@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>OW.Game</RootNamespace>
+    <AssemblyName>OwGameBaseCore</AssemblyName>
+    <Description>封装游戏基础逻辑的类型。</Description>
+    <PackageId>OW.GameBaseCore</PackageId>
+    <Authors>OW</Authors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OwBaseCore\OwBaseCore.csproj" />
+  </ItemGroup>
+
+</Project>

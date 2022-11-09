@@ -6,8 +6,6 @@ namespace Gy02.Controllers
     /// <summary>
     /// 账号管理控制器。
     /// </summary>
-    [Route("api/[controller]/[action]")]
-    [ApiController]
     public class AccountController : GameControllerBase
     {
         /// <summary>

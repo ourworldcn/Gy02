@@ -1,0 +1,36 @@
+Add-Migration 22082501 -Context GY02TemplateContext
+Add-Migration 22082501 -Context GY001UserContext
+Add-Migration 22102001 -Context GameLoggingDbContext
+
+
+fcpifhcd=1	增量
+fcpdfhcd=1	计算间隔，单位：秒
+fcpcfhcd=xx	当前值
+fcptfhcd=2021-6-1 1:0:0	最后计算的时间点,这个字符串会变格式，用DateTime.Parse分析能得到。注意是utc时间。
+fcpmfhcd=25400	孵化cd最大值
+
+DateTime.UtcNow.ToString("");
+
+A向B申请好友，则 GameSocialRelationshipDto 对象中，Id=AId,ObjectId=BId,Friendliness=6,Confirmed=0
+Friendliness=6,Confirmed=0 标识这是一个好友申请的条目，Id是提出申请的一方，ObjectId是被邀请的一方。这个条目记录了一个动作，Id是动作的主体。
+
+"QhtsnntKgkm1X+sYEXzaAw=="
+
+USE [GY2021001Prod]
+GO
+while(1=1)
+begin
+	UPDATE top (1000) [dbo].[GameItems]
+	   SET 
+		  [PropertiesString] = REPLACE([PropertiesString],'fcpcCount=0','fcpcCount=36000')
+		  ,[count]=36000
+	  where TemplateId='{7a00740c-035e-4846-a619-2d0855f60b55}' and [count]=0
+	if(@@ROWCOUNT=0)
+	  break
+end
+GO
+
+
+select * from master.dbo.sysprocesses where dbid = DB_ID('GY2021001Dev') --取活动链接数量
+
+https://krm.icebirdgame.com/fusion/verifySign

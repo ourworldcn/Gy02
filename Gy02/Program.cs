@@ -1,3 +1,7 @@
+using GuangYuan.GY001.TemplateDb;
+using Gy02Bll;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 
@@ -27,6 +31,16 @@ services.AddSwaggerGen(c =>
 });
 #endregion ≈‰÷√Swagger
 
+#region ≈‰÷√ ˝æ›ø‚
+var loggingDbConnectionString = builder.Configuration.GetConnectionString("LoggingDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
+var userDbConnectionString = builder.Configuration.GetConnectionString("UserDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
+var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
+
+services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
+
+#endregion ≈‰÷√ ˝æ›ø‚
+
+services.AddHostedService<GameHostedService>();
 
 var app = builder.Build();
 
