@@ -1,6 +1,8 @@
 ﻿using GuangYuan.GY001.TemplateDb;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.ObjectPool;
+using System.Diagnostics;
 
 namespace Gy02Bll
 {
@@ -25,8 +27,23 @@ namespace Gy02Bll
             var tContext = _Services.GetRequiredService<GY02TemplateContext>();
             TemplateMigrateDbInitializer.Initialize(tContext);
             //logger.LogTrace($"模板数据库已正常升级。");
-            var result = base.StartAsync(cancellationToken);
+            var result = base.StartAsync(cancellationToken).ContinueWith(Post);
             return result;
+        }
+
+        /// <summary>
+        /// 在基类<see cref="StartAsync(CancellationToken)"/>任务返回后运行的后续任务。
+        /// </summary>
+        void Post(Task task)
+        {
+            Test();
+
+        }
+
+        [Conditional("DEBUG")]
+        private void Test()
+        {
+            var ss=_Services.GetService<AutoClearPool<List<int>>>();
         }
     }
 }

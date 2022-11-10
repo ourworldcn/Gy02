@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\OwGameBase\OwGameBase.csproj" />
+    <ProjectReference Include="..\OwGameDb\OwGameDb.csproj" />
   </ItemGroup>
 
   <ItemGroup>

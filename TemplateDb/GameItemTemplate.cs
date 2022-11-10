@@ -118,32 +118,5 @@ namespace GuangYuan.GY001.TemplateDb
             get => GId.GetValueOrDefault() / 1000;
         }
 
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <param name="propertyName"><inheritdoc/></param>
-        /// <param name="result"><inheritdoc/></param>
-        /// <returns><inheritdoc/></returns>
-        public bool TryGetPropertyValue(string propertyName, out object result)
-        {
-            bool succ;
-            switch (propertyName)
-            {
-                case "GId":
-                    result = GId;
-                    succ = true;
-                    break;
-                case "GenusCode":
-                    result = GenusCode;
-                    succ = true;
-                    break;
-                default:
-                    succ = Properties.TryGetValue(propertyName, out result);
-                    break;
-            }
-            return succ;
-        }
-
-
     }
 }

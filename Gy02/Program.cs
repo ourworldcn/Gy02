@@ -8,6 +8,8 @@ using System.Reflection;
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
+#region 追加服务到容器
+
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -37,12 +39,17 @@ var userDbConnectionString = builder.Configuration.GetConnectionString("UserDbCo
 var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 
 services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
+services.AutoRegister();
 
 #endregion 配置数据库
 
 services.AddHostedService<GameHostedService>();
 
 var app = builder.Build();
+
+#endregion 追加服务到容器
+
+#region 配置HTTP管道
 
 // Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
@@ -64,5 +71,6 @@ app.UseSwaggerUI();
 //app.UseAuthorization();
 
 app.MapControllers();
+#endregion 配置HTTP管道
 
 app.Run();
