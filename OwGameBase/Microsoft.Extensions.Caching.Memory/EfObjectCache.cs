@@ -10,6 +10,9 @@ namespace Microsoft.Extensions.Caching.Memory
 {
     public class EfObjectCacheOptions : DataObjectCacheOptions, IOptions<EfObjectCacheOptions>
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
         public EfObjectCacheOptions() : base()
         {
         }

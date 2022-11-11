@@ -87,13 +87,6 @@ namespace OW.Game.Store
 
         #endregion IDisposable接口相关
 
-        public override void PrepareSaving(DbContext db)
-        {
-            if (JsonObject != null)
-                JsonObjectString = JsonSerializer.Serialize(JsonObject, JsonObjectType ?? JsonObject.GetType());
-            base.PrepareSaving(db);
-        }
-
         #region 事件及相关
 
         #endregion 事件及相关

@@ -31,7 +31,7 @@ namespace OW.Game.Store
 
     public interface IEntityWithSingleKey<T>
     {
-        T Id { get; set; }
+        abstract T Id { get; set; }
 
     }
 
@@ -128,7 +128,7 @@ namespace OW.Game.Store
     /// <summary>
     /// 提供一个基类，包含一个编码为字符串的压缩属性。且该字符串可以理解为一个字典的内容。
     /// </summary>
-    public abstract class SimpleDynamicPropertyBase : GuidKeyObjectBase, IBeforeSave, IDisposable,  ISimpleDynamicProperty<object>
+    public abstract class SimpleDynamicPropertyBase : GuidKeyObjectBase, IBeforeSave, IDisposable, ISimpleDynamicProperty<object>
     {
         /// <summary>
         /// <inheritdoc/>

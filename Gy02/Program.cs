@@ -3,6 +3,9 @@ using Gy02Bll;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
+using OW.Game.Entity;
+using OW.Game.Manager;
+using System.Diagnostics;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -39,6 +42,7 @@ var userDbConnectionString = builder.Configuration.GetConnectionString("UserDbCo
 var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 
 services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
+var ass = typeof(GameUser).Assembly;
 services.AutoRegister();
 
 #endregion ≈‰÷√ ˝æ›ø‚

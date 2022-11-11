@@ -14,4 +14,8 @@
     <ProjectReference Include="..\TemplateDb\TemplateDb.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entity\" />
+  </ItemGroup>
+
 </Project>

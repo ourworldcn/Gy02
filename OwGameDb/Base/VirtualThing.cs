@@ -116,6 +116,7 @@ namespace OW.Game.Store
 
         [AllowNull]
         private VirtualThing _Thing;
+
         /// <summary>
         /// 
         /// </summary>
@@ -197,7 +198,6 @@ namespace OW.Game.Store
     /// <summary>
     /// 存储游戏世界事物的基本类。一般认为他们具有树状结构。
     /// </summary>
-    [Table("VirtualThings")]
     public class VirtualThing : VirtualThingBase<VirtualThing>
     {
         #region 构造函数
@@ -230,21 +230,17 @@ namespace OW.Game.Store
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
                 _BinaryArray = default;
-                _Timestamp = null;
                 base.Dispose(disposing);
             }
         }
         #endregion 析构及处置对象相关
-
-        [AllowNull]
-        private byte[] _Timestamp;
 
         /// <summary>
         /// 时间戳。
         /// </summary>
         [Timestamp]
         [JsonIgnore]
-        public byte[] Timestamp { get => _Timestamp; set => _Timestamp = value; }
+        public byte[] Timestamp { get; set; }
 
         [AllowNull]
         private byte[] _BinaryArray;
@@ -270,5 +266,6 @@ namespace OW.Game.Store
                 viewBase.Thing = this;
             return result;
         }
+
     }
 }

@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gy02Bll\Gy02Bll.csproj" />
+    <ProjectReference Include="..\OwGameCore\OwGameCore.csproj" />
     <ProjectReference Include="..\TemplateDb\TemplateDb.csproj" />
   </ItemGroup>
 

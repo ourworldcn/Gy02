@@ -37,103 +37,11 @@ namespace OW.Game.Store
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         abstract T GetJsonObject<T>() where T : new();
-        //{
-        //    if (typeof(T) != JsonObjectType || JsonObject is null)
-        //    {
-        //        if (string.IsNullOrWhiteSpace(JsonObjectString))
-        //        {
-        //            JsonObject = new T();
-        //        }
-        //        else
-        //        {
-        //            JsonObject = JsonSerializer.Deserialize(JsonObjectString, typeof(T));
-        //        }
-        //        JsonObjectType = typeof(T);
-        //    }
-        //    return (T)JsonObject;
-        //}
     }
 
     /// <summary>
-    /// <see cref="JsonDynamicPropertyBase.JsonObject"/>属性的基类。
+    /// 
     /// </summary>
-    public class JsonDynamicPropertyViewBase : IDisposable
-    {
-        #region 构造函数
-
-        public JsonDynamicPropertyViewBase()
-        {
-        }
-
-        public JsonDynamicPropertyViewBase(Dictionary<string, string> stringDictionary)
-        {
-            _StringDictionary = stringDictionary;
-        }
-        #endregion 构造函数
-
-        #region IDisposable接口及相关
-
-        private volatile bool _IsDisposed;
-        /// <summary>
-        /// 对象是否已经被处置。
-        /// </summary>
-        [NotMapped]
-        [JsonIgnore]
-        public bool IsDisposed
-        {
-            get => _IsDisposed;
-            protected set => _IsDisposed = value;
-        }
-
-        /// <summary>
-        /// 实际处置当前对象的方法。
-        /// </summary>
-        /// <param name="disposing"></param>
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!_IsDisposed)
-            {
-                if (disposing)
-                {
-                    // 释放托管状态(托管对象)
-                }
-
-                // 释放未托管的资源(未托管的对象)并重写终结器
-                // 将大型字段设置为 null
-                _StringDictionary = null;
-                _IsDisposed = true;
-            }
-        }
-
-        // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
-        // ~SimpleDynamicPropertyBase()
-        // {
-        //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-        //     Dispose(disposing: false);
-        // }
-
-        /// <summary>
-        /// 处置对象。
-        /// </summary>
-        public void Dispose()
-        {
-            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
-
-        #endregion IDisposable接口及相关
-
-        private Dictionary<string, string> _StringDictionary;
-
-        /// <summary>
-        /// 记录一些扩展属性的字典。
-        /// </summary>
-        public Dictionary<string, string> StringDictionary { get => _StringDictionary ??= new Dictionary<string, string>(); set => _StringDictionary = value; }
-
-
-    }
-
     public class JsonDynamicPropertyBase : GuidKeyObjectBase, IDisposable, IBeforeSave, IJsonDynamicProperty
     {
         #region 构造函数

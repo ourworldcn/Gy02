@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using OW.Game.Entity;
+using OW.Game.Manager;
 
 namespace Gy02
 {

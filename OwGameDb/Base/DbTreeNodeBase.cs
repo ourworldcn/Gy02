@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -114,6 +115,7 @@ namespace OW.Game.Store
         /// 记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象。
         /// </summary>
         [MaxLength(64)]
+
         public string ExtraString { get => _ExtraString; set => _ExtraString = value; }
 
         /// <summary>
