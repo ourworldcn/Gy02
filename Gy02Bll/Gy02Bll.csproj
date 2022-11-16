@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TemplateDb\TemplateDb.csproj" />
+    <ProjectReference Include="..\UserDb\UserDb.csproj" />
   </ItemGroup>
 
   <ItemGroup>

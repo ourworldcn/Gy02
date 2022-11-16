@@ -1,10 +1,14 @@
+using Castle.Core.Configuration;
 using GuangYuan.GY001.TemplateDb;
 using Gy02Bll;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Manager;
+using OW.Game.Store;
 using System.Diagnostics;
 using System.Reflection;
 
@@ -42,11 +46,11 @@ var userDbConnectionString = builder.Configuration.GetConnectionString("UserDbCo
 var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 
 services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
-var ass = typeof(GameUser).Assembly;
-services.AutoRegister();
+services.AddDbContext<GameUserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Scoped);
 
 #endregion ≈‰÷√ ˝æ›ø‚
 
+services.AddGameServices();
 services.AddHostedService<GameHostedService>();
 
 var app = builder.Build();

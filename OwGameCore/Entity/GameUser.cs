@@ -20,6 +20,12 @@ namespace OW.Game.Entity
             Initialize();
         }
 
+        public GameUser(GameUserDo thing)
+        {
+            Thing = thing;
+            Initialize();
+        }
+
         private void Initialize()
         {
         }
