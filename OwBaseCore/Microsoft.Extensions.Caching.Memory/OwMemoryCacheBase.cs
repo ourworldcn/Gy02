@@ -74,6 +74,7 @@ namespace Microsoft.Extensions.Caching.Memory
 
     /// <summary>
     /// 内存缓存的基础类。
+    /// 针对每个项操作都会对其键值加锁，对高并发而言，不应有多个线程试图访问同一个键下的项。这样可以避免锁的碰撞。对基本单线程操作而言，此类性能较低。
     /// </summary>
     public abstract class OwMemoryCacheBase : IMemoryCache, IDisposable
     {

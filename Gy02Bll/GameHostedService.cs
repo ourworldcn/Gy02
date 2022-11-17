@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using OW.Game.Store;
+using OwDbBase;
 using System.Diagnostics;
 
 namespace Gy02Bll
@@ -130,6 +131,7 @@ namespace Gy02Bll
         private void Test()
         {
             var ss = _Services.GetService<AutoClearPool<List<int>>>();
+            var svc = _Services.GetService<DataObjectManager>();
         }
     }
 }
