@@ -26,21 +26,21 @@ namespace Microsoft.Extensions.Caching.Memory
 
         /// <summary>
         /// 设置或获取锁定键的回调。应支持递归与<see cref="UnlockCallback"/>配对使用。
-        /// 默认值是<see cref="Monitor.TryEnter(object, TimeSpan)"/>。
+        /// 默认值是<see cref="SingletonLocker.TryEnter(object, TimeSpan)"/>。
         /// </summary>
-        public Func<object, TimeSpan, bool> LockCallback { get; set; } = Monitor.TryEnter;
+        public Func<object, TimeSpan, bool> LockCallback { get; set; } = SingletonLocker.TryEnter;
 
         /// <summary>
         /// 设置或获取释放键的回调。应支持递归与<see cref="LockCallback"/>配对使用。
-        /// 默认值是<see cref="Monitor.Exit(object)"/>。
+        /// 默认值是<see cref="SingletonLocker.Exit(object)"/>。
         /// </summary>
-        public Action<object> UnlockCallback { get; set; } = Monitor.Exit;
+        public Action<object> UnlockCallback { get; set; } = SingletonLocker.Exit;
 
         /// <summary>
         /// 确定当前线程是否保留指定键上的锁。
-        /// 默认值是<see cref="Monitor.IsEntered(object)"/>
+        /// 默认值是<see cref="SingletonLocker.IsEntered(object)"/>
         /// </summary>
-        public Func<object, bool> IsEnteredCallback { get; set; } = Monitor.IsEntered;
+        public Func<object, bool> IsEnteredCallback { get; set; } = SingletonLocker.IsEntered;
 
         /// <summary>
         /// 默认的锁定超时时间。

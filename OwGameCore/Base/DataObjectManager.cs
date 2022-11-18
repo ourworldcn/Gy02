@@ -126,12 +126,6 @@ namespace OW.Game
         /// </summary>
         void Initialize()
         {
-            _Datas = new DataObjectCache(new DataObjectCacheOptions()
-            {
-                LockCallback = (obj, timeout) => StringLocker.TryEnter((string)obj, timeout),
-                UnlockCallback = c => StringLocker.Exit((string)c),
-                DefaultLockTimeout = _Options.DefaultLockTimeout,
-            });
             _Timer = new Timer(TimerCallback, null, Options.ScanFrequency, Options.ScanFrequency);
         }
 
@@ -167,7 +161,7 @@ namespace OW.Game
             for (int i = keys.Count - 1; i >= 0; i--)
             {
                 var key = keys[i];
-                using var dw = DisposeHelper.Create(StringLocker.TryEnter, StringLocker.Exit, key, TimeSpan.Zero);
+                using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, key, TimeSpan.Zero);
                 if (dw.IsEmpty)
                     continue;
                 var entry = _Datas.GetCacheEntry(key);
@@ -201,18 +195,18 @@ namespace OW.Game
         /// <returns></returns>
         public object GetOrLoad(string key, Action<DataObjectOptions> loader)
         {
-            key = StringLocker.Intern(key);
-            using var dw = DisposeHelper.Create(StringLocker.TryEnter, StringLocker.Exit, key, Options.DefaultLockTimeout);
+            var innerKey = SingletonLocker.Intern(key);
+            using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, innerKey, Options.DefaultLockTimeout);
             if (dw.IsEmpty)
                 return null;
-            var entry = _Datas.GetCacheEntry(key);
+            var entry = _Datas.GetCacheEntry(innerKey);
             DataObjectOptions options;
             if (entry is null)
             {
-                using var entity = (OwMemoryCacheBase.OwMemoryCacheBaseEntry)_Datas.CreateEntry(key);
+                using var entity = (OwMemoryCacheBase.OwMemoryCacheBaseEntry)_Datas.CreateEntry(innerKey);
                 options = new DataObjectOptions()
                 {
-                    Key = key,
+                    Key = (string)innerKey,
                 };
                 entity.State = options;
                 loader(options);
@@ -222,9 +216,9 @@ namespace OW.Game
                     options.LeaveCallback?.Invoke(value, state);
                 });
                 if (options.LoadCallback != null)
-                    entity.Value = options.LoadCallback(key, options.LoadCallbackState);
+                    entity.Value = options.LoadCallback(innerKey as string, options.LoadCallbackState);
             }
-            entry = _Datas.GetCacheEntry(key);
+            entry = _Datas.GetCacheEntry(innerKey);
             Debug.Assert(null != entry);
             return entry.Value;
         }
@@ -236,7 +230,7 @@ namespace OW.Game
         /// <returns></returns>
         public object Find(string key)
         {
-            using var dw = DisposeHelper.Create(StringLocker.TryEnter, StringLocker.Exit, key, Options.DefaultLockTimeout);
+            using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, key, Options.DefaultLockTimeout);
             if (dw.IsEmpty)
                 return null;
             return _Datas.TryGetValue(key, out var result) ? result : default;

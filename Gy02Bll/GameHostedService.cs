@@ -1,13 +1,17 @@
 ﻿using GuangYuan.GY001.TemplateDb;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
+using OW.Game.Caching;
 using OW.Game.Store;
 using OwDbBase;
 using System.Diagnostics;
+using System.Text;
 
 namespace Gy02Bll
 {
@@ -56,41 +60,30 @@ namespace Gy02Bll
 
         private void SetDbConfig()
         {
-            #region 设置sql server使用内存，避免sql server 贪婪使用内存导致内存过大
             using var scope = _Services.CreateScope();
             var svc = scope.ServiceProvider;
+            var sqlSb = AutoClearPool<StringBuilder>.Shared.Get();
+            using var dwSb = DisposeHelper.Create(c => AutoClearPool<StringBuilder>.Shared.Return(c), sqlSb);
+            #region 设置sql server使用内存，避免sql server 贪婪使用内存导致内存过大
 
             var db = svc.GetService<GameUserContext>();
-            var sql = @$"EXEC sys.sp_configure N'show advanced options', N'1'  RECONFIGURE WITH OVERRIDE;" +
+            sqlSb.AppendLine(@$"EXEC sys.sp_configure N'show advanced options', N'1'  RECONFIGURE WITH OVERRIDE;" +
                 "EXEC sys.sp_configure N'max server memory (MB)', N'4096';" +
                 "RECONFIGURE WITH OVERRIDE;" +
-                "EXEC sys.sp_configure N'show advanced options', N'0'  RECONFIGURE WITH OVERRIDE;";
-            try
-            {
-                db?.Database.ExecuteSqlRaw(sql);
-            }
-            catch (Exception)
-            {
-            }
+                "EXEC sys.sp_configure N'show advanced options', N'0'  RECONFIGURE WITH OVERRIDE;");
             #endregion
 
+            //压缩
+            var table = db?.Model.FindEntityType(typeof(VirtualThing))?.GetTableMappings();
+
+            var tn = db?.Model.FindEntityType(typeof(VirtualThing))?.GetTableName();
+            sqlSb.AppendLine($"ALTER TABLE {tn} REBUILD PARTITION = ALL WITH (DATA_COMPRESSION = PAGE);");
+            sqlSb.AppendLine($"ALTER INDEX IX_VirtualThings_ExtraGuid_ExtraDecimal_ExtraString ON {tn} REBUILD PARTITION = ALL WITH (DATA_COMPRESSION = PAGE);");
+            sqlSb.AppendLine($"ALTER INDEX IX_VirtualThings_ExtraGuid_ExtraString_ExtraDecimal ON {tn} REBUILD PARTITION = ALL WITH (DATA_COMPRESSION = PAGE);");
+
             try
             {
-                var tn = db?.Model.FindEntityType(typeof(VirtualThing))?.GetTableName();
-                sql = "ALTER TABLE [dbo].[GameItems] REBUILD PARTITION = ALL WITH (DATA_COMPRESSION = ROW);" +
-                    "ALTER INDEX IX_GameItems_TemplateId_ExtraString_ExtraDecimal ON [dbo].[GameItems] REBUILD PARTITION = ALL WITH (DATA_COMPRESSION = PAGE)";   //按行压缩
-
-                //TODO 压缩索引
-                var indexNames = new string[] { "IX_VirtualThings_ExtraGuid_ExtraString_ExtraDecimal", "IX_VirtualThings_ExtraGuid_ExtraDecimal_ExtraString" };
-                var alterIndex = "ALTER INDEX {0} ON [dbo].[GameItems] REBUILD PARTITION = ALL WITH(DATA_COMPRESSION = PAGE); ";
-
-                db?.Database.ExecuteSqlRaw(sql);
-                tn = db?.Model.FindEntityType(typeof(VirtualThing))?.GetTableName();
-                if (tn != null)
-                {
-                    sql = $"ALTER TABLE {tn} REBUILD PARTITION = ALL WITH (DATA_COMPRESSION = ROW);";
-                    db?.Database.ExecuteSqlRaw(sql);
-                }
+                db?.Database.ExecuteSqlRaw(sqlSb.ToString());
             }
             catch (Exception err)
             {
@@ -130,8 +123,18 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-            var ss = _Services.GetService<AutoClearPool<List<int>>>();
-            var svc = _Services.GetService<DataObjectManager>();
+            object i2 = 5.ToString();
+            var cache = _Services.GetService<GameObjectCache>();
+            var sw = Stopwatch.StartNew();
+            try
+            {
+
+            }
+            finally
+            {
+                sw.Stop();
+                Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
+            }
         }
     }
 }

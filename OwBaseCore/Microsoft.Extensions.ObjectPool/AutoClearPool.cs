@@ -13,26 +13,6 @@ using System.Threading;
 
 namespace Microsoft.Extensions.ObjectPool
 {
-    public class DictionaryPooledObjectPolicy<TKey, TValue> : DefaultPooledObjectPolicy<Dictionary<TKey, TValue>>
-    {
-        public override bool Return(Dictionary<TKey, TValue> obj)
-        {
-            obj.Clear();
-            return true;
-        }
-    }
-
-    public class StringBuilderPool
-    {
-        public static readonly ObjectPool<StringBuilder> Shared;
-
-        [MethodImpl(MethodImplOptions.Synchronized)]
-        static StringBuilderPool()
-        {
-            Shared ??= new DefaultObjectPoolProvider().CreateStringBuilderPool();
-        }
-    }
-
     /// <summary>
     /// 对象的内存池。
     /// 若类型支持公共方法且签名为Clear()，则在对象回池前会自动调用。
@@ -44,7 +24,7 @@ namespace Microsoft.Extensions.ObjectPool
     [OwAutoInjection(ServiceLifetime.Singleton, ServiceType = typeof(AutoClearPool<>))]
     public class AutoClearPool<T> : DefaultObjectPool<T> where T : class, new()
     {
-        private class CollectionPooledObjectPolicy : DefaultPooledObjectPolicy<T>
+        private class AutoClearPooledObjectPolicy : DefaultPooledObjectPolicy<T>
         {
             MethodInfo _Clear;
 
@@ -52,7 +32,7 @@ namespace Microsoft.Extensions.ObjectPool
             /// 构造函数。
             /// </summary>
             /// <param name="clear">必须是一个无参数且无返回值的实例方法。</param>
-            public CollectionPooledObjectPolicy(MethodInfo clear)
+            public AutoClearPooledObjectPolicy(MethodInfo clear)
             {
                 _Clear = clear;
             }
@@ -60,7 +40,7 @@ namespace Microsoft.Extensions.ObjectPool
             /// <summary>
             /// 构造函数。
             /// </summary>
-            public CollectionPooledObjectPolicy()
+            public AutoClearPooledObjectPolicy()
             {
                 _Clear = typeof(T).GetMethod("Clear", Array.Empty<Type>());
             }
@@ -88,7 +68,7 @@ namespace Microsoft.Extensions.ObjectPool
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public AutoClearPool() : base(new CollectionPooledObjectPolicy())
+        public AutoClearPool() : base(new AutoClearPooledObjectPolicy())
         {
 
         }
@@ -116,7 +96,7 @@ namespace Microsoft.Extensions.ObjectPool
         /// </summary>
         static AutoClearPool()
         {
-            var pool = new AutoClearPool<T>(new CollectionPooledObjectPolicy());
+            var pool = new AutoClearPool<T>(new AutoClearPooledObjectPolicy());
             Interlocked.CompareExchange(ref Shared, pool, null);
         }
 

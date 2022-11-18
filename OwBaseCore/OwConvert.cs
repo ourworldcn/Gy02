@@ -309,8 +309,8 @@ namespace System
         /// <returns></returns>
         public static string ToString(IReadOnlyDictionary<string, object> dic)
         {
-            StringBuilder sb = StringBuilderPool.Shared.Get();
-            using var dw = DisposeHelper.Create(c => StringBuilderPool.Shared.Return(c), sb);
+            StringBuilder sb = AutoClearPool<StringBuilder>.Shared.Get();
+            using var dw = DisposeHelper.Create(c => AutoClearPool<StringBuilder>.Shared.Return(c), sb);
             Copy(dic, sb);
             return sb.ToString();
         }

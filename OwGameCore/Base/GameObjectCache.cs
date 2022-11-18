@@ -1,12 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading;
 
@@ -16,9 +19,6 @@ namespace OW.Game.Caching
     {
         public GameObjectCacheOptions() : base()
         {
-            LockCallback = (key, timeout) => StringLocker.TryEnter((string)key, timeout);
-            UnlockCallback = key => StringLocker.Exit((string)key);
-            IsEnteredCallback = key => StringLocker.IsEntered((string)key);
         }
 
         GameObjectCacheOptions IOptions<GameObjectCacheOptions>.Value => this;
@@ -33,6 +33,7 @@ namespace OW.Game.Caching
     /// <summary>
     /// 特定适用于游戏世界内对象的缓存服务对象。
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameObjectCache : DataObjectCache
     {
         /// <summary>
@@ -236,6 +237,13 @@ namespace OW.Game.Caching
                 entry.SetSaveAndEviction(db);
                 return result;
             });
+        }
+
+        public static T GetOrLoadEntity<T>(this GameObjectCache cache, string key, Expression<Func<T, bool>> predicate, Action<GameObjectCache.GameObjectCacheEntry> setCallback = null,
+            Func<Type, object, DbContext> createDbCallback = null) where T : IEntityWithSingleKey<Guid>
+        {
+            
+            return default;
         }
 
         #endregion GameObjectCache扩展

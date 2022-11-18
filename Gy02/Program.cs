@@ -53,8 +53,8 @@ services.AddDbContext<GameUserContext>(options => options.UseLazyLoadingProxies(
 services.AddGameServices();
 services.AddHostedService<GameHostedService>();
 
+services.AddOptions();
 var app = builder.Build();
-
 #endregion 追加服务到容器
 
 #region 配置HTTP管道

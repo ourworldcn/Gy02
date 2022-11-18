@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace OW.Game
 {
-    public static class MyClass
+    public static class GameExtensions
     {
         public static IServiceCollection AddGameServices(this IServiceCollection services)
         {
@@ -15,7 +15,7 @@ namespace OW.Game
             assemblies.ForEach(c => hsAssm.Add(c));
 
             services.AutoRegister(hsAssm);
-
+            
             return services;
         }
     }

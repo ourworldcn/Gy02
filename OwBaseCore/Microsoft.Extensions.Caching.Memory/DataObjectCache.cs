@@ -404,7 +404,7 @@ namespace Microsoft.Extensions.Caching.Memory
         }
 
         /// <summary>
-        /// 派生类可以重载此函数。非公有函数不会自动对键加锁，若需要调用者需要负责加/解锁。
+        /// 派生类可以重载此函数。非公有函数不会自动对键加锁，若需要则调用者需负责加/解锁。
         /// </summary>
         /// <param name="entry"></param>
         /// <returns>该实现会确保初始化成功完成<seealso cref="EnsureInitializedCore(DataObjectCacheEntry, TimeSpan)"/>，然后调用基类实现--<inheritdoc/>。</returns>
@@ -448,8 +448,6 @@ namespace Microsoft.Extensions.Caching.Memory
         #endregion IMemoryCache接口相关
 
         #endregion IDataObjectCache接口相关
-
-
     }
 
     public static class DataObjectCacheExtensions
