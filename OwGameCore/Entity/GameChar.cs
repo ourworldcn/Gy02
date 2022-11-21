@@ -32,7 +32,8 @@ namespace OW.Game.Entity
         /// 角色显示用的名字。就是昵称，不可重复。
         /// </summary>
         [MaxLength(64)]
-        public string DisplayName { get => Thing.ExtraString; set => Thing.ExtraString = value; }
+        [JsonIgnore]
+        public Guid UserId { get => Guid.TryParse(Thing.ExtraString, out var id) ? id : Guid.Empty; set => Thing.ExtraString = value.ToString(); }
 
         /// <summary>
         /// 创建该对象的通用协调时间。

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace GuangYuan.GY001.TemplateDb
+namespace GuangYuan.GY001.TemplateDb.Entity
 {
     /// <summary>
     /// 游戏内物品的模板对象。

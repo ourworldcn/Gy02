@@ -1,13 +1,12 @@
 ﻿/*物品对象
  */
-using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.CompilerServices;
 
-namespace GuangYuan.GY001.TemplateDb
+namespace GuangYuan.GY001.TemplateDb.Entity
 {
     /// <summary>
     /// 虚拟事物对象的模板类。

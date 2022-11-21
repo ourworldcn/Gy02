@@ -1,4 +1,5 @@
 ﻿using GuangYuan.GY001.TemplateDb;
+using Gy02Bll.Commands;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Caching.Memory;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using OW.Game.Caching;
+using OW.Game.Managers;
 using OW.Game.Store;
 using OwDbBase;
 using System.Diagnostics;
@@ -128,7 +130,7 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-
+                CreateAccountHandler.GetQuicklyRegisterSuffixSeq();
             }
             finally
             {

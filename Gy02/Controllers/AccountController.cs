@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Gy02.Publisher;
+using Gy02Bll.Commands;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OW.Game;
 using OW.Game.Manager;
 
 namespace Gy02.Controllers
@@ -33,5 +37,23 @@ namespace Gy02.Controllers
         {
             return true;
         }
+
+        /// <summary>
+        /// 创建一个新账号。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="mapper">注入的AutoMapper服务。</param>
+        /// <param name="commandMng">注入的命令处理器服务。</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<CreateAccountResultDto> CreateAccount(CreateAccountParamsDto model, [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng)
+        {
+            var command = mapper.Map<CreateAccountCommand>(model);
+            commandMng.Handle(command);
+            
+            var result = mapper.Map<CreateAccountResultDto>(command);
+            return result;
+        }
     }
+
 }

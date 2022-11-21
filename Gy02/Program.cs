@@ -1,6 +1,9 @@
 using Castle.Core.Configuration;
 using GuangYuan.GY001.TemplateDb;
+using Gy02;
+using Gy02.AutoMappper;
 using Gy02Bll;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
@@ -19,9 +22,16 @@ var services = builder.Services;
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;  //直接用属性名
+    //options.JsonSerializerOptions.IgnoreReadOnlyProperties = true;  //忽略只读属性。
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+services.AddResponseCompression(c => c.EnableForHttps = true);
 
 #region 配置Swagger
 //注册Swagger生成器，定义一个 Swagger 文档
@@ -48,12 +58,19 @@ var templateDbConnectionString = builder.Configuration.GetConnectionString("Temp
 services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
 services.AddDbContext<GameUserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Scoped);
 
+VWorld.TemplateContextOptions = new DbContextOptionsBuilder<GY02TemplateContext>().UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).Options;
+VWorld.UserContextOptions = new DbContextOptionsBuilder<GameUserContext>().UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging().Options;
+
 #endregion 配置数据库
 
 services.AddGameServices();
 services.AddHostedService<GameHostedService>();
 
 services.AddOptions();
+
+services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
+
+
 var app = builder.Build();
 #endregion 追加服务到容器
 

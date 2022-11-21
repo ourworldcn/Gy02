@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GuangYuan.GY001.TemplateDb
+namespace GuangYuan.GY001.TemplateDb.Entity
 {
     /// <summary>
     /// 

@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using OW.Game.Caching;
+using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +12,9 @@ namespace OW.Game.Manager
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class VirtualThingManager
     {
-        public VirtualThingManager()
+        public VirtualThingManager(GameObjectCache cache)
         {
+            Cache = cache;
         }
 
         void Initialize()
@@ -19,5 +22,15 @@ namespace OW.Game.Manager
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
         }
+
+        public GameObjectCache Cache { get; }
+
+        public DisposeHelper<string> Load(Guid charId, out VirtualThing thing)
+        {
+            var result = DisposeHelper.Empty<string>();
+            thing = default;
+            return result;
+        }
+
     }
 }

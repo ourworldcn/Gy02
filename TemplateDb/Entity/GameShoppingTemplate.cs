@@ -1,9 +1,8 @@
-﻿using OW.Game.Store;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace GuangYuan.GY001.TemplateDb
+namespace GuangYuan.GY001.TemplateDb.Entity
 {
     /// <summary>
     /// 卡池数据模板。
@@ -99,13 +98,13 @@ namespace GuangYuan.GY001.TemplateDb
                     break;
                 case 'm':   //月周期
                     DateTime tmp;
-                    for (tmp = templateStart; tmp <= now; tmp = tmp.AddMonths(((int)val)))
+                    for (tmp = templateStart; tmp <= now; tmp = tmp.AddMonths((int)val))
                     {
                     }
-                    start = tmp.AddMonths(-((int)val));
+                    start = tmp.AddMonths(-(int)val);
                     break;
                 case 'y':   //年周期
-                    for (tmp = templateStart; tmp <= now; tmp = tmp.AddYears(((int)val)))
+                    for (tmp = templateStart; tmp <= now; tmp = tmp.AddYears((int)val))
                     {
                     }
                     start = tmp.AddYears(-(int)val);
@@ -127,7 +126,7 @@ namespace GuangYuan.GY001.TemplateDb
         {
             DateTime result; //最近一个周期的开始时间
             var val = template.ValidPeriodValue;
-            var start = GetStart(template, now);    //周期开始时间
+            var start = template.GetStart(now);    //周期开始时间
             switch (template.ValidPeriodUnit)
             {
                 case 'n':   //无限
@@ -269,13 +268,13 @@ namespace GuangYuan.GY001.TemplateDb
                     break;
                 case 'm':   //月周期
                     DateTime tmp;
-                    for (tmp = templateStart; tmp <= now; tmp = tmp.AddMonths(((int)val)))
+                    for (tmp = templateStart; tmp <= now; tmp = tmp.AddMonths((int)val))
                     {
                     }
-                    start = tmp.AddMonths(-((int)val));
+                    start = tmp.AddMonths(-(int)val);
                     break;
                 case 'y':   //年周期
-                    for (tmp = templateStart; tmp <= now; tmp = tmp.AddYears(((int)val)))
+                    for (tmp = templateStart; tmp <= now; tmp = tmp.AddYears((int)val))
                     {
                     }
                     start = tmp.AddYears(-(int)val);
@@ -297,7 +296,7 @@ namespace GuangYuan.GY001.TemplateDb
         {
             DateTime result; //最近一个周期的开始时间
             var val = template.ValidPeriodValue;
-            var start = GetStart(template, now);    //周期开始时间
+            var start = template.GetStart(now);    //周期开始时间
             switch (template.ValidPeriodUnit)
             {
                 case 'n':   //无限

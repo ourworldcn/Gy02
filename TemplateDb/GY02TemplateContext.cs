@@ -1,8 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore;
-using OW.Game.Store;
+﻿using GuangYuan.GY001.TemplateDb.Entity;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace GuangYuan.GY001.TemplateDb
 {
+    public static class TemplateMigrateDbInitializer
+    {
+        public static void Initialize(GY02TemplateContext context)
+        {
+            if (context.Database.GetPendingMigrations().Any())
+            {
+                context.Database.Migrate();
+            }
+        }
+    }
+
     /// <summary>
     /// 游戏模板数据库上下文。
     /// </summary>
@@ -21,7 +33,7 @@ namespace GuangYuan.GY001.TemplateDb
         /// <summary>
         /// 装备表。
         /// </summary>
-        public DbSet<GameItemTemplate> ItemTemplates { get; set; }
+        public DbSet<GameThingTemplate> ThingTemplates { get; set; }
 
         ///// <summary>
         ///// 蓝图表

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
-namespace GuangYuan.GY001.TemplateDb
+namespace GuangYuan.GY001.TemplateDb.Entity
 {
     /// <summary>
     /// 蓝图模板。
@@ -66,7 +66,7 @@ namespace GuangYuan.GY001.TemplateDb
 
         #region 废弃
 
-    #endregion 废弃
+        #endregion 废弃
     }
 
     /// <summary>

@@ -165,6 +165,10 @@ namespace OW.Game
 
     }
 
+    /// <summary>
+    /// 命令处理类的基类，可以在构造函数中注入必须的对象。
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public abstract class GameCommandHandlerBase<T> : IGameCommandHandler<T> where T : IGameCommand
     {
         public GameCommandHandlerBase()

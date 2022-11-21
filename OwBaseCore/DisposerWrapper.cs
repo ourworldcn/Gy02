@@ -114,7 +114,7 @@ namespace System
     /// <summary>
     /// 清理代码帮助器结构。实测比使用对象池要快20%左右。
     /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="T">清理时调用函数的参数。</typeparam>
     public readonly ref struct DisposeHelper<T>
     {
         /// <summary>

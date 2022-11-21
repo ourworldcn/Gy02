@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,9 @@ namespace OW.Game
             assemblies.ForEach(c => hsAssm.Add(c));
 
             services.AutoRegister(hsAssm);
-            
+            services.UseGameCommand(hsAssm);
+
+            services.TryAddSingleton<PasswordGenerator>(); //密码生成器
             return services;
         }
     }
