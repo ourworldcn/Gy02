@@ -20,7 +20,7 @@ namespace OW.Game.Manager
         /// <summary>
         /// 
         /// </summary>
-        public static DbContextOptions<GameUserContext> UserContextOptions { get; set; }
+        public static DbContextOptions<GY02UserContext> UserContextOptions { get; set; }
 
         /// <summary>
         /// 新建一个用户数据库的上下文对象。
@@ -28,7 +28,12 @@ namespace OW.Game.Manager
         /// </summary>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static public GameUserContext CreateNewUserDbContext() =>
-            new GameUserContext(UserContextOptions);
+        static public GY02UserContext CreateNewUserDbContext() =>
+            new GY02UserContext(UserContextOptions);
+
+        /// <summary>
+        /// 记录应用的根服务容器。
+        /// </summary>
+        public static IServiceProvider Service { get; set; }
     }
 }

@@ -71,6 +71,7 @@ namespace OW.Game.Store
         /// <summary>
         /// 属性字符串。格式数Json字符串。
         /// </summary>
+        [Column(Order = 10)]
         public string JsonObjectString
         {
             get => _JsonObjectString;

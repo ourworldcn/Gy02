@@ -7,11 +7,11 @@
       <FileName>GameItemTemplate.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GuangYuan.GY001.TemplateDb.GameGenus" Collapsed="true">
-    <Position X="5" Y="0.75" Width="1.5" />
+  <Class Name="GuangYuan.GY02.Store.GY02ThingTemplate" Collapsed="true">
+    <Position X="3.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAEAAEEAAAgAAAAIAAIAQAAIAAAIAAAgAAAAAAAAA=</HashCode>
-      <FileName>GameGenus.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\GY02ThingTemplate.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />

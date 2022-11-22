@@ -1,4 +1,5 @@
 ﻿using GuangYuan.GY001.TemplateDb.Entity;
+using GuangYuan.GY02.Store;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -31,9 +32,9 @@ namespace GuangYuan.GY001.TemplateDb
         }
 
         /// <summary>
-        /// 装备表。
+        /// 对象表。
         /// </summary>
-        public DbSet<GameThingTemplate> ThingTemplates { get; set; }
+        public DbSet<GY02ThingTemplate> ThingTemplates { get; set; }
 
         ///// <summary>
         ///// 蓝图表

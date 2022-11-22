@@ -2,13 +2,16 @@
 using Gy02Bll.Commands;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
+using Microsoft.Extensions.Options;
 using OW.Game.Caching;
+using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OwDbBase;
@@ -57,6 +60,7 @@ namespace Gy02Bll
             }, _Services, cancellationToken);
 
             Test();
+            Task.Run(Preloading);
             return result;
         }
 
@@ -68,7 +72,7 @@ namespace Gy02Bll
             using var dwSb = DisposeHelper.Create(c => AutoClearPool<StringBuilder>.Shared.Return(c), sqlSb);
             #region 设置sql server使用内存，避免sql server 贪婪使用内存导致内存过大
 
-            var db = svc.GetService<GameUserContext>();
+            var db = svc.GetService<GY02UserContext>();
             sqlSb.AppendLine(@$"EXEC sys.sp_configure N'show advanced options', N'1'  RECONFIGURE WITH OVERRIDE;" +
                 "EXEC sys.sp_configure N'max server memory (MB)', N'4096';" +
                 "RECONFIGURE WITH OVERRIDE;" +
@@ -105,7 +109,7 @@ namespace Gy02Bll
                 TemplateMigrateDbInitializer.Initialize(tContext);
                 logger.LogTrace($"模板数据库已正常升级。");
 
-                var context = services.GetRequiredService<GameUserContext>();
+                var context = services.GetRequiredService<GY02UserContext>();
                 MigrateDbInitializer.Initialize(context);
                 logger.LogTrace("用户数据库已正常升级。");
 
@@ -126,17 +130,23 @@ namespace Gy02Bll
         private void Test()
         {
             object i2 = 5.ToString();
-            var cache = _Services.GetService<GameObjectCache>();
             var sw = Stopwatch.StartNew();
             try
             {
-                CreateAccountHandler.GetQuicklyRegisterSuffixSeq();
             }
             finally
             {
                 sw.Stop();
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
+        }
+
+        /// <summary>
+        /// 预先初始化一些必须的服务。
+        /// </summary>
+        private void Preloading()
+        {
+            var cache = _Services.GetService<TemplateManager>();
         }
     }
 }

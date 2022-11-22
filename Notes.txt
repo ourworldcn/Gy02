@@ -1,7 +1,7 @@
 
 Enable-Migrations ¨CEnableAutomaticMigrations -Context GameUserContext
-Add-Migration 22111601 -Context GameUserContext
 Add-Migration 22111601 -Context GY02TemplateContext
+Add-Migration 22111601 -Context GY02UserContext
 Add-Migration 22102001 -Context GameLoggingDbContext
 
 fcpifhcd=1	ÔöÁ¿

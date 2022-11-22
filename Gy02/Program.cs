@@ -3,6 +3,7 @@ using GuangYuan.GY001.TemplateDb;
 using Gy02;
 using Gy02.AutoMappper;
 using Gy02Bll;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -17,6 +18,18 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
+
+//builder.Services.AddW3CLogging(logging =>
+//{
+//    // Log all W3C fields
+//    logging.LoggingFields = W3CLoggingFields.All;
+
+//    logging.FileSizeLimit = 5 * 1024 * 1024;
+//    logging.RetainedFileCountLimit = 2;
+//    logging.FileName = "MyLogFile";
+//    logging.LogDirectory = @"C:\logs";
+//    logging.FlushInterval = TimeSpan.FromSeconds(2);
+//});
 
 #region 追加服务到容器
 
@@ -56,10 +69,10 @@ var userDbConnectionString = builder.Configuration.GetConnectionString("UserDbCo
 var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 
 services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
-services.AddDbContext<GameUserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Scoped);
+services.AddDbContext<GY02UserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Scoped);
 
 VWorld.TemplateContextOptions = new DbContextOptionsBuilder<GY02TemplateContext>().UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).Options;
-VWorld.UserContextOptions = new DbContextOptionsBuilder<GameUserContext>().UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging().Options;
+VWorld.UserContextOptions = new DbContextOptionsBuilder<GY02UserContext>().UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging().Options;
 
 #endregion 配置数据库
 
@@ -71,7 +84,7 @@ services.AddOptions();
 services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
 
-var app = builder.Build();
+var app = builder.Build(); 
 #endregion 追加服务到容器
 
 #region 配置HTTP管道

@@ -9,6 +9,7 @@ using System.Text;
 
 namespace GuangYuan.GY001.TemplateDb.Entity
 {
+
     /// <summary>
     /// "属"对象。
     /// </summary>

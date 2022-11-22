@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Template\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\OwDbBase\OwDbBase.csproj" />
     <ProjectReference Include="..\OwGameBase\OwGameBase.csproj" />
   </ItemGroup>
