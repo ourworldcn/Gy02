@@ -6,15 +6,16 @@
     <RootNamespace>OW.Game</RootNamespace>
     <AssemblyName>OwGameCore</AssemblyName>
     <PackageReleaseNotes>封装特定于游戏领域模型的基础件。</PackageReleaseNotes>
+    <!--<Nullable>enable</Nullable>-->
   </PropertyGroup>
 
   <ItemGroup>
     <Compile Remove="OW.Game.Expression.cs" />
     <Compile Remove="OW.Game.Operate.cs" />
     <Compile Remove="OW.Game.Validation.cs" />
-    <Compile Remove="Rule\OW.Game.Expression.cs" />
-    <Compile Remove="Rule\OW.Game.Operate.cs" />
-    <Compile Remove="Rule\OW.Game.Validation.cs" />
+    <Compile Remove="Conditional\OW.Game.Expression.cs" />
+    <Compile Remove="Conditional\OW.Game.Operate.cs" />
+    <Compile Remove="Conditional\OW.Game.Validation.cs" />
   </ItemGroup>
 
   <ItemGroup>

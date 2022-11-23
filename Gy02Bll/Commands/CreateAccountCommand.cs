@@ -78,6 +78,15 @@ namespace Gy02Bll.Commands
             return Interlocked.Increment(ref _QuicklyRegisterSuffixSeq);
         }
 
+        /// <summary>
+        /// 创建角色对象。
+        /// </summary>
+        /// <param name="command"></param>
+        public VirtualThing CreateChar(CreateAccountCommand command)
+        {
+            var result = new VirtualThing();
+            return result;
+        }
 
     }
 }

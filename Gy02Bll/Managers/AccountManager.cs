@@ -27,12 +27,15 @@ namespace Gy02Bll.Managers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public AccountManager(AccountManagerOptions options, GameObjectCache cache)
+        public AccountManager(AccountManagerOptions options, GameObjectCache cache, IServiceProvider service)
         {
             Options = options;
             Cache = cache;
+            _Service = service;
             Initialize();
         }
+
+        IServiceProvider _Service;
 
         public AccountManagerOptions Options { get; set; }
 
@@ -54,5 +57,6 @@ namespace Gy02Bll.Managers
             thing = default;
             return result;
         }
+
     }
 }
