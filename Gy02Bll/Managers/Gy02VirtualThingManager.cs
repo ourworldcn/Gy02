@@ -1,5 +1,5 @@
 ﻿using GuangYuan.GY02.Store;
-using Gy02Bll.Entity;
+using Gy02Bll.Template;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ObjectPool;
 using OW.Game.Managers;

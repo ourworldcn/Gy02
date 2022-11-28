@@ -1,6 +1,6 @@
 ﻿using GuangYuan.GY001.TemplateDb;
 using Gy02Bll.Commands;
-using Gy02Bll.Entity;
+using Gy02Bll.Template;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
