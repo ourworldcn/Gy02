@@ -47,9 +47,12 @@ namespace Gy02Bll.Templates
         /// </summary>
         public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
 
+        /// <summary>
+        /// TODO 请求序列。
+        /// </summary>
         public string ReqPropName { get; set; }
 
-        public List<decimal> ReqPropValue { get; set; }
+        public List<decimal> ReqPropValues { get; set; }
 
         /// <summary>
         /// 消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
