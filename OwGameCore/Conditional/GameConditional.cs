@@ -8,6 +8,9 @@ namespace OW.Game.Conditional
 
     }
 
+    /// <summary>
+    /// 选择一个属性作为前提。
+    /// </summary>
     public class GamePropertyCondition
     {
         /// <summary>
@@ -18,10 +21,19 @@ namespace OW.Game.Conditional
 
         }
 
+        /// <summary>
+        /// 操作符。
+        /// </summary>
         public string Operator { get; set; }
 
+        /// <summary>
+        /// 属性名。
+        /// </summary>
         public string PropertyName { get; set; }
 
+        /// <summary>
+        /// 属性的值。
+        /// </summary>
         public object Value { get; set; }
 
         public bool Conform(object obj)
@@ -57,6 +69,7 @@ namespace OW.Game.Conditional
 
         /// <summary>
         /// 属的限制。空集合表示不限制，多个属，表示任一个都符合条件。
+        /// 此功能当前未实装。
         /// </summary>
         public List<string> Genus { get; set; } = new List<string>();
 

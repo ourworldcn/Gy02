@@ -54,7 +54,8 @@ services.AddSwaggerGen(c =>
     {
         Version = "v1",
         Title = $"光元02",
-        Description = "接口文档v2.0.0"
+        Description = "接口文档v2.0.0",
+        Contact = new OpenApiContact() { }
     });
     // 为 Swagger 设置xml文档注释路径
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -84,7 +85,7 @@ services.AddOptions();
 services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
 
-var app = builder.Build(); 
+var app = builder.Build();
 #endregion 追加服务到容器
 
 #region 配置HTTP管道
@@ -94,21 +95,22 @@ var app = builder.Build();
 
 IWebHostEnvironment env = app.Environment;
 
+//app.UseAuthorization();
+
+app.MapControllers();
+
 #region 启用中间件服务生成Swagger
 app.UseSwagger();
 app.UseSwaggerUI();
 //启用中间件服务生成SwaggerUI，指定Swagger JSON终结点
-//app.UseSwaggerUI(c =>
-//{
-//    c.SwaggerEndpoint("/swagger/v1/swagger.json", env.EnvironmentName + $" V2");
-//    c.RoutePrefix = string.Empty;//设置根节点访问
-//});
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v2/swagger.json", env.EnvironmentName + $" V2");
+    c.RoutePrefix = string.Empty;//设置根节点访问
+});
 #endregion 启用中间件服务生成Swagger
 
 
-//app.UseAuthorization();
-
-app.MapControllers();
 #endregion 配置HTTP管道
 
 app.Run();

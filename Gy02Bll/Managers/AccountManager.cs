@@ -51,7 +51,7 @@ namespace Gy02Bll.Managers
 
         ConcurrentDictionary<Guid, VirtualThing> _Token2Char = new ConcurrentDictionary<Guid, VirtualThing>();
 
-        public DisposeHelper<string> Load(Guid charId, out VirtualThing? thing)
+        public DisposeHelper<string> Load(Guid charId, out VirtualThing thing)
         {
             var result = DisposeHelper.Empty<string>();
             thing = default;

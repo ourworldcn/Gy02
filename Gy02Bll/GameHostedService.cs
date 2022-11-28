@@ -1,6 +1,6 @@
 ﻿using GuangYuan.GY001.TemplateDb;
 using Gy02Bll.Commands;
-using Gy02Bll.Template;
+using Gy02Bll.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -135,10 +135,9 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                string str = "{\"atk\":{\"val\":1,\"name\":\"namevalue\"},\"Genus\":[\"char\"],\"ChildrenTIds\":[\"c4e3a945-8d94-418d-8a83-feb7ff607e89\",\"a4b2dab5-af85-4210-bab6-63be9bb93d7b\"],\"LuInfo\":{\"DecimalProperties\":{}}}";
-                var tjo = JsonSerializer.Deserialize<Gy02TemplateJO>(str);
+                var str = JsonSerializer.Serialize<Gy02TemplateJO>(new Gy02TemplateJO { });
 
-                var str2 = JsonSerializer.Serialize(tjo);
+                var ss = JsonSerializer.Deserialize<Gy02TemplateJO>(str);
             }
             finally
             {

@@ -1,0 +1,49 @@
+﻿{
+  "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "ExtraLong": 0,
+  "Genus": [
+    "string"
+  ],
+  "CreateInfo": {
+    "ChildrenTIds": [
+      "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+    ]
+  },
+  "UpgradeInfo": {
+    "DecimalProperties": {
+      "additionalProp1": [
+        0
+      ],
+      "additionalProp2": [
+        0
+      ],
+      "additionalProp3": [
+        0
+      ]
+    },
+    "Cost": [
+      {
+        "Operator": "string",
+        "PropertyName": "string",
+        "Value": "string"
+      }
+    ]
+  },
+  "CompositingInfo": {
+    "CompositingPTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "Items": [
+      {
+        "Conditional": {
+          "Operator": "string",
+          "PropertyName": "string",
+          "Value": "string"
+        },
+        "Count": 0
+      }
+    ]
+  },
+  "UseInfo": {},
+  "additionalProp1": "string",
+  "additionalProp2": "string",
+  "additionalProp3": "string"
+}

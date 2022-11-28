@@ -1,5 +1,5 @@
 ﻿using GuangYuan.GY02.Store;
-using Gy02Bll.Template;
+using Gy02Bll.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ObjectPool;
 using OW.Game.Managers;
@@ -38,7 +38,7 @@ namespace Gy02Bll.Managers
             //复制必要属性
             var dic = AutoClearPool<Dictionary<string, object>>.Shared.Get();
             OwHelper.Copy(view.ExtraProperties, dic);
-            foreach (var item in view.LuInfo.DecimalProperties)
+            foreach (var item in view.UpgradeInfo.DecimalProperties)
             {
                 dic[item.Key] = item.Value?[0] ?? decimal.Zero;
             }
@@ -46,7 +46,7 @@ namespace Gy02Bll.Managers
             AutoClearPool<Dictionary<string, object>>.Shared.Return(dic);
             //初始化子对象
             var gtm = _Service.GetRequiredService<TemplateManager>();
-            foreach (var item in view.ChildrenTIds)
+            foreach (var item in view.CreateInfo.ChildrenTIds)
             {
                 var tt = gtm.GetTemplateFromId(item);
                 var thing = Create(tt);
