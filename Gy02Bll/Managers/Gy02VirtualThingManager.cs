@@ -31,14 +31,14 @@ namespace Gy02Bll.Managers
         /// </summary>
         /// <param name="template">创建对象使用的模板。</param>
         /// <returns></returns>
-        public VirtualThing Create(GY02ThingTemplate template)
+        public VirtualThing Create(Gy02TemplateJO template)
         {
             var result = new VirtualThing() { ExtraGuid = template.Id, };
-            var view = template.GetJsonObject<Gy02TemplateJO>();
+            //var view = template.GetJsonObject<Gy02TemplateJO>();
             //复制必要属性
             var dic = AutoClearPool<Dictionary<string, object>>.Shared.Get();
-            OwHelper.Copy(view.ExtraProperties, dic);
-            foreach (var item in view.UpgradeInfo.DecimalProperties)
+            OwHelper.Copy(template.ExtraProperties, dic);
+            foreach (var item in template.UpgradeInfo.DecimalProperties)
             {
                 dic[item.Key] = item.Value?[0] ?? decimal.Zero;
             }
@@ -46,10 +46,10 @@ namespace Gy02Bll.Managers
             AutoClearPool<Dictionary<string, object>>.Shared.Return(dic);
             //初始化子对象
             var gtm = _Service.GetRequiredService<TemplateManager>();
-            foreach (var item in view.CreateInfo.ChildrenTIds)
+            foreach (var item in template.CreateInfo.ChildrenTIds)
             {
                 var tt = gtm.GetTemplateFromId(item);
-                var thing = Create(tt);
+                var thing = Create(tt.GetJsonObject<Gy02TemplateJO>());
 
                 result.Children.Add(thing);
                 thing.ParentId = result.Id;

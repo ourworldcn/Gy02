@@ -25,7 +25,7 @@ namespace OW.Game.Conditional
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        bool Confirme(object obj, IServiceProvider service);
+        bool Match(object obj, IServiceProvider service);
     }
 
     /// <summary>
@@ -151,7 +151,7 @@ namespace OW.Game.Conditional
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-        public bool Confirme(object obj, IServiceProvider service)
+        public bool Match(object obj, IServiceProvider service)
         {
             var pi = GetPropertyInfo(obj);
             var value = (decimal)pi.GetValue(obj);
@@ -268,20 +268,20 @@ namespace OW.Game.Conditional
         /// <param name="service"></param>
         /// <returns></returns>
         /// <exception cref="NotImplementedException"></exception>
-        public bool Confirme(object obj, IServiceProvider service)
+        public bool Match(object obj, IServiceProvider service)
         {
-            if (!PTId.HasValue)
+            if (PTId.HasValue)  //若需要匹配父容器模板Id
             {
                 if (GetPTId(obj) != PTId.Value)
                     return false;
             }
-            if (!TId.HasValue)
+            if (TId.HasValue)   //若需要匹配模板Id
             {
                 if (GetTId(obj) != TId.Value)
                     return false;
             }
             var mng = service.GetRequiredService<TemplateManager>();
-            if (Genus != null && Genus.Count > 0)   //若规定了类属
+            if (Genus != null && Genus.Count > 0)   //若需匹配类属
             {
                 var genus = GetGenus(obj, mng);
                 if (Genus.Intersect(genus).Count() < Genus.Count)   //若不满足条件
@@ -289,7 +289,7 @@ namespace OW.Game.Conditional
             }
             if (PropertyConditions != null && PropertyConditions.Count > 0)
             {
-                if (PropertyConditions.Any(c => !c.Confirme(obj, service)))
+                if (PropertyConditions.Any(c => !c.Match(obj, service)))
                     return false;
             }
             return true;

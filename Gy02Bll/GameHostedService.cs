@@ -135,7 +135,14 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                var str = JsonSerializer.Serialize<Gy02TemplateJO>(new Gy02TemplateJO { });
+                var mng = _Services.GetService<TemplateManager>();
+                mng.GetTemplateFromId(Guid.NewGuid());
+                var str = JsonSerializer.Serialize(new Gy02TemplateJO { });
+                Task.Run(() =>
+                {
+                    mng.GetTemplateFromId(Guid.NewGuid());
+                });
+
 
                 var ss = JsonSerializer.Deserialize<Gy02TemplateJO>(str);
             }

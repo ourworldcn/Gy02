@@ -11,6 +11,14 @@ namespace OW.Game.Store
 {
     public class GameThingTemplate : JsonDynamicPropertyBase
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameThingTemplate()
+        {
+
+        }
+
         [Column(Order = 21)]
         [Comment("扩展的长整型信息。")]
         public long? ExtraLong { get; set; }
