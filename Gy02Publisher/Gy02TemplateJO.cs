@@ -48,17 +48,10 @@ namespace Gy02Bll.Templates
         public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
 
         /// <summary>
-        /// TODO 请求序列。
-        /// </summary>
-        public string ReqPropName { get; set; }
-
-        public List<decimal> ReqPropValues { get; set; }
-
-        /// <summary>
         /// 消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
-        /// 注意消耗数量可能是0，代表需要此物品但不消耗此物品。
+        /// 注意消耗数量可能是0，代表需要此物品但不消耗此物品。若是null或空则表示所有级别都不消耗。
         /// </summary>
-        public List<decimal> Counts { get; set; } = new List<decimal>();
+        public List<decimal> Counts { get; set; }
     }
 
     /// <summary>

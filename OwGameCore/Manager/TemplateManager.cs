@@ -32,7 +32,7 @@ namespace OW.Game.Managers
             }
         }
 
-        private readonly object _Locker = new();
+        private readonly object _Locker = new object();
 
         /// <summary>
         /// 

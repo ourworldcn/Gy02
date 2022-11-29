@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OwGameCore\OwGameCore.csproj" />
     <ProjectReference Include="..\OwGameDb\OwGameDb.csproj" />
   </ItemGroup>
 </Project>

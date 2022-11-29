@@ -70,45 +70,45 @@ namespace OW.Game.Validation
         /// </summary>
         /// <param name="thing"></param>
         /// <returns></returns>
-        public virtual object GetValue(GameThingBase thing)
-        {
-            GameThingBase result;
-            if (ParentTemplateId is null)   //若不限定容器
-            {
-                if (TemplateId == thing.ExtraGuid || TemplateId == Guid.Empty)  //指定本体
-                {
-                    result = thing;
-                }
-                else //若是子对象
-                {
-                    if (thing is GameChar gc)
-                        result = gc.AllChildren.FirstOrDefault(c => c.ExtraGuid == TemplateId);
-                    else if (thing is GameItem gi)
-                        result = gi.GetAllChildren().FirstOrDefault(c => c.ExtraGuid == TemplateId);
-                    else
-                        throw new ArgumentException();
-                }
-            }
-            else //若限定容器
-            {
-                IEnumerable<GameItem> parent;
-                if (thing is GameChar gc)
-                    parent = gc.AllChildren;
-                else if (thing is GameItem gi)
-                    parent = gi.GetAllChildren();
-                else
-                    throw new ArgumentException();
-                if (TemplateId == thing.ExtraGuid || TemplateId == Guid.Empty)  //指定本体
-                {
-                    result = thing;
-                }
-                else //若是子对象
-                {
-                    result = parent.FirstOrDefault(c => c.ExtraGuid == TemplateId);
-                }
-            }
-            return result;
-        }
+        //public virtual object GetValue(GameThingBase thing)
+        //{
+        //    GameThingBase result;
+        //    if (ParentTemplateId is null)   //若不限定容器
+        //    {
+        //        if (TemplateId == thing.ExtraGuid || TemplateId == Guid.Empty)  //指定本体
+        //        {
+        //            result = thing;
+        //        }
+        //        else //若是子对象
+        //        {
+        //            if (thing is GameChar gc)
+        //                result = gc.AllChildren.FirstOrDefault(c => c.ExtraGuid == TemplateId);
+        //            else if (thing is GameItem gi)
+        //                result = gi.GetAllChildren().FirstOrDefault(c => c.ExtraGuid == TemplateId);
+        //            else
+        //                throw new ArgumentException();
+        //        }
+        //    }
+        //    else //若限定容器
+        //    {
+        //        IEnumerable<GameItem> parent;
+        //        if (thing is GameChar gc)
+        //            parent = gc.AllChildren;
+        //        else if (thing is GameItem gi)
+        //            parent = gi.GetAllChildren();
+        //        else
+        //            throw new ArgumentException();
+        //        if (TemplateId == thing.ExtraGuid || TemplateId == Guid.Empty)  //指定本体
+        //        {
+        //            result = thing;
+        //        }
+        //        else //若是子对象
+        //        {
+        //            result = parent.FirstOrDefault(c => c.ExtraGuid == TemplateId);
+        //        }
+        //    }
+        //    return result;
+        //}
 
         private string GetDebuggerDisplay()
         {
@@ -203,20 +203,20 @@ namespace OW.Game.Validation
         /// </summary>
         /// <param name="gameChar"></param>
         /// <returns></returns>
-        public object GetValue(GameChar gameChar)
-        {
-            return (ThingReference.GetValue(gameChar) as GameThingBase).GetDecimalWithFcpOrDefault(PropertyName);
-        }
+        //public object GetValue(GameChar gameChar)
+        //{
+        //    return (ThingReference.GetValue(gameChar) as GameThingBase).GetDecimalWithFcpOrDefault(PropertyName);
+        //}
 
         /// <summary>
         /// 设置引用对象引用属性的值。
         /// </summary>
         /// <param name="gameChar"></param>
         /// <param name="value"></param>
-        public void SetValue(GameChar gameChar, object value)
-        {
-            (ThingReference.GetValue(gameChar) as GameThingBase).SetSdp(PropertyName, value);
-        }
+        //public void SetValue(GameChar gameChar, object value)
+        //{
+        //    (ThingReference.GetValue(gameChar) as GameThingBase).SetSdp(PropertyName, value);
+        //}
 
         private string GetDebuggerDisplay()
         {
@@ -324,38 +324,38 @@ namespace OW.Game.Validation
         /// </summary>
         /// <param name="gameChar"></param>
         /// <returns></returns>
-        public bool IsValid(GameChar gameChar)
-        {
-            if (!OwConvert.TryToDecimal(PropertyReference.GetValue(gameChar), out var val))
-                val = default;
-            bool result;
-            switch (Operator)
-            {
-                case "gtq": //大于或等于
-                    result = val >= Value;
-                    break;
-                case "gt":  //大于
-                    result = val > Value;
-                    break;
-                case "eq":  //等于
-                    result = val == Value;
-                    break;
-                case "neq": //不等于
-                    result = val != Value;
-                    break;
-                case "ltq": //小于或等于
-                    result = val <= Value;
-                    break;
-                case "lt":  //小于
-                    result = val < Value;
-                    break;
-                default:
-                    result = false;
-                    break;
-                    //throw new ArgumentException($"不认识的比较运算符,{keyValue}", nameof(prefix));
-            }
-            return result;
-        }
+        //public bool IsValid(GameChar gameChar)
+        //{
+        //    if (!OwConvert.TryToDecimal(PropertyReference.GetValue(gameChar), out var val))
+        //        val = default;
+        //    bool result;
+        //    switch (Operator)
+        //    {
+        //        case "gtq": //大于或等于
+        //            result = val >= Value;
+        //            break;
+        //        case "gt":  //大于
+        //            result = val > Value;
+        //            break;
+        //        case "eq":  //等于
+        //            result = val == Value;
+        //            break;
+        //        case "neq": //不等于
+        //            result = val != Value;
+        //            break;
+        //        case "ltq": //小于或等于
+        //            result = val <= Value;
+        //            break;
+        //        case "lt":  //小于
+        //            result = val < Value;
+        //            break;
+        //        default:
+        //            result = false;
+        //            break;
+        //            //throw new ArgumentException($"不认识的比较运算符,{keyValue}", nameof(prefix));
+        //    }
+        //    return result;
+        //}
 
         private string GetDebuggerDisplay()
         {

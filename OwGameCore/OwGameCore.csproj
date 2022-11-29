@@ -7,16 +7,8 @@
     <AssemblyName>OwGameCore</AssemblyName>
     <PackageReleaseNotes>封装特定于游戏领域模型的基础件。</PackageReleaseNotes>
     <!--<Nullable>enable</Nullable>-->
+  <!--<LangVersion>7.3</LangVersion>-->
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="OW.Game.Expression.cs" />
-    <Compile Remove="OW.Game.Operate.cs" />
-    <Compile Remove="OW.Game.Validation.cs" />
-    <Compile Remove="Conditional\OW.Game.Expression.cs" />
-    <Compile Remove="Conditional\OW.Game.Operate.cs" />
-    <Compile Remove="Conditional\OW.Game.Validation.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
