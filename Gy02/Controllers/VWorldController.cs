@@ -1,6 +1,7 @@
 ﻿using Gy02Bll.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using OW.Game.Managers;
 
 namespace Gy02.Controllers
 {
@@ -15,9 +16,9 @@ namespace Gy02.Controllers
         /// <returns><seealso cref="Gy02TemplateJO"/></returns>
         [HttpGet]
         [ResponseCache(Duration = 120)]
-        public ActionResult<IEnumerable<Gy02TemplateJO>> GetTemplates()
+        public ActionResult<IEnumerable<Gy02TemplateJO>> GetTemplates([FromServices]TemplateManager manager)
         {
-            return Array.Empty<Gy02TemplateJO>().ToList();
+            return manager.Id2Template.Values.Select(c=>c.GetJsonObject<Gy02TemplateJO>()).ToArray();
         }
     }
 }

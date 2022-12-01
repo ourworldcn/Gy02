@@ -61,6 +61,7 @@ namespace OW.Game.Conditional
         /// <summary>
         /// 是不是一个空的结构。
         /// </summary>
+        [JsonIgnore]
         public bool IsEmpty => string.IsNullOrEmpty(Operator);
 
 #if NETCOREAPP3_0_OR_GREATER    //需要NETCORE 3.0或以上
