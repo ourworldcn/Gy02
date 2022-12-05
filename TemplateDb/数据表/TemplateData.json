@@ -84,7 +84,8 @@
     "CreateInfo": {
       "ChildrenTIds": [
         "1268C12B-A8CF-46E4-A8AC-98806FE31D8C",
-        "B8EC1647-21CA-4704-9926-E2B8A3AEDC7E"
+        "B8EC1647-21CA-4704-9926-E2B8A3AEDC7E",
+        "225FB4E3-6FD8-4721-835E-0E36FDB30DDB"
       ]
     },
     "UpgradeInfo": {
@@ -276,18 +277,18 @@
             "PTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "Genus": [
-              "string"
+              
             ],
             "PropertyConditions": [
               {
-                "Operator": "string",
-                "PropertyName": "string",
-                "Value": "string",
-                "IsEmpty": true
+                //"Operator": "string",
+                //"PropertyName": "string",
+                //"Value": "string",
+                //"IsEmpty": true
               }
             ]
           },
-          "Count": 0
+          "Count": 1
         }
       ]
     },
@@ -296,10 +297,52 @@
     "additionalProp2": "string",
     "additionalProp3": "string"
   },
+  //货币袋
+  {
+    "Id": "225FB4E3-6FD8-4721-835E-0E36FDB30DDB",
+    "ExtraLong": 0,
+    "Genus": [ "背包" ],
+    "CreateInfo": {
+      "ChildrenTIds": []
+    },
+    "UpgradeInfo": null,
+    "Cost": null,
+    "CompositingInfo": null,
+    "UseInfo": {},
+    "Cap": -1
+  },
+  //装备背包
+  {
+    "Id": "166D7D8E-44DD-4675-A144-E42AFA2F1C44",
+    "ExtraLong": 0,
+    "Genus": [ "背包" ],
+    "CreateInfo": {
+      "ChildrenTIds": []
+    },
+    "UpgradeInfo": null,
+    "Cost": null,
+    "CompositingInfo": null,
+    "UseInfo": {},
+    "Cap": -1
+  },
+  //道具背包
+  {
+    "Id": "03CF8AA2-2F93-44CF-9076-CA2B4AA91019",
+    "ExtraLong": 0,
+    "Genus": [ "背包" ],
+    "CreateInfo": {
+      "ChildrenTIds": []
+    },
+    "UpgradeInfo": null,
+    "CompositingInfo": null,
+    "UseInfo": {},
+    "Cap": -1
+  },
   //白手套
   {
     "Id": "1BED8E50-3001-45BA-8371-285327DEDA3A",
     "ExtraLong": 0,
+    "ptid": "166D7D8E-44DD-4675-A144-E42AFA2F1C44",
     "Genus": [
       "手套"
     ],
@@ -310,6 +353,7 @@
     "UpgradeInfo": {
       "DecimalProperties": {
         "atk": [
+          //限定白色物品升级数量，应该没有这么多级别
           8,
           10,
           12,
@@ -414,23 +458,45 @@
       },
       "Cost": [
         {
+          //需求的角色等级
           "Conditional": {
-            "PTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "PTId": null,
             "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "Genus": [
-              "string"
             ],
             "PropertyConditions": [
               {
-                "Operator": "string",
-                "PropertyName": "string",
-                "Value": "string",
-                "IsEmpty": true
+                "Operator": ">=",
+                "PropertyName": "lv",
+                "Value": [ 1, 2, 3 ] //升级时需求的角色等级
               }
             ]
           },
           "Counts": [
             0
+          ]
+        },
+        //消耗图纸
+        {
+          "Conditional": {
+            "PTId": "03CF8AA2-2F93-44CF-9076-CA2B4AA91019",
+            "TId": "27FDFDFE-1BC4-41B4-A7FE-040A37C2E7B9",
+            "Genus": [
+            ],
+            "PropertyConditions": [
+              //{
+              //  "Operator": ">=",
+              //  "PropertyName": "lv",
+              //  "Value": [],
+              //  "IsEmpty": true
+              //}
+            ]
+          },
+          "Counts": [
+            1,
+            1,
+            1,
+            2 //这里是每级消耗的图纸数量,第一个数是0升级到1时的消耗数量
           ]
         }
       ]
@@ -443,7 +509,7 @@
             "PTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
             "Genus": [
-              "string"
+              
             ],
             "PropertyConditions": [
               {
@@ -459,82 +525,24 @@
       ]
     },
     "UseInfo": {},
-    "Traits": 0,  //品质 白=0，绿=1，蓝=2，紫1=10，紫2=11，紫3=12，金1=20，金2=21，金3=22，红1=30
-    "additionalProp2": "string",
-    "additionalProp3": "string"
+    "Traits": 0, //品质 白=0，绿=1，蓝=2，紫1=10，紫2=11，紫3=12，金1=20，金2=21，金3=22，红1=30
+    "qlt": 1
   },
   //手套升级图纸
   {
     "Id": "27FDFDFE-1BC4-41B4-A7FE-040A37C2E7B9",
+    "ptid": "03CF8AA2-2F93-44CF-9076-CA2B4AA91019",
     "ExtraLong": 0,
     "Genus": [
-      "升级道具"
+      "装备升级道具"
     ],
     "CreateInfo": {
       "ChildrenTIds": [
       ]
     },
-    "UpgradeInfo": {
-      "DecimalProperties": {
-        "additionalProp1": [
-          0
-        ],
-        "additionalProp2": [
-          0
-        ],
-        "additionalProp3": [
-          0
-        ]
-      },
-      "Cost": [
-        {
-          "Conditional": {
-            "PTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "Genus": [
-              "string"
-            ],
-            "PropertyConditions": [
-              {
-                "Operator": "string",
-                "PropertyName": "string",
-                "Value": "string",
-                "IsEmpty": true
-              }
-            ]
-          },
-          "Counts": [
-            0
-          ]
-        }
-      ]
-    },
-    "CompositingInfo": {
-      "CompositingPTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-      "Items": [
-        {
-          "Conditional": {
-            "PTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-            "Genus": [
-              "string"
-            ],
-            "PropertyConditions": [
-              {
-                "Operator": "string",
-                "PropertyName": "string",
-                "Value": "string",
-                "IsEmpty": true
-              }
-            ]
-          },
-          "Count": 0
-        }
-      ]
-    },
+    "UpgradeInfo": null,
+    "CompositingInfo": null,
     "UseInfo": {},
-    "additionalProp1": "string",
-    "additionalProp2": "string",
-    "additionalProp3": "string"
-  },
+    "stk": -1
+  }
 ]
