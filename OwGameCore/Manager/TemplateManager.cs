@@ -39,7 +39,8 @@ namespace OW.Game.Managers
                 var file = $"TemplateData.json";
                 var path = Path.Combine(AppContext.BaseDirectory, "数据表\\", file);
                 using var stream = File.OpenRead(path);
-                var jn = JsonSerializer.Deserialize<JsonElement>(stream);
+                var opt = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
+                var jn = JsonSerializer.Deserialize<JsonElement>(stream, opt);
                 foreach (var item in jn.EnumerateArray())
                 {
                     var tt = new GameThingTemplate()

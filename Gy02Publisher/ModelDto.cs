@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
+using OW.Game.Entity;
 
 namespace Gy02.Publisher
 {
@@ -108,5 +109,38 @@ namespace Gy02.Publisher
         #endregion 可映射属性
     }
 
+    public class LoginParamsDto
+    {
+        public LoginParamsDto()
+        {
+
+        }
+
+        #region 可映射属性
+
+        /// <summary>
+        /// 用户登录名。
+        /// </summary>
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。
+        /// </summary>
+        public string Pwd { get; set; }
+
+        #endregion 可映射属性
+    }
+
+    public class LoginReturnDto
+    {
+        #region 可映射属性
+
+        /// <summary>
+        /// 角色的信息。
+        /// </summary>
+        public GameChar GameChar { get; set; }
+
+        #endregion 可映射属性
+    }
     #endregion 账号及登录相关
 }

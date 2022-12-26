@@ -101,11 +101,12 @@ app.MapControllers();
 
 #region 启用中间件服务生成Swagger
 app.UseSwagger();
-app.UseSwaggerUI();
+//app.UseSwaggerUI();
 //启用中间件服务生成SwaggerUI，指定Swagger JSON终结点
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v2/swagger.json", env.EnvironmentName + $" V2");
+    //c.SwaggerEndpoint("/swagger/v2/swagger.json", env.EnvironmentName + $" V2");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json",  $"{env.EnvironmentName} V1");
     c.RoutePrefix = string.Empty;//设置根节点访问
 });
 #endregion 启用中间件服务生成Swagger

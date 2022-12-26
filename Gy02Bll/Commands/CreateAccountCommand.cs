@@ -56,12 +56,16 @@ namespace Gy02Bll.Commands
         public override void Handle(CreateAccountCommand command)
         {
             if (string.IsNullOrWhiteSpace(command.LoginName))
-                command.LoginName = $"gy";
+            {
+                var date = DateTime.UtcNow;
+                command.LoginName = $"gy{GetQuicklyRegisterSuffixSeq()}";
+            }
             if (string.IsNullOrWhiteSpace(command.Pwd))
             {
                 var pwdGen = _Service.GetRequiredService<PasswordGenerator>();
                 command.Pwd = pwdGen.Generate(8);
             }
+            CreateChar(command);
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]

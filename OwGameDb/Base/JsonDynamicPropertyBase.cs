@@ -101,7 +101,8 @@ namespace OW.Game.Store
                 }
                 else
                 {
-                    JsonObject = JsonSerializer.Deserialize(JsonObjectString, typeof(T));
+                    var opt = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
+                    JsonObject = JsonSerializer.Deserialize(JsonObjectString, typeof(T),opt);
                 }
                 JsonObjectType = typeof(T);
                 if (JsonObject is INotifyPropertyChanged changed)

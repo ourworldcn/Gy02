@@ -28,7 +28,7 @@ namespace Gy02.Controllers
         }
 
         /// <summary>
-        /// 测试。
+        /// 测试代码专用。
         /// </summary>
         /// <param name="str">测试参数。</param>
         /// <returns></returns>
@@ -53,6 +53,19 @@ namespace Gy02.Controllers
             
             var result = mapper.Map<CreateAccountResultDto>(command);
             return result;
+        }
+
+        /// <summary>
+        /// 登录账号。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="mapper"></param>
+        /// <param name="commandMng"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LoginReturnDto> Login(LoginParamsDto model,  [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng)
+        {
+            return BadRequest();
         }
     }
 

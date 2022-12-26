@@ -13,19 +13,21 @@ namespace OW.Game.Manager
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class VirtualThingManager
     {
-        public VirtualThingManager(GameObjectCache cache, IServiceProvider service)
+        public VirtualThingManager(IServiceProvider service)
         {
-            Cache = cache;
             _Service = service;
+            Initialize();
         }
 
         void Initialize()
         {
+            Cache = _Service.GetRequiredService<GameObjectCache>();
+
             var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
         }
 
-        public GameObjectCache Cache { get; }
+        public GameObjectCache Cache { get; protected set; }
 
         IServiceProvider _Service;
 
