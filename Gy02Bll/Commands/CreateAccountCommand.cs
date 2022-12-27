@@ -1,7 +1,9 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Gy02.Publisher;
+using Microsoft.Extensions.DependencyInjection;
 using OW;
 using OW.DDD;
 using OW.Game;
+using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Store;
 using System;
@@ -65,7 +67,18 @@ namespace Gy02Bll.Commands
                 var pwdGen = _Service.GetRequiredService<PasswordGenerator>();
                 command.Pwd = pwdGen.Generate(8);
             }
-            CreateChar(command);
+            var gcm = _Service.GetRequiredService<GameCommandManager>();
+            var commandCvt = new CreateVirtualThingCommand()
+            {
+                TemplateId = ProjectContent.CharTId
+            };
+            gcm.Handle(commandCvt);
+            command.FillErrorFrom(commandCvt);
+            if (!command.HasError)   //若成功创建
+            {
+                //加入缓存
+                //构造账号信息
+            }
         }
 
         [MethodImpl(MethodImplOptions.Synchronized)]
@@ -80,16 +93,6 @@ namespace Gy02Bll.Commands
                 _QuicklyRegisterSuffixSeqInit = true;
             }
             return Interlocked.Increment(ref _QuicklyRegisterSuffixSeq);
-        }
-
-        /// <summary>
-        /// 创建角色对象。
-        /// </summary>
-        /// <param name="command"></param>
-        public VirtualThing CreateChar(CreateAccountCommand command)
-        {
-            var result = new VirtualThing();
-            return result;
         }
 
     }

@@ -9,19 +9,21 @@ namespace Gy02.Publisher
 {
     #region 基础数据结构
 
+    /// <summary>
+    /// 存储一些常量和Id。
+    /// </summary>
+    public static class ProjectContent
+    {
+        public readonly static Guid CharTId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
+    }
+
     public class VirtualThingDto
     {
-        public VirtualThingDto(VirtualThing thing)
-        {
-
-        }
-
         /// <summary>
         /// 唯一Id。
         /// </summary>
         public Guid Id { get; set; }
 
-        [AllowNull]
         private byte[] _BinaryArray;
         /// <summary>
         /// 扩展的二进制大对象。

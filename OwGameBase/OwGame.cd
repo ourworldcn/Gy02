@@ -7,14 +7,6 @@
       <FileName>GameBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OW.Game.TodayDataWrapper&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>UAAAEMIAQCUggIDAAAoFAAAAAIAAAFEAAAAAAQQAAAA=</HashCode>
-      <FileName>GameBase.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
   <Class Name="OW.Game.ScriptHelper" Collapsed="true">
     <Position X="5.75" Y="3" Width="1.75" />
     <TypeIdentifier>
@@ -25,7 +17,7 @@
   <Class Name="OW.Game.PropertyChange.GamePropertyChangeItem&lt;T&gt;" BaseTypeListCollapsed="true">
     <Position X="8" Y="4" Width="4" />
     <TypeIdentifier>
-      <HashCode>EAQAAAAAAABgAQAgiAAAEAAAIgAAAAAAAAAAAABAABA=</HashCode>
+      <HashCode>EAQAAAAAAABgAQAgiAAAEAAAIAAAAEAAAAAAAABAIBA=</HashCode>
       <FileName>GamePropertyChanged.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -34,13 +26,6 @@
     <Position X="7.25" Y="2.5" Width="4" />
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GamePropertyChanged.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="OW.Game.PropertyChange.GamePropertyChangedItemExtensions" Collapsed="true">
-    <Position X="7.25" Y="1.5" Width="4" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GamePropertyChanged.cs</FileName>
     </TypeIdentifier>
   </Class>
