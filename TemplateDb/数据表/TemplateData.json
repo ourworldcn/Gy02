@@ -70,9 +70,7 @@
       ]
     },
     "UseInfo": {},
-    "additionalProp1": "string",
-    "additionalProp2": "string",
-    "additionalProp3": "string"
+    "additionalProp1": "string"
   },
   //角色
   {
@@ -138,7 +136,7 @@
       ]
     },
     "UseInfo": {},
-    "additionalProp1": "string"
+    "lv": 0
   },
   { //天赋1槽
     "Id": "1268C12B-A8CF-46E4-A8AC-98806FE31D8C",
@@ -282,7 +280,7 @@
       ]
     },
     "UseInfo": {},
-    "additionalProp1": "string",
+    "additionalProp1": 0,
     "additionalProp2": "string",
     "additionalProp3": "string"
   },

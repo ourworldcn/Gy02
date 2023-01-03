@@ -5,8 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>Gy02ApiDoc.xml</DocumentationFile>
     <TieredCompilation>true</TieredCompilation>
+    <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,4 +33,12 @@
     <ProjectReference Include="..\TemplateDb\TemplateDb.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Gy02ApiDoc.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
+
+

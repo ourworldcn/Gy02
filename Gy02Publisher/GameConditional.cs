@@ -18,12 +18,16 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace OW.Game.Conditional
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public interface IGamePrecondition
     {
         /// <summary>
         /// 获取一个指示，确定指定对象是否符合条件。
         /// </summary>
         /// <param name="obj"></param>
+        /// <param name="service"></param>
         /// <returns></returns>
         bool Match(object obj, IServiceProvider service);
     }
@@ -53,7 +57,7 @@ namespace OW.Game.Conditional
 
         /// <summary>
         /// 属性的值。只能接受数值或其数组类型。
-        /// 如果是一个<see cref="decimal[]"/>,则按级别比对。
+        /// 如果是一个 数值型数组 ,则按级别比对。
         /// 如[1,2,3]则按物品级别lv来选取值。
         /// </summary>
         public object Value { get; set; }
@@ -149,6 +153,7 @@ namespace OW.Game.Conditional
         /// 获取一个指示，确定指定对象是否符合条件。
         /// </summary>
         /// <param name="obj"></param>
+        /// <param name="service"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentException"></exception>
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]

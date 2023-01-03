@@ -239,13 +239,6 @@ namespace OW.Game.Caching
             });
         }
 
-        public static T GetOrLoadEntity<T>(this GameObjectCache cache, string key, Expression<Func<T, bool>> predicate, Action<GameObjectCache.GameObjectCacheEntry> setCallback = null,
-            Func<Type, object, DbContext> createDbCallback = null) where T : IEntityWithSingleKey<Guid>
-        {
-            
-            return default;
-        }
-
         #endregion GameObjectCache扩展
     }
 }

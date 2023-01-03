@@ -5,10 +5,19 @@
     <!--<ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>-->
     <LangVersion>7.3</LangVersion>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
+    <DocumentationFile>Gy02PublisherApiDoc.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\OwGameCore\OwGameCore.csproj" />
     <ProjectReference Include="..\OwGameDb\OwGameDb.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Gy02PublisherApiDoc.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

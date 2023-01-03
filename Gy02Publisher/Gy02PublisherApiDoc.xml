@@ -1,0 +1,439 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gy02Publisher</name>
+    </assembly>
+    <members>
+        <member name="T:OW.Game.Conditional.IGamePrecondition">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OW.Game.Conditional.IGamePrecondition.Match(System.Object,System.IServiceProvider)">
+            <summary>
+            获取一个指示，确定指定对象是否符合条件。
+            </summary>
+            <param name="obj"></param>
+            <param name="service"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OW.Game.Conditional.GamePropertyCondition">
+            <summary>
+            选择一个属性作为前提。
+            </summary>
+        </member>
+        <member name="M:OW.Game.Conditional.GamePropertyCondition.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GamePropertyCondition.Operator">
+            <summary>
+            操作符。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GamePropertyCondition.PropertyName">
+            <summary>
+            属性名。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GamePropertyCondition.Value">
+            <summary>
+            属性的值。只能接受数值或其数组类型。
+            如果是一个 数值型数组 ,则按级别比对。
+            如[1,2,3]则按物品级别lv来选取值。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GamePropertyCondition.IsEmpty">
+            <summary>
+            是不是一个空的结构。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GamePropertyCondition.InnerValue">
+            <summary>
+            解析<see cref="P:OW.Game.Conditional.GamePropertyCondition.Value"/>。
+            只能接受数值或其数组类型。
+            </summary>
+        </member>
+        <member name="F:OW.Game.Conditional.GamePropertyCondition._LevelPropertyInfo">
+            <summary>
+            级别的属性访问器。
+            </summary>
+        </member>
+        <member name="M:OW.Game.Conditional.GamePropertyCondition.GetLevel(System.Object)">
+            <summary>
+            获取等级数值。
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OW.Game.Conditional.GamePropertyCondition.Match(System.Object,System.IServiceProvider)">
+            <summary>
+            获取一个指示，确定指定对象是否符合条件。
+            </summary>
+            <param name="obj"></param>
+            <param name="service"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentException"></exception>
+        </member>
+        <member name="T:OW.Game.Conditional.GameThingPrecondition">
+            <summary>
+            寻找一个物品的条件对象。
+            </summary>
+        </member>
+        <member name="M:OW.Game.Conditional.GameThingPrecondition.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GameThingPrecondition.PTId">
+            <summary>
+            父容器的模板Id。
+            省略表示不限制。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GameThingPrecondition.TId">
+            <summary>
+            对象的模板Id。
+            省略表示不限制。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GameThingPrecondition.Genus">
+            <summary>
+            属的限制。空集合表示不限制，多个属，表示任一个都符合条件。
+            此功能当前未实装。
+            </summary>
+        </member>
+        <member name="P:OW.Game.Conditional.GameThingPrecondition.PropertyConditions">
+            <summary>
+            属性相关的条件。
+            可能是空或空集合，表示不限定具体属性。
+            </summary>
+        </member>
+        <member name="M:OW.Game.Conditional.GameThingPrecondition.Match(System.Object,System.IServiceProvider)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="obj"></param>
+            <param name="service"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:Gy02Bll.Templates.CreateTInfo">
+            <summary>
+            创建对象时的行为信息。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.CreateTInfo.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.CreateTInfo.ChildrenTIds">
+            <summary>
+            创建时自带的孩子的模板Id集合。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.CostTInfo">
+            <summary>
+            升级的代价类。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.CostTInfo.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.CostTInfo.Conditional">
+            <summary>
+            选取物品的条件。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.CostTInfo.Counts">
+            <summary>
+            消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
+            注意消耗数量可能是0，代表需要此物品但不消耗此物品。若是null或空则表示所有级别都不消耗。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.UpgradeTInfo">
+            <summary>
+            升级时增长的属性。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.UpgradeTInfo.DecimalProperties">
+            <summary>
+            每集的数值。键是属性的名，值每级别对应数值的数组。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.UpgradeTInfo.Cost">
+            <summary>
+            升级对应的代价。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.UseTInfo">
+            <summary>
+            使用该物品时行为定义数据。
+            该功能尚未实装。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.CompositingTInfoItem">
+            <summary>
+            合成的材料信息。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.CompositingTInfoItem.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.CompositingTInfoItem.Conditional">
+            <summary>
+            选取物品的条件。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.CompositingTInfoItem.Count">
+            <summary>
+            消耗的数量。
+            注意消耗数量可能是0，代表需要此物品但不消耗此物品。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.CompositingTInfo">
+            <summary>
+            合成物品行为的定义数据。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.CompositingTInfo.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.CompositingTInfo.CompositingPTId">
+            <summary>
+            当此物品合成创建时应放入的父容器的模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.CompositingTInfo.Items">
+            <summary>
+            合成时材料的集合。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.TemplateJsonObjectBase">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.TemplateJsonObjectBase.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.Id">
+            <summary>
+            模板的唯一Id。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.ExtraLong">
+            <summary>
+            长整型的一个数字，可以用于分类，但服务器不使用。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.Genus">
+            <summary>
+            所属的属。服务器后续复杂的计算系统使用该属。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.CreateInfo">
+            <summary>
+            <seealso cref="T:Gy02Bll.Templates.CreateTInfo"/>。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.UpgradeInfo">
+            <summary>
+            升级时使用的序列数值属性。
+            该属性内容不会直接复制到对象，需要按等级计算得到唯一值复制到对象。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.CompositingInfo">
+            <summary>
+            合成此物品的材料信息。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.UseInfo">
+            <summary>
+            <seealso cref="T:Gy02Bll.Templates.UseTInfo"/>。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.Gy02TemplateJO">
+            <summary>
+            模板对象Json的数据。
+            注意此类可能不断添加一些成员。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.Gy02TemplateJO.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.Gy02TemplateJO.ExtraProperties">
+            <summary>
+            未明确添加的属性，即剩余的扩展属性。
+            </summary>
+        </member>
+        <member name="T:Gy02Publisher.ServerHelper">
+            <summary>
+            帮助器类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.ReturnDtoBase">
+            <summary>
+            返回对象的基类。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.ReturnDtoBase.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.ReturnDtoBase.HasError">
+            <summary>
+            是否有错误。不设置则使用<see cref="P:Gy02.Publisher.ReturnDtoBase.ErrorCode"/>来判定。
+            </summary>
+            <value>0没有错误，其它数值含义由应用定义。</value>
+        </member>
+        <member name="P:Gy02.Publisher.ReturnDtoBase.ErrorCode">
+            <summary>
+            错误码，参见 ErrorCodes。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.ReturnDtoBase.DebugMessage">
+            <summary>
+            调试信息，如果发生错误，这里给出简要说明。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.ProjectContent">
+            <summary>
+            存储一些常量和Id。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.CharTId">
+            <summary>
+            角色的模板Id。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.VirtualThingDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.Id">
+            <summary>
+            唯一Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.BinaryArray">
+            <summary>
+            扩展的二进制大对象。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.JsonObjectString">
+            <summary>
+            所有扩展属性记录在这个字符串中，是一个Json对象。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraGuid">
+            <summary>
+            模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraString">
+            <summary>
+            记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraDecimal">
+            <summary>
+            记录一些额外的信息，用于排序搜索使用的字段。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.Children">
+            <summary>
+            拥有的子物品或槽。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.CreateAccountParamsDto">
+            <summary>
+            创建角色接口的参数封装类。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.CreateAccountParamsDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CreateAccountParamsDto.LoginName">
+            <summary>
+            用户登录名。可省略则自动生成。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CreateAccountParamsDto.Pwd">
+            <summary>
+            密码。可省略则自动生成。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.CreateAccountResultDto">
+            <summary>
+            创建接口返回数据封装类。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.CreateAccountResultDto.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CreateAccountResultDto.LoginName">
+            <summary>
+            用户登录名。可省略，则自动指定。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CreateAccountResultDto.Pwd">
+            <summary>
+            返回密码，客户端根据需要存储在本地，此后无法再明文返回密码。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LoginParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.LoginParamsDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginParamsDto.LoginName">
+            <summary>
+            用户登录名。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginParamsDto.Pwd">
+            <summary>
+            密码。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LoginReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.LoginReturnDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginReturnDto.GameChar">
+            <summary>
+            角色的信息。
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -4,20 +4,71 @@
         <name>Gy02</name>
     </assembly>
     <members>
-        <member name="T:Gy02.Controllers.AccountController">
+        <member name="T:Gy02.AutoMappper.AutoMapperProfile">
             <summary>
-            账号管理控制器。
+            AutoMapperProfile配置类。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Test">
+        <member name="M:Gy02.AutoMappper.AutoMapperProfile.#ctor">
             <summary>
-            测试。
+            构造函数。
             </summary>
+        </member>
+        <member name="T:Gy02.Controllers.AccountController">
+            <summary>
+            账号管理。
+            </summary>
+        </member>
+        <member name="P:Gy02.Controllers.AccountController.CharManager">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.AccountController.#ctor(OW.Game.Manager.GameCharManager)">
+            <summary>
+            
+            </summary>
+            <param name="charManager"></param>
+        </member>
+        <member name="M:Gy02.Controllers.AccountController.Test(System.String)">
+            <summary>
+            测试代码专用。
+            </summary>
+            <param name="str">测试参数。</param>
             <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.Game.GameCommandManager)">
+            <summary>
+            创建一个新账号。
+            </summary>
+            <param name="model"></param>
+            <param name="mapper">注入的AutoMapper服务。</param>
+            <param name="commandMng">注入的命令处理器服务。</param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.AccountController.Login(Gy02.Publisher.LoginParamsDto,AutoMapper.IMapper,OW.Game.GameCommandManager)">
+            <summary>
+            登录账号。
+            </summary>
+            <param name="model"></param>
+            <param name="mapper"></param>
+            <param name="commandMng"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gy02.Controllers.VWorldController">
+            <summary>
+            虚拟世界公用Api控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.VWorldController.GetTemplates(OW.Game.Managers.TemplateManager)">
+            <summary>
+            获取所有模板。
+            </summary>
+            <returns><seealso cref="T:Gy02Bll.Templates.Gy02TemplateJO"/></returns>
         </member>
         <member name="T:Gy02.Controllers.WeatherForecastController">
             <summary>
-            
+            天气控制器。
             </summary>
         </member>
         <member name="M:Gy02.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.WeatherForecastController})">
@@ -44,7 +95,7 @@
         </member>
         <member name="P:Gy02.WeatherForecast.Date">
             <summary>
-            
+            日期。
             </summary>
         </member>
         <member name="P:Gy02.WeatherForecast.TemperatureC">

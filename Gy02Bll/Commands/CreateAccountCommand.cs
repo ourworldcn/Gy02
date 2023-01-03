@@ -1,13 +1,16 @@
 ﻿using Gy02.Publisher;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using OW;
 using OW.DDD;
 using OW.Game;
+using OW.Game.Caching;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -62,6 +65,14 @@ namespace Gy02Bll.Commands
                 var date = DateTime.UtcNow;
                 command.LoginName = $"gy{GetQuicklyRegisterSuffixSeq()}";
             }
+            using var dwLoginName = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, command.LoginName, TimeSpan.FromSeconds(2));   //锁定登录名
+            
+            if (dwLoginName.IsEmpty)
+            {
+                command.HasError = true;
+                command.ErrorCode = 258;
+                return;
+            }
             if (string.IsNullOrWhiteSpace(command.Pwd))
             {
                 var pwdGen = _Service.GetRequiredService<PasswordGenerator>();
@@ -70,14 +81,20 @@ namespace Gy02Bll.Commands
             var gcm = _Service.GetRequiredService<GameCommandManager>();
             var commandCvt = new CreateVirtualThingCommand()
             {
-                TemplateId = ProjectContent.CharTId
+                TemplateId = ProjectContent.CharTId,
             };
             gcm.Handle(commandCvt);
             command.FillErrorFrom(commandCvt);
             if (!command.HasError)   //若成功创建
             {
+                var result = commandCvt.Result;
+                var cache = _Service.GetRequiredService<GameObjectCache>();
                 //加入缓存
+                var db = result.RuntimeProperties.GetOrAdd("DbContext", c => VWorld.CreateNewUserDbContext());
+                var gc = result.GetJsonObject<GameChar>();
+                cache.Set(result.IdString, result);
                 //构造账号信息
+
             }
         }
 

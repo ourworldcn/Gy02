@@ -9,7 +9,7 @@ using OW.Game.Manager;
 namespace Gy02.Controllers
 {
     /// <summary>
-    /// 账号管理控制器。
+    /// 账号管理。
     /// </summary>
     public class AccountController : GameControllerBase
     {
@@ -48,9 +48,9 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<CreateAccountResultDto> CreateAccount(CreateAccountParamsDto model, [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng)
         {
+            //var service = HttpContext.RequestServices.GetRequiredService<IServiceProvider>();
             var command = mapper.Map<CreateAccountCommand>(model);
             commandMng.Handle(command);
-            
             var result = mapper.Map<CreateAccountResultDto>(command);
             return result;
         }
@@ -63,7 +63,7 @@ namespace Gy02.Controllers
         /// <param name="commandMng"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<LoginReturnDto> Login(LoginParamsDto model,  [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng)
+        public ActionResult<LoginReturnDto> Login(LoginParamsDto model, [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng)
         {
             return BadRequest();
         }

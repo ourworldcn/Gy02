@@ -7,8 +7,8 @@ namespace System.Threading
 {
     /// <summary>
     /// 依据对象值相等<see cref="IEquatable{T}"/>锁定第一个实例。
+    /// 虽然可以使用该类锁定值对象，且逻辑上也正确，但每次都装箱(后续装箱对象将被抛弃，可以GC)导致性能低下。
     /// </summary>
-    /// <remarks>虽然可以使用该类锁定值对象，且逻辑上也正确，但每次都装箱导致性能低下。</remarks>
     public static class SingletonLocker
     {
         private static readonly ConcurrentDictionary<object, object> _Data;

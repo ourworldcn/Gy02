@@ -35,3 +35,17 @@ GO
 select * from master.dbo.sysprocesses where dbid = DB_ID('GY2021001Dev') --取活动链接数量
 
 https://krm.icebirdgame.com/fusion/verifySign
+
+
+报错：
+C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets(112,5): 错误 NETSDK1152: 找到了多个具有相同相对路径的发布输出文件: D:\project1.xml, D:\project2.xml, D:\project3xml。
+
+原因：
+
+是项目多层引用（a引用了b、c，d引用了a、b、c）,且被引用的项目生成了xml文件,发布时导致xml文件重复 ,但.net 6.0下会触发报错。
+
+解决办法：
+1. 被引用项目不要生成xml文件【根本原因】；
+2. 发布时，将C:\Program Files\dotnet\sdk\6.x的sdk移出C:\Program Files\dotnet目录；
+3. 将C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets下<NETSdkError Condition="'$(_ResolvedFileToPublishContainsDuplicates)' == 'true'"设为false；
+4. 在需要发布项目的csproj里新增<PropertyGroup><ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles></PropertyGroup>；

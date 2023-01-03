@@ -76,10 +76,11 @@ namespace Gy02Bll.Commands
             using var dwReturn = DisposeHelper.Create(AutoClearPool<Dictionary<string, object>>.Shared.Return, dic);    //确保回收
 
             OwHelper.Copy(template.ExtraProperties, dic);
-            foreach (var item in template.UpgradeInfo.DecimalProperties)
-            {
-                dic[item.Key] = item.Value?[0] ?? decimal.Zero;
-            }
+            if (template?.UpgradeInfo is not null)
+                foreach (var item in template.UpgradeInfo.DecimalProperties)
+                {
+                    dic[item.Key] = item.Value?[0] ?? decimal.Zero;
+                }
             result.JsonObjectString = JsonSerializer.Serialize(dic);
 
             //初始化子对象

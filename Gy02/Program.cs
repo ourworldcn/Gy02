@@ -58,9 +58,13 @@ services.AddSwaggerGen(c =>
         Contact = new OpenApiContact() { }
     });
     // 为 Swagger 设置xml文档注释路径
-    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-    c.IncludeXmlComments(xmlPath);
+    var fileNames = Directory.GetFiles(AppContext.BaseDirectory, "*ApiDoc.xml");
+    foreach (var item in fileNames) //加入多个xml描述文件
+    {
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, item);
+        c.IncludeXmlComments(xmlPath, true);
+    }
+    c.OrderActionsBy(c => c.RelativePath);
 });
 #endregion 配置Swagger
 
@@ -106,7 +110,7 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     //c.SwaggerEndpoint("/swagger/v2/swagger.json", env.EnvironmentName + $" V2");
-    c.SwaggerEndpoint("/swagger/v1/swagger.json",  $"{env.EnvironmentName} V1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", $"{env.EnvironmentName} V1");
     c.RoutePrefix = string.Empty;//设置根节点访问
 });
 #endregion 启用中间件服务生成Swagger

@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Manager
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class VirtualThingManager
     {
