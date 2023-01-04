@@ -118,7 +118,7 @@ namespace OW.Game.Store
         private VirtualThing _Thing;
 
         /// <summary>
-        /// 
+        /// 所属的数据存储对象。
         /// </summary>
         [JsonIgnore]
         public VirtualThing Thing { get => _Thing; set => _Thing = value; }

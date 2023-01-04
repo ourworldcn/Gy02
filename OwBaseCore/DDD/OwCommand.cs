@@ -126,6 +126,11 @@ namespace OW.DDD
 
     public abstract class CommandHandlerBase<TRequest, TResponse> : ICommandHandler<TRequest, TResponse> where TRequest : ICommand<TRequest>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
         public abstract TResponse Handle(TRequest command);
     }
 }

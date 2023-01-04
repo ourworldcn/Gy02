@@ -132,7 +132,15 @@ namespace OW.Game
     /// </summary>
     public abstract class GameCommandBase : IGameCommand
     {
-        #region IResultWorkData接口相关
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameCommandBase()
+        {
+
+        }
+
+        #region IResultWorkData 接口相关
 
         private bool? _HasError;
 
@@ -161,8 +169,7 @@ namespace OW.Game
             set => _ErrorMessage = value;
         }
 
-        #endregion IResultWorkData接口相关
-
+        #endregion IResultWorkData 接口相关
     }
 
     /// <summary>
@@ -179,7 +186,9 @@ namespace OW.Game
         public abstract void Handle(T command);
     }
 
-
+    /// <summary>
+    /// 
+    /// </summary>
     public static class GameCommandBaseExtensions
     {
         /// <summary>
