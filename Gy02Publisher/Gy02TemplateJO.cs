@@ -133,7 +133,6 @@ namespace Gy02Bll.Templates
     /// </summary>
     public class TemplateJsonObjectBase
     {
-        private CompositingTInfo compositingInfo = new CompositingTInfo();
 
         /// <summary>
         /// 构造函数。
@@ -169,10 +168,11 @@ namespace Gy02Bll.Templates
         /// </summary>
         public UpgradeTInfo UpgradeInfo { get; set; } = new UpgradeTInfo();
 
+        private CompositingTInfo _CompositingInfo = new CompositingTInfo();
         /// <summary>
         /// 合成此物品的材料信息。
         /// </summary>
-        public CompositingTInfo CompositingInfo { get => compositingInfo ?? (compositingInfo = new CompositingTInfo()); set => compositingInfo = value; }
+        public CompositingTInfo CompositingInfo { get => _CompositingInfo ?? (_CompositingInfo = new CompositingTInfo()); set => _CompositingInfo = value; }
 
         /// <summary>
         /// <seealso cref="UseTInfo"/>。

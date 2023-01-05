@@ -192,7 +192,6 @@ namespace OW.Game.Store
         public bool IsCreatedOfRuntimeProperties => _RuntimeProperties != null;
 
         #endregion RuntimeProperties属性相关
-
     }
 
     /// <summary>

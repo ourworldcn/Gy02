@@ -320,6 +320,16 @@
             角色的模板Id。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.TemplateDto">
+            <summary>
+            模板基类传输类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.Gy02TemplateDto">
+            <summary>
+            模板数据的传输类。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.VirtualThingDto">
             <summary>
             

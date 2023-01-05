@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using OwGameDb.User;
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
@@ -27,7 +26,7 @@ namespace OW.Game.Store
         /// <summary>
         /// 每当并发的操作数减少时会发出信号。
         /// </summary>
-        public static AutoResetEvent ExecutingCountChanged = new AutoResetEvent(false);
+        public static AutoResetEvent ExecutingCountChanged = new(false);
 
         /// <summary>
         /// 构造函数。
@@ -77,6 +76,9 @@ namespace OW.Game.Store
 
     }
 
+    /// <summary>
+    /// 游戏的玩家数据存储的数据上下文。
+    /// </summary>
     public class GameUserBaseContext : DbContext
     {
         protected GameUserBaseContext()

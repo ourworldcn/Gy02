@@ -17,6 +17,7 @@ using OW.Game.Managers;
 using OW.Game.Store;
 using OwDbBase;
 using System.Diagnostics;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
 
@@ -131,7 +132,6 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-            object i2 = 5.ToString();
             var sw = Stopwatch.StartNew();
             try
             {

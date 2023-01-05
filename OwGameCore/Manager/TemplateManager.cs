@@ -51,6 +51,7 @@ namespace OW.Game.Managers
                     tt.JsonObjectString = item.GetRawText();
                     _Id2Template[tt.Id] = tt;
                 }
+                //分类
             });
         }
 

@@ -9,18 +9,27 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Text.Json.Nodes;
-using OwGameDb.User;
 
 namespace OW.Game.Entity
 {
+    /// <summary>
+    /// 用户账号类。
+    /// </summary>
     public class GameUser
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
         public GameUser()
         {
             Initialize();
         }
 
-        public GameUser(GameUserDo thing)
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="thing"></param>
+        public GameUser(OrphanedThing thing)
         {
             Thing = thing;
             Initialize();
@@ -76,7 +85,8 @@ namespace OW.Game.Entity
 
         #region 非数据库属性
 
-        public GameUserDo Thing { get; set; }
+        [JsonIgnore]
+        public OrphanedThing Thing { get; set; }
 
         /// <summary>
         /// 最后一次操作的时间。

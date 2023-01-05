@@ -19,7 +19,7 @@ namespace GuangYuan.GY001.TemplateDb
     /// <summary>
     /// 游戏模板数据库上下文。
     /// </summary>
-    public class GY02TemplateContext : GameTemplateContext
+    public class GY02TemplateContext : GameTemplateBaseContext
     {
         public GY02TemplateContext()
         {

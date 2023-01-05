@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.ObjectPool;
-using OwGameDb.User;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,16 +52,12 @@ namespace OW.Game.Store
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<GameUserDo> GameUsers { get; set; }
+        public DbSet<OrphanedThing> OrphanedThings { get; set; }
 
         /// <summary>
         /// 包含游戏世界内所有事物对象的表。
         /// </summary>
         public DbSet<VirtualThing> VirtualThings { get; set; }
 
-        public override void Dispose()
-        {
-            base.Dispose();
-        }
     }
 }

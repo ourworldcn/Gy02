@@ -25,6 +25,9 @@ namespace OW.Game.Store
         [MaxLength(64)]
         string ExtraString { get; set; }
 
+        /// <summary>
+        /// 记录一些额外的信息，用于排序搜索使用的字段。
+        /// </summary>
         decimal? ExtraDecimal { get; set; }
 
     }
@@ -54,10 +57,76 @@ namespace OW.Game.Store
         public abstract List<TNode> Children { get; set; }
     }
 
+    public static class DbTreeNodeExtensions
+    {
+        public static IDbTreeNode<T> GetRoot<T>(this IDbTreeNode<T> node) where T : IEntityWithSingleKey<Guid>
+        {
+            IDbTreeNode<T> tmp;
+            for (tmp = node.Parent as IDbTreeNode<T>; tmp is not null; tmp = tmp.Parent as IDbTreeNode<T>) ;
+            return tmp;
+        }
+    }
+
+    /// <summary>
+    /// 可快速搜索的对象。
+    /// </summary>
+    public abstract class DbQuickFindBase : JsonDynamicPropertyBase, IDbQuickFind
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public DbQuickFindBase()
+        {
+
+        }
+
+        public DbQuickFindBase(Guid id) : base(id)
+        {
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        public decimal? ExtraDecimal { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        public Guid ExtraGuid { get; set; }
+
+        private string _ExtraString;
+        /// <summary>
+        /// 记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象。
+        /// </summary>
+        [MaxLength(64)]
+        public string ExtraString { get => _ExtraString; set => _ExtraString = value; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected override void Dispose(bool disposing)
+        {
+            if (!IsDisposed)
+            {
+                if (disposing)
+                {
+                    // 释放托管状态(托管对象)
+                }
+
+                // 释放未托管的资源(未托管的对象)并重写终结器
+                // 将大型字段设置为 null
+                JsonObjectType = null;
+                _ExtraString = null;
+            }
+            base.Dispose(disposing);
+        }
+    }
+
     /// <summary>
     /// 
     /// </summary>
-    public class DbTreeNodeBase<T> : JsonDynamicPropertyBase, IDisposable, IDbQuickFind, IDbTreeNode<T> where T : IEntityWithSingleKey<Guid>
+    public class DbTreeNodeBase<T> : DbQuickFindBase, IDisposable, IDbTreeNode<T> where T : IEntityWithSingleKey<Guid>
     {
         #region 构造函数
 
@@ -95,7 +164,6 @@ namespace OW.Game.Store
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                _ExtraString = null;
                 _Parent = default;
                 _Children = null;
                 base.Dispose(disposing);
@@ -104,24 +172,6 @@ namespace OW.Game.Store
         #endregion 析构及处置对象相关
 
         #region 数据库属性
-
-        /// <summary>
-        ///<inheritdoc/>
-        /// </summary>
-        public Guid ExtraGuid { get; set; }
-
-        private string _ExtraString;
-        /// <summary>
-        /// 记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象。
-        /// </summary>
-        [MaxLength(64)]
-
-        public string ExtraString { get => _ExtraString; set => _ExtraString = value; }
-
-        /// <summary>
-        /// 记录一些额外的信息，用于排序搜索使用的字段。
-        /// </summary>
-        public decimal? ExtraDecimal { get; set; }
 
         #endregion 数据库属性
 

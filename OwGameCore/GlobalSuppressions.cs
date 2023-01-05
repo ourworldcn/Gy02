@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE0066:将 switch 语句转换为表达式", Justification = "<挂起>", Scope = "member", Target = "~M:OW.Game.Expression.GameExpression.Compute(GuangYuan.GY001.UserDb.GameChar)~System.Object")]
+[assembly: SuppressMessage("Style", "IDE0090:使用 \"new(...)\"", Justification = "<挂起>", Scope = "member", Target = "~F:OW.Game.Entity.GameUser._GameChars")]

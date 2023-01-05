@@ -1,4 +1,5 @@
-﻿using OW.Game.Store;
+﻿using Microsoft.EntityFrameworkCore;
+using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -28,6 +29,8 @@ namespace OW.Game.Entity
 
         #endregion 敏感信息
 
+        #region 普通属性
+
         /// <summary>
         /// 角色显示用的名字。就是昵称，不可重复。
         /// </summary>
@@ -40,6 +43,7 @@ namespace OW.Game.Entity
         /// </summary>
         public DateTime CreateUtc { get; set; } = DateTime.UtcNow;
 
+        #endregion 普通属性
 
     }
 }

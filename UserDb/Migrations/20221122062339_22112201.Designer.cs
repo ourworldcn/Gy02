@@ -70,7 +70,7 @@ namespace UserDb.Migrations
                     b.ToTable("VirtualThings");
                 });
 
-            modelBuilder.Entity("OwGameDb.User.GameUserDo", b =>
+            modelBuilder.Entity("OwGameDb.User.OrphanedThing", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("uniqueidentifier")

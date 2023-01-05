@@ -52,6 +52,22 @@ namespace Gy02.Publisher
     }
 
     /// <summary>
+    /// 模板基类传输类。
+    /// </summary>
+    public class TemplateDto
+    {
+
+    }
+
+    /// <summary>
+    /// 模板数据的传输类。
+    /// </summary>
+    public class Gy02TemplateDto : TemplateDto
+    {
+
+    }
+
+    /// <summary>
     /// 
     /// </summary>
     public class VirtualThingDto
