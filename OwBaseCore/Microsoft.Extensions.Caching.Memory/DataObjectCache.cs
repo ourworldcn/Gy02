@@ -110,11 +110,6 @@ namespace Microsoft.Extensions.Caching.Memory
 
             #region IDisposable接口相关
 
-            public override void Dispose()
-            {
-                base.Dispose();
-            }
-
             #endregion IDisposable接口相关
 
 

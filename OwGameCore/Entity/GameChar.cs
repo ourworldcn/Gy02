@@ -11,6 +11,42 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Entity
 {
+    /// <summary>
+    /// TODO 标记强类型对象的模板Id。
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
+    public sealed class TemplateIdAttribute : Attribute
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tidString"></param>
+        public TemplateIdAttribute(string tidString)
+        {
+            _TemplateId = Guid.Parse(tidString);
+
+            // Implement code here
+
+        }
+
+        /// <summary>
+        /// See the attribute guidelines at 
+        /// http://go.microsoft.com/fwlink/?LinkId=85236
+        /// </summary>
+        readonly Guid _TemplateId;
+        /// <summary>
+        /// 模板Id。
+        /// </summary>
+        public Guid TemplateId
+        {
+            get { return _TemplateId; }
+        }
+
+    }
+
+    /// <summary>
+    /// 游戏角色类。
+    /// </summary>
     public class GameChar : VirtualThingEntityBase
     {
         public GameChar()

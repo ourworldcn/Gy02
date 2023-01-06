@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace OW.Game.Manager
@@ -35,5 +36,11 @@ namespace OW.Game.Manager
         /// 记录应用的根服务容器。
         /// </summary>
         public static IServiceProvider Service { get; set; }
+
+        /// <summary>
+        /// 默认的Json序列化配置对象。
+        /// </summary>
+        public static JsonSerializerOptions JsonSerializerOptions = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
+
     }
 }

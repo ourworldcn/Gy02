@@ -51,11 +51,6 @@ namespace OW.Game.Caching
             {
             }
 
-            public override void Dispose()
-            {
-                base.Dispose();
-            }
-
         }
 
         #region 构造函数

@@ -22,6 +22,9 @@ namespace OW.Game.Store
         /// 也创建如下顺序创建索引<see cref="ExtraGuid"/><see cref="ExtraDecimal"/><see cref="ExtraString"/></remarks>
         Guid ExtraGuid { get; set; }
 
+        /// <summary>
+        /// 记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象。
+        /// </summary>
         [MaxLength(64)]
         string ExtraString { get; set; }
 
@@ -96,7 +99,7 @@ namespace OW.Game.Store
 
         private string _ExtraString;
         /// <summary>
-        /// 记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象。
+        /// <inheritdoc/>
         /// </summary>
         [MaxLength(64)]
         public string ExtraString { get => _ExtraString; set => _ExtraString = value; }
@@ -126,7 +129,7 @@ namespace OW.Game.Store
     /// <summary>
     /// 
     /// </summary>
-    public class DbTreeNodeBase<T> : DbQuickFindBase, IDisposable, IDbTreeNode<T> where T : IEntityWithSingleKey<Guid>
+    public class DbTreeNodeBase<T> : DbQuickFindBase, IDbTreeNode<T> where T : IEntityWithSingleKey<Guid>
     {
         #region 构造函数
 

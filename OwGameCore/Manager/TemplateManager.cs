@@ -2,6 +2,7 @@
 using GuangYuan.GY02.Store;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using OW.Game.Manager;
 using OW.Game.Store;
 using System;
 using System.Collections.Concurrent;
@@ -40,6 +41,7 @@ namespace OW.Game.Managers
                 var path = Path.Combine(AppContext.BaseDirectory, "数据表\\", file);
                 using var stream = File.OpenRead(path);
                 var opt = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
+                
                 var jn = JsonSerializer.Deserialize<JsonElement>(stream, opt);
                 foreach (var item in jn.EnumerateArray())
                 {
