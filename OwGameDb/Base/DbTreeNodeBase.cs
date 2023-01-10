@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -83,6 +84,10 @@ namespace OW.Game.Store
 
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="id"><inheritdoc/></param>
         public DbQuickFindBase(Guid id) : base(id)
         {
         }
@@ -107,7 +112,7 @@ namespace OW.Game.Store
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        /// <param name="disposing"></param>
+        /// <param name="disposing"><inheritdoc/></param>
         protected override void Dispose(bool disposing)
         {
             if (!IsDisposed)
@@ -127,6 +132,69 @@ namespace OW.Game.Store
     }
 
     /// <summary>
+    /// 可快速搜索的对象。
+    /// </summary>
+    public abstract class DbQuickFindWithRuntimeDictionaryBase: DbQuickFindBase
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public DbQuickFindWithRuntimeDictionaryBase()
+        {
+
+        }
+
+        public DbQuickFindWithRuntimeDictionaryBase(Guid id) : base(id)
+        {
+        }   
+
+        [AllowNull]
+        private ConcurrentDictionary<string, object> _RuntimeProperties;
+
+        /// <summary>
+        /// 存储一些运行时需要用的到的属性，使用者自己定义。
+        /// 这些存储的属性不会被持久化。
+        /// </summary>
+        [NotMapped, JsonIgnore]
+        public ConcurrentDictionary<string, object> RuntimeProperties
+        {
+            get
+            {
+                if (_RuntimeProperties is null)
+                    Interlocked.CompareExchange(ref _RuntimeProperties, new ConcurrentDictionary<string, object>(), null);
+                return _RuntimeProperties;
+            }
+        }
+
+        /// <summary>
+        /// 存储RuntimeProperties属性的后备字段是否已经初始化。
+        /// </summary>
+        [NotMapped, JsonIgnore]
+        public bool IsCreatedOfRuntimeProperties => _RuntimeProperties != null;
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="disposing"><inheritdoc/></param>
+        protected override void Dispose(bool disposing)
+        {
+            if (!IsDisposed)
+            {
+                if (disposing)
+                {
+                    // 释放托管状态(托管对象)
+                }
+
+                // 释放未托管的资源(未托管的对象)并重写终结器
+                // 将大型字段设置为 null
+                _RuntimeProperties = null;
+            }
+            base.Dispose(disposing);
+        }
+
+    }
+
+    /// <summary>
     /// 
     /// </summary>
     public class DbTreeNodeBase<T> : DbQuickFindBase, IDbTreeNode<T> where T : IEntityWithSingleKey<Guid>
@@ -143,7 +211,7 @@ namespace OW.Game.Store
         /// <summary>
         /// 构造函数。
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id"><inheritdoc/></param>
         public DbTreeNodeBase(Guid id) : base(id)
         {
         }
@@ -202,4 +270,6 @@ namespace OW.Game.Store
 
         #endregion 导航属性
     }
+
+
 }

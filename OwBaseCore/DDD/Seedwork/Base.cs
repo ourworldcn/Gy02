@@ -11,6 +11,9 @@ namespace OW.DDD
 
     public interface IEntity
     {
+        /// <summary>
+        /// 实体对象的唯一Id。
+        /// </summary>
         Guid Id { get; }
     }
 

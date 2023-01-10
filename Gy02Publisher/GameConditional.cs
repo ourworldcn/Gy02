@@ -239,8 +239,8 @@ namespace OW.Game.Conditional
 #if NETCOREAPP
         Guid? GetPTId(object obj)
         {
-            if (obj is VirtualThingEntityBase vtb)
-                return vtb.Thing.Parent.ExtraGuid;
+            if (obj is OwGameEntityBase vtb)
+                return ((IDbTreeNode<VirtualThing>)vtb.Thing).Parent.ExtraGuid;
             else if (obj is VirtualThing vt)
                 return vt.Parent.ExtraGuid;
             else
@@ -249,8 +249,8 @@ namespace OW.Game.Conditional
 
         private Guid? GetTId(object obj)
         {
-            if (obj is VirtualThingEntityBase vtb)
-                return vtb.Thing.ExtraGuid;
+            if (obj is OwGameEntityBase vtb)
+                return ((IDbQuickFind)vtb.Thing).ExtraGuid;
             else if (obj is VirtualThing vt)
                 return vt.ExtraGuid;
             else
@@ -259,8 +259,8 @@ namespace OW.Game.Conditional
 
         private IEnumerable<string> GetGenus(object obj, TemplateManager mng)
         {
-            if (obj is VirtualThingEntityBase vtb)
-                return mng.GetTemplateFromId(vtb.Thing.ExtraGuid).GetJsonObject<Gy02TemplateJO>().Genus;
+            if (obj is OwGameEntityBase vtb)
+                return mng.GetTemplateFromId(((IDbQuickFind)vtb.Thing).ExtraGuid).GetJsonObject<Gy02TemplateJO>().Genus;
             else if (obj is VirtualThing vt)
                 return mng.GetTemplateFromId(vt.ExtraGuid).GetJsonObject<Gy02TemplateJO>().Genus;
             else

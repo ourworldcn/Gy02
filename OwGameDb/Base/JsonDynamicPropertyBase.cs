@@ -56,7 +56,7 @@ namespace OW.Game.Store
         /// <summary>
         /// 构造函数。
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id"><inheritdoc/></param>
         public JsonDynamicPropertyBase(Guid id) : base(id)
         {
         }
@@ -93,6 +93,8 @@ namespace OW.Game.Store
         /// <returns></returns>
         public virtual T GetJsonObject<T>() where T : new()
         {
+            if (_JsonObject is INotifyPropertyChanged changedEvent)    //若需要去除事件处理委托
+                changedEvent.PropertyChanged -= Changed_PropertyChanged;
             if (typeof(T) != JsonObjectType || JsonObject is null)  //若需要初始化
             {
                 if (string.IsNullOrWhiteSpace(JsonObjectString))
@@ -102,18 +104,19 @@ namespace OW.Game.Store
                 else
                 {
                     var opt = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
-                    JsonObject = JsonSerializer.Deserialize(JsonObjectString, typeof(T),opt);
+                    JsonObject = JsonSerializer.Deserialize(JsonObjectString, typeof(T), opt);
                 }
                 JsonObjectType = typeof(T);
-                if (JsonObject is INotifyPropertyChanged changed)
-                    changed.PropertyChanged += Changed_PropertyChanged; ;
+                if (_JsonObject is INotifyPropertyChanged changed)
+                    changed.PropertyChanged += Changed_PropertyChanged;
             }
             return (T)JsonObject;
         }
 
+        volatile int _Seq;
         private void Changed_PropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-
+            Interlocked.Increment(ref _Seq);
         }
 
         private object _JsonObject;
@@ -163,6 +166,8 @@ namespace OW.Game.Store
                 if (disposing)
                 {
                     // 释放托管状态(托管对象)
+                    if (_JsonObject is INotifyPropertyChanged changedEvent)    //若需要去除事件处理委托
+                        changedEvent.PropertyChanged -= Changed_PropertyChanged;
                 }
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
@@ -195,10 +200,16 @@ namespace OW.Game.Store
 
         #region IBeforeSave接口及相关
 
+        volatile int _WritedSeq;
         public virtual void PrepareSaving(DbContext db)
         {
             if (_JsonObject != null)
-                _JsonObjectString = JsonSerializer.Serialize(_JsonObject, JsonObjectType ?? JsonObject.GetType());
+                if (_JsonObject is not INotifyPropertyChanged || _Seq != _WritedSeq)
+                {
+                    _JsonObjectString = JsonSerializer.Serialize(_JsonObject, JsonObjectType ?? JsonObject.GetType());
+                    if (_JsonObject is INotifyPropertyChanged)
+                        _WritedSeq = _Seq;
+                }
         }
 
         #endregion IBeforeSave接口及相关

@@ -11,6 +11,39 @@ using System.Threading.Tasks;
 namespace OW.Game.Manager
 {
     /// <summary>
+    /// TODO 标记强类型对象的模板Id。
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
+    public sealed class TemplateIdAttribute : Attribute
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tidString"><see cref="Guid"/>的字符串表述形式。</param>
+        public TemplateIdAttribute(string tidString)
+        {
+            _TemplateId = Guid.Parse(tidString);
+
+            // Implement code here
+
+        }
+
+        /// <summary>
+        /// See the attribute guidelines at 
+        /// http://go.microsoft.com/fwlink/?LinkId=85236
+        /// </summary>
+        readonly Guid _TemplateId;
+        /// <summary>
+        /// 模板Id。
+        /// </summary>
+        public Guid TemplateId
+        {
+            get { return _TemplateId; }
+        }
+
+    }
+
+    /// <summary>
     /// 
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]

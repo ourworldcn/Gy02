@@ -15,7 +15,7 @@ namespace OW.Game.Entity
     /// <summary>
     /// 用户账号类。
     /// </summary>
-    public class GameUser
+    public class GameUser : OwGameEntityBase
     {
         /// <summary>
         /// 构造函数。
@@ -29,9 +29,8 @@ namespace OW.Game.Entity
         /// 构造函数。
         /// </summary>
         /// <param name="thing"></param>
-        public GameUser(OrphanedThing thing)
+        public GameUser(OrphanedThing thing) : base(thing)
         {
-            Thing = thing;
             Initialize();
         }
 
@@ -47,13 +46,13 @@ namespace OW.Game.Entity
         [Required]
         [StringLength(64)]
         [JsonIgnore]
-        public string LoginName { get => Thing.ExtraString; set => Thing.ExtraString = value; }
+        public string LoginName { get => ((IDbQuickFind)Thing).ExtraString; set => ((IDbQuickFind)Thing).ExtraString = value; }
 
         /// <summary>
         /// 密码的Hash值。
         /// </summary>
         [JsonIgnore]
-        public byte[] PwdHash { get => Thing.BinaryArray; set => Thing.BinaryArray = value; }
+        public byte[] PwdHash { get => ((OrphanedThing)Thing).BinaryArray; set => ((OrphanedThing)Thing).BinaryArray = value; }
 
         #endregion 敏感信息
 
@@ -84,9 +83,6 @@ namespace OW.Game.Entity
         public int? NodeNum { get; set; }
 
         #region 非数据库属性
-
-        [JsonIgnore]
-        public OrphanedThing Thing { get; set; }
 
         /// <summary>
         /// 最后一次操作的时间。
@@ -173,7 +169,7 @@ namespace OW.Game.Entity
         /// </summary>
         public static IServiceProvider GetServices(this GameUser user)
         {
-            return user.Thing.RuntimeProperties.GetValueOrDefault("Services") as IServiceProvider;
+            return ((OrphanedThing)user.Thing).RuntimeProperties.GetValueOrDefault("Services") as IServiceProvider;
         }
 
         /// <summary>
@@ -181,7 +177,7 @@ namespace OW.Game.Entity
         /// </summary>
         public static void SetServices(this GameUser user, IServiceProvider value)
         {
-            user.Thing.RuntimeProperties["Services"] = value;
+            ((OrphanedThing)user.Thing).RuntimeProperties["Services"] = value;
         }
 
         /// <summary>
@@ -189,7 +185,7 @@ namespace OW.Game.Entity
         /// </summary>
         public static DbContext GetDbContext(this GameUser user)
         {
-            return user.Thing.RuntimeProperties.GetValueOrDefault("DbContext") as DbContext;
+            return ((OrphanedThing)user.Thing).RuntimeProperties.GetValueOrDefault("DbContext") as DbContext;
         }
 
         /// <summary>
@@ -197,7 +193,7 @@ namespace OW.Game.Entity
         /// </summary>
         public static void SetDbContext(this GameUser user, DbContext value)
         {
-            user.Thing.RuntimeProperties["DbContext"] = value;
+            ((OrphanedThing)user.Thing).RuntimeProperties["DbContext"] = value;
         }
 
     }

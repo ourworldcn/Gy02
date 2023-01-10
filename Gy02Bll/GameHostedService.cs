@@ -12,10 +12,12 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
 using OW.Game.Caching;
+using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OwDbBase;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection.Metadata;
 using System.Text;
@@ -133,8 +135,11 @@ namespace Gy02Bll
         private void Test()
         {
             var sw = Stopwatch.StartNew();
+            GameChar v = new GameChar();
             try
             {
+                if (v is  INotifyPropertyChanged )
+                    ;
                 var mng = _Services.GetService<TemplateManager>();
                 mng.GetTemplateFromId(Guid.NewGuid());
                 var str = JsonSerializer.Serialize(new Gy02TemplateJO { });

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using OW.DDD;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -23,109 +22,6 @@ namespace OW.Game.Store
     }
 
     /// <summary>
-    /// 存储在<see cref="VirtualThing"/>中实体对象的基类。
-    /// </summary>
-    public class VirtualThingEntityBase : IEntity, IDisposable
-    {
-        #region 构造函数
-
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public VirtualThingEntityBase()
-        {
-
-        }
-
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        /// <param name="thing"></param>
-        public VirtualThingEntityBase(VirtualThing thing)
-        {
-            _Thing = thing;
-        }
-
-        #endregion 构造函数
-
-        [JsonIgnore]
-        public Guid Id => Thing?.Id ?? Guid.Empty;
-
-        #region IDisposable接口及相关
-
-        private volatile bool _IsDisposed;
-
-        /// <summary>
-        /// 对象是否已经被处置。
-        /// </summary>
-        [NotMapped]
-        [JsonIgnore]
-        public bool IsDisposed
-        {
-            get => _IsDisposed;
-            protected set => _IsDisposed = value;
-        }
-
-        /// <summary>
-        /// 实际处置当前对象的方法。
-        /// </summary>
-        /// <param name="disposing"></param>
-        protected virtual void Dispose(bool disposing)
-        {
-            if (!_IsDisposed)
-            {
-                if (disposing)
-                {
-                    // 释放托管状态(托管对象)
-                }
-
-                // 释放未托管的资源(未托管的对象)并重写终结器
-                // 将大型字段设置为 null
-                _Thing = null;
-                _StringDictionary = null;
-                _IsDisposed = true;
-            }
-        }
-
-        // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
-        // ~SimpleDynamicPropertyBase()
-        // {
-        //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-        //     Dispose(disposing: false);
-        // }
-
-        /// <summary>
-        /// 处置对象。
-        /// </summary>
-        public void Dispose()
-        {
-            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
-
-        #endregion IDisposable接口及相关
-
-        [AllowNull]
-        private Dictionary<string, string> _StringDictionary;
-
-        /// <summary>
-        /// 记录一些扩展属性的字典。
-        /// </summary>
-        public Dictionary<string, string> StringDictionary { get => _StringDictionary ??= new Dictionary<string, string>(); set => _StringDictionary = value; }
-
-        [AllowNull]
-        private VirtualThing _Thing;
-
-        /// <summary>
-        /// 所属的数据存储对象。
-        /// </summary>
-        [JsonIgnore]
-        public VirtualThing Thing { get => _Thing; set => _Thing = value; }
-
-    }
-
-    /// <summary>
     /// 
     /// </summary>
     /// <typeparam name="T"></typeparam>
@@ -133,10 +29,17 @@ namespace OW.Game.Store
     {
         #region 构造函数
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
         public VirtualThingBase()
         {
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="id"><inheritdoc/></param>
         public VirtualThingBase(Guid id) : base(id)
         {
         }
@@ -201,10 +104,17 @@ namespace OW.Game.Store
     {
         #region 构造函数
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
         public VirtualThing()
         {
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="id"><inheritdoc/></param>
         public VirtualThing(Guid id) : base(id)
         {
         }
@@ -250,7 +160,6 @@ namespace OW.Game.Store
         {
             get { return _BinaryArray; }
             set { _BinaryArray = value; }
-
         }
 
         /// <summary>
@@ -261,7 +170,7 @@ namespace OW.Game.Store
         public override T GetJsonObject<T>()
         {
             var result = base.GetJsonObject<T>();
-            if (result is VirtualThingEntityBase viewBase)
+            if (result is OwGameEntityBase viewBase)
                 viewBase.Thing = this;
             return result;
         }
