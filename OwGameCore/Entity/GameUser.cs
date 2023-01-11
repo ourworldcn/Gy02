@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Text.Json.Nodes;
 using System.Security.Cryptography;
 using System.Buffers;
+using System.Transactions;
 
 namespace OW.Game.Entity
 {
@@ -205,6 +206,7 @@ namespace OW.Game.Entity
         /// </summary>
         public static IServiceProvider GetServices(this GameUser user)
         {
+            TransactionScope scope
             return ((OrphanedThing)user.Thing).RuntimeProperties.GetValueOrDefault("Services") as IServiceProvider;
         }
 
