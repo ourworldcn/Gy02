@@ -12,7 +12,6 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Entity
 {
-
     /// <summary>
     /// 游戏角色类。
     /// </summary>

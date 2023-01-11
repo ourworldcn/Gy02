@@ -34,7 +34,18 @@ namespace OW.Game.Store
         #endregion 构造函数
 
         [JsonIgnore]
-        public Guid Id => ((IEntityWithSingleKey<Guid>)Thing)?.Id ?? Guid.Empty;
+        public Guid Id
+        {
+            get => ((IEntityWithSingleKey<Guid>)Thing)?.Id ?? Guid.Empty;
+            set => ((IEntityWithSingleKey<Guid>)Thing).Id = value;
+        }
+
+        [JsonIgnore]
+        public Guid TemplateId
+        {
+            get => ((IDbQuickFind)Thing)?.ExtraGuid ?? Guid.Empty;
+            set => ((IDbQuickFind)Thing).ExtraGuid = value;
+        }
 
         #region IDisposable接口及相关
 
@@ -67,7 +78,7 @@ namespace OW.Game.Store
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
                 _Thing = null;
-                _StringDictionary = null;
+                _ExtensionProperties = null;
                 _IsDisposed = true;
             }
         }
@@ -91,14 +102,6 @@ namespace OW.Game.Store
 
         #endregion IDisposable接口及相关
 
-        [AllowNull]
-        private Dictionary<string, string> _StringDictionary;
-
-        /// <summary>
-        /// 记录一些扩展属性的字典。
-        /// </summary>
-        public Dictionary<string, string> StringDictionary { get => _StringDictionary ??= new Dictionary<string, string>(); set => _StringDictionary = value; }
-
         /// <summary>
         /// 基础存储的实体，通常是<see cref="DbTreeNodeBase{T}"/> 的对象。
         /// </summary>
@@ -120,6 +123,17 @@ namespace OW.Game.Store
             {
                 _Thing = value;
             }
+        }
+
+        Dictionary<string, object> _ExtensionProperties;
+        /// <summary>
+        /// 反序列化时，可能会在 JSON 中收到不是由目标类型的属性表示的数据。
+        /// </summary>
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtensionProperties
+        {
+            get => _ExtensionProperties ??= new Dictionary<string, object>();
+            set => _ExtensionProperties = value;
         }
 
         #region 事件相关
@@ -150,7 +164,7 @@ namespace OW.Game.Store
         /// 引发<see cref="PropertyChange"/>事件。
         /// </summary>
         /// <param name="propertyName"><inheritdoc/></param>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         protected void InvokeOnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));

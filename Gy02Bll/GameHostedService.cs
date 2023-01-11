@@ -135,11 +135,10 @@ namespace Gy02Bll
         private void Test()
         {
             var sw = Stopwatch.StartNew();
-            GameChar v = new GameChar();
+            decimal? dn = 1.9m;
             try
             {
-                if (v is  INotifyPropertyChanged )
-                    ;
+                int? i = (int?)dn;
                 var mng = _Services.GetService<TemplateManager>();
                 mng.GetTemplateFromId(Guid.NewGuid());
                 var str = JsonSerializer.Serialize(new Gy02TemplateJO { });

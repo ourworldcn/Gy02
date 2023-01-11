@@ -9,6 +9,8 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Text.Json.Nodes;
+using System.Security.Cryptography;
+using System.Buffers;
 
 namespace OW.Game.Entity
 {
@@ -17,6 +19,8 @@ namespace OW.Game.Entity
     /// </summary>
     public class GameUser : OwGameEntityBase
     {
+        #region 构造函数及相关
+
         /// <summary>
         /// 构造函数。
         /// </summary>
@@ -28,7 +32,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 构造函数。
         /// </summary>
-        /// <param name="thing"></param>
+        /// <param name="thing"><inheritdoc/></param>
         public GameUser(OrphanedThing thing) : base(thing)
         {
             Initialize();
@@ -38,6 +42,8 @@ namespace OW.Game.Entity
         {
         }
 
+        #endregion 构造函数及相关
+
         #region 敏感信息
 
         /// <summary>
@@ -46,13 +52,37 @@ namespace OW.Game.Entity
         [Required]
         [StringLength(64)]
         [JsonIgnore]
-        public string LoginName { get => ((IDbQuickFind)Thing).ExtraString; set => ((IDbQuickFind)Thing).ExtraString = value; }
+        public string LoginName
+        {
+            get => ((IDbQuickFind)Thing).ExtraString;
+            set => ((IDbQuickFind)Thing).ExtraString = value;
+        }
 
         /// <summary>
         /// 密码的Hash值。
         /// </summary>
         [JsonIgnore]
         public byte[] PwdHash { get => ((OrphanedThing)Thing).BinaryArray; set => ((OrphanedThing)Thing).BinaryArray = value; }
+
+        /// <summary>
+        /// 密码是否正确。
+        /// </summary>
+        /// <param name="pwd">密码明文。</param>
+        /// <returns>true密码匹配，false密码不匹配。</returns>
+        public bool IsPwd(string pwd)
+        {
+            return SHA1.HashData(Encoding.UTF8.GetBytes(pwd)).SequenceEqual(PwdHash);
+        }
+
+        /// <summary>
+        /// 当前承载此用户的服务器节点号。空则表示此用户尚未被任何节点承载（未在线）。但有节点号，不代表用户登录，可能只是维护等其他目的将用户承载到服务器中。
+        /// </summary>
+        [JsonIgnore]
+        public int? NodeNum
+        {
+            get => (int?)((OrphanedThing)Thing).ExtraDecimal;
+            set => ((OrphanedThing)Thing).ExtraDecimal = value;
+        }
 
         #endregion 敏感信息
 
@@ -63,24 +93,9 @@ namespace OW.Game.Entity
         public string Region { get; set; }
 
         /// <summary>
-        /// <see cref="GameChars"/>属性的后备字段。
-        /// </summary>
-        private List<GameChar> _GameChars = new List<GameChar>();
-
-        /// <summary>
-        /// 导航到多个角色的属性。
-        /// </summary>
-        public virtual List<GameChar> GameChars { get => _GameChars; set => _GameChars = value; }
-
-        /// <summary>
         /// 创建该对象的通用协调时间。
         /// </summary>
         public DateTime CreateUtc { get; set; } = DateTime.UtcNow;
-
-        /// <summary>
-        /// 当前承载此用户的服务器节点号。空则表示此用户尚未被任何节点承载（未在线）。但有节点号，不代表用户登录，可能只是维护等其他目的将用户承载到服务器中。
-        /// </summary>
-        public int? NodeNum { get; set; }
 
         #region 非数据库属性
 
@@ -88,6 +103,7 @@ namespace OW.Game.Entity
         /// 最后一次操作的时间。
         /// </summary>
         [NotMapped]
+        [JsonIgnore]
         public DateTime LastModifyDateTimeUtc { get; set; } = DateTime.UtcNow;
 
         /// <summary>
@@ -96,7 +112,27 @@ namespace OW.Game.Entity
         /// <value>默认值15分钟。</value>
         [NotMapped]
         [JsonConverter(typeof(TimeSpanJsonConverter))]
+        [JsonIgnore]
         public TimeSpan Timeout { get; set; } = TimeSpan.FromMinutes(15);
+
+        #endregion 非数据库属性
+
+        #region 导航属性
+
+        /// <summary>
+        /// <see cref="GameChars"/>属性的后备字段。
+        /// </summary>
+        private List<GameChar> _GameChars = new List<GameChar>();
+
+        /// <summary>
+        /// 导航到多个角色的属性。
+        /// </summary>
+        [JsonIgnore]
+        public virtual List<GameChar> GameChars
+        {
+            get => _GameChars;
+            set => _GameChars = value;
+        }
 
         /// <summary>
         /// 玩家当前使用的角色。
@@ -107,7 +143,7 @@ namespace OW.Game.Entity
         [JsonIgnore]
         public GameChar CurrentChar { get; set; }
 
-        #endregion 非数据库属性
+        #endregion 导航属性
 
         #region 扩展属性
 

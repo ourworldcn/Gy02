@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "逻辑层", "逻辑层", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决方案项", "{3B681EF3-1D10-4FFA-B406-6A7923B7C2D8}"
 	ProjectSection(SolutionItems) = preProject
+		Graph1.dgml = Graph1.dgml
 		Notes.txt = Notes.txt
 		部署说明.txt = 部署说明.txt
 	EndProjectSection

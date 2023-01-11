@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="OW.Game.Caching.GameObjectCacheOptions" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="3" Width="2" />
+  <Class Name="OW.Game.Caching.GameObjectCacheOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAIAAAAA=</HashCode>
       <FileName>Cache\GameObjectCache.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="OW.Game.Caching.GameObjectCache">
-    <Position X="3" Y="2" Width="2.25" />
+  <Class Name="OW.Game.Caching.GameObjectCache" Collapsed="true">
+    <Position X="2.25" Y="2" Width="1.5" />
     <NestedTypes>
       <Class Name="OW.Game.Caching.GameObjectCache.GameObjectCacheEntry" Collapsed="true">
         <TypeIdentifier>
@@ -23,14 +23,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.Caching.GameObjectCacheExtensions" Collapsed="true">
-    <Position X="4.75" Y="2" Width="1.5" />
+    <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACABAAAAAAAAAAAAAAAAAAAIAAAAAAAAAEAAAAgAA=</HashCode>
       <FileName>Cache\GameObjectCache.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.DataObjectManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4.75" Y="1" Width="1.5" />
+    <Position X="4" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAgIAAAAAA=</HashCode>
       <FileName>Cache\DataObjectManager.cs</FileName>
@@ -38,21 +38,21 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="OW.Game.DataObjectOptions" Collapsed="true">
-    <Position X="1.25" Y="2" Width="1.5" />
+    <Position X="0.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAIAAAAQAAABAAAAAAAAAAACEQAAgAAAAAEA=</HashCode>
       <FileName>Cache\DataObjectManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.DataObjectManager" Collapsed="true">
-    <Position X="1.25" Y="1" Width="1.5" />
+    <Position X="0.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAIAAAAAABQAAAAABAACAAIAIAAAAAAAEACBAAAg=</HashCode>
       <FileName>Cache\DataObjectManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.DataObjectManagerExtensions" Collapsed="true">
-    <Position X="3" Y="1" Width="1.5" />
+    <Position X="2.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAIAAAABAAAAIAAQAAAA=</HashCode>
       <FileName>Cache\DataObjectManager.cs</FileName>

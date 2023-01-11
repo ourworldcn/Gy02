@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.Serialization;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -40,10 +38,16 @@ namespace OW.Game.Store
     }
 
     /// <summary>
-    /// 
+    /// 使用Json字符串存储一些动态属性的数据库类。
     /// </summary>
     public class JsonDynamicPropertyBase : GuidKeyObjectBase, IDisposable, IBeforeSave, IJsonDynamicProperty
     {
+        #region 静态成员
+
+        static readonly JsonSerializerOptions _SerializerOptions = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
+
+        #endregion 静态成员
+
         #region 构造函数
 
         /// <summary>
@@ -65,8 +69,6 @@ namespace OW.Game.Store
 
         #region 数据库属性
 
-        #region JsonObject相关
-
         private string _JsonObjectString;
         /// <summary>
         /// 属性字符串。格式数Json字符串。
@@ -80,48 +82,54 @@ namespace OW.Game.Store
                 if (!ReferenceEquals(_JsonObjectString, value))
                 {
                     _JsonObjectString = value;
-                    _JsonObject = null;
+                    JsonObject = null;
                     JsonObjectType = null;
                 }
             }
         }
 
+        #endregion 数据库属性
+
+        #region JsonObject相关
+
         /// <summary>
         /// 获取或初始化<see cref="JsonObject"/>属性并返回。
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
+        /// <typeparam name="T">若支持<see cref="INotifyPropertyChanged"/>接口则可以获得优化。</typeparam>
+        /// <returns>返回的对象，不会放回null，可能返回默认的新对象。</returns>
         public virtual T GetJsonObject<T>() where T : new()
         {
-            if (_JsonObject is INotifyPropertyChanged changedEvent)    //若需要去除事件处理委托
-                changedEvent.PropertyChanged -= Changed_PropertyChanged;
             if (typeof(T) != JsonObjectType || JsonObject is null)  //若需要初始化
             {
-                if (string.IsNullOrWhiteSpace(JsonObjectString))
+                if (string.IsNullOrWhiteSpace(JsonObjectString))    //若Json字符串是无效的
                 {
                     JsonObject = new T();
                 }
                 else
                 {
-                    var opt = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
-                    JsonObject = JsonSerializer.Deserialize(JsonObjectString, typeof(T), opt);
+                    JsonObject = JsonSerializer.Deserialize(JsonObjectString, typeof(T), _SerializerOptions);
+                    _Seq = _WritedSeq = 0;
                 }
                 JsonObjectType = typeof(T);
-                if (_JsonObject is INotifyPropertyChanged changed)
-                    changed.PropertyChanged += Changed_PropertyChanged;
             }
             return (T)JsonObject;
         }
 
         volatile int _Seq;
-        private void Changed_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            Interlocked.Increment(ref _Seq);
-        }
+
+        /// <summary>
+        /// 递增属性版本号。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        private void Changed_PropertyChanged(object sender, PropertyChangedEventArgs e) => Interlocked.Increment(ref _Seq);
 
         private object _JsonObject;
         /// <summary>
         /// 用<see cref="GetJsonObject{T}"/>获取。
+        /// 甚至该属性将自动处理事件挂钩和版本号。
+        /// 但是不会联动<see cref="JsonObjectType"/>属性。
         /// </summary>
         [JsonIgnore, NotMapped]
         public object JsonObject
@@ -129,7 +137,15 @@ namespace OW.Game.Store
             get => _JsonObject;
             set
             {
+                if (ReferenceEquals(_JsonObject, value))    //若无需设置
+                    return;
+                if (_JsonObject is INotifyPropertyChanged changedEvent) //若需要去除事件处理委托
+                    changedEvent.PropertyChanged -= Changed_PropertyChanged;
                 _JsonObject = value;
+                _Seq = 1;
+                _WritedSeq = 0;
+                if (_JsonObject is INotifyPropertyChanged changed)  //若需要挂接事件处理委托
+                    changed.PropertyChanged += Changed_PropertyChanged;
             }
         }
 
@@ -137,8 +153,6 @@ namespace OW.Game.Store
         public Type JsonObjectType { get; set; }
 
         #endregion JsonObject相关
-
-        #endregion 数据库属性
 
         #region IDisposable接口及相关
 
@@ -203,13 +217,15 @@ namespace OW.Game.Store
         volatile int _WritedSeq;
         public virtual void PrepareSaving(DbContext db)
         {
-            if (_JsonObject != null)
+            if (_JsonObject is null)    //若是空对象
+                _JsonObjectString = null;
+            else //若对象非空
                 if (_JsonObject is not INotifyPropertyChanged || _Seq != _WritedSeq)
-                {
-                    _JsonObjectString = JsonSerializer.Serialize(_JsonObject, JsonObjectType ?? JsonObject.GetType());
-                    if (_JsonObject is INotifyPropertyChanged)
-                        _WritedSeq = _Seq;
-                }
+            {
+                _JsonObjectString = JsonSerializer.Serialize(_JsonObject, JsonObjectType ?? JsonObject.GetType());
+                if (_JsonObject is INotifyPropertyChanged)
+                    _WritedSeq = _Seq;
+            }
         }
 
         #endregion IBeforeSave接口及相关
