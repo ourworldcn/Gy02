@@ -135,10 +135,12 @@ namespace Gy02Bll
         private void Test()
         {
             var sw = Stopwatch.StartNew();
-            decimal? dn = 1.9m;
+            DateTime now = DateTime.UtcNow;
+            TimeSpan? ts = null;
             try
             {
-                int? i = (int?)dn;
+                if (DateTime.UtcNow - now <= ts)
+                    ;
                 var mng = _Services.GetService<TemplateManager>();
                 mng.GetTemplateFromId(Guid.NewGuid());
                 var str = JsonSerializer.Serialize(new Gy02TemplateJO { });
@@ -146,7 +148,6 @@ namespace Gy02Bll
                 {
                     mng.GetTemplateFromId(Guid.NewGuid());
                 });
-
 
                 var ss = JsonSerializer.Deserialize<Gy02TemplateJO>(str);
             }

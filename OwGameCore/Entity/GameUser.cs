@@ -206,7 +206,6 @@ namespace OW.Game.Entity
         /// </summary>
         public static IServiceProvider GetServices(this GameUser user)
         {
-            TransactionScope scope
             return ((OrphanedThing)user.Thing).RuntimeProperties.GetValueOrDefault("Services") as IServiceProvider;
         }
 

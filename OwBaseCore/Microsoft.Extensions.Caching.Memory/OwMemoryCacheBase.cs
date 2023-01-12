@@ -4,6 +4,7 @@ using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -13,6 +14,7 @@ using System.Threading;
 
 namespace Microsoft.Extensions.Caching.Memory
 {
+
     public class OwMemoryCacheBaseOptions : MemoryCacheOptions, IOptions<OwMemoryCacheBaseOptions>
     {
         /// <summary>
@@ -55,6 +57,9 @@ namespace Microsoft.Extensions.Caching.Memory
 
     }
 
+    /// <summary>
+    /// 在即将被驱逐时调用的回调数据类。
+    /// </summary>
     public class BeforeEvictionCallbackRegistration
     {
         public BeforeEvictionCallbackRegistration()
@@ -68,6 +73,9 @@ namespace Microsoft.Extensions.Caching.Memory
         /// </summary>
         public Action<object, object, EvictionReason, object> BeforeEvictionCallback { get; set; }
 
+        /// <summary>
+        /// 回调的参数。
+        /// </summary>
         public object State { get; set; }
 
     }

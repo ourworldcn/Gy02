@@ -17,7 +17,9 @@ using System.Threading.Tasks;
 
 namespace Microsoft.Extensions.Caching.Memory
 {
-
+    /// <summary>
+    /// 数据对象缓存类的配置类。
+    /// </summary>
     public class DataObjectCacheOptions : OwMemoryCacheBaseOptions, IOptions<DataObjectCacheOptions>
     {
         public DataObjectCacheOptions() : base()
@@ -431,7 +433,7 @@ namespace Microsoft.Extensions.Caching.Memory
             }
         }
 
-        // // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
+        // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
         // ~DataObjectCache()
         // {
         //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
