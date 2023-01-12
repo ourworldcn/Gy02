@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "OwDbBase": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:63224;http://localhost:63225"
+    }
+  }
+}
