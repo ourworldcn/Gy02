@@ -3,6 +3,7 @@ using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using static Microsoft.Extensions.Caching.Memory.OwMemoryCacheBase;
@@ -35,9 +36,12 @@ namespace Microsoft.Extensions.Caching.Memory
         /// <value>默认值:3秒。</value>
         public TimeSpan DefaultLockTimeout { get; set; } = TimeSpan.FromSeconds(3);
 
-        public OwMemoryCacheOptions Value => this;
+        /// <summary>
+        /// Gets or sets the minimum length of time between successive scans for expired items.
+        /// </summary>
+        public TimeSpan ExpirationScanFrequency { get; set; } = TimeSpan.FromMinutes(1);
 
-        double _compactionPercentage;
+        double _compactionPercentage = 0.05;
         /// <summary>
         /// Gets or sets the amount to compact the cache by when the maximum size is exceeded.
         /// </summary>
@@ -46,7 +50,7 @@ namespace Microsoft.Extensions.Caching.Memory
             get => _compactionPercentage;
             set
             {
-                if (value < 0 || value > 1)
+                if (value is < 0 or > 1)
                 {
                     throw new ArgumentOutOfRangeException(nameof(value), value, $"{nameof(value)} must be between 0 and 1 inclusive.");
                 }
@@ -55,11 +59,20 @@ namespace Microsoft.Extensions.Caching.Memory
             }
         }
 
+        public OwMemoryCacheOptions Value => this;
+
     }
 
+    /// <summary>
+    /// 内存缓存的类。
+    /// 针对每个项操作都会对其键值加锁，对高并发而言，不应有多个线程试图访问同一个键下的项。这样可以避免锁的碰撞。对基本单线程操作而言，此类性能较低。
+    /// 此类公共成员（除嵌套类）可以多线程并发调用。
+    /// </summary>
     public class OwMemoryCache : IMemoryCache
     {
-
+        /// <summary>
+        /// 缓存项的配置信息类。
+        /// </summary>
         public class OwMemoryCacheEntry : ICacheEntry
         {
             /// <summary>
@@ -85,22 +98,43 @@ namespace Microsoft.Extensions.Caching.Memory
 
             public virtual object Value { get; set; }
 
+            /// <summary>
+            /// 未实装，不起作用。
+            /// </summary>
             public DateTimeOffset? AbsoluteExpiration { get; set; }
 
             public TimeSpan? AbsoluteExpirationRelativeToNow { get; set; }
 
             public TimeSpan? SlidingExpiration { get; set; }
 
+            /// <summary>
+            /// 未实装不起作用。
+            /// </summary>
             public IList<IChangeToken> ExpirationTokens { get; } = new List<IChangeToken>();
 
-            internal Lazy<List<PostEvictionCallbackRegistration>> _PostEvictionCallbacksLazyer = new Lazy<List<PostEvictionCallbackRegistration>>(true);
+            internal List<PostEvictionCallbackRegistration> _PostEvictionCallbacksLazyer;
             /// <summary>
             /// 所有的函数调用完毕才会解锁键对象。
             /// </summary>
-            public IList<PostEvictionCallbackRegistration> PostEvictionCallbacks => _PostEvictionCallbacksLazyer.Value;
+            [NotNull]
+            public IList<PostEvictionCallbackRegistration> PostEvictionCallbacks
+            {
+                get
+                {
+                    if (_PostEvictionCallbacksLazyer is null)
+                        Interlocked.CompareExchange(ref _PostEvictionCallbacksLazyer, new List<PostEvictionCallbackRegistration>(), null);
+                    return _PostEvictionCallbacksLazyer;
+                }
+            }
 
+            /// <summary>
+            /// 未实装，不起作用。
+            /// </summary>
             public CacheItemPriority Priority { get; set; }
 
+            /// <summary>
+            /// 未实装，不起作用。
+            /// </summary>
             public long? Size { get; set; }
 
             #region IDisposable接口相关
@@ -169,6 +203,11 @@ namespace Microsoft.Extensions.Caching.Memory
 
         ConcurrentDictionary<object, OwMemoryCacheEntry> _Items = new ConcurrentDictionary<object, OwMemoryCacheEntry>();
 
+        /// <summary>
+        /// 获取缓存内的所有内容。更改其中内容的结果未知。
+        /// </summary>
+        public IReadOnlyDictionary<object, OwMemoryCacheEntry> Items => _Items;
+
         OwMemoryCacheOptions _Options;
         /// <summary>
         /// 配置信息。
@@ -222,6 +261,7 @@ namespace Microsoft.Extensions.Caching.Memory
                 };
             if (_Items.TryGetValue(key, out var entry))
             {
+                entry.LastUseUtc = DateTime.UtcNow;
                 value = entry.Value;
                 return true;
             }
@@ -237,14 +277,11 @@ namespace Microsoft.Extensions.Caching.Memory
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        protected virtual ICacheEntry CreateEntryCore(object key)
-        {
-            return new OwMemoryCacheEntry(key, this);
-        }
+        protected virtual ICacheEntry CreateEntryCore(object key) => new OwMemoryCacheEntry(key, this);
 
         /// <summary>
         /// 以指定原因移除缓存项。
-        /// 此函数会调用<see cref="OwMemoryCacheEntry.BeforeEvictionCallbacks"/>所有回调，然后移除配置项,最后调用所有<see cref="OwMemoryCacheEntry.PostEvictionCallbacks"/>回调。
+        /// 此函数会移除配置项后调用所有<see cref="OwMemoryCacheEntry.PostEvictionCallbacks"/>回调。但回在回调完成后才对键值解锁键。
         /// 回调的异常均被忽略。
         /// 派生类可以重载此函数。非公有函数不会自动对键加锁，若需要调用者需要负责加/解锁。
         /// </summary>
@@ -256,7 +293,7 @@ namespace Microsoft.Extensions.Caching.Memory
             var result = _Items.TryRemove(entry.Key, out entry);
             try
             {
-                if (result && entry._PostEvictionCallbacksLazyer.IsValueCreated)
+                if (result && entry._PostEvictionCallbacksLazyer is not null)
                     entry.PostEvictionCallbacks.SafeForEach(c => c.EvictionCallback?.Invoke(entry.Key, entry.Value, reason, c.State));
             }
             catch (Exception)
@@ -357,8 +394,19 @@ namespace Microsoft.Extensions.Caching.Memory
         public void Compact()
         {
             ThrowIfDisposed();
+            var last = Volatile.Read(ref _CompactTick);
+            var now = DateTime.UtcNow;
+            if (now - new DateTime(last) < _Options.ExpirationScanFrequency)   //若最近已经压缩过
+                return;
+            if (Interlocked.CompareExchange(ref _CompactTick, now.Ticks, last) != last) //若已经被并发更改
+                return;
             Compact(Math.Max((long)(_Items.Count * _Options.CompactionPercentage), 1));
         }
+
+        /// <summary>
+        /// 最后一次压缩的时间的刻度。
+        /// </summary>
+        long _CompactTick = DateTime.UtcNow.Ticks;
 
         /// <summary>
         /// 压缩缓存。
@@ -366,8 +414,13 @@ namespace Microsoft.Extensions.Caching.Memory
         /// <param name="removalSizeTarget">最多驱逐多少项。</param>
         private void Compact(long removalSizeTarget)
         {
+            //避免冲入,在 Options.ExpirationScanFrequency 是0的时候可能重入，但这种设置不正确。
+            using var dwReenter = DisposeHelper.Create(Monitor.TryEnter, Monitor.Exit, _Items, TimeSpan.Zero);
+            if (dwReenter.IsEmpty)
+                return;
             long count = 0;
             var now = DateTime.UtcNow;
+
             foreach (var key in _Items.Keys)
             {
                 using var dw = DisposeHelper.Create(_Options.LockCallback, _Options.UnlockCallback, key, TimeSpan.Zero);
@@ -385,5 +438,31 @@ namespace Microsoft.Extensions.Caching.Memory
                     break;
             }
         }
+    }
+
+    /// <summary>
+    /// 封装<see cref="OwMemoryCache"/>类的一些方法。
+    /// </summary>
+    public static class OwMemoryCacheExtensions
+    {
+        /// <summary>
+        /// 锁定指定键对象，以备进行操作。
+        /// </summary>
+        /// <param name="cache"></param>
+        /// <param name="key">要锁定的键。</param>
+        /// <param name="timeout">允许的最大的超时时间。</param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public static bool TryEnter(this OwMemoryCache cache, object key, TimeSpan timeout) => cache.Options.LockCallback(key, timeout);
+
+        /// <summary>
+        /// 释放锁定的键。
+        /// </summary>
+        /// <param name="cache"></param>
+        /// <param name="key">要释放的键。</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public static void Exit(this OwMemoryCache cache, object key) => cache.Options.UnlockCallback(key);
+
+
     }
 }

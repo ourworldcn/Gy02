@@ -17,6 +17,7 @@ using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OwDbBase;
+using System.Buffers;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Reflection.Metadata;
@@ -137,8 +138,17 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             DateTime now = DateTime.UtcNow;
             TimeSpan? ts = null;
+            var ary = ArrayPool<object>.Shared.Rent(3);
+            ary[0] = 55;
+            ArrayPool<object>.Shared.Return(ary);
+            ary = ArrayPool<object>.Shared.Rent(3);
+            var span = ary.AsSpan(0, 3);
             try
             {
+                foreach (var item in span)
+                {
+                    var ss1 = item;
+                }
                 if (DateTime.UtcNow - now <= ts)
                     ;
                 var mng = _Services.GetService<TemplateManager>();

@@ -102,6 +102,48 @@ namespace OW.Game
         }
     }
 
+    public class DataObjectItemEntry
+    {
+
+        public object Key { get; set; }
+
+        /// <summary>
+        /// 需要保存时调用。
+        /// 在对键加锁的范围内调用。
+        /// 回调参数是要保存的对象，附加数据，返回true表示成功，否则是没有保存成功,若没有设置该回调，则说明无需保存，也就视同保存成功。
+        /// (value,state)
+        /// </summary>
+        [AllowNull]
+        public Func<object, object, bool> SaveCallback { get; set; }
+
+        /// <summary>
+        /// <see cref="SaveCallback"/>的用户参数。
+        /// </summary>
+        [AllowNull]
+        public object SaveCallbackState { get; set; }
+
+        //#region ICacheEntry接口及相关
+
+        //public OwMemoryCache.OwMemoryCacheEntry CacheEntry { get; set; }
+        //public object Value { get => ((ICacheEntry)CacheEntry).Value; set => ((ICacheEntry)CacheEntry).Value = value; }
+        //public DateTimeOffset? AbsoluteExpiration { get => ((ICacheEntry)CacheEntry).AbsoluteExpiration; set => ((ICacheEntry)CacheEntry).AbsoluteExpiration = value; }
+        //public TimeSpan? AbsoluteExpirationRelativeToNow { get => ((ICacheEntry)CacheEntry).AbsoluteExpirationRelativeToNow; set => ((ICacheEntry)CacheEntry).AbsoluteExpirationRelativeToNow = value; }
+        //public TimeSpan? SlidingExpiration { get => ((ICacheEntry)CacheEntry).SlidingExpiration; set => ((ICacheEntry)CacheEntry).SlidingExpiration = value; }
+
+        //public IList<IChangeToken> ExpirationTokens => ((ICacheEntry)CacheEntry).ExpirationTokens;
+
+        //public IList<PostEvictionCallbackRegistration> PostEvictionCallbacks => ((ICacheEntry)CacheEntry).PostEvictionCallbacks;
+
+        //public CacheItemPriority Priority { get => ((ICacheEntry)CacheEntry).Priority; set => ((ICacheEntry)CacheEntry).Priority = value; }
+        //public long? Size { get => ((ICacheEntry)CacheEntry).Size; set => ((ICacheEntry)CacheEntry).Size = value; }
+
+        //public void Dispose()
+        //{
+        //    ((IDisposable)CacheEntry).Dispose();
+        //}
+        //#endregion ICacheEntry接口及相关
+    }
+
     /// <summary>
     /// 数据对象的管理器，负责单例加载，保存并自动驱逐。
     /// </summary>
@@ -109,12 +151,10 @@ namespace OW.Game
     {
         #region 构造函数
 
-        public DataObjectManager()
-        {
-            Options = new DataObjectManagerOptions();
-            Initialize();
-        }
-
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="options"></param>
         public DataObjectManager(IOptions<DataObjectManagerOptions> options)
         {
             Options = options.Value;
@@ -131,9 +171,17 @@ namespace OW.Game
 
         #endregion 构造函数
 
+        OwMemoryCache _Cache = new OwMemoryCache(new OwMemoryCacheOptions());
+        /// <summary>
+        /// 
+        /// </summary>
+        internal OwMemoryCache Cache => _Cache;
+
+        ConcurrentDictionary<object, DataObjectItemEntry> _Items = new ConcurrentDictionary<object, DataObjectItemEntry>();
+
         public void TimerCallback(object state)
         {
-            _Datas.Compact();
+            _Cache.Compact();
             Save();
         }
 
@@ -142,8 +190,6 @@ namespace OW.Game
         DataObjectManagerOptions _Options;
 
         public DataObjectManagerOptions Options { get => _Options; set => _Options = value; }
-
-        OwMemoryCacheBase _Datas;
 
         HashSet<string> _Dirty = new HashSet<string>();
 
@@ -161,11 +207,10 @@ namespace OW.Game
             for (int i = keys.Count - 1; i >= 0; i--)
             {
                 var key = keys[i];
-                using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, key, TimeSpan.Zero);
+                using var dw = DisposeHelper.Create(_Cache.TryEnter, _Cache.Exit, key, TimeSpan.Zero);
                 if (dw.IsEmpty)
                     continue;
-                var entry = _Datas.GetCacheEntry(key);
-                if (entry is null)  //若键下的数据已经销毁
+                if (!_Cache.Items.TryGetValue(key, out var entry))  //若键下的数据已经销毁
                 {
                     keys.RemoveAt(i);
                     continue;
@@ -188,6 +233,43 @@ namespace OW.Game
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="key"></param>
+        /// <param name="setter">(键,用户对象)返回值。</param>
+        /// <returns></returns>
+        public T GetOrLoad<T>(object key, Func<DataObjectItemEntry, OwMemoryCache.OwMemoryCacheEntry, object> setter) where T : class
+        {
+            T result;
+            using var dw = DisposeHelper.Create(_Cache.TryEnter, _Cache.Exit, key, _Cache.Options.DefaultLockTimeout);
+            if (dw.IsEmpty)
+            {
+                result = default;
+                return result;
+            }
+            if (_Cache.Items.TryGetValue(key, out var val)) //若找到了该键的对象
+                result = (T)val.Value;
+            else //若需要加载
+            {
+                var itemEntry = new DataObjectItemEntry()
+                {
+                    Key = key,
+                };
+                var entry = _Cache.CreateEntry(key);
+                entry.Value = setter(itemEntry, (OwMemoryCache.OwMemoryCacheEntry)entry);
+                result = entry.Value as T;
+                if (entry.Value != null)
+                {
+                    entry.Dispose();
+                    _Items.TryAdd(key, itemEntry);
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// 获取或加载对象。
         /// </summary>
         /// <param name="key"></param>
@@ -199,11 +281,10 @@ namespace OW.Game
             using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, innerKey, Options.DefaultLockTimeout);
             if (dw.IsEmpty)
                 return null;
-            var entry = _Datas.GetCacheEntry(innerKey);
             DataObjectOptions options;
-            if (entry is null)
+            if (!_Cache.Items.TryGetValue(innerKey, out var entry))
             {
-                using var entity = (OwMemoryCacheBase.OwMemoryCacheBaseEntry)_Datas.CreateEntry(innerKey);
+                using var entity = (OwMemoryCacheBase.OwMemoryCacheBaseEntry)_Cache.CreateEntry(innerKey);
                 options = new DataObjectOptions()
                 {
                     Key = (string)innerKey,
@@ -218,7 +299,7 @@ namespace OW.Game
                 if (options.LoadCallback != null)
                     entity.Value = options.LoadCallback(innerKey as string, options.LoadCallbackState);
             }
-            entry = _Datas.GetCacheEntry(innerKey);
+            _Cache.Items.TryGetValue(innerKey, out entry);
             Debug.Assert(null != entry);
             return entry.Value;
         }
@@ -233,7 +314,7 @@ namespace OW.Game
             using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, key, Options.DefaultLockTimeout);
             if (dw.IsEmpty)
                 return null;
-            return _Datas.TryGetValue(key, out var result) ? result : default;
+            return _Cache.TryGetValue(key, out var result) ? result : default;
         }
 
         /// <summary>

@@ -134,7 +134,7 @@ namespace OW.Game.Store
     /// <summary>
     /// 可快速搜索的对象。
     /// </summary>
-    public abstract class DbQuickFindWithRuntimeDictionaryBase: DbQuickFindBase
+    public abstract class DbQuickFindWithRuntimeDictionaryBase : DbQuickFindBase
     {
         /// <summary>
         /// 构造函数。
@@ -146,7 +146,7 @@ namespace OW.Game.Store
 
         public DbQuickFindWithRuntimeDictionaryBase(Guid id) : base(id)
         {
-        }   
+        }
 
         [AllowNull]
         private ConcurrentDictionary<string, object> _RuntimeProperties;
