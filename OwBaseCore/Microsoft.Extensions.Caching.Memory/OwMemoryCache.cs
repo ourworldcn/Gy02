@@ -273,7 +273,9 @@ namespace Microsoft.Extensions.Caching.Memory
         }
 
         /// <summary>
-        /// 
+        /// 调用此函数创建内部使用的配置项对象。
+        /// 默认实现劲通过<see cref="OwMemoryCacheEntry(object, OwMemoryCache)"/>创建一个对象并返回。
+        /// 非公有函数不会自动对键加锁，若需要调用者需要负责加/解锁。
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
@@ -283,7 +285,8 @@ namespace Microsoft.Extensions.Caching.Memory
         /// 以指定原因移除缓存项。
         /// 此函数会移除配置项后调用所有<see cref="OwMemoryCacheEntry.PostEvictionCallbacks"/>回调。但回在回调完成后才对键值解锁键。
         /// 回调的异常均被忽略。
-        /// 派生类可以重载此函数。非公有函数不会自动对键加锁，若需要调用者需要负责加/解锁。
+        /// 派生类可以重载此函数。
+        /// 非公有函数不会自动对键加锁，若需要调用者需要负责加/解锁。
         /// </summary>
         /// <param name="entry"></param>
         /// <param name="reason"></param>
@@ -381,11 +384,12 @@ namespace Microsoft.Extensions.Caching.Memory
         #endregion IMemoryCache接口及相关
 
         /// <summary>
-        /// 某一项加入缓存时被调用。该实现立即返回。
+        /// 某一项加入缓存时被调用。
         /// 派生类可以重载此函数。非公有函数不会自动对键加锁，若需要调用者需要负责加/解锁。
         /// </summary>
         /// <param name="entry"></param>
-        protected virtual void AddItemCore(OwMemoryCacheEntry entry) { }
+        /// <returns></returns>
+        protected internal virtual bool AddItemCore(OwMemoryCacheEntry entry) => _Items.TryAdd(entry.Key, entry);
 
         /// <summary>
         /// 压缩缓存数据。

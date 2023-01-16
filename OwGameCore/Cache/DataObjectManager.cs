@@ -1,5 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using OW.Game.Store;
@@ -93,17 +96,15 @@ namespace OW.Game
         /// </summary>
         public Func<object, string> GetKeyCallback { get; set; } = c => ((GuidKeyObjectBase)c).IdString;
 
-        public object Value
-        {
-            get
-            {
-                return default;
-            }
-        }
     }
 
     public class DataObjectItemEntry
     {
+
+        public DataObjectItemEntry(object key)
+        {
+            Key = key;
+        }
 
         public object Key { get; set; }
 
@@ -155,9 +156,10 @@ namespace OW.Game
         /// 构造函数。
         /// </summary>
         /// <param name="options"></param>
-        public DataObjectManager(IOptions<DataObjectManagerOptions> options)
+        public DataObjectManager(IOptions<DataObjectManagerOptions> options, IServiceProvider service)
         {
             Options = options.Value;
+            _Service = service;
             Initialize();
         }
 
@@ -173,135 +175,76 @@ namespace OW.Game
 
         OwMemoryCache _Cache = new OwMemoryCache(new OwMemoryCacheOptions());
         /// <summary>
-        /// 
+        /// 缓存对象。
         /// </summary>
         internal OwMemoryCache Cache => _Cache;
 
         ConcurrentDictionary<object, DataObjectItemEntry> _Items = new ConcurrentDictionary<object, DataObjectItemEntry>();
-
-        public void TimerCallback(object state)
-        {
-            _Cache.Compact();
-            Save();
-        }
-
-        Timer _Timer;
+        /// <summary>
+        /// 配置项。
+        /// </summary>
+        public IReadOnlyDictionary<object, DataObjectItemEntry> Items => _Items;
 
         DataObjectManagerOptions _Options;
 
         public DataObjectManagerOptions Options { get => _Options; set => _Options = value; }
 
-        HashSet<string> _Dirty = new HashSet<string>();
-
         /// <summary>
-        /// 对标记为脏的数据进行保存。
+        /// 存储服务容器。
         /// </summary>
-        protected void Save()
-        {
-            List<string> keys = new List<string>();
-            lock (_Dirty)
-            {
-                OwHelper.Copy(_Dirty, keys);
-                _Dirty.Clear();
-            }
-            for (int i = keys.Count - 1; i >= 0; i--)
-            {
-                var key = keys[i];
-                using var dw = DisposeHelper.Create(_Cache.TryEnter, _Cache.Exit, key, TimeSpan.Zero);
-                if (dw.IsEmpty)
-                    continue;
-                if (!_Cache.Items.TryGetValue(key, out var entry))  //若键下的数据已经销毁
-                {
-                    keys.RemoveAt(i);
-                    continue;
-                }
-                try
-                {
-                    var option = (DataObjectOptions)entry.State;
-                    if (null != option.SaveCallback && !(bool)option.SaveCallback?.Invoke(entry.Value, option.SaveCallbackState))
-                        continue;
-                    keys.RemoveAt(i);
-                }
-                catch (Exception)
-                {
-                }
-            }
-            //放入下次再保存
-            if (keys.Count > 0)
-                lock (_Dirty)
-                    OwHelper.Copy(keys, _Dirty);
-        }
+        private IServiceProvider _Service;
+
 
         /// <summary>
-        /// 
+        /// 存储优先要从要存储的对象的键。仅使用键来存储。
+        /// </summary>
+        HashSet<object> _Dirty = new HashSet<object>();
+
+        /// <summary>
+        /// 锁定指定键对象，以备进行操作。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
+        public bool TryEnter(object key, TimeSpan timeout) => _Cache.TryEnter(key, timeout);
+
+        /// <summary>
+        /// 释放锁定的键。
+        /// </summary>
+        /// <param name="key"></param>
+        public void Exit(object key) => _Cache.Exit(key);
+
+        /// <summary>
+        /// 返回缓存对象或加载后返回。只有在加载过程中才会锁定键且在返回之前会解锁，如果需要锁定，调用者可以提前锁定键。
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="key"></param>
-        /// <param name="setter">(键,用户对象)返回值。</param>
+        /// <param name="setter">如果指定键不在管理器内，则通过此回调生成对象。</param>
         /// <returns></returns>
         public T GetOrLoad<T>(object key, Func<DataObjectItemEntry, OwMemoryCache.OwMemoryCacheEntry, object> setter) where T : class
         {
+            if (_Cache.Items.TryGetValue(key, out var val)) //若找到了该键的对象
+                return (T)val.Value;
             T result;
+
             using var dw = DisposeHelper.Create(_Cache.TryEnter, _Cache.Exit, key, _Cache.Options.DefaultLockTimeout);
-            if (dw.IsEmpty)
+            if (dw.IsEmpty) //若无法锁定键值
             {
                 result = default;
                 return result;
             }
-            if (_Cache.Items.TryGetValue(key, out var val)) //若找到了该键的对象
-                result = (T)val.Value;
-            else //若需要加载
+            var itemEntry = new DataObjectItemEntry(key)
             {
-                var itemEntry = new DataObjectItemEntry()
-                {
-                    Key = key,
-                };
-                var entry = _Cache.CreateEntry(key);
-                entry.Value = setter(itemEntry, (OwMemoryCache.OwMemoryCacheEntry)entry);
-                result = entry.Value as T;
-                if (entry.Value != null)
-                {
-                    entry.Dispose();
-                    _Items.TryAdd(key, itemEntry);
-                }
+            };
+            var entry = _Cache.CreateEntry(key);
+            entry.Value = setter(itemEntry, (OwMemoryCache.OwMemoryCacheEntry)entry);
+            result = entry.Value as T;
+            if (entry.Value != null)
+            {
+                entry.Dispose();
+                _Items.TryAdd(key, itemEntry);
             }
-
             return result;
-        }
-
-        /// <summary>
-        /// 获取或加载对象。
-        /// </summary>
-        /// <param name="key"></param>
-        /// <param name="loader"></param>
-        /// <returns></returns>
-        public object GetOrLoad(string key, Action<DataObjectOptions> loader)
-        {
-            var innerKey = SingletonLocker.Intern(key);
-            using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, innerKey, Options.DefaultLockTimeout);
-            if (dw.IsEmpty)
-                return null;
-            DataObjectOptions options;
-            if (!_Cache.Items.TryGetValue(innerKey, out var entry))
-            {
-                using var entity = (OwMemoryCacheBase.OwMemoryCacheBaseEntry)_Cache.CreateEntry(innerKey);
-                options = new DataObjectOptions()
-                {
-                    Key = (string)innerKey,
-                };
-                entity.State = options;
-                loader(options);
-                entity.SetSlidingExpiration(_Options.DefaultCachingTimeout);
-                entity.RegisterPostEvictionCallback((object key, object value, EvictionReason reason, object state) =>
-                {
-                    options.LeaveCallback?.Invoke(value, state);
-                });
-                if (options.LoadCallback != null)
-                    entity.Value = options.LoadCallback(innerKey as string, options.LoadCallbackState);
-            }
-            _Cache.Items.TryGetValue(innerKey, out entry);
-            Debug.Assert(null != entry);
-            return entry.Value;
         }
 
         /// <summary>
@@ -318,17 +261,134 @@ namespace OW.Game
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <param name="initializer"></param>
+        /// <returns></returns>
+        public bool TryAdd(object key, object value, Action<DataObjectItemEntry, OwMemoryCache.OwMemoryCacheEntry> initializer)
+        {
+            using var dw = DisposeHelper.Create(TryEnter, Exit, key, _Options.DefaultLockTimeout);
+            if (dw.IsEmpty)  //若无法锁定键
+                return false;
+            if (_Cache.Items.ContainsKey(key))   //若键已经存在
+                return false;
+            var itemEntry = new DataObjectItemEntry(key)
+            {
+            };
+            using (var entry = _Cache.CreateEntry(key))
+            {
+                entry.Value = value;
+                initializer(itemEntry, (OwMemoryCache.OwMemoryCacheEntry)entry);
+            }
+            return _Items.TryAdd(key, itemEntry);
+        }
+
+        /// <summary>
+        /// 移除指定项，自动调用保存。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        protected virtual bool TryRemoveCore(object key, out object result)
+        {
+            if (!_Items.Remove(key, out var item))
+            {
+                result = default;
+                return false;
+            }
+            if (!_Cache.Items.TryGetValue(key, out var entry))
+            {
+                result = default;
+                return false;
+            }
+            //item.SaveCallback?.Invoke(entry.Value, item.SaveCallbackState);
+            result = entry.Value;
+            _Cache.Remove(key);
+            return true;
+        }
+
+        /// <summary>
+        /// 移除项。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public bool TryRemove(object key)
+        {
+            using var dw = DisposeHelper.Create(TryEnter, Exit, key, _Options.DefaultLockTimeout);
+            if (dw.IsEmpty)  //若无法锁定键
+                return false;
+            if (!_Cache.Items.ContainsKey(key))   //若键已经不存在
+                return false;
+            return TryRemoveCore(key, out var result);
+        }
+
+        /// <summary>
         /// 指出对象已经更改，需要保存。
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public bool SetDirty(string key)
+        public bool SetDirty(object key)
         {
             lock (_Dirty)
                 return _Dirty.Add(key);
         }
 
         #region 后台工作相关
+
+        /// <summary>
+        /// 定时器。
+        /// </summary>
+        Timer _Timer;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="state"></param>
+        public void TimerCallback(object state)
+        {
+            _Cache.Compact();
+            Save();
+        }
+
+        /// <summary>
+        /// 对标记为脏的数据进行保存。
+        /// </summary>
+        protected void Save()
+        {
+            List<object> keys = AutoClearPool<List<object>>.Shared.Get();
+            using var dwKeys = DisposeHelper.Create(c => AutoClearPool<List<object>>.Shared.Return(c), keys);
+            lock (_Dirty)
+            {
+                OwHelper.Copy(_Dirty, keys);
+                _Dirty.Clear();
+            }
+            for (int i = keys.Count - 1; i >= 0; i--)   //逆序遍历，略微提高性能
+            {
+                var key = keys[i];
+                using var dw = DisposeHelper.Create(TryEnter, Exit, key, TimeSpan.Zero);
+                if (dw.IsEmpty)
+                    continue;
+                if (!_Items.TryGetValue(key, out var item) || !_Cache.Items.TryGetValue(key, out var entry))  //若键下的数据已经销毁
+                {
+                    keys.RemoveAt(i);
+                    continue;
+                }
+                try
+                {
+                    if (item.SaveCallback?.Invoke(entry.Value, item.SaveCallbackState) ?? true)  //若正常存储
+                        keys.RemoveAt(i);
+                }
+                catch (Exception)
+                {
+                }
+            }
+            //放入下次再保存
+            if (keys.Count > 0)
+                lock (_Dirty)
+                    OwHelper.Copy(keys, _Dirty);
+        }
 
         #endregion 后台工作相关
 
@@ -351,19 +411,6 @@ namespace OW.Game
 
     public static class DataObjectManagerExtensions
     {
-        public static DataObjectManager GetOrLoad<T>(this DataObjectManager mng, string key, Func<DbContext> dbCreator)
-        {
-            mng.GetOrLoad(key, options =>
-            {
-                var db = dbCreator();
-                options.SaveCallbackState = db;
-                options.SaveCallback = (obj, state) => { ((DbContext)state).SaveChanges(); return true; };
-                options.LeaveCallbackState = db;
-
-            });
-            return mng;
-        }
-
         /// <summary>
         /// 设置加载回调和参数。
         /// </summary>
