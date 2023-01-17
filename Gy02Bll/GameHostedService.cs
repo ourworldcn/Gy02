@@ -78,7 +78,8 @@ namespace Gy02Bll
             using var dwSb = DisposeHelper.Create(c => AutoClearPool<StringBuilder>.Shared.Return(c), sqlSb);
             #region 设置sql server使用内存，避免sql server 贪婪使用内存导致内存过大
 
-            var db = svc.GetService<GY02UserContext>();
+            var fact = _Services.GetService<IDbContextFactory<GY02UserContext>>();
+            using var db = fact.CreateDbContext();
             sqlSb.AppendLine(@$"EXEC sys.sp_configure N'show advanced options', N'1'  RECONFIGURE WITH OVERRIDE;" +
                 "EXEC sys.sp_configure N'max server memory (MB)', N'4096';" +
                 "RECONFIGURE WITH OVERRIDE;" +
@@ -141,8 +142,8 @@ namespace Gy02Bll
             var ary = ArrayPool<object>.Shared.Rent(3);
             ary[0] = 55;
             ArrayPool<object>.Shared.Return(ary);
-            ary = ArrayPool<object>.Shared.Rent(3);
-            var span = ary.AsSpan(0, 3);
+            using var dw = DisposeHelper.CreateSpan<object>(3, out var span, true);
+
             try
             {
                 foreach (var item in span)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.ObjectPool;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -205,6 +206,25 @@ namespace System
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static DisposeHelper<T> Empty<T>() =>
             new DisposeHelper<T>(null, default);
+
+        /// <summary>
+        /// 使用<see cref="ArrayPool{T}.Rent(int)"/>创建一个数组，且返回其<see cref="Span{T}"/>的形态。且在释放返回值时自动调用<see cref="ArrayPool{T}.Return(T[], bool)"/>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="count"></param>
+        /// <param name="result">此Span正好是<paramref name="count"/>指定的大小。</param>
+        /// <param name="clear">是否将返回的空间自动用零初始化的。默认值false不进行清0操作。</param>
+        /// <returns>用using语句可以自动将数组返回到<see cref="ArrayPool{T}"/>中。</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public static DisposeHelper<T[]> CreateSpan<T>(int count, out Span<T> result, bool clear = false)
+        {
+            var ary = ArrayPool<T>.Shared.Rent(count);  //此方法返回的数组可能不是零初始化的。
+            if (clear)  //若需清零
+                Array.Clear(ary, 0, count);
+            result = ary.AsSpan(0, count);
+            return new DisposeHelper<T[]>(c => ArrayPool<T>.Shared.Return(c), ary);
+        }
+
     }
 
 }

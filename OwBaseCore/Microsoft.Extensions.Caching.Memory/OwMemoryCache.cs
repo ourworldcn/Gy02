@@ -239,6 +239,12 @@ namespace Microsoft.Extensions.Caching.Memory
             return CreateEntryCore(key);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="KeyNotFoundException"></exception>
         public void Remove(object key)
         {
             using var dw = DisposeHelper.Create(_Options.LockCallback, _Options.UnlockCallback, key, _Options.DefaultLockTimeout);
@@ -249,6 +255,14 @@ namespace Microsoft.Extensions.Caching.Memory
             RemoveCore(entry, EvictionReason.Removed);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        /// <exception cref="TimeoutException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public bool TryGetValue(object key, out object value)
         {
             using var dw = DisposeHelper.Create(_Options.LockCallback, _Options.UnlockCallback, key, _Options.DefaultLockTimeout);

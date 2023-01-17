@@ -134,38 +134,4 @@ namespace OwDbBase
 
     }
 
-    /// <summary>
-    /// 数据对象管理器。
-    /// 缓存数据对象。
-    /// 可以设置尽量即时保存。
-    /// 在驱逐时保存。
-    /// </summary>
-    [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class DataObjectManager
-    {
-        public DataObjectManager(DataObjectManagerOptions options)
-        {
-            Options = options;
-        }
-
-        public DataObjectManager()
-        {
-
-        }
-
-        public DataObjectManagerOptions Options { get; set; }
-
-        /// <summary>
-        /// 获取或加载数据对象。
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="key"></param>
-        /// <param name="result"></param>
-        /// <returns><see cref="DisposeHelper{T}.IsEmpty"/>为true表示没有找到且不能加载或锁定键值时超时，否则得到了指定键的对象。</returns>
-        public DisposeHelper<T> GetOrLoad<T>(object key, out T result) where T : class
-        {
-            result = default;
-            return default;
-        }
-    }
 }

@@ -45,7 +45,7 @@ namespace Gy02Bll.Managers
                 dic[item.Key] = item.Value?[0] ?? decimal.Zero;
             }
             result.JsonObjectString = JsonSerializer.Serialize(dic);
-            
+
             //初始化子对象
             var gtm = _Service.GetRequiredService<TemplateManager>();
             foreach (var item in template.CreateInfo.ChildrenTIds)
