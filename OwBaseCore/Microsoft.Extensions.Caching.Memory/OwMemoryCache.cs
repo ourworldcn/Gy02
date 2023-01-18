@@ -224,6 +224,7 @@ namespace Microsoft.Extensions.Caching.Memory
             _Options = options;
         }
 
+        MemoryCache _MemoryCache;
         #region IMemoryCache接口及相关
 
         /// <summary>
