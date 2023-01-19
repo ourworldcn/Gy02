@@ -6,10 +6,12 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using static Microsoft.Extensions.Caching.Memory.OwMemoryCacheBase;
 
 namespace Microsoft.Extensions.Caching.Memory
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class OwMemoryCacheOptions : IOptions<OwMemoryCacheOptions>
     {
         /// <summary>
@@ -194,11 +196,6 @@ namespace Microsoft.Extensions.Caching.Memory
                 return false;
             }
 
-            /// <summary>
-            /// 获取或设置用户的附加配置数据。
-            /// </summary>
-            public object State { get; set; }
-
         }
 
         ConcurrentDictionary<object, OwMemoryCacheEntry> _Items = new ConcurrentDictionary<object, OwMemoryCacheEntry>();
@@ -224,7 +221,6 @@ namespace Microsoft.Extensions.Caching.Memory
             _Options = options;
         }
 
-        MemoryCache _MemoryCache;
         #region IMemoryCache接口及相关
 
         /// <summary>
@@ -407,6 +403,24 @@ namespace Microsoft.Extensions.Caching.Memory
         protected internal virtual bool AddItemCore(OwMemoryCacheEntry entry) => _Items.TryAdd(entry.Key, entry);
 
         /// <summary>
+        /// 获取设置项数据，需要首先锁定键，解锁键将导致配置生效。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>配置数据，如果不存在指定键，则返回null。</returns>
+        /// <exception cref="InvalidOperationException">未锁定键，尽在调试状态下会检测。</exception>
+        public OwMemoryCacheEntry GetEntry(object key)
+        {
+            ThrowIfDisposed();
+#if DEBUG
+            if (!Options.IsEnteredCallback(key))
+                throw new InvalidOperationException("要首先锁定键才能获取设置项");
+#endif
+            return _Items.GetValueOrDefault(key);
+        }
+
+        #region 压缩及相关
+
+        /// <summary>
         /// 压缩缓存数据。
         /// </summary>
         /// <param name="percentage">回收比例。</param>
@@ -446,42 +460,60 @@ namespace Microsoft.Extensions.Caching.Memory
                 if (dw.IsEmpty || !_Items.TryGetValue(key, out var entry))  //若未能锁定
                     continue;
                 EvictionReason reason;
-                if (now - entry.LastUseUtc >= entry.SlidingExpiration.GetValueOrDefault(TimeSpan.MaxValue))    //若相对超期
-                    reason = EvictionReason.Expired;
-                else if (now >= entry.AbsoluteExpiration.GetValueOrDefault(DateTime.MaxValue))   //若绝对超期
+                if (IsExpired(entry, now))    //若超期
                     reason = EvictionReason.Expired;
                 else //若无需驱逐
                     continue;
-                RemoveCore(entry, reason);
+                try
+                {
+                    RemoveCore(entry, reason);
+                }
+                catch (Exception)
+                {
+                }
                 if (++count >= removalSizeTarget)   //若已经完成任务
                     break;
             }
         }
-    }
 
-    /// <summary>
-    /// 封装<see cref="OwMemoryCache"/>类的一些方法。
-    /// </summary>
-    public static class OwMemoryCacheExtensions
-    {
+        /// <summary>
+        /// 是否超期。
+        /// </summary>
+        /// <param name="entry"></param>
+        /// <param name="now"></param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        bool IsExpired(OwMemoryCacheEntry entry, DateTime now)
+        {
+            if (now - entry.LastUseUtc >= entry.SlidingExpiration.GetValueOrDefault(TimeSpan.MaxValue))    //若相对超期
+                return true;
+            else if (now >= entry.AbsoluteExpiration.GetValueOrDefault(DateTime.MaxValue))   //若绝对超期
+                return true;
+            else
+                return false;
+        }
+
+        #endregion 压缩及相关
+
+        #region 锁定及相关
+
         /// <summary>
         /// 锁定指定键对象，以备进行操作。
         /// </summary>
-        /// <param name="cache"></param>
         /// <param name="key">要锁定的键。</param>
         /// <param name="timeout">允许的最大的超时时间。</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static bool TryEnter(this OwMemoryCache cache, object key, TimeSpan timeout) => cache.Options.LockCallback(key, timeout);
+        public bool TryEnter(object key, TimeSpan timeout) => Options.LockCallback(key, timeout);
 
         /// <summary>
         /// 释放锁定的键。
         /// </summary>
-        /// <param name="cache"></param>
         /// <param name="key">要释放的键。</param>
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static void Exit(this OwMemoryCache cache, object key) => cache.Options.UnlockCallback(key);
+        public void Exit(object key) => Options.UnlockCallback(key);
 
-
+        #endregion 锁定及相关
     }
+
 }

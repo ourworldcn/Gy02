@@ -146,12 +146,6 @@ namespace Gy02Bll
 
             try
             {
-                foreach (var item in span)
-                {
-                    var ss1 = item;
-                }
-                if (DateTime.UtcNow - now <= ts)
-                    ;
                 var mng = _Services.GetService<TemplateManager>();
                 mng.GetTemplateFromId(Guid.NewGuid());
                 var str = JsonSerializer.Serialize(new Gy02TemplateJO { });
