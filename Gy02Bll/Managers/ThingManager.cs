@@ -95,7 +95,7 @@ namespace OW.Game.Managers
         /// <param name="loadFunc">加载数据对象的过滤函数，必须返回唯一的对象。</param>
         /// <param name="initializer">初始换加载后的缓存配置数据。</param>
         /// <returns></returns>
-        public TResult GetOrLoadThing<TDbContext, TResult>(object key, Func<TResult, bool> loadFunc, Action<OwMemoryCache.OwMemoryCacheEntry> initializer)
+        public TResult GetOrLoadThing<TDbContext, TResult>(object key, Func<TResult, bool> loadFunc, Action<OwMemoryCache.OwMemoryCacheEntry> initializer, TDbContext dbContext = null)
             where TResult : DbQuickFindBase, new() where TDbContext : DbContext
         {
             using var dwKey = DisposeHelper.Create(Cache.TryEnter, Cache.Exit, key, Cache.Options.DefaultLockTimeout);
@@ -142,6 +142,14 @@ namespace OW.Game.Managers
             db.SaveChanges();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TDbContext"></typeparam>
+        /// <typeparam name="TResult"></typeparam>
+        /// <param name="key"></param>
+        /// <param name="initializer"></param>
+        /// <returns></returns>
         public TResult GetOrCreate<TDbContext, TResult>(object key, Func<OwMemoryCache.OwMemoryCacheEntry, TResult> initializer)
             where TResult : DbQuickFindBase, new() where TDbContext : DbContext
         {

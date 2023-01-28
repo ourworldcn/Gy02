@@ -28,8 +28,6 @@ namespace Gy02Bll
 {
     public class GameHostedService : BackgroundService
     {
-
-
         public GameHostedService(IServiceProvider services)
         {
             _Services = services;
@@ -136,9 +134,12 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
+            MemoryPool<byte> mp= MemoryPool<byte>.Shared;
+            var mo = mp.Rent(4);
+            var memory = mo.Memory;
+            mo.Dispose();
             var sw = Stopwatch.StartNew();
             DateTime now = DateTime.UtcNow;
-            TimeSpan? ts = null;
             var ary = ArrayPool<object>.Shared.Rent(3);
             ary[0] = 55;
             ArrayPool<object>.Shared.Return(ary);
