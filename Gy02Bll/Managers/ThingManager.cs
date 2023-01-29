@@ -57,6 +57,14 @@ namespace OW.Game.Managers
         }
         #endregion 构造函数相关
 
+        /// <summary>
+        /// 获取指定键的缓存配置项。
+        /// 应首先锁定键再获取，否则行为未知。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        internal OwMemoryCache.OwMemoryCacheEntry GetEntry(object key) => Cache.GetEntry(key);
+
         Timer _Timer;
 
         /// <summary>
@@ -95,7 +103,7 @@ namespace OW.Game.Managers
         /// <param name="loadFunc">加载数据对象的过滤函数，必须返回唯一的对象。</param>
         /// <param name="initializer">初始换加载后的缓存配置数据。</param>
         /// <returns></returns>
-        public TResult GetOrLoadThing<TDbContext, TResult>(object key, Func<TResult, bool> loadFunc, Action<OwMemoryCache.OwMemoryCacheEntry> initializer, TDbContext dbContext = null)
+        public TResult GetOrLoadThing<TDbContext, TResult>(object key, Func<TResult, bool> loadFunc, Action<OwMemoryCache.OwMemoryCacheEntry> initializer, ref TDbContext dbContext)
             where TResult : DbQuickFindBase, new() where TDbContext : DbContext
         {
             using var dwKey = DisposeHelper.Create(Cache.TryEnter, Cache.Exit, key, Cache.Options.DefaultLockTimeout);

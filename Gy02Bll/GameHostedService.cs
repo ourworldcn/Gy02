@@ -134,17 +134,11 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-            MemoryPool<byte> mp= MemoryPool<byte>.Shared;
-            var mo = mp.Rent(4);
-            var memory = mo.Memory;
-            mo.Dispose();
             var sw = Stopwatch.StartNew();
             DateTime now = DateTime.UtcNow;
             var ary = ArrayPool<object>.Shared.Rent(3);
             ary[0] = 55;
             ArrayPool<object>.Shared.Return(ary);
-            using var dw = DisposeHelper.CreateSpan<object>(3, out var span, true);
-
             try
             {
                 var mng = _Services.GetService<TemplateManager>();
