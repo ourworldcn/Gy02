@@ -20,6 +20,8 @@ using OwDbBase;
 using System.Buffers;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Sockets;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
@@ -134,6 +136,19 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
+            Task.Run(() =>
+            {
+                SocketAsyncEventArgs e = new SocketAsyncEventArgs() { };
+                e.SetBuffer(MemoryPool<byte>.Shared.Rent(2048).Memory);
+                e.SocketFlags = SocketFlags.Partial;
+                e.Completed += E_Completed;
+                Socket udp = new Socket(SocketType.Dgram, ProtocolType.Udp);
+                var b = udp.ReceiveAsync(e);
+            });
+            Thread.CurrentThread.Join(1);
+            UdpClient udp = new UdpClient(0);
+            udp.Send(new byte[] { 11, 22 }, new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 104 }), 21080));
+
             var sw = Stopwatch.StartNew();
             DateTime now = DateTime.UtcNow;
             var ary = ArrayPool<object>.Shared.Rent(3);
@@ -156,6 +171,11 @@ namespace Gy02Bll
                 sw.Stop();
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
+        }
+
+        private void E_Completed(object sender, SocketAsyncEventArgs e)
+        {
+
         }
 
         /// <summary>

@@ -9,6 +9,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,8 +26,30 @@ namespace OW.Game.Managers
     }
 
     /// <summary>
+    /// 内部设置项。
+    /// </summary>
+    public class ThingManagerEntry
+    {
+        public ThingManagerEntry()
+        {
+
+        }
+
+        /// <summary>
+        /// 用于存储的数据库上下文。
+        /// </summary>
+        public DbContext Context { get; set; }
+
+        /// <summary>
+        /// 使用的缓存对象内部的配置键。
+        /// </summary>
+        public OwMemoryCache.OwMemoryCacheEntry Entry { get; set; }
+    }
+
+    /// <summary>
     /// <see cref="VirtualThing"/> 和 <see cref="OrphanedThing"/>类的管理服务类。
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
     public class ThingManager
     {
         #region 构造函数相关
@@ -51,11 +74,20 @@ namespace OW.Game.Managers
         {
         }
 
+        /// <summary>
+        /// 初始化函数。
+        /// </summary>
         void Initializer()
         {
             _Timer = new Timer(TimerFunc, null, Options.ExpirationScanFrequency, Options.ExpirationScanFrequency);
         }
+
         #endregion 构造函数相关
+
+        /// <summary>
+        /// 键是缓存对象的键，值配置项。
+        /// </summary>
+        ConcurrentDictionary<object, ThingManagerEntry> _Entries = new ConcurrentDictionary<object, ThingManagerEntry>();
 
         /// <summary>
         /// 获取指定键的缓存配置项。
@@ -102,9 +134,10 @@ namespace OW.Game.Managers
         /// <param name="key">缓存的键。</param>
         /// <param name="loadFunc">加载数据对象的过滤函数，必须返回唯一的对象。</param>
         /// <param name="initializer">初始换加载后的缓存配置数据。</param>
+        /// <param name="dbContext">设置为上下文则使用此上下文加载，若是null则使用IDbContextFactory<TDbContext>服务创建一个并返回。</param>
         /// <returns></returns>
-        public TResult GetOrLoadThing<TDbContext, TResult>(object key, Func<TResult, bool> loadFunc, Action<OwMemoryCache.OwMemoryCacheEntry> initializer, ref TDbContext dbContext)
-            where TResult : DbQuickFindBase, new() where TDbContext : DbContext
+        public TResult GetOrLoadThing<TDbContext, TResult>(object key, Func<TResult, bool> loadFunc, Action<ThingManagerEntry> initializer, ref TDbContext dbContext)
+             where TResult : class where TDbContext : DbContext
         {
             using var dwKey = DisposeHelper.Create(Cache.TryEnter, Cache.Exit, key, Cache.Options.DefaultLockTimeout);
             if (dwKey.IsEmpty)
@@ -112,24 +145,26 @@ namespace OW.Game.Managers
             var entry = Cache.GetEntry(key);
             if (entry is not null)  //若已加载
                 return entry.Value as TResult;
+            dbContext ??= Service.GetRequiredService<IDbContextFactory<TDbContext>>().CreateDbContext();
+            var result = dbContext.Set<TResult>().SingleOrDefault(loadFunc);
             using (entry = Cache.CreateEntry(key) as OwMemoryCache.OwMemoryCacheEntry)
             {
-                var db = Service.GetRequiredService<IDbContextFactory<TDbContext>>().CreateDbContext();
-                var result = db.Set<TResult>().FirstOrDefault(loadFunc);
-                //TODO 只能处理这两种类或其派生类
-                if (result is OrphanedThing orphaned)
-                    orphaned.RuntimeProperties["DbContext"] = db;
-                else if (result is VirtualThing virtualThing)
-                    virtualThing.RuntimeProperties["DbContext"] = db;
-                entry.SetValue(result);
+                var tme = new ThingManagerEntry
+                {
+                    Context = dbContext,
+                    Entry = entry,
+                };
                 entry.RegisterPostEvictionCallback((key, value, reason, state) =>
                 {
-                    var entry = Cache.GetEntry(key);
+                    var cache = state as OwMemoryCache;
+                    var entry = cache.GetEntry(key);
                     SaveCore(entry);
-                }, null);
-                initializer(entry);
+                }, Cache);
+                entry.SetValue(result);
+                _Entries.TryAdd(key, tme);
+                initializer(tme);
             }
-            return entry.Value as TResult;
+            return (TResult)entry.Value;
         }
 
         /// <summary>
@@ -157,9 +192,10 @@ namespace OW.Game.Managers
         /// <typeparam name="TResult"></typeparam>
         /// <param name="key"></param>
         /// <param name="initializer"></param>
+        /// <param name="dbContext">设置为上下文则使用此上下文加载，若是null则使用IDbContextFactory<TDbContext>服务创建一个并返回。</param>
         /// <returns></returns>
-        public TResult GetOrCreate<TDbContext, TResult>(object key, Func<OwMemoryCache.OwMemoryCacheEntry, TResult> initializer)
-            where TResult : DbQuickFindBase, new() where TDbContext : DbContext
+        public TResult GetOrCreate<TDbContext, TResult>(object key, Func<ThingManagerEntry, TResult> initializer, ref TDbContext dbContext)
+            where TResult : class where TDbContext : DbContext
         {
             using var dwKey = DisposeHelper.Create(Cache.TryEnter, Cache.Exit, key, Cache.Options.DefaultLockTimeout);
             if (dwKey.IsEmpty)
@@ -167,14 +203,18 @@ namespace OW.Game.Managers
             var entry = Cache.GetEntry(key);
             if (entry is not null)
                 return entry.Value as TResult;
+
+            dbContext ??= Service.GetRequiredService<IDbContextFactory<TDbContext>>().CreateDbContext();
             using (entry = Cache.CreateEntry(key) as OwMemoryCache.OwMemoryCacheEntry)
             {
-                initializer(entry);
+                var tme = new ThingManagerEntry() { Context = dbContext, Entry = entry };
                 entry.RegisterPostEvictionCallback((key, value, reason, state) =>
                 {
-                    var entry = Cache.GetEntry(key);
+                    var cache = state as OwMemoryCache;
+                    var entry = cache.GetEntry(key);
                     SaveCore(entry);
-                });
+                }, Cache);
+                entry.SetValue(initializer(tme));
             }
             return entry.Value as TResult;
         }
@@ -182,6 +222,5 @@ namespace OW.Game.Managers
 
     public static class ThingManagerExtensions
     {
-
     }
 }

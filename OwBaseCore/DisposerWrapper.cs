@@ -181,7 +181,7 @@ namespace System
         /// <param name="action"></param>
         /// <param name="state"></param>
         /// <returns></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(MethodImplOptions.NoInlining )]
         public static DisposeHelper<T> Create<T>(Action<T> action, T state) =>
             new DisposeHelper<T>(action, state);
 
