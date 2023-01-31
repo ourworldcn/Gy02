@@ -1,11 +1,16 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using OW.Game;
 using OW.Game.Caching;
+using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.Game.Store;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.Arm;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,44 +24,144 @@ namespace Gy02Bll.Managers
 
         public AccountManagerOptions Value => this;
 
-
+        public TimeSpan Timeout { get; set; } = TimeSpan.FromSeconds(3);
     }
 
+    /// <summary>
+    /// 账号管理器。
+    /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
     public class AccountManager
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public AccountManager(AccountManagerOptions options, GameObjectCache cache, IServiceProvider service)
+        public AccountManager(IServiceProvider service)
         {
-            Options = options;
-            Cache = cache;
             _Service = service;
             Initialize();
         }
 
         IServiceProvider _Service;
 
-        public AccountManagerOptions Options { get; set; }
+        public IServiceProvider Service => _Service;
 
-        public GameObjectCache Cache { get; }
+        public AccountManagerOptions Options { get; set; } = new AccountManagerOptions();
+
+        ThingManager _ThingManager;
+        /// <summary>
+        /// 获取基础管理器。
+        /// 其中账号的Id的<see cref="Guid.ToString"/>后的字符串是键。
+        /// </summary>
+        public ThingManager ThingManager => _ThingManager ??= _Service.GetRequiredService<ThingManager>();
 
         /// <summary>
         /// 内部初始化函数。
         /// </summary>
         private void Initialize()
         {
-            var key = SingletonLocker.Intern(Guid.NewGuid().ToString());
         }
 
-        ConcurrentDictionary<Guid, VirtualThing> _Token2Char = new ConcurrentDictionary<Guid, VirtualThing>();
+        /// <summary>
+        /// 票据到账号Key的映射。
+        /// </summary>
+        ConcurrentDictionary<Guid, string> _Token2Key = new ConcurrentDictionary<Guid, string>();
 
-        public DisposeHelper<string> Load(Guid charId, out VirtualThing thing)
+        /// <summary>
+        /// 角色到账号Key的映射。
+        /// </summary>
+        ConcurrentDictionary<Guid, string> _CharId2Key = new ConcurrentDictionary<Guid, string>();
+
+        /// <summary>
+        /// 登录名到账号Key的映射。
+        /// </summary>
+        ConcurrentDictionary<string, string> _LoginNameId2Key = new ConcurrentDictionary<string, string>();
+
+        /// <summary>
+        /// 获取指定角色Id的角色是否在线。
+        /// </summary>
+        /// <param name="charId">角色Id。</param>
+        /// <returns></returns>
+        public bool IsOnline(Guid charId) => _CharId2Key.ContainsKey(charId);
+
+        public bool LoadFromCharId(Guid userId)
         {
-            var result = DisposeHelper.Empty<string>();
-            thing = default;
+            if (_CharId2Key.TryGetValue(userId, out var key))
+            {
+                using var dwKey = DisposeHelper.Create(ThingManager.Cache.Exit, key);
+                if (dwKey.IsEmpty)
+                    return false;
+            }
+            GY02UserContext db = null;
+            var guEntity = ThingManager.GetOrLoadThing<GY02UserContext, OrphanedThing>(userId.ToString(), c => c.Id == userId, c => { }, ref db);
+            var gcEntity = db.Set<VirtualThing>().FirstOrDefault(c => c.ExtraString == userId.ToString());
+            guEntity.RuntimeProperties["CurrentChar"] = gcEntity;
+            return default;
+        }
+
+        /// <summary>
+        /// 计算密码的Hash值。
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        static private byte[] GetHash(string str)
+        {
+            var bin = Encoding.UTF8.GetBytes(str);
+            return SHA256.HashData(bin);
+        }
+
+        /// <summary>
+        /// 获取指定key的用户对象。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="thing"></param>
+        /// <returns>获取指定键的对象，若没有找到则返回<see cref="DisposeHelper{T}.IsEmpty"/>为true。</returns>
+        public DisposeHelper<object> Get(object key, out OrphanedThing thing)
+        {
+            DisposeHelper<object> result;
+            result = DisposeHelper.Create(ThingManager.Cache.TryEnter, ThingManager.Cache.Exit, key, Options.Timeout);
+            if (!result.IsEmpty)    //若锁定成功
+            {
+                thing = ThingManager.Get(key) as OrphanedThing;
+                if (thing is null)  //若没有找到
+                    using (result)
+                        return DisposeHelper.Empty<object>();
+                else
+                    return result;
+            }
+            else //若锁定失败
+                thing = default;
             return result;
         }
 
+        /// <summary>
+        /// 登录。
+        /// </summary>
+        /// <param name="uid">登录名。</param>
+        /// <param name="pwd">密码。</param>
+        /// <returns></returns>
+        public DisposeHelper<object> Login(string uid, string pwd, out OrphanedThing thing)
+        {
+            DisposeHelper<object> dwKey;
+            object result = null;
+            if (_LoginNameId2Key.TryGetValue(uid, out var key)) //若找到了已经加载的用户
+            {
+                dwKey = Get(key, out thing);
+                if (!dwKey.IsEmpty)  //若锁定成功
+                {
+                    result = ThingManager.Get(key);
+                    if (result is not null) //若找到
+                        ;
+                }
+            }
+            else //若未加载
+            {
+
+            }
+            var hash = GetHash(pwd);
+
+            thing = default;
+            return default;
+        }
     }
 }

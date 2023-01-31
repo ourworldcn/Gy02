@@ -58,11 +58,9 @@ namespace OW.Game.Managers
         /// 构造函数。
         /// </summary>
         /// <param name="service"></param>
-        /// <param name="options"></param>
-        public ThingManager([NotNull] IServiceProvider service, [NotNull] ThingManagerOptions options) : this()
+        public ThingManager([NotNull] IServiceProvider service) : this()
         {
             Service = service;
-            Options = options;
             DataObjectManager = new DataObjectManager(new DataObjectManagerOptions(), Service);
             Initializer();
         }
@@ -144,7 +142,10 @@ namespace OW.Game.Managers
                 return null;
             var entry = Cache.GetEntry(key);
             if (entry is not null)  //若已加载
+            {
+                dbContext = _Entries.GetValueOrDefault(key).Context as TDbContext;
                 return entry.Value as TResult;
+            }
             dbContext ??= Service.GetRequiredService<IDbContextFactory<TDbContext>>().CreateDbContext();
             var result = dbContext.Set<TResult>().SingleOrDefault(loadFunc);
             using (entry = Cache.CreateEntry(key) as OwMemoryCache.OwMemoryCacheEntry)
@@ -217,6 +218,16 @@ namespace OW.Game.Managers
                 entry.SetValue(initializer(tme));
             }
             return entry.Value as TResult;
+        }
+
+        /// <summary>
+        /// 获取指定键的缓存对象。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>指定键的缓存对象，若没有找到指定键可能是空引用。</returns>
+        public object Get(object key)
+        {
+            return GetEntry(key)?.Value;
         }
     }
 

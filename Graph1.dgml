@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
-  <Nodes />
+  <Nodes>
+    <Node Id="bceb9524-fd56-49cc-b119-7297a79bbff01" Bounds="0,0,68,25.24" ErrorMessage="检测到未引用的节点: 新建节点 (bceb9524-fd56-49cc-b119-7297a79bbff01)" IsUnreferenced="True" Label="新建节点" />
+  </Nodes>
   <Links />
   <Properties>
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="ErrorMessage" Label="错误" Description="错误" DataType="System.String" />
     <Property Id="Expression" DataType="System.String" />
     <Property Id="GroupLabel" DataType="System.String" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsUnreferenced" Label="未引用的" Description="节点没有从关系图中的其他节点指向它的链接" DataType="System.Boolean" />
+    <Property Id="Label" Label="标签" Description="可批注对象的可显示标签" DataType="System.String" />
     <Property Id="TargetType" DataType="System.Type" />
     <Property Id="ToolTip" DataType="System.String" />
     <Property Id="Value" DataType="System.String" />
