@@ -61,7 +61,7 @@ namespace OwDbBase
         /// 构造函数。
         /// </summary>
         /// <param name="cache">指定所属缓存对象，在调用<see cref="Dispose"/>时可以加入该对象。</param>
-        protected DataObjectEntry(object key, OwMemoryCacheBase cache)
+        protected DataObjectEntry(object key, OwMemoryCache cache)
         {
             Key = key;
             Cache = cache;
@@ -70,7 +70,7 @@ namespace OwDbBase
         /// <summary>
         /// 所属的缓存对象。
         /// </summary>
-        public OwMemoryCacheBase Cache { get; set; }
+        public OwMemoryCache Cache { get; set; }
 
         #region ICacheEntry接口相关
 
@@ -100,13 +100,13 @@ namespace OwDbBase
 
         #endregion ICacheEntry接口相关
 
-        internal Lazy<List<BeforeEvictionCallbackRegistration>> _BeforeEvictionCallbacksLazyer = new Lazy<List<BeforeEvictionCallbackRegistration>>(true);
+        //internal Lazy<List<BeforeEvictionCallbackRegistration>> _BeforeEvictionCallbacksLazyer = new Lazy<List<BeforeEvictionCallbackRegistration>>(true);
         /// <summary>
         /// 获取或设置从缓存中即将逐出缓存项时将触发的回叫。
         /// 所有的函数调用完毕才会解锁键对象。
         /// 支持并发初始化，但返回集合本身不能支持并发。
         /// </summary>
-        public IList<BeforeEvictionCallbackRegistration> BeforeEvictionCallbacks => _BeforeEvictionCallbacksLazyer.Value;
+        //public IList<BeforeEvictionCallbackRegistration> BeforeEvictionCallbacks => _BeforeEvictionCallbacksLazyer.Value;
 
         /// <summary>
         /// 最后一次使用的Utc时间。

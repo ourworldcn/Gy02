@@ -463,12 +463,12 @@ namespace OW.Game
         /// <param name="callback"></param>
         /// <param name="state"></param>
         /// <returns></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static DataObjectCache.DataObjectCacheEntry RegisterBeforeEvictionCallback(this DataObjectCache.DataObjectCacheEntry entry, Action<object, object, EvictionReason, object> callback, object state = null)
-        {
-            entry.BeforeEvictionCallbacks.Add(new BeforeEvictionCallbackRegistration() { BeforeEvictionCallback = callback, State = state });
-            return entry;
-        }
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //public static DataObjectCache.DataObjectCacheEntry RegisterBeforeEvictionCallback(this DataObjectCache.DataObjectCacheEntry entry, Action<object, object, EvictionReason, object> callback, object state = null)
+        //{
+        //    entry.BeforeEvictionCallbacks.Add(new BeforeEvictionCallbackRegistration() { BeforeEvictionCallback = callback, State = state });
+        //    return entry;
+        //}
 
     }
 }

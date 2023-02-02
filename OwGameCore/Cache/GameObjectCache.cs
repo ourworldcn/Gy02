@@ -72,7 +72,7 @@ namespace OW.Game.Caching
 
         #endregion 构造函数
 
-        protected override OwMemoryCacheBaseEntry CreateEntryCore(object key)
+        protected override OwMemoryCacheEntry CreateEntryCore(object key)
         {
             return new GameObjectCacheEntry(key, this);
         }
@@ -114,10 +114,10 @@ namespace OW.Game.Caching
                     return false;
                 }
             }, db)
-            .RegisterBeforeEvictionCallback((key, value, reason, state) =>
-            {
-                db.SaveChanges();
-            }, db)
+            //.RegisterBeforeEvictionCallback((key, value, reason, state) =>
+            //{
+            //    db.SaveChanges();
+            //}, db)
             .RegisterPostEvictionCallback((key, value, reason, state) =>
             {
                 (value as IDisposable)?.Dispose();
@@ -171,10 +171,10 @@ namespace OW.Game.Caching
                     return false;
                 }
             }, db)
-            .RegisterBeforeEvictionCallback((key, value, reason, state) =>
-            {
-                ((DbContext)state).SaveChanges();
-            }, db)
+            //.RegisterBeforeEvictionCallback((key, value, reason, state) =>
+            //{
+            //    ((DbContext)state).SaveChanges();
+            //}, db)
             .RegisterPostEvictionCallback((key, value, reason, state) =>
             {
                 (value as IDisposable)?.Dispose();
@@ -212,7 +212,7 @@ namespace OW.Game.Caching
         {
             if (cache.TryGetValue(key, out T result))   //若已经在缓存中
                 return result;
-            using var dwKey = cache.Lock(key);
+            using var dwKey =DisposeHelper.Create(cache.TryEnter,cache.Exit,key,cache.Options.DefaultLockTimeout);
             if (dwKey.IsEmpty)   //若锁定超时
                 return null;
             if (cache.TryGetValue(key, out result))   //若已经在缓存中

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using static Microsoft.Extensions.Caching.Memory.DataObjectCache;
 
 namespace Microsoft.Extensions.Caching.Memory
 {
@@ -154,28 +155,28 @@ namespace Microsoft.Extensions.Caching.Memory
             /// <exception cref="TimeoutException">试图锁定键超时。</exception>
             public virtual void Dispose()
             {
-                using var dw = DisposeHelper.Create(Cache.Options.LockCallback, Cache.Options.UnlockCallback, Key, Cache.Options.DefaultLockTimeout);
-                if (dw.IsEmpty)
-                    throw new TimeoutException();
                 if (!_IsDisposed)
                 {
-                    var factEntity = Cache._Items.AddOrUpdate(Key, this, (key, ov) => this);
+                    using var dw = DisposeHelper.Create(Cache.TryEnter, Cache.Exit, Key, Cache.Options.DefaultLockTimeout);
+                    if (dw.IsEmpty)
+                        throw new TimeoutException();
+                    var factEntity = Cache.AddOrUpdateEntryCore(this);
                     factEntity.LastUseUtc = DateTime.UtcNow;
                     _IsDisposed = true;
                 }
-                Cache.AddItemCore(this);
+                //Cache.AddItemCore(this);
             }
             #endregion IDisposable接口相关
 
             #endregion ICacheEntry接口相关
 
-            internal Lazy<List<BeforeEvictionCallbackRegistration>> _BeforeEvictionCallbacksLazyer = new Lazy<List<BeforeEvictionCallbackRegistration>>(true);
+            //internal Lazy<List<BeforeEvictionCallbackRegistration>> _BeforeEvictionCallbacksLazyer = new Lazy<List<BeforeEvictionCallbackRegistration>>(true);
             /// <summary>
             /// 获取或设置从缓存中即将逐出缓存项时将触发的回叫。
             /// 所有的函数调用完毕才会解锁键对象。
             /// 支持并发初始化，但返回集合本身不能支持并发。
             /// </summary>
-            public IList<BeforeEvictionCallbackRegistration> BeforeEvictionCallbacks => _BeforeEvictionCallbacksLazyer.Value;
+            //public IList<BeforeEvictionCallbackRegistration> BeforeEvictionCallbacks => _BeforeEvictionCallbacksLazyer.Value;
 
             /// <summary>
             /// 最后一次使用的Utc时间。
@@ -270,7 +271,7 @@ namespace Microsoft.Extensions.Caching.Memory
                     258 => throw new TimeoutException(),
                     _ => throw new InvalidOperationException(),
                 };
-            if (_Items.TryGetValue(key, out var entry))
+            if (TryGetValueCore(key, out var entry))
             {
                 entry.LastUseUtc = DateTime.UtcNow;
                 value = entry.Value;
@@ -281,6 +282,18 @@ namespace Microsoft.Extensions.Caching.Memory
                 value = default;
                 return false;
             }
+        }
+
+        /// <summary>
+        /// 派生类可以重载此函数。非公有函数不会自动对键加锁，若需要则调用者需负责加/解锁。不会自动重置最后使用时间。
+        /// </summary>
+        /// <param name="key">键。</param>
+        /// <param name="entry">如果返回true则此处返回配置项。</param>
+        /// <returns>true则返回指定键的配置项。false表示没有找到指定的键。</returns>
+        protected virtual bool TryGetValueCore(object key, out OwMemoryCacheEntry entry)
+        {
+            entry = GetEntry(key);
+            return entry is not null;
         }
 
         /// <summary>
@@ -400,7 +413,10 @@ namespace Microsoft.Extensions.Caching.Memory
         /// </summary>
         /// <param name="entry"></param>
         /// <returns></returns>
-        protected internal virtual bool AddItemCore(OwMemoryCacheEntry entry) => _Items.TryAdd(entry.Key, entry);
+        protected virtual OwMemoryCacheEntry AddOrUpdateEntryCore(OwMemoryCacheEntry entry)
+        {
+            return _Items.AddOrUpdate(entry.Key, entry, (c1, c2) => entry);
+        }
 
         /// <summary>
         /// 获取设置项数据，需要首先锁定键，解锁键将导致配置生效。
@@ -410,7 +426,6 @@ namespace Microsoft.Extensions.Caching.Memory
         /// <exception cref="InvalidOperationException">未锁定键，尽在调试状态下会检测。</exception>
         public OwMemoryCacheEntry GetEntry(object key)
         {
-            ThrowIfDisposed();
 #if DEBUG
             if (!Options.IsEnteredCallback(key))
                 throw new InvalidOperationException("要首先锁定键才能获取设置项");

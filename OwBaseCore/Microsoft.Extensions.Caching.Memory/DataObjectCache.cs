@@ -20,7 +20,7 @@ namespace Microsoft.Extensions.Caching.Memory
     /// <summary>
     /// 数据对象缓存类的配置类。
     /// </summary>
-    public class DataObjectCacheOptions : OwMemoryCacheBaseOptions, IOptions<DataObjectCacheOptions>
+    public class DataObjectCacheOptions : OwMemoryCacheOptions, IOptions<DataObjectCacheOptions>
     {
         public DataObjectCacheOptions() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Extensions.Caching.Memory
     /// 数据对象的缓存类。
     /// 数据对象的加载需要经过IO,且需要保存，并且其有唯一的键值。
     /// </summary>
-    public class DataObjectCache : OwMemoryCacheBase, IDisposable
+    public class DataObjectCache : OwMemoryCache, IDisposable
     {
         /// <summary>
         /// 
         /// </summary>
-        public class DataObjectCacheEntry : OwMemoryCacheBaseEntry, IDisposable
+        public class DataObjectCacheEntry : OwMemoryCacheEntry, IDisposable
         {
             #region 构造函数
 
@@ -100,11 +100,11 @@ namespace Microsoft.Extensions.Caching.Memory
             public object SaveCallbackState { get; set; }
 
             /// <summary>
-            /// 是否已经初始化了<see cref="OwMemoryCacheBase.OwMemoryCacheBaseEntry.Value"/>的值。
+            /// 是否已经初始化了<see cref="OwMemoryCache.OwMemoryCacheEntry.Value"/>的值。
             /// </summary>
             internal bool _IsInitialized;
             /// <summary>
-            /// 是否已经初始化了<see cref="OwMemoryCacheBase.OwMemoryCacheBaseEntry.Value"/>的值。
+            /// 是否已经初始化了<see cref="OwMemoryCache.OwMemoryCacheEntry.Value"/>的值。
             /// </summary>
             public bool IsInitialized => _IsInitialized;
 
@@ -126,7 +126,7 @@ namespace Microsoft.Extensions.Caching.Memory
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public DataObjectCache(IOptions<DataObjectCacheOptions> options) : base(options)
+        public DataObjectCache(IOptions<DataObjectCacheOptions> options) : base(options.Value)
         {
             Initialize();
         }
@@ -254,7 +254,7 @@ namespace Microsoft.Extensions.Caching.Memory
         /// 此函数会首先试图对键加锁，成功后才会进行实质工作，并解锁。
         /// </summary>
         /// <param name="key"></param>
-        /// <param name="timeout">锁定超时。省略或为null则使用<see cref="OwMemoryCacheBaseOptions.DefaultLockTimeout"/>。</param>
+        /// <param name="timeout">锁定超时。省略或为null则使用<see cref="OwMemoryCacheOptions.DefaultLockTimeout"/>。</param>
         /// <returns>true成功保存，false保存时出错。
         /// 调用<see cref="OwHelper.GetLastError"/>可获取详细信息。258=锁定超时，698=键已存在，1168=键不存在。
         /// </returns>
@@ -262,10 +262,10 @@ namespace Microsoft.Extensions.Caching.Memory
         public bool EnsureSaved(object key, TimeSpan? timeout = null)
         {
             ThrowIfDisposed();
-            using var dw = Lock(key, timeout);
+            using var dw = DisposeHelper.Create(TryEnter, Exit, key, timeout ?? Options.DefaultLockTimeout);
             if (dw.IsEmpty)
                 return false;
-            if (!(GetCacheEntry(key) is DataObjectCacheEntry entry) || entry is null)
+            if (!(GetEntry(key) is DataObjectCacheEntry entry) || entry is null)
             {
                 OwHelper.SetLastError(1168);
                 return false;
@@ -307,20 +307,20 @@ namespace Microsoft.Extensions.Caching.Memory
         /// </summary>
         /// <param name="key"></param>
         /// <param name="result"></param>
-        /// <param name="timeout">锁定超时。省略或为null则使用<see cref="OwMemoryCacheBaseOptions.DefaultLockTimeout"/>。</param>
+        /// <param name="timeout">锁定超时。省略或为null则使用<see cref="OwMemoryCacheOptions.DefaultLockTimeout"/>。</param>
         /// <returns>true=成功，false=超时无法锁定键 - 或 - 键不存在。
         /// 调用<see cref="OwHelper.GetLastError"/>可获取详细信息。258=锁定超时，698=键已存在，1168=键不存在。
         /// </returns>
         public bool EnsureInitialized(object key, out DataObjectCacheEntry result, TimeSpan? timeout = null)
         {
             ThrowIfDisposed();
-            using var dw = Lock(key, timeout);
+            using var dw =DisposeHelper.Create(TryEnter,Exit,key, timeout ?? Options.DefaultLockTimeout);
             if (dw.IsEmpty)
             {
                 result = default;
                 return false;
             }
-            var entry = (DataObjectCacheEntry)GetCacheEntry(key);
+            var entry = (DataObjectCacheEntry)GetEntry(key);base.GetEntry(entry);
             if (entry is null)
             {
                 result = default;
@@ -385,9 +385,10 @@ namespace Microsoft.Extensions.Caching.Memory
         /// <inheritdoc/>
         /// </summary>
         /// <param name="entry"></param>
-        protected override void AddItemCore(OwMemoryCacheBaseEntry entry)
+        protected override OwMemoryCacheEntry AddOrUpdateEntryCore(OwMemoryCacheEntry entry)
         {
             Task.Run(() => EnsureInitialized(entry.Key, out _)); //异步初始化
+            return base.AddOrUpdateEntryCore(entry);
         }
 
         /// <summary>
@@ -395,7 +396,7 @@ namespace Microsoft.Extensions.Caching.Memory
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        protected override OwMemoryCacheBaseEntry CreateEntryCore(object key)
+        protected override OwMemoryCacheEntry CreateEntryCore(object key)
         {
             return new DataObjectCacheEntry(key, this);
         }
@@ -406,10 +407,12 @@ namespace Microsoft.Extensions.Caching.Memory
         /// <param name="entry"></param>
         /// <returns>该实现会确保初始化成功完成<seealso cref="EnsureInitializedCore(DataObjectCacheEntry, TimeSpan)"/>，然后调用基类实现--<inheritdoc/>。</returns>
         /// <exception cref="ObjectDisposedException">对象已处置。</exception>
-        protected override bool TryGetValueCore(OwMemoryCacheBaseEntry entry)
+        protected override bool TryGetValueCore(object key, out OwMemoryCacheEntry entry)
         {
-            EnsureInitializedCore((DataObjectCacheEntry)entry, Options.DefaultLockTimeout);
-            return base.TryGetValueCore(entry);
+            var b = base.TryGetValueCore(key, out entry);
+            if (b)
+                EnsureInitializedCore((DataObjectCacheEntry)entry, Options.DefaultLockTimeout);
+            return b;
         }
 
         #region IMemoryCache接口相关

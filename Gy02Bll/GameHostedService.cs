@@ -136,18 +136,30 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-            Task.Run(() =>
+            MemoryCache mc = new MemoryCache(new MemoryCacheOptions());
+
+            using (var entry = mc.CreateEntry("1"))
             {
-                SocketAsyncEventArgs e = new SocketAsyncEventArgs() { };
-                e.SetBuffer(MemoryPool<byte>.Shared.Rent(2048).Memory);
-                e.SocketFlags = SocketFlags.Partial;
-                e.Completed += E_Completed;
-                Socket udp = new Socket(SocketType.Dgram, ProtocolType.Udp);
-                var b = udp.ReceiveAsync(e);
-            });
-            Thread.CurrentThread.Join(1);
-            UdpClient udp = new UdpClient(0);
-            udp.Send(new byte[] { 11, 22 }, new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 104 }), 21080));
+                entry.SetValue(new object());
+            }
+
+            using (var entry = mc.CreateEntry("1"))
+            {
+                entry.SetValue(2);
+            }
+            var val = mc.Get("1");
+            //Task.Run(() =>
+            //{
+            //    SocketAsyncEventArgs e = new SocketAsyncEventArgs() { };
+            //    e.SetBuffer(MemoryPool<byte>.Shared.Rent(2048).Memory);
+            //    e.SocketFlags = SocketFlags.Partial;
+            //    e.Completed += E_Completed;
+            //    Socket udp = new Socket(SocketType.Dgram, ProtocolType.Udp);
+            //    var b = udp.ReceiveAsync(e);
+            //});
+            //Thread.CurrentThread.Join(1);
+            //UdpClient udp = new UdpClient(0);
+            //udp.Send(new byte[] { 11, 22 }, new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 104 }), 21080));
 
             var sw = Stopwatch.StartNew();
             DateTime now = DateTime.UtcNow;

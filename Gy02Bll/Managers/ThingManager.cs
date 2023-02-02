@@ -229,6 +229,24 @@ namespace OW.Game.Managers
         {
             return GetEntry(key)?.Value;
         }
+
+        /// <summary>
+        /// 创建
+        /// </summary>
+        /// <typeparam name="TDbContext"></typeparam>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public ThingManagerEntry CreateEntry<TDbContext>(object key) where TDbContext : DbContext
+        {
+            DbContext db = Service.GetRequiredService<IDbContextFactory<TDbContext>>().CreateDbContext();
+            var result = new ThingManagerEntry()
+            {
+                Context = db,
+                Entry = Cache.CreateEntry(key) as OwMemoryCache.OwMemoryCacheEntry,
+            };
+
+            return result;
+        }
     }
 
     public static class ThingManagerExtensions
