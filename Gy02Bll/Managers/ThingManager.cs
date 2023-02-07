@@ -117,11 +117,14 @@ namespace OW.Game.Managers
 
         public IServiceProvider Service { get; init; }
 
-        public ThingManagerOptions Options { get; init; }
+        private ThingManagerOptions _Options;
+
+        public ThingManagerOptions Options { get => _Options ??= Service.GetRequiredService<IOptions<ThingManagerOptions>>().Value; init => _Options = value; }
 
         public DataObjectManager DataObjectManager { get; init; }
 
-        public OwMemoryCache Cache { get; init; } = new OwMemoryCache(new OwMemoryCacheOptions());
+        private OwMemoryCache _Cache;
+        public OwMemoryCache Cache { get => _Cache ??= Service.GetRequiredService<OwMemoryCache>(); init => _Cache = value; }
 
         /// <summary>
         /// 加载或获取缓存的对象。不会重新计算时间。

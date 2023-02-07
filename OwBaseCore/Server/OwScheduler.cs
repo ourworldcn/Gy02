@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using System;
 using System.Buffers;
 using System.Collections;
@@ -12,6 +13,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace OW.Server
 {
@@ -35,12 +37,23 @@ namespace OW.Server
         /// <summary>
         /// 调用任务的周期。
         /// </summary>
+        /// <value>可以是<see cref="Timeout.InfiniteTimeSpan"/>或任何大于0的间隔。</value>
         public TimeSpan Period { get; set; }
 
         /// <summary>
         /// 上次执行的时间点。
         /// </summary>
         public DateTime LastUtc { get; internal set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="InvalidOperationException"></exception>
+        public void IsValid()
+        {
+            if (Period == TimeSpan.Zero)
+                throw new InvalidOperationException();
+        }
     }
 
     /// <summary>
@@ -48,6 +61,11 @@ namespace OW.Server
     /// </summary>
     public class OwSchedulerOptions : IOptions<OwSchedulerOptions>
     {
+        public OwSchedulerOptions()
+        {
+
+        }
+
         /// <summary>
         /// 默认的任务执行频度。
         /// </summary>
@@ -82,15 +100,15 @@ namespace OW.Server
     /// 默认它仅用一个线程（不并行），因为假设的场景是一个服务器的IO线程。
     /// 每个任务会有一个唯一标识key，调用任务会首先锁定key,若不能锁定则会再下次扫描时调用任务。
     /// </summary>
-    public class OwScheduler
+    [OwAutoInjection(ServiceLifetime.Singleton)]
+    public class OwScheduler : IDisposable
     {
         #region 构造函数及相关
 
-        public OwScheduler()
-        {
-            Initializer();
-        }
-
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="options"></param>
         public OwScheduler(IOptions<OwSchedulerOptions> options)
         {
             Options = options.Value;
@@ -99,12 +117,30 @@ namespace OW.Server
 
         private void Initializer()
         {
-            _Timer = new Timer(TimeCallback, null, Options.Frequency, Options.Frequency);
+            _Timer = new System.Threading.Timer(TimeCallback, null, Options.Frequency, Options.Frequency);
         }
+
+        private OwSchedulerOptions _Options;
+        /// <summary>
+        /// 配置对象。
+        /// </summary>
+        public OwSchedulerOptions Options { get => _Options ??= new OwSchedulerOptions(); init => _Options = value; }
 
         #endregion 构造函数及相关
 
-        Timer _Timer;
+        #region 定时任务及相关
+
+        /// <summary>
+        /// 优先执行任务的列表。键是锁定项的键，使用此类可避免锁定。
+        /// </summary>
+        ConcurrentDictionary<object, object> _Plans = new();
+
+        /// <summary>
+        /// 优先执行的任务的任务对象。
+        /// </summary>
+        Task _Task;
+
+        System.Threading.Timer _Timer;
         /// <summary>
         /// 定时任务。
         /// </summary>
@@ -124,54 +160,52 @@ namespace OW.Server
                 var now = DateTime.UtcNow;
                 if (now - kvp.Value.LastUtc >= kvp.Value.Period)    //若周期时间已到
                 {
-                    RunCore(kvp.Key);
+                    try
+                    {
+                        RunCore(kvp.Key);
+                    }
+                    catch (Exception)
+                    {
+                        //TODO 处理异常
+                    }
                 }
+                Thread.Yield();
             }
+            SchedulerTaskCore();
         }
-
-        /// <summary>
-        /// 优先执行的任务的任务对象。
-        /// </summary>
-        Task _Task;
 
         /// <summary>
         /// 将优先计划的项全部执行。
         /// </summary>
         private void RunPlanFunc()
         {
-            List<object> keys;
-            lock (_Plans)
+            foreach (var kvp in _Plans) //遍历工作项
             {
-                keys = new List<object>(_Plans);
-                _Plans.Clear();
-            }
-            foreach (var key in keys)
-            {
-                using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, key, TimeSpan.Zero);
-                if (dw.IsEmpty || !RunCore(key)) //若无法锁定或执行不成功
-                {
-                    lock (_Plans)
-                        _Plans.Add(key);
+                using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, kvp.Key, TimeSpan.Zero);
+                if (dw.IsEmpty || !RunCore(kvp.Key)) //若无法锁定或执行不成功
                     continue;
-                }
+                _Plans.TryRemove(kvp);
             }
         }
 
         /// <summary>
-        /// 配置对象。
+        /// 计划执行优先任务。不可重入，不能多线程并发。
         /// </summary>
-        public OwSchedulerOptions Options { get; init; }
+        private void SchedulerTaskCore()
+        {
+            if (_Task is null || _Task.IsCompleted) //若没有任务或已经完成任务
+            {
+                _Task?.Dispose();
+                _Task = Task.Run(RunPlanFunc);
+            }
+        }
+
+        #endregion 定时任务及相关
 
         /// <summary>
         /// 任务项。
         /// </summary>
-        ConcurrentDictionary<object, OwSchedulerEntry> _Items = new ConcurrentDictionary<object, OwSchedulerEntry>();
-
-        /// <summary>
-        /// 优先执行任务的列表。
-        /// 锁定此对象时，不可再试图锁定任何key。
-        /// </summary>
-        HashSet<object> _Plans = new HashSet<object>();
+        ConcurrentDictionary<object, OwSchedulerEntry> _Items = new();
 
         /// <summary>
         /// 执行指定键值的任务。
@@ -181,10 +215,12 @@ namespace OW.Server
         /// <returns>同步执行时返回任务的返回值。异步执行时返回true。</returns>
         protected virtual bool RunCore(object key)
         {
+            var now = DateTime.UtcNow;
             var entry = _Items.GetValueOrDefault(key);
             var b = entry.TaskCallback?.Invoke(key, entry.State) ?? true;
             if (b)
-                entry.LastUtc = DateTime.UtcNow;
+                while (entry.LastUtc < now)
+                    entry.LastUtc += entry.Period;
             return b;
         }
 
@@ -201,31 +237,15 @@ namespace OW.Server
                 using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, key, Timeout.InfiniteTimeSpan);
                 var b = RunCore(key);
                 if (b)
-                    lock (_Plans)
-                        _Plans.Remove(key);
+                    _Plans.Remove(key, out _);
                 return b;
             }
             else //若计划优先执行
             {
-                lock (_Plans)
-                {
-                    var b = _Plans.Add(key);
-                    if (b)
-                        SchedulerTaskCore();
-                    return b;
-                }
-            }
-        }
-
-        /// <summary>
-        /// 计划执行优先任务。不可重入，不能多线程并发。
-        /// </summary>
-        private void SchedulerTaskCore()
-        {
-            if (_Task is null || _Task.Wait(0)) //若没有任务或已经完成任务
-            {
-                _Task?.Dispose();
-                _Task = Task.Run(RunPlanFunc);
+                var b = _Plans.TryAdd(key, null);
+                if (b)
+                    SchedulerTaskCore();
+                return b;
             }
         }
 
@@ -237,8 +257,9 @@ namespace OW.Server
         /// <returns></returns>
         public bool TryAdd(object key, OwSchedulerEntry value)
         {
-            using (var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, key, Timeout.InfiniteTimeSpan))
-                return _Items.TryAdd(key, value);
+            value.IsValid();
+            using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, key, Timeout.InfiniteTimeSpan);
+            return _Items.TryAdd(key, value);
         }
 
         /// <summary>
@@ -251,12 +272,47 @@ namespace OW.Server
             using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, key, Timeout.InfiniteTimeSpan);
             bool result = _Items.Remove(key, out _);
             if (result)  //若成功移除任务
-                lock (_Plans)
-                {
-                    _Plans.Remove(key);
-                }
+                _Plans.Remove(key, out _);
             return result;
         }
 
+        #region IDisposable接口及相关
+
+        private bool _DisposedValue;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_DisposedValue)
+            {
+                if (disposing)
+                {
+                    // TODO: 释放托管状态(托管对象)
+                }
+
+                // 释放未托管的资源(未托管的对象)并重写终结器
+                // 将大型字段设置为 null
+                _Timer?.Dispose();
+                _Timer = null;
+                //_Task = null;
+                //_Items = null;
+                //_Plans = null;
+                _DisposedValue = true;
+            }
+        }
+
+        // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
+        // ~OwScheduler()
+        // {
+        //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+        //     Dispose(disposing: false);
+        // }
+
+        public void Dispose()
+        {
+            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion IDisposable接口及相关
     }
 }

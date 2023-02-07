@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Concurrent;
@@ -6,7 +7,6 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using static Microsoft.Extensions.Caching.Memory.DataObjectCache;
 
 namespace Microsoft.Extensions.Caching.Memory
 {
@@ -69,10 +69,12 @@ namespace Microsoft.Extensions.Caching.Memory
     /// <summary>
     /// 内存缓存的类。
     /// 针对每个项操作都会对其键值加锁，对高并发而言，不应有多个线程试图访问同一个键下的项。这样可以避免锁的碰撞。对基本单线程操作而言，此类性能较低。
-    /// 此类公共成员（除嵌套类）可以多线程并发调用。
+    /// 此类公共成员（除嵌套类）可以多线程并发调用。3446377c-dad1-46d9-8717-bb4f420c1cc8
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
     public class OwMemoryCache : IMemoryCache
     {
+
         /// <summary>
         /// 缓存项的配置信息类。
         /// </summary>
@@ -199,7 +201,7 @@ namespace Microsoft.Extensions.Caching.Memory
 
         }
 
-        ConcurrentDictionary<object, OwMemoryCacheEntry> _Items = new ConcurrentDictionary<object, OwMemoryCacheEntry>();
+        ConcurrentDictionary<object, OwMemoryCacheEntry> _Items = new();
 
         /// <summary>
         /// 获取缓存内的所有内容。更改其中内容的结果未知。
@@ -211,15 +213,15 @@ namespace Microsoft.Extensions.Caching.Memory
         /// 配置信息。
         /// </summary>
         /// <value>默认值是<see cref="OwMemoryCacheOptions"/>的默认对象。</value>
-        public OwMemoryCacheOptions Options { get => _Options ??= new OwMemoryCacheOptions(); set => _Options = value; }
+        public OwMemoryCacheOptions Options { get => _Options ??= new OwMemoryCacheOptions(); init => _Options = value; }
 
         /// <summary>
         /// 构造函数。
         /// </summary>
         /// <param name="options"></param>
-        public OwMemoryCache(OwMemoryCacheOptions options)
+        public OwMemoryCache(IOptions<OwMemoryCacheOptions> options)
         {
-            _Options = options;
+            _Options = options.Value;
         }
 
         #region IMemoryCache接口及相关
@@ -346,7 +348,7 @@ namespace Microsoft.Extensions.Caching.Memory
         /// </summary>
         /// <param name="msg"></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        protected void ThrowIfTimeout(string msg)
+        public static void ThrowIfTimeout(string msg)
         {
             if (OwHelper.GetLastError() == 258)
                 throw new TimeoutException(msg);
@@ -428,7 +430,7 @@ namespace Microsoft.Extensions.Caching.Memory
         {
 #if DEBUG
             if (!Options.IsEnteredCallback(key))
-                throw new InvalidOperationException("要首先锁定键才能获取设置项");
+                throw new InvalidOperationException("要首先锁定键才能获取设置项。");
 #endif
             return _Items.GetValueOrDefault(key);
         }

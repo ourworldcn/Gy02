@@ -16,6 +16,7 @@ using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.Server;
 using OwDbBase;
 using System.Buffers;
 using System.ComponentModel;
@@ -136,18 +137,8 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-            MemoryCache mc = new MemoryCache(new MemoryCacheOptions());
+           var sch= _Services.GetRequiredService<ThingManager>();
 
-            using (var entry = mc.CreateEntry("1"))
-            {
-                entry.SetValue(new object());
-            }
-
-            using (var entry = mc.CreateEntry("1"))
-            {
-                entry.SetValue(2);
-            }
-            var val = mc.Get("1");
             //Task.Run(() =>
             //{
             //    SocketAsyncEventArgs e = new SocketAsyncEventArgs() { };
