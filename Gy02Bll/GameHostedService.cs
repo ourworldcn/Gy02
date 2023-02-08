@@ -23,6 +23,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
+using System.Numerics;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
@@ -137,8 +138,8 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-           var sch= _Services.GetRequiredService<ThingManager>();
-
+            var sch = _Services.GetRequiredService<ThingManager>();
+            var mc = _Services.GetRequiredService<OwMemoryCache>();
             //Task.Run(() =>
             //{
             //    SocketAsyncEventArgs e = new SocketAsyncEventArgs() { };

@@ -118,12 +118,17 @@ namespace OW.Game.Managers
         public IServiceProvider Service { get; init; }
 
         private ThingManagerOptions _Options;
-
+        /// <summary>
+        /// 类配置项。
+        /// </summary>
         public ThingManagerOptions Options { get => _Options ??= Service.GetRequiredService<IOptions<ThingManagerOptions>>().Value; init => _Options = value; }
 
         public DataObjectManager DataObjectManager { get; init; }
 
         private OwMemoryCache _Cache;
+        /// <summary>
+        /// 缓存对象。
+        /// </summary>
         public OwMemoryCache Cache { get => _Cache ??= Service.GetRequiredService<OwMemoryCache>(); init => _Cache = value; }
 
         /// <summary>

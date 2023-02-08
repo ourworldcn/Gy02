@@ -60,6 +60,11 @@
             虚拟世界公用Api控制器。
             </summary>
         </member>
+        <member name="M:Gy02.Controllers.VWorldController.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Gy02.Controllers.VWorldController.GetTemplates(OW.Game.Managers.TemplateManager)">
             <summary>
             获取所有模板。

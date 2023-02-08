@@ -11,6 +11,14 @@ namespace Gy02.Controllers
     public class VWorldController : GameControllerBase
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public VWorldController()
+        {
+
+        }
+
+        /// <summary>
         /// 获取所有模板。
         /// </summary>
         /// <returns><seealso cref="Gy02TemplateJO"/></returns>

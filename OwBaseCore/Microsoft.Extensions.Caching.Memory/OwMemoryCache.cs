@@ -201,6 +201,10 @@ namespace Microsoft.Extensions.Caching.Memory
 
         }
 
+        /// <summary>
+        /// 记录所有缓存项。
+        /// 键是缓存项的键，值缓存配置项数据。
+        /// </summary>
         ConcurrentDictionary<object, OwMemoryCacheEntry> _Items = new();
 
         /// <summary>
