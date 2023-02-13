@@ -133,7 +133,7 @@ namespace OW.Server
         /// <summary>
         /// 优先执行任务的列表。键是锁定项的键，使用此类可避免锁定。
         /// </summary>
-        ConcurrentDictionary<object, object> _Plans = new();
+        ConcurrentDictionary<object, object> _Plans = new ConcurrentDictionary<object, object>();
 
         /// <summary>
         /// 优先执行的任务的任务对象。
@@ -171,7 +171,7 @@ namespace OW.Server
                 }
                 Thread.Yield();
             }
-            SchedulerTaskCore();
+            SchedulerCallback();
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace OW.Server
         /// <summary>
         /// 计划执行优先任务。不可重入，不能多线程并发。
         /// </summary>
-        private void SchedulerTaskCore()
+        private void SchedulerCallback()
         {
             if (_Task is null || _Task.IsCompleted) //若没有任务或已经完成任务
             {
@@ -203,9 +203,18 @@ namespace OW.Server
         #endregion 定时任务及相关
 
         /// <summary>
+        /// 是否已经完成所有定时任务。
+        /// </summary>
+        ManualResetEvent _Completed = new ManualResetEvent(false);
+        /// <summary>
+        /// 是否已经完成所有定时任务。
+        /// </summary>
+        public ManualResetEvent Completed { get => _Completed; }
+
+        /// <summary>
         /// 任务项。
         /// </summary>
-        ConcurrentDictionary<object, OwSchedulerEntry> _Items = new();
+        ConcurrentDictionary<object, OwSchedulerEntry> _Items = new ConcurrentDictionary<object, OwSchedulerEntry>();
 
         /// <summary>
         /// 执行指定键值的任务。
@@ -244,7 +253,7 @@ namespace OW.Server
             {
                 var b = _Plans.TryAdd(key, null);
                 if (b)
-                    SchedulerTaskCore();
+                    SchedulerCallback();
                 return b;
             }
         }
@@ -290,11 +299,12 @@ namespace OW.Server
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                _Timer?.Dispose();
+                _Timer?.Dispose(new ManualResetEvent(false));
                 _Timer = null;
                 //_Task = null;
-                //_Items = null;
-                //_Plans = null;
+                _Items = null;
+                _Plans = null;
+                _Completed = null;
                 _DisposedValue = true;
             }
         }

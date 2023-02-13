@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using OW.Game;
 using OW.Game.Caching;
@@ -162,6 +164,30 @@ namespace Gy02Bll.Managers
 
             thing = default;
             return default;
+        }
+
+        /// <summary>
+        /// 创建一个账号。
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="pwd"></param>
+        /// <param name="user"></param>
+        /// <returns>账号的id的锁定结构。</returns>
+        public DisposeHelper<object> Create(string uid, string pwd, out OrphanedThing user)
+        {
+            using var dwUid = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, uid, Timeout.InfiniteTimeSpan);
+            if (_LoginNameId2Key.ContainsKey(uid))   //若已经存在
+                throw new InvalidOperationException();
+            var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
+            if (db.Set<OrphanedThing>().Where(c => c.ExtraString == uid).Count() > 0)  //若数据库中已经存在
+            {
+                using var tmp = db;
+                throw new InvalidOperationException();
+            }
+            user = new OrphanedThing();
+            user.RuntimeProperties["DbContext"] = db;
+
+            return new DisposeHelper<object>();
         }
     }
 }

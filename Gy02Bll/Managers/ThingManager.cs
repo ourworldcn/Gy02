@@ -4,12 +4,14 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using OW.Game.Store;
+using OW.Server;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -50,7 +52,7 @@ namespace OW.Game.Managers
     /// <see cref="VirtualThing"/> 和 <see cref="OrphanedThing"/>类的管理服务类。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class ThingManager
+    public class ThingManager : IDisposable
     {
         #region 构造函数相关
 
@@ -61,7 +63,6 @@ namespace OW.Game.Managers
         public ThingManager([NotNull] IServiceProvider service) : this()
         {
             Service = service;
-            DataObjectManager = new DataObjectManager(new DataObjectManagerOptions(), Service);
             Initializer();
         }
 
@@ -77,10 +78,42 @@ namespace OW.Game.Managers
         /// </summary>
         void Initializer()
         {
-            _Timer = new Timer(TimerFunc, null, Options.ExpirationScanFrequency, Options.ExpirationScanFrequency);
+            Scheduler.TryAdd(_Key.ToString(), new OwSchedulerEntry()
+            {
+                Key = _Key.ToString(),
+                Period = Options.ExpirationScanFrequency,
+                TaskCallback = TimerFunc,
+            });
+
         }
 
         #endregion 构造函数相关
+
+        /// <summary>
+        /// 票据到账号Key的映射。
+        /// </summary>
+        ConcurrentDictionary<Guid, string> _Token2Key = new ConcurrentDictionary<Guid, string>();
+
+        /// <summary>
+        /// 角色到账号Key的映射。
+        /// </summary>
+        ConcurrentDictionary<Guid, string> _CharId2Key = new ConcurrentDictionary<Guid, string>();
+
+        /// <summary>
+        /// 登录名到账号Key的映射。
+        /// </summary>
+        ConcurrentDictionary<string, string> _LoginNameId2Key = new ConcurrentDictionary<string, string>();
+
+        /// <summary>
+        /// 定时任务的Key。
+        /// </summary>
+        readonly Guid _Key = Guid.NewGuid();
+
+        OwScheduler _Scheduler;
+        /// <summary>
+        /// 任务计划器。
+        /// </summary>
+        public OwScheduler Scheduler { get => _Scheduler ??= Service.GetRequiredService<OwScheduler>(); init => _Scheduler = value; }
 
         /// <summary>
         /// 键是缓存对象的键，值配置项。
@@ -95,24 +128,21 @@ namespace OW.Game.Managers
         /// <returns></returns>
         internal OwMemoryCache.OwMemoryCacheEntry GetEntry(object key) => Cache.GetEntry(key);
 
-        Timer _Timer;
-
         /// <summary>
         /// 
         /// </summary>
         /// <param name="state"></param>
-        void TimerFunc(object state)
+        bool TimerFunc(object taskKey, object state)
         {
             foreach (var key in Cache.Items.Keys)
             {
-                using (var dwKey = DisposeHelper.Create(Cache.TryEnter, Cache.Exit, key, TimeSpan.Zero))
-                {
-                    if (dwKey.IsEmpty)
-                        continue;
-                    var entry = Cache.GetEntry(key);
-                }
+                using var dwKey = DisposeHelper.Create(Cache.TryEnter, Cache.Exit, key, TimeSpan.Zero);
+                if (dwKey.IsEmpty)
+                    continue;
+                var entry = Cache.GetEntry(key);
 
             }
+            return true;
         }
 
         public IServiceProvider Service { get; init; }
@@ -122,8 +152,6 @@ namespace OW.Game.Managers
         /// 类配置项。
         /// </summary>
         public ThingManagerOptions Options { get => _Options ??= Service.GetRequiredService<IOptions<ThingManagerOptions>>().Value; init => _Options = value; }
-
-        public DataObjectManager DataObjectManager { get; init; }
 
         private OwMemoryCache _Cache;
         /// <summary>
@@ -255,6 +283,95 @@ namespace OW.Game.Managers
 
             return result;
         }
+
+        #region IDisposable接口相关
+
+        /// <summary>
+        /// 如果对象已经被处置则抛出<see cref="ObjectDisposedException"/>异常。
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        protected void ThrowIfDisposed()
+        {
+            if (_IsDisposed)
+                throw new ObjectDisposedException(GetType().FullName);
+        }
+
+        /// <summary>
+        /// 通过检测<see cref="OwHelper.GetLastError"/>返回值是否为258(WAIT_TIMEOUT)决定是否抛出异常<seealso cref="TimeoutException"/>。
+        /// </summary>
+        /// <param name="msg"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void ThrowIfTimeout(string msg)
+        {
+            if (OwHelper.GetLastError() == 258)
+                throw new TimeoutException(msg);
+        }
+
+        /// <summary>
+        /// 根据<see cref="OwHelper.GetLastError"/>返回值判断是否抛出锁定键超时的异常。
+        /// </summary>
+        /// <param name="key"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private void ThrowIfLockKeyTimeout(object key)
+        {
+            if (OwHelper.GetLastError() == 258)
+                throw new TimeoutException($"锁定键时超时，键:{key}");
+        }
+
+
+        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DoesNotReturn]
+        //static void Throw() => throw new ObjectDisposedException(typeof(LeafMemoryCache).FullName);
+
+        private bool _IsDisposed;
+
+        protected bool IsDisposed { get => _IsDisposed; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_IsDisposed)
+            {
+                if (disposing)
+                {
+                    //释放托管状态(托管对象)
+                }
+
+                // 释放未托管的资源(未托管的对象)并重写终结器
+                // 将大型字段设置为 null
+                _Options = null;
+                _Entries = null;
+                _Scheduler = null;
+                _Cache = null;
+                _Token2Key = null;
+                _LoginNameId2Key = null;
+                _CharId2Key = null;
+                _IsDisposed = true;
+            }
+        }
+
+        // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
+        // ~LeafMemoryCache()
+        // {
+        //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+        //     Dispose(disposing: false);
+        // }
+
+        /// <summary>
+        /// 处置对象。
+        /// </summary>
+        public void Dispose()
+        {
+            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
+
+        #endregion IDisposable接口相关
+
     }
 
     public static class ThingManagerExtensions

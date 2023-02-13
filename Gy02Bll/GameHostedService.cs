@@ -37,7 +37,11 @@ namespace Gy02Bll
             _Services = services;
         }
 
-        public IServiceProvider _Services { get; set; }
+        readonly IServiceProvider _Services;
+        /// <summary>
+        /// 使用的服务容器。
+        /// </summary>
+        public IServiceProvider Services { get => _Services; }
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -153,22 +157,15 @@ namespace Gy02Bll
             //UdpClient udp = new UdpClient(0);
             //udp.Send(new byte[] { 11, 22 }, new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 104 }), 21080));
 
-            var sw = Stopwatch.StartNew();
             DateTime now = DateTime.UtcNow;
-            var ary = ArrayPool<object>.Shared.Rent(3);
-            ary[0] = 55;
-            ArrayPool<object>.Shared.Return(ary);
+            var str = Guid.NewGuid().ToString();
+            var sw = Stopwatch.StartNew();
             try
             {
-                var mng = _Services.GetService<TemplateManager>();
-                mng.GetTemplateFromId(Guid.NewGuid());
-                var str = JsonSerializer.Serialize(new Gy02TemplateJO { });
-                Task.Run(() =>
+                for (int i = 0; i < 1_000_000; i++)
                 {
-                    mng.GetTemplateFromId(Guid.NewGuid());
-                });
 
-                var ss = JsonSerializer.Deserialize<Gy02TemplateJO>(str);
+                }
             }
             finally
             {
