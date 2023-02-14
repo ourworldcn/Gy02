@@ -16,6 +16,7 @@ using OW.Game.Manager;
 using OW.Game.Store;
 using System.Diagnostics;
 using System.Reflection;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;

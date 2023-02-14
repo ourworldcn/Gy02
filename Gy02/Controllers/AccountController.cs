@@ -25,7 +25,7 @@ namespace Gy02.Controllers
         /// <param name="charManager"></param>
         public AccountController(GameCharManager charManager)
         {
-            CharManager = charManager; 
+            CharManager = charManager;
         }
 
         /// <summary>

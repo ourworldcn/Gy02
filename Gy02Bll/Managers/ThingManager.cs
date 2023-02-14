@@ -52,7 +52,7 @@ namespace OW.Game.Managers
     /// <see cref="VirtualThing"/> 和 <see cref="OrphanedThing"/>类的管理服务类。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class ThingManager : IDisposable
+    public class ThingManager : GameManagerBase<ThingManagerOptions>
     {
         #region 构造函数相关
 
@@ -78,6 +78,7 @@ namespace OW.Game.Managers
         /// </summary>
         void Initializer()
         {
+            Options = Service.GetRequiredService<IOptions<ThingManagerOptions>>().Value;
             Scheduler.TryAdd(_Key.ToString(), new OwSchedulerEntry()
             {
                 Key = _Key.ToString(),
@@ -146,12 +147,6 @@ namespace OW.Game.Managers
         }
 
         public IServiceProvider Service { get; init; }
-
-        private ThingManagerOptions _Options;
-        /// <summary>
-        /// 类配置项。
-        /// </summary>
-        public ThingManagerOptions Options { get => _Options ??= Service.GetRequiredService<IOptions<ThingManagerOptions>>().Value; init => _Options = value; }
 
         private OwMemoryCache _Cache;
         /// <summary>
@@ -287,16 +282,6 @@ namespace OW.Game.Managers
         #region IDisposable接口相关
 
         /// <summary>
-        /// 如果对象已经被处置则抛出<see cref="ObjectDisposedException"/>异常。
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        protected void ThrowIfDisposed()
-        {
-            if (_IsDisposed)
-                throw new ObjectDisposedException(GetType().FullName);
-        }
-
-        /// <summary>
         /// 通过检测<see cref="OwHelper.GetLastError"/>返回值是否为258(WAIT_TIMEOUT)决定是否抛出异常<seealso cref="TimeoutException"/>。
         /// </summary>
         /// <param name="msg"></param>
@@ -319,21 +304,13 @@ namespace OW.Game.Managers
         }
 
 
-        //[MethodImpl(MethodImplOptions.AggressiveInlining)]
-        //[DoesNotReturn]
-        //static void Throw() => throw new ObjectDisposedException(typeof(LeafMemoryCache).FullName);
-
-        private bool _IsDisposed;
-
-        protected bool IsDisposed { get => _IsDisposed; }
-
         /// <summary>
         /// 
         /// </summary>
         /// <param name="disposing"></param>
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
-            if (!_IsDisposed)
+            if (IsDisposed)
             {
                 if (disposing)
                 {
@@ -342,32 +319,14 @@ namespace OW.Game.Managers
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                _Options = null;
                 _Entries = null;
                 _Scheduler = null;
                 _Cache = null;
                 _Token2Key = null;
                 _LoginNameId2Key = null;
                 _CharId2Key = null;
-                _IsDisposed = true;
             }
-        }
-
-        // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
-        // ~LeafMemoryCache()
-        // {
-        //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-        //     Dispose(disposing: false);
-        // }
-
-        /// <summary>
-        /// 处置对象。
-        /// </summary>
-        public void Dispose()
-        {
-            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
+            base.Dispose(disposing);
         }
 
         #endregion IDisposable接口相关

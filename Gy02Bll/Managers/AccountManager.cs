@@ -7,10 +7,12 @@ using OW.Game.Caching;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.Server;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.Arm;
 using System.Security.Cryptography;
 using System.Text;
@@ -33,8 +35,10 @@ namespace Gy02Bll.Managers
     /// 账号管理器。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class AccountManager
+    public class AccountManager : GameManagerBase<AccountManagerOptions>
     {
+        #region 构造函数及相关
+
         /// <summary>
         /// 构造函数。
         /// </summary>
@@ -44,11 +48,19 @@ namespace Gy02Bll.Managers
             Initialize();
         }
 
+        /// <summary>
+        /// 内部初始化函数。
+        /// </summary>
+        private void Initialize()
+        {
+            Options = Service.GetService<IOptions<AccountManagerOptions>>()?.Value ?? new AccountManagerOptions();
+        }
+
+        #endregion 构造函数及相关
+
         IServiceProvider _Service;
 
         public IServiceProvider Service => _Service;
-
-        public AccountManagerOptions Options { get; set; } = new AccountManagerOptions();
 
         ThingManager _ThingManager;
         /// <summary>
@@ -56,13 +68,6 @@ namespace Gy02Bll.Managers
         /// 其中账号的Id的<see cref="Guid.ToString"/>后的字符串是键。
         /// </summary>
         public ThingManager ThingManager => _ThingManager ??= _Service.GetRequiredService<ThingManager>();
-
-        /// <summary>
-        /// 内部初始化函数。
-        /// </summary>
-        private void Initialize()
-        {
-        }
 
         /// <summary>
         /// 票据到账号Key的映射。
@@ -189,5 +194,33 @@ namespace Gy02Bll.Managers
 
             return new DisposeHelper<object>();
         }
+        #region IDisposable接口相关
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected override void Dispose(bool disposing)
+        {
+            if (IsDisposed)
+            {
+                if (disposing)
+                {
+                    //释放托管状态(托管对象)
+                }
+
+                // 释放未托管的资源(未托管的对象)并重写终结器
+                // 将大型字段设置为 null
+                _ThingManager = null;
+                _Service = null;
+                _Token2Key = null;
+                _LoginNameId2Key = null;
+                _CharId2Key = null;
+            }
+            base.Dispose(disposing);
+        }
+
+        #endregion IDisposable接口相关
+
     }
 }

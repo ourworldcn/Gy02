@@ -142,6 +142,8 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
+            var cts=new SemaphoreSlim(1);
+            cts.Wait(100);
             var sch = _Services.GetRequiredService<ThingManager>();
             var mc = _Services.GetRequiredService<OwMemoryCache>();
             //Task.Run(() =>
