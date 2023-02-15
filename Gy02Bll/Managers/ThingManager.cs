@@ -154,6 +154,10 @@ namespace OW.Game.Managers
         /// </summary>
         public OwMemoryCache Cache { get => _Cache ??= Service.GetRequiredService<OwMemoryCache>(); init => _Cache = value; }
 
+        public void Add(object key, object value)
+        {
+        }
+
         /// <summary>
         /// 加载或获取缓存的对象。不会重新计算时间。
         /// </summary>

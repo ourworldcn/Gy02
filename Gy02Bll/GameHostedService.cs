@@ -142,25 +142,7 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-            var cts=new SemaphoreSlim(1);
-            cts.Wait(100);
-            var sch = _Services.GetRequiredService<ThingManager>();
-            var mc = _Services.GetRequiredService<OwMemoryCache>();
-            //Task.Run(() =>
-            //{
-            //    SocketAsyncEventArgs e = new SocketAsyncEventArgs() { };
-            //    e.SetBuffer(MemoryPool<byte>.Shared.Rent(2048).Memory);
-            //    e.SocketFlags = SocketFlags.Partial;
-            //    e.Completed += E_Completed;
-            //    Socket udp = new Socket(SocketType.Dgram, ProtocolType.Udp);
-            //    var b = udp.ReceiveAsync(e);
-            //});
-            //Thread.CurrentThread.Join(1);
-            //UdpClient udp = new UdpClient(0);
-            //udp.Send(new byte[] { 11, 22 }, new IPEndPoint(new IPAddress(new byte[] { 192, 168, 0, 104 }), 21080));
-
             DateTime now = DateTime.UtcNow;
-            var str = Guid.NewGuid().ToString();
             var sw = Stopwatch.StartNew();
             try
             {

@@ -40,6 +40,13 @@ namespace Microsoft.Extensions.DependencyInjection
         /// 服务的类型。可能返回null,表示使用实现类相同类型的服务类型。
         /// </summary>
         public Type ServiceType { get; set; }
+
+        /// <summary>
+        /// 创建服务对象的函数。
+        /// 如果不设置则直接用 <see cref="IServiceCollection"/>.AddXXX&lt;T&gt; 加入。
+        /// 函数签名是 static object XXX(IServiceProvider)
+        /// </summary>
+        public string CreateCallbackName { get; set; }
     }
 
     public static class OwAutoInjectionExtensions
@@ -60,13 +67,31 @@ namespace Microsoft.Extensions.DependencyInjection
                 switch (att.Lifetime)
                 {
                     case ServiceLifetime.Singleton:
-                        services.AddSingleton(att.ServiceType ?? item, item);
+                        if (string.IsNullOrWhiteSpace(att.CreateCallbackName))  //若没有创建函数
+                            services.AddSingleton(att.ServiceType ?? item, item);
+                        else //若有创建函数
+                        {
+                            var callback = att.ServiceType.GetMethod(att.CreateCallbackName);
+                            services.AddSingleton(att.ServiceType ?? item, c => callback.Invoke(null, new object[] { c }));
+                        }
                         break;
                     case ServiceLifetime.Scoped:
-                        services.AddScoped(att.ServiceType ?? item, item);
+                        if (string.IsNullOrWhiteSpace(att.CreateCallbackName))  //若没有创建函数
+                            services.AddScoped(att.ServiceType ?? item, item);
+                        else //若有创建函数
+                        {
+                            var callback = att.ServiceType.GetMethod(att.CreateCallbackName);
+                            services.AddScoped(att.ServiceType ?? item, c => callback.Invoke(null, new object[] { c }));
+                        }
                         break;
                     case ServiceLifetime.Transient:
-                        services.AddTransient(att.ServiceType ?? item, item);
+                        if (string.IsNullOrWhiteSpace(att.CreateCallbackName))  //若没有创建函数
+                            services.AddTransient(att.ServiceType ?? item, item);
+                        else //若有创建函数
+                        {
+                            var callback = att.ServiceType.GetMethod(att.CreateCallbackName);
+                            services.AddTransient(att.ServiceType ?? item, c => callback.Invoke(null, new object[] { c }));
+                        }
                         break;
                     default:
                         break;
