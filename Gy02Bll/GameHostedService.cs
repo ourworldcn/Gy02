@@ -4,6 +4,7 @@ using Gy02Bll.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +28,7 @@ using System.Numerics;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Text.Json;
+using static Microsoft.Extensions.Caching.Memory.OwMemoryCache;
 
 namespace Gy02Bll
 {
@@ -142,14 +144,23 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
+            var s = new List<int>();
+            int[] ary = new int[] { 1 };
+            Array.Resize(ref ary, 2);
             DateTime now = DateTime.UtcNow;
             var sw = Stopwatch.StartNew();
+            var mc = new OwServerMemoryCache(_Services.GetRequiredService<IOptions<OwServerCacheOptions>>());
+
+            mc.Set("", "");
+            using (var entry = mc.CreateEntry(""))
+                entry.SetSlidingExpiration(TimeSpan.FromSeconds(1));
+
+            using (var entry = mc.CreateEntry(""))
+                entry.SetSlidingExpiration(TimeSpan.FromSeconds(101)).SetValue(12);
+
+            //CacheEntry d;
             try
             {
-                for (int i = 0; i < 1_000_000; i++)
-                {
-
-                }
             }
             finally
             {

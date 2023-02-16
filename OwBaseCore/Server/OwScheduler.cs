@@ -287,14 +287,14 @@ namespace OW.Server
 
         #region IDisposable接口及相关
 
-        private bool _DisposedValue;
+        private bool _Disposed;
         protected virtual void Dispose(bool disposing)
         {
-            if (!_DisposedValue)
+            if (!_Disposed)
             {
                 if (disposing)
                 {
-                    // TODO: 释放托管状态(托管对象)
+                    // 释放托管状态(托管对象)
                 }
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
@@ -305,7 +305,7 @@ namespace OW.Server
                 _Items = null;
                 _Plans = null;
                 _Completed = null;
-                _DisposedValue = true;
+                _Disposed = true;
             }
         }
 

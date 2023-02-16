@@ -12,4 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.ObjectPool" Version="6.0.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Microsoft.Extensions\" />
+  </ItemGroup>
+
 </Project>
