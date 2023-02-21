@@ -71,6 +71,13 @@
             </summary>
             <returns><seealso cref="T:Gy02Bll.Templates.Gy02TemplateJO"/></returns>
         </member>
+        <member name="M:Gy02.Controllers.VWorldController.StopService(Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+            <summary>
+            重新启动服务。通常用于更新数据后重启。
+            </summary>
+            <param name="applicationLifetime"></param>
+            <returns></returns>
+        </member>
         <member name="T:Gy02.Controllers.WeatherForecastController">
             <summary>
             天气控制器。

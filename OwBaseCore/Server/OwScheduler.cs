@@ -1,10 +1,12 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System;
 using System.Buffers;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
@@ -41,9 +43,9 @@ namespace OW.Server
         public TimeSpan Period { get; set; }
 
         /// <summary>
-        /// 上次执行的时间点。
+        /// 上次执行的时间点。null表示尚未运行过。
         /// </summary>
-        public DateTime LastUtc { get; internal set; }
+        public DateTime? LastUtc { get; internal set; }
 
         /// <summary>
         /// 
@@ -53,6 +55,36 @@ namespace OW.Server
         {
             if (Period == TimeSpan.Zero)
                 throw new InvalidOperationException();
+        }
+
+        /// <summary>
+        /// 是否到期。
+        /// </summary>
+        /// <param name="now"></param>
+        /// <returns>true已经到期，false未到期。</returns>
+        public bool IsExpired(DateTime now)
+        {
+            if (Period == Timeout.InfiniteTimeSpan)  //若仅运行一次
+                return LastUtc is null;
+            if (LastUtc is null)    //若尚未运行
+                return true;
+            return OwHelper.ComputeTimeout(LastUtc.Value, now) >= Period;
+        }
+
+        /// <summary>
+        /// 增加最后运行时间。
+        /// </summary>
+        /// <param name="now">指定当前时间。</param>
+        public void SetExpired(DateTime now)
+        {
+            if (LastUtc is null)    //若尚未运行过任务
+            {
+                LastUtc = now;
+                return;
+            }
+            else
+                while (LastUtc.Value < now)   //若时间未超过指定时间
+                    LastUtc += Period;
         }
     }
 
@@ -69,6 +101,7 @@ namespace OW.Server
         /// <summary>
         /// 默认的任务执行频度。
         /// </summary>
+        /// <value>默认值：1分钟。</value>
         public TimeSpan Frequency { get; set; } = TimeSpan.FromMinutes(1);
 
         /// <summary>
@@ -100,8 +133,7 @@ namespace OW.Server
     /// 默认它仅用一个线程（不并行），因为假设的场景是一个服务器的IO线程。
     /// 每个任务会有一个唯一标识key，调用任务会首先锁定key,若不能锁定则会再下次扫描时调用任务。
     /// </summary>
-    [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class OwScheduler : IDisposable
+    public class OwScheduler : BackgroundService
     {
         #region 构造函数及相关
 
@@ -117,7 +149,6 @@ namespace OW.Server
 
         private void Initializer()
         {
-            _Timer = new System.Threading.Timer(TimeCallback, null, Options.Frequency, Options.Frequency);
         }
 
         private OwSchedulerOptions _Options;
@@ -139,40 +170,6 @@ namespace OW.Server
         /// 优先执行的任务的任务对象。
         /// </summary>
         Task _Task;
-
-        System.Threading.Timer _Timer;
-        /// <summary>
-        /// 定时任务。
-        /// </summary>
-        /// <param name="state"></param>
-        private void TimeCallback(object state)
-        {
-            foreach (var kvp in _Items)
-            {
-                using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, kvp.Key, TimeSpan.Zero);
-                if (dw.IsEmpty) //若无法锁定
-                {
-                    Run(kvp.Key, false);
-                    continue;
-                }
-                if (kvp.Value.Period == Timeout.InfiniteTimeSpan)   //若是无限周期的
-                    continue;
-                var now = DateTime.UtcNow;
-                if (now - kvp.Value.LastUtc >= kvp.Value.Period)    //若周期时间已到
-                {
-                    try
-                    {
-                        RunCore(kvp.Key);
-                    }
-                    catch (Exception)
-                    {
-                        //TODO 处理异常
-                    }
-                }
-                Thread.Yield();
-            }
-            SchedulerCallback();
-        }
 
         /// <summary>
         /// 将优先计划的项全部执行。
@@ -201,15 +198,6 @@ namespace OW.Server
         }
 
         #endregion 定时任务及相关
-
-        /// <summary>
-        /// 是否已经完成所有定时任务。
-        /// </summary>
-        ManualResetEvent _Completed = new ManualResetEvent(false);
-        /// <summary>
-        /// 是否已经完成所有定时任务。
-        /// </summary>
-        public ManualResetEvent Completed { get => _Completed; }
 
         /// <summary>
         /// 任务项。
@@ -285,6 +273,96 @@ namespace OW.Server
             return result;
         }
 
+        #region BackgroundService及相关
+
+        protected override Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            //注册终止函数。
+            stoppingToken.Register(c =>
+            {
+                try
+                {
+                    ExecuteTask?.Wait(); //等待后台任务结束
+                }
+                catch (Exception) { }
+
+                return;
+            }, null);
+            //后台任务
+            return Task.Factory.StartNew(stoppingTokenObj =>
+            {
+                CancellationToken ctStop = (CancellationToken)stoppingTokenObj;
+
+                while (!stoppingToken.IsCancellationRequested)
+                {
+                    var now = DateTime.UtcNow;  //此轮工作的开始时间
+                    foreach (var kvp in _Items)
+                    {
+                        using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, kvp.Key, TimeSpan.Zero);
+                        if (dw.IsEmpty) //若无法锁定
+                            continue;
+                        if (!kvp.Value.IsExpired(now))   //若无需运行
+                            continue;
+                        try
+                        {
+                            RunCore(kvp.Key);
+                        }
+                        catch (Exception)
+                        {//TODO 处理异常
+                        }
+                        Thread.Yield();
+                    }
+                    //等待
+                    var ts = OwHelper.ComputeTimeout(now, Options.Frequency);
+                    var task = Task.Run(() =>
+                    {
+                        using var dw = DisposeHelper.Create(Monitor.TryEnter, Monitor.Exit, _Plans, ts);
+                        if (!dw.IsEmpty)
+                        {
+                            ts = OwHelper.ComputeTimeout(DateTime.UtcNow, now + Options.Frequency);
+                            Monitor.Wait(_Plans, ts);
+                        }
+                    });
+                    try
+                    {
+                        task.Wait((int)ts.TotalMilliseconds, ctStop);
+                    }
+                    catch (OperationCanceledException) { break; }
+                }
+            }, stoppingToken, TaskCreationOptions.LongRunning);
+        }
+
+        /// <summary>
+        /// 运行所有任务。
+        /// </summary>
+        /// <param name="now"></param>
+        void RunAll(DateTime now)
+        {
+            foreach (var kvp in _Items)
+            {
+                using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, kvp.Key, TimeSpan.Zero);
+                if (dw.IsEmpty) //若无法锁定
+                {
+                    Run(kvp.Key);   //安排优先再次运行
+                    continue;
+                }
+                if (!kvp.Value.IsExpired(now))   //若无需运行
+                    continue;
+                try
+                {
+                    if(!RunCore(kvp.Key))
+                        Run(kvp.Key);   //安排优先再次运行
+                }
+                catch (Exception)
+                {
+                    Run(kvp.Key);   //安排优先再次运行
+                }
+                Thread.Yield();
+            }
+        }
+
+        #endregion BackgroundService及相关
+
         #region IDisposable接口及相关
 
         private bool _Disposed;
@@ -299,12 +377,9 @@ namespace OW.Server
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                _Timer?.Dispose(new ManualResetEvent(false));
-                _Timer = null;
                 //_Task = null;
                 _Items = null;
                 _Plans = null;
-                _Completed = null;
                 _Disposed = true;
             }
         }
@@ -316,13 +391,26 @@ namespace OW.Server
         //     Dispose(disposing: false);
         // }
 
-        public void Dispose()
-        {
-            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
+        //public void Dispose()
+        //{
+        //    // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+        //    Dispose(disposing: true);
+        //    GC.SuppressFinalize(this);
+        //}
 
         #endregion IDisposable接口及相关
+
+    }
+
+    namespace App.QueueService
+    {
+        public interface IBackgroundTaskQueue
+        {
+            ValueTask QueueBackgroundWorkItemAsync(
+                Func<CancellationToken, ValueTask> workItem);
+
+            ValueTask<Func<CancellationToken, ValueTask>> DequeueAsync(
+                CancellationToken cancellationToken);
+        }
     }
 }

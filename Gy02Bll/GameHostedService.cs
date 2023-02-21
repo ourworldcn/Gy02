@@ -144,19 +144,8 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-            var s = new List<int>();
-            int[] ary = new int[] { 1 };
-            Array.Resize(ref ary, 2);
             DateTime now = DateTime.UtcNow;
             var sw = Stopwatch.StartNew();
-            var mc = new OwServerMemoryCache(_Services.GetRequiredService<IOptions<OwServerCacheOptions>>());
-
-            mc.Set("", "");
-            using (var entry = mc.CreateEntry(""))
-                entry.SetSlidingExpiration(TimeSpan.FromSeconds(1));
-
-            using (var entry = mc.CreateEntry(""))
-                entry.SetSlidingExpiration(TimeSpan.FromSeconds(101)).SetValue(12);
 
             //CacheEntry d;
             try

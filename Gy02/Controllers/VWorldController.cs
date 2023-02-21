@@ -28,5 +28,17 @@ namespace Gy02.Controllers
         {
             return manager.Id2Template.Values.Select(c=>c.GetJsonObject<Gy02TemplateJO>()).ToArray();
         }
+
+        /// <summary>
+        /// 重新启动服务。通常用于更新数据后重启。
+        /// </summary>
+        /// <param name="applicationLifetime"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<bool> StopService([FromServices]IHostApplicationLifetime applicationLifetime)
+        {
+            applicationLifetime.StopApplication();
+            return true;
+        }
     }
 }

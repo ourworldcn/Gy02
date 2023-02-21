@@ -1,5 +1,5 @@
 ﻿/*
- * 利用开源的MemoryCache代码，稍微修改，实现了服务器专用的一个缓存类。
+ * 利用开源的MemoryCache代码，稍微修改，实现了服务器专用的缓存类。
  */
 using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging.Abstractions;
@@ -614,12 +614,12 @@ namespace Microsoft.Extensions.Caching.Memory
         public bool TryEnterKey(object key, TimeSpan timeout) => _options.TryEnterCallback(key, timeout);
 
         /// <summary>
-        /// 
+        /// 锁定键。
         /// </summary>
         /// <param name="key"></param>
-        /// <param name="timeout">null表示使用默认超时:<see cref="OwServerCacheOptions.EnterKeyTimeout"/>。</param>
+        /// <param name="timeout">省略或null表示使用默认超时:<see cref="OwServerCacheOptions.EnterKeyTimeout"/>。</param>
         /// <returns></returns>
-        public bool TryEnterKey(object key, TimeSpan? timeout) => _options.TryEnterCallback(key, timeout ?? _options.EnterKeyTimeout);
+        public bool TryEnterKey(object key, TimeSpan? timeout = null) => _options.TryEnterCallback(key, timeout ?? _options.EnterKeyTimeout);
 
         public void ExitKey(object key) => _options.ExitCallback(key);
 
@@ -1132,5 +1132,12 @@ namespace Microsoft.Extensions.Caching.Memory
 
             static void Throw() => throw new ArgumentNullException(nameof(key));
         }
+    }
+
+    /// <summary>
+    /// 封装扩展方法。
+    /// </summary>
+    public static class OwServerMemoryCacheExtensions
+    {
     }
 }
