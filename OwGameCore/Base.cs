@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using OW.Game.Store;
 using OW.Server;
@@ -20,6 +21,7 @@ namespace OW.Game
             services.UseGameCommand(hsAssm);
 
             services.TryAddSingleton<PasswordGenerator>(); //密码生成器
+            services.TryAddSingleton<OwServerMemoryCache>();
 
             services.AddHostedService<OwScheduler>();
             return services;

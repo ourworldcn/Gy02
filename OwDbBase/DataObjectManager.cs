@@ -1,7 +1,11 @@
-﻿using Microsoft.Extensions.Caching.Memory;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
+using OW.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,10 +16,13 @@ namespace OwDbBase
 {
     public class DataObjectManagerOptions : IOptions<DataObjectManagerOptions>
     {
+        #region 构造函数及相关
+
         public DataObjectManagerOptions()
         {
         }
 
+        #endregion 构造函数及相关
         public DataObjectManagerOptions Value => this;
 
         /// <summary>
@@ -134,4 +141,114 @@ namespace OwDbBase
 
     }
 
+    /// <summary>
+    /// EF实体类缓存管理器。
+    /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
+    public class DataObjectManager : IDisposable
+    {
+        #region 构造函数及相关
+        public DataObjectManager()
+        {
+
+        }
+
+        public DataObjectManager(IOptions<DataObjectManagerOptions> options, ILogger<DataObjectManager> logger, OwServerMemoryCache cache,
+            IEnumerable<IHostedService> ss, IServiceProvider service)
+        {
+            Options = options.Value;
+            Logger = logger;
+            _Cache = cache;
+            _Service = service;
+            _OwScheduler = ss.First(c => c is OwScheduler) as OwScheduler;
+        }
+
+
+        #endregion 构造函数及相关
+
+        private DataObjectManagerOptions _Options;
+        /// <summary>
+        /// 
+        /// </summary>
+        public DataObjectManagerOptions Options { get => _Options; internal set => _Options = value; }
+
+        private ILogger<DataObjectManager> _Logger;
+        /// <summary>
+        /// 
+        /// </summary>
+        public ILogger<DataObjectManager> Logger { get => _Logger; internal set => _Logger = value; }
+
+        OwScheduler _OwScheduler;
+        public OwScheduler Scheduler { get => _OwScheduler; }
+
+        OwServerMemoryCache _Cache;
+        public OwServerMemoryCache Cache { get => _Cache; }
+
+        IServiceProvider _Service;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IServiceProvider Service => _Service;
+
+
+        public void TryAdd(object key, object value)
+        {
+
+        }
+
+        public void TryRemove(object key) { }
+
+        public void GetOrLoad<TContext, TSource>(object key, Func<TSource, bool> predicate)
+            where TContext : DbContext where TSource : class
+        {
+            var db = _Service.GetRequiredService<IDbContextFactory<TContext>>().CreateDbContext();
+            var value = db.Set<TSource>().First(predicate);
+        }
+
+        #region IDisposable接口及相关
+
+        private bool _Disposed;
+
+        protected bool Disposed => _Disposed;
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        public void Dispose()
+        {
+            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_Disposed)
+            {
+                if (disposing)
+                {
+                }
+
+                // 释放未托管的资源(未托管的对象)并重写终结器
+                // 将大型字段设置为 null
+                _Cache = null;
+                _OwScheduler = null;
+                _Logger = null;
+                _Service = null;
+                _Disposed = true;
+            }
+        }
+
+        private void CheckDisposed()
+        {
+            if (_Disposed)
+            {
+                throw new ObjectDisposedException(GetType().FullName);
+            }
+        }
+
+        #endregion IDisposable接口及相关
+
+    }
 }

@@ -147,7 +147,7 @@ namespace Gy02Bll
             DateTime now = DateTime.UtcNow;
             var sw = Stopwatch.StartNew();
 
-            //CacheEntry d;
+            var svrs = _Services.GetService<DataObjectManager>();
             try
             {
             }
