@@ -1,5 +1,6 @@
 ﻿using GuangYuan.GY001.TemplateDb;
 using Gy02Bll.Commands;
+using Gy02Bll.Managers;
 using Gy02Bll.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -146,8 +147,7 @@ namespace Gy02Bll
         {
             DateTime now = DateTime.UtcNow;
             var sw = Stopwatch.StartNew();
-
-            var svrs = _Services.GetService<DataObjectManager>();
+            var mng = _Services.GetService<GameAccountManager>();
             try
             {
             }

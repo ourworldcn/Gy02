@@ -1,6 +1,10 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game;
 using OW.Game.Caching;
@@ -11,6 +15,7 @@ using OW.Server;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.Arm;
@@ -35,25 +40,26 @@ namespace Gy02Bll.Managers
     /// 账号管理器。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class AccountManager : GameManagerBase<AccountManagerOptions>
+    public class GameAccountManager : GameManagerBase<AccountManagerOptions>
     {
         #region 构造函数及相关
 
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public AccountManager(IServiceProvider service)
+        public GameAccountManager(IOptions<AccountManagerOptions> options, ILogger<DataObjectManager> logger, OwServerMemoryCache cache, IServiceProvider service)
         {
             _Service = service;
+            Options = options.Value;
+            _Logger = logger;
+            _Cache = cache;
+            _Scheduler = (OwScheduler)service.GetRequiredService<IEnumerable<IHostedService>>().First(c => c is OwScheduler);
             Initialize();
         }
 
         /// <summary>
         /// 内部初始化函数。
         /// </summary>
+        [SuppressMessage("Performance", "CA1822:将成员标记为 static", Justification = "<挂起>")]
         private void Initialize()
         {
-            Options = Service.GetService<IOptions<AccountManagerOptions>>()?.Value ?? new AccountManagerOptions();
         }
 
         #endregion 构造函数及相关
@@ -83,6 +89,20 @@ namespace Gy02Bll.Managers
         /// 登录名到账号Key的映射。
         /// </summary>
         ConcurrentDictionary<string, string> _LoginNameId2Key = new ConcurrentDictionary<string, string>();
+
+        private ILogger<DataObjectManager> _Logger;
+
+        OwScheduler _Scheduler;
+        /// <summary>
+        /// 任务计划对象。
+        /// </summary>
+        public OwScheduler Scheduler { get => _Scheduler; }
+
+        OwServerMemoryCache _Cache;
+        /// <summary>
+        /// 缓存对象。
+        /// </summary>
+        public OwServerMemoryCache Cache { get => _Cache; }
 
         /// <summary>
         /// 获取指定角色Id的角色是否在线。
@@ -174,26 +194,34 @@ namespace Gy02Bll.Managers
         /// <summary>
         /// 创建一个账号。
         /// </summary>
-        /// <param name="uid"></param>
+        /// <param name="loginName"></param>
         /// <param name="pwd"></param>
         /// <param name="user"></param>
         /// <returns>账号的id的锁定结构。</returns>
-        public DisposeHelper<object> Create(string uid, string pwd, out OrphanedThing user)
+        public DisposeHelper<object> Create(string loginName, string pwd, Action<DbContext, OrphanedThing> initCallback, out OrphanedThing user)
         {
-            using var dwUid = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, uid, Timeout.InfiniteTimeSpan);
-            if (_LoginNameId2Key.ContainsKey(uid))   //若已经存在
+            using var dwUid = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, loginName, Options.Timeout);
+            if (dwUid.IsEmpty)   //若锁定失败
+                throw new TimeoutException();
+            if (_LoginNameId2Key.ContainsKey(loginName))   //若已经存在
                 throw new InvalidOperationException();
             var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
-            if (db.Set<OrphanedThing>().Where(c => c.ExtraString == uid).Count() > 0)  //若数据库中已经存在
+            if (db.Set<OrphanedThing>().Any(c => c.ExtraString == loginName))  //若数据库中已经存在
             {
                 using var tmp = db;
                 throw new InvalidOperationException();
             }
             user = new OrphanedThing();
+            initCallback(db, user);
+            var mceo = new MemoryCacheEntryOptions();
+            mceo.SetSlidingExpiration(TimeSpan.FromMinutes(1)).RegisterPostEvictionCallback((cKey, cValue, cReason, cState) => { });
+
+            _Cache.Set(user.IdString, user, mceo);
             user.RuntimeProperties["DbContext"] = db;
 
             return new DisposeHelper<object>();
         }
+
         #region IDisposable接口相关
 
         /// <summary>

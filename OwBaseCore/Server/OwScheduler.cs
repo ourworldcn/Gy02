@@ -301,6 +301,7 @@ namespace OW.Server
         {
             value.IsValid();
             using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, key, Timeout.InfiniteTimeSpan);
+            value.Key = key;
             return _Items.TryAdd(key, value);
         }
 
