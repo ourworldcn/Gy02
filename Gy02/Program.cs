@@ -18,6 +18,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Text.Json;
 
+lbStart:
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
@@ -91,7 +92,6 @@ services.AddOptions();
 
 services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
 
-
 var app = builder.Build();
 #endregion 追加服务到容器
 
@@ -122,3 +122,27 @@ app.UseSwaggerUI(c =>
 #endregion 配置HTTP管道
 
 app.Run();
+
+if (Global.Program.ReqireReboot) //若需要重启
+{
+    (app as IDisposable)?.Dispose();
+    app = null;
+    GC.Collect(/*GC.MaxGeneration, GCCollectionMode.Forced*/);
+    Global.Program.ReqireReboot = false;
+    goto lbStart;
+}
+
+namespace Global
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public static class Program
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool ReqireReboot = false;
+
+    }
+}

@@ -40,17 +40,16 @@ namespace Gy02Bll.Managers
     /// 账号管理器。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class GameAccountManager : GameManagerBase<AccountManagerOptions>
+    public class GameAccountManager : GameManagerBase<AccountManagerOptions, GameAccountManager>
     {
         #region 构造函数及相关
 
-        public GameAccountManager(IOptions<AccountManagerOptions> options, ILogger<DataObjectManager> logger, OwServerMemoryCache cache, IServiceProvider service)
+        public GameAccountManager(IOptions<AccountManagerOptions> options, ILogger<GameAccountManager> logger, OwServerMemoryCache cache, OwScheduler scheduler,
+            IServiceProvider service) : base(options,logger)
         {
-            _Service = service;
-            Options = options.Value;
-            _Logger = logger;
             _Cache = cache;
-            _Scheduler = (OwScheduler)service.GetRequiredService<IEnumerable<IHostedService>>().First(c => c is OwScheduler);
+            _Scheduler = scheduler;
+            _Service = service;
             Initialize();
         }
 
@@ -89,8 +88,6 @@ namespace Gy02Bll.Managers
         /// 登录名到账号Key的映射。
         /// </summary>
         ConcurrentDictionary<string, string> _LoginNameId2Key = new ConcurrentDictionary<string, string>();
-
-        private ILogger<DataObjectManager> _Logger;
 
         OwScheduler _Scheduler;
         /// <summary>

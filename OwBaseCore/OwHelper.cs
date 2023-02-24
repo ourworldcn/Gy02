@@ -366,13 +366,8 @@ namespace System
         /// <returns><see cref="TimeSpan.Zero"/>表示超时，否则是剩余的时间。
         /// 如果<paramref name="timeout"/>是<see cref="Timeout.InfiniteTimeSpan"/>，则立即返回<see cref="Timeout.InfiniteTimeSpan"/>。</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static TimeSpan ComputeTimeout(DateTime start, TimeSpan timeout)
-        {
-            if (Timeout.InfiniteTimeSpan == timeout)
-                return Timeout.InfiniteTimeSpan;
-            var ts = start + timeout - DateTime.UtcNow;
-            return ts <= TimeSpan.Zero ? TimeSpan.Zero : ts;
-        }
+        public static TimeSpan ComputeTimeout(DateTime start, TimeSpan timeout) =>
+            Timeout.InfiniteTimeSpan == timeout ? Timeout.InfiniteTimeSpan : ComputeTimeout(DateTime.UtcNow, start + timeout);
 
         /// <summary>
         /// 计算剩余时间间隔，若<paramref name="end"/>在<paramref name="start"/>之前则返回<see cref="TimeSpan.Zero"/>。
@@ -502,6 +497,41 @@ namespace System
         }
 
         #endregion 字符串暂存池及相关
+
+        /// <summary>
+        /// 按顺序锁定一组对象。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="objs"></param>
+        /// <param name="enterCallback"></param>
+        /// <param name="exitCallback"></param>
+        /// <param name="timeout"></param>
+        /// <returns>若全部锁定则返回true，否则返回false,此时没有任何对象被锁定。</returns>
+        public static bool TryEnterAll<T>([NotNull] IEnumerable<T> objs, [NotNull] Func<T, TimeSpan, bool> enterCallback, [NotNull] Action<T> exitCallback, TimeSpan timeout)
+        {
+            DateTime start = DateTime.UtcNow;
+            Stack<T> stack = new Stack<T>();  //辅助堆栈，用于回滚
+            try
+            {
+                foreach (var item in objs)
+                {
+                    var ts = ComputeTimeout(start, timeout);
+                    if (!enterCallback(item, ts)) //若失败
+                        goto lbFault;
+                }
+            }
+            catch (Exception)
+            {
+                goto lbFault;
+            }
+            return true;
+        lbFault:
+            T tmp;
+            while (stack.TryPop(out tmp))
+                exitCallback(tmp);
+            return false;
+        }
+
     }
 
     public static class ConcurrentHelper

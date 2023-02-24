@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Store;
 using OW.Server;
@@ -52,25 +53,14 @@ namespace OW.Game.Managers
     /// <see cref="VirtualThing"/> 和 <see cref="OrphanedThing"/>类的管理服务类。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class ThingManager : GameManagerBase<ThingManagerOptions>
+    public class ThingManager : GameManagerBase<ThingManagerOptions, ThingManager>
     {
         #region 构造函数相关
 
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        /// <param name="service"></param>
-        public ThingManager([NotNull] IServiceProvider service) : this()
+        public ThingManager(IOptions<ThingManagerOptions> options, ILogger<ThingManager> logger, IServiceProvider service) : base(options, logger)
         {
-            Service = service;
             Initializer();
-        }
-
-        /// <summary>
-        /// 内部构造函数。
-        /// </summary>
-        private ThingManager()
-        {
+            Service = service;
         }
 
         /// <summary>
@@ -78,11 +68,10 @@ namespace OW.Game.Managers
         /// </summary>
         void Initializer()
         {
-            Options = Service.GetRequiredService<IOptions<ThingManagerOptions>>().Value;
             Scheduler.TryAdd(_Key.ToString(), new OwSchedulerEntry()
             {
                 Key = _Key.ToString(),
-                Period = Options.ExpirationScanFrequency,
+                Period =Options.ExpirationScanFrequency,
                 TaskCallback = TimerFunc,
             });
 

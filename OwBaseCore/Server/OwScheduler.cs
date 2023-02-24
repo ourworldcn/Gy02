@@ -407,7 +407,7 @@ namespace OW.Server
                 // 将大型字段设置为 null
                 _Items = null;
                 _Plans = null;
-                _Logger= null;
+                _Logger = null;
                 _Disposed = true;
                 _Logger.LogInformation("{GetType().Name}已经处置。", GetType().Name);
             }
@@ -429,5 +429,15 @@ namespace OW.Server
 
         #endregion IDisposable接口及相关
 
+    }
+
+    public static class OwSchedulerExtensions
+    {
+        public static IServiceCollection AddOwScheduler(this IServiceCollection services)
+        {
+            services.AddHostedService<OwScheduler>();
+            services.AddSingleton(sp => (OwScheduler)sp.GetRequiredService<IEnumerable<IHostedService>>().First(c => c is OwScheduler));
+            return services;
+        }
     }
 }

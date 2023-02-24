@@ -2,6 +2,7 @@
 using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.CompilerServices;
 
 namespace System
@@ -181,7 +182,7 @@ namespace System
         /// <param name="action"></param>
         /// <param name="state"></param>
         /// <returns></returns>
-        [MethodImpl(MethodImplOptions.NoInlining )]
+        [MethodImpl(MethodImplOptions.NoInlining)]
         public static DisposeHelper<T> Create<T>(Action<T> action, T state) =>
             new DisposeHelper<T>(action, state);
 
@@ -197,6 +198,19 @@ namespace System
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         public static DisposeHelper<T> Create<T>(Func<T, TimeSpan, bool> lockFunc, Action<T> unlockFunc, T lockObject, TimeSpan timeout) =>
             lockFunc(lockObject, timeout) ? new DisposeHelper<T>(unlockFunc, lockObject) : new DisposeHelper<T>(null, default);
+
+        /// <summary>
+        /// 按顺序锁定一组对象，并返回一个可以释放的结构。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="lockFunc"></param>
+        /// <param name="unlockFunc"></param>
+        /// <param name="lockObject"></param>
+        /// <param name="timeout"></param>
+        /// <returns><see cref="DisposeHelper{T}.IsEmpty"/>是true则说明锁定失败，此时没有任何对象被锁定。</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        public static DisposeHelper<IEnumerable<T>> CreateMuti<T>(Func<T, TimeSpan, bool> lockFunc, Action<T> unlockFunc, IEnumerable<T> lockObject, TimeSpan timeout) =>
+            OwHelper.TryEnterAll(lockObject, lockFunc, unlockFunc, timeout) ? new DisposeHelper<IEnumerable<T>>(c => c.SafeForEach(c1 => unlockFunc(c1)), lockObject.Reverse()) : Empty<IEnumerable<T>>();
 
         /// <summary>
         /// 返回一个空的结构。

@@ -19,16 +19,10 @@
             账号管理。
             </summary>
         </member>
-        <member name="P:Gy02.Controllers.AccountController.CharManager">
+        <member name="M:Gy02.Controllers.AccountController.#ctor">
             <summary>
             
             </summary>
-        </member>
-        <member name="M:Gy02.Controllers.AccountController.#ctor(OW.Game.Manager.GameCharManager)">
-            <summary>
-            
-            </summary>
-            <param name="charManager"></param>
         </member>
         <member name="M:Gy02.Controllers.AccountController.Test(System.String)">
             <summary>
@@ -121,6 +115,16 @@
             </summary>
         </member>
         <member name="P:Gy02.WeatherForecast.Summary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Global.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:Global.Program.ReqireReboot">
             <summary>
             
             </summary>

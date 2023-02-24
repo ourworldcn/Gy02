@@ -24,9 +24,9 @@ namespace Gy02.Controllers
         /// <returns><seealso cref="Gy02TemplateJO"/></returns>
         [HttpGet]
         [ResponseCache(Duration = 120)]
-        public ActionResult<IEnumerable<Gy02TemplateJO>> GetTemplates([FromServices]TemplateManager manager)
+        public ActionResult<IEnumerable<Gy02TemplateJO>> GetTemplates([FromServices] TemplateManager manager)
         {
-            return manager.Id2Template.Values.Select(c=>c.GetJsonObject<Gy02TemplateJO>()).ToArray();
+            return manager.Id2Template.Values.Select(c => c.GetJsonObject<Gy02TemplateJO>()).ToArray();
         }
 
         /// <summary>
@@ -35,8 +35,9 @@ namespace Gy02.Controllers
         /// <param name="applicationLifetime"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<bool> StopService([FromServices]IHostApplicationLifetime applicationLifetime)
+        public ActionResult<bool> StopService([FromServices] IHostApplicationLifetime applicationLifetime)
         {
+            Global.Program.ReqireReboot = true;
             applicationLifetime.StopApplication();
             return true;
         }

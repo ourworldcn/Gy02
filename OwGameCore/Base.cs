@@ -23,7 +23,7 @@ namespace OW.Game
             services.TryAddSingleton<PasswordGenerator>(); //密码生成器
             services.TryAddSingleton<OwServerMemoryCache>();
 
-            services.AddHostedService<OwScheduler>();
+            services.AddOwScheduler();
             return services;
         }
     }
