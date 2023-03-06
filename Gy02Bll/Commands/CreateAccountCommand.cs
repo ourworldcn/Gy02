@@ -1,6 +1,8 @@
 ﻿using Gy02.Publisher;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Internal;
 using OW;
 using OW.DDD;
 using OW.Game;
@@ -13,6 +15,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.Security;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,15 +47,12 @@ namespace Gy02Bll.Commands
 
     public class CreateAccountHandler : GameCommandHandlerBase<CreateAccountCommand>
     {
-        private static bool _QuicklyRegisterSuffixSeqInit;
-        private static int _QuicklyRegisterSuffixSeq;
-
         public CreateAccountHandler(IServiceProvider service)
         {
             _Service = service;
         }
 
-        public IServiceProvider _Service { get; set; }
+        IServiceProvider _Service;
 
         /// <summary>
         /// 创建账号。
@@ -60,57 +60,56 @@ namespace Gy02Bll.Commands
         /// <param name="command"></param>
         public override void Handle(CreateAccountCommand command)
         {
-            if (string.IsNullOrWhiteSpace(command.LoginName))
+            if (string.IsNullOrWhiteSpace(command.LoginName))   //若需要生成登录名
             {
+                var svc = _Service.GetRequiredService<LoginNameGenerator>();
                 var date = DateTime.UtcNow;
-                command.LoginName = $"gy{GetQuicklyRegisterSuffixSeq()}";
+                command.LoginName = svc.Generate();
             }
             using var dwLoginName = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, command.LoginName, TimeSpan.FromSeconds(2));   //锁定登录名
-            
-            if (dwLoginName.IsEmpty)
+            if (dwLoginName.IsEmpty)    //若无法锁定登录名
             {
                 command.HasError = true;
                 command.ErrorCode = 258;
                 return;
             }
-            if (string.IsNullOrWhiteSpace(command.Pwd))
+            if (string.IsNullOrEmpty(command.Pwd))  //若需要生成密码
             {
-                var pwdGen = _Service.GetRequiredService<PasswordGenerator>();
-                command.Pwd = pwdGen.Generate(8);
+                var svc = _Service.GetRequiredService<PasswordGenerator>();
+                command.Pwd = svc.Generate(8);
             }
-            var gcm = _Service.GetRequiredService<GameCommandManager>();
-            var commandCvt = new CreateVirtualThingCommand()
+
+            var result = new OrphanedThing()
             {
-                TemplateId = ProjectContent.CharTId,
+                ExtraString = command.LoginName,
             };
-            gcm.Handle(commandCvt);
-            command.FillErrorFrom(commandCvt);
-            if (!command.HasError)   //若成功创建
-            {
-                var result = commandCvt.Result;
-                var cache = _Service.GetRequiredService<GameObjectCache>();
-                //加入缓存
-                var db = result.RuntimeProperties.GetOrAdd("DbContext", c => VWorld.CreateNewUserDbContext());
-                var gc = result.GetJsonObject<GameChar>();
-                cache.Set(result.IdString, result);
-                //构造账号信息
+            //构造账号信息
+            var gu = result.GetJsonObject<GameUser>();
+            gu.SetPwd(command.Pwd);
+            var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
+            gu.SetDbContext(db);
 
+            var cache = _Service.GetRequiredService<GameObjectCache>();
+            //加入缓存
+            var gc = result.GetJsonObject<GameChar>();
+            cache.Set(result.IdString, result);
+
+            //创建角色
+            var comm = new CreateGameCharCommand()
+            {
+                DisplayName = command.LoginName,
+                User = gu,
+            };
+            _Service.GetRequiredService<GameCommandManager>().Handle(comm);
+
+            if (comm.HasError)
+            {
+                command.FillErrorFrom(comm);
+                return;
             }
+
         }
 
-        [MethodImpl(MethodImplOptions.Synchronized)]
-        public static int GetQuicklyRegisterSuffixSeq()
-        {
-            if (!_QuicklyRegisterSuffixSeqInit)
-            {
-                using var db = VWorld.CreateNewUserDbContext();
-                var maxSeqStr = db.OrphanedThings.Where(c => c.ExtraString.StartsWith("gy")).OrderByDescending(c => c.ExtraString).FirstOrDefault()?.ExtraString ?? "0";
-                var len = maxSeqStr.Reverse().TakeWhile(c => char.IsDigit(c)).Count();
-                _QuicklyRegisterSuffixSeq = int.Parse(maxSeqStr[^len..^0]);
-                _QuicklyRegisterSuffixSeqInit = true;
-            }
-            return Interlocked.Increment(ref _QuicklyRegisterSuffixSeq);
-        }
 
     }
 }

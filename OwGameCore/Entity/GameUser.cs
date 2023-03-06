@@ -76,6 +76,15 @@ namespace OW.Game.Entity
         }
 
         /// <summary>
+        /// 设置密码。
+        /// </summary>
+        /// <param name="pwd"></param>
+        public void SetPwd(string pwd)
+        {
+            PwdHash = SHA1.HashData(Encoding.UTF8.GetBytes(pwd));
+        }
+
+        /// <summary>
         /// 当前承载此用户的服务器节点号。空则表示此用户尚未被任何节点承载（未在线）。但有节点号，不代表用户登录，可能只是维护等其他目的将用户承载到服务器中。
         /// </summary>
         [JsonIgnore]

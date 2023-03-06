@@ -45,7 +45,7 @@ namespace Gy02Bll.Managers
         #region 构造函数及相关
 
         public GameAccountManager(IOptions<AccountManagerOptions> options, ILogger<GameAccountManager> logger, OwServerMemoryCache cache, OwScheduler scheduler,
-            IServiceProvider service) : base(options,logger)
+            IServiceProvider service) : base(options, logger)
         {
             _Cache = cache;
             _Scheduler = scheduler;

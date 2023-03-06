@@ -10,6 +10,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
@@ -148,7 +149,6 @@ namespace Gy02Bll
             DateTime now = DateTime.UtcNow;
             var sw = Stopwatch.StartNew();
             var mng = _Services.GetService<GameAccountManager>();
-            
             try
             {
             }

@@ -25,4 +25,8 @@
     <ProjectReference Include="..\UserDb\UserDb.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CommandHandlers\" />
+  </ItemGroup>
+
 </Project>

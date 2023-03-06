@@ -98,6 +98,11 @@ namespace OW
     //}
 #endif  //NETCOREAPP3_0_OR_GREATER
 
+    /// <summary>
+    /// 服务的基类。
+    /// </summary>
+    /// <typeparam name="TOptions"></typeparam>
+    /// <typeparam name="TService"></typeparam>
     public abstract class ServiceBase<TOptions, TService> : DisposableBase
         where TOptions : class
     {

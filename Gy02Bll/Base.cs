@@ -1,6 +1,10 @@
-﻿using Microsoft.Extensions.Caching.Memory;
+﻿using Gy02Bll;
+using Microsoft.Extensions;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Internal;
+using OW.Game.Manager;
 using OW.Game.Store;
 using OW.Server;
 using System;
@@ -21,9 +25,11 @@ namespace OW.Game
             services.UseGameCommand(hsAssm);
 
             services.TryAddSingleton<PasswordGenerator>(); //密码生成器
+            services.TryAddSingleton<LoginNameGenerator>();    //登录名生成器
             services.TryAddSingleton<OwServerMemoryCache>();
 
             services.AddOwScheduler();
+            services.TryAddSingleton<ISystemClock, OwSystemClock>();    //若没有时钟服务则增加时钟服务
             return services;
         }
     }
