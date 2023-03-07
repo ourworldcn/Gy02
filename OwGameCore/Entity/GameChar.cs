@@ -51,13 +51,17 @@ namespace OW.Game.Entity
         /// </summary>
         [MaxLength(64)]
         [JsonIgnore]
-        public Guid UserId { get => Guid.TryParse(((IDbQuickFind)Thing).ExtraString, out var id) ? id : Guid.Empty; set => ((IDbQuickFind)Thing).ExtraString = value.ToString(); }
+        public Guid UserId { get => ((VirtualThing)Thing).ParentId ?? Guid.Empty; set => ((VirtualThing)Thing).ParentId = value; }
 
         /// <summary>
         /// 创建该对象的通用协调时间。
         /// </summary>
         public DateTime CreateUtc { get; set; } = DateTime.UtcNow;
 
+        /// <summary>
+        /// 是否由用户登录。
+        /// </summary>
+        public bool IsOnline { get; set; }
         #endregion 普通属性
 
     }

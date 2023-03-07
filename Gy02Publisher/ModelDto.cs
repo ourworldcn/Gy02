@@ -138,6 +138,17 @@ namespace Gy02.Publisher
     }
 
     /// <summary>
+    /// 带有令牌命令的入参基类。
+    /// </summary>
+    public class TokenDtoBase
+    {
+        /// <summary>
+        /// 令牌。
+        /// </summary>
+        public Guid Token { get; set; }
+    }
+
+    /// <summary>
     /// 存储一些常量和Id。
     /// </summary>
     public static class ProjectContent
@@ -146,6 +157,11 @@ namespace Gy02.Publisher
         /// 角色的模板Id。
         /// </summary>
         public readonly static Guid CharTId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
+
+        /// <summary>
+        /// 角色的模板Id。
+        /// </summary>
+        public readonly static Guid UserTId = new Guid("def2fbc1-0928-4e78-b74e-edb20c1c9eb3");
     }
 
     /// <summary>
@@ -291,20 +307,22 @@ namespace Gy02.Publisher
         /// <summary>
         /// 用户登录名。
         /// </summary>
+        [Required]
         public string LoginName { get; set; }
 
         /// <summary>
         /// 密码。
         /// </summary>
+        [Required]
         public string Pwd { get; set; }
 
         #endregion 可映射属性
     }
 
     /// <summary>
-    /// 
+    /// 登录接口返回数据封装类。
     /// </summary>
-    public class LoginReturnDto
+    public class LoginReturnDto : ReturnDtoBase
     {
         /// <summary>
         /// 构造函数。
@@ -320,6 +338,11 @@ namespace Gy02.Publisher
         /// 角色的信息。
         /// </summary>
         public GameChar GameChar { get; set; }
+
+        /// <summary>
+        /// 后续操作该用户使用的令牌。
+        /// </summary>
+        public Guid Token { get; set; }
 
         #endregion 可映射属性
     }

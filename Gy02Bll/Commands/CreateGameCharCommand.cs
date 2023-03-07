@@ -1,4 +1,5 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Managers;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game;
 using OW.Game.Entity;
@@ -52,7 +53,9 @@ namespace Gy02Bll.Commands
 
         public override void Handle(CreateGameCharCommand command)
         {
-            using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, command.User.Id.ToString(), TimeSpan.FromSeconds(1));
+            var key = command.User.Id.ToString();
+            var svcStore = _Service.GetRequiredService<GameAccountStore>();
+            using var dw = DisposeHelper.Create(svcStore.Lock, svcStore.Unlock, key, TimeSpan.FromSeconds(1));
             if (dw.IsEmpty)
             {
                 command.ErrorCode = 258;
@@ -70,10 +73,14 @@ namespace Gy02Bll.Commands
                 return;
             }
             var result = commandCvt.Result;
+            //设置角色的属性
             var gc = result.GetJsonObject<GameChar>();
             gc.UserId = command.User.Id;
-            var db = command.User.GetDbContext();
-            db.Add(result);
+            result.ExtraGuid = ProjectContent.CharTId;
+            result.Parent = command.User.Thing as VirtualThing;
+            ((VirtualThing)command.User.Thing).Children.Add(result);
+            svcStore.AddChar(gc);   //加入缓存
+
             command.Result = gc;
         }
     }

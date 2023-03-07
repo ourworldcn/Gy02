@@ -61,7 +61,10 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<LoginReturnDto> Login(LoginParamsDto model, [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng)
         {
-            return BadRequest();
+            var command = mapper.Map<LoginCommand>(model);
+            commandMng.Handle(command);
+            var result = mapper.Map<LoginReturnDto>(command);
+            return result;
         }
     }
 

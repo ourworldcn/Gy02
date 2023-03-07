@@ -178,10 +178,12 @@ namespace OW.Game
     /// <typeparam name="T"></typeparam>
     public abstract class GameCommandHandlerBase<T> : IGameCommandHandler<T> where T : IGameCommand
     {
-        public GameCommandHandlerBase()
+        protected GameCommandHandlerBase()
         {
 
         }
+
+
 
         public abstract void Handle(T command);
     }

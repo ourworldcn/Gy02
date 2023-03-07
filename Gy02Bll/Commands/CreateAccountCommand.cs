@@ -1,4 +1,5 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Managers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +23,9 @@ using System.Threading.Tasks;
 
 namespace Gy02Bll.Commands
 {
+    /// <summary>
+    /// 账号被创建后的事件。
+    /// </summary>
     public class CreateAccountCommand : GameCommandBase
     {
         public CreateAccountCommand()
@@ -43,6 +47,11 @@ namespace Gy02Bll.Commands
         public string Pwd { get; set; }
 
         #endregion 可映射属性
+
+        /// <summary>
+        /// 返回创建的新用户账号。
+        /// </summary>
+        public GameUser User { get; set; }
     }
 
     public class CreateAccountHandler : GameCommandHandlerBase<CreateAccountCommand>
@@ -79,35 +88,23 @@ namespace Gy02Bll.Commands
                 command.Pwd = svc.Generate(8);
             }
 
-            var result = new OrphanedThing()
-            {
-                ExtraString = command.LoginName,
-            };
+            var result = new VirtualThing();
             //构造账号信息
             var gu = result.GetJsonObject<GameUser>();
+            gu.LoginName = command.LoginName;
             gu.SetPwd(command.Pwd);
             var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
+            db.Add(result);
             gu.SetDbContext(db);
-
-            var cache = _Service.GetRequiredService<GameObjectCache>();
+            gu.Token = Guid.NewGuid();
             //加入缓存
-            var gc = result.GetJsonObject<GameChar>();
-            cache.Set(result.IdString, result);
+            var svcStore = _Service.GetRequiredService<GameAccountStore>();
+            svcStore.AddUser(gu);
+            //发出创建后事件
+            var commCreated = new AccountCreatedCommand() { User = gu };
+            _Service.GetRequiredService<GameCommandManager>().Handle(commCreated);
 
-            //创建角色
-            var comm = new CreateGameCharCommand()
-            {
-                DisplayName = command.LoginName,
-                User = gu,
-            };
-            _Service.GetRequiredService<GameCommandManager>().Handle(comm);
-
-            if (comm.HasError)
-            {
-                command.FillErrorFrom(comm);
-                return;
-            }
-
+            command.User = gu;
         }
 
 

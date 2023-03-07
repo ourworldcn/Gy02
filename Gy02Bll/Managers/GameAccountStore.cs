@@ -1,8 +1,11 @@
-﻿using Microsoft.Extensions.Caching.Memory;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.Server;
@@ -25,26 +28,50 @@ namespace Gy02Bll.Managers
         }
 
         public GameAccountStoreOptions Value => this;
+
+        /// <summary>
+        /// 设置或获取锁定键的回调。应支持递归与<see cref="UnlockCallback"/>配对使用。
+        /// 默认值是<see cref="SingletonLocker.TryEnter(object, TimeSpan)"/>。
+        /// </summary>
+        public Func<object, TimeSpan, bool> LockCallback { get; set; } = SingletonLocker.TryEnter;
+
+        /// <summary>
+        /// 设置或获取释放键的回调。应支持递归与<see cref="LockCallback"/>配对使用。
+        /// 默认值是<see cref="SingletonLocker.Exit(object)"/>。
+        /// </summary>
+        public Action<object> UnlockCallback { get; set; } = SingletonLocker.Exit;
+
+        /// <summary>
+        /// 确定当前线程是否保留指定键上的锁。
+        /// 默认值是<see cref="SingletonLocker.IsEntered(object)"/>
+        /// </summary>
+        public Func<object, bool> IsEnteredCallback { get; set; } = SingletonLocker.IsEntered;
+
+        /// <summary>
+        /// 默认的锁定超时时间。
+        /// </summary>
+        /// <value>默认值:3秒。</value>
+        public TimeSpan DefaultLockTimeout { get; set; } = TimeSpan.FromSeconds(3);
+
     }
 
     /// <summary>
     /// 存储及索引服务。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class GameAccountStore : GameManagerBase<GameAccountStoreOptions, GameAccountStore>, IDisposable
+    public class GameAccountStore : GameManagerBase<GameAccountStoreOptions, GameAccountStore>
     {
-        public GameAccountStore(IOptions<GameAccountStoreOptions> options, OwServerMemoryCache cache,
-            ILogger<GameAccountStore> logger) : base(options, logger)
+        public GameAccountStore(IOptions<GameAccountStoreOptions> options, ILogger<GameAccountStore> logger, IDbContextFactory<GY02UserContext> contextFactory) : base(options, logger)
         {
-            _Cache = cache;
+            _ContextFactory = contextFactory;
         }
 
-        /// <summary>
-        /// 底层存储的缓存对象。
-        /// </summary>
-        OwServerMemoryCache _Cache;
+        IDbContextFactory<GY02UserContext> _ContextFactory;
 
-        public OwServerMemoryCache Cache { get => _Cache; }
+        /// <summary>
+        /// 记录所有用户对象。
+        /// </summary>
+        public ConcurrentDictionary<string, GameUser> _Key2User = new ConcurrentDictionary<string, GameUser>();
 
         /// <summary>
         /// 票据到账号Key的映射。
@@ -64,6 +91,104 @@ namespace Gy02Bll.Managers
         ConcurrentDictionary<string, string> _LoginName2Key = new ConcurrentDictionary<string, string>();
         public ConcurrentDictionary<string, string> LoginName2Key { get => _LoginName2Key; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
+        public bool Lock(object key, TimeSpan timeout) => SingletonLocker.TryEnter(key, timeout);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        public void Unlock(object key) => SingletonLocker.Exit(key);
+
+        /// <summary>
+        /// 加入一个指定的账号对象。
+        /// </summary>
+        /// <param name="gu"></param>
+        /// <returns>true成功加入，false已经存在一个相同Id的对象。</returns>
+        /// <exception cref="TimeoutException"></exception>
+        public bool AddUser(GameUser gu)
+        {
+            var key = gu.Id.ToString();
+            using var dw = DisposeHelper.Create(Lock, Unlock, key, TimeSpan.FromSeconds(1));
+            if (dw.IsEmpty)
+                throw new TimeoutException();
+            if (!_LoginName2Key.TryAdd(gu.LoginName, key))
+                return false;
+            _Token2Key.TryAdd(gu.Token, key);
+            _Key2User.TryAdd(key, gu);
+            return true;
+        }
+
+        /// <summary>
+        /// 加入一个指定的角色，若尚未加入其账号，则也自动加入账号对象。
+        /// </summary>
+        /// <param name="gc"></param>
+        /// <exception cref="TimeoutException"></exception>
+        public void AddChar(GameChar gc)
+        {
+            var gcThing = gc.Thing as VirtualThing;
+            var guThing = gcThing?.Parent;
+            var key = guThing.IdString;
+            using var dw = DisposeHelper.Create(Lock, Unlock, key, Options.DefaultLockTimeout);
+            if (dw.IsEmpty) throw new TimeoutException();
+            if (!_Key2User.ContainsKey(key))
+                AddUser(guThing.GetJsonObject<GameUser>());
+            _CharId2Key.TryAdd(gcThing.Id, key);
+        }
+
+        /// <summary>
+        /// 加载或获取已经存在的用户对象。
+        /// </summary>
+        /// <param name="loginName"></param>
+        /// <param name="pwd"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        /// <exception cref="TimeoutException"></exception>
+        public bool LoadOrGetUser(string loginName, string pwd, out GameUser user)
+        {
+            using var dw = DisposeHelper.Create(Lock, Unlock, loginName, Options.DefaultLockTimeout);
+            if (dw.IsEmpty) throw new TimeoutException();
+            GameUser gu;
+            if (_LoginName2Key.TryGetValue(loginName, out string key))    //若内存中找到了指定登录名的账号对象
+            {
+                using var dwKey = DisposeHelper.Create(Lock, Unlock, key, Options.DefaultLockTimeout);
+                if (dwKey.IsEmpty) throw new TimeoutException();
+                gu = _Key2User.GetValueOrDefault(key);
+                if (!gu.IsPwd(pwd))
+                {
+                    user = default;
+                    return false;
+                }
+                user = gu;
+                return true;
+            }
+            //加载
+            var db = _ContextFactory.CreateDbContext();
+            var guThing = db.Set<VirtualThing>().FirstOrDefault(c => c.ExtraString == loginName);
+            if (guThing is null) goto falut;
+            gu = guThing.GetJsonObject<GameUser>();
+            if (!gu.IsPwd(pwd)) goto falut;
+            //设置必要属性
+
+            using (var dwKey = DisposeHelper.Create(Lock, Unlock, guThing.IdString, Options.DefaultLockTimeout))
+            {
+                gu.SetDbContext(db);
+                if (dwKey.IsEmpty) throw new TimeoutException();
+                AddUser(gu);
+                gu.Dispose();
+                user = gu;
+                return true;
+            }
+        falut:
+            user = null;
+            return false;
+        }
+
         #region IDisposable接口相关
 
         /// <summary>
@@ -81,10 +206,10 @@ namespace Gy02Bll.Managers
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                _Cache = default;
                 _Token2Key = default;
                 _LoginName2Key = default;
                 _CharId2Key = default;
+                _Key2User = default;
                 base.Dispose(disposing);
             }
         }

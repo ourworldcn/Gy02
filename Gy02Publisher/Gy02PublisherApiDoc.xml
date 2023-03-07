@@ -284,6 +284,101 @@
             帮助器类。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.ErrorCodes">
+            <summary>
+            错误码封装。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED">
+            <summary>
+            功能未实现。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.WAIT_TIMEOUT">
+            <summary>
+            超时，没有在指定时间内完成操作，通常是锁定超时。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_INVALID_TOKEN">
+            <summary>
+            无效令牌。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_NO_SUCH_USER">
+            <summary>
+            找不到指定用户。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.E_CHANGED_STATE">
+            <summary>
+            并发或交错操作更改了对象的状态，使此操作无效。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.Unauthorized">
+            <summary>
+            未进行身份验证。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ObjectDisposed">
+            <summary>
+            对象已经被处置。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_BAD_ARGUMENTS">
+            <summary>
+            参数错误。One or more arguments are not correct.
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_NO_SUCH_PRIVILEGE">
+            <summary>
+            没有足够的权限来完成请求的操作
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.RPC_S_OUT_OF_RESOURCES">
+            <summary>
+            没有足够资源完成操作。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_NOT_ENOUGH_QUOTA">
+            <summary>
+            没有足够的配额来处理此命令。通常是超过某些次数的限制。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_INVALID_DATA">
+            <summary>
+            The data is invalid.
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_IMPLEMENTATION_LIMIT">
+            <summary>
+            操作试图超过实施定义的限制。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_INVALID_ACCOUNT_NAME">
+            <summary>
+            无效的账号名称。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_USER_EXISTS">
+            <summary>
+            指定账号已经存在。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_LOGON_FAILURE">
+            <summary>
+            用户名或密码错误。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_INVALID_ACL">
+            <summary>
+            无效的ACL——权限令牌包含的权限不足,权限不够。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_LOGON_NOT_GRANTED">
+            <summary>
+            无法登录，通常是被封停账号。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.ReturnDtoBase">
             <summary>
             返回对象的基类。
@@ -310,12 +405,27 @@
             调试信息，如果发生错误，这里给出简要说明。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.TokenDtoBase">
+            <summary>
+            带有令牌命令的入参基类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.TokenDtoBase.Token">
+            <summary>
+            令牌。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.ProjectContent">
             <summary>
             存储一些常量和Id。
             </summary>
         </member>
         <member name="F:Gy02.Publisher.ProjectContent.CharTId">
+            <summary>
+            角色的模板Id。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.UserTId">
             <summary>
             角色的模板Id。
             </summary>
@@ -432,7 +542,7 @@
         </member>
         <member name="T:Gy02.Publisher.LoginReturnDto">
             <summary>
-            
+            登录接口返回数据封装类。
             </summary>
         </member>
         <member name="M:Gy02.Publisher.LoginReturnDto.#ctor">
@@ -443,6 +553,11 @@
         <member name="P:Gy02.Publisher.LoginReturnDto.GameChar">
             <summary>
             角色的信息。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginReturnDto.Token">
+            <summary>
+            后续操作该用户使用的令牌。
             </summary>
         </member>
     </members>

@@ -63,7 +63,7 @@ namespace OW.Game.Entity
         /// 密码的Hash值。
         /// </summary>
         [JsonIgnore]
-        public byte[] PwdHash { get => ((OrphanedThing)Thing).BinaryArray; set => ((OrphanedThing)Thing).BinaryArray = value; }
+        public byte[] PwdHash { get => ((VirtualThing)Thing).BinaryArray; set => ((VirtualThing)Thing).BinaryArray = value; }
 
         /// <summary>
         /// 密码是否正确。
@@ -90,9 +90,16 @@ namespace OW.Game.Entity
         [JsonIgnore]
         public int? NodeNum
         {
-            get => (int?)((OrphanedThing)Thing).ExtraDecimal;
-            set => ((OrphanedThing)Thing).ExtraDecimal = value;
+            get => (int?)((VirtualThing)Thing).ExtraDecimal;
+            set => ((VirtualThing)Thing).ExtraDecimal = value;
         }
+
+        /// <summary>
+        /// 用户 Token。
+        /// </summary>
+        [JsonIgnore]
+        [NotMapped]
+        public Guid Token { get; set; }
 
         #endregion 敏感信息
 
@@ -215,7 +222,7 @@ namespace OW.Game.Entity
         /// </summary>
         public static IServiceProvider GetServices(this GameUser user)
         {
-            return ((OrphanedThing)user.Thing).RuntimeProperties.GetValueOrDefault("Services") as IServiceProvider;
+            return ((VirtualThing)user.Thing).RuntimeProperties.GetValueOrDefault("Services") as IServiceProvider;
         }
 
         /// <summary>
@@ -223,7 +230,7 @@ namespace OW.Game.Entity
         /// </summary>
         public static void SetServices(this GameUser user, IServiceProvider value)
         {
-            ((OrphanedThing)user.Thing).RuntimeProperties["Services"] = value;
+            ((VirtualThing)user.Thing).RuntimeProperties["Services"] = value;
         }
 
         /// <summary>
@@ -231,7 +238,7 @@ namespace OW.Game.Entity
         /// </summary>
         public static DbContext GetDbContext(this GameUser user)
         {
-            return ((OrphanedThing)user.Thing).RuntimeProperties.GetValueOrDefault("DbContext") as DbContext;
+            return ((VirtualThing)user.Thing).RuntimeProperties.GetValueOrDefault("DbContext") as DbContext;
         }
 
         /// <summary>
@@ -239,8 +246,17 @@ namespace OW.Game.Entity
         /// </summary>
         public static void SetDbContext(this GameUser user, DbContext value)
         {
-            ((OrphanedThing)user.Thing).RuntimeProperties["DbContext"] = value;
+            ((VirtualThing)user.Thing).RuntimeProperties["DbContext"] = value;
         }
 
+        public static void SetCurrentChar(this GameUser user, GameChar value)
+        {
+            ((VirtualThing)user.Thing).RuntimeProperties["CurrentChar"] = value;
+        }
+
+        public static GameChar GetCurrentChar(this GameUser user)
+        {
+            return ((VirtualThing)user.Thing).RuntimeProperties.GetValueOrDefault("CurrentChar") as GameChar;
+        }
     }
 }
