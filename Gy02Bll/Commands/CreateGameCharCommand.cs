@@ -58,7 +58,7 @@ namespace Gy02Bll.Commands
             using var dw = DisposeHelper.Create(svcStore.Lock, svcStore.Unlock, key, TimeSpan.FromSeconds(1));
             if (dw.IsEmpty)
             {
-                command.ErrorCode = 258;
+                command.ErrorCode = ErrorCodes.WAIT_TIMEOUT;
                 return;
             }
             var commandCvt = new CreateVirtualThingCommand()
@@ -82,6 +82,7 @@ namespace Gy02Bll.Commands
             svcStore.AddChar(gc);   //加入缓存
 
             command.Result = gc;
+            svcStore.Save(key);
         }
     }
 }

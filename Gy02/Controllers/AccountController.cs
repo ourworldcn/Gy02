@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Gy02.Publisher;
 using Gy02Bll.Commands;
+using Gy02Bll.Managers;
+using Gy02Publisher;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -8,6 +10,8 @@ using OW.Game;
 using OW.Game.Manager;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
+using System.Net;
 
 namespace Gy02.Controllers
 {
@@ -16,21 +20,49 @@ namespace Gy02.Controllers
     /// </summary>
     public class AccountController : GameControllerBase
     {
+        static IPAddress? _LocalIp;
+        /// <summary>
+        /// 
+        /// </summary>
+        public IPAddress LocalIp
+        {
+            get
+            {
+                if (_LocalIp is null)
+                {
+                    IPAddress tmp;
+                    if (Request.Host.ToString().Contains("localhost", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        var addressList = Dns.GetHostEntry(Dns.GetHostName()).AddressList;
+                        tmp = addressList.Last(c => c.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+                    }
+                    else
+                        tmp = IPAddress.Parse(Request.Host.Host);
+                    Interlocked.CompareExchange(ref _LocalIp, tmp, null);
+                }
+                return _LocalIp;
+            }
+        }
         /// <summary>
         /// 
         /// </summary>
         public AccountController()
         {
         }
-
+        static GyUdpClient udp;
         /// <summary>
         /// 测试代码专用。
         /// </summary>
         /// <param name="str">测试参数。</param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult<bool> Test(string str)
+        public ActionResult<bool> Test([AllowNull] string str)
         {
+            if (udp is null)
+            {
+                var udp = new GyUdpClient();
+                udp.Start();
+            }
             return true;
         }
 
@@ -57,13 +89,21 @@ namespace Gy02.Controllers
         /// <param name="model"></param>
         /// <param name="mapper"></param>
         /// <param name="commandMng"></param>
+        /// <param name="udpServer"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<LoginReturnDto> Login(LoginParamsDto model, [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng)
+        public ActionResult<LoginReturnDto> Login(LoginParamsDto model, [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng,
+            [FromServices] UdpServerManager udpServer)
         {
             var command = mapper.Map<LoginCommand>(model);
             commandMng.Handle(command);
             var result = mapper.Map<LoginReturnDto>(command);
+            string ip = LocalIp.ToString();
+
+            var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+            var udpServiceHost = $"{ip}:{udpServer.Port}";
+            result.WorldServiceHost = worldServiceHost;
+            result.UdpServiceHost = udpServiceHost;
             return result;
         }
     }

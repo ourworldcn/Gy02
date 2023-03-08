@@ -284,6 +284,76 @@
             帮助器类。
             </summary>
         </member>
+        <member name="T:Gy02Publisher.DataRecivedEventArgs">
+            <summary>
+            <see cref="E:Gy02Publisher.GyUdpClient.DataRecived"/>事件的数据类。
+            </summary>
+        </member>
+        <member name="P:Gy02Publisher.DataRecivedEventArgs.Types">
+            <summary>
+            所有Json可转换的类型
+            </summary>
+        </member>
+        <member name="P:Gy02Publisher.DataRecivedEventArgs.Data">
+            <summary>
+            到达的数据。
+            </summary>
+        </member>
+        <member name="M:Gy02Publisher.DataRecivedEventArgs.GetDataType(System.String@)">
+            <summary>
+            获取Data中数据的Type的唯一Id和Json字符串。
+            </summary>
+            <param name="json">Json字符串/</param>
+            <returns>数据的类型。未能找到合适类型，则可能返回null。</returns>
+        </member>
+        <member name="T:Gy02Publisher.GyUdpClient">
+            <summary>
+            Udp连接的帮助类。
+            在登录用户后调用<see cref="M:Gy02Publisher.GyUdpClient.Start"/>开始侦听。
+            </summary>
+        </member>
+        <member name="P:Gy02Publisher.GyUdpClient.LastUdpServiceHost">
+            <summary>
+            暂存最后一次连接服务器的地址。
+            </summary>
+        </member>
+        <member name="P:Gy02Publisher.GyUdpClient.LastToken">
+            <summary>
+            暂存最后一次登录的Token。
+            </summary>
+        </member>
+        <member name="M:Gy02Publisher.GyUdpClient.#ctor">
+            <summary>
+            默认构造函数。
+            </summary>
+        </member>
+        <member name="M:Gy02Publisher.GyUdpClient.Start">
+            <summary>
+            开始侦听。在登录完成后调用此函数，开始侦听数据。
+            </summary>
+        </member>
+        <member name="M:Gy02Publisher.GyUdpClient.Start(System.Guid,System.Net.IPEndPoint)">
+            <summary>
+            开始侦听。
+            </summary>
+        </member>
+        <member name="E:Gy02Publisher.GyUdpClient.DataRecived">
+            <summary>
+            有数据到达的事件。
+            此事件发生在后台线程中。
+            </summary>
+        </member>
+        <member name="M:Gy02Publisher.GyUdpClient.OnDataRecived(Gy02Publisher.DataRecivedEventArgs)">
+            <summary>
+            引发<see cref="E:Gy02Publisher.GyUdpClient.DataRecived"/>事件。
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gy02Publisher.GyUdpClient.Dispose">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.ErrorCodes">
             <summary>
             错误码封装。
@@ -480,6 +550,21 @@
             拥有的子物品或槽。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.IJsonData">
+            <summary>
+            表示类是一个需要udp解码的类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.ListenStartedDto">
+            <summary>
+            Udp通知数据类。在侦听成功后会收到一次该数据。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.ListenStartedDto.Token">
+            <summary>
+            客户端登录的Token。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.CreateAccountParamsDto">
             <summary>
             创建角色接口的参数封装类。
@@ -558,6 +643,16 @@
         <member name="P:Gy02.Publisher.LoginReturnDto.Token">
             <summary>
             后续操作该用户使用的令牌。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginReturnDto.WorldServiceHost">
+            <summary>
+            世界服务器的主机地址。使用此地址拼接后续的通讯地址。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginReturnDto.UdpServiceHost">
+            <summary>
+            Udp连接的地址。
             </summary>
         </member>
     </members>

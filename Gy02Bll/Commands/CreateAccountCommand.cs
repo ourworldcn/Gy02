@@ -1,6 +1,7 @@
 ﻿using Gy02.Publisher;
 using Gy02Bll.Managers;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Internal;
@@ -91,12 +92,14 @@ namespace Gy02Bll.Commands
             var result = new VirtualThing();
             //构造账号信息
             var gu = result.GetJsonObject<GameUser>();
+            gu.TemplateId = ProjectContent.UserTId;
             gu.LoginName = command.LoginName;
             gu.SetPwd(command.Pwd);
             var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
             db.Add(result);
             gu.SetDbContext(db);
             gu.Token = Guid.NewGuid();
+            gu.Timeout = TimeSpan.FromMinutes(1);
             //加入缓存
             var svcStore = _Service.GetRequiredService<GameAccountStore>();
             svcStore.AddUser(gu);
@@ -105,6 +108,8 @@ namespace Gy02Bll.Commands
             _Service.GetRequiredService<GameCommandManager>().Handle(commCreated);
 
             command.User = gu;
+            svcStore.Save(result.IdString);
+
         }
 
 

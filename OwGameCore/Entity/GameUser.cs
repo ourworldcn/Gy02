@@ -226,6 +226,13 @@ namespace OW.Game.Entity
         }
 
         /// <summary>
+        /// 获取用于锁定的键。
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static object GetKey(this GameUser user) => ((VirtualThing)user.Thing)?.IdString;
+
+        /// <summary>
         /// 记录服务提供者。
         /// </summary>
         public static void SetServices(this GameUser user, IServiceProvider value)

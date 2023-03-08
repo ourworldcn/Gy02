@@ -1,4 +1,6 @@
-﻿using OW.Game;
+﻿using Gy02Bll.Managers;
+using Microsoft.Extensions.DependencyInjection;
+using OW.Game;
 using OW.Game.Entity;
 using System;
 using System.Collections.Generic;
@@ -35,9 +37,32 @@ namespace Gy02Bll.Commands
 
     public class LoginHandler : GameCommandHandlerBase<LoginCommand>
     {
+
+        public LoginHandler(IServiceProvider service)
+        {
+            _Service = service;
+        }
+
+        IServiceProvider _Service;
+
         public override void Handle(LoginCommand command)
         {
-            command.ErrorCode = 258;
+            var svcStore = _Service.GetRequiredService<GameAccountStore>();
+            if (!svcStore.LoadOrGetUser(command.LoginName, command.Pwd, out var gu))
+            {
+                command.FillErrorFromWorld();
+                return;
+            }
+            using var dw = DisposeHelper.Create(svcStore.Lock, svcStore.Unlock, gu.GetKey(), TimeSpan.FromSeconds(3));
+            if (dw.IsEmpty || gu.IsDisposed)
+            {
+                command.FillErrorFromWorld();
+                return;
+            }
+            command.User = gu;
+
+            gu.Timeout = TimeSpan.FromMinutes(15);
+            gu.LastModifyDateTimeUtc= DateTime.UtcNow;
         }
     }
 }

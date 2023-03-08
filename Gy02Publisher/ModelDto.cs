@@ -5,6 +5,9 @@ using System.Diagnostics.CodeAnalysis;
 using System.Collections.Generic;
 using OW.Game.Entity;
 using System.ComponentModel;
+using System.Runtime.Serialization;
+using Gy02Publisher;
+using System.Runtime.InteropServices;
 
 namespace Gy02.Publisher
 {
@@ -230,6 +233,29 @@ namespace Gy02.Publisher
 
     #endregion 基础数据结构
 
+    #region Udp相关
+
+    /// <summary>
+    /// 表示类是一个需要udp解码的类。
+    /// </summary>
+    public interface IJsonData
+    {
+
+    }
+
+    /// <summary>
+    /// Udp通知数据类。在侦听成功后会收到一次该数据。
+    /// </summary>
+    [Guid("24C3FEAA-4CF7-49DC-9C1E-36EBB92CCD12")]
+    public class ListenStartedDto: IJsonData
+    {
+        /// <summary>
+        /// 客户端登录的Token。
+        /// </summary>
+        public Guid Token { get; set; }
+    }
+    #endregion Udp相关
+
     #region 账号及登录相关
 
     /// <summary>
@@ -339,12 +365,39 @@ namespace Gy02.Publisher
         /// </summary>
         public GameChar GameChar { get; set; }
 
+        Guid _Token;
         /// <summary>
         /// 后续操作该用户使用的令牌。
         /// </summary>
-        public Guid Token { get; set; }
+        public Guid Token
+        {
+            get => _Token; set
+            {
+                GyUdpClient.LastToken = value;
+                _Token = value;
+            }
+        }
+
+        /// <summary>
+        /// 世界服务器的主机地址。使用此地址拼接后续的通讯地址。
+        /// </summary>
+        public string WorldServiceHost { get; set; }
+
+        string _UdpServiceHost;
+        /// <summary>
+        /// Udp连接的地址。
+        /// </summary>
+        public string UdpServiceHost
+        {
+            get => _UdpServiceHost; set
+            {
+                GyUdpClient.LastUdpServiceHost = value;
+                _UdpServiceHost = value;
+            }
+        }
 
         #endregion 可映射属性
+
     }
     #endregion 账号及登录相关
 }

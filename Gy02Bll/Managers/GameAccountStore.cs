@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -61,12 +62,16 @@ namespace Gy02Bll.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameAccountStore : GameManagerBase<GameAccountStoreOptions, GameAccountStore>
     {
-        public GameAccountStore(IOptions<GameAccountStoreOptions> options, ILogger<GameAccountStore> logger, IDbContextFactory<GY02UserContext> contextFactory) : base(options, logger)
+        public GameAccountStore(IOptions<GameAccountStoreOptions> options, ILogger<GameAccountStore> logger, IDbContextFactory<GY02UserContext> contextFactory,
+            IHostApplicationLifetime lifetime) : base(options, logger)
         {
             _ContextFactory = contextFactory;
+            _Lifetime = lifetime;
+            Task.Factory.StartNew(SaveCallback, TaskCreationOptions.LongRunning);
         }
 
         IDbContextFactory<GY02UserContext> _ContextFactory;
+        IHostApplicationLifetime _Lifetime;
 
         /// <summary>
         /// 记录所有用户对象。
@@ -90,6 +95,71 @@ namespace Gy02Bll.Managers
         /// </summary>
         ConcurrentDictionary<string, string> _LoginName2Key = new ConcurrentDictionary<string, string>();
         public ConcurrentDictionary<string, string> LoginName2Key { get => _LoginName2Key; }
+
+        /// <summary>
+        /// 处理保存的函数。
+        /// </summary>
+        ConcurrentDictionary<string, string> _Queue = new ConcurrentDictionary<string, string>();
+
+        /// <summary>
+        /// 后台保存函数。
+        /// </summary>
+        void SaveCallback()
+        {
+            while (!_Lifetime.ApplicationStopped.IsCancellationRequested)
+            {
+                foreach (var item in _Queue)    //遍历优先保存项
+                {
+                    using var dw = DisposeHelper.Create(Lock, Unlock, item.Key, TimeSpan.Zero);
+                    if (dw.IsEmpty)
+                        continue;
+                    if (!_Queue.Remove(item.Key, out _))  //若已经并发去除
+                        continue;
+                    var gu = _Key2User.GetValueOrDefault(item.Key);
+                    if (gu is null) continue;
+                    try
+                    {
+                        gu.GetDbContext().SaveChanges();
+                    }
+                    catch (Exception excp)
+                    {
+                        _Queue.TryAdd(item.Key, null);  //加入队列以备未来写入
+                        Logger.LogWarning(excp, "保存数据时出错");
+                    }
+                }
+                foreach (var item in _Key2User) //遍历所有账号
+                {
+                    using var dw = DisposeHelper.Create(Lock, Unlock, item.Key, TimeSpan.Zero);
+                    if (dw.IsEmpty)
+                        continue;
+                    var gu = item.Value;
+                    if(OwHelper.ComputeTimeout(gu.LastModifyDateTimeUtc, gu.Timeout)>TimeSpan.Zero) //若尚未超时
+                        continue;
+                    //准备驱除
+                    gu.GetDbContext().SaveChanges(true);
+                    RemoveUser(item.Key);
+                }
+                lock (_Queue)
+                    Monitor.Wait(_Queue, 10000);
+            }
+            //准备退出。
+        }
+
+        private void RemoveUser(string key)
+        {
+            
+        }
+
+        public bool Save(string key)
+        {
+            var result = _Queue.TryAdd(key, null);
+            if (result && Monitor.TryEnter(_Queue, TimeSpan.Zero))
+            {
+                Monitor.Pulse(_Queue);
+                Monitor.Exit(_Queue);
+            }
+            return result;
+        }
 
         /// <summary>
         /// 
@@ -180,7 +250,6 @@ namespace Gy02Bll.Managers
                 gu.SetDbContext(db);
                 if (dwKey.IsEmpty) throw new TimeoutException();
                 AddUser(gu);
-                gu.Dispose();
                 user = gu;
                 return true;
             }

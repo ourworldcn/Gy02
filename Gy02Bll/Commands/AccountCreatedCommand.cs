@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Gy02Bll.Commands
 {
     /// <summary>
-    /// 
+    /// 账号已经被创建的事件数据。
     /// </summary>
     public class AccountCreatedCommand : GameCommandBase
     {

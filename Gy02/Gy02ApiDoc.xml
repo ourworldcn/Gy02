@@ -19,6 +19,11 @@
             账号管理。
             </summary>
         </member>
+        <member name="P:Gy02.Controllers.AccountController.LocalIp">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="M:Gy02.Controllers.AccountController.#ctor">
             <summary>
             
@@ -40,13 +45,14 @@
             <param name="commandMng">注入的命令处理器服务。</param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Login(Gy02.Publisher.LoginParamsDto,AutoMapper.IMapper,OW.Game.GameCommandManager)">
+        <member name="M:Gy02.Controllers.AccountController.Login(Gy02.Publisher.LoginParamsDto,AutoMapper.IMapper,OW.Game.GameCommandManager,Gy02Bll.Managers.UdpServerManager)">
             <summary>
             登录账号。
             </summary>
             <param name="model"></param>
             <param name="mapper"></param>
             <param name="commandMng"></param>
+            <param name="udpServer"></param>
             <returns></returns>
         </member>
         <member name="T:Gy02.Controllers.VWorldController">

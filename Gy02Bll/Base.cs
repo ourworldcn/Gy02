@@ -1,4 +1,5 @@
 ﻿using Gy02Bll;
+using Gy02Bll.Managers;
 using Microsoft.Extensions;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +31,8 @@ namespace OW.Game
 
             services.AddOwScheduler();
             services.TryAddSingleton<ISystemClock, OwSystemClock>();    //若没有时钟服务则增加时钟服务
+
+            services.AddUdpServerManager();
             return services;
         }
     }
