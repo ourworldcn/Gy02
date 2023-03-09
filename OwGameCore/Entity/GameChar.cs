@@ -65,4 +65,9 @@ namespace OW.Game.Entity
         #endregion 普通属性
 
     }
+
+    public static class GameCharExtensions
+    {
+        public static object GetKey(this GameChar gc) => ((VirtualThing)gc.Thing).IdString;
+    }
 }

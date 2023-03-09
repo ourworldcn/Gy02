@@ -60,9 +60,10 @@ namespace Gy02Bll.Commands
                 return;
             }
             command.User = gu;
-
+            //设置属性
             gu.Timeout = TimeSpan.FromMinutes(15);
             gu.LastModifyDateTimeUtc= DateTime.UtcNow;
+            gu.Token=Guid.NewGuid();
         }
     }
 }

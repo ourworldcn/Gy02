@@ -72,7 +72,7 @@ namespace Gy02Bll
                 //                Task.Run(CreateGameManager);    //强制初始化所有服务以加速
                 Task.Run(SetDbConfig);  //设置数据库配置项
                 var logger = _Services.GetService<ILogger<GameHostedService>>();
-                logger?.LogTrace("游戏虚拟世界服务成功上线。");
+                logger?.LogInformation("游戏虚拟世界服务成功上线。");
             }, _Services, cancellationToken);
 
             Test();
@@ -148,7 +148,9 @@ namespace Gy02Bll
         {
             DateTime now = DateTime.UtcNow;
             var sw = Stopwatch.StartNew();
-            var mng = _Services.GetService<GameAccountManager>();
+            var mng = _Services.GetService<GameAccountStore>();
+            var udp1 = new UdpClient(50888);
+            var udp2 = new UdpClient(49919);
             try
             {
             }

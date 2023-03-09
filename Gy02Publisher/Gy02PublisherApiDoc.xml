@@ -284,6 +284,18 @@
             帮助器类。
             </summary>
         </member>
+        <member name="T:Gy02Publisher.DispatcherDemo">
+            <summary>
+            示例。
+            </summary>
+        </member>
+        <member name="M:Gy02Publisher.DispatcherDemo.M1(Gy02.Publisher.ListenStartedDto)">
+            <summary>
+            示例。
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
         <member name="T:Gy02Publisher.DataRecivedEventArgs">
             <summary>
             <see cref="E:Gy02Publisher.GyUdpClient.DataRecived"/>事件的数据类。

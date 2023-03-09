@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Gy02Bll.Commands;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using Microsoft.Extensions.Caching.Memory;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.Store;
@@ -63,15 +65,17 @@ namespace Gy02Bll.Managers
     public class GameAccountStore : GameManagerBase<GameAccountStoreOptions, GameAccountStore>
     {
         public GameAccountStore(IOptions<GameAccountStoreOptions> options, ILogger<GameAccountStore> logger, IDbContextFactory<GY02UserContext> contextFactory,
-            IHostApplicationLifetime lifetime) : base(options, logger)
+            IHostApplicationLifetime lifetime, IServiceProvider service) : base(options, logger)
         {
             _ContextFactory = contextFactory;
             _Lifetime = lifetime;
             Task.Factory.StartNew(SaveCallback, TaskCreationOptions.LongRunning);
+            _Service = service;
         }
 
         IDbContextFactory<GY02UserContext> _ContextFactory;
         IHostApplicationLifetime _Lifetime;
+        IServiceProvider _Service;
 
         /// <summary>
         /// 记录所有用户对象。
@@ -97,7 +101,7 @@ namespace Gy02Bll.Managers
         public ConcurrentDictionary<string, string> LoginName2Key { get => _LoginName2Key; }
 
         /// <summary>
-        /// 处理保存的函数。
+        /// 需要保存的账号的key。
         /// </summary>
         ConcurrentDictionary<string, string> _Queue = new ConcurrentDictionary<string, string>();
 
@@ -127,27 +131,45 @@ namespace Gy02Bll.Managers
                         Logger.LogWarning(excp, "保存数据时出错");
                     }
                 }
-                foreach (var item in _Key2User) //遍历所有账号
+                //计算超时
+                if (_Key2User.Any())    //若有账号
                 {
-                    using var dw = DisposeHelper.Create(Lock, Unlock, item.Key, TimeSpan.Zero);
-                    if (dw.IsEmpty)
-                        continue;
-                    var gu = item.Value;
-                    if(OwHelper.ComputeTimeout(gu.LastModifyDateTimeUtc, gu.Timeout)>TimeSpan.Zero) //若尚未超时
-                        continue;
-                    //准备驱除
-                    gu.GetDbContext().SaveChanges(true);
-                    RemoveUser(item.Key);
+                    using var scope = _Service.CreateScope();
+                    var svcCommand = scope.ServiceProvider.GetRequiredService<GameCommandManager>();
+                    foreach (var item in _Key2User) //遍历所有账号
+                    {
+                        using var dw = DisposeHelper.Create(Lock, Unlock, item.Key, TimeSpan.Zero);
+                        if (dw.IsEmpty)
+                            continue;
+                        var gu = item.Value;
+                        if (OwHelper.ComputeTimeout(gu.LastModifyDateTimeUtc, gu.Timeout) > TimeSpan.Zero) //若尚未超时
+                            continue;
+                        //准备驱除
+                        var cmd = new AccountLogoutingCommand() { User = gu, Reason = GameUserLogoutReason.Timeout };
+                        try
+                        {
+                            svcCommand.Handle(cmd);
+                        }
+                        catch (Exception excp)
+                        {
+                            Logger.LogWarning(excp, "用户即将登出事件中产生错误。");
+                        }
+                        gu.GetDbContext().SaveChanges(true);
+                        RemoveUser(item.Key);
+                    }
                 }
-                lock (_Queue)
+                if (Monitor.TryEnter(_Queue, TimeSpan.FromSeconds(1)))
+                {
                     Monitor.Wait(_Queue, 10000);
+                    Monitor.Enter(_Queue);
+                }
             }
             //准备退出。
         }
 
-        private void RemoveUser(string key)
+        public void RemoveUser(string key)
         {
-            
+
         }
 
         public bool Save(string key)
@@ -167,13 +189,20 @@ namespace Gy02Bll.Managers
         /// <param name="key"></param>
         /// <param name="timeout"></param>
         /// <returns></returns>
-        public bool Lock(object key, TimeSpan timeout) => SingletonLocker.TryEnter(key, timeout);
+        public bool Lock(object key, TimeSpan timeout) => Options.LockCallback(key, timeout);
+
+        /// <summary>
+        /// 使用默认超时设置锁定key。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public bool Lock(object key) => Options.LockCallback(key, Options.DefaultLockTimeout);
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="key"></param>
-        public void Unlock(object key) => SingletonLocker.Exit(key);
+        public void Unlock(object key) => Options.UnlockCallback(key);
 
         /// <summary>
         /// 加入一个指定的账号对象。
@@ -279,6 +308,10 @@ namespace Gy02Bll.Managers
                 _LoginName2Key = default;
                 _CharId2Key = default;
                 _Key2User = default;
+                _ContextFactory = default;
+                _Lifetime = default;
+                _Service = default;
+                _Queue = default;
                 base.Dispose(disposing);
             }
         }

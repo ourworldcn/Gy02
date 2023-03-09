@@ -22,6 +22,36 @@ namespace Gy02Publisher
     }
 
     /// <summary>
+    /// 示例。
+    /// </summary>
+    public static class DispatcherDemo
+    {
+        static Dictionary<Type, MethodInfo> _Dic = new Dictionary<Type, MethodInfo>();
+
+        static IReadOnlyDictionary<Type, MethodInfo> Dic
+        {
+            get
+            {
+                if (_Dic is null) { }
+                return _Dic;
+            }
+        }
+        static void Gen()
+        {
+            MethodInfo mi = default;
+            object obj = default;
+            mi.Invoke(null, new object[] { obj });
+        }
+
+        /// <summary>
+        /// 示例。
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static int M1(ListenStartedDto data) { return 0; }
+    }
+
+    /// <summary>
     /// <see cref="GyUdpClient.DataRecived"/>事件的数据类。
     /// </summary>
     public class DataRecivedEventArgs : EventArgs
@@ -109,7 +139,7 @@ namespace Gy02Publisher
         /// </summary>
         public void Start()
         {
-            var ary = LastUdpServiceHost.Split(":");
+            var ary = LastUdpServiceHost.Split(':');
             var ip = new IPEndPoint(IPAddress.Parse(ary[0]), int.Parse(ary[1]));
             Start(LastToken, ip);
         }

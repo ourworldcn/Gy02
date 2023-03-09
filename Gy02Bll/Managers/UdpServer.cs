@@ -1,6 +1,7 @@
 ﻿using Gy02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Buffers;
 using System.Collections.Concurrent;
@@ -16,12 +17,14 @@ namespace Gy02Bll.Managers
 {
     public class UdpServerManager : BackgroundService
     {
-        public UdpServerManager(IHostApplicationLifetime lifetime)
+        public UdpServerManager(IHostApplicationLifetime lifetime, ILogger<UdpServerManager> logger)
         {
             _Lifetime = lifetime;
+            _Logger = logger;
         }
 
         IHostApplicationLifetime _Lifetime;
+        ILogger<UdpServerManager> _Logger;
 
         /// <summary>
         /// 听的端口号。
@@ -46,6 +49,7 @@ namespace Gy02Bll.Managers
                     try
                     {
                         result = _UdpListen.ReceiveAsync(_Lifetime.ApplicationStopping).AsTask().Result;
+                        _Logger.LogWarning($"收到信息{result.Buffer.Length}字节。");
                     }
                     catch (AggregateException excp) when (excp.InnerException is TaskCanceledException) //若应用已经试图推出
                     {
@@ -57,8 +61,9 @@ namespace Gy02Bll.Managers
                         _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
                         SendObject(token, new ListenStartedDto() { Token = token });  //发送确认
                     }
-                    catch (Exception)
+                    catch (Exception excp)
                     {
+                        _Logger.LogWarning(excp, "回应信息时出错。");
                     }
                 }
                 _UdpListen.Close();
@@ -107,7 +112,10 @@ namespace Gy02Bll.Managers
                     var tmp = _Queue.Take(_Lifetime.ApplicationStopping);
                     using var dw = DisposeHelper.Create(c => ArrayPool<byte>.Shared.Return(c), tmp.Item2);  //回收
                     if (_Token2EndPoint.TryGetValue(tmp.Item1, out var ip))
+                    {
                         _UdpSend.Send(tmp.Item2, tmp.Item2.Length, ip);
+                        _Logger.LogWarning($"发送信息{tmp.Item2.Length}字节。");
+                    }
                 }
                 catch (InvalidOperationException)   //基础集合在此实例之外 BlockingCollection<T> 进行了修改，或 BlockingCollection<T> 为空，并且已标记为已完成，并已对添加内容进行标记。
                 {

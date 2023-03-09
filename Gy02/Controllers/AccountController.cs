@@ -54,16 +54,17 @@ namespace Gy02.Controllers
         /// 测试代码专用。
         /// </summary>
         /// <param name="str">测试参数。</param>
+        /// <param name="udpServer"></param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult<bool> Test([AllowNull] string str)
+        public ActionResult<string> Test([FromServices] UdpServerManager udpServer,[AllowNull] string str = null)
         {
             if (udp is null)
             {
                 var udp = new GyUdpClient();
                 udp.Start();
             }
-            return true;
+            return udpServer.Port.ToString();
         }
 
         /// <summary>
