@@ -7,11 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Internal;
 using OW;
 using OW.DDD;
-using OW.Game;
 using OW.Game.Caching;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Store;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,7 +27,7 @@ namespace Gy02Bll.Commands
     /// <summary>
     /// 账号被创建后的事件。
     /// </summary>
-    public class CreateAccountCommand : GameCommandBase
+    public class CreateAccountCommand : SyncCommandBase
     {
         public CreateAccountCommand()
         {
@@ -55,7 +55,7 @@ namespace Gy02Bll.Commands
         public GameUser User { get; set; }
     }
 
-    public class CreateAccountHandler : GameCommandHandlerBase<CreateAccountCommand>
+    public class CreateAccountHandler : SyncCommandHandlerBase<CreateAccountCommand>
     {
         public CreateAccountHandler(IServiceProvider service)
         {
@@ -105,7 +105,7 @@ namespace Gy02Bll.Commands
             svcStore.AddUser(gu);
             //发出创建后事件
             var commCreated = new AccountCreatedCommand() { User = gu };
-            _Service.GetRequiredService<GameCommandManager>().Handle(commCreated);
+            _Service.GetRequiredService<SyncCommandManager>().Handle(commCreated);
 
             command.User = gu;
             svcStore.Save(result.IdString);

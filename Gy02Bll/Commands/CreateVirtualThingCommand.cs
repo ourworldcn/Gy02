@@ -1,9 +1,9 @@
 ﻿using Gy02Bll.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ObjectPool;
-using OW.Game;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace Gy02Bll.Commands
 {
-    public class CreateVirtualThingCommand : GameCommandBase
+    public class CreateVirtualThingCommand : SyncCommandBase
     {
         public CreateVirtualThingCommand()
         {
@@ -33,7 +33,7 @@ namespace Gy02Bll.Commands
     /// <summary>
     /// 创建虚拟对象的命令处理类。
     /// </summary>
-    public class CreateVirtualThingHandler : GameCommandHandlerBase<CreateVirtualThingCommand>
+    public class CreateVirtualThingHandler : SyncCommandHandlerBase<CreateVirtualThingCommand>
     {
         public CreateVirtualThingHandler(IServiceProvider service)
         {

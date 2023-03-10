@@ -1,5 +1,6 @@
 ﻿using Gy02.Publisher;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -49,6 +50,15 @@ namespace Gy02Publisher
         /// <param name="data"></param>
         /// <returns></returns>
         public static int M1(ListenStartedDto data) { return 0; }
+
+       static ConcurrentDictionary<Guid, object> _dic=new ConcurrentDictionary<Guid, object>();
+
+        static void GenUi()
+        {
+            foreach (var item in _dic)
+            {
+            }
+        }
     }
 
     /// <summary>

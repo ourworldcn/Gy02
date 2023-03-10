@@ -22,6 +22,7 @@ using OW.Game.Store;
 using OW.Server;
 using OwDbBase;
 using System.Buffers;
+using System.Collections.Concurrent;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Net;
@@ -146,11 +147,7 @@ namespace Gy02Bll
         [Conditional("DEBUG")]
         private void Test()
         {
-            DateTime now = DateTime.UtcNow;
             var sw = Stopwatch.StartNew();
-            var mng = _Services.GetService<GameAccountStore>();
-            var udp1 = new UdpClient(50888);
-            var udp2 = new UdpClient(49919);
             try
             {
             }

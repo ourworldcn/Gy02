@@ -1,7 +1,7 @@
 ﻿using Gy02Bll.Managers;
 using Microsoft.Extensions.DependencyInjection;
-using OW.Game;
 using OW.Game.Entity;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Gy02Bll.Commands
 {
-    public class LoginCommand : GameCommandBase
+    public class LoginCommand : SyncCommandBase
     {
         public LoginCommand()
         {
@@ -35,7 +35,7 @@ namespace Gy02Bll.Commands
         public GameUser User { get; set; }
     }
 
-    public class LoginHandler : GameCommandHandlerBase<LoginCommand>
+    public class LoginHandler : SyncCommandHandlerBase<LoginCommand>
     {
 
         public LoginHandler(IServiceProvider service)

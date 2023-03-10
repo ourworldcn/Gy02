@@ -7,11 +7,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.Server;
+using OW.SyncCommand;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -135,7 +135,7 @@ namespace Gy02Bll.Managers
                 if (_Key2User.Any())    //若有账号
                 {
                     using var scope = _Service.CreateScope();
-                    var svcCommand = scope.ServiceProvider.GetRequiredService<GameCommandManager>();
+                    var svcCommand = scope.ServiceProvider.GetRequiredService<SyncCommandManager>();
                     foreach (var item in _Key2User) //遍历所有账号
                     {
                         using var dw = DisposeHelper.Create(Lock, Unlock, item.Key, TimeSpan.Zero);

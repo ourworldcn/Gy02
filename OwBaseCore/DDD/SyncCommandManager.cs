@@ -10,18 +10,17 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace OW.Game
+namespace OW.SyncCommand
 {
-
     [OwAutoInjection(ServiceLifetime.Scoped)]
-    public class GameCommandManager : IDisposable
+    public class SyncCommandManager : IDisposable
     {
-        public GameCommandManager()
+        public SyncCommandManager()
         {
 
         }
 
-        public GameCommandManager(IServiceProvider service)
+        public SyncCommandManager(IServiceProvider service)
         {
             _Service = service;
 
@@ -36,10 +35,10 @@ namespace OW.Game
         public IDictionary<string, object> Items => items ??= AutoClearPool<Dictionary<string, object>>.Shared.Get();
 
 
-        public void Handle<T>(T command) where T : IGameCommand
+        public void Handle<T>(T command) where T : ISyncCommand
         {
             orderNumber = 0;
-            var coll = _Service.GetServices<IGameCommandHandler<T>>();
+            var coll = _Service.GetServices<ISyncCommandHandler<T>>();
             coll.SafeForEach(c =>
             {
                 c.Handle(command);
@@ -53,10 +52,11 @@ namespace OW.Game
 
         #region IDisposable接口相关
 
-        private bool disposedValue;
+        private bool _DisposedValue;
+
         protected virtual void Dispose(bool disposing)
         {
-            if (!disposedValue)
+            if (!_DisposedValue)
             {
                 if (disposing)
                 {
@@ -70,7 +70,7 @@ namespace OW.Game
                     AutoClearPool<Dictionary<string, object>>.Shared.Return(items);
                     items = null;
                 }
-                disposedValue = true;
+                _DisposedValue = true;
             }
         }
 
@@ -90,12 +90,12 @@ namespace OW.Game
         #endregion IDisposable接口相关
     }
 
-    public static class GameCommandManagerExtensions
+    public static class SyncCommandManagerExtensions
     {
-        public static IServiceCollection UseGameCommand(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+        public static IServiceCollection UseSyncCommand(this IServiceCollection services, IEnumerable<Assembly> assemblies)
         {
             var coll = from tmp in assemblies.SelectMany(c => c.GetTypes())
-                       let i = tmp.FindInterfaces((c1, c2) => c1.IsGenericType && c1.GetGenericTypeDefinition() == typeof(IGameCommandHandler<>), null).FirstOrDefault()
+                       let i = tmp.FindInterfaces((c1, c2) => c1.IsGenericType && c1.GetGenericTypeDefinition() == typeof(ISyncCommandHandler<>), null).FirstOrDefault()
                        where i != null && tmp.IsClass && !tmp.IsAbstract
                        select (Type: tmp, @interface: i);
             foreach (var item in coll)
@@ -107,9 +107,9 @@ namespace OW.Game
     }
 
     /// <summary>
-    /// 游戏命令对象的专用标记接口。
+    /// 在同一个线程(net)中处理的命令对象的专用标记接口。
     /// </summary>
-    public interface IGameCommand
+    public interface ISyncCommand
     {
 
     }
@@ -118,7 +118,7 @@ namespace OW.Game
     /// 游戏命令处理器的基础接口。
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IGameCommandHandler<T> where T : IGameCommand
+    public interface ISyncCommandHandler<T> where T : ISyncCommand
     {
         /// <summary>
         /// 命令处理函数。
@@ -130,12 +130,12 @@ namespace OW.Game
     /// <summary>
     /// 
     /// </summary>
-    public abstract class GameCommandBase : IGameCommand
+    public abstract class SyncCommandBase : ISyncCommand
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public GameCommandBase()
+        public SyncCommandBase()
         {
 
         }
@@ -176,9 +176,9 @@ namespace OW.Game
     /// 命令处理类的基类，可以在构造函数中注入必须的对象。
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public abstract class GameCommandHandlerBase<T> : IGameCommandHandler<T> where T : IGameCommand
+    public abstract class SyncCommandHandlerBase<T> : ISyncCommandHandler<T> where T : ISyncCommand
     {
-        protected GameCommandHandlerBase()
+        protected SyncCommandHandlerBase()
         {
 
         }
@@ -191,13 +191,13 @@ namespace OW.Game
     /// <summary>
     /// 
     /// </summary>
-    public static class GameCommandBaseExtensions
+    public static class SyncCommandBaseExtensions
     {
         /// <summary>
         /// 从<see cref="VWorld"/>对象获取错误信息。
         /// </summary>
         /// <param name="obj"></param>
-        public static void FillErrorFromWorld(this GameCommandBase obj)
+        public static void FillErrorFromWorld(this SyncCommandBase obj)
         {
             obj.ErrorCode = OwHelper.GetLastError();
             obj.DebugMessage = OwHelper.GetLastErrorMessage();
@@ -209,7 +209,7 @@ namespace OW.Game
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="src"></param>
-        public static void FillErrorFrom(this GameCommandBase obj, GameCommandBase src)
+        public static void FillErrorFrom(this SyncCommandBase obj, SyncCommandBase src)
         {
             obj.ErrorCode = src.ErrorCode;
             obj.DebugMessage = src.DebugMessage;

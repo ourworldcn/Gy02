@@ -6,8 +6,8 @@ using Gy02Publisher;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using OW.Game;
 using OW.Game.Manager;
+using OW.SyncCommand;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -75,7 +75,7 @@ namespace Gy02.Controllers
         /// <param name="commandMng">注入的命令处理器服务。</param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<CreateAccountResultDto> CreateAccount(CreateAccountParamsDto model, [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng)
+        public ActionResult<CreateAccountResultDto> CreateAccount(CreateAccountParamsDto model, [FromServices] IMapper mapper, [FromServices] SyncCommandManager commandMng)
         {
             //var service = HttpContext.RequestServices.GetRequiredService<IServiceProvider>();
             var command = mapper.Map<CreateAccountCommand>(model);
@@ -93,7 +93,7 @@ namespace Gy02.Controllers
         /// <param name="udpServer"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<LoginReturnDto> Login(LoginParamsDto model, [FromServices] IMapper mapper, [FromServices] GameCommandManager commandMng,
+        public ActionResult<LoginReturnDto> Login(LoginParamsDto model, [FromServices] IMapper mapper, [FromServices] SyncCommandManager commandMng,
             [FromServices] UdpServerManager udpServer)
         {
             var command = mapper.Map<LoginCommand>(model);

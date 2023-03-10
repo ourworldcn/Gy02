@@ -37,7 +37,7 @@
             <param name="udpServer"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.Game.GameCommandManager)">
+        <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             创建一个新账号。
             </summary>
@@ -46,7 +46,7 @@
             <param name="commandMng">注入的命令处理器服务。</param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Login(Gy02.Publisher.LoginParamsDto,AutoMapper.IMapper,OW.Game.GameCommandManager,Gy02Bll.Managers.UdpServerManager)">
+        <member name="M:Gy02.Controllers.AccountController.Login(Gy02.Publisher.LoginParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,Gy02Bll.Managers.UdpServerManager)">
             <summary>
             登录账号。
             </summary>

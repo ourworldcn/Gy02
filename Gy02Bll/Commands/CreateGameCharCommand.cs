@@ -1,9 +1,9 @@
 ﻿using Gy02.Publisher;
 using Gy02Bll.Managers;
 using Microsoft.Extensions.DependencyInjection;
-using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Store;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace Gy02Bll.Commands
     /// <summary>
     /// 创建角色的命令。
     /// </summary>
-    public class CreateGameCharCommand : GameCommandBase
+    public class CreateGameCharCommand : SyncCommandBase
     {
         public CreateGameCharCommand() { }
 
@@ -39,7 +39,7 @@ namespace Gy02Bll.Commands
     /// <summary>
     /// 创建角色的命令处理器。
     /// </summary>
-    public class CreateGameCharHandler : GameCommandHandlerBase<CreateGameCharCommand>
+    public class CreateGameCharHandler : SyncCommandHandlerBase<CreateGameCharCommand>
     {
         public CreateGameCharHandler(IServiceProvider service)
         {
@@ -65,7 +65,7 @@ namespace Gy02Bll.Commands
             {
                 TemplateId = ProjectContent.CharTId,
             };
-            var gcm = _Service.GetRequiredService<GameCommandManager>();
+            var gcm = _Service.GetRequiredService<SyncCommandManager>();
             gcm.Handle(commandCvt);
             if (commandCvt.HasError)
             {

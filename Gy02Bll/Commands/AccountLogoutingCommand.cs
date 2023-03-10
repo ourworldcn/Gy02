@@ -1,5 +1,5 @@
-﻿using OW.Game;
-using OW.Game.Entity;
+﻿using OW.Game.Entity;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,14 +32,14 @@ namespace Gy02Bll.Commands
     /// <summary>
     /// 用户即将登出的事件数据类。
     /// </summary>
-    public class AccountLogoutingCommand : GameCommandBase
+    public class AccountLogoutingCommand : SyncCommandBase
     {
         public GameUser  User{ get; set; }
 
         public GameUserLogoutReason Reason { get; set; }
     }
 
-    public class AccountLogoutingHandler : GameCommandHandlerBase<AccountLogoutingCommand>
+    public class AccountLogoutingHandler : SyncCommandHandlerBase<AccountLogoutingCommand>
     {
         public override void Handle(AccountLogoutingCommand command)
         {

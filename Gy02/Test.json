@@ -1,5 +1,12 @@
 {
-  "Genus": [ "char" ],
-  "ChildrenTIds": [ "c4e3a945-8d94-418d-8a83-feb7ff607e89", "a4b2dab5-af85-4210-bab6-63be9bb93d7b" ],
-  "LuInfo": { "DecimalProperties": {} }
+  "skils": [
+    {
+      "tid": "c531cd34-fed9-4859811-501c25c0926d",
+      "enable": false
+    },
+    {
+      "tid": "c531cd34-fed9-4859811-501c25c0926d",
+      "enable": false
+    }
+  ]
 }
