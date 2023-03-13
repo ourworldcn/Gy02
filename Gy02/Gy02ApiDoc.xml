@@ -101,6 +101,17 @@
             游戏控制器基类。
             </summary>
         </member>
+        <member name="M:Gy02.GameControllerBase.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.GameControllerBase.ThrowIfStopping">
+            <summary>
+            若服务器正在关闭则抛出异常。
+            </summary>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
         <member name="T:Gy02.WeatherForecast">
             <summary>
             

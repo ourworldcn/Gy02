@@ -21,7 +21,7 @@ namespace Microsoft.Extensions.ObjectPool
     /// 此类有助于避免GC。通常这是服务器编程才会使用到的类。
     /// </remarks>
     /// <typeparam name="T"></typeparam>
-    [OwAutoInjection(ServiceLifetime.Singleton, ServiceType = typeof(AutoClearPool<>))]
+    [OwAutoInjection(ServiceLifetime.Singleton)]
     public class AutoClearPool<T> : DefaultObjectPool<T> where T : class, new()
     {
         private class AutoClearPooledObjectPolicy : DefaultPooledObjectPolicy<T>

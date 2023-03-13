@@ -1,6 +1,8 @@
 ﻿using GuangYuan.GY001.TemplateDb;
 using GuangYuan.GY02.Store;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using OW.Game.Manager;
 using OW.Game.Store;
@@ -21,27 +23,34 @@ namespace OW.Game.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class TemplateManager
     {
-        public TemplateManager(GY02TemplateContext dbContext, ILogger<TemplateManager> logger)
+        public TemplateManager(GY02TemplateContext dbContext, ILogger<TemplateManager> logger, IHostApplicationLifetime lifetime)
         {
             DbContext = dbContext;
             Logger = logger;
-            Initialize();
             logger.LogDebug("上线:模板管理器。");
+            _Lifetime = lifetime;
+            Initialize();
+
         }
 
+        IHostApplicationLifetime _Lifetime;
         Task _InitTask;
         private void Initialize()
         {
             //    var ary = DbContext.ThingTemplates.ToArray();
             //    _Id2Template = new ConcurrentDictionary<Guid, GY02ThingTemplate>(ary.ToDictionary(c => c.Id));
             Interlocked.CompareExchange(ref _Id2Template, new ConcurrentDictionary<Guid, GameThingTemplate>(), null);
+
+            _Lifetime.ApplicationStarted.Register(() =>
+            {
+            });
             _InitTask = Task.Run(() =>
             {
                 var file = $"TemplateData.json";
                 var path = Path.Combine(AppContext.BaseDirectory, "数据表\\", file);
                 using var stream = File.OpenRead(path);
                 var opt = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
-                
+
                 var jn = JsonSerializer.Deserialize<JsonElement>(stream, opt);
                 foreach (var item in jn.EnumerateArray())
                 {
@@ -89,6 +98,14 @@ namespace OW.Game.Managers
         {
             _InitTask.Wait();
             return _Id2Template.GetValueOrDefault(id);
+        }
+    }
+
+    public static class TemplateManagerExtensions
+    {
+        public static IServiceCollection AddTemplateManager(this IServiceCollection services)
+        {
+            return services;
         }
     }
 }

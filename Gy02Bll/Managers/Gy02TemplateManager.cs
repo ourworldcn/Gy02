@@ -8,24 +8,24 @@ using System.Threading.Tasks;
 
 namespace Gy02Bll.Managers
 {
-    public class Gy02TemplateManager : TemplateManager
-    {
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        /// <param name="service"></param>
-        public Gy02TemplateManager(IServiceProvider service) : base(null, null)
-        {
-            _Service = service;
-            Initialize();
-        }
+    //public class Gy02TemplateManager : TemplateManager
+    //{
+    //    /// <summary>
+    //    /// 构造函数。
+    //    /// </summary>
+    //    /// <param name="service"></param>
+    //    public Gy02TemplateManager(IServiceProvider service) : base(null, null)
+    //    {
+    //        _Service = service;
+    //        Initialize();
+    //    }
 
-        private void Initialize()
-        {
+    //    private void Initialize()
+    //    {
 
-        }
+    //    }
 
-        IServiceProvider _Service;
+    //    IServiceProvider _Service;
 
-    }
+    //}
 }

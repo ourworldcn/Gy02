@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.Extensions.Hosting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -47,6 +49,46 @@ namespace Microsoft.Extensions.DependencyInjection
         /// 函数签名是 static object XXX(IServiceProvider)
         /// </summary>
         public string CreateCallbackName { get; set; }
+
+        /// <summary>
+        /// 是否自动创建第一个实例。
+        /// </summary>
+        public bool AutoCreateFirst { get; set; }
+
+    }
+
+    public class OwAutoInjection : BackgroundService
+    {
+        /// <summary>
+        /// 要尽快创建第一个实例的服务类型。
+        /// </summary>
+        /// <param name="serviceTypes"></param>
+        public OwAutoInjection(IServiceProvider service, IEnumerable<Type> serviceTypes)
+        {
+            _ServiceTypes = serviceTypes;
+            _Service = service;
+        }
+
+        IEnumerable<Type> _ServiceTypes;
+        IServiceProvider _Service;
+
+        protected override Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            //return Task.Run(() => AutoCreate(_Service, _ServiceTypes));
+            return Task.CompletedTask;
+        }
+
+        static void AutoCreate(IServiceProvider service, IEnumerable<(Type, bool)> serviceTypes)
+        {
+            using var scope = service.CreateScope();
+            foreach (var item in serviceTypes)
+            {
+                if (item.Item2)
+                    scope.ServiceProvider.GetService(item.Item1);
+                else
+                    service.GetService(item.Item1);
+            }
+        }
     }
 
     public static class OwAutoInjectionExtensions
@@ -97,6 +139,7 @@ namespace Microsoft.Extensions.DependencyInjection
                         break;
                 }
             }
+            services.AddHostedService(c => new OwAutoInjection(c, serviceTypes: new List<Type>()));
             return services;
         }
     }

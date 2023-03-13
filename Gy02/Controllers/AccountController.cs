@@ -43,13 +43,14 @@ namespace Gy02.Controllers
                 return _LocalIp;
             }
         }
+
         /// <summary>
         /// 
         /// </summary>
         public AccountController()
         {
         }
-        static GyUdpClient udp;
+        static GyUdpClient? udp;
         /// <summary>
         /// 测试代码专用。
         /// </summary>
@@ -57,7 +58,7 @@ namespace Gy02.Controllers
         /// <param name="udpServer"></param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult<string> Test([FromServices] UdpServerManager udpServer,[AllowNull] string str = null)
+        public ActionResult<string> Test([FromServices] UdpServerManager udpServer, [AllowNull] string str = null)
         {
             if (udp is null)
             {

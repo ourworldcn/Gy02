@@ -168,7 +168,7 @@ namespace Gy02Bll
         /// </summary>
         private void Preloading()
         {
-            var cache = _Services.GetService<TemplateManager>();
+            _ = _Services.GetService<TemplateManager>();
         }
     }
 }
