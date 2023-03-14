@@ -667,5 +667,30 @@
             Udp连接的地址。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.GetTemplatesParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplatesParamsDto.Uid">
+            <summary>
+            用户名。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplatesParamsDto.Pwd">
+            <summary>
+            密码。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GetTemplatesReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplatesReturnDto.Templates">
+            <summary>
+            模板数据集合。
+            </summary>
+        </member>
     </members>
 </doc>

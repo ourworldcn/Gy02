@@ -77,7 +77,6 @@ namespace Gy02Bll
             }, _Services, cancellationToken);
 
             Test();
-            Task.Run(Preloading);
             return result;
         }
 
@@ -163,12 +162,5 @@ namespace Gy02Bll
 
         }
 
-        /// <summary>
-        /// 预先初始化一些必须的服务。
-        /// </summary>
-        private void Preloading()
-        {
-            _ = _Services.GetService<TemplateManager>();
-        }
     }
 }

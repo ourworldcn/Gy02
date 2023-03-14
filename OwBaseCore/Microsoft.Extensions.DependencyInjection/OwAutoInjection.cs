@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -63,21 +64,31 @@ namespace Microsoft.Extensions.DependencyInjection
         /// 要尽快创建第一个实例的服务类型。
         /// </summary>
         /// <param name="serviceTypes"></param>
-        public OwAutoInjection(IServiceProvider service, IEnumerable<Type> serviceTypes)
+        public OwAutoInjection(IServiceProvider service, IEnumerable<(Type, bool)> serviceTypes)
         {
             _ServiceTypes = serviceTypes;
             _Service = service;
         }
 
-        IEnumerable<Type> _ServiceTypes;
+        IEnumerable<(Type, bool)> _ServiceTypes;
         IServiceProvider _Service;
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="stoppingToken"></param>
+        /// <returns></returns>
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            //return Task.Run(() => AutoCreate(_Service, _ServiceTypes));
-            return Task.CompletedTask;
+            if (stoppingToken.IsCancellationRequested) return Task.CompletedTask;
+            return Task.Run(() => AutoCreate(_Service, _ServiceTypes));
         }
 
+        /// <summary>
+        /// 按参数指定的，逐一创建一个实例。
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="serviceTypes"></param>
         static void AutoCreate(IServiceProvider service, IEnumerable<(Type, bool)> serviceTypes)
         {
             using var scope = service.CreateScope();
@@ -103,6 +114,7 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             assemblies ??= AppDomain.CurrentDomain.GetAssemblies();
             var coll = assemblies.SelectMany(c => c.GetTypes()).Where(c => c.GetCustomAttribute<OwAutoInjectionAttribute>() != null);
+            var serviceTypes = new List<(Type, bool)>();
             foreach (var item in coll)
             {
                 var att = item.GetCustomAttribute<OwAutoInjectionAttribute>();
@@ -116,6 +128,7 @@ namespace Microsoft.Extensions.DependencyInjection
                             var callback = att.ServiceType.GetMethod(att.CreateCallbackName);
                             services.AddSingleton(att.ServiceType ?? item, c => callback.Invoke(null, new object[] { c }));
                         }
+                        if (att.AutoCreateFirst) serviceTypes.Add((att.ServiceType ?? item, false));
                         break;
                     case ServiceLifetime.Scoped:
                         if (string.IsNullOrWhiteSpace(att.CreateCallbackName))  //若没有创建函数
@@ -125,6 +138,7 @@ namespace Microsoft.Extensions.DependencyInjection
                             var callback = att.ServiceType.GetMethod(att.CreateCallbackName);
                             services.AddScoped(att.ServiceType ?? item, c => callback.Invoke(null, new object[] { c }));
                         }
+                        if (att.AutoCreateFirst) serviceTypes.Add((att.ServiceType ?? item, true));
                         break;
                     case ServiceLifetime.Transient:
                         if (string.IsNullOrWhiteSpace(att.CreateCallbackName))  //若没有创建函数
@@ -134,12 +148,13 @@ namespace Microsoft.Extensions.DependencyInjection
                             var callback = att.ServiceType.GetMethod(att.CreateCallbackName);
                             services.AddTransient(att.ServiceType ?? item, c => callback.Invoke(null, new object[] { c }));
                         }
+                        if (att.AutoCreateFirst) serviceTypes.Add((att.ServiceType ?? item, true));
                         break;
                     default:
                         break;
                 }
             }
-            services.AddHostedService(c => new OwAutoInjection(c, serviceTypes: new List<Type>()));
+            services.AddHostedService(c => new OwAutoInjection(c, serviceTypes));
             return services;
         }
     }

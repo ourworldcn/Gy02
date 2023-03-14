@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Managers
 {
-    [OwAutoInjection(ServiceLifetime.Singleton)]
+    [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class TemplateManager
     {
         public TemplateManager(GY02TemplateContext dbContext, ILogger<TemplateManager> logger, IHostApplicationLifetime lifetime)

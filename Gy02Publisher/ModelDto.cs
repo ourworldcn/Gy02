@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Runtime.Serialization;
 using Gy02Publisher;
 using System.Runtime.InteropServices;
+using Gy02Bll.Templates;
 
 namespace Gy02.Publisher
 {
@@ -247,7 +248,7 @@ namespace Gy02.Publisher
     /// Udp通知数据类。在侦听成功后会收到一次该数据。
     /// </summary>
     [Guid("24C3FEAA-4CF7-49DC-9C1E-36EBB92CCD12")]
-    public class ListenStartedDto: IJsonData
+    public class ListenStartedDto : IJsonData
     {
         /// <summary>
         /// 客户端登录的Token。
@@ -400,6 +401,36 @@ namespace Gy02.Publisher
 
     }
     #endregion 账号及登录相关
+
+    #region 世界控制器功能相关
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class GetTemplatesParamsDto
+    {
+        /// <summary>
+        /// 用户名。
+        /// </summary>
+        public string Uid { get; set; }
+
+        /// <summary>
+        /// 密码。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class GetTemplatesReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 模板数据集合。
+        /// </summary>
+        public IEnumerable<Gy02TemplateJO> Templates { get; set; }
+    }
+    #endregion 世界控制器功能相关
 }
 
 /*

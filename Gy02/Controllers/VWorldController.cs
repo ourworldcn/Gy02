@@ -1,4 +1,5 @@
-﻿using Gy02Bll.Templates;
+﻿using Gy02.Publisher;
+using Gy02Bll.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Managers;
@@ -21,12 +22,21 @@ namespace Gy02.Controllers
         /// <summary>
         /// 获取所有模板。
         /// </summary>
+        /// <param name="model">入参。</param>
+        /// <param name="manager"></param>
         /// <returns><seealso cref="Gy02TemplateJO"/></returns>
         [HttpGet]
         [ResponseCache(Duration = 120)]
-        public ActionResult<IEnumerable<Gy02TemplateJO>> GetTemplates([FromServices] TemplateManager manager)
+        public ActionResult<GetTemplatesReturnDto> GetTemplates(GetTemplatesParamsDto model, [FromServices] TemplateManager manager)
         {
-            return manager.Id2Template.Values.Select(c => c.GetJsonObject<Gy02TemplateJO>()).ToArray();
+            var result = new GetTemplatesReturnDto();
+            if (model.Uid != "gy001" || model.Pwd != "210115")
+            {
+                result.ErrorCode = ErrorCodes.Unauthorized;
+            }
+            else
+                result.Templates = manager.Id2Template.Values.Select(c => c.GetJsonObject<Gy02TemplateJO>()).ToArray();
+            return result;
         }
 
         /// <summary>
