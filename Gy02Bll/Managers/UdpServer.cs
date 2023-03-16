@@ -59,7 +59,7 @@ namespace Gy02Bll.Managers
                     {
                         var token = new Guid(result.Buffer);
                         _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
-                        SendObject(token, new ListenStartedDto() { Token = token });  //发送确认
+                        //SendObject(token, new ListenStartedDto() { Token = token });  //发送确认
                     }
                     catch (Exception excp)
                     {

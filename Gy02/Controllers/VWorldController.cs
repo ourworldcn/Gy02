@@ -25,7 +25,7 @@ namespace Gy02.Controllers
         /// <param name="model">入参。</param>
         /// <param name="manager"></param>
         /// <returns><seealso cref="Gy02TemplateJO"/></returns>
-        [HttpGet]
+        [HttpPost]
         [ResponseCache(Duration = 120)]
         public ActionResult<GetTemplatesReturnDto> GetTemplates(GetTemplatesParamsDto model, [FromServices] TemplateManager manager)
         {
@@ -33,6 +33,8 @@ namespace Gy02.Controllers
             if (model.Uid != "gy001" || model.Pwd != "210115")
             {
                 result.ErrorCode = ErrorCodes.Unauthorized;
+                result.DebugMessage = "用户名或密码错误。";
+                result.HasError = true;
             }
             else
                 result.Templates = manager.Id2Template.Values.Select(c => c.GetJsonObject<Gy02TemplateJO>()).ToArray();

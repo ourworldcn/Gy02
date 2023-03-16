@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Publisher4WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Gy02.Publisher.ReturnDtoBase">
+            <summary>
+            返回对象的基类。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.ReturnDtoBase.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.ReturnDtoBase.HasError">
+            <summary>
+            是否有错误。不设置则使用<see cref="P:Gy02.Publisher.ReturnDtoBase.ErrorCode"/>来判定。
+            </summary>
+            <value>0没有错误，其它数值含义由应用定义。</value>
+        </member>
+        <member name="P:Gy02.Publisher.ReturnDtoBase.ErrorCode">
+            <summary>
+            错误码，参见 ErrorCodes。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.ReturnDtoBase.DebugMessage">
+            <summary>
+            调试信息，如果发生错误，这里给出简要说明。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.TokenDtoBase">
+            <summary>
+            带有令牌命令的入参基类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.TokenDtoBase.Token">
+            <summary>
+            令牌。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.TemplateDto">
+            <summary>
+            模板基类传输类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.Gy02TemplateDto">
+            <summary>
+            模板数据的传输类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.VirtualThingDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.Id">
+            <summary>
+            唯一Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.BinaryArray">
+            <summary>
+            扩展的二进制大对象。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.JsonObjectString">
+            <summary>
+            所有扩展属性记录在这个字符串中，是一个Json对象。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraGuid">
+            <summary>
+            模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraString">
+            <summary>
+            记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraDecimal">
+            <summary>
+            记录一些额外的信息，用于排序搜索使用的字段。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.VirtualThingDto.Children">
+            <summary>
+            拥有的子物品或槽。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GameJsonObjectBase">
+            <summary>
+            游戏内玩家强类型数据的基类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameJsonObjectBase.Id">
+            <summary>
+            唯一Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameJsonObjectBase.TemplateId">
+            <summary>
+            模板Id。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GameCharDto">
+            <summary>
+            角色数据。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.Wuqi">
+            <summary>
+            武器装备槽。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.ShouTao">
+            <summary>
+            手套装备槽。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.YiFu">
+            <summary>
+            衣服装备槽。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.XieZi">
+            <summary>
+            鞋子装备槽。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.YaoDai">
+            <summary>
+            腰带装备槽。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.ZuoQiSlot">
+            <summary>
+            坐骑装备槽。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.ZhuangBeiBag">
+            <summary>
+            装备背包。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.DaoJuBag">
+            <summary>
+            道具背包。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GameItemDto">
+            <summary>
+            道具数据。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GameSlotDto`1">
+            <summary>
+            槽数据。
+            </summary>
+            <typeparam name="T">槽内数据类型。</typeparam>
+        </member>
+        <member name="M:Gy02.Publisher.GameSlotDto`1.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameSlotDto`1.Capacity">
+            <summary>
+            槽的容量。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameSlotDto`1.Children">
+            <summary>
+            槽内的道具/装备。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GameEquipmentDto">
+            <summary>
+            装备数据。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.IJsonData">
+            <summary>
+            表示类是一个需要udp解码的类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.ListenStartedDto">
+            <summary>
+            Udp通知数据类。在侦听成功后会收到一次该数据。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.ListenStartedDto.Token">
+            <summary>
+            客户端登录的Token。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.CreateAccountParamsDto">
+            <summary>
+            创建角色接口的参数封装类。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.CreateAccountParamsDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CreateAccountParamsDto.LoginName">
+            <summary>
+            用户登录名。可省略则自动生成。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CreateAccountParamsDto.Pwd">
+            <summary>
+            密码。可省略则自动生成。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.CreateAccountResultDto">
+            <summary>
+            创建接口返回数据封装类。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.CreateAccountResultDto.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CreateAccountResultDto.LoginName">
+            <summary>
+            用户登录名。可省略，则自动指定。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CreateAccountResultDto.Pwd">
+            <summary>
+            返回密码，客户端根据需要存储在本地，此后无法再明文返回密码。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LoginParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.LoginParamsDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginParamsDto.LoginName">
+            <summary>
+            用户登录名。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginParamsDto.Pwd">
+            <summary>
+            密码。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LoginReturnDto">
+            <summary>
+            登录接口返回数据封装类。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.LoginReturnDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginReturnDto.GameChar">
+            <summary>
+            角色的信息。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginReturnDto.Token">
+            <summary>
+            后续操作该用户使用的令牌。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginReturnDto.WorldServiceHost">
+            <summary>
+            世界服务器的主机地址。使用此地址拼接后续的通讯地址。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginReturnDto.UdpServiceHost">
+            <summary>
+            Udp连接的地址。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GetTemplatesParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplatesParamsDto.Uid">
+            <summary>
+            用户名。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplatesParamsDto.Pwd">
+            <summary>
+            密码。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GetTemplatesReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplatesReturnDto.Templates">
+            <summary>
+            模板数据集合。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.DispatcherDemo">
+            <summary>
+            示例。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.DispatcherDemo.M1(Gy02.Publisher.ListenStartedDto)">
+            <summary>
+            示例。
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gy02.Publisher.DataRecivedEventArgs">
+            <summary>
+            <see cref="E:Gy02.Publisher.GyUdpClient.DataRecived"/>事件的数据类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.DataRecivedEventArgs.Types">
+            <summary>
+            所有Json可转换的类型
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.DataRecivedEventArgs.Data">
+            <summary>
+            到达的数据。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.DataRecivedEventArgs.GetDataType(System.String@)">
+            <summary>
+            获取Data中数据的Type的唯一Id和Json字符串。
+            </summary>
+            <param name="json">Json字符串/</param>
+            <returns>数据的类型。未能找到合适类型，则可能返回null。</returns>
+        </member>
+        <member name="T:Gy02.Publisher.GyUdpClient">
+            <summary>
+            Udp连接的帮助类。
+            在登录用户后调用<see cref="M:Gy02.Publisher.GyUdpClient.Start"/>开始侦听。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GyUdpClient.LastUdpServiceHost">
+            <summary>
+            暂存最后一次连接服务器的地址。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GyUdpClient.LastToken">
+            <summary>
+            暂存最后一次登录的Token。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.#ctor">
+            <summary>
+            默认构造函数。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.Start">
+            <summary>
+            开始侦听。在登录完成后调用此函数，开始侦听数据。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.Start(System.Guid,System.Net.IPEndPoint)">
+            <summary>
+            开始侦听。
+            </summary>
+        </member>
+        <member name="E:Gy02.Publisher.GyUdpClient.DataRecived">
+            <summary>
+            有数据到达的事件。
+            此事件发生在后台线程中。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.OnDataRecived(Gy02.Publisher.DataRecivedEventArgs)">
+            <summary>
+            引发<see cref="E:Gy02.Publisher.GyUdpClient.DataRecived"/>事件。
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.Dispose">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+    </members>
+</doc>

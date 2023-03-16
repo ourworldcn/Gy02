@@ -12,6 +12,7 @@ using System.Text.Json.Nodes;
 using System.Security.Cryptography;
 using System.Buffers;
 using System.Transactions;
+using System.Runtime.InteropServices;
 
 namespace OW.Game.Entity
 {

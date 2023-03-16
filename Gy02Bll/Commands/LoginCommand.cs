@@ -1,6 +1,7 @@
 ﻿using Gy02Bll.Managers;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
+using OW.Game.Store;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -62,8 +63,10 @@ namespace Gy02Bll.Commands
             command.User = gu;
             //设置属性
             gu.Timeout = TimeSpan.FromMinutes(15);
-            gu.LastModifyDateTimeUtc= DateTime.UtcNow;
-            gu.Token=Guid.NewGuid();
+            gu.LastModifyDateTimeUtc = DateTime.UtcNow;
+            gu.Token = Guid.NewGuid();
+            var db = gu.GetDbContext();
+            gu.CurrentChar = ((VirtualThing)gu.Thing).Children.First().GetJsonObject<GameChar>();
         }
     }
 }

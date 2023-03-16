@@ -21,7 +21,7 @@ namespace OW
             if (!_QuicklyRegisterSuffixSeqInit)
             {
                 using var db = VWorld.CreateNewUserDbContext();
-                var maxSeqStr = db.OrphanedThings.Where(c => c.ExtraString.StartsWith("gy")).OrderByDescending(c => c.ExtraString).FirstOrDefault()?.ExtraString ?? "0";
+                var maxSeqStr = db.VirtualThings.Where(c => c.ExtraString.StartsWith("gy")).OrderByDescending(c => c.ExtraString).FirstOrDefault()?.ExtraString ?? "0";
                 var len = maxSeqStr.Reverse().TakeWhile(c => char.IsDigit(c)).Count();
                 _QuicklyRegisterSuffixSeq = int.Parse(maxSeqStr[^len..^0]);
                 _QuicklyRegisterSuffixSeqInit = true;

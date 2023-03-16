@@ -30,6 +30,7 @@
     <ProjectReference Include="..\Gy02Bll\Gy02Bll.csproj" />
     <ProjectReference Include="..\Gy02Publisher\Gy02Publisher.csproj" />
     <ProjectReference Include="..\OwGameCore\OwGameCore.csproj" />
+    <ProjectReference Include="..\Publisher4WebApi\Publisher4WebApi.csproj" />
     <ProjectReference Include="..\TemplateDb\TemplateDb.csproj" />
   </ItemGroup>
 

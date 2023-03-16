@@ -18,16 +18,16 @@ namespace Gy02.AutoMappper
         {
             //基础数据
             CreateMap<VirtualThing, VirtualThingDto>();
-            //命令相关
-            CreateMap<CreateAccountParamsDto, CreateAccountCommand>();
-            CreateMap<CreateAccountCommand, CreateAccountResultDto>();
 
-            CreateMap<LoginParamsDto, LoginCommand>();
-            CreateMap<LoginCommand, LoginReturnDto>().AfterMap((comm, dto) =>
-            {
-                dto.GameChar = comm.User?.GetCurrentChar();
-                dto.Token = comm.User?.Token ?? Guid.Empty;
-            });
+            CreateMap<GameSlot<GameEquipment>, GameSlotDto<GameEquipmentDto>>();
+
+            //命令相关
+
+            //CreateMap<LoginCommand, LoginReturnDto>().AfterMap((comm, dto) =>
+            //{
+            //    dto.GameChar = comm.User.CurrentChar;
+            //    dto.Token = comm.User?.Token ?? Guid.Empty;
+            //});
 
 
         }

@@ -90,12 +90,17 @@ namespace Gy02Bll.Commands
             }
 
             var result = new VirtualThing();
+            var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
+            if(db.VirtualThings.Any(c=>c.ExtraString== command.Pwd))    //若指定账号已存在
+            {
+                command.ErrorCode = ErrorCodes.ERROR_USER_EXISTS;
+                return;
+            }
             //构造账号信息
             var gu = result.GetJsonObject<GameUser>();
             gu.TemplateId = ProjectContent.UserTId;
             gu.LoginName = command.LoginName;
             gu.SetPwd(command.Pwd);
-            var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
             db.Add(result);
             gu.SetDbContext(db);
             gu.Token = Guid.NewGuid();

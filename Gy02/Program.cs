@@ -2,6 +2,7 @@ using Castle.Core.Configuration;
 using GuangYuan.GY001.TemplateDb;
 using Gy02;
 using Gy02.AutoMappper;
+using Gy02.Publisher;
 using Gy02Bll;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Identity;
@@ -90,7 +91,7 @@ services.AddHostedService<GameHostedService>();
 
 services.AddOptions();
 
-services.AddAutoMapper(typeof(AutoMapperProfile).Assembly);
+services.AddAutoMapper(typeof(AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly);
 
 var app = builder.Build();
 #endregion 追加服务到容器

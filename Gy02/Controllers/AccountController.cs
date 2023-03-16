@@ -2,7 +2,6 @@
 using Gy02.Publisher;
 using Gy02Bll.Commands;
 using Gy02Bll.Managers;
-using Gy02Publisher;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -78,7 +77,6 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<CreateAccountResultDto> CreateAccount(CreateAccountParamsDto model, [FromServices] IMapper mapper, [FromServices] SyncCommandManager commandMng)
         {
-            //var service = HttpContext.RequestServices.GetRequiredService<IServiceProvider>();
             var command = mapper.Map<CreateAccountCommand>(model);
             commandMng.Handle(command);
             var result = mapper.Map<CreateAccountResultDto>(command);
