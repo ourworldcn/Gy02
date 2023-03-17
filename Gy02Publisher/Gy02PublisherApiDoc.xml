@@ -4,120 +4,126 @@
         <name>Gy02Publisher</name>
     </assembly>
     <members>
-        <member name="T:OW.Game.Conditional.IGamePrecondition">
+        <member name="T:Gy02Bll.Templates.RawTemplate">
+            <summary>
+            原始的的模板类。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.RawTemplate.Id">
+            <summary>
+            模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.RawTemplate.DisplayName">
+            <summary>
+            显示名。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.RawTemplate.Gid">
+            <summary>
+            分类号。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.RawTemplate.PropertiesString">
+            <summary>
+            属性字符串，Json格式。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.RawTemplate.Remark">
+            <summary>
+            备注。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.RawTemplate.GetJsonObject``1">
+            <summary>
+            获取<see cref="P:Gy02Bll.Templates.RawTemplate.PropertiesString"/>的Json对象。
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Gy02Bll.Templates.TemplatePropertiesStringBase">
+            <summary>
+            模板属性字符串的基础类。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.TemplatePropertiesStringBase.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="M:OW.Game.Conditional.IGamePrecondition.Match(System.Object,System.IServiceProvider)">
+        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Capacity">
             <summary>
-            获取一个指示，确定指定对象是否符合条件。
+            容量。
             </summary>
-            <param name="obj"></param>
-            <param name="service"></param>
-            <returns></returns>
+            <value>默认值：0</value>
         </member>
-        <member name="T:OW.Game.Conditional.GamePropertyCondition">
+        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Stk">
             <summary>
-            选择一个属性作为前提。
+            最大堆叠数。
             </summary>
+            <value>默认值：1</value>
         </member>
-        <member name="M:OW.Game.Conditional.GamePropertyCondition.#ctor">
+        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.TIdsOfCreate">
             <summary>
-            构造函数。
-            </summary>
-        </member>
-        <member name="P:OW.Game.Conditional.GamePropertyCondition.Operator">
-            <summary>
-            操作符。
+            创建时要一同创建的子对象。
             </summary>
         </member>
-        <member name="P:OW.Game.Conditional.GamePropertyCondition.PropertyName">
+        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Count0Reserved">
             <summary>
-            属性名。
+            为true时，数量为0时也不会删除该物品，省略或为false则删除。
             </summary>
         </member>
-        <member name="P:OW.Game.Conditional.GamePropertyCondition.Value">
+        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.ExtraProties">
             <summary>
-            属性的值。只能接受数值或其数组类型。
-            如果是一个 数值型数组 ,则按级别比对。
-            如[1,2,3]则按物品级别lv来选取值。
+            未能明确解析的字段放在此属性内。
             </summary>
         </member>
-        <member name="P:OW.Game.Conditional.GamePropertyCondition.IsEmpty">
+        <member name="T:Gy02Bll.Templates.TemplatePropertiesString">
             <summary>
-            是不是一个空的结构。
+            模板属性字符串的主类。
+            用于解析<see cref="P:Gy02Bll.Templates.RawTemplate.PropertiesString"/>属性的类型。
             </summary>
         </member>
-        <member name="P:OW.Game.Conditional.GamePropertyCondition.InnerValue">
+        <member name="T:Gy02Bll.Templates.GameTemplateBase`1">
             <summary>
-            解析<see cref="P:OW.Game.Conditional.GamePropertyCondition.Value"/>。
-            只能接受数值或其数组类型。
+            模板基类。
             </summary>
         </member>
-        <member name="F:OW.Game.Conditional.GamePropertyCondition._LevelPropertyInfo">
+        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.Id">
             <summary>
-            级别的属性访问器。
+            模板Id。
             </summary>
         </member>
-        <member name="M:OW.Game.Conditional.GamePropertyCondition.GetLevel(System.Object)">
+        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.DisplayName">
             <summary>
-            获取等级数值。
-            </summary>
-            <param name="obj"></param>
-            <returns></returns>
-        </member>
-        <member name="M:OW.Game.Conditional.GamePropertyCondition.Match(System.Object,System.IServiceProvider)">
-            <summary>
-            获取一个指示，确定指定对象是否符合条件。
-            </summary>
-            <param name="obj"></param>
-            <param name="service"></param>
-            <returns></returns>
-            <exception cref="T:System.ArgumentException"></exception>
-        </member>
-        <member name="T:OW.Game.Conditional.GameThingPrecondition">
-            <summary>
-            寻找一个物品的条件对象。
+            显示名。
             </summary>
         </member>
-        <member name="M:OW.Game.Conditional.GameThingPrecondition.#ctor">
+        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.Gid">
             <summary>
-            构造函数。
+            分类号。
             </summary>
         </member>
-        <member name="P:OW.Game.Conditional.GameThingPrecondition.PTId">
+        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.Remark">
             <summary>
-            父容器的模板Id。
-            省略表示不限制。
+            备注。
             </summary>
         </member>
-        <member name="P:OW.Game.Conditional.GameThingPrecondition.TId">
+        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.ExtraProperties">
             <summary>
-            对象的模板Id。
-            省略表示不限制。
+            扩展属性封装对象。
             </summary>
         </member>
-        <member name="P:OW.Game.Conditional.GameThingPrecondition.Genus">
+        <member name="T:Gy02Bll.Templates.GameTemplate`1">
             <summary>
-            属的限制。空集合表示不限制，多个属，表示任一个都符合条件。
-            此功能当前未实装。
+            模板主类。
             </summary>
         </member>
-        <member name="P:OW.Game.Conditional.GameThingPrecondition.PropertyConditions">
+        <member name="M:Gy02Bll.Templates.GameTemplate`1.op_Implicit(Gy02Bll.Templates.RawTemplate)~Gy02Bll.Templates.GameTemplate{`0}">
             <summary>
-            属性相关的条件。
-            可能是空或空集合，表示不限定具体属性。
+            从原始数据转换。
             </summary>
-        </member>
-        <member name="M:OW.Game.Conditional.GameThingPrecondition.Match(System.Object,System.IServiceProvider)">
-            <summary>
-            <inheritdoc/>
-            </summary>
-            <param name="obj"></param>
-            <param name="service"></param>
-            <returns></returns>
-            <exception cref="T:System.NotImplementedException"></exception>
+            <param name="raw"></param>
         </member>
         <member name="T:Gy02Bll.Templates.CreateTInfo">
             <summary>
@@ -142,11 +148,6 @@
         <member name="M:Gy02Bll.Templates.CostTInfo.#ctor">
             <summary>
             构造函数。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.CostTInfo.Conditional">
-            <summary>
-            选取物品的条件。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.CostTInfo.Counts">
@@ -184,11 +185,6 @@
         <member name="M:Gy02Bll.Templates.CompositingTInfoItem.#ctor">
             <summary>
             构造函数。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.CompositingTInfoItem.Conditional">
-            <summary>
-            选取物品的条件。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.CompositingTInfoItem.Count">

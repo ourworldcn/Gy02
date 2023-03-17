@@ -42,6 +42,28 @@ namespace Gy02.Controllers
         }
 
         /// <summary>
+        /// 获取模板数据。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ResponseCache(Duration = 120)]
+        public ActionResult<GetTemplates2ReturnDto> GetTemplates2(GetTemplates2ParamsDto model, [FromServices] TemplateManager manager)
+        {
+            var result = new GetTemplates2ReturnDto();
+            if (model.Uid != "gy001" || model.Pwd != "210115")
+            {
+                result.ErrorCode = ErrorCodes.Unauthorized;
+                result.DebugMessage = "用户名或密码错误。";
+                result.HasError = true;
+            }
+            else
+                result.Templates = manager.Id2Template2.Values.ToArray();
+            return result;
+        }
+
+        /// <summary>
         /// 重新启动服务。通常用于更新数据后重启。
         /// </summary>
         /// <param name="applicationLifetime"></param>

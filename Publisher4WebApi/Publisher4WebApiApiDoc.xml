@@ -311,6 +311,31 @@
             模板数据集合。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.GetTemplates2ParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplates2ParamsDto.Uid">
+            <summary>
+            用户名。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplates2ParamsDto.Pwd">
+            <summary>
+            密码。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GetTemplates2ReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetTemplates2ReturnDto.Templates">
+            <summary>
+            模板数据集合。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.DispatcherDemo">
             <summary>
             示例。

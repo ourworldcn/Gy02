@@ -433,6 +433,33 @@ namespace Gy02.Publisher
         /// </summary>
         public IEnumerable<Gy02TemplateJO> Templates { get; set; }
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class GetTemplates2ParamsDto
+    {
+        /// <summary>
+        /// 用户名。
+        /// </summary>
+        public string Uid { get; set; }
+
+        /// <summary>
+        /// 密码。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class GetTemplates2ReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 模板数据集合。
+        /// </summary>
+        public IEnumerable<GameTemplate<TemplatePropertiesString>> Templates { get; set; }
+    }
     #endregion 世界控制器功能相关
 }
 

@@ -1,12 +1,112 @@
-{
-  "skils": [
-    {
-      "tid": "c531cd34-fed9-4859811-501c25c0926d",
-      "enable": false
-    },
-    {
-      "tid": "c531cd34-fed9-4859811-501c25c0926d",
-      "enable": false
-    }
-  ]
-}
+[
+  {
+    "Id": "dc58d091-623a-4d7d-b9e5-b645e87d4e79",
+    "DisplayName": "账号",
+    "Gid": 910101001,
+    "PropertiesString": "{}",
+    "Remark": "备注"
+  },
+  {
+    "Id": "07664462-df05-4ba7-886d-b431bb88aa1c",
+    "DisplayName": "角色",
+    "Gid": 911101001,
+    "PropertiesString": "{\"lv\":0,\"TIdsOfCreate\":[\"2a596a68-a2d4-4157-b6ac-3d9da7a81ac0\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\"]}",
+    "Remark": "TIdsOfCreate是创建该对象时，需要一起创建的子对象的TIds"
+  },
+  {
+    "Id": "2a596a68-a2d4-4157-b6ac-3d9da7a81ac0",
+    "DisplayName": "装备槽",
+    "Gid": 912101001,
+    "PropertiesString": "{}",
+    "Remark": "存放未装上的装备，cap最大容量，省略或为-1则为不限制"
+  },
+  {
+    "Id": "3b163a62-6591-4a93-a385-cf079b20f589",
+    "DisplayName": "皮肤槽",
+    "Gid": 912101002,
+    "PropertiesString": "{}"
+  },
+  {
+    "Id": "29b7e726-387f-409d-a6ac-ad8670a814f0",
+    "DisplayName": "武器装备槽",
+    "Gid": 912101003,
+    "PropertiesString": "{\"cap\":1}"
+  },
+  {
+    "Id": "4d125986-4a3f-4294-bf54-a70853d719c1",
+    "DisplayName": "手套装备槽",
+    "Gid": 912101004,
+    "PropertiesString": "{\"cap\":1}"
+  },
+  {
+    "Id": "3d141082-0deb-4f59-ac5d-a80e43657ccc",
+    "DisplayName": "衣服装备槽",
+    "Gid": 912101005,
+    "PropertiesString": "{\"cap\":1}"
+  },
+  {
+    "Id": "fe312261-2233-4c35-aaf4-bd698e328baf",
+    "DisplayName": "鞋子装备槽",
+    "Gid": 912101006,
+    "PropertiesString": "{\"cap\":1}"
+  },
+  {
+    "Id": "af7b7b9b-a881-4cbe-bca5-111f7babd73a",
+    "DisplayName": "腰带装备槽",
+    "Gid": 912101007,
+    "PropertiesString": "{\"cap\":1}"
+  },
+  {
+    "Id": "14d0e372-909b-485f-b8cb-07c9231b10ff",
+    "DisplayName": "坐骑装备槽",
+    "Gid": 912101008,
+    "PropertiesString": "{\"cap\":1}"
+  },
+  {
+    "Id": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+    "DisplayName": "装备背包",
+    "Gid": 912101009,
+    "PropertiesString": "{\"cap\":1}"
+  },
+  {
+    "Id": "9c559895-9a2c-43a7-b793-e879a600487c",
+    "DisplayName": "道具背包",
+    "Gid": 912101010,
+    "PropertiesString": "{\"cap\":1}"
+  },
+  {
+    "Id": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+    "DisplayName": "货币槽",
+    "Gid": 912101011,
+    "PropertiesString": "{\"cap\":1,\"TIdsOfCreate\":[\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"]}",
+    "Remark": "货币类物品放置在此槽下，初始创建；"
+  },
+  {
+    "Id": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+    "DisplayName": "体力",
+    "Gid": "策划填写",
+    "PropertiesString": "{“Count”:0,\"stk\":-1,\"Count0Reserved\":true}"
+  },
+  {
+    "Id": "a45b3421-3688-43c5-b8f5-429db7621f69",
+    "DisplayName": "金币",
+    "Gid": "策划填写",
+    "PropertiesString": "{“Count”:0,\"stk\":-1,\"Count0Reserved\":true}"
+  },
+  {
+    "Id": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+    "DisplayName": "钻石",
+    "Gid": "策划填写",
+    "PropertiesString": "{“Count”:0,\"stk\":-1,\"Count0Reserved\":true}",
+    "Remark": "Count控制初始生成时的数量，省略则为0，可以有小数点，定点数；stk最大堆叠数，-1=不限制，省略为1就是非堆叠物品如装备;Count0Reserved为true时，数量为0时也不会删除该物品，省略或为false则删除。"
+  },
+  {
+    "Id": "c4620da9-3ae2-4cdc-aeb3-8c343b56449b"
+  },
+  {
+    "Id": "e44ba666-ee75-441a-8650-9bd950c9f43d"
+  },
+  {
+    "Id": "30df8b18-9bdd-49af-addc-5db4a206c66a"
+  }
+]

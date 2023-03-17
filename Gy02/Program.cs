@@ -141,7 +141,7 @@ namespace Global
     public static class Program
     {
         /// <summary>
-        /// 
+        /// 是否请求重新启动。
         /// </summary>
         public static bool ReqireReboot = false;
 

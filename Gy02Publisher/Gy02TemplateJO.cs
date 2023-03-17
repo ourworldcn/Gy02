@@ -1,15 +1,183 @@
-﻿using OW.Game.Conditional;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Gy02Bll.Templates
 {
+    /// <summary>
+    /// 原始的的模板类。
+    /// </summary>
+    public class RawTemplate
+    {
+        /// <summary>
+        /// 模板Id。
+        /// </summary>
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// 显示名。
+        /// </summary>
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// 分类号。
+        /// </summary>
+        public decimal? Gid { get; set; }
+
+        /// <summary>
+        /// 属性字符串，Json格式。
+        /// </summary>
+        public string PropertiesString { get; set; }
+
+        /// <summary>
+        /// 备注。
+        /// </summary>
+        public string Remark { get; set; }
+
+        /// <summary>
+        /// 获取<see cref="PropertiesString"/>的Json对象。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public T GetJsonObject<T>()
+        {
+            return JsonSerializer.Deserialize<T>(PropertiesString);
+        }
+    }
+
+    /// <summary>
+    /// 模板属性字符串的基础类。
+    /// </summary>
+    public class TemplatePropertiesStringBase
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public TemplatePropertiesStringBase()
+        {
+
+        }
+
+        /// <summary>
+        /// 容量。
+        /// </summary>
+        /// <value>默认值：0</value>
+        [JsonPropertyName("cap")]
+        public decimal Capacity { get; set; }
+
+        /// <summary>
+        /// 最大堆叠数。
+        /// </summary>
+        /// <value>默认值：1</value>
+        public decimal Stk { get; set; } = decimal.One;
+
+        /// <summary>
+        /// 创建时要一同创建的子对象。
+        /// </summary>
+        public Guid[] TIdsOfCreate { get; set; }
+
+        /// <summary>
+        /// 为true时，数量为0时也不会删除该物品，省略或为false则删除。
+        /// </summary>
+        public bool Count0Reserved { get; set; }
+
+        Dictionary<string, object> _ExtraProties;
+        /// <summary>
+        /// 未能明确解析的字段放在此属性内。
+        /// </summary>
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtraProties
+        {
+            get
+            {
+                if (_ExtraProties is null)
+                    Interlocked.CompareExchange(ref _ExtraProties, new Dictionary<string, object>(), null);
+                return _ExtraProties;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 模板属性字符串的主类。
+    /// 用于解析<see cref="RawTemplate.PropertiesString"/>属性的类型。
+    /// </summary>
+    public class TemplatePropertiesString : TemplatePropertiesStringBase
+    {
+    }
+
+    /// <summary>
+    /// 模板基类。
+    /// </summary>
+    public class GameTemplateBase<T> where T : TemplatePropertiesStringBase
+    {
+        /// <summary>
+        /// 模板Id。
+        /// </summary>
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// 显示名。
+        /// </summary>
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// 分类号。
+        /// </summary>
+        public decimal? Gid { get; set; }
+
+        /// <summary>
+        /// 备注。
+        /// </summary>
+        public string Remark { get; set; }
+
+        /// <summary>
+        /// 扩展属性封装对象。
+        /// </summary>
+        public T ExtraProperties { get; set; }
+    }
+
+    /// <summary>
+    /// 模板主类。
+    /// </summary>
+    public class GameTemplate<T> : GameTemplateBase<T> where T : TemplatePropertiesStringBase
+    {
+        /// <summary>
+        /// 从原始数据转换。
+        /// </summary>
+        /// <param name="raw"></param>
+        public static implicit operator GameTemplate<T>(RawTemplate raw)
+        {
+            TemplatePropertiesString ts;
+            try
+            {
+                ts = raw.GetJsonObject<TemplatePropertiesString>();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            var result = new GameTemplate<T>()
+            {
+                DisplayName = raw.DisplayName,
+                Gid = raw.Gid,
+                Id = raw.Id,
+                Remark = raw.Remark
+            };
+            result.ExtraProperties = ts as T;
+            return result;
+        }
+
+    }
+
     /// <summary>
     /// 创建对象时的行为信息。
     /// </summary>
@@ -45,7 +213,7 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        //public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
 
         /// <summary>
         /// 消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
@@ -95,7 +263,7 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        //public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
 
         /// <summary>
         /// 消耗的数量。

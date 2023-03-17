@@ -74,6 +74,14 @@
             <param name="manager"></param>
             <returns><seealso cref="T:Gy02Bll.Templates.Gy02TemplateJO"/></returns>
         </member>
+        <member name="M:Gy02.Controllers.VWorldController.GetTemplates2(Gy02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.TemplateManager)">
+            <summary>
+            获取模板数据。
+            </summary>
+            <param name="model"></param>
+            <param name="manager"></param>
+            <returns></returns>
+        </member>
         <member name="M:Gy02.Controllers.VWorldController.StopService(Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
             <summary>
             重新启动服务。通常用于更新数据后重启。
@@ -146,7 +154,7 @@
         </member>
         <member name="F:Global.Program.ReqireReboot">
             <summary>
-            
+            是否请求重新启动。
             </summary>
         </member>
     </members>
