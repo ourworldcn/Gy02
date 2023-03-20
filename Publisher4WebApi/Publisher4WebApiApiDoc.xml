@@ -50,11 +50,6 @@
             模板数据的传输类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.VirtualThingDto">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="P:Gy02.Publisher.VirtualThingDto.Id">
             <summary>
             唯一Id。

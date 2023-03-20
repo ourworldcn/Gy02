@@ -14,6 +14,7 @@ using Microsoft.OpenApi.Models;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Manager;
+using OW.Game.Managers;
 using OW.Game.Store;
 using System.Diagnostics;
 using System.Reflection;
@@ -22,6 +23,8 @@ using System.Text.Json;
 lbStart:
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
+
+builder.Configuration.AddJsonFile("GameTemplates.json");    //加入模板信息配置文件
 
 //builder.Services.AddW3CLogging(logging =>
 //{
@@ -89,11 +92,13 @@ VWorld.UserContextOptions = new DbContextOptionsBuilder<GY02UserContext>().UseLa
 services.AddGameServices();
 services.AddHostedService<GameHostedService>();
 
-services.AddOptions();
+services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"));
 
 services.AddAutoMapper(typeof(AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly);
+//services.Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"));  //模板配置的选项模式
 
 var app = builder.Build();
+
 #endregion 追加服务到容器
 
 #region 配置HTTP管道

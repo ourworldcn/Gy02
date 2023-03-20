@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
@@ -43,6 +44,7 @@ namespace Gy02Bll.Templates
         /// </summary>
         public string Remark { get; set; }
 
+#if NETCOREAPP3_0_OR_GREATER
         /// <summary>
         /// 获取<see cref="PropertiesString"/>的Json对象。
         /// </summary>
@@ -52,6 +54,7 @@ namespace Gy02Bll.Templates
         {
             return JsonSerializer.Deserialize<T>(PropertiesString);
         }
+#endif //NETCOREAPP3_0_OR_GREATER
     }
 
     /// <summary>
@@ -90,19 +93,26 @@ namespace Gy02Bll.Templates
         /// </summary>
         public bool Count0Reserved { get; set; }
 
-        Dictionary<string, object> _ExtraProties;
+        /// <summary>
+        /// 类属字符串集合。
+        /// </summary>
+        [JsonPropertyName("genus")]
+        public string[] Genus { get; set; }
+
+        Dictionary<string, object> _ExtraProperties;
         /// <summary>
         /// 未能明确解析的字段放在此属性内。
         /// </summary>
         [JsonExtensionData]
-        public Dictionary<string, object> ExtraProties
+        public Dictionary<string, object> ExtraProperties
         {
             get
             {
-                if (_ExtraProties is null)
-                    Interlocked.CompareExchange(ref _ExtraProties, new Dictionary<string, object>(), null);
-                return _ExtraProties;
+                if (_ExtraProperties is null)
+                    Interlocked.CompareExchange(ref _ExtraProperties, new Dictionary<string, object>(), null);
+                return _ExtraProperties;
             }
+            set { _ExtraProperties = value; }
         }
     }
 
@@ -112,6 +122,68 @@ namespace Gy02Bll.Templates
     /// </summary>
     public class TemplatePropertiesString : TemplatePropertiesStringBase
     {
+    }
+
+    /// <summary>
+    /// 词条的数据结构。
+    /// </summary>
+    public class TemplateSkillItem
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public TemplateSkillItem()
+        {
+
+        }
+
+        /// <summary>
+        /// 词条的Id。
+        /// </summary>
+        public Guid SkillsId { get; set; }
+
+        /// <summary>
+        /// 词条是否生效。
+        /// </summary>
+        public bool Enable { get; set; }
+    }
+
+    /// <summary>
+    /// 装备模板特有数据。
+    /// </summary>
+    public class EquipmentTemplatePropertiesString : TemplatePropertiesString
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public EquipmentTemplatePropertiesString()
+        {
+
+        }
+
+        /// <summary>
+        /// 攻击数值序列。
+        /// </summary>
+        [JsonPropertyName("atk")]
+        public decimal[] Atk { get; set; }
+
+        /// <summary>
+        /// 防御数值序列。
+        /// </summary>
+        [JsonPropertyName("def")]
+        public decimal[] Def { get; set; }
+
+        /// <summary>
+        /// 力量属性数值序列。
+        /// </summary>
+        [JsonPropertyName("pwo")]
+        public decimal[] Pwo { get; set; }
+
+        /// <summary>
+        /// 词条的集合。
+        /// </summary>
+        [JsonPropertyName("p_skills")]
+        public TemplateSkillItem[] Skills { get; set; }
     }
 
     /// <summary>
@@ -160,6 +232,7 @@ namespace Gy02Bll.Templates
             try
             {
                 ts = raw.GetJsonObject<TemplatePropertiesString>();
+                //var tmp = raw.GetJsonObject<EquipmentTemplatePropertiesString>();
             }
             catch (Exception)
             {
@@ -213,7 +286,7 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        //public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        ///public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
 
         /// <summary>
         /// 消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
@@ -263,7 +336,7 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        //public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        ///public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
 
         /// <summary>
         /// 消耗的数量。

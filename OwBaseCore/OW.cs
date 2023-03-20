@@ -8,9 +8,9 @@ namespace OW
     /// <summary>
     /// 帮助实现 <see cref="IDisposable"/> 和 <see cref="IAsyncDisposable"/> 接口的抽象类。
     /// </summary>
-    public abstract partial class DisposableBase : IDisposable
+    public abstract partial class OwDisposableBase : IDisposable
     {
-        protected DisposableBase() { }
+        protected OwDisposableBase() { }
 
         #region IDisposable接口相关
 
@@ -103,10 +103,10 @@ namespace OW
     /// </summary>
     /// <typeparam name="TOptions"></typeparam>
     /// <typeparam name="TService"></typeparam>
-    public abstract class ServiceBase<TOptions, TService> : DisposableBase
+    public abstract class OwServiceBase<TOptions, TService> : OwDisposableBase
         where TOptions : class
     {
-        protected ServiceBase(IOptions<TOptions> options, ILogger<TService> logger)
+        protected OwServiceBase(IOptions<TOptions> options, ILogger<TService> logger)
         {
             Options = options.Value;
             Logger = logger;

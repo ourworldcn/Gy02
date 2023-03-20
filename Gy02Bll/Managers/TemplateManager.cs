@@ -5,11 +5,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using OW.Game.Manager;
 using OW.Game.Store;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -21,19 +23,48 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Managers
 {
-    [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
-    public class TemplateManager
+    /// <summary>
+    /// 
+    /// </summary>
+    public class RawTemplateOptions : Collection<RawTemplate>
     {
-        public TemplateManager(GY02TemplateContext dbContext, ILogger<TemplateManager> logger, IHostApplicationLifetime lifetime)
+        public RawTemplateOptions() : base()
         {
-            DbContext = dbContext;
-            Logger = logger;
-            logger.LogDebug("上线:模板管理器。");
-            _Lifetime = lifetime;
-            Initialize();
 
         }
 
+    }
+
+    public class TemplateManagerOptions : IOptions<TemplateManagerOptions>
+    {
+        public TemplateManagerOptions() { }
+
+        public TemplateManagerOptions Value => this;
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
+    public class TemplateManager : GameManagerBase<TemplateManagerOptions, TemplateManager>
+    {
+        public TemplateManager(IOptions<TemplateManagerOptions> options, GY02TemplateContext dbContext, ILogger<TemplateManager> logger, IHostApplicationLifetime lifetime, IOptionsMonitor<RawTemplateOptions> rawTemplateOptions)
+            : base(options, logger)
+        {
+            DbContext = dbContext;
+            logger.LogDebug("上线:模板管理器。");
+            _Lifetime = lifetime;
+            _RawTemplateOptions = rawTemplateOptions;
+            _RawTemplateOptionsChangedMonitor = _RawTemplateOptions.OnChange(RawTemplateOptionsChanged);
+            Initialize();
+        }
+
+        private void RawTemplateOptionsChanged(RawTemplateOptions arg1, string arg2)
+        {
+
+        }
+
+        IDisposable _RawTemplateOptionsChangedMonitor;
+        IOptionsMonitor<RawTemplateOptions> _RawTemplateOptions;
         IHostApplicationLifetime _Lifetime;
         Task _InitTask;
         private void Initialize()
@@ -65,15 +96,11 @@ namespace OW.Game.Managers
                 }
                 //分类
 
-                file = "GameTemplates.json";
-                path = Path.Combine(AppContext.BaseDirectory, "数据表", file);
-                using var streamTemplate = File.OpenRead(path);
                 try
                 {
                     //using var br = new StreamReader(streamTemplate);
                     //var str = br.ReadToEnd();
-                    var ts = JsonSerializer.Deserialize<RawTemplate[]>(streamTemplate, opt);
-                    var dic = ts.Select(c => (GameTemplate<TemplatePropertiesString>)c).ToDictionary(c => c.Id);
+                    var dic = _RawTemplateOptions.CurrentValue.Select(c => (GameTemplate<TemplatePropertiesString>)c).ToDictionary(c => c.Id);
                     _Id2Template2 = new ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>>(dic);
                 }
                 catch (Exception excp)
@@ -89,11 +116,6 @@ namespace OW.Game.Managers
         /// 
         /// </summary>
         public GY02TemplateContext DbContext { get; set; }
-
-        /// <summary>
-        /// 日志接口。
-        /// </summary>
-        public ILogger<TemplateManager> Logger { get; }
 
         ConcurrentDictionary<Guid, GameThingTemplate> _Id2Template;
         ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>> _Id2Template2;
@@ -128,6 +150,15 @@ namespace OW.Game.Managers
             _InitTask.Wait();
             return _Id2Template.GetValueOrDefault(id);
         }
+
+        #region IDisposable
+        protected override void Dispose(bool disposing)
+        {
+            _RawTemplateOptionsChangedMonitor?.Dispose();
+            _RawTemplateOptionsChangedMonitor = null;
+            base.Dispose(disposing);
+        }
+        #endregion IDisposable
     }
 
     public static class TemplateManagerExtensions

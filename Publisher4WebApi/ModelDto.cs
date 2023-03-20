@@ -74,9 +74,6 @@ namespace Gy02.Publisher
 
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public class VirtualThingDto
     {
         /// <summary>
@@ -366,7 +363,7 @@ namespace Gy02.Publisher
         /// 角色的信息。
         /// </summary>
         [SourceMember("User.CurrentChar")]
-        public GameChar GameChar { get; set; }
+        public GameCharDto GameChar { get; set; }
 
         Guid _Token;
         /// <summary>

@@ -73,7 +73,12 @@
             为true时，数量为0时也不会删除该物品，省略或为false则删除。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.ExtraProties">
+        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Genus">
+            <summary>
+            类属字符串集合。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.ExtraProperties">
             <summary>
             未能明确解析的字段放在此属性内。
             </summary>
@@ -82,6 +87,56 @@
             <summary>
             模板属性字符串的主类。
             用于解析<see cref="P:Gy02Bll.Templates.RawTemplate.PropertiesString"/>属性的类型。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.TemplateSkillItem">
+            <summary>
+            词条的数据结构。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.TemplateSkillItem.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateSkillItem.SkillsId">
+            <summary>
+            词条的Id。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateSkillItem.Enable">
+            <summary>
+            词条是否生效。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.EquipmentTemplatePropertiesString">
+            <summary>
+            装备模板特有数据。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.EquipmentTemplatePropertiesString.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Atk">
+            <summary>
+            攻击数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Def">
+            <summary>
+            防御数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Pwo">
+            <summary>
+            力量属性数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Skills">
+            <summary>
+            词条的集合。
             </summary>
         </member>
         <member name="T:Gy02Bll.Templates.GameTemplateBase`1">
@@ -151,6 +206,10 @@
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.CostTInfo.Counts">
+             <summary>
+             选取物品的条件。
+             </summary>
+            public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
             <summary>
             消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
             注意消耗数量可能是0，代表需要此物品但不消耗此物品。若是null或空则表示所有级别都不消耗。
@@ -188,6 +247,10 @@
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.CompositingTInfoItem.Count">
+             <summary>
+             选取物品的条件。
+             </summary>
+            public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
             <summary>
             消耗的数量。
             注意消耗数量可能是0，代表需要此物品但不消耗此物品。

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Managers
 {
-    public abstract class GameManagerBase<TOptions, TService> : ServiceBase<TOptions, TService> where TOptions : class
+    public abstract class GameManagerBase<TOptions, TService> : OwServiceBase<TOptions, TService> where TOptions : class
     {
         #region 构造函数及相关
 

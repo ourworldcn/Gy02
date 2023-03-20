@@ -53,6 +53,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         /// <summary>
         /// 是否自动创建第一个实例。
+        /// true将在后台线程自动创建一个实例以完成必要的初始化。
         /// </summary>
         public bool AutoCreateFirst { get; set; }
 
