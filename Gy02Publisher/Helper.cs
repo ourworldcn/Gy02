@@ -21,14 +21,15 @@ namespace Gy02.Publisher
     public static class ProjectContent
     {
         /// <summary>
-        /// 角色的模板Id。
+        /// 账号的模板Id。
         /// </summary>
-        public readonly static Guid CharTId = new Guid("3fa85f64-5717-4562-b3fc-2c963f66afa6");
+        public readonly static Guid UserTId = new Guid("dc58d091-623a-4d7d-b9e5-b645e87d4e79");
 
         /// <summary>
         /// 角色的模板Id。
         /// </summary>
-        public readonly static Guid UserTId = new Guid("def2fbc1-0928-4e78-b74e-edb20c1c9eb3");
+        public readonly static Guid CharTId = new Guid("07664462-df05-4ba7-886d-b431bb88aa1c");
+
     }
 
     /// <summary>
@@ -132,6 +133,14 @@ namespace Gy02.Publisher
     /// </summary>
     public static class ServerHelper
     {
+    }
+
+    /// <summary>
+    /// 类型映射。
+    /// </summary>
+    public static class TypeTable
+    {
+        //public Dictionary<Guid, (Type, Type)> Types { get; set; } = new Dictionary<Guid, (Type, Type)>() { { Guid.NewGuid, (null, null) } };
     }
 
 }

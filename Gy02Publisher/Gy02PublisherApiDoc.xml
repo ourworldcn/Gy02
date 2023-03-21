@@ -65,7 +65,7 @@
         </member>
         <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.TIdsOfCreate">
             <summary>
-            创建时要一同创建的子对象。
+            创建时要一同创建的子对象的模板Id。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Count0Reserved">
@@ -135,6 +135,63 @@
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Skills">
+            <summary>
+            词条的集合。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.TemplateStringFullView">
+            <summary>
+            模板的完整视图。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.TemplateStringFullView.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Capacity">
+            <summary>
+            容量。
+            </summary>
+            <value>默认值：0</value>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Stk">
+            <summary>
+            最大堆叠数。
+            </summary>
+            <value>默认值：1</value>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.TIdsOfCreate">
+            <summary>
+            创建时要一同创建的子对象的模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Count0Reserved">
+            <summary>
+            为true时，数量为0时也不会删除该物品，省略或为false则删除。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Genus">
+            <summary>
+            类属字符串集合。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Atk">
+            <summary>
+            攻击数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Def">
+            <summary>
+            防御数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Pwo">
+            <summary>
+            力量属性数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Skills">
             <summary>
             词条的集合。
             </summary>
@@ -276,79 +333,17 @@
             合成时材料的集合。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.TemplateJsonObjectBase">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Gy02Bll.Templates.TemplateJsonObjectBase.#ctor">
-            <summary>
-            构造函数。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.Id">
-            <summary>
-            模板的唯一Id。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.ExtraLong">
-            <summary>
-            长整型的一个数字，可以用于分类，但服务器不使用。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.Genus">
-            <summary>
-            所属的属。服务器后续复杂的计算系统使用该属。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.CreateInfo">
-            <summary>
-            <seealso cref="T:Gy02Bll.Templates.CreateTInfo"/>。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.UpgradeInfo">
-            <summary>
-            升级时使用的序列数值属性。
-            该属性内容不会直接复制到对象，需要按等级计算得到唯一值复制到对象。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.CompositingInfo">
-            <summary>
-            合成此物品的材料信息。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplateJsonObjectBase.UseInfo">
-            <summary>
-            <seealso cref="T:Gy02Bll.Templates.UseTInfo"/>。
-            </summary>
-        </member>
-        <member name="T:Gy02Bll.Templates.Gy02TemplateJO">
-            <summary>
-            模板对象Json的数据。
-            注意此类可能不断添加一些成员。
-            </summary>
-        </member>
-        <member name="M:Gy02Bll.Templates.Gy02TemplateJO.#ctor">
-            <summary>
-            构造函数。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.Gy02TemplateJO.ExtraProperties">
-            <summary>
-            未明确添加的属性，即剩余的扩展属性。
-            </summary>
-        </member>
         <member name="T:Gy02.Publisher.ProjectContent">
             <summary>
             存储一些常量和Id。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.CharTId">
+        <member name="F:Gy02.Publisher.ProjectContent.UserTId">
             <summary>
-            角色的模板Id。
+            账号的模板Id。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.UserTId">
+        <member name="F:Gy02.Publisher.ProjectContent.CharTId">
             <summary>
             角色的模板Id。
             </summary>
@@ -451,6 +446,11 @@
         <member name="T:Gy02.Publisher.ServerHelper">
             <summary>
             帮助器类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.TypeTable">
+            <summary>
+            类型映射。
             </summary>
         </member>
     </members>

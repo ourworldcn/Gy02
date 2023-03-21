@@ -66,14 +66,6 @@
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.VWorldController.GetTemplates(Gy02.Publisher.GetTemplatesParamsDto,OW.Game.Managers.TemplateManager)">
-            <summary>
-            获取所有模板。
-            </summary>
-            <param name="model">入参。</param>
-            <param name="manager"></param>
-            <returns><seealso cref="T:Gy02Bll.Templates.Gy02TemplateJO"/></returns>
-        </member>
         <member name="M:Gy02.Controllers.VWorldController.GetTemplates2(Gy02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.TemplateManager)">
             <summary>
             获取模板数据。

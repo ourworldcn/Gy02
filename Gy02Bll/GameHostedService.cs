@@ -1,4 +1,5 @@
-﻿using GuangYuan.GY001.TemplateDb;
+﻿using AutoMapper;
+using GuangYuan.GY001.TemplateDb;
 using Gy02Bll.Commands;
 using Gy02Bll.Managers;
 using Gy02Bll.Templates;
@@ -140,15 +141,20 @@ namespace Gy02Bll
             }
             catch (Exception err)
             {
-                logger.LogError(err, $"升级数据库出现错误——{err.Message}");
+                logger.LogError(err, "升级数据库出现错误");
             }
         }
+
         [Conditional("DEBUG")]
         private void Test()
         {
             var sw = Stopwatch.StartNew();
             try
             {
+                var mapper = _Services.GetService<IMapper>();
+                Guid guid = Guid.NewGuid();
+                string str = mapper.Map<string>(guid);
+                var id = mapper.Map<Guid>(str);
             }
             finally
             {

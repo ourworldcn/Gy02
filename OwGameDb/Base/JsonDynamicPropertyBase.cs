@@ -96,23 +96,34 @@ namespace OW.Game.Store
         /// 获取或初始化<see cref="JsonObject"/>属性并返回。
         /// </summary>
         /// <typeparam name="T">若支持<see cref="INotifyPropertyChanged"/>接口则可以获得优化。</typeparam>
-        /// <returns>返回的对象，不会放回null，可能返回默认的新对象。</returns>
-        public virtual T GetJsonObject<T>() where T : new()
+        /// <returns>返回的对象，不会返回null，可能返回默认的新对象。</returns>
+        public T GetJsonObject<T>() where T : new()
         {
-            if (typeof(T) != JsonObjectType || JsonObject is null)  //若需要初始化
+            var result = GetJsonObject(typeof(T));
+            return (T)result;
+        }
+
+        /// <summary>
+        /// 获取或初始化<see cref="JsonObject"/>属性并返回。
+        /// </summary>
+        /// <param name="type">若支持<see cref="INotifyPropertyChanged"/>接口则可以获得优化。</param>
+        /// <returns>返回的对象，不会返回null，可能返回默认的新对象。</returns>
+        public virtual object GetJsonObject(Type type)
+        {
+            if (type != JsonObjectType || JsonObject is null)  //若需要初始化
             {
                 if (string.IsNullOrWhiteSpace(JsonObjectString))    //若Json字符串是无效的
                 {
-                    JsonObject = new T();
+                    JsonObject = TypeDescriptor.CreateInstance(null, type, null, null);
                 }
                 else
                 {
-                    JsonObject = JsonSerializer.Deserialize(JsonObjectString, typeof(T), _SerializerOptions);
+                    JsonObject = JsonSerializer.Deserialize(JsonObjectString, type, _SerializerOptions);
                     _Seq = _WritedSeq = 0;
                 }
-                JsonObjectType = typeof(T);
+                JsonObjectType = type;
             }
-            return (T)JsonObject;
+            return JsonObject;
         }
 
         volatile int _Seq;

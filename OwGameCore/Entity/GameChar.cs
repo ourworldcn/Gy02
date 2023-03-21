@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
@@ -15,6 +16,7 @@ namespace OW.Game.Entity
     /// <summary>
     /// 游戏角色类。
     /// </summary>
+    [Guid("941917CC-E91C-46D7-9F53-A98C3EB4F92E")]
     public class GameChar : OwGameEntityBase
     {
         #region 构造函数
@@ -63,6 +65,76 @@ namespace OW.Game.Entity
         /// </summary>
         public bool IsOnline { get; set; }
         #endregion 普通属性
+
+        #region 简单属性
+
+        /// <summary>
+        /// 昵称。
+        /// </summary>
+        [JsonIgnore]
+        public string DisplayName
+        {
+            get => ((VirtualThing)Thing).ExtraString;
+            set => ((VirtualThing)Thing).ExtraString = value;
+        }
+        #endregion 简单属性
+
+        #region 各种槽
+
+        /// <summary>
+        /// 武器装备槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> Wuqi { get; set; }
+
+        /// <summary>
+        /// 手套装备槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> ShouTao { get; set; }
+
+        /// <summary>
+        /// 衣服装备槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> YiFu { get; set; }
+
+        /// <summary>
+        /// 鞋子装备槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> XieZi { get; set; }
+
+        /// <summary>
+        /// 腰带装备槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> YaoDai { get; set; }
+
+        /// <summary>
+        /// 坐骑装备槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> ZuoQiSlot { get; set; }
+
+        /// <summary>
+        /// 装备背包。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> ZhuangBeiBag { get; set; }
+
+        /// <summary>
+        /// 道具背包。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> DaoJuBag { get; set; }
+
+        /// <summary>
+        /// 时装背包。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> ShiZhuangBag { get; set; }
+        #endregion 各种槽
 
     }
 

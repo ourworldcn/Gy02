@@ -167,9 +167,9 @@ namespace OW.Game.Store
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public override T GetJsonObject<T>()
+        public override object GetJsonObject(Type type)
         {
-            var result = base.GetJsonObject<T>();
+            var result = base.GetJsonObject(type);
             if (result is OwGameEntityBase viewBase)
                 viewBase.Thing = this;
             return result;

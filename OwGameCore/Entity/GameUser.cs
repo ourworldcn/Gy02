@@ -19,6 +19,7 @@ namespace OW.Game.Entity
     /// <summary>
     /// 用户账号类。
     /// </summary>
+    [Guid("60DE10B7-8CC6-4D51-B356-691ECBB77C03")]
     public class GameUser : OwGameEntityBase
     {
         #region 构造函数及相关

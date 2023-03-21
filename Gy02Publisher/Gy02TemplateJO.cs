@@ -84,7 +84,7 @@ namespace Gy02Bll.Templates
         public decimal Stk { get; set; } = decimal.One;
 
         /// <summary>
-        /// 创建时要一同创建的子对象。
+        /// 创建时要一同创建的子对象的模板Id。
         /// </summary>
         public Guid[] TIdsOfCreate { get; set; }
 
@@ -184,6 +184,79 @@ namespace Gy02Bll.Templates
         /// </summary>
         [JsonPropertyName("p_skills")]
         public TemplateSkillItem[] Skills { get; set; }
+    }
+
+    /// <summary>
+    /// 模板的完整视图。
+    /// </summary>
+    public class TemplateStringFullView
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public TemplateStringFullView()
+        {
+
+        }
+
+        #region 基础数据
+        /// <summary>
+        /// 容量。
+        /// </summary>
+        /// <value>默认值：0</value>
+        [JsonPropertyName("cap")]
+        public decimal Capacity { get; set; }
+
+        /// <summary>
+        /// 最大堆叠数。
+        /// </summary>
+        /// <value>默认值：1</value>
+        public decimal Stk { get; set; } = decimal.One;
+
+        /// <summary>
+        /// 创建时要一同创建的子对象的模板Id。
+        /// </summary>
+        public Guid[] TIdsOfCreate { get; set; }
+
+        /// <summary>
+        /// 为true时，数量为0时也不会删除该物品，省略或为false则删除。
+        /// </summary>
+        public bool Count0Reserved { get; set; }
+
+        /// <summary>
+        /// 类属字符串集合。
+        /// </summary>
+        [JsonPropertyName("genus")]
+        public string[] Genus { get; set; }
+
+        #endregion 基础数据
+
+        #region 装备数据
+        /// <summary>
+        /// 攻击数值序列。
+        /// </summary>
+        [JsonPropertyName("atk")]
+        public decimal[] Atk { get; set; }
+
+        /// <summary>
+        /// 防御数值序列。
+        /// </summary>
+        [JsonPropertyName("def")]
+        public decimal[] Def { get; set; }
+
+        /// <summary>
+        /// 力量属性数值序列。
+        /// </summary>
+        [JsonPropertyName("pwo")]
+        public decimal[] Pwo { get; set; }
+
+        /// <summary>
+        /// 词条的集合。
+        /// </summary>
+        [JsonPropertyName("p_skills")]
+        public TemplateSkillItem[] Skills { get; set; }
+
+        #endregion 装备数据
     }
 
     /// <summary>
@@ -369,77 +442,4 @@ namespace Gy02Bll.Templates
         public List<CompositingTInfoItem> Items { get; set; } = new List<CompositingTInfoItem>();
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    public class TemplateJsonObjectBase
-    {
-
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public TemplateJsonObjectBase()
-        {
-
-        }
-
-        /// <summary>
-        /// 模板的唯一Id。
-        /// </summary>
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// 长整型的一个数字，可以用于分类，但服务器不使用。
-        /// </summary>
-        public long ExtraLong { get; set; }
-
-        /// <summary>
-        /// 所属的属。服务器后续复杂的计算系统使用该属。
-        /// </summary>
-        public List<string> Genus { get; set; } = new List<string>();
-
-        /// <summary>
-        /// <seealso cref="CreateTInfo"/>。
-        /// </summary>
-        public CreateTInfo CreateInfo { get; set; } = new CreateTInfo();
-
-        /// <summary>
-        /// 升级时使用的序列数值属性。
-        /// 该属性内容不会直接复制到对象，需要按等级计算得到唯一值复制到对象。
-        /// </summary>
-        public UpgradeTInfo UpgradeInfo { get; set; } = new UpgradeTInfo();
-
-        private CompositingTInfo _CompositingInfo = new CompositingTInfo();
-        /// <summary>
-        /// 合成此物品的材料信息。
-        /// </summary>
-        public CompositingTInfo CompositingInfo { get => _CompositingInfo ?? (_CompositingInfo = new CompositingTInfo()); set => _CompositingInfo = value; }
-
-        /// <summary>
-        /// <seealso cref="UseTInfo"/>。
-        /// </summary>
-        public UseTInfo UseInfo { get; set; } = new UseTInfo();
-    }
-
-    /// <summary>
-    /// 模板对象Json的数据。
-    /// 注意此类可能不断添加一些成员。
-    /// </summary>
-    public class Gy02TemplateJO : TemplateJsonObjectBase
-    {
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public Gy02TemplateJO()
-        {
-
-        }
-
-        /// <summary>
-        /// 未明确添加的属性，即剩余的扩展属性。
-        /// </summary>
-        [JsonExtensionData] //该批注保证没有明确添加的属性被反序列化到此字典内，键是属性名，但值根据不同的反序列化程序可能完全不同。
-        public Dictionary<string, object> ExtraProperties { get; set; } = new Dictionary<string, object>();
-
-    }
 }

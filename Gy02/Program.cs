@@ -92,10 +92,10 @@ VWorld.UserContextOptions = new DbContextOptionsBuilder<GY02UserContext>().UseLa
 services.AddGameServices();
 services.AddHostedService<GameHostedService>();
 
-services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"));
+services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"));  //模板配置的选项模式
 
-services.AddAutoMapper(typeof(AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly);
-//services.Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"));  //模板配置的选项模式
+services.AddAutoMapper(typeof(Gy02.AutoMappper.AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly,typeof(Gy02Bll.AutoMapperProfile).Assembly);
+
 
 var app = builder.Build();
 

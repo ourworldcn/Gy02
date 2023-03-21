@@ -18,6 +18,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -71,37 +72,18 @@ namespace OW.Game.Managers
         {
             //    var ary = DbContext.ThingTemplates.ToArray();
             //    _Id2Template = new ConcurrentDictionary<Guid, GY02ThingTemplate>(ary.ToDictionary(c => c.Id));
-            Interlocked.CompareExchange(ref _Id2Template, new ConcurrentDictionary<Guid, GameThingTemplate>(), null);
 
             _Lifetime.ApplicationStarted.Register(() =>
             {
             });
             _InitTask = Task.Run(() =>
             {
-                var file = $"TemplateData.json";
-                var path = Path.Combine(AppContext.BaseDirectory, "数据表", file);
-                using var stream = File.OpenRead(path);
-                var opt = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
-
-                var jn = JsonSerializer.Deserialize<JsonElement>(stream, opt);
-                foreach (var item in jn.EnumerateArray())
-                {
-                    var tt = new GameThingTemplate()
-                    {
-                        Id = item.GetProperty("Id").GetGuid(),
-                        Remark = item.TryGetProperty("Remark", out var tmp) ? tmp.GetString() : null,
-                    };
-                    tt.JsonObjectString = item.GetRawText();
-                    _Id2Template[tt.Id] = tt;
-                }
-                //分类
-
                 try
                 {
                     //using var br = new StreamReader(streamTemplate);
                     //var str = br.ReadToEnd();
                     var dic = _RawTemplateOptions.CurrentValue.Select(c => (GameTemplate<TemplatePropertiesString>)c).ToDictionary(c => c.Id);
-                    _Id2Template2 = new ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>>(dic);
+                    _Id2Template = new ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>>(dic);
                 }
                 catch (Exception excp)
                 {
@@ -117,21 +99,18 @@ namespace OW.Game.Managers
         /// </summary>
         public GY02TemplateContext DbContext { get; set; }
 
-        ConcurrentDictionary<Guid, GameThingTemplate> _Id2Template;
-        ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>> _Id2Template2;
-        public ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>> Id2Template2
+        ConcurrentDictionary<Guid, RawTemplate> _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>();
+        public ConcurrentDictionary<Guid, RawTemplate> Id2RawTemplate
         {
             get
             {
                 _InitTask.Wait();
-                return _Id2Template2;
+                return _Id2RawTemplate;
             }
         }
 
-        /// <summary>
-        /// 获取所有模板的字典。键时模板id,值模板对象。
-        /// </summary>
-        public IReadOnlyDictionary<Guid, GameThingTemplate> Id2Template
+        ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>> _Id2Template;
+        public ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>> Id2Template
         {
             get
             {
@@ -141,14 +120,13 @@ namespace OW.Game.Managers
         }
 
         /// <summary>
-        /// 
+        /// 获取指定Id的原始模板。
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public GameThingTemplate GetTemplateFromId(Guid id)
+        public RawTemplate GetRawTemplateFromId(Guid id)
         {
-            _InitTask.Wait();
-            return _Id2Template.GetValueOrDefault(id);
+            return Id2RawTemplate.GetValueOrDefault(id);
         }
 
         #region IDisposable

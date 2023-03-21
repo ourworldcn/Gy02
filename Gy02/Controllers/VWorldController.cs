@@ -20,28 +20,6 @@ namespace Gy02.Controllers
         }
 
         /// <summary>
-        /// 获取所有模板。
-        /// </summary>
-        /// <param name="model">入参。</param>
-        /// <param name="manager"></param>
-        /// <returns><seealso cref="Gy02TemplateJO"/></returns>
-        [HttpPost]
-        [ResponseCache(Duration = 120)]
-        public ActionResult<GetTemplatesReturnDto> GetTemplates(GetTemplatesParamsDto model, [FromServices] TemplateManager manager)
-        {
-            var result = new GetTemplatesReturnDto();
-            if (model.Uid != "gy001" || model.Pwd != "210115")
-            {
-                result.ErrorCode = ErrorCodes.Unauthorized;
-                result.DebugMessage = "用户名或密码错误。";
-                result.HasError = true;
-            }
-            else
-                result.Templates = manager.Id2Template.Values.Select(c => c.GetJsonObject<Gy02TemplateJO>()).ToArray();
-            return result;
-        }
-
-        /// <summary>
         /// 获取模板数据。
         /// </summary>
         /// <param name="model"></param>
@@ -59,7 +37,7 @@ namespace Gy02.Controllers
                 result.HasError = true;
             }
             else
-                result.Templates = manager.Id2Template2.Values.ToArray();
+                result.Templates = manager.Id2Template.Values.ToArray();
             return result;
         }
 

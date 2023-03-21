@@ -89,7 +89,6 @@ namespace Gy02Bll.Commands
                 command.Pwd = svc.Generate(8);
             }
 
-            var result = new VirtualThing();
             var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
             if(db.VirtualThings.Any(c=>c.ExtraString== command.Pwd))    //若指定账号已存在
             {
@@ -97,6 +96,7 @@ namespace Gy02Bll.Commands
                 return;
             }
             //构造账号信息
+            var result = new VirtualThing();
             var gu = result.GetJsonObject<GameUser>();
             gu.TemplateId = ProjectContent.UserTId;
             gu.LoginName = command.LoginName;

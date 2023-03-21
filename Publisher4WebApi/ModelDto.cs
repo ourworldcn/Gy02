@@ -12,6 +12,7 @@ using System.Text;
 using AutoMapper;
 using Gy02Bll.Commands;
 using AutoMapper.Configuration.Annotations;
+using System.Text.Json.Serialization;
 
 namespace Gy02.Publisher
 {
@@ -74,6 +75,9 @@ namespace Gy02.Publisher
 
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class VirtualThingDto
     {
         /// <summary>
@@ -137,11 +141,37 @@ namespace Gy02.Publisher
     }
 
     /// <summary>
+    /// 账号数据。
+    /// </summary>
+    [AutoMap(typeof(GameUser))]
+    public class GameUserDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 当前使用角色。
+        /// </summary>
+        public GameCharDto CurrentChar { get; set; }
+
+    }
+
+    /// <summary>
     /// 角色数据。
     /// </summary>
     [AutoMap(typeof(GameChar))]
     public class GameCharDto : GameJsonObjectBase
     {
+        #region 简单属性
+
+        /// <summary>
+        /// 昵称。
+        /// </summary>
+        public string DisplayName { get; set; }
+        #endregion 简单属性
+
         #region 各种槽
 
         /// <summary>
@@ -183,6 +213,11 @@ namespace Gy02.Publisher
         /// 道具背包。
         /// </summary>
         public GameSlotDto<GameItemDto> DaoJuBag { get; set; }
+
+        /// <summary>
+        /// 时装背包。
+        /// </summary>
+        public GameSlotDto<GameEquipmentDto> ShiZhuangBag { get; set; }
         #endregion 各种槽
     }
 
@@ -224,7 +259,34 @@ namespace Gy02.Publisher
     [AutoMap(typeof(GameEquipment))]
     public class GameEquipmentDto : GameJsonObjectBase
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameEquipmentDto()
+        {
 
+        }
+
+        #region 装备数据
+        /// <summary>
+        /// 攻击数值序列。
+        /// </summary>
+        [JsonPropertyName("atk")]
+        public decimal Atk { get; set; }
+
+        /// <summary>
+        /// 防御数值序列。
+        /// </summary>
+        [JsonPropertyName("def")]
+        public decimal Def { get; set; }
+
+        /// <summary>
+        /// 力量属性数值序列。
+        /// </summary>
+        [JsonPropertyName("pwo")]
+        public decimal Pwo { get; set; }
+
+        #endregion 装备数据
     }
     #endregion 基础数据结构
 
@@ -418,17 +480,6 @@ namespace Gy02.Publisher
         /// 密码。
         /// </summary>
         public string Pwd { get; set; }
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public class GetTemplatesReturnDto : ReturnDtoBase
-    {
-        /// <summary>
-        /// 模板数据集合。
-        /// </summary>
-        public IEnumerable<Gy02TemplateJO> Templates { get; set; }
     }
 
     /// <summary>

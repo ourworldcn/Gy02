@@ -50,6 +50,11 @@
             模板数据的传输类。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.VirtualThingDto">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Gy02.Publisher.VirtualThingDto.Id">
             <summary>
             唯一Id。
@@ -100,9 +105,29 @@
             模板Id。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.GameUserDto">
+            <summary>
+            账号数据。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameUserDto.LoginName">
+            <summary>
+            登录名。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameUserDto.CurrentChar">
+            <summary>
+            当前使用角色。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.GameCharDto">
             <summary>
             角色数据。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.DisplayName">
+            <summary>
+            昵称。
             </summary>
         </member>
         <member name="P:Gy02.Publisher.GameCharDto.Wuqi">
@@ -145,6 +170,11 @@
             道具背包。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.GameCharDto.ShiZhuangBag">
+            <summary>
+            时装背包。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.GameItemDto">
             <summary>
             道具数据。
@@ -174,6 +204,26 @@
         <member name="T:Gy02.Publisher.GameEquipmentDto">
             <summary>
             装备数据。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.GameEquipmentDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameEquipmentDto.Atk">
+            <summary>
+            攻击数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameEquipmentDto.Def">
+            <summary>
+            防御数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameEquipmentDto.Pwo">
+            <summary>
+            力量属性数值序列。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.IJsonData">
@@ -294,16 +344,6 @@
         <member name="P:Gy02.Publisher.GetTemplatesParamsDto.Pwd">
             <summary>
             密码。
-            </summary>
-        </member>
-        <member name="T:Gy02.Publisher.GetTemplatesReturnDto">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Gy02.Publisher.GetTemplatesReturnDto.Templates">
-            <summary>
-            模板数据集合。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.GetTemplates2ParamsDto">

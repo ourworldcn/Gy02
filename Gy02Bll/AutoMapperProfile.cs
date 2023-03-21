@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Managers;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Managers
+namespace Gy02Bll
 {
     //public class Gy02TemplateManager : TemplateManager
     //{
@@ -28,4 +29,11 @@ namespace Gy02Bll.Managers
     //    IServiceProvider _Service;
 
     //}
+    public class AutoMapperProfile : Profile
+    {
+        public AutoMapperProfile()
+        {
+
+        }
+    }
 }
