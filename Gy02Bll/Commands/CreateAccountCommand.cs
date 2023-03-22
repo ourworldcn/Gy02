@@ -90,15 +90,18 @@ namespace Gy02Bll.Commands
             }
 
             var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
-            if(db.VirtualThings.Any(c=>c.ExtraString== command.Pwd))    //若指定账号已存在
+            if (db.VirtualThings.Any(c => c.ExtraString == command.LoginName))    //若指定账号已存在
             {
                 command.ErrorCode = ErrorCodes.ERROR_USER_EXISTS;
                 return;
             }
+            var mng = _Service.GetRequiredService<SyncCommandManager>();
             //构造账号信息
-            var result = new VirtualThing();
+            var commCreateUser = new CreateVirtualThingCommand() { TemplateId = ProjectContent.UserTId };
+            mng.Handle(commCreateUser);
+
+            var result = commCreateUser.Result;
             var gu = result.GetJsonObject<GameUser>();
-            gu.TemplateId = ProjectContent.UserTId;
             gu.LoginName = command.LoginName;
             gu.SetPwd(command.Pwd);
             db.Add(result);
@@ -110,7 +113,7 @@ namespace Gy02Bll.Commands
             svcStore.AddUser(gu);
             //发出创建后事件
             var commCreated = new AccountCreatedCommand() { User = gu };
-            _Service.GetRequiredService<SyncCommandManager>().Handle(commCreated);
+            mng.Handle(commCreated);
 
             command.User = gu;
             svcStore.Save(result.IdString);

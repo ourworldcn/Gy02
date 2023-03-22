@@ -46,7 +46,7 @@ namespace Gy02Bll.Commands
                 command.FillErrorFrom(comm);
                 return;
             }
-            command.User.SetCurrentChar(comm.Result);
+            command.User.CurrentChar = comm.Result;
         }
     }
 }

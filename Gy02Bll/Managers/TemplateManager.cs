@@ -78,12 +78,12 @@ namespace OW.Game.Managers
             });
             _InitTask = Task.Run(() =>
             {
+                _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id));
+                _Id2FullView = new ConcurrentDictionary<Guid, TemplateStringFullView>(_Id2RawTemplate.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
                 try
                 {
                     //using var br = new StreamReader(streamTemplate);
                     //var str = br.ReadToEnd();
-                    var dic = _RawTemplateOptions.CurrentValue.Select(c => (GameTemplate<TemplatePropertiesString>)c).ToDictionary(c => c.Id);
-                    _Id2Template = new ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>>(dic);
                 }
                 catch (Exception excp)
                 {
@@ -99,7 +99,7 @@ namespace OW.Game.Managers
         /// </summary>
         public GY02TemplateContext DbContext { get; set; }
 
-        ConcurrentDictionary<Guid, RawTemplate> _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>();
+        ConcurrentDictionary<Guid, RawTemplate> _Id2RawTemplate;
         public ConcurrentDictionary<Guid, RawTemplate> Id2RawTemplate
         {
             get
@@ -109,15 +109,19 @@ namespace OW.Game.Managers
             }
         }
 
-        ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>> _Id2Template;
-        public ConcurrentDictionary<Guid, GameTemplate<TemplatePropertiesString>> Id2Template
+        ConcurrentDictionary<Guid, TemplateStringFullView> _Id2FullView;
+        /// <summary>
+        /// 所有模板全量视图。
+        /// </summary>
+        public ConcurrentDictionary<Guid, TemplateStringFullView> Id2FullView
         {
             get
             {
                 _InitTask.Wait();
-                return _Id2Template;
+                return _Id2FullView;
             }
         }
+
 
         /// <summary>
         /// 获取指定Id的原始模板。

@@ -170,14 +170,24 @@
             道具背包。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.ShiZhuangBag">
+        <member name="P:Gy02.Publisher.GameCharDto.PiFuBag">
             <summary>
-            时装背包。
+            皮肤背包。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.HuoBiSlot">
+            <summary>
+            货币槽。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.GameItemDto">
             <summary>
             道具数据。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameItemDto.Count">
+            <summary>
+            数量。对非堆叠的是1。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.GameSlotDto`1">

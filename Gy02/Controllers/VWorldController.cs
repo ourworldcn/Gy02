@@ -37,7 +37,7 @@ namespace Gy02.Controllers
                 result.HasError = true;
             }
             else
-                result.Templates = manager.Id2Template.Values.ToArray();
+                result.Templates = manager.Id2FullView.Values.ToArray();
             return result;
         }
 

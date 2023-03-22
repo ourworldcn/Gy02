@@ -41,54 +41,6 @@
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="T:Gy02Bll.Templates.TemplatePropertiesStringBase">
-            <summary>
-            模板属性字符串的基础类。
-            </summary>
-        </member>
-        <member name="M:Gy02Bll.Templates.TemplatePropertiesStringBase.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Capacity">
-            <summary>
-            容量。
-            </summary>
-            <value>默认值：0</value>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Stk">
-            <summary>
-            最大堆叠数。
-            </summary>
-            <value>默认值：1</value>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.TIdsOfCreate">
-            <summary>
-            创建时要一同创建的子对象的模板Id。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Count0Reserved">
-            <summary>
-            为true时，数量为0时也不会删除该物品，省略或为false则删除。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.Genus">
-            <summary>
-            类属字符串集合。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.TemplatePropertiesStringBase.ExtraProperties">
-            <summary>
-            未能明确解析的字段放在此属性内。
-            </summary>
-        </member>
-        <member name="T:Gy02Bll.Templates.TemplatePropertiesString">
-            <summary>
-            模板属性字符串的主类。
-            用于解析<see cref="P:Gy02Bll.Templates.RawTemplate.PropertiesString"/>属性的类型。
-            </summary>
-        </member>
         <member name="T:Gy02Bll.Templates.TemplateSkillItem">
             <summary>
             词条的数据结构。
@@ -109,36 +61,6 @@
             词条是否生效。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.EquipmentTemplatePropertiesString">
-            <summary>
-            装备模板特有数据。
-            </summary>
-        </member>
-        <member name="M:Gy02Bll.Templates.EquipmentTemplatePropertiesString.#ctor">
-            <summary>
-            构造函数。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Atk">
-            <summary>
-            攻击数值序列。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Def">
-            <summary>
-            防御数值序列。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Pwo">
-            <summary>
-            力量属性数值序列。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.EquipmentTemplatePropertiesString.Skills">
-            <summary>
-            词条的集合。
-            </summary>
-        </member>
         <member name="T:Gy02Bll.Templates.TemplateStringFullView">
             <summary>
             模板的完整视图。
@@ -147,6 +69,47 @@
         <member name="M:Gy02Bll.Templates.TemplateStringFullView.#ctor">
             <summary>
             构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.TemplateId">
+            <summary>
+            模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.DisplayName">
+            <summary>
+            显示名。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Gid">
+            <summary>
+            分类号。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Remark">
+            <summary>
+            备注。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.ExtraProperties">
+            <summary>
+            存储额外的非强类型属性数据。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.TypeGuid">
+            <summary>
+            类型的Guid。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.SubTypeGuid">
+            <summary>
+            泛型参数类型的GUID。
+            若TypeGuid不是泛型则应保持为null。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.ParentTId">
+            <summary>
+            父容器模板Id。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Capacity">
@@ -196,47 +159,6 @@
             词条的集合。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.GameTemplateBase`1">
-            <summary>
-            模板基类。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.Id">
-            <summary>
-            模板Id。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.DisplayName">
-            <summary>
-            显示名。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.Gid">
-            <summary>
-            分类号。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.Remark">
-            <summary>
-            备注。
-            </summary>
-        </member>
-        <member name="P:Gy02Bll.Templates.GameTemplateBase`1.ExtraProperties">
-            <summary>
-            扩展属性封装对象。
-            </summary>
-        </member>
-        <member name="T:Gy02Bll.Templates.GameTemplate`1">
-            <summary>
-            模板主类。
-            </summary>
-        </member>
-        <member name="M:Gy02Bll.Templates.GameTemplate`1.op_Implicit(Gy02Bll.Templates.RawTemplate)~Gy02Bll.Templates.GameTemplate{`0}">
-            <summary>
-            从原始数据转换。
-            </summary>
-            <param name="raw"></param>
-        </member>
         <member name="T:Gy02Bll.Templates.CreateTInfo">
             <summary>
             创建对象时的行为信息。
@@ -285,12 +207,6 @@
         <member name="P:Gy02Bll.Templates.UpgradeTInfo.Cost">
             <summary>
             升级对应的代价。
-            </summary>
-        </member>
-        <member name="T:Gy02Bll.Templates.UseTInfo">
-            <summary>
-            使用该物品时行为定义数据。
-            该功能尚未实装。
             </summary>
         </member>
         <member name="T:Gy02Bll.Templates.CompositingTInfoItem">
@@ -346,6 +262,61 @@
         <member name="F:Gy02.Publisher.ProjectContent.CharTId">
             <summary>
             角色的模板Id。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.WuQiSlotTId">
+            <summary>
+            武器槽TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.ShouTaoSlotTId">
+            <summary>
+            手套槽TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.YiFuSlotTId">
+            <summary>
+            衣服槽TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.XieZiSlotTId">
+            <summary>
+            鞋子槽TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.YaoDaiSlotTId">
+            <summary>
+            腰带槽TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.ZuoJiSlotTId">
+            <summary>
+            坐骑槽TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.ZhuangBeiBagTId">
+            <summary>
+            装备背包TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.DaoJuBagTId">
+            <summary>
+            道具背包TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.HuoBiSlotTId">
+            <summary>
+            货币槽TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.ShiZhuangBagTId">
+            <summary>
+            时装背包TId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.PiFuBagTId">
+            <summary>
+            皮肤背包。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.ErrorCodes">

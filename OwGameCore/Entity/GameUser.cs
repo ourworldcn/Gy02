@@ -160,7 +160,11 @@ namespace OW.Game.Entity
         /// <value>当前角色对象，null用户尚未选择角色。</value>
         [NotMapped]
         [JsonIgnore]
-        public GameChar CurrentChar { get; set; }
+        public GameChar CurrentChar
+        {
+            get => ((VirtualThing)Thing).RuntimeProperties.GetValueOrDefault(nameof(CurrentChar)) as GameChar;
+            set => ((VirtualThing)Thing).RuntimeProperties[nameof(CurrentChar)] = value;
+        }
 
         #endregion 导航属性
 
@@ -258,14 +262,5 @@ namespace OW.Game.Entity
             ((VirtualThing)user.Thing).RuntimeProperties["DbContext"] = value;
         }
 
-        public static void SetCurrentChar(this GameUser user, GameChar value)
-        {
-            ((VirtualThing)user.Thing).RuntimeProperties["CurrentChar"] = value;
-        }
-
-        public static GameChar GetCurrentChar(this GameUser user)
-        {
-            return ((VirtualThing)user.Thing).RuntimeProperties.GetValueOrDefault("CurrentChar") as GameChar;
-        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Gy02.Publisher;
+using Microsoft.EntityFrameworkCore;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace OW.Game.Entity
     /// 游戏角色类。
     /// </summary>
     [Guid("941917CC-E91C-46D7-9F53-A98C3EB4F92E")]
-    public class GameChar : OwGameEntityBase
+    public class GameChar : GameEntity
     {
         #region 构造函数
 
@@ -85,55 +86,61 @@ namespace OW.Game.Entity
         /// 武器装备槽。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> Wuqi { get; set; }
+        public GameSlot<GameEquipment> Wuqi => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.WuQiSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
         /// <summary>
         /// 手套装备槽。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> ShouTao { get; set; }
+        public GameSlot<GameEquipment> ShouTao => ((VirtualThing)Thing).Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.ShouTaoSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
         /// <summary>
         /// 衣服装备槽。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> YiFu { get; set; }
+        public GameSlot<GameEquipment> YiFu => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.YiFuSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
         /// <summary>
         /// 鞋子装备槽。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> XieZi { get; set; }
+        public GameSlot<GameEquipment> XieZi => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.XieZiSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
         /// <summary>
         /// 腰带装备槽。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> YaoDai { get; set; }
+        public GameSlot<GameEquipment> YaoDai => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.YaoDaiSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
         /// <summary>
         /// 坐骑装备槽。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> ZuoQiSlot { get; set; }
+        public GameSlot<GameEquipment> ZuoQiSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.ZuoJiSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
         /// <summary>
         /// 装备背包。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> ZhuangBeiBag { get; set; }
+        public GameSlot<GameEquipment> ZhuangBeiBag => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.ZhuangBeiBagTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
         /// <summary>
         /// 道具背包。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> DaoJuBag { get; set; }
+        public GameSlot<GameItem> DaoJuBag => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.DaoJuBagTId)?.GetJsonObject<GameSlot<GameItem>>();
 
         /// <summary>
-        /// 时装背包。
+        /// 皮肤背包。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameEquipment> ShiZhuangBag { get; set; }
+        public GameSlot<GameItem> PiFuBag => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.PiFuBagTId)?.GetJsonObject<GameSlot<GameItem>>();
+
+        /// <summary>
+        /// 货币槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameItem> HuoBiSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.HuoBiSlotTId)?.GetJsonObject<GameSlot<GameItem>>();
         #endregion 各种槽
 
     }

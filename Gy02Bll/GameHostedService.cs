@@ -151,10 +151,7 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                var mapper = _Services.GetService<IMapper>();
-                Guid guid = Guid.NewGuid();
-                string str = mapper.Map<string>(guid);
-                var id = mapper.Map<Guid>(str);
+                var xx = CreateVirtualThingHandler.TypeGuid2Type;
             }
             finally
             {

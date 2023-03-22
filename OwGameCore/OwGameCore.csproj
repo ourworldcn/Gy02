@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Gy02Publisher\Gy02Publisher.csproj" />
     <ProjectReference Include="..\OwBaseCore\OwBaseCore.csproj" />
     <ProjectReference Include="..\OwDbBase\OwDbBase.csproj" />
     <ProjectReference Include="..\OwGameBase\OwGameBase.csproj" />

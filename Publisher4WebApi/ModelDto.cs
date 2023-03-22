@@ -13,6 +13,7 @@ using AutoMapper;
 using Gy02Bll.Commands;
 using AutoMapper.Configuration.Annotations;
 using System.Text.Json.Serialization;
+using System.Net.NetworkInformation;
 
 namespace Gy02.Publisher
 {
@@ -207,7 +208,7 @@ namespace Gy02.Publisher
         /// <summary>
         /// 装备背包。
         /// </summary>
-        public GameSlotDto<GameEquipmentDto> ZhuangBeiBag { get; set; }
+        public GameSlotDto<GameItemDto> ZhuangBeiBag { get; set; }
 
         /// <summary>
         /// 道具背包。
@@ -215,9 +216,14 @@ namespace Gy02.Publisher
         public GameSlotDto<GameItemDto> DaoJuBag { get; set; }
 
         /// <summary>
-        /// 时装背包。
+        /// 皮肤背包。
         /// </summary>
-        public GameSlotDto<GameEquipmentDto> ShiZhuangBag { get; set; }
+        public GameSlotDto<GameItemDto> PiFuBag { get; set; }
+
+        /// <summary>
+        /// 货币槽。
+        /// </summary>
+        public GameSlotDto<GameItemDto> HuoBiSlot { get; set; }
         #endregion 各种槽
     }
 
@@ -227,6 +233,10 @@ namespace Gy02.Publisher
     [AutoMap(typeof(GameItem))]
     public class GameItemDto : GameJsonObjectBase
     {
+        /// <summary>
+        /// 数量。对非堆叠的是1。
+        /// </summary>
+        public decimal Count { get; set; }
     }
 
     /// <summary>
@@ -506,7 +516,7 @@ namespace Gy02.Publisher
         /// <summary>
         /// 模板数据集合。
         /// </summary>
-        public IEnumerable<GameTemplate<TemplatePropertiesString>> Templates { get; set; }
+        public IEnumerable<TemplateStringFullView> Templates { get; set; }
     }
     #endregion 世界控制器功能相关
 }

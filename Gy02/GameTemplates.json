@@ -4,129 +4,139 @@
       "Id": "dc58d091-623a-4d7d-b9e5-b645e87d4e79",
       "DisplayName": "账号",
       "Gid": 910101001,
-      "PropertiesString": "{}",
+      "PropertiesString": "{\"TypeGuid\":\"60DE10B7-8CC6-4D51-B356-691ECBB77C03\",\"lv\":0}",
       "Remark": "备注"
     },
     {
       "Id": "07664462-df05-4ba7-886d-b431bb88aa1c",
       "DisplayName": "角色",
       "Gid": 911101001,
-      "PropertiesString": "{\"lv\":0,\"TIdsOfCreate\":[\"2a596a68-a2d4-4157-b6ac-3d9da7a81ac0\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\"]}",
+      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}",
       "Remark": "TIdsOfCreate是创建该对象时，需要一起创建的子对象的TIds"
     },
     {
       "Id": "3b163a62-6591-4a93-a385-cf079b20f589",
-      "DisplayName": "皮肤槽",
+      "DisplayName": "皮肤背包",
       "Gid": 912101002,
-      "PropertiesString": "{\"Count\":1}",
-      "Remark": "存放未装上的装备，cap最大容量，省略或为-1则为不限制"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}",
+      "Remark": "cap最大容量，省略或为-1则为不限制"
     },
     {
       "Id": "29b7e726-387f-409d-a6ac-ad8670a814f0",
       "DisplayName": "武器装备槽",
       "Gid": 912101003,
-      "PropertiesString": "{\"cap\":1,\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1}"
     },
     {
       "Id": "4d125986-4a3f-4294-bf54-a70853d719c1",
       "DisplayName": "手套装备槽",
       "Gid": 912101004,
-      "PropertiesString": "{\"cap\":1,\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1}"
     },
     {
       "Id": "3d141082-0deb-4f59-ac5d-a80e43657ccc",
       "DisplayName": "衣服装备槽",
       "Gid": 912101005,
-      "PropertiesString": "{\"cap\":1,\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1}"
     },
     {
       "Id": "fe312261-2233-4c35-aaf4-bd698e328baf",
       "DisplayName": "鞋子装备槽",
       "Gid": 912101006,
-      "PropertiesString": "{\"cap\":1,\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1}"
     },
     {
       "Id": "af7b7b9b-a881-4cbe-bca5-111f7babd73a",
       "DisplayName": "腰带装备槽",
       "Gid": 912101007,
-      "PropertiesString": "{\"cap\":1,\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1}"
     },
     {
       "Id": "14d0e372-909b-485f-b8cb-07c9231b10ff",
       "DisplayName": "坐骑装备槽",
       "Gid": 912101008,
-      "PropertiesString": "{\"cap\":1,\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1}"
     },
     {
       "Id": "e6edab87-0034-4f45-8040-1f0d565ccf58",
       "DisplayName": "装备背包",
       "Gid": 912101009,
-      "PropertiesString": "{\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}"
     },
     {
       "Id": "9c559895-9a2c-43a7-b793-e879a600487c",
       "DisplayName": "道具背包",
       "Gid": 912101010,
-      "PropertiesString": "{\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":1}"
     },
     {
       "Id": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
       "DisplayName": "货币槽",
       "Gid": 912101011,
-      "PropertiesString": "{\"cap\":1,\"TIdsOfCreate\":[\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"]}",
+      "PropertiesString": "{\"cap\":1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"TIdsOfCreate\":[\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"]}",
       "Remark": "货币类物品放置在此槽下，初始创建；"
+    },
+    {
+      "Id": "A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652",
+      "DisplayName": "时装背包",
+      "Gid": 912101012,
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}"
     },
     {
       "Id": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
       "DisplayName": "体力",
-      "PropertiesString": "{\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}"
+      "Gid": 110101003,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}"
     },
     {
       "Id": "a45b3421-3688-43c5-b8f5-429db7621f69",
       "DisplayName": "金币",
-      "PropertiesString": "{\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}"
+      "Gid": 110101002,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}"
     },
     {
       "Id": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
       "DisplayName": "钻石",
-      "PropertiesString": "{\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}",
+      "Gid": 110101001,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}",
       "Remark": "Count控制初始生成时的数量，省略则为0，可以有小数点，定点数；stk最大堆叠数，-1=不限制，省略为1就是非堆叠物品如装备;Count0Reserved为true时，数量为0时也不会删除该物品，省略或为false则删除。"
     },
     {
       "Id": "c531cd34-fed9-4859-81f1-501c25c0926d",
       "DisplayName": "长矛",
       "Gid": 120101001,
-      "PropertiesString": "{\"nametxt\":1000,\"atk\":[10,13,16,19,22,25,28,31,34,37],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":false}]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[10,13,16,19,22,25,28,31,34,37],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":false}]}",
+      "Remark": "ptid该物品默认的槽的模板id,TypeGuid类型Id——5C9B58EA-F18A-4874-9625-B22694A71A04装备，F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B道具"
     },
     {
       "Id": "f10a888e-b274-4bec-a5d9-f4cb1912b833",
       "DisplayName": "手套",
       "Gid": 120104001,
-      "PropertiesString": "{\"nametxt\":1000,\"atk\":[10,13,16,19,22,25,28,31,34,37],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_shoutao\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":false}]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[10,13,16,19,22,25,28,31,34,37],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_shoutao\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":false}]}"
     },
     {
       "Id": "dde00d3f-e459-4928-a7d6-016e7dae3268",
       "DisplayName": "衣服",
       "Gid": 120103001,
-      "PropertiesString": "{\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[10,13,16,19,22,25,28,31,34,37],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_yifu\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[10,13,16,19,22,25,28,31,34,37],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_yifu\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
     },
     {
       "Id": "e20fb6f8-ff7f-4d40-980c-98509d800d7e",
       "DisplayName": "鞋子",
       "Gid": 120106001,
-      "PropertiesString": "{\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[10,13,16,19,22,25,28,31,34,37],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_xiezi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[10,13,16,19,22,25,28,31,34,37],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_xiezi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
     },
     {
       "Id": "9d4828ef-3580-4a2f-823b-ce22849a2d5c",
       "DisplayName": "腰带",
       "Gid": 120105001,
-      "PropertiesString": "{\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[10,13,16,19,22,25,28,31,34,37],   \"genus\":[\"p_wh\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[10,13,16,19,22,25,28,31,34,37],   \"genus\":[\"p_wh\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
     },
     {
       "Id": "e919f7c7-b341-4159-9ecb-fba64363cff2",
       "DisplayName": "坐骑",
       "Gid": 120102001,
-      "PropertiesString": "{\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[10,13,16,19,22,25,28,31,34,37],   \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[10,13,16,19,22,25,28,31,34,37],   \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
     },
     {
       "Id": "c4c430e1-962a-458d-a1ce-026128edc377",

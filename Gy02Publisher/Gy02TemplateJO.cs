@@ -52,76 +52,13 @@ namespace Gy02Bll.Templates
         /// <returns></returns>
         public T GetJsonObject<T>()
         {
-            return JsonSerializer.Deserialize<T>(PropertiesString);
+            var result = JsonSerializer.Deserialize<T>(PropertiesString);
+            var tmp = result as TemplateStringFullView;
+            if (tmp != null)
+                tmp._RawTemplate = this;
+            return result;
         }
 #endif //NETCOREAPP3_0_OR_GREATER
-    }
-
-    /// <summary>
-    /// 模板属性字符串的基础类。
-    /// </summary>
-    public class TemplatePropertiesStringBase
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        public TemplatePropertiesStringBase()
-        {
-
-        }
-
-        /// <summary>
-        /// 容量。
-        /// </summary>
-        /// <value>默认值：0</value>
-        [JsonPropertyName("cap")]
-        public decimal Capacity { get; set; }
-
-        /// <summary>
-        /// 最大堆叠数。
-        /// </summary>
-        /// <value>默认值：1</value>
-        public decimal Stk { get; set; } = decimal.One;
-
-        /// <summary>
-        /// 创建时要一同创建的子对象的模板Id。
-        /// </summary>
-        public Guid[] TIdsOfCreate { get; set; }
-
-        /// <summary>
-        /// 为true时，数量为0时也不会删除该物品，省略或为false则删除。
-        /// </summary>
-        public bool Count0Reserved { get; set; }
-
-        /// <summary>
-        /// 类属字符串集合。
-        /// </summary>
-        [JsonPropertyName("genus")]
-        public string[] Genus { get; set; }
-
-        Dictionary<string, object> _ExtraProperties;
-        /// <summary>
-        /// 未能明确解析的字段放在此属性内。
-        /// </summary>
-        [JsonExtensionData]
-        public Dictionary<string, object> ExtraProperties
-        {
-            get
-            {
-                if (_ExtraProperties is null)
-                    Interlocked.CompareExchange(ref _ExtraProperties, new Dictionary<string, object>(), null);
-                return _ExtraProperties;
-            }
-            set { _ExtraProperties = value; }
-        }
-    }
-
-    /// <summary>
-    /// 模板属性字符串的主类。
-    /// 用于解析<see cref="RawTemplate.PropertiesString"/>属性的类型。
-    /// </summary>
-    public class TemplatePropertiesString : TemplatePropertiesStringBase
-    {
     }
 
     /// <summary>
@@ -140,55 +77,20 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 词条的Id。
         /// </summary>
+        [JsonPropertyName("skillsid")]
         public Guid SkillsId { get; set; }
 
         /// <summary>
         /// 词条是否生效。
         /// </summary>
+        [JsonPropertyName("enable")]
         public bool Enable { get; set; }
-    }
-
-    /// <summary>
-    /// 装备模板特有数据。
-    /// </summary>
-    public class EquipmentTemplatePropertiesString : TemplatePropertiesString
-    {
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public EquipmentTemplatePropertiesString()
-        {
-
-        }
-
-        /// <summary>
-        /// 攻击数值序列。
-        /// </summary>
-        [JsonPropertyName("atk")]
-        public decimal[] Atk { get; set; }
-
-        /// <summary>
-        /// 防御数值序列。
-        /// </summary>
-        [JsonPropertyName("def")]
-        public decimal[] Def { get; set; }
-
-        /// <summary>
-        /// 力量属性数值序列。
-        /// </summary>
-        [JsonPropertyName("pwo")]
-        public decimal[] Pwo { get; set; }
-
-        /// <summary>
-        /// 词条的集合。
-        /// </summary>
-        [JsonPropertyName("p_skills")]
-        public TemplateSkillItem[] Skills { get; set; }
     }
 
     /// <summary>
     /// 模板的完整视图。
     /// </summary>
+    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
     public class TemplateStringFullView
     {
         /// <summary>
@@ -196,10 +98,92 @@ namespace Gy02Bll.Templates
         /// </summary>
         public TemplateStringFullView()
         {
-
         }
 
+        #region 本体数据
+
+        Guid _TemplateId;
+        /// <summary>
+        /// 模板Id。
+        /// </summary>
+        public Guid TemplateId
+        {
+            get
+            {
+                return _RawTemplate?.Id ?? _TemplateId;
+            }
+            set => _TemplateId = value;
+        }
+
+        string _DisplayName;
+        /// <summary>
+        /// 显示名。
+        /// </summary>
+        public string DisplayName
+        {
+            get
+            {
+                return _RawTemplate?.DisplayName ?? _DisplayName;
+            }
+            set => _DisplayName = value;
+        }
+
+        decimal? _Gid;
+        /// <summary>
+        /// 分类号。
+        /// </summary>
+        public decimal? Gid
+        {
+            get
+            {
+                return _RawTemplate?.Gid ?? _Gid;
+            }
+            set => _Gid = value;
+        }
+
+        string _Remark;
+        /// <summary>
+        /// 备注。
+        /// </summary>
+        public string Remark
+        {
+            get
+            {
+                return _RawTemplate?.Remark ?? _Remark;
+            }
+            set => _Remark = value;
+        }
+
+        #endregion 本体数据
+
         #region 基础数据
+
+        [JsonIgnore]
+        internal RawTemplate _RawTemplate;
+
+        /// <summary>
+        /// 存储额外的非强类型属性数据。
+        /// </summary>
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtraProperties { get; set; } = new Dictionary<string, object>();
+
+        /// <summary>
+        /// 类型的Guid。
+        /// </summary>
+        public Guid TypeGuid { get; set; }
+
+        /// <summary>
+        /// 泛型参数类型的GUID。
+        /// 若TypeGuid不是泛型则应保持为null。
+        /// </summary>
+        public Guid? SubTypeGuid { get; set; }
+
+        /// <summary>
+        /// 父容器模板Id。
+        /// </summary>
+        [JsonPropertyName("ptid")]
+        public Guid ParentTId { get; set; }
+
         /// <summary>
         /// 容量。
         /// </summary>
@@ -257,69 +241,10 @@ namespace Gy02Bll.Templates
         public TemplateSkillItem[] Skills { get; set; }
 
         #endregion 装备数据
-    }
 
-    /// <summary>
-    /// 模板基类。
-    /// </summary>
-    public class GameTemplateBase<T> where T : TemplatePropertiesStringBase
-    {
-        /// <summary>
-        /// 模板Id。
-        /// </summary>
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// 显示名。
-        /// </summary>
-        public string DisplayName { get; set; }
-
-        /// <summary>
-        /// 分类号。
-        /// </summary>
-        public decimal? Gid { get; set; }
-
-        /// <summary>
-        /// 备注。
-        /// </summary>
-        public string Remark { get; set; }
-
-        /// <summary>
-        /// 扩展属性封装对象。
-        /// </summary>
-        public T ExtraProperties { get; set; }
-    }
-
-    /// <summary>
-    /// 模板主类。
-    /// </summary>
-    public class GameTemplate<T> : GameTemplateBase<T> where T : TemplatePropertiesStringBase
-    {
-        /// <summary>
-        /// 从原始数据转换。
-        /// </summary>
-        /// <param name="raw"></param>
-        public static implicit operator GameTemplate<T>(RawTemplate raw)
+        private string GetDebuggerDisplay()
         {
-            TemplatePropertiesString ts;
-            try
-            {
-                ts = raw.GetJsonObject<TemplatePropertiesString>();
-                //var tmp = raw.GetJsonObject<EquipmentTemplatePropertiesString>();
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            var result = new GameTemplate<T>()
-            {
-                DisplayName = raw.DisplayName,
-                Gid = raw.Gid,
-                Id = raw.Id,
-                Remark = raw.Remark
-            };
-            result.ExtraProperties = ts as T;
-            return result;
+            return DisplayName;
         }
 
     }
@@ -382,15 +307,6 @@ namespace Gy02Bll.Templates
         /// 升级对应的代价。
         /// </summary>
         public List<CostTInfo> Cost { get; set; } = new List<CostTInfo>();
-    }
-
-    /// <summary>
-    /// 使用该物品时行为定义数据。
-    /// 该功能尚未实装。
-    /// </summary>
-    public class UseTInfo
-    {
-
     }
 
     /// <summary>

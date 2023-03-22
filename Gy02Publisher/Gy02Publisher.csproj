@@ -19,11 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OwGameCore\OwGameCore.csproj" />
-    <ProjectReference Include="..\OwGameDb\OwGameDb.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Gy02PublisherApiDoc.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

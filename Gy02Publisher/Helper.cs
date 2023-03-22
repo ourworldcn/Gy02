@@ -30,6 +30,60 @@ namespace Gy02.Publisher
         /// </summary>
         public readonly static Guid CharTId = new Guid("07664462-df05-4ba7-886d-b431bb88aa1c");
 
+        /// <summary>
+        /// 武器槽TId。
+        /// </summary>
+        public readonly static Guid WuQiSlotTId = new Guid("29b7e726-387f-409d-a6ac-ad8670a814f0");
+
+        /// <summary>
+        /// 手套槽TId。
+        /// </summary>
+        public static readonly Guid ShouTaoSlotTId = new Guid("4d125986-4a3f-4294-bf54-a70853d719c1");
+
+        /// <summary>
+        /// 衣服槽TId。
+        /// </summary>
+        public static readonly Guid YiFuSlotTId = new Guid("3d141082-0deb-4f59-ac5d-a80e43657ccc");
+
+        /// <summary>
+        /// 鞋子槽TId。
+        /// </summary>
+        public static readonly Guid XieZiSlotTId = new Guid("fe312261-2233-4c35-aaf4-bd698e328baf");
+
+        /// <summary>
+        /// 腰带槽TId。
+        /// </summary>
+        public static readonly Guid YaoDaiSlotTId = new Guid("af7b7b9b-a881-4cbe-bca5-111f7babd73a");
+
+        /// <summary>
+        /// 坐骑槽TId。
+        /// </summary>
+        public static readonly Guid ZuoJiSlotTId = new Guid("14d0e372-909b-485f-b8cb-07c9231b10ff");
+
+        /// <summary>
+        /// 装备背包TId。
+        /// </summary>
+        public static readonly Guid ZhuangBeiBagTId = new Guid("e6edab87-0034-4f45-8040-1f0d565ccf58");
+
+        /// <summary>
+        /// 道具背包TId。
+        /// </summary>
+        public static readonly Guid DaoJuBagTId = new Guid("9c559895-9a2c-43a7-b793-e879a600487c");
+
+        /// <summary>
+        /// 货币槽TId。
+        /// </summary>
+        public static readonly Guid HuoBiSlotTId = new Guid("123a5ad1-d4f0-4cd9-9abc-d440419d9e0d");
+
+        /// <summary>
+        /// 时装背包TId。
+        /// </summary>
+        public static readonly Guid ShiZhuangBagTId = new Guid("A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652");
+
+        /// <summary>
+        /// 皮肤背包。
+        /// </summary>
+        public static readonly Guid PiFuBagTId = new Guid("3b163a62-6591-4a93-a385-cf079b20f589");
     }
 
     /// <summary>
@@ -126,6 +180,7 @@ namespace Gy02.Publisher
         public const int ERROR_LOGON_NOT_GRANTED = 1380;
 
     }
+
 #pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
 
     /// <summary>

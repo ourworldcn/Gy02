@@ -20,6 +20,7 @@ namespace Gy02.AutoMappper
             CreateMap<VirtualThing, VirtualThingDto>();
 
             CreateMap<GameSlot<GameEquipment>, GameSlotDto<GameEquipmentDto>>();
+            CreateMap<GameSlot<GameItem>, GameSlotDto<GameItemDto>>();
 
             //命令相关
 

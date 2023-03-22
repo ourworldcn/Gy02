@@ -12,7 +12,10 @@ namespace OW.Game.Entity
     /// 道具类数据结构。
     /// </summary>
     [Guid("F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B")]
-    public class GameItem: OwGameEntityBase
+    public class GameItem: GameEntity
     {
+        public GameItem() { }
+
+        public decimal Count { get; set; }
     }
 }
