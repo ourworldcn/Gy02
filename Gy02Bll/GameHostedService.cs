@@ -153,7 +153,7 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                Exception e = new ExternalException("",-2146233083);
+                Exception e = new COMException("",-2146233083);
                 var str1 = e.Message;
                 //e.s = ErrorCodes.Unauthorized;
                 var str2 = e.Message;
