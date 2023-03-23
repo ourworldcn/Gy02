@@ -44,7 +44,8 @@ namespace Gy02Bll
             CreateMap<TemplateStringFullView, GameSlot<GameItem>>().AfterMap(FillSeq);
             CreateMap<TemplateStringFullView, GameSlot<GameEquipment>>().AfterMap(FillSeq);
             //装备道具
-            CreateMap<TemplateStringFullView, GameEquipment>().AfterMap(FillSeq);
+            CreateMap<TemplateStringFullView, GameEquipment>().ForMember(c => c.Atk, opt => opt.Ignore()).ForMember(c => c.Def, opt => opt.Ignore()).ForMember(c => c.Pwo, opt => opt.Ignore())
+                .AfterMap(FillSeq);
             CreateMap<TemplateStringFullView, GameItem>().AfterMap(FillSeq);
         }
 

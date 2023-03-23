@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GuangYuan.GY001.TemplateDb;
+using Gy02.Publisher;
 using Gy02Bll.Commands;
 using Gy02Bll.Managers;
 using Gy02Bll.Templates;
@@ -31,6 +32,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Numerics;
 using System.Reflection.Metadata;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
 using static Microsoft.Extensions.Caching.Memory.OwMemoryCache;
@@ -151,7 +153,11 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                var xx = CreateVirtualThingHandler.TypeGuid2Type;
+                Exception e = new ExternalException("",-2146233083);
+                var str1 = e.Message;
+                //e.s = ErrorCodes.Unauthorized;
+                var str2 = e.Message;
+                
             }
             finally
             {

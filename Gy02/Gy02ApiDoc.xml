@@ -14,6 +14,24 @@
             构造函数。
             </summary>
         </member>
+        <member name="T:Gy02.ReturnDtoExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.ReturnDtoExtensions.FillErrorFrom(Gy02.Publisher.ReturnDtoBase,OW.SyncCommand.SyncCommandBase)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <param name="src"></param>
+        </member>
+        <member name="M:Gy02.ReturnDtoExtensions.FillErrorFromWorld(Gy02.Publisher.ReturnDtoBase)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+        </member>
         <member name="T:Gy02.Controllers.AccountController">
             <summary>
             账号管理。
@@ -55,6 +73,27 @@
             <param name="commandMng"></param>
             <param name="udpServer"></param>
             <returns></returns>
+        </member>
+        <member name="T:Gy02.Controllers.ItemManagerController">
+            <summary>
+            物品管理控制器
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.#ctor(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.MoveItems(Gy02.Publisher.MoveItemsParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+            <summary>
+            移动物品接口。
+            </summary>
+            <param name="model"></param>
+            <param name="mapper"></param>
+            <param name="commandMng"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="T:Gy02.Controllers.VWorldController">
             <summary>

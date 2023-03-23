@@ -78,16 +78,15 @@ namespace OW.Game.Managers
             });
             _InitTask = Task.Run(() =>
             {
-                _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id));
-                _Id2FullView = new ConcurrentDictionary<Guid, TemplateStringFullView>(_Id2RawTemplate.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
                 try
                 {
-                    //using var br = new StreamReader(streamTemplate);
-                    //var str = br.ReadToEnd();
+                    _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id));
+                    _Id2FullView = new ConcurrentDictionary<Guid, TemplateStringFullView>(_Id2RawTemplate.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
                 }
                 catch (Exception excp)
                 {
                     Logger.LogWarning(excp, "读取模板数据出现错误。");
+                    throw;
                 }
 
             });

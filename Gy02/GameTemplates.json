@@ -61,7 +61,7 @@
       "Id": "e6edab87-0034-4f45-8040-1f0d565ccf58",
       "DisplayName": "装备背包",
       "Gid": 912101009,
-      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}"
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1,\"TIdsOfCreate\":[\"c531cd34-fed9-4859-81f1-501c25c0926d\",\"c531cd34-fed9-4859-81f1-501c25c0926d\",\"c531cd34-fed9-4859-81f1-501c25c0926d\",\"f10a888e-b274-4bec-a5d9-f4cb1912b833\",\"f10a888e-b274-4bec-a5d9-f4cb1912b833\",\"f10a888e-b274-4bec-a5d9-f4cb1912b833\",\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"e20fb6f8-ff7f-4d40-980c-98509d800d7e\",\"e20fb6f8-ff7f-4d40-980c-98509d800d7e\",\"e20fb6f8-ff7f-4d40-980c-98509d800d7e\",\"9d4828ef-3580-4a2f-823b-ce22849a2d5c\",\"9d4828ef-3580-4a2f-823b-ce22849a2d5c\",\"9d4828ef-3580-4a2f-823b-ce22849a2d5c\",\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"bd871154-1aab-4add-8433-be4886244560\",\"bd871154-1aab-4add-8433-be4886244560\",\"bd871154-1aab-4add-8433-be4886244560\",\"40425703-830d-4f95-90c4-8d0833e7ee25\",\"40425703-830d-4f95-90c4-8d0833e7ee25\",\"40425703-830d-4f95-90c4-8d0833e7ee25\",\"aa235359-a945-4a8d-8bf6-f6ad82e2afc5\",\"aa235359-a945-4a8d-8bf6-f6ad82e2afc5\",\"aa235359-a945-4a8d-8bf6-f6ad82e2afc5\",\"1e809108-ac47-4ea3-912b-bb446dd89179\",\"1e809108-ac47-4ea3-912b-bb446dd89179\",\"1e809108-ac47-4ea3-912b-bb446dd89179\",\"bd9db3a8-a310-41e8-8228-afa425183cb3\",\"bd9db3a8-a310-41e8-8228-afa425183cb3\",\"bd9db3a8-a310-41e8-8228-afa425183cb3\",\"058c4bfc-a69d-4298-b449-f88f2a9e2870\",\"058c4bfc-a69d-4298-b449-f88f2a9e2870\",\"058c4bfc-a69d-4298-b449-f88f2a9e2870\",\"5dc5ec4b-c546-43a9-af17-0e5ef7406f5d\",\"5dc5ec4b-c546-43a9-af17-0e5ef7406f5d\",\"5dc5ec4b-c546-43a9-af17-0e5ef7406f5d\",\"f7745ac0-2a75-4bdc-ab02-acec7b310e48\",\"f7745ac0-2a75-4bdc-ab02-acec7b310e48\",\"f7745ac0-2a75-4bdc-ab02-acec7b310e48\",\"f7745ac0-2a75-4bdc-ab02-acec7b310e48\",\"b6615372-3a40-4c39-ae16-cd36a46d58b8\",\"b6615372-3a40-4c39-ae16-cd36a46d58b8\",\"b6615372-3a40-4c39-ae16-cd36a46d58b8\",\"90c996cd-ca1f-4dc6-a21c-62fda991c4e1\",\"90c996cd-ca1f-4dc6-a21c-62fda991c4e1\",\"90c996cd-ca1f-4dc6-a21c-62fda991c4e1\",\"24a70dea-2b51-4d93-b99d-728e42f4365c\",\"24a70dea-2b51-4d93-b99d-728e42f4365c\",\"24a70dea-2b51-4d93-b99d-728e42f4365c\",\"24a70dea-2b51-4d93-b99d-728e42f4365c\",\"aa2d91d9-90a3-4f42-889e-00e020782982\",\"aa2d91d9-90a3-4f42-889e-00e020782982\",\"aa2d91d9-90a3-4f42-889e-00e020782982\",\"8b172c1b-ffad-44fb-9fdc-31773e22964b\",\"8b172c1b-ffad-44fb-9fdc-31773e22964b\",\"8b172c1b-ffad-44fb-9fdc-31773e22964b\",\"8b172c1b-ffad-44fb-9fdc-31773e22964b\",\"1e1841e2-b2ca-46f0-9d65-fa58b85273a8\",\"1e1841e2-b2ca-46f0-9d65-fa58b85273a8\",\"1e1841e2-b2ca-46f0-9d65-fa58b85273a8\",\"8d510f7c-7be8-46ed-b3b9-a1934dd31127\",\"8d510f7c-7be8-46ed-b3b9-a1934dd31127\",\"8d510f7c-7be8-46ed-b3b9-a1934dd31127\",\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"110b74ff-db7e-4a28-9e28-12beaf18a9e1\",\"110b74ff-db7e-4a28-9e28-12beaf18a9e1\",\"110b74ff-db7e-4a28-9e28-12beaf18a9e1\",\"402a7b1c-bd32-4540-9efe-f9801ed6946b\",\"402a7b1c-bd32-4540-9efe-f9801ed6946b\",\"402a7b1c-bd32-4540-9efe-f9801ed6946b\"]}"
     },
     {
       "Id": "9c559895-9a2c-43a7-b793-e879a600487c",
@@ -118,7 +118,7 @@
       "Id": "dde00d3f-e459-4928-a7d6-016e7dae3268",
       "DisplayName": "衣服",
       "Gid": 120103001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[10,13,16,19,22,25,28,31,34,37],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_yifu\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[50,55,60,65,70,75,80,85,90,95],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_wh\",\"e_yifu\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
     },
     {
       "Id": "e20fb6f8-ff7f-4d40-980c-98509d800d7e",
@@ -130,13 +130,13 @@
       "Id": "9d4828ef-3580-4a2f-823b-ce22849a2d5c",
       "DisplayName": "腰带",
       "Gid": 120105001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[10,13,16,19,22,25,28,31,34,37],   \"genus\":[\"p_wh\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[30,40,50,60,70,80,90,100,110,120],   \"genus\":[\"p_wh\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
     },
     {
       "Id": "e919f7c7-b341-4159-9ecb-fba64363cff2",
       "DisplayName": "坐骑",
-      "Gid": 120102001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[10,13,16,19,22,25,28,31,34,37],   \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
+      "Gid": 120101001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[50,80,110,140,170,200,230,260,290,320],   \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
     },
     {
       "Id": "c4c430e1-962a-458d-a1ce-026128edc377",
@@ -209,6 +209,114 @@
       "DisplayName": "力量提升25%",
       "Gid": 140101012,
       "PropertiesString": "{\"pow_pct\":25}"
+    },
+    {
+      "Id": "bd871154-1aab-4add-8433-be4886244560",
+      "DisplayName": "长矛绿",
+      "Gid": 120201001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[20,24,28,32,36,40,44,48,52,56],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_gn\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":false}]}"
+    },
+    {
+      "Id": "40425703-830d-4f95-90c4-8d0833e7ee25",
+      "DisplayName": "长矛蓝",
+      "Gid": 120301001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[30,35,40,45,50,55,60,65,70,75],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_bu\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":false}]}"
+    },
+    {
+      "Id": "aa235359-a945-4a8d-8bf6-f6ad82e2afc5",
+      "DisplayName": "长矛紫",
+      "Gid": 121101001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[50,55,60,65,70,75,80,85,90,95],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_vt\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":true}]}"
+    },
+    {
+      "Id": "1e809108-ac47-4ea3-912b-bb446dd89179",
+      "DisplayName": "手套绿",
+      "Gid": 120204001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[14,17,20,23,26,29,32,35,38,42],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_gn\",\"e_shoutao\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":false}]}"
+    },
+    {
+      "Id": "bd9db3a8-a310-41e8-8228-afa425183cb3",
+      "DisplayName": "手套蓝",
+      "Gid": 120304001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[21,25,29,33,37,41,45,49,53,57],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_bu\",\"e_shoutao\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":false}]}"
+    },
+    {
+      "Id": "058c4bfc-a69d-4298-b449-f88f2a9e2870",
+      "DisplayName": "手套紫",
+      "Gid": 121104001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[35,41,47,53,59,65,71,77,83,89],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_vt\",\"e_shoutao\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":true}]}"
+    },
+    {
+      "Id": "5dc5ec4b-c546-43a9-af17-0e5ef7406f5d",
+      "DisplayName": "衣服绿",
+      "Gid": 120203001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[70,78,86,94,102,110,118,126,134,142],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_gn\",\"e_yifu\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
+    },
+    {
+      "Id": "f7745ac0-2a75-4bdc-ab02-acec7b310e48",
+      "DisplayName": "衣服蓝",
+      "Gid": 120303001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[100,110,120,130,140,150,160,170,180,190],\"pwo\":[0,0,0,0,0,0,0,0,0,0],   \"genus\":[\"p_bu\",\"e_yifu\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":true},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
+    },
+    {
+      "Id": "b6615372-3a40-4c39-ae16-cd36a46d58b8",
+      "DisplayName": "衣服紫",
+      "Gid": 121103001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[200,210,23,130,140,150,160,170,180,190],\"pwo\":[0,0,0,0,0,0,0,0,0,0],\"genus\":[\"p_vt\",\"e_yifu\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":true},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":true}]}"
+    },
+    {
+      "Id": "90c996cd-ca1f-4dc6-a21c-62fda991c4e1",
+      "DisplayName": "鞋子绿",
+      "Gid": 120206001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[38,42,46,50,54,58,62,66,70,74],\"pwo\":[0,0,0,0,0,0,0,0,0,0],\"genus\":[\"p_gn\",\"e_xiezi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
+    },
+    {
+      "Id": "24a70dea-2b51-4d93-b99d-728e42f4365c",
+      "DisplayName": "鞋子蓝",
+      "Gid": 120306001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[75,83,91,99,107,115,123,131,139,147],\"pwo\":[0,0,0,0,0,0,0,0,0,0],\"genus\":[\"p_bu\",\"e_xiezi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":true},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":false}]}"
+    },
+    {
+      "Id": "aa2d91d9-90a3-4f42-889e-00e020782982",
+      "DisplayName": "鞋子紫",
+      "Gid": 121106001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[150,161,172,183,194,205,216,227,238,349],\"pwo\":[0,0,0,0,0,0,0,0,0,0],\"genus\":[\"p_vt\",\"e_xiezi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":true},{\"skillsid\":\"381916bc-c0c0-4897-9877-f7829fd88956\",\"enable\":true}]}"
+    },
+    {
+      "Id": "8b172c1b-ffad-44fb-9fdc-31773e22964b",
+      "DisplayName": "腰带绿",
+      "Gid": 120205001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[50,70,90,110,130,150,170,190,210,230],\"genus\":[\"p_gn\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
+    },
+    {
+      "Id": "1e1841e2-b2ca-46f0-9d65-fa58b85273a8",
+      "DisplayName": "腰带蓝",
+      "Gid": 120305001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[80,120,160,200,240,280,320,360,400,440],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
+    },
+    {
+      "Id": "8d510f7c-7be8-46ed-b3b9-a1934dd31127",
+      "DisplayName": "腰带紫",
+      "Gid": 121105001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[150,210,270,330,390,450,510,570,630,690],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}]}"
+    },
+    {
+      "Id": "9c2d37c2-1f65-4809-a51b-bf1e22e9525f",
+      "DisplayName": "坐骑绿",
+      "Gid": 120202001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[100,150,200,250,300,350,400,450,500,550],\"genus\":[\"p_gn\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
+    },
+    {
+      "Id": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
+      "DisplayName": "坐骑蓝",
+      "Gid": 120402001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[120,200,280,360,440,520,600,680,760,840],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}]}"
+    },
+    {
+      "Id": "402a7b1c-bd32-4540-9efe-f9801ed6946b",
+      "DisplayName": "坐骑紫",
+      "Gid": 121102001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"nametxt\":1000,\"atk\":[0,0,0,0,0,0,0,0,0,0],\"def\":[0,0,0,0,0,0,0,0,0,0],\"pwo\":[150,250,350,450,550,650,750,850,950,1050],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}]}"
     }
   ]
 }

@@ -47,6 +47,7 @@ namespace Gy02.Publisher
         /// 调试信息，如果发生错误，这里给出简要说明。
         /// </summary>
         public string DebugMessage { get; set; }
+
     }
 
     /// <summary>
@@ -139,13 +140,19 @@ namespace Gy02.Publisher
         /// 模板Id。
         /// </summary>
         public Guid TemplateId { get; set; }
+
+        /// <summary>
+        /// 等级。
+        /// </summary>
+        [JsonPropertyName("lv")]
+        public decimal Level { get; set; }
     }
 
     /// <summary>
     /// 账号数据。
     /// </summary>
     [AutoMap(typeof(GameUser))]
-    public class GameUserDto
+    public partial class GameUserDto
     {
         /// <summary>
         /// 登录名。
@@ -163,7 +170,7 @@ namespace Gy02.Publisher
     /// 角色数据。
     /// </summary>
     [AutoMap(typeof(GameChar))]
-    public class GameCharDto : GameJsonObjectBase
+    public partial class GameCharDto : GameJsonObjectBase
     {
         #region 简单属性
 
@@ -208,7 +215,7 @@ namespace Gy02.Publisher
         /// <summary>
         /// 装备背包。
         /// </summary>
-        public GameSlotDto<GameItemDto> ZhuangBeiBag { get; set; }
+        public GameSlotDto<GameEquipmentDto> ZhuangBeiBag { get; set; }
 
         /// <summary>
         /// 道具背包。
@@ -231,7 +238,7 @@ namespace Gy02.Publisher
     /// 道具数据。
     /// </summary>
     [AutoMap(typeof(GameItem))]
-    public class GameItemDto : GameJsonObjectBase
+    public partial class GameItemDto : GameJsonObjectBase
     {
         /// <summary>
         /// 数量。对非堆叠的是1。
@@ -243,7 +250,7 @@ namespace Gy02.Publisher
     /// 槽数据。
     /// </summary>
     /// <typeparam name="T">槽内数据类型。</typeparam>
-    public class GameSlotDto<T> : GameJsonObjectBase
+    public partial class GameSlotDto<T> : GameJsonObjectBase
     {
         /// <summary>
         /// 
@@ -267,7 +274,7 @@ namespace Gy02.Publisher
     /// 装备数据。
     /// </summary>
     [AutoMap(typeof(GameEquipment))]
-    public class GameEquipmentDto : GameJsonObjectBase
+    public partial class GameEquipmentDto : GameJsonObjectBase
     {
         /// <summary>
         /// 构造函数。
@@ -519,6 +526,36 @@ namespace Gy02.Publisher
         public IEnumerable<TemplateStringFullView> Templates { get; set; }
     }
     #endregion 世界控制器功能相关
+
+    #region 物品管理相关
+
+    /// <summary>
+    /// 移动物品功能参数。
+    /// </summary>
+    [AutoMap(typeof(MoveItemsCommand), ReverseMap = true)]
+    public class MoveItemsParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要移动物品的Id集合。
+        /// </summary>
+        public List<Guid> ItemIds { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 要移动到的目标容器唯一Id。
+        /// </summary>
+        public Guid ContainerId { get; set; }
+    }
+
+    /// <summary>
+    /// 移动物品功能返回数据。
+    /// </summary>
+    [AutoMap(typeof(MoveItemsCommand))]
+    public class MoveItemsReturnDto : ReturnDtoBase
+    {
+
+    }
+
+    #endregion 物品管理相关
 }
 
 /*

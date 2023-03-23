@@ -1,22 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="bceb9524-fd56-49cc-b119-7297a79bbff01" Bounds="0,0,68,25.24" ErrorMessage="检测到未引用的节点: 新建节点 (bceb9524-fd56-49cc-b119-7297a79bbff01)" IsUnreferenced="True" Label="新建节点" />
+    <Node Id="(@1 Namespace=OW.Game.Store Type=DbQuickFindBase)" Category="CodeSchema_Class" Bounds="-53.7167232953907,4.03936149395841,141.883333333333,26" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="DbQuickFindBase" ErrorMessage="检测到未引用的节点: DbQuickFindBase ((Assembly=file:///d:/Users/光元/source/repos/Gy02/OwGameDb/bin/Debug/net6.0/OwGameDb.dll Namespace=OW.Game.Store Type=DbQuickFindBase))" Icon="Microsoft.VisualStudio.Class.Public" IsUnreferenced="True" Label="DbQuickFindBase" SourceLocation="(Assembly=file:///d:/Users/光元/source/repos/Gy02/OwGameDb/Base/DbTreeNodeBase.cs StartLineNumber=76 StartCharacterOffset=26 EndLineNumber=76 EndCharacterOffset=41)" />
+    <Node Id="(@1 Namespace=OW.Game.Store Type=DbTreeNodeExtensions)" Category="CodeSchema_Class" Bounds="-53.7167232953907,60.0393614939584,175.436666666667,26" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsStatic="True" CommonLabel="DbTreeNodeExtensions" ErrorMessage="检测到未引用的节点: DbTreeNodeExtensions ((Assembly=file:///d:/Users/光元/source/repos/Gy02/OwGameDb/bin/Debug/net6.0/OwGameDb.dll Namespace=OW.Game.Store Type=DbTreeNodeExtensions))" Icon="Microsoft.VisualStudio.Class.Public" IsUnreferenced="True" Label="DbTreeNodeExtensions" SourceLocation="(Assembly=file:///d:/Users/光元/source/repos/Gy02/OwGameDb/Base/DbTreeNodeBase.cs StartLineNumber=63 StartCharacterOffset=24 EndLineNumber=63 EndCharacterOffset=44)" />
+    <Node Id="(@1 Namespace=OW.Game.Store Type=IDbQuickFind)" Category="CodeSchema_Interface" Bounds="-53.7167232953907,-51.9606385060416,118.883333333333,26" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" CommonLabel="IDbQuickFind" ErrorMessage="检测到未引用的节点: IDbQuickFind ((Assembly=file:///d:/Users/光元/source/repos/Gy02/OwGameDb/bin/Debug/net6.0/OwGameDb.dll Namespace=OW.Game.Store Type=IDbQuickFind))" Icon="Microsoft.VisualStudio.Interface.Public" IsUnreferenced="True" Label="IDbQuickFind" SourceLocation="(Assembly=file:///d:/Users/光元/source/repos/Gy02/OwGameDb/Base/DbTreeNodeBase.cs StartLineNumber=15 StartCharacterOffset=21 EndLineNumber=15 EndCharacterOffset=33)" />
+    <Node Id="bceb9524-fd56-49cc-b119-7297a79bbff01" Bounds="-73.7167232953907,-91.9606385060416,215.436666666667,198" ErrorMessage="检测到未引用的节点: 新建节点 (bceb9524-fd56-49cc-b119-7297a79bbff01)" Group="Expanded" IsUnreferenced="True" Label="新建节点" UseManualLocation="True" />
   </Nodes>
-  <Links />
+  <Links>
+    <Link Source="bceb9524-fd56-49cc-b119-7297a79bbff01" Target="(@1 Namespace=OW.Game.Store Type=DbQuickFindBase)" Category="Contains" />
+    <Link Source="bceb9524-fd56-49cc-b119-7297a79bbff01" Target="(@1 Namespace=OW.Game.Store Type=DbTreeNodeExtensions)" Category="Contains" />
+    <Link Source="bceb9524-fd56-49cc-b119-7297a79bbff01" Target="(@1 Namespace=OW.Game.Store Type=IDbQuickFind)" Category="Contains" />
+  </Links>
+  <Categories>
+    <Category Id="CodeSchema_Class" Label="类" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="类" />
+    <Category Id="CodeSchema_Interface" Label="接口" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Interface" NavigationActionLabel="接口" />
+    <Category Id="CodeSchema_Type" Label="类型" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="类型" />
+    <Category Id="Contains" Label="包含" Description="链接的源是否包含目标对象" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="包含者" IsContainment="True" OutgoingActionLabel="包含" />
+  </Categories>
   <Properties>
     <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsAbstract" Label="是抽象的" Description="一个标志，用于指示该成员是“抽象”成员且不提供完整实现" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsPublic" Label="是公共的" Description="一个标志，用于指示该范围是“公共”范围" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsStatic" Label="是静态的" Description="一个标志，用于指示该成员是静态成员" DataType="System.Boolean" />
+    <Property Id="CommonLabel" DataType="System.String" />
+    <Property Id="DefaultAction" Label="DefaultAction" Description="DefaultAction" DataType="System.String" />
     <Property Id="ErrorMessage" Label="错误" Description="错误" DataType="System.String" />
     <Property Id="Expression" DataType="System.String" />
+    <Property Id="Group" Label="组" Description="将节点显示为组" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
     <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="Icon" Label="图标" Description="图标" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
     <Property Id="IsEnabled" DataType="System.Boolean" />
     <Property Id="IsUnreferenced" Label="未引用的" Description="节点没有从关系图中的其他节点指向它的链接" DataType="System.Boolean" />
     <Property Id="Label" Label="标签" Description="可批注对象的可显示标签" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="SourceLocation" Label="起始行号" DataType="Microsoft.VisualStudio.GraphModel.CodeSchema.SourceLocation" />
     <Property Id="TargetType" DataType="System.Type" />
     <Property Id="ToolTip" DataType="System.String" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
     <Property Id="Value" DataType="System.String" />
     <Property Id="ValueLabel" DataType="System.String" />
   </Properties>
+  <QualifiedNames>
+    <Name Id="Assembly" Label="程序集" ValueType="Uri" />
+    <Name Id="Namespace" Label="命名空间" ValueType="System.String" />
+    <Name Id="Type" Label="类型" ValueType="System.Object" />
+  </QualifiedNames>
+  <IdentifierAliases>
+    <Alias n="1" Uri="Assembly=$(382a9dc6-d932-4965-9697-a4916fc730e5.OutputPathUri)" />
+  </IdentifierAliases>
   <Styles>
     <Style TargetType="Node" GroupLabel="循环引用" ToolTip="节点是强耦合的组件的一部分" ValueLabel="节点">
       <Condition Expression="IsStronglyConnected" />
@@ -42,4 +78,8 @@
       <Setter Property="StrokeThickness" Value="6" />
     </Style>
   </Styles>
+  <Paths>
+    <Path Id="382a9dc6-d932-4965-9697-a4916fc730e5.OutputPath" Value="d:\Users\光元\source\repos\Gy02\OwGameDb\bin\Debug\net6.0\OwGameDb.dll" />
+    <Path Id="382a9dc6-d932-4965-9697-a4916fc730e5.OutputPathUri" Value="file:///d:/Users/光元/source/repos/Gy02/OwGameDb/bin/Debug/net6.0/OwGameDb.dll" />
+  </Paths>
 </DirectedGraph>

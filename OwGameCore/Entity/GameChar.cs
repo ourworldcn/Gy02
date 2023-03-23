@@ -148,5 +148,15 @@ namespace OW.Game.Entity
     public static class GameCharExtensions
     {
         public static object GetKey(this GameChar gc) => ((VirtualThing)gc.Thing).IdString;
+
+        public static IEnumerable<VirtualThing> GetAllChildren(this VirtualThing root)
+        {
+            foreach (var item in root.Children)
+            {
+                yield return item;
+                foreach (var item2 in item.GetAllChildren())
+                    yield return item2;
+            }
+        }
     }
 }

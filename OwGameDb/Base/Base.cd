@@ -53,14 +53,6 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="OW.Game.Store.VirtualThingEntityBase" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="13" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAADAACAAAAAAAAAAABCAhAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Base\VirtualThing.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
   <Class Name="OW.Game.Store.VirtualThingBase&lt;T&gt;">
     <Position X="6" Y="16.75" Width="1.5" />
     <TypeIdentifier>

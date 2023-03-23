@@ -184,6 +184,31 @@ namespace Gy02Bll.Managers
         }
 
         /// <summary>
+        /// 使用令牌获取当前登录的角色。
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="gameChar"></param>
+        /// <returns></returns>
+        public DisposeHelper<object> GetCharFromToken(Guid token, out GameChar gameChar)
+        {
+            var key = Token2Key.GetValueOrDefault(token);
+            gameChar = null;
+            if (key is null)
+                return DisposeHelper.Empty<object>();
+            var result = DisposeHelper.Create(Lock, Unlock, (object)key, TimeSpan.FromSeconds(3));
+            if (result.IsEmpty)
+                return result;
+            var gu = _Key2User.GetValueOrDefault(key);  //获取用户
+            if (gu is null)
+            {
+                result.Dispose();
+                return DisposeHelper.Empty<object>();
+            }
+            gameChar = gu.CurrentChar;
+            return result;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="key"></param>

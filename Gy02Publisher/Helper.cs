@@ -102,23 +102,28 @@ namespace Gy02.Publisher
         /// 超时，没有在指定时间内完成操作，通常是锁定超时。
         /// </summary>
         public const int WAIT_TIMEOUT = 258;
+
         /// <summary>
         /// 无效令牌。
         /// </summary>
         public const int ERROR_INVALID_TOKEN = 315;
+
         /// <summary>
         /// 找不到指定用户。
         /// </summary>
         public const int ERROR_NO_SUCH_USER = 1317;
+
         /// <summary>
         /// 并发或交错操作更改了对象的状态，使此操作无效。
         /// </summary>
         public const int E_CHANGED_STATE = unchecked((int)0x8000000C);
+
         /// <summary>
         /// 未进行身份验证。
         /// </summary>
         public const int Unauthorized = unchecked((int)0x80190191);
         public const int RO_E_CLOSED = unchecked((int)0x80000013);
+
         /// <summary>
         /// 对象已经被处置。
         /// </summary>

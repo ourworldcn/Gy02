@@ -105,6 +105,11 @@
             模板Id。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.GameJsonObjectBase.Level">
+            <summary>
+            等级。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.GameUserDto">
             <summary>
             账号数据。
@@ -379,6 +384,26 @@
         <member name="P:Gy02.Publisher.GetTemplates2ReturnDto.Templates">
             <summary>
             模板数据集合。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.MoveItemsParamsDto">
+            <summary>
+            移动物品功能参数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.MoveItemsParamsDto.ItemIds">
+            <summary>
+            要移动物品的Id集合。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.MoveItemsParamsDto.ContainerId">
+            <summary>
+            要移动到的目标容器唯一Id。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.MoveItemsReturnDto">
+            <summary>
+            移动物品功能返回数据。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.DispatcherDemo">

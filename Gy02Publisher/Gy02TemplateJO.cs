@@ -17,7 +17,8 @@ namespace Gy02Bll.Templates
     /// <summary>
     /// 原始的的模板类。
     /// </summary>
-    public class RawTemplate
+    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
+    public partial class RawTemplate
     {
         /// <summary>
         /// 模板Id。
@@ -52,11 +53,23 @@ namespace Gy02Bll.Templates
         /// <returns></returns>
         public T GetJsonObject<T>()
         {
-            var result = JsonSerializer.Deserialize<T>(PropertiesString);
-            var tmp = result as TemplateStringFullView;
-            if (tmp != null)
-                tmp._RawTemplate = this;
-            return result;
+            try
+            {
+                var result = JsonSerializer.Deserialize<T>(PropertiesString);
+                var tmp = result as TemplateStringFullView;
+                if (tmp != null)
+                    tmp._RawTemplate = this;
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private string GetDebuggerDisplay()
+        {
+            return DisplayName;
         }
 #endif //NETCOREAPP3_0_OR_GREATER
     }
@@ -91,7 +104,7 @@ namespace Gy02Bll.Templates
     /// 模板的完整视图。
     /// </summary>
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    public class TemplateStringFullView
+    public partial class TemplateStringFullView
     {
         /// <summary>
         /// 构造函数。
