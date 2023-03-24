@@ -149,6 +149,13 @@ namespace OW.Game.Entity
     {
         public static object GetKey(this GameChar gc) => ((VirtualThing)gc.Thing).IdString;
 
+        /// <summary>
+        /// 获取用户。
+        /// </summary>
+        /// <param name="gc"></param>
+        /// <returns></returns>
+        public static GameUser GetUser(this GameChar gc) => ((VirtualThing)gc.Thing).Parent.GetJsonObject<GameUser>();
+
         public static IEnumerable<VirtualThing> GetAllChildren(this VirtualThing root)
         {
             foreach (var item in root.Children)

@@ -1,4 +1,5 @@
-﻿using Gy02Bll.Commands;
+﻿using Gy02.Publisher;
+using Gy02Bll.Commands;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
@@ -172,6 +173,11 @@ namespace Gy02Bll.Managers
 
         }
 
+        /// <summary>
+        /// 保存指定key的用户数据。
+        /// </summary>
+        /// <param name="key">用户的key。</param>
+        /// <returns></returns>
         public bool Save(string key)
         {
             var result = _Queue.TryAdd(key, null);
@@ -194,10 +200,16 @@ namespace Gy02Bll.Managers
             var key = Token2Key.GetValueOrDefault(token);
             gameChar = null;
             if (key is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                 return DisposeHelper.Empty<object>();
+            }
             var result = DisposeHelper.Create(Lock, Unlock, (object)key, TimeSpan.FromSeconds(3));
             if (result.IsEmpty)
+            {
+                OwHelper.SetLastError(ErrorCodes.WAIT_TIMEOUT);
                 return result;
+            }
             var gu = _Key2User.GetValueOrDefault(key);  //获取用户
             if (gu is null)
             {
@@ -237,7 +249,7 @@ namespace Gy02Bll.Managers
         /// <exception cref="TimeoutException"></exception>
         public bool AddUser(GameUser gu)
         {
-            var key = gu.Id.ToString();
+            var key = gu.GetKey();
             using var dw = DisposeHelper.Create(Lock, Unlock, key, TimeSpan.FromSeconds(1));
             if (dw.IsEmpty)
                 throw new TimeoutException();
@@ -293,7 +305,8 @@ namespace Gy02Bll.Managers
             }
             //加载
             var db = _ContextFactory.CreateDbContext();
-            var guThing = db.Set<VirtualThing>().FirstOrDefault(c => c.ExtraString == loginName);
+            var guThing = db.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children)
+                .FirstOrDefault(c => c.ExtraString == loginName);
             if (guThing is null) goto falut;
             gu = guThing.GetJsonObject<GameUser>();
             if (!gu.IsPwd(pwd)) goto falut;
@@ -301,8 +314,8 @@ namespace Gy02Bll.Managers
 
             using (var dwKey = DisposeHelper.Create(Lock, Unlock, guThing.IdString, Options.DefaultLockTimeout))
             {
-                gu.SetDbContext(db);
                 if (dwKey.IsEmpty) throw new TimeoutException();
+                gu.SetDbContext(db);
                 AddUser(gu);
                 user = gu;
                 return true;
@@ -339,6 +352,20 @@ namespace Gy02Bll.Managers
                 _Queue = default;
                 base.Dispose(disposing);
             }
+        }
+
+        public bool ChangeToken(GameUser gu, Guid guid)
+        {
+            using var dw = DisposeHelper.Create(Lock, Unlock, gu.GetKey(), TimeSpan.FromSeconds(3));
+            if (dw.IsEmpty || gu.IsDisposed)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                return false;
+            }
+            Token2Key.Remove(gu.Token, out _);
+            gu.Token = guid;
+            Token2Key.TryAdd(gu.Token, gu.GetKey());
+            return true;
         }
 
         #endregion IDisposable接口相关

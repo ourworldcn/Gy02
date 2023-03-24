@@ -236,7 +236,7 @@ namespace OW.Game.Entity
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static object GetKey(this GameUser user) => ((VirtualThing)user.Thing)?.IdString;
+        public static string GetKey(this GameUser user) => ((VirtualThing)user.Thing)?.IdString;
 
         /// <summary>
         /// 记录服务提供者。

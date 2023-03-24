@@ -133,7 +133,8 @@ if (Global.Program.ReqireReboot) //»Ù–Ë“™÷ÿ∆Ù
 {
     (app as IDisposable)?.Dispose();
     app = null;
-    GC.Collect(/*GC.MaxGeneration, GCCollectionMode.Forced*/);
+    GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
+    GC.WaitForFullGCComplete();
     Global.Program.ReqireReboot = false;
     goto lbStart;
 }

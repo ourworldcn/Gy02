@@ -35,16 +35,9 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<MoveItemsReturnDto> MoveItems(MoveItemsParamsDto model, [FromServices] IMapper mapper, [FromServices] SyncCommandManager commandMng)
         {
-            var storeMng = _ServiceProvider.GetRequiredService<GameAccountStore>();
-            var dw = storeMng.GetCharFromToken(model.Token, out var gameChar);
-            var result = new MoveItemsReturnDto();
-            if (dw.IsEmpty)
-            {
-                result.FillErrorFromWorld();
-                return result;
-            }
             var command = mapper.Map<MoveItemsCommand>(model);
             commandMng.Handle(command);
+            var result = new MoveItemsReturnDto();
             mapper.Map(command, result);
             return result;
         }

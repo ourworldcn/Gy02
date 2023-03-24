@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Gy02Bll.Commands
@@ -49,6 +50,7 @@ namespace Gy02Bll.Commands
         public override void Handle(LoginCommand command)
         {
             var svcStore = _Service.GetRequiredService<GameAccountStore>();
+            var exists = svcStore.LoginName2Key.ContainsKey(command.LoginName);  //是否已经登录
             if (!svcStore.LoadOrGetUser(command.LoginName, command.Pwd, out var gu))
             {
                 command.FillErrorFromWorld();
@@ -64,7 +66,14 @@ namespace Gy02Bll.Commands
             //设置属性
             gu.Timeout = TimeSpan.FromMinutes(15);
             gu.LastModifyDateTimeUtc = DateTime.UtcNow;
-            gu.Token = Guid.NewGuid();
+            if (exists)  //若是重新登录
+            {
+                if (!svcStore.ChangeToken(gu, Guid.NewGuid()))
+                {
+                    command.FillErrorFromWorld();
+                    return;
+                }
+            }
             var db = gu.GetDbContext();
             gu.CurrentChar = ((VirtualThing)gu.Thing).Children.First().GetJsonObject<GameChar>();
         }

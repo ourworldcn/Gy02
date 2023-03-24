@@ -27,16 +27,17 @@ namespace OW.Game.Entity
         /// 槽内的道具/装备。
         /// </summary>
         [JsonIgnore]
-        public ICollection<T> Children
+        public IEnumerable<T> Children
         {
             get
             {
-                if (_Children is null)
-                {
-                    var tmp = (Thing as VirtualThing)?.Children.Select(c => c.GetJsonObject<T>())?.ToList();
-                    Interlocked.CompareExchange(ref _Children, tmp, null);
-                }
-                return _Children;
+                return (Thing as VirtualThing)?.Children.Select(c => c.GetJsonObject<T>());
+                //if (_Children is null)
+                //{
+                //    var tmp = (Thing as VirtualThing)?.Children.Select(c => c.GetJsonObject<T>())?.ToList();
+                //    Interlocked.CompareExchange(ref _Children, tmp, null);
+                //}
+                //return _Children;
             }
         }
     }
