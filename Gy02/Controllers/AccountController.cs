@@ -2,10 +2,14 @@
 using Gy02.Publisher;
 using Gy02Bll.Commands;
 using Gy02Bll.Managers;
+using Gy02Bll.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
+using OW.Game.Entity;
 using OW.Game.Manager;
+using OW.Game.PropertyChange;
+using OW.Game.Store;
 using OW.SyncCommand;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -49,23 +53,23 @@ namespace Gy02.Controllers
         public AccountController()
         {
         }
-        static GyUdpClient? udp;
+
+#if DEBUG
+
         /// <summary>
         /// 测试代码专用。
         /// </summary>
-        /// <param name="str">测试参数。</param>
-        /// <param name="udpServer"></param>
+        /// <param name="udpServer">测试参数。</param>
+        /// <param name="mapper"></param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult<string> Test([FromServices] UdpServerManager udpServer, [AllowNull] string str = null)
+        public ActionResult<List<CostInfo>> Test([FromServices] UdpServerManager udpServer, [FromServices] IMapper mapper)
         {
-            if (udp is null)
-            {
-                var udp = new GyUdpClient();
-                udp.Start();
-            }
-            return udpServer.Port.ToString();
+            var src = new GamePropertyChangeItem<object>() { Object = new GameItem(new VirtualThing() { ExtraGuid = Guid.NewGuid() }) };
+            var dest = mapper.Map<GamePropertyChangeItemDto>(src);
+            return null;
         }
+#endif
 
         /// <summary>
         /// 创建一个新账号。

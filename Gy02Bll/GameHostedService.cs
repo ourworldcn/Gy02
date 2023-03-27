@@ -20,6 +20,7 @@ using OW.Game.Caching;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.Server;
 using OwDbBase;
@@ -153,11 +154,10 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                Exception e = new COMException("",-2146233083);
-                var str1 = e.Message;
-                //e.s = ErrorCodes.Unauthorized;
-                var str2 = e.Message;
-                
+                var tmp = new CostInfo { };
+                tmp.Conditional.Add(new GameThingPreconditionItem());
+                tmp.Counts.Add(10); tmp.Counts.Add(20);
+                var str = JsonSerializer.Serialize(tmp);
             }
             finally
             {

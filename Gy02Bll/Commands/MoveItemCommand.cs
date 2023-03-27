@@ -3,6 +3,7 @@ using Gy02Bll.Managers;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System;
@@ -13,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Gy02Bll.Commands
 {
-    public class MoveItemsCommand : SyncCommandBase
+    public class MoveItemsCommand : PropertyChangeCommandBase
     {
         /// <summary>
         /// 角色。
@@ -70,19 +71,38 @@ namespace Gy02Bll.Commands
             }
             foreach (var item in things)
             {
-                Move(item, container);
+                Move(item, container, command.Changes);
             }
             _Store.Save(gameChar.GetUser().GetKey());
         }
 
-        static void Move(VirtualThing thing, VirtualThing container)
+         void Move(VirtualThing thing, VirtualThing container, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var parent = thing.Parent;
+            var view = thing.GetJsonObject(_TemplateManager.GetTypeFromTId(thing.ExtraGuid));
             if (parent is not null)
+            {
                 parent.Children.Remove(thing);
+                changes?.Add(new GamePropertyChangeItem<object>
+                {
+                    Object = parent,
+                    PropertyName = nameof(parent.Children),
+                    HasOldValue = true,
+                    OldValue = view,
+                    HasNewValue = false,
+                });
+            }
             container.Children.Add(thing);
             thing.Parent = container;
             thing.ParentId = container.Id;
+            changes?.Add(new GamePropertyChangeItem<object>
+            {
+                Object = container,
+                PropertyName = nameof(parent.Children),
+                HasOldValue = false,
+                HasNewValue = true,
+                NewValue = view,
+            });
         }
 
 

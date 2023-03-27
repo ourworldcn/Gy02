@@ -22,4 +22,20 @@ namespace OW.Game.Entity
         [JsonPropertyName("lv")]
         public decimal Level { get; set; }
     }
+
+    public class GameContainer: GameEntity
+    {
+        public GameContainer()
+        {
+        }
+
+        public GameContainer(object thing) : base(thing)
+        {
+        }
+
+        /// <summary>
+        /// 容器的容量。
+        /// </summary>
+        public decimal Capacity { get; set; } = -1;
+    }
 }

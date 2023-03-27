@@ -48,6 +48,55 @@ namespace OW.Game.Managers
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class TemplateManager : GameManagerBase<TemplateManagerOptions, TemplateManager>
     {
+        #region 静态成员
+
+        static ConcurrentDictionary<Guid, Type> _TypeGuid2Type;
+        public static ConcurrentDictionary<Guid, Type> TypeGuid2Type
+        {
+            get
+            {
+                if (_TypeGuid2Type is null)
+                {
+                    var coll = AppDomain.CurrentDomain.GetAssemblies().SelectMany(c => c.GetTypes()).Where(c => !c.IsAbstract && c.IsAssignableTo(typeof(OwGameEntityBase)));
+                    var tmp = new ConcurrentDictionary<Guid, Type>(coll.ToDictionary(c => c.GUID));
+                    Interlocked.CompareExchange(ref _TypeGuid2Type, tmp, null);
+                }
+                return _TypeGuid2Type;
+            }
+        }
+
+        /// <summary>
+        /// 获取模板的生成类的类型。
+        /// </summary>
+        /// <param name="fullView"></param>
+        /// <returns></returns>
+        public static Type GetTypeFromTemplate(TemplateStringFullView fullView)
+        {
+            var result = TypeGuid2Type.GetValueOrDefault(fullView.TypeGuid);    //获取实例类型
+            if (result is not null && fullView.SubTypeGuid is not null) //若是泛型类
+            {
+                var sub = TypeGuid2Type.GetValueOrDefault(fullView.SubTypeGuid.Value);
+                result = result.MakeGenericType(sub);
+            }
+            return result;
+        }
+
+        #endregion 静态成员
+
+        /// <summary>
+        /// 获取模板的生成类的类型。
+        /// </summary>
+        /// <param name="tid"></param>
+        /// <returns></returns>
+        public Type GetTypeFromTId(Guid tid)
+        {
+            var tt = GetRawTemplateFromId(tid);
+            var fv = tt?.GetJsonObject<TemplateStringFullView>();
+            if (fv is null)
+                return null;
+            return GetTypeFromTemplate(fv);
+        }
+
         public TemplateManager(IOptions<TemplateManagerOptions> options, GY02TemplateContext dbContext, ILogger<TemplateManager> logger, IHostApplicationLifetime lifetime, IOptionsMonitor<RawTemplateOptions> rawTemplateOptions)
             : base(options, logger)
         {

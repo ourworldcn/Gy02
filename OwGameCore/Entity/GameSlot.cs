@@ -15,14 +15,8 @@ namespace OW.Game.Entity
     /// </summary>
     /// <typeparam name="T">槽内数据类型。</typeparam>
     [Guid("57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38")]
-    public class GameSlot<T> : GameEntity where T : new()
+    public class GameSlot<T> : GameContainer where T : new()
     {
-        /// <summary>
-        /// 槽的容量。
-        /// </summary>
-        public decimal Capacity { get; set; }
-
-        ICollection<T> _Children;
         /// <summary>
         /// 槽内的道具/装备。
         /// </summary>

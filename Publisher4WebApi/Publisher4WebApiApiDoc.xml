@@ -241,6 +241,67 @@
             力量属性数值序列。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.PropertyChangeReturnDto">
+            <summary>
+            带属性变化集合的返回值封装的基类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.PropertyChangeReturnDto.Changes">
+            <summary>
+            属性变化的集合。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GamePropertyChangeItemDto">
+            <summary>
+            用于精确描述变化数据的类。
+            </summary>
+            <remarks>这个类的新值和旧值都用Object表示，对于数据量极大的一些情况会使用具体的类表示如GamePropertyChangeFloatItemDto表示大量的即时战斗数据包导致的人物属性变化。</remarks>
+        </member>
+        <member name="M:Gy02.Publisher.GamePropertyChangeItemDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.TId">
+            <summary>
+            对象的模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.ObjectId">
+            <summary>
+            对象Id。指出是什么对象变化了属性。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.PropertyName">
+            <summary>
+            属性的名字。事件发送者和处理者约定好即可，也可能是对象的其他属性名，如Children可以表示集合变化。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.HasOldValue">
+            <summary>
+            指示<see cref="P:Gy02.Publisher.GamePropertyChangeItemDto.OldValue"/>中的值是否有意义。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.OldValue">
+            <summary>
+            获取或设置旧值。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.HasNewValue">
+            <summary>
+            指示<see cref="P:Gy02.Publisher.GamePropertyChangeItemDto.NewValue"/>中的值是否有意义。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.NewValue">
+            <summary>
+            新值。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.DateTimeUtc">
+            <summary>
+            属性发生变化的时间点。Utc计时。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.IJsonData">
             <summary>
             表示类是一个需要udp解码的类。

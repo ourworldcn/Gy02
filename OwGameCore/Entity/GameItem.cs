@@ -16,6 +16,10 @@ namespace OW.Game.Entity
     {
         public GameItem() { }
 
+        public GameItem(object thing) : base(thing)
+        {
+        }
+
         public decimal Count { get; set; }
     }
 }

@@ -316,6 +316,8 @@ namespace Gy02Bll.Managers
             {
                 if (dwKey.IsEmpty) throw new TimeoutException();
                 gu.SetDbContext(db);
+                if (gu.Token == Guid.Empty)
+                    gu.Token = Guid.NewGuid();
                 AddUser(gu);
                 user = gu;
                 return true;

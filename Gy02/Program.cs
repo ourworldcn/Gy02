@@ -94,7 +94,7 @@ services.AddHostedService<GameHostedService>();
 
 services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"));  //模板配置的选项模式
 
-services.AddAutoMapper(typeof(Gy02.AutoMappper.AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(Gy02Bll.AutoMapperProfile).Assembly);
+services.AddAutoMapper(typeof(Gy02.AutoMappper.Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(Gy02Bll.Gy02BllAutoMapperProfile).Assembly);
 
 
 var app = builder.Build();

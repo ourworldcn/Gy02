@@ -13,29 +13,9 @@ using System.Threading.Tasks;
 
 namespace Gy02Bll
 {
-    //public class Gy02TemplateManager : TemplateManager
-    //{
-    //    /// <summary>
-    //    /// 构造函数。
-    //    /// </summary>
-    //    /// <param name="service"></param>
-    //    public Gy02TemplateManager(IServiceProvider service) : base(null, null)
-    //    {
-    //        _Service = service;
-    //        Initialize();
-    //    }
-
-    //    private void Initialize()
-    //    {
-
-    //    }
-
-    //    IServiceProvider _Service;
-
-    //}
-    public class AutoMapperProfile : Profile
+    public class Gy02BllAutoMapperProfile : Profile
     {
-        public AutoMapperProfile()
+        public Gy02BllAutoMapperProfile()
         {
             //账号角色
             CreateMap<TemplateStringFullView, GameUser>().AfterMap(FillSeq);

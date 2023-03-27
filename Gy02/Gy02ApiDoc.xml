@@ -4,12 +4,25 @@
         <name>Gy02</name>
     </assembly>
     <members>
-        <member name="T:Gy02.AutoMappper.AutoMapperProfile">
+        <member name="T:Gy02.AutoMappper.Gy02AutoMapperProfile">
             <summary>
             AutoMapperProfile配置类。
             </summary>
         </member>
-        <member name="M:Gy02.AutoMappper.AutoMapperProfile.#ctor">
+        <member name="P:Gy02.AutoMappper.Gy02AutoMapperProfile.Entyti2Dto">
+            <summary>
+            将指定的实体类型转化为对应的封装类型。
+            </summary>
+        </member>
+        <member name="M:Gy02.AutoMappper.Gy02AutoMapperProfile.AutoMapEntity(System.Object,AutoMapper.IMapperBase)">
+            <summary>
+            将指定的实体转化为对应的封装数据。
+            </summary>
+            <param name="entity">对null则立即返回null。</param>
+            <param name="mapper"></param>
+            <returns>对不认识的类型则原样返回，。</returns>
+        </member>
+        <member name="M:Gy02.AutoMappper.Gy02AutoMapperProfile.#ctor">
             <summary>
             构造函数。
             </summary>
@@ -47,12 +60,12 @@
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Test(Gy02Bll.Managers.UdpServerManager,System.String)">
+        <member name="M:Gy02.Controllers.AccountController.Test(Gy02Bll.Managers.UdpServerManager,AutoMapper.IMapper)">
             <summary>
             测试代码专用。
             </summary>
-            <param name="str">测试参数。</param>
-            <param name="udpServer"></param>
+            <param name="udpServer">测试参数。</param>
+            <param name="mapper"></param>
             <returns></returns>
         </member>
         <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">

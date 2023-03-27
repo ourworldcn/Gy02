@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -200,12 +201,12 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 容量。
         /// </summary>
-        /// <value>默认值：0</value>
+        /// <value>默认值：-1。</value>
         [JsonPropertyName("cap")]
-        public decimal Capacity { get; set; }
+        public decimal Capacity { get; set; } = -1;
 
         /// <summary>
-        /// 最大堆叠数。
+        /// 最大堆叠数。不可堆叠物该属性为1。
         /// </summary>
         /// <value>默认值：1</value>
         public decimal Stk { get; set; } = decimal.One;
@@ -262,64 +263,62 @@ namespace Gy02Bll.Templates
 
     }
 
-    /// <summary>
-    /// 创建对象时的行为信息。
-    /// </summary>
-    public class CreateTInfo
-    {
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public CreateTInfo()
-        {
-
-        }
-
-        /// <summary>
-        /// 创建时自带的孩子的模板Id集合。
-        /// </summary>
-        public List<Guid> ChildrenTIds { get; set; } = new List<Guid>();
-
-    }
 
     /// <summary>
     /// 升级的代价类。
     /// </summary>
-    public class CostTInfo
+    public class CostInfo
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public CostTInfo()
+        public CostInfo()
         {
         }
 
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        ///public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
 
         /// <summary>
         /// 消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
         /// 注意消耗数量可能是0，代表需要此物品但不消耗此物品。若是null或空则表示所有级别都不消耗。
         /// </summary>
-        public List<decimal> Counts { get; set; }
+        public List<decimal> Counts { get; set; } = new List<decimal>();
     }
 
     /// <summary>
-    /// 升级时增长的属性。
+    /// 定位一个物品的结构。
     /// </summary>
-    public class UpgradeTInfo
+    public class GameThingPrecondition : Collection<GameThingPreconditionItem>
+    {
+    }
+
+    /// <summary>
+    /// 定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
+    /// </summary>
+    public class GameThingPreconditionItem
     {
         /// <summary>
-        /// 每集的数值。键是属性的名，值每级别对应数值的数组。
+        /// 容器的模板Id。省略则不限制。
         /// </summary>
-        public Dictionary<string, decimal[]> DecimalProperties { get; set; } = new Dictionary<string, decimal[]>();
+        public Guid? ParentTId { get; set; }
 
         /// <summary>
-        /// 升级对应的代价。
+        /// 需要包含的属名称（如果有多项则必须全部包含）。空集合则不限制。
         /// </summary>
-        public List<CostTInfo> Cost { get; set; } = new List<CostTInfo>();
+        public List<string> Genus { get; set; } = new List<string>();
+
+        /// <summary>
+        /// 物品的TId。省略则不限制。
+        /// </summary>
+        public Guid? TId { get; set; }
+
+        /// <summary>
+        /// 要求的最小数量。省略则不限制。
+        /// </summary>
+        public decimal? MinCount { get; set; }
     }
 
     /// <summary>

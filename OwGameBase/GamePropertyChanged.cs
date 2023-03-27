@@ -198,6 +198,7 @@ namespace OW.Game.PropertyChange
             return $"{Object}.{PropertyName} : {{{OldValue}}} -> {{{NewValue}}}";
         }
         #endregion 调试相关
+
     }
 
     /// <summary>
