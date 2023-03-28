@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Entity
 {
-    public class GameEntity: OwGameEntityBase
+    /// <summary>
+    /// 游戏内非容器的虚拟物的实体基类。
+    /// </summary>
+    public class GameEntity : OwGameEntityBase
     {
         public GameEntity()
         {
@@ -21,9 +24,13 @@ namespace OW.Game.Entity
 
         [JsonPropertyName("lv")]
         public decimal Level { get; set; }
+
+        [JsonPropertyName("count")]
+        public decimal Count { get; set; }
+
     }
 
-    public class GameContainer: GameEntity
+    public class GameContainer : GameEntity
     {
         public GameContainer()
         {

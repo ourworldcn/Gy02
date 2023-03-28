@@ -180,6 +180,7 @@ namespace OW.Game.PropertyChange
         /// <summary>
         /// 属性发生变化的时间点。Utc计时。
         /// </summary>
+        /// <value>构造时的当前Utc时间。</value>
         public DateTime DateTimeUtc { get; set; } = DateTime.UtcNow;
 
         /// <summary>

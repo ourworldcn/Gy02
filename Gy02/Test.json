@@ -1,24 +1,26 @@
-[
-  {
-    "Conditional": [
-      {
-        "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "Genus": [],
-        "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "MinCount": 0
-      }
-    ],
-    "Counts": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]
-  },
-  {
-    "Conditional": [
-      {
-        "ParentTId": "道具背包",
-        "Genus": [],
-        "TId": "图纸TId",
-        "MinCount": 0
-      }
-    ],
-    "Counts": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]
-  }
-]
+{
+  "LvUpData": [
+    {
+      "Conditional": [
+        {
+          "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "Genus": [],
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "MinCount": 0
+        }
+      ],
+      "Counts": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 ]
+    },
+    {
+      "Conditional": [
+        {
+          "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+          "Genus": [],
+          "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
+          "MinCount": 0
+        }
+      ],
+      "Counts": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]
+    }
+  ]
+}

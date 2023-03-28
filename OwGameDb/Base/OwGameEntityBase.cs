@@ -132,7 +132,7 @@ namespace OW.Game.Store
         [JsonExtensionData]
         public Dictionary<string, object> ExtensionProperties
         {
-            get => _ExtensionProperties ??= new Dictionary<string, object>();
+            get => LazyInitializer.EnsureInitialized(ref _ExtensionProperties);
             set => _ExtensionProperties = value;
         }
 

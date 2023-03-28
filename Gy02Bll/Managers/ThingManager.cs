@@ -57,10 +57,11 @@ namespace OW.Game.Managers
     {
         #region 构造函数相关
 
-        public ThingManager(IOptions<ThingManagerOptions> options, ILogger<ThingManager> logger, IServiceProvider service) : base(options, logger)
+        public ThingManager(IOptions<ThingManagerOptions> options, ILogger<ThingManager> logger, IServiceProvider service, TemplateManager templateManager) : base(options, logger)
         {
             Initializer();
             Service = service;
+            _TemplateManager = templateManager;
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace OW.Game.Managers
             Scheduler.TryAdd(_Key.ToString(), new OwSchedulerEntry()
             {
                 Key = _Key.ToString(),
-                Period =Options.ExpirationScanFrequency,
+                Period = Options.ExpirationScanFrequency,
                 TaskCallback = TimerFunc,
             });
 
@@ -323,6 +324,14 @@ namespace OW.Game.Managers
         }
 
         #endregion IDisposable接口相关
+
+        TemplateManager _TemplateManager;
+        public OwGameEntityBase GetEntityBase(VirtualThing thing)
+        {
+            var tt = _TemplateManager.Id2FullView.GetValueOrDefault(thing.ExtraGuid, null);
+            var type = TemplateManager.GetTypeFromTemplate(tt);
+            return thing.GetJsonObject(type) as OwGameEntityBase;
+        }
 
     }
 

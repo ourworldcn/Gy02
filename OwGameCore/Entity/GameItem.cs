@@ -20,6 +20,5 @@ namespace OW.Game.Entity
         {
         }
 
-        public decimal Count { get; set; }
     }
 }

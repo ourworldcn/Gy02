@@ -126,6 +126,7 @@ namespace Gy02Bll.Templates
             {
                 return _RawTemplate?.Id ?? _TemplateId;
             }
+            //TODO
             set => _TemplateId = value;
         }
 
@@ -182,7 +183,7 @@ namespace Gy02Bll.Templates
         public Dictionary<string, object> ExtraProperties { get; set; } = new Dictionary<string, object>();
 
         /// <summary>
-        /// 类型的Guid。
+        /// 实体类型的Guid。
         /// </summary>
         public Guid TypeGuid { get; set; }
 
@@ -206,7 +207,7 @@ namespace Gy02Bll.Templates
         public decimal Capacity { get; set; } = -1;
 
         /// <summary>
-        /// 最大堆叠数。不可堆叠物该属性为1。
+        /// 最大堆叠数。不可堆叠物该属性为1。-1表示不限制。
         /// </summary>
         /// <value>默认值：1</value>
         public decimal Stk { get; set; } = decimal.One;
@@ -256,6 +257,21 @@ namespace Gy02Bll.Templates
 
         #endregion 装备数据
 
+        #region 升级相关
+
+        /// <summary>
+        /// 升级使用配方的TId。不能升级的这里可能是null。
+        /// </summary>
+        public Guid? LvUpTId { get; set; }
+
+        List<CostInfo> _LvUpData;
+        /// <summary>
+        /// 对于升级公式这里是升级公式的内容，对于其它类型的数据，这里是空集合。
+        /// </summary>
+        public List<CostInfo> LvUpData { get => _LvUpData ?? (_LvUpData = new List<CostInfo>()); set => _LvUpData = value; }
+
+        #endregion 升级相关
+
         private string GetDebuggerDisplay()
         {
             return DisplayName;
@@ -263,11 +279,10 @@ namespace Gy02Bll.Templates
 
     }
 
-
     /// <summary>
     /// 升级的代价类。
     /// </summary>
-    public class CostInfo
+    public partial class CostInfo
     {
         /// <summary>
         /// 构造函数。
@@ -291,15 +306,30 @@ namespace Gy02Bll.Templates
     /// <summary>
     /// 定位一个物品的结构。
     /// </summary>
-    public class GameThingPrecondition : Collection<GameThingPreconditionItem>
+    public partial class GameThingPrecondition : Collection<GameThingPreconditionItem>
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameThingPrecondition()
+        {
+
+        }
     }
 
     /// <summary>
     /// 定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
     /// </summary>
-    public class GameThingPreconditionItem
+    public partial class GameThingPreconditionItem
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameThingPreconditionItem()
+        {
+
+        }
+
         /// <summary>
         /// 容器的模板Id。省略则不限制。
         /// </summary>

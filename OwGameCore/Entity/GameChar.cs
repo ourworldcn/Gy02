@@ -156,6 +156,11 @@ namespace OW.Game.Entity
         /// <returns></returns>
         public static GameUser GetUser(this GameChar gc) => ((VirtualThing)gc.Thing).Parent.GetJsonObject<GameUser>();
 
+        /// <summary>
+        /// 获取指定虚拟物的所有子虚拟物。
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
         public static IEnumerable<VirtualThing> GetAllChildren(this VirtualThing root)
         {
             foreach (var item in root.Children)
@@ -165,5 +170,12 @@ namespace OW.Game.Entity
                     yield return item2;
             }
         }
+
+        /// <summary>
+        /// 获取属于指定角色的所有子虚拟物。
+        /// </summary>
+        /// <param name="gc"></param>
+        /// <returns></returns>
+        public static IEnumerable<VirtualThing> GetAllChildren(this GameChar gc) => (gc.Thing as VirtualThing).GetAllChildren();
     }
 }

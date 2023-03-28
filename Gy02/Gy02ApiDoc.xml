@@ -60,14 +60,6 @@
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Test(Gy02Bll.Managers.UdpServerManager,AutoMapper.IMapper)">
-            <summary>
-            测试代码专用。
-            </summary>
-            <param name="udpServer">测试参数。</param>
-            <param name="mapper"></param>
-            <returns></returns>
-        </member>
         <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             创建一个新账号。

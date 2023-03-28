@@ -98,7 +98,7 @@
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.TypeGuid">
             <summary>
-            类型的Guid。
+            实体类型的Guid。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.SubTypeGuid">
@@ -120,7 +120,7 @@
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Stk">
             <summary>
-            最大堆叠数。不可堆叠物该属性为1。
+            最大堆叠数。不可堆叠物该属性为1。-1表示不限制。
             </summary>
             <value>默认值：1</value>
         </member>
@@ -159,6 +159,16 @@
             词条的集合。
             </summary>
         </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.LvUpTId">
+            <summary>
+            升级使用配方的TId。不能升级的这里可能是null。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.LvUpData">
+            <summary>
+            对于升级公式这里是升级公式的内容，对于其它类型的数据，这里是空集合。
+            </summary>
+        </member>
         <member name="T:Gy02Bll.Templates.CostInfo">
             <summary>
             升级的代价类。
@@ -185,9 +195,19 @@
             定位一个物品的结构。
             </summary>
         </member>
+        <member name="M:Gy02Bll.Templates.GameThingPrecondition.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
         <member name="T:Gy02Bll.Templates.GameThingPreconditionItem">
             <summary>
             定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.GameThingPreconditionItem.#ctor">
+            <summary>
+            构造函数。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.GameThingPreconditionItem.ParentTId">
