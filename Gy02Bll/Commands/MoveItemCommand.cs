@@ -76,7 +76,7 @@ namespace Gy02Bll.Commands
             _Store.Save(gameChar.GetUser().GetKey());
         }
 
-         void Move(VirtualThing thing, VirtualThing container, ICollection<GamePropertyChangeItem<object>> changes = null)
+        void Move(VirtualThing thing, VirtualThing container, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var parent = thing.Parent;
             var view = thing.GetJsonObject(_TemplateManager.GetTypeFromTId(thing.ExtraGuid));

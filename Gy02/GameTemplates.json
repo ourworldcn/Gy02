@@ -388,73 +388,76 @@
       "Id": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
       "DisplayName": "武器图纸",
       "Gid": 131101001,
-      "PropertiesString": "{\"name_txt\":[],\"comment\":[],\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
+      "PropertiesString": "{\"name_txt\":0,\"comment_txt\":0,\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
     },
     {
       "Id": "12c82e87-de2e-43aa-b713-63fd0fd14457",
       "DisplayName": "手套图纸",
       "Gid": 131104001,
-      "PropertiesString": "{\"name_txt\":[],\"comment\":[],\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
+      "PropertiesString": "{\"name_txt\":0,\"comment_txt\":0,\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
     },
     {
       "Id": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
       "DisplayName": "衣服图纸",
       "Gid": 131103001,
-      "PropertiesString": "{\"name_txt\":[],\"comment\":[],\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
+      "PropertiesString": "{\"name_txt\":0,\"comment_txt\":0,\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
     },
     {
       "Id": "79391d55-a01f-4051-841b-5452908566ab",
       "DisplayName": "鞋子图纸",
       "Gid": 131106001,
-      "PropertiesString": "{\"name_txt\":[],\"comment\":[],\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
+      "PropertiesString": "{\"name_txt\":0,\"comment_txt\":0,\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
     },
     {
       "Id": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
       "DisplayName": "腰带图纸",
       "Gid": 131105001,
-      "PropertiesString": "{\"name_txt\":[],\"comment\":[],\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
+      "PropertiesString": "{\"name_txt\":0,\"comment_txt\":0,\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
     },
     {
       "Id": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
       "DisplayName": "坐骑图纸",
       "Gid": 131102001,
-      "PropertiesString": "{\"name_txt\":[],\"comment\":[],\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
+      "PropertiesString": "{\"name_txt\":0,\"comment_txt\":0,\"stk\":-1,\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
     },
     {
       "Id": "f6d2b3d3-9680-472a-bd41-7927de6e87f9",
       "DisplayName": "武器升级条件",
-      "Gid": 1501010001,
+      "Gid": 150101001,
       "PropertiesString": "{\"LvUpData\":[{\"Conditional\": [{\"ParentTId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Genus\": [],\"TId\": \"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\": 0}],\"Counts\": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 ]},{\"Conditional\": [{\"ParentTId\": \"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\": [],\"TId\": \"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"MinCount\": 0}],\"Counts\": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]}]}"
     },
     {
       "Id": "fe35cf9e-24b4-4365-a6c5-c2e8f886367d",
       "DisplayName": "手套升级条件",
-      "Gid": 1501010002,
+      "Gid": 150101002,
       "PropertiesString": "{\"LvUpData\":[{\"Conditional\": [{\"ParentTId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Genus\": [],\"TId\": \"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\": 0}],\"Counts\": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 ]},{\"Conditional\": [{\"ParentTId\": \"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\": [],\"TId\": \"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"MinCount\": 0}],\"Counts\": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]}]}"
     },
     {
       "Id": "a308b4ab-6350-41d8-a0bc-042ff41715af",
       "DisplayName": "衣服升级条件",
-      "Gid": 1501010003,
+      "Gid": 150101003,
       "PropertiesString": "{\"LvUpData\":[{\"Conditional\": [{\"ParentTId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Genus\": [],\"TId\": \"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\": 0}],\"Counts\": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 ]},{\"Conditional\": [{\"ParentTId\": \"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\": [],\"TId\": \"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"MinCount\": 0}],\"Counts\": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]}]}"
     },
     {
       "Id": "9cec10d2-43de-4db0-8f94-5c223df69b56",
       "DisplayName": "鞋子升级条件",
-      "Gid": 1501010004,
+      "Gid": 150101004,
       "PropertiesString": "{\"LvUpData\":[{\"Conditional\": [{\"ParentTId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Genus\": [],\"TId\": \"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\": 0}],\"Counts\": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 ]},{\"Conditional\": [{\"ParentTId\": \"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\": [],\"TId\": \"79391d55-a01f-4051-841b-5452908566ab\",\"MinCount\": 0}],\"Counts\": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]}]}"
     },
     {
       "Id": "b497e3a8-d510-4a14-8185-1e2c815f89f1",
       "DisplayName": "腰带升级条件",
-      "Gid": 1501010005,
+      "Gid": 150101005,
       "PropertiesString": "{\"LvUpData\":[{\"Conditional\": [{\"ParentTId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Genus\": [],\"TId\": \"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\": 0}],\"Counts\": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 ]},{\"Conditional\": [{\"ParentTId\": \"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\": [],\"TId\": \"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"MinCount\": 0}],\"Counts\": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]}]}"
     },
     {
       "Id": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e",
       "DisplayName": "坐骑升级条件",
-      "Gid": 1501010006,
-      "PropertiesString": "{\"LvUpData\":[{\"Conditional\": [{\"ParentTId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Genus\": [],\"TId\": \"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\": 0}],\"Counts\": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 ]},{\"Conditional\": [{\"ParentTId\": \"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\": [],\"TId\": \"a308b4ab-6350-41d8-a0bc-042ff41715af\",\"MinCount\": 0}],\"Counts\": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]}]}"
+      "Gid": 150101006,
+      "PropertiesString": "{\"LvUpData\":[{\"Conditional\": [{\"ParentTId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Genus\": [],\"TId\": \"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\": 0}],\"Counts\": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 ]},{\"Conditional\": [{\"ParentTId\": \"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\": [],\"TId\": \"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"MinCount\": 0}],\"Counts\": [ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]}]}"
+    },
+    {
+      "Gid": "`"
     }
   ]
 }

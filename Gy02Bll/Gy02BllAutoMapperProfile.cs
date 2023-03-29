@@ -24,7 +24,7 @@ namespace Gy02Bll
             CreateMap<TemplateStringFullView, GameSlot<GameItem>>().AfterMap(FillSeq);
             CreateMap<TemplateStringFullView, GameSlot<GameEquipment>>().AfterMap(FillSeq);
             //装备道具
-            CreateMap<TemplateStringFullView, GameEquipment>().ForMember(c => c.Atk, opt => opt.Ignore()).ForMember(c => c.Def, opt => opt.Ignore()).ForMember(c => c.Pwo, opt => opt.Ignore())
+            CreateMap<TemplateStringFullView, GameEquipment>().ForMember(c => c.Atk, opt => opt.Ignore()).ForMember(c => c.Def, opt => opt.Ignore()).ForMember(c => c.Pow, opt => opt.Ignore())
                 .AfterMap(FillSeq);
             CreateMap<TemplateStringFullView, GameItem>().AfterMap(FillSeq);
         }
@@ -47,7 +47,8 @@ namespace Gy02Bll
             foreach (var item in coll)
             {
                 var list = item.src.GetValue(view) as IList<decimal>;
-                item.dest.SetValue(obj, list[lv]);
+                if (list is not null)
+                    item.dest.SetValue(obj, list[lv]);
             }
         }
     }

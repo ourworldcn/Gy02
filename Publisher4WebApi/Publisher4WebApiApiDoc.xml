@@ -236,7 +236,7 @@
             防御数值序列。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameEquipmentDto.Pwo">
+        <member name="P:Gy02.Publisher.GameEquipmentDto.Pow">
             <summary>
             力量属性数值序列。
             </summary>
@@ -465,6 +465,46 @@
         <member name="T:Gy02.Publisher.MoveItemsReturnDto">
             <summary>
             移动物品功能返回数据。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.AddItemsParamsDto">
+            <summary>
+            增加物品参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.AddItemsParamsDto.TIds">
+            <summary>
+            要添加物品的模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.AddItemsParamsDto.Counts">
+            <summary>
+            增加的数量， 对应TIds中的顺序。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.AddItemsReturnDto">
+            <summary>
+            增加物品返回数据封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.ApplyBlueprintReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.ApplyBlueprintParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.ApplyBlueprintParamsDto.Items">
+            <summary>
+            使用的装备/道具等的唯一Id集合。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.ApplyBlueprintParamsDto.BlueprintId">
+            <summary>
+            使用的蓝图模板Id。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.DispatcherDemo">

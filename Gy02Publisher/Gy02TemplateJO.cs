@@ -246,8 +246,8 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 力量属性数值序列。
         /// </summary>
-        [JsonPropertyName("pwo")]
-        public decimal[] Pwo { get; set; }
+        [JsonPropertyName("pow")]
+        public decimal[] Pow { get; set; }
 
         /// <summary>
         /// 词条的集合。

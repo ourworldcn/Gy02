@@ -84,6 +84,21 @@ namespace Gy02.Publisher
         /// 皮肤背包。
         /// </summary>
         public static readonly Guid PiFuBagTId = new Guid("3b163a62-6591-4a93-a385-cf079b20f589");
+
+        /// <summary>
+        /// 金币TID。
+        /// </summary>
+        public static readonly Guid GoldTId = new Guid("a45b3421-3688-43c5-b8f5-429db7621f69");
+
+        /// <summary>
+        /// 钻石TID。
+        /// </summary>
+        public static readonly Guid DiamTId = new Guid("c9575f24-a33d-49ba-b130-29b6ff4d62c7");
+
+        /// <summary>
+        /// 体力TID。
+        /// </summary>
+        public static readonly Guid PowerTId = new Guid("f1b15c9e-32ee-4203-af62-d324bfa4f7e7");
     }
 
     /// <summary>

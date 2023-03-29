@@ -14,12 +14,7 @@ namespace Gy02Bll.Commands
 
         public List<GamePropertyChangeItem<object>> Changes
         {
-            get
-            {
-                if (_Changes is null)
-                    Interlocked.CompareExchange(ref _Changes, new List<GamePropertyChangeItem<object>> { }, null);
-                return _Changes;
-            }
+            get => LazyInitializer.EnsureInitialized(ref _Changes);
 
             set => _Changes = value;
         }

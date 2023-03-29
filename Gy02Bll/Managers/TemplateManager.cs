@@ -189,13 +189,17 @@ namespace OW.Game.Managers
         /// 获取虚拟物的实体。
         /// </summary>
         /// <param name="thing"></param>
+        /// <param name="type">返回值的实际类型。</param>
         /// <returns>返回的是<see cref="OwGameEntityBase"/>的派生对象。如果没找到则可能返回null。</returns>
-        public OwGameEntityBase GetEntityBase(VirtualThing thing)
+        public OwGameEntityBase GetEntityBase(VirtualThing thing, out Type type)
         {
             var tt = Id2FullView.GetValueOrDefault(thing.ExtraGuid, null);
-            if (tt is null) return null;
-            var type = GetTypeFromTemplate(tt);
+            if (tt is null) goto fail;
+            type = GetTypeFromTemplate(tt);
             return thing.GetJsonObject(type) as OwGameEntityBase;
+        fail:
+            type = null;
+            return null;
         }
 
         /// <summary>

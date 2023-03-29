@@ -16,52 +16,55 @@ using System.Threading.Tasks;
 
 namespace Gy02Bll.Commands
 {
-    public class ModifyThingCountCommand : PropertyChangeCommandBase
+    public class ModifyEntityCountCommand : PropertyChangeCommandBase
     {
         /// <summary>
         /// 修改数量属性。Item2是数量的增量。可能是负值表示减少，正值表示增加。
         /// </summary>
-        public List<(VirtualThing, decimal)> Items { get; set; } = new List<(VirtualThing, decimal)>();
+        public List<(GameEntity, decimal)> Items { get; set; } = new List<(GameEntity, decimal)>();
     }
 
-    public class ModifyThingCountHandler : SyncCommandHandlerBase<ModifyThingCountCommand>
+    public class ModifyEntityCountHandler : SyncCommandHandlerBase<ModifyEntityCountCommand>
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
         /// <param name="templateManager"></param>
-        public ModifyThingCountHandler(TemplateManager templateManager)
+        public ModifyEntityCountHandler(TemplateManager templateManager)
         {
             _TemplateManager = templateManager;
         }
 
         TemplateManager _TemplateManager;
 
-        public override void Handle(ModifyThingCountCommand command)
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="command"></param>
+        public override void Handle(ModifyEntityCountCommand command)
         {
             var coll = command.Items.Select(c =>
             {
-                _TemplateManager.GetEntityAndTemplate(c.Item1, out var entity, out var fullView);
-                return (c.Item1, c.Item2, entity, fullView);
+                var fullView = _TemplateManager.Id2FullView.GetValueOrDefault(c.Item1.TemplateId);
+                return (c.Item1, c.Item2, fullView);
             });
             if (!Verify(command))
                 return;
             foreach (var item in coll)
-                Modify(item.entity as GameEntity, item.Item2, item.fullView, command.Changes);
+                Modify(item.Item1, item.Item2, item.fullView, command.Changes);
         }
 
-        bool Verify(ModifyThingCountCommand command)
+        /// <summary>
+        /// 校验参数。
+        /// </summary>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        bool Verify(ModifyEntityCountCommand command)
         {
-            var coll = command.Items.Select(c => (c.Item1, c.Item2, _TemplateManager.GetEntityBase(c.Item1) as GameEntity));
-            foreach (var item in coll)
+            foreach (var item in command.Items)
             {
-                if (item.Item3 is null)
-                {
-                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                    OwHelper.SetLastErrorMessage("至少有一个对象不是一个可以改变数量的对象。");
-                    return false;
-                }
-                if (!Verify(item.Item3, item.Item2, _TemplateManager.Id2FullView.GetValueOrDefault(item.Item1.ExtraGuid))/*TODO 性能*/)
+                var tt = _TemplateManager.Id2FullView.GetValueOrDefault(item.Item1.TemplateId);
+                if (!Verify(item.Item1, item.Item2, tt))
                 {
                     command.FillErrorFromWorld();
                     return false;
@@ -74,7 +77,7 @@ namespace Gy02Bll.Commands
         /// 校验指定物品是否可以执行指定增量。
         /// </summary>
         /// <param name="entity"></param>
-        /// <param name="count"></param>
+        /// <param name="count">数量的增量，正数表示增加，负数表示失败。</param>
         /// <param name="template">物品的模板。</param>
         /// <returns></returns>
         public static bool Verify(GameEntity entity, decimal count, TemplateStringFullView template)
@@ -107,18 +110,19 @@ namespace Gy02Bll.Commands
         /// <param name="count">数量的增量。</param>
         /// <param name="template"></param>
         /// <param name="changes"></param>
-        static void Modify(GameEntity entity, decimal count, TemplateStringFullView template, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public static void Modify(GameEntity entity, decimal count, TemplateStringFullView template, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var oldCount = entity.Count;
             entity.Count += count;
             changes?.Add(new GamePropertyChangeItem<object>()
             {
-                Object = entity.Thing,
-                HasNewValue = true,
+                Object = entity,
+                PropertyName = "Count",
+                DateTimeUtc = DateTime.UtcNow,
                 HasOldValue = true,
                 OldValue = oldCount,
+                HasNewValue = true,
                 NewValue = entity.Count,
-                PropertyName = "Count",
             });
         }
 

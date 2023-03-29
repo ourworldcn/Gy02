@@ -36,8 +36,8 @@ namespace OW.Game.Entity
         /// <summary>
         /// 力量属性数值序列。
         /// </summary>
-        [JsonPropertyName("pwo")]
-        public decimal Pwo { get; set; }
+        [JsonPropertyName("pow")]
+        public decimal Pow { get; set; }
 
         #endregion 装备数据
     }

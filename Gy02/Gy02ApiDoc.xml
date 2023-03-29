@@ -60,6 +60,14 @@
             
             </summary>
         </member>
+        <member name="M:Gy02.Controllers.AccountController.Test(Gy02Bll.Managers.UdpServerManager,AutoMapper.IMapper)">
+            <summary>
+            测试代码专用。
+            </summary>
+            <param name="udpServer">测试参数。</param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
         <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             创建一个新账号。
@@ -77,6 +85,18 @@
             <param name="mapper"></param>
             <param name="commandMng"></param>
             <param name="udpServer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gy02.Controllers.BlueprintController">
+            <summary>
+            蓝图相关操作的控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.BlueprintController.ApplyBlueprint(Gy02.Publisher.ApplyBlueprintParamsDto)">
+            <summary>
+            使用指定蓝图。
+            </summary>
+            <param name="model"></param>
             <returns></returns>
         </member>
         <member name="T:Gy02.Controllers.ItemManagerController">
@@ -99,6 +119,16 @@
             <param name="commandMng"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.AddItems(Gy02.Publisher.AddItemsParamsDto,Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager)">
+            <summary>
+            增加物品，调试用接口。
+            </summary>
+            <param name="model"></param>
+            <param name="store"></param>
+            <param name="commandManager"></param>
+            <param name="templateManager"></param>
+            <returns></returns>
         </member>
         <member name="T:Gy02.Controllers.VWorldController">
             <summary>

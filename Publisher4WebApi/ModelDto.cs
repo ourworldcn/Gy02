@@ -301,8 +301,8 @@ namespace Gy02.Publisher
         /// <summary>
         /// 力量属性数值序列。
         /// </summary>
-        [JsonPropertyName("pwo")]
-        public decimal Pwo { get; set; }
+        [JsonPropertyName("pow")]
+        public decimal Pow { get; set; }
 
         #endregion 装备数据
     }
@@ -632,7 +632,57 @@ namespace Gy02.Publisher
 
     }
 
+    /// <summary>
+    /// 增加物品参数封装类。
+    /// </summary>
+    public class AddItemsParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要添加物品的模板Id。
+        /// </summary>
+        public List<Guid> TIds { get; set; }
+
+        /// <summary>
+        /// 增加的数量， 对应TIds中的顺序。
+        /// </summary>
+        public List<decimal> Counts { get; set; }
+    }
+
+    /// <summary>
+    /// 增加物品返回数据封装类。
+    /// </summary>
+    [AutoMap(typeof(MoveEntitiesCommand))]
+    public class AddItemsReturnDto : PropertyChangeReturnDto
+    {
+    }
+
     #endregion 物品管理相关
+
+    #region 蓝图相关
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ApplyBlueprintReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class ApplyBlueprintParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 使用的装备/道具等的唯一Id集合。
+        /// </summary>
+        public List<Guid> Items { get; set; }
+
+        /// <summary>
+        /// 使用的蓝图模板Id。
+        /// </summary>
+        public Guid BlueprintId { get; set; }
+    }
+
+    #endregion 蓝图相关
 }
 
 /*

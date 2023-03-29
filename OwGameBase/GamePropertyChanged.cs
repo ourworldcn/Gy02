@@ -262,49 +262,90 @@ namespace OW.Game.PropertyChange
     /// <summary>
     /// <see cref="GamePropertyChangeItem{T}"/>类的扩展方法封装类。
     /// </summary>
-    //public static class GamePropertyChangedItemExtensions
-    //{
-    //    /// <summary>
-    //    /// 修改一个对象的属性，并正确填写变化数据。
-    //    /// </summary>
-    //    /// <typeparam name="T"></typeparam>
-    //    /// <param name="collection"></param>
-    //    /// <param name="obj"></param>
-    //    /// <param name="name">只能针对简单属性，不可针对集合属性。调试状态下Children会报错。</param>
-    //    /// <param name="newValue"></param>
-    //    /// <param name="tag"></param>
-    //    public static void ModifyAndAddChanged<T>(this ICollection<GamePropertyChangeItem<T>> collection, SimpleDynamicPropertyBase obj, string name, T newValue, object tag = null)
-    //    {
-    //        Debug.Assert(name != "Children");
-    //        var arg = GamePropertyChangeItemPool<T>.Shared.Get();
-    //        arg.Object = obj; arg.PropertyName = name; arg.Tag = tag;
-    //        if (obj.TryGetSdp(name, out var oldValue) && oldValue is T old)
-    //        {
-    //            arg.OldValue = old;
-    //            arg.HasOldValue = true;
-    //        }
-    //        switch (name)
-    //        {
-    //            case nameof(IDbQuickFind.ExtraDecimal):
-    //                if (obj is IDbQuickFind dbFinder && OwConvert.TryToDecimal(newValue, out var dec))
-    //                    dbFinder.ExtraDecimal = dec;
-    //                else
-    //                    obj.SetSdp(name, newValue);
-    //                break;
-    //            case nameof(IDbQuickFind.ExtraString):
-    //                if (obj is IDbQuickFind dbFinder1)
-    //                    dbFinder1.ExtraString = newValue.ToString();
-    //                else
-    //                    obj.SetSdp(name, newValue);
-    //                break;
-    //            default:
-    //                obj.SetSdp(name, newValue);
-    //                break;
-    //        }
-    //        arg.NewValue = newValue;
-    //        arg.HasNewValue = true;
-    //        collection.Add(arg);
-    //    }
+    public static class GamePropertyChangedItemExtensions
+    {
+        //public static void ModifyAndAddChanged<T>(this ICollection<GamePropertyChangeItem<T>> collection, SimpleDynamicPropertyBase obj, string name, T newValue, object tag = null)
+        //{
+        //    Debug.Assert(name != "Children");
+        //    var arg = GamePropertyChangeItemPool<T>.Shared.Get();
+        //    arg.Object = obj; arg.PropertyName = name; arg.Tag = tag;
+        //    if (obj.TryGetSdp(name, out var oldValue) && oldValue is T old)
+        //    {
+        //        arg.OldValue = old;
+        //        arg.HasOldValue = true;
+        //    }
+        //    switch (name)
+        //    {
+        //        case nameof(IDbQuickFind.ExtraDecimal):
+        //            if (obj is IDbQuickFind dbFinder && OwConvert.TryToDecimal(newValue, out var dec))
+        //                dbFinder.ExtraDecimal = dec;
+        //            else
+        //                obj.SetSdp(name, newValue);
+        //            break;
+        //        case nameof(IDbQuickFind.ExtraString):
+        //            if (obj is IDbQuickFind dbFinder1)
+        //                dbFinder1.ExtraString = newValue.ToString();
+        //            else
+        //                obj.SetSdp(name, newValue);
+        //            break;
+        //        default:
+        //            obj.SetSdp(name, newValue);
+        //            break;
+        //    }
+        //    arg.NewValue = newValue;
+        //    arg.HasNewValue = true;
+        //    collection.Add(arg);
+        //}
 
-    //}
+        /// <summary>
+        /// 记录一个集合中删除元素的操作。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="changes"></param>
+        /// <param name="child"></param>
+        /// <param name="container"></param>
+        /// <param name="propertyName"></param>
+        /// <returns></returns>
+        public static ICollection<GamePropertyChangeItem<T>> CollectionRemove<T>(this ICollection<GamePropertyChangeItem<T>> changes, T child, T container, string propertyName = "Children")
+        {
+            changes.Add(new GamePropertyChangeItem<T>
+            {
+                Object = container,
+                PropertyName = propertyName,
+                DateTimeUtc = DateTime.UtcNow,
+
+                HasOldValue = true,
+                OldValue = child,
+                HasNewValue = false,
+                NewValue = default,
+            });
+            return changes;
+        }
+
+        /// <summary>
+        /// 记录一个集合中添加元素的操作。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="changes"></param>
+        /// <param name="child"></param>
+        /// <param name="container"></param>
+        /// <param name="propertyName"></param>
+        /// <returns></returns>
+        public static ICollection<GamePropertyChangeItem<T>> CollectionAdd<T>(this ICollection<GamePropertyChangeItem<T>> changes, T child, T container, string propertyName = "Children")
+        {
+            changes.Add(new GamePropertyChangeItem<T>
+            {
+                Object = container,
+                PropertyName = propertyName,
+                DateTimeUtc = DateTime.UtcNow,
+
+                HasOldValue = false,
+                OldValue = default,
+                HasNewValue = true,
+                NewValue = child,
+            });
+            return changes;
+        }
+
+    }
 }

@@ -149,7 +149,7 @@
             防御数值序列。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Pwo">
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Pow">
             <summary>
             力量属性数值序列。
             </summary>
@@ -338,6 +338,21 @@
         <member name="F:Gy02.Publisher.ProjectContent.PiFuBagTId">
             <summary>
             皮肤背包。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.GoldTId">
+            <summary>
+            金币TID。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.DiamTId">
+            <summary>
+            钻石TID。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.PowerTId">
+            <summary>
+            体力TID。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.ErrorCodes">
