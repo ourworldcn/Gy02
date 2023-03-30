@@ -62,6 +62,14 @@ namespace OW.Game
 
         public static void SetTemplateStringFullView(this OwGameEntityBase entity, TemplateStringFullView tfv) => entity.GetThing().RuntimeProperties["Template"] = tfv;
 
+        /// <summary>
+        /// 根据指定Id集合 获取实体数据。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="tm"></param>
+        /// <param name="gc"></param>
+        /// <param name="ids"></param>
+        /// <returns></returns>
         public static IEnumerable<T> GetEntityAndTemplateFullView<T>(this TemplateManager tm, GameChar gc, IEnumerable<Guid> ids) where T : OwGameEntityBase
         {
             var id2Thing = gc.GetThing().GetAllChildren().ToDictionary(c => c.Id);
@@ -90,6 +98,26 @@ namespace OW.Game
                 }
             }
             return result;
+        }
+
+        /// <summary>
+        /// 给虚拟物填写模板属性。
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <param name="thing"></param>
+        /// <returns></returns>
+        public static bool SetTemplate(this TemplateManager manager, VirtualThing thing)
+        {
+            var tt = manager.Id2FullView.GetValueOrDefault(thing.ExtraGuid);
+            if (tt is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"对象{thing.Id} 的模板Id={thing.ExtraGuid},但找不到相应模板。");
+                return false;
+            }
+            thing.RuntimeProperties["Template"] = tt;
+            return true;
+
         }
     }
 }
