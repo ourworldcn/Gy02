@@ -92,6 +92,12 @@
             蓝图相关操作的控制器。
             </summary>
         </member>
+        <member name="M:Gy02.Controllers.BlueprintController.#ctor(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="serviceProvider"></param>
+        </member>
         <member name="M:Gy02.Controllers.BlueprintController.ApplyBlueprint(Gy02.Publisher.ApplyBlueprintParamsDto)">
             <summary>
             使用指定蓝图。
@@ -120,7 +126,13 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.AddItems(Gy02.Publisher.AddItemsParamsDto,Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager)">
+        <member name="M:Gy02.Controllers.ItemManagerController.Test">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.AddItems(Gy02.Publisher.AddItemsParamsDto,Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager,AutoMapper.IMapper)">
             <summary>
             增加物品，调试用接口。
             </summary>
@@ -128,6 +140,24 @@
             <param name="store"></param>
             <param name="commandManager"></param>
             <param name="templateManager"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.CreateThing(System.Guid,System.Decimal,OW.Game.Managers.TemplateManager,OW.SyncCommand.SyncCommandManager)">
+            <summary>
+            
+            </summary>
+            <param name="tid"></param>
+            <param name="count"></param>
+            <param name="templateManager"></param>
+            <param name="commandManager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.LvUp(Gy02.Publisher.LvUpParamsDto)">
+            <summary>
+            升级装备/物品。
+            </summary>
+            <param name="model"></param>
             <returns></returns>
         </member>
         <member name="T:Gy02.Controllers.VWorldController">

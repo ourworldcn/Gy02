@@ -65,8 +65,9 @@ namespace OW.Game.Store
     {
         public static IDbTreeNode<T> GetRoot<T>(this IDbTreeNode<T> node) where T : IEntityWithSingleKey<Guid>
         {
-            IDbTreeNode<T> tmp;
-            for (tmp = node.Parent as IDbTreeNode<T>; tmp is not null; tmp = tmp.Parent as IDbTreeNode<T>) ;
+            IDbTreeNode<T> tmp, result;
+            for (tmp = node.Parent as IDbTreeNode<T>; tmp is not null; tmp = tmp.Parent as IDbTreeNode<T>)
+                result = tmp;
             return tmp;
         }
     }

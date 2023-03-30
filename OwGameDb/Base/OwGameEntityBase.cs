@@ -114,15 +114,9 @@ namespace OW.Game.Store
         [JsonIgnore]
         public object Thing
         {
-            get
-            {
-                return _Thing;
-            }
+            get => _Thing;
 
-            set
-            {
-                _Thing = value;
-            }
+            set => _Thing = value;
         }
 
         Dictionary<string, object> _ExtensionProperties;

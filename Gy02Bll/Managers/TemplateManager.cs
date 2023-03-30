@@ -206,7 +206,7 @@ namespace OW.Game.Managers
         /// 获取指定虚拟物的模板和实体。
         /// </summary>
         /// <param name="thing"></param>
-        /// <param name="entity"></param>
+        /// <param name="entity">实际的实体类型。</param>
         /// <param name="fullView"></param>
         /// <returns></returns>
         public bool GetEntityAndTemplate(VirtualThing thing, out OwGameEntityBase entity, out TemplateStringFullView fullView)

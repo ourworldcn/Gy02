@@ -109,7 +109,7 @@
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.ParentTId">
             <summary>
-            父容器模板Id。
+            默认的父容器模板Id。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Capacity">
@@ -152,6 +152,16 @@
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Pow">
             <summary>
             力量属性数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.CritPct">
+            <summary>
+            暴击率。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Crit">
+            <summary>
+            暴击倍数。1表示暴击和普通上海一致。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Skills">

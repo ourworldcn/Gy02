@@ -194,7 +194,7 @@ namespace Gy02Bll.Templates
         public Guid? SubTypeGuid { get; set; }
 
         /// <summary>
-        /// 父容器模板Id。
+        /// 默认的父容器模板Id。
         /// </summary>
         [JsonPropertyName("ptid")]
         public Guid ParentTId { get; set; }
@@ -248,6 +248,18 @@ namespace Gy02Bll.Templates
         /// </summary>
         [JsonPropertyName("pow")]
         public decimal[] Pow { get; set; }
+
+        /// <summary>
+        /// 暴击率。
+        /// </summary>
+        [JsonPropertyName("crit_pct")]
+        public decimal CritPct { get; set; }
+
+        /// <summary>
+        /// 暴击倍数。1表示暴击和普通上海一致。
+        /// </summary>
+        [JsonPropertyName("crit")]
+        public decimal Crit { get; set; }
 
         /// <summary>
         /// 词条的集合。

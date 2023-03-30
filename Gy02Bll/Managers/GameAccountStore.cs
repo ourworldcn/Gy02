@@ -318,6 +318,7 @@ namespace Gy02Bll.Managers
                 gu.SetDbContext(db);
                 if (gu.Token == Guid.Empty)
                     gu.Token = Guid.NewGuid();
+                gu.CurrentChar = guThing.Children.First().GetJsonObject<GameChar>();
                 AddUser(gu);
                 user = gu;
                 return true;

@@ -67,7 +67,7 @@ namespace Gy02.Controllers
         {
             var src = new GamePropertyChangeItem<object>() { Object = new GameItem(new VirtualThing() { ExtraGuid = Guid.NewGuid() }) };
             var dest = mapper.Map<GamePropertyChangeItemDto>(src);
-            return null;
+            return new List<CostInfo>();
         }
 #endif
 

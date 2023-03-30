@@ -1,5 +1,7 @@
 ﻿using Gy02.Publisher;
 using Gy02Bll.Templates;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
@@ -124,6 +126,15 @@ namespace Gy02Bll.Commands
                 HasNewValue = true,
                 NewValue = entity.Count,
             });
+            if (entity.Count == 0 && !template.Count0Reserved) //若需要删除
+            {
+                var thing = entity.Thing as VirtualThing;
+                var parent = thing.Parent;
+                thing.Parent.Children.Remove(thing); thing.Parent = null; thing.ParentId = null;
+                changes?.CollectionRemove(thing, parent);
+                var db = (thing.GetRoot() as VirtualThing)?.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) as DbContext;
+                db?.Remove(thing);
+            }
         }
 
     }

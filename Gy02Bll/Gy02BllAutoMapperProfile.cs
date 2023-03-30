@@ -19,7 +19,7 @@ namespace Gy02Bll
         {
             //账号角色
             CreateMap<TemplateStringFullView, GameUser>().AfterMap(FillSeq);
-            CreateMap<TemplateStringFullView, GameChar>().AfterMap(FillSeq);
+            CreateMap<TemplateStringFullView, GameChar>().ForMember(c => c.Atk, opt => opt.Ignore()).ForMember(c => c.Def, opt => opt.Ignore()).ForMember(c => c.Pow, opt => opt.Ignore()).AfterMap(FillSeq);
             //槽
             CreateMap<TemplateStringFullView, GameSlot<GameItem>>().AfterMap(FillSeq);
             CreateMap<TemplateStringFullView, GameSlot<GameEquipment>>().AfterMap(FillSeq);

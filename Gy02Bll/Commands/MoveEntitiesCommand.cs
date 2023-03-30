@@ -1,15 +1,10 @@
 ﻿using Gy02.Publisher;
-using OW.DDD;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Gy02Bll.Commands
 {
@@ -17,8 +12,13 @@ namespace Gy02Bll.Commands
     {
         public MoveEntitiesCommand() { }
 
+        public GameChar GameChar { get; set; }
+
         public List<GameEntity> Items { get; set; } = new List<GameEntity>();
 
+        /// <summary>
+        /// 指定容器，若省略或为null则会根据每个虚拟物的模板数据放入其默认容器。
+        /// </summary>
         public GameEntity Container { get; set; }
     }
 
@@ -35,6 +35,17 @@ namespace Gy02Bll.Commands
         TemplateManager _TemplateManager;
         SyncCommandManager _CommandManager;
 
+        GameEntity GetDefaultContainer(GameEntity entity, GameChar gc)
+        {
+            var fv = _TemplateManager.Id2FullView.GetValueOrDefault(entity.TemplateId);
+            var ptid = fv.ParentTId;
+            var thing = (VirtualThing)entity.Thing;
+            var charThing = gc?.Thing as VirtualThing ?? thing.GetGameCharThing();
+            var parent = charThing.GetAllChildren().FirstOrDefault(c => c.ExtraGuid == ptid);
+            if (parent is null) return null;
+            return _TemplateManager.GetEntityBase(parent, out _) as GameEntity;
+        }
+
         public override void Handle(MoveEntitiesCommand command)
         {
             if (!Verify(command)) return;
@@ -42,18 +53,23 @@ namespace Gy02Bll.Commands
 
             foreach (var item in command.Items)
             {
-                if (IsMerge(item, command.Container, out var dest))
+                var container = command.Container ?? GetDefaultContainer(item, command.GameChar);
+                if (IsMerge(item, container, _TemplateManager, out var dest))
                 {
                     modifyItems.Add((dest, item.Count));
                 }
                 else //无法合并
                 {
-                    Move(item, command.Container, command.Changes);
+                    Move(item, container, command.Changes);
                 }
             }
             if (modifyItems.Count > 0)
             {
-                var subCommand = new ModifyEntityCountCommand { Changes = command.Changes, Items = modifyItems };
+                var subCommand = new ModifyEntityCountCommand
+                {
+                    Changes = command.Changes,
+                    Items = modifyItems
+                };
                 _CommandManager.Handle(subCommand);
                 if (subCommand.HasError)
                     command.FillErrorFrom(subCommand);
@@ -62,7 +78,7 @@ namespace Gy02Bll.Commands
 
         bool Verify(MoveEntitiesCommand command)
         {
-            var count = command.Items.Count(c => !IsMerge(c, command.Container, out _));
+            var count = command.Items.Count(c => !IsMerge(c, command.Container ?? GetDefaultContainer(c, command.GameChar), _TemplateManager, out _));
             var tmp = command.Container;
 
             if (tmp is GameContainer gi && gi.Capacity != -1 && count + ((VirtualThing)command.Container.Thing).Children.Count > gi.Capacity)
@@ -79,13 +95,14 @@ namespace Gy02Bll.Commands
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="container"></param>
+        /// <param name="templateManager"></param>
         /// <param name="dest"></param>
         /// <returns>true指定容器中存在可合并的虚拟物，false没有可合并的虚拟物或出错，此时用<see cref="OwHelper.GetLastError"/>确定是否有错。</returns>
-        bool IsMerge(GameEntity entity, GameEntity container, out GameEntity dest)
+        public static bool IsMerge(GameEntity entity, GameEntity container, TemplateManager templateManager, out GameEntity dest)
         {
             var tmp = ((VirtualThing)container.Thing).Children.FirstOrDefault(c => c.ExtraGuid == entity.TemplateId);  //可能的合成物
             if (tmp is null) goto noMerge;    //若不能合并
-            var tt = _TemplateManager.Id2FullView.GetValueOrDefault(tmp.ExtraGuid);
+            var tt = templateManager.Id2FullView.GetValueOrDefault(tmp.ExtraGuid);
             if (tt is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
@@ -94,17 +111,17 @@ namespace Gy02Bll.Commands
             }
             if (tt.Stk != -1)   //若不可无限堆叠
             {
-                var entity2 = _TemplateManager.GetEntityBase(tmp, out _) as GameEntity;
+                var entity2 = (GameEntity)templateManager.GetEntityBase(tmp, out _);
                 if (entity.Count + entity2.Count > tt.Stk) goto noMerge;    //若不可合并
                 else
                 {
-                    dest = _TemplateManager.GetEntityBase(tmp, out _) as GameEntity;
+                    dest = templateManager.GetEntityBase(tmp, out _) as GameEntity;
                     return true;
                 }
             }
             else //无限堆叠
             {
-                dest = _TemplateManager.GetEntityBase(tmp, out _) as GameEntity;
+                dest = templateManager.GetEntityBase(tmp, out _) as GameEntity;
                 return true;
             }
         noMerge:

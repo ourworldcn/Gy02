@@ -179,6 +179,37 @@ namespace Gy02.Publisher
         /// 昵称。
         /// </summary>
         public string DisplayName { get; set; }
+
+        /// <summary>
+        /// 攻击数值序列。
+        /// </summary>
+        [JsonPropertyName("atk")]
+        public decimal Atk { get; set; }
+
+        /// <summary>
+        /// 防御数值序列。
+        /// </summary>
+        [JsonPropertyName("def")]
+        public decimal Def { get; set; }
+
+        /// <summary>
+        /// 力量属性数值序列。
+        /// </summary>
+        [JsonPropertyName("pow")]
+        public decimal Pow { get; set; }
+
+        /// <summary>
+        /// 暴击率。
+        /// </summary>
+        [JsonPropertyName("crit_pct")]
+        public decimal CritPct { get; set; }
+
+        /// <summary>
+        /// 暴击倍数。1表示暴击和普通上海一致。
+        /// </summary>
+        [JsonPropertyName("crit")]
+        public decimal Crit { get; set; }
+
         #endregion 简单属性
 
         #region 各种槽
@@ -640,12 +671,12 @@ namespace Gy02.Publisher
         /// <summary>
         /// 要添加物品的模板Id。
         /// </summary>
-        public List<Guid> TIds { get; set; }
+        public List<Guid> TIds { get; set; } = new List<Guid>();
 
         /// <summary>
         /// 增加的数量， 对应TIds中的顺序。
         /// </summary>
-        public List<decimal> Counts { get; set; }
+        public List<decimal> Counts { get; set; } = new List<decimal>();
     }
 
     /// <summary>
@@ -653,6 +684,26 @@ namespace Gy02.Publisher
     /// </summary>
     [AutoMap(typeof(MoveEntitiesCommand))]
     public class AddItemsReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
+    /// 升级装备接口的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(LvUpCommand), ReverseMap = true)]
+    public class LvUpParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要升级物品的唯一Id集合。
+        /// </summary>
+        public List<Guid> Ids { get; set; } = new List<Guid>();
+    }
+
+    /// <summary>
+    /// 升级装备接口的返回数据封装类。
+    /// </summary>
+    [AutoMap(typeof(LvUpCommand))]
+    public class LvUpReturnDto : PropertyChangeReturnDto
     {
     }
 

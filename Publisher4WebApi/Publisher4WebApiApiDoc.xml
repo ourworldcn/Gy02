@@ -135,6 +135,31 @@
             昵称。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.GameCharDto.Atk">
+            <summary>
+            攻击数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.Def">
+            <summary>
+            防御数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.Pow">
+            <summary>
+            力量属性数值序列。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.CritPct">
+            <summary>
+            暴击率。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.Crit">
+            <summary>
+            暴击倍数。1表示暴击和普通上海一致。
+            </summary>
+        </member>
         <member name="P:Gy02.Publisher.GameCharDto.Wuqi">
             <summary>
             武器装备槽。
@@ -485,6 +510,21 @@
         <member name="T:Gy02.Publisher.AddItemsReturnDto">
             <summary>
             增加物品返回数据封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LvUpParamsDto">
+            <summary>
+            升级装备接口的参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LvUpParamsDto.Ids">
+            <summary>
+            要升级物品的唯一Id集合。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LvUpReturnDto">
+            <summary>
+            升级装备接口的返回数据封装类。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.ApplyBlueprintReturnDto">
