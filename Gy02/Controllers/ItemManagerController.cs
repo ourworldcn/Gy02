@@ -105,7 +105,7 @@ namespace Gy02.Controllers
             }
             var command = new MoveEntitiesCommand { Items = list, Container = null, GameChar = gc };
             commandManager.Handle(command);
-            mapper.Map<AddItemsReturnDto>(command);
+            mapper.Map(command, result);
             return result;
         }
 
@@ -154,12 +154,14 @@ namespace Gy02.Controllers
             else //若可以堆叠
             {
                 var command = new CreateVirtualThingCommand { TemplateId = tid };
+                commandManager.Handle(command);
                 if (command.HasError)
                 {
                     OwHelper.SetLastError(command.ErrorCode);
                     OwHelper.SetLastErrorMessage(command.DebugMessage);
                     return null;
                 }
+
                 if (templateManager.GetEntityBase(command.Result, out _) is GameEntity ge)
                 {
                     ge.Count = count;
@@ -196,6 +198,18 @@ namespace Gy02.Controllers
             var chm = _ServiceProvider.GetRequiredService<SyncCommandManager>();
             chm.Handle(command);
             mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
+        /// 合成（升品阶/降低品阶）功能。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<CompositeReturnDto> Composite(CompositeParamsDto model)
+        {
+            var result = new CompositeReturnDto { };
             return result;
         }
     }

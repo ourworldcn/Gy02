@@ -256,6 +256,11 @@ namespace OW.Game.Managers
             return result;
         }
 
+        public bool IsMatch(GameEntity entity, CostInfo cost)
+        {
+            return true;
+        }
+
         public bool IsMatch(GameEntity entity, GameThingPrecondition conditions) =>
             conditions.Any(c => IsMatch(entity, c));
 

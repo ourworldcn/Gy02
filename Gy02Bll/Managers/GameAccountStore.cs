@@ -305,7 +305,7 @@ namespace Gy02Bll.Managers
             }
             //加载
             var db = _ContextFactory.CreateDbContext();
-            var guThing = db.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children)
+            var guThing = db.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children)
                 .FirstOrDefault(c => c.ExtraString == loginName);
             if (guThing is null) goto falut;
             gu = guThing.GetJsonObject<GameUser>();

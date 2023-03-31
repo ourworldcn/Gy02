@@ -240,44 +240,70 @@
             要求的最小数量。省略则不限制。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.CompositingTInfoItem">
+        <member name="T:Gy02Bll.Templates.BlueprintInItem">
             <summary>
             合成的材料信息。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.CompositingTInfoItem.#ctor">
+        <member name="M:Gy02Bll.Templates.BlueprintInItem.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.CompositingTInfoItem.Count">
-             <summary>
-             选取物品的条件。
-             </summary>
-            public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        <member name="P:Gy02Bll.Templates.BlueprintInItem.Conditional">
+            <summary>
+            选取物品的条件。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.BlueprintInItem.Count">
             <summary>
             消耗的数量。
             注意消耗数量可能是0，代表需要此物品但不消耗此物品。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.CompositingTInfo">
+        <member name="P:Gy02Bll.Templates.BlueprintInItem.Genus">
             <summary>
-            合成物品行为的定义数据。
+            与主材料共有类属。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.CompositingTInfo.#ctor">
+        <member name="T:Gy02Bll.Templates.BlueprintOutItem">
+            <summary>
+            蓝图产出项数据结构。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.BlueprintOutItem.ParentTId">
+            <summary>
+            当此物品合成创建时应放入的父容器的模板Id。省略则将物品放入默认容器。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.BlueprintOutItem.TId">
+            <summary>
+            新产出物品的模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.BlueprintOutItem.Count">
+            <summary>
+            新产出物品的数量。对非堆叠物一定是1。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.BlueprintInfo">
+            <summary>
+            蓝图输入项数据结构。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.BlueprintInfo.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.CompositingTInfo.CompositingPTId">
+        <member name="P:Gy02Bll.Templates.BlueprintInfo.Out">
             <summary>
-            当此物品合成创建时应放入的父容器的模板Id。
+            产出物的集合。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.CompositingTInfo.Items">
+        <member name="P:Gy02Bll.Templates.BlueprintInfo.In">
             <summary>
-            合成时材料的集合。
+            材料的集合。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.ProjectContent">

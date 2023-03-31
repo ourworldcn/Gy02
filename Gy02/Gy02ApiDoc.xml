@@ -160,6 +160,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.Composite(Gy02.Publisher.CompositeParamsDto)">
+            <summary>
+            合成（升品阶/降低品阶）功能。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:Gy02.Controllers.VWorldController">
             <summary>
             虚拟世界公用Api控制器。

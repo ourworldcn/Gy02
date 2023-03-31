@@ -210,6 +210,7 @@ namespace Gy02Bll.Templates
         /// 最大堆叠数。不可堆叠物该属性为1。-1表示不限制。
         /// </summary>
         /// <value>默认值：1</value>
+        [JsonPropertyName("stk")]
         public decimal Stk { get; set; } = decimal.One;
 
         /// <summary>
@@ -366,12 +367,12 @@ namespace Gy02Bll.Templates
     /// <summary>
     /// 合成的材料信息。
     /// </summary>
-    public class CompositingTInfoItem
+    public class BlueprintInItem
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public CompositingTInfoItem()
+        public BlueprintInItem()
         {
 
         }
@@ -379,37 +380,65 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        ///public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
 
         /// <summary>
         /// 消耗的数量。
         /// 注意消耗数量可能是0，代表需要此物品但不消耗此物品。
         /// </summary>
         public decimal Count { get; set; }
+
+        /// <summary>
+        /// 与主材料共有类属。
+        /// </summary>
+        public List<string> Genus { get; set; }
     }
 
     /// <summary>
-    /// 合成物品行为的定义数据。
+    /// 蓝图产出项数据结构。
     /// </summary>
-    public class CompositingTInfo
+    public class BlueprintOutItem
+    {
+        /// <summary>
+        /// 当此物品合成创建时应放入的父容器的模板Id。省略则将物品放入默认容器。
+        /// </summary>
+        public Guid? ParentTId { get; set; }
+
+        /// <summary>
+        /// 新产出物品的模板Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 新产出物品的数量。对非堆叠物一定是1。
+        /// </summary>
+        public decimal Count { get; set; }
+
+    }
+
+    /// <summary>
+    /// 蓝图输入项数据结构。
+    /// </summary>
+    public class BlueprintInfo
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public CompositingTInfo()
+        public BlueprintInfo()
         {
 
         }
 
         /// <summary>
-        /// 当此物品合成创建时应放入的父容器的模板Id。
+        /// 产出物的集合。
         /// </summary>
-        public Guid CompositingPTId { get; set; }
+        public List<BlueprintOutItem> Out { get; set; } = new List<BlueprintOutItem>();
 
         /// <summary>
-        /// 合成时材料的集合。
+        /// 材料的集合。
         /// </summary>
-        public List<CompositingTInfoItem> Items { get; set; } = new List<CompositingTInfoItem>();
+        public List<BlueprintInItem> In { get; set; } = new List<BlueprintInItem>();
+
     }
 
 }

@@ -1,4 +1,7 @@
-﻿using OW.Game.Manager;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using OW.Game.Manager;
+using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +24,8 @@ namespace OW
             if (!_QuicklyRegisterSuffixSeqInit)
             {
                 using var db = VWorld.CreateNewUserDbContext();
-                var maxSeqStr = db.VirtualThings.Where(c => c.ExtraString.StartsWith("gy")).OrderByDescending(c => c.ExtraString).FirstOrDefault()?.ExtraString ?? "0";
+                var maxSeqStr = db.VirtualThings.Where(c => c.ExtraString.StartsWith("gy") && EF.Functions.IsNumeric(c.ExtraString.Substring(2)))
+                    .OrderByDescending(c => c.ExtraString.Length).ThenByDescending(c => c.ExtraString).FirstOrDefault()?.ExtraString ?? "0";
                 var len = maxSeqStr.Reverse().TakeWhile(c => char.IsDigit(c)).Count();
                 _QuicklyRegisterSuffixSeq = int.Parse(maxSeqStr[^len..^0]);
                 _QuicklyRegisterSuffixSeqInit = true;

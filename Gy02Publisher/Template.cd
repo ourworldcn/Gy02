@@ -3,21 +3,7 @@
   <Class Name="Gy02Bll.Templates.RawTemplate" Collapsed="true">
     <Position X="7.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACEAAAAAAAACBAAAAAABAAAAAAAAAAAAAAAAAAAQA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Gy02Bll.Templates.TemplatePropertiesStringBase" Collapsed="true">
-    <Position X="0.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAIBAAAIIAAAAAACIAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Gy02Bll.Templates.TemplatePropertiesString" Collapsed="true">
-    <Position X="0.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACEAAAAAAAACBACAAAABAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -28,80 +14,45 @@
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Gy02Bll.Templates.EquipmentTemplatePropertiesString">
-    <Position X="0.5" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>EAAAAAAAAAAAAACAAAAAAAAAAACAAAAAAIAAAAAAAAA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Gy02Bll.Templates.GameTemplateBase&lt;T&gt;">
-    <Position X="5.75" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACEAAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAAQQA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Gy02Bll.Templates.GameTemplate&lt;T&gt;">
-    <Position X="3.5" Y="4.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Gy02Bll.Templates.CreateTInfo" Collapsed="true">
-    <Position X="6" Y="1.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Gy02Bll.Templates.CostTInfo" Collapsed="true">
+  <Class Name="Gy02Bll.Templates.CostInfo" Collapsed="true">
     <Position X="9.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Gy02Bll.Templates.UpgradeTInfo" Collapsed="true">
-    <Position X="6" Y="2.5" Width="1.5" />
+  <Class Name="Gy02Bll.Templates.BlueprintInfo">
+    <Position X="6" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAABAABAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Gy02Bll.Templates.UseTInfo" Collapsed="true">
-    <Position X="7.75" Y="2.5" Width="1.5" />
+  <Class Name="Gy02Bll.Templates.TemplateStringFullView">
+    <Position X="6.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAEAAAAAIBAADAKQAYAAADIACggABAIABAEQUAQQA=</HashCode>
+      <FileName>Gy02TemplateJO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gy02Bll.Templates.GameThingPrecondition">
+    <Position X="1.25" Y="4.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Gy02Bll.Templates.CompositingTInfoItem" Collapsed="true">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+  <Class Name="Gy02Bll.Templates.GameThingPreconditionItem">
+    <Position X="3.75" Y="2.75" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAASAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Gy02Bll.Templates.CompositingTInfo" Collapsed="true">
-    <Position X="6" Y="0.5" Width="1.5" />
+  <Class Name="Gy02Bll.Templates.BlueprintInItem" Collapsed="true">
+    <Position X="1.5" Y="1.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAEAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Gy02Bll.Templates.TemplateJsonObjectBase" Collapsed="true">
-    <Position X="3.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>IAACAAAAgAAAAAAAAAAEAAAAAAAAAAAEAIAAQAAAQAA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="Gy02Bll.Templates.Gy02TemplateJO">
-    <Position X="3.5" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEQAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -707,6 +707,34 @@ namespace Gy02.Publisher
     {
     }
 
+    /// <summary>
+    /// 合成接口的参数封装类。
+    /// </summary>
+    public class CompositeParamsDto : TokenDtoBase
+    {
+
+        /// <summary>
+        /// 使用蓝图的模板Id。
+        /// </summary>
+        public Guid BlueprintId { get; set; }
+
+        /// <summary>
+        /// 主要材料的唯一Id。
+        /// </summary>
+        public Guid MainId { get; set; }
+
+        /// <summary>
+        /// 辅助材料的唯一Id的集合。降低品阶时这里不用填写。
+        /// </summary>
+        public List<Guid> Ids { get; set; } = new List<Guid>();
+    }
+
+    /// <summary>
+    /// 合成接口的返回数据封装类。
+    /// </summary>
+    public class CompositeReturnDto : PropertyChangeReturnDto
+    {
+    }
     #endregion 物品管理相关
 
     #region 蓝图相关

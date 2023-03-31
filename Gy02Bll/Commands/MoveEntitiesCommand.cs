@@ -109,7 +109,9 @@ namespace Gy02Bll.Commands
                 dest = null;
                 return false;
             }
-            if (tt.Stk != -1)   //若不可无限堆叠
+            if (tt.Stk == 1)   //若不可堆叠
+                goto noMerge;
+            else if (tt.Stk != -1)   //若不可无限堆叠
             {
                 var entity2 = (GameEntity)templateManager.GetEntityBase(tmp, out _);
                 if (entity.Count + entity2.Count > tt.Stk) goto noMerge;    //若不可合并

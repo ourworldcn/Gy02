@@ -4,6 +4,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.Serialization;
 using System.Text;
@@ -100,6 +101,7 @@ namespace OW.Game.Store
     /// <summary>
     /// 存储游戏世界事物的基本类。一般认为他们具有树状结构。
     /// </summary>
+    [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     public class VirtualThing : VirtualThingBase<VirtualThing>
     {
         #region 构造函数
@@ -175,5 +177,21 @@ namespace OW.Game.Store
             return result;
         }
 
+        private string GetDebuggerDisplay()
+        {
+            return ToString();
+        }
+
+        public override string ToString()
+        {
+            dynamic tt = RuntimeProperties.GetValueOrDefault("Template");
+            string name = null;
+            try
+            {
+                name = tt?.DisplayName;
+            }
+            catch (Exception) { }
+            return $"{base.ToString()}(Template={name})";
+        }
     }
 }

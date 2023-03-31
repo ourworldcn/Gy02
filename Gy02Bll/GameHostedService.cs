@@ -154,9 +154,10 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                var tmp = new CostInfo { };
-                tmp.Conditional.Add(new GameThingPreconditionItem());
-                tmp.Counts.Add(10); tmp.Counts.Add(20);
+                var tmp = new BlueprintInfo { };
+                //tmp.Conditional.Add(new GameThingPreconditionItem());
+                tmp.In.Add(new BlueprintInItem { Conditional = new GameThingPrecondition { new GameThingPreconditionItem() } }); //tmp.Counts.Add(20);
+                tmp.Out.Add(new BlueprintOutItem { });
                 var str = JsonSerializer.Serialize(tmp);
             }
             finally
