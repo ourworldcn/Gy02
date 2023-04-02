@@ -1,4 +1,5 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Managers;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -74,6 +75,7 @@ namespace Gy02Bll.Commands
                 if (subCommand.HasError)
                     command.FillErrorFrom(subCommand);
             }
+
         }
 
         bool Verify(MoveEntitiesCommand command)

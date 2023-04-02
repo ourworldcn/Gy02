@@ -57,7 +57,7 @@ namespace Gy02.Controllers
         public ActionResult<bool> Test()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
-            store.LoadOrGetUser("string56", "string", out var gu);
+            store.LoadOrGetUser("gy16", "qgfcfGwS", out var gu);
             var token = gu.Token;
             var model = new AddItemsParamsDto { Token = token };
             model.TIds.Add(Guid.Parse("c531cd34-fed9-4859-81f1-501c25c0926d"));

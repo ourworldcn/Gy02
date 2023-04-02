@@ -1,6 +1,7 @@
 ﻿using GuangYuan.GY001.TemplateDb;
 using GuangYuan.GY02.Store;
 using Gy02.Publisher;
+using Gy02Bll.Commands;
 using Gy02Bll.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -17,6 +18,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -227,40 +229,79 @@ namespace OW.Game.Managers
         /// </summary>
         /// <param name="entity">要升级的物品。</param>
         /// <param name="alls">搜索物品的集合。</param>
-        /// <returns>升级所需物及数量列表。</returns>
+        /// <returns>升级所需物及数量列表。返回null表示出错了 <seealso cref="OwHelper.GetLastError"/>。
+        /// 如果返回了找到的条目<see cref="ValueTuple{GameEntity,Decimal}.Item2"/> 对于消耗的物品是负数，可能包含0.。</returns>
         public List<(GameEntity, decimal)> GetCost(GameEntity entity, IEnumerable<GameEntity> alls)
         {
-            var result = new List<(GameEntity, decimal)> { };
+            List<(GameEntity, decimal)> result = null;
             var fullView = Id2FullView.GetValueOrDefault(entity.TemplateId);
 
             if (fullView?.LvUpTId is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage("指定物品没有可升级的数据。");
+                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
                 return result;
             }
             var tt = Id2FullView.GetValueOrDefault(fullView.LvUpTId.Value);
-            if (tt is null || tt.LvUpData is null)
+            if (tt?.LvUpData is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage("指定物品没有可升级的数据。");
+                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
                 return result;
             }
             var lv = entity.Level;
             var coll = tt.LvUpData.Select(c =>
             {
-                var tmp = alls.FirstOrDefault(item => IsMatch(item, c.Conditional));    //TODO 重复指定时验证条件不准确
-                return tmp;
+                decimal count = 0;
+                var tmp = alls.FirstOrDefault(item => IsMatch(item, c, out count));
+                return (entity: tmp, count);
             });
-            //var coll=alls.Where(c => { });
-            return result;
+            if (coll.Count() != tt.LvUpData.Count)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_IMPLEMENTATION_LIMIT);
+                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})升级材料不全。");
+                return result;
+            }
+            var errItem = coll.GroupBy(c => c.entity.Id).Where(c => c.Count() > 1).FirstOrDefault();
+            if (errItem is not null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"物品(Id={errItem.First().entity.Id})同时符合两个或更多条件。");
+                return result;
+            }
+
+            return result = coll.ToList();
         }
 
-        public bool IsMatch(GameEntity entity, CostInfo cost)
+        #region 计算寻找物品的匹配
+
+        /// <summary>
+        /// 指定材料是否符合指定条件的要求。
+        /// </summary>
+        /// <param name="entity">材料的实体。</param>
+        /// <param name="cost">要求的条件。</param>
+        /// <param name="count">需要消耗的数量。如果成功找到是负数或者0。</param>
+        /// <returns>true表示指定实体符合指定条件，否则返回false。</returns>
+        public bool IsMatch(GameEntity entity, CostInfo cost, out decimal count)
         {
-            return true;
+            if (IsMatch(entity, cost.Conditional))
+            {
+                var lv = Convert.ToInt32(entity.Level);
+                if (cost.Conditional is not null && cost.Counts.Count > lv)
+                {
+                    var tmp = cost.Counts[lv];  //耗费的数量
+                    if (tmp <= entity.Count)
+                    {
+                        count = -Math.Abs(tmp);
+                        return true;
+                    }
+                }
+            }
+            count = 0;
+            return false;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool IsMatch(GameEntity entity, GameThingPrecondition conditions) =>
             conditions.Any(c => IsMatch(entity, c));
 
@@ -279,6 +320,8 @@ namespace OW.Game.Managers
                 return false;
             return true;
         }
+
+        #endregion 计算寻找物品的匹配
 
         #region IDisposable
         protected override void Dispose(bool disposing)

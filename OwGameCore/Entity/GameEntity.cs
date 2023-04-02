@@ -43,6 +43,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 容器的容量。
         /// </summary>
+        [JsonPropertyName("cap")]
         public decimal Capacity { get; set; } = -1;
     }
 }

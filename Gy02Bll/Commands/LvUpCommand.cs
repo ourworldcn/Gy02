@@ -30,13 +30,15 @@ namespace Gy02Bll.Commands
     public class LvUpCommandHandler : SyncCommandHandlerBase<LvUpCommand>
     {
 
-        public LvUpCommandHandler(TemplateManager templateManager)
+        public LvUpCommandHandler(TemplateManager templateManager, SyncCommandManager syncCommandManager)
         {
             _TemplateManager = templateManager;
+            _SyncCommandManager = syncCommandManager;
         }
 
         TemplateManager _TemplateManager;
         LvUpCommand _Command;
+        SyncCommandManager _SyncCommandManager;
 
         public override void Handle(LvUpCommand command)
         {
@@ -52,6 +54,7 @@ namespace Gy02Bll.Commands
         public bool LvUp(GameEntity entity, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var tmpTfv = entity.GetTemplateStringFullView();
+            var gc = _Command.GameChar;
             if (tmpTfv?.LvUpTId is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
@@ -59,6 +62,7 @@ namespace Gy02Bll.Commands
                 return false;
             }
             var tfv = _TemplateManager.Id2FullView.GetValueOrDefault(tmpTfv.LvUpTId.Value); //升级用的模板
+            //_TemplateManager.GetCost()
             var lvData = tfv?.LvUpData;
             if (lvData is null)
             {
@@ -66,10 +70,23 @@ namespace Gy02Bll.Commands
                 OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
                 return false;
             }
-
-            foreach (var item in lvData)
+            var all = _TemplateManager.GetCost(entity, gc.GetAllChildren().Select(c => _TemplateManager.GetEntityBase(c, out _)).OfType<GameEntity>());
+            if (all is null)
             {
-                //_TemplateManager.IsMatch(, lvData[1])
+                _Command.FillErrorFromWorld();
+                return false;
+            }
+            all?.RemoveAll(c => c.Item2 == 0);
+            if (all.Count > 0) //需要消耗材料
+            {
+                var modifyCount = new ModifyEntityCountCommand { Items = all, };
+                _SyncCommandManager.Handle(modifyCount);
+                if (modifyCount.HasError)
+                {
+                    _Command.FillErrorFrom(modifyCount);
+                    return false;
+                }
+                modifyCount.Changes.ForEach(c => changes.Add(c));
             }
             SetLevel(entity, Convert.ToInt32(entity.Level + 1), changes);
             return true;

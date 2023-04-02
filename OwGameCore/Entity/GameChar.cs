@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -208,6 +209,8 @@ namespace OW.Game.Entity
         /// </summary>
         /// <param name="gc"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerable<VirtualThing> GetAllChildren(this GameChar gc) => (gc.Thing as VirtualThing).GetAllChildren();
+
     }
 }

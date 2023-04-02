@@ -146,4 +146,12 @@ namespace OW.Game
         }
 
     }
+
+    public static class MyClass
+    {
+        public static void IsMatch(this GameThingPrecondition preconditionItems)
+        {
+
+        }
+    }
 }
