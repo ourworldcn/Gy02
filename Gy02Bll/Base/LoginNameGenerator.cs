@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OW
+namespace Gy02Bll.Base
 {
     public class LoginNameGenerator
     {

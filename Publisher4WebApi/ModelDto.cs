@@ -21,6 +21,23 @@ namespace Gy02.Publisher
     #region 基础数据结构
 
     /// <summary>
+    /// 游戏内装备/道具的摘要信息。
+    /// </summary>
+    [AutoMap(typeof(GameEntitySummary))]
+    public class GameEntitySummaryDto
+    {
+        /// <summary>
+        /// 模板Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 数量。
+        /// </summary>
+        public decimal Count { get; set; }
+    }
+
+    /// <summary>
     /// 返回对象的基类。
     /// </summary>
     public class ReturnDtoBase
@@ -150,6 +167,19 @@ namespace Gy02.Publisher
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    [AutoMap(typeof(GameEntity))]
+    public class GameEntityDto: GameJsonObjectBase
+    {
+        /// <summary>
+        /// 升级的累计消耗。
+        /// </summary>
+        public List<GameEntitySummaryDto> LvUpAccruedCost { get; set; } = new List<GameEntitySummaryDto>();
+
+    }
+
+    /// <summary>
     /// 账号数据。
     /// </summary>
     [AutoMap(typeof(GameUser))]
@@ -171,7 +201,7 @@ namespace Gy02.Publisher
     /// 角色数据。
     /// </summary>
     [AutoMap(typeof(GameChar))]
-    public partial class GameCharDto : GameJsonObjectBase
+    public partial class GameCharDto : GameEntityDto
     {
         #region 简单属性
 
@@ -270,7 +300,7 @@ namespace Gy02.Publisher
     /// 道具数据。
     /// </summary>
     [AutoMap(typeof(GameItem))]
-    public partial class GameItemDto : GameJsonObjectBase
+    public partial class GameItemDto : GameEntityDto
     {
         /// <summary>
         /// 数量。对非堆叠的是1。
@@ -306,7 +336,7 @@ namespace Gy02.Publisher
     /// 装备数据。
     /// </summary>
     [AutoMap(typeof(GameEquipment))]
-    public partial class GameEquipmentDto : GameJsonObjectBase
+    public partial class GameEquipmentDto : GameEntityDto
     {
         /// <summary>
         /// 构造函数。

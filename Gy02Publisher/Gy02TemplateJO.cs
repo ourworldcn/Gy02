@@ -285,9 +285,27 @@ namespace Gy02Bll.Templates
 
         #endregion 升级相关
 
+        #region 合成相关
+
+        /// <summary>
+        /// 产出物的集合。当前版本该集合中只有一项。
+        /// </summary>
+        public List<BlueprintOutItem> Out { get; set; } = new List<BlueprintOutItem>();
+
+        /// <summary>
+        /// 材料的集合。
+        /// </summary>
+        public List<BlueprintInItem> In { get; set; } = new List<BlueprintInItem>();
+
+        /// <summary>
+        /// 合成公式的Id。省略则没有合成公式。
+        /// </summary>
+        public Guid? CompositeId { get; set; }
+        #endregion 合成相关
+
         private string GetDebuggerDisplay()
         {
-            return DisplayName;
+            return $"{ToString()}({DisplayName})";
         }
 
     }

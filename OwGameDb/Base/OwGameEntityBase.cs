@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.SymbolStore;
 using System.Runtime.CompilerServices;
 using System.Text.Json.Serialization;
 
@@ -132,6 +133,28 @@ namespace OW.Game.Store
 
         #region 事件相关
 
+        protected bool SetStruct<T>(ref T field, T newValue) where T : struct
+        {
+            if (!Equals(field, newValue))    //若值不相等
+            {
+                field = newValue;
+                Interlocked.Increment(ref _Seq);
+                return true;
+            }
+            return false;
+        }
+
+        protected bool SetClass<T1>(ref T1 field, T1 newValue) where T1 : class
+        {
+            if (!ReferenceEquals(field, newValue))    //若值不相等
+            {
+                field = newValue;
+                Interlocked.Increment(ref _Seq);
+                return true;
+            }
+            return false;
+        }
+
         volatile int _Seq;
 
         /// <summary>
@@ -164,7 +187,6 @@ namespace OW.Game.Store
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
         }
         #endregion 事件相关
-
 
     }
 }

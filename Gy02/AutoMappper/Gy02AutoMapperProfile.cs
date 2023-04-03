@@ -48,8 +48,15 @@ namespace Gy02.AutoMappper
             var srcType = entity?.GetType();
             if (srcType is null)    //若源类型无法确定
                 return null;
-            var destType = Entyti2Dto.GetValueOrDefault(srcType);
-            return destType is null ? entity : mapper.Map(entity, srcType, destType);
+            else if (srcType == typeof(GameEntitySummary))
+            {
+                return mapper.Map<GameEntitySummaryDto>(entity);
+            }
+            else
+            {
+                var destType = Entyti2Dto.GetValueOrDefault(srcType);
+                return destType is null ? entity : mapper.Map(entity, srcType, destType);
+            }
         }
 
         /// <summary>

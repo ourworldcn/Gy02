@@ -126,9 +126,15 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.Test">
+        <member name="M:Gy02.Controllers.ItemManagerController.TestAddItems">
             <summary>
             
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.TestLvUp">
+            <summary>
+            测试升级接口。
             </summary>
             <returns></returns>
         </member>
@@ -217,6 +223,17 @@
         <member name="M:Gy02.GameControllerBase.#ctor">
             <summary>
             
+            </summary>
+        </member>
+        <member name="M:Gy02.GameControllerBase.#ctor(System.IServiceProvider)">
+            <summary>
+            
+            </summary>
+            <param name="service"></param>
+        </member>
+        <member name="P:Gy02.GameControllerBase.Service">
+            <summary>
+            获取本范围(Scope)的容器服务。
             </summary>
         </member>
         <member name="M:Gy02.GameControllerBase.ThrowIfStopping">

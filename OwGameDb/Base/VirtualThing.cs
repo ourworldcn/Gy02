@@ -191,7 +191,7 @@ namespace OW.Game.Store
                 name = tt?.DisplayName;
             }
             catch (Exception) { }
-            return $"{base.ToString()}(Template={name})";
+            return $"{base.ToString()}({name})";
         }
     }
 }

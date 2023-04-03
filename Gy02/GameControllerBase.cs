@@ -19,6 +19,23 @@ namespace Gy02
         {
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="service"></param>
+        protected GameControllerBase(IServiceProvider service)
+        {
+            _Service = service;
+        }
+
+        IServiceProvider? _Service;
+
+        /// <summary>
+        /// 获取本范围(Scope)的容器服务。
+        /// </summary>
+        public IServiceProvider? Service => _Service;
+
         /// <summary>
         /// 若服务器正在关闭则抛出异常。
         /// </summary>

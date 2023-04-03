@@ -179,6 +179,21 @@
             对于升级公式这里是升级公式的内容，对于其它类型的数据，这里是空集合。
             </summary>
         </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Out">
+            <summary>
+            产出物的集合。当前版本该集合中只有一项。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.In">
+            <summary>
+            材料的集合。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.CompositeId">
+            <summary>
+            合成公式的Id。省略则没有合成公式。
+            </summary>
+        </member>
         <member name="T:Gy02Bll.Templates.CostInfo">
             <summary>
             升级的代价类。

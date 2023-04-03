@@ -4,6 +4,21 @@
         <name>Publisher4WebApi</name>
     </assembly>
     <members>
+        <member name="T:Gy02.Publisher.GameEntitySummaryDto">
+            <summary>
+            游戏内装备/道具的摘要信息。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameEntitySummaryDto.TId">
+            <summary>
+            模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameEntitySummaryDto.Count">
+            <summary>
+            数量。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.ReturnDtoBase">
             <summary>
             返回对象的基类。
@@ -108,6 +123,16 @@
         <member name="P:Gy02.Publisher.GameJsonObjectBase.Level">
             <summary>
             等级。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GameEntityDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameEntityDto.LvUpAccruedCost">
+            <summary>
+            升级的累计消耗。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.GameUserDto">

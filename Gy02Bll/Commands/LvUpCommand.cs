@@ -1,6 +1,6 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Base;
 using Gy02Bll.Templates;
-using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
@@ -53,7 +53,7 @@ namespace Gy02Bll.Commands
 
         public bool LvUp(GameEntity entity, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var tmpTfv = entity.GetTemplateStringFullView();
+            var tmpTfv = entity.GetTemplate();
             var gc = _Command.GameChar;
             if (tmpTfv?.LvUpTId is null)
             {
@@ -87,6 +87,7 @@ namespace Gy02Bll.Commands
                     return false;
                 }
                 modifyCount.Changes.ForEach(c => changes.Add(c));
+                all.Select(c => new GameEntitySummary { TId = c.Item1.TemplateId, Count = c.Item2 });
             }
             SetLevel(entity, Convert.ToInt32(entity.Level + 1), changes);
             return true;
@@ -100,7 +101,7 @@ namespace Gy02Bll.Commands
         /// <returns></returns>
         public static bool SetLevel(GameEntity entity, int newLevel, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var tfv = entity.GetTemplateStringFullView();
+            var tfv = entity.GetTemplate();
             if (tfv is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
@@ -116,7 +117,8 @@ namespace Gy02Bll.Commands
                 var seq = (IList<decimal>)pi.seq.GetValue(tfv);
                 var oldVal = seq[oldLv];
                 var newVal = seq[newLevel];
-                entity.SetPropertyValue(pi.prop, newVal - oldVal, changes);
+                if (oldVal != newVal)
+                    entity.SetPropertyValue(pi.prop, newVal - oldVal, changes);
             }
             //设置级别属性值
             entity.Level = newLevel;

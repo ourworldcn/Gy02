@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Gy02Bll.Base;
 using Gy02Bll.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ObjectPool;
@@ -69,15 +70,20 @@ namespace Gy02Bll.Commands
             return result;
         }
 
-        public CreateVirtualThingHandler(IServiceProvider service)
+        public CreateVirtualThingHandler(IServiceProvider service, TemplateManager templateManager, IMapper mapper)
         {
             _Service = service;
+            _TemplateManager = templateManager;
+            _Mapper = mapper;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public IServiceProvider _Service { get; set; }
+
+        TemplateManager _TemplateManager;
+        IMapper _Mapper;
 
         /// <summary>
         /// 创建 <see cref="VirtualThing"/> 。
@@ -98,24 +104,25 @@ namespace Gy02Bll.Commands
 
         VirtualThing Create(RawTemplate template)
         {
-            var tm = _Service.GetRequiredService<TemplateManager>();
-            var mapper = _Service.GetRequiredService<IMapper>();
             var tv = template.GetJsonObject<TemplateStringFullView>();
-            VirtualThing result = new VirtualThing();
+            VirtualThing result = new VirtualThing { };
             var type = GetTypeFromTemplate(tv);    //获取实例类型
 
             var view = result.GetJsonObject(type);
-            mapper.Map(tv, view, tv.GetType(), view.GetType()); //复制一般性属性。
+            _Mapper.Map(tv, view, tv.GetType(), view.GetType()); //复制一般性属性。
 
             if (tv.TIdsOfCreate is not null)
                 foreach (var item in tv.TIdsOfCreate) //创建所有子对象
                 {
-                    var tt = tm.GetRawTemplateFromId(item);
+                    var tt = _TemplateManager.GetRawTemplateFromId(item);
                     var sub = Create(tt);   //创建子对象
                     result.Children.Add(sub);
                     sub.Parent = result;
                     sub.ParentId = result.Id;
                 }
+#if DEBUG
+            _TemplateManager.SetTemplate(result);
+#endif
             return result;
         }
     }

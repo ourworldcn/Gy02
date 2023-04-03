@@ -1,45 +1,22 @@
-﻿using AutoMapper;
-using GuangYuan.GY001.TemplateDb;
-using Gy02.Publisher;
-using Gy02Bll.Commands;
-using Gy02Bll.Managers;
+﻿using GuangYuan.GY001.TemplateDb;
 using Gy02Bll.Templates;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
-using Microsoft.Extensions.Options;
-using OW.Game.Caching;
-using OW.Game.Entity;
-using OW.Game.Manager;
-using OW.Game.Managers;
-using OW.Game.PropertyChange;
 using OW.Game.Store;
-using OW.Server;
-using OwDbBase;
-using System.Buffers;
-using System.Collections;
-using System.Collections.Concurrent;
-using System.ComponentModel;
 using System.Diagnostics;
-using System.Net;
 using System.Net.Sockets;
-using System.Numerics;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
-using static Microsoft.Extensions.Caching.Memory.OwMemoryCache;
 
 namespace Gy02Bll
 {
+    /// <summary>
+    /// 游戏世界的主服务。该服务退出表示游戏世界不再存在。
+    /// </summary>
     public class GameHostedService : BackgroundService
     {
         public GameHostedService(IServiceProvider services)
@@ -154,11 +131,6 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                var tmp = new BlueprintInfo { };
-                //tmp.Conditional.Add(new GameThingPreconditionItem());
-                tmp.In.Add(new BlueprintInItem { Conditional = new GameThingPrecondition { new GameThingPreconditionItem() } }); //tmp.Counts.Add(20);
-                tmp.Out.Add(new BlueprintOutItem { });
-                var str = JsonSerializer.Serialize(tmp);
             }
             finally
             {

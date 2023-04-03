@@ -1,6 +1,6 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Base;
 using Gy02Bll.Managers;
-using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
@@ -13,8 +13,14 @@ namespace Gy02Bll.Commands
     {
         public MoveEntitiesCommand() { }
 
+        /// <summary>
+        /// 物品目的地的角色（如果有）
+        /// </summary>
         public GameChar GameChar { get; set; }
 
+        /// <summary>
+        /// 要移动的物品。
+        /// </summary>
         public List<GameEntity> Items { get; set; } = new List<GameEntity>();
 
         /// <summary>
@@ -27,14 +33,16 @@ namespace Gy02Bll.Commands
     {
 
 
-        public MoveEntitiesHandler(TemplateManager templateManager, SyncCommandManager commandManager)
+        public MoveEntitiesHandler(TemplateManager templateManager, SyncCommandManager commandManager, GameAccountStore store)
         {
             _TemplateManager = templateManager;
             _CommandManager = commandManager;
+            _Store = store;
         }
 
         TemplateManager _TemplateManager;
         SyncCommandManager _CommandManager;
+        GameAccountStore _Store;
 
         GameEntity GetDefaultContainer(GameEntity entity, GameChar gc)
         {
@@ -75,7 +83,7 @@ namespace Gy02Bll.Commands
                 if (subCommand.HasError)
                     command.FillErrorFrom(subCommand);
             }
-
+            _Store.Save(command.GameChar.GetUser().GetKey());
         }
 
         bool Verify(MoveEntitiesCommand command)

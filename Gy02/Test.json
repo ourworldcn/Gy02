@@ -1,35 +1,29 @@
 {
-  "Out": [
+  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
+  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+  "name_txt": 1000,
+  "atk": [ 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96 ],
+  "def": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  "pow": [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+  "genus": [ "p_gn", "e_wuqi" ],
+  "p_skills": [
     {
-      "ParentTId": null,
-      "TId": "闪电手套紫+1 TId",
-      "Count": 1
-    }
-  ],
-  "In": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": null,
-          "Genus": [ ],
-          "TId": "闪电手套紫TId",
-          "MinCount": 1
-        }
-      ],
-      "Count": 0,
-      "Genus": null
+      "skillsid": "0dfc1671-b37e-422c-b832-149585ffff2c",
+      "enable": true
     },
     {
-      "Conditional": [
-        {
-          "ParentTId": null,
-          "Genus": [  "pz_zi" ],
-          "TId": null,
-          "MinCount": 1
-        }
-      ],
-      "Count": 0,
-      "Genus": null
+      "skillsid": "0268e085-c13f-43b7-8290-58d41ffe6244",
+      "enable": true
+    },
+    {
+      "skillsid": "171df1f4-935f-4e92-b612-b33275575db3",
+      "enable": false
+    },
+    {
+      "skillsid": "c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948",
+      "enable": false
     }
-  ]
+  ],
+  "LvUpTId": "f6d2b3d3-9680-472a-bd41-7927de6e87f9",
+  "CompositeId": "a4308ab5-f647-4ed6-9905-592e263fe37a"
 }

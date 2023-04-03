@@ -54,16 +54,37 @@ namespace Gy02.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<bool> Test()
+        public ActionResult<bool> TestAddItems()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
             store.LoadOrGetUser("gy16", "qgfcfGwS", out var gu);
             var token = gu.Token;
             var model = new AddItemsParamsDto { Token = token };
-            model.TIds.Add(Guid.Parse("c531cd34-fed9-4859-81f1-501c25c0926d"));
-            model.Counts.Add(2);
+            //加金币
+            model.TIds.Add(ProjectContent.GoldTId);
+            model.Counts.Add(1_000_000);
+            //加图纸
+            model.TIds.Add(Guid.Parse("16a8b068-918b-46ad-8ae6-d3797c7683ac"));
+            model.Counts.Add(100);
             AddItems(model, store, _ServiceProvider.GetRequiredService<SyncCommandManager>(), _ServiceProvider.GetRequiredService<TemplateManager>(),
                 _ServiceProvider.GetRequiredService<IMapper>());
+            return true;
+        }
+
+        /// <summary>
+        /// 测试升级接口。
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<bool> TestLvUp()
+        {
+            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            store.LoadOrGetUser("gy16", "qgfcfGwS", out var gu);
+            var token = gu.Token;
+            var item = gu.CurrentChar.ZhuangBeiBag.Children.First(c => c.TemplateId == Guid.Parse("bd871154-1aab-4add-8433-be4886244560"));
+            var sub = new LvUpParamsDto { Token = token, };
+            sub.Ids.Add(item.Id);
+            LvUp(sub);
             return true;
         }
 #endif

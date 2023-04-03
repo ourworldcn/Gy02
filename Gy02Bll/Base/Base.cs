@@ -8,6 +8,7 @@ using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Internal;
+using OW;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Managers;
@@ -20,7 +21,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
 
-namespace OW.Game
+namespace Gy02Bll.Base
 {
     public static class GameExtensions
     {
@@ -47,22 +48,6 @@ namespace OW.Game
 
     public static class GameThingExtensions
     {
-        public static VirtualThing GetGameCharThing(this VirtualThing thing)
-        {
-            for (var tmp = thing; tmp is not null; tmp = tmp.Parent)
-            {
-                if (tmp.ExtraGuid == ProjectContent.CharTId)
-                    return tmp;
-            }
-            return null;
-        }
-
-        public static VirtualThing GetThing(this OwGameEntityBase entity) => entity.Thing as VirtualThing;
-
-        public static TemplateStringFullView GetTemplateStringFullView(this OwGameEntityBase entity) =>
-            entity.GetThing()?.RuntimeProperties.GetValueOrDefault("Template") as TemplateStringFullView;
-
-        public static void SetTemplateStringFullView(this OwGameEntityBase entity, TemplateStringFullView tfv) => entity.GetThing().RuntimeProperties["Template"] = tfv;
 
         /// <summary>
         /// 根据指定Id集合 获取实体数据。
@@ -89,7 +74,7 @@ namespace OW.Game
                 if (!tm.GetEntityAndTemplate(thing, out var entity, out var tfv)) return null;
                 if (entity is T tmp)
                 {
-                    entity.SetTemplateStringFullView(tfv);
+                    entity.SetTemplate(tfv);
                     result.Add(tmp);
                 }
                 else
@@ -117,41 +102,10 @@ namespace OW.Game
                 OwHelper.SetLastErrorMessage($"对象{thing.Id} 的模板Id={thing.ExtraGuid},但找不到相应模板。");
                 return false;
             }
-            thing.RuntimeProperties["Template"] = tt;
+            thing.SetTemplate(tt);
             return true;
 
         }
-
-        /// <summary>
-        /// 设置指定属性的值。
-        /// </summary>
-        /// <param name="entity">实体。</param>
-        /// <param name="pi"></param>
-        /// <param name="difference">差值，正数增加，负数减少。</param>
-        /// <param name="changes"></param>
-        public static void SetPropertyValue(this GameEntity entity, PropertyDescriptor pi, decimal difference, ICollection<GamePropertyChangeItem<object>> changes = null)
-        {
-            var oldVal = Convert.ToDecimal(pi.GetValue(entity));   //旧属性值
-            var newVal = oldVal + difference; //新属性值
-            pi.SetValue(entity, newVal);    //设置属性值
-            changes?.Add(new GamePropertyChangeItem<object>
-            {
-                Object = entity,
-                PropertyName = pi.Name,
-                OldValue = oldVal,
-                HasOldValue = true,
-                NewValue = newVal,
-                HasNewValue = true,
-            });
-        }
-
     }
 
-    public static class MyClass
-    {
-        public static void IsMatch(this GameThingPrecondition preconditionItems)
-        {
-
-        }
-    }
 }

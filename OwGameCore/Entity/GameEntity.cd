@@ -1,58 +1,58 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="OW.Game.Entity.GameChar" Collapsed="true">
-    <Position X="4.75" Y="2.5" Width="1.5" />
+    <Position X="4" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABEAIAgAAgAAAAAQAAACgAIACAAAAAAAACAAIBAAA=</HashCode>
+      <HashCode>ACABEAAAgAAgAACAAYAAACgCIACgAAAAAAACAAIBAAA=</HashCode>
       <FileName>Entity\GameChar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.Entity.GameCharExtensions" Collapsed="true">
-    <Position X="11.75" Y="1" Width="1.5" />
+    <Position X="11" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAIAEAAAAAAAAAA=</HashCode>
       <FileName>Entity\GameChar.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.Entity.GameEntity" Collapsed="true">
-    <Position X="5.75" Y="1" Width="1.5" />
+    <Position X="4" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAQAAAAIAAABAAAAAAAAAAA=</HashCode>
       <FileName>Entity\GameEntity.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.Entity.GameItem" Collapsed="true">
-    <Position X="2.5" Y="2.5" Width="1.5" />
+    <Position X="1.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entity\GameItem.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.Entity.GameEquipment" Collapsed="true">
-    <Position X="9.25" Y="2.5" Width="1.5" />
+    <Position X="6.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAACAAAAAAIAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entity\GamesEquipment.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.Entity.GameSlot&lt;T&gt;" Collapsed="true">
-    <Position X="7" Y="2.5" Width="1.5" />
+    <Position X="12.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entity\GameSlot.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.Entity.GameUser" Collapsed="true">
-    <Position X="13.5" Y="1" Width="1.5" />
+    <Position X="8.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AMBAAAABgAAgAQAAAAAQAAAAIAAAAgIAAQAgAIABIAA=</HashCode>
       <FileName>Entity\GameUser.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Game.Entity.GameUserExtensions" Collapsed="true">
-    <Position X="11.75" Y="2" Width="1.5" />
+    <Position X="11" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAQAAAAAACAAAAAQAAAAQAAAAAIAAAAAIgAA=</HashCode>
+      <HashCode>AAAAAAAAAQAAAAAACAAAAAQAAAAQAAAAAIAAAAAAAAA=</HashCode>
       <FileName>Entity\GameUser.cs</FileName>
     </TypeIdentifier>
   </Class>
