@@ -125,7 +125,6 @@ namespace OW.Game.Store
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                JsonObjectType = null;
                 _ExtraString = null;
             }
             base.Dispose(disposing);

@@ -4,6 +4,7 @@ using Gy02Bll.Commands;
 using Gy02Bll.Managers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore.Storage.Internal;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -57,12 +58,12 @@ namespace Gy02.Controllers
         public ActionResult<bool> TestAddItems()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
-            store.LoadOrGetUser("gy16", "qgfcfGwS", out var gu);
+            store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
             var token = gu.Token;
             var model = new AddItemsParamsDto { Token = token };
             //加金币
             model.TIds.Add(ProjectContent.GoldTId);
-            model.Counts.Add(1_000_000);
+            model.Counts.Add(200_000);
             //加图纸
             model.TIds.Add(Guid.Parse("16a8b068-918b-46ad-8ae6-d3797c7683ac"));
             model.Counts.Add(100);
@@ -79,7 +80,7 @@ namespace Gy02.Controllers
         public ActionResult<bool> TestLvUp()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
-            store.LoadOrGetUser("gy16", "qgfcfGwS", out var gu);
+            store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
             var token = gu.Token;
             var item = gu.CurrentChar.ZhuangBeiBag.Children.First(c => c.TemplateId == Guid.Parse("bd871154-1aab-4add-8433-be4886244560"));
             var sub = new LvUpParamsDto { Token = token, };
@@ -113,7 +114,7 @@ namespace Gy02.Controllers
             for (int i = 0; i < model.TIds.Count; i++)
             {
                 var item = model.TIds[i];
-                var tmp = CreateThing(item, model.Counts[i], templateManager, commandManager);
+                var tmp = CreateVirtualThingHandler.CreateThing(item, model.Counts[i], templateManager, commandManager);
                 if (tmp is null) //若出错
                 {
                     result.FillErrorFromWorld();
@@ -127,73 +128,6 @@ namespace Gy02.Controllers
             var command = new MoveEntitiesCommand { Items = list, Container = null, GameChar = gc };
             commandManager.Handle(command);
             mapper.Map(command, result);
-            return result;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="tid"></param>
-        /// <param name="count"></param>
-        /// <param name="templateManager"></param>
-        /// <param name="commandManager"></param>
-        /// <returns></returns>
-        public static List<VirtualThing>? CreateThing(Guid tid, decimal count, TemplateManager templateManager, SyncCommandManager commandManager)
-        {
-            var tt = templateManager.Id2FullView.GetValueOrDefault(tid);
-            if (tt is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"找不到指定Id的模板，TId={tid}");
-                return null;
-            }
-            var result = new List<VirtualThing>();
-            if (tt.Stk == 1)   //若不可堆叠
-            {
-                for (int i = 0; i < count; i++)
-                {
-                    var command = new CreateVirtualThingCommand { TemplateId = tid };
-                    commandManager.Handle(command);
-                    if (command.HasError)
-                    {
-                        OwHelper.SetLastError(command.ErrorCode);
-                        OwHelper.SetLastErrorMessage(command.DebugMessage);
-                        return null;
-                    }
-                    if (templateManager.GetEntityBase(command.Result, out _) is GameEntity ge)
-                    {
-                        ge.Count = 1;
-                        result.Add(command.Result);
-                    }
-                    else
-                    {
-                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                        return null;
-                    }
-                }
-            }
-            else //若可以堆叠
-            {
-                var command = new CreateVirtualThingCommand { TemplateId = tid };
-                commandManager.Handle(command);
-                if (command.HasError)
-                {
-                    OwHelper.SetLastError(command.ErrorCode);
-                    OwHelper.SetLastErrorMessage(command.DebugMessage);
-                    return null;
-                }
-
-                if (templateManager.GetEntityBase(command.Result, out _) is GameEntity ge)
-                {
-                    ge.Count = count;
-                    result.Add(command.Result);
-                }
-                else
-                {
-                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                    return null;
-                }
-            }
             return result;
         }
 
@@ -223,6 +157,33 @@ namespace Gy02.Controllers
         }
 
         /// <summary>
+        /// 物品降级接口。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LvDownReturnDto> LvDown(LvDownParamsDto model)
+        {
+            var mapper = _ServiceProvider.GetRequiredService<IMapper>();
+            var tm = _ServiceProvider.GetRequiredService<TemplateManager>();
+            var result = new LvDownReturnDto { };
+            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            using var dw = store.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var command = mapper.Map<LvDownCommand>(model);
+            command.GameChar = gc;
+            command.Entity = tm.GetEntityBase(gc.GetAllChildren().FirstOrDefault(c => c.Id == model.ItemId), out _) as GameEntity;
+            var chm = _ServiceProvider.GetRequiredService<SyncCommandManager>();
+            chm.Handle(command);
+            mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
         /// 合成（升品阶/降低品阶）功能。
         /// </summary>
         /// <param name="model"></param>
@@ -233,6 +194,7 @@ namespace Gy02.Controllers
             var result = new CompositeReturnDto { };
             return result;
         }
+
     }
 
 }

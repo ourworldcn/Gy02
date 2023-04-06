@@ -552,6 +552,21 @@
             升级装备接口的返回数据封装类。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.LvDownParamsDto">
+            <summary>
+            降级接口返回参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LvDownParamsDto.ItemId">
+            <summary>
+            要降级的物品的唯一Id。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LvDownReturnDto">
+            <summary>
+            降级接口返回数据封装类。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.CompositeParamsDto">
             <summary>
             合成接口的参数封装类。

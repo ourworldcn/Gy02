@@ -249,13 +249,13 @@ namespace OW.Game.Managers
                 OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
                 return result;
             }
-            var lv = entity.Level;
+            var lv = Convert.ToInt32(entity.Level);
             var coll = tt.LvUpData.Select(c =>
             {
                 decimal count = 0;
-                var tmp = alls.FirstOrDefault(item => IsMatch(item, c, out count));
+                var tmp = alls.FirstOrDefault(item => IsMatch(entity, c, item, out count));
                 return (entity: tmp, count);
-            });
+            }).ToArray();
             if (coll.Count() != tt.LvUpData.Count)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_IMPLEMENTATION_LIMIT);
@@ -278,15 +278,16 @@ namespace OW.Game.Managers
         /// <summary>
         /// 指定材料是否符合指定条件的要求。
         /// </summary>
-        /// <param name="entity">材料的实体。</param>
+        /// <param name="main">要升级的物品</param>
         /// <param name="cost">要求的条件。</param>
-        /// <param name="count">需要消耗的数量。如果成功找到是负数或者0。</param>
+        /// <param name="entity">材料的实体。</param>
+        /// <param name="count">实际耗费的数量</param>
         /// <returns>true表示指定实体符合指定条件，否则返回false。</returns>
-        public bool IsMatch(GameEntity entity, CostInfo cost, out decimal count)
+        public bool IsMatch(GameEntity main, CostInfo cost, GameEntity entity, out decimal count)
         {
             if (IsMatch(entity, cost.Conditional))
             {
-                var lv = Convert.ToInt32(entity.Level);
+                var lv = Convert.ToInt32(main.Level);
                 if (cost.Conditional is not null && cost.Counts.Count > lv)
                 {
                     var tmp = cost.Counts[lv];  //耗费的数量

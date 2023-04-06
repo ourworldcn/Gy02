@@ -21,7 +21,7 @@ namespace OW.Game.Store
         /// 存储最后一次获取对象的类型。
         /// </summary>
         [NotMapped]
-        Type JsonObjectType { get; set; }
+        Type JsonObjectType { get; }
 
         /// <summary>
         /// Json字符串代表的对象。请调用<see cref="GetJsonObject{T}"/>生成该属性值。
@@ -83,7 +83,7 @@ namespace OW.Game.Store
                 {
                     _JsonObjectString = value;
                     JsonObject = null;
-                    JsonObjectType = null;
+                    _JsonObjectType = null;
                 }
             }
         }
@@ -110,6 +110,7 @@ namespace OW.Game.Store
         /// <returns>返回的对象，不会返回null，可能返回默认的新对象。</returns>
         public virtual object GetJsonObject(Type type)
         {
+            //Lazy Initializer.EnsureInitialized(ref _JsonObject,);
             if (type != JsonObjectType || JsonObject is null)  //若需要初始化
             {
                 if (string.IsNullOrWhiteSpace(JsonObjectString))    //若Json字符串是无效的
@@ -121,7 +122,7 @@ namespace OW.Game.Store
                     JsonObject = JsonSerializer.Deserialize(JsonObjectString, type, _SerializerOptions);
                     _Seq = _WritedSeq = 0;
                 }
-                JsonObjectType = type;
+                _JsonObjectType = type;
             }
             return JsonObject;
         }
@@ -160,8 +161,9 @@ namespace OW.Game.Store
             }
         }
 
+        private Type _JsonObjectType;
         [JsonIgnore, NotMapped]
-        public Type JsonObjectType { get; set; }
+        public Type JsonObjectType { get => _JsonObjectType; }
 
         #endregion JsonObject相关
 
@@ -197,7 +199,7 @@ namespace OW.Game.Store
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                JsonObjectType = null;
+                _JsonObjectType = null;
                 _JsonObject = null;
                 _JsonObjectString = null;
                 _IsDisposed = true;
@@ -226,12 +228,14 @@ namespace OW.Game.Store
         #region IBeforeSave接口及相关
 
         volatile int _WritedSeq;
+
         public virtual void PrepareSaving(DbContext db)
         {
-            if (_JsonObject is null)    //若是空对象
-                _JsonObjectString = null;
-            else //若对象非空
-                if (_JsonObject is not INotifyPropertyChanged || _Seq != _WritedSeq)
+            //if (_JsonObject is null)    //若是空对象 则说明未初始化，故无须序列化
+            //    _JsonObjectString = null;
+            //else //若对象非空
+            //if (/*_JsonObject is not INotifyPropertyChanged ||*/ _Seq != _WritedSeq)
+            if (_JsonObject is not null)
             {
                 _JsonObjectString = JsonSerializer.Serialize(_JsonObject, JsonObjectType ?? JsonObject.GetType());
                 if (_JsonObject is INotifyPropertyChanged)

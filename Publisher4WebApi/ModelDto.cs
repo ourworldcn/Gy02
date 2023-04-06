@@ -170,7 +170,7 @@ namespace Gy02.Publisher
     /// 
     /// </summary>
     [AutoMap(typeof(GameEntity))]
-    public class GameEntityDto: GameJsonObjectBase
+    public class GameEntityDto : GameJsonObjectBase
     {
         /// <summary>
         /// 升级的累计消耗。
@@ -734,6 +734,26 @@ namespace Gy02.Publisher
     /// </summary>
     [AutoMap(typeof(LvUpCommand))]
     public class LvUpReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
+    /// 降级接口返回参数封装类。
+    /// </summary>
+    [AutoMap(typeof(LvDownCommand), ReverseMap = true)]
+    public class LvDownParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要降级的物品的唯一Id。
+        /// </summary>
+        public Guid ItemId { get; set; }
+    }
+
+    /// <summary>
+    /// 降级接口返回数据封装类。
+    /// </summary>
+    [AutoMap(typeof(LvDownCommand))]
+    public class LvDownReturnDto : PropertyChangeReturnDto
     {
     }
 

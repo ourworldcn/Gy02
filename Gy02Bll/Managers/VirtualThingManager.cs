@@ -1,6 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AutoMapper;
+using Gy02Bll.Base;
+using Gy02Bll.Templates;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using OW.Game.Caching;
+using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
@@ -43,49 +50,63 @@ namespace OW.Game.Manager
 
     }
 
+    public class VirtualThingManagerOptions : IOptions<VirtualThingManagerOptions>
+    {
+        public VirtualThingManagerOptions Value => this;
+    }
+
     /// <summary>
-    /// 
+    /// 虚拟物管理器。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class VirtualThingManager
+    public class VirtualThingManager : GameManagerBase<VirtualThingManagerOptions, VirtualThingManager>
     {
-        public VirtualThingManager(IServiceProvider service)
+        public VirtualThingManager(IOptions<VirtualThingManagerOptions> options, ILogger<VirtualThingManager> logger, TemplateManager templateManager, IMapper mapper) : base(options, logger)
         {
-            _Service = service;
+            _TemplateManager = templateManager;
+
             Initialize();
+            _Mapper = mapper;
         }
 
         void Initialize()
         {
-            Cache = _Service.GetRequiredService<GameObjectCache>();
-
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
         }
 
-        public GameObjectCache Cache { get; protected set; }
+        TemplateManager _TemplateManager;
 
-        IServiceProvider _Service;
-
-        public DisposeHelper<string> Load(Guid charId, out VirtualThing thing)
-        {
-            var result = DisposeHelper.Empty<string>();
-            thing = default;
-            return result;
-        }
+        IMapper _Mapper;
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="template"></param>
+        /// <param name="tv">创建的模板。</param>
+        /// <param name="changes">记录详细变化数据的集合，省略或为null则忽略。</param>
         /// <returns></returns>
-        public VirtualThing CreateThing(GameThingTemplate template)
+        public VirtualThing Create(TemplateStringFullView tv, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var result = new VirtualThing { };
-            var gtm = _Service.GetRequiredService<TemplateManager>();
-            //template.GetJsonObject<Gy02TemplateJO>();
-            //GameThingTemplate template1;
+            VirtualThing result = new VirtualThing { };
+#if DEBUG 
+            _TemplateManager.SetTemplate(result);
+#endif
+            var type = TemplateManager.GetTypeFromTemplate(tv);    //获取实例类型
+
+            var view = result.GetJsonObject(type);
+            _Mapper.Map(tv, view, tv.GetType(), view.GetType()); //复制一般性属性。
+
+            if (tv.TIdsOfCreate is not null)
+                foreach (var item in tv.TIdsOfCreate) //创建所有子对象
+                {
+                    var sub = Create(tv);   //创建子对象
+                    result.Children.Add(sub);
+                    sub.Parent = result;
+                    sub.ParentId = result.Id;
+                    changes?.CollectionAdd(sub, result);
+                }
             return result;
         }
+
     }
+
 }

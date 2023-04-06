@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
+using Gy02.Publisher;
 using Gy02Bll.Base;
 using Gy02Bll.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ObjectPool;
+using OW.Game.Entity;
+using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.SyncCommand;
@@ -70,11 +73,12 @@ namespace Gy02Bll.Commands
             return result;
         }
 
-        public CreateVirtualThingHandler(IServiceProvider service, TemplateManager templateManager, IMapper mapper)
+        public CreateVirtualThingHandler(IServiceProvider service, TemplateManager templateManager, IMapper mapper, VirtualThingManager virtualThingManager)
         {
             _Service = service;
             _TemplateManager = templateManager;
             _Mapper = mapper;
+            _VirtualThingManager = virtualThingManager;
         }
 
         /// <summary>
@@ -83,6 +87,7 @@ namespace Gy02Bll.Commands
         public IServiceProvider _Service { get; set; }
 
         TemplateManager _TemplateManager;
+        VirtualThingManager _VirtualThingManager;
         IMapper _Mapper;
 
         /// <summary>
@@ -92,37 +97,80 @@ namespace Gy02Bll.Commands
         public override void Handle(CreateVirtualThingCommand command)
         {
             var tm = _Service.GetRequiredService<TemplateManager>();
-            var tt = tm.GetRawTemplateFromId(command.TemplateId);  //获取模板
+            var tt = tm.Id2FullView.GetValueOrDefault(command.TemplateId);  //获取模板
             if (tt is null)
             {
                 command.HasError = true;
                 command.DebugMessage = $"找不到指定模板，Id={command.TemplateId}";
             }
             else
-                command.Result = Create(tt);
+                command.Result = _VirtualThingManager.Create(tt);
         }
 
-        VirtualThing Create(RawTemplate template)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tid"></param>
+        /// <param name="count">对于可堆叠物品则创建单个对象，对于不可堆叠物品则创建指定数量的对象。</param>
+        /// <param name="templateManager"></param>
+        /// <param name="commandManager"></param>
+        /// <returns>生成的虚拟物集合，如果有错则返回null.</returns>
+        public static List<VirtualThing> CreateThing(Guid tid, decimal count, TemplateManager templateManager, SyncCommandManager commandManager)
         {
-            var tv = template.GetJsonObject<TemplateStringFullView>();
-            VirtualThing result = new VirtualThing { };
-            var type = GetTypeFromTemplate(tv);    //获取实例类型
-
-            var view = result.GetJsonObject(type);
-            _Mapper.Map(tv, view, tv.GetType(), view.GetType()); //复制一般性属性。
-
-            if (tv.TIdsOfCreate is not null)
-                foreach (var item in tv.TIdsOfCreate) //创建所有子对象
+            var tt = templateManager.Id2FullView.GetValueOrDefault(tid);
+            if (tt is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定Id的模板，TId={tid}");
+                return null;
+            }
+            var result = new List<VirtualThing>();
+            if (tt.Stk == 1)   //若不可堆叠
+            {
+                for (int i = 0; i < count; i++)
                 {
-                    var tt = _TemplateManager.GetRawTemplateFromId(item);
-                    var sub = Create(tt);   //创建子对象
-                    result.Children.Add(sub);
-                    sub.Parent = result;
-                    sub.ParentId = result.Id;
+                    var command = new CreateVirtualThingCommand { TemplateId = tid };
+                    commandManager.Handle(command);
+                    if (command.HasError)
+                    {
+                        OwHelper.SetLastError(command.ErrorCode);
+                        OwHelper.SetLastErrorMessage(command.DebugMessage);
+                        return null;
+                    }
+                    if (templateManager.GetEntityBase(command.Result, out _) is GameEntity ge)
+                    {
+                        ge.Count = 1;
+                        result.Add(command.Result);
+                    }
+                    else
+                    {
+                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                        return null;
+                    }
                 }
-#if DEBUG
-            _TemplateManager.SetTemplate(result);
-#endif
+            }
+            else //若可以堆叠
+            {
+                var command = new CreateVirtualThingCommand { TemplateId = tid };
+                commandManager.Handle(command);
+                if (command.HasError)
+                {
+                    OwHelper.SetLastError(command.ErrorCode);
+                    OwHelper.SetLastErrorMessage(command.DebugMessage);
+                    return null;
+                }
+
+                if (templateManager.GetEntityBase(command.Result, out _) is GameEntity ge)
+                {
+                    ge.Count = count;
+                    result.Add(command.Result);
+                }
+                else
+                {
+                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                    return null;
+                }
+            }
             return result;
         }
     }

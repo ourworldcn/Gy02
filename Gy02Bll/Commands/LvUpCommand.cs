@@ -80,6 +80,14 @@ namespace Gy02Bll.Commands
             if (all.Count > 0) //需要消耗材料
             {
                 var modifyCount = new ModifyEntityCountCommand { Items = all, };
+                var newCost = all.Select(c => new GameEntitySummary    //记录耗材原始数据
+                {
+                    TId = c.Item1.TemplateId,
+                    Count = c.Item2,
+                    Id = c.Item1.Id,
+                    ParentTId = c.Item1.GetThing().ParentId
+                }).ToArray();
+
                 _SyncCommandManager.Handle(modifyCount);
                 if (modifyCount.HasError)
                 {
@@ -87,7 +95,30 @@ namespace Gy02Bll.Commands
                     return false;
                 }
                 modifyCount.Changes.ForEach(c => changes.Add(c));
-                all.Select(c => new GameEntitySummary { TId = c.Item1.TemplateId, Count = c.Item2 });
+                //记录耗材数据
+                var old = entity.LvUpAccruedCost?.ToArray() ?? Array.Empty<GameEntitySummary>();
+                GameEntitySummary[] totalCost;
+                if (old.Length <= 0) //若没有耗材记录
+                    totalCost = newCost;
+                else
+                    totalCost = newCost.GroupJoin(entity.LvUpAccruedCost, c => c.TId, c => c.TId, (l, r) => new GameEntitySummary
+                    {
+                        Count = Math.Abs(l.Count) + Math.Abs(r.Any() ? r.First().Count : 0),
+                        ParentTId = l.ParentTId,
+                        TId = l.TId,
+                    }).ToArray();
+                entity.LvUpAccruedCost?.Clear();
+                entity.LvUpAccruedCost.AddRange(totalCost);
+                changes?.Add(new GamePropertyChangeItem<object>   //记录以前消耗的耗材
+                {
+                    Object = entity,
+                    PropertyName = nameof(entity.LvUpAccruedCost),
+
+                    HasOldValue = old.Length > 0,
+                    OldValue = old,
+                    HasNewValue = true,
+                    NewValue = totalCost,
+                });
             }
             SetLevel(entity, Convert.ToInt32(entity.Level + 1), changes);
             return true;

@@ -92,7 +92,8 @@ namespace Gy02Bll.Base
         /// </summary>
         /// <param name="manager"></param>
         /// <param name="thing"></param>
-        /// <returns></returns>
+        /// <returns>true成功，false失败，
+        /// 此时使用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
         public static bool SetTemplate(this TemplateManager manager, VirtualThing thing)
         {
             var tt = manager.Id2FullView.GetValueOrDefault(thing.ExtraGuid);
