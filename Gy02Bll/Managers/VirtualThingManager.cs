@@ -99,14 +99,40 @@ namespace OW.Game.Manager
                 foreach (var item in tv.TIdsOfCreate) //创建所有子对象
                 {
                     var sub = Create(tv);   //创建子对象
-                    result.Children.Add(sub);
-                    sub.Parent = result;
-                    sub.ParentId = result.Id;
-                    changes?.CollectionAdd(sub, result);
+                    Add(sub, result, changes);
                 }
             return result;
         }
 
+        /// <summary>
+        /// 向指定容器添加一项，会自动将子项从原有父(如果有)中移除。
+        /// </summary>
+        /// <param name="child"></param>
+        /// <param name="parent"></param>
+        /// <param name="changes"></param>
+        public static void Add(VirtualThing child, VirtualThing parent, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            if (child.Parent is not null) Remove(child, child.Parent, changes);
+            parent.Children.Add(child);
+            child.Parent = parent;
+            child.ParentId = parent.Id;
+            changes?.CollectionAdd(child, parent);
+        }
+
+        /// <summary>
+        /// 从指定父中移除子项。不会从数据库中删除子项。
+        /// </summary>
+        /// <param name="child"></param>
+        /// <param name="parent"></param>
+        /// <param name="changes"></param>
+        /// <returns></returns>
+        public static bool Remove(VirtualThing child, VirtualThing parent, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var result = parent.Children.Remove(child);
+            if (result)
+                changes?.CollectionRemove(child, parent);
+            return result;
+        }
     }
 
 }

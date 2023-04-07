@@ -111,7 +111,7 @@ namespace OW.Game.Store
         public virtual object GetJsonObject(Type type)
         {
             //Lazy Initializer.EnsureInitialized(ref _JsonObject,);
-            if (type != JsonObjectType || JsonObject is null)  //若需要初始化
+            if (JsonObject is null || !type.IsAssignableFrom(JsonObjectType))  //若需要初始化
             {
                 if (string.IsNullOrWhiteSpace(JsonObjectString))    //若Json字符串是无效的
                 {

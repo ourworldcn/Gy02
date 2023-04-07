@@ -1,5 +1,6 @@
 ﻿using Gy02.Publisher;
 using Gy02Bll.Base;
+using Gy02Bll.Managers;
 using Gy02Bll.Templates;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -30,15 +31,17 @@ namespace Gy02Bll.Commands
     public class LvUpCommandHandler : SyncCommandHandlerBase<LvUpCommand>
     {
 
-        public LvUpCommandHandler(TemplateManager templateManager, SyncCommandManager syncCommandManager)
+        public LvUpCommandHandler(TemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager)
         {
             _TemplateManager = templateManager;
             _SyncCommandManager = syncCommandManager;
+            _GameEntityManager = gameEntityManager;
         }
 
         TemplateManager _TemplateManager;
         LvUpCommand _Command;
         SyncCommandManager _SyncCommandManager;
+        GameEntityManager _GameEntityManager;
 
         public override void Handle(LvUpCommand command)
         {
@@ -70,7 +73,7 @@ namespace Gy02Bll.Commands
                 OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
                 return false;
             }
-            var all = _TemplateManager.GetCost(entity, gc.GetAllChildren().Select(c => _TemplateManager.GetEntityBase(c, out _)).OfType<GameEntity>());
+            var all = _GameEntityManager.GetCost(entity, gc.GetAllChildren().Select(c => _TemplateManager.GetEntityBase(c, out _)).OfType<GameEntity>());
             if (all is null)
             {
                 _Command.FillErrorFromWorld();
@@ -145,7 +148,9 @@ namespace Gy02Bll.Commands
             var coll = pis.Join(pis2, c => c.Name, c => c.Name, (l, r) => (seq: l, prop: r));
             foreach (var pi in coll)
             {
-                var seq = (IList<decimal>)pi.seq.GetValue(tfv);
+                var seq = pi.seq.GetValue(tfv) as IList<decimal>;
+                if (seq is null)    //若该属性未设置
+                    continue;   //忽略该序列
                 var oldVal = seq[oldLv];
                 var newVal = seq[newLevel];
                 if (oldVal != newVal)

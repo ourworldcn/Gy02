@@ -1,4 +1,5 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Managers;
 using Gy02Bll.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
@@ -32,12 +33,14 @@ namespace Gy02Bll.Commands
         /// 构造函数。
         /// </summary>
         /// <param name="templateManager"></param>
-        public ModifyEntityCountHandler(TemplateManager templateManager)
+        public ModifyEntityCountHandler(TemplateManager templateManager, GameEntityManager gameEntityManager)
         {
             _TemplateManager = templateManager;
+            _GameEntityManager = gameEntityManager;
         }
 
         TemplateManager _TemplateManager;
+        GameEntityManager _GameEntityManager;
 
         /// <summary>
         /// <inheritdoc/>
@@ -53,7 +56,7 @@ namespace Gy02Bll.Commands
             if (!Verify(command))
                 return;
             foreach (var item in coll)
-                Modify(item.Item1, item.Item2, item.fullView, command.Changes);
+                _GameEntityManager.Modify(item.Item1, item.Item2, command.Changes);
         }
 
         /// <summary>
@@ -103,38 +106,6 @@ namespace Gy02Bll.Commands
                 return false;
             }
             return true;
-        }
-
-        /// <summary>
-        /// 修改虚拟物的数量。不进行参数校验的修改数量属性。并根据需要返回更改数据。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="count">数量的增量。</param>
-        /// <param name="template"></param>
-        /// <param name="changes"></param>
-        public static void Modify(GameEntity entity, decimal count, TemplateStringFullView template, ICollection<GamePropertyChangeItem<object>> changes = null)
-        {
-            var oldCount = entity.Count;
-            entity.Count += count;
-            changes?.Add(new GamePropertyChangeItem<object>()
-            {
-                Object = entity,
-                PropertyName = "Count",
-                DateTimeUtc = DateTime.UtcNow,
-                HasOldValue = true,
-                OldValue = oldCount,
-                HasNewValue = true,
-                NewValue = entity.Count,
-            });
-            if (entity.Count == 0 && !template.Count0Reserved) //若需要删除
-            {
-                var thing = entity.Thing as VirtualThing;
-                var parent = thing.Parent;
-                thing.Parent.Children.Remove(thing); thing.Parent = null; thing.ParentId = null;
-                changes?.CollectionRemove(thing, parent);
-                var db = (thing.GetRoot() as VirtualThing)?.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) as DbContext;
-                db?.Remove(thing);
-            }
         }
 
     }

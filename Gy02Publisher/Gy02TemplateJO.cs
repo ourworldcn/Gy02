@@ -380,6 +380,15 @@ namespace Gy02Bll.Templates
         /// 要求的最小数量。省略则不限制。
         /// </summary>
         public decimal? MinCount { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 
     /// <summary>

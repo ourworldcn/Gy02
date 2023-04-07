@@ -191,7 +191,17 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<CompositeReturnDto> Composite(CompositeParamsDto model)
         {
+            var mapper = _ServiceProvider.GetRequiredService<IMapper>();
             var result = new CompositeReturnDto { };
+            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            using var dw = store.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var command = mapper.Map<ApplyBlueprintCommand>(model);
+            command.GameChar = gc;
             return result;
         }
 

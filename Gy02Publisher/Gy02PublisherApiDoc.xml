@@ -255,6 +255,12 @@
             要求的最小数量。省略则不限制。
             </summary>
         </member>
+        <member name="M:Gy02Bll.Templates.GameThingPreconditionItem.ToString">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Gy02Bll.Templates.BlueprintInItem">
             <summary>
             合成的材料信息。
