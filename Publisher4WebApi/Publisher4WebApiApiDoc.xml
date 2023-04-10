@@ -135,6 +135,11 @@
             升级的累计消耗。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.GameEntityDto.CompositingAccruedCost">
+            <summary>
+            升品的累计用品。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.GameUserDto">
             <summary>
             账号数据。
@@ -183,6 +188,11 @@
         <member name="P:Gy02.Publisher.GameCharDto.Crit">
             <summary>
             暴击倍数。1表示暴击和普通上海一致。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.YichuanPifuSlot">
+            <summary>
+            已穿戴皮肤槽。
             </summary>
         </member>
         <member name="P:Gy02.Publisher.GameCharDto.Wuqi">

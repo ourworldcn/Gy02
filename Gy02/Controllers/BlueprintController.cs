@@ -11,6 +11,7 @@ namespace Gy02.Controllers
     /// <summary>
     /// 蓝图相关操作的控制器。
     /// </summary>
+    [ApiExplorerSettings(IgnoreApi =true)]
     public class BlueprintController : GameControllerBase
     {
         /// <summary>
@@ -33,7 +34,7 @@ namespace Gy02.Controllers
         public ActionResult<ApplyBlueprintReturnDto> ApplyBlueprint(ApplyBlueprintParamsDto model)
         {
             var result = new ApplyBlueprintReturnDto { };
-            var command = new ApplyBlueprintCommand { };
+            var command = new CompositeCommand { };
             var commandManager = _ServiceProvider.GetRequiredService<SyncCommandManager>();
             commandManager.Handle(command);
             var mapper = _ServiceProvider.GetRequiredService<IMapper>();

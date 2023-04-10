@@ -342,6 +342,11 @@
             角色的模板Id。
             </summary>
         </member>
+        <member name="F:Gy02.Publisher.ProjectContent.YichuanPifuSlotTId">
+            <summary>
+            武器槽TId。
+            </summary>
+        </member>
         <member name="F:Gy02.Publisher.ProjectContent.WuQiSlotTId">
             <summary>
             武器槽TId。

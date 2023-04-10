@@ -4,6 +4,7 @@ using Microsoft.Extensions.ObjectPool;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -34,12 +35,13 @@ namespace OW.SyncCommand
         /// </summary>
         public IDictionary<string, object> Items => items ??= AutoClearPool<Dictionary<string, object>>.Shared.Get();
 
-
+        [DebuggerHidden]
         public void Handle<T>(T command) where T : ISyncCommand
         {
             orderNumber = 0;
             var coll = _Service.GetServices<ISyncCommandHandler<T>>();
-            coll.SafeForEach(c =>
+        
+            coll.SafeForEach( c =>
             {
                 c.Handle(command);
                 orderNumber++;

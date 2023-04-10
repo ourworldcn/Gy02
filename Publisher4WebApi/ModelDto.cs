@@ -177,6 +177,11 @@ namespace Gy02.Publisher
         /// </summary>
         public List<GameEntitySummaryDto> LvUpAccruedCost { get; set; } = new List<GameEntitySummaryDto>();
 
+        /// <summary>
+        /// 升品的累计用品。
+        /// </summary>
+        public List<GameEntitySummaryDto> CompositingAccruedCost { get; set; } = new List<GameEntitySummaryDto>();
+
     }
 
     /// <summary>
@@ -243,6 +248,11 @@ namespace Gy02.Publisher
         #endregion 简单属性
 
         #region 各种槽
+
+        /// <summary>
+        /// 已穿戴皮肤槽。
+        /// </summary>
+        public GameSlotDto<GameEquipmentDto> YichuanPifuSlot { get; set; }
 
         /// <summary>
         /// 武器装备槽。
@@ -760,9 +770,9 @@ namespace Gy02.Publisher
     /// <summary>
     /// 合成接口的参数封装类。
     /// </summary>
+    [AutoMap(typeof(CompositeCommand), ReverseMap = true)]
     public class CompositeParamsDto : TokenDtoBase
     {
-
         /// <summary>
         /// 使用蓝图的模板Id。
         /// </summary>
@@ -782,6 +792,7 @@ namespace Gy02.Publisher
     /// <summary>
     /// 合成接口的返回数据封装类。
     /// </summary>
+    [AutoMap(typeof(CompositeCommand))]
     public class CompositeReturnDto : PropertyChangeReturnDto
     {
     }

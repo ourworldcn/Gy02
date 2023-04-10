@@ -57,9 +57,8 @@ namespace Gy02Bll.Templates
             try
             {
                 var result = JsonSerializer.Deserialize<T>(PropertiesString);
-                var tmp = result as TemplateStringFullView;
-                if (tmp != null)
-                    tmp._RawTemplate = this;
+                if (result is TemplateStringFullView t)
+                    t._RawTemplate = this;
                 return result;
             }
             catch (Exception)

@@ -116,6 +116,12 @@ namespace OW.Game.Entity
         #region 各种槽
 
         /// <summary>
+        /// 已穿戴皮肤槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> YichuanPifuSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.YichuanPifuSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
+
+        /// <summary>
         /// 武器装备槽。
         /// </summary>
         [JsonIgnore]

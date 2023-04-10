@@ -46,11 +46,11 @@ namespace Gy02Bll.Commands
             command.Entity.LvUpAccruedCost = new List<GameEntitySummary>();
             List<VirtualThing> list = new List<VirtualThing>();
 
-            foreach (var item in totalCost)
+            foreach (var item in totalCost) //退还材料
             {
                 CreateVirtualThingCommand create = new CreateVirtualThingCommand { TemplateId = item.TId };
                 _SyncCommandManager.Handle(create);
-                var tmp = CreateVirtualThingHandler.CreateThing(item.TId, item.Count, _TemplateManager, _SyncCommandManager);
+                var tmp = CreateVirtualThingHandler.CreateThing(item.TId, Math.Abs(item.Count), _TemplateManager, _SyncCommandManager);
                 if (tmp is null)
                 {
                     command.FillErrorFromWorld();

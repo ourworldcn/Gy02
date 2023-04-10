@@ -5,14 +5,17 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OW.DDD;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.SymbolStore;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -87,7 +90,7 @@ namespace Gy02Bll.Managers
             VirtualThing thing = (VirtualThing)entity.Thing;
             TemplateStringFullView fullView = _TemplateManager.Id2FullView[thing.ExtraGuid];
 
-            if (!condition.TId.HasValue && condition.TId.Value != thing.ExtraGuid)
+            if (condition.TId.HasValue && condition.TId.Value != thing.ExtraGuid)
                 return false;
             if (condition.Genus is not null && condition.Genus.Count > 0 && condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count)
                 return false;
@@ -99,17 +102,31 @@ namespace Gy02Bll.Managers
         }
 
         /// <summary>
-        /// 
+        /// 忽略计数的情况下判断是否符合条件。
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="condition"></param>
         /// <returns></returns>
         public bool IsPartialMatch(GameEntity entity, GameThingPreconditionItem condition)
         {
-            
+            var thing = entity.GetThing();
+            TemplateStringFullView fullView = _TemplateManager.Id2FullView[entity.TemplateId];
+            if (condition.TId.HasValue && condition.TId.Value != entity.TemplateId)
+                return false;
+            if (condition.Genus is not null && condition.Genus.Count > 0 && condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count)
+                return false;
+            if (condition.ParentTId.HasValue && condition.ParentTId.Value != thing.Parent?.ExtraGuid)
+                return false;
             return true;
         }
 
+        //public bool IsNoStk(GameThingPreconditionItem condition)
+        //{
+        //    if (!condition.TId.HasValue)
+        //        return false;
+        //    TemplateStringFullView fullView = _TemplateManager.Id2FullView[entity.TemplateId];
+
+        //}
         #endregion 计算寻找物品的匹配
 
         /// <summary>
@@ -144,7 +161,7 @@ namespace Gy02Bll.Managers
                 var tmp = alls.FirstOrDefault(item => IsMatch(entity, c, item, out count));
                 return (entity: tmp, count);
             }).ToArray();
-            if (coll.Count() != tt.LvUpData.Count)
+            if (coll.Count(c => c.entity is not null) != tt.LvUpData.Count)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_IMPLEMENTATION_LIMIT);
                 OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})升级材料不全。");

@@ -21,6 +21,11 @@ namespace Gy02Bll.Base
 
         public static void SetTemplate(this OwGameEntityBase entity, TemplateStringFullView tfv) => entity.GetThing().SetTemplate(tfv);
 
+        /// <summary>
+        /// 获取实体对象宿主对象。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>宿主对象，如果没有找到则返回null。</returns>
         public static VirtualThing GetThing(this OwGameEntityBase entity) => entity.Thing as VirtualThing;
 
         /// <summary>

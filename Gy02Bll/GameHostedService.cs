@@ -131,6 +131,11 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
+                int[] empty = { };
+                int[] one = { 1 };
+                int[] odd = { 1, 3, 5 };
+                int[] even = { 2, 4, 6 };
+                int[] fib = { 1, 1, 2, 3, 5 };
             }
             finally
             {

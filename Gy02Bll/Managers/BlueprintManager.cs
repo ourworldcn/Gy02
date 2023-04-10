@@ -50,11 +50,30 @@ namespace Gy02Bll.Managers
             }
         }
 
+        /// <summary>
+        /// 获取指示，指定的实体是否符合蓝图输入项的要求。
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="inItem"></param>
+        /// <returns></returns>
         public bool IsMatch(GameEntity item, BlueprintInItem inItem)
         {
             if (item.Count < inItem.Count)
                 return false;
             return _EntityManager.IsMatch(item, inItem.Conditional);
+        }
+
+        /// <summary>
+        /// 获取指示，指定的实体是否符合蓝图输入项中的一项。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="inItems"></param>
+        /// <param name="result"></param>
+        /// <returns>true找到了输入项。</returns>
+        public bool IsMatch(GameEntity entity, IEnumerable<BlueprintInItem> inItems, out BlueprintInItem result)
+        {
+            result = inItems.FirstOrDefault(c => IsMatch(entity, c));
+            return result is not null;
         }
 
         /// <summary>

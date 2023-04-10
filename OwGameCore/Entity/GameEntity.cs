@@ -93,6 +93,11 @@ namespace OW.Game.Entity
         /// </summary>
         public List<GameEntitySummary> LvUpAccruedCost { get; set; } = new List<GameEntitySummary>();
 
+        /// <summary>
+        /// 升品的累计用品。
+        /// </summary>
+        public List<GameEntitySummary> CompositingAccruedCost { get; set; } = new List<GameEntitySummary>();
+
         public override string ToString()
         {
             var name = ((Thing as VirtualThing)?.GetTemplate())?.DisplayName;

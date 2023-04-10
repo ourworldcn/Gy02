@@ -138,6 +138,12 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.TestComp">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:Gy02.Controllers.ItemManagerController.AddItems(Gy02.Publisher.AddItemsParamsDto,Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager,AutoMapper.IMapper)">
             <summary>
             增加物品，调试用接口。
@@ -165,7 +171,7 @@
         </member>
         <member name="M:Gy02.Controllers.ItemManagerController.Composite(Gy02.Publisher.CompositeParamsDto)">
             <summary>
-            合成（升品阶/降低品阶）功能。
+            指定物品合成（升品阶）功能。
             </summary>
             <param name="model"></param>
             <returns></returns>

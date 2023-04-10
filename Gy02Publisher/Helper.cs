@@ -33,6 +33,11 @@ namespace Gy02.Publisher
         /// <summary>
         /// 武器槽TId。
         /// </summary>
+        public readonly static Guid YichuanPifuSlotTId = new Guid("18084905-2C57-4B4C-B302-4B8230740FBD");
+
+        /// <summary>
+        /// 武器槽TId。
+        /// </summary>
         public readonly static Guid WuQiSlotTId = new Guid("29b7e726-387f-409d-a6ac-ad8670a814f0");
 
         /// <summary>

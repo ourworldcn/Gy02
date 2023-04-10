@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Gy02.Publisher;
+using Gy02Bll.Base;
 using Gy02Bll.Commands;
 using Gy02Bll.Managers;
 using Microsoft.AspNetCore.Mvc;
@@ -82,10 +83,26 @@ namespace Gy02.Controllers
             var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
             store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
             var token = gu.Token;
-            var item = gu.CurrentChar.ZhuangBeiBag.Children.First(c => c.TemplateId == Guid.Parse("bd871154-1aab-4add-8433-be4886244560"));
+            var item = gu.CurrentChar.ZhuangBeiBag.Children.First(c => c.TemplateId == Guid.Parse("402a7b1c-bd32-4540-9efe-f9801ed6946b"));
             var sub = new LvUpParamsDto { Token = token, };
             sub.Ids.Add(item.Id);
             LvUp(sub);
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<bool> TestComp()
+        {
+            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
+            var token = gu.Token;
+            var model = new CompositeParamsDto { Token = token ,BlueprintId=Guid.Parse("")};
+            model.MainId = Guid.Parse("0130307a-36fa-4804-b24e-c1c457ae2721");
+            Composite(model);
             return true;
         }
 #endif
@@ -184,7 +201,7 @@ namespace Gy02.Controllers
         }
 
         /// <summary>
-        /// 合成（升品阶/降低品阶）功能。
+        /// 指定物品合成（升品阶）功能。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -200,8 +217,24 @@ namespace Gy02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-            var command = mapper.Map<ApplyBlueprintCommand>(model);
+            var command = mapper.Map<CompositeCommand>(model);
             command.GameChar = gc;
+            var tm = _ServiceProvider.GetRequiredService<TemplateManager>();
+            var entities = tm.GetEntityAndTemplateFullView<GameEntity>(command.GameChar, model.Ids);
+            if (entities is null)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            command.Items.AddRange(entities);
+
+            command.MainItem = tm.GetEntityBase(command.GameChar.GetAllChildren().FirstOrDefault(c => c.Id == model.MainId), out _) as GameEntity;
+            var scm = _ServiceProvider.GetRequiredService<SyncCommandManager>();
+            command.Blueprint = tm.Id2FullView[model.BlueprintId];
+
+            scm.Handle(command);
+
+            mapper.Map(command, result);
             return result;
         }
 

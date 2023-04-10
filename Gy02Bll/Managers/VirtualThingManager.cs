@@ -98,7 +98,8 @@ namespace OW.Game.Manager
             if (tv.TIdsOfCreate is not null)
                 foreach (var item in tv.TIdsOfCreate) //创建所有子对象
                 {
-                    var sub = Create(tv);   //创建子对象
+                    var subTT = _TemplateManager.Id2FullView[item];
+                    var sub = Create(subTT);   //创建子对象
                     Add(sub, result, changes);
                 }
             return result;

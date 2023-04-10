@@ -1,4 +1,6 @@
 ﻿
+using System.Diagnostics;
+
 namespace System.Collections.Generic
 {
     public static class OwEnumerableExtensions
@@ -25,6 +27,7 @@ namespace System.Collections.Generic
         /// <param name="obj"></param>
         /// <param name="action">注意不要修改集合<paramref name="obj"/>。</param>
         /// <exception cref="AggregateException">其中是每个操作引发的异常。</exception>
+        [DebuggerHidden]
         public static void SafeForEach<T>(this IEnumerable<T> obj, Action<T> action)
         {
             List<Exception> list = null;
