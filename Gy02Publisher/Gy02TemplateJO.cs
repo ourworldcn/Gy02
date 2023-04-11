@@ -307,6 +307,14 @@ namespace Gy02Bll.Templates
             return $"{ToString()}({DisplayName})";
         }
 
+        /// <summary>
+        /// 是否可以堆叠。
+        /// </summary>
+        /// <returns>true可堆叠，false不可堆叠。</returns>
+        public bool IsStk()
+        {
+            return Stk != decimal.One;
+        }
     }
 
     /// <summary>

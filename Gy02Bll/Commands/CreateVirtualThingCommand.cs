@@ -97,11 +97,10 @@ namespace Gy02Bll.Commands
         public override void Handle(CreateVirtualThingCommand command)
         {
             var tm = _Service.GetRequiredService<TemplateManager>();
-            var tt = tm.Id2FullView.GetValueOrDefault(command.TemplateId);  //获取模板
+            var tt = tm.GetFullViewFromId(command.TemplateId);  //获取模板
             if (tt is null)
             {
-                command.HasError = true;
-                command.DebugMessage = $"找不到指定模板，Id={command.TemplateId}";
+                command.FillErrorFromWorld();
             }
             else
                 command.Result = _VirtualThingManager.Create(tt);
@@ -117,13 +116,8 @@ namespace Gy02Bll.Commands
         /// <returns>生成的虚拟物集合，如果有错则返回null.</returns>
         public static List<VirtualThing> CreateThing(Guid tid, decimal count, TemplateManager templateManager, SyncCommandManager commandManager)
         {
-            var tt = templateManager.Id2FullView.GetValueOrDefault(tid);
-            if (tt is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"找不到指定Id的模板，TId={tid}");
-                return null;
-            }
+            var tt = templateManager.GetFullViewFromId(tid);
+            if (tt is null) return null;
             var result = new List<VirtualThing>();
             if (tt.Stk == 1)   //若不可堆叠
             {

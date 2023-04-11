@@ -96,7 +96,7 @@ namespace Gy02Bll.Base
         /// 此时使用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
         public static bool SetTemplate(this TemplateManager manager, VirtualThing thing)
         {
-            var tt = manager.Id2FullView.GetValueOrDefault(thing.ExtraGuid);
+            var tt = manager.GetFullViewFromId(thing.ExtraGuid);
             if (tt is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);

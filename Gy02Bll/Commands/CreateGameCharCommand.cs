@@ -41,15 +41,17 @@ namespace Gy02Bll.Commands
     /// </summary>
     public class CreateGameCharHandler : SyncCommandHandlerBase<CreateGameCharCommand>
     {
-        public CreateGameCharHandler(IServiceProvider service)
+        public CreateGameCharHandler(IServiceProvider service, GameEntityManager gameEntityManager)
         {
             _Service = service;
+            _GameEntityManager = gameEntityManager;
         }
 
         /// <summary>
         /// 范围服务容器。
         /// </summary>
         IServiceProvider _Service;
+        GameEntityManager _GameEntityManager;
 
         public override void Handle(CreateGameCharCommand command)
         {
@@ -79,6 +81,14 @@ namespace Gy02Bll.Commands
             result.ExtraGuid = ProjectContent.CharTId;
             result.Parent = command.User.Thing as VirtualThing;
             ((VirtualThing)command.User.Thing).Children.Add(result);
+
+            var coll = gc.GetAllChildren().Select(c =>
+            {
+                var entity = _GameEntityManager.GetEntity(c);
+                var tt = _GameEntityManager.GetTemplate(entity);
+                return (entity, tt);
+            }).Where(c => !c.tt.IsStk()).ToArray();
+            coll.SafeForEach(c => c.entity.Count = 1);
             svcStore.AddChar(gc);   //加入缓存
 
             command.Result = gc;

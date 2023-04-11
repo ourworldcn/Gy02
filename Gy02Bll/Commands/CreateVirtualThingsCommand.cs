@@ -18,7 +18,7 @@ namespace Gy02Bll.Commands
         /// 要创建的虚拟对象的模板Id集合。
         /// 注意这里不考虑数量问题。如果有一个模板Id就会创建一个对象，多个相同模板Id会创建多个相同模板的对象。
         /// </summary>
-        public List<Guid> Items { get; set; } = new List<Guid> { };
+        public List<Guid> TIds { get; set; } = new List<Guid> { };
 
         /// <summary>
         /// 返回创建的对象集合。
@@ -46,6 +46,19 @@ namespace Gy02Bll.Commands
         /// <param name="command"></param>
         public override void Handle(CreateVirtualThingsCommand command)
         {
+            List<VirtualThing> result = new List<VirtualThing>();
+            VirtualThing[] tmp;
+            foreach (var tid in command.TIds)
+            {
+                tmp = _VirtualThingManager.Create(tid, 1, command.Changes);
+                if (tmp is null)
+                {
+                    command.FillErrorFromWorld();
+                    return;
+                }
+                result.AddRange(tmp);
+            }
+            command.Result.AddRange(result);
         }
     }
 }

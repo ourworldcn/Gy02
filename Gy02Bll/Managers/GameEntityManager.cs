@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.DDD;
 using OW.Game.Entity;
+using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
@@ -19,6 +20,7 @@ using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace Gy02Bll.Managers
 {
@@ -33,12 +35,14 @@ namespace Gy02Bll.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameEntityManager : GameManagerBase<GameEntityManagerOptions, GameEntityManager>
     {
-        public GameEntityManager(IOptions<GameEntityManagerOptions> options, ILogger<GameEntityManager> logger, TemplateManager templateManager) : base(options, logger)
+        public GameEntityManager(IOptions<GameEntityManagerOptions> options, ILogger<GameEntityManager> logger, TemplateManager templateManager, VirtualThingManager virtualThingManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
+            _VirtualThingManager = virtualThingManager;
         }
 
         TemplateManager _TemplateManager;
+        VirtualThingManager _VirtualThingManager;
 
         #region 计算寻找物品的匹配
 
@@ -219,21 +223,17 @@ namespace Gy02Bll.Managers
         /// <param name="entity"></param>
         /// <param name="count">数量的增量。</param>
         /// <param name="changes"></param>
-        public void Modify(GameEntity entity, decimal count, ICollection<GamePropertyChangeItem<object>> changes = null)
+        /// <returns>true成功，否则返回false,此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        public bool Modify(GameEntity entity, decimal count, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var template = _TemplateManager.Id2FullView.GetValueOrDefault(entity.TemplateId);
-            if (template is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"找不到Id={entity.TemplateId}的模板。");
-                return;
-            }
+            var template = _TemplateManager.GetFullViewFromId(entity.TemplateId);
+            if (template is null) return false;
             var oldCount = entity.Count;
             entity.Count += count;
             changes?.Add(new GamePropertyChangeItem<object>()
             {
                 Object = entity,
-                PropertyName = "Count",
+                PropertyName = nameof(entity.Count),
                 DateTimeUtc = DateTime.UtcNow,
                 HasOldValue = true,
                 OldValue = oldCount,
@@ -249,6 +249,7 @@ namespace Gy02Bll.Managers
                 var db = (thing.GetRoot() as VirtualThing)?.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) as DbContext;
                 db?.Remove(thing);
             }
+            return true;
         }
 
         /// <summary>
@@ -262,14 +263,9 @@ namespace Gy02Bll.Managers
         {
             var tmp = ((VirtualThing)container.Thing).Children.FirstOrDefault(c => c.ExtraGuid == entity.TemplateId);  //可能的合成物
             if (tmp is null) goto noMerge;    //若不能合并
-            var tt = _TemplateManager.Id2FullView.GetValueOrDefault(tmp.ExtraGuid);
-            if (tt is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                dest = null;
-                return false;
-            }
-            if (tt.Stk == 1)   //若不可堆叠
+            var tt = _TemplateManager.GetFullViewFromId(tmp.ExtraGuid);
+            if (tt is null) goto noMerge;   //若无法找到模板
+            if (!tt.IsStk())   //若不可堆叠
                 goto noMerge;
             else if (tt.Stk != -1)   //若不可无限堆叠
             {
@@ -289,6 +285,232 @@ namespace Gy02Bll.Managers
         noMerge:
             dest = null;
             return false;
+        }
+
+        #region 基础功能
+
+        /// <summary>
+        /// 获取虚拟对象中寄宿的游戏实体对象。
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <returns>寄宿其中的游戏实体对象，如果不是则返回null，此时用<see cref="OwHelper.GetLastError"/>确定是否有错。</returns>
+        public GameEntity GetEntity(VirtualThing thing)
+        {
+            var result = _TemplateManager.GetEntityBase(thing, out _) as GameEntity;
+            if (result is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"指定虚拟对象没有寄宿的对象不是{typeof(GameEntity)}类型,Id={thing.Id}");
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取容器的虚拟对象。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>容器的虚拟对象,返回null表示没有父或出错，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。0表示没有父对象。</returns>
+        public VirtualThing GetParentThing(GameEntity entity)
+        {
+            var thing = entity.GetThing();
+            if (thing is null) return null;
+            OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+            return thing.Parent;
+        }
+
+        /// <summary>
+        /// 获取指定实体的父实体。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>指定实体的容器实体，如果发生错误则返回null，此时用<see cref="OwHelper.GetLastError"/>确定是否有错,可能返回无错误(0)这说明指定实体本旧没有容器。</returns>
+        public GameEntity GetParent(GameEntity entity)
+        {
+            var parentThing = GetParentThing(entity);
+            if (parentThing is null) return null;
+            return GetEntity(parentThing);
+        }
+
+        /// <summary>
+        /// 获取模板。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>模板，如果返回null,此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        public TemplateStringFullView GetTemplate(GameEntity entity) =>
+            _TemplateManager.GetFullViewFromId(entity.TemplateId);
+
+        /// <summary>
+        /// 获取实体的默认容器。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="gc"></param>
+        /// <returns></returns>
+        public GameEntity GetDefaultContainer(GameEntity entity, GameChar gc)
+        {
+            if (entity is null)
+                throw new ArgumentNullException(nameof(entity));
+            if (gc is null)
+                throw new ArgumentNullException(nameof(gc));
+
+            var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId); //获取模板
+            if (tt is null) return null;
+            var ptid = tt.ParentTId;
+
+            var all = gc.GetAllChildren();
+            if (all is null) return null;
+
+            var parent = all.FirstOrDefault(c => c.ExtraGuid == ptid);
+            if (parent is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"无法获取指定角色的所有子对象，CharId={gc.Id}");
+                return null;
+            }
+            return GetEntity(parent);
+        }
+
+        #endregion 基础功能
+
+        /// <summary>
+        /// 创建实体。
+        /// </summary>
+        /// <param name="idAndCount"></param>
+        /// <param name="changes"></param>
+        /// <returns>创建实体的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        public List<GameEntity> Create(IEnumerable<(Guid, decimal)> idAndCount, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var result = new List<GameEntity> { };
+            foreach (var item in idAndCount)
+            {
+                var tt = _TemplateManager.GetFullViewFromId(item.Item1);
+                if (tt is null) return null;
+                if (tt.IsStk())  //可堆叠物
+                {
+                    var tmp = _VirtualThingManager.Create(tt, changes);
+                    if (tmp is null)
+                        return null;
+                    var entity = _TemplateManager.GetEntityBase(tmp, out _) as GameEntity;
+                    if (entity is null)
+                        return null;
+                    entity.Count = item.Item2;
+                    result.Add(entity);
+                }
+                else //不可堆叠物
+                {
+                    var count = (int)item.Item2;
+                    if (count != item.Item2)
+                    {
+                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                        OwHelper.SetLastErrorMessage($"创建不可堆叠物的数量必须是整数。TId={item.Item1}");
+                        return null;
+                    }
+                    var tmp = _VirtualThingManager.Create(tt.TemplateId, count, changes);
+                    if (tmp is null) return null;
+                    foreach (var thing in tmp)
+                    {
+                        var tmpEntity = _TemplateManager.GetEntityBase(thing, out _) as GameEntity;
+                        if (tmpEntity is null)
+                            return null;
+                        tmpEntity.Count = 1;
+                        result.Add(tmpEntity);
+                    }
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 把指定实体从其父容器中移除，但不删除实体。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="changes"></param>
+        /// <returns>true一处成功，false指定实体没有父容器或移除失败，此时用<see cref="OwHelper.GetLastError"/>获取详细信息，0表示指定实体本就没有父容器。</returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        public bool RemoveFromContainer(GameEntity entity, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var parent = GetParent(entity);
+            if (parent is null) //若出错或没有父容器
+            {
+                return false;
+            }
+            else
+            {
+                var parentThing = parent.GetThing();
+                if (parentThing is null) return false;
+                var thing = entity.GetThing();   //不应失败
+                if (!parentThing.Children.Remove(thing)) //若异常错误
+                    throw new InvalidOperationException { };
+                thing.Parent = null;
+                thing.ParentId = null;
+                changes?.CollectionRemove(entity, parent);
+                return true;
+            }
+        }
+
+        public void Move(IEnumerable<GameEntity> entities, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            //TODO 要测试是否能移动
+            foreach (var entity in entities)
+            {
+                var b = Move(entity, gameChar, changes);
+                if (!b)
+                    throw new InvalidOperationException { };
+            }
+        }
+
+
+        /// <summary>
+        /// 移动物品到它模板指定的默认容器中。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="changes"></param>
+        /// <returns></returns>
+        public bool Move(GameEntity entity, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var container = GetDefaultContainer(entity, gameChar);
+            if (container == null) return false;
+            return Move(entity, container, changes);
+        }
+
+        public void Move(IEnumerable<GameEntity> entities, GameEntity container, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            //TODO 需要判断是否可以完整移入
+            foreach (var entity in entities)
+                Move(entity, container, changes);
+        }
+
+        public bool Move(GameEntity entity, GameEntity container, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId);
+            if (tt is null) return false;
+            if (tt.IsStk())  //若是可堆叠物
+            {
+                if (!RemoveFromContainer(entity, changes) && OwHelper.GetLastError() != ErrorCodes.NO_ERROR) return false;
+                if (IsMerge(entity, container, out var dest))  //若找到可合并物
+                {
+                    Modify(dest, entity.Count, changes);
+                }
+                else //没有可合并物
+                {
+                    var parentThing = container.GetThing();
+                    if (parentThing is null) return false;
+                    var thing = entity.GetThing();
+                    if (thing is null) return false;
+                    VirtualThingManager.Add(thing, parentThing);
+                    changes?.CollectionAdd(thing, parentThing);
+                }
+            }
+            else //若非可堆叠物
+            {
+                if (!RemoveFromContainer(entity, changes) && OwHelper.GetLastError() != ErrorCodes.NO_ERROR) return false;
+                var parentThing = container.GetThing();
+                if (parentThing is null) return false;
+                var thing = entity.GetThing();
+                if (thing is null) return false;
+                VirtualThingManager.Add(thing, parentThing);
+                changes?.CollectionAdd(thing, parentThing);
+            }
+            return true;
         }
     }
 }

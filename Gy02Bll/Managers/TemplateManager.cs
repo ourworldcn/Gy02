@@ -188,6 +188,22 @@ namespace OW.Game.Managers
         }
 
         /// <summary>
+        /// 返回完整视图。
+        /// </summary>
+        /// <param name="tid"></param>
+        /// <returns>完整视图对象，如果没有找到则返回null。此时<see cref="OwHelper.GetLastError"/>将返回具体错误。</returns>
+        public TemplateStringFullView GetFullViewFromId(Guid tid)
+        {
+            var result = Id2FullView.GetValueOrDefault(tid);
+            if (result == null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定Id的模板，TId={tid}");
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 获取虚拟物的实体。
         /// </summary>
         /// <param name="thing"></param>

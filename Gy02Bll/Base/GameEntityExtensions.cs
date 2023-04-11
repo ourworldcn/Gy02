@@ -26,7 +26,10 @@ namespace Gy02Bll.Base
         /// </summary>
         /// <param name="entity"></param>
         /// <returns>宿主对象，如果没有找到则返回null。</returns>
-        public static VirtualThing GetThing(this OwGameEntityBase entity) => entity.Thing as VirtualThing;
+        public static VirtualThing GetThing(this OwGameEntityBase entity)
+        {
+            return entity.Thing as VirtualThing;
+        }
 
         /// <summary>
         /// 设置指定属性的值。

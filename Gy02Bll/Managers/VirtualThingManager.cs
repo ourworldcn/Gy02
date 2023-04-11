@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Gy02.Publisher;
 using Gy02Bll.Base;
 using Gy02Bll.Templates;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace OW.Game.Manager
 {
@@ -79,10 +81,38 @@ namespace OW.Game.Manager
         IMapper _Mapper;
 
         /// <summary>
+        /// 用指定的模板Id创建对象。
+        /// </summary>
+        /// <param name="tId"></param>
+        /// <param name="count">创建多少个对象。</param>
+        /// <param name="changes"></param>
+        /// <returns>创建对象的数组，任何创建失败都会导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        public VirtualThing[] Create(Guid tId, int count, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var tt = _TemplateManager.Id2FullView.GetValueOrDefault(tId);
+            if (tt is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定模板，Id={tId}");
+                return null;
+            }
+            VirtualThing[] result = new VirtualThing[count];
+            VirtualThing tmp;
+            for (int i = 0; i < count; i++)
+            {
+                tmp = Create(tt, changes);
+                if (tmp is null)
+                    return null;
+                result[i] = tmp;
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="tv">创建的模板。</param>
-        /// <param name="changes">记录详细变化数据的集合，省略或为null则忽略。</param>
+        /// <param name="changes">记录详细变化数据的集合，省略或为null则忽略，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</param>
         /// <returns></returns>
         public VirtualThing Create(TemplateStringFullView tv, ICollection<GamePropertyChangeItem<object>> changes = null)
         {

@@ -70,56 +70,65 @@ namespace Gy02Bll.Commands
                 return;
             }
             var bp = command.Blueprint;
-            if ((bp?.In?.Count ?? 0) <= 0 || (bp?.Out?.Count ?? 0) <= 0)
-            {
-                command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                command.DebugMessage = "指定蓝图Id不正确。";
-                return;
+            //TODO 检测参数合法性
+            //if ((bp?.In?.Count ?? 0) <= 0 || (bp?.Out?.Count ?? 0) <= 0)
+            //{
+            //    command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+            //    command.DebugMessage = "指定蓝图Id不正确。";
+            //    return;
 
-            }
-            if (!bp.In.Any(c => _BlueprintManager.IsMatch(command.MainItem, c)))
-            {
-                command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                command.DebugMessage = "主材料不符合蓝图输入项的要求。";
-                return;
-            }
-            if (!command.Items.All(item => bp.In.Any(c => _BlueprintManager.IsMatch(item, c))))
-            {
-                command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                command.DebugMessage = "至少一个材料不符合蓝图输入项的要求。";
-                return;
-            }
+            //}
+            //if (!bp.In.Any(c => _BlueprintManager.IsMatch(command.MainItem, c)))
+            //{
+            //    command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+            //    command.DebugMessage = "主材料不符合蓝图输入项的要求。";
+            //    return;
+            //}
+            //if (!command.Items.All(item => bp.In.Any(c => _BlueprintManager.IsMatch(item, c))))
+            //{
+            //    command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+            //    command.DebugMessage = "至少一个材料不符合蓝图输入项的要求。";
+            //    return;
+            //}
 
-            var cost = command.Items.Append(command.MainItem).Select(c => (c, -c.Count));
-            var modifyCount = new ModifyEntityCountCommand { Items = cost.ToList() };
-            _SyncCommandManager.Handle(modifyCount);
-            if (modifyCount.HasError)
+            var cost = command.Items.Append(command.MainItem).Select(c => new GameEntitySummary
             {
-                command.FillErrorFrom(modifyCount);
+                TId = c.TemplateId,
+                Count = c.Count,
+                Id = c.Id,
+                ParentTId = _GameEntityManager.GetParentThing(c)?.ExtraGuid
+            }).ToArray(); //记录消耗材料
+            //应用蓝图
+            var commandApply = new ApplyBlueprintCommand
+            {
+                Blueprint = command.Blueprint,
+                GameChar = command.GameChar,
+            };
+            commandApply.InItems.AddRange(command.Items);
+            commandApply.InItems.Add(command.MainItem);
+
+            _SyncCommandManager.Handle(commandApply);
+            if (command.HasError)
+            {
+                command.FillErrorFrom(commandApply);
                 return;
             }
-            command.Changes?.AddRange(modifyCount.Changes);
-
-            List<GameEntity> entities = new List<GameEntity>();
-            foreach (var item in bp.Out)    //生成输出项
+            //消耗代价
+            var removes = command.Items.Append(command.MainItem).Select(c => (Entity: c, Count: -c.Count)).ToArray();
+            foreach (var item in removes)
             {
-                var createThing = new CreateVirtualThingCommand { TemplateId = item.TId };
-                _SyncCommandManager.Handle(createThing);
-                if (createThing.HasError)
-                {
-                    command.FillErrorFrom(createThing);
-                    return;
-                }
-                entities.Add((GameEntity)_TemplateManager.GetEntityBase(createThing.Result, out _));
+                //TODO 要处理不是完整消耗的情况
+                _GameEntityManager.Modify(item.Entity, item.Count, command.Changes);
             }
-            var move = new MoveEntitiesCommand { Items = entities };
-            _SyncCommandManager.Handle(move);
-            if (move.HasError) { command.FillErrorFrom(move); return; }
-            command?.Changes.AddRange(move.Changes);
+            //生成物品
+            var mainOut = commandApply.OutItems.First(); //主要输出物
+            _GameEntityManager.Move(commandApply.OutItems, command.GameChar, command.Changes);
+
             //生成合成材料记录
-            var mainOut = entities.First(); //主要输出物
-            var oldCost = mainOut.CompositingAccruedCost?.ToArray() ?? Array.Empty<GameEntitySummary>();    //旧的合成材料记录
-            var newCost = oldCost.Concat(cost.Select(c => new GameEntitySummary { Count = c.Item2, TId = c.c.TemplateId })).ToArray();   //新材料记录
+            var oldCost = mainOut.CompositingAccruedCost?.ToArray() ?? Array.Empty<GameEntitySummary>().ToArray();    //旧的合成材料记录
+            var newCost = (from tmp in oldCost.Concat(cost)   //新材料记录
+                           group tmp by tmp.TId into g
+                           select new GameEntitySummary { TId = g.Key, Count = g.Sum(x => x.Count) }).ToArray();
             command.Changes?.Add(new GamePropertyChangeItem<object>
             {
                 Object = mainOut,

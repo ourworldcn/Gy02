@@ -98,10 +98,15 @@ namespace Gy02.Controllers
         public ActionResult<bool> TestComp()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
-            store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
+            store.LoadOrGetUser("gy27", "W1QPLWSB", out var gu);
             var token = gu.Token;
-            var model = new CompositeParamsDto { Token = token ,BlueprintId=Guid.Parse("")};
-            model.MainId = Guid.Parse("0130307a-36fa-4804-b24e-c1c457ae2721");
+            var gc = gu.CurrentChar;
+            var model = new CompositeParamsDto { Token = token, BlueprintId = Guid.Parse("2fc38d58-86e5-4eff-ba68-ccf60f356f5a") };
+
+            var items = gc.GetAllChildren().Where(c => c.ExtraGuid == Guid.Parse("110b74ff-db7e-4a28-9e28-12beaf18a9e1")).Take(3).ToArray(); //兰山羊
+            model.MainId = items.First().Id;
+            model.Ids.AddRange(items.Skip(1).Select(c => c.Id));
+
             Composite(model);
             return true;
         }

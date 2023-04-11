@@ -199,9 +199,8 @@ namespace OW.Game.Entity
         /// 获取属于指定角色的所有子虚拟物。
         /// </summary>
         /// <param name="gc"></param>
-        /// <returns></returns>
+        /// <returns>所有子虚拟物的枚举子。如果出错则返回null,此时用<see cref="OwHelper.GetLastError"/>确定具体信息。</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static IEnumerable<VirtualThing> GetAllChildren(this GameChar gc) => (gc.Thing as VirtualThing).GetAllChildren();
-
+        public static IEnumerable<VirtualThing> GetAllChildren(this GameChar gc) => gc.GetThing()?.GetAllChildren();
     }
 }

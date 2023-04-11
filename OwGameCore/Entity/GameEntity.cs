@@ -1,4 +1,5 @@
-﻿using Gy02Bll.Templates;
+﻿using Gy02.Publisher;
+using Gy02Bll.Templates;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using System;
@@ -120,5 +121,24 @@ namespace OW.Game.Entity
         /// </summary>
         [JsonPropertyName("cap")]
         public decimal Capacity { get; set; } = -1;
+    }
+
+    public static class GameEntityExtensions
+    {
+        /// <summary>
+        /// 获取实体寄宿的虚拟对象。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>虚拟对象，如果出错则返回null,此时用<see cref="OwHelper.GetLastError"/>确定具体信息。</returns>
+        public static VirtualThing GetThing(this GameEntity entity)
+        {
+            var result = entity.Thing as VirtualThing;
+            if (result == null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"指定实体寄宿的对象类型不是{typeof(VirtualThing)}类型,Id={entity.Id}");
+            }
+            return result;
+        }
     }
 }

@@ -194,6 +194,12 @@
             合成公式的Id。省略则没有合成公式。
             </summary>
         </member>
+        <member name="M:Gy02Bll.Templates.TemplateStringFullView.IsStk">
+            <summary>
+            是否可以堆叠。
+            </summary>
+            <returns>true可堆叠，false不可堆叠。</returns>
+        </member>
         <member name="T:Gy02Bll.Templates.CostInfo">
             <summary>
             升级的代价类。
