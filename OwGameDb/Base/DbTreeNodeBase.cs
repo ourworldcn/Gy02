@@ -63,12 +63,18 @@ namespace OW.Game.Store
 
     public static class DbTreeNodeExtensions
     {
+        /// <summary>
+        /// 获取树状结构中指定节点的根节点。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public static IDbTreeNode<T> GetRoot<T>(this IDbTreeNode<T> node) where T : IEntityWithSingleKey<Guid>
         {
-            IDbTreeNode<T> tmp, result;
+            IDbTreeNode<T> tmp, result=null;
             for (tmp = node.Parent as IDbTreeNode<T>; tmp is not null; tmp = tmp.Parent as IDbTreeNode<T>)
                 result = tmp;
-            return tmp;
+            return result;
         }
     }
 

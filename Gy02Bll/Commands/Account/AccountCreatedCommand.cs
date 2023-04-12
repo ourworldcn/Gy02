@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace Gy02Bll.Commands.Account
 {
     /// <summary>
     /// 账号已经被创建的事件数据。

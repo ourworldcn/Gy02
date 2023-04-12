@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using Gy02.Publisher;
-using Gy02Bll.Commands;
+using Gy02Bll.Commands.Account;
 using Gy02Bll.Managers;
 using Gy02Bll.Templates;
 using Microsoft.AspNetCore.Http;

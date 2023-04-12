@@ -23,7 +23,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace Gy02Bll.Commands.Account
 {
     /// <summary>
     /// 账号被创建后的事件。

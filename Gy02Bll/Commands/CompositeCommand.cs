@@ -118,6 +118,13 @@ namespace Gy02Bll.Commands
             foreach (var item in removes)
             {
                 //TODO 要处理不是完整消耗的情况
+                if (item.Entity.LvUpAccruedCost?.Count > 0) //若需要降低等级
+                {
+                    var lvDown = new LvDownCommand { Entity = item.Entity, GameChar = command.GameChar };
+                    _SyncCommandManager.Handle(lvDown);
+                    command.Changes.AddRange(lvDown.Changes);
+                }
+
                 _GameEntityManager.Modify(item.Entity, item.Count, command.Changes);
             }
             //生成物品

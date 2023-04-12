@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace Gy02Bll.Commands.Account
 {
     /// <summary>
     /// 创建角色的命令。

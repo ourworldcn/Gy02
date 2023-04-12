@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace Gy02Bll.Commands.Account
 {
     /// <summary>
     /// 用户注销(登出)的原因。
@@ -34,7 +34,7 @@ namespace Gy02Bll.Commands
     /// </summary>
     public class AccountLogoutingCommand : SyncCommandBase
     {
-        public GameUser  User{ get; set; }
+        public GameUser User { get; set; }
 
         public GameUserLogoutReason Reason { get; set; }
     }
@@ -43,7 +43,7 @@ namespace Gy02Bll.Commands
     {
         public override void Handle(AccountLogoutingCommand command)
         {
-            
+
         }
     }
 }

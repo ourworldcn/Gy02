@@ -242,12 +242,7 @@ namespace Gy02Bll.Managers
             });
             if (entity.Count == 0 && !template.Count0Reserved) //若需要删除
             {
-                var thing = entity.Thing as VirtualThing;
-                var parent = thing.Parent;
-                thing.Parent.Children.Remove(thing); thing.Parent = null; thing.ParentId = null;
-                changes?.CollectionRemove(thing, parent);
-                var db = (thing.GetRoot() as VirtualThing)?.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) as DbContext;
-                db?.Remove(thing);
+                Delete(entity, changes);
             }
             return true;
         }
@@ -370,6 +365,8 @@ namespace Gy02Bll.Managers
 
         #endregion 基础功能
 
+        #region 创建实体相关功能
+
         /// <summary>
         /// 创建实体。
         /// </summary>
@@ -414,6 +411,40 @@ namespace Gy02Bll.Managers
             }
             return result;
         }
+
+        #endregion 创建实体相关功能
+
+        #region 删除实体相关功能
+
+        /// <summary>
+        /// 从数据库中删除指定实体极其宿主对象。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="changes"></param>
+        /// <returns></returns>
+        public bool Delete(GameEntity entity, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var thing = entity.GetThing();
+            if (thing is null) return false;
+            var parent = GetParent(entity);
+            var db = (thing.GetRoot() as VirtualThing)?.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) as DbContext;
+            if (db is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定实体宿主对象的数据库上下文，Id={entity.Id}");
+                return false;
+            }
+            var result = _VirtualThingManager.Delete(thing, db);
+            if (result)
+            {
+                changes?.CollectionRemove(entity, parent);
+            }
+            return result;
+        }
+
+        #endregion 删除实体相关功能
+
+        #region 改变实体相关功能
 
         /// <summary>
         /// 把指定实体从其父容器中移除，但不删除实体。
@@ -460,7 +491,6 @@ namespace Gy02Bll.Managers
                     throw new InvalidOperationException { };
             }
         }
-
 
         /// <summary>
         /// 移动物品到它模板指定的默认容器中。
@@ -512,9 +542,11 @@ namespace Gy02Bll.Managers
                 var thing = entity.GetThing();
                 if (thing is null) return false;
                 VirtualThingManager.Add(thing, parentThing);
-                changes?.CollectionAdd(thing, parentThing);
+                changes?.CollectionAdd(entity, container);
             }
             return true;
         }
+
+        #endregion 改变实体相关功能
     }
 }

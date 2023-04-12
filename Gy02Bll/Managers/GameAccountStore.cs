@@ -1,5 +1,5 @@
 ﻿using Gy02.Publisher;
-using Gy02Bll.Commands;
+using Gy02Bll.Commands.Account;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;

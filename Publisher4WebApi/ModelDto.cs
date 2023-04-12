@@ -15,6 +15,7 @@ using AutoMapper.Configuration.Annotations;
 using System.Text.Json.Serialization;
 using System.Net.NetworkInformation;
 using OW.Game.PropertyChange;
+using Gy02Bll.Commands.Account;
 
 namespace Gy02.Publisher
 {

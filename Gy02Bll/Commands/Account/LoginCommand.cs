@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace Gy02Bll.Commands.Account
 {
     public class LoginCommand : SyncCommandBase
     {

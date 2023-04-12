@@ -2,6 +2,7 @@
 using Gy02.Publisher;
 using Gy02Bll.Base;
 using Gy02Bll.Templates;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -133,6 +134,19 @@ namespace OW.Game.Manager
                     Add(sub, result, changes);
                 }
             return result;
+        }
+
+
+        public bool Delete(VirtualThing thing, DbContext context)
+        {
+            if (thing.Parent is not null)
+            {
+                thing.Parent.Children.Remove(thing);
+            }
+            thing.Parent = null;
+            thing.ParentId = null;
+            context.Remove(thing);
+            return true;
         }
 
         /// <summary>
