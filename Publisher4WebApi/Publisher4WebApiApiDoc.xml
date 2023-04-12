@@ -602,6 +602,31 @@
             合成接口的返回数据封装类。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.AutoCompositeReturnDto">
+            <summary>
+            自动合成紫色（不含）以下装备接口的返回数据封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.AutoCompositeParamsDto">
+            <summary>
+            自动合成紫色（不含）以下装备功能的参数封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.DecomposeParamsDto">
+            <summary>
+            分解（降品）装备功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.DecomposeParamsDto.ItemId">
+            <summary>
+            要降品的装备的唯一Id。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.DecomposeReturnDto">
+            <summary>
+            分解（降品）装备功能的返回值封装类。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.ApplyBlueprintReturnDto">
             <summary>
             

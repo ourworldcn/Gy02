@@ -796,6 +796,43 @@ namespace Gy02.Publisher
     public class CompositeReturnDto : PropertyChangeReturnDto
     {
     }
+
+    /// <summary>
+    /// 自动合成紫色（不含）以下装备接口的返回数据封装类。
+    /// </summary>
+    [AutoMap(typeof(AutoCompositeCommand))]
+    public class AutoCompositeReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
+    /// 自动合成紫色（不含）以下装备功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(AutoCompositeCommand), ReverseMap = true)]
+    public class AutoCompositeParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 分解（降品）装备功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(DecomposeCommand), ReverseMap = true)]
+    public class DecomposeParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要降品的装备的唯一Id。
+        /// </summary>
+        public Guid ItemId { get; set; }
+    }
+
+    /// <summary>
+    /// 分解（降品）装备功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(DecomposeCommand))]
+    public class DecomposeReturnDto : PropertyChangeReturnDto
+    {
+    }
+
     #endregion 物品管理相关
 
     #region 蓝图相关

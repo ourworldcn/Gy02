@@ -24,12 +24,21 @@ namespace Gy02.Controllers
         /// 
         /// </summary>
         /// <param name="serviceProvider"></param>
-        public ItemManagerController(IServiceProvider serviceProvider)
+        /// <param name="mapper"></param>
+        /// <param name="gameEntityManager"></param>
+        /// <param name="syncCommandManager"></param>
+        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager)
         {
             _ServiceProvider = serviceProvider;
+            _Mapper = mapper;
+            _GameEntityManager = gameEntityManager;
+            _SyncCommandManager = syncCommandManager;
         }
 
         readonly IServiceProvider _ServiceProvider;
+        IMapper _Mapper;
+        GameEntityManager _GameEntityManager;
+        SyncCommandManager _SyncCommandManager;
 
         /// <summary>
         /// 移动物品接口。
@@ -243,6 +252,71 @@ namespace Gy02.Controllers
             return result;
         }
 
+        /// <summary>
+        /// 自动合成紫色（不含）以下装备。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<AutoCompositeReturnDto> AutoComposite(AutoCompositeParamsDto model)
+        {
+            var result = new AutoCompositeReturnDto { };
+            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            using var dw = store.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var command = _Mapper.Map<AutoCompositeCommand>(model);
+            command.GameChar = gc;
+            var scm = _ServiceProvider.GetRequiredService<SyncCommandManager>();
+
+            scm.Handle(command);
+
+            _Mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
+        /// 分解（降品）装备。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<DecomposeReturnDto> Decompose(DecomposeParamsDto model)
+        {
+            var result = new DecomposeReturnDto { };
+            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            using var dw = store.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var command = _Mapper.Map<DecomposeCommand>(model);
+            command.GameChar = gc;
+            var item = gc.GetAllChildren().FirstOrDefault(c => c.Id == model.ItemId);
+            if (item is null)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"找不到指定的装备，Id={model.ItemId}";
+                return result;
+            }
+            var entity = _GameEntityManager.GetEntity(item);
+            if (entity is null)
+            {
+                command.FillErrorFromWorld();
+                return result;
+            }
+            command.Item = entity;
+
+            _SyncCommandManager.Handle(command);
+
+            _Mapper.Map(command, result);
+            return result;
+
+        }
     }
 
 }

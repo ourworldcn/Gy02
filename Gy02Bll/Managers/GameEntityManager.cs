@@ -373,7 +373,7 @@ namespace Gy02Bll.Managers
         /// <summary>
         /// 创建实体。
         /// </summary>
-        /// <param name="idAndCount"></param>
+        /// <param name="idAndCount">对不可堆叠物品，会创建多个对象，每个对象数量是1。</param>
         /// <param name="changes"></param>
         /// <returns>创建实体的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
         public List<GameEntity> Create(IEnumerable<(Guid, decimal)> idAndCount, ICollection<GamePropertyChangeItem<object>> changes = null)
@@ -386,11 +386,9 @@ namespace Gy02Bll.Managers
                 if (tt.IsStk())  //可堆叠物
                 {
                     var tmp = _VirtualThingManager.Create(tt, changes);
-                    if (tmp is null)
-                        return null;
-                    var entity = _TemplateManager.GetEntityBase(tmp, out _) as GameEntity;
-                    if (entity is null)
-                        return null;
+                    if (tmp is null) return null;
+                    var entity = GetEntity(tmp);
+                    if (entity is null) return null;
                     entity.Count = item.Item2;
                     result.Add(entity);
                 }
@@ -407,9 +405,8 @@ namespace Gy02Bll.Managers
                     if (tmp is null) return null;
                     foreach (var thing in tmp)
                     {
-                        var tmpEntity = _TemplateManager.GetEntityBase(thing, out _) as GameEntity;
-                        if (tmpEntity is null)
-                            return null;
+                        var tmpEntity = GetEntity(thing);
+                        if (tmpEntity is null) return null;
                         tmpEntity.Count = 1;
                         result.Add(tmpEntity);
                     }
@@ -446,6 +443,13 @@ namespace Gy02Bll.Managers
             }
         }
 
+        /// <summary>
+        /// 移动物品到它模板指定的默认容器中。
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="changes"></param>
+        /// <exception cref="InvalidOperationException"></exception>
         public void Move(IEnumerable<GameEntity> entities, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             //TODO 要测试是否能移动

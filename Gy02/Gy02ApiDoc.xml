@@ -105,16 +105,30 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="T:Gy02.Controllers.CombatController">
+            <summary>
+            战斗控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.CombatController.Test">
+            <summary>
+            测试。
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Gy02.Controllers.ItemManagerController">
             <summary>
             物品管理控制器
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.#ctor(System.IServiceProvider)">
+        <member name="M:Gy02.Controllers.ItemManagerController.#ctor(System.IServiceProvider,AutoMapper.IMapper,Gy02Bll.Managers.GameEntityManager,OW.SyncCommand.SyncCommandManager)">
             <summary>
             
             </summary>
             <param name="serviceProvider"></param>
+            <param name="mapper"></param>
+            <param name="gameEntityManager"></param>
+            <param name="syncCommandManager"></param>
         </member>
         <member name="M:Gy02.Controllers.ItemManagerController.MoveItems(Gy02.Publisher.MoveItemsParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
@@ -172,6 +186,20 @@
         <member name="M:Gy02.Controllers.ItemManagerController.Composite(Gy02.Publisher.CompositeParamsDto)">
             <summary>
             指定物品合成（升品阶）功能。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.AutoComposite(Gy02.Publisher.AutoCompositeParamsDto)">
+            <summary>
+            自动合成紫色（不含）以下装备。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.Decompose(Gy02.Publisher.DecomposeParamsDto)">
+            <summary>
+            分解（降品）装备。
             </summary>
             <param name="model"></param>
             <returns></returns>
