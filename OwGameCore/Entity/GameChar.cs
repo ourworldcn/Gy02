@@ -97,6 +97,15 @@ namespace OW.Game.Entity
         [JsonPropertyName("crit")]
         public decimal Crit { get; set; }
 
+        /// <summary>
+        /// 角色当前所处战斗的关卡模板Id。
+        /// </summary>
+        public Guid? CombatTId { get; set; }
+
+        /// <summary>
+        /// 客户端用于记录战斗内信息的字符串。
+        /// </summary>
+        public string ClientCombatInfo { get; set; }
         #endregion 普通属性
 
 

@@ -51,6 +51,53 @@ namespace Gy02Bll.Managers
         }
 
         /// <summary>
+        /// 在一组实体中选择条件指定实体。
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <param name="conditionals"></param>
+        /// <returns>返回条件与实体配对的值元组的集合。如果出现任何错误将返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        public IEnumerable<(BlueprintInItem, GameEntity)> GetCost(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals)
+        {
+            var result = new List<(BlueprintInItem, GameEntity)>();
+            var list = new List<BlueprintInItem>(conditionals);
+            var all = new HashSet<GameEntity>(entities);
+
+            foreach (var conditional in conditionals)
+            {
+                var entity = all.Where(c => IsMatch(c, conditional)).FirstOrDefault();
+                if (entity is null)
+                {
+                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                    OwHelper.SetLastErrorMessage($"无法找到符合条件{conditional}的实体。");
+                    return null;
+                }
+                result.Add((conditional, entity));
+                all.Remove(entity); //去掉已经被匹配的项
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <param name="conditionals"></param>
+        /// <param name="changes"></param>
+        /// <returns>true成功消耗了所有指定材料，false至少有一种材料不满足条件。</returns>
+        /// <exception cref="InvalidOperationException"></exception>
+        public bool Deplete(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var coll = GetCost(entities, conditionals);
+            if (coll is null) return false;
+            var tmp = coll.Select(c => (Entity: c.Item2, Count: -Math.Abs(c.Item1.Count))).Where(c => c.Count != 0);
+            foreach (var item in tmp.ToArray())
+            {
+                if (!_EntityManager.Modify(item.Entity, item.Count, changes)) throw new InvalidOperationException { };  //若出现无法减少的异常
+            }
+            return true;
+        }
+
+        /// <summary>
         /// 获取指示，指定的实体是否符合蓝图输入项的要求。
         /// </summary>
         /// <param name="item"></param>

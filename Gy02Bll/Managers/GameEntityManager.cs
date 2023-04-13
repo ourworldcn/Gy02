@@ -221,7 +221,7 @@ namespace Gy02Bll.Managers
         /// 修改虚拟物的数量。不进行参数校验的修改数量属性。并根据需要返回更改数据。
         /// </summary>
         /// <param name="entity"></param>
-        /// <param name="count">数量的增量。</param>
+        /// <param name="count">数量的增量，即正数为增加，负数为减少。</param>
         /// <param name="changes"></param>
         /// <returns>true成功，否则返回false,此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
         public bool Modify(GameEntity entity, decimal count, ICollection<GamePropertyChangeItem<object>> changes = null)

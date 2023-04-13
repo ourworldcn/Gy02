@@ -294,8 +294,8 @@ namespace Gy02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-            var command = _Mapper.Map<DecomposeCommand>(model);
-            command.GameChar = gc;
+            var command = new DecomposeCommand {GameChar=gc };
+            
             var item = gc.GetAllChildren().FirstOrDefault(c => c.Id == model.ItemId);
             if (item is null)
             {

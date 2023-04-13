@@ -302,6 +302,14 @@ namespace Gy02Bll.Templates
         public Guid? CompositeId { get; set; }
         #endregion 合成相关
 
+        #region 战斗相关
+        /// <summary>
+        /// 关卡入场费。
+        /// </summary>
+        public List<BlueprintInItem> EntranceFees { get; set; } = new List<BlueprintInItem>();
+
+        #endregion
+
         private string GetDebuggerDisplay()
         {
             return $"{ToString()}({DisplayName})";

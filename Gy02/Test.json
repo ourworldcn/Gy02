@@ -1,28 +1,11 @@
 {
   "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-  "name_txt": 11829,
+  "ptid": "3b163a62-6591-4a93-a385-cf079b20f589",
+  "name_txt": 12414,
   "atk": null,
   "def": null,
-  "pow": [ 50, 55, 60, 65, 70, 75, 80, 85, 90, 95 ],
-  "genus": [ "p_wh", "e_zuoqi" ],
-  "p_skills": [
-    {
-      "skillsid": "979c4439-318e-4fa3-a26a-8811d5de6c2a",
-      "enable": true
-    },
-    {
-      "skillsid": "171df1f4-935f-4e92-b612-b33275575db3",
-      "enable": false
-    },
-    {
-      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
-      "enable": false
-    },
-    {
-      "skillsid": "fcb0c083-e337-4d67-bfe3-5a2e590137b9",
-      "enable": false
-    }
-  ],
-  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e"
+  "pow": null,
+  "genus": [ "rarity_zg", "e_zuoqi" ],
+  "p_skills": [],
+  "equipskin": "Wolf_Hybrid_Giraffe"
 }

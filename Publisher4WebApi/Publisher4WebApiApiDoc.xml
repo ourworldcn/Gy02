@@ -190,6 +190,17 @@
             暴击倍数。1表示暴击和普通上海一致。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.GameCharDto.CombatTId">
+            <summary>
+            角色当前所处战斗的关卡模板Id。
+            为null表示不在战斗中。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameCharDto.ClientCombatInfo">
+            <summary>
+            客户端用于记录战斗内信息的字符串。
+            </summary>
+        </member>
         <member name="P:Gy02.Publisher.GameCharDto.YichuanPifuSlot">
             <summary>
             已穿戴皮肤槽。
@@ -645,6 +656,46 @@
         <member name="P:Gy02.Publisher.ApplyBlueprintParamsDto.BlueprintId">
             <summary>
             使用的蓝图模板Id。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.EndCombatParamsDto">
+            <summary>
+            结算战斗功能参数封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.EndCombatReturnDto">
+            <summary>
+            结算战斗返回值封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.CombatMarkParamsDto">
+            <summary>
+            记录战斗中信息功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CombatMarkParamsDto.CombatInfo">
+            <summary>
+            要标记的战斗信息。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.CombatMarkReturnDto">
+            <summary>
+            记录战斗中信息返回信息封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.StartCombatParamsDto">
+            <summary>
+            开始战斗功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.StartCombatParamsDto.CombatTId">
+            <summary>
+            要启动的战斗模板Id。目前只有 905288ED-1615-4033-9F94-850C0C56E5C5 一个关卡。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.StartCombatReturnDto">
+            <summary>
+            开始战斗功能返回封装类。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.DispatcherDemo">

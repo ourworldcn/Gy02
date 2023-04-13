@@ -1,4 +1,5 @@
-﻿using OW.SyncCommand;
+﻿using OW.Game.Entity;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,13 @@ namespace Gy02Bll.Commands.Combat
         {
 
         }
+
+        public GameChar GameChar { get; set; }
+
+        public Guid CombatTId { get; set; }
+
+        public List<GameEntitySummary> Rewards { get; set; } =new List<GameEntitySummary>();
+
     }
 
     public class EndCombatHandler : SyncCommandHandlerBase<EndCombatCommand>
@@ -24,7 +32,6 @@ namespace Gy02Bll.Commands.Combat
 
         public override void Handle(EndCombatCommand command)
         {
-            throw new NotImplementedException();
         }
     }
 }

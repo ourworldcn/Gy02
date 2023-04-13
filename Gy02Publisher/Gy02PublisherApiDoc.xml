@@ -194,6 +194,11 @@
             合成公式的Id。省略则没有合成公式。
             </summary>
         </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.EntranceFees">
+            <summary>
+            关卡入场费。
+            </summary>
+        </member>
         <member name="M:Gy02Bll.Templates.TemplateStringFullView.IsStk">
             <summary>
             是否可以堆叠。

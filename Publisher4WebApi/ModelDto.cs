@@ -16,6 +16,7 @@ using System.Text.Json.Serialization;
 using System.Net.NetworkInformation;
 using OW.Game.PropertyChange;
 using Gy02Bll.Commands.Account;
+using Gy02Bll.Commands.Combat;
 
 namespace Gy02.Publisher
 {
@@ -24,7 +25,7 @@ namespace Gy02.Publisher
     /// <summary>
     /// 游戏内装备/道具的摘要信息。
     /// </summary>
-    [AutoMap(typeof(GameEntitySummary))]
+    [AutoMap(typeof(GameEntitySummary), ReverseMap = true)]
     public class GameEntitySummaryDto
     {
         /// <summary>
@@ -246,6 +247,16 @@ namespace Gy02.Publisher
         [JsonPropertyName("crit")]
         public decimal Crit { get; set; }
 
+        /// <summary>
+        /// 角色当前所处战斗的关卡模板Id。
+        /// 为null表示不在战斗中。
+        /// </summary>
+        public Guid? CombatTId { get; set; }
+
+        /// <summary>
+        /// 客户端用于记录战斗内信息的字符串。
+        /// </summary>
+        public string ClientCombatInfo { get; set; }
         #endregion 简单属性
 
         #region 各种槽
@@ -298,7 +309,7 @@ namespace Gy02.Publisher
         /// <summary>
         /// 皮肤背包。
         /// </summary>
-        public GameSlotDto<GameItemDto> PiFuBag { get; set; }
+        public GameSlotDto<GameEquipmentDto> PiFuBag { get; set; }
 
         /// <summary>
         /// 货币槽。
@@ -861,6 +872,66 @@ namespace Gy02.Publisher
     }
 
     #endregion 蓝图相关
+
+    #region 战斗相关
+    /// <summary>
+    /// 结算战斗功能参数封装类。
+    /// </summary>
+    [AutoMap(typeof(EndCombatCommand), ReverseMap = true)]
+    public class EndCombatParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 结算战斗返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(EndCombatCommand))]
+    public class EndCombatReturnDto : ReturnDtoBase
+    {
+
+    }
+
+    /// <summary>
+    /// 记录战斗中信息功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(CombatMarkCommand), ReverseMap = true)]
+    public class CombatMarkParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要标记的战斗信息。
+        /// </summary>
+        public string CombatInfo { get; set; }
+    }
+
+    /// <summary>
+    /// 记录战斗中信息返回信息封装类。
+    /// </summary>
+    [AutoMap(typeof(CombatMarkCommand))]
+    public class CombatMarkReturnDto : ReturnDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 开始战斗功能参数封装类。
+    /// </summary>
+    [AutoMap(typeof(StartCombatCommand), ReverseMap = true)]
+    public class StartCombatParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要启动的战斗模板Id。目前只有 905288ED-1615-4033-9F94-850C0C56E5C5 一个关卡。
+        /// </summary>
+        public Guid CombatTId { get; set; }
+    }
+
+    /// <summary>
+    /// 开始战斗功能返回封装类。
+    /// </summary>
+    [AutoMap(typeof(StartCombatCommand))]
+    public class StartCombatReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    #endregion 战斗相关
 }
 
 /*

@@ -204,7 +204,7 @@ namespace Gy02Bll.Managers
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                 return DisposeHelper.Empty<object>();
             }
-            var result = DisposeHelper.Create(Lock, Unlock, (object)key, TimeSpan.FromSeconds(3));
+            var result = DisposeHelper.Create(Lock, Unlock, (object)key, Options.DefaultLockTimeout);
             if (result.IsEmpty)
             {
                 OwHelper.SetLastError(ErrorCodes.WAIT_TIMEOUT);
