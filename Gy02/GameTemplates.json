@@ -11,7 +11,7 @@
       "Id": "07664462-df05-4ba7-886d-b431bb88aa1c",
       "DisplayName": "角色",
       "Gid": 911101001,
-      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[200],\"def\":[1400],\"pow\":[200],\"crit\":100,\"crit_pct\":0}",
+      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[200],\"def\":[2000],\"pow\":[200],\"crit\":100,\"crit_pct\":0}",
       "Remark": "TIdsOfCreate是创建该对象时，需要一起创建的子对象的TIds"
     },
     {
@@ -24,6 +24,7 @@
     {
       "Id": "18084905-2C57-4B4C-B302-4B8230740FBD",
       "DisplayName": "已穿戴皮肤槽",
+      "Gid": 912101013,
       "PropertiesString": "{\"cap\":-1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}"
     },
     {
@@ -1577,11 +1578,6 @@
       "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"7b08d03a-1804-4a32-93b2-31736ffc1fb6\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"e92a3375-9872-40ea-8cb4-10bb24add432\",\"MinCount\": 3}],\"Count\": 3,\"Genus\": null}]}"
     },
     {
-      "Id": "905288ED-1615-4033-9F94-850C0C56E5C5",
-      "DisplayName": "战斗关卡",
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}]}"
-    },
-    {
       "Id": "cceff08b-5a73-4d5e-ba9f-761e0d9b58f4",
       "DisplayName": "白山羊",
       "Gid": 160201001,
@@ -1834,7 +1830,7 @@
       "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12441,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Wolf\"}"
     },
     {
-      "Id": "c8efd4b1-0227-4447-b1de-1a867c8c0163",
+      "Id": "13c638fb-86cd-473a-ae33-113239fc4fb8",
       "DisplayName": "虎皮龙",
       "Gid": 160205007,
       "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12442,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Giraffe\"}"
@@ -1850,6 +1846,78 @@
       "DisplayName": "火焰龙",
       "Gid": 160205009,
       "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12443,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Dragon_Legend_01\"}"
+    },
+    {
+      "Id": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
+      "DisplayName": "牧野草原",
+      "Gid": 210101001,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13001,\"comment_txt\":13013,\"suggest\":[ 200,2000,200]}"
+    },
+    {
+      "Id": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
+      "DisplayName": "残破牧场",
+      "Gid": 210101002,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13002,\"comment_txt\":13014,\"suggest\":[ 200,2000,200]}"
+    },
+    {
+      "Id": "1e5fc645-2833-48a1-add5-6b83a3407d03",
+      "DisplayName": "荒野雪原",
+      "Gid": 210101003,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13003,\"comment_txt\":13015,\"suggest\":[ 250,2200,200]}"
+    },
+    {
+      "Id": "f8b2fd94-8e7e-4c62-9c37-411f24a9b6a1",
+      "DisplayName": "平原小路",
+      "Gid": 210101004,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13004,\"comment_txt\":13016,\"suggest\":[ 250,2200,200]}"
+    },
+    {
+      "Id": "28314d37-7d90-4a13-992f-22485de7b020",
+      "DisplayName": "火山溶洞",
+      "Gid": 210101005,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[ 280,2500,250]}"
+    },
+    {
+      "Id": "da564dad-8b75-420a-b7e9-d1aab85617ec",
+      "DisplayName": "荒废古道",
+      "Gid": 210101006,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13006,\"comment_txt\":13018,\"suggest\":[ 280,2500,250]}"
+    },
+    {
+      "Id": "2cefd284-8d80-4beb-a1e6-0bce481593ca",
+      "DisplayName": "迷路深林",
+      "Gid": 210101007,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[ 300,2800,250]}"
+    },
+    {
+      "Id": "9b6b2f9d-01cb-4847-8373-758f3c0baee2",
+      "DisplayName": "坠落方舟",
+      "Gid": 210101008,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[ 300,2800,250]}"
+    },
+    {
+      "Id": "6510b97c-3317-43b8-a25c-f4ca0920a8ce",
+      "DisplayName": "滑滑冰川",
+      "Gid": 210101009,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[ 300,3000,300]}"
+    },
+    {
+      "Id": "44400571-975e-4a5d-a1db-4d606cc4363b",
+      "DisplayName": "牧场小径",
+      "Gid": 210101010,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13010,\"comment_txt\":13022,\"suggest\":[ 300,3000,300]}"
+    },
+    {
+      "Id": "9ce989a9-df89-40a6-a2f7-af95d8d0824c",
+      "DisplayName": "无尽沙漠",
+      "Gid": 210101011,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[ 400,3000,350]}"
+    },
+    {
+      "Id": "6f0da752-94ba-4cb4-a52b-39dcbdb41f91",
+      "DisplayName": "地火监牢",
+      "Gid": 210101012,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13012,\"comment_txt\":13024,\"suggest\":[ 400,3000,400]}"
     }
   ]
 }

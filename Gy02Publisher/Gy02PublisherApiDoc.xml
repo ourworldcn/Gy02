@@ -161,7 +161,7 @@
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Crit">
             <summary>
-            暴击倍数。1表示暴击和普通上海一致。
+            暴击倍数。1表示暴击和普通伤害一致。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Skills">
@@ -336,6 +336,21 @@
         <member name="P:Gy02Bll.Templates.BlueprintInfo.In">
             <summary>
             材料的集合。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.GamePoolItem">
+            <summary>
+            池子项。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GamePoolItem.Precondition">
+            <summary>
+            池子物品的条件。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GamePoolItem.Weight">
+            <summary>
+            权重值。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.ProjectContent">

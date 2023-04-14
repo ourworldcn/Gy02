@@ -663,6 +663,21 @@
             结算战斗功能参数封装类。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.EndCombatParamsDto.CombatTId">
+            <summary>
+            战斗关卡的模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.EndCombatParamsDto.Rewards">
+            <summary>
+            掉落物品的集合。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.EndCombatParamsDto.Others">
+            <summary>
+            杀怪或其它集合。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.EndCombatReturnDto">
             <summary>
             结算战斗返回值封装类。

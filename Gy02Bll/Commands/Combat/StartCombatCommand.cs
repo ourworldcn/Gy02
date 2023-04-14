@@ -2,6 +2,7 @@
 using Gy02Bll.Managers;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -74,9 +75,10 @@ namespace Gy02Bll.Commands.Combat
                     }
                     all.Add(entity);
                 }
-                if (!_BlueprintManager.Deplete(all, tt.EntranceFees, command.Changes)) { command.FillErrorFromWorld(); return; }
+                if (tt.EntranceFees?.Count > 0) //若需要消耗资源
+                    if (!_BlueprintManager.Deplete(all, tt.EntranceFees, command.Changes)) { command.FillErrorFromWorld(); return; }
                 command.GameChar.CombatTId = command.CombatTId;
-                command.Changes?.Add(new OW.Game.PropertyChange.GamePropertyChangeItem<object>
+                command.Changes?.Add(new GamePropertyChangeItem<object>
                 {
                     Object = command.GameChar,
                     PropertyName = nameof(command.GameChar.CombatTId),

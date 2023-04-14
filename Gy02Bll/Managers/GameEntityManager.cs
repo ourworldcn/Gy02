@@ -371,9 +371,8 @@ namespace Gy02Bll.Managers
         /// 创建实体。
         /// </summary>
         /// <param name="idAndCount">对不可堆叠物品，会创建多个对象，每个对象数量是1。</param>
-        /// <param name="changes"></param>
         /// <returns>创建实体的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
-        public List<GameEntity> Create(IEnumerable<(Guid, decimal)> idAndCount, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public List<GameEntity> Create(IEnumerable<(Guid, decimal)> idAndCount)
         {
             var result = new List<GameEntity> { };
             foreach (var item in idAndCount)
@@ -382,7 +381,7 @@ namespace Gy02Bll.Managers
                 if (tt is null) return null;
                 if (tt.IsStk())  //可堆叠物
                 {
-                    var tmp = _VirtualThingManager.Create(tt, changes);
+                    var tmp = _VirtualThingManager.Create(tt);
                     if (tmp is null) return null;
                     var entity = GetEntity(tmp);
                     if (entity is null) return null;
@@ -398,7 +397,7 @@ namespace Gy02Bll.Managers
                         OwHelper.SetLastErrorMessage($"创建不可堆叠物的数量必须是整数。TId={item.Item1}");
                         return null;
                     }
-                    var tmp = _VirtualThingManager.Create(tt.TemplateId, count, changes);
+                    var tmp = _VirtualThingManager.Create(tt.TemplateId, count);
                     if (tmp is null) return null;
                     foreach (var thing in tmp)
                     {

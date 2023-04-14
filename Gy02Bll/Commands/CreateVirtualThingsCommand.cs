@@ -50,7 +50,7 @@ namespace Gy02Bll.Commands
             VirtualThing[] tmp;
             foreach (var tid in command.TIds)
             {
-                tmp = _VirtualThingManager.Create(tid, 1, command.Changes);
+                tmp = _VirtualThingManager.Create(tid, 1);
                 if (tmp is null)
                 {
                     command.FillErrorFromWorld();

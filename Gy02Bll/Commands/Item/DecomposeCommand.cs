@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace Gy02Bll.Commands.Item
 {
     public class DecomposeCommand : PropertyChangeCommandBase
     {
@@ -58,7 +58,7 @@ namespace Gy02Bll.Commands
 
             var list = _GameEntityManager.Create(command.Item.CompositingAccruedCost.Select(c => (c.TId, c.Count)));
             if (list is null) goto lbErr;
-            if(!_GameEntityManager.Modify(command.Item, -command.Item.Count, command.Changes)) goto lbErr;
+            if (!_GameEntityManager.Modify(command.Item, -command.Item.Count, command.Changes)) goto lbErr;
 
             _GameEntityManager.Move(list, command.GameChar, command.Changes);
 

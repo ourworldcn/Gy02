@@ -1,11 +1,18 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "3b163a62-6591-4a93-a385-cf079b20f589",
-  "name_txt": 12414,
-  "atk": null,
-  "def": null,
-  "pow": null,
-  "genus": [ "rarity_zg", "e_zuoqi" ],
-  "p_skills": [],
-  "equipskin": "Wolf_Hybrid_Giraffe"
+  "EntranceFees": [
+    {
+      "Conditional": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "Genus": [],
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "MinCount": 5
+        }
+      ],
+      "Count": 5
+    }
+  ],
+  "name_txt": 13010,
+  "comment_txt": 13022,
+  "suggest": [ 300, 3000, 300 ]
 }

@@ -40,8 +40,8 @@ namespace OW.SyncCommand
         {
             orderNumber = 0;
             var coll = _Service.GetServices<ISyncCommandHandler<T>>();
-        
-            coll.SafeForEach( c =>
+
+            coll.SafeForEach(c =>
             {
                 c.Handle(command);
                 orderNumber++;
@@ -117,6 +117,28 @@ namespace OW.SyncCommand
     }
 
     /// <summary>
+    /// 有通用返回值的命令。
+    /// </summary>
+    public interface IResultCommand : ISyncCommand
+    {
+        /// <summary>
+        /// 错误码，参见 ErrorCodes。
+        /// </summary>
+        public int ErrorCode { get; set; }
+
+        /// <summary>
+        /// 是否有错误。不设置则使用<see cref="ErrorCode"/>来判定。
+        /// </summary>
+        /// <value>0没有错误，其它数值含义由应用定义。</value>
+        public bool HasError { get; set; }
+
+        /// <summary>
+        /// 调试信息，如果发生错误，这里给出简要说明。
+        /// </summary>
+        public string DebugMessage { get; set; }
+    }
+
+    /// <summary>
     /// 游戏命令处理器的基础接口。
     /// </summary>
     /// <typeparam name="T"></typeparam>
@@ -132,7 +154,7 @@ namespace OW.SyncCommand
     /// <summary>
     /// 
     /// </summary>
-    public abstract class SyncCommandBase : ISyncCommand
+    public abstract class SyncCommandBase : IResultCommand, ISyncCommand
     {
         /// <summary>
         /// 构造函数。
@@ -199,7 +221,7 @@ namespace OW.SyncCommand
         /// 从<see cref="VWorld"/>对象获取错误信息。
         /// </summary>
         /// <param name="obj"></param>
-        public static void FillErrorFromWorld(this SyncCommandBase obj)
+        public static void FillErrorFromWorld(this IResultCommand obj)
         {
             obj.ErrorCode = OwHelper.GetLastError();
             obj.DebugMessage = OwHelper.GetLastErrorMessage();
@@ -211,7 +233,7 @@ namespace OW.SyncCommand
         /// </summary>
         /// <param name="obj"></param>
         /// <param name="src"></param>
-        public static void FillErrorFrom(this SyncCommandBase obj, SyncCommandBase src)
+        public static void FillErrorFrom(this IResultCommand obj, IResultCommand src)
         {
             obj.ErrorCode = src.ErrorCode;
             obj.DebugMessage = src.DebugMessage;

@@ -100,7 +100,6 @@ namespace Gy02.Controllers
                 return result;
             }
 
-
             var command = new EndCombatCommand { };
 
             _Mapper.Map(model, command);

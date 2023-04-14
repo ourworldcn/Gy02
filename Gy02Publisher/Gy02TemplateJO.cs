@@ -256,7 +256,7 @@ namespace Gy02Bll.Templates
         public decimal CritPct { get; set; }
 
         /// <summary>
-        /// 暴击倍数。1表示暴击和普通上海一致。
+        /// 暴击倍数。1表示暴击和普通伤害一致。
         /// </summary>
         [JsonPropertyName("crit")]
         public decimal Crit { get; set; }
@@ -406,6 +406,8 @@ namespace Gy02Bll.Templates
         }
     }
 
+    #region 合成相关
+
     /// <summary>
     /// 合成的材料信息。
     /// </summary>
@@ -483,4 +485,30 @@ namespace Gy02Bll.Templates
 
     }
 
+    #endregion 合成相关
+
+    #region 孵化相关
+
+    public class SpawningData
+    {
+
+    }
+
+    /// <summary>
+    /// 池子项。
+    /// </summary>
+    public class GamePoolItem
+    {
+        /// <summary>
+        /// 池子物品的条件。
+        /// </summary>
+        public GameThingPrecondition Precondition { get; set; }
+
+        /// <summary>
+        /// 权重值。
+        /// </summary>
+        public decimal Weight { get; set; }
+    }
+
+    #endregion 孵化相关
 }

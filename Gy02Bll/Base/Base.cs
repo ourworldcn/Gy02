@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace Gy02Bll.Base
 {
@@ -106,6 +107,64 @@ namespace Gy02Bll.Base
             thing.SetTemplate(tt);
             return true;
 
+        }
+    }
+
+}
+
+namespace MyNamespace
+{
+    public interface IGameCharCommand : ISyncCommand
+    {
+        public GameChar GameChar { get; set; }
+
+    }
+
+    public interface IGameCharHandler<T> : ISyncCommandHandler<T> where T : IGameCharCommand, IResultCommand
+    {
+
+        GameAccountStore AccountStore { get; }
+
+        /// <summary>
+        /// 锁定角色。
+        /// </summary>
+        /// <typeparam name="TCommand"></typeparam>
+        /// <param name="command"></param>
+        /// <returns></returns>
+        public DisposeHelper<string> LockGameChar(T command)
+        {
+            var key = command.GameChar?.GetUser()?.GetKey();
+            if (key == null)
+            {
+                command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                command.DebugMessage = $"无法找到用来锁定角色的Key。";
+                return DisposeHelper.Empty<string>();
+            }
+            if (!AccountStore.Lock(key))   //若锁定失败
+            {
+                command.FillErrorFromWorld();
+                return DisposeHelper.Empty<string>();
+            }
+            var dw = DisposeHelper.Create(AccountStore.Unlock, key);
+            if (dw.IsEmpty) //若锁定失败
+            {
+                AccountStore.Unlock(key);
+                command.FillErrorFromWorld();
+                return DisposeHelper.Empty<string>();
+            }
+            return dw;
+        }
+
+        public string GetKey(T command)
+        {
+            var key = command.GameChar?.GetUser()?.GetKey();
+            if (key == null)
+            {
+                command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                command.DebugMessage = $"无法找到用来锁定角色的Key。";
+                return default;
+            }
+            return key;
         }
     }
 

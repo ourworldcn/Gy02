@@ -86,9 +86,8 @@ namespace OW.Game.Manager
         /// </summary>
         /// <param name="tId"></param>
         /// <param name="count">创建多少个对象。</param>
-        /// <param name="changes"></param>
         /// <returns>创建对象的数组，任何创建失败都会导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
-        public VirtualThing[] Create(Guid tId, int count, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public VirtualThing[] Create(Guid tId, int count)
         {
             var tt = _TemplateManager.Id2FullView.GetValueOrDefault(tId);
             if (tt is null)
@@ -101,7 +100,7 @@ namespace OW.Game.Manager
             VirtualThing tmp;
             for (int i = 0; i < count; i++)
             {
-                tmp = Create(tt, changes);
+                tmp = Create(tt);
                 if (tmp is null)
                     return null;
                 result[i] = tmp;

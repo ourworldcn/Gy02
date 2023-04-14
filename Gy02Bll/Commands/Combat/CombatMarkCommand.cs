@@ -1,4 +1,5 @@
-﻿using OW.Game.Entity;
+﻿using Gy02Bll.Managers;
+using OW.Game.Entity;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -22,15 +23,29 @@ namespace Gy02Bll.Commands.Combat
 
     public class CombatMarkHandler : SyncCommandHandlerBase<CombatMarkCommand>
     {
-        public CombatMarkHandler()
+        public CombatMarkHandler(GameAccountStore gameAccountStore)
         {
-
+            _GameAccountStore = gameAccountStore;
         }
+
+        GameAccountStore _GameAccountStore;
 
         public override void Handle(CombatMarkCommand command)
         {
+            var key = command.GameChar.GetUser()?.GetKey();
+            if (!_GameAccountStore.Lock(key))   //若锁定失败
+            {
+                command.FillErrorFromWorld();
+                return;
+            }
+            using var dw = DisposeHelper.Create(_GameAccountStore.Unlock, key);
+            if (dw.IsEmpty) //若锁定失败
+            {
+                command.FillErrorFromWorld();
+                return;
+            }
             command.GameChar.ClientCombatInfo = command.CombatInfo;
-
+            _GameAccountStore.Save(key);
         }
     }
 }

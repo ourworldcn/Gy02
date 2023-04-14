@@ -17,6 +17,7 @@ using System.Net.NetworkInformation;
 using OW.Game.PropertyChange;
 using Gy02Bll.Commands.Account;
 using Gy02Bll.Commands.Combat;
+using Gy02Bll.Commands.Item;
 
 namespace Gy02.Publisher
 {
@@ -880,6 +881,20 @@ namespace Gy02.Publisher
     [AutoMap(typeof(EndCombatCommand), ReverseMap = true)]
     public class EndCombatParamsDto : TokenDtoBase
     {
+        /// <summary>
+        /// 战斗关卡的模板Id。
+        /// </summary>
+        public Guid CombatTId { get; set; }
+
+        /// <summary>
+        /// 掉落物品的集合。
+        /// </summary>
+        public List<GameEntitySummaryDto> Rewards { get; set; } = new List<GameEntitySummaryDto>();
+
+        /// <summary>
+        /// 杀怪或其它集合。
+        /// </summary>
+        public List<GameEntitySummaryDto> Others { get; set; } = new List<GameEntitySummaryDto>();
     }
 
     /// <summary>
@@ -934,21 +949,4 @@ namespace Gy02.Publisher
     #endregion 战斗相关
 }
 
-/*
-线程 0x5268 已退出，返回值为 0 (0x0)。
-线程 0x5050 已退出，返回值为 0 (0x0)。
-线程 0x2c28 已退出，返回值为 0 (0x0)。
-线程 0xd90 已退出，返回值为 0 (0x0)。
-线程 0x2884 已退出，返回值为 0 (0x0)。
-线程 0x1430 已退出，返回值为 0 (0x0)。
-线程 0x2c78 已退出，返回值为 0 (0x0)。
-线程 0x37dc 已退出，返回值为 0 (0x0)。
-线程 0x1948 已退出，返回值为 0 (0x0)。
-线程 0x2e5c 已退出，返回值为 0 (0x0)。
-线程 0x54cc 已退出，返回值为 0 (0x0)。
-线程 0x3d44 已退出，返回值为 0 (0x0)。
-线程 0x5290 已退出，返回值为 0 (0x0)。
-线程 0x3aa4 已退出，返回值为 0 (0x0)。
-线程 0x3c10 已退出，返回值为 0 (0x0)。
-线程 0x2bdc 已退出，返回值为 0 (0x0)。
- */
+

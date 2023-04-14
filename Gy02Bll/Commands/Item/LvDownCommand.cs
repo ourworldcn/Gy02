@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace Gy02Bll.Commands.Item
 {
     public class LvDownCommand : PropertyChangeCommandBase
     {
@@ -33,7 +33,7 @@ namespace Gy02Bll.Commands
         public LvDownHandler(SyncCommandManager syncCommandManager, TemplateManager templateManager)
         {
             _SyncCommandManager = syncCommandManager;
-            this._TemplateManager = templateManager;
+            _TemplateManager = templateManager;
         }
 
         SyncCommandManager _SyncCommandManager;
