@@ -11,7 +11,7 @@
       "Id": "07664462-df05-4ba7-886d-b431bb88aa1c",
       "DisplayName": "角色",
       "Gid": 911101001,
-      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[200],\"def\":[2000],\"pow\":[200],\"crit\":100,\"crit_pct\":0}",
+      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[200],\"def\":[2000],\"pow\":[150],\"crit\":100,\"crit_pct\":0}",
       "Remark": "TIdsOfCreate是创建该对象时，需要一起创建的子对象的TIds"
     },
     {
@@ -1587,49 +1587,49 @@
       "Id": "a380e125-2640-409b-8c45-359ea2f734bb",
       "DisplayName": "灰山羊",
       "Gid": 160201002,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12401,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_cj\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Sheep_Color_777777\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12401,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_cj\", \"e_zuoqi\" ],\"p_skills\": [{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_777777\"}"
     },
     {
       "Id": "b564395a-487d-4682-8dec-1338daee3952",
       "DisplayName": "粉山羊",
       "Gid": 160201003,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12402,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_cj\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Sheep_Color_e99b9c\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12402,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_cj\", \"e_zuoqi\" ],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_e99b9c\"}"
     },
     {
       "Id": "26f7e185-6daa-428a-a86f-715258c43b4b",
       "DisplayName": "金山羊",
       "Gid": 160201004,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12403,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_cj\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Sheep_Color_e2b261\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12403,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_cj\", \"e_zuoqi\" ],\"p_skills\": [{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_e2b261\"}"
     },
     {
       "Id": "18b7f5cf-fc73-4e8f-b443-a9204e010188",
       "DisplayName": "灰狼羊",
       "Gid": 160201005,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12404,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Sheep_Hybrid_Wolf\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12404,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Wolf\"}"
     },
     {
       "Id": "39f9e0eb-b143-493f-9100-4703f60ed632",
       "DisplayName": "鹿身羊",
       "Gid": 160201006,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12405,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Sheep_Hybrid_Giraffe\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12405,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Giraffe\"}"
     },
     {
       "Id": "77e38e0c-089c-4d45-866f-6d9a1a3f5bde",
       "DisplayName": "虎皮样",
       "Gid": 160201007,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12406,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Sheep_Hybrid_Tiger\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12406,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Tiger\"}"
     },
     {
       "Id": "d81beb39-1ad4-4306-ba39-47f090640afe",
       "DisplayName": "守护羊",
       "Gid": 160201008,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12407,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Sheep_Hybrid_Dragon\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12407,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Dragon\"}"
     },
     {
       "Id": "1bf4948d-fedc-4819-8e1f-41fe3a6d83f0",
       "DisplayName": "发条羊",
       "Gid": 160201009,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12408,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_zg\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Sheep_Legend_01\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12408,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_zg\", \"e_zuoqi\" ],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Legend_01\"}"
     },
     {
       "Id": "abf3916f-aef6-4974-9d18-37e35fde589a",

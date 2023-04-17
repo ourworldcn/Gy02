@@ -901,7 +901,7 @@ namespace Gy02.Publisher
     /// 结算战斗返回值封装类。
     /// </summary>
     [AutoMap(typeof(EndCombatCommand))]
-    public class EndCombatReturnDto : ReturnDtoBase
+    public class EndCombatReturnDto : PropertyChangeReturnDto
     {
 
     }

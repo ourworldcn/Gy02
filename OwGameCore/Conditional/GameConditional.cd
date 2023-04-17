@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="OW.Game.Conditional.GameConditional">
+    <Position X="2.75" Y="5.75" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Conditional\GameConditional.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OW.Game.Conditional.GameConditionalItem">
+    <Position X="2.5" Y="3.75" Width="3.75" />
+    <AssociationLine Name="RightOperand" Type="OW.Game.Conditional.GameOperand">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.38" Y="0.289" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgAAAAAAAAAIAA=</HashCode>
+      <FileName>Conditional\GameConditional.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RightOperand" />
+      <Property Name="LeftOperand" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OW.Game.Conditional.GameOperand">
+    <Position X="8" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Conditional\GameConditional.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
+using OW.Game.Conditional;
 using OW.Game.Store;
 using System.Diagnostics;
 using System.Net.Sockets;
@@ -131,11 +132,42 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                int[] empty = { };
-                int[] one = { 1 };
-                int[] odd = { 1, 3, 5 };
-                int[] even = { 2, 4, 6 };
-                int[] fib = { 1, 1, 2, 3, 5 };
+
+                var dice = new GameDice
+                {
+                    MaxCount = 1,
+                    AllowRepetition = false,
+                };
+                dice.Items.Add(new GameDiceItem
+                {
+                    Precondition = new GameThingPrecondition { new GameThingPreconditionItem { TId = Guid.NewGuid() } },
+                    Weight = 1
+                });
+                dice.Items.Add(new GameDiceItem
+                {
+                    Precondition = new GameThingPrecondition { new GameThingPreconditionItem { TId = Guid.NewGuid() } },
+                    Weight = 1,
+                    GuardConditions = new GameThingPrecondition
+                    {
+                        new GameThingPreconditionItem()
+                        {
+                            GeneralConditional=new  List<GeneralConditionalItem>
+                            {
+                                new GeneralConditionalItem
+                                {
+                                    LeftOperand="lv",
+                                    Operator=">=",
+                                    RightOperand=2
+                                }
+                            }
+                        }
+                    },
+                });
+                var str = JsonSerializer.Serialize(new FuhuaInfo { });
+                var type = Type.GetType("System.Int32");
+                ICollection<int> list = new List<int>() { 1 };
+                object dcm = 1m;
+                //var pi = list.GetType().GetMethod("Contains");
             }
             finally
             {

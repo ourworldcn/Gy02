@@ -59,7 +59,7 @@ namespace Gy02Bll.Commands.Combat
         public override void Handle(EndCombatCommand command)
         {
             var key = ((IGameCharHandler<EndCombatCommand>)this).GetKey(command);
-            var dw = ((IGameCharHandler<EndCombatCommand>)this).LockGameChar(command);
+            using var dw = ((IGameCharHandler<EndCombatCommand>)this).LockGameChar(command);
             if (dw.IsEmpty) return; //若锁定失败
 
             if (command.CombatTId != command.GameChar.CombatTId)

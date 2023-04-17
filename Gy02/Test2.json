@@ -1,0 +1,14 @@
+{
+  "Fuhua": {
+    "Parent1Conditional": {
+      "ParentTId": null,
+      "Genus": [ "sheep" ],
+      "TId": null,
+      "MinCount": 1,
+      "GeneralConditional": []
+    },
+    "Parent2Conditional": null,
+    "DiceTId1": "00000000-0000-0000-0000-000000000000",
+    "DiceTId2": "00000000-0000-0000-0000-000000000000"
+  }
+}

@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 
-namespace OW.Game.Validation
+namespace OW.Game.Conditional
 {
     /// <summary>
     /// GameItem引用对象。

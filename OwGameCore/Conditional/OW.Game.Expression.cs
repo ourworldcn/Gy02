@@ -9,7 +9,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading;
 
-namespace OW.Game.Expression
+namespace OW.Game.Conditional
 {
     public class GameExpression
     {

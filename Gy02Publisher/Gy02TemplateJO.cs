@@ -310,6 +310,24 @@ namespace Gy02Bll.Templates
 
         #endregion
 
+        #region 孵化相关
+
+        /// <summary>
+        /// 孵化数据。
+        /// </summary>
+        public FuhuaInfo Fuhua { get; set; }
+
+        #endregion 孵化相关
+
+        #region 骰子相关
+
+        /// <summary>
+        /// 池子的数据。
+        /// </summary>
+        public GameDice Dice { get; set; }
+
+        #endregion 骰子相关
+
         private string GetDebuggerDisplay()
         {
             return $"{ToString()}({DisplayName})";
@@ -323,6 +341,34 @@ namespace Gy02Bll.Templates
         {
             return Stk != decimal.One;
         }
+
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class FuhuaInfo
+    {
+        /// <summary>
+        /// 双亲1的条件。
+        /// </summary>
+        public GameThingPrecondition Parent1Conditional { get; set; }
+
+        /// <summary>
+        /// 双亲2的条件。
+        /// </summary>
+        public GameThingPrecondition Parent2Conditional { get; set; }
+
+        /// <summary>
+        /// 卡池1的。
+        /// </summary>
+        public Guid DiceTId1 { get; set; }
+
+        /// <summary>
+        /// 卡池2的。
+        /// </summary>
+        public Guid DiceTId2 { get; set; }
     }
 
     /// <summary>
@@ -396,6 +442,17 @@ namespace Gy02Bll.Templates
         /// </summary>
         public decimal? MinCount { get; set; }
 
+        private List<GeneralConditionalItem> _Contional;
+
+        /// <summary>
+        /// 扩展条件，针对属性的不等式。有多项时需要同时都符合才认为命中。
+        /// </summary>
+        public List<GeneralConditionalItem> GeneralConditional
+        {
+            get { return _Contional ?? (_Contional = new List<GeneralConditionalItem>()); }
+            set { _Contional = value; }
+        }
+
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
@@ -403,6 +460,39 @@ namespace Gy02Bll.Templates
         public override string ToString()
         {
             return base.ToString();
+        }
+    }
+
+    /// <summary>
+    /// 通用属性条件项。
+    /// </summary>
+    public class GeneralConditionalItem
+    {
+        /// <summary>
+        /// 操作符。暂定支持六种关系运算,如 &lt;= 等。
+        /// </summary>
+        [JsonPropertyName("op")]
+        public string Operator
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// 通常是属性名。
+        /// </summary>
+        [JsonPropertyName("lo")]
+        public object LeftOperand
+        {
+            get; set;
+        }
+
+        /// <summary>
+        /// 一般是一个数字，用于和属性对比。
+        /// </summary>
+        [JsonPropertyName("ro")]
+        public object RightOperand
+        {
+            get; set;
         }
     }
 
@@ -489,26 +579,71 @@ namespace Gy02Bll.Templates
 
     #region 孵化相关
 
-    public class SpawningData
+    #endregion 孵化相关
+
+    #region 骰子相关
+
+    /// <summary>
+    /// 定义一个"池子"
+    /// </summary>
+    public class GameDice
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameDice()
+        {
+
+        }
+
+        /// <summary>
+        /// 指定该"池子"内输出的最大项数。
+        /// </summary>
+        /// <value>应大于0。</value>
+        public int MaxCount { get; set; }
+
+        /// <summary>
+        /// 允许生成重复项。
+        /// </summary>
+        /// <value>默认值：false 不允许。</value>
+        public bool AllowRepetition { get; set; }
+
+        /// <summary>
+        /// 每个投骰子的项。
+        /// </summary>
+        public List<GameDiceItem> Items { get; set; } = new List<GameDiceItem>();
 
     }
 
     /// <summary>
     /// 池子项。
     /// </summary>
-    public class GamePoolItem
+    public class GameDiceItem
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameDiceItem()
+        {
+
+        }
+
         /// <summary>
         /// 池子物品的条件。
         /// </summary>
-        public GameThingPrecondition Precondition { get; set; }
+        public GameThingPrecondition Precondition { get; set; } = new GameThingPrecondition();
 
         /// <summary>
-        /// 权重值。
+        /// 权重值。在同一个池子中所有项加起来的权重是分母。
         /// </summary>
         public decimal Weight { get; set; }
+
+        /// <summary>
+        /// 需要此项有效的前置条件，这个条件针对角色数据来设置。
+        /// </summary>
+        public GameThingPrecondition GuardConditions { get; set; } = new GameThingPrecondition();
     }
 
-    #endregion 孵化相关
+    #endregion 骰子相关
+
 }

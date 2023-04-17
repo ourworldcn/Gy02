@@ -1,18 +1,48 @@
 {
-  "EntranceFees": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "MinCount": 5
-        }
-      ],
-      "Count": 5
-    }
-  ],
-  "name_txt": 13010,
-  "comment_txt": 13022,
-  "suggest": [ 300, 3000, 300 ]
+  "Dice": {
+    "MaxCount": 3,
+    "AllowRepetition": false,
+    "Items": [
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "71dc95a1-ec90-489a-92b0-3f4b1f86cda0",
+            "MinCount": null,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 1,
+        "GuardConditions": []
+      },
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "ac2b3352-adfd-4ab9-9d1d-f68bbec41142",
+            "MinCount": null,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 1,
+        "GuardConditions": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": null,
+            "MinCount": null,
+            "GeneralConditional": [
+              {
+                "op": "\u003E=",
+                "lo": "lv",
+                "ro": 2
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

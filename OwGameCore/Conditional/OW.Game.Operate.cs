@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 
-namespace OW.Game.Operate
+namespace OW.Game.Conditional
 {
     /// <summary>
     /// 

@@ -199,11 +199,46 @@
             关卡入场费。
             </summary>
         </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Fuhua">
+            <summary>
+            孵化数据。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Dice">
+            <summary>
+            池子的数据。
+            </summary>
+        </member>
         <member name="M:Gy02Bll.Templates.TemplateStringFullView.IsStk">
             <summary>
             是否可以堆叠。
             </summary>
             <returns>true可堆叠，false不可堆叠。</returns>
+        </member>
+        <member name="T:Gy02Bll.Templates.FuhuaInfo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FuhuaInfo.Parent1Conditional">
+            <summary>
+            双亲1的条件。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FuhuaInfo.Parent2Conditional">
+            <summary>
+            双亲2的条件。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FuhuaInfo.DiceTId1">
+            <summary>
+            卡池1的。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FuhuaInfo.DiceTId2">
+            <summary>
+            卡池2的。
+            </summary>
         </member>
         <member name="T:Gy02Bll.Templates.CostInfo">
             <summary>
@@ -266,11 +301,36 @@
             要求的最小数量。省略则不限制。
             </summary>
         </member>
+        <member name="P:Gy02Bll.Templates.GameThingPreconditionItem.GeneralConditional">
+            <summary>
+            扩展条件，针对属性的不等式。有多项时需要同时都符合才认为命中。
+            </summary>
+        </member>
         <member name="M:Gy02Bll.Templates.GameThingPreconditionItem.ToString">
             <summary>
             <inheritdoc/>
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:Gy02Bll.Templates.GeneralConditionalItem">
+            <summary>
+            通用属性条件项。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GeneralConditionalItem.Operator">
+            <summary>
+            操作符。暂定支持六种关系运算,如 &lt;= 等。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GeneralConditionalItem.LeftOperand">
+            <summary>
+            通常是属性名。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GeneralConditionalItem.RightOperand">
+            <summary>
+            一般是一个数字，用于和属性对比。
+            </summary>
         </member>
         <member name="T:Gy02Bll.Templates.BlueprintInItem">
             <summary>
@@ -338,19 +398,56 @@
             材料的集合。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.GamePoolItem">
+        <member name="T:Gy02Bll.Templates.GameDice">
+            <summary>
+            定义一个"池子"
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.GameDice.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GameDice.MaxCount">
+            <summary>
+            指定该"池子"内输出的最大项数。
+            </summary>
+            <value>应大于0。</value>
+        </member>
+        <member name="P:Gy02Bll.Templates.GameDice.AllowRepetition">
+            <summary>
+            允许生成重复项。
+            </summary>
+            <value>默认值：false 不允许。</value>
+        </member>
+        <member name="P:Gy02Bll.Templates.GameDice.Items">
+            <summary>
+            每个投骰子的项。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.GameDiceItem">
             <summary>
             池子项。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GamePoolItem.Precondition">
+        <member name="M:Gy02Bll.Templates.GameDiceItem.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GameDiceItem.Precondition">
             <summary>
             池子物品的条件。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GamePoolItem.Weight">
+        <member name="P:Gy02Bll.Templates.GameDiceItem.Weight">
             <summary>
-            权重值。
+            权重值。在同一个池子中所有项加起来的权重是分母。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GameDiceItem.GuardConditions">
+            <summary>
+            需要此项有效的前置条件，这个条件针对角色数据来设置。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.ProjectContent">
