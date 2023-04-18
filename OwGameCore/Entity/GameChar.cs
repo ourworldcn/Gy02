@@ -108,7 +108,6 @@ namespace OW.Game.Entity
         public string ClientCombatInfo { get; set; }
         #endregion 普通属性
 
-
         #region 简单属性
 
         /// <summary>
@@ -191,6 +190,30 @@ namespace OW.Game.Entity
         public GameSlot<GameItem> HuoBiSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.HuoBiSlotTId)?.GetJsonObject<GameSlot<GameItem>>();
         #endregion 各种槽
 
+        #region 孵化相关
+
+        /// <summary>
+        /// 记录孵化的预览信息。
+        /// </summary>
+        public List<FuhuaSummary> FuhuaPreview { get; set; } = new List<FuhuaSummary>();
+
+        #endregion 孵化相关
+    }
+
+    /// <summary>
+    /// 孵化预览信息。
+    /// </summary>
+    public class FuhuaSummary
+    {
+        /// <summary>
+        /// 双亲的TId集合，目前有两个元素，且按升序排序。
+        /// </summary>
+        public List<Guid> ParentTIds { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 可能产出的物品预览。
+        /// </summary>
+        public List<GameEntitySummary> Items { get; set; } = new List<GameEntitySummary>();
     }
 
     public static class GameCharExtensions

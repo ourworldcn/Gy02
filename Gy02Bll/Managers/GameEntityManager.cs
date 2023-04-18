@@ -105,6 +105,20 @@ namespace Gy02Bll.Managers
             return true;
         }
 
+        public bool IsMatch(TemplateStringFullView entity, GameThingPreconditionItem condition)
+        {
+            if (condition.TId.HasValue && condition.TId.Value != entity.TemplateId)
+                return false;
+            if (condition.Genus is not null && condition.Genus.Count > 0 && condition.Genus.Intersect(entity.Genus).Count() != condition.Genus.Count)
+                return false;
+            //if (condition.ParentTId.HasValue && condition.ParentTId.Value != thing.Parent?.ExtraGuid)
+            //return false;
+            //if (condition.MinCount.HasValue && condition.MinCount.Value > entity.Count)
+            //    return false;
+            return true;
+        }
+
+
         /// <summary>
         /// 忽略计数的情况下判断是否符合条件。
         /// </summary>
@@ -547,5 +561,49 @@ namespace Gy02Bll.Managers
         }
 
         #endregion 改变实体相关功能
+
+        #region 计算卡池相关
+
+        /// <summary>
+        /// 用池子指定的规则生成所有项。
+        /// </summary>
+        /// <param name="dice"></param>
+        /// <returns></returns>
+        public IEnumerable<GameDiceItem> GetOutputs(GameDice dice)
+        {
+            var list = new HashSet<GameDiceItem>();
+            var rnd = new Random { };
+            while (list.Count < dice.MaxCount)
+            {
+                var tmp = GetOutputs(dice.Items, rnd);
+                if (dice.AllowRepetition)
+                    list.Add(tmp);
+                else if (!list.Contains(tmp))
+                    list.Add(tmp);
+            }
+            return list;
+        }
+
+        /// <summary>
+        /// 用随机数获取指定的池项中的随机一项。
+        /// </summary>
+        /// <param name="items"></param>
+        /// <param name="random"></param>
+        /// <returns></returns>
+        public GameDiceItem GetOutputs(IEnumerable<GameDiceItem> items, Random random = null)
+        {
+            var totalWeight = items.Sum(c => c.Weight);    //总权重
+            random ??= new Random();
+            var total = (decimal)random.NextDouble() * totalWeight;
+            foreach (var item in items)
+            {
+                if (item.Weight <= decimal.Zero) continue; //容错
+                if (total <= item.Weight) return item;
+                total -= item.Weight;
+            }
+            return default;
+        }
+
+        #endregion 计算卡池相关
     }
 }

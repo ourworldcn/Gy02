@@ -317,6 +317,12 @@ namespace Gy02.Publisher
         /// </summary>
         public GameSlotDto<GameItemDto> HuoBiSlot { get; set; }
         #endregion 各种槽
+
+        /// <summary>
+        /// 记录孵化的预览信息。
+        /// </summary>
+        public List<FuhuaSummaryDto> FuhuaPreview { get; set; } = new List<FuhuaSummaryDto>();
+
     }
 
     /// <summary>
@@ -947,6 +953,27 @@ namespace Gy02.Publisher
     }
 
     #endregion 战斗相关
+
+    #region 孵化相关
+
+    /// <summary>
+    /// 孵化预览信息。
+    /// </summary>
+    [AutoMap(typeof(FuhuaSummary))]
+    public class FuhuaSummaryDto
+    {
+        /// <summary>
+        /// 双亲的TId集合，目前有两个元素，且按升序排序。
+        /// </summary>
+        public List<Guid> ParentTIds { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 可能产出的物品预览。
+        /// </summary>
+        public List<GameEntitySummaryDto> Items { get; set; } = new List<GameEntitySummaryDto>();
+    }
+
+    #endregion 孵化相关
 }
 
 

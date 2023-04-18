@@ -11,7 +11,7 @@
       "Id": "07664462-df05-4ba7-886d-b431bb88aa1c",
       "DisplayName": "角色",
       "Gid": 911101001,
-      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[200],\"def\":[2000],\"pow\":[150],\"crit\":100,\"crit_pct\":0}",
+      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[200],\"def\":[2000],\"pow\":[200],\"crit\":100,\"crit_pct\":0}",
       "Remark": "TIdsOfCreate是创建该对象时，需要一起创建的子对象的TIds"
     },
     {
@@ -1615,7 +1615,7 @@
     },
     {
       "Id": "77e38e0c-089c-4d45-866f-6d9a1a3f5bde",
-      "DisplayName": "虎皮样",
+      "DisplayName": "虎皮羊",
       "Gid": 160201007,
       "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12406,\"atk\":null,\"def\":null,\"pow\":null,\"genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Tiger\"}"
     },
@@ -1918,6 +1918,21 @@
       "DisplayName": "地火监牢",
       "Gid": 210101012,
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13012,\"comment_txt\":13024,\"suggest\":[ 400,3000,400]}"
+    },
+    {
+      "Id": "1da0bea3-5765-48b5-aeb6-c8cb9ce6c82e",
+      "DisplayName": "羊和狼孵化",
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"0345ca96-b748-4050-ad8a-814b9643d890\",\"DiceTId2\":\"65578531-8325-4e6f-910f-12055f2eeb4f\"}}\n"
+    },
+    {
+      "Id": "0345ca96-b748-4050-ad8a-814b9643d890",
+      "DisplayName": "羊和狼孵化动物产出",
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"cceff08b-5a73-4d5e-ba9f-761e0d9b58f4\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1bf4948d-fedc-4819-8e1f-41fe3a6d83f0\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3a47c56c-fa8b-4293-98cd-d6c64690604a\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"c31cad76-7385-4092-8cec-46bde8f8bab8\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"abf3916f-aef6-4974-9d18-37e35fde589a\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "65578531-8325-4e6f-910f-12055f2eeb4f",
+      "DisplayName": "羊和狼孵化皮肤产出",
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"26f7e185-6daa-428a-a86f-715258c43b4b\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"18b7f5cf-fc73-4e8f-b443-a9204e010188\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"39f9e0eb-b143-493f-9100-4703f60ed632\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"77e38e0c-089c-4d45-866f-6d9a1a3f5bde\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":30,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"abf3916f-aef6-4974-9d18-37e35fde589a\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":70,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6b7f8db2-3563-443b-9f85-174a1a226263\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":45,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9451d8a6-507b-46eb-b1be-1f653af21f0a\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":25,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]}]}}"
     }
   ]
 }

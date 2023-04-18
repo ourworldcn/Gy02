@@ -1,60 +1,125 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Gy02Bll.Templates.RawTemplate" Collapsed="true">
-    <Position X="7.75" Y="1.5" Width="1.5" />
+    <Position X="17.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACEAAAAAAAACBACAAAABAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gy02Bll.Templates.TemplateSkillItem" Collapsed="true">
-    <Position X="9.5" Y="1.5" Width="1.5" />
+    <Position X="7" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Gy02Bll.Templates.CostInfo" Collapsed="true">
-    <Position X="9.5" Y="0.5" Width="1.5" />
+  <Class Name="Gy02Bll.Templates.CostInfo">
+    <Position X="4" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Conditional" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Gy02Bll.Templates.BlueprintInfo">
-    <Position X="6" Y="0.5" Width="1.5" />
+    <Position X="12" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="In" />
+      <Property Name="Out" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Gy02Bll.Templates.TemplateStringFullView">
-    <Position X="6.75" Y="3.5" Width="2.25" />
+    <Position X="7" Y="5.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>EAAAEAAAAAIBAADAKQAYAAADIACggABAIABAEQUAQQA=</HashCode>
+      <HashCode>UAgAEAAAAAIBAADAKQAYAAADIACggABAYgBAEQUCQSA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Dice" />
+      <Property Name="Fuhua" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="EntranceFees" />
+      <Property Name="In" />
+      <Property Name="LvUpData" />
+      <Property Name="Out" />
+      <Property Name="Skills" />
+    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Gy02Bll.Templates.GameThingPrecondition">
-    <Position X="1.25" Y="4.25" Width="2.25" />
+  <Class Name="Gy02Bll.Templates.GameThingPrecondition" Collapsed="true">
+    <Position X="4.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Gy02Bll.Templates.GameThingPreconditionItem">
-    <Position X="3.75" Y="2.75" Width="2.5" />
+    <Position X="13.5" Y="0.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAASAA=</HashCode>
+      <HashCode>AAAAAAABAAAAAAAECAAJAAAAAAAAAAAAAAAAAAAASAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="GeneralConditional" />
+    </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="Gy02Bll.Templates.BlueprintInItem" Collapsed="true">
-    <Position X="1.5" Y="1.5" Width="2" />
+  <Class Name="Gy02Bll.Templates.BlueprintInItem">
+    <Position X="11" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEQAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Conditional" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Gy02Bll.Templates.FuhuaInfo" Collapsed="true">
+    <Position X="11" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAQAAAAAAAAAAAAAAAIAAAAAAAAABAAAA=</HashCode>
+      <FileName>Gy02TemplateJO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gy02Bll.Templates.GeneralConditionalItem">
+    <Position X="13" Y="4" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAIAgAAAAAAAAAIAA=</HashCode>
+      <FileName>Gy02TemplateJO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gy02Bll.Templates.BlueprintOutItem" Collapsed="true">
+    <Position X="7" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Gy02TemplateJO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gy02Bll.Templates.GameDice">
+    <Position X="4" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Gy02TemplateJO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Items" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Gy02Bll.Templates.GameDiceItem">
+    <Position X="1.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAACAAAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>Gy02TemplateJO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Precondition" />
+    </ShowAsAssociation>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>

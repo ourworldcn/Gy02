@@ -1,48 +1,26 @@
 {
-  "Dice": {
-    "MaxCount": 3,
-    "AllowRepetition": false,
-    "Items": [
+  "Fuhua": {
+    "Parent1Conditional": 
+      [
+        {
+          "ParentTId": null,
+          "Genus": [ "zuoqi_sheep" ],
+          "TId": null,
+          "MinCount": 1,
+          "GeneralConditional": []
+        }
+      ]
+    ,
+    "Parent2Conditional": [
       {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "71dc95a1-ec90-489a-92b0-3f4b1f86cda0",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 1,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "ac2b3352-adfd-4ab9-9d1d-f68bbec41142",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 1,
-        "GuardConditions": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": null,
-            "MinCount": null,
-            "GeneralConditional": [
-              {
-                "op": "\u003E=",
-                "lo": "lv",
-                "ro": 2
-              }
-            ]
-          }
-        ]
+        "ParentTId": null,
+        "Genus": [ "zuoqi_wolf" ],
+        "TId": null,
+        "MinCount": 1,
+        "GeneralConditional": []
       }
-    ]
+    ],
+    "DiceTId1": "0345ca96-b748-4050-ad8a-814b9643d890",
+    "DiceTId2": "65578531-8325-4e6f-910f-12055f2eeb4f"
   }
 }

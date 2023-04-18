@@ -256,6 +256,11 @@
             货币槽。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.GameCharDto.FuhuaPreview">
+            <summary>
+            记录孵化的预览信息。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.GameItemDto">
             <summary>
             道具数据。
@@ -711,6 +716,21 @@
         <member name="T:Gy02.Publisher.StartCombatReturnDto">
             <summary>
             开始战斗功能返回封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.FuhuaSummaryDto">
+            <summary>
+            孵化预览信息。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.FuhuaSummaryDto.ParentTIds">
+            <summary>
+            双亲的TId集合，目前有两个元素，且按升序排序。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.FuhuaSummaryDto.Items">
+            <summary>
+            可能产出的物品预览。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.DispatcherDemo">
