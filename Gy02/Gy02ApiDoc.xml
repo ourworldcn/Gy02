@@ -60,14 +60,6 @@
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Test(Gy02Bll.Managers.UdpServerManager,AutoMapper.IMapper)">
-            <summary>
-            测试代码专用。
-            </summary>
-            <param name="udpServer">测试参数。</param>
-            <param name="mapper"></param>
-            <returns></returns>
-        </member>
         <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             创建一个新账号。
@@ -110,12 +102,6 @@
             战斗控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.CombatController.Test">
-            <summary>
-            测试。
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Gy02.Controllers.CombatController.StartCombat(Gy02.Publisher.StartCombatParamsDto)">
             <summary>
             开始战斗。
@@ -142,7 +128,7 @@
             物品管理控制器
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.#ctor(System.IServiceProvider,AutoMapper.IMapper,Gy02Bll.Managers.GameEntityManager,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:Gy02.Controllers.ItemManagerController.#ctor(System.IServiceProvider,AutoMapper.IMapper,Gy02Bll.Managers.GameEntityManager,OW.SyncCommand.SyncCommandManager,Gy02Bll.Managers.GameAccountStore)">
             <summary>
             
             </summary>
@@ -150,6 +136,7 @@
             <param name="mapper"></param>
             <param name="gameEntityManager"></param>
             <param name="syncCommandManager"></param>
+            <param name="gameAccountStore"></param>
         </member>
         <member name="M:Gy02.Controllers.ItemManagerController.MoveItems(Gy02.Publisher.MoveItemsParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
@@ -160,24 +147,6 @@
             <param name="commandMng"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestAddItems">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestLvUp">
-            <summary>
-            测试升级接口。
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestComp">
-            <summary>
-            
-            </summary>
-            <returns></returns>
         </member>
         <member name="M:Gy02.Controllers.ItemManagerController.AddItems(Gy02.Publisher.AddItemsParamsDto,Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager,AutoMapper.IMapper)">
             <summary>
@@ -221,6 +190,13 @@
         <member name="M:Gy02.Controllers.ItemManagerController.Decompose(Gy02.Publisher.DecomposeParamsDto)">
             <summary>
             分解（降品）装备。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.FuhuaPreview(Gy02.Publisher.FuhuaPreviewParamsDto)">
+            <summary>
+            孵化的预览功能。
             </summary>
             <param name="model"></param>
             <returns></returns>

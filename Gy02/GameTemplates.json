@@ -1922,17 +1922,164 @@
     {
       "Id": "1da0bea3-5765-48b5-aeb6-c8cb9ce6c82e",
       "DisplayName": "羊和狼孵化",
+      "Gid": 171101001,
       "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"0345ca96-b748-4050-ad8a-814b9643d890\",\"DiceTId2\":\"65578531-8325-4e6f-910f-12055f2eeb4f\"}}\n"
     },
     {
       "Id": "0345ca96-b748-4050-ad8a-814b9643d890",
       "DisplayName": "羊和狼孵化动物产出",
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"cceff08b-5a73-4d5e-ba9f-761e0d9b58f4\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1bf4948d-fedc-4819-8e1f-41fe3a6d83f0\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3a47c56c-fa8b-4293-98cd-d6c64690604a\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"c31cad76-7385-4092-8cec-46bde8f8bab8\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"abf3916f-aef6-4974-9d18-37e35fde589a\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]}]}}"
+      "Gid": 170101001,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]}]}}"
     },
     {
       "Id": "65578531-8325-4e6f-910f-12055f2eeb4f",
       "DisplayName": "羊和狼孵化皮肤产出",
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"26f7e185-6daa-428a-a86f-715258c43b4b\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"18b7f5cf-fc73-4e8f-b443-a9204e010188\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"39f9e0eb-b143-493f-9100-4703f60ed632\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"77e38e0c-089c-4d45-866f-6d9a1a3f5bde\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":30,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"abf3916f-aef6-4974-9d18-37e35fde589a\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":70,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6b7f8db2-3563-443b-9f85-174a1a226263\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":45,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9451d8a6-507b-46eb-b1be-1f653af21f0a\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":25,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":null,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]}]}}"
+      "Gid": 170101002,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"26f7e185-6daa-428a-a86f-715258c43b4b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":30,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1bf4948d-fedc-4819-8e1f-41fe3a6d83f0\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d05fd0f3-db38-4089-9ad9-f1dc677e217e\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":65,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b4827ef0-710b-4ba0-8d43-187a685c673b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":55,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9f12ff15-8e24-4672-b2da-d5a2263e3afb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"7b4b5142-80fe-4e95-adbe-32c71589efe8\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"c2aa963d-a568-45fc-b4f0-646843e1a4fc\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":2,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "bd2fc6c4-61b3-4165-9f40-6948b27f0acd",
+      "DisplayName": "羊和长颈鹿的孵化",
+      "Gid": 171101002,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"4c796274-eaac-4625-b341-4eb93fa22510\",\"DiceTId2\":\"bd7777a3-05f9-4536-b1f6-7a4e97ff29ed\"}}\n"
+    },
+    {
+      "Id": "4c796274-eaac-4625-b341-4eb93fa22510",
+      "DisplayName": "羊和长颈鹿孵化动物产出",
+      "Gid": 170101003,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":25,\"GuardConditions\":[]}]}}\n"
+    },
+    {
+      "Id": "bd7777a3-05f9-4536-b1f6-7a4e97ff29ed",
+      "DisplayName": "羊和长颈鹿孵化皮肤产出",
+      "Gid": 170101004,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"26f7e185-6daa-428a-a86f-715258c43b4b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":30,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1bf4948d-fedc-4819-8e1f-41fe3a6d83f0\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d05fd0f3-db38-4089-9ad9-f1dc677e217e\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":65,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b4827ef0-710b-4ba0-8d43-187a685c673b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":55,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9f12ff15-8e24-4672-b2da-d5a2263e3afb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"7b4b5142-80fe-4e95-adbe-32c71589efe8\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"c2aa963d-a568-45fc-b4f0-646843e1a4fc\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":2,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "ad524211-ece4-40ba-92c8-73e8f42721a2",
+      "DisplayName": "羊和老虎的孵化",
+      "Gid": 171101003,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b4ed3603-af19-4bb4-b5a7-1b03dba0155d\",\"DiceTId2\":\"97da5fb1-5a0f-4408-8662-f20c7e3475fb\"}}"
+    },
+    {
+      "Id": "b4ed3603-af19-4bb4-b5a7-1b03dba0155d",
+      "DisplayName": "羊和老虎孵化动物产出",
+      "Gid": 170101005,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "97da5fb1-5a0f-4408-8662-f20c7e3475fb",
+      "DisplayName": "羊和老虎孵化皮肤产出",
+      "Gid": 170101006,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"26f7e185-6daa-428a-a86f-715258c43b4b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":30,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1bf4948d-fedc-4819-8e1f-41fe3a6d83f0\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d26aadc0-f9e6-430e-88c9-8d61d0100a09\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":65,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"524b552f-6ecc-4fbf-a388-4f70eab305b2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":55,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"662b5b60-44a4-42d6-90d0-e5f422667890\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6cbeaf9a-b2b5-4ed1-a2c3-201eb3b7f0ee\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b030897d-d5f3-439d-8910-624a76811b79\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":2,\"GuardConditions\":[]}]}}\n"
+    },
+    {
+      "Id": "e4d113d3-c6bb-413c-8e81-0c4cb683c558",
+      "DisplayName": "羊和龙的孵化",
+      "Gid": 171101004,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_dragon\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"7801b358-1ab6-4376-b4b0-27ec8fdde735\",\"DiceTId2\":\"d03b2daf-c754-46da-83e7-3ec29e8b1447\"}}"
+    },
+    {
+      "Id": "7801b358-1ab6-4376-b4b0-27ec8fdde735",
+      "DisplayName": "羊和龙孵化动物产出",
+      "Gid": 170101007,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "d03b2daf-c754-46da-83e7-3ec29e8b1447",
+      "DisplayName": "羊和龙孵化皮肤产出",
+      "Gid": 170101008,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":4,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"26f7e185-6daa-428a-a86f-715258c43b4b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":30,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1bf4948d-fedc-4819-8e1f-41fe3a6d83f0\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3d28629d-0cc1-44f3-89e5-ae0ce6fde6dc\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":65,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"944a8ebc-b1f7-4b02-b090-5fd76d827b75\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":55,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"20310983-8374-4dd1-805f-309e04cb6f9c\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a4566768-ef1d-4498-b297-60ed005d6191\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e4ace279-5ddb-4080-81e9-86e59f49a6b3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":2,\"GuardConditions\":[]}]}}\n"
+    },
+    {
+      "Id": "355c268d-d0a3-45ab-9951-78db410313da",
+      "DisplayName": "狼和虎的孵化",
+      "Gid": 171101004,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"f80255bf-c906-4866-89c4-1cba20853049\",\"DiceTId2\":\"c9e1173a-789d-4940-8209-35a8ea94b3c2\"}}"
+    },
+    {
+      "Id": "f80255bf-c906-4866-89c4-1cba20853049",
+      "DisplayName": "狼和虎孵化动物产出",
+      "Gid": 170101009,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":35,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":15,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "c9e1173a-789d-4940-8209-35a8ea94b3c2",
+      "DisplayName": "狼和虎孵化皮肤产出",
+      "Gid": 170101010,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dd2c75f5-176d-4af8-a47c-20bb6f313073\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6b7f8db2-3563-443b-9f85-174a1a226263\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":90,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9451d8a6-507b-46eb-b1be-1f653af21f0a\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":40,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6ce19f8f-4c23-4c56-805e-4a649318108f\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3a47c56c-fa8b-4293-98cd-d6c64690604a\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d26aadc0-f9e6-430e-88c9-8d61d0100a09\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"524b552f-6ecc-4fbf-a388-4f70eab305b2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"662b5b60-44a4-42d6-90d0-e5f422667890\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"928fb8a2-f3ab-4863-abf9-3992049cac4e\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"928fb8a2-f3ab-4863-abf9-3992049cac4e\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b030897d-d5f3-439d-8910-624a76811b79\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "8c67ba59-55e1-4a6e-b669-e506db4007a3",
+      "DisplayName": "狼和长颈鹿的孵化",
+      "Gid": 171101005,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"70c73d0f-59d1-428d-8359-f3feb79f7e63\",\"DiceTId2\":\"7d728204-1858-44ec-b909-6e8bb8e6d01b\"}}"
+    },
+    {
+      "Id": "70c73d0f-59d1-428d-8359-f3feb79f7e63",
+      "DisplayName": "狼和长颈鹿孵化动物产出",
+      "Gid": 170101011,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":35,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "7d728204-1858-44ec-b909-6e8bb8e6d01b",
+      "DisplayName": "狼和长颈鹿孵化皮肤产出",
+      "Gid": 170101012,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dd2c75f5-176d-4af8-a47c-20bb6f313073\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6b7f8db2-3563-443b-9f85-174a1a226263\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":90,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9451d8a6-507b-46eb-b1be-1f653af21f0a\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":40,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6ce19f8f-4c23-4c56-805e-4a649318108f\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3a47c56c-fa8b-4293-98cd-d6c64690604a\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d05fd0f3-db38-4089-9ad9-f1dc677e217e\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":110,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b4827ef0-710b-4ba0-8d43-187a685c673b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":60,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9f12ff15-8e24-4672-b2da-d5a2263e3afb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":25,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b14c117f-ad3d-47ed-9c96-2bbf5c2f9d04\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":15,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"c2aa963d-a568-45fc-b4f0-646843e1a4fc\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "33d157c9-29a3-4167-afce-8daab96abfd4",
+      "DisplayName": "狼和龙的孵化",
+      "Gid": 171101006,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"1fb6b3eb-3653-475b-a266-a4be37f2aacf\",\"DiceTId2\":\"d8a92b6b-e6ac-480e-88e5-2dcdb8e10609\"}}"
+    },
+    {
+      "Id": "1fb6b3eb-3653-475b-a266-a4be37f2aacf",
+      "DisplayName": "狼和龙孵化动物产出",
+      "Gid": 170101013,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "d8a92b6b-e6ac-480e-88e5-2dcdb8e10609",
+      "DisplayName": "狼和龙孵化皮肤产出",
+      "Gid": 170101014,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dd2c75f5-176d-4af8-a47c-20bb6f313073\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":150,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6b7f8db2-3563-443b-9f85-174a1a226263\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":90,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9451d8a6-507b-46eb-b1be-1f653af21f0a\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":40,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6ce19f8f-4c23-4c56-805e-4a649318108f\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3a47c56c-fa8b-4293-98cd-d6c64690604a\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3d28629d-0cc1-44f3-89e5-ae0ce6fde6dc\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":110,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"944a8ebc-b1f7-4b02-b090-5fd76d827b75\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"20310983-8374-4dd1-805f-309e04cb6f9c\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":30,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"45c351d1-3147-438d-b8c0-366f6a61d3eb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e4ace279-5ddb-4080-81e9-86e59f49a6b3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":2,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "6f0b6144-83a8-4aa1-99ca-5730ca51dea6",
+      "DisplayName": "虎和长颈鹿的孵化",
+      "Gid": 171101007,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b496948d-eb6d-4196-a742-c6f0ac9178b5\",\"DiceTId2\":\"1857e628-e923-4725-beaa-f85178d9dfb3\"}}"
+    },
+    {
+      "Id": "b496948d-eb6d-4196-a742-c6f0ac9178b5",
+      "DisplayName": "虎和长颈鹿孵化动物产出",
+      "Gid": 170101015,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":1,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "1857e628-e923-4725-beaa-f85178d9dfb3",
+      "DisplayName": "虎和长颈鹿孵化皮肤产出",
+      "Gid": 170101016,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d26aadc0-f9e6-430e-88c9-8d61d0100a09\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"524b552f-6ecc-4fbf-a388-4f70eab305b2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"662b5b60-44a4-42d6-90d0-e5f422667890\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"928fb8a2-f3ab-4863-abf9-3992049cac4e\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b030897d-d5f3-439d-8910-624a76811b79\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d05fd0f3-db38-4089-9ad9-f1dc677e217e\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b4827ef0-710b-4ba0-8d43-187a685c673b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9f12ff15-8e24-4672-b2da-d5a2263e3afb\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":60,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"83ccf074-77b4-4ca5-82f4-84b0349dfb5b\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":60,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"c2aa963d-a568-45fc-b4f0-646843e1a4fc\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":60,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "48b32216-c39f-4187-9ff8-5c0297beb51a",
+      "DisplayName": "虎和龙的孵化",
+      "Gid": 171101008,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b496948d-eb6d-4196-a742-c6f0ac9178b5\",\"DiceTId2\":\"1857e628-e923-4725-beaa-f85178d9dfb3\"}}"
+    },
+    {
+      "Id": "b787d431-c41b-4afb-b587-292efb834ce6",
+      "DisplayName": "虎和龙孵化动物产出",
+      "Gid": 170101017,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":100,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]}]}}"
+    },
+    {
+      "Id": "449d62ab-228b-4f12-8516-95bcea844234",
+      "DisplayName": "虎和龙孵化皮肤产出",
+      "Gid": 170101018,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d26aadc0-f9e6-430e-88c9-8d61d0100a09\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"524b552f-6ecc-4fbf-a388-4f70eab305b2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":80,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"662b5b60-44a4-42d6-90d0-e5f422667890\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"928fb8a2-f3ab-4863-abf9-3992049cac4e\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":20,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b030897d-d5f3-439d-8910-624a76811b79\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3d28629d-0cc1-44f3-89e5-ae0ce6fde6dc\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":65,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"944a8ebc-b1f7-4b02-b090-5fd76d827b75\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":35,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"20310983-8374-4dd1-805f-309e04cb6f9c\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":15,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"13c638fb-86cd-473a-ae33-113239fc4fb8\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":10,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e4ace279-5ddb-4080-81e9-86e59f49a6b3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":5,\"GuardConditions\":[]}]}}"
     }
   ]
 }

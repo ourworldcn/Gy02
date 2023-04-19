@@ -18,6 +18,7 @@ using OW.Game.PropertyChange;
 using Gy02Bll.Commands.Account;
 using Gy02Bll.Commands.Combat;
 using Gy02Bll.Commands.Item;
+using Gy02Bll.Commands.Fuhua;
 
 namespace Gy02.Publisher
 {
@@ -318,10 +319,20 @@ namespace Gy02.Publisher
         public GameSlotDto<GameItemDto> HuoBiSlot { get; set; }
         #endregion 各种槽
 
+        #region 孵化相关
+
         /// <summary>
         /// 记录孵化的预览信息。
         /// </summary>
         public List<FuhuaSummaryDto> FuhuaPreview { get; set; } = new List<FuhuaSummaryDto>();
+
+        /// <summary>
+        /// 记录孵化系统正产出的历史数据。
+        /// </summary>
+        /// <remarks>是否可以生成皮肤以此处记录为准，没有则可以生成。</remarks>
+        public List<FuhuaSummaryDto> FuhuaHistory { get; set; } = new List<FuhuaSummaryDto>();
+
+        #endregion 孵化相关
 
     }
 
@@ -965,13 +976,56 @@ namespace Gy02.Publisher
         /// <summary>
         /// 双亲的TId集合，目前有两个元素，且按升序排序。
         /// </summary>
-        public List<Guid> ParentTIds { get; set; } = new List<Guid>();
+        public List<string> ParentTIds { get; set; } = new List<string>();
 
         /// <summary>
         /// 可能产出的物品预览。
         /// </summary>
-        public List<GameEntitySummaryDto> Items { get; set; } = new List<GameEntitySummaryDto>();
+        public List<GameDiceItemSummaryDto> Items { get; set; } = new List<GameDiceItemSummaryDto>();
     }
+
+    /// <summary>
+    /// 生成项的摘要信息。
+    /// </summary>
+    [AutoMap(typeof(GameDiceItemSummary))]
+    public class GameDiceItemSummaryDto
+    {
+        /// <summary>
+        /// 生成项的摘要。
+        /// </summary>
+        public GameEntitySummaryDto Entity { get; set; }
+
+        /// <summary>
+        /// 生成项的权重。
+        /// </summary>
+        public decimal Weight { get; set; }
+    }
+
+    /// <summary>
+    /// 孵化预览功能所用的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(FuhuaPreviewCommand), ReverseMap = true)]
+    public class FuhuaPreviewParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 双亲的类属集合 如 "zuoqi_sheep" "zuoqi_wolf"，无所谓顺序，但返回时是按升序排序。
+        /// </summary>
+        public List<string> ParentGenus { get; set; } = new List<string>();
+
+    }
+
+    /// <summary>
+    /// 孵化预览功能所用的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(FuhuaPreviewCommand))]
+    public class FuhuaPreviewReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回数据，孵化可能生成的预览信息列表。
+        /// </summary>
+        public List<GameDiceItemSummaryDto> Result { get; set; } = new List<GameDiceItemSummaryDto>();
+    }
+
 
     #endregion 孵化相关
 }

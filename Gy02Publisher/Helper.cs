@@ -20,6 +20,8 @@ namespace Gy02.Publisher
     /// </summary>
     public static class ProjectContent
     {
+        #region 各种槽和背包
+
         /// <summary>
         /// 账号的模板Id。
         /// </summary>
@@ -86,9 +88,11 @@ namespace Gy02.Publisher
         public static readonly Guid ShiZhuangBagTId = new Guid("A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652");
 
         /// <summary>
-        /// 皮肤背包。
+        /// 皮肤背包。3b163a62-6591-4a93-a385-cf079b20f589
         /// </summary>
         public static readonly Guid PiFuBagTId = new Guid("3b163a62-6591-4a93-a385-cf079b20f589");
+
+        #endregion 各种槽和背包
 
         /// <summary>
         /// 金币TID。

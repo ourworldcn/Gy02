@@ -261,6 +261,12 @@
             记录孵化的预览信息。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.GameCharDto.FuhuaHistory">
+            <summary>
+            记录孵化系统正产出的历史数据。
+            </summary>
+            <remarks>是否可以生成皮肤以此处记录为准，没有则可以生成。</remarks>
+        </member>
         <member name="T:Gy02.Publisher.GameItemDto">
             <summary>
             道具数据。
@@ -731,6 +737,41 @@
         <member name="P:Gy02.Publisher.FuhuaSummaryDto.Items">
             <summary>
             可能产出的物品预览。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GameDiceItemSummaryDto">
+            <summary>
+            生成项的摘要信息。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameDiceItemSummaryDto.Entity">
+            <summary>
+            生成项的摘要。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GameDiceItemSummaryDto.Weight">
+            <summary>
+            生成项的权重。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.FuhuaPreviewParamsDto">
+            <summary>
+            孵化预览功能所用的参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.FuhuaPreviewParamsDto.ParentGenus">
+            <summary>
+            双亲的类属集合 如 "zuoqi_sheep" "zuoqi_wolf"，无所谓顺序，但返回时是按升序排序。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.FuhuaPreviewReturnDto">
+            <summary>
+            孵化预览功能所用的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.FuhuaPreviewReturnDto.Result">
+            <summary>
+            返回数据，孵化可能生成的预览信息列表。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.DispatcherDemo">

@@ -1,4 +1,5 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Templates;
 using Microsoft.EntityFrameworkCore;
 using OW.Game.Store;
 using System;
@@ -197,6 +198,12 @@ namespace OW.Game.Entity
         /// </summary>
         public List<FuhuaSummary> FuhuaPreview { get; set; } = new List<FuhuaSummary>();
 
+        /// <summary>
+        /// 记录孵化系统正产出的历史数据。
+        /// </summary>
+        /// <remarks>是否可以生成皮肤以此处记录为准，没有则可以生成。</remarks>
+        public List<FuhuaSummary> FuhuaHistory { get; set; } = new List<FuhuaSummary>();
+
         #endregion 孵化相关
     }
 
@@ -208,12 +215,28 @@ namespace OW.Game.Entity
         /// <summary>
         /// 双亲的TId集合，目前有两个元素，且按升序排序。
         /// </summary>
-        public List<Guid> ParentTIds { get; set; } = new List<Guid>();
+        public List<string> ParentTIds { get; set; } = new List<string>();
 
         /// <summary>
         /// 可能产出的物品预览。
         /// </summary>
-        public List<GameEntitySummary> Items { get; set; } = new List<GameEntitySummary>();
+        public List<GameDiceItemSummary> Items { get; set; } = new List<GameDiceItemSummary>();
+    }
+
+    /// <summary>
+    /// 生成项的摘要信息。
+    /// </summary>
+    public class GameDiceItemSummary
+    {
+        /// <summary>
+        /// 生成项的摘要。
+        /// </summary>
+        public GameEntitySummary Entity { get; set; }
+
+        /// <summary>
+        /// 生成项的权重。
+        /// </summary>
+        public decimal Weight { get; set; }
     }
 
     public static class GameCharExtensions

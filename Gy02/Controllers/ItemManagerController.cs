@@ -2,6 +2,8 @@
 using Gy02.Publisher;
 using Gy02Bll.Base;
 using Gy02Bll.Commands;
+using Gy02Bll.Commands.Combat;
+using Gy02Bll.Commands.Fuhua;
 using Gy02Bll.Commands.Item;
 using Gy02Bll.Managers;
 using Microsoft.AspNetCore.Mvc;
@@ -28,18 +30,21 @@ namespace Gy02.Controllers
         /// <param name="mapper"></param>
         /// <param name="gameEntityManager"></param>
         /// <param name="syncCommandManager"></param>
-        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager)
+        /// <param name="gameAccountStore"></param>
+        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameAccountStore gameAccountStore)
         {
             _ServiceProvider = serviceProvider;
             _Mapper = mapper;
             _GameEntityManager = gameEntityManager;
             _SyncCommandManager = syncCommandManager;
+            _GameAccountStore = gameAccountStore;
         }
 
         readonly IServiceProvider _ServiceProvider;
         IMapper _Mapper;
         GameEntityManager _GameEntityManager;
         SyncCommandManager _SyncCommandManager;
+        GameAccountStore _GameAccountStore;
 
         /// <summary>
         /// 移动物品接口。
@@ -295,8 +300,8 @@ namespace Gy02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-            var command = new DecomposeCommand {GameChar=gc };
-            
+            var command = new DecomposeCommand { GameChar = gc };
+
             var item = gc.GetAllChildren().FirstOrDefault(c => c.Id == model.ItemId);
             if (item is null)
             {
@@ -318,6 +323,54 @@ namespace Gy02.Controllers
             return result;
 
         }
+
+        #region 孵化相关
+#if DEBUG
+        /// <summary>
+        /// 测试孵化。
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<FuhuaPreviewReturnDto> TestFuhuaPreview()
+        {
+            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            store.LoadOrGetUser("string40", "string", out var gu);
+            var token = gu.Token;
+            //var gc = gu.CurrentChar;
+            var model = new FuhuaPreviewParamsDto
+            {
+                Token = token,
+                ParentGenus = new List<string> { "zuoqi_wolf", "zuoqi_giraffe" },
+            };
+
+            return FuhuaPreview(model);
+
+        }
+#endif
+        /// <summary>
+        /// 孵化的预览功能。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<FuhuaPreviewReturnDto> FuhuaPreview(FuhuaPreviewParamsDto model)
+        {
+            var result = new FuhuaPreviewReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new FuhuaPreviewCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
+        #endregion 孵化相关
     }
 
 }

@@ -6,6 +6,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -34,7 +35,7 @@ namespace Gy02Bll.Templates
         /// <summary>
         /// 分类号。
         /// </summary>
-        public decimal? Gid { get; set; }
+        public int? Gid { get; set; }
 
         /// <summary>
         /// 属性字符串，Json格式。
@@ -142,11 +143,11 @@ namespace Gy02Bll.Templates
             set => _DisplayName = value;
         }
 
-        decimal? _Gid;
+        int? _Gid;
         /// <summary>
         /// 分类号。
         /// </summary>
-        public decimal? Gid
+        public int? Gid
         {
             get
             {
@@ -167,6 +168,24 @@ namespace Gy02Bll.Templates
             }
             set => _Remark = value;
         }
+
+        /// <summary>
+        /// 获取大类号。
+        /// </summary>
+        /// <returns></returns>
+        public int? GetCatalog1() => Gid.HasValue ? new int?(Gid.Value / 10000000) : null;
+
+        /// <summary>
+        /// 获取中类号。
+        /// </summary>
+        /// <returns></returns>
+        public int? GetCatalog2() => Gid.HasValue ? new int?(Gid.Value / 100000 % 100) : null;
+
+        /// <summary>
+        /// 获取小类号。
+        /// </summary>
+        /// <returns></returns>
+        public int? GetCatalog3() => Gid.HasValue ? new int?(Gid.Value / 1000 % 100) : null;
 
         #endregion 本体数据
 
@@ -642,6 +661,21 @@ namespace Gy02Bll.Templates
         /// 需要此项有效的前置条件，这个条件针对角色数据来设置。
         /// </summary>
         public GameThingPrecondition GuardConditions { get; set; } = new GameThingPrecondition();
+
+        (Guid, decimal, decimal)? _Summary;
+        /// <summary>
+        /// 获取产出的(模板Id,数量,权重)。
+        /// </summary>
+        /// <returns></returns>
+        public (Guid, decimal, decimal) GetSummary()
+        {
+            if (!_Summary.HasValue)
+            {
+                var item = Precondition.FirstOrDefault(c => c.TId.HasValue);
+                _Summary = (item?.TId ?? Guid.Empty, item?.MinCount ?? 0, Weight);
+            }
+            return _Summary.Value;
+        }
     }
 
     #endregion 骰子相关
