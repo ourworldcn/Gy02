@@ -974,7 +974,7 @@ namespace Gy02.Publisher
     public class FuhuaSummaryDto
     {
         /// <summary>
-        /// 双亲的TId集合，目前有两个元素，且按升序排序。
+        /// 双亲的类属集合，目前有两个元素，且按升序排序。
         /// </summary>
         public List<string> ParentTIds { get; set; } = new List<string>();
 
