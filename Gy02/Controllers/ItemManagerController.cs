@@ -371,7 +371,7 @@ namespace Gy02.Controllers
         }
 
         /// <summary>
-        /// 
+        /// 孵化功能。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>

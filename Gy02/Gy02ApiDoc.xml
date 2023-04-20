@@ -241,7 +241,7 @@
         </member>
         <member name="M:Gy02.Controllers.ItemManagerController.Fuhua(Gy02.Publisher.FuhuaParamsDto)">
             <summary>
-            
+            孵化功能。
             </summary>
             <param name="model"></param>
             <returns></returns>

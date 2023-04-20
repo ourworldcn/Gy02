@@ -27,12 +27,13 @@ namespace Gy02Bll.Commands.Fuhua
 
     public class FuhuaHandler : SyncCommandHandlerBase<FuhuaCommand>, IGameCharHandler<FuhuaCommand>
     {
-        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, TemplateManager templateManager)
+        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, TemplateManager templateManager, BlueprintManager blueprintManager)
         {
             _AccountStore = accountStore;
             _SyncCommandManager = syncCommandManager;
             _GameEntityManager = gameEntityManager;
             _TemplateManager = templateManager;
+            _BlueprintManager = blueprintManager;
         }
 
         GameAccountStore _AccountStore;

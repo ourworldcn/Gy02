@@ -62,8 +62,9 @@ namespace Gy02Bll.Templates
                     t._RawTemplate = this;
                 return result;
             }
-            catch (Exception)
+            catch (Exception err)
             {
+                Debug.WriteLine($"{PropertiesString}{Environment.NewLine}{err.Message}");
                 throw;
             }
         }
