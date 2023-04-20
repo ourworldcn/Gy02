@@ -11,7 +11,7 @@
       "Id": "07664462-df05-4ba7-886d-b431bb88aa1c",
       "DisplayName": "角色",
       "Gid": 911101001,
-      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[200],\"def\":[2000],\"pow\":[200],\"crit\":100,\"crit_pct\":0}",
+      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[200],\"def\":[2000],\"pow\":[150],\"crit\":100,\"crit_pct\":0}",
       "Remark": "TIdsOfCreate是创建该对象时，需要一起创建的子对象的TIds"
     },
     {
@@ -79,7 +79,7 @@
       "Id": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
       "DisplayName": "货币槽",
       "Gid": 912101011,
-      "PropertiesString": "{\"cap\":1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"TIdsOfCreate\":[\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"]}",
+      "PropertiesString": "{\"cap\":1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"TIdsOfCreate\":[\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\"]}",
       "Remark": "货币类物品放置在此槽下，初始创建；"
     },
     {
@@ -108,76 +108,82 @@
       "Remark": "Count控制初始生成时的数量，省略则为0，可以有小数点，定点数；stk最大堆叠数，-1=不限制，省略为1就是非堆叠物品如装备;Count0Reserved为true时，数量为0时也不会删除该物品，省略或为false则删除。"
     },
     {
+      "Id": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
+      "DisplayName": "孵化次数货币",
+      "Gid": 110101004,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"}"
+    },
+    {
       "Id": "c4c430e1-962a-458d-a1ce-026128edc377",
       "DisplayName": "攻击力提升10%",
       "Gid": 140201001,
-      "PropertiesString": "{\"atk_pct\":10,\"name_txt\":12100}"
+      "PropertiesString": "{\"atk_pct\":0,\"name_txt\":12100}"
     },
     {
       "Id": "0dfc1671-b37e-422c-b832-149585ffff2c",
       "DisplayName": "血量提升10%",
       "Gid": 140301001,
-      "PropertiesString": "{\"def_pct\":10,\"name_txt\":12101}"
+      "PropertiesString": "{\"def_pct\":0,\"name_txt\":12101}"
     },
     {
       "Id": "979c4439-318e-4fa3-a26a-8811d5de6c2a",
       "DisplayName": "力量提升10%",
       "Gid": 140301002,
-      "PropertiesString": "{\"pow_pct\":10,\"name_txt\":12102}"
+      "PropertiesString": "{\"pow_pct\":0,\"name_txt\":12102}"
     },
     {
       "Id": "0268e085-c13f-43b7-8290-58d41ffe6244",
       "DisplayName": "攻击力提升15%",
       "Gid": 142101001,
-      "PropertiesString": "{\"atk_pct\":15,\"name_txt\":12100}"
+      "PropertiesString": "{\"atk_pct\":0,\"name_txt\":12100}"
     },
     {
       "Id": "099a64ff-c761-4de5-9838-36ed24e271f1",
       "DisplayName": "血量提升15%",
       "Gid": 142101002,
-      "PropertiesString": "{\"def_pct\":15,\"name_txt\":12101}"
+      "PropertiesString": "{\"def_pct\":0,\"name_txt\":12101}"
     },
     {
       "Id": "171df1f4-935f-4e92-b612-b33275575db3",
       "DisplayName": "力量提升15%",
       "Gid": 142101003,
-      "PropertiesString": "{\"pow_pct\":15,\"name_txt\":12102}"
+      "PropertiesString": "{\"pow_pct\":0,\"name_txt\":12102}"
     },
     {
       "Id": "622f4517-ef8d-4f70-877e-a9420d177f00",
       "DisplayName": "攻击力提升20%",
       "Gid": 142101004,
-      "PropertiesString": "{\"atk_pct\":20,\"name_txt\":12100}"
+      "PropertiesString": "{\"atk_pct\":0,\"name_txt\":12100}"
     },
     {
       "Id": "698b41a1-db8b-4e00-b669-112bb2f925fd",
       "DisplayName": "血量提升20%",
       "Gid": 142101005,
-      "PropertiesString": "{\"def_pct\":20,\"name_txt\":12101}"
+      "PropertiesString": "{\"def_pct\":0,\"name_txt\":12101}"
     },
     {
       "Id": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
       "DisplayName": "力量提升20%",
       "Gid": 142101006,
-      "PropertiesString": "{\"pow_pct\":20,\"name_txt\":12102}"
+      "PropertiesString": "{\"pow_pct\":0,\"name_txt\":12102}"
     },
     {
       "Id": "c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948",
       "DisplayName": "攻击力提升25%",
       "Gid": 142101007,
-      "PropertiesString": "{\"atk_pct\":25,\"name_txt\":12100}"
+      "PropertiesString": "{\"atk_pct\":0,\"name_txt\":12100}"
     },
     {
       "Id": "381916bc-c0c0-4897-9877-f7829fd88956",
       "DisplayName": "血量提升25%",
       "Gid": 142101008,
-      "PropertiesString": "{\"def_pct\":25,\"name_txt\":12101}"
+      "PropertiesString": "{\"def_pct\":0,\"name_txt\":12101}"
     },
     {
       "Id": "fcb0c083-e337-4d67-bfe3-5a2e590137b9",
       "DisplayName": "力量提升25%",
       "Gid": 142101009,
-      "PropertiesString": "{\"pow_pct\":25,\"name_txt\":12102}"
+      "PropertiesString": "{\"pow_pct\":0,\"name_txt\":12102}"
     },
     {
       "Id": "8a145b29-42e7-4ce5-80c6-416d918fc935",
@@ -916,7 +922,7 @@
       "Id": "0bd9990c-f4c1-489c-b25e-82cdd58961fb",
       "DisplayName": "武士腰带白",
       "Gid": 120105002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11824,\"comment_txt\":11850,\"atk\":null,\"def\":null,\"pow\":[20,23,26,29,32,35,38,41,44,47,50], \"genus\":[\"p_wh\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"b497e3a8-d510-4a14-8185-1e2c815f89f1\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11824,\"comment_txt\":11850,\"atk\":null,\"def\":null,\"pow\":[20,23,26,29,32,35,38,41,44,47], \"genus\":[\"p_wh\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"b497e3a8-d510-4a14-8185-1e2c815f89f1\"}"
     },
     {
       "Id": "0c5a7eaa-34e7-4d13-8462-89532c0354e9",
@@ -988,121 +994,121 @@
       "Id": "e919f7c7-b341-4159-9ecb-fba64363cff2",
       "DisplayName": "山羊坐骑白",
       "Gid": 120102001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11827,\"comment_txt\":11853,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11827,\"comment_txt\":11853,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\",\"zuoqi_sheep\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "9c2d37c2-1f65-4809-a51b-bf1e22e9525f",
       "DisplayName": "山羊坐骑绿",
       "Gid": 120202001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11827,\"comment_txt\":11853,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"081c0a42-ed99-455a-b24c-fd01ebbc521a\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11827,\"comment_txt\":11853,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_sheep\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"081c0a42-ed99-455a-b24c-fd01ebbc521a\"}"
     },
     {
       "Id": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
       "DisplayName": "山羊坐骑蓝",
       "Gid": 120302001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11827,\"comment_txt\":11853,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"f58f0e96-e8c1-445a-89c0-5ec7b9b005ff\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11827,\"comment_txt\":11853,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_sheep\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"f58f0e96-e8c1-445a-89c0-5ec7b9b005ff\"}"
     },
     {
       "Id": "402a7b1c-bd32-4540-9efe-f9801ed6946b",
       "DisplayName": "山羊坐骑紫",
       "Gid": 121102001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11827,\"comment_txt\":11853,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"2fc38d58-86e5-4eff-ba68-ccf60f356f5a\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11827,\"comment_txt\":11853,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_sheep\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"2fc38d58-86e5-4eff-ba68-ccf60f356f5a\"}"
     },
     {
       "Id": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
       "DisplayName": "老虎白",
       "Gid": 120102002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11829,\"comment_txt\":11855,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11829,\"comment_txt\":11855,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\",\"zuoqi_tiger\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "14a84b6c-8709-44bd-becf-dc19ed8f9f97",
       "DisplayName": "老虎绿",
       "Gid": 120202002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11829,\"comment_txt\":11855,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"88260b19-7315-4598-85b1-5c68b1d4d3f7\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11829,\"comment_txt\":11855,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_tiger\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"88260b19-7315-4598-85b1-5c68b1d4d3f7\"}"
     },
     {
       "Id": "f38fe707-ed6a-4d3e-9453-7e2df60bbb39",
       "DisplayName": "老虎蓝",
       "Gid": 120302002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11829,\"comment_txt\":11855,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"f44c156a-1ad1-454a-ac53-bdb1dab6c8dc\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11829,\"comment_txt\":11855,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_tiger\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"f44c156a-1ad1-454a-ac53-bdb1dab6c8dc\"}"
     },
     {
       "Id": "0e6f9a4d-e198-4549-83be-9b9c9f67db53",
       "DisplayName": "老虎紫",
       "Gid": 121102002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11829,\"comment_txt\":11855,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"73c20879-a548-43d3-8141-61754f36ba40\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11829,\"comment_txt\":11855,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_tiger\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"73c20879-a548-43d3-8141-61754f36ba40\"}"
     },
     {
       "Id": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
       "DisplayName": "狼白",
       "Gid": 120102003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11828,\"comment_txt\":11854,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11828,\"comment_txt\":11854,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\",\"zuoqi_wolf\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "60c28119-42b0-4ebc-bc37-24be3afaebf4",
       "DisplayName": "狼绿",
       "Gid": 120202003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11828,\"comment_txt\":11854,\"comment_txt\":11854,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"79304c6a-4bb4-453b-a379-ef982630a3ef\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11828,\"comment_txt\":11854,\"comment_txt\":11854,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_wolf\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"79304c6a-4bb4-453b-a379-ef982630a3ef\"}"
     },
     {
       "Id": "269448b5-b46c-4245-aab5-01b8fb53137e",
       "DisplayName": "狼蓝",
       "Gid": 120302003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11828,\"comment_txt\":11854,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"fce412d8-ac99-4b09-ad79-3cc855124d63\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11828,\"comment_txt\":11854,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_wolf\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"fce412d8-ac99-4b09-ad79-3cc855124d63\"}"
     },
     {
       "Id": "505dad1a-0d29-4052-97d7-f0843e393fec",
       "DisplayName": "狼紫",
       "Gid": 121102003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11828,\"comment_txt\":11854,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"e9702199-6f43-441d-9de3-2524b69d3177\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11828,\"comment_txt\":11854,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_wolf\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"e9702199-6f43-441d-9de3-2524b69d3177\"}"
     },
     {
       "Id": "696e8311-b286-486c-931f-aff1eb72f1de",
       "DisplayName": "长颈鹿白",
       "Gid": 120102004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11830,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11830,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\",\"zuoqi_giraffe\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "365b7755-2042-4faa-aa47-408b5201e84f",
       "DisplayName": "长颈鹿绿",
       "Gid": 120202004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11830,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"cdde3552-4971-447b-8fea-71ae7031c1a2\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11830,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_giraffe\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"cdde3552-4971-447b-8fea-71ae7031c1a2\"}"
     },
     {
       "Id": "c2e12564-f3cc-4222-8f4e-d04235297efd",
       "DisplayName": "长颈鹿蓝",
       "Gid": 120302004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11830,\"comment_txt\":11855,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"b61e7014-e8bb-4527-9af9-8ae7064bf68d\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11830,\"comment_txt\":11855,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_giraffe\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"b61e7014-e8bb-4527-9af9-8ae7064bf68d\"}"
     },
     {
       "Id": "b09eda4f-c978-480e-a7d2-644f414b3298",
       "DisplayName": "长颈鹿紫",
       "Gid": 121102004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11830,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"eb00647b-0845-4c4f-8882-002f49d5017f\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11830,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_giraffe\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"eb00647b-0845-4c4f-8882-002f49d5017f\"}"
     },
     {
       "Id": "1741c697-ea92-458b-a9e8-a839e41ad5f3",
       "DisplayName": "龙白",
       "Gid": 120102005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95], \"genus\":[\"p_wh\",\"e_zuoqi\",\"zuoqi_gragon\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":false},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "b92ce078-670e-4870-a244-a638880dc41b",
       "DisplayName": "龙绿",
       "Gid": 120202005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11857,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"085f24eb-a5bd-4a60-bf77-94c8c9170801\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11857,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222,230],\"genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_gragon\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":false},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"085f24eb-a5bd-4a60-bf77-94c8c9170801\"}"
     },
     {
       "Id": "e92a3375-9872-40ea-8cb4-10bb24add432",
       "DisplayName": "龙蓝",
       "Gid": 120302005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11857,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"d2df8392-07d2-4754-9c3d-81fa98ef7072\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11857,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390,400],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_gragon\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"d2df8392-07d2-4754-9c3d-81fa98ef7072\"}"
     },
     {
       "Id": "7b08d03a-1804-4a32-93b2-31736ffc1fb6",
       "DisplayName": "龙紫",
       "Gid": 121102005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_yaodai\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"7a22427b-2fa5-4ac3-a51f-fdc15683a096\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11856,\"atk\":null,\"def\":null,\"pow\":[200,215,230,245,260,275,290,305,320,335,350,365,380,395,410,425,440,455,470,485,500,515,530,545,560,575,590,605,620,635,650,665,680,695,710,725,740,755,770,785,800,815,830,845,860,875,890,905,920,935],\"genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_gragon\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true},{\"skillsid\":\"fcb0c083-e337-4d67-bfe3-5a2e590137b9\",\"enable\":true}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"7a22427b-2fa5-4ac3-a51f-fdc15683a096\"}"
     },
     {
       "Id": "5D7340B6-F784-4F20-A8DA-EE72E1288727",
@@ -1923,7 +1929,7 @@
       "Id": "1da0bea3-5765-48b5-aeb6-c8cb9ce6c82e",
       "DisplayName": "羊和狼孵化",
       "Gid": 171101001,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"0345ca96-b748-4050-ad8a-814b9643d890\",\"DiceTId2\":\"65578531-8325-4e6f-910f-12055f2eeb4f\"}}\n"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"0345ca96-b748-4050-ad8a-814b9643d890\",\"DiceTId2\":\"65578531-8325-4e6f-910f-12055f2eeb4f\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
     },
     {
       "Id": "0345ca96-b748-4050-ad8a-814b9643d890",
@@ -1941,7 +1947,7 @@
       "Id": "bd2fc6c4-61b3-4165-9f40-6948b27f0acd",
       "DisplayName": "羊和长颈鹿的孵化",
       "Gid": 171101002,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"4c796274-eaac-4625-b341-4eb93fa22510\",\"DiceTId2\":\"bd7777a3-05f9-4536-b1f6-7a4e97ff29ed\"}}\n"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"4c796274-eaac-4625-b341-4eb93fa22510\",\"DiceTId2\":\"bd7777a3-05f9-4536-b1f6-7a4e97ff29ed\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}\n"
     },
     {
       "Id": "4c796274-eaac-4625-b341-4eb93fa22510",
@@ -1959,7 +1965,7 @@
       "Id": "ad524211-ece4-40ba-92c8-73e8f42721a2",
       "DisplayName": "羊和老虎的孵化",
       "Gid": 171101003,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b4ed3603-af19-4bb4-b5a7-1b03dba0155d\",\"DiceTId2\":\"97da5fb1-5a0f-4408-8662-f20c7e3475fb\"}}"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b4ed3603-af19-4bb4-b5a7-1b03dba0155d\",\"DiceTId2\":\"97da5fb1-5a0f-4408-8662-f20c7e3475fb\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}\n"
     },
     {
       "Id": "b4ed3603-af19-4bb4-b5a7-1b03dba0155d",
@@ -1977,7 +1983,7 @@
       "Id": "e4d113d3-c6bb-413c-8e81-0c4cb683c558",
       "DisplayName": "羊和龙的孵化",
       "Gid": 171101004,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_dragon\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"7801b358-1ab6-4376-b4b0-27ec8fdde735\",\"DiceTId2\":\"d03b2daf-c754-46da-83e7-3ec29e8b1447\"}}"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_dragon\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"7801b358-1ab6-4376-b4b0-27ec8fdde735\",\"DiceTId2\":\"d03b2daf-c754-46da-83e7-3ec29e8b1447,\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}\n"
     },
     {
       "Id": "7801b358-1ab6-4376-b4b0-27ec8fdde735",
@@ -1995,7 +2001,7 @@
       "Id": "355c268d-d0a3-45ab-9951-78db410313da",
       "DisplayName": "狼和虎的孵化",
       "Gid": 171101004,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"f80255bf-c906-4866-89c4-1cba20853049\",\"DiceTId2\":\"c9e1173a-789d-4940-8209-35a8ea94b3c2\"}}"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"f80255bf-c906-4866-89c4-1cba20853049\",\"DiceTId2\":\"c9e1173a-789d-4940-8209-35a8ea94b3c2\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}\n"
     },
     {
       "Id": "f80255bf-c906-4866-89c4-1cba20853049",
@@ -2013,7 +2019,7 @@
       "Id": "8c67ba59-55e1-4a6e-b669-e506db4007a3",
       "DisplayName": "狼和长颈鹿的孵化",
       "Gid": 171101005,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"70c73d0f-59d1-428d-8359-f3feb79f7e63\",\"DiceTId2\":\"7d728204-1858-44ec-b909-6e8bb8e6d01b\"}}"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"70c73d0f-59d1-428d-8359-f3feb79f7e63\",\"DiceTId2\":\"7d728204-1858-44ec-b909-6e8bb8e6d01b\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}\n"
     },
     {
       "Id": "70c73d0f-59d1-428d-8359-f3feb79f7e63",
@@ -2031,7 +2037,7 @@
       "Id": "33d157c9-29a3-4167-afce-8daab96abfd4",
       "DisplayName": "狼和龙的孵化",
       "Gid": 171101006,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"1fb6b3eb-3653-475b-a266-a4be37f2aacf\",\"DiceTId2\":\"d8a92b6b-e6ac-480e-88e5-2dcdb8e10609\"}}"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"1fb6b3eb-3653-475b-a266-a4be37f2aacf\",\"DiceTId2\":\"d8a92b6b-e6ac-480e-88e5-2dcdb8e10609\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}\n"
     },
     {
       "Id": "1fb6b3eb-3653-475b-a266-a4be37f2aacf",
@@ -2049,7 +2055,7 @@
       "Id": "6f0b6144-83a8-4aa1-99ca-5730ca51dea6",
       "DisplayName": "虎和长颈鹿的孵化",
       "Gid": 171101007,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b496948d-eb6d-4196-a742-c6f0ac9178b5\",\"DiceTId2\":\"1857e628-e923-4725-beaa-f85178d9dfb3\"}}"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b496948d-eb6d-4196-a742-c6f0ac9178b5\",\"DiceTId2\":\"1857e628-e923-4725-beaa-f85178d9dfb3\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}\n"
     },
     {
       "Id": "b496948d-eb6d-4196-a742-c6f0ac9178b5",
@@ -2067,7 +2073,7 @@
       "Id": "48b32216-c39f-4187-9ff8-5c0297beb51a",
       "DisplayName": "虎和龙的孵化",
       "Gid": 171101008,
-      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b496948d-eb6d-4196-a742-c6f0ac9178b5\",\"DiceTId2\":\"1857e628-e923-4725-beaa-f85178d9dfb3\"}}"
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"b496948d-eb6d-4196-a742-c6f0ac9178b5\",\"DiceTId2\":\"1857e628-e923-4725-beaa-f85178d9dfb3\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}\n"
     },
     {
       "Id": "b787d431-c41b-4afb-b587-292efb834ce6",

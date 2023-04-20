@@ -108,16 +108,18 @@ namespace Gy02Bll.Commands.Combat
                 }
                 if (!ch.MinTimeSpanOfPass.HasValue || ch.MinTimeSpanOfPass > command.MinTimeSpanOfPass)
                 {
-                    command.Changes.Add(new GamePropertyChangeItem<object>
+                    var change1 = new GamePropertyChangeItem<object>
                     {
                         Object = gc,
                         PropertyName = nameof(gc.CombatHistory),
                         HasOldValue = ch.MinTimeSpanOfPass.HasValue,
-                        OldValue = ch.MinTimeSpanOfPass,
+                        OldValue = new CombatHistoryItem { TId = ch.TId, MinTimeSpanOfPass = ch.MinTimeSpanOfPass },
                         HasNewValue = command.MinTimeSpanOfPass.HasValue,
-                        NewValue = command.MinTimeSpanOfPass,
-                    });
+                        NewValue = ch,
+                    };
                     ch.MinTimeSpanOfPass = command.MinTimeSpanOfPass;
+
+                    command.Changes?.Add(change1);
                 }
             }
             #endregion 记录战斗信息

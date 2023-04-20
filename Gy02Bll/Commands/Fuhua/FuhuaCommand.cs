@@ -134,7 +134,10 @@ namespace Gy02Bll.Commands.Fuhua
               {
                   return gc.GetAllChildren().Any(c =>
                   {
-                      return _TemplateManager.GetFullViewFromId(c.ExtraGuid)?.Genus?.Contains(g) ?? false;
+                      var tmp = _TemplateManager.GetFullViewFromId(c.ExtraGuid)?.Genus;
+                      if (tmp is null)
+                          return false;
+                      return tmp.Contains(g);
                   });
 
               });

@@ -391,6 +391,36 @@ namespace System
         }
 
         /// <summary>
+        /// 按概率权重获取无重复的多项数据。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items"></param>
+        /// <param name="count"></param>
+        /// <param name="random"></param>
+        /// <returns></returns>
+        public static IEnumerable<(T, decimal)> GetRandom<T>(IEnumerable<(T, decimal)> items, int count, Random random = null)
+        {
+            decimal totalWeight = 0;    //总权重
+            foreach (var item in items)
+            {
+                if (item.Item2 < 0)
+                {
+                    SetLastError(160);
+                    SetLastErrorMessage($"权重不能小于0.");
+                    return default;
+                }
+                totalWeight += item.Item2;
+            }
+            random ??= new Random();
+            List<(T, decimal)> result = new List<(T, decimal)>();
+            for (int i = 0; i < count; i++)
+            {
+
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 用<see cref="DateTime.UtcNow"/>计算超时剩余时间。
         /// </summary>
         /// <param name="start">起始时间点。使用UTC时间。</param>
