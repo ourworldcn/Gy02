@@ -334,6 +334,15 @@ namespace Gy02.Publisher
 
         #endregion 孵化相关
 
+        #region 战斗相关
+
+        /// <summary>
+        /// 通关信息相关集合。
+        /// </summary>
+        public List<CombatHistoryItemDto> CombatHistory { get; set; } = new List<CombatHistoryItemDto>();
+
+        #endregion 战斗相关
+
     }
 
     /// <summary>
@@ -892,6 +901,25 @@ namespace Gy02.Publisher
     #endregion 蓝图相关
 
     #region 战斗相关
+
+    /// <summary>
+    /// 战斗的相关记录信息。
+    /// </summary>
+    [AutoMap(typeof(CombatHistoryItem), ReverseMap = true)]
+    public class CombatHistoryItemDto
+    {
+        /// <summary>
+        /// 关卡的模板Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 该关卡的最短时间，如果null,表示没有记录过。
+        /// </summary>
+        public TimeSpan? MinTimeSpanOfPass { get; set; }
+    }
+
+
     /// <summary>
     /// 结算战斗功能参数封装类。
     /// </summary>
@@ -912,6 +940,11 @@ namespace Gy02.Publisher
         /// 杀怪或其它集合。
         /// </summary>
         public List<GameEntitySummaryDto> Others { get; set; } = new List<GameEntitySummaryDto>();
+
+        /// <summary>
+        /// 该关卡的最短时间，如果null,表示不记录。
+        /// </summary>
+        public TimeSpan? MinTimeSpanOfPass { get; set; }
     }
 
     /// <summary>
@@ -1026,6 +1059,25 @@ namespace Gy02.Publisher
         public List<GameDiceItemSummaryDto> Result { get; set; } = new List<GameDiceItemSummaryDto>();
     }
 
+    /// <summary>
+    /// 孵化功能参数封装类。
+    /// </summary>
+    [AutoMap(typeof(FuhuaCommand), ReverseMap = true)]
+    public class FuhuaParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 双亲的类属集合 如 "zuoqi_sheep" "zuoqi_wolf"，无所谓顺序，但返回时是按升序排序。
+        /// </summary>
+        public List<string> ParentGenus { get; set; } = new List<string>();
+    }
+
+    /// <summary>
+    /// 孵化功能返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(FuhuaCommand))]
+    public class FuhuaReturnDto : PropertyChangeReturnDto
+    {
+    }
 
     #endregion 孵化相关
 }

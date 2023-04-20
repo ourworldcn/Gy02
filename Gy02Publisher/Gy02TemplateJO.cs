@@ -388,6 +388,13 @@ namespace Gy02Bll.Templates
         /// 卡池2的。
         /// </summary>
         public Guid DiceTId2 { get; set; }
+
+        /// <summary>
+        /// 消耗物的集合。
+        /// </summary>
+        public List<BlueprintInItem> In { get; set; } = new List<BlueprintInItem>();
+
+
     }
 
     /// <summary>

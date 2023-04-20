@@ -1,151 +1,23 @@
 {
-  "Dice": {
-    "MaxCount": 3,
-    "AllowRepetition": false,
-    "Items": [
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 150,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "b564395a-487d-4682-8dec-1338daee3952",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 100,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "26f7e185-6daa-428a-a86f-715258c43b4b",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 80,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "18b7f5cf-fc73-4e8f-b443-a9204e010188",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 100,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": 1,
-            "Genus": [],
-            "TId": "39f9e0eb-b143-493f-9100-4703f60ed632",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 50,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "1bf4948d-fedc-4819-8e1f-41fe3a6d83f0",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 30,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "dd2c75f5-176d-4af8-a47c-20bb6f313073",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 70,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "6b7f8db2-3563-443b-9f85-174a1a226263",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 45,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "9451d8a6-507b-46eb-b1be-1f653af21f0a",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 25,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "3a47c56c-fa8b-4293-98cd-d6c64690604a",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 45,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 80,
-        "GuardConditions": []
-      }
-    ]
-  }
+  "Out": [
+    {
+      "ParentTId": null,
+      "TId": "3f48cd38-b26d-4fbf-8cef-8834b9e3ab72",
+      "Count": 1
+    }
+  ],
+  "In": [
+    {
+      "Conditional": [
+        {
+          "ParentTId": null,
+          "Genus": [],
+          "TId": "2d1d0094-0a37-4374-9d2f-317ebc79e7a3",
+          "MinCount": 3
+        }
+      ],
+      "Count": 3,
+      "Genus": null
+    }
+  ]
 }

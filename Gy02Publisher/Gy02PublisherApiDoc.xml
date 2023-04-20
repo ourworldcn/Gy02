@@ -258,6 +258,11 @@
             卡池2的。
             </summary>
         </member>
+        <member name="P:Gy02Bll.Templates.FuhuaInfo.In">
+            <summary>
+            消耗物的集合。
+            </summary>
+        </member>
         <member name="T:Gy02Bll.Templates.CostInfo">
             <summary>
             升级的代价类。

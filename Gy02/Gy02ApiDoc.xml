@@ -201,6 +201,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:Gy02.Controllers.ItemManagerController.Fuhua(Gy02.Publisher.FuhuaParamsDto)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:Gy02.Controllers.VWorldController">
             <summary>
             虚拟世界公用Api控制器。

@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 
@@ -356,6 +357,37 @@ namespace System
 
             var (Prob, Data) = innerSeq.First(c => c.Prob >= seed);
             return Data;
+        }
+
+        /// <summary>
+        /// 按权重抽取一个随机项。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="items"></param>
+        /// <param name="random"></param>
+        /// <returns>如果出错则返回null，此时调用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        public static (T, decimal)? GetRandom<T>(IEnumerable<(T, decimal)> items, Random random = null)
+        {
+            decimal totalWeight = 0;    //总权重
+            foreach (var item in items)
+            {
+                if (item.Item2 < 0)
+                {
+                    SetLastError(160);
+                    SetLastErrorMessage($"权重不能小于0.");
+                    return default;
+                }
+                totalWeight += item.Item2;
+            }
+            random ??= new Random();
+            var total = (decimal)random.NextDouble() * totalWeight; //随机点位
+            foreach (var item in items)
+            {
+                if (item.Item2 <= decimal.Zero) continue; //容错
+                if (total <= item.Item2) return item;
+                total -= item.Item2;
+            }
+            return default;
         }
 
         /// <summary>

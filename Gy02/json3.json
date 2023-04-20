@@ -1,137 +1,37 @@
 {
-  "Dice": {
-    "MaxCount": 3,
-    "AllowRepetition": false,
-    "Items": [
+  "Fuhua": {
+    "Parent1Conditional": [
       {
-        "Precondition": [
+        "ParentTId": null,
+        "Genus": [ "zuoqi_wolf" ],
+        "TId": null,
+        "MinCount": 1,
+        "GeneralConditional": []
+      }
+    ],
+    "Parent2Conditional": [
+      {
+        "ParentTId": null,
+        "Genus": [ "zuoqi_tiger" ],
+        "TId": null,
+        "MinCount": 1,
+        "GeneralConditional": []
+      }
+    ],
+    "DiceTId1": "f80255bf-c906-4866-89c4-1cba20853049",
+    "DiceTId2": "c9e1173a-789d-4940-8209-35a8ea94b3c2",
+    "In": [
+      {
+        "Conditional": [
           {
-            "ParentTId": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
-            "MinCount": null,
-            "GeneralConditional": []
+            "TId": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
+            "MinCount": 1
           }
         ],
-        "Weight": 150,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "b564395a-487d-4682-8dec-1338daee3952",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 100,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "26f7e185-6daa-428a-a86f-715258c43b4b",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 80,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "18b7f5cf-fc73-4e8f-b443-a9204e010188",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 100,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "39f9e0eb-b143-493f-9100-4703f60ed632",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 50,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "77e38e0c-089c-4d45-866f-6d9a1a3f5bde",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 30,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "abf3916f-aef6-4974-9d18-37e35fde589a",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 70,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "6b7f8db2-3563-443b-9f85-174a1a226263",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 45,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "9451d8a6-507b-46eb-b1be-1f653af21f0a",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 25,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
-            "MinCount": null,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 80,
-        "GuardConditions": []
+        "Count": 1,
+        "Genus": null
       }
     ]
   }

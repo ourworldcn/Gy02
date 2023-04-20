@@ -182,7 +182,7 @@ namespace OW.Game.Entity
         /// 皮肤背包。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameItem> PiFuBag => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.PiFuBagTId)?.GetJsonObject<GameSlot<GameItem>>();
+        public GameSlot<GameEquipment> PiFuBag => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.PiFuBagTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
         /// <summary>
         /// 货币槽。
@@ -205,6 +205,25 @@ namespace OW.Game.Entity
         public List<FuhuaSummary> FuhuaHistory { get; set; } = new List<FuhuaSummary>();
 
         #endregion 孵化相关
+
+        #region 战斗相关
+
+        public List<CombatHistoryItem> CombatHistory { get; set; } = new List<CombatHistoryItem>();
+
+        #endregion 战斗相关
+    }
+
+    public class CombatHistoryItem
+    {
+        /// <summary>
+        /// 关卡的模板Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 该关卡的最短时间，如果null,表示没有记录过。
+        /// </summary>
+        public TimeSpan? MinTimeSpanOfPass { get; set; }
     }
 
     /// <summary>

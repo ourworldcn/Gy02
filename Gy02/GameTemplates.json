@@ -525,7 +525,7 @@
     {
       "Id": "6d551fec-702b-44d6-b94b-b62405d1e056",
       "DisplayName": "锤子紫",
-      "Gid": 120401002,
+      "Gid": 121101002,
       "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11807,\"comment_txt\":11833,\"atk\":[50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200,205,210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295],\"def\":null,\"pow\":null, \"genus\":[\"p_vt\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":true}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"767afecf-2d6e-4935-b262-318739a203d6\"}"
     },
     {
@@ -549,7 +549,7 @@
     {
       "Id": "05d53c61-11d7-4f12-bbd5-e1d0f8aaad51",
       "DisplayName": "法杖紫",
-      "Gid": 120401003,
+      "Gid": 121101003,
       "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11808,\"comment_txt\":11834,\"atk\":[50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200,205,210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295],\"def\":null,\"pow\":null,\"genus\":[\"p_vt\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":true}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"02cce6a2-a2a8-4a80-b752-237e0ab44782\"}"
     },
     {
@@ -573,7 +573,7 @@
     {
       "Id": "d9d0b916-285c-441a-a68d-543596b1dcd5",
       "DisplayName": "弩箭紫",
-      "Gid": 120401004,
+      "Gid": 121101004,
       "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11809,\"comment_txt\":11835,\"atk\":[50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200,205,210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295],\"def\":null,\"pow\":null,\"genus\":[\"p_vt\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":true}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"7b65e361-eda1-45a7-be93-f4cc3831ffda\"}"
     },
     {
@@ -597,7 +597,7 @@
     {
       "Id": "0130307a-36fa-4804-b24e-c1c457ae2721",
       "DisplayName": "飞镖紫",
-      "Gid": 120401005,
+      "Gid": 121101005,
       "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11810,\"comment_txt\":11836,\"atk\":[50,55,60,65,70,75,80,85,90,95,100,105,110,115,120,125,130,135,140,145,150,155,160,165,170,175,180,185,190,195,200,205,210,215,220,225,230,235,240,245,250,255,260,265,270,275,280,285,290,295],\"def\":null,\"pow\":null,\"genus\":[\"p_vt\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"171df1f4-935f-4e92-b612-b33275575db3\",\"enable\":true},{\"skillsid\":\"c3f3bfdf-2fc7-4baa-ba43-397e8d4f9948\",\"enable\":true}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"f27e9ed8-2b1f-4b87-ac16-d66fa052e5b9\"}"
     },
     {

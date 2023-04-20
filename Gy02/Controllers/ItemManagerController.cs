@@ -152,11 +152,7 @@ namespace Gy02.Controllers
             {
                 var item = model.TIds[i];
                 var tmp = CreateVirtualThingHandler.CreateThing(item, model.Counts[i], templateManager, commandManager);
-                if (tmp is null) //若出错
-                {
-                    result.FillErrorFromWorld();
-                    return result;
-                }
+                if (tmp is null) goto lbErr; //若出错
                 var coll = tmp.Select(c => templateManager.GetEntityBase(c, out _)).OfType<GameEntity>();
                 if (coll is null || coll.Count() != tmp.Count)
                     continue;
@@ -165,6 +161,9 @@ namespace Gy02.Controllers
             var command = new MoveEntitiesCommand { Items = list, Container = null, GameChar = gc };
             commandManager.Handle(command);
             mapper.Map(command, result);
+            return result;
+        lbErr:
+            result.FillErrorFromWorld();
             return result;
         }
 
@@ -364,6 +363,30 @@ namespace Gy02.Controllers
             }
 
             var command = new FuhuaPreviewCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<FuhuaReturnDto> Fuhua(FuhuaParamsDto model)
+        {
+            var result = new FuhuaReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new FuhuaCommand { GameChar = gc, };
 
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);

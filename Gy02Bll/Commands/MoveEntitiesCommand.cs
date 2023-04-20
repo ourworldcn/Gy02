@@ -112,7 +112,7 @@ namespace Gy02Bll.Commands
         {
             var entityThing = (VirtualThing)entity.Thing;
             var oldContainer = entityThing.Parent;  //老容器
-            if (oldContainer is not null)   //若没有老容器
+            if (oldContainer is not null)   //若有老容器
             {
                 oldContainer.Children.Remove((VirtualThing)entity.Thing);
                 changes?.CollectionRemove(entity, oldContainer);

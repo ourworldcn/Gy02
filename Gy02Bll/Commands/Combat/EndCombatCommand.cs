@@ -38,6 +38,12 @@ namespace Gy02Bll.Commands.Combat
         /// 杀怪或其它集合。
         /// </summary>
         public List<GameEntitySummary> Others { get; set; } = new List<GameEntitySummary>();
+
+        /// <summary>
+        /// 该关卡的最短时间，如果null,表示不记录。
+        /// </summary>
+        public TimeSpan? MinTimeSpanOfPass { get; set; }
+
     }
 
     /// <summary>
@@ -90,6 +96,31 @@ namespace Gy02Bll.Commands.Combat
             };
             command.GameChar.CombatTId = null;
             command.Changes?.Add(change);
+            #region 记录战斗信息
+            var gc = command.GameChar;
+            if (command.MinTimeSpanOfPass.HasValue) //若需要记录战斗信息
+            {
+                var ch = gc.CombatHistory.FirstOrDefault(c => c.TId == command.CombatTId);
+                if (ch is null) //若尚未初始化
+                {
+                    ch = new CombatHistoryItem { TId = command.CombatTId };
+                    gc.CombatHistory.Add(ch);
+                }
+                if (!ch.MinTimeSpanOfPass.HasValue || ch.MinTimeSpanOfPass > command.MinTimeSpanOfPass)
+                {
+                    command.Changes.Add(new GamePropertyChangeItem<object>
+                    {
+                        Object = gc,
+                        PropertyName = nameof(gc.CombatHistory),
+                        HasOldValue = ch.MinTimeSpanOfPass.HasValue,
+                        OldValue = ch.MinTimeSpanOfPass,
+                        HasNewValue = command.MinTimeSpanOfPass.HasValue,
+                        NewValue = command.MinTimeSpanOfPass,
+                    });
+                    ch.MinTimeSpanOfPass = command.MinTimeSpanOfPass;
+                }
+            }
+            #endregion 记录战斗信息
             _GameAccountStore.Save(key);
         }
     }

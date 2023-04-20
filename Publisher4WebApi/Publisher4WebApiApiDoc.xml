@@ -267,6 +267,11 @@
             </summary>
             <remarks>是否可以生成皮肤以此处记录为准，没有则可以生成。</remarks>
         </member>
+        <member name="P:Gy02.Publisher.GameCharDto.CombatHistory">
+            <summary>
+            通关信息相关集合。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.GameItemDto">
             <summary>
             道具数据。
@@ -669,6 +674,21 @@
             使用的蓝图模板Id。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.CombatHistoryItemDto">
+            <summary>
+            战斗的相关记录信息。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CombatHistoryItemDto.TId">
+            <summary>
+            关卡的模板Id。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.CombatHistoryItemDto.MinTimeSpanOfPass">
+            <summary>
+            该关卡的最短时间，如果null,表示没有记录过。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.EndCombatParamsDto">
             <summary>
             结算战斗功能参数封装类。
@@ -687,6 +707,11 @@
         <member name="P:Gy02.Publisher.EndCombatParamsDto.Others">
             <summary>
             杀怪或其它集合。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.EndCombatParamsDto.MinTimeSpanOfPass">
+            <summary>
+            该关卡的最短时间，如果null,表示不记录。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.EndCombatReturnDto">
@@ -731,7 +756,7 @@
         </member>
         <member name="P:Gy02.Publisher.FuhuaSummaryDto.ParentTIds">
             <summary>
-            双亲的TId集合，目前有两个元素，且按升序排序。
+            双亲的类属集合，目前有两个元素，且按升序排序。
             </summary>
         </member>
         <member name="P:Gy02.Publisher.FuhuaSummaryDto.Items">
@@ -772,6 +797,21 @@
         <member name="P:Gy02.Publisher.FuhuaPreviewReturnDto.Result">
             <summary>
             返回数据，孵化可能生成的预览信息列表。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.FuhuaParamsDto">
+            <summary>
+            孵化功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.FuhuaParamsDto.ParentGenus">
+            <summary>
+            双亲的类属集合 如 "zuoqi_sheep" "zuoqi_wolf"，无所谓顺序，但返回时是按升序排序。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.FuhuaReturnDto">
+            <summary>
+            孵化功能返回值封装类。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.DispatcherDemo">
