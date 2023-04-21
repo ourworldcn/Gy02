@@ -167,6 +167,8 @@ namespace Gy02.Controllers
             return result;
         }
 
+        #region 升降级相关
+
         /// <summary>
         /// 升级装备/物品。
         /// </summary>
@@ -220,6 +222,32 @@ namespace Gy02.Controllers
         }
 
         /// <summary>
+        /// 自动升级功能。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<AutoLvUpReturnDto> AutoLvUp(AutoLvUpParamsDto model)
+        {
+            var result = new AutoLvUpReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new AutoLvUpCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
+
+        #endregion 升降级相关
+
+        /// <summary>
         /// 指定物品合成（升品阶）功能。
         /// </summary>
         /// <param name="model"></param>
@@ -238,6 +266,7 @@ namespace Gy02.Controllers
             }
             var command = mapper.Map<CompositeCommand>(model);
             command.GameChar = gc;
+            command.RestoreLevel = true;
             var tm = _ServiceProvider.GetRequiredService<TemplateManager>();
             var entities = tm.GetEntityAndTemplateFullView<GameEntity>(command.GameChar, model.Ids);
             if (entities is null)

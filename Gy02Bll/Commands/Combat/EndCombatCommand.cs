@@ -1,6 +1,6 @@
 ﻿using Gy02.Publisher;
 using Gy02Bll.Managers;
-using MyNamespace;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.SyncCommand;
@@ -53,14 +53,14 @@ namespace Gy02Bll.Commands.Combat
     {
         public EndCombatHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager)
         {
-            _GameAccountStore = gameAccountStore;
+            _AccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
         }
 
-        GameAccountStore _GameAccountStore;
+        GameAccountStore _AccountStore;
         GameEntityManager _GameEntityManager;
 
-        public GameAccountStore AccountStore => _GameAccountStore;
+        public GameAccountStore AccountStore => _AccountStore;
 
         public override void Handle(EndCombatCommand command)
         {
@@ -123,7 +123,7 @@ namespace Gy02Bll.Commands.Combat
                 }
             }
             #endregion 记录战斗信息
-            _GameAccountStore.Save(key);
+            _AccountStore.Save(key);
         }
     }
 }

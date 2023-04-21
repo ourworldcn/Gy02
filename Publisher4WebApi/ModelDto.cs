@@ -766,6 +766,28 @@ namespace Gy02.Publisher
     {
     }
 
+    #region 升降级相关
+
+    /// <summary>
+    /// 自动升级功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(AutoLvUpCommand), ReverseMap = true)]
+    public class AutoLvUpParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要自动升级的物品唯一Id。
+        /// </summary>
+        public Guid ItemId { get; set; }
+    }
+
+    /// <summary>
+    /// 自动升级功能返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(AutoLvUpCommand))]
+    public class AutoLvUpReturnDto : PropertyChangeReturnDto
+    {
+    }
+
     /// <summary>
     /// 升级装备接口的参数封装类。
     /// </summary>
@@ -805,6 +827,8 @@ namespace Gy02.Publisher
     public class LvDownReturnDto : PropertyChangeReturnDto
     {
     }
+
+    #endregion 升降级相关
 
     /// <summary>
     /// 合成接口的参数封装类。

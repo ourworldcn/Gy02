@@ -112,7 +112,7 @@ namespace Gy02Bll.Base
 
 }
 
-namespace MyNamespace
+namespace OW.Game
 {
     public interface IGameCharCommand : ISyncCommand
     {

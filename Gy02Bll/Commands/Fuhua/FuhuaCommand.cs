@@ -1,6 +1,6 @@
 ﻿using Gy02.Publisher;
 using Gy02Bll.Managers;
-using MyNamespace;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;

@@ -34,6 +34,11 @@ namespace Gy02Bll.Commands.Item
         public GameEntity MainItem { get; set; }
 
         /// <summary>
+        /// 是否恢复主要材料的等级到主要输出物品上。
+        /// </summary>
+        public bool RestoreLevel { get; set; }
+
+        /// <summary>
         /// 指定使用的辅助材料。
         /// </summary>
         public List<GameEntity> Items { get; set; } = new List<GameEntity>();
@@ -91,6 +96,7 @@ namespace Gy02Bll.Commands.Item
             //    return;
             //}
 
+            var oldLv = command.MainItem.Level; //主要材料的等级
             var cost = command.Items.Append(command.MainItem).Select(c => new GameEntitySummary
             {
                 TId = c.TemplateId,
@@ -149,6 +155,24 @@ namespace Gy02Bll.Commands.Item
             });
             mainOut.CompositingAccruedCost.Clear();
             mainOut.CompositingAccruedCost.AddRange(newCost);
+            //恢复主材料等级
+            if (command.RestoreLevel)
+            {
+                LvUpCommand lvupCommand;
+                for (int i = 0; i < oldLv; i++)
+                {
+                    lvupCommand = new LvUpCommand { GameChar = command.GameChar, };
+                    lvupCommand.Ids.Add(mainOut.Id);
+                    _SyncCommandManager.Handle(lvupCommand);
+                    if (lvupCommand.HasError)
+                    {
+                        command.FillErrorFrom(lvupCommand);
+                        return;
+                    }
+                    else
+                        command.Changes.AddRange(lvupCommand.Changes);
+                }
+            }
         }
     }
 }

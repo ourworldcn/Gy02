@@ -2,7 +2,7 @@
 using Gy02Bll.Commands.Combat;
 using Gy02Bll.Managers;
 using Gy02Bll.Templates;
-using MyNamespace;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;

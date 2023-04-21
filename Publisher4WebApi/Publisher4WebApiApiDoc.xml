@@ -574,6 +574,21 @@
             增加物品返回数据封装类。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.AutoLvUpParamsDto">
+            <summary>
+            自动升级功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.AutoLvUpParamsDto.ItemId">
+            <summary>
+            要自动升级的物品唯一Id。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.AutoLvUpReturnDto">
+            <summary>
+            自动升级功能返回值封装类。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.LvUpParamsDto">
             <summary>
             升级装备接口的参数封装类。

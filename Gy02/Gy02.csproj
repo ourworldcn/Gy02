@@ -45,7 +45,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="json3.json">
+    <Content Update="Test3.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>
     <Content Update="Test2.json">
