@@ -3,9 +3,10 @@
   <Class Name="OW.Game.FastChangingProperty">
     <Position X="3.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BABAAQAUAEAgAAAAIBAAAAAAABAIAAEAAAAgAAAAAAA=</HashCode>
+      <HashCode>RAAAAQAUAECgEAgAAAAAAAAAABAIAAAAAAAgAAAAAAA=</HashCode>
       <FileName>GameBase.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="OW.Game.ScriptHelper" Collapsed="true">
     <Position X="5.75" Y="3" Width="1.75" />
@@ -27,6 +28,13 @@
     <TypeIdentifier>
       <HashCode>AAAQAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GamePropertyChanged.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OW.Game.GameHelper">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameBase.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />

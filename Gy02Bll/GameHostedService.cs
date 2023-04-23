@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
+using OW.Game;
 using OW.Game.Conditional;
 using OW.Game.Store;
 using System.Diagnostics;
@@ -132,42 +133,20 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
+                var dic = new Dictionary<string, FastChangingProperty>();
+                dic.Add("Count", new FastChangingProperty
+                {
+                    Delay = TimeSpan.FromSeconds(5),
+                    StepValue = 1,
+                    LastDateTime = DateTime.Now,
+                    CurrentValue = 2,
+                    MaxValue = 3,
+                });
+                var str = JsonSerializer.Serialize(dic);
+                var des = JsonSerializer.Deserialize<Dictionary<string, FastChangingProperty>>(str);
 
-                var dice = new GameDice
-                {
-                    MaxCount = 1,
-                    AllowRepetition = false,
-                };
-                dice.Items.Add(new GameDiceItem
-                {
-                    Precondition = new GameThingPrecondition { new GameThingPreconditionItem { TId = Guid.NewGuid() } },
-                    Weight = 1
-                });
-                dice.Items.Add(new GameDiceItem
-                {
-                    Precondition = new GameThingPrecondition { new GameThingPreconditionItem { TId = Guid.NewGuid() } },
-                    Weight = 1,
-                    GuardConditions = new GameThingPrecondition
-                    {
-                        new GameThingPreconditionItem()
-                        {
-                            GeneralConditional=new  List<GeneralConditionalItem>
-                            {
-                                new GeneralConditionalItem
-                                {
-                                    LeftOperand="lv",
-                                    Operator=">=",
-                                    RightOperand=2
-                                }
-                            }
-                        }
-                    },
-                });
-                var str = JsonSerializer.Serialize(new FuhuaInfo { });
-                var type = Type.GetType("System.Int32");
-                ICollection<int> list = new List<int>() { 1 };
-                object dcm = 1m;
-                //var pi = list.GetType().GetMethod("Contains");
+                var dt = DateTime.UtcNow;
+                var ss = (dt - DateTime.UtcNow).Ticks;
             }
             finally
             {

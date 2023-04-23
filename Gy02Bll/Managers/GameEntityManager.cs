@@ -544,7 +544,7 @@ namespace Gy02Bll.Managers
                     var thing = entity.GetThing();
                     if (thing is null) return false;
                     VirtualThingManager.Add(thing, parentThing);
-                    changes?.CollectionAdd(thing, parentThing);
+                    changes?.CollectionAdd(entity, container);
                 }
             }
             else //若非可堆叠物

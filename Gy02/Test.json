@@ -1,23 +1,7 @@
 {
-  "Out": [
-    {
-      "ParentTId": null,
-      "TId": "3f48cd38-b26d-4fbf-8cef-8834b9e3ab72",
-      "Count": 1
-    }
-  ],
-  "In": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": null,
-          "Genus": [],
-          "TId": "2d1d0094-0a37-4374-9d2f-317ebc79e7a3",
-          "MinCount": 3
-        }
-      ],
-      "Count": 3,
-      "Genus": null
-    }
-  ]
+  "TypeGuid": "57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38",
+  "SubTypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
+  "cap": 1,
+  "Count": 1,
+  "TIdsOfCreate": [ "18084905-2C57-4B4C-B302-4B8230740FBD" ]
 }
