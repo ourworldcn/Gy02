@@ -45,6 +45,42 @@
             </summary>
             <param name="obj"></param>
         </member>
+        <member name="T:Gy02.UdpScannerOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.UdpScannerOptions.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Gy02.UdpScanner">
+            <summary>
+            分发变化数据的服务。
+            </summary>
+        </member>
+        <member name="M:Gy02.UdpScanner.#ctor(Gy02Bll.Managers.UdpServerManager,Gy02Bll.Managers.GameAccountStore,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Options.IOptions{Gy02.UdpScannerOptions},Microsoft.Extensions.Logging.ILogger{Gy02.UdpScanner})">
+            <summary>
+            构造函数。
+            </summary>
+            <param name="udpServerManager"></param>
+            <param name="gameAccountStore"></param>
+            <param name="hostLifetime"></param>
+            <param name="logger"></param>
+            <param name="options"></param>
+        </member>
+        <member name="M:Gy02.UdpScanner.UdpTimer">
+            <summary>
+            分发数据变化的函数。
+            </summary>
+        </member>
+        <member name="M:Gy02.UdpScanner.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
         <member name="T:Gy02.Controllers.AccountController">
             <summary>
             账号管理。
@@ -92,12 +128,18 @@
             管理员工具的控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AdminController.ImportUsers(Microsoft.AspNetCore.Http.IFormFile,System.String)">
+        <member name="T:Gy02.Controllers.AdminController.TemplateDatas">
             <summary>
-            上传用户数据。
+            封装模板数据配置文件的类。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.AdminController.ImportTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+            <summary>
+            上传游戏模板数据。
             </summary>
             <param name="file"></param>
             <param name="token">令牌。</param>
+            <param name="applicationLifetime"></param>
             <returns></returns>
         </member>
         <member name="T:Gy02.Controllers.BlueprintController">

@@ -15,6 +15,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -53,6 +54,29 @@ namespace OW.Game.Managers
     public class TemplateManager : GameManagerBase<TemplateManagerOptions, TemplateManager>
     {
         #region 静态成员
+
+        public static Dictionary<Guid, TemplateStringFullView> GetTemplateFullviews(IEnumerable<RawTemplate> rawTemplate)
+        {
+            List<Exception> exceptions = new List<Exception>();
+            var result = new Dictionary<Guid, TemplateStringFullView>();
+            foreach (RawTemplate raw in rawTemplate)
+            {
+                try
+                {
+                    var tmp = raw.GetJsonObject<TemplateStringFullView>();
+                    result.Add(raw.Id, tmp);
+                }
+                catch (Exception excp)
+                {
+                    var excpOutter = new InvalidDataException($"解析模板数据时出错：{Environment.NewLine}Id = {raw.Id}{Environment.NewLine}String = {raw.PropertiesString}{Environment.NewLine}{excp.Message}", excp);
+                    exceptions.Add(excpOutter);
+                    break;
+                }
+            }
+            if (exceptions.Count > 0)
+                throw new AggregateException(exceptions);
+            return result;
+        }
 
         static ConcurrentDictionary<Guid, Type> _TypeGuid2Type;
         /// <summary>

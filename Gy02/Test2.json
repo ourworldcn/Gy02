@@ -1,30 +1,8 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-  "name_txt": 11829,
-  "comment_txt": 11855,
-  "atk": null,
-  "def": null,
-  "pow": [ 70, 78, 86, 94, 102, 110, 118, 126, 134, 142, 150, 158, 166, 174, 182, 190, 198, 206, 214, 222, 230 ],
-  "genus": [ "p_gn", "e_zuoqi", "zuoqi_tiger" ],
-  "p_skills": [
-    {
-      "skillsid": "979c4439-318e-4fa3-a26a-8811d5de6c2a",
-      "enable": true
-    },
-    {
-      "skillsid": "171df1f4-935f-4e92-b612-b33275575db3",
-      "enable": true
-    },
-    {
-      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
-      "enable": false
-    },
-    {
-      "skillsid": "fcb0c083-e337-4d67-bfe3-5a2e590137b9",
-      "enable": false
-    }
-  ],
-  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e",
-  "CompositeId": "88260b19-7315-4598-85b1-5c68b1d4d3f7"
+  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
+  "Count": 0,
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+  "Count": 10000
 }

@@ -108,6 +108,11 @@ namespace Gy02.Publisher
         /// 体力TID。
         /// </summary>
         public static readonly Guid PowerTId = new Guid("f1b15c9e-32ee-4203-af62-d324bfa4f7e7");
+
+        /// <summary>
+        /// 孵化次数货币的TId。
+        /// </summary>
+        public static readonly Guid FuhuaCishuTId = new Guid("9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B");
     }
 
     /// <summary>

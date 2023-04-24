@@ -157,6 +157,11 @@
             类属字符串集合。
             </summary>
         </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Count">
+            <summary>
+            初始数量。
+            </summary>
+        </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Atk">
             <summary>
             攻击数值序列。
@@ -225,6 +230,11 @@
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Dice">
             <summary>
             池子的数据。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Fcps">
+            <summary>
+            快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
             </summary>
         </member>
         <member name="M:Gy02Bll.Templates.TemplateStringFullView.IsStk">
@@ -479,6 +489,89 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Gy02Bll.Templates.FastChangingProperty">
+            <summary>
+            变化数据的封装类。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.FastChangingProperty.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.FastChangingProperty.#ctor(System.TimeSpan,System.Decimal,System.Decimal,System.Decimal,System.DateTime)">
+            <summary>
+            构造函数、
+            </summary>
+            <param name="delay">计算间隔。</param>
+            <param name="increment">增量。</param>
+            <param name="maxVal">最大值。不会超过此值。</param>
+            <param name="currentVal">当前值。</param>
+            <param name="lastComputerDateTime">时间。建议一律采用Utc时间。</param>
+        </member>
+        <member name="P:Gy02Bll.Templates.FastChangingProperty.MinValue">
+            <summary>
+            最小值。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FastChangingProperty.MaxValue">
+            <summary>
+            最大值。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FastChangingProperty.StepValue">
+            <summary>
+            每次跳点的增量。可能是正值也可能是负值，正值每次跳变时增加<see cref="P:Gy02Bll.Templates.FastChangingProperty.CurrentValue"/>，否则减少。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FastChangingProperty.Delay">
+            <summary>
+            多久计算一次。即每次跳变的时间长度。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FastChangingProperty.CurrentValue">
+            <summary>
+            获取或设置最后计算的结果。<see cref="P:Gy02Bll.Templates.FastChangingProperty.LastDateTime"/>这个时点上计算的值。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.FastChangingProperty.LastDateTime">
+            <summary>
+            获取或设置最后计算的时间。建议一律采用Utc时间。默认值是构造时的当前时间。
+            </summary>
+            <value>默认值：<see cref="P:System.DateTime.UtcNow"/></value>
+        </member>
+        <member name="P:Gy02Bll.Templates.FastChangingProperty.Tag">
+            <summary>
+            一个记录额外信息的属性。本类成员不使用该属性。
+            </summary>
+        </member>
+        <member name="M:Gy02Bll.Templates.FastChangingProperty.GetCurrentValue(System.DateTime@)">
+            <summary>
+            获取当前值。自动修改<see cref="P:Gy02Bll.Templates.FastChangingProperty.LastDateTime"/>和<see cref="P:Gy02Bll.Templates.FastChangingProperty.CurrentValue"/>属性。
+            </summary>
+            <param name="now">当前时间。返回时可能更改，如果没有正好到跳变时间，则会提前到上一次跳变的时间点。</param>
+            <returns>更改后的值(<see cref="P:Gy02Bll.Templates.FastChangingProperty.CurrentValue"/>)。</returns>
+        </member>
+        <member name="M:Gy02Bll.Templates.FastChangingProperty.GetCurrentValueWithUtc">
+            <summary>
+            使用当前Utc时间获取当前值。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02Bll.Templates.FastChangingProperty.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02Bll.Templates.FastChangingProperty.SetLastValue(System.Decimal,System.DateTime@)">
+            <summary>
+            设置最后计算得到的值，同时将计算时间更新到最接近指定点的时间。
+            </summary>
+            <param name="val">这个时间点不晚于指定时间点，且又是正好一跳的时间点。</param>
+            <param name="dateTime"></param>
+        </member>
         <member name="T:Gy02.Publisher.ProjectContent">
             <summary>
             存储一些常量和Id。
@@ -567,6 +660,11 @@
         <member name="F:Gy02.Publisher.ProjectContent.PowerTId">
             <summary>
             体力TID。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.ProjectContent.FuhuaCishuTId">
+            <summary>
+            孵化次数货币的TId。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.ErrorCodes">

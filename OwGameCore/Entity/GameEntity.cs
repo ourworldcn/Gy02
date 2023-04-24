@@ -86,8 +86,27 @@ namespace OW.Game.Entity
         [JsonPropertyName("lv")]
         public decimal Level { get; set; }
 
-        [JsonPropertyName("count")]
-        public decimal Count { get; set; }
+        decimal _Count;
+        //[JsonPropertyName("count")]
+        public decimal Count
+        {
+            get
+            {
+                var fcp = Fcps.GetValueOrDefault(nameof(Count));
+                return fcp is null ? _Count : fcp.GetCurrentValueWithUtc();
+            }
+            set
+            {
+                var fcp = Fcps.GetValueOrDefault(nameof(Count));
+                if (fcp is null)
+                    _Count = value;
+                else
+                {
+                    var dt = DateTime.UtcNow;
+                    fcp.SetLastValue(value, ref dt);
+                }
+            }
+        }
 
         /// <summary>
         /// 升级的累计消耗。
@@ -98,6 +117,11 @@ namespace OW.Game.Entity
         /// 升品的累计用品。
         /// </summary>
         public List<GameEntitySummary> CompositingAccruedCost { get; set; } = new List<GameEntitySummary>();
+
+        /// <summary>
+        /// 快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
+        /// </summary>
+        public Dictionary<string, FastChangingProperty> Fcps { get; set; } = new Dictionary<string, FastChangingProperty>();
 
         public override string ToString()
         {

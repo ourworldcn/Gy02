@@ -1,7 +1,13 @@
 {
-  "TypeGuid": "57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38",
-  "SubTypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "cap": 1,
-  "Count": 1,
-  "TIdsOfCreate": [ "18084905-2C57-4B4C-B302-4B8230740FBD" ]
+  "Fcps": {
+    "Count": {
+      "MinValue": 1,
+      "MaxValue": 3,
+      "StepValue": 1,
+      "Delay": "00:00:05",
+      "CurrentValue": 2,
+      "LastDateTime": "2023-04-24T09:33:50.5024704+08:00",
+      "Tag": null
+    }
+  }
 }

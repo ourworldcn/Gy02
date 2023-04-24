@@ -1,4 +1,5 @@
 ﻿using GuangYuan.GY001.TemplateDb;
+using Gy02Bll.Managers;
 using Gy02Bll.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
@@ -133,6 +134,7 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
+                var udp = _Services.GetService<UdpServerManager>();
                 var dic = new Dictionary<string, FastChangingProperty>();
                 dic.Add("Count", new FastChangingProperty
                 {
@@ -140,6 +142,16 @@ namespace Gy02Bll
                     StepValue = 1,
                     LastDateTime = DateTime.Now,
                     CurrentValue = 2,
+                    MinValue=1,
+                    MaxValue = 3,
+                });
+                dic.Add("Count1", new FastChangingProperty
+                {
+                    Delay = TimeSpan.FromSeconds(5),
+                    StepValue = 1,
+                    LastDateTime = DateTime.Now,
+                    CurrentValue = 2,
+                    MinValue=1,
                     MaxValue = 3,
                 });
                 var str = JsonSerializer.Serialize(dic);

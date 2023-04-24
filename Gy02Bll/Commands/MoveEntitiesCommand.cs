@@ -81,9 +81,17 @@ namespace Gy02Bll.Commands
                     Changes = command.Changes,
                     Items = modifyItems
                 };
-                _CommandManager.Handle(subCommand);
-                if (subCommand.HasError)
-                    command.FillErrorFrom(subCommand);
+                foreach (var item in modifyItems)
+                {
+                    if(!_GameEntityManager.Modify(item.Item1, item.Item2,command.Changes))
+                    {
+                        command.FillErrorFromWorld();
+                        return;
+                    }
+                }
+                //_CommandManager.Handle(subCommand);
+                //if (subCommand.HasError)
+                //    command.FillErrorFrom(subCommand);
             }
             _Store.Save(command.GameChar.GetUser().GetKey());
         }

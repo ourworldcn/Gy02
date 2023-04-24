@@ -19,6 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OwGameBase\OwGameBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Gy02PublisherApiDoc.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

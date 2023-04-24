@@ -149,7 +149,7 @@ namespace Global
         /// <summary>
         /// 是否请求重新启动。
         /// </summary>
-        public static bool ReqireReboot = false;
+        public static volatile bool ReqireReboot = false;
 
     }
 }

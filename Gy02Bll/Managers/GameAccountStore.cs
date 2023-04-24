@@ -16,6 +16,8 @@ using OW.SyncCommand;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -159,10 +161,18 @@ namespace Gy02Bll.Managers
                         RemoveUser(item.Key);
                     }
                 }
-                if (Monitor.TryEnter(_Queue, TimeSpan.FromSeconds(1)))
+                if (_Lifetime.ApplicationStopping.IsCancellationRequested) break;
+                try
                 {
-                    Monitor.Wait(_Queue, 10000);
-                    Monitor.Enter(_Queue);
+                    if (Monitor.TryEnter(_Queue, TimeSpan.FromSeconds(1)))
+                    {
+                        Monitor.Wait(_Queue, 10000);
+                        Monitor.Enter(_Queue);
+                    }
+                }
+                catch (Exception)
+                {
+                    return;
                 }
             }
             //准备退出。

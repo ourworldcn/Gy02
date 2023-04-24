@@ -420,6 +420,7 @@ namespace Gy02.Publisher
     /// <summary>
     /// 带属性变化集合的返回值封装的基类。
     /// </summary>
+    [Guid("A4EE8C3F-2FC7-4B45-A492-7BFB64ACDB57")]
     public class PropertyChangeReturnDto : ReturnDtoBase
     {
         /// <summary>
@@ -434,7 +435,8 @@ namespace Gy02.Publisher
     /// 用于精确描述变化数据的类。
     /// </summary>
     /// <remarks>这个类的新值和旧值都用Object表示，对于数据量极大的一些情况会使用具体的类表示如GamePropertyChangeFloatItemDto表示大量的即时战斗数据包导致的人物属性变化。</remarks>
-    public partial class GamePropertyChangeItemDto
+    [Guid("905F93EE-D2A2-4321-87AD-C67CD145B77D")]
+    public partial class GamePropertyChangeItemDto: IJsonData
     {
         /// <summary>
         /// 构造函数。
