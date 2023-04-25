@@ -142,19 +142,20 @@ namespace Gy02Bll.Commands.Item
             var newCost = (from tmp in oldCost.Concat(cost)   //新材料记录
                            group tmp by tmp.TId into g
                            select new GameEntitySummary { TId = g.Key, Count = g.Sum(x => x.Count) }).ToArray();
-            command.Changes?.Add(new GamePropertyChangeItem<object>
-            {
-                Object = mainOut,
-                PropertyName = nameof(mainOut.CompositingAccruedCost),
+            //command.Changes?.Add(new GamePropertyChangeItem<object>
+            //{
+            //    Object = mainOut,
+            //    PropertyName = nameof(mainOut.CompositingAccruedCost),
 
-                HasOldValue = oldCost.Length > 0,
-                OldValue = oldCost,
+            //    HasOldValue = oldCost.Length > 0,
+            //    OldValue = oldCost,
 
-                HasNewValue = newCost.Length > 0,
-                NewValue = newCost,
-            });
+            //    HasNewValue = newCost.Length > 0,
+            //    NewValue = newCost,
+            //});
             mainOut.CompositingAccruedCost.Clear();
-            mainOut.CompositingAccruedCost.AddRange(newCost);
+            //TODO 暂时屏蔽
+            //mainOut.CompositingAccruedCost.AddRange(newCost);
             //恢复主材料等级
             if (command.RestoreLevel)
             {

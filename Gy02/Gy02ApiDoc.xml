@@ -96,14 +96,6 @@
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Test(Gy02Bll.Managers.UdpServerManager,AutoMapper.IMapper)">
-            <summary>
-            测试代码专用。
-            </summary>
-            <param name="udpServer">测试参数。</param>
-            <param name="mapper"></param>
-            <returns></returns>
-        </member>
         <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             创建一个新账号。
@@ -165,12 +157,6 @@
             战斗控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.CombatController.Test">
-            <summary>
-            测试。
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Gy02.Controllers.CombatController.StartCombat(Gy02.Publisher.StartCombatParamsDto)">
             <summary>
             开始战斗。
@@ -216,24 +202,6 @@
             <param name="commandMng"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestAddItems">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestLvUp">
-            <summary>
-            测试升级接口。
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestComp">
-            <summary>
-            
-            </summary>
-            <returns></returns>
         </member>
         <member name="M:Gy02.Controllers.ItemManagerController.AddItems(Gy02.Publisher.AddItemsParamsDto,Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager,AutoMapper.IMapper)">
             <summary>
@@ -286,12 +254,6 @@
             分解（降品）装备。
             </summary>
             <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestFuhuaPreview">
-            <summary>
-            测试孵化。
-            </summary>
             <returns></returns>
         </member>
         <member name="M:Gy02.Controllers.ItemManagerController.FuhuaPreview(Gy02.Publisher.FuhuaPreviewParamsDto)">

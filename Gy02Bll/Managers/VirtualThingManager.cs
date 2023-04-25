@@ -81,6 +81,37 @@ namespace OW.Game.Manager
 
         IMapper _Mapper;
 
+        #region 基础功能
+
+        /// <summary>
+        /// 获取虚拟对象树中存储的数据库上下文对象。
+        /// </summary>
+        /// <param name="thing">树中节点，数据库上下文存储在根节点的<see cref="VirtualThingBase.RuntimeProperties"/>中。</param>
+        /// <returns>没有或出错可能返回null。</returns>
+        public DbContext GetDbContext(VirtualThing thing)
+        {
+            var root = thing.GetRoot();
+            if (root is null) return null;   //若找不到根
+            var rootThing = root as VirtualThing;
+            if (rootThing is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"指定虚拟对象的根不是 {typeof(VirtualThing)} 类型。");
+                return null;
+            }
+            var db = rootThing.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) as DbContext;
+            if (db is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到对象中存储的数据库上下文属性。Id={rootThing.Id}");
+                return null;
+            }
+            OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+            return db;
+        }
+
+        #endregion 基础功能
+
         /// <summary>
         /// 用指定的模板Id创建对象。
         /// </summary>
@@ -119,12 +150,18 @@ namespace OW.Game.Manager
             VirtualThing result = new VirtualThing { };
 #if DEBUG 
             _TemplateManager.SetTemplate(result);
-#endif
+#endif //DEBUG
             var type = TemplateManager.GetTypeFromTemplate(tv);    //获取实例类型
 
             var view = result.GetJsonObject(type);
             _Mapper.Map(tv, view, tv.GetType(), view.GetType()); //复制一般性属性。
-
+            if(tv.Fcps.Count > 0)   //TODO 临时修正
+            {
+                dynamic dyn = view;
+                dyn.Fcps.Clear();
+                foreach (var fcps in tv.Fcps)
+                    dyn.Fcps.Add(fcps.Key,(FastChangingProperty)fcps.Value.Clone());
+            }
             if (tv.TIdsOfCreate is not null)
                 foreach (var item in tv.TIdsOfCreate) //创建所有子对象
                 {
@@ -135,7 +172,12 @@ namespace OW.Game.Manager
             return result;
         }
 
-
+        /// <summary>
+        /// 从数据库中删除指定的虚拟对象。
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <param name="context"></param>
+        /// <returns>true成功删除，false不在指定的上下文中。</returns>
         public bool Delete(VirtualThing thing, DbContext context)
         {
             if (thing.Parent is not null)
@@ -144,8 +186,7 @@ namespace OW.Game.Manager
             }
             thing.Parent = null;
             thing.ParentId = null;
-            context.Remove(thing);
-            return true;
+            return context.Remove(thing).State == EntityState.Deleted;
         }
 
         /// <summary>

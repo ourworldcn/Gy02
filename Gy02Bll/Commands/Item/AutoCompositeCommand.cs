@@ -32,39 +32,44 @@ namespace Gy02Bll.Commands.Item
 
         public override void Handle(AutoCompositeCommand command)
         {
-            var ary = command.GameChar.ZhuangBeiBag.Children.GroupBy(c => c.TemplateId).Where(c => c.Count() >= 3).ToArray();
-            if (ary.Length > 0) //若存在需要合成的物品
+            while (true)
             {
-                var allBlueprint = _TemplateManager.Id2FullView.Values
-                    .Where(c => c.Out?.Count > 0 && c?.In.Count == 1 && c.In[0].Conditional.Count == 1 && c.In[0].Conditional[0].TId.HasValue)
-                    .ToLookup(c => c.In[0].Conditional[0].TId.Value);    //获得所有蓝图
-
-                foreach (var group in ary)
+                var ary = command.GameChar.ZhuangBeiBag.Children.GroupBy(c => c.TemplateId).Where(c => c.Count() >= 3).ToArray();
+                if (ary.Length > 0) //若存在需要合成的物品
                 {
-                    var smallAry = group.Chunk(3);
-                    foreach (var items in smallAry)
+                    var allBlueprint = _TemplateManager.Id2FullView.Values
+                        .Where(c => c.Out?.Count > 0 && c?.In.Count == 1 && c.In[0].Conditional.Count == 1 && c.In[0].Conditional[0].TId.HasValue)
+                        .ToLookup(c => c.In[0].Conditional[0].TId.Value);    //获得所有蓝图
+
+                    foreach (var group in ary)
                     {
-                        if (items.Length != 3) continue;  //若不是3个
-                        var bp = allBlueprint[items.First().TemplateId].FirstOrDefault();
-                        if (bp is null) continue;    //若找不到适用蓝图
-                        var subCommand = new CompositeCommand
+                        var smallAry = group.Chunk(3);
+                        foreach (var items in smallAry)
                         {
-                            GameChar = command.GameChar,
-                        };
-                        subCommand.MainItem = items.First();
-                        subCommand.Items.AddRange(items.Skip(1));
-                        subCommand.Blueprint = bp;
-                        _SyncCommandManager.Handle(subCommand);
-                        if (subCommand.HasError)
-                        {
-                            command.FillErrorFrom(subCommand);
-                            return;
+                            if (items.Length != 3) continue;  //若不是3个
+                            var bp = allBlueprint[items.First().TemplateId].FirstOrDefault();
+                            if (bp is null) continue;    //若找不到适用蓝图
+                            var subCommand = new CompositeCommand
+                            {
+                                GameChar = command.GameChar,
+                            };
+                            subCommand.MainItem = items.First();
+                            subCommand.Items.AddRange(items.Skip(1));
+                            subCommand.Blueprint = bp;
+                            _SyncCommandManager.Handle(subCommand);
+                            if (subCommand.HasError)
+                            {
+                                command.FillErrorFrom(subCommand);
+                                return;
+                            }
+                            command.Changes.AddRange(subCommand.Changes);   //TODO 暂时无法做到原子性
                         }
-                        command.Changes.AddRange(subCommand.Changes);   //TODO 暂时无法做到原子性
                     }
                 }
+                else
+                    break;
             }
-            //ProjectContent.ZhuangBeiBagTId
+
         }
     }
 }

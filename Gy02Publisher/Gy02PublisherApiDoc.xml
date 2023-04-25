@@ -572,6 +572,12 @@
             <param name="val">这个时间点不晚于指定时间点，且又是正好一跳的时间点。</param>
             <param name="dateTime"></param>
         </member>
+        <member name="M:Gy02Bll.Templates.FastChangingProperty.Clone">
+            <summary>
+            深度克隆该对象。
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Gy02.Publisher.ProjectContent">
             <summary>
             存储一些常量和Id。

@@ -270,29 +270,35 @@ namespace Gy02Bll.Managers
         /// <returns>true指定容器中存在可合并的虚拟物，false没有可合并的虚拟物或出错，此时用<see cref="OwHelper.GetLastError"/>确定是否有错。</returns>
         public bool IsMerge(GameEntity entity, GameEntity container, out GameEntity dest)
         {
-            var tmp = ((VirtualThing)container.Thing).Children.FirstOrDefault(c => c.ExtraGuid == entity.TemplateId);  //可能的合成物
-            if (tmp is null) goto noMerge;    //若不能合并
+            var containerThing = container.GetThing();
+            if (containerThing is null) goto lbErr;
+            var tmp = containerThing.Children.FirstOrDefault(c => c.ExtraGuid == entity.TemplateId);  //可能的合成物
+            if (tmp is null) goto noMerge;   //若不能合并
             var tt = _TemplateManager.GetFullViewFromId(tmp.ExtraGuid);
-            if (tt is null) goto noMerge;   //若无法找到模板
-            if (!tt.IsStk())   //若不可堆叠
-                goto noMerge;
+            if (tt is null) goto lbErr;   //若无法找到模板
+            if (!tt.IsStk()) goto noMerge;  //若不可堆叠
             else if (tt.Stk != -1)   //若不可无限堆叠
             {
-                var entity2 = (GameEntity)_TemplateManager.GetEntityBase(tmp, out _);
+                var entity2 = GetEntity(tmp);
+                if (entity2 is null) goto lbErr; //若无法获取实体对象
                 if (entity.Count + entity2.Count > tt.Stk) goto noMerge;    //若不可合并
                 else
                 {
-                    dest = _TemplateManager.GetEntityBase(tmp, out _) as GameEntity;
+                    dest = GetEntity(tmp);
                     return true;
                 }
             }
             else //无限堆叠
             {
-                dest = _TemplateManager.GetEntityBase(tmp, out _) as GameEntity;
+                dest = GetEntity(tmp);
                 return true;
             }
-        noMerge:
+        lbErr:    //出错返回
             dest = null;
+            return false;
+        noMerge:    //不可合并
+            OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+            dest = default;
             return false;
         }
 
@@ -440,13 +446,9 @@ namespace Gy02Bll.Managers
             var thing = entity.GetThing();
             if (thing is null) return false;
             var parent = GetParent(entity);
-            var db = (thing.GetRoot() as VirtualThing)?.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) as DbContext;
-            if (db is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"找不到指定实体宿主对象的数据库上下文，Id={entity.Id}");
-                return false;
-            }
+            if (parent is null) return false;   //若没有找到指定实体的父
+            var db = _VirtualThingManager.GetDbContext(thing);
+            if (db is null) return false;
             var result = _VirtualThingManager.Delete(thing, db);
             if (result)
             {
@@ -526,6 +528,13 @@ namespace Gy02Bll.Managers
                 Move(entity, container, changes);
         }
 
+        /// <summary>
+        /// 移动物品到指定容器中。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="container"></param>
+        /// <param name="changes"></param>
+        /// <returns></returns>
         public bool Move(GameEntity entity, GameEntity container, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId);
@@ -535,6 +544,7 @@ namespace Gy02Bll.Managers
                 if (!RemoveFromContainer(entity, changes) && OwHelper.GetLastError() != ErrorCodes.NO_ERROR) return false;
                 if (IsMerge(entity, container, out var dest))  //若找到可合并物
                 {
+                    //Delete(entity);
                     Modify(dest, entity.Count, changes);
                 }
                 else //没有可合并物

@@ -42,37 +42,6 @@ namespace Gy02Bll.Commands
     /// </summary>
     public class CreateVirtualThingHandler : SyncCommandHandlerBase<CreateVirtualThingCommand>
     {
-        static ConcurrentDictionary<Guid, Type> _TypeGuid2Type;
-        public static ConcurrentDictionary<Guid, Type> TypeGuid2Type
-        {
-            get
-            {
-                if (_TypeGuid2Type is null)
-                {
-                    var coll = AppDomain.CurrentDomain.GetAssemblies().SelectMany(c => c.GetTypes()).Where(c => !c.IsAbstract && c.IsAssignableTo(typeof(OwGameEntityBase)));
-                    var tmp = new ConcurrentDictionary<Guid, Type>(coll.ToDictionary(c => c.GUID));
-                    Interlocked.CompareExchange(ref _TypeGuid2Type, tmp, null);
-                }
-                return _TypeGuid2Type;
-            }
-        }
-
-        /// <summary>
-        /// 获取模板的生成类的类型。
-        /// </summary>
-        /// <param name="fullView"></param>
-        /// <returns></returns>
-        public static Type GetTypeFromTemplate(TemplateStringFullView fullView)
-        {
-            var result = TypeGuid2Type.GetValueOrDefault(fullView.TypeGuid);    //获取实例类型
-            if (result is not null && fullView.SubTypeGuid is not null) //若是泛型类
-            {
-                var sub = TypeGuid2Type.GetValueOrDefault(fullView.SubTypeGuid.Value);
-                result = result.MakeGenericType(sub);
-            }
-            return result;
-        }
-
         public CreateVirtualThingHandler(IServiceProvider service, TemplateManager templateManager, IMapper mapper, VirtualThingManager virtualThingManager)
         {
             _Service = service;

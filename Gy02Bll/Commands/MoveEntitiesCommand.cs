@@ -83,7 +83,7 @@ namespace Gy02Bll.Commands
                 };
                 foreach (var item in modifyItems)
                 {
-                    if(!_GameEntityManager.Modify(item.Item1, item.Item2,command.Changes))
+                    if (!_GameEntityManager.Modify(item.Item1, item.Item2, command.Changes))
                     {
                         command.FillErrorFromWorld();
                         return;
@@ -151,50 +151,6 @@ namespace Gy02Bll.Commands
             thing.Parent = container;
             thing.ParentId = container.Id;
             changes?.CollectionAdd(thing, container);
-        }
-
-        /// <summary>
-        /// 获取指定虚拟物是否可以和指定容器中的虚拟物合并。
-        /// </summary>
-        /// <param name="thing"></param>
-        /// <param name="container"></param>
-        /// <param name="dest"></param>
-        /// <returns>true指定容器中存在可合并的虚拟物，false没有可合并的虚拟物或出错，此时用<see cref="OwHelper.GetLastError"/>确定是否有错。</returns>
-        bool IsMerge(VirtualThing thing, VirtualThing container, out VirtualThing dest)
-        {
-            var tmp = container.Children.FirstOrDefault(c => c.ExtraGuid == thing.ExtraGuid);  //可能的合成物
-            if (tmp is null)    //若不能合并
-            {
-                dest = null;
-                return false;
-            }
-            var tt = _TemplateManager.Id2FullView.GetValueOrDefault(tmp.ExtraGuid);
-            if (tt is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                dest = null;
-                return false;
-            }
-            if (tt.Stk != -1)   //若不可堆叠
-            {
-                var entity1 = _TemplateManager.GetEntityBase(thing, out _) as GameEntity;
-                var entity2 = _TemplateManager.GetEntityBase(tmp, out _) as GameEntity;
-                if (entity1.Count + entity2.Count > tt.Stk)
-                {
-                    dest = null;
-                    return false;
-                }
-                else
-                {
-                    dest = tmp;
-                    return true;
-                }
-            }
-            else
-            {
-                dest = tmp;
-                return true;
-            }
         }
 
     }

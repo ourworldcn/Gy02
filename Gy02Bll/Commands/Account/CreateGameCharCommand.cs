@@ -63,10 +63,11 @@ namespace Gy02Bll.Commands.Account
                 command.ErrorCode = ErrorCodes.WAIT_TIMEOUT;
                 return;
             }
-            var commandCvt = new CreateVirtualThingCommand()
-            {
-                TemplateId = ProjectContent.CharTId,
-            };
+            var commandCvt = new CreateVirtualThingsCommand() { };
+            commandCvt.TIds.Add(ProjectContent.CharTId);
+            //{
+            //    TemplateId = ProjectContent.CharTId,
+            //};
             var gcm = _Service.GetRequiredService<SyncCommandManager>();
             gcm.Handle(commandCvt);
             if (commandCvt.HasError)
@@ -74,7 +75,7 @@ namespace Gy02Bll.Commands.Account
                 command.FillErrorFrom(commandCvt);
                 return;
             }
-            var result = commandCvt.Result;
+            var result = commandCvt.Result.First();
             //设置角色的属性
             var gc = result.GetJsonObject<GameChar>();
             gc.UserId = command.User.Id;

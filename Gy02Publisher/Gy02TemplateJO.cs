@@ -695,7 +695,7 @@ namespace Gy02Bll.Templates
     /// <summary>
     /// 变化数据的封装类。
     /// </summary>
-    public class FastChangingProperty
+    public class FastChangingProperty : ICloneable
     {
         /// <summary>
         /// 
@@ -845,6 +845,25 @@ namespace Gy02Bll.Templates
                 LastDateTime -= Delay;
             dateTime = LastDateTime;
             _CurrentValue = val;
+        }
+
+        /// <summary>
+        /// 深度克隆该对象。
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            var result = new FastChangingProperty
+            {
+                CurrentValue = _CurrentValue,
+                Delay = Delay,
+                LastDateTime = LastDateTime,
+                MaxValue = MaxValue,
+                MinValue = MinValue,
+                StepValue = StepValue,
+                Tag = Tag,
+            };
+            return result;
         }
 
         #endregion 事件及相关

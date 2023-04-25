@@ -113,7 +113,7 @@ namespace Gy02.Controllers
         public ActionResult<bool> TestComp()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
-            store.LoadOrGetUser("gy27", "W1QPLWSB", out var gu);
+            store.LoadOrGetUser("string65", "string", out var gu);
             var token = gu.Token;
             var gc = gu.CurrentChar;
             var model = new CompositeParamsDto { Token = token, BlueprintId = Guid.Parse("2fc38d58-86e5-4eff-ba68-ccf60f356f5a") };
