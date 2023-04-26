@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Gy02.Publisher;
+using Gy02Bll.Commands;
 using Gy02Bll.Commands.Account;
+using Gy02Bll.Commands.Combat;
 using Gy02Bll.Managers;
 using Gy02Bll.Templates;
 using Microsoft.AspNetCore.Http;
@@ -50,10 +52,16 @@ namespace Gy02.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public AccountController()
+        public AccountController(GameAccountStore gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper)
         {
+            _GameAccountStore = gameAccountStore;
+            _SyncCommandManager = syncCommandManager;
+            _Mapper = mapper;
         }
 
+        GameAccountStore _GameAccountStore;
+        SyncCommandManager _SyncCommandManager;
+        IMapper _Mapper;
 #if DEBUG
 
         /// <summary>
@@ -108,6 +116,30 @@ namespace Gy02.Controllers
             var udpServiceHost = $"{ip}:{udpServer.Port}";
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
+            return result;
+        }
+
+        /// <summary>
+        /// 心跳功能，延迟被驱逐的时间。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<NopReturnDto> Nop(NopParamsDto model)
+        {
+            var result = new NopReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new NopCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
             return result;
         }
     }

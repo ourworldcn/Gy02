@@ -1,7 +1,9 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Commands.Combat;
 using Gy02Bll.Managers;
 using Gy02Bll.Templates;
 using OW.DDD;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
@@ -16,7 +18,7 @@ namespace Gy02Bll.Commands
     /// <summary>
     /// 应用蓝图的命令
     /// </summary>
-    public class ApplyBlueprintCommand : PropertyChangeCommandBase
+    public class ApplyBlueprintCommand : PropertyChangeCommandBase,IGameCharCommand
     {
         /// <summary>
         /// 针对的角色。
@@ -40,7 +42,7 @@ namespace Gy02Bll.Commands
 
     }
 
-    public class ApplyBlueprintHandler : SyncCommandHandlerBase<ApplyBlueprintCommand>
+    public class ApplyBlueprintHandler : SyncCommandHandlerBase<ApplyBlueprintCommand>,IGameCharHandler<ApplyBlueprintCommand>
     {
         /// <summary>
         /// 构造函数。
@@ -61,20 +63,13 @@ namespace Gy02Bll.Commands
         TemplateManager _TemplateManager;
         GameEntityManager _GameEntityManager;
 
+        public GameAccountStore AccountStore => _GameAccountStore;
+
         public override void Handle(ApplyBlueprintCommand command)
         {
-            string key = command.GameChar.GetUser().GetKey();
-            if (!_GameAccountStore.Lock(key))   //若锁定失败
-            {
-                command.FillErrorFromWorld();
-                return;
-            }
-            using var dw = DisposeHelper.Create(_GameAccountStore.Unlock, key);
-            if (dw.IsEmpty) //若锁定失败
-            {
-                command.FillErrorFromWorld();
-                return;
-            }
+            var key = ((IGameCharHandler<ApplyBlueprintCommand>)this).GetKey(command);
+            using var dw = ((IGameCharHandler<ApplyBlueprintCommand>)this).LockGameChar(command);
+            if (dw.IsEmpty) return; //若锁定失败
             var bp = command.Blueprint;
             //TODO 校验材料是否符合要求
             //if (!(bp?.In?.Count > 0 && bp?.Out?.Count > 0))
@@ -107,6 +102,7 @@ namespace Gy02Bll.Commands
             //}
             //_GameEntityManager.Move(outs, command.GameChar, command.Changes);
             command.OutItems.AddRange(outs);
+            _GameAccountStore.Save(key);
         }
     }
 }

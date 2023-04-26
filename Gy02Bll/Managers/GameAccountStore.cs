@@ -200,6 +200,24 @@ namespace Gy02Bll.Managers
         }
 
         /// <summary>
+        /// 通知延迟驱逐。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public bool Nop(string key)
+        {
+            var gu=_Key2User.GetValueOrDefault(key);
+            if(gu is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定的Key={key}代表的用户对象。");
+                return false;
+            }
+            gu.LastModifyDateTimeUtc = DateTime.UtcNow;
+            return true;
+        }
+
+        /// <summary>
         /// 使用令牌获取当前登录的角色。
         /// </summary>
         /// <param name="token"></param>

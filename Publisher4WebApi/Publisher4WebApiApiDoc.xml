@@ -404,6 +404,16 @@
             客户端登录的Token。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.NopParamsDto">
+            <summary>
+            心跳数据参数封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.NopReturnDto">
+            <summary>
+            心跳功能返回数据封装类。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.CreateAccountParamsDto">
             <summary>
             创建角色接口的参数封装类。

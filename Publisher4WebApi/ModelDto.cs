@@ -436,7 +436,7 @@ namespace Gy02.Publisher
     /// </summary>
     /// <remarks>这个类的新值和旧值都用Object表示，对于数据量极大的一些情况会使用具体的类表示如GamePropertyChangeFloatItemDto表示大量的即时战斗数据包导致的人物属性变化。</remarks>
     [Guid("905F93EE-D2A2-4321-87AD-C67CD145B77D")]
-    public partial class GamePropertyChangeItemDto: IJsonData
+    public partial class GamePropertyChangeItemDto : IJsonData
     {
         /// <summary>
         /// 构造函数。
@@ -520,6 +520,22 @@ namespace Gy02.Publisher
     #endregion Udp相关
 
     #region 账号及登录相关
+
+    /// <summary>
+    /// 心跳数据参数封装类。
+    /// </summary>
+    [AutoMap(typeof(NopCommand), ReverseMap = true)]
+    public class NopParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 心跳功能返回数据封装类。
+    /// </summary>
+    [AutoMap(typeof(NopCommand))]
+    public class NopReturnDto : ReturnDtoBase
+    {
+    }
 
     /// <summary>
     /// 创建角色接口的参数封装类。

@@ -91,7 +91,7 @@
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.#ctor">
+        <member name="M:Gy02.Controllers.AccountController.#ctor(Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
             <summary>
             
             </summary>
@@ -113,6 +113,13 @@
             <param name="mapper"></param>
             <param name="commandMng"></param>
             <param name="udpServer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.AccountController.Nop(Gy02.Publisher.NopParamsDto)">
+            <summary>
+            心跳功能，延迟被驱逐的时间。
+            </summary>
+            <param name="model"></param>
             <returns></returns>
         </member>
         <member name="T:Gy02.Controllers.AdminController">

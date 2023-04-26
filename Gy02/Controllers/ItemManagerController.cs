@@ -140,8 +140,8 @@ namespace Gy02.Controllers
         public ActionResult<AddItemsReturnDto> AddItems(AddItemsParamsDto model, [FromServices] GameAccountStore store, [FromServices] SyncCommandManager commandManager,
             [FromServices] TemplateManager templateManager, [FromServices] IMapper mapper)
         {
-            using var dw = store.GetCharFromToken(model.Token, out var gc);
             var result = new AddItemsReturnDto { };
+            using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
                 result.FillErrorFromWorld();

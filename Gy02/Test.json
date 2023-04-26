@@ -1,13 +1,47 @@
 {
-  "Fcps": {
-    "Count": {
-      "MinValue": 1,
-      "MaxValue": 3,
-      "StepValue": 1,
-      "Delay": "00:00:05",
-      "CurrentValue": 2,
-      "LastDateTime": "2023-04-24T09:33:50.5024704+08:00",
-      "Tag": null
-    }
+  "Dice": {
+    "MaxCount": 2,
+    "AllowRepetition": false,
+    "Items": [
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 150,
+        "GuardConditions": []
+      },
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 50,
+        "GuardConditions": []
+      },
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "1741c697-ea92-458b-a9e8-a839e41ad5f3",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 1,
+        "GuardConditions": []
+      }
+    ]
   }
 }
