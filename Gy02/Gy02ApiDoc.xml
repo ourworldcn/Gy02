@@ -132,7 +132,7 @@
             封装模板数据配置文件的类。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AdminController.ImportTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+        <member name="M:Gy02.Controllers.AdminController.ImportTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Hosting.IHostEnvironment)">
             <summary>
             上传游戏模板数据。
             </summary>

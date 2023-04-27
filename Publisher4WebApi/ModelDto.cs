@@ -674,7 +674,8 @@ namespace Gy02.Publisher
         /// </summary>
         public string UdpServiceHost
         {
-            get => _UdpServiceHost; set
+            get => _UdpServiceHost; 
+            set
             {
                 GyUdpClient.LastUdpServiceHost = value;
                 _UdpServiceHost = value;

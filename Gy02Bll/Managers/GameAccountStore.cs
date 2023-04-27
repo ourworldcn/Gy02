@@ -229,7 +229,7 @@ namespace Gy02Bll.Managers
             gameChar = null;
             if (key is null)
             {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastError(ErrorCodes.ERROR_INVALID_TOKEN);
                 return DisposeHelper.Empty<object>();
             }
             var result = DisposeHelper.Create(Lock, Unlock, (object)key, Options.DefaultLockTimeout);

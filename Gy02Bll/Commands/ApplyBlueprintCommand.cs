@@ -18,7 +18,7 @@ namespace Gy02Bll.Commands
     /// <summary>
     /// 应用蓝图的命令
     /// </summary>
-    public class ApplyBlueprintCommand : PropertyChangeCommandBase,IGameCharCommand
+    public class ApplyBlueprintCommand : PropertyChangeCommandBase, IGameCharCommand
     {
         /// <summary>
         /// 针对的角色。
@@ -42,7 +42,7 @@ namespace Gy02Bll.Commands
 
     }
 
-    public class ApplyBlueprintHandler : SyncCommandHandlerBase<ApplyBlueprintCommand>,IGameCharHandler<ApplyBlueprintCommand>
+    public class ApplyBlueprintHandler : SyncCommandHandlerBase<ApplyBlueprintCommand>, IGameCharHandler<ApplyBlueprintCommand>
     {
         /// <summary>
         /// 构造函数。
@@ -89,19 +89,20 @@ namespace Gy02Bll.Commands
             var createThing = new CreateVirtualThingsCommand { };
             createThing.TIds.AddRange(bp.Out.Select(c => c.TId));
             _SyncCommandManager.Handle(createThing);
+            var results = _GameEntityManager.Create(createThing.TIds.Select(c => (c, 1m)));
             if (createThing.HasError)
             {
                 command.FillErrorFrom(createThing);
                 return;
             }
-            outs.AddRange(createThing.Result.Select(c => _GameEntityManager.GetEntity(c)));
+            outs.AddRange(results);
             //消耗材料
             //foreach (var item in command.InItems)
             //{
             //    _GameEntityManager.Modify(item, -item.Count, command.Changes);
             //}
             //_GameEntityManager.Move(outs, command.GameChar, command.Changes);
-            command.OutItems.AddRange(outs);
+            command.OutItems.AddRange(results);
             _GameAccountStore.Save(key);
         }
     }

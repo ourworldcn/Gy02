@@ -48,6 +48,7 @@ namespace Gy02.Controllers
             using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -72,6 +73,7 @@ namespace Gy02.Controllers
             using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -96,6 +98,7 @@ namespace Gy02.Controllers
             using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }

@@ -29,7 +29,7 @@ namespace Gy02Bll.Managers
         /// <summary>
         /// 听的端口号。
         /// </summary>
-        public int Port => ((IPEndPoint)_UdpListen.Client.LocalEndPoint).Port;
+        public int ListenerPort => ((IPEndPoint)_UdpListen.Client.LocalEndPoint).Port;
 
         UdpClient _UdpListen;
         UdpClient _UdpSend = new UdpClient(0);
@@ -37,9 +37,13 @@ namespace Gy02Bll.Managers
         ConcurrentDictionary<Guid, IPEndPoint> _Token2EndPoint = new ConcurrentDictionary<Guid, IPEndPoint>();
 
         BlockingCollection<(Guid, byte[], int)> _Queue = new BlockingCollection<(Guid, byte[], int)>();
+
+        public static Guid PingGuid = Guid.Parse("{D99A07D0-DF3E-43F7-8060-4C7140905A29}");
+
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _UdpListen = new UdpClient(0);
+
             Task.Factory.StartNew(WriteCallback, TaskCreationOptions.LongRunning);
             return Task.Factory.StartNew(() =>
             {
@@ -58,7 +62,13 @@ namespace Gy02Bll.Managers
                     try
                     {
                         var token = new Guid(result.Buffer);
-                        _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
+                        if (token == PingGuid)
+                        {
+                            var count = _UdpSend.Send(new byte[] { 12, 34 }, 2, result.RemoteEndPoint);
+                            _Logger.LogWarning($"回应了{count}字节，ip={result.RemoteEndPoint}");
+                        }
+                        else
+                            _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
                         //SendObject(token, new ListenStartedDto() { Token = token });  //发送确认
                     }
                     catch (Exception excp)
@@ -114,7 +124,7 @@ namespace Gy02Bll.Managers
                     if (_Token2EndPoint.TryGetValue(tmp.Item1, out var ip))
                     {
                         _UdpSend.Send(tmp.Item2, tmp.Item2.Length, ip);
-                        _Logger.LogWarning($"发送信息{tmp.Item2.Length}字节。");
+                        _Logger.LogWarning($"发送信息{tmp.Item2.Length}字节到IP：{ip}");
                     }
                 }
                 catch (InvalidOperationException)   //基础集合在此实例之外 BlockingCollection<T> 进行了修改，或 BlockingCollection<T> 为空，并且已标记为已完成，并已对添加内容进行标记。

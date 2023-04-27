@@ -450,7 +450,7 @@ namespace Gy02Bll.Managers
             var db = _VirtualThingManager.GetDbContext(thing);
             if (db is null) return false;
             var result = _VirtualThingManager.Delete(thing, db);
-            if (result)
+            if (parent is not null)
             {
                 changes?.CollectionRemove(entity, parent);
             }

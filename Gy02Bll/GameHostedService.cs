@@ -3,14 +3,18 @@ using Gy02Bll.Managers;
 using Gy02Bll.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
+using Microsoft.Extensions.Options;
 using OW.Game;
 using OW.Game.Conditional;
+using OW.Game.Managers;
 using OW.Game.Store;
 using System.Diagnostics;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
@@ -124,9 +128,11 @@ namespace Gy02Bll
             }
             catch (Exception err)
             {
-                logger.LogError(err, "升级数据库出现错误");
+                logger.LogError(err, "升级数据库出现错误。");
             }
         }
+
+        public static Guid PingGuid = Guid.Parse("{D99A07D0-DF3E-43F7-8060-4C7140905A29}");
 
         [Conditional("DEBUG")]
         private void Test()
@@ -134,7 +140,11 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
-                var udp = _Services.GetService<UdpServerManager>();
+                var udp = new UdpClient(0);
+                //var ipendpoint = new IPEndPoint(IPAddress.Parse("43.133.232.4"), 53052);
+
+                //udp.Send(PingGuid.ToByteArray(), 16, ipendpoint);
+
                 var dic = new Dictionary<string, FastChangingProperty>();
                 dic.Add("Count", new FastChangingProperty
                 {
@@ -142,7 +152,7 @@ namespace Gy02Bll
                     StepValue = 1,
                     LastDateTime = DateTime.Now,
                     CurrentValue = 2,
-                    MinValue=1,
+                    MinValue = 1,
                     MaxValue = 3,
                 });
                 dic.Add("Count1", new FastChangingProperty
@@ -151,7 +161,7 @@ namespace Gy02Bll
                     StepValue = 1,
                     LastDateTime = DateTime.Now,
                     CurrentValue = 2,
-                    MinValue=1,
+                    MinValue = 1,
                     MaxValue = 3,
                 });
                 var str = JsonSerializer.Serialize(dic);

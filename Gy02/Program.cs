@@ -21,11 +21,11 @@ using System.Reflection;
 using System.Text.Json;
 
 lbStart:
+Environment.SetEnvironmentVariable("DOTNET_USE_POLLING_FILE_WATCHER", "1");
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
-builder.Configuration.AddJsonFile("GameTemplates.json");    //加入模板信息配置文件
-
+builder.Configuration.AddJsonFile("GameTemplates.json", false, true);    //加入模板信息配置文件
 //builder.Services.AddW3CLogging(logging =>
 //{
 //    // Log all W3C fields

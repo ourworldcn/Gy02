@@ -1,47 +1,192 @@
 {
-  "Dice": {
-    "MaxCount": 2,
-    "AllowRepetition": false,
-    "Items": [
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 150,
-        "GuardConditions": []
+  "Changes": [
+    {
+      "TId": "c531cd34-fed9-4859-81f1-501c25c0926d",
+      "ObjectId": "53b9bbb7-5533-4654-b065-d908623facd3",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.9211829Z"
+    },
+    {
+      "TId": "c531cd34-fed9-4859-81f1-501c25c0926d",
+      "ObjectId": "3f0f14a4-c679-4487-a421-5c14ca694634",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.9212181Z"
+    },
+    {
+      "TId": "c531cd34-fed9-4859-81f1-501c25c0926d",
+      "ObjectId": "b356f0f1-9308-4479-bffb-0a8d6da72002",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.921223Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "0855e0b1-3eaf-40ca-a0e5-4968667ec9f5",
+      "PropertyName": "Children",
+      "HasOldValue": false,
+      "OldValue": null,
+      "HasNewValue": true,
+      "NewValue": {
+        "atk": 20,
+        "def": 0,
+        "pow": 0,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "Id": "82cb9b5d-0547-49c7-9427-988acf6ad921",
+        "TemplateId": "bd871154-1aab-4add-8433-be4886244560",
+        "lv": 0
       },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 50,
-        "GuardConditions": []
+      "DateTimeUtc": "2023-04-27T10:36:51.9212298Z"
+    },
+    {
+      "TId": "bd871154-1aab-4add-8433-be4886244560",
+      "ObjectId": "b07b6f4f-49c8-4e0b-bf27-f75649dbcdde",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.9212992Z"
+    },
+    {
+      "TId": "bd871154-1aab-4add-8433-be4886244560",
+      "ObjectId": "82cb9b5d-0547-49c7-9427-988acf6ad921",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 0,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.9213082Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "0855e0b1-3eaf-40ca-a0e5-4968667ec9f5",
+      "PropertyName": "Children",
+      "HasOldValue": true,
+      "OldValue": {
+        "atk": 20,
+        "def": 0,
+        "pow": 0,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "Id": "82cb9b5d-0547-49c7-9427-988acf6ad921",
+        "TemplateId": "bd871154-1aab-4add-8433-be4886244560",
+        "lv": 0
       },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "1741c697-ea92-458b-a9e8-a839e41ad5f3",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 1,
-        "GuardConditions": []
-      }
-    ]
-  }
+      "HasNewValue": false,
+      "NewValue": null,
+      "DateTimeUtc": "2023-04-27T10:36:51.921342Z"
+    },
+    {
+      "TId": "bd871154-1aab-4add-8433-be4886244560",
+      "ObjectId": "7d327d0c-60e5-45be-b0d8-790654d19332",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.9213425Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "0855e0b1-3eaf-40ca-a0e5-4968667ec9f5",
+      "PropertyName": "Children",
+      "HasOldValue": false,
+      "OldValue": null,
+      "HasNewValue": true,
+      "NewValue": {
+        "atk": 30,
+        "def": 0,
+        "pow": 0,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "Id": "bea5989d-8a98-4a14-a08d-e1da7365f95b",
+        "TemplateId": "40425703-830d-4f95-90c4-8d0833e7ee25",
+        "lv": 0
+      },
+      "DateTimeUtc": "2023-04-27T10:36:51.9213502Z"
+    },
+    {
+      "TId": "40425703-830d-4f95-90c4-8d0833e7ee25",
+      "ObjectId": "bff78709-b8cd-48fe-953c-ccbf21a5cd2e",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 0,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.9214127Z"
+    },
+    {
+      "TId": "40425703-830d-4f95-90c4-8d0833e7ee25",
+      "ObjectId": "bea5989d-8a98-4a14-a08d-e1da7365f95b",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 0,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.9214217Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "0855e0b1-3eaf-40ca-a0e5-4968667ec9f5",
+      "PropertyName": "Children",
+      "HasOldValue": true,
+      "OldValue": {
+        "atk": 30,
+        "def": 0,
+        "pow": 0,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "Id": "bea5989d-8a98-4a14-a08d-e1da7365f95b",
+        "TemplateId": "40425703-830d-4f95-90c4-8d0833e7ee25",
+        "lv": 0
+      },
+      "HasNewValue": false,
+      "NewValue": null,
+      "DateTimeUtc": "2023-04-27T10:36:51.9214366Z"
+    },
+    {
+      "TId": "40425703-830d-4f95-90c4-8d0833e7ee25",
+      "ObjectId": "a94ccef2-e741-4a96-97ce-d0a9a132a937",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 0,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-04-27T10:36:51.9214371Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "0855e0b1-3eaf-40ca-a0e5-4968667ec9f5",
+      "PropertyName": "Children",
+      "HasOldValue": false,
+      "OldValue": null,
+      "HasNewValue": true,
+      "NewValue": {
+        "atk": 50,
+        "def": 0,
+        "pow": 0,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "Id": "d59c2f60-868d-4638-baa9-7bc84029e56b",
+        "TemplateId": "aa235359-a945-4a8d-8bf6-f6ad82e2afc5",
+        "lv": 0
+      },
+      "DateTimeUtc": "2023-04-27T10:36:51.9214434Z"
+    }
+  ],
+  "HasError": false,
+  "ErrorCode": 0,
+  "DebugMessage": "操作成功完成。"
 }

@@ -113,7 +113,7 @@ namespace Gy02.Controllers
             string ip = LocalIp.ToString();
 
             var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-            var udpServiceHost = $"{ip}:{udpServer.Port}";
+            var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
             return result;
@@ -131,6 +131,7 @@ namespace Gy02.Controllers
             using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }

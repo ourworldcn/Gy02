@@ -31,7 +31,7 @@ namespace Gy02.Controllers
         /// <param name="applicationLifetime"></param>
         /// <returns></returns>
         [HttpPost,]
-        public ActionResult ImportTemplates(IFormFile file, string token, [FromServices] IHostApplicationLifetime applicationLifetime)
+        public ActionResult ImportTemplates(IFormFile file, string token, [FromServices] IHostApplicationLifetime applicationLifetime, [FromServices] IHostEnvironment environment)
         {
             using var stream = file.OpenReadStream();
             try
@@ -39,9 +39,9 @@ namespace Gy02.Controllers
                 var list = JsonSerializer.Deserialize<TemplateDatas>(stream);
                 var dic = TemplateManager.GetTemplateFullviews(list?.GameTemplates);
 
-                //stream.Seek(0, SeekOrigin.Begin);
-                //var path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "GameTemplates.json");
-                //using var writer = System.IO.File.OpenWrite(path);
+                stream.Seek(0, SeekOrigin.Begin);
+                var path = Path.Combine(environment.ContentRootPath, "GameTemplates.json");
+                //using var writer = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Read);
                 //stream.CopyTo(writer);
 
                 //Global.Program.ReqireReboot = true;
@@ -56,7 +56,7 @@ namespace Gy02.Controllers
                 return BadRequest(err.Message);
             }
 
-            return Ok("成功上传，服务器重启，5秒后重新连接。");
+            return Ok("格式正确。");
         }
 
     }

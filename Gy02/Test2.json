@@ -1,8 +1,47 @@
 {
-  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
-  "Count": 0,
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d"
-  
+  "Dice": {
+    "MaxCount": 3,
+    "AllowRepetition": false,
+    "Items": [
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 130,
+        "GuardConditions": []
+      },
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 60,
+        "GuardConditions": []
+      },
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 10,
+        "GuardConditions": []
+      }
+    ]
+  }
 }

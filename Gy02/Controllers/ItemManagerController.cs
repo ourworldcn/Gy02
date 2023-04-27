@@ -58,7 +58,9 @@ namespace Gy02.Controllers
         public ActionResult<MoveItemsReturnDto> MoveItems(MoveItemsParamsDto model, [FromServices] IMapper mapper, [FromServices] SyncCommandManager commandMng)
         {
             var command = mapper.Map<MoveItemsCommand>(model);
+
             commandMng.Handle(command);
+            if (command.ErrorCode == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
             var result = new MoveItemsReturnDto();
             mapper.Map(command, result);
             return result;
@@ -144,6 +146,7 @@ namespace Gy02.Controllers
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -183,6 +186,7 @@ namespace Gy02.Controllers
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -209,6 +213,7 @@ namespace Gy02.Controllers
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -233,6 +238,7 @@ namespace Gy02.Controllers
             using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -261,6 +267,7 @@ namespace Gy02.Controllers
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -299,6 +306,7 @@ namespace Gy02.Controllers
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -325,6 +333,7 @@ namespace Gy02.Controllers
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -387,6 +396,7 @@ namespace Gy02.Controllers
             using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }
@@ -411,6 +421,7 @@ namespace Gy02.Controllers
             using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
             }

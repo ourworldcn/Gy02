@@ -47,6 +47,7 @@ namespace OW.Game.Managers
 
         public TemplateManagerOptions Value => this;
     }
+
     /// <summary>
     /// 
     /// </summary>
@@ -127,7 +128,8 @@ namespace OW.Game.Managers
             return GetTypeFromTemplate(fv);
         }
 
-        public TemplateManager(IOptions<TemplateManagerOptions> options, GY02TemplateContext dbContext, ILogger<TemplateManager> logger, IHostApplicationLifetime lifetime, IOptionsMonitor<RawTemplateOptions> rawTemplateOptions)
+        public TemplateManager(IOptions<TemplateManagerOptions> options, GY02TemplateContext dbContext, ILogger<TemplateManager> logger, IHostApplicationLifetime lifetime,
+            IOptionsMonitor<RawTemplateOptions> rawTemplateOptions)
             : base(options, logger)
         {
             DbContext = dbContext;
@@ -140,13 +142,21 @@ namespace OW.Game.Managers
 
         private void RawTemplateOptionsChanged(RawTemplateOptions arg1, string arg2)
         {
+            var raws = new ConcurrentDictionary<Guid, RawTemplate>(arg1.ToDictionary(c => c.Id));
+            var fullViews = new ConcurrentDictionary<Guid, TemplateStringFullView>(raws.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
 
+            lock (this)
+            {
+                _Id2RawTemplate = raws;
+                _Id2FullView = fullViews;
+            }
         }
 
         IDisposable _RawTemplateOptionsChangedMonitor;
         IOptionsMonitor<RawTemplateOptions> _RawTemplateOptions;
         IHostApplicationLifetime _Lifetime;
         Task _InitTask;
+
         private void Initialize()
         {
             //    var ary = DbContext.ThingTemplates.ToArray();
@@ -159,8 +169,11 @@ namespace OW.Game.Managers
             {
                 try
                 {
-                    _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id));
-                    _Id2FullView = new ConcurrentDictionary<Guid, TemplateStringFullView>(_Id2RawTemplate.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
+                    lock (this)
+                    {
+                        _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id));
+                        _Id2FullView = new ConcurrentDictionary<Guid, TemplateStringFullView>(_Id2RawTemplate.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
+                    }
                 }
                 catch (Exception excp)
                 {
