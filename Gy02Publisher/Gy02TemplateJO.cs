@@ -186,6 +186,9 @@ namespace Gy02Bll.Templates
 
         #region 基础数据
 
+        /// <summary>
+        /// 
+        /// </summary>
         [JsonIgnore]
         internal RawTemplate _RawTemplate;
 
@@ -773,6 +776,7 @@ namespace Gy02Bll.Templates
         public decimal GetCurrentValue(ref DateTime now)
         {
             var count = (long)Math.Round((decimal)(now - LastDateTime).Ticks / Delay.Ticks, MidpointRounding.ToNegativeInfinity);   //跳变次数,回调可能多跳一次
+
             LastDateTime += Delay * count;
             now = LastDateTime;
             if (StepValue > 0) //若增量跳变

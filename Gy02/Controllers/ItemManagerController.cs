@@ -6,6 +6,7 @@ using Gy02Bll.Commands.Combat;
 using Gy02Bll.Commands.Fuhua;
 using Gy02Bll.Commands.Item;
 using Gy02Bll.Managers;
+using Gy02Bll.Templates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
@@ -434,6 +435,30 @@ namespace Gy02.Controllers
             return result;
         }
         #endregion 孵化相关
+
+        /// <summary>
+        /// 返回指定对象数据。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GetEntitiesReturnDto> GetEntities(GetEntitiesParamsDto model)
+        {
+            var result = new GetEntitiesReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var command = new GetEntitiesCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
     }
 
 }

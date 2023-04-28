@@ -109,6 +109,11 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="F:Gy02Bll.Templates.TemplateStringFullView._RawTemplate">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.ExtraProperties">
             <summary>
             存储额外的非强类型属性数据。

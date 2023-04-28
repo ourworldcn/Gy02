@@ -674,7 +674,7 @@ namespace Gy02.Publisher
         /// </summary>
         public string UdpServiceHost
         {
-            get => _UdpServiceHost; 
+            get => _UdpServiceHost;
             set
             {
                 GyUdpClient.LastUdpServiceHost = value;
@@ -734,6 +734,36 @@ namespace Gy02.Publisher
     #endregion 世界控制器功能相关
 
     #region 物品管理相关
+
+    /// <summary>
+    /// 返回指定对象数据功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(GetEntitiesCommand), ReverseMap = true)]
+    public class GetEntitiesParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 需要获取对象的唯一Id集合。
+        /// 可以是角色Id,那样将返回角色对象。
+        /// </summary>
+        public List<Guid> Ids { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 是否包含子对象。当前版本一律视同为false——都不包含子对象。
+        /// </summary>
+        public bool IncludeChildren { get; set; }
+    }
+
+    /// <summary>
+    /// 返回指定对象数据功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(GetEntitiesCommand))]
+    public class GetEntitiesReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回的实体集合。
+        /// </summary>
+        public List<GameItemDto> Results { get; set; } = new List<GameItemDto>();
+    }
 
     /// <summary>
     /// 移动物品功能参数。

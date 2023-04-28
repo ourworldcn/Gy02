@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using System;
 using System.Buffers;
 using System.Collections.Concurrent;
@@ -15,16 +16,29 @@ using System.Threading.Tasks;
 
 namespace Gy02Bll.Managers
 {
+    public class UdpServerManagerOptions : IOptions<UdpServerManagerOptions>
+    {
+        public UdpServerManagerOptions Value => this;
+
+        /// <summary>
+        /// 使用的本机侦听端口。
+        /// </summary>
+        /// <value>默认值：0,自动选择。</value>
+        public short LocalPort { get; set; }
+    }
+
     public class UdpServerManager : BackgroundService
     {
-        public UdpServerManager(IHostApplicationLifetime lifetime, ILogger<UdpServerManager> logger)
+        public UdpServerManager(IHostApplicationLifetime lifetime, ILogger<UdpServerManager> logger, IOptions<UdpServerManagerOptions> options)
         {
             _Lifetime = lifetime;
             _Logger = logger;
+            _Options = options.Value;
         }
 
         IHostApplicationLifetime _Lifetime;
         ILogger<UdpServerManager> _Logger;
+        UdpServerManagerOptions _Options;
 
         /// <summary>
         /// 听的端口号。
@@ -42,7 +56,8 @@ namespace Gy02Bll.Managers
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _UdpListen = new UdpClient(0);
+            _UdpListen = new UdpClient(_Options.LocalPort);
+            _Logger.LogDebug($"UdpServer开始侦听{_UdpListen.Client.LocalEndPoint}。");
 
             Task.Factory.StartNew(WriteCallback, TaskCreationOptions.LongRunning);
             return Task.Factory.StartNew(() =>
@@ -68,7 +83,9 @@ namespace Gy02Bll.Managers
                             _Logger.LogWarning($"回应了{count}字节，ip={result.RemoteEndPoint}");
                         }
                         else
+                        {
                             _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
+                        }
                         //SendObject(token, new ListenStartedDto() { Token = token });  //发送确认
                     }
                     catch (Exception excp)
@@ -124,7 +141,7 @@ namespace Gy02Bll.Managers
                     if (_Token2EndPoint.TryGetValue(tmp.Item1, out var ip))
                     {
                         _UdpSend.Send(tmp.Item2, tmp.Item2.Length, ip);
-                        _Logger.LogWarning($"发送信息{tmp.Item2.Length}字节到IP：{ip}");
+                        _Logger.LogTrace($"发送信息{tmp.Item2.Length}字节到IP：{ip}");
                     }
                 }
                 catch (InvalidOperationException)   //基础集合在此实例之外 BlockingCollection<T> 进行了修改，或 BlockingCollection<T> 为空，并且已标记为已完成，并已对添加内容进行标记。

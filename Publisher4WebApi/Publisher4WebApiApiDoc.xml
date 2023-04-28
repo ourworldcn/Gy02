@@ -544,6 +544,32 @@
             模板数据集合。
             </summary>
         </member>
+        <member name="T:Gy02.Publisher.GetEntitiesParamsDto">
+            <summary>
+            返回指定对象数据功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetEntitiesParamsDto.Ids">
+            <summary>
+            需要获取对象的唯一Id集合。
+            可以是角色Id,那样将返回角色对象。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetEntitiesParamsDto.IncludeChildren">
+            <summary>
+            是否包含子对象。当前版本一律视同为false——都不包含子对象。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.GetEntitiesReturnDto">
+            <summary>
+            返回指定对象数据功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GetEntitiesReturnDto.Results">
+            <summary>
+            返回的实体集合。
+            </summary>
+        </member>
         <member name="T:Gy02.Publisher.MoveItemsParamsDto">
             <summary>
             移动物品功能参数。

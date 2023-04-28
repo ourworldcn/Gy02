@@ -29,6 +29,7 @@ namespace Gy02.Controllers
         /// <param name="file"></param>
         /// <param name="token">令牌。</param>
         /// <param name="applicationLifetime"></param>
+        /// <param name="environment"></param>
         /// <returns></returns>
         [HttpPost,]
         public ActionResult ImportTemplates(IFormFile file, string token, [FromServices] IHostApplicationLifetime applicationLifetime, [FromServices] IHostEnvironment environment)

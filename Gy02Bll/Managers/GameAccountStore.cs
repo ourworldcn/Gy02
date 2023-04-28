@@ -131,7 +131,7 @@ namespace Gy02Bll.Managers
                     catch (Exception excp)
                     {
                         _Queue.TryAdd(item.Key, null);  //加入队列以备未来写入
-                        Logger.LogWarning(excp, "保存数据时出错");
+                        Logger.LogWarning(excp, "保存数据时出错。");
                     }
                 }
                 //计算超时
@@ -206,8 +206,8 @@ namespace Gy02Bll.Managers
         /// <returns></returns>
         public bool Nop(string key)
         {
-            var gu=_Key2User.GetValueOrDefault(key);
-            if(gu is null)
+            var gu = _Key2User.GetValueOrDefault(key);
+            if (gu is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                 OwHelper.SetLastErrorMessage($"找不到指定的Key={key}代表的用户对象。");

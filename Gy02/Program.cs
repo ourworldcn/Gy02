@@ -5,6 +5,7 @@ using Gy02.AutoMappper;
 using Gy02.Publisher;
 using Gy02Bll;
 using Gy02Bll.Base;
+using Gy02Bll.Managers;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -92,9 +93,10 @@ VWorld.UserContextOptions = new DbContextOptionsBuilder<GY02UserContext>().UseLa
 services.AddGameServices();
 services.AddHostedService<GameHostedService>();
 
-services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"));  //模板配置的选项模式
+services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"))
+    .Configure<UdpServerManagerOptions>(builder.Configuration.GetSection("UdpServerManagerOptions"));  //模板配置的选项模式
 
-services.AddAutoMapper(typeof(Gy02.AutoMappper.Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(Gy02Bll.Gy02BllAutoMapperProfile).Assembly);
+services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(Gy02BllAutoMapperProfile).Assembly);
 
 
 var app = builder.Build();
