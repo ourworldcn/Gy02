@@ -23,7 +23,7 @@ namespace Gy02Bll.Managers
         /// <summary>
         /// 使用的本机侦听端口。
         /// </summary>
-        /// <value>默认值：0,自动选择。</value>
+        /// <value>默认值：0,自动选择。应通过配置指定端口，避免防火墙拒绝侦听请求。</value>
         public short LocalPort { get; set; }
     }
 
@@ -43,11 +43,13 @@ namespace Gy02Bll.Managers
         /// <summary>
         /// 听的端口号。
         /// </summary>
-        public int ListenerPort => ((IPEndPoint)_UdpListen.Client.LocalEndPoint).Port;
+        public int ListenerPort => ((IPEndPoint)_Udp.Client.LocalEndPoint).Port;
 
-        UdpClient _UdpListen;
-        UdpClient _UdpSend = new UdpClient(0);
+        volatile UdpClient _Udp;
 
+        /// <summary>
+        /// 用户令牌对应的远程客户端地址端口。
+        /// </summary>
         ConcurrentDictionary<Guid, IPEndPoint> _Token2EndPoint = new ConcurrentDictionary<Guid, IPEndPoint>();
 
         BlockingCollection<(Guid, byte[], int)> _Queue = new BlockingCollection<(Guid, byte[], int)>();
@@ -56,46 +58,11 @@ namespace Gy02Bll.Managers
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            _UdpListen = new UdpClient(_Options.LocalPort);
-            _Logger.LogDebug($"UdpServer开始侦听{_UdpListen.Client.LocalEndPoint}。");
+            _Udp = new UdpClient(_Options.LocalPort);
+            _Logger.LogDebug($"UdpServer开始侦听{_Udp.Client.LocalEndPoint}。");
 
-            Task.Factory.StartNew(WriteCallback, TaskCreationOptions.LongRunning);
-            return Task.Factory.StartNew(() =>
-            {
-                while (!_Lifetime.ApplicationStopping.IsCancellationRequested)
-                {
-                    UdpReceiveResult result;
-                    try
-                    {
-                        result = _UdpListen.ReceiveAsync(_Lifetime.ApplicationStopping).AsTask().Result;
-                        _Logger.LogWarning($"收到信息{result.Buffer.Length}字节。");
-                    }
-                    catch (AggregateException excp) when (excp.InnerException is TaskCanceledException) //若应用已经试图推出
-                    {
-                        break;
-                    }
-                    try
-                    {
-                        var token = new Guid(result.Buffer);
-                        if (token == PingGuid)
-                        {
-                            var count = _UdpSend.Send(new byte[] { 12, 34 }, 2, result.RemoteEndPoint);
-                            _Logger.LogWarning($"回应了{count}字节，ip={result.RemoteEndPoint}");
-                        }
-                        else
-                        {
-                            _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
-                        }
-                        //SendObject(token, new ListenStartedDto() { Token = token });  //发送确认
-                    }
-                    catch (Exception excp)
-                    {
-                        _Logger.LogWarning(excp, "回应信息时出错。");
-                    }
-                }
-                _UdpListen.Close();
-            }, TaskCreationOptions.LongRunning);
-
+            Task.Factory.StartNew(ListernCallback, TaskCreationOptions.LongRunning);
+            return Task.Factory.StartNew(WriteCallback, TaskCreationOptions.LongRunning);
         }
 
         /// <summary>
@@ -140,17 +107,62 @@ namespace Gy02Bll.Managers
                     using var dw = DisposeHelper.Create(c => ArrayPool<byte>.Shared.Return(c), tmp.Item2);  //回收
                     if (_Token2EndPoint.TryGetValue(tmp.Item1, out var ip))
                     {
-                        _UdpSend.Send(tmp.Item2, tmp.Item2.Length, ip);
+                        _Udp.Send(tmp.Item2, tmp.Item2.Length, ip);
                         _Logger.LogTrace($"发送信息{tmp.Item2.Length}字节到IP：{ip}");
                     }
                 }
                 catch (InvalidOperationException)   //基础集合在此实例之外 BlockingCollection<T> 进行了修改，或 BlockingCollection<T> 为空，并且已标记为已完成，并已对添加内容进行标记。
                 {
-                    break;
+                    //不可能发生
+                    throw;
                 }
                 catch (OperationCanceledException)  //CancellationToken 已取消
                 {
                     break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// 侦听线程。
+        /// </summary>
+        void ListernCallback()
+        {
+            while (!_Lifetime.ApplicationStopping.IsCancellationRequested)
+            {
+                UdpReceiveResult result = default;
+                try
+                {
+                    result = _Udp.ReceiveAsync(_Lifetime.ApplicationStopping).AsTask().Result;
+                    _Logger.LogTrace($"收到信息{result.Buffer.Length}字节。");
+                }
+                catch (AggregateException excp) when (excp.InnerException is TaskCanceledException) //若应用已经试图推出
+                {
+                    break;
+                }
+                catch (ObjectDisposedException)  //已关闭基础 Socket。
+                { }
+                catch (SocketException)  //访问套接字时出错。
+                {
+
+                }
+                try
+                {
+                    var token = new Guid(result.Buffer);
+                    if (token == PingGuid)
+                    {
+                        var count = _Udp.Send(new byte[] { 12, 34 }, 2, result.RemoteEndPoint);
+                        _Logger.LogWarning($"回应了{count}字节，ip={result.RemoteEndPoint}");
+                    }
+                    else
+                    {
+                        _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
+                    }
+                    //SendObject(token, new ListenStartedDto() { Token = token });  //发送确认
+                }
+                catch (Exception excp)
+                {
+                    _Logger.LogWarning(excp, "回应信息时出错。");
                 }
             }
         }

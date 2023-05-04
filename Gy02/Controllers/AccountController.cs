@@ -116,6 +116,11 @@ namespace Gy02.Controllers
             var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
+#if DEBUG
+            GyUdpClient udp = new GyUdpClient();
+            var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
+            udp.Start(result.Token, serverIp);
+#endif
             return result;
         }
 

@@ -1,25 +1,25 @@
 {
-  "Results": [
+  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
+  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+  "name_txt": 11808,
+  "comment_txt": 11834,
+  "atk": [ 10, 13, 16, 19, 22, 25, 28, 31, 34, 37 ],
+  "def": null,
+  "pow": null,
+  "genus": [ "p_wh", "e_wuqi" ],
+  "p_skills": [
     {
-      "lv": 0,
-      "Count": 19.0,
-      "LvUpAccruedCost": [],
-      "CompositingAccruedCost": [],
-      "Fcps": {
-        "Count": {
-          "MinValue": 0,
-          "MaxValue": 3,
-          "StepValue": 3,
-          "Delay": "1.00:00:00",
-          "CurrentValue": 19.0,
-          "LastDateTime": "2023-04-28T00:00:00Z",
-          "Tag": null
-        }
-      },
-      "Seq": 0
+      "skillsid": "c4c430e1-962a-458d-a1ce-026128edc377",
+      "enable": false
+    },
+    {
+      "skillsid": "5644a815-fd14-48e2-bbae-7da347c04b1b",
+      "enable": false
+    },
+    {
+      "skillsid": "441a5e71-0252-4e16-8f9c-ba0e5203d2c2",
+      "enable": false
     }
   ],
-  "HasError": false,
-  "ErrorCode": 0,
-  "DebugMessage": "操作成功完成。"
+  "LvUpTId": "f6d2b3d3-9680-472a-bd41-7927de6e87f9"
 }

@@ -920,6 +920,21 @@
             默认构造函数。
             </summary>
         </member>
+        <member name="F:Gy02.Publisher.GyUdpClient._PostEventTask">
+            <summary>
+            引发事件的任务。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.GyUdpClient._ListenTask">
+            <summary>
+            侦听任务。
+            </summary>
+        </member>
+        <member name="F:Gy02.Publisher.GyUdpClient._RemotePoint">
+            <summary>
+            远程服务器的地址。
+            </summary>
+        </member>
         <member name="M:Gy02.Publisher.GyUdpClient.Start">
             <summary>
             开始侦听。在登录完成后调用此函数，开始侦听数据。
@@ -942,9 +957,36 @@
             </summary>
             <param name="e"></param>
         </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.InvokeDataRecived(Gy02.Publisher.DataRecivedEventArgs)">
+            <summary>
+            向排队增加一个事件数据。
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.PostEventCallback">
+            <summary>
+            将事件数据异步引发的线程函数。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.ThrowIfDisposed">
+            <summary>
+            如果对象已经被处置则抛出<see cref="T:System.ObjectDisposedException"/>异常。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GyUdpClient.IsDisposed">
+            <summary>
+            获取或设置对象是否已经处置的属性，派生类需要自己切换该属性。
+            </summary>
+        </member>
+        <member name="M:Gy02.Publisher.GyUdpClient.Dispose(System.Boolean)">
+            <summary>
+            调用此实现以切换 <see cref="P:Gy02.Publisher.GyUdpClient.IsDisposed"/> 属性。
+            </summary>
+            <param name="disposing"></param>
+        </member>
         <member name="M:Gy02.Publisher.GyUdpClient.Dispose">
             <summary>
-            <inheritdoc/>
+            处置对象。
             </summary>
         </member>
     </members>

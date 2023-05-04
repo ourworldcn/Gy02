@@ -43,10 +43,34 @@ namespace Gy02Bll.Commands.Item
         SyncCommandManager _SyncCommandManager;
         GameEntityManager _GameEntityManager;
 
+        int GetMaxLevel(TemplateStringFullView template)
+        {
+            var result = Math.Min(template.Atk?.Length ?? int.MaxValue, template.Def?.Length ?? int.MaxValue);
+            result = Math.Min(result, template.Pow?.Length ?? int.MaxValue);
+            return result - 1;
+        }
+
         public override void Handle(LvUpCommand command)
         {
             _Command = command;
             var entities = _TemplateManager.GetEntityAndTemplateFullView<GameEntity>(command.GameChar, command.Ids);
+            foreach (var entity in entities)
+            {
+                var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId); //模板
+                var ttUp = _TemplateManager.GetFullViewFromId(tt.LvUpTId ?? Guid.Empty);
+                if (ttUp is null)
+                {
+                    command.FillErrorFromWorld();
+                    return;
+                }
+                var lv = (int)entity.Level;
+                if (ttUp.LvUpData[0].Counts.Count - 1 <= lv || GetMaxLevel(tt) <= lv)    //若超越等级
+                {
+                    command.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
+                    command.DebugMessage = $"物品等级达到限制，Id={entity.Id}";
+                    return;
+                }
+            }
             foreach (var entity in entities)
             {
                 _TemplateManager.SetTemplate((VirtualThing)entity.Thing);

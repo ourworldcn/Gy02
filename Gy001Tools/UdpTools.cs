@@ -21,7 +21,6 @@ namespace Gy001Tools
         }
 
         UdpToolsOptions _Options = new UdpToolsOptions { };
-        Thread _RecvTask;
         CancellationTokenSource _CancellationTokenSource;
 
         private void UdpTools_Load(object sender, EventArgs e)
@@ -69,7 +68,6 @@ namespace Gy001Tools
         private void btStop_Click(object sender, EventArgs e)
         {
             _CancellationTokenSource?.Cancel();
-            _RecvTask?.Abort();
         }
 
         private void button1_Click(object sender, EventArgs e)

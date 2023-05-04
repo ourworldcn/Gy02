@@ -131,7 +131,7 @@ namespace Gy02Bll.Managers
                     catch (Exception excp)
                     {
                         _Queue.TryAdd(item.Key, null);  //加入队列以备未来写入
-                        Logger.LogWarning(excp, "保存数据时出错。");
+                        Logger.LogWarning(excp, $"保存数据时出错——{excp.Message}");
                     }
                 }
                 //计算超时

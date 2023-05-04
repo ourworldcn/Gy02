@@ -47,12 +47,16 @@ namespace Gy02Bll.Commands.Item
                 lvup.Ids.Add(command.ItemId);
                 lvup.GameChar = command.GameChar;
                 _CommandManager.Handle(lvup);
-                if (!lvup.HasError)  //若无措
+                if (!lvup.HasError)  //若无错
                     command.Changes.AddRange(lvup.Changes);
-                else if (lvup.ErrorCode != ErrorCodes.ERROR_IMPLEMENTATION_LIMIT)  //若不是材料不够的错误
+                else if (lvup.ErrorCode != ErrorCodes.ERROR_IMPLEMENTATION_LIMIT)  //若不是材料不够的错误或等级达到限制
                 {
                     command.FillErrorFrom(lvup);
                     return;
+                }
+                else //已经没有材料或等级达到最大
+                {
+                    break;
                 }
             } while (!lvup.HasError);
             _AccountStore.Save(key);

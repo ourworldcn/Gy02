@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
+using System.Runtime.Intrinsics.Arm;
 
 namespace Gy02.Publisher
 {
@@ -133,8 +135,23 @@ namespace Gy02.Publisher
 
         }
 
-        UdpClient _Udp;
-        Task _Task;
+        volatile UdpClient _Udp;
+
+        /// <summary>
+        /// 引发事件的任务。
+        /// </summary>
+        Task _PostEventTask;
+        /// <summary>
+        /// 侦听任务。
+        /// </summary>
+        Task _ListenTask;
+        /// <summary>
+        /// 远程服务器的地址。
+        /// </summary>
+        IPEndPoint _RemotePoint;
+
+        CancellationTokenSource _CancellationTokenSource = new CancellationTokenSource();
+
         /// <summary>
         /// 开始侦听。在登录完成后调用此函数，开始侦听数据。
         /// </summary>
@@ -142,41 +159,50 @@ namespace Gy02.Publisher
         {
             var ary = LastUdpServiceHost.Split(':');
             var ip = new IPEndPoint(IPAddress.Parse(ary[0]), int.Parse(ary[1]));
+
             Start(LastToken, ip);
         }
-
         /// <summary>
         /// 开始侦听。
         /// </summary>
-        public void Start(Guid token, IPEndPoint remotePoint)
+        public virtual void Start(Guid token, IPEndPoint remotePoint)
         {
+            _RemotePoint = remotePoint;
             _Udp?.Dispose();
             _Udp = new UdpClient(0);
+            //初始化发送数据的任务
+            if (_PostEventTask is null)
+                _PostEventTask = Task.Factory.StartNew(PostEventCallback, TaskCreationOptions.LongRunning);
 
+            //初始化接受网络数据的任务。
+            if (_ListenTask is null)
+                _ListenTask = Task.Factory.StartNew(ListenCallback, TaskCreationOptions.LongRunning);
+            //通知服务器
             var guts = token.ToByteArray();
             _Udp.Send(guts, guts.Length, remotePoint);
-
-            _Task = Task.Factory.StartNew(c =>
-            {
-                UdpClient udp = (UdpClient)c;
-                var ip = new IPEndPoint(remotePoint.Address, 0);
-                while (true)
-                {
-                    var buff = udp.Receive(ref ip);
-                    try
-                    {
-                        OnDataRecived(new DataRecivedEventArgs()
-                        {
-                            Data = buff,
-                        });
-                    }
-                    catch (Exception excp)
-                    {
-                        Debug.WriteLine(excp);
-                    }
-                }
-            }, _Udp, TaskCreationOptions.LongRunning);
         }
+
+        void ListenCallback()
+        {
+            while (!_CancellationTokenSource.IsCancellationRequested)
+            {
+                try
+                {
+                    var ip = new IPEndPoint(_RemotePoint.Address, 0);
+                    var buff = _Udp.Receive(ref ip);
+                    InvokeDataRecived(new DataRecivedEventArgs()
+                    {
+                        Data = buff,
+                    });
+                }
+                catch (Exception excp)
+                {
+                    Debug.WriteLine(excp);
+                }
+            }
+        }
+
+        #region 事件相关
 
         /// <summary>
         /// 有数据到达的事件。
@@ -191,14 +217,105 @@ namespace Gy02.Publisher
         protected virtual void OnDataRecived(DataRecivedEventArgs e) => DataRecived?.Invoke(this, e);
 
         /// <summary>
-        /// <inheritdoc/>
+        /// 向排队增加一个事件数据。
+        /// </summary>
+        /// <param name="e"></param>
+        public void InvokeDataRecived(DataRecivedEventArgs e) => _EventDatas.Add(e);
+
+        BlockingCollection<DataRecivedEventArgs> _EventDatas = new BlockingCollection<DataRecivedEventArgs>();
+
+        /// <summary>
+        /// 将事件数据异步引发的线程函数。
+        /// </summary>
+        void PostEventCallback()
+        {
+            DataRecivedEventArgs item;
+            while (!_CancellationTokenSource.IsCancellationRequested)
+            {
+                try
+                {
+                    _EventDatas.TryTake(out item);
+
+                }
+                catch (ObjectDisposedException) //已释放了 BlockingCollection<T>。
+                {
+                    return;
+                }
+                catch (InvalidOperationException)   //该基础集合已在此 BlockingCollection<T> 实例外部进行了修改。
+                {
+                    //不可能出现
+                    throw;
+                }
+                try
+                {
+                    OnDataRecived(item);
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
+        #endregion 事件相关
+
+        #region IDisposable接口相关
+
+        /// <summary>
+        /// 如果对象已经被处置则抛出<see cref="ObjectDisposedException"/>异常。
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        //[DoesNotReturn]
+        protected void ThrowIfDisposed()
+        {
+            if (_IsDisposed)
+                throw new ObjectDisposedException(GetType().FullName);
+        }
+
+        private bool _IsDisposed;
+
+        /// <summary>
+        /// 获取或设置对象是否已经处置的属性，派生类需要自己切换该属性。
+        /// </summary>
+        protected bool IsDisposed { get => _IsDisposed; set => _IsDisposed = value; }
+
+        /// <summary>
+        /// 调用此实现以切换 <see cref="IsDisposed"/> 属性。
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected void Dispose(bool disposing)
+        {
+            if (!IsDisposed)
+            {
+                if (disposing)
+                {
+                    //释放托管状态(托管对象)
+                    _Udp?.Dispose();
+                }
+                // 释放未托管的资源(未托管的对象)并重写终结器
+                // 将大型字段设置为 null
+                _Udp = null;
+                _PostEventTask = null;
+                //base.Dispose(disposing);  //        IsDisposed = true;
+            }
+        }
+
+        // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
+        // ~LeafMemoryCache()
+        // {
+        //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+        //     Dispose(disposing: false);
+        // }
+
+        /// <summary>
+        /// 处置对象。
         /// </summary>
         public void Dispose()
         {
-            _Udp?.Dispose();
-            _Udp = null;
+            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
+            Dispose(disposing: true);
             GC.SuppressFinalize(this);
         }
+
+        #endregion IDisposable接口相关
     }
 
 }
