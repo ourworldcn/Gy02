@@ -19,6 +19,7 @@ using Gy02Bll.Commands.Account;
 using Gy02Bll.Commands.Combat;
 using Gy02Bll.Commands.Item;
 using Gy02Bll.Commands.Fuhua;
+using GuangYuan.GY001.BLL;
 
 namespace Gy02.Publisher
 {
@@ -259,6 +260,12 @@ namespace Gy02.Publisher
         /// 客户端用于记录战斗内信息的字符串。
         /// </summary>
         public string ClientCombatInfo { get; set; }
+
+        /// <summary>
+        /// 该角色登录的次数。
+        /// </summary>
+        public int LogineCount { get; set; }
+
         #endregion 简单属性
 
         #region 各种槽
@@ -520,6 +527,42 @@ namespace Gy02.Publisher
     #endregion Udp相关
 
     #region 账号及登录相关
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [AutoMap(typeof(LoginT78Command), ReverseMap = true)]
+    public class LoginT78ParamsDto
+    {
+        /// <summary>
+        /// 发行商SDK给的的sid。
+        /// </summary>
+        public string Sid { get; set; }
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [AutoMap(typeof(LoginT78Command))]
+    public class LoginT78ReturnDto : LoginReturnDto
+    {
+        /// <summary>
+        /// T78服务器返回的值完整的放在此处。仅当成功登录时才有。
+        /// </summary>
+        public string ResultString { get; set; }
+
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        [SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
 
     /// <summary>
     /// 心跳数据参数封装类。

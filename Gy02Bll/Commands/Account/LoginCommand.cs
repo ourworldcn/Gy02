@@ -34,6 +34,9 @@ namespace Gy02Bll.Commands.Account
 
         #endregion 可映射属性
 
+        /// <summary>
+        /// 成功时返回的登录的用户对象。
+        /// </summary>
         public GameUser User { get; set; }
     }
 
@@ -76,6 +79,7 @@ namespace Gy02Bll.Commands.Account
             }
             var db = gu.GetDbContext();
             gu.CurrentChar = ((VirtualThing)gu.Thing).Children.First().GetJsonObject<GameChar>();
+            gu.CurrentChar.LogineCount++;
         }
     }
 }

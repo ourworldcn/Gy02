@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using GuangYuan.GY001.BLL;
 using Gy02.Publisher;
 using Gy02Bll.Commands;
 using Gy02Bll.Commands.Account;
@@ -121,6 +122,31 @@ namespace Gy02.Controllers
             var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
             udp.Start(result.Token, serverIp);
 #endif
+            return result;
+        }
+
+        /// <summary>
+        /// 特定发行商sdk创建或登录用户。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="udpServer"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LoginT78ReturnDto> LoginT78(LoginT78ParamsDto model, [FromServices] UdpServerManager udpServer)
+        {
+            //    if (gm.Id2OnlineChar.Count > 10000 * Environment.ProcessorCount)
+            //        return StatusCode((int)HttpStatusCode.ServiceUnavailable, "登录人数过多，请稍后登录");
+            //    var gu = gm.LoginT78(model.Sid, out string pwd);
+
+            var command = _Mapper.Map<LoginT78Command>(model);
+            _SyncCommandManager.Handle(command);
+
+            string ip = LocalIp.ToString();
+            var result = _Mapper.Map<LoginT78ReturnDto> (command);
+            var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+            var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+            result.WorldServiceHost = worldServiceHost;
+            result.UdpServiceHost = udpServiceHost;
             return result;
         }
 

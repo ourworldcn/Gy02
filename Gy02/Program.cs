@@ -97,7 +97,7 @@ services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSec
     .Configure<UdpServerManagerOptions>(builder.Configuration.GetSection("UdpServerManagerOptions"));  //模板配置的选项模式
 
 services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(Gy02BllAutoMapperProfile).Assembly);
-
+services.AddPublisherT78();
 
 var app = builder.Build();
 

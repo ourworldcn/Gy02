@@ -201,6 +201,11 @@
             客户端用于记录战斗内信息的字符串。
             </summary>
         </member>
+        <member name="P:Gy02.Publisher.GameCharDto.LogineCount">
+            <summary>
+            该角色登录的次数。
+            </summary>
+        </member>
         <member name="P:Gy02.Publisher.GameCharDto.YichuanPifuSlot">
             <summary>
             已穿戴皮肤槽。
@@ -402,6 +407,36 @@
         <member name="P:Gy02.Publisher.ListenStartedDto.Token">
             <summary>
             客户端登录的Token。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LoginT78ParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginT78ParamsDto.Sid">
+            <summary>
+            发行商SDK给的的sid。
+            </summary>
+        </member>
+        <member name="T:Gy02.Publisher.LoginT78ReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginT78ReturnDto.ResultString">
+            <summary>
+            T78服务器返回的值完整的放在此处。仅当成功登录时才有。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginT78ReturnDto.LoginName">
+            <summary>
+            登录名。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.LoginT78ReturnDto.Pwd">
+            <summary>
+            密码。若首次登录，创建了账号则这里返回密码。否则返回null。
             </summary>
         </member>
         <member name="T:Gy02.Publisher.NopParamsDto">

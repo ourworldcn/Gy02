@@ -93,7 +93,7 @@ namespace OW.Game.Entity
         public decimal CritPct { get; set; }
 
         /// <summary>
-        /// 暴击倍数。1表示暴击和普通上海一致。
+        /// 暴击倍数。1表示暴击和普通伤害一致。
         /// </summary>
         [JsonPropertyName("crit")]
         public decimal Crit { get; set; }
@@ -107,6 +107,12 @@ namespace OW.Game.Entity
         /// 客户端用于记录战斗内信息的字符串。
         /// </summary>
         public string ClientCombatInfo { get; set; }
+
+        /// <summary>
+        /// 该角色登录的次数。
+        /// </summary>
+        public int LogineCount { get; set; }
+
         #endregion 普通属性
 
         #region 简单属性
@@ -120,6 +126,7 @@ namespace OW.Game.Entity
             get => ((VirtualThing)Thing).ExtraString;
             set => ((VirtualThing)Thing).ExtraString = value;
         }
+
         #endregion 简单属性
 
         #region 各种槽

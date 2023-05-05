@@ -140,6 +140,9 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
+                var t78 = _Services.GetService<PublisherT78Manager>();
+
+                //t78.Login("d");
                 var udp = new UdpClient(0);
                 //var ipendpoint = new IPEndPoint(IPAddress.Parse("43.133.232.4"), 53052);
 
