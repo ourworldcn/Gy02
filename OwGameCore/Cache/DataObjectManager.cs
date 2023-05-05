@@ -182,10 +182,12 @@ namespace OW.Game
 
         public DataObjectManagerOptions Options { get => _Options; set => _Options = value; }
 
+
         /// <summary>
         /// 存储服务容器。
         /// </summary>
         private IServiceProvider _Service;
+        public IServiceProvider Service { get => _Service;}
 
 
         /// <summary>
@@ -286,7 +288,7 @@ namespace OW.Game
         /// <returns></returns>
         protected virtual bool TryRemoveCore(object key, out object result)
         {
-            if (!_Items.Remove(key, out var item))
+            if (!_Items.Remove(key, out _))
             {
                 result = default;
                 return false;

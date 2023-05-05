@@ -60,25 +60,9 @@ namespace Gy02.Controllers
             _Mapper = mapper;
         }
 
-        GameAccountStore _GameAccountStore;
-        SyncCommandManager _SyncCommandManager;
-        IMapper _Mapper;
-#if DEBUG
-
-        /// <summary>
-        /// 测试代码专用。
-        /// </summary>
-        /// <param name="udpServer">测试参数。</param>
-        /// <param name="mapper"></param>
-        /// <returns></returns>
-        [HttpGet]
-        public ActionResult<List<CostInfo>> Test([FromServices] UdpServerManager udpServer, [FromServices] IMapper mapper)
-        {
-            var src = new GamePropertyChangeItem<object>() { Object = new GameItem(new VirtualThing() { ExtraGuid = Guid.NewGuid() }) };
-            var dest = mapper.Map<GamePropertyChangeItemDto>(src);
-            return new List<CostInfo>();
-        }
-#endif
+        readonly GameAccountStore _GameAccountStore;
+        readonly SyncCommandManager _SyncCommandManager;
+        readonly IMapper _Mapper;
 
         /// <summary>
         /// 创建一个新账号。
@@ -118,7 +102,7 @@ namespace Gy02.Controllers
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
 #if DEBUG
-            GyUdpClient udp = new GyUdpClient();
+            var udp = new GyUdpClient();
             var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
             udp.Start(result.Token, serverIp);
 #endif

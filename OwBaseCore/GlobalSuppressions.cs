@@ -6,3 +6,4 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Style", "IDE0090:使用 \"new(...)\"")]
+[assembly: SuppressMessage("Style", "IDE0044:添加只读修饰符", Justification = "<挂起>")]

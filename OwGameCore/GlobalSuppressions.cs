@@ -5,5 +5,5 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE0090:使用 \"new(...)\"", Justification = "<挂起>", Scope = "member", Target = "~F:OW.Game.Entity.GameUser._GameChars")]
+[assembly: SuppressMessage("Style", "IDE0090:使用 \"new(...)\"", Justification = "<挂起>")]
 [assembly: SuppressMessage("Performance", "CA1822:将成员标记为 static", Justification = "<挂起>", Scope = "member", Target = "~M:OW.Game.Entity.GameUser.Initialize")]
