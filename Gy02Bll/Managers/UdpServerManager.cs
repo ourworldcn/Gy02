@@ -1,4 +1,5 @@
 ﻿using Gy02.Publisher;
+using Gy02Bll.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -25,6 +26,11 @@ namespace Gy02Bll.Managers
         /// </summary>
         /// <value>默认值：0,自动选择。应通过配置指定端口，避免防火墙拒绝侦听请求。</value>
         public short LocalPort { get; set; }
+
+        /// <summary>
+        /// 指定使用的本地终结点Ip,通常不用设置。
+        /// </summary>
+        public string LocalIp { get; set; }
     }
 
     public class UdpServerManager : BackgroundService
@@ -34,8 +40,11 @@ namespace Gy02Bll.Managers
             _Lifetime = lifetime;
             _Logger = logger;
             _Options = options.Value;
+            var count = Interlocked.Increment(ref _Count);
+            if (_Count > 1)
+                _Logger.LogWarning($"检测到UdpServerManager第{count}个实例。");
         }
-
+        volatile static int _Count = 0;
         IHostApplicationLifetime _Lifetime;
         ILogger<UdpServerManager> _Logger;
         UdpServerManagerOptions _Options;
@@ -50,9 +59,9 @@ namespace Gy02Bll.Managers
         /// <summary>
         /// 用户令牌对应的远程客户端地址端口。
         /// </summary>
-        ConcurrentDictionary<Guid, IPEndPoint> _Token2EndPoint = new ConcurrentDictionary<Guid, IPEndPoint>();
+        static ConcurrentDictionary<Guid, IPEndPoint> _Token2EndPoint = new ConcurrentDictionary<Guid, IPEndPoint>();
 
-        BlockingCollection<(Guid, byte[], int)> _Queue = new BlockingCollection<(Guid, byte[], int)>();
+        static BlockingCollection<(Guid, byte[], int)> _Queue = new BlockingCollection<(Guid, byte[], int)>();
 
         public static Guid PingGuid = Guid.Parse("{D99A07D0-DF3E-43F7-8060-4C7140905A29}");
 
@@ -108,7 +117,7 @@ namespace Gy02Bll.Managers
                     if (_Token2EndPoint.TryGetValue(tmp.Item1, out var ip))
                     {
                         _Udp.Send(tmp.Item2, tmp.Item2.Length, ip);
-                        _Logger.LogTrace($"发送信息{tmp.Item2.Length}字节到IP：{ip}");
+                        _Logger.LogWarning($"发送信息{_Udp.Client.LocalEndPoint} -> {ip} : {tmp.Item2.Length}字节");
                     }
                 }
                 catch (InvalidOperationException)   //基础集合在此实例之外 BlockingCollection<T> 进行了修改，或 BlockingCollection<T> 为空，并且已标记为已完成，并已对添加内容进行标记。
@@ -157,8 +166,8 @@ namespace Gy02Bll.Managers
                     else
                     {
                         _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
+                        SendObject(token, new ListenStartedDto() { Token = token, IPEndpoint = result.RemoteEndPoint.ToString() });  //发送确认
                     }
-                    //SendObject(token, new ListenStartedDto() { Token = token });  //发送确认
                 }
                 catch (Exception excp)
                 {

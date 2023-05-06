@@ -5,11 +5,85 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Gy02Bll.Templates
 {
+    #region Udp相关
+
+    /// <summary>
+    /// 表示类是一个需要udp解码的类。
+    /// </summary>
+    public interface IJsonData
+    {
+
+    }
+
+    /// <summary>
+    /// Udp通知数据类。在侦听成功后会收到一次该数据。
+    /// </summary>
+    [Guid("24C3FEAA-4CF7-49DC-9C1E-36EBB92CCD12")]
+    public class ListenStartedDto : IJsonData
+    {
+        /// <summary>
+        /// 客户端登录的Token。
+        /// </summary>
+        public Guid Token { get; set; }
+
+        /// <summary>
+        /// 服务器所见的客户端地址。
+        /// </summary>
+        public string IPEndpoint { get; set; }
+    }
+    #endregion Udp相关
+
+    #region 商城相关
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class GameShoppingItem
+    {
+        /// <summary>
+        /// 该商品项的游戏周期。
+        /// </summary>
+        public GamePeriod Period { get; set; } = new GamePeriod();
+    }
+
+    /// <summary>
+    /// 定义周期的类。
+    /// </summary>
+    public class GamePeriod
+    {
+        /// <summary>
+        /// 开始时间。
+        /// </summary>
+        public DateTime Start { get; set; }
+
+        /// <summary>
+        /// 结束时间。
+        /// </summary>
+        public DateTime? End { get; set; }
+
+        /// <summary>
+        /// 循环周期长度。
+        /// </summary>
+        public string PeriodString { get; set; }
+
+        /// <summary>
+        /// 有效周期长度。
+        /// </summary>
+        public string ValidPeriodString { get; set; }
+
+#if NETCOREAPP3_0_OR_GREATER
+
+#endif
+    }
+    #endregion 商城相关
+
+
     /// <summary>
     /// 原始的的模板类。
     /// </summary>
@@ -250,6 +324,11 @@ namespace Gy02Bll.Templates
         /// </summary>
         public decimal Count { get; set; }
         #endregion 基础数据
+
+        #region 商城相关
+
+
+        #endregion 商城相关
 
         #region 装备数据
         /// <summary>

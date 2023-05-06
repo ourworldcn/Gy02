@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.Arm;
+using Gy02Bll.Templates;
 
 namespace Gy02.Publisher
 {
@@ -153,6 +154,11 @@ namespace Gy02.Publisher
         CancellationTokenSource _CancellationTokenSource = new CancellationTokenSource();
 
         /// <summary>
+        /// 请求停止的终止标志。
+        /// </summary>
+        public CancellationTokenSource CancellationTokenSource { get => _CancellationTokenSource; }
+
+        /// <summary>
         /// 开始侦听。在登录完成后调用此函数，开始侦听数据。
         /// </summary>
         public void Start()
@@ -170,7 +176,7 @@ namespace Gy02.Publisher
             _RemotePoint = remotePoint;
             _Udp?.Dispose();
             _Udp = new UdpClient(0);
-            //初始化发送数据的任务
+            //初始化引发事件数据的任务
             if (_PostEventTask is null)
                 _PostEventTask = Task.Factory.StartNew(PostEventCallback, TaskCreationOptions.LongRunning);
 
@@ -184,12 +190,13 @@ namespace Gy02.Publisher
 
         void ListenCallback()
         {
-            while (!_CancellationTokenSource.IsCancellationRequested)
+            while (!CancellationTokenSource.IsCancellationRequested)
             {
                 try
                 {
                     var ip = new IPEndPoint(_RemotePoint.Address, 0);
                     var buff = _Udp.Receive(ref ip);
+                    Debug.WriteLine($"收到来自{ip}的数据，{buff.Length}字节。");
                     InvokeDataRecived(new DataRecivedEventArgs()
                     {
                         Data = buff,
@@ -230,7 +237,7 @@ namespace Gy02.Publisher
         void PostEventCallback()
         {
             DataRecivedEventArgs item;
-            while (!_CancellationTokenSource.IsCancellationRequested)
+            while (!CancellationTokenSource.IsCancellationRequested)
             {
                 try
                 {
@@ -288,6 +295,7 @@ namespace Gy02.Publisher
                 if (disposing)
                 {
                     //释放托管状态(托管对象)
+                    _CancellationTokenSource?.Cancel();
                     _Udp?.Dispose();
                 }
                 // 释放未托管的资源(未托管的对象)并重写终结器

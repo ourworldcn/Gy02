@@ -144,10 +144,12 @@ namespace Gy02Bll
 
                 //t78.Login("d");
                 var udp = new UdpClient(0);
-                //var ipendpoint = new IPEndPoint(IPAddress.Parse("43.133.232.4"), 53052);
+                var ipendpoint = new IPEndPoint(IPAddress.Parse("43.133.232.4"), 20088);
 
-                //udp.Send(PingGuid.ToByteArray(), 16, ipendpoint);
+                udp.Send(PingGuid.ToByteArray(), 16, ipendpoint);
 
+                var ip = new IPEndPoint(IPAddress.Any, ((IPEndPoint)udp.Client.LocalEndPoint).Port);
+                //var ary = udp.Receive(ref ip);
                 var dic = new Dictionary<string, FastChangingProperty>();
                 dic.Add("Count", new FastChangingProperty
                 {

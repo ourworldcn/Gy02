@@ -394,21 +394,6 @@
             属性发生变化的时间点。Utc计时。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.IJsonData">
-            <summary>
-            表示类是一个需要udp解码的类。
-            </summary>
-        </member>
-        <member name="T:Gy02.Publisher.ListenStartedDto">
-            <summary>
-            Udp通知数据类。在侦听成功后会收到一次该数据。
-            </summary>
-        </member>
-        <member name="P:Gy02.Publisher.ListenStartedDto.Token">
-            <summary>
-            客户端登录的Token。
-            </summary>
-        </member>
         <member name="T:Gy02.Publisher.LoginT78ParamsDto">
             <summary>
             
@@ -905,7 +890,7 @@
             示例。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.DispatcherDemo.M1(Gy02.Publisher.ListenStartedDto)">
+        <member name="M:Gy02.Publisher.DispatcherDemo.M1(Gy02Bll.Templates.ListenStartedDto)">
             <summary>
             示例。
             </summary>
@@ -968,6 +953,11 @@
         <member name="F:Gy02.Publisher.GyUdpClient._RemotePoint">
             <summary>
             远程服务器的地址。
+            </summary>
+        </member>
+        <member name="P:Gy02.Publisher.GyUdpClient.CancellationTokenSource">
+            <summary>
+            请求停止的终止标志。
             </summary>
         </member>
         <member name="M:Gy02.Publisher.GyUdpClient.Start">

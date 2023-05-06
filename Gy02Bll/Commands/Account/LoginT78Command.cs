@@ -104,6 +104,7 @@ namespace GuangYuan.GY001.BLL
         public override void Handle(LoginT78Command command)
         {
             var t87Result = _PublisherT78Manager.Login(command.Sid);
+            var uid = t87Result.Content.Data.UserId;
             if (t87Result.Ret != "0")   //若登录失败
             {
                 command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
@@ -113,19 +114,20 @@ namespace GuangYuan.GY001.BLL
             //若登录成功了
             using var db = _DbContextFactory.CreateDbContext();
             var t78tid = new Guid("7A7A7058-CB88-4D54-80E9-22241774CF51");
-            var slot = db.Set<VirtualThing>().SingleOrDefault(c => c.ExtraGuid == t78tid && c.ExtraString == command.Sid);
+            var slot = db.Set<VirtualThing>().SingleOrDefault(c => c.ExtraGuid == t78tid && c.ExtraString == uid);
             bool isCreate = false;  //是否是第一次创建用户
+            string userKey = null;
             if (slot is null)    //若没有找到指定用户
             {
                 //创建
-                var createCommand = new CreateAccountCommand { LoginName = command.Sid, Pwd = command.Sid };
+                var createCommand = new CreateAccountCommand { LoginName = uid, Pwd = uid };
                 _SyncCommandManager.Handle(createCommand);
                 if (createCommand.HasError)
                 {
                     command.FillErrorFrom(createCommand);
                     return;
                 }
-                var userKey = createCommand.User.GetKey();
+                userKey = createCommand.User.GetKey();
                 if (!_GameAccountStore.Lock(userKey))
                 {
                     command.FillErrorFromWorld();
@@ -136,22 +138,22 @@ namespace GuangYuan.GY001.BLL
 
                 //标记绑定关系
                 //var t78slot = _VirtualThingManager.Create(t78tid, 1).First();
-                var t78slot = new VirtualThing {ExtraGuid=t78tid };
-                t78slot.ExtraString = command.Sid;
+                var t78slot = new VirtualThing { ExtraGuid = t78tid };
+                t78slot.ExtraString = uid;
                 var userThing = (VirtualThing)createCommand.User.Thing;
                 VirtualThingManager.Add(t78slot, userThing);
                 isCreate = true;
             }
             //登录用户
-            var loginCommand = new LoginCommand { LoginName = command.Sid, Pwd = command.Sid };
+            var loginCommand = new LoginCommand { LoginName = uid, Pwd = uid };
             _SyncCommandManager.Handle(loginCommand);
             if (loginCommand.HasError)
             {
                 command.FillErrorFrom(loginCommand);
                 return;
             }
-
-            if (!_GameAccountStore.LoadOrGetUser(command.Sid, command.Sid, out var gu))
+            userKey = loginCommand.User.GetKey();
+            if (!_GameAccountStore.LoadOrGetUser(uid, uid, out var gu))
             {
                 command.FillErrorFromWorld();
                 return;
@@ -160,7 +162,8 @@ namespace GuangYuan.GY001.BLL
             command.User = loginCommand.User;
             if (isCreate) //若是首次创建并登录
             {
-                command.Pwd = command.Sid;
+                command.Pwd = uid;
+                _GameAccountStore.Save(userKey);
             }
         }
     }

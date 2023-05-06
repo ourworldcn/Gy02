@@ -4,6 +4,61 @@
         <name>Gy02Publisher</name>
     </assembly>
     <members>
+        <member name="T:Gy02Bll.Templates.IJsonData">
+            <summary>
+            表示类是一个需要udp解码的类。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.ListenStartedDto">
+            <summary>
+            Udp通知数据类。在侦听成功后会收到一次该数据。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.ListenStartedDto.Token">
+            <summary>
+            客户端登录的Token。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.ListenStartedDto.IPEndpoint">
+            <summary>
+            服务器所见的客户端地址。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.GameShoppingItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GameShoppingItem.Period">
+            <summary>
+            该商品项的游戏周期。
+            </summary>
+        </member>
+        <member name="T:Gy02Bll.Templates.GamePeriod">
+            <summary>
+            定义周期的类。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GamePeriod.Start">
+            <summary>
+            开始时间。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GamePeriod.End">
+            <summary>
+            结束时间。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GamePeriod.PeriodString">
+            <summary>
+            循环周期长度。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GamePeriod.ValidPeriodString">
+            <summary>
+            有效周期长度。
+            </summary>
+        </member>
         <member name="T:Gy02Bll.Templates.RawTemplate">
             <summary>
             原始的的模板类。

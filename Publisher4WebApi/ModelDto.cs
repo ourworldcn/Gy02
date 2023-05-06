@@ -503,28 +503,6 @@ namespace Gy02.Publisher
 
     #endregion 通用数据变化相关
 
-    #region Udp相关
-
-    /// <summary>
-    /// 表示类是一个需要udp解码的类。
-    /// </summary>
-    public interface IJsonData
-    {
-
-    }
-
-    /// <summary>
-    /// Udp通知数据类。在侦听成功后会收到一次该数据。
-    /// </summary>
-    [Guid("24C3FEAA-4CF7-49DC-9C1E-36EBB92CCD12")]
-    public class ListenStartedDto : IJsonData
-    {
-        /// <summary>
-        /// 客户端登录的Token。
-        /// </summary>
-        public Guid Token { get; set; }
-    }
-    #endregion Udp相关
 
     #region 账号及登录相关
 
