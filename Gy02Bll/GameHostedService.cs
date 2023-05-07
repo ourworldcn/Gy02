@@ -140,6 +140,8 @@ namespace Gy02Bll
             var sw = Stopwatch.StartNew();
             try
             {
+                var loggoer = _Services.GetRequiredService<ILogger<GameHostedService>>();
+                loggoer.LogDebug("TestDebug");
                 var t78 = _Services.GetService<PublisherT78Manager>();
 
                 //t78.Login("d");
