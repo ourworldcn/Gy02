@@ -34,6 +34,21 @@
             该商品项的游戏周期。
             </summary>
         </member>
+        <member name="P:Gy02Bll.Templates.GameShoppingItem.GroupNumber">
+            <summary>
+            组号。对同一个"页签"内的项进行分组。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GameShoppingItem.Ins">
+            <summary>
+            购买需要的代价。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GameShoppingItem.Outs">
+            <summary>
+            获得的物品。
+            </summary>
+        </member>
         <member name="T:Gy02Bll.Templates.GamePeriod">
             <summary>
             定义周期的类。
@@ -51,10 +66,22 @@
         </member>
         <member name="P:Gy02Bll.Templates.GamePeriod.PeriodString">
             <summary>
-            循环周期长度。
+            循环周期长度字符串表示。
+            如1m，1y分别表示一月和一年，其中一些是不确定时长度的间间隔，但在实际应用中却常有需求。支持：s秒，d天，w周，m月，y年。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.GamePeriod.ValidPeriodString">
+            <summary>
+            有效周期长度字符串表示。
+            如1m，1y分别表示一月和一年，其中一些是不确定时长度的间间隔，但在实际应用中却常有需求。支持：s秒，d天，w周，m月，y年。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GamePeriod.Period">
+            <summary>
+            循环周期长度。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.GamePeriod.ValidPeriod">
             <summary>
             有效周期长度。
             </summary>
@@ -220,6 +247,11 @@
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Count">
             <summary>
             初始数量。
+            </summary>
+        </member>
+        <member name="P:Gy02Bll.Templates.TemplateStringFullView.ShoppingItem">
+            <summary>
+            商城配置项。
             </summary>
         </member>
         <member name="P:Gy02Bll.Templates.TemplateStringFullView.Atk">

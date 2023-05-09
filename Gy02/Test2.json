@@ -1,46 +1,42 @@
 {
-  "Dice": {
-    "MaxCount": 3,
-    "AllowRepetition": false,
-    "Items": [
+  "Genus": [ "gs_xxx" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null, //"2023-05-09T00:00:00.000Z",
+      "PeriodString": "1w",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "Ins": [
       {
-        "Precondition": [
+        "Conditional": [
           {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
-            "MinCount": 1,
-            "GeneralConditional": []
+            "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "Genus": [
+              "string"
+            ],
+            "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "remainder",
+                "lo": "7",
+                "ro": "1"
+              }
+            ]
           }
         ],
-        "Weight": 130,
-        "GuardConditions": []
-      },
+        "Count": 0,
+        "Genus": [
+        ]
+      }
+    ],
+    "Outs": [
       {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 60,
-        "GuardConditions": []
-      },
-      {
-        "Precondition": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
-            "MinCount": 1,
-            "GeneralConditional": []
-          }
-        ],
-        "Weight": 10,
-        "GuardConditions": []
+        "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "Count": 1
       }
     ]
   }

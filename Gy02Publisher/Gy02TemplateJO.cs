@@ -50,6 +50,21 @@ namespace Gy02Bll.Templates
         /// 该商品项的游戏周期。
         /// </summary>
         public GamePeriod Period { get; set; } = new GamePeriod();
+
+        /// <summary>
+        /// 组号。对同一个"页签"内的项进行分组。
+        /// </summary>
+        public int? GroupNumber { get; set; }
+
+        /// <summary>
+        /// 购买需要的代价。
+        /// </summary>
+        public List<BlueprintInItem> Ins { get; set; } = new List<BlueprintInItem>();
+
+        /// <summary>
+        /// 获得的物品。
+        /// </summary>
+        public List<BlueprintOutItem> Outs { get; set; } = new List<BlueprintOutItem>();
     }
 
     /// <summary>
@@ -68,19 +83,33 @@ namespace Gy02Bll.Templates
         public DateTime? End { get; set; }
 
         /// <summary>
-        /// 循环周期长度。
+        /// 循环周期长度字符串表示。
+        /// 如1m，1y分别表示一月和一年，其中一些是不确定时长度的间间隔，但在实际应用中却常有需求。支持：s秒，d天，w周，m月，y年。
         /// </summary>
         public string PeriodString { get; set; }
 
         /// <summary>
-        /// 有效周期长度。
+        /// 有效周期长度字符串表示。
+        /// 如1m，1y分别表示一月和一年，其中一些是不确定时长度的间间隔，但在实际应用中却常有需求。支持：s秒，d天，w周，m月，y年。
         /// </summary>
         public string ValidPeriodString { get; set; }
 
 #if NETCOREAPP3_0_OR_GREATER
 
+        /// <summary>
+        /// 循环周期长度。
+        /// </summary>
+        [JsonIgnore]
+        public TimeSpanEx Period { get; }
+
+        /// <summary>
+        /// 有效周期长度。
+        /// </summary>
+        [JsonIgnore]
+        public TimeSpanEx ValidPeriod { get; set; }
 #endif
     }
+
     #endregion 商城相关
 
 
@@ -327,6 +356,10 @@ namespace Gy02Bll.Templates
 
         #region 商城相关
 
+        /// <summary>
+        /// 商城配置项。
+        /// </summary>
+        public GameShoppingItem ShoppingItem { get; set; }
 
         #endregion 商城相关
 

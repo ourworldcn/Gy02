@@ -323,6 +323,17 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="T:Gy02.Controllers.ShoppingController">
+            <summary>
+            商城功能控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.ShoppingController.GetItems">
+            <summary>
+            获取指定商品配置数据。
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Gy02.Controllers.VWorldController">
             <summary>
             虚拟世界公用Api控制器。

@@ -12,7 +12,6 @@ namespace Gy02.Controllers
     /// <summary>
     /// 蓝图相关操作的控制器。
     /// </summary>
-    [ApiExplorerSettings(IgnoreApi = true)]
     public class BlueprintController : GameControllerBase
     {
         /// <summary>
