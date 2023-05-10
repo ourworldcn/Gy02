@@ -57,6 +57,12 @@ namespace GY02.Templates
         public int? GroupNumber { get; set; }
 
         /// <summary>
+        /// 在一个购买周期内最多购买数量。
+        /// </summary>
+        /// <value>省略或null则不限制一个周期内最大购买数量。</value>
+        public decimal? MaxCount { get; set; }
+
+        /// <summary>
         /// 购买需要的代价。
         /// </summary>
         public List<BlueprintInItem> Ins { get; set; } = new List<BlueprintInItem>();

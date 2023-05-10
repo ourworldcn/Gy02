@@ -56,8 +56,8 @@ namespace GY02.Commands
                             var subCommand = new CompositeCommand
                             {
                                 GameChar = command.GameChar,
+                                MainItem = items.First()
                             };
-                            subCommand.MainItem = items.First();
                             subCommand.Items.AddRange(items.Skip(1));
                             subCommand.Blueprint = bp;
                             _SyncCommandManager.Handle(subCommand);

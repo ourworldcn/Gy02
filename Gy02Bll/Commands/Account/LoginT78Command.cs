@@ -130,8 +130,8 @@ namespace GY02.Publisher
 
                 //标记绑定关系
                 //var t78slot = _VirtualThingManager.Create(t78tid, 1).First();
-                var t78slot = new VirtualThing { ExtraGuid = t78tid };
-                t78slot.ExtraString = uid;
+                var t78slot = new VirtualThing { ExtraGuid = t78tid,ExtraString = uid };
+                
                 var userThing = (VirtualThing)createCommand.User.Thing;
                 VirtualThingManager.Add(t78slot, userThing);
                 isCreate = true;

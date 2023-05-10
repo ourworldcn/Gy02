@@ -92,15 +92,13 @@ namespace OW.Game.Manager
         {
             var root = thing.GetRoot();
             if (root is null) return null;   //若找不到根
-            var rootThing = root as VirtualThing;
-            if (rootThing is null)
+            if (root is not VirtualThing rootThing)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                 OwHelper.SetLastErrorMessage($"指定虚拟对象的根不是 {typeof(VirtualThing)} 类型。");
                 return null;
             }
-            var db = rootThing.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) as DbContext;
-            if (db is null)
+            if (rootThing.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) is not DbContext db)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                 OwHelper.SetLastErrorMessage($"找不到对象中存储的数据库上下文属性。Id={rootThing.Id}");

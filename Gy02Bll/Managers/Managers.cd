@@ -1,33 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="OW.Game.Managers.ThingManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="OW.Game.Managers.TemplateManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="5.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>Managers\ThingManager.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Managers\TemplateManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="OW.Game.Managers.ThingManagerEntry" Collapsed="true">
-    <Position X="5.25" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Managers\ThingManager.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="OW.Game.Managers.ThingManager" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="3.5" Y="1" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAIBAAAiICAgASJAEAAAAAAIAdAAQBAAABABAIAABAA=</HashCode>
-      <FileName>Managers\ThingManager.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="OW.Game.Managers.ThingManagerExtensions" Collapsed="true">
-    <Position X="3.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Managers\ThingManager.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>

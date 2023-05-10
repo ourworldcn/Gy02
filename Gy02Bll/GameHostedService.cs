@@ -141,6 +141,12 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
+                foreach (var item in Enum.GetNames(typeof(ProtocolType)))
+                {
+                    //var ss1=(ProtocolType) ProtocolType.Parse(item);
+                }
+                var _Socket = new Socket(SocketType.Rdm, ProtocolType.Pup);
+
                 var loggoer = _Services.GetRequiredService<ILogger<GameHostedService>>();
                 loggoer.LogDebug("TestDebug");
                 var t78 = _Services.GetService<PublisherT78Manager>();
@@ -153,25 +159,33 @@ namespace GY02
 
                 var ip = new IPEndPoint(IPAddress.Any, ((IPEndPoint)udp.Client.LocalEndPoint).Port);
                 //var ary = udp.Receive(ref ip);
-                var dic = new Dictionary<string, FastChangingProperty>();
-                dic.Add("Count", new FastChangingProperty
+                var dic = new Dictionary<string, FastChangingProperty>
                 {
-                    Delay = TimeSpan.FromSeconds(5),
-                    StepValue = 1,
-                    LastDateTime = DateTime.Now,
-                    CurrentValue = 2,
-                    MinValue = 1,
-                    MaxValue = 3,
-                });
-                dic.Add("Count1", new FastChangingProperty
-                {
-                    Delay = TimeSpan.FromSeconds(5),
-                    StepValue = 1,
-                    LastDateTime = DateTime.Now,
-                    CurrentValue = 2,
-                    MinValue = 1,
-                    MaxValue = 3,
-                });
+                    {
+                        "Count",
+                        new FastChangingProperty
+                        {
+                            Delay = TimeSpan.FromSeconds(5),
+                            StepValue = 1,
+                            LastDateTime = DateTime.Now,
+                            CurrentValue = 2,
+                            MinValue = 1,
+                            MaxValue = 3,
+                        }
+                    },
+                    {
+                        "Count1",
+                        new FastChangingProperty
+                        {
+                            Delay = TimeSpan.FromSeconds(5),
+                            StepValue = 1,
+                            LastDateTime = DateTime.Now,
+                            CurrentValue = 2,
+                            MinValue = 1,
+                            MaxValue = 3,
+                        }
+                    }
+                };
                 var str = JsonSerializer.Serialize(dic);
                 var des = JsonSerializer.Deserialize<Dictionary<string, FastChangingProperty>>(str);
 

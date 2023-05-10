@@ -39,6 +39,12 @@
             组号。对同一个"页签"内的项进行分组。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GameShoppingItem.MaxCount">
+            <summary>
+            在一个购买周期内最多购买数量。
+            </summary>
+            <value>省略或null则不限制一个周期内最大购买数量。</value>
+        </member>
         <member name="P:GY02.Templates.GameShoppingItem.Ins">
             <summary>
             购买需要的代价。

@@ -62,7 +62,7 @@ namespace GY02.Managers
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _Udp = new UdpClient(_Options.LocalPort);
-            _Logger.LogDebug($"UdpServer开始侦听{_Udp.Client.LocalEndPoint}。");
+            _Logger.LogInformation("UdpServer开始侦听{LocalEndPoint}。", _Udp.Client.LocalEndPoint);
 
             Task.Factory.StartNew(ListernCallback, TaskCreationOptions.LongRunning);
             return Task.Factory.StartNew(WriteCallback, TaskCreationOptions.LongRunning);

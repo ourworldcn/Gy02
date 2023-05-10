@@ -1,28 +1,44 @@
 {
-  "CombatTId": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
-  "Rewards": [
-    {
-      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "Count": 2060.0
+  "Genus": [ "gs_xxx" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null, //"2023-05-09T00:00:00.000Z",
+      "PeriodString": "1w",
+      "ValidPeriodString": "1d"
     },
-    {
-      "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-      "Count": 1.0
-    },
-    {
-      "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
-      "Count": 1.0
-    },
-    {
-      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
-      "Count": 1.0
-    },
-    {
-      "TId": "5dfb3b1c-3b14-4269-9813-aaa1243a41f2",
-      "Count": 2.0
-    }
-  ],
-  "Others": [],
-  "MinTimeSpanOfPass": null,
-  "Token": "323d2189-56d7-4bc4-8f36-ede2e98cfc43"
+    "GroupNumber": 0,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "Genus": [
+              "string"
+            ],
+            "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "MinCount": 0,
+            "GeneralConditional": [
+              //{
+              //  "op": "string",
+              //  "lo": "string",
+              //  "ro": "string"
+              //}
+            ]
+          }
+        ],
+        "Count": 100,
+        "Genus": [
+        ]
+      }
+    ],
+    "Outs": [
+      {
+        "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "Count": 1
+      }
+    ],
+    "MaxCount": null
+  }
 }

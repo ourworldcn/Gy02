@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Managers;
 using System;
@@ -20,6 +21,7 @@ namespace GY02.Managers
     /// <summary>
     /// 游戏商城管理器。
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameShoppingManager : GameManagerBase<GameShoppingManagerOptions, GameShoppingManager>
     {
         public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger) : base(options, logger)
