@@ -7,7 +7,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Text;
 
-namespace GuangYuan.GY001.TemplateDb.Entity
+namespace OW.TemplateDb.Entity
 {
     /// <summary>
     /// 游戏数据模板存储上下文。

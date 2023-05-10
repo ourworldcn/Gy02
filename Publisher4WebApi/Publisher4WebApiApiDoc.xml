@@ -4,1012 +4,1012 @@
         <name>Publisher4WebApi</name>
     </assembly>
     <members>
-        <member name="T:Gy02.Publisher.GameEntitySummaryDto">
+        <member name="T:GY02.Publisher.GameEntitySummaryDto">
             <summary>
             游戏内装备/道具的摘要信息。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameEntitySummaryDto.TId">
+        <member name="P:GY02.Publisher.GameEntitySummaryDto.TId">
             <summary>
             模板Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameEntitySummaryDto.Count">
+        <member name="P:GY02.Publisher.GameEntitySummaryDto.Count">
             <summary>
             数量。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.ReturnDtoBase">
+        <member name="T:GY02.Publisher.ReturnDtoBase">
             <summary>
             返回对象的基类。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.ReturnDtoBase.#ctor">
+        <member name="M:GY02.Publisher.ReturnDtoBase.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.ReturnDtoBase.HasError">
+        <member name="P:GY02.Publisher.ReturnDtoBase.HasError">
             <summary>
-            是否有错误。不设置则使用<see cref="P:Gy02.Publisher.ReturnDtoBase.ErrorCode"/>来判定。
+            是否有错误。不设置则使用<see cref="P:GY02.Publisher.ReturnDtoBase.ErrorCode"/>来判定。
             </summary>
             <value>0没有错误，其它数值含义由应用定义。</value>
         </member>
-        <member name="P:Gy02.Publisher.ReturnDtoBase.ErrorCode">
+        <member name="P:GY02.Publisher.ReturnDtoBase.ErrorCode">
             <summary>
             错误码，参见 ErrorCodes。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.ReturnDtoBase.DebugMessage">
+        <member name="P:GY02.Publisher.ReturnDtoBase.DebugMessage">
             <summary>
             调试信息，如果发生错误，这里给出简要说明。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.TokenDtoBase">
+        <member name="T:GY02.Publisher.TokenDtoBase">
             <summary>
             带有令牌命令的入参基类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.TokenDtoBase.Token">
+        <member name="P:GY02.Publisher.TokenDtoBase.Token">
             <summary>
             令牌。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.TemplateDto">
+        <member name="T:GY02.Publisher.TemplateDto">
             <summary>
             模板基类传输类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.Gy02TemplateDto">
+        <member name="T:GY02.Publisher.Gy02TemplateDto">
             <summary>
             模板数据的传输类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.VirtualThingDto">
+        <member name="T:GY02.Publisher.VirtualThingDto">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.VirtualThingDto.Id">
+        <member name="P:GY02.Publisher.VirtualThingDto.Id">
             <summary>
             唯一Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.VirtualThingDto.BinaryArray">
+        <member name="P:GY02.Publisher.VirtualThingDto.BinaryArray">
             <summary>
             扩展的二进制大对象。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.VirtualThingDto.JsonObjectString">
+        <member name="P:GY02.Publisher.VirtualThingDto.JsonObjectString">
             <summary>
             所有扩展属性记录在这个字符串中，是一个Json对象。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraGuid">
+        <member name="P:GY02.Publisher.VirtualThingDto.ExtraGuid">
             <summary>
             模板Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraString">
+        <member name="P:GY02.Publisher.VirtualThingDto.ExtraString">
             <summary>
             记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.VirtualThingDto.ExtraDecimal">
+        <member name="P:GY02.Publisher.VirtualThingDto.ExtraDecimal">
             <summary>
             记录一些额外的信息，用于排序搜索使用的字段。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.VirtualThingDto.Children">
+        <member name="P:GY02.Publisher.VirtualThingDto.Children">
             <summary>
             拥有的子物品或槽。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GameJsonObjectBase">
+        <member name="T:GY02.Publisher.GameJsonObjectBase">
             <summary>
             游戏内玩家强类型数据的基类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameJsonObjectBase.Id">
+        <member name="P:GY02.Publisher.GameJsonObjectBase.Id">
             <summary>
             唯一Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameJsonObjectBase.TemplateId">
+        <member name="P:GY02.Publisher.GameJsonObjectBase.TemplateId">
             <summary>
             模板Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameJsonObjectBase.Level">
+        <member name="P:GY02.Publisher.GameJsonObjectBase.Level">
             <summary>
             等级。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GameEntityDto">
+        <member name="T:GY02.Publisher.GameEntityDto">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameEntityDto.LvUpAccruedCost">
+        <member name="P:GY02.Publisher.GameEntityDto.LvUpAccruedCost">
             <summary>
             升级的累计消耗。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameEntityDto.CompositingAccruedCost">
+        <member name="P:GY02.Publisher.GameEntityDto.CompositingAccruedCost">
             <summary>
             升品的累计用品。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GameUserDto">
+        <member name="T:GY02.Publisher.GameUserDto">
             <summary>
             账号数据。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameUserDto.LoginName">
+        <member name="P:GY02.Publisher.GameUserDto.LoginName">
             <summary>
             登录名。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameUserDto.CurrentChar">
+        <member name="P:GY02.Publisher.GameUserDto.CurrentChar">
             <summary>
             当前使用角色。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GameCharDto">
+        <member name="T:GY02.Publisher.GameCharDto">
             <summary>
             角色数据。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.DisplayName">
+        <member name="P:GY02.Publisher.GameCharDto.DisplayName">
             <summary>
             昵称。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.Atk">
+        <member name="P:GY02.Publisher.GameCharDto.Atk">
             <summary>
             攻击数值序列。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.Def">
+        <member name="P:GY02.Publisher.GameCharDto.Def">
             <summary>
             防御数值序列。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.Pow">
+        <member name="P:GY02.Publisher.GameCharDto.Pow">
             <summary>
             力量属性数值序列。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.CritPct">
+        <member name="P:GY02.Publisher.GameCharDto.CritPct">
             <summary>
             暴击率。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.Crit">
+        <member name="P:GY02.Publisher.GameCharDto.Crit">
             <summary>
             暴击倍数。1表示暴击和普通上海一致。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.CombatTId">
+        <member name="P:GY02.Publisher.GameCharDto.CombatTId">
             <summary>
             角色当前所处战斗的关卡模板Id。
             为null表示不在战斗中。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.ClientCombatInfo">
+        <member name="P:GY02.Publisher.GameCharDto.ClientCombatInfo">
             <summary>
             客户端用于记录战斗内信息的字符串。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.LogineCount">
+        <member name="P:GY02.Publisher.GameCharDto.LogineCount">
             <summary>
             该角色登录的次数。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.YichuanPifuSlot">
+        <member name="P:GY02.Publisher.GameCharDto.YichuanPifuSlot">
             <summary>
             已穿戴皮肤槽。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.Wuqi">
+        <member name="P:GY02.Publisher.GameCharDto.Wuqi">
             <summary>
             武器装备槽。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.ShouTao">
+        <member name="P:GY02.Publisher.GameCharDto.ShouTao">
             <summary>
             手套装备槽。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.YiFu">
+        <member name="P:GY02.Publisher.GameCharDto.YiFu">
             <summary>
             衣服装备槽。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.XieZi">
+        <member name="P:GY02.Publisher.GameCharDto.XieZi">
             <summary>
             鞋子装备槽。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.YaoDai">
+        <member name="P:GY02.Publisher.GameCharDto.YaoDai">
             <summary>
             腰带装备槽。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.ZuoQiSlot">
+        <member name="P:GY02.Publisher.GameCharDto.ZuoQiSlot">
             <summary>
             坐骑装备槽。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.ZhuangBeiBag">
+        <member name="P:GY02.Publisher.GameCharDto.ZhuangBeiBag">
             <summary>
             装备背包。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.DaoJuBag">
+        <member name="P:GY02.Publisher.GameCharDto.DaoJuBag">
             <summary>
             道具背包。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.PiFuBag">
+        <member name="P:GY02.Publisher.GameCharDto.PiFuBag">
             <summary>
             皮肤背包。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.HuoBiSlot">
+        <member name="P:GY02.Publisher.GameCharDto.HuoBiSlot">
             <summary>
             货币槽。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.FuhuaPreview">
+        <member name="P:GY02.Publisher.GameCharDto.FuhuaPreview">
             <summary>
             记录孵化的预览信息。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.FuhuaHistory">
+        <member name="P:GY02.Publisher.GameCharDto.FuhuaHistory">
             <summary>
             记录孵化系统正产出的历史数据。
             </summary>
             <remarks>是否可以生成皮肤以此处记录为准，没有则可以生成。</remarks>
         </member>
-        <member name="P:Gy02.Publisher.GameCharDto.CombatHistory">
+        <member name="P:GY02.Publisher.GameCharDto.CombatHistory">
             <summary>
             通关信息相关集合。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GameItemDto">
+        <member name="T:GY02.Publisher.GameItemDto">
             <summary>
             道具数据。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameItemDto.Count">
+        <member name="P:GY02.Publisher.GameItemDto.Count">
             <summary>
             数量。对非堆叠的是1。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GameSlotDto`1">
+        <member name="T:GY02.Publisher.GameSlotDto`1">
             <summary>
             槽数据。
             </summary>
             <typeparam name="T">槽内数据类型。</typeparam>
         </member>
-        <member name="M:Gy02.Publisher.GameSlotDto`1.#ctor">
+        <member name="M:GY02.Publisher.GameSlotDto`1.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameSlotDto`1.Capacity">
+        <member name="P:GY02.Publisher.GameSlotDto`1.Capacity">
             <summary>
             槽的容量。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameSlotDto`1.Children">
+        <member name="P:GY02.Publisher.GameSlotDto`1.Children">
             <summary>
             槽内的道具/装备。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GameEquipmentDto">
+        <member name="T:GY02.Publisher.GameEquipmentDto">
             <summary>
             装备数据。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.GameEquipmentDto.#ctor">
+        <member name="M:GY02.Publisher.GameEquipmentDto.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameEquipmentDto.Atk">
+        <member name="P:GY02.Publisher.GameEquipmentDto.Atk">
             <summary>
             攻击数值序列。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameEquipmentDto.Def">
+        <member name="P:GY02.Publisher.GameEquipmentDto.Def">
             <summary>
             防御数值序列。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameEquipmentDto.Pow">
+        <member name="P:GY02.Publisher.GameEquipmentDto.Pow">
             <summary>
             力量属性数值序列。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.PropertyChangeReturnDto">
+        <member name="T:GY02.Publisher.PropertyChangeReturnDto">
             <summary>
             带属性变化集合的返回值封装的基类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.PropertyChangeReturnDto.Changes">
+        <member name="P:GY02.Publisher.PropertyChangeReturnDto.Changes">
             <summary>
             属性变化的集合。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GamePropertyChangeItemDto">
+        <member name="T:GY02.Publisher.GamePropertyChangeItemDto">
             <summary>
             用于精确描述变化数据的类。
             </summary>
             <remarks>这个类的新值和旧值都用Object表示，对于数据量极大的一些情况会使用具体的类表示如GamePropertyChangeFloatItemDto表示大量的即时战斗数据包导致的人物属性变化。</remarks>
         </member>
-        <member name="M:Gy02.Publisher.GamePropertyChangeItemDto.#ctor">
+        <member name="M:GY02.Publisher.GamePropertyChangeItemDto.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.TId">
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.TId">
             <summary>
             对象的模板Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.ObjectId">
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.ObjectId">
             <summary>
             对象Id。指出是什么对象变化了属性。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.PropertyName">
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.PropertyName">
             <summary>
             属性的名字。事件发送者和处理者约定好即可，也可能是对象的其他属性名，如Children可以表示集合变化。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.HasOldValue">
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.HasOldValue">
             <summary>
-            指示<see cref="P:Gy02.Publisher.GamePropertyChangeItemDto.OldValue"/>中的值是否有意义。
+            指示<see cref="P:GY02.Publisher.GamePropertyChangeItemDto.OldValue"/>中的值是否有意义。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.OldValue">
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.OldValue">
             <summary>
             获取或设置旧值。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.HasNewValue">
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.HasNewValue">
             <summary>
-            指示<see cref="P:Gy02.Publisher.GamePropertyChangeItemDto.NewValue"/>中的值是否有意义。
+            指示<see cref="P:GY02.Publisher.GamePropertyChangeItemDto.NewValue"/>中的值是否有意义。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.NewValue">
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.NewValue">
             <summary>
             新值。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GamePropertyChangeItemDto.DateTimeUtc">
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.DateTimeUtc">
             <summary>
             属性发生变化的时间点。Utc计时。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.LoginT78ParamsDto">
+        <member name="T:GY02.Publisher.LoginT78ParamsDto">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginT78ParamsDto.Sid">
+        <member name="P:GY02.Publisher.LoginT78ParamsDto.Sid">
             <summary>
             发行商SDK给的的sid。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.LoginT78ReturnDto">
+        <member name="T:GY02.Publisher.LoginT78ReturnDto">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginT78ReturnDto.ResultString">
+        <member name="P:GY02.Publisher.LoginT78ReturnDto.ResultString">
             <summary>
             T78服务器返回的值完整的放在此处。仅当成功登录时才有。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginT78ReturnDto.LoginName">
+        <member name="P:GY02.Publisher.LoginT78ReturnDto.LoginName">
             <summary>
             登录名。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginT78ReturnDto.Pwd">
+        <member name="P:GY02.Publisher.LoginT78ReturnDto.Pwd">
             <summary>
             密码。若首次登录，创建了账号则这里返回密码。否则返回null。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.NopParamsDto">
+        <member name="T:GY02.Publisher.NopParamsDto">
             <summary>
             心跳数据参数封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.NopReturnDto">
+        <member name="T:GY02.Publisher.NopReturnDto">
             <summary>
             心跳功能返回数据封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.CreateAccountParamsDto">
+        <member name="T:GY02.Publisher.CreateAccountParamsDto">
             <summary>
             创建角色接口的参数封装类。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.CreateAccountParamsDto.#ctor">
+        <member name="M:GY02.Publisher.CreateAccountParamsDto.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CreateAccountParamsDto.LoginName">
+        <member name="P:GY02.Publisher.CreateAccountParamsDto.LoginName">
             <summary>
             用户登录名。可省略则自动生成。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CreateAccountParamsDto.Pwd">
+        <member name="P:GY02.Publisher.CreateAccountParamsDto.Pwd">
             <summary>
             密码。可省略则自动生成。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.CreateAccountResultDto">
+        <member name="T:GY02.Publisher.CreateAccountResultDto">
             <summary>
             创建接口返回数据封装类。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.CreateAccountResultDto.#ctor">
+        <member name="M:GY02.Publisher.CreateAccountResultDto.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CreateAccountResultDto.LoginName">
+        <member name="P:GY02.Publisher.CreateAccountResultDto.LoginName">
             <summary>
             用户登录名。可省略，则自动指定。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CreateAccountResultDto.Pwd">
+        <member name="P:GY02.Publisher.CreateAccountResultDto.Pwd">
             <summary>
             返回密码，客户端根据需要存储在本地，此后无法再明文返回密码。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.LoginParamsDto">
+        <member name="T:GY02.Publisher.LoginParamsDto">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.LoginParamsDto.#ctor">
+        <member name="M:GY02.Publisher.LoginParamsDto.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginParamsDto.LoginName">
+        <member name="P:GY02.Publisher.LoginParamsDto.LoginName">
             <summary>
             用户登录名。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginParamsDto.Pwd">
+        <member name="P:GY02.Publisher.LoginParamsDto.Pwd">
             <summary>
             密码。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.LoginReturnDto">
+        <member name="T:GY02.Publisher.LoginReturnDto">
             <summary>
             登录接口返回数据封装类。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.LoginReturnDto.#ctor">
+        <member name="M:GY02.Publisher.LoginReturnDto.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginReturnDto.GameChar">
+        <member name="P:GY02.Publisher.LoginReturnDto.GameChar">
             <summary>
             角色的信息。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginReturnDto.Token">
+        <member name="P:GY02.Publisher.LoginReturnDto.Token">
             <summary>
             后续操作该用户使用的令牌。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginReturnDto.WorldServiceHost">
+        <member name="P:GY02.Publisher.LoginReturnDto.WorldServiceHost">
             <summary>
             世界服务器的主机地址。使用此地址拼接后续的通讯地址。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LoginReturnDto.UdpServiceHost">
+        <member name="P:GY02.Publisher.LoginReturnDto.UdpServiceHost">
             <summary>
             Udp连接的地址。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GetTemplatesParamsDto">
+        <member name="T:GY02.Publisher.GetTemplatesParamsDto">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GetTemplatesParamsDto.Uid">
+        <member name="P:GY02.Publisher.GetTemplatesParamsDto.Uid">
             <summary>
             用户名。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GetTemplatesParamsDto.Pwd">
+        <member name="P:GY02.Publisher.GetTemplatesParamsDto.Pwd">
             <summary>
             密码。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GetTemplates2ParamsDto">
+        <member name="T:GY02.Publisher.GetTemplates2ParamsDto">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GetTemplates2ParamsDto.Uid">
+        <member name="P:GY02.Publisher.GetTemplates2ParamsDto.Uid">
             <summary>
             用户名。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GetTemplates2ParamsDto.Pwd">
+        <member name="P:GY02.Publisher.GetTemplates2ParamsDto.Pwd">
             <summary>
             密码。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GetTemplates2ReturnDto">
+        <member name="T:GY02.Publisher.GetTemplates2ReturnDto">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GetTemplates2ReturnDto.Templates">
+        <member name="P:GY02.Publisher.GetTemplates2ReturnDto.Templates">
             <summary>
             模板数据集合。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GetEntitiesParamsDto">
+        <member name="T:GY02.Publisher.GetEntitiesParamsDto">
             <summary>
             返回指定对象数据功能的参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GetEntitiesParamsDto.Ids">
+        <member name="P:GY02.Publisher.GetEntitiesParamsDto.Ids">
             <summary>
             需要获取对象的唯一Id集合。
             可以是角色Id,那样将返回角色对象。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GetEntitiesParamsDto.IncludeChildren">
+        <member name="P:GY02.Publisher.GetEntitiesParamsDto.IncludeChildren">
             <summary>
             是否包含子对象。当前版本一律视同为false——都不包含子对象。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GetEntitiesReturnDto">
+        <member name="T:GY02.Publisher.GetEntitiesReturnDto">
             <summary>
             返回指定对象数据功能的返回值封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GetEntitiesReturnDto.Results">
+        <member name="P:GY02.Publisher.GetEntitiesReturnDto.Results">
             <summary>
             返回的实体集合。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.MoveItemsParamsDto">
+        <member name="T:GY02.Publisher.MoveItemsParamsDto">
             <summary>
             移动物品功能参数。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.MoveItemsParamsDto.ItemIds">
+        <member name="P:GY02.Publisher.MoveItemsParamsDto.ItemIds">
             <summary>
             要移动物品的Id集合。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.MoveItemsParamsDto.ContainerId">
+        <member name="P:GY02.Publisher.MoveItemsParamsDto.ContainerId">
             <summary>
             要移动到的目标容器唯一Id。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.MoveItemsReturnDto">
+        <member name="T:GY02.Publisher.MoveItemsReturnDto">
             <summary>
             移动物品功能返回数据。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.AddItemsParamsDto">
+        <member name="T:GY02.Publisher.AddItemsParamsDto">
             <summary>
             增加物品参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.AddItemsParamsDto.TIds">
+        <member name="P:GY02.Publisher.AddItemsParamsDto.TIds">
             <summary>
             要添加物品的模板Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.AddItemsParamsDto.Counts">
+        <member name="P:GY02.Publisher.AddItemsParamsDto.Counts">
             <summary>
             增加的数量， 对应TIds中的顺序。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.AddItemsReturnDto">
+        <member name="T:GY02.Publisher.AddItemsReturnDto">
             <summary>
             增加物品返回数据封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.AutoLvUpParamsDto">
+        <member name="T:GY02.Publisher.AutoLvUpParamsDto">
             <summary>
             自动升级功能的参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.AutoLvUpParamsDto.ItemId">
+        <member name="P:GY02.Publisher.AutoLvUpParamsDto.ItemId">
             <summary>
             要自动升级的物品唯一Id。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.AutoLvUpReturnDto">
+        <member name="T:GY02.Publisher.AutoLvUpReturnDto">
             <summary>
             自动升级功能返回值封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.LvUpParamsDto">
+        <member name="T:GY02.Publisher.LvUpParamsDto">
             <summary>
             升级装备接口的参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LvUpParamsDto.Ids">
+        <member name="P:GY02.Publisher.LvUpParamsDto.Ids">
             <summary>
             要升级物品的唯一Id集合。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.LvUpReturnDto">
+        <member name="T:GY02.Publisher.LvUpReturnDto">
             <summary>
             升级装备接口的返回数据封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.LvDownParamsDto">
+        <member name="T:GY02.Publisher.LvDownParamsDto">
             <summary>
             降级接口返回参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.LvDownParamsDto.ItemId">
+        <member name="P:GY02.Publisher.LvDownParamsDto.ItemId">
             <summary>
             要降级的物品的唯一Id。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.LvDownReturnDto">
+        <member name="T:GY02.Publisher.LvDownReturnDto">
             <summary>
             降级接口返回数据封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.CompositeParamsDto">
+        <member name="T:GY02.Publisher.CompositeParamsDto">
             <summary>
             合成接口的参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CompositeParamsDto.BlueprintId">
+        <member name="P:GY02.Publisher.CompositeParamsDto.BlueprintId">
             <summary>
             使用蓝图的模板Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CompositeParamsDto.MainId">
+        <member name="P:GY02.Publisher.CompositeParamsDto.MainId">
             <summary>
             主要材料的唯一Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CompositeParamsDto.Ids">
+        <member name="P:GY02.Publisher.CompositeParamsDto.Ids">
             <summary>
             辅助材料的唯一Id的集合。降低品阶时这里不用填写。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.CompositeReturnDto">
+        <member name="T:GY02.Publisher.CompositeReturnDto">
             <summary>
             合成接口的返回数据封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.AutoCompositeReturnDto">
+        <member name="T:GY02.Publisher.AutoCompositeReturnDto">
             <summary>
             自动合成紫色（不含）以下装备接口的返回数据封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.AutoCompositeParamsDto">
+        <member name="T:GY02.Publisher.AutoCompositeParamsDto">
             <summary>
             自动合成紫色（不含）以下装备功能的参数封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.DecomposeParamsDto">
+        <member name="T:GY02.Publisher.DecomposeParamsDto">
             <summary>
             分解（降品）装备功能的参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.DecomposeParamsDto.ItemId">
+        <member name="P:GY02.Publisher.DecomposeParamsDto.ItemId">
             <summary>
             要降品的装备的唯一Id。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.DecomposeReturnDto">
+        <member name="T:GY02.Publisher.DecomposeReturnDto">
             <summary>
             分解（降品）装备功能的返回值封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.ApplyBlueprintReturnDto">
+        <member name="T:GY02.Publisher.ApplyBlueprintReturnDto">
             <summary>
             
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.ApplyBlueprintParamsDto">
+        <member name="T:GY02.Publisher.ApplyBlueprintParamsDto">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.ApplyBlueprintParamsDto.Items">
+        <member name="P:GY02.Publisher.ApplyBlueprintParamsDto.Items">
             <summary>
             使用的装备/道具等的唯一Id集合。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.ApplyBlueprintParamsDto.BlueprintId">
+        <member name="P:GY02.Publisher.ApplyBlueprintParamsDto.BlueprintId">
             <summary>
             使用的蓝图模板Id。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.CombatHistoryItemDto">
+        <member name="T:GY02.Publisher.CombatHistoryItemDto">
             <summary>
             战斗的相关记录信息。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CombatHistoryItemDto.TId">
+        <member name="P:GY02.Publisher.CombatHistoryItemDto.TId">
             <summary>
             关卡的模板Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CombatHistoryItemDto.MinTimeSpanOfPass">
+        <member name="P:GY02.Publisher.CombatHistoryItemDto.MinTimeSpanOfPass">
             <summary>
             该关卡的最短时间，如果null,表示没有记录过。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.EndCombatParamsDto">
+        <member name="T:GY02.Publisher.EndCombatParamsDto">
             <summary>
             结算战斗功能参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.EndCombatParamsDto.CombatTId">
+        <member name="P:GY02.Publisher.EndCombatParamsDto.CombatTId">
             <summary>
             战斗关卡的模板Id。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.EndCombatParamsDto.Rewards">
+        <member name="P:GY02.Publisher.EndCombatParamsDto.Rewards">
             <summary>
             掉落物品的集合。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.EndCombatParamsDto.Others">
+        <member name="P:GY02.Publisher.EndCombatParamsDto.Others">
             <summary>
             杀怪或其它集合。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.EndCombatParamsDto.MinTimeSpanOfPass">
+        <member name="P:GY02.Publisher.EndCombatParamsDto.MinTimeSpanOfPass">
             <summary>
             该关卡的最短时间，如果null,表示不记录。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.EndCombatReturnDto">
+        <member name="T:GY02.Publisher.EndCombatReturnDto">
             <summary>
             结算战斗返回值封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.CombatMarkParamsDto">
+        <member name="T:GY02.Publisher.CombatMarkParamsDto">
             <summary>
             记录战斗中信息功能的参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.CombatMarkParamsDto.CombatInfo">
+        <member name="P:GY02.Publisher.CombatMarkParamsDto.CombatInfo">
             <summary>
             要标记的战斗信息。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.CombatMarkReturnDto">
+        <member name="T:GY02.Publisher.CombatMarkReturnDto">
             <summary>
             记录战斗中信息返回信息封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.StartCombatParamsDto">
+        <member name="T:GY02.Publisher.StartCombatParamsDto">
             <summary>
             开始战斗功能参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.StartCombatParamsDto.CombatTId">
+        <member name="P:GY02.Publisher.StartCombatParamsDto.CombatTId">
             <summary>
             要启动的战斗模板Id。目前只有 905288ED-1615-4033-9F94-850C0C56E5C5 一个关卡。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.StartCombatReturnDto">
+        <member name="T:GY02.Publisher.StartCombatReturnDto">
             <summary>
             开始战斗功能返回封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.FuhuaSummaryDto">
+        <member name="T:GY02.Publisher.FuhuaSummaryDto">
             <summary>
             孵化预览信息。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.FuhuaSummaryDto.ParentTIds">
+        <member name="P:GY02.Publisher.FuhuaSummaryDto.ParentTIds">
             <summary>
             双亲的类属集合，目前有两个元素，且按升序排序。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.FuhuaSummaryDto.Items">
+        <member name="P:GY02.Publisher.FuhuaSummaryDto.Items">
             <summary>
             可能产出的物品预览。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.GameDiceItemSummaryDto">
+        <member name="T:GY02.Publisher.GameDiceItemSummaryDto">
             <summary>
             生成项的摘要信息。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameDiceItemSummaryDto.Entity">
+        <member name="P:GY02.Publisher.GameDiceItemSummaryDto.Entity">
             <summary>
             生成项的摘要。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GameDiceItemSummaryDto.Weight">
+        <member name="P:GY02.Publisher.GameDiceItemSummaryDto.Weight">
             <summary>
             生成项的权重。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.FuhuaPreviewParamsDto">
+        <member name="T:GY02.Publisher.FuhuaPreviewParamsDto">
             <summary>
             孵化预览功能所用的参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.FuhuaPreviewParamsDto.ParentGenus">
+        <member name="P:GY02.Publisher.FuhuaPreviewParamsDto.ParentGenus">
             <summary>
             双亲的类属集合 如 "zuoqi_sheep" "zuoqi_wolf"，无所谓顺序，但返回时是按升序排序。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.FuhuaPreviewReturnDto">
+        <member name="T:GY02.Publisher.FuhuaPreviewReturnDto">
             <summary>
             孵化预览功能所用的返回值封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.FuhuaPreviewReturnDto.Result">
+        <member name="P:GY02.Publisher.FuhuaPreviewReturnDto.Result">
             <summary>
             返回数据，孵化可能生成的预览信息列表。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.FuhuaParamsDto">
+        <member name="T:GY02.Publisher.FuhuaParamsDto">
             <summary>
             孵化功能参数封装类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.FuhuaParamsDto.ParentGenus">
+        <member name="P:GY02.Publisher.FuhuaParamsDto.ParentGenus">
             <summary>
             双亲的类属集合 如 "zuoqi_sheep" "zuoqi_wolf"，无所谓顺序，但返回时是按升序排序。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.FuhuaReturnDto">
+        <member name="T:GY02.Publisher.FuhuaReturnDto">
             <summary>
             孵化功能返回值封装类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.DispatcherDemo">
+        <member name="T:GY02.Publisher.DispatcherDemo">
             <summary>
             示例。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.DispatcherDemo.M1(Gy02Bll.Templates.ListenStartedDto)">
+        <member name="M:GY02.Publisher.DispatcherDemo.M1(GY02.Templates.ListenStartedDto)">
             <summary>
             示例。
             </summary>
             <param name="data"></param>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Publisher.DataRecivedEventArgs">
+        <member name="T:GY02.Publisher.DataRecivedEventArgs">
             <summary>
-            <see cref="E:Gy02.Publisher.GyUdpClient.DataRecived"/>事件的数据类。
+            <see cref="E:GY02.Publisher.GyUdpClient.DataRecived"/>事件的数据类。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.DataRecivedEventArgs.Types">
+        <member name="P:GY02.Publisher.DataRecivedEventArgs.Types">
             <summary>
             所有Json可转换的类型
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.DataRecivedEventArgs.Data">
+        <member name="P:GY02.Publisher.DataRecivedEventArgs.Data">
             <summary>
             到达的数据。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.DataRecivedEventArgs.GetDataType(System.String@)">
+        <member name="M:GY02.Publisher.DataRecivedEventArgs.GetDataType(System.String@)">
             <summary>
             获取Data中数据的Type的唯一Id和Json字符串。
             </summary>
             <param name="json">Json字符串/</param>
             <returns>数据的类型。未能找到合适类型，则可能返回null。</returns>
         </member>
-        <member name="T:Gy02.Publisher.GyUdpClient">
+        <member name="T:GY02.Publisher.GyUdpClient">
             <summary>
             Udp连接的帮助类。
-            在登录用户后调用<see cref="M:Gy02.Publisher.GyUdpClient.Start"/>开始侦听。
+            在登录用户后调用<see cref="M:GY02.Publisher.GyUdpClient.Start"/>开始侦听。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GyUdpClient.LastUdpServiceHost">
+        <member name="P:GY02.Publisher.GyUdpClient.LastUdpServiceHost">
             <summary>
             暂存最后一次连接服务器的地址。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GyUdpClient.LastToken">
+        <member name="P:GY02.Publisher.GyUdpClient.LastToken">
             <summary>
             暂存最后一次登录的Token。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.#ctor">
+        <member name="M:GY02.Publisher.GyUdpClient.#ctor">
             <summary>
             默认构造函数。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.GyUdpClient._PostEventTask">
+        <member name="F:GY02.Publisher.GyUdpClient._PostEventTask">
             <summary>
             引发事件的任务。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.GyUdpClient._ListenTask">
+        <member name="F:GY02.Publisher.GyUdpClient._ListenTask">
             <summary>
             侦听任务。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.GyUdpClient._RemotePoint">
+        <member name="F:GY02.Publisher.GyUdpClient._RemotePoint">
             <summary>
             远程服务器的地址。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GyUdpClient.CancellationTokenSource">
+        <member name="P:GY02.Publisher.GyUdpClient.CancellationTokenSource">
             <summary>
             请求停止的终止标志。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.Start">
+        <member name="M:GY02.Publisher.GyUdpClient.Start">
             <summary>
             开始侦听。在登录完成后调用此函数，开始侦听数据。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.Start(System.Guid,System.Net.IPEndPoint)">
+        <member name="M:GY02.Publisher.GyUdpClient.Start(System.Guid,System.Net.IPEndPoint)">
             <summary>
             开始侦听。
             </summary>
         </member>
-        <member name="E:Gy02.Publisher.GyUdpClient.DataRecived">
+        <member name="E:GY02.Publisher.GyUdpClient.DataRecived">
             <summary>
             有数据到达的事件。
             此事件发生在后台线程中。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.OnDataRecived(Gy02.Publisher.DataRecivedEventArgs)">
+        <member name="M:GY02.Publisher.GyUdpClient.OnDataRecived(GY02.Publisher.DataRecivedEventArgs)">
             <summary>
-            引发<see cref="E:Gy02.Publisher.GyUdpClient.DataRecived"/>事件。
+            引发<see cref="E:GY02.Publisher.GyUdpClient.DataRecived"/>事件。
             </summary>
             <param name="e"></param>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.InvokeDataRecived(Gy02.Publisher.DataRecivedEventArgs)">
+        <member name="M:GY02.Publisher.GyUdpClient.InvokeDataRecived(GY02.Publisher.DataRecivedEventArgs)">
             <summary>
             向排队增加一个事件数据。
             </summary>
             <param name="e"></param>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.PostEventCallback">
+        <member name="M:GY02.Publisher.GyUdpClient.PostEventCallback">
             <summary>
             将事件数据异步引发的线程函数。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.ThrowIfDisposed">
+        <member name="M:GY02.Publisher.GyUdpClient.ThrowIfDisposed">
             <summary>
             如果对象已经被处置则抛出<see cref="T:System.ObjectDisposedException"/>异常。
             </summary>
         </member>
-        <member name="P:Gy02.Publisher.GyUdpClient.IsDisposed">
+        <member name="P:GY02.Publisher.GyUdpClient.IsDisposed">
             <summary>
             获取或设置对象是否已经处置的属性，派生类需要自己切换该属性。
             </summary>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.Dispose(System.Boolean)">
+        <member name="M:GY02.Publisher.GyUdpClient.Dispose(System.Boolean)">
             <summary>
-            调用此实现以切换 <see cref="P:Gy02.Publisher.GyUdpClient.IsDisposed"/> 属性。
+            调用此实现以切换 <see cref="P:GY02.Publisher.GyUdpClient.IsDisposed"/> 属性。
             </summary>
             <param name="disposing"></param>
         </member>
-        <member name="M:Gy02.Publisher.GyUdpClient.Dispose">
+        <member name="M:GY02.Publisher.GyUdpClient.Dispose">
             <summary>
             处置对象。
             </summary>

@@ -1,23 +1,15 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Commands.Combat;
-using Gy02Bll.Managers;
-using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+﻿using GY02.Managers;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Item
+namespace GY02.Commands
 {
     /// <summary>
     /// 自动合成紫色（不含）以下装备。
     /// </summary>
-    public class AutoCompositeCommand : PropertyChangeCommandBase,IGameCharCommand
+    public class AutoCompositeCommand : PropertyChangeCommandBase, IGameCharCommand
     {
         public GameChar GameChar { get; set; }
     }

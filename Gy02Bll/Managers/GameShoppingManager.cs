@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Managers
+namespace GY02.Managers
 {
     /// <summary>
     /// 商城管理器的配置类。

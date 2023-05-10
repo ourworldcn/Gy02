@@ -1,7 +1,8 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Base;
-using Gy02Bll.Managers;
-using Gy02Bll.Templates;
+﻿using GY02.Base;
+using GY02.Commands;
+using GY02.Managers;
+using GY02.Publisher;
+using GY02.Templates;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
@@ -14,7 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Item
+namespace GY02.Commands
 {
     public class LvUpCommand : PropertyChangeCommandBase
     {

@@ -1,5 +1,5 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Templates;
+﻿using GY02.Publisher;
+using GY02.Templates;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using System;

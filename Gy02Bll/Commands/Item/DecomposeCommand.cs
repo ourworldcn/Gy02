@@ -1,5 +1,6 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Managers;
+﻿using GY02.Commands;
+using GY02.Managers;
+using GY02.Publisher;
 using OW.Game.Entity;
 using OW.SyncCommand;
 using System;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Item
+namespace GY02.Commands
 {
     public class DecomposeCommand : PropertyChangeCommandBase
     {

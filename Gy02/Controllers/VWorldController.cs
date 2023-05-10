@@ -1,11 +1,8 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Templates;
-using Microsoft.AspNetCore.Http;
+﻿using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Managers;
-using System.Text.Json;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// 虚拟世界公用Api控制器。

@@ -1,6 +1,7 @@
 ﻿using GuangYuan.GY001.TemplateDb;
-using Gy02Bll.Managers;
-using Gy02Bll.Templates;
+using GY02.Managers;
+using GY02.TemplateDb;
+using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
@@ -19,7 +20,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 
-namespace Gy02Bll
+namespace GY02
 {
     /// <summary>
     /// 游戏世界的主服务。该服务退出表示游戏世界不再存在。

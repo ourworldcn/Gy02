@@ -1,4 +1,5 @@
-﻿using Gy02Bll.Templates;
+﻿using GY02.Base;
+using GY02.Templates;
 using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Base
+namespace GY02.Base
 {
     /// <summary>
     /// 游戏实体类的扩展方法封装类。
@@ -17,7 +18,7 @@ namespace Gy02Bll.Base
     public static class GameEntityExtensions
     {
 
-        public static TemplateStringFullView GetTemplate(this OwGameEntityBase entity) =>entity.GetThing()?.GetTemplate();
+        public static TemplateStringFullView GetTemplate(this OwGameEntityBase entity) => entity.GetThing()?.GetTemplate();
 
         public static void SetTemplate(this OwGameEntityBase entity, TemplateStringFullView tfv) => entity.GetThing().SetTemplate(tfv);
 

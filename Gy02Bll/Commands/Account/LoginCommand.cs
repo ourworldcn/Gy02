@@ -1,4 +1,4 @@
-﻿using Gy02Bll.Managers;
+﻿using GY02.Managers;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Store;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Account
+namespace GY02.Commands
 {
     public class LoginCommand : SyncCommandBase
     {

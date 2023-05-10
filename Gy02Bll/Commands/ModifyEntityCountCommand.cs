@@ -1,6 +1,6 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Managers;
-using Gy02Bll.Templates;
+﻿using GY02.Managers;
+using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Internal;
@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace GY02.Commands
 {
     public class ModifyEntityCountCommand : PropertyChangeCommandBase
     {

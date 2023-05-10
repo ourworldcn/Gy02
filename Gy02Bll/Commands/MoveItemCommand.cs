@@ -1,5 +1,5 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Managers;
+﻿using GY02.Managers;
+using GY02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace GY02.Commands
 {
     public class MoveItemsCommand : PropertyChangeCommandBase
     {

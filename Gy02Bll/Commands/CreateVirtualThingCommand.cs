@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using Gy02.Publisher;
-using Gy02Bll.Base;
-using Gy02Bll.Templates;
+using GY02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ObjectPool;
 using OW.Game.Entity;
@@ -18,7 +16,7 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace GY02.Commands
 {
     public class CreateVirtualThingCommand : SyncCommandBase
     {

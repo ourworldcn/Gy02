@@ -1,25 +1,12 @@
 ﻿using AutoMapper;
-using GuangYuan.GY001.BLL;
-using Gy02.Publisher;
-using Gy02Bll.Commands;
-using Gy02Bll.Commands.Account;
-using Gy02Bll.Commands.Combat;
-using Gy02Bll.Managers;
-using Gy02Bll.Templates;
-using Microsoft.AspNetCore.Http;
+using GY02.Commands;
+using GY02.Managers;
+using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Caching.Memory;
-using OW.Game.Entity;
-using OW.Game.Manager;
-using OW.Game.PropertyChange;
-using OW.Game.Store;
 using OW.SyncCommand;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Diagnostics.CodeAnalysis;
 using System.Net;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// 账号管理。
@@ -126,7 +113,7 @@ namespace Gy02.Controllers
             _SyncCommandManager.Handle(command);
 
             string ip = LocalIp.ToString();
-            var result = _Mapper.Map<LoginT78ReturnDto> (command);
+            var result = _Mapper.Map<LoginT78ReturnDto>(command);
             var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
             var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
             result.WorldServiceHost = worldServiceHost;

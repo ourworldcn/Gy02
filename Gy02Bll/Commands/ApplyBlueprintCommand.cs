@@ -1,19 +1,11 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Commands.Combat;
-using Gy02Bll.Managers;
-using Gy02Bll.Templates;
-using OW.DDD;
+﻿using GY02.Managers;
+using GY02.Templates;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace GY02.Commands
 {
     /// <summary>
     /// 应用蓝图的命令

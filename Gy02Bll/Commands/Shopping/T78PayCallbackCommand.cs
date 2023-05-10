@@ -1,7 +1,6 @@
-﻿using GuangYuan.GY001.BLL;
-using OW.SyncCommand;
+﻿using OW.SyncCommand;
 
-namespace Gy02Bll.Commands.Shopping
+namespace GY02.Commands
 {
 #pragma warning disable IDE1006 // 命名样式
     #region 付费回调
@@ -133,7 +132,7 @@ namespace Gy02Bll.Commands.Shopping
         public string PayType { get; set; }
     }
 
-#endregion 付费回调
+    #endregion 付费回调
 
 #pragma warning restore IDE1006 // 命名样式
 

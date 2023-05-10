@@ -1,8 +1,9 @@
-﻿using Gy02Bll.Templates;
+﻿using GY02;
+using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// 商城功能控制器。

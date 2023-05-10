@@ -1,16 +1,11 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Managers;
+﻿using GY02.Managers;
+using GY02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Store;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Account
+namespace GY02.Commands
 {
     /// <summary>
     /// 创建角色的命令。

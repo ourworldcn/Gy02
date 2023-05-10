@@ -1,21 +1,15 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Templates;
+﻿using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System;
 using System.Buffers;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Managers
+namespace GY02.Managers
 {
     public class UdpServerManagerOptions : IOptions<UdpServerManagerOptions>
     {
@@ -117,7 +111,7 @@ namespace Gy02Bll.Managers
                     if (_Token2EndPoint.TryGetValue(tmp.Item1, out var ip))
                     {
                         _Udp.Send(tmp.Item2, tmp.Item2.Length, ip);
-                        _Logger.LogWarning($"发送信息{_Udp.Client.LocalEndPoint} -> {ip} : {tmp.Item2.Length}字节");
+                        _Logger.LogDebug($"发送信息{_Udp.Client.LocalEndPoint} -> {ip} : {tmp.Item2.Length}字节");
                     }
                 }
                 catch (InvalidOperationException)   //基础集合在此实例之外 BlockingCollection<T> 进行了修改，或 BlockingCollection<T> 为空，并且已标记为已完成，并已对添加内容进行标记。

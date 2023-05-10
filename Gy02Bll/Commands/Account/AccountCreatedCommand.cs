@@ -1,14 +1,8 @@
-﻿using Gy02.Publisher;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Account
+namespace GY02.Commands
 {
     /// <summary>
     /// 账号已经被创建的事件数据。

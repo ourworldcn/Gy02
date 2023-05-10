@@ -1,12 +1,10 @@
 ﻿using AutoMapper;
-using Gy02.Publisher;
-using Gy02Bll.Commands;
-using Microsoft.AspNetCore.Routing.Constraints;
+using GY02.Publisher;
 using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 
-namespace Gy02.AutoMappper
+namespace GY02.AutoMappper
 {
     /// <summary>
     /// AutoMapperProfile配置类。

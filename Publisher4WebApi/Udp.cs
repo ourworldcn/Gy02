@@ -1,5 +1,4 @@
-﻿using Gy02.Publisher;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Net.Sockets;
 using System.Net;
@@ -12,9 +11,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.Arm;
-using Gy02Bll.Templates;
+using GY02.Templates;
 
-namespace Gy02.Publisher
+namespace GY02.Publisher
 {
     /// <summary>
     /// 示例。

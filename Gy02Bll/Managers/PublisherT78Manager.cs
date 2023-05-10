@@ -1,4 +1,4 @@
-﻿using GuangYuan.GY001.BLL;
+﻿using GY02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
@@ -13,7 +13,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Managers
+namespace GY02.Managers
 {
 
     public class PublisherT78ManagerOptions : IOptions<PublisherT78ManagerOptions>

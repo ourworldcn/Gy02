@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace GY02.Commands
 {
     public class PropertyChangeCommandBase : SyncCommandBase
     {

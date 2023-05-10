@@ -4,594 +4,594 @@
         <name>Gy02Publisher</name>
     </assembly>
     <members>
-        <member name="T:Gy02Bll.Templates.IJsonData">
+        <member name="T:GY02.Templates.IJsonData">
             <summary>
             表示类是一个需要udp解码的类。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.ListenStartedDto">
+        <member name="T:GY02.Templates.ListenStartedDto">
             <summary>
             Udp通知数据类。在侦听成功后会收到一次该数据。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.ListenStartedDto.Token">
+        <member name="P:GY02.Templates.ListenStartedDto.Token">
             <summary>
             客户端登录的Token。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.ListenStartedDto.IPEndpoint">
+        <member name="P:GY02.Templates.ListenStartedDto.IPEndpoint">
             <summary>
             服务器所见的客户端地址。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.GameShoppingItem">
+        <member name="T:GY02.Templates.GameShoppingItem">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameShoppingItem.Period">
+        <member name="P:GY02.Templates.GameShoppingItem.Period">
             <summary>
             该商品项的游戏周期。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameShoppingItem.GroupNumber">
+        <member name="P:GY02.Templates.GameShoppingItem.GroupNumber">
             <summary>
             组号。对同一个"页签"内的项进行分组。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameShoppingItem.Ins">
+        <member name="P:GY02.Templates.GameShoppingItem.Ins">
             <summary>
             购买需要的代价。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameShoppingItem.Outs">
+        <member name="P:GY02.Templates.GameShoppingItem.Outs">
             <summary>
             获得的物品。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.GamePeriod">
+        <member name="T:GY02.Templates.GamePeriod">
             <summary>
             定义周期的类。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GamePeriod.Start">
+        <member name="P:GY02.Templates.GamePeriod.Start">
             <summary>
             开始时间。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GamePeriod.End">
+        <member name="P:GY02.Templates.GamePeriod.End">
             <summary>
             结束时间。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GamePeriod.PeriodString">
+        <member name="P:GY02.Templates.GamePeriod.PeriodString">
             <summary>
             循环周期长度字符串表示。
             如1m，1y分别表示一月和一年，其中一些是不确定时长度的间间隔，但在实际应用中却常有需求。支持：s秒，d天，w周，m月，y年。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GamePeriod.ValidPeriodString">
+        <member name="P:GY02.Templates.GamePeriod.ValidPeriodString">
             <summary>
             有效周期长度字符串表示。
             如1m，1y分别表示一月和一年，其中一些是不确定时长度的间间隔，但在实际应用中却常有需求。支持：s秒，d天，w周，m月，y年。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GamePeriod.Period">
+        <member name="P:GY02.Templates.GamePeriod.Period">
             <summary>
             循环周期长度。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GamePeriod.ValidPeriod">
+        <member name="P:GY02.Templates.GamePeriod.ValidPeriod">
             <summary>
             有效周期长度。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.RawTemplate">
+        <member name="T:GY02.Templates.RawTemplate">
             <summary>
             原始的的模板类。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.RawTemplate.Id">
+        <member name="P:GY02.Templates.RawTemplate.Id">
             <summary>
             模板Id。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.RawTemplate.DisplayName">
+        <member name="P:GY02.Templates.RawTemplate.DisplayName">
             <summary>
             显示名。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.RawTemplate.Gid">
+        <member name="P:GY02.Templates.RawTemplate.Gid">
             <summary>
             分类号。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.RawTemplate.PropertiesString">
+        <member name="P:GY02.Templates.RawTemplate.PropertiesString">
             <summary>
             属性字符串，Json格式。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.RawTemplate.Remark">
+        <member name="P:GY02.Templates.RawTemplate.Remark">
             <summary>
             备注。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.RawTemplate.GetJsonObject``1">
+        <member name="M:GY02.Templates.RawTemplate.GetJsonObject``1">
             <summary>
-            获取<see cref="P:Gy02Bll.Templates.RawTemplate.PropertiesString"/>的Json对象。
+            获取<see cref="P:GY02.Templates.RawTemplate.PropertiesString"/>的Json对象。
             </summary>
             <typeparam name="T"></typeparam>
             <returns></returns>
         </member>
-        <member name="T:Gy02Bll.Templates.TemplateSkillItem">
+        <member name="T:GY02.Templates.TemplateSkillItem">
             <summary>
             词条的数据结构。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.TemplateSkillItem.#ctor">
+        <member name="M:GY02.Templates.TemplateSkillItem.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateSkillItem.SkillsId">
+        <member name="P:GY02.Templates.TemplateSkillItem.SkillsId">
             <summary>
             词条的Id。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateSkillItem.Enable">
+        <member name="P:GY02.Templates.TemplateSkillItem.Enable">
             <summary>
             词条是否生效。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.TemplateStringFullView">
+        <member name="T:GY02.Templates.TemplateStringFullView">
             <summary>
             模板的完整视图。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.TemplateStringFullView.#ctor">
+        <member name="M:GY02.Templates.TemplateStringFullView.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.TemplateId">
+        <member name="P:GY02.Templates.TemplateStringFullView.TemplateId">
             <summary>
             模板Id。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.DisplayName">
+        <member name="P:GY02.Templates.TemplateStringFullView.DisplayName">
             <summary>
             显示名。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Gid">
+        <member name="P:GY02.Templates.TemplateStringFullView.Gid">
             <summary>
             分类号。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Remark">
+        <member name="P:GY02.Templates.TemplateStringFullView.Remark">
             <summary>
             备注。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.TemplateStringFullView.GetCatalog1">
+        <member name="M:GY02.Templates.TemplateStringFullView.GetCatalog1">
             <summary>
             获取大类号。
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Gy02Bll.Templates.TemplateStringFullView.GetCatalog2">
+        <member name="M:GY02.Templates.TemplateStringFullView.GetCatalog2">
             <summary>
             获取中类号。
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Gy02Bll.Templates.TemplateStringFullView.GetCatalog3">
+        <member name="M:GY02.Templates.TemplateStringFullView.GetCatalog3">
             <summary>
             获取小类号。
             </summary>
             <returns></returns>
         </member>
-        <member name="F:Gy02Bll.Templates.TemplateStringFullView._RawTemplate">
+        <member name="F:GY02.Templates.TemplateStringFullView._RawTemplate">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.ExtraProperties">
+        <member name="P:GY02.Templates.TemplateStringFullView.ExtraProperties">
             <summary>
             存储额外的非强类型属性数据。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.TypeGuid">
+        <member name="P:GY02.Templates.TemplateStringFullView.TypeGuid">
             <summary>
             实体类型的Guid。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.SubTypeGuid">
+        <member name="P:GY02.Templates.TemplateStringFullView.SubTypeGuid">
             <summary>
             泛型参数类型的GUID。
             若TypeGuid不是泛型则应保持为null。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.ParentTId">
+        <member name="P:GY02.Templates.TemplateStringFullView.ParentTId">
             <summary>
             默认的父容器模板Id。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Capacity">
+        <member name="P:GY02.Templates.TemplateStringFullView.Capacity">
             <summary>
             容量。
             </summary>
             <value>默认值：-1。</value>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Stk">
+        <member name="P:GY02.Templates.TemplateStringFullView.Stk">
             <summary>
             最大堆叠数。不可堆叠物该属性为1。-1表示不限制。
             </summary>
             <value>默认值：1</value>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.TIdsOfCreate">
+        <member name="P:GY02.Templates.TemplateStringFullView.TIdsOfCreate">
             <summary>
             创建时要一同创建的子对象的模板Id。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Count0Reserved">
+        <member name="P:GY02.Templates.TemplateStringFullView.Count0Reserved">
             <summary>
             为true时，数量为0时也不会删除该物品，省略或为false则删除。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Genus">
+        <member name="P:GY02.Templates.TemplateStringFullView.Genus">
             <summary>
             类属字符串集合。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Count">
+        <member name="P:GY02.Templates.TemplateStringFullView.Count">
             <summary>
             初始数量。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.ShoppingItem">
+        <member name="P:GY02.Templates.TemplateStringFullView.ShoppingItem">
             <summary>
             商城配置项。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Atk">
+        <member name="P:GY02.Templates.TemplateStringFullView.Atk">
             <summary>
             攻击数值序列。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Def">
+        <member name="P:GY02.Templates.TemplateStringFullView.Def">
             <summary>
             防御数值序列。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Pow">
+        <member name="P:GY02.Templates.TemplateStringFullView.Pow">
             <summary>
             力量属性数值序列。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.CritPct">
+        <member name="P:GY02.Templates.TemplateStringFullView.CritPct">
             <summary>
             暴击率。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Crit">
+        <member name="P:GY02.Templates.TemplateStringFullView.Crit">
             <summary>
             暴击倍数。1表示暴击和普通伤害一致。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Skills">
+        <member name="P:GY02.Templates.TemplateStringFullView.Skills">
             <summary>
             词条的集合。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.LvUpTId">
+        <member name="P:GY02.Templates.TemplateStringFullView.LvUpTId">
             <summary>
             升级使用配方的TId。不能升级的这里可能是null。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.LvUpData">
+        <member name="P:GY02.Templates.TemplateStringFullView.LvUpData">
             <summary>
             对于升级公式这里是升级公式的内容，对于其它类型的数据，这里是空集合。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Out">
+        <member name="P:GY02.Templates.TemplateStringFullView.Out">
             <summary>
             产出物的集合。当前版本该集合中只有一项。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.In">
+        <member name="P:GY02.Templates.TemplateStringFullView.In">
             <summary>
             材料的集合。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.CompositeId">
+        <member name="P:GY02.Templates.TemplateStringFullView.CompositeId">
             <summary>
             合成公式的Id。省略则没有合成公式。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.EntranceFees">
+        <member name="P:GY02.Templates.TemplateStringFullView.EntranceFees">
             <summary>
             关卡入场费。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Fuhua">
+        <member name="P:GY02.Templates.TemplateStringFullView.Fuhua">
             <summary>
             孵化数据。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Dice">
+        <member name="P:GY02.Templates.TemplateStringFullView.Dice">
             <summary>
             池子的数据。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.TemplateStringFullView.Fcps">
+        <member name="P:GY02.Templates.TemplateStringFullView.Fcps">
             <summary>
             快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.TemplateStringFullView.IsStk">
+        <member name="M:GY02.Templates.TemplateStringFullView.IsStk">
             <summary>
             是否可以堆叠。
             </summary>
             <returns>true可堆叠，false不可堆叠。</returns>
         </member>
-        <member name="T:Gy02Bll.Templates.FuhuaInfo">
+        <member name="T:GY02.Templates.FuhuaInfo">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FuhuaInfo.Parent1Conditional">
+        <member name="P:GY02.Templates.FuhuaInfo.Parent1Conditional">
             <summary>
             双亲1的条件。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FuhuaInfo.Parent2Conditional">
+        <member name="P:GY02.Templates.FuhuaInfo.Parent2Conditional">
             <summary>
             双亲2的条件。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FuhuaInfo.DiceTId1">
+        <member name="P:GY02.Templates.FuhuaInfo.DiceTId1">
             <summary>
             卡池1的。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FuhuaInfo.DiceTId2">
+        <member name="P:GY02.Templates.FuhuaInfo.DiceTId2">
             <summary>
             卡池2的。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FuhuaInfo.In">
+        <member name="P:GY02.Templates.FuhuaInfo.In">
             <summary>
             消耗物的集合。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.CostInfo">
+        <member name="T:GY02.Templates.CostInfo">
             <summary>
             升级的代价类。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.CostInfo.#ctor">
+        <member name="M:GY02.Templates.CostInfo.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.CostInfo.Conditional">
+        <member name="P:GY02.Templates.CostInfo.Conditional">
             <summary>
             选取物品的条件。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.CostInfo.Counts">
+        <member name="P:GY02.Templates.CostInfo.Counts">
             <summary>
             消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
             注意消耗数量可能是0，代表需要此物品但不消耗此物品。若是null或空则表示所有级别都不消耗。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.GameThingPrecondition">
+        <member name="T:GY02.Templates.GameThingPrecondition">
             <summary>
             定位一个物品的结构。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.GameThingPrecondition.#ctor">
+        <member name="M:GY02.Templates.GameThingPrecondition.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.GameThingPreconditionItem">
+        <member name="T:GY02.Templates.GameThingPreconditionItem">
             <summary>
             定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.GameThingPreconditionItem.#ctor">
+        <member name="M:GY02.Templates.GameThingPreconditionItem.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameThingPreconditionItem.ParentTId">
+        <member name="P:GY02.Templates.GameThingPreconditionItem.ParentTId">
             <summary>
             容器的模板Id。省略则不限制。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameThingPreconditionItem.Genus">
+        <member name="P:GY02.Templates.GameThingPreconditionItem.Genus">
             <summary>
             需要包含的属名称（如果有多项则必须全部包含）。空集合则不限制。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameThingPreconditionItem.TId">
+        <member name="P:GY02.Templates.GameThingPreconditionItem.TId">
             <summary>
             物品的TId。省略则不限制。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameThingPreconditionItem.MinCount">
+        <member name="P:GY02.Templates.GameThingPreconditionItem.MinCount">
             <summary>
             要求的最小数量。省略则不限制。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameThingPreconditionItem.GeneralConditional">
+        <member name="P:GY02.Templates.GameThingPreconditionItem.GeneralConditional">
             <summary>
             扩展条件，针对属性的不等式。有多项时需要同时都符合才认为命中。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.GameThingPreconditionItem.ToString">
+        <member name="M:GY02.Templates.GameThingPreconditionItem.ToString">
             <summary>
             <inheritdoc/>
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Gy02Bll.Templates.GeneralConditionalItem">
+        <member name="T:GY02.Templates.GeneralConditionalItem">
             <summary>
             通用属性条件项。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GeneralConditionalItem.Operator">
+        <member name="P:GY02.Templates.GeneralConditionalItem.Operator">
             <summary>
             操作符。暂定支持六种关系运算,如 &lt;= 等。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GeneralConditionalItem.LeftOperand">
+        <member name="P:GY02.Templates.GeneralConditionalItem.LeftOperand">
             <summary>
             通常是属性名。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GeneralConditionalItem.RightOperand">
+        <member name="P:GY02.Templates.GeneralConditionalItem.RightOperand">
             <summary>
             一般是一个数字，用于和属性对比。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.BlueprintInItem">
+        <member name="T:GY02.Templates.BlueprintInItem">
             <summary>
             合成的材料信息。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.BlueprintInItem.#ctor">
+        <member name="M:GY02.Templates.BlueprintInItem.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.BlueprintInItem.Conditional">
+        <member name="P:GY02.Templates.BlueprintInItem.Conditional">
             <summary>
             选取物品的条件。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.BlueprintInItem.Count">
+        <member name="P:GY02.Templates.BlueprintInItem.Count">
             <summary>
             消耗的数量。
             注意消耗数量可能是0，代表需要此物品但不消耗此物品。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.BlueprintInItem.Genus">
+        <member name="P:GY02.Templates.BlueprintInItem.Genus">
             <summary>
             与主材料共有类属。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.BlueprintOutItem">
+        <member name="T:GY02.Templates.BlueprintOutItem">
             <summary>
             蓝图产出项数据结构。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.BlueprintOutItem.ParentTId">
+        <member name="P:GY02.Templates.BlueprintOutItem.ParentTId">
             <summary>
             当此物品合成创建时应放入的父容器的模板Id。省略则将物品放入默认容器。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.BlueprintOutItem.TId">
+        <member name="P:GY02.Templates.BlueprintOutItem.TId">
             <summary>
             新产出物品的模板Id。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.BlueprintOutItem.Count">
+        <member name="P:GY02.Templates.BlueprintOutItem.Count">
             <summary>
             新产出物品的数量。对非堆叠物一定是1。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.BlueprintInfo">
+        <member name="T:GY02.Templates.BlueprintInfo">
             <summary>
             蓝图输入项数据结构。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.BlueprintInfo.#ctor">
+        <member name="M:GY02.Templates.BlueprintInfo.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.BlueprintInfo.Out">
+        <member name="P:GY02.Templates.BlueprintInfo.Out">
             <summary>
             产出物的集合。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.BlueprintInfo.In">
+        <member name="P:GY02.Templates.BlueprintInfo.In">
             <summary>
             材料的集合。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.GameDice">
+        <member name="T:GY02.Templates.GameDice">
             <summary>
             定义一个"池子"
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.GameDice.#ctor">
+        <member name="M:GY02.Templates.GameDice.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameDice.MaxCount">
+        <member name="P:GY02.Templates.GameDice.MaxCount">
             <summary>
             指定该"池子"内输出的最大项数。
             </summary>
             <value>应大于0。</value>
         </member>
-        <member name="P:Gy02Bll.Templates.GameDice.AllowRepetition">
+        <member name="P:GY02.Templates.GameDice.AllowRepetition">
             <summary>
             允许生成重复项。
             </summary>
             <value>默认值：false 不允许。</value>
         </member>
-        <member name="P:Gy02Bll.Templates.GameDice.Items">
+        <member name="P:GY02.Templates.GameDice.Items">
             <summary>
             每个投骰子的项。
             </summary>
         </member>
-        <member name="T:Gy02Bll.Templates.GameDiceItem">
+        <member name="T:GY02.Templates.GameDiceItem">
             <summary>
             池子项。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.GameDiceItem.#ctor">
+        <member name="M:GY02.Templates.GameDiceItem.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameDiceItem.Precondition">
+        <member name="P:GY02.Templates.GameDiceItem.Precondition">
             <summary>
             池子物品的条件。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameDiceItem.Weight">
+        <member name="P:GY02.Templates.GameDiceItem.Weight">
             <summary>
             权重值。在同一个池子中所有项加起来的权重是分母。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.GameDiceItem.GuardConditions">
+        <member name="P:GY02.Templates.GameDiceItem.GuardConditions">
             <summary>
             需要此项有效的前置条件，这个条件针对角色数据来设置。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.GameDiceItem.GetSummary">
+        <member name="M:GY02.Templates.GameDiceItem.GetSummary">
             <summary>
             获取产出的(模板Id,数量,权重)。
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Gy02Bll.Templates.FastChangingProperty">
+        <member name="T:GY02.Templates.FastChangingProperty">
             <summary>
             变化数据的封装类。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.FastChangingProperty.#ctor">
+        <member name="M:GY02.Templates.FastChangingProperty.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.FastChangingProperty.#ctor(System.TimeSpan,System.Decimal,System.Decimal,System.Decimal,System.DateTime)">
+        <member name="M:GY02.Templates.FastChangingProperty.#ctor(System.TimeSpan,System.Decimal,System.Decimal,System.Decimal,System.DateTime)">
             <summary>
             构造函数、
             </summary>
@@ -601,271 +601,271 @@
             <param name="currentVal">当前值。</param>
             <param name="lastComputerDateTime">时间。建议一律采用Utc时间。</param>
         </member>
-        <member name="P:Gy02Bll.Templates.FastChangingProperty.MinValue">
+        <member name="P:GY02.Templates.FastChangingProperty.MinValue">
             <summary>
             最小值。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FastChangingProperty.MaxValue">
+        <member name="P:GY02.Templates.FastChangingProperty.MaxValue">
             <summary>
             最大值。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FastChangingProperty.StepValue">
+        <member name="P:GY02.Templates.FastChangingProperty.StepValue">
             <summary>
-            每次跳点的增量。可能是正值也可能是负值，正值每次跳变时增加<see cref="P:Gy02Bll.Templates.FastChangingProperty.CurrentValue"/>，否则减少。
+            每次跳点的增量。可能是正值也可能是负值，正值每次跳变时增加<see cref="P:GY02.Templates.FastChangingProperty.CurrentValue"/>，否则减少。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FastChangingProperty.Delay">
+        <member name="P:GY02.Templates.FastChangingProperty.Delay">
             <summary>
             多久计算一次。即每次跳变的时间长度。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FastChangingProperty.CurrentValue">
+        <member name="P:GY02.Templates.FastChangingProperty.CurrentValue">
             <summary>
-            获取或设置最后计算的结果。<see cref="P:Gy02Bll.Templates.FastChangingProperty.LastDateTime"/>这个时点上计算的值。
+            获取或设置最后计算的结果。<see cref="P:GY02.Templates.FastChangingProperty.LastDateTime"/>这个时点上计算的值。
             </summary>
         </member>
-        <member name="P:Gy02Bll.Templates.FastChangingProperty.LastDateTime">
+        <member name="P:GY02.Templates.FastChangingProperty.LastDateTime">
             <summary>
             获取或设置最后计算的时间。建议一律采用Utc时间。默认值是构造时的当前时间。
             </summary>
             <value>默认值：<see cref="P:System.DateTime.UtcNow"/></value>
         </member>
-        <member name="P:Gy02Bll.Templates.FastChangingProperty.Tag">
+        <member name="P:GY02.Templates.FastChangingProperty.Tag">
             <summary>
             一个记录额外信息的属性。本类成员不使用该属性。
             </summary>
         </member>
-        <member name="M:Gy02Bll.Templates.FastChangingProperty.GetCurrentValue(System.DateTime@)">
+        <member name="M:GY02.Templates.FastChangingProperty.GetCurrentValue(System.DateTime@)">
             <summary>
-            获取当前值。自动修改<see cref="P:Gy02Bll.Templates.FastChangingProperty.LastDateTime"/>和<see cref="P:Gy02Bll.Templates.FastChangingProperty.CurrentValue"/>属性。
+            获取当前值。自动修改<see cref="P:GY02.Templates.FastChangingProperty.LastDateTime"/>和<see cref="P:GY02.Templates.FastChangingProperty.CurrentValue"/>属性。
             </summary>
             <param name="now">当前时间。返回时可能更改，如果没有正好到跳变时间，则会提前到上一次跳变的时间点。</param>
-            <returns>更改后的值(<see cref="P:Gy02Bll.Templates.FastChangingProperty.CurrentValue"/>)。</returns>
+            <returns>更改后的值(<see cref="P:GY02.Templates.FastChangingProperty.CurrentValue"/>)。</returns>
         </member>
-        <member name="M:Gy02Bll.Templates.FastChangingProperty.GetCurrentValueWithUtc">
+        <member name="M:GY02.Templates.FastChangingProperty.GetCurrentValueWithUtc">
             <summary>
             使用当前Utc时间获取当前值。
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Gy02Bll.Templates.FastChangingProperty.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+        <member name="M:GY02.Templates.FastChangingProperty.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
             <summary>
             
             </summary>
             <param name="validationContext"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02Bll.Templates.FastChangingProperty.SetLastValue(System.Decimal,System.DateTime@)">
+        <member name="M:GY02.Templates.FastChangingProperty.SetLastValue(System.Decimal,System.DateTime@)">
             <summary>
             设置最后计算得到的值，同时将计算时间更新到最接近指定点的时间。
             </summary>
             <param name="val">这个时间点不晚于指定时间点，且又是正好一跳的时间点。</param>
             <param name="dateTime"></param>
         </member>
-        <member name="M:Gy02Bll.Templates.FastChangingProperty.Clone">
+        <member name="M:GY02.Templates.FastChangingProperty.Clone">
             <summary>
             深度克隆该对象。
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Publisher.ProjectContent">
+        <member name="T:GY02.Publisher.ProjectContent">
             <summary>
             存储一些常量和Id。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.UserTId">
+        <member name="F:GY02.Publisher.ProjectContent.UserTId">
             <summary>
             账号的模板Id。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.CharTId">
+        <member name="F:GY02.Publisher.ProjectContent.CharTId">
             <summary>
             角色的模板Id。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.YichuanPifuSlotTId">
+        <member name="F:GY02.Publisher.ProjectContent.YichuanPifuSlotTId">
             <summary>
             武器槽TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.WuQiSlotTId">
+        <member name="F:GY02.Publisher.ProjectContent.WuQiSlotTId">
             <summary>
             武器槽TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.ShouTaoSlotTId">
+        <member name="F:GY02.Publisher.ProjectContent.ShouTaoSlotTId">
             <summary>
             手套槽TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.YiFuSlotTId">
+        <member name="F:GY02.Publisher.ProjectContent.YiFuSlotTId">
             <summary>
             衣服槽TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.XieZiSlotTId">
+        <member name="F:GY02.Publisher.ProjectContent.XieZiSlotTId">
             <summary>
             鞋子槽TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.YaoDaiSlotTId">
+        <member name="F:GY02.Publisher.ProjectContent.YaoDaiSlotTId">
             <summary>
             腰带槽TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.ZuoJiSlotTId">
+        <member name="F:GY02.Publisher.ProjectContent.ZuoJiSlotTId">
             <summary>
             坐骑槽TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.ZhuangBeiBagTId">
+        <member name="F:GY02.Publisher.ProjectContent.ZhuangBeiBagTId">
             <summary>
             装备背包TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.DaoJuBagTId">
+        <member name="F:GY02.Publisher.ProjectContent.DaoJuBagTId">
             <summary>
             道具背包TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.HuoBiSlotTId">
+        <member name="F:GY02.Publisher.ProjectContent.HuoBiSlotTId">
             <summary>
             货币槽TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.ShiZhuangBagTId">
+        <member name="F:GY02.Publisher.ProjectContent.ShiZhuangBagTId">
             <summary>
             时装背包TId。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.PiFuBagTId">
+        <member name="F:GY02.Publisher.ProjectContent.PiFuBagTId">
             <summary>
             皮肤背包。3b163a62-6591-4a93-a385-cf079b20f589
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.GoldTId">
+        <member name="F:GY02.Publisher.ProjectContent.GoldTId">
             <summary>
             金币TID。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.DiamTId">
+        <member name="F:GY02.Publisher.ProjectContent.DiamTId">
             <summary>
             钻石TID。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.PowerTId">
+        <member name="F:GY02.Publisher.ProjectContent.PowerTId">
             <summary>
             体力TID。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ProjectContent.FuhuaCishuTId">
+        <member name="F:GY02.Publisher.ProjectContent.FuhuaCishuTId">
             <summary>
             孵化次数货币的TId。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.ErrorCodes">
+        <member name="T:GY02.Publisher.ErrorCodes">
             <summary>
             错误码封装。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED">
             <summary>
             功能未实现。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.WAIT_TIMEOUT">
+        <member name="F:GY02.Publisher.ErrorCodes.WAIT_TIMEOUT">
             <summary>
             超时，没有在指定时间内完成操作，通常是锁定超时。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_INVALID_TOKEN">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_TOKEN">
             <summary>
             无效令牌。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_NO_SUCH_USER">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_NO_SUCH_USER">
             <summary>
             找不到指定用户。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.E_CHANGED_STATE">
+        <member name="F:GY02.Publisher.ErrorCodes.E_CHANGED_STATE">
             <summary>
             并发或交错操作更改了对象的状态，使此操作无效。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.Unauthorized">
+        <member name="F:GY02.Publisher.ErrorCodes.Unauthorized">
             <summary>
             未进行身份验证。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ObjectDisposed">
+        <member name="F:GY02.Publisher.ErrorCodes.ObjectDisposed">
             <summary>
             对象已经被处置。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_BAD_ARGUMENTS">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_BAD_ARGUMENTS">
             <summary>
             参数错误。One or more arguments are not correct.
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_NO_SUCH_PRIVILEGE">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_NO_SUCH_PRIVILEGE">
             <summary>
             没有足够的权限来完成请求的操作
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.RPC_S_OUT_OF_RESOURCES">
+        <member name="F:GY02.Publisher.ErrorCodes.RPC_S_OUT_OF_RESOURCES">
             <summary>
             没有足够资源完成操作。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_NOT_ENOUGH_QUOTA">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_NOT_ENOUGH_QUOTA">
             <summary>
             没有足够的配额来处理此命令。通常是超过某些次数的限制。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_INVALID_DATA">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_DATA">
             <summary>
             The data is invalid.
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_IMPLEMENTATION_LIMIT">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_IMPLEMENTATION_LIMIT">
             <summary>
             操作试图超过实施定义的限制。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_INVALID_ACCOUNT_NAME">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_ACCOUNT_NAME">
             <summary>
             无效的账号名称。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_USER_EXISTS">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_USER_EXISTS">
             <summary>
             指定账号已经存在。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_LOGON_FAILURE">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_LOGON_FAILURE">
             <summary>
             用户名或密码错误。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_INVALID_ACL">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_ACL">
             <summary>
             无效的ACL——权限令牌包含的权限不足,权限不够。
             </summary>
         </member>
-        <member name="F:Gy02.Publisher.ErrorCodes.ERROR_LOGON_NOT_GRANTED">
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_LOGON_NOT_GRANTED">
             <summary>
             无法登录，通常是被封停账号。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.ServerHelper">
+        <member name="T:GY02.Publisher.ServerHelper">
             <summary>
             帮助器类。
             </summary>
         </member>
-        <member name="T:Gy02.Publisher.TypeTable">
+        <member name="T:GY02.Publisher.TypeTable">
             <summary>
             类型映射。
             </summary>

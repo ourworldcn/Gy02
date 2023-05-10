@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
-namespace GuangYuan.GY001.TemplateDb.Entity
+namespace GY02.TemplateDb.Entity
 {
 
     /// <summary>

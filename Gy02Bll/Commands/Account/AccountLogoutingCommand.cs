@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Account
+namespace GY02.Commands
 {
     /// <summary>
     /// 用户注销(登出)的原因。

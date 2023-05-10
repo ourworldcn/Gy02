@@ -1,29 +1,15 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Base;
-using Gy02Bll.Managers;
+﻿using GY02.Base;
+using GY02.Managers;
+using GY02.Publisher;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Internal;
 using OW;
-using OW.DDD;
-using OW.Game.Caching;
 using OW.Game.Entity;
-using OW.Game.Manager;
 using OW.Game.Store;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Net.Security;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Account
+namespace GY02.Commands
 {
     /// <summary>
     /// 账号被创建后的事件。

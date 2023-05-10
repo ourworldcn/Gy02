@@ -17,7 +17,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Base
+namespace GY02.Base
 {
     public class ThingManagerOptions : IOptions<ThingManagerOptions>
     {

@@ -1,5 +1,6 @@
 ﻿using AutoMapper.Configuration.Annotations;
-using Gy02Bll.Templates;
+using GY02;
+using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting.Internal;
@@ -8,7 +9,7 @@ using OW.Game.Managers;
 using System.IO.Compression;
 using System.Text.Json;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// 管理员工具的控制器。

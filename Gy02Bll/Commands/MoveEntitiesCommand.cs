@@ -1,13 +1,12 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Base;
-using Gy02Bll.Managers;
+﻿using GY02.Managers;
+using GY02.Publisher;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
 
-namespace Gy02Bll.Commands
+namespace GY02.Commands
 {
     public class MoveEntitiesCommand : PropertyChangeCommandBase
     {

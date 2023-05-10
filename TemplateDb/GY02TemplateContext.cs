@@ -1,9 +1,9 @@
 ﻿using GuangYuan.GY001.TemplateDb.Entity;
-using GuangYuan.GY02.Store;
+using GY02.Store;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
-namespace GuangYuan.GY001.TemplateDb
+namespace GY02.TemplateDb
 {
     public static class TemplateMigrateDbInitializer
     {

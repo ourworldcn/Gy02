@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace GuangYuan.GY001.TemplateDb.数据表
+namespace GY02.TemplateDb.数据表
 {
     public static class CnNames
     {

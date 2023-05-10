@@ -1,20 +1,12 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Commands.Account;
-using Gy02Bll.Managers;
+﻿using GY02.Commands;
+using GY02.Managers;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.ObjectPool;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Store;
 using OW.SyncCommand;
-using System.Collections.Concurrent;
-using System.ComponentModel;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json;
 
-namespace GuangYuan.GY001.BLL
+namespace GY02.Publisher
 {
 #pragma warning disable IDE1006 // 命名样式
 

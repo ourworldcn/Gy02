@@ -1,13 +1,12 @@
-﻿
-using Gy02.Publisher;
-using Gy02Bll.Managers;
+﻿using GY02.Managers;
+using GY02.Publisher;
 using Microsoft.Extensions.Options;
 using OW;
 using OW.SyncCommand;
 using System;
 using System.Diagnostics;
 
-namespace Gy02
+namespace GY02
 {
     /// <summary>
     /// 

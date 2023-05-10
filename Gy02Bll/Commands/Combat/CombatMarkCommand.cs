@@ -1,4 +1,4 @@
-﻿using Gy02Bll.Managers;
+﻿using GY02.Managers;
 using OW.Game.Entity;
 using OW.SyncCommand;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Combat
+namespace GY02.Commands
 {
     public class CombatMarkCommand : SyncCommandBase
     {

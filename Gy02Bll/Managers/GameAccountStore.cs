@@ -1,5 +1,5 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Commands.Account;
+﻿using GY02.Commands;
+using GY02.Publisher;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
@@ -24,7 +24,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Managers
+namespace GY02.Managers
 {
     public class GameAccountStoreOptions : IOptions<GameAccountStoreOptions>
     {

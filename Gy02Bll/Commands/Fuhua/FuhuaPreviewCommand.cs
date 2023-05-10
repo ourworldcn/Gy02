@@ -1,18 +1,11 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Commands.Combat;
-using Gy02Bll.Managers;
-using Gy02Bll.Templates;
+﻿using GY02.Managers;
+using GY02.Publisher;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Fuhua
+namespace GY02.Commands
 {
     public class FuhuaPreviewCommand : SyncCommandBase, IGameCharCommand
     {
@@ -29,7 +22,7 @@ namespace Gy02Bll.Commands.Fuhua
         public List<GameDiceItemSummary> Result { get; set; } = new List<GameDiceItemSummary>();
     }
 
-    public class FuhuaPreviewHandler : SyncCommandHandlerBase<FuhuaPreviewCommand>,IGameCharHandler<FuhuaPreviewCommand>
+    public class FuhuaPreviewHandler : SyncCommandHandlerBase<FuhuaPreviewCommand>, IGameCharHandler<FuhuaPreviewCommand>
     {
         public FuhuaPreviewHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager, TemplateManager templateManager)
         {

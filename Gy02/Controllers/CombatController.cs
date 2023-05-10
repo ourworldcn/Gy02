@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
-using Gy02.Publisher;
-using Gy02Bll.Commands.Combat;
-using Gy02Bll.Managers;
-using Microsoft.AspNetCore.Http;
+using GY02.Commands;
+using GY02.Managers;
+using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
 using OW.SyncCommand;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// 战斗控制器。

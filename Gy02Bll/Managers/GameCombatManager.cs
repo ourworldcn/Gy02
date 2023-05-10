@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Managers
+namespace GY02.Managers
 {
     /// <summary>
     /// 战斗管理器的配置选项。

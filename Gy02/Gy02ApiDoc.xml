@@ -4,17 +4,17 @@
         <name>Gy02</name>
     </assembly>
     <members>
-        <member name="T:Gy02.AutoMappper.Gy02AutoMapperProfile">
+        <member name="T:GY02.AutoMappper.Gy02AutoMapperProfile">
             <summary>
             AutoMapperProfile配置类。
             </summary>
         </member>
-        <member name="P:Gy02.AutoMappper.Gy02AutoMapperProfile.Entyti2Dto">
+        <member name="P:GY02.AutoMappper.Gy02AutoMapperProfile.Entyti2Dto">
             <summary>
             将指定的实体类型转化为对应的封装类型。
             </summary>
         </member>
-        <member name="M:Gy02.AutoMappper.Gy02AutoMapperProfile.AutoMapEntity(System.Object,AutoMapper.IMapperBase)">
+        <member name="M:GY02.AutoMappper.Gy02AutoMapperProfile.AutoMapEntity(System.Object,AutoMapper.IMapperBase)">
             <summary>
             将指定的实体转化为对应的封装数据。
             </summary>
@@ -22,45 +22,45 @@
             <param name="mapper"></param>
             <returns>对不认识的类型则原样返回，。</returns>
         </member>
-        <member name="M:Gy02.AutoMappper.Gy02AutoMapperProfile.#ctor">
+        <member name="M:GY02.AutoMappper.Gy02AutoMapperProfile.#ctor">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="T:Gy02.ReturnDtoExtensions">
+        <member name="T:GY02.ReturnDtoExtensions">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Gy02.ReturnDtoExtensions.FillErrorFrom(Gy02.Publisher.ReturnDtoBase,OW.SyncCommand.SyncCommandBase)">
+        <member name="M:GY02.ReturnDtoExtensions.FillErrorFrom(GY02.Publisher.ReturnDtoBase,OW.SyncCommand.SyncCommandBase)">
             <summary>
             
             </summary>
             <param name="obj"></param>
             <param name="src"></param>
         </member>
-        <member name="M:Gy02.ReturnDtoExtensions.FillErrorFromWorld(Gy02.Publisher.ReturnDtoBase)">
+        <member name="M:GY02.ReturnDtoExtensions.FillErrorFromWorld(GY02.Publisher.ReturnDtoBase)">
             <summary>
             
             </summary>
             <param name="obj"></param>
         </member>
-        <member name="T:Gy02.UdpScannerOptions">
+        <member name="T:GY02.UdpScannerOptions">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.UdpScannerOptions.Value">
+        <member name="P:GY02.UdpScannerOptions.Value">
             <summary>
             
             </summary>
         </member>
-        <member name="T:Gy02.UdpScanner">
+        <member name="T:GY02.UdpScanner">
             <summary>
             分发变化数据的服务。
             </summary>
         </member>
-        <member name="M:Gy02.UdpScanner.#ctor(Gy02Bll.Managers.UdpServerManager,Gy02Bll.Managers.GameAccountStore,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Options.IOptions{Gy02.UdpScannerOptions},Microsoft.Extensions.Logging.ILogger{Gy02.UdpScanner})">
+        <member name="M:GY02.UdpScanner.#ctor(GY02.Managers.UdpServerManager,GY02.Managers.GameAccountStore,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Options.IOptions{GY02.UdpScannerOptions},Microsoft.Extensions.Logging.ILogger{GY02.UdpScanner})">
             <summary>
             构造函数。
             </summary>
@@ -70,33 +70,33 @@
             <param name="logger"></param>
             <param name="options"></param>
         </member>
-        <member name="M:Gy02.UdpScanner.UdpTimer">
+        <member name="M:GY02.UdpScanner.UdpTimer">
             <summary>
             分发数据变化的函数。
             </summary>
         </member>
-        <member name="M:Gy02.UdpScanner.Dispose(System.Boolean)">
+        <member name="M:GY02.UdpScanner.Dispose(System.Boolean)">
             <summary>
             
             </summary>
             <param name="disposing"></param>
         </member>
-        <member name="T:Gy02.Controllers.AccountController">
+        <member name="T:GY02.Controllers.AccountController">
             <summary>
             账号管理。
             </summary>
         </member>
-        <member name="P:Gy02.Controllers.AccountController.LocalIp">
+        <member name="P:GY02.Controllers.AccountController.LocalIp">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.#ctor(Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
+        <member name="M:GY02.Controllers.AccountController.#ctor(GY02.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.CreateAccount(Gy02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:GY02.Controllers.AccountController.CreateAccount(GY02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             创建一个新账号。
             </summary>
@@ -105,7 +105,7 @@
             <param name="commandMng">注入的命令处理器服务。</param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Login(Gy02.Publisher.LoginParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,Gy02Bll.Managers.UdpServerManager)">
+        <member name="M:GY02.Controllers.AccountController.Login(GY02.Publisher.LoginParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,GY02.Managers.UdpServerManager)">
             <summary>
             登录账号。
             </summary>
@@ -115,7 +115,7 @@
             <param name="udpServer"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.LoginT78(Gy02.Publisher.LoginT78ParamsDto,Gy02Bll.Managers.UdpServerManager)">
+        <member name="M:GY02.Controllers.AccountController.LoginT78(GY02.Publisher.LoginT78ParamsDto,GY02.Managers.UdpServerManager)">
             <summary>
             特定发行商sdk创建或登录用户。
             </summary>
@@ -123,24 +123,24 @@
             <param name="udpServer"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.AccountController.Nop(Gy02.Publisher.NopParamsDto)">
+        <member name="M:GY02.Controllers.AccountController.Nop(GY02.Publisher.NopParamsDto)">
             <summary>
             心跳功能，延迟被驱逐的时间。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Controllers.AdminController">
+        <member name="T:GY02.Controllers.AdminController">
             <summary>
             管理员工具的控制器。
             </summary>
         </member>
-        <member name="T:Gy02.Controllers.AdminController.TemplateDatas">
+        <member name="T:GY02.Controllers.AdminController.TemplateDatas">
             <summary>
             封装模板数据配置文件的类。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AdminController.ImportTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Hosting.IHostEnvironment)">
+        <member name="M:GY02.Controllers.AdminController.ImportTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Hosting.IHostEnvironment)">
             <summary>
             上传游戏模板数据。
             </summary>
@@ -150,62 +150,62 @@
             <param name="environment"></param>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Controllers.BlueprintController">
+        <member name="T:GY02.Controllers.BlueprintController">
             <summary>
             蓝图相关操作的控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.BlueprintController.#ctor(System.IServiceProvider)">
+        <member name="M:GY02.Controllers.BlueprintController.#ctor(System.IServiceProvider)">
             <summary>
             
             </summary>
             <param name="serviceProvider"></param>
         </member>
-        <member name="M:Gy02.Controllers.BlueprintController.ApplyBlueprint(Gy02.Publisher.ApplyBlueprintParamsDto)">
+        <member name="M:GY02.Controllers.BlueprintController.ApplyBlueprint(GY02.Publisher.ApplyBlueprintParamsDto)">
             <summary>
             使用指定蓝图。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Controllers.CombatController">
+        <member name="T:GY02.Controllers.CombatController">
             <summary>
             战斗控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.CombatController.Test">
+        <member name="M:GY02.Controllers.CombatController.Test">
             <summary>
             测试。
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.CombatController.StartCombat(Gy02.Publisher.StartCombatParamsDto)">
+        <member name="M:GY02.Controllers.CombatController.StartCombat(GY02.Publisher.StartCombatParamsDto)">
             <summary>
             开始战斗。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.CombatController.CombatMark(Gy02.Publisher.CombatMarkParamsDto)">
+        <member name="M:GY02.Controllers.CombatController.CombatMark(GY02.Publisher.CombatMarkParamsDto)">
             <summary>
             记录战斗中信息。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.CombatController.EndCombat(Gy02.Publisher.EndCombatParamsDto)">
+        <member name="M:GY02.Controllers.CombatController.EndCombat(GY02.Publisher.EndCombatParamsDto)">
             <summary>
             结算战斗。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Controllers.ItemManagerController">
+        <member name="T:GY02.Controllers.ItemManagerController">
             <summary>
             物品管理控制器
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.#ctor(System.IServiceProvider,AutoMapper.IMapper,Gy02Bll.Managers.GameEntityManager,OW.SyncCommand.SyncCommandManager,Gy02Bll.Managers.GameAccountStore)">
+        <member name="M:GY02.Controllers.ItemManagerController.#ctor(System.IServiceProvider,AutoMapper.IMapper,GY02.Managers.GameEntityManager,OW.SyncCommand.SyncCommandManager,GY02.Managers.GameAccountStore)">
             <summary>
             
             </summary>
@@ -215,7 +215,7 @@
             <param name="syncCommandManager"></param>
             <param name="gameAccountStore"></param>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.MoveItems(Gy02.Publisher.MoveItemsParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:GY02.Controllers.ItemManagerController.MoveItems(GY02.Publisher.MoveItemsParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             移动物品接口。
             </summary>
@@ -225,25 +225,25 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestAddItems">
+        <member name="M:GY02.Controllers.ItemManagerController.TestAddItems">
             <summary>
             
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestLvUp">
+        <member name="M:GY02.Controllers.ItemManagerController.TestLvUp">
             <summary>
             测试升级接口。
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestComp">
+        <member name="M:GY02.Controllers.ItemManagerController.TestComp">
             <summary>
             
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.AddItems(Gy02.Publisher.AddItemsParamsDto,Gy02Bll.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager,AutoMapper.IMapper)">
+        <member name="M:GY02.Controllers.ItemManagerController.AddItems(GY02.Publisher.AddItemsParamsDto,GY02.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager,AutoMapper.IMapper)">
             <summary>
             增加物品，调试用接口。
             </summary>
@@ -254,97 +254,97 @@
             <param name="mapper"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.LvUp(Gy02.Publisher.LvUpParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.LvUp(GY02.Publisher.LvUpParamsDto)">
             <summary>
             升级装备/物品。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.LvDown(Gy02.Publisher.LvDownParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.LvDown(GY02.Publisher.LvDownParamsDto)">
             <summary>
             物品降级接口。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.AutoLvUp(Gy02.Publisher.AutoLvUpParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.AutoLvUp(GY02.Publisher.AutoLvUpParamsDto)">
             <summary>
             自动升级功能。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.Composite(Gy02.Publisher.CompositeParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.Composite(GY02.Publisher.CompositeParamsDto)">
             <summary>
             指定物品合成（升品阶）功能。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.AutoComposite(Gy02.Publisher.AutoCompositeParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.AutoComposite(GY02.Publisher.AutoCompositeParamsDto)">
             <summary>
             自动合成紫色（不含）以下装备。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.Decompose(Gy02.Publisher.DecomposeParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.Decompose(GY02.Publisher.DecomposeParamsDto)">
             <summary>
             分解（降品）装备。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.TestFuhuaPreview">
+        <member name="M:GY02.Controllers.ItemManagerController.TestFuhuaPreview">
             <summary>
             测试孵化。
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.FuhuaPreview(Gy02.Publisher.FuhuaPreviewParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.FuhuaPreview(GY02.Publisher.FuhuaPreviewParamsDto)">
             <summary>
             孵化的预览功能。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.Fuhua(Gy02.Publisher.FuhuaParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.Fuhua(GY02.Publisher.FuhuaParamsDto)">
             <summary>
             孵化功能。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.ItemManagerController.GetEntities(Gy02.Publisher.GetEntitiesParamsDto)">
+        <member name="M:GY02.Controllers.ItemManagerController.GetEntities(GY02.Publisher.GetEntitiesParamsDto)">
             <summary>
             返回指定对象数据。
             </summary>
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Controllers.ShoppingController">
+        <member name="T:GY02.Controllers.ShoppingController">
             <summary>
             商城功能控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.ShoppingController.GetItems">
+        <member name="M:GY02.Controllers.ShoppingController.GetItems">
             <summary>
             获取指定商品配置数据。
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Controllers.VWorldController">
+        <member name="T:GY02.Controllers.VWorldController">
             <summary>
             虚拟世界公用Api控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.VWorldController.#ctor">
+        <member name="M:GY02.Controllers.VWorldController.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.VWorldController.GetTemplates2(Gy02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.TemplateManager)">
+        <member name="M:GY02.Controllers.VWorldController.GetTemplates2(GY02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.TemplateManager)">
             <summary>
             获取模板数据。
             </summary>
@@ -352,78 +352,78 @@
             <param name="manager"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.VWorldController.StopService(Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+        <member name="M:GY02.Controllers.VWorldController.StopService(Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
             <summary>
             重新启动服务。通常用于更新数据后重启。
             </summary>
             <param name="applicationLifetime"></param>
             <returns></returns>
         </member>
-        <member name="T:Gy02.Controllers.WeatherForecastController">
+        <member name="T:GY02.Controllers.WeatherForecastController">
             <summary>
             天气控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.WeatherForecastController})">
+        <member name="M:GY02.Controllers.WeatherForecastController.#ctor(Microsoft.Extensions.Logging.ILogger{GY02.Controllers.WeatherForecastController})">
             <summary>
             
             </summary>
             <param name="logger"></param>
         </member>
-        <member name="M:Gy02.Controllers.WeatherForecastController.Get">
+        <member name="M:GY02.Controllers.WeatherForecastController.Get">
             <summary>
             
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Gy02.GameControllerBase">
+        <member name="T:GY02.GameControllerBase">
             <summary>
             游戏控制器基类。
             </summary>
         </member>
-        <member name="M:Gy02.GameControllerBase.#ctor">
+        <member name="M:GY02.GameControllerBase.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Gy02.GameControllerBase.#ctor(System.IServiceProvider)">
+        <member name="M:GY02.GameControllerBase.#ctor(System.IServiceProvider)">
             <summary>
             
             </summary>
             <param name="service"></param>
         </member>
-        <member name="P:Gy02.GameControllerBase.Service">
+        <member name="P:GY02.GameControllerBase.Service">
             <summary>
             获取本范围(Scope)的容器服务。
             </summary>
         </member>
-        <member name="M:Gy02.GameControllerBase.ThrowIfStopping">
+        <member name="M:GY02.GameControllerBase.ThrowIfStopping">
             <summary>
             若服务器正在关闭则抛出异常。
             </summary>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
-        <member name="T:Gy02.WeatherForecast">
+        <member name="T:GY02.WeatherForecast">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.WeatherForecast.Date">
+        <member name="P:GY02.WeatherForecast.Date">
             <summary>
             日期。
             </summary>
         </member>
-        <member name="P:Gy02.WeatherForecast.TemperatureC">
+        <member name="P:GY02.WeatherForecast.TemperatureC">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.WeatherForecast.TemperatureF">
+        <member name="P:GY02.WeatherForecast.TemperatureF">
             <summary>
             
             </summary>
         </member>
-        <member name="P:Gy02.WeatherForecast.Summary">
+        <member name="P:GY02.WeatherForecast.Summary">
             <summary>
             
             </summary>

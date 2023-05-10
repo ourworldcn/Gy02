@@ -1,22 +1,15 @@
 ﻿using AutoMapper;
-using Gy02.Publisher;
-using Gy02Bll.Base;
-using Gy02Bll.Commands;
-using Gy02Bll.Commands.Combat;
-using Gy02Bll.Commands.Fuhua;
-using Gy02Bll.Commands.Item;
-using Gy02Bll.Managers;
-using Gy02Bll.Templates;
+using GY02;
+using GY02.Base;
+using GY02.Commands;
+using GY02.Managers;
+using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Query;
-using Microsoft.EntityFrameworkCore.Storage.Internal;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OW.Game.Entity;
 using OW.Game.Managers;
-using OW.Game.Store;
 using OW.SyncCommand;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// 物品管理控制器

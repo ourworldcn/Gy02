@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Gy02.Publisher
+namespace GY02.Publisher
 {
 
 #pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释

@@ -1,18 +1,12 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Managers;
+﻿using GY02.Managers;
+using GY02.Publisher;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Fuhua
+namespace GY02.Commands
 {
     public class FuhuaCommand : PropertyChangeCommandBase, IGameCharCommand
     {

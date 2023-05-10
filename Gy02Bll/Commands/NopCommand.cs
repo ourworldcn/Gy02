@@ -1,16 +1,9 @@
-﻿using Gy02Bll.Commands.Combat;
-using Gy02Bll.Managers;
-using OW.DDD;
+﻿using GY02.Managers;
 using OW.Game;
 using OW.Game.Entity;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands
+namespace GY02.Commands
 {
     /// <summary>
     /// 通知心跳，驱逐内存中用户信息的计时器重新开始计时。

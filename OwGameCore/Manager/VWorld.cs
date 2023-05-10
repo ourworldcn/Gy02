@@ -1,4 +1,5 @@
 ﻿using GuangYuan.GY001.TemplateDb;
+using GY02.TemplateDb;
 using Microsoft.EntityFrameworkCore;
 using OW.Game.Store;
 using System;

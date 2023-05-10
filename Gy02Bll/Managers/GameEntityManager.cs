@@ -1,6 +1,6 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Base;
-using Gy02Bll.Templates;
+﻿using GY02.Base;
+using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -22,7 +22,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace Gy02Bll.Managers
+namespace GY02.Managers
 {
     public class GameEntityManagerOptions : IOptions<GameEntityManagerOptions>
     {

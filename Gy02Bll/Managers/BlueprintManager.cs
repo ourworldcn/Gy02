@@ -1,5 +1,5 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Templates;
+﻿using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
@@ -16,7 +16,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Managers
+namespace GY02.Managers
 {
     public class BlueprintOptions : IOptions<BlueprintOptions>
     {

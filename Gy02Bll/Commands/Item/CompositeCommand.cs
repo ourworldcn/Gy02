@@ -1,20 +1,10 @@
-﻿using Gy02.Publisher;
-using Gy02Bll.Managers;
-using Gy02Bll.Templates;
-using Microsoft.IdentityModel.Tokens;
-using OW.DDD;
+﻿using GY02.Managers;
+using GY02.Templates;
 using OW.Game.Entity;
 using OW.Game.Managers;
-using OW.Game.PropertyChange;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Item
+namespace GY02.Commands
 {
     public class CompositeCommand : PropertyChangeCommandBase
     {

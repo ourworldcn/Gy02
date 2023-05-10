@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Gy02.Publisher;
-using Gy02Bll.Base;
-using Gy02Bll.Templates;
+using GY02.Base;
+using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

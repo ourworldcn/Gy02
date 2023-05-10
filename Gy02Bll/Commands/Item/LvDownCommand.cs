@@ -3,13 +3,8 @@ using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Item
+namespace GY02.Commands
 {
     public class LvDownCommand : PropertyChangeCommandBase
     {

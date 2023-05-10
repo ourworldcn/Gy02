@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Gy02Bll.Templates
+namespace GY02.Templates
 {
     #region Udp相关
 
