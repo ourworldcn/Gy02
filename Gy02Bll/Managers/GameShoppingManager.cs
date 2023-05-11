@@ -64,7 +64,7 @@ namespace GY02.Managers
                 if (periodStart > nowUtc) //若已经超期
                 {
                     OwHelper.SetLastError(ErrorCodes.ERROR_INVALID_DATA);
-                    OwHelper.SetLastErrorMessage($"指定的时间{nowUtc}商品项最终有效期针对此商品项不合适。");
+                    OwHelper.SetLastErrorMessage($"指定的时间{nowUtc}不在商品有效期内。");
                     return false;
                 }
                 if (periodStart + shoppingItem.Period.ValidPeriod > nowUtc)    //若找到合适的项
