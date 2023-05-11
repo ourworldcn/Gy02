@@ -2,6 +2,7 @@
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -213,8 +214,55 @@ namespace OW.Game.Entity
         public List<CombatHistoryItem> CombatHistory { get; set; } = new List<CombatHistoryItem>();
 
         #endregion 战斗相关
+
+        #region 商城相关
+
+        /// <summary>
+        /// 购买记录。
+        /// </summary>
+        public GameShoppingHistory ShoppingHistory { get; set; } = new GameShoppingHistory();
+
+        #endregion 商城相关
     }
 
+    /// <summary>
+    /// 购买记录。
+    /// </summary>
+    public class GameShoppingHistory : Collection<GameShoppingHistoryItem>
+    {
+
+    }
+
+    /// <summary>
+    /// 购买记录的详细项。
+    /// </summary>
+    public class GameShoppingHistoryItem
+    {
+        /// <summary>
+        /// 购买的商品TId。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 购买的数量。
+        /// </summary>
+        public decimal Count { get; set; }
+
+        /// <summary>
+        /// 购买的日期。
+        /// </summary>
+        public DateTime DateTime { get; set; }
+
+        /// <summary>
+        /// 该项是否有效。在同组数据返回时，有些项是无效项。
+        /// </summary>
+        /// <value>true有效数据，false无效数据，无效数据包含已达最大购买数量，已过期，未到期三种情况。</value>
+        public bool Valid { get; set; }
+    }
+
+    /// <summary>
+    /// 战斗历史记录的详细项。
+    /// </summary>
     public class CombatHistoryItem
     {
         /// <summary>

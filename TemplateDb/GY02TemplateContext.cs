@@ -1,6 +1,6 @@
-﻿using GuangYuan.GY001.TemplateDb.Entity;
-using GY02.Store;
+﻿using GY02.Store;
 using Microsoft.EntityFrameworkCore;
+using OW.TemplateDb.Entity;
 using System.Linq;
 
 namespace GY02.TemplateDb

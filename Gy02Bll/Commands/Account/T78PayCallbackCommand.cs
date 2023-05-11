@@ -1,6 +1,6 @@
 ﻿using OW.SyncCommand;
 
-namespace GY02.Commands
+namespace Gy02Bll.Commands
 {
 #pragma warning disable IDE1006 // 命名样式
     #region 付费回调

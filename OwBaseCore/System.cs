@@ -19,7 +19,7 @@ namespace System
         /// </summary>
         public const string UnitChars = "sdwmy";
 
-        public bool TryParse([NotNull] string str, [MaybeNullWhen(false)] out TimeSpanEx result)
+        public static bool TryParse([NotNull] string str, [MaybeNullWhen(false)] out TimeSpanEx result)
         {
             var u = str[^1];
             if (!UnitChars.Contains(u))

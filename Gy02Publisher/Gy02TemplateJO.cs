@@ -44,7 +44,7 @@ namespace GY02.Templates
     /// <summary>
     /// 
     /// </summary>
-    public class GameShoppingItem
+    public partial class GameShoppingItem
     {
         /// <summary>
         /// 该商品项的游戏周期。

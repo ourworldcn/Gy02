@@ -145,11 +145,10 @@ namespace GY02
                 {
                     //var ss1=(ProtocolType) ProtocolType.Parse(item);
                 }
-                var _Socket = new Socket(SocketType.Rdm, ProtocolType.Pup);
 
                 var loggoer = _Services.GetRequiredService<ILogger<GameHostedService>>();
                 loggoer.LogDebug("TestDebug");
-                var t78 = _Services.GetService<PublisherT78Manager>();
+                var t78 = _Services.GetService<PublisherT78Manager>(); 
 
                 //t78.Login("d");
                 var udp = new UdpClient(0);
