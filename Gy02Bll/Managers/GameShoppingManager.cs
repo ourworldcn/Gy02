@@ -52,28 +52,10 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
                 return false;
             }
-            periodStart = shoppingItem.Period.Start;
-            if (nowUtc > shoppingItem.Period.End)   //若已经超期
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_INVALID_DATA);
-                OwHelper.SetLastErrorMessage($"指定的时间{nowUtc}商品项最终有效期{shoppingItem.Period.End.Value}。");
-                return false;
-            }
-            while (true)    //TODO 需要提高性能
-            {
-                if (periodStart > nowUtc) //若已经超期
-                {
-                    OwHelper.SetLastError(ErrorCodes.ERROR_INVALID_DATA);
-                    OwHelper.SetLastErrorMessage($"指定的时间{nowUtc}不在商品有效期内。");
-                    return false;
-                }
-                if (periodStart + shoppingItem.Period.ValidPeriod > nowUtc)    //若找到合适的项
-                    break;
-                periodStart += shoppingItem.Period.Period;
-            }
-            var end = periodStart + shoppingItem.Period.ValidPeriod;
-            var start = periodStart;
+            if (!shoppingItem.Period.IsValid(nowUtc, out periodStart)) return false;  //若时间点无效
             //校验购买数量
+            var start = periodStart;
+            var end = start + shoppingItem.Period.ValidPeriod;
             var buyedCount = gameChar.ShoppingHistory.Where(c => c.DateTime >= start && c.DateTime < end).Sum(c => c.Count);  //已经购买的数量
             if (buyedCount >= shoppingItem.MaxCount)
             {
