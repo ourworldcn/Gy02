@@ -141,60 +141,58 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                foreach (var item in Enum.GetNames(typeof(ProtocolType)))
-                {
-                    //var ss1=(ProtocolType) ProtocolType.Parse(item);
-                }
+                var socket = new Socket(AddressFamily.InterNetwork,SocketType.Dgram, ProtocolType.Udp) { };
+                var saea = new SocketAsyncEventArgs { /*RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090),*/UserToken=socket };
+                byte[] buffer = new byte[1024];
+                saea.SetBuffer(buffer, 0, buffer.Length);
+                saea.Completed += Saea_Completed;
+                socket.Bind(new IPEndPoint(IPAddress.Any, 20090));
+                var b = socket.ReceiveMessageFromAsync(saea);
 
-                var loggoer = _Services.GetRequiredService<ILogger<GameHostedService>>();
-                loggoer.LogDebug("TestDebug");
-                var t78 = _Services.GetService<PublisherT78Manager>(); 
-
-                //t78.Login("d");
-                var udp = new UdpClient(0);
-                var ipendpoint = new IPEndPoint(IPAddress.Parse("43.133.232.4"), 20088);
-
-                udp.Send(PingGuid.ToByteArray(), 16, ipendpoint);
-
-                var ip = new IPEndPoint(IPAddress.Any, ((IPEndPoint)udp.Client.LocalEndPoint).Port);
-                //var ary = udp.Receive(ref ip);
-                var dic = new Dictionary<string, FastChangingProperty>
-                {
-                    {
-                        "Count",
-                        new FastChangingProperty
-                        {
-                            Delay = TimeSpan.FromSeconds(5),
-                            StepValue = 1,
-                            LastDateTime = DateTime.Now,
-                            CurrentValue = 2,
-                            MinValue = 1,
-                            MaxValue = 3,
-                        }
-                    },
-                    {
-                        "Count1",
-                        new FastChangingProperty
-                        {
-                            Delay = TimeSpan.FromSeconds(5),
-                            StepValue = 1,
-                            LastDateTime = DateTime.Now,
-                            CurrentValue = 2,
-                            MinValue = 1,
-                            MaxValue = 3,
-                        }
-                    }
-                };
-                var str = JsonSerializer.Serialize(dic);
-                var des = JsonSerializer.Deserialize<Dictionary<string, FastChangingProperty>>(str);
-
-                var dt = DateTime.UtcNow;
-                var ss = (dt - DateTime.UtcNow).Ticks;
+                var send = new UdpClient(0);
+                var sendBuff = new byte[] { 1,2, 3 };
+                send.Send(sendBuff, sendBuff.Length, new IPEndPoint(IPAddress.Parse("192.168.68.75"), 20090));
+                send.Send(sendBuff, sendBuff.Length, new IPEndPoint(IPAddress.Parse("192.168.68.75"), 20090));
             }
             finally
             {
                 sw.Stop();
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
+            }
+        }
+
+        private void Saea_Completed(object sender, SocketAsyncEventArgs e)
+        {
+            var socket = (Socket)e.UserToken;
+            var saea = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090),UserToken= socket };
+            byte[] buffer = new byte[1024];
+            saea.SetBuffer(buffer, 0, buffer.Length);
+            saea.Completed += Saea_Completed;
+            var b1 = socket.ReceiveMessageFromAsync(saea);
+            switch (e.LastOperation)
+            {
+                case SocketAsyncOperation.None:
+                    break;
+                case SocketAsyncOperation.Accept:
+                    break;
+                case SocketAsyncOperation.Connect:
+                    break;
+                case SocketAsyncOperation.Disconnect:
+                    break;
+                case SocketAsyncOperation.Receive:
+                    break;
+                case SocketAsyncOperation.ReceiveFrom:
+                    break;
+                case SocketAsyncOperation.ReceiveMessageFrom:
+                    break;
+                case SocketAsyncOperation.Send:
+                    break;
+                case SocketAsyncOperation.SendPackets:
+                    break;
+                case SocketAsyncOperation.SendTo:
+                    break;
+                default:
+                    break;
             }
         }
 
