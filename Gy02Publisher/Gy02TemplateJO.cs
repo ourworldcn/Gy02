@@ -1,4 +1,5 @@
 ﻿using GY02.Publisher;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -654,7 +655,13 @@ namespace GY02.Templates
     public class GeneralConditionalItem
     {
         /// <summary>
-        /// 操作符。暂定支持六种关系运算,如 &lt;= 等。
+        /// 有效操作符列表。
+        /// </summary>
+        public static string[] ValidOperator { get; } = new string[] { ">=", ">", "<=", "<", "==", "!=", "ModE" };
+
+        /// <summary>
+        /// 操作符（函数名）。暂定支持六种关系运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!= 等。
+        /// 特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
         /// </summary>
         [JsonPropertyName("op")]
         public string Operator
@@ -663,22 +670,112 @@ namespace GY02.Templates
         }
 
         /// <summary>
-        /// 通常是属性名。
+        /// 属性名。该属性只能是一个可以运算的类型，即可以转化为<see cref="decimal"/>的类型。
         /// </summary>
-        [JsonPropertyName("lo")]
-        public object LeftOperand
+        [JsonPropertyName("pn")]
+        public string PropertyName
         {
             get; set;
         }
 
         /// <summary>
-        /// 一般是一个数字，用于和属性对比。
+        /// 一组参数值，有多少个元素由运算符指定。
         /// </summary>
-        [JsonPropertyName("ro")]
-        public object RightOperand
+        [JsonPropertyName("args")]
+        public List<decimal> Args { get; set; } = new List<decimal> { };
+
+        /// <summary>
+        /// 获取条件对象中指定的属性值。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="result"></param>
+        /// <returns>true找到值，false出错。</returns>
+        public bool TryGetPropertyValue(object entity, out decimal result)
         {
-            get; set;
+            var pi = entity.GetType().GetProperty(PropertyName);
+            if (pi is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"无法找到指定的属性{PropertyName}");
+                goto lbErr;
+            }
+            var obj = pi.GetValue(entity);
+            if (pi is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"无法找到指定的属性{PropertyName}");
+                goto lbErr;
+            }
+            try
+            {
+                result = Convert.ToDecimal(obj);
+            }
+            catch (Exception)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"属性值无法转化为Decimal,{obj}");
+                goto lbErr;
+            }
+            return true;
+        lbErr:
+            result = default;
+            return false;
         }
+
+        /// <summary>
+        /// 获取一个指示指定实体是否符合指定条件。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
+        public bool IsMatch(object entity)
+        {
+            bool result;
+            switch (Operator)
+            {
+                case "ModE":
+                    //获取属性值
+                    if (!TryGetPropertyValue(entity, out var val))
+                    {
+                        result = false;
+                        break;
+                    }
+                    if (Args.Count < 2)
+                    {
+                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                        OwHelper.SetLastErrorMessage($"ModE要有两个参数但实际只有{Args.Count}个参数。");
+                        result = false;
+                        break;
+                    }
+                    else if (Args.Count > 2)
+                        OwHelper.SetLastErrorMessage($"ModE要有两个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
+                    result = val % Args[0] == Args[1];
+                    OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                    break;
+                case "<=":
+                case "<":
+                case ">=":
+                case ">":
+                case "==":
+                case "!=":
+                    throw new NotImplementedException();
+                default:
+                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                    OwHelper.SetLastErrorMessage($"不支持的操作符{Operator}");
+                    result = false;
+                    break;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 指定实体是否满足所有指定的条件。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="conditionals"></param>
+        /// <returns>满足所有指定条件或条件集合为空则返回true;否则返回false。</returns>
+        /// <exception cref="ArgumentNullException">conditionals -或和- entity 是空引用。</exception>
+        public static bool IsMatch(object entity, IEnumerable<GeneralConditionalItem> conditionals) => conditionals.All(c => c.IsMatch(entity));
+
     }
 
     #region 合成相关

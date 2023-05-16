@@ -220,7 +220,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 购买记录。
         /// </summary>
-        public GameShoppingHistory ShoppingHistory { get; set; } = new GameShoppingHistory();
+        public List<GameShoppingHistoryItem> ShoppingHistory { get; set; } = new List<GameShoppingHistoryItem>();
 
         #endregion 商城相关
     }
@@ -230,7 +230,44 @@ namespace OW.Game.Entity
     /// </summary>
     public class GameShoppingHistory : Collection<GameShoppingHistoryItem>
     {
+        public GameShoppingHistory()
+        {
+            
+        }
+    }
 
+    /// <summary>
+    /// 商品项的状态描述对象。
+    /// </summary>
+    public class ShoppingItemState
+    {
+        /// <summary>
+        /// 默认构造函数。
+        /// </summary>
+        public ShoppingItemState()
+        {
+
+        }
+
+        /// <summary>
+        /// 商品项的模板Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 当前周期下的已经购买数量。
+        /// </summary>
+        public decimal BuyedCount { get; set; }
+
+        /// <summary>
+        /// 记录该项属于的购买周期的起始时间点。
+        /// </summary>
+        public DateTime StartUtc { get; set; }
+
+        /// <summary>
+        /// 本周期的结束时间。空表示无结束时间。
+        /// </summary>
+        public DateTime? EndUtc { get; set; }
     }
 
     /// <summary>
@@ -239,12 +276,20 @@ namespace OW.Game.Entity
     public class GameShoppingHistoryItem
     {
         /// <summary>
+        /// 默认构造函数。
+        /// </summary>
+        public GameShoppingHistoryItem()
+        {
+
+        }
+
+        /// <summary>
         /// 购买的商品TId。
         /// </summary>
         public Guid TId { get; set; }
 
         /// <summary>
-        /// 购买的数量。
+        /// 购买的商品的次数。如两次可能购买总计2000金币，但这里是2。具体获得物品的数量取决于商品项的配置。
         /// </summary>
         public decimal Count { get; set; }
 

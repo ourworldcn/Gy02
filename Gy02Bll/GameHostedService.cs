@@ -141,64 +141,24 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                var socket = new Socket(AddressFamily.InterNetwork,SocketType.Dgram, ProtocolType.Udp) { };
-                var saea = new SocketAsyncEventArgs { /*RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090),*/UserToken=socket };
-                byte[] buffer = new byte[1024];
-                saea.SetBuffer(buffer, 0, buffer.Length);
-                saea.Completed += Saea_Completed;
-                socket.Bind(new IPEndPoint(IPAddress.Any, 20090));
-                var b = socket.ReceiveMessageFromAsync(saea);
+                //var socket = new Socket(AddressFamily.InterNetwork,SocketType.Dgram, ProtocolType.Udp) { };
+                //var saea = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090), UserToken =socket };
+                //byte[] buffer = new byte[1024];
+                //saea.SetBuffer(buffer, 0, buffer.Length);
+                //saea.Completed += Saea_Completed;
+                //socket.Bind(new IPEndPoint(IPAddress.Any, 20090));
+                //var b = socket.ReceiveMessageFromAsync(saea);
 
-                var send = new UdpClient(0);
-                var sendBuff = new byte[] { 1,2, 3 };
-                send.Send(sendBuff, sendBuff.Length, new IPEndPoint(IPAddress.Parse("192.168.68.75"), 20090));
-                send.Send(sendBuff, sendBuff.Length, new IPEndPoint(IPAddress.Parse("192.168.68.75"), 20090));
+                //var send = new UdpClient(0);
+                //var sendBuff = new byte[] { 1,2, 3 };
+                //send.Send(sendBuff, sendBuff.Length, new IPEndPoint(IPAddress.Parse("192.168.68.75"), 20090));
+                //send.Send(sendBuff, sendBuff.Length, new IPEndPoint(IPAddress.Parse("192.168.68.75"), 20090));
             }
             finally
             {
                 sw.Stop();
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
-        }
-
-        private void Saea_Completed(object sender, SocketAsyncEventArgs e)
-        {
-            var socket = (Socket)e.UserToken;
-            var saea = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090),UserToken= socket };
-            byte[] buffer = new byte[1024];
-            saea.SetBuffer(buffer, 0, buffer.Length);
-            saea.Completed += Saea_Completed;
-            var b1 = socket.ReceiveMessageFromAsync(saea);
-            switch (e.LastOperation)
-            {
-                case SocketAsyncOperation.None:
-                    break;
-                case SocketAsyncOperation.Accept:
-                    break;
-                case SocketAsyncOperation.Connect:
-                    break;
-                case SocketAsyncOperation.Disconnect:
-                    break;
-                case SocketAsyncOperation.Receive:
-                    break;
-                case SocketAsyncOperation.ReceiveFrom:
-                    break;
-                case SocketAsyncOperation.ReceiveMessageFrom:
-                    break;
-                case SocketAsyncOperation.Send:
-                    break;
-                case SocketAsyncOperation.SendPackets:
-                    break;
-                case SocketAsyncOperation.SendTo:
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        private void E_Completed(object sender, SocketAsyncEventArgs e)
-        {
-
         }
 
     }

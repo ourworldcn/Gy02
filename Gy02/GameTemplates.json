@@ -15,6 +15,63 @@
       "Remark": "TIdsOfCreate是创建该对象时，需要一起创建的子对象的TIds"
     },
     {
+      "Id": "7A7A7058-CB88-4D54-80E9-22241774CF51",
+      "DisplayName": "t78占位符",
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":1}"
+    },
+    {
+      "Id": "46542DE4-B8B8-4735-936C-856273B650F7",
+      "DisplayName": "7日签到标志",
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}"
+    },
+    {
+      "Id": "4527471A-FD91-4899-910C-DE7056AD67A1",
+      "DisplayName": "累计签到标志",
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}"
+    },
+    {
+      "Id": "f00fbec7-7465-4344-8443-6b4b43260b3c",
+      "DisplayName": "7日签到第1天",
+      "Gid": 180101001,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-16T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1w\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[7,0]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "75137bd7-882d-4580-b011-e92e8a36fbd5",
+      "DisplayName": "7日签到第2天",
+      "Gid": 180101002,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-17T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1w\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[7,1]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "ee0ae75e-9e45-4d8c-9ec1-09219e7684e4",
+      "DisplayName": "7日签到第3天",
+      "Gid": 180101003,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-18T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1w\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[7,2]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1000},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "c7640cab-5178-4447-9456-76fa807645ae",
+      "DisplayName": "7日签到第4天",
+      "Gid": 180101004,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-19T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1w\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[7,3]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "4c087d38-ec50-42bc-ab59-b8af3101d9af",
+      "DisplayName": "7日签到第5天",
+      "Gid": 180101005,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-20T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1w\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[7,4]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1000},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "94f21d1a-3b55-40c6-9748-7abd43e2dc47",
+      "DisplayName": "7日签到第6天",
+      "Gid": 180101006,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-21T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1w\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[7,5]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "f34df47a-2397-4751-9e2f-961879ef2f6d",
+      "DisplayName": "7日签到第7天",
+      "Gid": 180101007,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-22T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1w\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[7,6]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
       "Id": "3b163a62-6591-4a93-a385-cf079b20f589",
       "DisplayName": "皮肤背包",
       "Gid": 912101002,
@@ -79,7 +136,7 @@
       "Id": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
       "DisplayName": "货币槽",
       "Gid": 912101011,
-      "PropertiesString": "{\"cap\":1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"TIdsOfCreate\":[\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\"]}",
+      "PropertiesString": "{\"cap\":1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"TIdsOfCreate\":[\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"46542DE4-B8B8-4735-936C-856273B650F7\",\"4527471A-FD91-4899-910C-DE7056AD67A1\"]}",
       "Remark": "货币类物品放置在此槽下，初始创建；"
     },
     {
@@ -241,7 +298,7 @@
     },
     {
       "Id": "0304d960-e01b-44c7-bf5e-bd3f104cbadb",
-      "DisplayName": "有10%的几率产生暴击",
+      "DisplayName": "有10%的几率产生暴击（2倍攻击）",
       "Gid": 141101005,
       "PropertiesString": "{\"skillParams\":[10],\"name_txt\":12112}"
     },
@@ -1971,7 +2028,7 @@
       "Id": "b4ed3603-af19-4bb4-b5a7-1b03dba0155d",
       "DisplayName": "羊和老虎孵化动物产出",
       "Gid": 170101005,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":130,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":1,\"GuardConditions\":[]}]}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":130,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":50,\"GuardConditions\":[]},{\"Precondition\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"MinCount\":1,\"GeneralConditional\":[]}],\"Weight\":1,\"GuardConditions\":[]}]}}"
     },
     {
       "Id": "97da5fb1-5a0f-4408-8662-f20c7e3475fb",

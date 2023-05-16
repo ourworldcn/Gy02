@@ -2,10 +2,12 @@
 using AutoMapper.Configuration.Annotations;
 using GY02.Commands;
 using GY02.Templates;
+using Gy02Bll.Commands.Shopping;
 using OW.Game.Entity;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
@@ -198,6 +200,35 @@ namespace GY02.Publisher
     }
 
     /// <summary>
+    /// 购买记录的详细项。
+    /// </summary>
+    [AutoMap(typeof(GameShoppingHistoryItem))]
+    public class GameShoppingHistoryItemDto
+    {
+        /// <summary>
+        /// 默认构造函数。
+        /// </summary>
+        public GameShoppingHistoryItemDto()
+        {
+
+        }
+        /// <summary>
+        /// 购买的商品TId。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 购买的数量。
+        /// </summary>
+        public decimal Count { get; set; }
+
+        /// <summary>
+        /// 购买的日期。
+        /// </summary>
+        public DateTime DateTime { get; set; }
+    }
+
+    /// <summary>
     /// 角色数据。
     /// </summary>
     [AutoMap(typeof(GameChar))]
@@ -340,6 +371,14 @@ namespace GY02.Publisher
 
         #endregion 战斗相关
 
+        #region 商城相关
+
+        /// <summary>
+        /// 购买记录。
+        /// </summary>
+        public List<GameShoppingHistoryItemDto> ShoppingHistory { get; set; } = new List<GameShoppingHistoryItemDto>();
+
+        #endregion 商城相关
     }
 
     /// <summary>
@@ -492,7 +531,6 @@ namespace GY02.Publisher
     }
 
     #endregion 通用数据变化相关
-
 
     #region 账号及登录相关
 
@@ -1164,6 +1202,64 @@ namespace GY02.Publisher
     }
 
     #endregion 孵化相关
+
+    #region 商城相关
+
+    /// <summary>
+    /// 获取商城购买物品项功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(GetShoppingItemsCommand), ReverseMap = true)]
+    public class GetShoppingItemsParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 页签过滤。如果这里有数据则仅返回这些页签下的商品项，若没有指定或为空集合，则返回所有页签的数据（这可能导致性能问题）
+        /// </summary>
+        public string[] Genus { get; set; }
+    }
+
+    /// <summary>
+    /// 获取商城购买物品项功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(GetShoppingItemsCommand))]
+    public class GetShoppingItemsReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 购买商品的状态集合。
+        /// </summary>
+        public List<ShoppingItemStateDto> ShoppingItemState { get; set; } = new List<ShoppingItemStateDto>();
+    }
+
+    /// <summary>
+    /// 购买商品的状态。
+    /// </summary>
+    [AutoMap(typeof(ShoppingItemState))]
+    public class ShoppingItemStateDto
+    {
+        /// <summary>
+        /// 默认构造函数。
+        /// </summary>
+        public ShoppingItemStateDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 商品项的模板Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 当前周期下的已经购买数量。
+        /// </summary>
+        public decimal BuyedCount { get; set; }
+
+        /// <summary>
+        /// 本周期的结束时间。空表示无结束时间。
+        /// </summary>
+        public DateTime? EndUtc { get; set; }
+    }
+
+    #endregion 商城相关
 }
 
 

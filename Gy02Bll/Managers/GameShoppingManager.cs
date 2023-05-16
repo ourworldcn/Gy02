@@ -69,5 +69,17 @@ namespace GY02.Managers
                 return false;
             return true;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="tt"></param>
+        /// <param name="nowUtc"></param>
+        /// <returns>(当前周期起始时间点,本周期内已买次数,是否有效)，若无效<see cref="OwHelper.GetLastError"/>不是<see cref="ErrorCodes.NO_ERROR"/>则说明有错。</returns>
+        public (DateTime, decimal, bool) GetShoppingItemState(GameChar gameChar, GameShoppingItem tt, DateTime nowUtc)
+        {
+            return default;
+        }
     }
 }

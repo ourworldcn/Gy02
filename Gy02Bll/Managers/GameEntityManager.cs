@@ -2,6 +2,7 @@
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -14,6 +15,8 @@ using OW.Game.Store;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -101,6 +104,8 @@ namespace GY02.Managers
             if (condition.ParentTId.HasValue && condition.ParentTId.Value != thing.Parent?.ExtraGuid)
                 return false;
             if (condition.MinCount.HasValue && condition.MinCount.Value > entity.Count)
+                return false;
+            if (!GeneralConditionalItem.IsMatch(entity, condition.GeneralConditional))  //若通用属性要求的条件不满足
                 return false;
             return true;
         }
@@ -384,6 +389,10 @@ namespace GY02.Managers
         }
 
         #endregion 基础功能
+
+        #region 通用条件相关
+
+        #endregion 通用条件相关
 
         #region 创建实体相关功能
 

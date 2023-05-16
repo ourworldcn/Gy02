@@ -456,20 +456,50 @@
             通用属性条件项。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GeneralConditionalItem.ValidOperator">
+            <summary>
+            有效操作符列表。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.GeneralConditionalItem.Operator">
             <summary>
-            操作符。暂定支持六种关系运算,如 &lt;= 等。
+            操作符（函数名）。暂定支持六种关系运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!= 等。
+            特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GeneralConditionalItem.LeftOperand">
+        <member name="P:GY02.Templates.GeneralConditionalItem.PropertyName">
             <summary>
-            通常是属性名。
+            属性名。该属性只能是一个可以运算的类型，即可以转化为<see cref="T:System.Decimal"/>的类型。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GeneralConditionalItem.RightOperand">
+        <member name="P:GY02.Templates.GeneralConditionalItem.Args">
             <summary>
-            一般是一个数字，用于和属性对比。
+            一组参数值，有多少个元素由运算符指定。
             </summary>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyValue(System.Object,System.Decimal@)">
+            <summary>
+            获取条件对象中指定的属性值。
+            </summary>
+            <param name="entity"></param>
+            <param name="result"></param>
+            <returns>true找到值，false出错。</returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object)">
+            <summary>
+            获取一个指示指定实体是否符合指定条件。
+            </summary>
+            <param name="entity"></param>
+            <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object,System.Collections.Generic.IEnumerable{GY02.Templates.GeneralConditionalItem})">
+            <summary>
+            指定实体是否满足所有指定的条件。
+            </summary>
+            <param name="entity"></param>
+            <param name="conditionals"></param>
+            <returns>满足所有指定条件或条件集合为空则返回true;否则返回false。</returns>
+            <exception cref="T:System.ArgumentNullException">conditionals -或和- entity 是空引用。</exception>
         </member>
         <member name="T:GY02.Templates.BlueprintInItem">
             <summary>
