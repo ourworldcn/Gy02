@@ -13,7 +13,6 @@ using System.Threading.Tasks;
 
 namespace GY02.Publisher
 {
-
 #pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
     /// <summary>
     /// 存储一些常量和Id。
@@ -113,6 +112,11 @@ namespace GY02.Publisher
         /// 孵化次数货币的TId。
         /// </summary>
         public static readonly Guid FuhuaCishuTId = new Guid("9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B");
+
+        /// <summary>
+        /// 七日签到页签。
+        /// </summary>
+        public const string QiriQiandaoGenus = "gs_qiandao";
     }
 
     /// <summary>
@@ -151,6 +155,10 @@ namespace GY02.Publisher
         /// 未进行身份验证。
         /// </summary>
         public const int Unauthorized = unchecked((int)0x80190191);
+
+        /// <summary>
+        /// 必须的资源已经被关闭。
+        /// </summary>
         public const int RO_E_CLOSED = unchecked((int)0x80000013);
 
         /// <summary>
@@ -212,24 +220,7 @@ namespace GY02.Publisher
         /// 无法登录，通常是被封停账号。
         /// </summary>
         public const int ERROR_LOGON_NOT_GRANTED = 1380;
-
     }
-
 #pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
-
-    /// <summary>
-    /// 帮助器类。
-    /// </summary>
-    public static class ServerHelper
-    {
-    }
-
-    /// <summary>
-    /// 类型映射。
-    /// </summary>
-    public static class TypeTable
-    {
-        //public Dictionary<Guid, (Type, Type)> Types { get; set; } = new Dictionary<Guid, (Type, Type)>() { { Guid.NewGuid, (null, null) } };
-    }
 
 }

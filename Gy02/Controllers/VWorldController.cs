@@ -23,7 +23,7 @@ namespace GY02.Controllers
         /// <param name="manager"></param>
         /// <returns></returns>
         [HttpPost]
-        [ResponseCache(Duration = 120)]
+        [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any)]
         public ActionResult<GetTemplates2ReturnDto> GetTemplates2(GetTemplates2ParamsDto model, [FromServices] TemplateManager manager)
         {
             var result = new GetTemplates2ReturnDto();

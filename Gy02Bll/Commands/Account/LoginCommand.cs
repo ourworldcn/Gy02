@@ -1,10 +1,12 @@
-﻿using GY02.Managers;
+﻿using GY02.Base;
+using GY02.Managers;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -80,6 +82,14 @@ namespace GY02.Commands
             var db = gu.GetDbContext();
             gu.CurrentChar = ((VirtualThing)gu.Thing).Children.First().GetJsonObject<GameChar>();
             gu.CurrentChar.LogineCount++;
+            Trace(gu);
+        }
+
+        [Conditional("DEBUG")]
+        public void Trace(GameUser user)
+        {
+            var str = string.Join(Environment.NewLine, user.GetThing().GetAllChildren().Select(c => c.Id));
+            Debug.WriteLine(str);
         }
     }
 }

@@ -52,12 +52,21 @@ namespace GY02.Managers
         /// <returns></returns>
         public T78LoginReturnDto Login(string sid)
         {
-            var options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
-            var httpResult = PostAsync(new Dictionary<string, string>() { { "sid", sid }, }).Result;
-            var resultString = httpResult.Content.ReadAsStringAsync().Result;
-            var result = (T78LoginReturnDto)JsonSerializer.Deserialize(resultString, typeof(T78LoginReturnDto), options);
-            result.ResultString = resultString;
-            return result;
+            try
+            {
+                var options = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
+                var httpResult = PostAsync(new Dictionary<string, string>() { { "sid", sid }, }).Result;
+                var resultString = httpResult.Content.ReadAsStringAsync().Result;
+                Logger.LogInformation($"SDK登录校验返回——sid:{sid},return:{resultString}");
+                var result = (T78LoginReturnDto)JsonSerializer.Deserialize(resultString, typeof(T78LoginReturnDto), options);
+                result.ResultString = resultString;
+                return result;
+            }
+            catch (Exception err)
+            {
+                Logger.LogError(err, "登录T78出现异常");
+                throw;
+            }
         }
 
         #endregion 账号相关
@@ -130,6 +139,10 @@ namespace GY02.Managers
         }
         #endregion 基础功能
 
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+        }
     }
 
     public static class PublisherT78ManagerExtensions
@@ -142,5 +155,6 @@ namespace GY02.Managers
             });
         }
     }
+
 
 }

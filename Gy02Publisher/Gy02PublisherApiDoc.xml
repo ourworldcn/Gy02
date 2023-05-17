@@ -809,6 +809,11 @@
             孵化次数货币的TId。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.QiriQiandaoGenus">
+            <summary>
+            七日签到页签。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.ErrorCodes">
             <summary>
             错误码封装。
@@ -842,6 +847,11 @@
         <member name="F:GY02.Publisher.ErrorCodes.Unauthorized">
             <summary>
             未进行身份验证。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.RO_E_CLOSED">
+            <summary>
+            必须的资源已经被关闭。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ErrorCodes.ObjectDisposed">
@@ -902,16 +912,6 @@
         <member name="F:GY02.Publisher.ErrorCodes.ERROR_LOGON_NOT_GRANTED">
             <summary>
             无法登录，通常是被封停账号。
-            </summary>
-        </member>
-        <member name="T:GY02.Publisher.ServerHelper">
-            <summary>
-            帮助器类。
-            </summary>
-        </member>
-        <member name="T:GY02.Publisher.TypeTable">
-            <summary>
-            类型映射。
             </summary>
         </member>
     </members>
