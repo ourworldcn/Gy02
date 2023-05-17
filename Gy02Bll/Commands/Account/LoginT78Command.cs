@@ -114,7 +114,7 @@ namespace GY02.Publisher
                 //创建
                 var createCommand = new CreateAccountCommand { LoginName = uid, Pwd = uid };
                 _SyncCommandManager.Handle(createCommand);
-                if (createCommand.HasError)
+                if (createCommand.HasError || createCommand.User is null)
                 {
                     command.FillErrorFrom(createCommand);
                     return;
@@ -139,7 +139,7 @@ namespace GY02.Publisher
             //登录用户
             var loginCommand = new LoginCommand { LoginName = uid, Pwd = uid };
             _SyncCommandManager.Handle(loginCommand);
-            if (loginCommand.HasError)
+            if (loginCommand.HasError || loginCommand.User is null)
             {
                 command.FillErrorFrom(loginCommand);
                 return;

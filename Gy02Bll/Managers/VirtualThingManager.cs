@@ -153,12 +153,12 @@ namespace OW.Game.Manager
 
             var view = result.GetJsonObject(type);
             _Mapper.Map(tv, view, tv.GetType(), view.GetType()); //复制一般性属性。
-            if(tv.Fcps.Count > 0)   //TODO 临时修正
+            if (tv.Fcps.Count > 0)   //TODO 临时修正
             {
                 dynamic dyn = view;
                 dyn.Fcps.Clear();
                 foreach (var fcps in tv.Fcps)
-                    dyn.Fcps.Add(fcps.Key,(FastChangingProperty)fcps.Value.Clone());
+                    dyn.Fcps.Add(fcps.Key, (FastChangingProperty)fcps.Value.Clone());
             }
             if (tv.TIdsOfCreate is not null)
                 foreach (var item in tv.TIdsOfCreate) //创建所有子对象
@@ -178,13 +178,16 @@ namespace OW.Game.Manager
         /// <returns>true成功删除，false不在指定的上下文中。</returns>
         public bool Delete(VirtualThing thing, DbContext context)
         {
+            var efEntity = context.Entry(thing);
             if (thing.Parent is not null)
             {
                 thing.Parent.Children.Remove(thing);
             }
             thing.Parent = null;
             thing.ParentId = null;
-            return context.Remove(thing).State == EntityState.Deleted;
+            if (efEntity.State != EntityState.Deleted)
+                efEntity = context.Remove(thing);
+            return efEntity.State == EntityState.Deleted;
         }
 
         /// <summary>

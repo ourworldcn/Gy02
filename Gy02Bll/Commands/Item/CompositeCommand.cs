@@ -58,7 +58,8 @@ namespace GY02.Commands
 
         public override void Handle(CompositeCommand command)
         {
-            using var dw = DisposeHelper.Create(_GameAccountStore.Lock, _GameAccountStore.Unlock, command.GameChar.GetUser().GetKey(), TimeSpan.FromSeconds(2));
+            var key = command.GameChar.GetUser().GetKey();
+            using var dw = DisposeHelper.Create(_GameAccountStore.Lock, _GameAccountStore.Unlock, key, TimeSpan.FromSeconds(2));
             if (dw.IsEmpty)
             {
                 command.FillErrorFromWorld();
@@ -143,6 +144,7 @@ namespace GY02.Commands
             //    HasNewValue = newCost.Length > 0,
             //    NewValue = newCost,
             //});
+            _GameAccountStore.Save(key);
             mainOut.CompositingAccruedCost.Clear();
             //TODO 暂时屏蔽
             //mainOut.CompositingAccruedCost.AddRange(newCost);

@@ -74,7 +74,8 @@ namespace OW.Game.Entity
         /// <returns>true密码匹配，false密码不匹配。</returns>
         public bool IsPwd(string pwd)
         {
-            return SHA1.HashData(Encoding.UTF8.GetBytes(pwd)).SequenceEqual(PwdHash);
+            return true;
+            //TODO return SHA1.HashData(Encoding.UTF8.GetBytes(pwd)).SequenceEqual(PwdHash ?? Array.Empty<byte>());
         }
 
         /// <summary>
