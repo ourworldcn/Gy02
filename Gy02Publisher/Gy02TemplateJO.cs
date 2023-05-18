@@ -678,11 +678,12 @@ namespace GY02.Templates
             get; set;
         }
 
+        List<decimal> _Args;
         /// <summary>
         /// 一组参数值，有多少个元素由运算符指定。
         /// </summary>
         [JsonPropertyName("args")]
-        public List<decimal> Args { get; set; } = new List<decimal> { };
+        public List<decimal> Args { get => _Args ?? (_Args = new List<decimal> { }); set => _Args = value; }
 
         /// <summary>
         /// 获取条件对象中指定的属性值。

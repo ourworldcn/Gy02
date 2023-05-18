@@ -178,16 +178,20 @@ namespace OW.Game.Manager
         /// <returns>true成功删除，false不在指定的上下文中。</returns>
         public bool Delete(VirtualThing thing, DbContext context)
         {
-            var efEntity = context.Entry(thing);
+            bool result;
             if (thing.Parent is not null)
             {
                 thing.Parent.Children.Remove(thing);
+                thing.Parent = null;
+                result = true;
             }
-            thing.Parent = null;
+            else
+                result = false;
             thing.ParentId = null;
-            if (efEntity.State != EntityState.Deleted)
-                efEntity = context.Remove(thing);
-            return efEntity.State == EntityState.Deleted;
+            var efEntity = context.Entry(thing);
+            if (efEntity.State != EntityState.Detached) //若不是游离对象
+                _ = context.Remove(thing);
+            return result;
         }
 
         /// <summary>

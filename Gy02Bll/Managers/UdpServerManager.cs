@@ -144,7 +144,8 @@ namespace GY02.Managers
                     break;
                 }
                 catch (ObjectDisposedException)  //已关闭基础 Socket。
-                { }
+                {
+                }
                 catch (SocketException)  //访问套接字时出错。
                 {
 

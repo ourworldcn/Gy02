@@ -1,24 +1,234 @@
 {
-  "ret": "0",
-  "msg": "Success!",
-  "content": {
-    "data": {
-      "gameId": "220000044",
-      "channelId": 3,
-      "appId": "210044002",
-      "userId": "u24928600009",
-      "sdkData": { "channelUid": "u24928600009" },
-      "accessToken": "07pdVt_qC4_c0LalBe9tB2c9mprRDWmD0nEK48p9UAQ8WUqQxgtwjyU3TCI_a3CK2FpDpEo5t7cgSJ-MGFOHRGWx_G4z1Nq6TJfalG"
+  "GameChar": {
+    "DisplayName": "角色",
+    "atk": 20,
+    "def": 100,
+    "pow": 350,
+    "crit_pct": 0,
+    "crit": 100,
+    "CombatTId": null,
+    "ClientCombatInfo": "{\"killEnemyDic\":{\"320101004\":12,\"320206003\":1},\"dropRewardDic\":{\"110101002\":30}}",
+    "LogineCount": 4,
+    "YichuanPifuSlot": {
+      "Capacity": -1,
+      "Children": [],
+      "Id": "9aa2a5b2-c1d4-4672-b04d-b30497c6f713",
+      "TemplateId": "18084905-2c57-4b4c-b302-4b8230740fbd",
+      "lv": 0
     },
-    "cData": {
-      "ret": 1,
-      "msg": "success",
-      "content": {
-        "expires": 2592000,
-        "access_token": "07pdVt_qC4_c0LalBe9tB2c9mprRDWmD0nEK48p9UAQ8WUqQxgtwjyU3TCI_a3CK2FpDpEo5t7cgSJ-MGFOHRGWx_G4z1Nq6TJfalG",
-        "user_id": "u24928600009",
-        "user_name": "24928600009"
+    "Wuqi": {
+      "Capacity": 1,
+      "Children": [
+        {
+          "atk": 10,
+          "def": 0,
+          "pow": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "3fb514ab-6244-4cc4-9494-21368011c3fa",
+          "TemplateId": "c531cd34-fed9-4859-81f1-501c25c0926d",
+          "lv": 0
+        }
+      ],
+      "Id": "4336525c-dfd2-4791-9de4-692119a97502",
+      "TemplateId": "29b7e726-387f-409d-a6ac-ad8670a814f0",
+      "lv": 0
+    },
+    "ShouTao": {
+      "Capacity": 1,
+      "Children": [],
+      "Id": "63112964-31c1-4a11-9ac5-ecbb3df5de10",
+      "TemplateId": "4d125986-4a3f-4294-bf54-a70853d719c1",
+      "lv": 0
+    },
+    "YiFu": {
+      "Capacity": 1,
+      "Children": [
+        {
+          "atk": 0,
+          "def": 50,
+          "pow": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "7f061834-7ad9-4e2d-a3dd-ab69ab4f8a79",
+          "TemplateId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+          "lv": 0
+        }
+      ],
+      "Id": "dd993ca6-f1fe-4fc7-82c9-e46842d74a9b",
+      "TemplateId": "3d141082-0deb-4f59-ac5d-a80e43657ccc",
+      "lv": 0
+    },
+    "XieZi": {
+      "Capacity": 1,
+      "Children": [],
+      "Id": "12d195db-72ac-4a93-93e2-e423ba578d5b",
+      "TemplateId": "fe312261-2233-4c35-aaf4-bd698e328baf",
+      "lv": 0
+    },
+    "YaoDai": {
+      "Capacity": 1,
+      "Children": [],
+      "Id": "4e465fe8-2242-4578-a15e-b55f01e424e7",
+      "TemplateId": "af7b7b9b-a881-4cbe-bca5-111f7babd73a",
+      "lv": 0
+    },
+    "ZuoQiSlot": {
+      "Capacity": 1,
+      "Children": [
+        {
+          "atk": 0,
+          "def": 0,
+          "pow": 50,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "327b4945-d11f-48e1-87fa-3896aeff349a",
+          "TemplateId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+          "lv": 0
+        }
+      ],
+      "Id": "20111681-76c4-429d-915c-5fd736d00683",
+      "TemplateId": "14d0e372-909b-485f-b8cb-07c9231b10ff",
+      "lv": 0
+    },
+    "ZhuangBeiBag": {
+      "Capacity": -1,
+      "Children": [
+        {
+          "atk": 0,
+          "def": 50,
+          "pow": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "6579b540-af99-4b10-9d36-b520882ac1dc",
+          "TemplateId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+          "lv": 0
+        },
+        {
+          "atk": 0,
+          "def": 0,
+          "pow": 50,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "42b4563d-835e-451f-aaba-fa40f04d9c5e",
+          "TemplateId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+          "lv": 0
+        }
+      ],
+      "Id": "0b2eace5-731e-47fb-a4a7-ffe740bc7948",
+      "TemplateId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "lv": 0
+    },
+    "DaoJuBag": {
+      "Capacity": -1,
+      "Children": [
+        {
+          "Count": 4.0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "e3880f8a-a6f0-4378-a73c-3fe394cc518c",
+          "TemplateId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
+          "lv": 0
+        },
+        {
+          "Count": 2.0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "a293f570-b42e-404c-b339-978a36e05cc5",
+          "TemplateId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
+          "lv": 0
+        }
+      ],
+      "Id": "55e5da96-9d61-4753-89eb-c5c0f6760efd",
+      "TemplateId": "9c559895-9a2c-43a7-b793-e879a600487c",
+      "lv": 0
+    },
+    "PiFuBag": {
+      "Capacity": -1,
+      "Children": [],
+      "Id": "34f829a4-6741-4e20-98b1-ae1a8bd5c33b",
+      "TemplateId": "3b163a62-6591-4a93-a385-cf079b20f589",
+      "lv": 0
+    },
+    "HuoBiSlot": {
+      "Capacity": 1,
+      "Children": [
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "f316b630-ea6e-4eab-aa2c-162032ff5031",
+          "TemplateId": "46542de4-b8b8-4735-936c-856273b650f7",
+          "lv": 0
+        },
+        {
+          "Count": 16,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "d5803eef-76e0-4c08-89b2-6dffdf7c14d2",
+          "TemplateId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "lv": 0
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "7d10418c-ae77-49b1-be31-6e4e730a77b1",
+          "TemplateId": "4527471a-fd91-4899-910c-de7056ad67a1",
+          "lv": 0
+        },
+        {
+          "Count": 25600.0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "28ad33b7-4f8e-45d9-93bb-770636317c27",
+          "TemplateId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "lv": 0
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "745723f0-abd6-4251-97b0-b14f9fb31d14",
+          "TemplateId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "lv": 0
+        },
+        {
+          "Count": 3,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "Id": "66f7aaa9-2343-4f59-9a02-e310d0bf6b50",
+          "TemplateId": "9ebdc71e-f2ad-4f1c-82b9-88955fe15b4b",
+          "lv": 0
+        }
+      ],
+      "Id": "3c50a22b-26d0-45df-8764-4986d0c2155c",
+      "TemplateId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+      "lv": 0
+    },
+    "FuhuaPreview": [],
+    "FuhuaHistory": [],
+    "CombatHistory": [
+      {
+        "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
+        "MinTimeSpanOfPass": "00:06:23.4510000"
+      },
+      {
+        "TId": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
+        "MinTimeSpanOfPass": "00:07:35.8110000"
       }
-    }
-  }
+    ],
+    "ShoppingHistory": [],
+    "LvUpAccruedCost": [],
+    "CompositingAccruedCost": [],
+    "Id": "5aeda3f9-6f58-4935-b87a-755c5e78f3ac",
+    "TemplateId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+    "lv": 0
+  },
+  "Token": "687e1052-83d0-45c0-94e5-15ca1c7b57e5",
+  "WorldServiceHost": "http://192.168.0.104:5175",
+  "UdpServiceHost": "192.168.0.104:49260",
+  "HasError": false,
+  "ErrorCode": 0,
+  "DebugMessage": "操作成功完成。"
 }

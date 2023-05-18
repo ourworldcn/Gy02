@@ -133,7 +133,8 @@ namespace GY02.Managers
                         _Queue.TryAdd(item.Key, null);  //加入队列以备未来写入
                         var ids = string.Join(',', excp.Entries.Select(c => (c.Entity as VirtualThing)?.IdString));
                         var tids = string.Join(',', excp.Entries.Select(c => (c.Entity as VirtualThing)?.ExtraGuid));
-                        Logger.LogWarning(excp, $"保存数据时出现并发错误——ids:{ids}。tids:{tids}");
+                        var states = string.Join(',', excp.Entries.Select(c => c?.State));
+                        Logger.LogWarning(excp, $"保存数据时出现并发错误——ids:{ids}。tids:{tids}。state{states}");
                     }
                     catch (Exception excp)
                     {
