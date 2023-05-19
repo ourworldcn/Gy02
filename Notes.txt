@@ -2,7 +2,7 @@
 Enable-Migrations –EnableAutomaticMigrations -Context GameUserContext
 Add-Migration 22111601 -Context GY02TemplateContext
 Add-Migration 22111601 -Context GY02UserContext
-Add-Migration 22102001 -Context GameLoggingDbContext
+Add-Migration 23051901 -Context GY02LogginContext
 
 fcpifhcd=1	增量
 fcpdfhcd=1	计算间隔，单位：秒

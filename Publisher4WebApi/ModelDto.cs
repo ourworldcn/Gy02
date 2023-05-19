@@ -698,6 +698,12 @@ namespace GY02.Publisher
         [SourceMember("User.CurrentChar")]
         public GameCharDto GameChar { get; set; }
 
+        /// <summary>
+        /// 用户账号的唯一Id。
+        /// </summary>
+        [SourceMember(nameof(LoginCommand.User) + "." + nameof(GameUser.Id))]
+        public Guid UserId { get; set; }
+
         Guid _Token;
         /// <summary>
         /// 后续操作该用户使用的令牌。

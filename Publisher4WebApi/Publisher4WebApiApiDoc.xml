@@ -539,6 +539,11 @@
             角色的信息。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.LoginReturnDto.UserId">
+            <summary>
+            用户账号的唯一Id。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.LoginReturnDto.Token">
             <summary>
             后续操作该用户使用的令牌。

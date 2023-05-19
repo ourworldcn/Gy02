@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gy001Tools", "Gy001Tools\Gy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Publisher4WebApi", "Publisher4WebApi\Publisher4WebApi.csproj", "{9FD9A443-6731-4B51-96AE-021E6D22779B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingDb", "LoggingDb\LoggingDb.csproj", "{19025221-CC57-4FA2-897A-8C263CEA5CB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,10 @@ Global
 		{9FD9A443-6731-4B51-96AE-021E6D22779B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FD9A443-6731-4B51-96AE-021E6D22779B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FD9A443-6731-4B51-96AE-021E6D22779B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19025221-CC57-4FA2-897A-8C263CEA5CB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19025221-CC57-4FA2-897A-8C263CEA5CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19025221-CC57-4FA2-897A-8C263CEA5CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19025221-CC57-4FA2-897A-8C263CEA5CB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{F5A5432D-2FDC-4FA0-ADD9-A43B28DCDFCC} = {D5FDFE49-F245-4E56-95DA-64D0FF750423}
 		{1A9F52C4-5AC1-4306-9828-6087D08C1578} = {302C020C-1FAB-4814-99C9-60FE958B069F}
 		{9FD9A443-6731-4B51-96AE-021E6D22779B} = {75C81597-8B53-450D-82BA-445BBBA77D10}
+		{19025221-CC57-4FA2-897A-8C263CEA5CB4} = {2EE9B8A3-CCF2-4322-BACC-7E38151146C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BA262253-6F3C-4B0D-8BB4-363E65DDC63E}

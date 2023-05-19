@@ -14,9 +14,11 @@ using OW.Game;
 using OW.Game.Conditional;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.GameDb;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 
@@ -112,6 +114,10 @@ namespace GY02
             var logger = services.GetRequiredService<ILogger<GameHostedService>>();
             try
             {
+                var loggingContext = services.GetRequiredService<GY02LogginContext>();
+                GY02LogginMigrateDbInitializer.Initialize(loggingContext);
+                logger.LogTrace($"日志数据库已正常升级。");
+
                 var tContext = services.GetRequiredService<GY02TemplateContext>();
                 TemplateMigrateDbInitializer.Initialize(tContext);
                 logger.LogTrace($"模板数据库已正常升级。");

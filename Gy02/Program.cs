@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.GameDb;
 
 lbStart:
 Environment.SetEnvironmentVariable("DOTNET_USE_POLLING_FILE_WATCHER", "1");
@@ -69,6 +70,8 @@ services.AddSwaggerGen(c =>
 var loggingDbConnectionString = builder.Configuration.GetConnectionString("LoggingDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 var userDbConnectionString = builder.Configuration.GetConnectionString("UserDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
+
+services.AddDbContext<GY02LogginContext>(options => options.UseLazyLoadingProxies().UseSqlServer(loggingDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
 
 services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
 //services.AddDbContext<GY02UserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Scoped);

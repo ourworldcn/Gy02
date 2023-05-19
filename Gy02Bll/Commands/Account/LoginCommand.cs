@@ -4,6 +4,7 @@ using GY02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Store;
+using OW.GameDb;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -46,12 +47,14 @@ namespace GY02.Commands
     public class LoginHandler : SyncCommandHandlerBase<LoginCommand>
     {
 
-        public LoginHandler(IServiceProvider service)
+        public LoginHandler(IServiceProvider service, GameSqlLoggingManager loggingManager)
         {
             _Service = service;
+            _LoggingManager = loggingManager;
         }
 
         IServiceProvider _Service;
+        GameSqlLoggingManager _LoggingManager;
 
         public override void Handle(LoginCommand command)
         {
@@ -83,6 +86,7 @@ namespace GY02.Commands
             var db = gu.GetDbContext();
             gu.CurrentChar = ((VirtualThing)gu.Thing).Children.First(c => c.ExtraGuid == ProjectContent.CharTId).GetJsonObject<GameChar>();
             gu.CurrentChar.LogineCount++;
+            _LoggingManager.AddLogging(new GameActionRecord { ActionId = "Loginged", ParentId = gu.Id });
         }
 
     }

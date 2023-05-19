@@ -14,6 +14,11 @@ namespace Gy02Bll.Commands.Shopping
 {
     public class GetShoppingItemsCommand : SyncCommandBase, IGameCharCommand
     {
+        public GetShoppingItemsCommand()
+        {
+
+        }
+
         public GameChar GameChar { get; set; }
 
         /// <summary>
@@ -56,7 +61,7 @@ namespace Gy02Bll.Commands.Shopping
             else //若指定了页签
             {
                 HashSet<string> genus = new HashSet<string>(command.Genus);
-                baseColl = _TemplateManager.Id2FullView.Where(c => c.Value.ShoppingItem is not null && genus.Overlaps(c.Value.Genus)).Select(c => c.Value);
+                baseColl = _TemplateManager.Id2FullView.Where(c => c.Value.ShoppingItem is not null && c.Value.Genus is not null && genus.Overlaps(c.Value.Genus)).Select(c => c.Value);
             }
             //过滤
             DateTime nowUtc = DateTime.UtcNow;    //当前
@@ -64,6 +69,7 @@ namespace Gy02Bll.Commands.Shopping
             {
                 var b = _ShoppingManager.IsValid(command.GameChar, item, nowUtc, out var startUtc);
                 if (!b) continue;   //若不符合条件
+                command.ShoppingItems.Add(item.ShoppingItem);
             }
         }
     }

@@ -27,9 +27,10 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameShoppingManager : GameManagerBase<GameShoppingManagerOptions, GameShoppingManager>
     {
-        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, BlueprintManager blueprintManager) : base(options, logger)
+        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, BlueprintManager blueprintManager, GameEntityManager entityManager) : base(options, logger)
         {
             _BlueprintManager = blueprintManager;
+            _EntityManager = entityManager;
         }
 
         BlueprintManager _BlueprintManager;
