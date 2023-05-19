@@ -114,6 +114,11 @@ namespace GY02.Publisher
         public static readonly Guid FuhuaCishuTId = new Guid("9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B");
 
         /// <summary>
+        /// 累计签到占位符的TId。
+        /// </summary>
+        public static readonly Guid LeijiQiandaoSlotTId = new Guid("4527471A-FD91-4899-910C-DE7056AD67A1");
+
+        /// <summary>
         /// 七日签到页签。
         /// </summary>
         public const string QiriQiandaoGenus = "gs_qiandao";

@@ -1212,6 +1212,22 @@ namespace GY02.Publisher
     #region 商城相关
 
     /// <summary>
+    /// 累计签到功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(LeijiQiandaoCommand), ReverseMap = true)]
+    public class LeijiQiandaoParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 累计签到功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(LeijiQiandaoCommand))]
+    public class LeijiQiandaoReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
     /// 获取商城购买物品项功能的参数封装类。
     /// </summary>
     [AutoMap(typeof(GetShoppingItemsCommand), ReverseMap = true)]
@@ -1232,7 +1248,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 购买商品的状态集合。
         /// </summary>
-        public List<ShoppingItemStateDto> ShoppingItemState { get; set; } = new List<ShoppingItemStateDto>();
+        public List<ShoppingItemStateDto> ShoppingItemStates { get; set; } = new List<ShoppingItemStateDto>();
     }
 
     /// <summary>

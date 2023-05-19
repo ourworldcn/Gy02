@@ -809,6 +809,11 @@
             孵化次数货币的TId。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.LeijiQiandaoSlotTId">
+            <summary>
+            累计签到占位符的TId。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.QiriQiandaoGenus">
             <summary>
             七日签到页签。

@@ -29,7 +29,7 @@ namespace Gy02Bll.Commands.Shopping
         /// <summary>
         /// 返回的有效数据项。
         /// </summary>
-        public List<GameShoppingItem> ShoppingItems { get; set; } = new List<GameShoppingItem>();
+        public List<ShoppingItemState> ShoppingItemStates { get; set; } = new List<ShoppingItemState>();
     }
 
     public class GetShoppingItemsHandler : SyncCommandHandlerBase<GetShoppingItemsCommand>, IGameCharHandler<GetShoppingItemsCommand>
@@ -65,12 +65,21 @@ namespace Gy02Bll.Commands.Shopping
             }
             //过滤
             DateTime nowUtc = DateTime.UtcNow;    //当前
+            List<(TemplateStringFullView, DateTime)> list = new List<(TemplateStringFullView, DateTime)>();
             foreach (var item in baseColl)  //遍历基础集合
             {
                 var b = _ShoppingManager.IsValid(command.GameChar, item, nowUtc, out var startUtc);
                 if (!b) continue;   //若不符合条件
-                command.ShoppingItems.Add(item.ShoppingItem);
+                list.Add((item, startUtc));
             }
+
+            command.ShoppingItemStates.AddRange(list.Select(c => new ShoppingItemState
+            {
+                TId = c.Item1.TemplateId,
+                StartUtc = c.Item2,
+                EndUtc = c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod,
+                BuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.DateTime >= c.Item2 && history.DateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.Count),
+            }));
         }
     }
 }
