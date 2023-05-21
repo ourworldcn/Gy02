@@ -920,6 +920,21 @@
             孵化功能返回值封装类。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.ShoppingBuyParamsDto">
+            <summary>
+            购买功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.ShoppingBuyParamsDto.ShoppingItemTId">
+            <summary>
+            购买的商品项Id。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.ShoppingBuyReturnDto">
+            <summary>
+            购买功能返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.LeijiQiandaoParamsDto">
             <summary>
             累计签到功能的参数封装类。

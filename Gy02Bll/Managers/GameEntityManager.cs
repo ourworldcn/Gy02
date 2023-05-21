@@ -358,6 +358,7 @@ namespace GY02.Managers
         public TemplateStringFullView GetTemplate(GameEntity entity) =>
             _TemplateManager.GetFullViewFromId(entity.TemplateId);
 
+
         /// <summary>
         /// 获取实体的默认容器。
         /// </summary>
@@ -387,6 +388,68 @@ namespace GY02.Managers
             }
             return GetEntity(parent);
         }
+
+        /// <summary>
+        /// 为指定实体在一组实体中选择默认的容器对象。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="containeres"></param>
+        /// <returns>null表示出错。</returns>
+        public GameEntity GetDefaultContainer(GameEntity entity, IEnumerable<GameEntity> containeres)
+        {
+            var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId); //获取模板
+            var ptid = tt.ParentTId;
+            var parent = containeres.Where(c => c.TemplateId == ptid);
+            var count = parent.Count();
+            if (count > 1)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"在指定集合中找到多个符合条件的默认容器，容器TId={ptid}");
+                return null;
+            }
+            else if (count <= 0)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"在指定集合中找不到符合条件的默认容器，容器TId={ptid}");
+                return null;
+            }
+            return parent.First();
+        }
+
+        /// <summary>
+        /// 获取指定实体的容器或默认容器。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="containerTId">指定的容器TId，null则取默认容器。</param>
+        /// <param name="containeres">仅在此集合内查找容器。</param>
+        /// <returns>null表示出错，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        public GameEntity GetContainer(GameEntity entity, Guid? containerTId, IEnumerable<GameEntity> containeres)
+        {
+            if (containerTId is null)    //若找默认容器
+                return GetDefaultContainer(entity, containeres);
+            var parent = containeres.Where(c => c.TemplateId == containerTId);
+            var count = parent.Count();
+            if (count > 1)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"在指定集合中找到多个符合条件的容器，容器TId={containerTId}");
+                return null;
+            }
+            else if (count <= 0)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"在指定集合中找不到符合条件的容器，容器TId={containerTId}");
+                return null;
+            }
+            return parent.First();
+        }
+
+        /// <summary>
+        /// 获取指定角色下所有实体的枚举子。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <returns>所有子虚拟物的枚举子。如果出错则返回null,此时用<see cref="OwHelper.GetLastError"/>确定具体信息。</returns>
+        public IEnumerable<GameEntity> GetAllEntity(GameChar gameChar) => gameChar.GetAllChildren()?.Select(c => GetEntity(c));
 
         #endregion 基础功能
 
@@ -496,6 +559,28 @@ namespace GY02.Managers
                 changes?.CollectionRemove(entity, parent);
                 return true;
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source">(实体的模板Id，数量，强行指定的容器Id。)</param>
+        /// <param name="gameChar"></param>
+        /// <param name="changes"></param>
+        /// <returns></returns>
+        public bool CreateAndMove(IEnumerable<(Guid, decimal, Guid?)> source, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var allEntity = GetAllEntity(gameChar)?.ToArray();
+            if (allEntity is null) return false;
+
+            var result = Create(source.Select(c => (c.Item1, c.Item2)));
+            var coll = source.Zip(result);
+            foreach (var item in coll)
+            {
+                var container = GetContainer(item.Second, item.First.Item3, allEntity);
+                Move(item.Second, container, changes);
+            }
+            return true;
         }
 
         /// <summary>

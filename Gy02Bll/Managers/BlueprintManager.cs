@@ -1,4 +1,5 @@
-﻿using GY02.Publisher;
+﻿using GY02.Commands;
+using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -8,6 +9,7 @@ using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,6 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Managers
 {
@@ -95,6 +98,18 @@ namespace GY02.Managers
                 if (!_EntityManager.Modify(item.Entity, item.Count, changes)) throw new InvalidOperationException { };  //若出现无法减少的异常
             }
             return true;
+        }
+
+        /// <summary>
+        /// 按照指定的输出项生成实体。
+        /// </summary>
+        /// <param name="outItems"></param>
+        /// <returns></returns>
+        public IEnumerable<GameEntity> GenerateOuts(IEnumerable<BlueprintOutItem> outItems)
+        {
+            var result = _EntityManager.Create(outItems.Select(c => (c.TId, c.Count)));
+            if (result is null) return null;
+            return result;
         }
 
         /// <summary>

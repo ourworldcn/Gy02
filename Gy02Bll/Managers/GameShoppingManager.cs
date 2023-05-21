@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,23 +28,44 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameShoppingManager : GameManagerBase<GameShoppingManagerOptions, GameShoppingManager>
     {
-        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, BlueprintManager blueprintManager, GameEntityManager entityManager) : base(options, logger)
+        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, BlueprintManager blueprintManager, GameEntityManager entityManager, TemplateManager templateManager) : base(options, logger)
         {
             _BlueprintManager = blueprintManager;
             _EntityManager = entityManager;
+            _TemplateManager = templateManager;
         }
 
         BlueprintManager _BlueprintManager;
         GameEntityManager _EntityManager;
+        TemplateManager _TemplateManager;
+
+        public GameShoppingItem GetShoppingItemByTId(Guid shoppingItemTId)
+        {
+            var tt = _TemplateManager.GetFullViewFromId(shoppingItemTId);
+            if (tt is null) return null;
+            return GetShoppingItemByTemplate(tt);
+        }
+
+        public GameShoppingItem GetShoppingItemByTemplate(TemplateStringFullView tt)
+        {
+            if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
+                return null;
+            }
+            return shoppingItem;
+        }
+
 
         /// <summary>
-        /// 测试角色是否可以购买指定的商品项。
+        /// 综合考虑多种因素确定是否可以购买。
         /// </summary>
         /// <param name="gameChar"></param>
         /// <param name="tt"></param>
         /// <param name="nowUtc"></param>
-        /// <param name="periodStart">返回true时这里返回<paramref name="nowUtc"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
-        /// <returns>true指定的商品项对指定用户而言在指定时间点上有效。</returns>
+        /// <param name="periodStart"></param>
+        /// <returns></returns>
         public bool IsValid(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart)
         {
             if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
@@ -53,21 +75,95 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
                 return false;
             }
-            if (!shoppingItem.Period.IsValid(nowUtc, out periodStart)) return false;  //若时间点无效
-            //校验购买数量
-            var start = periodStart;
-            var end = start + shoppingItem.Period.ValidPeriod;
-            var buyedCount = gameChar.ShoppingHistory.Where(c => c.DateTime >= start && c.DateTime < end).Sum(c => c.Count);  //已经购买的数量
-            if (buyedCount >= shoppingItem.MaxCount)
+            return IsValid(gameChar, shoppingItem, nowUtc, out periodStart);
+
+        }
+
+        /// <summary>
+        /// 综合考虑多种因素确定是否可以购买。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="shoppingItem"></param>
+        /// <param name="nowUtc"></param>
+        /// <param name="periodStart"></param>
+        /// <returns></returns>
+        public bool IsValid(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart)
+        {
+            if (!IsValidWithoutBuyed(gameChar, shoppingItem, nowUtc, out periodStart)) return false;  //若时间点无效
+            var end = periodStart + shoppingItem.Period.ValidPeriod;
+            if (!IsValidOnlyCount(gameChar, shoppingItem, periodStart, end, out _))
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_NOT_ENOUGH_QUOTA);
                 OwHelper.SetLastErrorMessage($"已达最大购买数量。");
                 return false;
             }
+            return true;
+        }
+
+        /// <summary>
+        /// 测试角色是否可以购买指定的商品项。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="tt"></param>
+        /// <param name="nowUtc"></param>
+        /// <param name="periodStart">返回true时这里返回<paramref name="nowUtc"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
+        /// <returns>true指定的商品项对指定用户而言在指定时间点上有效。</returns>
+        public bool IsValidWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart)
+        {
+            if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
+            {
+                periodStart = default;
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
+                return false;
+            }
+            return IsValidWithoutBuyed(gameChar, shoppingItem, DateTime.UtcNow, out periodStart);
+        }
+
+        /// <summary>
+        /// 指定的商品项对指定角色是否有效，不考虑已经购买的数量。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="shoppingItem"></param>
+        /// <param name="nowUtc"></param>
+        /// <param name="periodStart"></param>
+        /// <returns></returns>
+        public bool IsValidWithoutBuyed(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart)
+        {
+            if (!shoppingItem.Period.IsValid(nowUtc, out periodStart)) return false;  //若时间点无效
             //检测购买代价
             var costs = _BlueprintManager.GetCost(gameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)), shoppingItem.Ins);
             if (costs is null)
                 return false;
+            return true;
+        }
+
+        /// <summary>
+        /// 指定商品项是否可以购买，仅考虑已购买数量，不考虑其它因素。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="shoppingItem"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="buyedCount">在指定时间段内已经购买的数量。</param>
+        /// <returns></returns>
+        public bool IsValidOnlyCount(GameChar gameChar, GameShoppingItem shoppingItem, DateTime start, DateTime end, out decimal buyedCount)
+        {
+            buyedCount = gameChar.ShoppingHistory?.Where(c => c.DateTime >= start && c.DateTime < end).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
+            return buyedCount <= shoppingItem.MaxCount;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="shoppingItem"></param>
+        /// <param name="nowUtc"></param>
+        /// <param name="changes"></param>
+        public bool Buy(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            if (!IsValid(gameChar, shoppingItem, nowUtc, out var start)) return false;  //若不符合购买条件
+
             return true;
         }
 

@@ -81,6 +81,31 @@ namespace GY02.Controllers
             _Mapper.Map(command, result);
             return result;
         }
+
+        /// <summary>
+        /// 购买指定商品。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<ShoppingBuyReturnDto> ShoppingBuy(ShoppingBuyParamsDto model)
+        {
+            var result = new ShoppingBuyReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new ShoppingBuyCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
     }
 
 }

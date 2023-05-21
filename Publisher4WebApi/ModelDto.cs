@@ -1212,6 +1212,26 @@ namespace GY02.Publisher
     #region 商城相关
 
     /// <summary>
+    /// 购买功能参数封装类。
+    /// </summary>
+    [AutoMap(typeof(ShoppingBuyCommand), ReverseMap = true)]
+    public class ShoppingBuyParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 购买的商品项Id。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+    }
+
+    /// <summary>
+    /// 购买功能返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(ShoppingBuyCommand))]
+    public class ShoppingBuyReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
     /// 累计签到功能的参数封装类。
     /// </summary>
     [AutoMap(typeof(LeijiQiandaoCommand), ReverseMap = true)]
