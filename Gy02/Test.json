@@ -1,25 +1,50 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-  "name_txt": 11808,
-  "comment_txt": 11834,
-  "atk": [ 10, 13, 16, 19, 22, 25, 28, 31, 34, 37 ],
-  "def": null,
-  "pow": null,
-  "genus": [ "p_wh", "e_wuqi" ],
-  "p_skills": [
-    {
-      "skillsid": "c4c430e1-962a-458d-a1ce-026128edc377",
-      "enable": false
+  "Genus": [ "gs_qiandao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-04-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
     },
-    {
-      "skillsid": "5644a815-fd14-48e2-bbae-7da347c04b1b",
-      "enable": false
-    },
-    {
-      "skillsid": "441a5e71-0252-4e16-8f9c-ba0e5203d2c2",
-      "enable": false
-    }
-  ],
-  "LvUpTId": "f6d2b3d3-9680-472a-bd41-7927de6e87f9"
+    "GroupNumber": 0,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ 7, 0 ],
+                "IgnoreIfDisplayList": true
+              }
+            ],
+            "IgnoreIfDisplayList": true
+
+          }
+        ],
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 10
+      },
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
+        "Count": 1
+      }
+    ],
+    "MaxCount": 1
+  }
 }

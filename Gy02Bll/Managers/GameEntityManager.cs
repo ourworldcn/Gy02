@@ -81,19 +81,22 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="conditions"></param>
+        /// <param name="ignore">是否忽略可以忽略的项。</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool IsMatch(GameEntity entity, GameThingPrecondition conditions) =>
-            conditions.Any(c => IsMatch(entity, c));
+        public bool IsMatch(GameEntity entity, GameThingPrecondition conditions, bool ignore = false) =>
+            conditions.Any(c => IsMatch(entity, c, ignore));
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="condition"></param>
+        /// <param name="ignore"></param>
         /// <returns></returns>
-        public bool IsMatch(GameEntity entity, GameThingPreconditionItem condition)
+        public bool IsMatch(GameEntity entity, GameThingPreconditionItem condition, bool ignore = false)
         {
+            if (ignore && condition.IgnoreIfDisplayList) return true;   //若忽略此项
             VirtualThing thing = (VirtualThing)entity.Thing;
             TemplateStringFullView fullView = _TemplateManager.Id2FullView[thing.ExtraGuid];
 
@@ -105,7 +108,7 @@ namespace GY02.Managers
                 return false;
             if (condition.MinCount.HasValue && condition.MinCount.Value > entity.Count)
                 return false;
-            if (!GeneralConditionalItem.IsMatch(entity, condition.GeneralConditional))  //若通用属性要求的条件不满足
+            if (!GeneralConditionalItem.IsMatch(entity, condition.GeneralConditional, ignore))  //若通用属性要求的条件不满足
                 return false;
             return true;
         }
@@ -704,7 +707,6 @@ namespace GY02.Managers
         //{
         //    var totalWeight = items.Sum(c => c.Weight);    //总权重
         //    random ??= new Random();
-
         //}
 
         /// <summary>

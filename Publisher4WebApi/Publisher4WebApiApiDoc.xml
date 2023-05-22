@@ -910,6 +910,11 @@
             孵化功能参数封装类。
             </summary>
         </member>
+        <member name="M:GY02.Publisher.FuhuaParamsDto.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.FuhuaParamsDto.ParentGenus">
             <summary>
             双亲的类属集合 如 "zuoqi_sheep" "zuoqi_wolf"，无所谓顺序，但返回时是按升序排序。

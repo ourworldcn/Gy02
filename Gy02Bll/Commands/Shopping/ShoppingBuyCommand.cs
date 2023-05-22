@@ -14,6 +14,11 @@ namespace Gy02Bll.Commands.Shopping
 {
     public class ShoppingBuyCommand : PropertyChangeCommandBase, IGameCharCommand
     {
+        public ShoppingBuyCommand()
+        {
+            
+        }
+
         public GameChar GameChar { get; set; }
 
         /// <summary>

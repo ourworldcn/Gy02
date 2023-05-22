@@ -629,7 +629,6 @@ namespace GY02.Templates
         public decimal? MinCount { get; set; }
 
         private List<GeneralConditionalItem> _Contional;
-
         /// <summary>
         /// 扩展条件，针对属性的不等式。有多项时需要同时都符合才认为命中。
         /// </summary>
@@ -638,6 +637,12 @@ namespace GY02.Templates
             get { return _Contional ?? (_Contional = new List<GeneralConditionalItem>()); }
             set { _Contional = value; }
         }
+
+        /// <summary>
+        /// 在获取显示列表的时候，是否忽略该条件，视同满足。
+        /// </summary>
+        /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+        public bool IgnoreIfDisplayList { get; set; } = false;
 
         /// <summary>
         /// <inheritdoc/>
@@ -686,6 +691,12 @@ namespace GY02.Templates
         public List<decimal> Args { get => _Args ?? (_Args = new List<decimal> { }); set => _Args = value; }
 
         /// <summary>
+        /// 在获取显示列表的时候，是否忽略该条件，视同满足。
+        /// </summary>
+        /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+        public bool IgnoreIfDisplayList { get; set; } = false;
+
+        /// <summary>
         /// 获取条件对象中指定的属性值。
         /// </summary>
         /// <param name="entity"></param>
@@ -727,15 +738,19 @@ namespace GY02.Templates
         /// 获取一个指示指定实体是否符合指定条件。
         /// </summary>
         /// <param name="entity"></param>
+        /// <param name="ignore">是否忽略<see cref="GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
         /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
-        public bool IsMatch(object entity)
+        public bool IsMatch(object entity, bool ignore = false)
         {
+            if (ignore && IgnoreIfDisplayList)  //若忽略此项
+                return true;
             bool result;
+            decimal val;    //属性的值
             switch (Operator)
             {
                 case "ModE":
                     //获取属性值
-                    if (!TryGetPropertyValue(entity, out var val))
+                    if (!TryGetPropertyValue(entity, out val))
                     {
                         result = false;
                         break;
@@ -749,10 +764,30 @@ namespace GY02.Templates
                     }
                     else if (Args.Count > 2)
                         OwHelper.SetLastErrorMessage($"ModE要有两个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
+                    else
+                        OwHelper.SetLastError(ErrorCodes.NO_ERROR);
                     result = val % Args[0] == Args[1];
-                    OwHelper.SetLastError(ErrorCodes.NO_ERROR);
                     break;
                 case "<=":
+                    //获取属性值
+                    if (!TryGetPropertyValue(entity, out val))
+                    {
+                        result = false;
+                        break;
+                    }
+                    if (Args.Count < 1)
+                    {
+                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                        OwHelper.SetLastErrorMessage($"<=要有一个参数但实际只有{Args.Count}个参数。");
+                        result = false;
+                        break;
+                    }
+                    else if (Args.Count > 1)
+                        OwHelper.SetLastErrorMessage($"<=要有一个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
+                    else
+                        OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                    result = val <= Args[0];
+                    break;
                 case "<":
                 case ">=":
                 case ">":
@@ -773,9 +808,10 @@ namespace GY02.Templates
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="conditionals"></param>
+        /// <param name="ignore"></param>
         /// <returns>满足所有指定条件或条件集合为空则返回true;否则返回false。</returns>
         /// <exception cref="ArgumentNullException">conditionals -或和- entity 是空引用。</exception>
-        public static bool IsMatch(object entity, IEnumerable<GeneralConditionalItem> conditionals) => conditionals.All(c => c.IsMatch(entity));
+        public static bool IsMatch(object entity, IEnumerable<GeneralConditionalItem> conditionals, bool ignore = false) => conditionals.All(c => c.IsMatch(entity, ignore));
 
     }
 
@@ -809,6 +845,12 @@ namespace GY02.Templates
         /// 与主材料共有类属。
         /// </summary>
         public List<string> Genus { get; set; }
+
+        /// <summary>
+        /// 在获取显示列表的时候，是否忽略该条件，视同满足。
+        /// </summary>
+        /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+        public bool IgnoreIfDisplayList { get; set; } = false;
     }
 
     /// <summary>

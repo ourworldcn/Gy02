@@ -117,12 +117,13 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="item"></param>
         /// <param name="inItem"></param>
+        /// <param name="ignore"></param>
         /// <returns></returns>
-        public bool IsMatch(GameEntity item, BlueprintInItem inItem)
+        public bool IsMatch(GameEntity item, BlueprintInItem inItem, bool ignore = false)
         {
             if (item.Count < inItem.Count)
                 return false;
-            return _EntityManager.IsMatch(item, inItem.Conditional);
+            return _EntityManager.IsMatch(item, inItem.Conditional, ignore);
         }
 
         /// <summary>

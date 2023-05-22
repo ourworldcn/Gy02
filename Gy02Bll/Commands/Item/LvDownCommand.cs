@@ -1,4 +1,7 @@
-﻿using OW.Game.Entity;
+﻿using GY02.Managers;
+using Gy02Bll.Commands.Shopping;
+using OW.Game;
+using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
@@ -6,8 +9,12 @@ using OW.SyncCommand;
 
 namespace GY02.Commands
 {
-    public class LvDownCommand : PropertyChangeCommandBase
+    public class LvDownCommand : PropertyChangeCommandBase, IGameCharCommand
     {
+        public LvDownCommand()
+        {
+            
+        }
         /// <summary>
         /// 降级物品所属角色。
         /// </summary>
@@ -19,23 +26,30 @@ namespace GY02.Commands
         public GameEntity Entity { get; set; }
     }
 
-    public class LvDownHandler : SyncCommandHandlerBase<LvDownCommand>
+    public class LvDownHandler : SyncCommandHandlerBase<LvDownCommand>, IGameCharHandler<LvDownCommand>
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
         /// <param name="syncCommandManager"></param>
-        public LvDownHandler(SyncCommandManager syncCommandManager, TemplateManager templateManager)
+        public LvDownHandler(SyncCommandManager syncCommandManager, TemplateManager templateManager, GameAccountStore accountStore)
         {
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
+            AccountStore = accountStore;
         }
 
         SyncCommandManager _SyncCommandManager;
         private TemplateManager _TemplateManager;
 
+        public GameAccountStore AccountStore { get; }
+
         public override void Handle(LvDownCommand command)
         {
+            var key = ((IGameCharHandler<LvDownCommand>)this).GetKey(command);
+            using var dw = ((IGameCharHandler<LvDownCommand>)this).LockGameChar(command);
+            if (dw.IsEmpty) return; //若锁定失败
+
             var totalCost = command.Entity.LvUpAccruedCost.ToArray();
             LvUpCommandHandler.SetLevel(command.Entity, 0, command.Changes);
             command.Entity.LvUpAccruedCost = new List<GameEntitySummary>();
@@ -68,6 +82,7 @@ namespace GY02.Commands
                     OldValue = totalCost,
                     HasNewValue = false,
                 });
+                AccountStore.Save(key);
             }
         }
     }

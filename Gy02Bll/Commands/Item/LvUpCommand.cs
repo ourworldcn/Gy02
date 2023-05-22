@@ -3,6 +3,7 @@ using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
@@ -17,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace GY02.Commands
 {
-    public class LvUpCommand : PropertyChangeCommandBase
+    public class LvUpCommand : PropertyChangeCommandBase, IGameCharCommand
     {
         public LvUpCommand() { }
 
@@ -29,20 +30,23 @@ namespace GY02.Commands
         public List<Guid> Ids { get; set; } = new List<Guid>();
     }
 
-    public class LvUpCommandHandler : SyncCommandHandlerBase<LvUpCommand>
+    public class LvUpCommandHandler : SyncCommandHandlerBase<LvUpCommand>, IGameCharHandler<LvUpCommand>
     {
 
-        public LvUpCommandHandler(TemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager)
+        public LvUpCommandHandler(TemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStore accountStore)
         {
             _TemplateManager = templateManager;
             _SyncCommandManager = syncCommandManager;
             _GameEntityManager = gameEntityManager;
+            AccountStore = accountStore;
         }
 
         TemplateManager _TemplateManager;
         LvUpCommand _Command;
         SyncCommandManager _SyncCommandManager;
         GameEntityManager _GameEntityManager;
+
+        public GameAccountStore AccountStore { get; }
 
         int GetMaxLevel(TemplateStringFullView template)
         {
@@ -53,6 +57,10 @@ namespace GY02.Commands
 
         public override void Handle(LvUpCommand command)
         {
+            var key = ((IGameCharHandler<LvUpCommand>)this).GetKey(command);
+            using var dw = ((IGameCharHandler<LvUpCommand>)this).LockGameChar(command);
+            if (dw.IsEmpty) return; //若锁定失败
+
             _Command = command;
             var entities = _TemplateManager.GetEntityAndTemplateFullView<GameEntity>(command.GameChar, command.Ids);
             foreach (var entity in entities)
@@ -77,6 +85,7 @@ namespace GY02.Commands
                 _TemplateManager.SetTemplate((VirtualThing)entity.Thing);
                 LvUp(entity, command.Changes);
             }
+            AccountStore.Save(key);
         }
 
         public bool LvUp(GameEntity entity, ICollection<GamePropertyChangeItem<object>> changes = null)

@@ -445,6 +445,12 @@
             扩展条件，针对属性的不等式。有多项时需要同时都符合才认为命中。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GameThingPreconditionItem.IgnoreIfDisplayList">
+            <summary>
+            在获取显示列表的时候，是否忽略该条件，视同满足。
+            </summary>
+            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+        </member>
         <member name="M:GY02.Templates.GameThingPreconditionItem.ToString">
             <summary>
             <inheritdoc/>
@@ -477,6 +483,12 @@
             一组参数值，有多少个元素由运算符指定。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList">
+            <summary>
+            在获取显示列表的时候，是否忽略该条件，视同满足。
+            </summary>
+            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+        </member>
         <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyValue(System.Object,System.Decimal@)">
             <summary>
             获取条件对象中指定的属性值。
@@ -485,19 +497,21 @@
             <param name="result"></param>
             <returns>true找到值，false出错。</returns>
         </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object)">
+        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object,System.Boolean)">
             <summary>
             获取一个指示指定实体是否符合指定条件。
             </summary>
             <param name="entity"></param>
+            <param name="ignore">是否忽略<see cref="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
             <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
         </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object,System.Collections.Generic.IEnumerable{GY02.Templates.GeneralConditionalItem})">
+        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object,System.Collections.Generic.IEnumerable{GY02.Templates.GeneralConditionalItem},System.Boolean)">
             <summary>
             指定实体是否满足所有指定的条件。
             </summary>
             <param name="entity"></param>
             <param name="conditionals"></param>
+            <param name="ignore"></param>
             <returns>满足所有指定条件或条件集合为空则返回true;否则返回false。</returns>
             <exception cref="T:System.ArgumentNullException">conditionals -或和- entity 是空引用。</exception>
         </member>
@@ -526,6 +540,12 @@
             <summary>
             与主材料共有类属。
             </summary>
+        </member>
+        <member name="P:GY02.Templates.BlueprintInItem.IgnoreIfDisplayList">
+            <summary>
+            在获取显示列表的时候，是否忽略该条件，视同满足。
+            </summary>
+            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         </member>
         <member name="T:GY02.Templates.BlueprintOutItem">
             <summary>

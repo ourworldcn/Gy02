@@ -10,6 +10,11 @@ namespace GY02.Commands
 {
     public class FuhuaCommand : PropertyChangeCommandBase, IGameCharCommand
     {
+        public FuhuaCommand()
+        {
+            
+        }
+
         public GameChar GameChar { get; set; }
 
         /// <summary>

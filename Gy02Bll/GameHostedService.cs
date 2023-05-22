@@ -147,10 +147,7 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                using var svc1 = _Services.CreateScope();
-                var t781 = svc1.ServiceProvider.GetService<PublisherT78Manager>();
-                using var svc2 = _Services.CreateScope();
-                var t782 = svc2.ServiceProvider.GetService<PublisherT78Manager>();
+                var dec1 = Convert.ToDecimal(DateTime.UtcNow);
 
                 //var socket = new Socket(AddressFamily.InterNetwork,SocketType.Dgram, ProtocolType.Udp) { };
                 //var saea = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090), UserToken =socket };

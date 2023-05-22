@@ -1194,6 +1194,14 @@ namespace GY02.Publisher
     public class FuhuaParamsDto : TokenDtoBase
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public FuhuaParamsDto()
+        {
+            
+        }
+
+        /// <summary>
         /// 双亲的类属集合 如 "zuoqi_sheep" "zuoqi_wolf"，无所谓顺序，但返回时是按升序排序。
         /// </summary>
         public List<string> ParentGenus { get; set; } = new List<string>();

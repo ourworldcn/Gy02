@@ -107,8 +107,9 @@ namespace GY02.Managers
         /// <param name="tt"></param>
         /// <param name="nowUtc"></param>
         /// <param name="periodStart">返回true时这里返回<paramref name="nowUtc"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
+        /// <param name="ignore">是否忽略仅用于购买的条件。</param>
         /// <returns>true指定的商品项对指定用户而言在指定时间点上有效。</returns>
-        public bool IsValidWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart)
+        public bool IsValidWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
         {
             if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
             {
@@ -117,7 +118,7 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
                 return false;
             }
-            return IsValidWithoutBuyed(gameChar, shoppingItem, DateTime.UtcNow, out periodStart);
+            return IsValidWithoutBuyed(gameChar, shoppingItem, DateTime.UtcNow, out periodStart, ignore);
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace GY02.Managers
         /// <param name="nowUtc"></param>
         /// <param name="periodStart"></param>
         /// <returns></returns>
-        public bool IsValidWithoutBuyed(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart)
+        public bool IsValidWithoutBuyed(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
         {
             if (!shoppingItem.Period.IsValid(nowUtc, out periodStart)) return false;  //若时间点无效
             //检测购买代价
