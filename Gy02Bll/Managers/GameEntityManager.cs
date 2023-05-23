@@ -539,7 +539,7 @@ namespace GY02.Managers
         /// <summary>
         /// 设置等级和相关的序列属性。
         /// </summary>
-        /// <param name="entity">信息完备的实体（设置了模板属性）。</param>
+        /// <param name="entity">有Level属性的实体。</param>
         /// <param name="newLevel"></param>
         /// <returns></returns>
         public bool SetLevel(GameEntity entity, int newLevel, ICollection<GamePropertyChangeItem<object>> changes = null)
