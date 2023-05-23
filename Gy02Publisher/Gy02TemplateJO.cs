@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
@@ -499,6 +500,10 @@ namespace GY02.Templates
         /// </summary>
         public GameDice Dice { get; set; }
 
+        /// <summary>
+        /// 卡池组数据。
+        /// </summary>
+        public GameDiceGoup DiceGroup { get; set; }
 
         #endregion 骰子相关
 
@@ -909,6 +914,27 @@ namespace GY02.Templates
     #region 骰子相关
 
     /// <summary>
+    /// 骰子池的组。组内所有池子共享抽取优惠次数。
+    /// </summary>
+    public class GameDiceGoup
+    {
+        /// <summary>
+        /// 骰子池的TId集合。
+        /// </summary>
+        public List<Guid> DiceIds { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 达到优惠次数时使用特定的抽取规则。如80，表示地80次抽取时使用<see cref="GuaranteesDiceTId"/>指定的卡池抽取。可以是null。
+        /// </summary>
+        public int? GuaranteesCount { get; set; }
+
+        /// <summary>
+        /// 达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
+        /// </summary>
+        public Guid? GuaranteesDiceTId { get; set; }
+    }
+
+    /// <summary>
     /// 定义一个"池子"
     /// </summary>
     public class GameDice
@@ -938,6 +964,15 @@ namespace GY02.Templates
         /// </summary>
         public List<GameDiceItem> Items { get; set; } = new List<GameDiceItem>();
 
+        /// <summary>
+        /// 达到优惠次数时使用特定的抽取规则。如80，表示地80次抽取时使用<see cref="GuaranteesDiceTId"/>指定的卡池抽取。可以是null。
+        /// </summary>
+        public int? GuaranteesCount { get; set; }
+
+        /// <summary>
+        /// 达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
+        /// </summary>
+        public Guid? GuaranteesDiceTId { get; set; }
     }
 
     /// <summary>
@@ -950,7 +985,6 @@ namespace GY02.Templates
         /// </summary>
         public GameDiceItem()
         {
-
         }
 
         /// <summary>
@@ -959,14 +993,15 @@ namespace GY02.Templates
         public GameThingPrecondition Precondition { get; set; } = new GameThingPrecondition();
 
         /// <summary>
-        /// 权重值。在同一个池子中所有项加起来的权重是分母。
+        /// 权重值。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
         /// </summary>
         public decimal Weight { get; set; }
 
         /// <summary>
-        /// 需要此项有效的前置条件，这个条件针对角色数据来设置。
+        /// 忽略计数。
         /// </summary>
-        public GameThingPrecondition GuardConditions { get; set; } = new GameThingPrecondition();
+        /// <value>true当命中此项时会清除保底计数，置为为0。</value>
+        public bool ClearGuaranteesCount { get; set; }
 
         (Guid, decimal, decimal)? _Summary;
         /// <summary>

@@ -338,6 +338,11 @@
             池子的数据。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.DiceGroup">
+            <summary>
+            卡池组数据。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fcps">
             <summary>
             快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
@@ -587,6 +592,26 @@
             材料的集合。
             </summary>
         </member>
+        <member name="T:GY02.Templates.GameDiceGoup">
+            <summary>
+            骰子池的组。组内所有池子共享抽取优惠次数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameDiceGoup.DiceIds">
+            <summary>
+            骰子池的TId集合。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameDiceGoup.GuaranteesCount">
+            <summary>
+            达到优惠次数时使用特定的抽取规则。如80，表示地80次抽取时使用<see cref="P:GY02.Templates.GameDiceGoup.GuaranteesDiceTId"/>指定的卡池抽取。可以是null。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameDiceGoup.GuaranteesDiceTId">
+            <summary>
+            达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.GameDice">
             <summary>
             定义一个"池子"
@@ -614,6 +639,16 @@
             每个投骰子的项。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GameDice.GuaranteesCount">
+            <summary>
+            达到优惠次数时使用特定的抽取规则。如80，表示地80次抽取时使用<see cref="P:GY02.Templates.GameDice.GuaranteesDiceTId"/>指定的卡池抽取。可以是null。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameDice.GuaranteesDiceTId">
+            <summary>
+            达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.GameDiceItem">
             <summary>
             池子项。
@@ -631,13 +666,14 @@
         </member>
         <member name="P:GY02.Templates.GameDiceItem.Weight">
             <summary>
-            权重值。在同一个池子中所有项加起来的权重是分母。
+            权重值。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameDiceItem.GuardConditions">
+        <member name="P:GY02.Templates.GameDiceItem.ClearGuaranteesCount">
             <summary>
-            需要此项有效的前置条件，这个条件针对角色数据来设置。
+            忽略计数。
             </summary>
+            <value>true当命中此项时会清除保底计数，置为为0。</value>
         </member>
         <member name="M:GY02.Templates.GameDiceItem.GetSummary">
             <summary>

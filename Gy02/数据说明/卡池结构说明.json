@@ -1,0 +1,34 @@
+{
+  "Dice": { //定义一个卡池
+    "MaxCount": 0, //投一次骰子产出多少项
+    "AllowRepetition": true, //投一次骰子产出项是否可以重复
+    "Items": [ //里面每项是一个可能产出
+      {
+        "Precondition": [
+          {
+            "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //限定父容器，可以为null，表示放置到默认容器
+            "Genus": [ //限定类属，可以是空集合
+              "string"
+            ],
+            "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //产出想的模板Id
+            "MinCount": 0, //最小需求
+            "GeneralConditional": [ //通用约束，此处无用，应为空集合
+              {
+                "op": "string",
+                "pn": "string",
+                "args": [
+                  0
+                ],
+                "IgnoreIfDisplayList": true
+              }
+            ],
+            "IgnoreIfDisplayList": true //此处无用应为空集合
+          }
+        ],
+        "Weight": 0 //此项权重
+      }
+    ],
+    "Discount": 0, //达到多少抽取时使用特定的抽取规则。如80，表示达到80次，尚未抽到指定物品则使用特定池子抽取。这项可以是null。
+    "DiscountDiceTid": "3fa85f64-5717-4562-b3fc-2c963f66afa6" //达到优惠次数时，使用此TId使用的卡池进行1次抽奖。这项可以是null。
+  }
+}

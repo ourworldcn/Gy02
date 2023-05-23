@@ -6,20 +6,20 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace OW.Game.Entity
 {
     /// <summary>
     /// 游戏内装备/道具的摘要信息。
     /// </summary>
-    [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     [DisplayName("虚拟物摘要")]
+    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
     public class GameEntitySummary
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
         public GameEntitySummary()
         {
 

@@ -1,46 +1,38 @@
 {
-  "Genus": [ "gs_qiandao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-04-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
-    },
-    "GroupNumber": 0,
-    "Ins": [
+  "Fuhua": {
+    "Parent1Conditional": [
+      {
+        "ParentTId": null,
+        "Genus": [ "zuoqi_sheep" ],
+        "TId": null,
+        "MinCount": 1,
+        "GeneralConditional": []
+      }
+    ],
+    "Parent2Conditional": [
+      {
+        "ParentTId": null,
+        "Genus": [ "zuoqi_wolf" ],
+        "TId": null,
+        "MinCount": 1,
+        "GeneralConditional": []
+      }
+    ],
+    "DiceTId1": "0345ca96-b748-4050-ad8a-814b9643d890",
+    "DiceTId2": "65578531-8325-4e6f-910f-12055f2eeb4f",
+    "In": [
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ 7, 0 ]
-              }
-            ]
+            "TId": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
+            "MinCount": 1
           }
         ],
-        "Count": 0,
-        "Genus": []
+        "Count": 1,
+        "Genus": null
       }
-    ],
-    "Outs": [
-      {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 10
-      },
-      {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
-        "Count": 1
-      }
-    ],
-    "MaxCount": 1
+    ]
   }
 }

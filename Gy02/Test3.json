@@ -1,61 +1,47 @@
 {
-  "Changes": [
-    {
-      "TId": "9c559895-9a2c-43a7-b793-e879a600487c",
-      "ObjectId": "0d95f06b-9ba2-4fc6-94cf-1033315379e3",
-      "PropertyName": "Children",
-      "HasOldValue": false,
-      "OldValue": null,
-      "HasNewValue": true,
-      "NewValue": {
-        "Count": 2,
-        "LvUpAccruedCost": [
-
+  "Dice": {
+    "MaxCount": 3,
+    "AllowRepetition": false,
+    "Items": [
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
         ],
-        "CompositingAccruedCost": [
-
-        ],
-        "Id": "4afdd0c1-1cf2-4060-9690-8831071c6c24",
-        "TemplateId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-        "lv": 0
+        "Weight": 100,
+        "GuardConditions": []
       },
-      "DateTimeUtc": "2023-05-22T07:21:19.0523799Z"
-    },
-    {
-      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "ObjectId": "395d4f0f-b4cb-4052-b801-23f56aea4d3f",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 19270,
-      "HasNewValue": true,
-      "NewValue": 22270,
-      "DateTimeUtc": "2023-05-22T07:21:19.052837Z"
-    },
-    {
-      "TId": "c531cd34-fed9-4859-81f1-501c25c0926d",
-      "ObjectId": "48c9c03a-bf1d-4fcb-9d0f-65a7a31885d5",
-      "PropertyName": "LvUpAccruedCost",
-      "HasOldValue": true,
-      "OldValue": [
-        {
-          "Id": "00000000-0000-0000-0000-000000000000",
-          "ParentTId": "bafa0e89-ddfa-4295-adc5-20d3ce7c73c0",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 3000
-        },
-        {
-          "Id": "00000000-0000-0000-0000-000000000000",
-          "ParentTId": "0d95f06b-9ba2-4fc6-94cf-1033315379e3",
-          "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-          "Count": 2
-        }
-      ],
-      "HasNewValue": false,
-      "NewValue": null,
-      "DateTimeUtc": "2023-05-22T07:21:19.0532008Z"
-    }
-  ],
-  "HasError": false,
-  "ErrorCode": 0,
-  "DebugMessage": "操作成功完成。"
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 60,
+        "GuardConditions": []
+      },
+      {
+        "Precondition": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+            "MinCount": 1,
+            "GeneralConditional": []
+          }
+        ],
+        "Weight": 30,
+        "GuardConditions": []
+      }
+    ]
+  }
 }
