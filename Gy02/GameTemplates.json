@@ -22,11 +22,13 @@
     {
       "Id": "46542DE4-B8B8-4735-936C-856273B650F7",
       "DisplayName": "7日签到标志",
+      "Gid": 110201002,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}"
     },
     {
       "Id": "4527471A-FD91-4899-910C-DE7056AD67A1",
       "DisplayName": "累计签到标志",
+      "Gid": 110201003,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true}"
     },
     {
