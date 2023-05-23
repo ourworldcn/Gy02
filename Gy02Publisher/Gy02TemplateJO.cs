@@ -976,6 +976,28 @@ namespace GY02.Templates
     }
 
     /// <summary>
+    /// 输出项。
+    /// </summary>
+    public class OutItem
+    {
+        /// <summary>
+        /// 父容器模板Id，为null则放置在默认容器中。
+        /// </summary>
+        public Guid? ParentTId { get; set; }
+
+        /// <summary>
+        /// 模板Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 数量。
+        /// </summary>
+        public decimal Count { get; set; }
+
+    }
+
+    /// <summary>
     /// 池子项。
     /// </summary>
     public class GameDiceItem
@@ -993,14 +1015,19 @@ namespace GY02.Templates
         public GameThingPrecondition Precondition { get; set; } = new GameThingPrecondition();
 
         /// <summary>
-        /// 权重值。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
+        /// 产出物品的描述集合。
+        /// </summary>
+        public List<OutItem> Outs { get; set; } = new List<OutItem>();
+
+        /// <summary>
+        /// 权重值，可以带小数。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
         /// </summary>
         public decimal Weight { get; set; }
 
         /// <summary>
         /// 忽略计数。
         /// </summary>
-        /// <value>true当命中此项时会清除保底计数，置为为0。</value>
+        /// <value>true当命中此项时会清除保底计数，置为0。</value>
         public bool ClearGuaranteesCount { get; set; }
 
         (Guid, decimal, decimal)? _Summary;

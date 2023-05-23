@@ -649,6 +649,26 @@
             达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
             </summary>
         </member>
+        <member name="T:GY02.Templates.OutItem">
+            <summary>
+            输出项。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.OutItem.ParentTId">
+            <summary>
+            父容器模板Id，为null则放置在默认容器中。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.OutItem.TId">
+            <summary>
+            模板Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.OutItem.Count">
+            <summary>
+            数量。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.GameDiceItem">
             <summary>
             池子项。
@@ -664,16 +684,21 @@
             池子物品的条件。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GameDiceItem.Outs">
+            <summary>
+            产出物品的描述集合。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.GameDiceItem.Weight">
             <summary>
-            权重值。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
+            权重值，可以带小数。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
             </summary>
         </member>
         <member name="P:GY02.Templates.GameDiceItem.ClearGuaranteesCount">
             <summary>
             忽略计数。
             </summary>
-            <value>true当命中此项时会清除保底计数，置为为0。</value>
+            <value>true当命中此项时会清除保底计数，置为0。</value>
         </member>
         <member name="M:GY02.Templates.GameDiceItem.GetSummary">
             <summary>
