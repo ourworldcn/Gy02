@@ -157,7 +157,7 @@ namespace GY02.Commands
                     NewValue = totalCost,
                 });
             }
-            SetLevel(entity, Convert.ToInt32(entity.Level + 1), changes);
+            SetLevel(entity, Convert.ToInt32(entity.Level + 1),_GameEntityManager, changes);
             return true;
         }
 
@@ -167,9 +167,9 @@ namespace GY02.Commands
         /// <param name="entity">信息完备的实体（设置了模板属性）。</param>
         /// <param name="newLevel"></param>
         /// <returns></returns>
-        public static bool SetLevel(GameEntity entity, int newLevel, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public static bool SetLevel(GameEntity entity, int newLevel, GameEntityManager entityManager, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var tfv = entity.GetTemplate();
+            var tfv = entityManager.GetTemplate(entity);
             if (tfv is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
