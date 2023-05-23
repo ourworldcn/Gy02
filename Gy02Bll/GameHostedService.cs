@@ -2,6 +2,7 @@
 using GY02.Managers;
 using GY02.TemplateDb;
 using GY02.Templates;
+using Gy02Bll.Managers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;
@@ -147,8 +148,6 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                //var dec1 = Convert.ToDecimal(DateTime.UtcNow.Date-DateTime.MinValue);
-
                 //var socket = new Socket(AddressFamily.InterNetwork,SocketType.Dgram, ProtocolType.Udp) { };
                 //var saea = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090), UserToken =socket };
                 //byte[] buffer = new byte[1024];
