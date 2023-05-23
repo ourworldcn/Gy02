@@ -13,7 +13,7 @@ namespace GY02.Commands
     {
         public LvDownCommand()
         {
-            
+
         }
         /// <summary>
         /// 降级物品所属角色。
@@ -32,17 +32,19 @@ namespace GY02.Commands
         /// 构造函数。
         /// </summary>
         /// <param name="syncCommandManager"></param>
-        public LvDownHandler(SyncCommandManager syncCommandManager, TemplateManager templateManager, GameAccountStore accountStore)
+        public LvDownHandler(SyncCommandManager syncCommandManager, TemplateManager templateManager, GameAccountStore accountStore, GameEntityManager entityManager)
         {
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
             AccountStore = accountStore;
+            _EntityManager = entityManager;
         }
 
         SyncCommandManager _SyncCommandManager;
         private TemplateManager _TemplateManager;
 
         public GameAccountStore AccountStore { get; }
+        GameEntityManager _EntityManager;
 
         public override void Handle(LvDownCommand command)
         {
@@ -51,7 +53,7 @@ namespace GY02.Commands
             if (dw.IsEmpty) return; //若锁定失败
 
             var totalCost = command.Entity.LvUpAccruedCost.ToArray();
-            LvUpCommandHandler.SetLevel(command.Entity, 0, command.Changes);
+            LvUpCommandHandler.SetLevel(command.Entity, 0, _EntityManager, command.Changes);
             command.Entity.LvUpAccruedCost = new List<GameEntitySummary>();
             List<VirtualThing> list = new List<VirtualThing>();
 
