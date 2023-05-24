@@ -47,7 +47,7 @@
         </member>
         <member name="T:GY02.UdpScannerOptions">
             <summary>
-            
+            <see cref="T:GY02.UdpScanner"/>的配置类。
             </summary>
         </member>
         <member name="P:GY02.UdpScannerOptions.Value">
@@ -173,6 +173,12 @@
             战斗控制器。
             </summary>
         </member>
+        <member name="M:GY02.Controllers.CombatController.Test">
+            <summary>
+            测试。
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:GY02.Controllers.CombatController.StartCombat(GY02.Publisher.StartCombatParamsDto)">
             <summary>
             开始战斗。
@@ -218,6 +224,24 @@
             <param name="commandMng"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:GY02.Controllers.ItemManagerController.TestAddItems">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Controllers.ItemManagerController.TestLvUp">
+            <summary>
+            测试升级接口。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Controllers.ItemManagerController.TestComp">
+            <summary>
+            
+            </summary>
+            <returns></returns>
         </member>
         <member name="M:GY02.Controllers.ItemManagerController.AddItems(GY02.Publisher.AddItemsParamsDto,GY02.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager,AutoMapper.IMapper)">
             <summary>
@@ -270,6 +294,12 @@
             分解（降品）装备。
             </summary>
             <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Controllers.ItemManagerController.TestFuhuaPreview">
+            <summary>
+            测试孵化。
+            </summary>
             <returns></returns>
         </member>
         <member name="M:GY02.Controllers.ItemManagerController.FuhuaPreview(GY02.Publisher.FuhuaPreviewParamsDto)">

@@ -41,7 +41,7 @@ namespace GY02
     }
 
     /// <summary>
-    /// 
+    /// <see cref="UdpScanner"/>的配置类。
     /// </summary>
     public class UdpScannerOptions : IOptions<UdpScannerOptions>
     {
