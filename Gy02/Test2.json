@@ -1,38 +1,54 @@
 {
-  "Fuhua": {
-    "Parent1Conditional": [
+  "Dice": {
+    "MaxCount": 3,
+    "AllowRepetition": true,
+    "Items": [
       {
-        "ParentTId": null,
-        "Genus": [ "zuoqi_sheep" ],
-        "TId": null,
-        "MinCount": 1,
-        "GeneralConditional": []
-      }
-    ],
-    "Parent2Conditional": [
-      {
-        "ParentTId": null,
-        "Genus": [ "zuoqi_wolf" ],
-        "TId": null,
-        "MinCount": 1,
-        "GeneralConditional": []
-      }
-    ],
-    "DiceTId1": "0345ca96-b748-4050-ad8a-814b9643d890",
-    "DiceTId2": "65578531-8325-4e6f-910f-12055f2eeb4f",
-    "In": [
-      {
-        "Conditional": [
+        "Outs": [
           {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
-            "MinCount": 1
+            "ParentTId": null,
+            "TId": "4d87f0f0-5c82-4a83-a654-05bfdd3e95a5",
+            "Count": 1
           }
         ],
-        "Count": 1,
-        "Genus": null
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "b14c117f-ad3d-47ed-9c96-2bbf5c2f9d04",
+            "Count": 1
+          }
+        ],
+        "Weight": 10,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "b4827ef0-710b-4ba0-8d43-187a685c673b",
+            "Count": 1
+          }
+        ],
+        "Weight": 15,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "6b7f8db2-3563-443b-9f85-174a1a226263",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
       }
-    ]
+    ],
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
   }
 }

@@ -926,12 +926,12 @@ namespace GY02.Templates
         /// <summary>
         /// 达到优惠次数时使用特定的抽取规则。如80，表示地80次抽取时使用<see cref="GuaranteesDiceTId"/>指定的卡池抽取。可以是null。
         /// </summary>
-        public int? GuaranteesCount { get; set; }
+        public int GuaranteesCount { get; set; }
 
         /// <summary>
         /// 达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
         /// </summary>
-        public Guid? GuaranteesDiceTId { get; set; }
+        public Guid GuaranteesDiceTId { get; set; }
     }
 
     /// <summary>
@@ -1025,7 +1025,7 @@ namespace GY02.Templates
         public decimal Weight { get; set; }
 
         /// <summary>
-        /// 忽略计数。
+        /// 保底忽略标志。
         /// </summary>
         /// <value>true当命中此项时会清除保底计数，置为0。</value>
         public bool ClearGuaranteesCount { get; set; }

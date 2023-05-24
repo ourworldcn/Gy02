@@ -1,5 +1,6 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
+using Gy02Bll.Managers;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -24,16 +25,18 @@ namespace GY02.Commands
 
     public class FuhuaPreviewHandler : SyncCommandHandlerBase<FuhuaPreviewCommand>, IGameCharHandler<FuhuaPreviewCommand>
     {
-        public FuhuaPreviewHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager, TemplateManager templateManager)
+        public FuhuaPreviewHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager, TemplateManager templateManager, GameDiceManager diceManager)
         {
             _GameAccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
             _TemplateManager = templateManager;
+            _DiceManager = diceManager;
         }
 
         GameAccountStore _GameAccountStore;
         GameEntityManager _GameEntityManager;
         TemplateManager _TemplateManager;
+        GameDiceManager _DiceManager;
 
         public GameAccountStore AccountStore => _GameAccountStore;
 
@@ -65,14 +68,14 @@ namespace GY02.Commands
             {
                 var info = _TemplateManager.GetFuhuaInfo(command.ParentGenus);
                 if (info.Item1 is null) goto lbErr; //若出错
-                var mounts = _GameEntityManager.GetOutputs(info.Item2);
+                var mounts = _DiceManager.GetOutputs(info.Item2);
 
-                var pifus = _GameEntityManager.GetOutputs(info.Item3, history.Items.Select(c => c.Entity.TId));
+                var pifus = _DiceManager.GetOutputs(info.Item3, history.Items.Select(c => c.Entity.TId));
 
                 preview = new FuhuaSummary { };
                 preview.ParentTIds.AddRange(command.ParentGenus);
-                preview.Items.AddRange(mounts.Select(c => GameEntityManager.GetDiceItemSummary(c)));
-                preview.Items.AddRange(pifus.Select(c => GameEntityManager.GetDiceItemSummary(c)));
+                preview.Items.AddRange(mounts.Select(c => GameDiceManager.GetDiceItemSummary(c)));
+                preview.Items.AddRange(pifus.Select(c => GameDiceManager.GetDiceItemSummary(c)));
                 gc.FuhuaPreview.Add(preview);
             }
             command.Result.AddRange(preview.Items);

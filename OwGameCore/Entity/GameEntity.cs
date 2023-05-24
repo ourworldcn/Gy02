@@ -83,11 +83,17 @@ namespace OW.Game.Entity
         {
         }
 
+        /// <summary>
+        /// 等级。
+        /// </summary>
         [JsonPropertyName("lv")]
         public decimal Level { get; set; }
 
         decimal _Count;
-        //[JsonPropertyName("count")]
+        
+        /// <summary>
+        /// 数量。
+        /// </summary>
         public decimal Count
         {
             get

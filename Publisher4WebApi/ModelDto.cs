@@ -229,6 +229,31 @@ namespace GY02.Publisher
     }
 
     /// <summary>
+    /// 投骰子的记录。
+    /// </summary>
+    [AutoMap(typeof(GameDiceHistoryItem))]
+    public class GameDiceHistoryItemDto
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameDiceHistoryItemDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 卡池或卡池组的TId。
+        /// </summary>
+        public Guid DiceTId { get; set; }
+
+        /// <summary>
+        /// 连续未命中高价值物品的次数。
+        /// </summary>
+        public int GuaranteesCount { get; set; }
+    }
+
+    /// <summary>
     /// 角色数据。
     /// </summary>
     [AutoMap(typeof(GameChar))]
@@ -379,6 +404,15 @@ namespace GY02.Publisher
         public List<GameShoppingHistoryItemDto> ShoppingHistory { get; set; } = new List<GameShoppingHistoryItemDto>();
 
         #endregion 商城相关
+
+        #region 投骰子的记录
+
+        /// <summary>
+        /// 投骰子的记录。
+        /// </summary>
+        public List<GameDiceHistoryItemDto> DiceHistory { get; set; } = new List<GameDiceHistoryItemDto>();
+        #endregion 投骰子的记录
+
     }
 
     /// <summary>
@@ -1198,7 +1232,7 @@ namespace GY02.Publisher
         /// </summary>
         public FuhuaParamsDto()
         {
-            
+
         }
 
         /// <summary>

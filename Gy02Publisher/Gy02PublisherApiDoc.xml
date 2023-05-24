@@ -696,7 +696,7 @@
         </member>
         <member name="P:GY02.Templates.GameDiceItem.ClearGuaranteesCount">
             <summary>
-            忽略计数。
+            保底忽略标志。
             </summary>
             <value>true当命中此项时会清除保底计数，置为0。</value>
         </member>

@@ -205,41 +205,6 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 规范化物品，使之数量符合堆叠上限要求。
-        /// </summary>
-        /// <param name="src"></param>
-        /// <returns></returns>
-        public IEnumerable<GameEntity> Normalize(IEnumerable<GameEntity> src)
-        {
-            var result = new List<GameEntity>();
-            src.SafeForEach(c => _TemplateManager.SetTemplate((VirtualThing)c.Thing));
-            foreach (var item in src)
-            {
-                var tt = _TemplateManager.Id2FullView.GetValueOrDefault(item.TemplateId);
-                if (tt is null)
-                {
-                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                    OwHelper.SetLastErrorMessage($"物品{item.Id},没有有效模板TId={item.TemplateId}");
-                    return null;
-                }
-                if (tt.Stk == 1)   //若是不可堆叠物
-                {
-                    var oldCount = item.Count;
-                    if (Math.Abs(item.Count) > 1)    //若需要规范化
-                    {
-                        item.Count = Math.Sign(oldCount);
-                        result.Add(item);
-                        for (int i = Convert.ToInt32(Math.Abs(item.Count) - 1); i > 0 - 1; i--)
-                        {
-
-                        }
-                    }
-                }
-            }
-            return result;
-        }
-
-        /// <summary>
         /// 修改虚拟物的数量。不进行参数校验的修改数量属性。并根据需要返回更改数据。
         /// </summary>
         /// <param name="entity"></param>
@@ -712,85 +677,5 @@ namespace GY02.Managers
 
         #endregion 改变实体相关功能
 
-        #region 计算卡池相关
-
-        /// <summary>
-        /// 用池子指定的规则生成所有项。
-        /// </summary>
-        /// <param name="dice"></param>
-        /// <param name="excludeTIds"></param>
-        /// <returns></returns>
-        public IEnumerable<GameDiceItem> GetOutputs(GameDice dice, IEnumerable<Guid> excludeTIds = null)
-        {
-            var list = new HashSet<GameDiceItem>();
-            var rnd = new Random { };
-            HashSet<GameDiceItem> items;
-            if (excludeTIds is null)
-                items = new HashSet<GameDiceItem>(dice.Items);
-            else
-                items = new HashSet<GameDiceItem>(dice.Items.Where(c => !excludeTIds.Contains(c.GetSummary().Item1)));
-            if (!dice.AllowRepetition && items.Count <= dice.MaxCount)
-                OwHelper.Copy(items, list);
-            else
-                while (list.Count < dice.MaxCount)
-                {
-                    var tmp = GetOutputs(items, rnd);
-                    if (dice.AllowRepetition)
-                        list.Add(tmp);
-                    else if (!list.Contains(tmp))
-                    {
-                        list.Add(tmp);
-                        items.Remove(tmp);
-                    }
-                }
-            return list;
-        }
-
-        //public GameDiceItemSummary GetOutputs(IEnumerable<GameDiceItemSummary> items, Random random = null)
-        //{
-        //    var totalWeight = items.Sum(c => c.Weight);    //总权重
-        //    random ??= new Random();
-        //}
-
-        /// <summary>
-        /// 用随机数获取指定的池项中的随机一项。
-        /// </summary>
-        /// <param name="items"></param>
-        /// <param name="random"></param>
-        /// <returns></returns>
-        public GameDiceItem GetOutputs(IEnumerable<GameDiceItem> items, Random random = null)
-        {
-            var totalWeight = items.Sum(c => c.Weight);    //总权重
-            random ??= new Random();
-            var total = (decimal)random.NextDouble() * totalWeight;
-            foreach (var item in items)
-            {
-                if (item.Weight <= decimal.Zero) continue; //容错
-                if (total <= item.Weight) return item;
-                total -= item.Weight;
-            }
-            return default;
-        }
-
-        /// <summary>
-        /// 获取生成项预览。
-        /// </summary>
-        /// <param name="item"></param>
-        /// <returns></returns>
-        public static GameDiceItemSummary GetDiceItemSummary(GameDiceItem item)
-        {
-            var tmp = item.GetSummary();
-            return new GameDiceItemSummary
-            {
-                Entity = new GameEntitySummary
-                {
-                    TId = tmp.Item1,
-                    Count = tmp.Item2,
-                },
-                Weight = tmp.Item3,
-            };
-        }
-
-        #endregion 计算卡池相关
     }
 }

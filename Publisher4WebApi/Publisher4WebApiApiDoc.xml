@@ -180,6 +180,26 @@
             购买的日期。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GameDiceHistoryItemDto">
+            <summary>
+            投骰子的记录。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.GameDiceHistoryItemDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameDiceHistoryItemDto.DiceTId">
+            <summary>
+            卡池或卡池组的TId。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameDiceHistoryItemDto.GuaranteesCount">
+            <summary>
+            连续未命中高价值物品的次数。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameCharDto">
             <summary>
             角色数据。
@@ -305,6 +325,11 @@
         <member name="P:GY02.Publisher.GameCharDto.ShoppingHistory">
             <summary>
             购买记录。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameCharDto.DiceHistory">
+            <summary>
+            投骰子的记录。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GameItemDto">

@@ -223,6 +223,38 @@ namespace OW.Game.Entity
         public List<GameShoppingHistoryItem> ShoppingHistory { get; set; } = new List<GameShoppingHistoryItem>();
 
         #endregion 商城相关
+
+        #region 投骰子的记录
+
+        /// <summary>
+        /// 投骰子的记录。
+        /// </summary>
+        public List<GameDiceHistoryItem> DiceHistory { get; set; } = new List<GameDiceHistoryItem>();
+        #endregion 投骰子的记录
+    }
+
+    /// <summary>
+    /// 投骰子的记录。
+    /// </summary>
+    public class GameDiceHistoryItem
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameDiceHistoryItem()
+        {
+            
+        }
+
+        /// <summary>
+        /// 卡池或卡池组的TId。
+        /// </summary>
+        public Guid DiceTId { get; set; }
+
+        /// <summary>
+        /// 连续未命中高价值物品的次数。
+        /// </summary>
+        public int GuaranteesCount { get; set; }
     }
 
     /// <summary>
