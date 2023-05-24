@@ -55,13 +55,16 @@ namespace GY02.Commands
             var gc = command.GameChar;
 
             command.ParentGenus.Sort();
+
             #region 条件验证
+
             if (!Contains(command.ParentGenus, gc))   //若不符合孵化条件
             {
                 command.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
                 command.DebugMessage = $"孵化所需坐骑不全。";
                 return;
             }
+
             #endregion 条件验证
 
             var preview = gc.FuhuaPreview.FirstOrDefault(c => c.ParentTIds.SequenceEqual(command.ParentGenus));
