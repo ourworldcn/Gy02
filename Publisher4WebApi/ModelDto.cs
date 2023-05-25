@@ -820,6 +820,30 @@ namespace GY02.Publisher
         /// </summary>
         public IEnumerable<TemplateStringFullView> Templates { get; set; }
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class StopServiceParamsDto
+    {
+        /// <summary>
+        /// 用户名。
+        /// </summary>
+        public string Uid { get; set; }
+
+        /// <summary>
+        /// 密码。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class StopServiceReturnDto : ReturnDtoBase
+    {
+    }
+
     #endregion 世界控制器功能相关
 
     #region 物品管理相关

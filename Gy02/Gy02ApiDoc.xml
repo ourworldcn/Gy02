@@ -374,10 +374,11 @@
             <param name="manager"></param>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.VWorldController.StopService(Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+        <member name="M:GY02.Controllers.VWorldController.StopService(GY02.Publisher.StopServiceParamsDto,Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
             <summary>
-            重新启动服务。通常用于更新数据后重启。
+            关闭服务并写入所有缓存数据。
             </summary>
+            <param name="model"></param>
             <param name="applicationLifetime"></param>
             <returns></returns>
         </member>

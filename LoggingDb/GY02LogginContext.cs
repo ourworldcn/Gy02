@@ -46,7 +46,7 @@ namespace OW.GameDb
     {
         public GameSqlLoggingManagerOptions Value => this;
 
-        public int MaxSaveCount { get; set; } = 200;
+        public int MaxSaveCount { get; set; } = 100;
 
         public TimeSpan MaxDelay { get; set; } = TimeSpan.FromSeconds(10);
     }
@@ -80,29 +80,36 @@ namespace OW.GameDb
         void OnWork()
         {
             CancellationTokenSource cts = new CancellationTokenSource((int)_Options.MaxDelay.TotalMilliseconds);
+            var totalCts = CancellationTokenSource.CreateLinkedTokenSource(cts.Token, _ApplicationLifetime.ApplicationStopping);
             try
             {
-                while (_Actions.TryTake(out var item, Timeout.Infinite, _ApplicationLifetime.ApplicationStopped))
+                while (true)
                 {
-                    _Context.Add(item);
-                    if (cts.IsCancellationRequested)
+                    totalCts.Token.WaitHandle.WaitOne();    //等到超期
+                    try
                     {
-                        using var tmp = cts;
-                        cts = new CancellationTokenSource((int)_Options.MaxDelay.TotalMilliseconds);
-                        try
-                        {
-                            _Context.SaveChanges();
-                        }
-                        catch (Exception err)
-                        {
-                            _Logging.LogError(err, "保存日志数据时出错。");
-                            continue;
-                        }
-                        if (_Context.ChangeTracker.Entries().Count() > _Options.MaxSaveCount)
-                        {
-                            _Context.ChangeTracker.Clear();
-                        }
+                        while (_Actions.TryTake(out var item))
+                            _Context.Add(item);
                     }
+                    catch (OperationCanceledException)
+                    {
+                    }
+                    using var tmp = cts;
+                    cts = new CancellationTokenSource((int)_Options.MaxDelay.TotalMilliseconds);
+                    totalCts = CancellationTokenSource.CreateLinkedTokenSource(cts.Token, _ApplicationLifetime.ApplicationStopping);
+                    try
+                    {
+                        _Context.SaveChanges();
+                    }
+                    catch (Exception err)
+                    {
+                        _Logging.LogError(err, "保存日志数据时出错。");
+                    }
+                    if (_Context.ChangeTracker.Entries().Count() > _Options.MaxSaveCount)
+                    {
+                        _Context.ChangeTracker.Clear();
+                    }
+                    if (_ApplicationLifetime.ApplicationStopping.IsCancellationRequested) break;
                 }
             }
             catch (OperationCanceledException)

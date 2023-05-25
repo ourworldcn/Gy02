@@ -624,6 +624,26 @@
             模板数据集合。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.StopServiceParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.StopServiceParamsDto.Uid">
+            <summary>
+            用户名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.StopServiceParamsDto.Pwd">
+            <summary>
+            密码。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.StopServiceReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetEntitiesParamsDto">
             <summary>
             返回指定对象数据功能的参数封装类。

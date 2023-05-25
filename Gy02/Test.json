@@ -1,57 +1,42 @@
 {
-  "Changes": [
-    {
-      "TId": "9c559895-9a2c-43a7-b793-e879a600487c",
-      "ObjectId": "5a2f393f-96a7-4e0f-b9e9-465a20b48d40",
-      "PropertyName": "Children",
-      "HasOldValue": false,
-      "OldValue": null,
-      "HasNewValue": true,
-      "NewValue": {
-        "Count": 7,
-        "LvUpAccruedCost": [],
-        "CompositingAccruedCost": [],
-        "Id": "e608d6af-75e7-4e1a-b3c6-b1a6552739f5",
-        "TemplateId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-        "lv": 0
-      },
-      "DateTimeUtc": "2023-05-23T09:59:33.6837546Z"
+  "Genus": [ "gs_leijiqiandao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-04-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "60d",
+      "ValidPeriodString": "60d"
     },
-    {
-      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "ObjectId": "a80361dc-f6a2-4226-bea1-e0e2833edf34",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 22890.0,
-      "HasNewValue": true,
-      "NewValue": 37890.0,
-      "DateTimeUtc": "2023-05-23T09:59:33.6837556Z"
-    },
-    {
-      "TId": "c531cd34-fed9-4859-81f1-501c25c0926d",
-      "ObjectId": "83e9a924-c867-4c2c-97a8-49070e17413d",
-      "PropertyName": "LvUpAccruedCost",
-      "HasOldValue": true,
-      "OldValue": [
-        {
-          "Id": "00000000-0000-0000-0000-000000000000",
-          "ParentTId": "5c2ff6f0-e934-4e74-a999-48258944ef0c",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 15000
-        },
-        {
-          "Id": "00000000-0000-0000-0000-000000000000",
-          "ParentTId": "5a2f393f-96a7-4e0f-b9e9-465a20b48d40",
-          "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-          "Count": 7
-        }
-      ],
-      "HasNewValue": false,
-      "NewValue": null,
-      "DateTimeUtc": "2023-05-23T09:59:33.6837698Z"
-    }
-  ],
-  "HasError": false,
-  "ErrorCode": 0,
-  "DebugMessage": "操作成功完成。"
+    "GroupNumber": 0,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ 60, 2 ]
+              }
+            ],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": []
+      }
+    ],
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
+        "Count": 1
+      }
+    ],
+    "MaxCount": 1
+  }
 }

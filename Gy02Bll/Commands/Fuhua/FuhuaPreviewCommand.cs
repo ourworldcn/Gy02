@@ -1,10 +1,12 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Gy02Bll.Managers;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Commands
 {
@@ -25,12 +27,13 @@ namespace GY02.Commands
 
     public class FuhuaPreviewHandler : SyncCommandHandlerBase<FuhuaPreviewCommand>, IGameCharHandler<FuhuaPreviewCommand>
     {
-        public FuhuaPreviewHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager, TemplateManager templateManager, GameDiceManager diceManager)
+        public FuhuaPreviewHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager, TemplateManager templateManager, GameDiceManager diceManager, SpecialManager specialManager)
         {
             _GameAccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
             _TemplateManager = templateManager;
             _DiceManager = diceManager;
+            _SpecialManager = specialManager;
         }
 
         GameAccountStore _GameAccountStore;
@@ -39,6 +42,8 @@ namespace GY02.Commands
         GameDiceManager _DiceManager;
 
         public GameAccountStore AccountStore => _GameAccountStore;
+
+        SpecialManager _SpecialManager;
 
         public override void Handle(FuhuaPreviewCommand command)
         {
@@ -55,15 +60,9 @@ namespace GY02.Commands
                 return;
             }
             command.ParentGenus.Sort();
-            var history = gc.FuhuaHistory.FirstOrDefault(c => c.ParentTIds.SequenceEqual(command.ParentGenus));
-            if (history is null)    //若没有找到指定双亲的皮肤生成记录
-            {
-                history = new FuhuaSummary { };
-                history.ParentTIds.AddRange(command.ParentGenus);
-                gc.FuhuaHistory.Add(history);
-            }
+            var history = _SpecialManager.GetOrAddHistory(command.ParentGenus, command.GameChar);   //获取指定双亲的皮肤生成记录
 
-            var preview = gc.FuhuaPreview.FirstOrDefault(c => c.ParentTIds.SequenceEqual(command.ParentGenus));
+            var preview = _SpecialManager.GetFuhuaSummary(command.ParentGenus, command.GameChar);
             if (preview is null)    //若没有生成的记录
             {
                 var info = _TemplateManager.GetFuhuaInfo(command.ParentGenus);
@@ -84,7 +83,6 @@ namespace GY02.Commands
         lbErr:
             command.FillErrorFromWorld();
         }
-
 
     }
 }

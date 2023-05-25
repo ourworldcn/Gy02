@@ -1,54 +1,42 @@
 {
-  "Dice": {
-    "MaxCount": 3,
-    "AllowRepetition": true,
-    "Items": [
+  "Genus": [ "gs_leijiqiandao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-06-11T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "60d",
+      "ValidPeriodString": "60d"
+    },
+    "GroupNumber": 5,
+    "Ins": [
       {
-        "Outs": [
+        "Conditional": [
           {
-            "ParentTId": null,
-            "TId": "4d87f0f0-5c82-4a83-a654-05bfdd3e95a5",
-            "Count": 1
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ 60, 58 ]
+              }
+            ],
+            "IgnoreIfDisplayList": true
           }
         ],
-        "Weight": 5,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "b14c117f-ad3d-47ed-9c96-2bbf5c2f9d04",
-            "Count": 1
-          }
-        ],
-        "Weight": 10,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "b4827ef0-710b-4ba0-8d43-187a685c673b",
-            "Count": 1
-          }
-        ],
-        "Weight": 15,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "6b7f8db2-3563-443b-9f85-174a1a226263",
-            "Count": 1
-          }
-        ],
-        "Weight": 5,
-        "ClearGuaranteesCount": false
+        "Count": 0,
+        "Genus": []
       }
     ],
-    "GuaranteesCount": null,
-    "GuaranteesDiceTId": null
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+        "Count": 1
+      }
+    ],
+    "MaxCount": 1
   }
 }

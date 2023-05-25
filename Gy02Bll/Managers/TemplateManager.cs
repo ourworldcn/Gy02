@@ -302,6 +302,37 @@ namespace OW.Game.Managers
         }
 
         /// <summary>
+        /// 返回孵化的模板信息。
+        /// </summary>
+        /// <param name="parentGenus"></param>
+        /// <returns>(孵化模板，动物模板，皮肤模板)</returns>
+        public (TemplateStringFullView, TemplateStringFullView, TemplateStringFullView) GetFuhuaInfoV2(IEnumerable<string> parentGenus)
+        {
+            var fuhua = Id2FullView.Values.Where(c => c.Fuhua is not null).First(c => GetGenus(c.Fuhua).SequenceEqual(parentGenus));
+            if (fuhua is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定类属组合的孵化信息{parentGenus}");
+                return (null, null, null);
+            }
+            var mounts = GetFullViewFromId(fuhua.Fuhua.DiceTId1);
+            if (mounts is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定的卡池模板，TId={fuhua.Fuhua.DiceTId1}");
+                return (null, null, null);
+            }
+            var pifus = GetFullViewFromId(fuhua.Fuhua.DiceTId2);
+            if (pifus is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定的卡池模板，TId={fuhua.Fuhua.DiceTId1}");
+                return (null, null, null);
+            }
+            return (fuhua, mounts, pifus);
+        }
+
+        /// <summary>
         /// 获取孵化信息中双亲的类属信息。
         /// </summary>
         /// <param name="fuhua"></param>

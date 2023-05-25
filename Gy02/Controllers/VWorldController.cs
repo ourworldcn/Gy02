@@ -39,16 +39,25 @@ namespace GY02.Controllers
         }
 
         /// <summary>
-        /// 重新启动服务。通常用于更新数据后重启。
+        /// 关闭服务并写入所有缓存数据。
         /// </summary>
+        /// <param name="model"></param>
         /// <param name="applicationLifetime"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<bool> StopService([FromServices] IHostApplicationLifetime applicationLifetime)
+        public ActionResult<StopServiceReturnDto> StopService(StopServiceParamsDto model, [FromServices] IHostApplicationLifetime applicationLifetime)
         {
+            var result = new StopServiceReturnDto();
+            if (model.Uid != "gy001" || model.Pwd != "210115")
+            {
+                result.ErrorCode = ErrorCodes.Unauthorized;
+                result.DebugMessage = "用户名或密码错误。";
+                result.HasError = true;
+            }
             Global.Program.ReqireReboot = true;
             applicationLifetime.StopApplication();
-            return true;
+            return result;
         }
     }
+
 }
