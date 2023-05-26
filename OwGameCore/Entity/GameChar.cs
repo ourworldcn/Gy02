@@ -1,4 +1,5 @@
 ﻿using GY02.Publisher;
+using GY02.Templates;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
@@ -243,7 +244,7 @@ namespace OW.Game.Entity
         /// </summary>
         public GameDiceHistoryItem()
         {
-            
+
         }
 
         /// <summary>
@@ -264,7 +265,7 @@ namespace OW.Game.Entity
     {
         public GameShoppingHistory()
         {
-            
+
         }
     }
 
@@ -372,8 +373,12 @@ namespace OW.Game.Entity
     /// <summary>
     /// 生成项的摘要信息。
     /// </summary>
-    public class GameDiceItemSummary
+    public class GameDiceItemSummary : ICloneable
     {
+        public GameDiceItemSummary()
+        {
+        }
+
         /// <summary>
         /// 生成项的摘要。
         /// </summary>
@@ -383,6 +388,19 @@ namespace OW.Game.Entity
         /// 生成项的权重。
         /// </summary>
         public decimal Weight { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            return new GameDiceItemSummary
+            {
+                Entity = (GameEntitySummary)Entity.Clone(),
+                Weight = Weight,
+            };
+        }
     }
 
     public static class GameCharExtensions

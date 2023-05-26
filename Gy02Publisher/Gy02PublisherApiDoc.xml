@@ -356,7 +356,7 @@
         </member>
         <member name="T:GY02.Templates.FuhuaInfo">
             <summary>
-            
+            孵化的信息项主要数据封装类。
             </summary>
         </member>
         <member name="P:GY02.Templates.FuhuaInfo.Parent1Conditional">
@@ -649,25 +649,49 @@
             达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
             </summary>
         </member>
-        <member name="T:GY02.Templates.OutItem">
+        <member name="M:GY02.Templates.GameDice.Clone">
             <summary>
-            输出项。
+            获取一个深表副本。
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:GY02.Templates.GameEntitySummary">
+            <summary>
+            实体摘要信息类。
             </summary>
         </member>
-        <member name="P:GY02.Templates.OutItem.ParentTId">
+        <member name="M:GY02.Templates.GameEntitySummary.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEntitySummary.Id">
+            <summary>
+            特定原因记录物品唯一Id，通常为null。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEntitySummary.ParentTId">
             <summary>
             父容器模板Id，为null则放置在默认容器中。
             </summary>
         </member>
-        <member name="P:GY02.Templates.OutItem.TId">
+        <member name="P:GY02.Templates.GameEntitySummary.TId">
             <summary>
             模板Id。
             </summary>
         </member>
-        <member name="P:GY02.Templates.OutItem.Count">
+        <member name="P:GY02.Templates.GameEntitySummary.Count">
             <summary>
             数量。
             </summary>
+        </member>
+        <member name="M:GY02.Templates.GameEntitySummary.Clone">
+            <summary>
+            获取一个深表副本。
+            </summary>
+            <remarks>所有成员都是结构时，深表副本等价于浅表副本。</remarks>
+            <returns></returns>
         </member>
         <member name="T:GY02.Templates.GameDiceItem">
             <summary>
@@ -705,6 +729,13 @@
             获取产出的(模板Id,数量,权重)。
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:GY02.Templates.GameDiceItem.Clone">
+            <summary>
+            获取一个深表副本。
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="T:GY02.Templates.FastChangingProperty">
             <summary>

@@ -73,7 +73,7 @@ namespace GY02.Templates
         /// <summary>
         /// 获得的物品。
         /// </summary>
-        public List<BlueprintOutItem> Outs { get; set; } = new List<BlueprintOutItem>();
+        public List<GameEntitySummary> Outs { get; set; } = new List<GameEntitySummary>();
     }
 
     /// <summary>
@@ -463,7 +463,7 @@ namespace GY02.Templates
         /// <summary>
         /// 产出物的集合。当前版本该集合中只有一项。
         /// </summary>
-        public List<BlueprintOutItem> Out { get; set; } = new List<BlueprintOutItem>();
+        public List<GameEntitySummary> Out { get; set; } = new List<GameEntitySummary>();
 
         /// <summary>
         /// 材料的集合。
@@ -530,7 +530,7 @@ namespace GY02.Templates
     }
 
     /// <summary>
-    /// 
+    /// 孵化的信息项主要数据封装类。
     /// </summary>
     public class FuhuaInfo
     {
@@ -861,6 +861,7 @@ namespace GY02.Templates
     /// <summary>
     /// 蓝图产出项数据结构。
     /// </summary>
+    [Obsolete("请改用 nameof(GameOutItem) 类型。")]
     public class BlueprintOutItem
     {
         /// <summary>
@@ -896,7 +897,7 @@ namespace GY02.Templates
         /// <summary>
         /// 产出物的集合。
         /// </summary>
-        public List<BlueprintOutItem> Out { get; set; } = new List<BlueprintOutItem>();
+        public List<GameEntitySummary> Out { get; set; } = new List<GameEntitySummary>();
 
         /// <summary>
         /// 材料的集合。
@@ -937,7 +938,7 @@ namespace GY02.Templates
     /// <summary>
     /// 定义一个"池子"
     /// </summary>
-    public class GameDice
+    public class GameDice : ICloneable
     {
         /// <summary>
         /// 构造函数。
@@ -973,13 +974,47 @@ namespace GY02.Templates
         /// 达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
         /// </summary>
         public Guid? GuaranteesDiceTId { get; set; }
+
+        /// <summary>
+        /// 获取一个深表副本。
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public object Clone()
+        {
+            var result = new GameDice
+            {
+                AllowRepetition = AllowRepetition,
+                GuaranteesCount = GuaranteesCount,
+                GuaranteesDiceTId = GuaranteesDiceTId,
+                MaxCount = MaxCount,
+            };
+            result.Items.AddRange(Items.Select(c => (GameDiceItem)c.Clone()));
+            return result;
+        }
     }
 
     /// <summary>
-    /// 输出项。
+    /// 实体摘要信息类。
     /// </summary>
-    public class OutItem
+    [DisplayName("实体摘要")]
+    [Description("由 OutItem 改名而来。")]
+    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
+    public class GameEntitySummary : ICloneable
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameEntitySummary()
+        {
+
+        }
+
+        /// <summary>
+        /// 特定原因记录物品唯一Id，通常为null。
+        /// </summary>
+        public Guid? Id { get; set; }
+
         /// <summary>
         /// 父容器模板Id，为null则放置在默认容器中。
         /// </summary>
@@ -995,12 +1030,30 @@ namespace GY02.Templates
         /// </summary>
         public decimal Count { get; set; }
 
+        /// <summary>
+        /// 获取一个深表副本。
+        /// </summary>
+        /// <remarks>所有成员都是结构时，深表副本等价于浅表副本。</remarks>
+        /// <returns></returns>
+        public object Clone() => new GameEntitySummary
+        {
+            Count = Count,
+            Id = Id,
+            ParentTId = ParentTId,
+            TId = TId,
+        };
+
+        private string GetDebuggerDisplay()
+        {
+            return $"Summary({TId},{Count})";
+        }
+
     }
 
     /// <summary>
     /// 池子项。
     /// </summary>
-    public class GameDiceItem
+    public class GameDiceItem : ICloneable
     {
         /// <summary>
         /// 构造函数。
@@ -1017,7 +1070,7 @@ namespace GY02.Templates
         /// <summary>
         /// 产出物品的描述集合。
         /// </summary>
-        public List<OutItem> Outs { get; set; } = new List<OutItem>();
+        public List<GameEntitySummary> Outs { get; set; } = new List<GameEntitySummary>();
 
         /// <summary>
         /// 权重值，可以带小数。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
@@ -1043,6 +1096,22 @@ namespace GY02.Templates
                 _Summary = (item?.TId ?? Guid.Empty, item?.MinCount ?? 0, Weight);
             }
             return _Summary.Value;
+        }
+
+        /// <summary>
+        /// 获取一个深表副本。
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public object Clone()
+        {
+            var result = new GameDiceItem
+            {
+                ClearGuaranteesCount = ClearGuaranteesCount,
+                Weight = Weight,
+            };
+            result.Outs.AddRange(Outs.Select(c => (GameEntitySummary)c.Clone()));
+            return result;
         }
     }
 

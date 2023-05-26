@@ -1,4 +1,5 @@
 ﻿using GuangYuan.GY001.TemplateDb;
+using GY02.Commands;
 using GY02.Managers;
 using GY02.TemplateDb;
 using GY02.Templates;
@@ -16,6 +17,7 @@ using OW.Game.Conditional;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
@@ -148,6 +150,8 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
+                //var command = new FuhuaPreviewCommand { };
+                //var b = Validator.TryValidateObject(command, new ValidationContext(command, Services, null) { }, new List<ValidationResult> { });
                 //var socket = new Socket(AddressFamily.InterNetwork,SocketType.Dgram, ProtocolType.Udp) { };
                 //var saea = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090), UserToken =socket };
                 //byte[] buffer = new byte[1024];

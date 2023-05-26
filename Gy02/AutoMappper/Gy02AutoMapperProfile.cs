@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GY02.Publisher;
+using GY02.Templates;
 using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.Game.Store;

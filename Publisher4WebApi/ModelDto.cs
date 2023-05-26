@@ -24,6 +24,16 @@ namespace GY02.Publisher
     public class GameEntitySummaryDto
     {
         /// <summary>
+        /// 特定原因记录物品唯一Id，通常为null。
+        /// </summary>
+        public Guid? Id { get; set; }
+
+        /// <summary>
+        /// 父容器模板Id，为null则放置在默认容器中。
+        /// </summary>
+        public Guid? ParentTId { get; set; }
+
+        /// <summary>
         /// 模板Id。
         /// </summary>
         public Guid TId { get; set; }

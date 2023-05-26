@@ -287,38 +287,6 @@ namespace Gy02Bll.Managers
         #region 计算卡池相关
 
         /// <summary>
-        /// 用池子指定的规则生成所有项。
-        /// </summary>
-        /// <param name="dice"></param>
-        /// <param name="excludeTIds"></param>
-        /// <returns></returns>
-        public IEnumerable<GameDiceItem> GetOutputs(GameDice dice, IEnumerable<Guid> excludeTIds = null)
-        {
-            var list = new HashSet<GameDiceItem>();
-            var rnd = new Random { };
-            HashSet<GameDiceItem> items;
-            if (excludeTIds is null)
-                items = new HashSet<GameDiceItem>(dice.Items);
-            else
-                items = new HashSet<GameDiceItem>(dice.Items.Where(c => !excludeTIds.Contains(c.GetSummary().Item1)));
-            if (!dice.AllowRepetition && items.Count <= dice.MaxCount)
-                OwHelper.Copy(items, list);
-            else
-                while (list.Count < dice.MaxCount)
-                {
-                    var tmp = Roll(items, rnd);
-                    if (dice.AllowRepetition)
-                        list.Add(tmp);
-                    else if (!list.Contains(tmp))
-                    {
-                        list.Add(tmp);
-                        items.Remove(tmp);
-                    }
-                }
-            return list;
-        }
-
-        /// <summary>
         /// 获取生成项预览。
         /// </summary>
         /// <param name="item"></param>
@@ -343,11 +311,11 @@ namespace Gy02Bll.Managers
         /// <param name="outItem"></param>
         /// <param name="gameChar"></param>
         /// <returns></returns>
-        public List<OutItem> Transformed(OutItem outItem, GameChar gameChar, bool ignoreGuarantees = false, Random random = null)
+        public List<GY02.Templates.GameEntitySummary> Transformed(GY02.Templates.GameEntitySummary outItem, GameChar gameChar, bool ignoreGuarantees = false, Random random = null)
         {
             var dice = GetDiceById(outItem.TId);
             if (dice is null)
-                return new List<OutItem> { outItem };
+                return new List<GY02.Templates.GameEntitySummary> { outItem };
             random ??= new Random();
             var items = Roll(dice, gameChar, ignoreGuarantees, random);
             var result = items.SelectMany(c => c.Outs).ToList();
@@ -359,7 +327,7 @@ namespace Gy02Bll.Managers
         /// </summary>
         /// <param name="outItems"></param>
         /// <returns>(源,对应的转换项)</returns>
-        public IEnumerable<(OutItem, IEnumerable<OutItem>)> Transformed(IEnumerable<OutItem> outItems)
+        public IEnumerable<(GameEntitySummary, IEnumerable<GY02.Templates.GameEntitySummary>)> Transformed(IEnumerable<GY02.Templates.GameEntitySummary> outItems)
         {
             throw new NotImplementedException();
         }

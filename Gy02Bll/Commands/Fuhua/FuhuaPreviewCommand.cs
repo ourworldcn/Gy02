@@ -1,17 +1,25 @@
-﻿using GY02.Managers;
+﻿using AutoMapper;
+using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Gy02Bll.Managers;
+using Microsoft.Extensions.DependencyInjection;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
+using System.ComponentModel.DataAnnotations;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Commands
 {
-    public class FuhuaPreviewCommand : SyncCommandBase, IGameCharCommand
+    public class FuhuaPreviewCommand : SyncCommandBase, IGameCharCommand, IValidatableObject
     {
+        public FuhuaPreviewCommand()
+        {
+
+        }
+
         public GameChar GameChar { get; set; }
 
         /// <summary>
@@ -23,23 +31,30 @@ namespace GY02.Commands
         /// 返回数据，孵化可能生成的预览信息列表。
         /// </summary>
         public List<GameDiceItemSummary> Result { get; set; } = new List<GameDiceItemSummary>();
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return Array.Empty<ValidationResult>();
+        }
     }
 
     public class FuhuaPreviewHandler : SyncCommandHandlerBase<FuhuaPreviewCommand>, IGameCharHandler<FuhuaPreviewCommand>
     {
-        public FuhuaPreviewHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager, TemplateManager templateManager, GameDiceManager diceManager, SpecialManager specialManager)
+        public FuhuaPreviewHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager, TemplateManager templateManager, GameDiceManager diceManager, SpecialManager specialManager, IMapper mapper)
         {
             _GameAccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
             _TemplateManager = templateManager;
             _DiceManager = diceManager;
             _SpecialManager = specialManager;
+            _Mapper = mapper;
         }
 
         GameAccountStore _GameAccountStore;
         GameEntityManager _GameEntityManager;
         TemplateManager _TemplateManager;
         GameDiceManager _DiceManager;
+        IMapper _Mapper;
 
         public GameAccountStore AccountStore => _GameAccountStore;
 
@@ -60,16 +75,16 @@ namespace GY02.Commands
                 return;
             }
             command.ParentGenus.Sort();
-            var history = _SpecialManager.GetOrAddHistory(command.ParentGenus, command.GameChar);   //获取指定双亲的皮肤生成记录
+            var history = _SpecialManager.GetOrAddFuhuaHistory(command.ParentGenus, command.GameChar);   //获取指定双亲的皮肤生成记录
 
             var preview = _SpecialManager.GetFuhuaSummary(command.ParentGenus, command.GameChar);
             if (preview is null)    //若没有生成的记录
             {
-                var info = _TemplateManager.GetFuhuaInfo(command.ParentGenus);
+                var info = _SpecialManager.GetFuhuaInfo(command.ParentGenus);
                 if (info.Item1 is null) goto lbErr; //若出错
-                var mounts = _DiceManager.GetOutputs(info.Item2);
+                var mounts = _SpecialManager.GetOutputs(info.Item2.Dice);
 
-                var pifus = _DiceManager.GetOutputs(info.Item3, history.Items.Select(c => c.Entity.TId));
+                var pifus = _SpecialManager.GetOutputs(info.Item3.Dice, history.Items.Select(c => c.Entity.TId));
 
                 preview = new FuhuaSummary { };
                 preview.ParentTIds.AddRange(command.ParentGenus);

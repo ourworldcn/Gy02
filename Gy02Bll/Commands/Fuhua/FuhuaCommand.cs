@@ -1,5 +1,7 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
+using Gy02Bll.Managers;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -12,7 +14,7 @@ namespace GY02.Commands
     {
         public FuhuaCommand()
         {
-            
+
         }
 
         public GameChar GameChar { get; set; }
@@ -26,13 +28,14 @@ namespace GY02.Commands
 
     public class FuhuaHandler : SyncCommandHandlerBase<FuhuaCommand>, IGameCharHandler<FuhuaCommand>
     {
-        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, TemplateManager templateManager, BlueprintManager blueprintManager)
+        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, TemplateManager templateManager, BlueprintManager blueprintManager, SpecialManager specialManager)
         {
             _AccountStore = accountStore;
             _SyncCommandManager = syncCommandManager;
             _GameEntityManager = gameEntityManager;
             _TemplateManager = templateManager;
             _BlueprintManager = blueprintManager;
+            _SpecialManager = specialManager;
         }
 
         GameAccountStore _AccountStore;
@@ -45,6 +48,7 @@ namespace GY02.Commands
         TemplateManager _TemplateManager;
 
         BlueprintManager _BlueprintManager;
+        SpecialManager _SpecialManager;
 
         public override void Handle(FuhuaCommand command)
         {
@@ -78,7 +82,7 @@ namespace GY02.Commands
             }
 
             #region 计算通用消耗
-            var info = _TemplateManager.GetFuhuaInfo(command.ParentGenus);
+            var info = _SpecialManager.GetFuhuaInfo(command.ParentGenus);
             if (info.Item1 is null) goto lbErr; //若出错
             var tt = info.Item1;
             if (tt.Fuhua.In.Count > 0)  //若有通用消耗
@@ -101,16 +105,9 @@ namespace GY02.Commands
                     history.ParentTIds.AddRange(command.ParentGenus);
                     gc.FuhuaHistory.Add(history);
                 }
-                var tmp = new GameDiceItemSummary
-                {
-                    Entity = new GameEntitySummary
-                    {
-                        TId = specOut.Value.Item1.Entity.TId,
-                        Count = specOut.Value.Item1.Entity.Count
-                    },
-                    Weight = specOut.Value.Item1.Weight,
-                };
+                var tmp = (GameDiceItemSummary)specOut.Value.Item1.Clone();
                 history.Items.Add(tmp);
+
                 command.Changes?.Add(new GamePropertyChangeItem<object>
                 {
                     Object = gc,
@@ -128,7 +125,6 @@ namespace GY02.Commands
             return;
         lbErr:
             command.FillErrorFromWorld();
-
         }
 
         bool Contains(IEnumerable<string> genus, GameChar gc)

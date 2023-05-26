@@ -10,46 +10,6 @@ using System.Text.Json.Serialization;
 
 namespace OW.Game.Entity
 {
-    /// <summary>
-    /// 游戏内装备/道具的摘要信息。
-    /// </summary>
-    [DisplayName("虚拟物摘要")]
-    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    public class GameEntitySummary
-    {
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public GameEntitySummary()
-        {
-
-        }
-
-        /// <summary>
-        /// 唯一Id。保留未用。
-        /// </summary>
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// 父容器模板Id，保留未用。
-        /// </summary>
-        public Guid? ParentTId { get; set; }
-
-        /// <summary>
-        /// 模板Id。
-        /// </summary>
-        public Guid TId { get; set; }
-
-        /// <summary>
-        /// 数量。
-        /// </summary>
-        public decimal Count { get; set; }
-
-        private string GetDebuggerDisplay()
-        {
-            return $"Summary({TId},{Count})";
-        }
-    }
 
     public static class GameEntitySummaryExtensions
     {

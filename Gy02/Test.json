@@ -1,42 +1,43 @@
 {
-  "Genus": [ "gs_leijiqiandao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-04-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "60d",
-      "ValidPeriodString": "60d"
-    },
-    "GroupNumber": 0,
-    "Ins": [
+  "Dice": {
+    "MaxCount": 3,
+    "AllowRepetition": true,
+    "Items": [
       {
-        "Conditional": [
+        "Outs": [
           {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ 60, 2 ]
-              }
-            ],
-            "IgnoreIfDisplayList": true
+            "ParentTId": null,
+            "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+            "Count": 1
           }
         ],
-        "Count": 0,
-        "Genus": []
-      }
-    ],
-    "Outs": [
+        "Weight": 120,
+        "ClearGuaranteesCount": false
+      },
       {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
-        "Count": 1
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+            "Count": 1
+          }
+        ],
+        "Weight": 35,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "1741c697-ea92-458b-a9e8-a839e41ad5f3",
+            "Count": 1
+          }
+        ],
+        "Weight": 15,
+        "ClearGuaranteesCount": false
       }
     ],
-    "MaxCount": 1
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
   }
 }

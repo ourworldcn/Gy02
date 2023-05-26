@@ -1,42 +1,54 @@
 {
-  "Genus": [ "gs_leijiqiandao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-06-11T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "60d",
-      "ValidPeriodString": "60d"
-    },
-    "GroupNumber": 5,
-    "Ins": [
+  "Dice": {
+    "MaxCount": 3,
+    "AllowRepetition": true,
+    "Items": [
       {
-        "Conditional": [
+        "Outs": [
           {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ 60, 58 ]
-              }
-            ],
-            "IgnoreIfDisplayList": true
+            "ParentTId": null,
+            "TId": "9451d8a6-507b-46eb-b1be-1f653af21f0a",
+            "Count": 1
           }
         ],
-        "Count": 0,
-        "Genus": []
-      }
-    ],
-    "Outs": [
+        "Weight": 20,
+        "ClearGuaranteesCount": false
+      },
       {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-        "Count": 1
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "524b552f-6ecc-4fbf-a388-4f70eab305b2",
+            "Count": 1
+          }
+        ],
+        "Weight": 10,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "6ce19f8f-4c23-4c56-805e-4a649318108f",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "928fb8a2-f3ab-4863-abf9-3992049cac4e",
+            "Count": 1
+          }
+        ],
+        "Weight": 3,
+        "ClearGuaranteesCount": false
       }
     ],
-    "MaxCount": 1
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
   }
 }

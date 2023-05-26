@@ -105,7 +105,7 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="outItems"></param>
         /// <returns></returns>
-        public IEnumerable<GameEntity> GenerateOuts(IEnumerable<BlueprintOutItem> outItems)
+        public IEnumerable<GameEntity> GenerateOuts(IEnumerable<Templates.GameEntitySummary> outItems)
         {
             var result = _EntityManager.Create(outItems.Select(c => (c.TId, c.Count)));
             if (result is null) return null;

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using GY02.Publisher;
+using GY02.Templates;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
@@ -23,11 +25,116 @@ namespace Gy02Bll.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class SpecialManager : GameManagerBase<SpecialManagerOptions, SpecialManager>
     {
-        public SpecialManager(IOptions<SpecialManagerOptions> options, ILogger<SpecialManager> logger) : base(options, logger)
+        public SpecialManager(IOptions<SpecialManagerOptions> options, ILogger<SpecialManager> logger, TemplateManager templateManager, GameDiceManager diceManager) : base(options, logger)
         {
+            _TemplateManager = templateManager;
+            _DiceManager = diceManager;
         }
 
+        TemplateManager _TemplateManager;
+        GameDiceManager _DiceManager;
+
         #region 孵化相关
+
+        /// <summary>
+        /// 获取指定孵化的产出预览项。
+        /// </summary>
+        /// <param name="keys"></param>
+        /// <param name="gameChar"></param>
+        /// <returns></returns>
+        public List<GameDiceItem> GetFuhuaEntitySummary(IEnumerable<string> keys, GameChar gameChar)
+        {
+            List<GameDiceItem> result = new List<GameDiceItem>();
+            var history = GetOrAddFuhuaHistory(keys, gameChar);
+            var info = GetFuhuaInfo(keys);
+            var mounts = _DiceManager.Roll(info.Item2, gameChar, true);
+            //获取皮肤槽选项
+            var dicePifu = (GameDice)info.Item3.Dice.Clone();
+            var hs = new HashSet<Guid>((history.Items.Select(d1 => d1.Entity.TId)));
+            dicePifu.Items.RemoveAll(c => hs.Overlaps(c.Outs.Select(d => d.TId)));
+            var maxCount = dicePifu.MaxCount;
+            var pifus = _DiceManager.Roll(dicePifu.Items, ref maxCount, dicePifu.AllowRepetition);
+            return result;
+        }
+
+        /// <summary>
+        /// 用池子指定的规则生成所有项。
+        /// </summary>
+        /// <param name="dice"></param>
+        /// <param name="excludeTIds"></param>
+        /// <returns></returns>
+        public IEnumerable<GameDiceItem> GetOutputs(GameDice dice, IEnumerable<Guid> excludeTIds = null)
+        {
+            var list = new HashSet<GameDiceItem>();
+            var rnd = new Random { };
+            HashSet<GameDiceItem> items;
+            if (excludeTIds is null)
+                items = new HashSet<GameDiceItem>(dice.Items);
+            else
+                items = new HashSet<GameDiceItem>(dice.Items.Where(c => !excludeTIds.Contains(c.GetSummary().Item1)));
+            if (!dice.AllowRepetition && items.Count <= dice.MaxCount)
+                OwHelper.Copy(items, list);
+            else
+                while (list.Count < dice.MaxCount)
+                {
+                    var tmp = _DiceManager.Roll(items, rnd);
+                    if (dice.AllowRepetition)
+                        list.Add(tmp);
+                    else if (!list.Contains(tmp))
+                    {
+                        list.Add(tmp);
+                        items.Remove(tmp);
+                    }
+                }
+            return list;
+        }
+
+        /// <summary>
+        /// 获取孵化信息中双亲的类属信息。
+        /// </summary>
+        /// <param name="fuhua"></param>
+        /// <returns>返回值已经排序。</returns>
+        public static string[] GetFuhuaKey(FuhuaInfo fuhua)
+        {
+            var result = new string[]
+            {
+               fuhua.Parent1Conditional.First().Genus[0],   //孵化信息必须是这个结构
+               fuhua.Parent2Conditional.First().Genus[0],
+            };
+            Array.Sort(result);
+            return result;
+        }
+
+        /// <summary>
+        /// 返回孵化的模板信息。
+        /// </summary>
+        /// <param name="parentGenus"></param>
+        /// <returns>(孵化模板，动物模板，皮肤模板)</returns>
+        public (TemplateStringFullView, TemplateStringFullView, TemplateStringFullView) GetFuhuaInfo(IEnumerable<string> parentGenus)
+        {
+            var fuhua = _TemplateManager.Id2FullView.Values.Where(c => c.Fuhua is not null).First(c => GetFuhuaKey(c.Fuhua).SequenceEqual(parentGenus));
+            if (fuhua is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定类属组合的孵化信息{parentGenus}");
+                return (null, null, null);
+            }
+            var mounts = _TemplateManager.GetFullViewFromId(fuhua.Fuhua.DiceTId1);
+            if (mounts is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定的卡池模板，TId={fuhua.Fuhua.DiceTId1}");
+                return (null, null, null);
+            }
+            var pifus = _TemplateManager.GetFullViewFromId(fuhua.Fuhua.DiceTId2);
+            if (pifus is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"找不到指定的卡池模板，TId={fuhua.Fuhua.DiceTId1}");
+                return (null, null, null);
+            }
+            return (fuhua, mounts, pifus);
+        }
 
         /// <summary>
         /// 获取孵化的预览信息。
@@ -65,7 +172,7 @@ namespace Gy02Bll.Managers
             return gameChar.FuhuaHistory.FirstOrDefault(c => c.ParentTIds.SequenceEqual(keys));
         }
 
-        public FuhuaSummary GetOrAddHistory(IEnumerable<string> keys, GameChar gameChar)
+        public FuhuaSummary GetOrAddFuhuaHistory(IEnumerable<string> keys, GameChar gameChar)
         {
             var result = GetFuhuaHistory(keys, gameChar);
             if (result is null)

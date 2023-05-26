@@ -1,4 +1,5 @@
 ﻿using GY02.Managers;
+using GY02.Templates;
 using Gy02Bll.Commands.Shopping;
 using OW.Game;
 using OW.Game.Entity;
