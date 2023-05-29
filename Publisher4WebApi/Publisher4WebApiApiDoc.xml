@@ -925,20 +925,26 @@
             可能产出的物品预览。
             </summary>
         </member>
-        <member name="T:GY02.Publisher.GameDiceItemSummaryDto">
+        <member name="T:GY02.Publisher.GameDiceItemDto">
             <summary>
             生成项的摘要信息。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.GameDiceItemSummaryDto.Entity">
+        <member name="P:GY02.Publisher.GameDiceItemDto.Outs">
             <summary>
-            生成项的摘要。
+            产出物品的描述集合。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.GameDiceItemSummaryDto.Weight">
+        <member name="P:GY02.Publisher.GameDiceItemDto.Weight">
             <summary>
-            生成项的权重。
+            权重值，可以带小数。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
             </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameDiceItemDto.ClearGuaranteesCount">
+            <summary>
+            保底忽略标志。
+            </summary>
+            <value>true当命中此项时会清除保底计数，置为0。</value>
         </member>
         <member name="T:GY02.Publisher.FuhuaPreviewParamsDto">
             <summary>

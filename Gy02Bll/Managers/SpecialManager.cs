@@ -37,7 +37,7 @@ namespace Gy02Bll.Managers
         #region 孵化相关
 
         /// <summary>
-        /// 获取指定孵化的产出预览项。
+        /// 获取指定孵化的产出预览项。考虑了排除规则。
         /// </summary>
         /// <param name="keys"></param>
         /// <param name="gameChar"></param>
@@ -50,43 +50,14 @@ namespace Gy02Bll.Managers
             var mounts = _DiceManager.Roll(info.Item2, gameChar, true);
             //获取皮肤槽选项
             var dicePifu = (GameDice)info.Item3.Dice.Clone();
-            var hs = new HashSet<Guid>((history.Items.Select(d1 => d1.Entity.TId)));
+            var hs = new HashSet<Guid>((history.Items.SelectMany(d1 => d1.Outs.Select(d=>d.TId))));
             dicePifu.Items.RemoveAll(c => hs.Overlaps(c.Outs.Select(d => d.TId)));
             var maxCount = dicePifu.MaxCount;
             var pifus = _DiceManager.Roll(dicePifu.Items, ref maxCount, dicePifu.AllowRepetition);
-            return result;
-        }
 
-        /// <summary>
-        /// 用池子指定的规则生成所有项。
-        /// </summary>
-        /// <param name="dice"></param>
-        /// <param name="excludeTIds"></param>
-        /// <returns></returns>
-        public IEnumerable<GameDiceItem> GetOutputs(GameDice dice, IEnumerable<Guid> excludeTIds = null)
-        {
-            var list = new HashSet<GameDiceItem>();
-            var rnd = new Random { };
-            HashSet<GameDiceItem> items;
-            if (excludeTIds is null)
-                items = new HashSet<GameDiceItem>(dice.Items);
-            else
-                items = new HashSet<GameDiceItem>(dice.Items.Where(c => !excludeTIds.Contains(c.GetSummary().Item1)));
-            if (!dice.AllowRepetition && items.Count <= dice.MaxCount)
-                OwHelper.Copy(items, list);
-            else
-                while (list.Count < dice.MaxCount)
-                {
-                    var tmp = _DiceManager.Roll(items, rnd);
-                    if (dice.AllowRepetition)
-                        list.Add(tmp);
-                    else if (!list.Contains(tmp))
-                    {
-                        list.Add(tmp);
-                        items.Remove(tmp);
-                    }
-                }
-            return list;
+            result.AddRange(mounts);
+            result.AddRange(pifus);
+            return result;
         }
 
         /// <summary>

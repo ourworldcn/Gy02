@@ -4,12 +4,14 @@ using GY02.Base;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.TemplateDb;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
+using System.IO.Compression;
 
 lbStart:
 Environment.SetEnvironmentVariable("DOTNET_USE_POLLING_FILE_WATCHER", "1");
@@ -17,10 +19,10 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
 builder.Configuration.AddJsonFile("GameTemplates.json", false, true);    //¼ÓÈëÄ£°åĞÅÏ¢ÅäÖÃÎÄ¼ş
-//builder.Services.AddW3CLogging(logging =>
-//{
-//    // Log all W3C fields
-//    logging.LoggingFields = W3CLoggingFields.All;
+                                                                         //builder.Services.AddW3CLogging(logging =>
+                                                                         //{
+                                                                         //    // Log all W3C fields
+                                                                         //    logging.LoggingFields = W3CLoggingFields.All;
 
 //    logging.FileSizeLimit = 5 * 1024 * 1024;
 //    logging.RetainedFileCountLimit = 2;
@@ -32,6 +34,23 @@ builder.Configuration.AddJsonFile("GameTemplates.json", false, true);    //¼ÓÈëÄ
 #region ×·¼Ó·şÎñµ½ÈİÆ÷
 
 // Add services to the container.
+#region ÅäÖÃÑ¹Ëõ
+
+services.Configure<BrotliCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Optimal;
+}).Configure<GzipCompressionProviderOptions>(options =>
+{
+    options.Level = CompressionLevel.Optimal;
+}).AddResponseCompression(c =>
+{
+    c.EnableForHttps = true;
+
+    c.Providers.Add<BrotliCompressionProvider>();
+    c.Providers.Add<GzipCompressionProvider>();
+});
+
+#endregion ÅäÖÃÑ¹Ëõ
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -41,8 +60,6 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-
-services.AddResponseCompression(c => c.EnableForHttps = true);
 
 #region ÅäÖÃSwagger
 //×¢²áSwaggerÉú³ÉÆ÷£¬¶¨ÒåÒ»¸ö Swagger ÎÄµµ
@@ -102,8 +119,8 @@ var app = builder.Build();
 
 IWebHostEnvironment env = app.Environment;
 
+app.UseResponseCompression();
 //app.UseAuthorization();
-
 app.MapControllers();
 
 #region ÆôÓÃÖĞ¼ä¼ş·şÎñÉú³ÉSwagger

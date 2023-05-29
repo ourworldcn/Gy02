@@ -28,7 +28,8 @@ namespace GY02.Commands
 
     public class FuhuaHandler : SyncCommandHandlerBase<FuhuaCommand>, IGameCharHandler<FuhuaCommand>
     {
-        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, TemplateManager templateManager, BlueprintManager blueprintManager, SpecialManager specialManager)
+        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, TemplateManager templateManager, BlueprintManager blueprintManager,
+            SpecialManager specialManager, GameDiceManager diceManager)
         {
             _AccountStore = accountStore;
             _SyncCommandManager = syncCommandManager;
@@ -36,6 +37,7 @@ namespace GY02.Commands
             _TemplateManager = templateManager;
             _BlueprintManager = blueprintManager;
             _SpecialManager = specialManager;
+            _DiceManager = diceManager;
         }
 
         GameAccountStore _AccountStore;
@@ -43,9 +45,11 @@ namespace GY02.Commands
 
         SyncCommandManager _SyncCommandManager;
 
+        TemplateManager _TemplateManager;
+
+        GameDiceManager _DiceManager;
         GameEntityManager _GameEntityManager;
 
-        TemplateManager _TemplateManager;
 
         BlueprintManager _BlueprintManager;
         SpecialManager _SpecialManager;
@@ -92,7 +96,8 @@ namespace GY02.Commands
             #region 生成孵化专有产出
             var specOut = OwHelper.GetRandom(preview.Items.Select(c => (c, c.Weight)));
             if (specOut is null) goto lbErr;
-            var items = _GameEntityManager.Create(Array.Empty<(Guid, decimal)>().Append((specOut.Value.Item1.Entity.TId, specOut.Value.Item1.Entity.Count)));
+
+            IEnumerable<GameEntity> items = default;    // _GameEntityManager.Create(Array.Empty<(Guid, decimal)>().Append((specOut.Value.Item1.Entity.TId, specOut.Value.Item1.Entity.Count)));
             if (items is null) goto lbErr;
             var specOutPtid = _GameEntityManager.GetTemplate(items.First()).ParentTId;
             _GameEntityManager.Move(items, gc, command.Changes);
@@ -105,7 +110,7 @@ namespace GY02.Commands
                     history.ParentTIds.AddRange(command.ParentGenus);
                     gc.FuhuaHistory.Add(history);
                 }
-                var tmp = (GameDiceItemSummary)specOut.Value.Item1.Clone();
+                var tmp = (GameDiceItem)specOut.Value.Item1.Clone();
                 history.Items.Add(tmp);
 
                 command.Changes?.Add(new GamePropertyChangeItem<object>

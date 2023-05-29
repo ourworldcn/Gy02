@@ -185,7 +185,7 @@ namespace Gy02Bll.Managers
                 if (_DiceTId2DiceGroup is null)
                 {
                     var tmp = new ConcurrentDictionary<Guid, TemplateStringFullView>();
-                    var coll = _TemplateManager.Id2FullView.Where(c => c.Value.DiceGroup is not null);
+                    var coll = _TemplateManager.Id2FullView.Where(c => c.Value?.DiceGroup is not null);
                     foreach (var item in coll)
                     {
                         item.Value.DiceGroup.DiceIds.ForEach(c => tmp[c] = item.Value);
@@ -193,7 +193,7 @@ namespace Gy02Bll.Managers
 
                     Interlocked.CompareExchange(ref _DiceTId2DiceGroup, tmp, null);
                 }
-                return _Id2Dice;
+                return _DiceTId2DiceGroup;
             }
         }
 
@@ -287,22 +287,15 @@ namespace Gy02Bll.Managers
         #region 计算卡池相关
 
         /// <summary>
-        /// 获取生成项预览。
+        /// 获取卡池项的输出项。
         /// </summary>
-        /// <param name="item"></param>
+        /// <param name="items"></param>
         /// <returns></returns>
-        public static GameDiceItemSummary GetDiceItemSummary(GameDiceItem item)
+        public IEnumerable<(GameDiceItem, IEnumerable<GameEntitySummary>)> GetOutputs(IEnumerable<GameDiceItem> items)
         {
-            var tmp = item.GetSummary();
-            return new GameDiceItemSummary
-            {
-                Entity = new GameEntitySummary
-                {
-                    TId = tmp.Item1,
-                    Count = tmp.Item2,
-                },
-                Weight = tmp.Item3,
-            };
+            var result = from tmp in items
+                         select (tmp, tmp.Outs.Select(c => (GameEntitySummary)c.Clone()));
+            return result;
         }
 
         /// <summary>
@@ -311,11 +304,11 @@ namespace Gy02Bll.Managers
         /// <param name="outItem"></param>
         /// <param name="gameChar"></param>
         /// <returns></returns>
-        public List<GY02.Templates.GameEntitySummary> Transformed(GY02.Templates.GameEntitySummary outItem, GameChar gameChar, bool ignoreGuarantees = false, Random random = null)
+        public List<GameEntitySummary> Transformed(GameEntitySummary outItem, GameChar gameChar, bool ignoreGuarantees = false, Random random = null)
         {
             var dice = GetDiceById(outItem.TId);
             if (dice is null)
-                return new List<GY02.Templates.GameEntitySummary> { outItem };
+                return new List<GameEntitySummary> { outItem };
             random ??= new Random();
             var items = Roll(dice, gameChar, ignoreGuarantees, random);
             var result = items.SelectMany(c => c.Outs).ToList();
@@ -327,7 +320,7 @@ namespace Gy02Bll.Managers
         /// </summary>
         /// <param name="outItems"></param>
         /// <returns>(源,对应的转换项)</returns>
-        public IEnumerable<(GameEntitySummary, IEnumerable<GY02.Templates.GameEntitySummary>)> Transformed(IEnumerable<GY02.Templates.GameEntitySummary> outItems)
+        public IEnumerable<(GameDiceItem, IEnumerable<GameEntitySummary>)> Transformed(IEnumerable<GameDiceItem> outItems)
         {
             throw new NotImplementedException();
         }

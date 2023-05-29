@@ -30,7 +30,7 @@ namespace GY02.Commands
         /// <summary>
         /// 返回数据，孵化可能生成的预览信息列表。
         /// </summary>
-        public List<GameDiceItemSummary> Result { get; set; } = new List<GameDiceItemSummary>();
+        public List<GameDiceItem> Result { get; set; } = new List<GameDiceItem>();
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
@@ -82,14 +82,17 @@ namespace GY02.Commands
             {
                 var info = _SpecialManager.GetFuhuaInfo(command.ParentGenus);
                 if (info.Item1 is null) goto lbErr; //若出错
-                var mounts = _SpecialManager.GetOutputs(info.Item2.Dice);
+                //var mounts = _SpecialManager.GetOutputs(info.Item2.Dice);
 
-                var pifus = _SpecialManager.GetOutputs(info.Item3.Dice, history.Items.Select(c => c.Entity.TId));
+                //var pifus = _SpecialManager.GetOutputs(info.Item3.Dice, history.Items.Select(c => c.Entity.TId));
 
+               var coll= _SpecialManager.GetFuhuaEntitySummary(command.ParentGenus, command.GameChar);
+                //var items = _DiceManager.Transformed(coll.Select(c => c.Outs));
                 preview = new FuhuaSummary { };
                 preview.ParentTIds.AddRange(command.ParentGenus);
-                preview.Items.AddRange(mounts.Select(c => GameDiceManager.GetDiceItemSummary(c)));
-                preview.Items.AddRange(pifus.Select(c => GameDiceManager.GetDiceItemSummary(c)));
+                //preview.Items.AddRange(mounts.Select(c => GameDiceManager.GetDiceItemSummary(c)));
+                //preview.Items.AddRange(pifus.Select(c => GameDiceManager.GetDiceItemSummary(c)));
+                preview.Items.AddRange(coll);
                 gc.FuhuaPreview.Add(preview);
             }
             command.Result.AddRange(preview.Items);

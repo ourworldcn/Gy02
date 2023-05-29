@@ -367,40 +367,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 可能产出的物品预览。
         /// </summary>
-        public List<GameDiceItemSummary> Items { get; set; } = new List<GameDiceItemSummary>();
-    }
-
-    /// <summary>
-    /// 生成项的摘要信息。
-    /// </summary>
-    public class GameDiceItemSummary : ICloneable
-    {
-        public GameDiceItemSummary()
-        {
-        }
-
-        /// <summary>
-        /// 生成项的摘要。
-        /// </summary>
-        public GameEntitySummary Entity { get; set; }
-
-        /// <summary>
-        /// 生成项的权重。
-        /// </summary>
-        public decimal Weight { get; set; }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <returns></returns>
-        public object Clone()
-        {
-            return new GameDiceItemSummary
-            {
-                Entity = (GameEntitySummary)Entity.Clone(),
-                Weight = Weight,
-            };
-        }
+        public List<GameDiceItem> Items { get; set; } = new List<GameDiceItem>();
     }
 
     public static class GameCharExtensions

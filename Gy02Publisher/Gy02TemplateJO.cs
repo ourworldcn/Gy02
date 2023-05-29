@@ -1051,7 +1051,7 @@ namespace GY02.Templates
     }
 
     /// <summary>
-    /// 池子项。
+    /// 池子项。取代了 GameDiceItemSummary 类。
     /// </summary>
     public class GameDiceItem : ICloneable
     {
@@ -1061,11 +1061,6 @@ namespace GY02.Templates
         public GameDiceItem()
         {
         }
-
-        /// <summary>
-        /// 池子物品的条件。
-        /// </summary>
-        public GameThingPrecondition Precondition { get; set; } = new GameThingPrecondition();
 
         /// <summary>
         /// 产出物品的描述集合。
@@ -1082,21 +1077,6 @@ namespace GY02.Templates
         /// </summary>
         /// <value>true当命中此项时会清除保底计数，置为0。</value>
         public bool ClearGuaranteesCount { get; set; }
-
-        (Guid, decimal, decimal)? _Summary;
-        /// <summary>
-        /// 获取产出的(模板Id,数量,权重)。
-        /// </summary>
-        /// <returns></returns>
-        public (Guid, decimal, decimal) GetSummary()
-        {
-            if (!_Summary.HasValue)
-            {
-                var item = Precondition.FirstOrDefault(c => c.TId.HasValue);
-                _Summary = (item?.TId ?? Guid.Empty, item?.MinCount ?? 0, Weight);
-            }
-            return _Summary.Value;
-        }
 
         /// <summary>
         /// 获取一个深表副本。

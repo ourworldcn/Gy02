@@ -1210,24 +1210,30 @@ namespace GY02.Publisher
         /// <summary>
         /// 可能产出的物品预览。
         /// </summary>
-        public List<GameDiceItemSummaryDto> Items { get; set; } = new List<GameDiceItemSummaryDto>();
+        public List<GameDiceItemDto> Items { get; set; } = new List<GameDiceItemDto>();
     }
 
     /// <summary>
     /// 生成项的摘要信息。
     /// </summary>
-    [AutoMap(typeof(GameDiceItemSummary))]
-    public class GameDiceItemSummaryDto
+    [AutoMap(typeof(GameDiceItem))]
+    public class GameDiceItemDto
     {
         /// <summary>
-        /// 生成项的摘要。
+        /// 产出物品的描述集合。
         /// </summary>
-        public GameEntitySummaryDto Entity { get; set; }
+        public List<GameEntitySummary> Outs { get; set; } = new List<GameEntitySummary>();
 
         /// <summary>
-        /// 生成项的权重。
+        /// 权重值，可以带小数。在同一个池子中所有项加起来的权重是分母，该项权重是分子。
         /// </summary>
         public decimal Weight { get; set; }
+
+        /// <summary>
+        /// 保底忽略标志。
+        /// </summary>
+        /// <value>true当命中此项时会清除保底计数，置为0。</value>
+        public bool ClearGuaranteesCount { get; set; }
     }
 
     /// <summary>
@@ -1252,7 +1258,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 返回数据，孵化可能生成的预览信息列表。
         /// </summary>
-        public List<GameDiceItemSummaryDto> Result { get; set; } = new List<GameDiceItemSummaryDto>();
+        public List<GameDiceItemDto> Result { get; set; } = new List<GameDiceItemDto>();
     }
 
     /// <summary>
