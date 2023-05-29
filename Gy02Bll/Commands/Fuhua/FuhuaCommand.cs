@@ -97,7 +97,7 @@ namespace GY02.Commands
             var specOut = OwHelper.GetRandom(preview.Items.Select(c => (c, c.Weight)));
             if (specOut is null) goto lbErr;
 
-            IEnumerable<GameEntity> items = default;    // _GameEntityManager.Create(Array.Empty<(Guid, decimal)>().Append((specOut.Value.Item1.Entity.TId, specOut.Value.Item1.Entity.Count)));
+            IEnumerable<GameEntity> items = null;    // _GameEntityManager.Create(Array.Empty<(Guid, decimal)>().Append((specOut.Value.Item1.Entity.TId, specOut.Value.Item1.Entity.Count)));
             if (items is null) goto lbErr;
             var specOutPtid = _GameEntityManager.GetTemplate(items.First()).ParentTId;
             _GameEntityManager.Move(items, gc, command.Changes);
