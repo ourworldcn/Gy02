@@ -3,6 +3,7 @@ using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
 using Gy02Bll.Commands.Account;
+using Gy02Bll.Managers;
 using OW.Game;
 using OW.Game.Entity;
 using OW.SyncCommand;
@@ -32,12 +33,13 @@ namespace Gy02Bll.Commands.Shopping
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
     {
 
-        public ShoppingBuyHandler(GameAccountStore accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, BlueprintManager blueprintManager)
+        public ShoppingBuyHandler(GameAccountStore accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, BlueprintManager blueprintManager, GameDiceManager diceManager)
         {
             AccountStore = accountStore;
             _ShoppingManager = shoppingManager;
             _EntityManager = entityManager;
             _BlueprintManager = blueprintManager;
+            _DiceManager = diceManager;
         }
 
         public GameAccountStore AccountStore { get; }
@@ -45,24 +47,37 @@ namespace Gy02Bll.Commands.Shopping
         GameEntityManager _EntityManager;
         BlueprintManager _BlueprintManager;
         GameShoppingManager _ShoppingManager;
+        GameDiceManager _DiceManager;
 
         public override void Handle(ShoppingBuyCommand command)
         {
             var key = ((IGameCharHandler<ShoppingBuyCommand>)this).GetKey(command);
             using var dw = ((IGameCharHandler<ShoppingBuyCommand>)this).LockGameChar(command);
             if (dw.IsEmpty) return; //若锁定失败
-            var si = _ShoppingManager.GetShoppingItemByTId(command.ShoppingItemTId);
-            if (si is null) goto lbErr;
+
+            var tt = _ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId);
+            //var si = _ShoppingManager.GetShoppingItemByTId(command.ShoppingItemTId);
+            if (tt is null) goto lbErr;
             var now = DateTime.UtcNow;
-            if (!_ShoppingManager.IsValid(command.GameChar, si, now, out _)) goto lbErr;
+            if (!_ShoppingManager.IsValid(command.GameChar, tt, now, out _)) goto lbErr;
 
             var allEntity = _EntityManager.GetAllEntity(command.GameChar)?.ToArray();
             if (allEntity is null) goto lbErr;
 
-            if (!_BlueprintManager.Deplete(allEntity, si.Ins, command.Changes)) goto lbErr;
+            if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
+                if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes)) goto lbErr;
 
-            if (!_EntityManager.CreateAndMove(si.Outs.Select(c => (c.TId, c.Count, c.ParentTId)), command.GameChar, command.Changes)) goto lbErr;
-
+            if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
+            {
+                var coll = tt.ShoppingItem.Outs.SelectMany(c => _DiceManager.Transformed(c, command.GameChar));
+                if (!_EntityManager.CreateAndMove(coll.Select(c => (c.TId, c.Count, c.ParentTId)), command.GameChar, command.Changes)) goto lbErr;
+            }
+            command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
+            {
+                Count = 1,
+                DateTime = now,
+                TId = command.ShoppingItemTId
+            });
             AccountStore.Save(key);
             return;
         lbErr:

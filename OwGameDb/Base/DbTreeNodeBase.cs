@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -71,7 +72,7 @@ namespace OW.Game.Store
         /// <returns></returns>
         public static IDbTreeNode<T> GetRoot<T>(this IDbTreeNode<T> node) where T : IEntityWithSingleKey<Guid>
         {
-            IDbTreeNode<T> tmp, result=null;
+            IDbTreeNode<T> tmp, result = null;
             for (tmp = node.Parent as IDbTreeNode<T>; tmp is not null; tmp = tmp.Parent as IDbTreeNode<T>)
                 result = tmp;
             return result;
@@ -102,6 +103,7 @@ namespace OW.Game.Store
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
+
         public decimal? ExtraDecimal { get; set; }
 
         /// <summary>
