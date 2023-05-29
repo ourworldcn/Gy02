@@ -50,10 +50,11 @@ namespace OW.Game.Entity
         public decimal Level { get; set; }
 
         decimal _Count;
-        
+
         /// <summary>
         /// 数量。
         /// </summary>
+        [JsonPropertyOrder(10)]
         public decimal Count
         {
             get
@@ -65,14 +66,24 @@ namespace OW.Game.Entity
             {
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
                 if (fcp is null)
+                {
                     _Count = value;
+                    CountOfLastModifyUtc = DateTime.UtcNow;
+                }
                 else
                 {
                     var dt = DateTime.UtcNow;
                     fcp.SetLastValue(value, ref dt);
+                    CountOfLastModifyUtc = DateTime.UtcNow;
                 }
             }
         }
+
+        /// <summary>
+        /// Count 属性最后的修改时间。修改Count属性时自动修改此属性。
+        /// </summary>
+        [JsonPropertyOrder(11)]
+        public DateTime? CountOfLastModifyUtc { get; set; }
 
         /// <summary>
         /// 升级的累计消耗。

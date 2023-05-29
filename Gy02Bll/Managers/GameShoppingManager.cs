@@ -39,6 +39,24 @@ namespace GY02.Managers
         GameEntityManager _EntityManager;
         TemplateManager _TemplateManager;
 
+        /// <summary>
+        /// 获取代表商品项的模板。
+        /// </summary>
+        /// <param name="shoppingItemTId"></param>
+        /// <returns></returns>
+        public TemplateStringFullView GetShoppingTemplateByTId(Guid shoppingItemTId)
+        {
+            var result = _TemplateManager.GetFullViewFromId(shoppingItemTId);
+            if (GetShoppingItemByTemplate(result) is null)
+                return null;
+            return result;
+        }
+
+        /// <summary>
+        /// 获取商品项数据。
+        /// </summary>
+        /// <param name="shoppingItemTId"></param>
+        /// <returns></returns>
         public GameShoppingItem GetShoppingItemByTId(Guid shoppingItemTId)
         {
             var tt = _TemplateManager.GetFullViewFromId(shoppingItemTId);
@@ -56,7 +74,6 @@ namespace GY02.Managers
             }
             return shoppingItem;
         }
-
 
         /// <summary>
         /// 综合考虑多种因素确定是否可以购买。

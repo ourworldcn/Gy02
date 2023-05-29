@@ -110,6 +110,11 @@ namespace OW.Game.Entity
         /// </summary>
         public int LogineCount { get; set; }
 
+        /// <summary>
+        /// 最后一次登录的时间点。仅用户登录后才会改变该值，系统登录该角色不会改变该值。
+        /// </summary>
+        public DateTime? LastLoginDateTimeUtc { get; set; }
+
         #endregion 普通属性
 
         #region 简单属性

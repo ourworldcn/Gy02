@@ -96,8 +96,8 @@ namespace GY02.Commands
             #region 生成孵化专有产出
             var specOut = OwHelper.GetRandom(preview.Items.Select(c => (c, c.Weight)));
             if (specOut is null) goto lbErr;
-
-            IEnumerable<GameEntity> items = null;    // _GameEntityManager.Create(Array.Empty<(Guid, decimal)>().Append((specOut.Value.Item1.Entity.TId, specOut.Value.Item1.Entity.Count)));
+            var dices = _DiceManager.GetOutputs(Array.Empty<GameDiceItem>().Append(specOut.Value.Item1)).SelectMany(c => c.Item2);
+            IEnumerable<GameEntity> items = _GameEntityManager.Create(Array.Empty<(Guid, decimal)>().Concat(dices.Select(c => (c.TId, c.Count))));
             if (items is null) goto lbErr;
             var specOutPtid = _GameEntityManager.GetTemplate(items.First()).ParentTId;
             _GameEntityManager.Move(items, gc, command.Changes);

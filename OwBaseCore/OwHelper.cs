@@ -365,7 +365,7 @@ namespace System
         /// <typeparam name="T"></typeparam>
         /// <param name="items"></param>
         /// <param name="random"></param>
-        /// <returns>如果出错则返回null，此时调用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        /// <returns>如果出错则返回null，此时调用<see cref="GetLastError"/>获取详细信息。</returns>
         public static (T, decimal)? GetRandom<T>(IEnumerable<(T, decimal)> items, Random random = null)
         {
             decimal totalWeight = 0;    //总权重

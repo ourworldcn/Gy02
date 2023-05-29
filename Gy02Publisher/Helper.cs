@@ -119,6 +119,11 @@ namespace GY02.Publisher
         public static readonly Guid LeijiQiandaoSlotTId = new Guid("4527471A-FD91-4899-910C-DE7056AD67A1");
 
         /// <summary>
+        /// 累计签到占位符的TId。
+        /// </summary>
+        public static readonly Guid SevenDayQiandaoSlotTId = new Guid("46542DE4-B8B8-4735-936C-856273B650F7");
+
+        /// <summary>
         /// 七日签到页签。
         /// </summary>
         public const string QiriQiandaoGenus = "gs_qiandao";

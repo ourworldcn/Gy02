@@ -150,6 +150,11 @@
             升品的累计用品。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameEntityDto.CountOfLastModifyUtc">
+            <summary>
+            Count 属性最后的修改时间。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameUserDto">
             <summary>
             账号数据。
@@ -259,6 +264,11 @@
         <member name="P:GY02.Publisher.GameCharDto.LogineCount">
             <summary>
             该角色登录的次数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameCharDto.LastLoginDateTimeUtc">
+            <summary>
+            最后一次登录的时间点。仅用户登录后才会改变该值，系统登录该角色不会改变该值。
             </summary>
         </member>
         <member name="P:GY02.Publisher.GameCharDto.YichuanPifuSlot">

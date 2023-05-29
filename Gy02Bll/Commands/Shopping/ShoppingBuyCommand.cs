@@ -1,6 +1,8 @@
 ﻿
 using GY02.Commands;
 using GY02.Managers;
+using GY02.Publisher;
+using Gy02Bll.Commands.Account;
 using OW.Game;
 using OW.Game.Entity;
 using OW.SyncCommand;
@@ -16,7 +18,7 @@ namespace Gy02Bll.Commands.Shopping
     {
         public ShoppingBuyCommand()
         {
-            
+
         }
 
         public GameChar GameChar { get; set; }
@@ -67,5 +69,56 @@ namespace Gy02Bll.Commands.Shopping
             command.FillErrorFromWorld();
         }
     }
+
+    /// <summary>
+    /// 处理累计签到的占位符Count+1的逻辑。
+    /// </summary>
+    public class CharFirstLoginedHandler : SyncCommandHandlerBase<CharFirstLoginedCommand>
+    {
+        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStore accountStore)
+        {
+            _EntityManager = entityManager;
+            _ShoppingManager = shoppingManager;
+            _AccountStore = accountStore;
+        }
+
+        GameEntityManager _EntityManager;
+        GameShoppingManager _ShoppingManager;
+        GameAccountStore _AccountStore;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="command"></param>
+        public override void Handle(CharFirstLoginedCommand command)
+        {
+            var gc = command.GameChar;
+            var slot = _EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.LeijiQiandaoSlotTId);
+            var coll = from tmp in gc.ShoppingHistory
+                       where tmp.DateTime.Date.AddDays(1) == command.LoginDateTimeUtc.Date //昨日购买记录
+                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
+                       where tt.Genus.Contains("gs_leijiqiandao")   //累计签到项
+                       select tmp;
+            var key = gc.GetKey() as string;
+            if (coll.Any())  //若昨日买过累计签到项
+            {
+                slot.Count++;
+                _AccountStore.Save(key);
+            }
+
+            slot = _EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.SevenDayQiandaoSlotTId);
+            coll = from tmp in gc.ShoppingHistory
+                   where tmp.DateTime.Date.AddDays(1) == command.LoginDateTimeUtc.Date //昨日购买记录
+                   let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
+                   where tt.Genus.Contains("gs_qiandao")   //7日签到项
+                   select tmp;
+            if (coll.Any())  //若昨日买过累计签到项
+            {
+                slot.Count++;
+                _AccountStore.Save(key);
+            }
+        }
+    }
+
 }
 

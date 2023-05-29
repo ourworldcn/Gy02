@@ -1,6 +1,7 @@
 ﻿using GY02.Base;
 using GY02.Managers;
 using GY02.Publisher;
+using Gy02Bll.Commands.Account;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Store;
@@ -47,14 +48,16 @@ namespace GY02.Commands
     public class LoginHandler : SyncCommandHandlerBase<LoginCommand>
     {
 
-        public LoginHandler(IServiceProvider service, GameSqlLoggingManager loggingManager)
+        public LoginHandler(IServiceProvider service, GameSqlLoggingManager loggingManager, SyncCommandManager syncCommandManager)
         {
             _Service = service;
             _LoggingManager = loggingManager;
+            _SyncCommandManager = syncCommandManager;
         }
 
         IServiceProvider _Service;
         GameSqlLoggingManager _LoggingManager;
+        SyncCommandManager _SyncCommandManager;
 
         public override void Handle(LoginCommand command)
         {
@@ -71,6 +74,7 @@ namespace GY02.Commands
                 command.FillErrorFromWorld();
                 return;
             }
+            var nowUtc = DateTime.UtcNow;
             command.User = gu;
             //设置属性
             gu.Timeout = TimeSpan.FromMinutes(15);
@@ -87,6 +91,14 @@ namespace GY02.Commands
             gu.CurrentChar = ((VirtualThing)gu.Thing).Children.First(c => c.ExtraGuid == ProjectContent.CharTId).GetJsonObject<GameChar>();
             gu.CurrentChar.LogineCount++;
             _LoggingManager.AddLogging(new GameActionRecord { ActionId = "Loginged", ParentId = gu.Id });
+            var gc = gu.CurrentChar;
+            if (gc.LastLoginDateTimeUtc is null || gc.LastLoginDateTimeUtc.Value.Date < nowUtc.Date) //若是今日第一次登录
+            {
+                gc.LastLoginDateTimeUtc = nowUtc.Date;
+                var subCommand = new CharFirstLoginedCommand { GameChar = gc, LoginDateTimeUtc = nowUtc };
+                _SyncCommandManager.Handle(subCommand);
+                svcStore.Save(gu.GetKey());
+            }
         }
 
     }

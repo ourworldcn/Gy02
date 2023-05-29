@@ -203,7 +203,7 @@
       "Id": "d7437942-4738-4d4c-9067-27f184551737",
       "DisplayName": "累计签到 22",
       "Gid": 180102022,
-      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,21]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,21]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "bc287cfc-77d5-469f-a5f6-dbb3d123fd4d",
@@ -263,7 +263,7 @@
       "Id": "da8508fd-2008-4c31-a533-4ea7d2ef9024",
       "DisplayName": "累计签到 32",
       "Gid": 180102032,
-      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,31]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,31]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "b04521de-6b47-4efd-b69e-e49a46f37d54",
@@ -305,7 +305,7 @@
       "Id": "ced02a38-c30b-404a-9a76-4aa0da9991d8",
       "DisplayName": "累计签到 39",
       "Gid": 180102039,
-      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,38]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,38]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "8093c36e-06b8-41b4-881c-73fff4d385c8",
@@ -329,7 +329,7 @@
       "Id": "87cd060f-7dd6-4a82-a653-318e30ba27c8",
       "DisplayName": "累计签到 43",
       "Gid": 180102043,
-      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":4,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,42]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":4,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,42]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "7c15702c-7134-43f7-b710-0551fe83b4f1",
@@ -371,7 +371,7 @@
       "Id": "4933dd1b-83cc-4631-bf87-1c1895f4e414",
       "DisplayName": "累计签到 50",
       "Gid": 180102050,
-      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":4,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,49]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":4,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,49]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "8eaf3bf7-810e-4c1c-81e8-db2b59fe0602",
@@ -389,7 +389,7 @@
       "Id": "23d76236-78d6-4890-9f62-502bcc4ac890",
       "DisplayName": "累计签到 53",
       "Gid": 180102043,
-      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,52]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,52]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "2fb956c0-529b-4516-8ff1-b250b6db7122",
@@ -431,7 +431,7 @@
       "Id": "23cb3e34-0344-4794-abe2-49fe3650e4c9",
       "DisplayName": "累计签到 60",
       "Gid": 180102050,
-      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,59]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijiqiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-04-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"60d\",\"ValidPeriodString\":\"60d\"},\"GroupNumber\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[60,59]}],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "18084905-2C57-4B4C-B302-4B8230740FBD",

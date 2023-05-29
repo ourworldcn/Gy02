@@ -80,6 +80,7 @@ namespace Gy02Bll.Commands.Shopping
                 EndUtc = c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod,
                 BuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.DateTime >= c.Item2 && history.DateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.Count),
             }));
+
         }
     }
 }

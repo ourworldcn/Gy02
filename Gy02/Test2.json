@@ -1,54 +1,47 @@
 {
-  "Dice": {
-    "MaxCount": 3,
-    "AllowRepetition": true,
-    "Items": [
+  "Genus": [ "gs_qiandao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "Ins": [
       {
-        "Outs": [
+        "Conditional": [
           {
-            "ParentTId": null,
-            "TId": "9451d8a6-507b-46eb-b1be-1f653af21f0a",
-            "Count": 1
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ 7, 0 ]
+              }
+            ],
+            "IgnoreIfDisplayList": true
           }
         ],
-        "Weight": 20,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "524b552f-6ecc-4fbf-a388-4f70eab305b2",
-            "Count": 1
-          }
-        ],
-        "Weight": 10,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "6ce19f8f-4c23-4c56-805e-4a649318108f",
-            "Count": 1
-          }
-        ],
-        "Weight": 5,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "928fb8a2-f3ab-4863-abf9-3992049cac4e",
-            "Count": 1
-          }
-        ],
-        "Weight": 3,
-        "ClearGuaranteesCount": false
+        "Count": 0,
+        "Genus": []
       }
     ],
-    "GuaranteesCount": null,
-    "GuaranteesDiceTId": null
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 10
+      },
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
+        "Count": 1
+      }
+    ],
+    "MaxCount": 1
   }
 }
