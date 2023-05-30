@@ -118,8 +118,9 @@ var app = builder.Build();
 //if (app.Environment.IsDevelopment())
 
 IWebHostEnvironment env = app.Environment;
-
 app.UseResponseCompression();
+
+app.UseResponseCaching();
 //app.UseAuthorization();
 app.MapControllers();
 
