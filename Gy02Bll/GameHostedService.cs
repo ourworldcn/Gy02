@@ -3,7 +3,6 @@ using GY02.Commands;
 using GY02.Managers;
 using GY02.TemplateDb;
 using GY02.Templates;
-using Gy02Bll.Managers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.Configuration;

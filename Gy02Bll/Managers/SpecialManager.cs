@@ -1,4 +1,5 @@
-﻿using GY02.Publisher;
+﻿using GY02.Managers;
+using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -12,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
-namespace Gy02Bll.Managers
+namespace GY02.Managers
 {
     public class SpecialManagerOptions : IOptions<SpecialManagerOptions>
     {

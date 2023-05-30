@@ -1,7 +1,7 @@
 ﻿using GY02.Base;
 using GY02.Managers;
 using GY02.Publisher;
-using Gy02Bll.Commands.Account;
+using GY02.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Store;

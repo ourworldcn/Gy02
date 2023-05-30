@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using GY02;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
-using Gy02Bll.Commands.Shopping;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OW.SyncCommand;
 
@@ -33,6 +30,18 @@ namespace GY02.Controllers
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
 
+#if DEBUG
+        /// <summary>
+        /// 获取商品项结构。
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GameShoppingItem> GetShoppingItem()
+        {
+            return Ok();
+        }
+
+#endif
         /// <summary>
         /// 获取指定商品配置数据。
         /// </summary>

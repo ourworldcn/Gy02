@@ -91,7 +91,6 @@ namespace GY02.Publisher
         GameAccountStore _GameAccountStore;
         IDbContextFactory<GY02UserContext> _DbContextFactory;
         SyncCommandManager _SyncCommandManager;
-        VirtualThingManager _VirtualThingManager;
 
         public override void Handle(LoginT78Command command)
         {

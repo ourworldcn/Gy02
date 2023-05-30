@@ -93,6 +93,20 @@ namespace GY02.Publisher
 
         #endregion 各种槽和背包
 
+        #region 邮件相关
+
+        /// <summary>
+        /// 邮件槽TId。
+        /// </summary>
+        public static readonly Guid MailSlotTId = new Guid("CE00523E-9060-4D74-96C7-C7D3D57CE650");
+
+        /// <summary>
+        /// 邮件槽TId。（收件）
+        /// </summary>
+        public static readonly Guid MailTId = new Guid("E7229A9E-23A4-42EF-8ABB-FAEF0E16F683");
+
+        #endregion
+
         /// <summary>
         /// 金币TID。
         /// </summary>

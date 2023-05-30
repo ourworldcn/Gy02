@@ -2,7 +2,6 @@
 using AutoMapper.Configuration.Annotations;
 using GY02.Commands;
 using GY02.Templates;
-using Gy02Bll.Commands.Shopping;
 using OW.Game.Entity;
 using OW.Game.Store;
 using System;

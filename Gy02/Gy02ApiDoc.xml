@@ -336,6 +336,12 @@
             <param name="mapper"></param>
             <param name="syncCommandManager"></param>
         </member>
+        <member name="M:GY02.Controllers.ShoppingController.GetShoppingItem">
+            <summary>
+            获取商品项结构。
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:GY02.Controllers.ShoppingController.GetShoppingItems(GY02.Publisher.GetShoppingItemsParamsDto)">
             <summary>
             获取指定商品配置数据。

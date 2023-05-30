@@ -1,5 +1,6 @@
 ﻿using GY02.Publisher;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -629,7 +630,7 @@ namespace GY02.Templates
         public Guid? TId { get; set; }
 
         /// <summary>
-        /// 要求的最小数量。省略则不限制。
+        /// 要求的最小数量。省略(null)则不限制。
         /// </summary>
         public decimal? MinCount { get; set; }
 
@@ -1275,4 +1276,71 @@ namespace GY02.Templates
         #endregion 事件及相关
 
     }
+
+    #region 邮件相关
+    /// <summary>
+    /// 邮件对象。
+    /// </summary>
+    [Guid("0465A794-42E7-4B14-AE8B-2BF282FAA0BE")]  //宿主在VirtualThing中
+    public partial class GameMail : OwGameEntityBase
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameMail()
+        {
+
+        }
+
+        #region 基本属性
+
+        /// <summary>
+        /// 邮件标题。
+        /// </summary>
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// 邮件正文。
+        /// </summary>
+        public string Body { get; set; }
+
+        /// <summary>
+        /// 附件集合。
+        /// </summary>
+        public List<GameEntitySummary> Attachment { get; set; } = new List<GameEntitySummary> { };
+
+        /// <summary>
+        /// 发件人。
+        /// </summary>
+        public string From { get; set; }
+
+        /// <summary>
+        /// 收件人。通常这里是收件角色Id的<see cref="Guid.ToString()"/>字符串形式，这样可以用于快速查找指定角色的所有邮件。
+        /// </summary>
+        [JsonIgnore]
+        public string To { get => ((VirtualThing)Thing).ExtraString; set => ((VirtualThing)Thing).ExtraString = value; }
+
+        #endregion 基本属性
+
+        #region 动态属性
+
+        /// <summary>
+        /// 是否已读，已读为true。
+        /// </summary>
+        public bool Read { get; set; }
+
+        /// <summary>
+        /// 发件日期。
+        /// </summary>
+        public DateTime SendDateTimeUtc { get; set; } = DateTime.UtcNow;
+
+        /// <summary>
+        /// 领取附件的日期，null标识尚未领取。
+        /// </summary>
+        public DateTime? PickUpUtc { get; set; }
+
+        #endregion 动态属性
+
+    }
+    #endregion 邮件相关
 }

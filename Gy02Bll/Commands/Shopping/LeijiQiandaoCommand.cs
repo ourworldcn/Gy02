@@ -1,5 +1,4 @@
-﻿using GY02.Commands;
-using GY02.Managers;
+﻿using GY02.Managers;
 using GY02.Publisher;
 using OW.Game;
 using OW.Game.Entity;
@@ -11,7 +10,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Shopping
+namespace GY02.Commands
 {
     /// <summary>
     /// 累计签到的命令。
@@ -47,7 +46,7 @@ namespace Gy02Bll.Commands.Shopping
             }
             var now = DateTime.UtcNow;
             DateTime? lastChange = null;
-            var obj= slot.ExtensionProperties.GetValueOrDefault("LastChange");
+            var obj = slot.ExtensionProperties.GetValueOrDefault("LastChange");
             if (obj is JsonElement je)
                 lastChange = je.GetDateTime();
             else if (obj is DateTime dt)

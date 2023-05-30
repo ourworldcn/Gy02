@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Account
+namespace GY02.Commands
 {
     /// <summary>
     /// 指定角色今日首次由用户登录后发生该事件。
@@ -16,7 +16,7 @@ namespace Gy02Bll.Commands.Account
     {
         public CharFirstLoginedCommand()
         {
-            
+
         }
 
         public GameChar GameChar { get; set; }
