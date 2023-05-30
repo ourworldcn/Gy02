@@ -1325,14 +1325,14 @@ namespace GY02.Templates
         #region 动态属性
 
         /// <summary>
-        /// 是否已读，已读为true。
+        /// 已读的时间，null标识未读。
         /// </summary>
-        public bool Read { get; set; }
+        public DateTime? ReadUtc { get; set; }
 
         /// <summary>
         /// 发件日期。
         /// </summary>
-        public DateTime SendDateTimeUtc { get; set; } = DateTime.UtcNow;
+        public DateTime SendUtc { get; set; } = DateTime.UtcNow;
 
         /// <summary>
         /// 领取附件的日期，null标识尚未领取。

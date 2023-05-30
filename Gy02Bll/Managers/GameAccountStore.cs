@@ -72,8 +72,9 @@ namespace GY02.Managers
         {
             _ContextFactory = contextFactory;
             _Lifetime = lifetime;
-            Task.Factory.StartNew(SaveCallback, TaskCreationOptions.LongRunning);
             _Service = service;
+
+            Task.Factory.StartNew(SaveCallback, TaskCreationOptions.LongRunning);
         }
 
         IDbContextFactory<GY02UserContext> _ContextFactory;

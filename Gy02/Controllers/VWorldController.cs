@@ -39,6 +39,29 @@ namespace GY02.Controllers
         }
 
         /// <summary>
+        /// 使用缓存获取配置。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="manager"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any)]
+        public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery]GetTemplates2ParamsDto model, [FromServices] TemplateManager manager)
+        {
+            var result = new GetTemplates2ReturnDto();
+            if (model.Uid != "gy001" || model.Pwd != "210115")
+            {
+                result.ErrorCode = ErrorCodes.Unauthorized;
+                result.DebugMessage = "用户名或密码错误。";
+                result.HasError = true;
+            }
+            else
+                result.Templates = manager.Id2FullView.Values.ToArray();
+            return result;
+        }
+
+
+        /// <summary>
         /// 关闭服务并写入所有缓存数据。
         /// </summary>
         /// <param name="model"></param>

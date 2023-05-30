@@ -850,12 +850,12 @@
             收件人。通常这里是收件角色Id的<see cref="M:System.Guid.ToString"/>字符串形式，这样可以用于快速查找指定角色的所有邮件。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameMail.Read">
+        <member name="P:GY02.Templates.GameMail.ReadUtc">
             <summary>
-            是否已读，已读为true。
+            已读的时间，null标识未读。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameMail.SendDateTimeUtc">
+        <member name="P:GY02.Templates.GameMail.SendUtc">
             <summary>
             发件日期。
             </summary>

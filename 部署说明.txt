@@ -25,3 +25,5 @@ yun1.pandaglb.com:44489
 ÃÀÎ÷47.251.39.121 Administrator//5599F108-E0DF-43C3-BE06
 {9E51D4AF-1740-4919-89E6-FCE02D117CFE}
 BeastBlitzKey
+
+https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-0d757090e71fb103e

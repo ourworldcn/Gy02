@@ -1,47 +1,41 @@
 {
-  "Genus": [ "gs_leijiqiandao" ],
+  "Genus": [],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-04-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "60d",
-      "ValidPeriodString": "60d"
+      "Start": "2023-05-30T03:03:28.385Z",
+      "End": "null",
+      "PeriodString": "null",
+      "ValidPeriodString": "string"
     },
     "GroupNumber": 0,
+    "MaxCount": 1,
     "Ins": [
       {
         "Conditional": [
           {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ 60, 1 ]
-              }
+            "ParentTId": null,
+            "Genus": [
+              "sp_mianfe"
             ],
+            "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "MinCount": 0,
+            "GeneralConditional": [],
             "IgnoreIfDisplayList": true
           }
         ],
         "Count": 0,
-        "Genus": []
+        "Genus": [
+        ],
+        "IgnoreIfDisplayList": true
       }
     ],
     "Outs": [
       {
+        "Id": null,
         "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
         "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-        "Count": 1000
-      },
-      {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
-        "Count": 1
+        "Count": 50
       }
-    ],
-    "MaxCount": 1
+    ]
   }
 }
