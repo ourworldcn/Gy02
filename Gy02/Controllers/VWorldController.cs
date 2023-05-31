@@ -45,8 +45,8 @@ namespace GY02.Controllers
         /// <param name="manager"></param>
         /// <returns></returns>
         [HttpGet]
-        [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any)]
-        public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery]GetTemplates2ParamsDto model, [FromServices] TemplateManager manager)
+        [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new string[] { nameof(GetTemplates2ParamsDto.Uid), nameof(GetTemplates2ParamsDto.Pwd) })]
+        public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery] GetTemplates2ParamsDto model, [FromServices] TemplateManager manager)
         {
             var result = new GetTemplates2ReturnDto();
             if (model.Uid != "gy001" || model.Pwd != "210115")
@@ -54,6 +54,7 @@ namespace GY02.Controllers
                 result.ErrorCode = ErrorCodes.Unauthorized;
                 result.DebugMessage = "用户名或密码错误。";
                 result.HasError = true;
+                return Unauthorized(result);
             }
             else
                 result.Templates = manager.Id2FullView.Values.ToArray();

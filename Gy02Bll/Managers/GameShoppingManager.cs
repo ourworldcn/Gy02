@@ -180,7 +180,7 @@ namespace GY02.Managers
         /// <param name="changes"></param>
         public bool Buy(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            if (!IsValid(gameChar, shoppingItem, nowUtc, out var start)) return false;  //若不符合购买条件
+            if (!IsValid(gameChar, shoppingItem, nowUtc, out _)) return false;  //若不符合购买条件
 
             return true;
         }

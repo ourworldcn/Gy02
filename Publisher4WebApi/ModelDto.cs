@@ -820,11 +820,13 @@ namespace GY02.Publisher
         /// <summary>
         /// 用户名。
         /// </summary>
+        [MaxLength(64)]
         public string Uid { get; set; }
 
         /// <summary>
         /// 密码。
         /// </summary>
+        [MaxLength(64)]
         public string Pwd { get; set; }
     }
 

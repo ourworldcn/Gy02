@@ -17,7 +17,7 @@ namespace OW.Game.Entity
     /// 游戏角色类。
     /// </summary>
     [Guid("941917CC-E91C-46D7-9F53-A98C3EB4F92E")]
-    public class GameChar : GameEntity
+    public class GameChar : GameEntity,IValidatableObject
     {
         #region 构造函数
 
@@ -237,6 +237,20 @@ namespace OW.Game.Entity
         /// </summary>
         public List<GameDiceHistoryItem> DiceHistory { get; set; } = new List<GameDiceHistoryItem>();
         #endregion 投骰子的记录
+
+        #region 权限相关
+
+        /// <summary>
+        /// 所属角色组。如果为空集合，则默认为一般用户组（这是一种压缩手段）。
+        /// </summary>
+        public List<string> Roles { get; set; } = new List<string>();
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return default;
+        }
+
+        #endregion 权限相关
     }
 
     /// <summary>

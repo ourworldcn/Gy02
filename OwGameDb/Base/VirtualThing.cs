@@ -102,7 +102,7 @@ namespace OW.Game.Store
     /// 存储游戏世界事物的基本类。一般认为他们具有树状结构。
     /// </summary>
     [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
-    public class VirtualThing : VirtualThingBase<VirtualThing>
+    public class VirtualThing : VirtualThingBase<VirtualThing>,IValidatableObject
     {
         #region 构造函数
 
@@ -192,6 +192,11 @@ namespace OW.Game.Store
             }
             catch (Exception) { }
             return $"{base.ToString()}({name})";
+        }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return default;
         }
     }
 }
