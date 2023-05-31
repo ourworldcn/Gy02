@@ -1,6 +1,7 @@
 ﻿using GuangYuan.GY001.TemplateDb;
 using GY02.Commands;
 using GY02.Managers;
+using GY02.Publisher;
 using GY02.TemplateDb;
 using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
 using OW.Game;
 using OW.Game.Conditional;
+using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
@@ -149,20 +151,19 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                //var command = new FuhuaPreviewCommand { };
-                //var b = Validator.TryValidateObject(command, new ValidationContext(command, Services, null) { }, new List<ValidationResult> { });
-                //var socket = new Socket(AddressFamily.InterNetwork,SocketType.Dgram, ProtocolType.Udp) { };
-                //var saea = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Any, 20090), UserToken =socket };
-                //byte[] buffer = new byte[1024];
-                //saea.SetBuffer(buffer, 0, buffer.Length);
-                //saea.Completed += Saea_Completed;
-                //socket.Bind(new IPEndPoint(IPAddress.Any, 20090));
-                //var b = socket.ReceiveMessageFromAsync(saea);
+                var svc = _Services.GetService<IDbContextFactory<GY02UserContext>>();
 
-                //var send = new UdpClient(0);
-                //var sendBuff = new byte[] { 1,2, 3 };
-                //send.Send(sendBuff, sendBuff.Length, new IPEndPoint(IPAddress.Parse("192.168.68.75"), 20090));
-                //send.Send(sendBuff, sendBuff.Length, new IPEndPoint(IPAddress.Parse("192.168.68.75"), 20090));
+                GameChar gameChar;
+                using (var db = svc.CreateDbContext())
+                {
+                    gameChar = db.VirtualThings.First(c => c.ExtraGuid == ProjectContent.CharTId).GetJsonObject<GameChar>();
+                }
+                using (var db = svc.CreateDbContext())
+                {
+                    db.Attach(gameChar.Thing);
+                    var entry = db.Entry(gameChar.Thing);
+                    var state = entry.State;
+                }
             }
             finally
             {

@@ -64,7 +64,7 @@ namespace GY02.Managers
                 r.To = c;
                 r.Subject = mail.Subject;
                 r.Body = mail.Body;
-                r.Attachment.AddRange(mail.Attachment);
+                r.Attachment.AddRange(mail.Attachment.Select(c1 => (GameEntitySummary)c1.Clone()));
                 return r.GetThing();
             });
             return mails.ToList();

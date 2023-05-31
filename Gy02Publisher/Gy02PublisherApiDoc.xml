@@ -552,26 +552,6 @@
             </summary>
             <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         </member>
-        <member name="T:GY02.Templates.BlueprintOutItem">
-            <summary>
-            蓝图产出项数据结构。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.BlueprintOutItem.ParentTId">
-            <summary>
-            当此物品合成创建时应放入的父容器的模板Id。省略则将物品放入默认容器。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.BlueprintOutItem.TId">
-            <summary>
-            新产出物品的模板Id。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.BlueprintOutItem.Count">
-            <summary>
-            新产出物品的数量。对非堆叠物一定是1。
-            </summary>
-        </member>
         <member name="T:GY02.Templates.BlueprintInfo">
             <summary>
             蓝图输入项数据结构。

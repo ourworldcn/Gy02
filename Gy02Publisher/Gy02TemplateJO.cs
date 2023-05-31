@@ -860,29 +860,6 @@ namespace GY02.Templates
     }
 
     /// <summary>
-    /// 蓝图产出项数据结构。
-    /// </summary>
-    [Obsolete("请改用 nameof(GameOutItem) 类型。")]
-    public class BlueprintOutItem
-    {
-        /// <summary>
-        /// 当此物品合成创建时应放入的父容器的模板Id。省略则将物品放入默认容器。
-        /// </summary>
-        public Guid? ParentTId { get; set; }
-
-        /// <summary>
-        /// 新产出物品的模板Id。
-        /// </summary>
-        public Guid TId { get; set; }
-
-        /// <summary>
-        /// 新产出物品的数量。对非堆叠物一定是1。
-        /// </summary>
-        public decimal Count { get; set; }
-
-    }
-
-    /// <summary>
     /// 蓝图输入项数据结构。
     /// </summary>
     public class BlueprintInfo
