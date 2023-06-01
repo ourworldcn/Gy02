@@ -4,6 +4,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Threading;
 
 namespace System
 {
@@ -19,8 +20,15 @@ namespace System
         /// </summary>
         public const string UnitChars = "sdwmy";
 
+        public static TimeSpanEx Infinite = new TimeSpanEx(-1, 's');
+
         public static bool TryParse([NotNull] string str, [MaybeNullWhen(false)] out TimeSpanEx result)
         {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                result = Infinite;
+                return true;
+            }
             var u = str[^1];
             if (!UnitChars.Contains(u))
             {
@@ -39,9 +47,15 @@ namespace System
         /// <summary>
         /// 构造函数。
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="str">空字符串标识无限的周期。</param>
         public TimeSpanEx(string str)
         {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                Value = -1;
+                Unit = 's';
+                return;
+            }
             Value = int.Parse(str[..^1]);
             Unit = str[^1];
         }
@@ -86,6 +100,8 @@ namespace System
         /// <returns></returns>
         public static DateTime operator +(TimeSpanEx ts, DateTime dt)
         {
+            if (ts.Value == -1)
+                return DateTime.MaxValue;
             DateTime result;
             switch (ts.Unit)
             {

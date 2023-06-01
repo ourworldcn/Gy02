@@ -152,7 +152,8 @@ namespace GY02
             try
             {
                 var svc = _Services.GetService<IDbContextFactory<GY02UserContext>>();
-
+                var lookup = Array.Empty<int>().ToLookup(c => c);
+                var d = lookup[1]?.FirstOrDefault();
                 GameChar gameChar;
                 using (var db = svc.CreateDbContext())
                 {

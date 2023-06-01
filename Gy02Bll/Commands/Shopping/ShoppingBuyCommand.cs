@@ -104,7 +104,9 @@ namespace GY02.Commands
         public override void Handle(CharFirstLoginedCommand command)
         {
             var gc = command.GameChar;
-            var slot = _EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.LeijiQiandaoSlotTId);
+            var allEntity = _EntityManager.GetAllEntity(gc).ToLookup(c => c.TemplateId);
+
+            var slot = allEntity[ProjectContent.LeijiQiandaoSlotTId].Single();
             var coll = from tmp in gc.ShoppingHistory
                        where tmp.DateTime.Date.AddDays(1) == command.LoginDateTimeUtc.Date //昨日购买记录
                        let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
@@ -117,7 +119,7 @@ namespace GY02.Commands
                 _AccountStore.Save(key);
             }
 
-            slot = _EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.SevenDayQiandaoSlotTId);
+            slot = allEntity[ProjectContent.SevenDayQiandaoSlotTId].Single();
             coll = from tmp in gc.ShoppingHistory
                    where tmp.DateTime.Date.AddDays(1) == command.LoginDateTimeUtc.Date //昨日购买记录
                    let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
@@ -128,6 +130,10 @@ namespace GY02.Commands
                 slot.Count++;
                 _AccountStore.Save(key);
             }
+            //增加累计登陆天数
+            slot = allEntity[ProjectContent.LoginedDayTId]?.FirstOrDefault();
+            if (slot is not null)
+                slot.Count++;
         }
     }
 

@@ -85,30 +85,16 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool IsValid(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart)
         {
-            if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
+            if (!(tt.ShoppingItem is GameShoppingItem shoppingItem))
             {
                 periodStart = default;
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                 OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
                 return false;
             }
-            return IsValid(gameChar, shoppingItem, nowUtc, out periodStart);
-
-        }
-
-        /// <summary>
-        /// 综合考虑多种因素确定是否可以购买。
-        /// </summary>
-        /// <param name="gameChar"></param>
-        /// <param name="shoppingItem"></param>
-        /// <param name="nowUtc"></param>
-        /// <param name="periodStart"></param>
-        /// <returns></returns>
-        public bool IsValid(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart)
-        {
             if (!IsValidWithoutBuyed(gameChar, shoppingItem, nowUtc, out periodStart)) return false;  //若时间点无效
             var end = periodStart + shoppingItem.Period.ValidPeriod;
-            if (!IsValidOnlyCount(gameChar, shoppingItem, periodStart, end, out _))
+            if (!IsValidOnlyCount(gameChar, tt, periodStart, end, out _))
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_NOT_ENOUGH_QUOTA);
                 OwHelper.SetLastErrorMessage($"已达最大购买数量。");
@@ -150,6 +136,8 @@ namespace GY02.Managers
         {
             if (!shoppingItem.Period.IsValid(nowUtc, out periodStart)) return false;  //若时间点无效
             //检测购买代价
+            if (ignore && shoppingItem.Ins.All(c => c.IgnoreIfDisplayList))
+                return true;
             var costs = _BlueprintManager.GetCost(gameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)), shoppingItem.Ins);
             if (costs is null)
                 return false;
@@ -160,27 +148,27 @@ namespace GY02.Managers
         /// 指定商品项是否可以购买，仅考虑已购买数量，不考虑其它因素。
         /// </summary>
         /// <param name="gameChar"></param>
-        /// <param name="shoppingItem"></param>
+        /// <param name="tt"></param>
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <param name="buyedCount">在指定时间段内已经购买的数量。</param>
         /// <returns></returns>
-        public bool IsValidOnlyCount(GameChar gameChar, GameShoppingItem shoppingItem, DateTime start, DateTime end, out decimal buyedCount)
+        public bool IsValidOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
         {
-            buyedCount = gameChar.ShoppingHistory?.Where(c => c.DateTime >= start && c.DateTime < end).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
-            return buyedCount <= shoppingItem.MaxCount;
+            buyedCount = gameChar.ShoppingHistory?.Where(c => c.DateTime >= start && c.DateTime < end && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
+            return buyedCount <= tt.ShoppingItem.MaxCount;
         }
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="gameChar"></param>
-        /// <param name="shoppingItem"></param>
+        /// <param name="tt"></param>
         /// <param name="nowUtc"></param>
         /// <param name="changes"></param>
-        public bool Buy(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public bool Buy(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            if (!IsValid(gameChar, shoppingItem, nowUtc, out _)) return false;  //若不符合购买条件
+            if (!IsValid(gameChar, tt, nowUtc, out _)) return false;  //若不符合购买条件
 
             return true;
         }

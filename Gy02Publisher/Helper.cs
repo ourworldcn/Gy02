@@ -138,6 +138,11 @@ namespace GY02.Publisher
         public static readonly Guid SevenDayQiandaoSlotTId = new Guid("46542DE4-B8B8-4735-936C-856273B650F7");
 
         /// <summary>
+        /// 累计登录天数的TId。
+        /// </summary>
+        public static readonly Guid LoginedDayTId = new Guid("24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C");
+
+        /// <summary>
         /// 七日签到页签。
         /// </summary>
         public const string QiriQiandaoGenus = "gs_qiandao";
