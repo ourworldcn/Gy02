@@ -49,3 +49,6 @@ C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET
 2. 发布时，将C:\Program Files\dotnet\sdk\6.x的sdk移出C:\Program Files\dotnet目录；
 3. 将C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET.ConflictResolution.targets下<NETSdkError Condition="'$(_ResolvedFileToPublishContainsDuplicates)' == 'true'"设为false；
 4. 在需要发布项目的csproj里新增<PropertyGroup><ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles></PropertyGroup>；
+
+红点
+两个签到，特定商品可购买，新皮肤。
