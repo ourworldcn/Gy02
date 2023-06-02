@@ -60,7 +60,7 @@ namespace GY02.Commands
 
             foreach (var item in totalCost) //退还材料
             {
-                CreateVirtualThingCommand create = new CreateVirtualThingCommand { TemplateId = item.TId };
+                var create = new CreateVirtualThingCommand { TemplateId = item.TId };
                 _SyncCommandManager.Handle(create);
                 var tmp = CreateVirtualThingHandler.CreateThing(item.TId, Math.Abs(item.Count), _TemplateManager, _SyncCommandManager);
                 if (tmp is null)

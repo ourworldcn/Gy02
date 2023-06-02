@@ -91,14 +91,19 @@ namespace GY02.Commands
                 return;
             }
             //构造账号信息
-            var commCreateUser = new CreateVirtualThingCommand() { TemplateId = ProjectContent.UserTId };
+            var commCreateUser = new CreateVirtualThingsCommand();
+            commCreateUser.TIds.Add(ProjectContent.UserTId);
             _SyncCommandManager.Handle(commCreateUser);
-
-            var result = commCreateUser.Result;
-            var gu = result.GetJsonObject<GameUser>();
+            if (commCreateUser.HasError)
+            {
+                command.FillErrorFrom(commCreateUser);
+                return;
+            }
+            var guThing = commCreateUser.Result[0];
+            var gu = guThing.GetJsonObject<GameUser>();
             gu.LoginName = command.LoginName;
             gu.SetPwd(command.Pwd);
-            db.Add(result);
+            db.Add(guThing);
             gu.SetDbContext(db);
             gu.Token = Guid.NewGuid();
             gu.Timeout = TimeSpan.FromMinutes(1);
@@ -109,7 +114,7 @@ namespace GY02.Commands
             _SyncCommandManager.Handle(commCreated);
 
             command.User = gu;
-            _AccountStore.Save(result.IdString);
+            _AccountStore.Save(guThing.IdString);
 
         }
 
