@@ -170,6 +170,16 @@ namespace GY02.Managers
                 }
             }
         }
+
+        public override void Dispose()
+        {
+            if (_Udp is not null)
+            {
+                _Udp.Dispose();
+                Interlocked.Decrement(ref _Count);
+            }
+            base.Dispose();
+        }
     }
 
     public static class UdpServerManagerExtensions

@@ -44,12 +44,21 @@ namespace GY02.Commands
 
     public class CreateAccountHandler : SyncCommandHandlerBase<CreateAccountCommand>
     {
-        public CreateAccountHandler(IServiceProvider service)
+        public CreateAccountHandler(IDbContextFactory<GY02UserContext> dbFactory, LoginNameGenerator loginNameGenerator, PasswordGenerator passwordGenerator, SyncCommandManager syncCommandManager,
+            GameAccountStore accountStore)
         {
-            _Service = service;
+            _DbFactory = dbFactory;
+            _LoginNameGenerator = loginNameGenerator;
+            _PasswordGenerator = passwordGenerator;
+            _SyncCommandManager = syncCommandManager;
+            _AccountStore = accountStore;
         }
 
-        IServiceProvider _Service;
+        IDbContextFactory<GY02UserContext> _DbFactory;
+        LoginNameGenerator _LoginNameGenerator;
+        PasswordGenerator _PasswordGenerator;
+        SyncCommandManager _SyncCommandManager;
+        GameAccountStore _AccountStore;
 
         /// <summary>
         /// 创建账号。
@@ -59,9 +68,8 @@ namespace GY02.Commands
         {
             if (string.IsNullOrWhiteSpace(command.LoginName))   //若需要生成登录名
             {
-                var svc = _Service.GetRequiredService<LoginNameGenerator>();
                 var date = DateTime.UtcNow;
-                command.LoginName = svc.Generate();
+                command.LoginName = _LoginNameGenerator.Generate();
             }
             using var dwLoginName = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, command.LoginName, TimeSpan.FromSeconds(2));   //锁定登录名
             if (dwLoginName.IsEmpty)    //若无法锁定登录名
@@ -72,20 +80,19 @@ namespace GY02.Commands
             }
             if (string.IsNullOrEmpty(command.Pwd))  //若需要生成密码
             {
-                var svc = _Service.GetRequiredService<PasswordGenerator>();
-                command.Pwd = svc.Generate(8);
+                command.Pwd = _PasswordGenerator.Generate(8);
             }
 
-            var db = _Service.GetRequiredService<IDbContextFactory<GY02UserContext>>().CreateDbContext();
-            if (db.VirtualThings.Any(c => c.ExtraString == command.LoginName))    //若指定账号已存在
+            var db = _DbFactory.CreateDbContext();
+            if (db.VirtualThings.Any(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == command.LoginName))    //若指定账号已存在
             {
                 command.ErrorCode = ErrorCodes.ERROR_USER_EXISTS;
+                command.DebugMessage = $"指定账号已经存在。";
                 return;
             }
-            var mng = _Service.GetRequiredService<SyncCommandManager>();
             //构造账号信息
             var commCreateUser = new CreateVirtualThingCommand() { TemplateId = ProjectContent.UserTId };
-            mng.Handle(commCreateUser);
+            _SyncCommandManager.Handle(commCreateUser);
 
             var result = commCreateUser.Result;
             var gu = result.GetJsonObject<GameUser>();
@@ -96,14 +103,13 @@ namespace GY02.Commands
             gu.Token = Guid.NewGuid();
             gu.Timeout = TimeSpan.FromMinutes(1);
             //加入缓存
-            var svcStore = _Service.GetRequiredService<GameAccountStore>();
-            svcStore.AddUser(gu);
+            _AccountStore.AddUser(gu);
             //发出创建后事件
             var commCreated = new AccountCreatedCommand() { User = gu };
-            mng.Handle(commCreated);
+            _SyncCommandManager.Handle(commCreated);
 
             command.User = gu;
-            svcStore.Save(result.IdString);
+            _AccountStore.Save(result.IdString);
 
         }
 

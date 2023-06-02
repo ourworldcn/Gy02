@@ -22,6 +22,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -33,12 +34,23 @@ namespace GY02
     /// </summary>
     public class GameHostedService : BackgroundService
     {
-        public GameHostedService(IServiceProvider services)
+        public GameHostedService(IServiceProvider services, IHostApplicationLifetime applicationLifetime, ILogger<GameHostedService> logger)
         {
             _Services = services;
+            _ApplicationLifetime = applicationLifetime;
+            _Logger = logger;
+
+            _ApplicationLifetime.ApplicationStopping.Register(() =>
+            {
+                _Logger.LogInformation($"检测到游戏服务器正常下线。");
+            });
         }
 
         readonly IServiceProvider _Services;
+
+        IHostApplicationLifetime _ApplicationLifetime;
+        ILogger<GameHostedService> _Logger;
+
         /// <summary>
         /// 使用的服务容器。
         /// </summary>
@@ -151,20 +163,8 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                var svc = _Services.GetService<IDbContextFactory<GY02UserContext>>();
-                var lookup = Array.Empty<int>().ToLookup(c => c);
-                var d = lookup[1]?.FirstOrDefault();
-                GameChar gameChar;
-                using (var db = svc.CreateDbContext())
-                {
-                    gameChar = db.VirtualThings.First(c => c.ExtraGuid == ProjectContent.CharTId).GetJsonObject<GameChar>();
-                }
-                using (var db = svc.CreateDbContext())
-                {
-                    db.Attach(gameChar.Thing);
-                    var entry = db.Entry(gameChar.Thing);
-                    var state = entry.State;
-                }
+                var b1 = GCSettings.IsServerGC;
+                var b2 = GCSettings.LatencyMode;
             }
             finally
             {
