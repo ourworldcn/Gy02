@@ -146,6 +146,7 @@ namespace GY02.Managers
                 //计算超时
                 if (_Key2User.Any())    //若有账号
                 {
+                    bool isRemoved = false;
                     using var scope = _Service.CreateScope();
                     var svcCommand = scope.ServiceProvider.GetRequiredService<SyncCommandManager>();
                     foreach (var item in _Key2User) //遍历所有账号
@@ -167,8 +168,13 @@ namespace GY02.Managers
                             Logger.LogWarning(excp, "用户即将登出事件中产生错误。");
                         }
                         gu.GetDbContext().SaveChanges(true);
-                        RemoveUser(item.Key);
+                        if (RemoveUser(item.Key))
+                        {
+                            ClearUser(gu);
+                            isRemoved = true;
+                        }
                     }
+                    if (isRemoved) GC.Collect(GC.MaxGeneration, GCCollectionMode.Optimized);
                 }
                 if (_Lifetime.ApplicationStopping.IsCancellationRequested) break;
                 try
@@ -187,9 +193,25 @@ namespace GY02.Managers
             //准备退出。
         }
 
-        public void RemoveUser(string key)
+        void ClearUser(GameUser user)
         {
+            //user.GetDbContext()?.Dispose();
+            //user.CurrentChar?.Dispose();
+            //user.Dispose();
+        }
 
+        public bool RemoveUser(string key)
+        {
+            using var dw = DisposeHelper.Create(Lock, Unlock, key, TimeSpan.Zero);
+            if (dw.IsEmpty) return false;
+            if (_Key2User.Remove(key, out var gu))
+            {
+                var gc = gu.CurrentChar;
+                _CharId2Key.Remove(gc.Id, out _);
+                _Token2Key.Remove(gu.Token, out _);
+                _LoginName2Key.Remove(gu.LoginName, out _);
+            }
+            return true;
         }
 
         /// <summary>
@@ -404,6 +426,7 @@ namespace GY02.Managers
             if (dw.IsEmpty || gu.IsDisposed)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"");
                 return false;
             }
             Token2Key.Remove(gu.Token, out _);
