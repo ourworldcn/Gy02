@@ -8,6 +8,8 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.Json;
@@ -41,6 +43,19 @@ namespace GY02.Templates
         /// </summary>
         public string IPEndpoint { get; set; }
     }
+
+    /// <summary>
+    /// 邮件到达的Udp通知数据类。
+    /// </summary>
+    [Guid("4E556F0D-8A46-4B7D-8A7B-2D24753DB68A")]
+    public class MailArrivedDto : IJsonData
+    {
+        /// <summary>
+        /// 新到达邮件的唯一Id集合。
+        /// </summary>
+        public List<Guid> MailIds { get; set; } = new List<Guid>();
+    }
+
     #endregion Udp相关
 
     #region 商城相关
@@ -670,6 +685,8 @@ namespace GY02.Templates
         /// </summary>
         public static string[] ValidOperator { get; } = new string[] { ">=", ">", "<=", "<", "==", "!=", "ModE" };
 
+        #region 公共属性
+
         /// <summary>
         /// 操作符（函数名）。暂定支持六种关系运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!= 等。
         /// 特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
@@ -702,27 +719,57 @@ namespace GY02.Templates
         /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         public bool IgnoreIfDisplayList { get; set; } = false;
 
+        #endregion 公共属性
+
+        #region 公共方法
+
+        /// <summary>
+        /// 获取指定属性的反射对象。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="propertyInfo"></param>
+        /// <returns>true找到值，false出错。</returns>
+        public bool TryGetPropertyInfo(object entity, out PropertyInfo propertyInfo)
+        {
+            propertyInfo = entity.GetType().GetProperty(PropertyName);
+            if (propertyInfo is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"无法找到指定的属性{PropertyName}");
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 获取指定属性的值。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="result"></param>
+        /// <returns>true找到值，false出错。</returns>
+        public bool TryGetPropertyValue(object entity, out object result)
+        {
+            if (!TryGetPropertyInfo(entity, out var pi))
+            {
+                result = default;
+                return false;
+            }
+            result = pi.GetValue(entity);
+            return true;
+        }
+
         /// <summary>
         /// 获取条件对象中指定的属性值。
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="result"></param>
         /// <returns>true找到值，false出错。</returns>
-        public bool TryGetPropertyValue(object entity, out decimal result)
+        public bool TryGetDecimal(object entity, out decimal result)
         {
-            var pi = entity.GetType().GetProperty(PropertyName);
-            if (pi is null)
+            if (!TryGetPropertyValue(entity, out var obj))
             {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"无法找到指定的属性{PropertyName}");
-                goto lbErr;
-            }
-            var obj = pi.GetValue(entity);
-            if (pi is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"无法找到指定的属性{PropertyName}");
-                goto lbErr;
+                result = default;
+                return false;
             }
             try
             {
@@ -756,7 +803,7 @@ namespace GY02.Templates
             {
                 case "ModE":
                     //获取属性值
-                    if (!TryGetPropertyValue(entity, out val))
+                    if (!TryGetDecimal(entity, out val))
                     {
                         result = false;
                         break;
@@ -776,7 +823,7 @@ namespace GY02.Templates
                     break;
                 case "<=":
                     //获取属性值
-                    if (!TryGetPropertyValue(entity, out val))
+                    if (!TryGetDecimal(entity, out val))
                     {
                         result = false;
                         break;
@@ -809,16 +856,7 @@ namespace GY02.Templates
             return result;
         }
 
-        /// <summary>
-        /// 指定实体是否满足所有指定的条件。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="conditionals"></param>
-        /// <param name="ignore"></param>
-        /// <returns>满足所有指定条件或条件集合为空则返回true;否则返回false。</returns>
-        /// <exception cref="ArgumentNullException">conditionals -或和- entity 是空引用。</exception>
-        public static bool IsMatch(object entity, IEnumerable<GeneralConditionalItem> conditionals, bool ignore = false) => conditionals.All(c => c.IsMatch(entity, ignore));
-
+        #endregion 公共方法
     }
 
     #region 合成相关
@@ -1255,11 +1293,12 @@ namespace GY02.Templates
     }
 
     #region 邮件相关
+
     /// <summary>
     /// 邮件对象。
     /// </summary>
     [Guid("0465A794-42E7-4B14-AE8B-2BF282FAA0BE")]  //宿主在VirtualThing中
-    public partial class GameMail : OwGameEntityBase
+    public partial class GameMail : GameEntityBase
     {
         /// <summary>
         /// 构造函数。
@@ -1287,7 +1326,7 @@ namespace GY02.Templates
         public List<GameEntitySummary> Attachment { get; set; } = new List<GameEntitySummary> { };
 
         /// <summary>
-        /// 发件人。
+        /// 发件人。可以不填写，自动用Token身份填入。
         /// </summary>
         public string From { get; set; }
 

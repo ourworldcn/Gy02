@@ -92,7 +92,7 @@ namespace GY02.Commands
                 //if (subCommand.HasError)
                 //    command.FillErrorFrom(subCommand);
             }
-            _Store.Save(command.GameChar.GetUser().GetKey());
+            _Store.Save(command.GameChar.GetUser().Key);
         }
 
         bool Verify(MoveEntitiesCommand command)
@@ -115,7 +115,7 @@ namespace GY02.Commands
         /// <param name="entity"></param>
         /// <param name="container"></param>
         /// <param name="changes">省略或为null则不记录变化数据。</param>
-        public static void Move(OwGameEntityBase entity, OwGameEntityBase container, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public static void Move(GameEntityBase entity, GameEntityBase container, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var entityThing = (VirtualThing)entity.Thing;
             var oldContainer = entityThing.Parent;  //老容器

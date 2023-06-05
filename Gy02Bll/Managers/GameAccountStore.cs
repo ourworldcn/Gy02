@@ -308,7 +308,7 @@ namespace GY02.Managers
         /// <exception cref="TimeoutException"></exception>
         public bool AddUser(GameUser gu)
         {
-            var key = gu.GetKey();
+            var key = gu.Key;
             using var dw = DisposeHelper.Create(Lock, Unlock, key, TimeSpan.FromSeconds(1));
             if (dw.IsEmpty)
                 throw new TimeoutException();
@@ -422,7 +422,7 @@ namespace GY02.Managers
 
         public bool ChangeToken(GameUser gu, Guid guid)
         {
-            using var dw = DisposeHelper.Create(Lock, Unlock, gu.GetKey(), TimeSpan.FromSeconds(3));
+            using var dw = DisposeHelper.Create(Lock, Unlock, gu.Key, TimeSpan.FromSeconds(3));
             if (dw.IsEmpty || gu.IsDisposed)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
@@ -431,7 +431,7 @@ namespace GY02.Managers
             }
             Token2Key.Remove(gu.Token, out _);
             gu.Token = guid;
-            Token2Key.TryAdd(gu.Token, gu.GetKey());
+            Token2Key.TryAdd(gu.Token, gu.Key);
             return true;
         }
 

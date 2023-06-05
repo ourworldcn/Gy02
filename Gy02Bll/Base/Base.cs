@@ -50,7 +50,7 @@ namespace GY02.Base
         /// <param name="gc"></param>
         /// <param name="ids"></param>
         /// <returns></returns>
-        public static IEnumerable<T> GetEntityAndTemplateFullView<T>(this TemplateManager tm, GameChar gc, IEnumerable<Guid> ids) where T : OwGameEntityBase
+        public static IEnumerable<T> GetEntityAndTemplateFullView<T>(this TemplateManager tm, GameChar gc, IEnumerable<Guid> ids) where T : GameEntityBase
         {
             var id2Thing = gc.GetThing().GetAllChildren().ToDictionary(c => c.Id);
             var result = new List<T>();
@@ -125,7 +125,7 @@ namespace OW.Game
         /// <returns></returns>
         public DisposeHelper<string> LockGameChar(T command)
         {
-            var key = command.GameChar?.GetUser()?.GetKey();
+            var key = command.GameChar?.GetUser()?.Key;
             if (key == null)
             {
                 command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
@@ -149,7 +149,7 @@ namespace OW.Game
 
         public string GetKey(T command)
         {
-            var key = command.GameChar?.GetUser()?.GetKey();
+            var key = command.GameChar?.GetUser()?.Key;
             if (key == null)
             {
                 command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;

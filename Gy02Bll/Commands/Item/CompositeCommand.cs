@@ -58,7 +58,7 @@ namespace GY02.Commands
 
         public override void Handle(CompositeCommand command)
         {
-            var key = command.GameChar.GetUser().GetKey();
+            var key = command.GameChar.GetUser().Key;
             using var dw = DisposeHelper.Create(_GameAccountStore.Lock, _GameAccountStore.Unlock, key, TimeSpan.FromSeconds(2));
             if (dw.IsEmpty)
             {

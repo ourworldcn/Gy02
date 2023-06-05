@@ -34,13 +34,13 @@
       "Id": "46542DE4-B8B8-4735-936C-856273B650F7",
       "DisplayName": "7日签到标志",
       "Gid": 110201002,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":-1,\"stk\":0,\"Count0Reserved\":true}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":0,\"Count0Reserved\":true}"
     },
     {
       "Id": "4527471A-FD91-4899-910C-DE7056AD67A1",
       "DisplayName": "累计签到标志",
       "Gid": 110201003,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":-1,\"stk\":0,\"Count0Reserved\":true}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":0,\"Count0Reserved\":true}"
     },
     {
       "Id": "f00fbec7-7465-4344-8443-6b4b43260b3c",
@@ -545,7 +545,7 @@
     {
       "Id": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
       "DisplayName": "孵化次数货币",
-      "Gid": 110101004,
+      "Gid": 110201001,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-04-24T00:00:00.0000000+08:00\"}}}"
     },
     {
@@ -2592,13 +2592,13 @@
       "Id": "1681d08e-966a-4cd8-ba3f-4b5b49e9d576",
       "DisplayName": "一般卡池免费购买",
       "Gid": 180201007,
-      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"string\"},\"GroupNumber\":1,\"MaxCount\":1,\"JiaoBiao\": [\"shopcorner zhekou\",10001],\"Ins\":[{\"Conditional\":[],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":null},\"GroupNumber\":1,\"MaxCount\":1,\"JiaoBiao\": [\"shopcorner zhekou\",10001],\"Ins\":[{\"Conditional\":[],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]}}"
     },
     {
       "Id": "c25afdc9-e1cc-41b5-b790-80b80782cda1",
       "DisplayName": "一般卡池付费购买",
       "Gid": 180201008,
-      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":1,\"JiaoBiao\": [\"shopcorner zhekou\",10001],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":null},\"GroupNumber\":1,\"MaxCount\":1,\"JiaoBiao\": [\"shopcorner zhekou\",10001],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]}}"
     },
     {
       "Id": "af719619-3934-45bf-aaec-669c6a8afdc6",

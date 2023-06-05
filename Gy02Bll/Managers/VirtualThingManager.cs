@@ -118,13 +118,8 @@ namespace OW.Game.Manager
         /// <returns>创建对象的数组，任何创建失败都会导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
         public VirtualThing[] Create(Guid tId, int count)
         {
-            var tt = _TemplateManager.Id2FullView.GetValueOrDefault(tId);
-            if (tt is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"找不到指定模板，Id={tId}");
-                return null;
-            }
+            var tt = _TemplateManager.GetFullViewFromId(tId);
+            if (tt is null) return null;    //若无法找到指定的模板
             VirtualThing[] result = new VirtualThing[count];
             VirtualThing tmp;
             for (int i = 0; i < count; i++)

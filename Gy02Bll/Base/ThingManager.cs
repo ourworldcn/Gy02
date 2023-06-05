@@ -327,11 +327,11 @@ namespace GY02.Base
         #endregion IDisposable接口相关
 
         TemplateManager _TemplateManager;
-        public OwGameEntityBase GetEntityBase(VirtualThing thing)
+        public GameEntityBase GetEntityBase(VirtualThing thing)
         {
             var tt = _TemplateManager.Id2FullView.GetValueOrDefault(thing.ExtraGuid, null);
             var type = TemplateManager.GetTypeFromTemplate(tt);
-            return thing.GetJsonObject(type) as OwGameEntityBase;
+            return thing.GetJsonObject(type) as GameEntityBase;
         }
 
     }

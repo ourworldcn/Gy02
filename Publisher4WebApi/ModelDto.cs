@@ -2,6 +2,7 @@
 using AutoMapper.Configuration.Annotations;
 using GY02.Commands;
 using GY02.Templates;
+using Gy02Bll.Commands.Mail;
 using OW.Game.Entity;
 using OW.Game.Store;
 using System;
@@ -152,7 +153,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 游戏内玩家强类型数据的基类。
     /// </summary>
-    [AutoMap(typeof(OwGameEntityBase))]
+    [AutoMap(typeof(GameEntityBase))]
     public class GameJsonObjectBase
     {
         /// <summary>
@@ -1388,12 +1389,186 @@ namespace GY02.Publisher
         public decimal BuyedCount { get; set; }
 
         /// <summary>
+        /// 记录该项属于的购买周期的起始时间点。
+        /// </summary>
+        public DateTime StartUtc { get; set; }
+
+        /// <summary>
         /// 本周期的结束时间。空表示无结束时间。
         /// </summary>
         public DateTime? EndUtc { get; set; }
     }
 
     #endregion 商城相关
+
+    #region 邮件相关
+
+    /// <summary>
+    /// 收取邮件功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(GetMailsCommand), ReverseMap = true)]
+    public class GetMailsParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 收取邮件返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(GetMailsCommand))]
+    public class GetMailsReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public GetMailsReturnDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 返回收件箱中的邮件。空集合标识没有邮件。
+        /// </summary>
+        public List<GameMailDto> Mails { get; set; } = new List<GameMailDto>();
+    }
+
+    /// <summary>
+    /// 发送邮件的内容。
+    /// </summary>
+    [AutoMap(typeof(SendMailItem), ReverseMap = true)]
+    public class SendMailItemDto
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public SendMailItemDto()
+        {
+
+        }
+
+        #region 基本属性
+
+        /// <summary>
+        /// 邮件标题。
+        /// </summary>
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// 邮件正文。
+        /// </summary>
+        public string Body { get; set; }
+
+        /// <summary>
+        /// 附件集合。
+        /// </summary>
+        public List<GameEntitySummaryDto> Attachment { get; set; } = new List<GameEntitySummaryDto> { };
+
+        #endregion 基本属性
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [AutoMap(typeof(GameMail), ReverseMap = true)]
+    public partial class GameMailDto
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public GameMailDto()
+        {
+
+        }
+
+        #region 基本属性
+
+        /// <summary>
+        /// 该邮件的唯一Id标识。
+        /// </summary>
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// 邮件标题。
+        /// </summary>
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// 邮件正文。
+        /// </summary>
+        public string Body { get; set; }
+
+        /// <summary>
+        /// 附件集合。
+        /// </summary>
+        public List<GameEntitySummary> Attachment { get; set; } = new List<GameEntitySummary> { };
+
+        /// <summary>
+        /// 发件人。可以不填写，自动用Token身份填入。
+        /// </summary>
+        public string From { get; set; }
+
+        /// <summary>
+        /// 收件人。不填写。
+        /// </summary>
+        public string To { get; set; }
+
+        #endregion 基本属性
+
+        #region 动态属性
+
+        /// <summary>
+        /// 已读的时间，null标识未读。
+        /// </summary>
+        public DateTime? ReadUtc { get; set; }
+
+        /// <summary>
+        /// 发件日期。
+        /// </summary>
+        public DateTime SendUtc { get; set; } = DateTime.UtcNow;
+
+        /// <summary>
+        /// 领取附件的日期，null标识尚未领取。
+        /// </summary>
+        public DateTime? PickUpUtc { get; set; }
+
+        #endregion 动态属性
+
+    }
+
+    /// <summary>
+    /// 发送邮件功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(SendMailCommand), ReverseMap = true)]
+    public class SendMailParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public SendMailParamsDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 邮件的本体。
+        /// </summary>
+        public SendMailItemDto Mail { get; set; }
+
+        /// <summary>
+        /// 发送的地址，对方角色唯一id的字符串，通常省略（空集合），表示群发,此时无法给自己发送邮件，要强制给自己发送，必须明确指定Id。
+        /// </summary>
+        public List<Guid> ToIds { get; set; } = new List<Guid>();
+    }
+
+    /// <summary>
+    /// 发送邮件功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(SendMailCommand))]
+    public class SendMailReturnDto : ReturnDtoBase
+    {
+    }
+
+    #endregion 邮件相关
 }
 
 

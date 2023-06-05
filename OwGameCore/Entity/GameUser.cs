@@ -20,7 +20,7 @@ namespace OW.Game.Entity
     /// 用户账号类。
     /// </summary>
     [Guid("60DE10B7-8CC6-4D51-B356-691ECBB77C03")]
-    public class GameUser : OwGameEntityBase
+    public class GameUser : GameEntityBase
     {
         #region 构造函数及相关
 
@@ -233,13 +233,6 @@ namespace OW.Game.Entity
         {
             return ((VirtualThing)user.Thing).RuntimeProperties.GetValueOrDefault("Services") as IServiceProvider;
         }
-
-        /// <summary>
-        /// 获取用于锁定的键。
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
-        public static string GetKey(this GameUser user) => ((VirtualThing)user.Thing)?.IdString;
 
         /// <summary>
         /// 记录服务提供者。

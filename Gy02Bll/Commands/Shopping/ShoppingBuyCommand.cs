@@ -112,7 +112,7 @@ namespace GY02.Commands
                        let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
                        where tt.Genus.Contains("gs_leijiqiandao")   //累计签到项
                        select tmp;
-            var key = gc.GetKey() as string;
+            var key = gc.Key;
             if (coll.Any())  //若昨日买过累计签到项
             {
                 slot.Count++;

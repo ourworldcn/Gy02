@@ -11,14 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="GameConditional.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="GameConditional.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\OwBaseCore\OwBaseCore.csproj" />
     <ProjectReference Include="..\UserDb\UserDb.csproj" />
   </ItemGroup>

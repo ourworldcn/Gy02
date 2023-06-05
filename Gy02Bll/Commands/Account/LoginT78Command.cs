@@ -118,7 +118,7 @@ namespace GY02.Publisher
                     command.FillErrorFrom(createCommand);
                     return;
                 }
-                userKey = createCommand.User.GetKey();
+                userKey = createCommand.User.Key;
                 if (!_GameAccountStore.Lock(userKey))
                 {
                     command.FillErrorFromWorld();
@@ -143,7 +143,7 @@ namespace GY02.Publisher
                 command.FillErrorFrom(loginCommand);
                 return;
             }
-            userKey = loginCommand.User.GetKey();
+            userKey = loginCommand.User.Key;
             if (!_GameAccountStore.LoadOrGetUser(uid, uid, out var gu))
             {
                 command.FillErrorFromWorld();

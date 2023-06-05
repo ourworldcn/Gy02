@@ -32,7 +32,7 @@ namespace OW.Game.Entity
     /// <summary>
     /// 游戏内非容器的虚拟物的实体基类。
     /// </summary>
-    public class GameEntity : OwGameEntityBase
+    public class GameEntity : GameEntityBase
     {
         public GameEntity()
         {

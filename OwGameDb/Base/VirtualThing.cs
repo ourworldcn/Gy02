@@ -172,7 +172,7 @@ namespace OW.Game.Store
         public override object GetJsonObject(Type type)
         {
             var result = base.GetJsonObject(type);
-            if (result is OwGameEntityBase viewBase)
+            if (result is GameEntityBase viewBase)
                 viewBase.Thing = this;
             return result;
         }

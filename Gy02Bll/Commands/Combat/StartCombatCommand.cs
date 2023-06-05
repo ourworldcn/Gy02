@@ -41,7 +41,7 @@ namespace GY02.Commands
 
         public override void Handle(StartCombatCommand command)
         {
-            var key = command.GameChar.GetUser()?.GetKey();
+            var key = command.GameChar.GetUser()?.Key;
             if (!_GameAccountStore.Lock(key))   //若锁定失败
             {
                 command.FillErrorFromWorld();

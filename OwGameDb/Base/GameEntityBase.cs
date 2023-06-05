@@ -11,14 +11,14 @@ namespace OW.Game.Store
     /// <summary>
     /// 存储在<see cref="IJsonDynamicProperty"/>中实体对象的基类。
     /// </summary>
-    public class OwGameEntityBase : IEntity, IDisposable, INotifyPropertyChanged
+    public class GameEntityBase : IEntity, IDisposable, INotifyPropertyChanged
     {
         #region 构造函数
 
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public OwGameEntityBase()
+        public GameEntityBase()
         {
 
         }
@@ -27,7 +27,7 @@ namespace OW.Game.Store
         /// 构造函数。
         /// </summary>
         /// <param name="thing">实体对象存储的基础数据对象。</param>
-        public OwGameEntityBase(object thing)
+        public GameEntityBase(object thing)
         {
             _Thing = thing;
         }
@@ -188,5 +188,13 @@ namespace OW.Game.Store
         }
         #endregion 事件相关
 
+        string _Key;
+        /// <summary>
+        /// 获取该对象的唯一标识。通常该返回值可以用于锁定该对象。
+        /// </summary>
+        /// <remarks><see cref="Thing"/>如果从<see cref="GuidKeyObjectBase"/>派生则返回<see cref="GuidKeyObjectBase.IdString"/>,否则返回<see cref="Id"/>的全小写字符串形式。
+        /// 此属性尽量不生成新的对象。</remarks>
+        [JsonIgnore]
+        public string Key => Thing is GuidKeyObjectBase gko ? gko.IdString : _Key ??= Id.ToString();
     }
 }

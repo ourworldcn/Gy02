@@ -39,6 +39,8 @@ namespace GY02.Managers
         GameEntityManager _EntityManager;
         TemplateManager _TemplateManager;
 
+        #region 获取信息
+
         /// <summary>
         /// 获取代表商品项的模板。
         /// </summary>
@@ -64,6 +66,11 @@ namespace GY02.Managers
             return GetShoppingItemByTemplate(tt);
         }
 
+        /// <summary>
+        /// 获取商品信息。
+        /// </summary>
+        /// <param name="tt"></param>
+        /// <returns></returns>
         public GameShoppingItem GetShoppingItemByTemplate(TemplateStringFullView tt)
         {
             if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
@@ -74,6 +81,8 @@ namespace GY02.Managers
             }
             return shoppingItem;
         }
+
+        #endregion 获取信息
 
         /// <summary>
         /// 综合考虑多种因素确定是否可以购买。
@@ -114,11 +123,10 @@ namespace GY02.Managers
         /// <returns>true指定的商品项对指定用户而言在指定时间点上有效。</returns>
         public bool IsValidWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
         {
-            if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
+            var shoppingItem = GetShoppingItemByTemplate(tt);
+            if (shoppingItem is null)
             {
                 periodStart = default;
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
                 return false;
             }
             return IsValidWithoutBuyed(gameChar, shoppingItem, DateTime.UtcNow, out periodStart, ignore);
@@ -138,9 +146,11 @@ namespace GY02.Managers
             //检测购买代价
             if (ignore && shoppingItem.Ins.All(c => c.IgnoreIfDisplayList))
                 return true;
-            var costs = _BlueprintManager.GetCost(gameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)), shoppingItem.Ins);
-            if (costs is null)
-                return false;
+            var b = _BlueprintManager.IsValid(shoppingItem.Ins, _EntityManager.GetAllEntity(gameChar));
+            if(!b) return false;
+            //var costs = _BlueprintManager.GetCost(gameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)), shoppingItem.Ins);
+            //if (costs is null)
+            //    return false;
             return true;
         }
 

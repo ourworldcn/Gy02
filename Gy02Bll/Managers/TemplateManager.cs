@@ -72,7 +72,7 @@ namespace OW.Game.Managers
             {
                 return LazyInitializer.EnsureInitialized(ref _TypeGuid2Type, () =>
                 {
-                    var coll = AppDomain.CurrentDomain.GetAssemblies().SelectMany(c => c.GetTypes()).Where(c => !c.IsAbstract && c.IsAssignableTo(typeof(OwGameEntityBase)));
+                    var coll = AppDomain.CurrentDomain.GetAssemblies().SelectMany(c => c.GetTypes()).Where(c => !c.IsAbstract && c.IsAssignableTo(typeof(GameEntityBase)));
                     var tmp = new ConcurrentDictionary<Guid, Type>(coll.ToDictionary(c => c.GUID));
                     return tmp;
                 });
@@ -228,13 +228,13 @@ namespace OW.Game.Managers
         /// </summary>
         /// <param name="thing"></param>
         /// <param name="type">返回值的实际类型。</param>
-        /// <returns>返回的是<see cref="OwGameEntityBase"/>的派生对象。如果没找到则可能返回null。</returns>
-        public OwGameEntityBase GetEntityBase(VirtualThing thing, out Type type)
+        /// <returns>返回的是<see cref="GameEntityBase"/>的派生对象。如果没找到则可能返回null。</returns>
+        public GameEntityBase GetEntityBase(VirtualThing thing, out Type type)
         {
             var tt = Id2FullView.GetValueOrDefault(thing.ExtraGuid, null);
             if (tt is null) goto fail;
             type = GetTypeFromTemplate(tt);
-            return thing.GetJsonObject(type) as OwGameEntityBase;
+            return thing.GetJsonObject(type) as GameEntityBase;
         fail:
             type = null;
             return null;
@@ -247,13 +247,13 @@ namespace OW.Game.Managers
         /// <param name="entity">实际的实体类型。</param>
         /// <param name="fullView"></param>
         /// <returns></returns>
-        public bool GetEntityAndTemplate(VirtualThing thing, out OwGameEntityBase entity, out TemplateStringFullView fullView)
+        public bool GetEntityAndTemplate(VirtualThing thing, out GameEntityBase entity, out TemplateStringFullView fullView)
         {
             fullView = Id2FullView.GetValueOrDefault(thing.ExtraGuid, null);
             if (fullView is null) goto error;
             var type = GetTypeFromTemplate(fullView);
             if (type is null) goto error;
-            entity = thing.GetJsonObject(type) as OwGameEntityBase;
+            entity = thing.GetJsonObject(type) as GameEntityBase;
             return entity is not null;
         error:
             entity = null;

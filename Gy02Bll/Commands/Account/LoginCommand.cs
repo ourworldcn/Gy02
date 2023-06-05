@@ -68,7 +68,7 @@ namespace GY02.Commands
                 command.FillErrorFromWorld();
                 return;
             }
-            using var dw = DisposeHelper.Create(svcStore.Lock, svcStore.Unlock, gu.GetKey(), TimeSpan.FromSeconds(3));
+            using var dw = DisposeHelper.Create(svcStore.Lock, svcStore.Unlock, gu.Key, TimeSpan.FromSeconds(3));
             if (dw.IsEmpty || gu.IsDisposed)
             {
                 command.FillErrorFromWorld();
@@ -97,7 +97,7 @@ namespace GY02.Commands
                 gc.LastLoginDateTimeUtc = nowUtc.Date;
                 var subCommand = new CharFirstLoginedCommand { GameChar = gc, LoginDateTimeUtc = nowUtc };
                 _SyncCommandManager.Handle(subCommand);
-                svcStore.Save(gu.GetKey());
+                svcStore.Save(gu.Key);
             }
         }
 

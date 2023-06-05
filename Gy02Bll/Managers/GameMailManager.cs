@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
+using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
@@ -34,14 +35,16 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameMailManager : GameManagerBase<GameMailManagerOptions, GameMailManager>
     {
-        public GameMailManager(IOptions<GameMailManagerOptions> options, ILogger<GameMailManager> logger, IDbContextFactory<GY02UserContext> contextFactory, GameEntityManager gameEntityManager) : base(options, logger)
+        public GameMailManager(IOptions<GameMailManagerOptions> options, ILogger<GameMailManager> logger, IDbContextFactory<GY02UserContext> contextFactory, GameEntityManager gameEntityManager, VirtualThingManager virtualThingManager) : base(options, logger)
         {
             _ContextFactory = contextFactory;
-            _GameEntityManager = gameEntityManager;
+            _EntityManager = gameEntityManager;
+            _VirtualThingManager = virtualThingManager;
         }
 
         IDbContextFactory<GY02UserContext> _ContextFactory;
-        GameEntityManager _GameEntityManager;
+        GameEntityManager _EntityManager;
+        VirtualThingManager _VirtualThingManager;
 
         /// <summary>
         /// 创建一个新的mail对象。
@@ -49,35 +52,43 @@ namespace GY02.Managers
         /// <returns></returns>
         public GameMail CreateNewMail()
         {
+
             var thing = new VirtualThing();
             var result = thing.GetJsonObject<GameMail>();
             result.TemplateId = ProjectContent.MailTId;
             return result;
         }
 
-        public List<VirtualThing> CreateNewMails(GameMail mail, IEnumerable<string> tos)
+        public List<GameMail> CreateNewMails(GameMail mail, IEnumerable<string> tos)
         {
-            var mails = tos.Select(c =>
+            int count = tos.Count();
+            var things = _VirtualThingManager.Create(ProjectContent.MailTId, count);
+            if (things is null) return null;    //若出错
+            var result = new List<GameMail>(count);
+            int index = 0;
+            foreach (var to in tos)
             {
-                var r = CreateNewMail();
-                r.From = mail.From;
-                r.To = c;
-                r.Subject = mail.Subject;
-                r.Body = mail.Body;
-                r.Attachment.AddRange(mail.Attachment.Select(c1 => (GameEntitySummary)c1.Clone()));
-                return r.GetThing();
-            });
-            return mails.ToList();
+                var tmp = things[index++].GetJsonObject<GameMail>();
+                tmp.From = mail.From;
+                tmp.To = to;
+                tmp.Subject = mail.Subject;
+                tmp.Body = mail.Body;
+                tmp.Attachment.AddRange(mail.Attachment.Select(c1 => (GameEntitySummary)c1.Clone()));
+                result.Add(tmp);
+            }
+            return result;
         }
 
         /// <summary>
-        /// 
+        /// 发送邮件。
         /// </summary>
+        /// <param name="gameChar">发送邮件的角色。</param>
         /// <param name="mail"></param>
-        /// <param name="from"></param>
-        /// <param name="to">要发送的角色对象，省略或为null则发送给所有人。也可以用分号分隔发送给多人。</param>
+        /// <param name="from">角色Id。</param>
+        /// <param name="to">要发送的角色对象，省略或为null则发送给所有人，此时无法给自己发送邮件。也可以用分号分隔发送给多人。</param>
+        /// <param name="newMails">若不是空，则追加最新发送的邮件到此集合。注意此时邮件的虚拟实体已经处于分离状态。</param>
         /// <returns></returns>
-        public bool SendMail(GameMail mail, string from, string to = null)
+        public bool SendMail(GameChar gameChar, GameMail mail, string from, string to = null, List<GameMail> newMails = null)
         {
             mail.From = from;
             if (mail.From is null) return false;
@@ -89,7 +100,7 @@ namespace GY02.Managers
             }
             else //若发送到所有人
             {
-                var coll = db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.CharTId).Select(c => c.Id).AsEnumerable();
+                var coll = db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.CharTId && c.Id != gameChar.Id).Select(c => c.Id).AsEnumerable();
                 tos = coll.Select(c => c.ToString());
             }
             if (tos.Any(c => c.Length > 64))
@@ -100,7 +111,9 @@ namespace GY02.Managers
             }
 
             var mails = CreateNewMails(mail, tos);
-            db.AddRange(mails);
+            if (newMails is not null) newMails.AddRange(mails);
+
+            db.AddRange(mails.Select(c => c.GetThing()));
             try
             {
                 db.SaveChanges();
@@ -121,10 +134,10 @@ namespace GY02.Managers
         /// <returns></returns>
         public List<GameMail> GetMails(GameChar gameChar)
         {
-            var to = gameChar.GetThing().IdString;
+            var to = gameChar.Key;
             using var db = _ContextFactory.CreateDbContext();
-            var coll = db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.MailTId && c.ExtraString == to);
-            var result = coll.ToList().Select(c => c.GetJsonObject<GameMail>()).ToList();
+            var things = db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.MailTId && c.ExtraString == to);
+            var result = things.AsEnumerable().Select(c => c.GetJsonObject<GameMail>()).ToList();
             return result;
         }
 
@@ -136,7 +149,7 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool PickUp(GameChar gameChar, GameMail mail, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            if (!_GameEntityManager.CreateAndMove(mail.Attachment.Select(c => (c.TId, c.Count, c.ParentTId)), gameChar, changes))
+            if (!_EntityManager.CreateAndMove(mail.Attachment.Select(c => (c.TId, c.Count, c.ParentTId)), gameChar, changes))
                 return false;
             mail.PickUpUtc = DateTime.UtcNow;
             return true;

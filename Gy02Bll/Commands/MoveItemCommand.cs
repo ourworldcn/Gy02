@@ -73,7 +73,7 @@ namespace GY02.Commands
             {
                 Move(item, container, command.Changes);
             }
-            _Store.Save(gameChar.GetUser().GetKey());
+            _Store.Save(gameChar.GetUser().Key);
         }
 
         void Move(VirtualThing thing, VirtualThing container, ICollection<GamePropertyChangeItem<object>> changes = null)

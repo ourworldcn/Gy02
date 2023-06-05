@@ -24,6 +24,16 @@
             服务器所见的客户端地址。
             </summary>
         </member>
+        <member name="T:GY02.Templates.MailArrivedDto">
+            <summary>
+            邮件到达的Udp通知数据类。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MailArrivedDto.MailIds">
+            <summary>
+            新到达邮件的唯一Id集合。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.GameShoppingItem">
             <summary>
             
@@ -494,7 +504,23 @@
             </summary>
             <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyValue(System.Object,System.Decimal@)">
+        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyInfo(System.Object,System.Reflection.PropertyInfo@)">
+            <summary>
+            获取指定属性的反射对象。
+            </summary>
+            <param name="entity"></param>
+            <param name="propertyInfo"></param>
+            <returns>true找到值，false出错。</returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyValue(System.Object,System.Object@)">
+            <summary>
+            获取指定属性的值。
+            </summary>
+            <param name="entity"></param>
+            <param name="result"></param>
+            <returns>true找到值，false出错。</returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetDecimal(System.Object,System.Decimal@)">
             <summary>
             获取条件对象中指定的属性值。
             </summary>
@@ -509,16 +535,6 @@
             <param name="entity"></param>
             <param name="ignore">是否忽略<see cref="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
             <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
-        </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object,System.Collections.Generic.IEnumerable{GY02.Templates.GeneralConditionalItem},System.Boolean)">
-            <summary>
-            指定实体是否满足所有指定的条件。
-            </summary>
-            <param name="entity"></param>
-            <param name="conditionals"></param>
-            <param name="ignore"></param>
-            <returns>满足所有指定条件或条件集合为空则返回true;否则返回false。</returns>
-            <exception cref="T:System.ArgumentNullException">conditionals -或和- entity 是空引用。</exception>
         </member>
         <member name="T:GY02.Templates.BlueprintInItem">
             <summary>
@@ -822,7 +838,7 @@
         </member>
         <member name="P:GY02.Templates.GameMail.From">
             <summary>
-            发件人。
+            发件人。可以不填写，自动用Token身份填入。
             </summary>
         </member>
         <member name="P:GY02.Templates.GameMail.To">

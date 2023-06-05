@@ -44,7 +44,7 @@ namespace GY02.Commands
                 command.DebugMessage = $"指定物品不能分解，Id={command.Item.Id}";
                 return;
             }
-            string key = command.GameChar.GetUser().GetKey();
+            string key = command.GameChar.GetUser().Key;
             if (!_GameAccountStore.Lock(key))   //若锁定失败
             {
                 command.FillErrorFromWorld();

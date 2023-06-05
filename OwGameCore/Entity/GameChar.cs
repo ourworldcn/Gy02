@@ -391,8 +391,6 @@ namespace OW.Game.Entity
 
     public static class GameCharExtensions
     {
-        public static object GetKey(this GameChar gc) => ((VirtualThing)gc.Thing).IdString;
-
         /// <summary>
         /// 获取用户。
         /// </summary>

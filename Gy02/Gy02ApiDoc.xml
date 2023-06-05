@@ -465,6 +465,30 @@
             
             </summary>
         </member>
+        <member name="T:Gy02.Controllers.MailController">
+            <summary>
+            邮件控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.MailController.#ctor(GY02.Managers.GameMailManager,GY02.Managers.GameAccountStore,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.MailController.SendMail(GY02.Publisher.SendMailParamsDto)">
+            <summary>
+            发送邮件。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.MailController.GetMails(GY02.Publisher.GetMailsParamsDto)">
+            <summary>
+            获取指定用户收件箱中的邮件。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:Global.Program">
             <summary>
             

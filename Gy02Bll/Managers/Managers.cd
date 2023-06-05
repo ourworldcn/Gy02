@@ -1,12 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="OW.Game.Managers.TemplateManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.25" Y="2" Width="1.5" />
+    <Position X="13.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Managers\TemplateManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GY02.Managers.GameDiceManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Managers\GameDiceManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GY02.Managers.GameDiceManager">
+    <Position X="0.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAEAAAAAAAICAAIAAABCgACAAABAAAAICAAAA=</HashCode>
+      <FileName>Managers\GameDiceManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_TemplateManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GY02.Managers.GameEntityManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Managers\GameEntityManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GY02.Managers.GameEntityManager">
+    <Position X="8.25" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQCGIAAAACCBAAAAAAARAQAAAAFAAEgAAEAAAIQAAAA=</HashCode>
+      <FileName>Managers\GameEntityManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_TemplateManager" />
+      <Field Name="_VirtualThingManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OW.Game.Manager.TemplateIdAttribute" Collapsed="true">
+    <Position X="15.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Managers\VirtualThingManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OW.Game.Manager.VirtualThingManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Managers\VirtualThingManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="OW.Game.Manager.VirtualThingManager">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAQAAAQAAAAAABAAAAAEAAEAAAAAAAIAAAQA=</HashCode>
+      <FileName>Managers\VirtualThingManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_TemplateManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OW.Game.Managers.TemplateManager" Collapsed="true">
+    <Position X="6" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAwAAACCABQAAAAAAAAGAgSQEABACIAQQEAAAgAA=</HashCode>
+      <FileName>Managers\TemplateManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OW.Game.Managers.RawTemplateOptions" Collapsed="true">
+    <Position X="13.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Managers\TemplateManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OW.Game.Managers.TemplateManagerExtensions" Collapsed="true">
+    <Position X="17.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Managers\TemplateManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GY02.Managers.BlueprintOptions" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Managers\BlueprintManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GY02.Managers.BlueprintManager">
+    <Position X="11" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ARgCAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAIAAAgA=</HashCode>
+      <FileName>Managers\BlueprintManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_EntityManager" />
+      <Field Name="_TemplateManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="OW.Game.Managers.GameManagerBase&lt;TOptions, TService&gt;" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Managers\GameManagerBase.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>

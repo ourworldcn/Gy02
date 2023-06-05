@@ -74,7 +74,7 @@ namespace GY02.AutoMappper
                 .ForMember(c => c.OldValue, opt => opt.MapFrom((src, dest, val, context) => AutoMapEntity(src.OldValue, context.Mapper)))
                 .AfterMap((src, dest, context) =>
                 {
-                    if (src.Object is OwGameEntityBase ogb)
+                    if (src.Object is GameEntityBase ogb)
                     {
                         dest.ObjectId = ogb.Id;
                         dest.TId = ogb.TemplateId;
@@ -93,7 +93,7 @@ namespace GY02.AutoMappper
             //    dto.Token = comm.User?.Token ?? Guid.Empty;
             //});
 
-
+            CreateMap<TemplateStringFullView, GameMail>();
         }
     }
 }

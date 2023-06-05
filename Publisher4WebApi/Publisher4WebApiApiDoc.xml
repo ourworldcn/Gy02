@@ -1061,9 +1061,139 @@
             当前周期下的已经购买数量。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.ShoppingItemStateDto.StartUtc">
+            <summary>
+            记录该项属于的购买周期的起始时间点。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.ShoppingItemStateDto.EndUtc">
             <summary>
             本周期的结束时间。空表示无结束时间。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetMailsParamsDto">
+            <summary>
+            收取邮件功能的参数封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetMailsReturnDto">
+            <summary>
+            收取邮件返回值封装类。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.GetMailsReturnDto.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetMailsReturnDto.Mails">
+            <summary>
+            返回收件箱中的邮件。空集合标识没有邮件。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.SendMailItemDto">
+            <summary>
+            发送邮件的内容。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.SendMailItemDto.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.SendMailItemDto.Subject">
+            <summary>
+            邮件标题。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.SendMailItemDto.Body">
+            <summary>
+            邮件正文。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.SendMailItemDto.Attachment">
+            <summary>
+            附件集合。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GameMailDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.GameMailDto.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.Id">
+            <summary>
+            该邮件的唯一Id标识。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.Subject">
+            <summary>
+            邮件标题。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.Body">
+            <summary>
+            邮件正文。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.Attachment">
+            <summary>
+            附件集合。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.From">
+            <summary>
+            发件人。可以不填写，自动用Token身份填入。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.To">
+            <summary>
+            收件人。不填写。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.ReadUtc">
+            <summary>
+            已读的时间，null标识未读。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.SendUtc">
+            <summary>
+            发件日期。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.PickUpUtc">
+            <summary>
+            领取附件的日期，null标识尚未领取。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.SendMailParamsDto">
+            <summary>
+            发送邮件功能的参数封装类。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.SendMailParamsDto.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.SendMailParamsDto.Mail">
+            <summary>
+            邮件的本体。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.SendMailParamsDto.ToIds">
+            <summary>
+            发送的地址，对方角色唯一id的字符串，通常省略（空集合），表示群发,此时无法给自己发送邮件，要强制给自己发送，必须明确指定Id。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.SendMailReturnDto">
+            <summary>
+            发送邮件功能的返回值封装类。
             </summary>
         </member>
         <member name="T:GY02.Publisher.DispatcherDemo">

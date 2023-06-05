@@ -45,13 +45,42 @@ namespace GY02.Managers
         TemplateManager _TemplateManager;
         GameEntityManager _EntityManager;
 
-        public void GetCost(TemplateStringFullView fullView, GameEntity mainItem, List<GameEntity> items, GameChar gc, ICollection<GamePropertyChangeItem<object>> changes)
+        #region 获取信息
+
+
+        #endregion 获取信息
+
+        #region 计算匹配
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ins"></param>
+        /// <param name="entities"></param>
+        /// <param name="ignore"></param>
+        /// 
+        /// <returns></returns>
+        public bool IsValid(IEnumerable<BlueprintInItem> ins, IEnumerable<GameEntity> entities, bool ignore = false)
         {
-            foreach (var item in fullView.In)
-            {
-                _EntityManager.IsMatch(mainItem, item.Conditional);
-            }
+            var result = ins.All(inItem => entities.Any(entity => IsValid(inItem, entity, ignore)));
+            return result;
         }
+
+        /// <summary>
+        /// 获取指示，指定的实体是否符合蓝图输入项的要求。
+        /// </summary>
+        /// <param name="inItem"></param>
+        /// <param name="entity"></param>
+        /// <param name="ignore"></param>
+        /// <returns></returns>
+        public bool IsValid(BlueprintInItem inItem, GameEntity entity, bool ignore = false)
+        {
+            if (inItem.IgnoreIfDisplayList && ignore) return true;  //若允许忽略
+            if (inItem.Count > entity.Count) return false;  //若数量不满足
+            return _EntityManager.IsMatch(entity, inItem.Conditional, ignore);
+        }
+
+        #endregion 计算匹配
 
         /// <summary>
         /// 在一组实体中选择条件指定实体。
@@ -67,7 +96,7 @@ namespace GY02.Managers
 
             foreach (var conditional in conditionals)
             {
-                var entity = all.Where(c => IsMatch(c, conditional)).FirstOrDefault();
+                var entity = all.Where(c => IsValid(conditional, c)).FirstOrDefault();
                 if (entity is null)
                 {
                     OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
@@ -98,73 +127,6 @@ namespace GY02.Managers
                 if (!_EntityManager.Modify(item.Entity, item.Count, changes)) throw new InvalidOperationException { };  //若出现无法减少的异常
             }
             return true;
-        }
-
-        /// <summary>
-        /// 按照指定的输出项生成实体。
-        /// </summary>
-        /// <param name="outItems"></param>
-        /// <returns></returns>
-        public IEnumerable<GameEntity> GenerateOuts(IEnumerable<Templates.GameEntitySummary> outItems)
-        {
-            var result = _EntityManager.Create(outItems.Select(c => (c.TId, c.Count)));
-            if (result is null) return null;
-            return result;
-        }
-
-        /// <summary>
-        /// 获取指示，指定的实体是否符合蓝图输入项的要求。
-        /// </summary>
-        /// <param name="item"></param>
-        /// <param name="inItem"></param>
-        /// <param name="ignore"></param>
-        /// <returns></returns>
-        public bool IsMatch(GameEntity item, BlueprintInItem inItem, bool ignore = false)
-        {
-            if (item.Count < inItem.Count)
-                return false;
-            return _EntityManager.IsMatch(item, inItem.Conditional, ignore);
-        }
-
-        /// <summary>
-        /// 获取指示，指定的实体是否符合蓝图输入项中的一项。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="inItems"></param>
-        /// <param name="result"></param>
-        /// <returns>true找到了输入项。</returns>
-        public bool IsMatch(GameEntity entity, IEnumerable<BlueprintInItem> inItems, out BlueprintInItem result)
-        {
-            result = inItems.FirstOrDefault(c => IsMatch(entity, c));
-            return result is not null;
-        }
-
-        /// <summary>
-        /// 获取材料的匹配关系。
-        /// </summary>
-        /// <remarks>会避免重复获取同一个材料多次，但无法达到最佳匹配。</remarks>
-        /// <param name="inItems"></param>
-        /// <param name="entities"></param>
-        /// <returns></returns>
-        public IEnumerable<(BlueprintInItem, GameEntity)> Matches(IEnumerable<BlueprintInItem> inItems, IEnumerable<GameEntity> entities)
-        {
-            HashSet<GameEntity> hsEntities = new HashSet<GameEntity>(entities);
-            List<(BlueprintInItem, GameEntity)> result = new List<(BlueprintInItem, GameEntity)>();
-            foreach (var item in inItems)
-            {
-                var entity = hsEntities.FirstOrDefault(c => IsMatch(c, item));
-                if (entity is null)
-                {
-                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                    OwHelper.SetLastErrorMessage($"找不到{item}要求的材料。");
-                    return null;
-                }
-                var b = hsEntities.Remove(entity);
-                Debug.Assert(b);
-                result.Add((item, entity));
-            }
-            //TODO 未对多重匹配的问题做处理
-            return result;
         }
     }
 }
