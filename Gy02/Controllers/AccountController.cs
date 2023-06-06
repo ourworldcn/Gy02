@@ -127,6 +127,7 @@ namespace GY02.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult<NopReturnDto> Nop(NopParamsDto model)
         {
             var result = new NopReturnDto { };

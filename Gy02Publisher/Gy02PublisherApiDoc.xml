@@ -4,6 +4,99 @@
         <name>Gy02Publisher</name>
     </assembly>
     <members>
+        <member name="T:GY02.Templates.GameEntitySummary">
+            <summary>
+            实体摘要信息类。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.GameEntitySummary.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEntitySummary.Id">
+            <summary>
+            特定原因记录物品唯一Id，通常为null。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEntitySummary.ParentTId">
+            <summary>
+            父容器模板Id，为null则放置在默认容器中。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEntitySummary.TId">
+            <summary>
+            模板Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEntitySummary.Count">
+            <summary>
+            数量。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.GameEntitySummary.Clone">
+            <summary>
+            获取一个深表副本。
+            </summary>
+            <remarks>所有成员都是结构时，深表副本等价于浅表副本。</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:GY02.Templates.MultGameEntitySummary">
+            <summary>
+            描述一组产出。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MultGameEntitySummary.TIds">
+            <summary>
+            多个物品的TId集合。
+            可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MultGameEntitySummary.Counts">
+            <summary>
+            多个物品的数量集合。
+            可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MultGameEntitySummary.ParentTIds">
+            <summary>
+            多个物品放入的父容器的TId集合。
+            可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MultGameEntitySummary.Count">
+            <summary>
+            三个集合的最大长度。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.MultGameEntitySummary.GetItem(System.Int32)">
+            <summary>
+            获取指定索引处的实体描述对象。
+            </summary>
+            <param name="index">要大于或等于0且小于<see cref="P:GY02.Templates.MultGameEntitySummary.Count"/>。</param>
+            <returns></returns>
+            <exception cref="T:System.IndexOutOfRangeException">索引超出范围。</exception>
+        </member>
+        <member name="T:GY02.Templates.MultOut">
+            <summary>
+            动态产出。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MultOut.Preconditions">
+            <summary>
+            获取一个实体，该实体名称为 <see cref="P:GY02.Templates.MultOut.PropertyName"/> 的属性值是索引值。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MultOut.PropertyName">
+            <summary>
+            获取索引的属性名。该属性必须返回一个数字。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MultOut.Outs">
+            <summary>
+            产出的集合。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.IJsonData">
             <summary>
             表示类是一个需要udp解码的类。
@@ -651,43 +744,6 @@
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
-        </member>
-        <member name="T:GY02.Templates.GameEntitySummary">
-            <summary>
-            实体摘要信息类。
-            </summary>
-        </member>
-        <member name="M:GY02.Templates.GameEntitySummary.#ctor">
-            <summary>
-            构造函数。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.GameEntitySummary.Id">
-            <summary>
-            特定原因记录物品唯一Id，通常为null。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.GameEntitySummary.ParentTId">
-            <summary>
-            父容器模板Id，为null则放置在默认容器中。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.GameEntitySummary.TId">
-            <summary>
-            模板Id。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.GameEntitySummary.Count">
-            <summary>
-            数量。
-            </summary>
-        </member>
-        <member name="M:GY02.Templates.GameEntitySummary.Clone">
-            <summary>
-            获取一个深表副本。
-            </summary>
-            <remarks>所有成员都是结构时，深表副本等价于浅表副本。</remarks>
-            <returns></returns>
         </member>
         <member name="T:GY02.Templates.GameDiceItem">
             <summary>

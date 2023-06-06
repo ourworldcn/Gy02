@@ -41,20 +41,20 @@ internal class Program
         // Add services to the container.
         #region 配置压缩
 
-        services.AddResponseCompression(c =>
+        services.Configure<BrotliCompressionProviderOptions>(options =>
+        {
+            options.Level = CompressionLevel.Optimal;
+        }).Configure<GzipCompressionProviderOptions>(options =>
+        {
+            options.Level = CompressionLevel.Optimal;
+        }).AddResponseCompression(c =>
         {
             c.EnableForHttps = true;
 
-            c.Providers.Add<GzipCompressionProvider>(); //ICompressionProvider
             c.Providers.Add<BrotliCompressionProvider>();
+            c.Providers.Add<GzipCompressionProvider>(); //ICompressionProvider
             //c.Providers.Add<BrotliCompressionProvider>();  //ICompressionProvider
 
-        }).Configure<BrotliCompressionProviderOptions>(options =>
-        {
-            options.Level = CompressionLevel.Fastest;
-        }).Configure<GzipCompressionProviderOptions>(options =>
-        {
-            options.Level = CompressionLevel.Fastest;
         });
 
         #endregion 配置压缩
@@ -142,7 +142,6 @@ internal class Program
             c.RoutePrefix = string.Empty;//设置根节点访问
         });
         #endregion 启用中间件服务生成Swagger
-
 
         #endregion 配置HTTP管道
 

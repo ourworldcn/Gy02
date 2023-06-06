@@ -17,6 +17,175 @@ using System.Text.Json.Serialization;
 
 namespace GY02.Templates
 {
+    #region 基础数据
+
+    /// <summary>
+    /// 实体摘要信息类。
+    /// </summary>
+    [DisplayName("实体摘要")]
+    [Description("由 OutItem 改名而来。")]
+    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
+    public class GameEntitySummary : ICloneable
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameEntitySummary()
+        {
+
+        }
+
+        /// <summary>
+        /// 特定原因记录物品唯一Id，通常为null。
+        /// </summary>
+        public Guid? Id { get; set; }
+
+        /// <summary>
+        /// 父容器模板Id，为null则放置在默认容器中。
+        /// </summary>
+        public Guid? ParentTId { get; set; }
+
+        /// <summary>
+        /// 模板Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 数量。
+        /// </summary>
+        public decimal Count { get; set; }
+
+        /// <summary>
+        /// 获取一个深表副本。
+        /// </summary>
+        /// <remarks>所有成员都是结构时，深表副本等价于浅表副本。</remarks>
+        /// <returns></returns>
+        public object Clone() => new GameEntitySummary
+        {
+            Count = Count,
+            Id = Id,
+            ParentTId = ParentTId,
+            TId = TId,
+        };
+
+        private string GetDebuggerDisplay()
+        {
+            return $"Summary({TId},{Count})";
+        }
+
+    }
+
+    /// <summary>
+    /// 描述一组产出。
+    /// </summary>
+    public class MultGameEntitySummary
+    {
+        List<Guid> _TIds;
+        /// <summary>
+        /// 多个物品的TId集合。
+        /// 可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+        /// </summary>
+        public List<Guid> TIds
+        {
+            get => _TIds ?? (_TIds = new List<Guid>());
+            set
+            {
+                _TIds = value;
+                _Count = null;
+            }
+        }
+
+        List<decimal> _Counts;
+
+        /// <summary>
+        /// 多个物品的数量集合。
+        /// 可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+        /// </summary>
+        public List<decimal> Counts
+        {
+            get => _Counts ?? (_Counts = new List<decimal>());
+            set
+            {
+                _Counts = value;
+                _Count = null;
+            }
+        }
+
+        List<Guid?> _ParentTIds;
+        /// <summary>
+        /// 多个物品放入的父容器的TId集合。
+        /// 可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+        /// </summary>
+        public List<Guid?> ParentTIds
+        {
+            get => _ParentTIds ?? (_ParentTIds = new List<Guid?>());
+            set
+            {
+                _ParentTIds = value;
+                _Count = null;
+            }
+        }
+
+        private int? _Count;
+
+        /// <summary>
+        /// 三个集合的最大长度。
+        /// </summary>
+        [JsonIgnore]
+        public int Count
+        {
+            get
+            {
+                if (_Count.HasValue) return _Count.Value;
+                _Count = Math.Max(Math.Max(TIds.Count, Counts.Count), ParentTIds.Count);
+                return _Count.Value;
+            }
+        }
+
+        /// <summary>
+        /// 获取指定索引处的实体描述对象。
+        /// </summary>
+        /// <param name="index">要大于或等于0且小于<see cref="Count"/>。</param>
+        /// <returns></returns>
+        /// <exception cref="IndexOutOfRangeException">索引超出范围。</exception>
+        public GameEntitySummary GetItem(int index)
+        {
+            if (index < 0 || index >= Count) throw new IndexOutOfRangeException();
+
+            var result = new GameEntitySummary
+            {
+                Count = Counts.Count > index ? Counts[index] : Counts[Counts.Count - 1],
+                TId = TIds.Count > index ? TIds[index] : TIds[TIds.Count - 1],
+                ParentTId = ParentTIds.Count > index ? ParentTIds[index] : ParentTIds[ParentTIds.Count - 1],
+            };
+            return result;
+        }
+    }
+
+    /// <summary>
+    /// 动态产出。
+    /// </summary>
+    public class MultOut
+    {
+        /// <summary>
+        /// 获取一个实体，该实体名称为 <see cref="PropertyName"/> 的属性值是索引值。
+        /// </summary>
+        public GameThingPrecondition Preconditions { get; set; }
+
+        /// <summary>
+        /// 获取索引的属性名。该属性必须返回一个数字。
+        /// </summary>
+        public string PropertyName { get; set; }
+
+        /// <summary>
+        /// 产出的集合。
+        /// </summary>
+        public MultGameEntitySummary Outs { get; set; }
+
+    }
+
+    #endregion 基础数据
+
     #region Udp相关
 
     /// <summary>
@@ -1008,62 +1177,6 @@ namespace GY02.Templates
             result.Items.AddRange(Items.Select(c => (GameDiceItem)c.Clone()));
             return result;
         }
-    }
-
-    /// <summary>
-    /// 实体摘要信息类。
-    /// </summary>
-    [DisplayName("实体摘要")]
-    [Description("由 OutItem 改名而来。")]
-    [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    public class GameEntitySummary : ICloneable
-    {
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public GameEntitySummary()
-        {
-
-        }
-
-        /// <summary>
-        /// 特定原因记录物品唯一Id，通常为null。
-        /// </summary>
-        public Guid? Id { get; set; }
-
-        /// <summary>
-        /// 父容器模板Id，为null则放置在默认容器中。
-        /// </summary>
-        public Guid? ParentTId { get; set; }
-
-        /// <summary>
-        /// 模板Id。
-        /// </summary>
-        public Guid TId { get; set; }
-
-        /// <summary>
-        /// 数量。
-        /// </summary>
-        public decimal Count { get; set; }
-
-        /// <summary>
-        /// 获取一个深表副本。
-        /// </summary>
-        /// <remarks>所有成员都是结构时，深表副本等价于浅表副本。</remarks>
-        /// <returns></returns>
-        public object Clone() => new GameEntitySummary
-        {
-            Count = Count,
-            Id = Id,
-            ParentTId = ParentTId,
-            TId = TId,
-        };
-
-        private string GetDebuggerDisplay()
-        {
-            return $"Summary({TId},{Count})";
-        }
-
     }
 
     /// <summary>

@@ -147,7 +147,7 @@ namespace GY02.Managers
             if (ignore && shoppingItem.Ins.All(c => c.IgnoreIfDisplayList))
                 return true;
             var b = _BlueprintManager.IsValid(shoppingItem.Ins, _EntityManager.GetAllEntity(gameChar));
-            if(!b) return false;
+            if (!b) return false;
             //var costs = _BlueprintManager.GetCost(gameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)), shoppingItem.Ins);
             //if (costs is null)
             //    return false;
@@ -166,7 +166,7 @@ namespace GY02.Managers
         public bool IsValidOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
         {
             buyedCount = gameChar.ShoppingHistory?.Where(c => c.DateTime >= start && c.DateTime < end && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
-            return buyedCount <= tt.ShoppingItem.MaxCount;
+            return buyedCount <= (tt.ShoppingItem.MaxCount ?? decimal.MaxValue);
         }
 
         /// <summary>

@@ -99,7 +99,7 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 
+        /// 在指定项中获取指定次数的项。
         /// </summary>
         /// <param name="items"></param>
         /// <param name="maxCount">至多生成这么多项。可能实际生成的项，少于指定的项。返回时，是实际roll的次数，仅当不允许重复项时可能出现全部物品已经roll到，但次数未达到的情况。</param>
@@ -130,12 +130,13 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// roll卡池，并考虑保底问题。
+        /// roll卡池。
         /// </summary>
         /// <param name="diceTT">卡池</param>
         /// <param name="gameChar"></param>
         /// <param name="ignoreGuarantees">是否忽略保底计数，true忽略（不会记录保底次数的变化），false,不忽略。</param>
         /// <param name="random"></param>
+        /// <returns>命中的项，注意这些项可能是保底卡池中的项。</returns>
         public List<GameDiceItem> Roll(TemplateStringFullView diceTT, GameChar gameChar, bool ignoreGuarantees = false, Random random = null)
         {
             random ??= new Random();

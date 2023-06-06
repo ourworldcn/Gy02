@@ -166,13 +166,14 @@ namespace GY02.Managers
             if (mails.Count > 0)  //若选择邮件
                 doMails = mails.Where(mail => mailIds.Contains(mail.Id));
             else doMails = mails;
-            var errFirst = doMails.FirstOrDefault(c => c.PickUpUtc is not null);
-            if (errFirst is not null)    //若至少一个邮件的附件已经被领取
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_IMPLEMENTATION_LIMIT);
-                OwHelper.SetLastErrorMessage($"至少一个邮件的附件已经被领取，MailId={errFirst.Id}");
-                return false;
-            }
+            doMails = doMails.Where(c => c.PickUpUtc is null);
+            //var errFirst = doMails.FirstOrDefault(c => c.PickUpUtc is not null);
+            //if (errFirst is not null)    //若至少一个邮件的附件已经被领取
+            //{
+            //    OwHelper.SetLastError(ErrorCodes.ERROR_IMPLEMENTATION_LIMIT);
+            //    OwHelper.SetLastErrorMessage($"至少一个邮件的附件已经被领取，MailId={errFirst.Id}");
+            //    return false;
+            //}
             var summary = doMails.SelectMany(c => c.Attachment);
             var nowUtc = DateTime.UtcNow;
             if (!_EntityManager.CreateAndMove(summary.Select(c => (c.TId, c.Count, c.ParentTId)), gameChar, changes))
