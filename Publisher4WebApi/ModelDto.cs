@@ -1404,6 +1404,26 @@ namespace GY02.Publisher
     #region 邮件相关
 
     /// <summary>
+    /// 收取附件功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(PickUpAttachmentCommand), ReverseMap = true)]
+    public class PickUpAttachmentParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要获取附件的邮件的唯一Id集合。如果是空集合则获取所有邮件的附件。一个邮件的多个附件必须一次性全部获取。
+        /// </summary>
+        public List<Guid> MailIds { get; set; } = new List<Guid>();
+    }
+
+    /// <summary>
+    /// 收取附件功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(PickUpAttachmentCommand))]
+    public class PickUpAttachmentReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
     /// 收取邮件功能的参数封装类。
     /// </summary>
     [AutoMap(typeof(GetMailsCommand), ReverseMap = true)]

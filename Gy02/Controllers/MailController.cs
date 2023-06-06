@@ -80,6 +80,31 @@ namespace Gy02.Controllers
             _Mapper.Map(command, result);
             return result;
         }
+
+        /// <summary>
+        /// 获取邮件附件。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<PickUpAttachmentReturnDto> PickUpAttachment(PickUpAttachmentParamsDto model)
+        {
+            var result = new PickUpAttachmentReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new GetMailsCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
     }
 
 }

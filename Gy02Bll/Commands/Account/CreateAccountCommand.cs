@@ -84,12 +84,17 @@ namespace GY02.Commands
             }
 
             var db = _DbFactory.CreateDbContext();
-            if (db.VirtualThings.Any(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == command.LoginName))    //若指定账号已存在
+#pragma warning disable CA1827 // Do not use Count() or LongCount() when Any() can be used
+            //由于数据库数据特征Count优于Any
+            if (db.VirtualThings.Count(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == command.LoginName) > 0)    //若指定账号已存在
             {
+                command.LoginName = null;
+                command.Pwd = null;
                 command.ErrorCode = ErrorCodes.ERROR_USER_EXISTS;
                 command.DebugMessage = $"指定账号已经存在。";
                 return;
             }
+#pragma warning restore CA1827 // Do not use Count() or LongCount() when Any() can be used
             //构造账号信息
             var commCreateUser = new CreateVirtualThingsCommand();
             commCreateUser.TIds.Add(ProjectContent.UserTId);

@@ -34,10 +34,13 @@ namespace OW.Game.Store
 
         #endregion 构造函数
 
+        /// <summary>
+        /// 实体的唯一Id。
+        /// </summary>
         [JsonIgnore]
         public Guid Id
         {
-            get => ((IEntityWithSingleKey<Guid>)Thing)?.Id ?? Guid.Empty;
+            get => Thing is IEntityWithSingleKey<Guid> tmp ? tmp.Id : Guid.Empty;
             set => ((IEntityWithSingleKey<Guid>)Thing).Id = value;
         }
 

@@ -1071,6 +1071,21 @@
             本周期的结束时间。空表示无结束时间。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.PickUpAttachmentParamsDto">
+            <summary>
+            收取附件功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PickUpAttachmentParamsDto.MailIds">
+            <summary>
+            要获取附件的邮件的唯一Id集合。如果是空集合则获取所有邮件的附件。一个邮件的多个附件必须一次性全部获取。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.PickUpAttachmentReturnDto">
+            <summary>
+            收取附件功能的返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetMailsParamsDto">
             <summary>
             收取邮件功能的参数封装类。

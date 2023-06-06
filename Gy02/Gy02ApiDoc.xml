@@ -489,6 +489,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:Gy02.Controllers.MailController.PickUpAttachment(GY02.Publisher.PickUpAttachmentParamsDto)">
+            <summary>
+            获取邮件附件。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:Global.Program">
             <summary>
             

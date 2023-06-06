@@ -387,6 +387,8 @@ namespace GY02.Managers
                 return true;
             }
         falut:
+            OwHelper.SetLastError(ErrorCodes.ERROR_NO_SUCH_USER);
+            OwHelper.SetLastErrorMessage($"找不到指定的用户名或密码错误。");
             user = null;
             return false;
         }

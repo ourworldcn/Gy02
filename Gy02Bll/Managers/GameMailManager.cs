@@ -131,27 +131,53 @@ namespace GY02.Managers
         /// 获取指定角色的所有收件箱中的邮件。
         /// </summary>
         /// <param name="gameChar"></param>
+        /// <param name="dbContext">使用的数据库上下文，若不指定则自动生成（此时也会自动处置），若指定了则不会处置。</param>
         /// <returns></returns>
-        public List<GameMail> GetMails(GameChar gameChar)
+        public List<GameMail> GetMails(GameChar gameChar, DbContext dbContext = null)
         {
             var to = gameChar.Key;
-            using var db = _ContextFactory.CreateDbContext();
-            var things = db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.MailTId && c.ExtraString == to);
-            var result = things.AsEnumerable().Select(c => c.GetJsonObject<GameMail>()).ToList();
+            bool bDbOwner = dbContext is null;  //函数自身拥有上下文
+            if (bDbOwner) dbContext = _ContextFactory.CreateDbContext();
+            var result = new List<GameMail> { };
+            try
+            {
+                var things = dbContext.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.MailTId && c.ExtraString == to).AsEnumerable();
+                result = things.Select(c => c.GetJsonObject<GameMail>()).ToList();
+            }
+            finally
+            {
+                if (bDbOwner) dbContext.Dispose();
+            }
             return result;
         }
 
         /// <summary>
-        /// 收取附件。
+        /// 获取指定邮件的附件。
         /// </summary>
         /// <param name="gameChar"></param>
-        /// <param name="mail"></param>
+        /// <param name="mailIds">要获取附件的邮件的唯一Id集合。如果是空集合则获取所有邮件的附件。一个邮件的多个附件必须一次性全部获取。</param>
+        /// <param name="changes"></param>
         /// <returns></returns>
-        public bool PickUp(GameChar gameChar, GameMail mail, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public bool PickUpAttachment(GameChar gameChar, List<Guid> mailIds, List<GamePropertyChangeItem<object>> changes)
         {
-            if (!_EntityManager.CreateAndMove(mail.Attachment.Select(c => (c.TId, c.Count, c.ParentTId)), gameChar, changes))
+            using var db = _ContextFactory.CreateDbContext();
+            var mails = GetMails(gameChar, db);
+            IEnumerable<GameMail> doMails;
+            if (mails.Count > 0)  //若选择邮件
+                doMails = mails.Where(mail => mailIds.Contains(mail.Id));
+            else doMails = mails;
+            var errFirst = doMails.FirstOrDefault(c => c.PickUpUtc is not null);
+            if (errFirst is not null)    //若至少一个邮件的附件已经被领取
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_IMPLEMENTATION_LIMIT);
+                OwHelper.SetLastErrorMessage($"至少一个邮件的附件已经被领取，MailId={errFirst.Id}");
                 return false;
-            mail.PickUpUtc = DateTime.UtcNow;
+            }
+            var summary = doMails.SelectMany(c => c.Attachment);
+            var nowUtc = DateTime.UtcNow;
+            if (!_EntityManager.CreateAndMove(summary.Select(c => (c.TId, c.Count, c.ParentTId)), gameChar, changes))
+                return false;
+            doMails.ForEach(c => c.PickUpUtc = nowUtc);
             return true;
         }
     }
