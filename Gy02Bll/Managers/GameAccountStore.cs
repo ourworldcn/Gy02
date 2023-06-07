@@ -347,7 +347,13 @@ namespace GY02.Managers
         public bool LoadOrGetUser(string loginName, string pwd, out GameUser user)
         {
             using var dw = DisposeHelper.Create(Lock, Unlock, loginName, Options.DefaultLockTimeout);
-            if (dw.IsEmpty) throw new TimeoutException();
+            if (dw.IsEmpty)
+            {
+                OwHelper.SetLastError(ErrorCodes.WAIT_TIMEOUT);
+                OwHelper.SetLastErrorMessage($"无法锁定用户登录名，LoginName : {loginName}。");
+                user = null;
+                return false;
+            }
             GameUser gu;
             if (_LoginName2Key.TryGetValue(loginName, out string key))    //若内存中找到了指定登录名的账号对象
             {

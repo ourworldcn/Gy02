@@ -1,4 +1,6 @@
 ﻿using GY02.Publisher;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OW.Game.Store;
 using System;
@@ -83,7 +85,7 @@ namespace GY02.Templates
         List<Guid> _TIds;
         /// <summary>
         /// 多个物品的TId集合。
-        /// 可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+        /// 可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
         /// </summary>
         public List<Guid> TIds
         {
@@ -99,7 +101,7 @@ namespace GY02.Templates
 
         /// <summary>
         /// 多个物品的数量集合。
-        /// 可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+        /// 可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
         /// </summary>
         public List<decimal> Counts
         {
@@ -114,7 +116,7 @@ namespace GY02.Templates
         List<Guid?> _ParentTIds;
         /// <summary>
         /// 多个物品放入的父容器的TId集合。
-        /// 可以填写的数量少于另外两个集合的数量，如果其它两几个更长，则取此集合最后一个。
+        /// 可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
         /// </summary>
         public List<Guid?> ParentTIds
         {
@@ -145,12 +147,12 @@ namespace GY02.Templates
         /// <summary>
         /// 获取指定索引处的实体描述对象。
         /// </summary>
-        /// <param name="index">要大于或等于0且小于<see cref="Count"/>。</param>
-        /// <returns></returns>
+        /// <param name="index">要大于或等于0。</param>
+        /// <returns>返回相应索引的预览对象，若索引过大，则取对应集合的最后一项（不会因为索引过大引发异常）。</returns>
         /// <exception cref="IndexOutOfRangeException">索引超出范围。</exception>
         public GameEntitySummary GetItem(int index)
         {
-            if (index < 0 || index >= Count) throw new IndexOutOfRangeException();
+            if (index < 0) throw new IndexOutOfRangeException();
 
             var result = new GameEntitySummary
             {
@@ -163,19 +165,203 @@ namespace GY02.Templates
     }
 
     /// <summary>
+    /// 一个通用的表达式对象。
+    /// </summary>
+    public class GameExpression
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameExpression()
+        {
+
+        }
+        #region 公共属性
+
+        /// <summary>
+        /// 操作符（函数名）。暂定支持以下运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!=,ToInt32 等。
+        /// 特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
+        /// </summary>
+        public string Operator
+        {
+            get; set;
+        }
+
+        List<object> _Args;
+        /// <summary>
+        /// 一组参数值,参数的顺序和数量由运算符指定。
+        /// </summary>
+        /// <remarks>对 ToInt32 运算，有唯一的参数，字符串类型，标识获取实体属性的名称。</remarks>
+        public List<object> Args { get => _Args ?? (_Args = new List<object>()); set => _Args = value; }
+
+        /// <summary>
+        /// 在获取显示列表的时候，是否忽略该条件，视同满足。
+        /// </summary>
+        /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+        public bool IgnoreIfDisplayList { get; set; } = false;
+
+        #endregion 公共属性
+
+        #region 公共方法
+
+        /// <summary>
+        /// 获取一个指示指定实体是否符合指定条件。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="result">返回的值</param>
+        /// <param name="ignore">是否忽略<see cref="GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
+        /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
+        public bool TryGetValue(object entity, out object result, bool ignore = false)
+        {
+            //if (ignore && IgnoreIfDisplayList)  //若忽略此项
+            //    return true;
+            //bool result;
+            //decimal val;    //属性的值
+            bool succ;
+            switch (Operator)
+            {
+                case "ToInt32":
+                    if (!TryGetString(Args[0], out var str))
+                    {
+                        succ = false;
+                        result = default;
+                    }
+                    else
+                    {
+                        succ = TryGetPropertyValue(entity, str, out var obj);
+                        if (succ)
+                            result = Convert.ToInt32(obj);
+                        else
+                            result = null;
+                    }
+                    break;
+                case "ModE":
+                ////获取属性值
+                //if (!TryGetDecimal(entity, out val))
+                //{
+                //    result = false;
+                //    break;
+                //}
+                //if (Args.Count < 2)
+                //{
+                //    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                //    OwHelper.SetLastErrorMessage($"ModE要有两个参数但实际只有{Args.Count}个参数。");
+                //    result = false;
+                //    break;
+                //}
+                //else if (Args.Count > 2)
+                //    OwHelper.SetLastErrorMessage($"ModE要有两个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
+                //else
+                //    OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                //result = val % Args[0] == Args[1];
+                //break;
+                case "<=":
+                //获取属性值
+                //if (!TryGetDecimal(entity, out val))
+                //{
+                //    result = false;
+                //    break;
+                //}
+                //if (Args.Count < 1)
+                //{
+                //    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                //    OwHelper.SetLastErrorMessage($"<=要有一个参数但实际只有{Args.Count}个参数。");
+                //    result = false;
+                //    break;
+                //}
+                //else if (Args.Count > 1)
+                //    OwHelper.SetLastErrorMessage($"<=要有一个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
+                //else
+                //    OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                //result = val <= Args[0];
+                //break;
+                case "<":
+                case ">=":
+                case ">":
+                case "==":
+                case "!=":
+                //throw new NotImplementedException();
+                default:
+                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                    OwHelper.SetLastErrorMessage($"不支持的操作符{Operator}");
+                    result = default;
+                    succ = false;
+                    break;
+            }
+            return succ;
+        }
+
+        bool TryGetString(object obj, out string result)
+        {
+            if (obj is string str)
+            {
+                result = str;
+                return true;
+            }
+            if (obj is JsonElement jsonElement)
+            {
+                result = jsonElement.GetString();
+                return true;
+            }
+            OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+            OwHelper.SetLastErrorMessage($"指定对象无法转换为字符串，obj={obj}");
+            result = default;
+            return false;
+        }
+
+        /// <summary>
+        /// 获取指定属性的反射对象。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="propertyInfo"></param>
+        /// <returns>true找到值，false出错。</returns>
+        public bool TryGetPropertyInfo(object entity, string propertyName, out PropertyInfo propertyInfo)
+        {
+            propertyInfo = entity.GetType().GetProperty(propertyName);
+            if (propertyInfo is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"无法找到指定的属性{propertyName}");
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 获取指定属性的值。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="result"></param>
+        /// <returns>true找到值，false出错。</returns>
+        public bool TryGetPropertyValue(object entity, string propertyName, out object result)
+        {
+            if (!TryGetPropertyInfo(entity, propertyName, out var pi))
+            {
+                result = default;
+                return false;
+            }
+            result = pi.GetValue(entity);
+            return true;
+        }
+        #endregion 公共方法
+    }
+
+    /// <summary>
     /// 动态产出。
     /// </summary>
     public class MultOut
     {
         /// <summary>
-        /// 获取一个实体，该实体名称为 <see cref="PropertyName"/> 的属性值是索引值。
+        /// 过滤并获取一个实体，该实体使用 <see cref="GetIndexExpression"/> 属性指定的方法提取索引值。
         /// </summary>
         public GameThingPrecondition Preconditions { get; set; }
 
         /// <summary>
-        /// 获取索引的属性名。该属性必须返回一个数字。
+        /// 获取索引的对象。
         /// </summary>
-        public string PropertyName { get; set; }
+        public GameExpression GetIndexExpression { get; set; }
 
         /// <summary>
         /// 产出的集合。
@@ -692,6 +878,14 @@ namespace GY02.Templates
 
         #endregion 骰子相关
 
+        #region 动态产出相关
+
+        /// <summary>
+        /// 动态产出对象。
+        /// </summary>
+        public MultOut MultOut { get; set; }
+
+        #endregion 动态产出相关
         /// <summary>
         /// 快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
         /// </summary>

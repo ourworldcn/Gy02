@@ -149,6 +149,12 @@ namespace System
             _LastErrorMessage = null;
         }
 
+        public static int GetLastError(out string msg)
+        {
+            msg = GetLastErrorMessage();
+            return GetLastError();
+        }
+
         #endregion 错误处理
 
         static OwHelper()
