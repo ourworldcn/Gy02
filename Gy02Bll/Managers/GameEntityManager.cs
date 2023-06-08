@@ -84,8 +84,10 @@ namespace GY02.Managers
         /// <param name="ignore">是否忽略可以忽略的项。</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool IsMatch(GameEntity entity, GameThingPrecondition conditions, bool ignore = false) =>
-            conditions.Any(c => IsMatch(entity, c, ignore));
+        public bool IsMatch(GameEntity entity, GameThingPrecondition conditions, bool ignore = false)
+        {
+            return conditions.Count == 0 || conditions.Any(c => IsMatch(entity, c, ignore));
+        }
 
         /// <summary>
         /// 
@@ -202,6 +204,28 @@ namespace GY02.Managers
             }
 
             return result = coll.ToList();
+        }
+
+        /// <summary>
+        /// 修改一组实体的数量，若有任何一个实体在减少数量后，数量值为负数，则不会减少任何实体的数量并立即返回错误。
+        /// </summary>
+        /// <remarks><paramref name="changes"/>若是枚举子，则会在修改数量之前将其内容放置在数组中。</remarks>
+        /// <param name="values">(实体对象,增量数量) 增量数量正数标识增加，负数标识减少。</param>
+        /// <param name="changes"></param>
+        /// <returns></returns>
+        public bool Modify(IEnumerable<(GameEntity, decimal)> values, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var errFirst = values.FirstOrDefault(c => c.Item1.Count + c.Item2 < 0);
+            if (errFirst.Item1 is GameEntity entity) //若找到错误
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"实体数量过低,实体Id={errFirst.Item1.Id}");
+                return false;
+            }
+            if (values is ICollection<(GameEntity, decimal)>)    //若已经是一个集合对象
+                values.ForEach(c => Modify(c.Item1, c.Item2, changes));
+            else //若仅仅是一个枚举子
+                values.ToArray().SafeForEach(c => Modify(c.Item1, c.Item2, changes));
+            return true;
         }
 
         /// <summary>

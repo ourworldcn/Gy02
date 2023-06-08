@@ -6,12 +6,14 @@ using GY02.TemplateDb;
 using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
+using OW.DDD;
 using OW.Game;
 using OW.Game.Conditional;
 using OW.Game.Entity;
@@ -160,11 +162,15 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test()
         {
+
             var sw = Stopwatch.StartNew();
+            dynamic dyn = new GameThingPreconditionItem();
             try
             {
-                var b1 = GCSettings.IsServerGC;
-                var b2 = GCSettings.LatencyMode;
+                for (int i = 0; i < 1_000_000; i++)
+                {
+                    //var dw = DisposeHelper.Create(c => { }, 1);
+                }
             }
             finally
             {

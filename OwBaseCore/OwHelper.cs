@@ -149,6 +149,18 @@ namespace System
             _LastErrorMessage = null;
         }
 
+        /// <summary>
+        /// 设置最后一次错误的错误码和错误信息。
+        /// </summary>
+        /// <param name="errorCode"></param>
+        /// <param name="msg"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void SetLastErrorAndMessage(int errorCode,string msg)
+        {
+            _LastError = errorCode;
+            _LastErrorMessage = msg;
+        }
+
         public static int GetLastError(out string msg)
         {
             msg = GetLastErrorMessage();

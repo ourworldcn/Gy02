@@ -87,7 +87,8 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="entities"></param>
         /// <param name="conditionals"></param>
-        /// <returns>返回条件与实体配对的值元组的集合。如果出现任何错误将返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        /// <returns>返回条件与实体配对的值元组的集合。如果出现任何错误将返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。
+        /// 只会返回有消耗的需求的实体，不需要消耗的实体不会返回。</returns>
         public IEnumerable<(BlueprintInItem, GameEntity)> GetCost(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals)
         {
             var result = new List<(BlueprintInItem, GameEntity)>();
@@ -103,6 +104,7 @@ namespace GY02.Managers
                     OwHelper.SetLastErrorMessage($"无法找到符合条件{conditional}的实体。");
                     return null;
                 }
+                if (conditional.Count == decimal.Zero) continue;    //若此项不消耗
                 result.Add((conditional, entity));
                 all.Remove(entity); //去掉已经被匹配的项
             }
@@ -110,7 +112,7 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 
+        /// 消耗指定材料。
         /// </summary>
         /// <param name="entities"></param>
         /// <param name="conditionals"></param>
@@ -122,11 +124,7 @@ namespace GY02.Managers
             var coll = GetCost(entities, conditionals);
             if (coll is null) return false;
             var tmp = coll.Select(c => (Entity: c.Item2, Count: -Math.Abs(c.Item1.Count))).Where(c => c.Count != 0);
-            foreach (var item in tmp.ToArray())
-            {
-                if (!_EntityManager.Modify(item.Entity, item.Count, changes)) throw new InvalidOperationException { };  //若出现无法减少的异常
-            }
-            return true;
+            return _EntityManager.Modify(tmp, changes);
         }
     }
 }

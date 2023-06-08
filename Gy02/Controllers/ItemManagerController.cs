@@ -29,14 +29,14 @@ namespace GY02.Controllers
         {
             _ServiceProvider = serviceProvider;
             _Mapper = mapper;
-            _GameEntityManager = gameEntityManager;
+            _EntityManager = gameEntityManager;
             _SyncCommandManager = syncCommandManager;
             _GameAccountStore = gameAccountStore;
         }
 
         readonly IServiceProvider _ServiceProvider;
         IMapper _Mapper;
-        GameEntityManager _GameEntityManager;
+        GameEntityManager _EntityManager;
         SyncCommandManager _SyncCommandManager;
         GameAccountStore _GameAccountStore;
 
@@ -340,7 +340,7 @@ namespace GY02.Controllers
                 result.DebugMessage = $"找不到指定的装备，Id={model.ItemId}";
                 return result;
             }
-            var entity = _GameEntityManager.GetEntity(item);
+            var entity = _EntityManager.GetEntity(item);
             if (entity is null)
             {
                 command.FillErrorFromWorld();

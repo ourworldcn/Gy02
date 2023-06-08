@@ -117,19 +117,19 @@
       <FileName>Managers\GameManagerBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GY02.Managers.MultOutManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="GY02.Managers.SequenceOutManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="16" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Managers\MultOutManager.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Managers\SequenceOutManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="GY02.Managers.MultOutManager">
+  <Class Name="GY02.Managers.SequenceOutManager">
     <Position X="3.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
-      <FileName>Managers\MultOutManager.cs</FileName>
+      <FileName>Managers\SequenceOutManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_EntityManager" />

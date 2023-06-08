@@ -155,11 +155,12 @@
             蓝图相关操作的控制器。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.BlueprintController.#ctor(System.IServiceProvider)">
+        <member name="M:GY02.Controllers.BlueprintController.#ctor(GY02.Managers.BlueprintManager,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
             <summary>
             
             </summary>
             <param name="serviceProvider"></param>
+            <param name="blueprintManager"></param>
         </member>
         <member name="M:GY02.Controllers.BlueprintController.ApplyBlueprint(GY02.Publisher.ApplyBlueprintParamsDto)">
             <summary>

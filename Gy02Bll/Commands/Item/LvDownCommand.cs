@@ -71,12 +71,13 @@ namespace GY02.Commands
                 list.AddRange(tmp);
             }
 
-            var move = new MoveEntitiesCommand { GameChar = command.GameChar, Items = list.Select(c => (GameEntity)_TemplateManager.GetEntityBase(c, out _)).ToList() };
-            _SyncCommandManager.Handle(move);
-            command.FillErrorFrom(move);
+            //var move = new MoveEntitiesCommand { GameChar = command.GameChar, Items = list.Select(c => (GameEntity)_TemplateManager.GetEntityBase(c, out _)).ToList() };
+            //_SyncCommandManager.Handle(move);
+            //command.FillErrorFrom(move);
+
+            _EntityManager.Move(list.Select(c=>_EntityManager.GetEntity(c)), command.GameChar, command.Changes);
             if (!command.HasError)
             {
-                command.Changes?.AddRange(move.Changes);
                 command.Changes?.Add(new GamePropertyChangeItem<object>
                 {
                     Object = command.Entity,

@@ -1,27 +1,30 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
+  "Genus": [ "gs_choujiangbaoxiang" ],
   "ShoppingItem": {
     "Period": {
       "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": null
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
     },
-    "GroupNumber": 0,
-    "MaxCount": 0,
+    "GroupNumber": 1,
+    "name_txt": 10965,
+    "comment_txt": 10943,
+    "MaxCount": 1,
+    "JiaoBiao": [],
     "Ins": [
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-            "MinCount": 7000,
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "MinCount": 200,
             "GeneralConditional": [],
             "IgnoreIfDisplayList": true
           }
         ],
-        "Count": 7000,
+        "Count": 200,
         "Genus": [],
         "IgnoreIfDisplayList": true
       }
@@ -29,9 +32,9 @@
     "Outs": [
       {
         "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-        "Count": 5
+        "ParentTId": null,
+        "TId": "af719619-3934-45bf-aaec-669c6a8afdc6",
+        "Count": 1
       }
     ]
   }

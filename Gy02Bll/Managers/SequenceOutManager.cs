@@ -12,22 +12,22 @@ using System.Threading.Tasks;
 
 namespace GY02.Managers
 {
-    public class MultOutManagerOptions : IOptions<MultOutManagerOptions>
+    public class SequenceOutManagerOptions : IOptions<SequenceOutManagerOptions>
     {
-        public MultOutManagerOptions()
+        public SequenceOutManagerOptions()
         {
 
         }
 
-        public MultOutManagerOptions Value => this;
+        public SequenceOutManagerOptions Value => this;
     }
 
     /// <summary>
     /// 动态输出的管理器。
     /// </summary>
-    public class MultOutManager : GameManagerBase<MultOutManagerOptions, MultOutManager>
+    public class SequenceOutManager : GameManagerBase<SequenceOutManagerOptions, SequenceOutManager>
     {
-        public MultOutManager(IOptions<MultOutManagerOptions> options, ILogger<MultOutManager> logger, GameEntityManager entityManager) : base(options, logger)
+        public SequenceOutManager(IOptions<SequenceOutManagerOptions> options, ILogger<SequenceOutManager> logger, GameEntityManager entityManager) : base(options, logger)
         {
             _EntityManager = entityManager;
         }
@@ -36,7 +36,7 @@ namespace GY02.Managers
 
         #region 获取信息相关
 
-        public MultOut GetMultOutByTemplate(TemplateStringFullView template)
+        public SequenceOut GetMultOutByTemplate(TemplateStringFullView template)
         {
             var result = template.MultOut;
             if (result is null)

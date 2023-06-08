@@ -80,7 +80,7 @@ namespace GY02.Templates
     /// <summary>
     /// 描述一组产出。
     /// </summary>
-    public class MultGameEntitySummary
+    public class SequenceGameEntitySummary
     {
         List<Guid> _TIds;
         /// <summary>
@@ -209,14 +209,9 @@ namespace GY02.Templates
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="result">返回的值</param>
-        /// <param name="ignore">是否忽略<see cref="GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
-        /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
-        public bool TryGetValue(object entity, out object result, bool ignore = false)
+        /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError()"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
+        public bool TryGetValue(object entity, out object result)
         {
-            //if (ignore && IgnoreIfDisplayList)  //若忽略此项
-            //    return true;
-            //bool result;
-            //decimal val;    //属性的值
             bool succ;
             switch (Operator)
             {
@@ -351,7 +346,7 @@ namespace GY02.Templates
     /// <summary>
     /// 动态产出。
     /// </summary>
-    public class MultOut
+    public class SequenceOut
     {
         /// <summary>
         /// 过滤并获取一个实体，该实体使用 <see cref="GetIndexExpression"/> 属性指定的方法提取索引值。
@@ -366,7 +361,7 @@ namespace GY02.Templates
         /// <summary>
         /// 产出的集合。
         /// </summary>
-        public MultGameEntitySummary Outs { get; set; }
+        public SequenceGameEntitySummary Outs { get; set; }
 
     }
 
@@ -883,7 +878,7 @@ namespace GY02.Templates
         /// <summary>
         /// 动态产出对象。
         /// </summary>
-        public MultOut MultOut { get; set; }
+        public SequenceOut MultOut { get; set; }
 
         #endregion 动态产出相关
         /// <summary>
@@ -967,6 +962,7 @@ namespace GY02.Templates
 
     /// <summary>
     /// 定位一个物品的结构。
+    /// 一组条件中满足任何一个都认为匹配。
     /// </summary>
     public partial class GameThingPrecondition : Collection<GameThingPreconditionItem>
     {
@@ -989,7 +985,6 @@ namespace GY02.Templates
         /// </summary>
         public GameThingPreconditionItem()
         {
-
         }
 
         /// <summary>
@@ -1155,7 +1150,7 @@ namespace GY02.Templates
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="ignore">是否忽略<see cref="GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
-        /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
+        /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError()"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
         public bool IsMatch(object entity, bool ignore = false)
         {
             if (ignore && IgnoreIfDisplayList)  //若忽略此项
@@ -1249,7 +1244,7 @@ namespace GY02.Templates
         public decimal Count { get; set; }
 
         /// <summary>
-        /// 与主材料共有类属。
+        /// 与主材料共有类属。暂时未启用。
         /// </summary>
         public List<string> Genus { get; set; }
 

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GY02.Commands;
+using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
 using OW.SyncCommand;
@@ -15,12 +16,17 @@ namespace GY02.Controllers
         /// 
         /// </summary>
         /// <param name="serviceProvider"></param>
-        public BlueprintController(IServiceProvider serviceProvider)
+        /// <param name="blueprintManager"></param>
+        public BlueprintController(BlueprintManager blueprintManager, SyncCommandManager syncCommandManager, IMapper mapper)
         {
-            _ServiceProvider = serviceProvider;
+            _BlueprintManager = blueprintManager;
+            _SyncCommandManager = syncCommandManager;
+            _Mapper = mapper;
         }
 
-        IServiceProvider _ServiceProvider;
+        private BlueprintManager _BlueprintManager;
+        SyncCommandManager _SyncCommandManager;
+        IMapper _Mapper;
 
         /// <summary>
         /// 使用指定蓝图。
@@ -32,10 +38,10 @@ namespace GY02.Controllers
         {
             var result = new ApplyBlueprintReturnDto { };
             var command = new CompositeCommand { };
-            var commandManager = _ServiceProvider.GetRequiredService<SyncCommandManager>();
-            commandManager.Handle(command);
-            var mapper = _ServiceProvider.GetRequiredService<IMapper>();
-            mapper.Map(command, result);
+
+            _SyncCommandManager.Handle(command);
+
+            _Mapper.Map(command, result);
             return result;
         }
     }

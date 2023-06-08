@@ -41,35 +41,35 @@
             <remarks>所有成员都是结构时，深表副本等价于浅表副本。</remarks>
             <returns></returns>
         </member>
-        <member name="T:GY02.Templates.MultGameEntitySummary">
+        <member name="T:GY02.Templates.SequenceGameEntitySummary">
             <summary>
             描述一组产出。
             </summary>
         </member>
-        <member name="P:GY02.Templates.MultGameEntitySummary.TIds">
+        <member name="P:GY02.Templates.SequenceGameEntitySummary.TIds">
             <summary>
             多个物品的TId集合。
             可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
             </summary>
         </member>
-        <member name="P:GY02.Templates.MultGameEntitySummary.Counts">
+        <member name="P:GY02.Templates.SequenceGameEntitySummary.Counts">
             <summary>
             多个物品的数量集合。
             可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
             </summary>
         </member>
-        <member name="P:GY02.Templates.MultGameEntitySummary.ParentTIds">
+        <member name="P:GY02.Templates.SequenceGameEntitySummary.ParentTIds">
             <summary>
             多个物品放入的父容器的TId集合。
             可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
             </summary>
         </member>
-        <member name="P:GY02.Templates.MultGameEntitySummary.Count">
+        <member name="P:GY02.Templates.SequenceGameEntitySummary.Count">
             <summary>
             三个集合的最大长度。
             </summary>
         </member>
-        <member name="M:GY02.Templates.MultGameEntitySummary.GetItem(System.Int32)">
+        <member name="M:GY02.Templates.SequenceGameEntitySummary.GetItem(System.Int32)">
             <summary>
             获取指定索引处的实体描述对象。
             </summary>
@@ -105,13 +105,12 @@
             </summary>
             <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         </member>
-        <member name="M:GY02.Templates.GameExpression.TryGetValue(System.Object,System.Object@,System.Boolean)">
+        <member name="M:GY02.Templates.GameExpression.TryGetValue(System.Object,System.Object@)">
             <summary>
             获取一个指示指定实体是否符合指定条件。
             </summary>
             <param name="entity"></param>
             <param name="result">返回的值</param>
-            <param name="ignore">是否忽略<see cref="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
             <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
         </member>
         <member name="M:GY02.Templates.GameExpression.TryGetPropertyInfo(System.Object,System.String,System.Reflection.PropertyInfo@)">
@@ -132,22 +131,22 @@
             <param name="result"></param>
             <returns>true找到值，false出错。</returns>
         </member>
-        <member name="T:GY02.Templates.MultOut">
+        <member name="T:GY02.Templates.SequenceOut">
             <summary>
             动态产出。
             </summary>
         </member>
-        <member name="P:GY02.Templates.MultOut.Preconditions">
+        <member name="P:GY02.Templates.SequenceOut.Preconditions">
             <summary>
-            过滤并获取一个实体，该实体使用 <see cref="P:GY02.Templates.MultOut.GetIndexExpression"/> 属性指定的方法提取索引值。
+            过滤并获取一个实体，该实体使用 <see cref="P:GY02.Templates.SequenceOut.GetIndexExpression"/> 属性指定的方法提取索引值。
             </summary>
         </member>
-        <member name="P:GY02.Templates.MultOut.GetIndexExpression">
+        <member name="P:GY02.Templates.SequenceOut.GetIndexExpression">
             <summary>
             获取索引的对象。
             </summary>
         </member>
-        <member name="P:GY02.Templates.MultOut.Outs">
+        <member name="P:GY02.Templates.SequenceOut.Outs">
             <summary>
             产出的集合。
             </summary>
@@ -571,6 +570,7 @@
         <member name="T:GY02.Templates.GameThingPrecondition">
             <summary>
             定位一个物品的结构。
+            一组条件中满足任何一个都认为匹配。
             </summary>
         </member>
         <member name="M:GY02.Templates.GameThingPrecondition.#ctor">
@@ -712,7 +712,7 @@
         </member>
         <member name="P:GY02.Templates.BlueprintInItem.Genus">
             <summary>
-            与主材料共有类属。
+            与主材料共有类属。暂时未启用。
             </summary>
         </member>
         <member name="P:GY02.Templates.BlueprintInItem.IgnoreIfDisplayList">

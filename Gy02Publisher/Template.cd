@@ -34,7 +34,7 @@
   <Class Name="GY02.Templates.TemplateStringFullView">
     <Position X="3.5" Y="2.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>UAgAEAAAAAIBAADAKQAYAAQjIICkgIRAagBAEQUCQSA=</HashCode>
+      <HashCode>UAgAEAAAAAIBAADAKQAYAAQjIICkgIRAagBAMQUCQSA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -86,21 +86,20 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="GY02.Templates.MultGameEntitySummary">
+  <Class Name="GY02.Templates.SequenceGameEntitySummary">
     <Position X="16.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAEAAAAAAAAQAAAAAAAAQAAIgBAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GY02.Templates.MultOut">
+  <Class Name="GY02.Templates.SequenceOut">
     <Position X="13.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgEAAAAAAAAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAgEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Outs" />
       <Property Name="Preconditions" />
     </ShowAsAssociation>
   </Class>
