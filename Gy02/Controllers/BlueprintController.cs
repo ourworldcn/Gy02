@@ -15,7 +15,6 @@ namespace GY02.Controllers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="serviceProvider"></param>
         /// <param name="blueprintManager"></param>
         public BlueprintController(BlueprintManager blueprintManager, SyncCommandManager syncCommandManager, IMapper mapper)
         {

@@ -159,7 +159,6 @@
             <summary>
             
             </summary>
-            <param name="serviceProvider"></param>
             <param name="blueprintManager"></param>
         </member>
         <member name="M:GY02.Controllers.BlueprintController.ApplyBlueprint(GY02.Publisher.ApplyBlueprintParamsDto)">
