@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.Arm;
 using GY02.Templates;
+using System.Timers;
 
 namespace GY02.Publisher
 {
@@ -132,7 +133,6 @@ namespace GY02.Publisher
         /// </summary>
         public GyUdpClient()
         {
-
         }
 
         volatile UdpClient _Udp;
@@ -145,10 +145,6 @@ namespace GY02.Publisher
         /// 侦听任务。
         /// </summary>
         Task _ListenTask;
-        /// <summary>
-        /// 远程服务器的地址。
-        /// </summary>
-        IPEndPoint _RemotePoint;
 
         CancellationTokenSource _CancellationTokenSource = new CancellationTokenSource();
 
@@ -157,22 +153,49 @@ namespace GY02.Publisher
         /// </summary>
         public CancellationTokenSource CancellationTokenSource { get => _CancellationTokenSource; }
 
+        IPEndPoint _RemoteEndPoint;
+        /// <summary>
+        /// 远程服务器的地址。
+        /// </summary>
+        public IPEndPoint RemoteEndPoint
+        {
+            get
+            {
+                if (_RemoteEndPoint is null)
+                {
+                    var ary = LastUdpServiceHost.Split(':');
+                    _RemoteEndPoint = new IPEndPoint(IPAddress.Parse(ary[0]), int.Parse(ary[1]));
+                }
+                return _RemoteEndPoint;
+            }
+            set
+            {
+                _RemoteEndPoint = value;
+            }
+        }
+
+        Guid? _Token;
+        /// <summary>
+        /// 最后使用的令牌。
+        /// </summary>
+        public Guid Token { get => _Token ?? (_Token = LastToken).Value; }
+
+        System.Threading.Timer _Timer;
+
         /// <summary>
         /// 开始侦听。在登录完成后调用此函数，开始侦听数据。
         /// </summary>
         public void Start()
         {
-            var ary = LastUdpServiceHost.Split(':');
-            var ip = new IPEndPoint(IPAddress.Parse(ary[0]), int.Parse(ary[1]));
-
-            Start(LastToken, ip);
+            _RemoteEndPoint = null;
+            Start(LastToken, RemoteEndPoint);
         }
         /// <summary>
         /// 开始侦听。
         /// </summary>
         public virtual void Start(Guid token, IPEndPoint remotePoint)
         {
-            _RemotePoint = remotePoint;
+            _RemoteEndPoint = remotePoint;
             _Udp?.Dispose();
             _Udp = new UdpClient(0);
             //初始化引发事件数据的任务
@@ -183,8 +206,7 @@ namespace GY02.Publisher
             if (_ListenTask is null)
                 _ListenTask = Task.Factory.StartNew(ListenCallback, TaskCreationOptions.LongRunning);
             //通知服务器
-            var guts = token.ToByteArray();
-            _Udp.Send(guts, guts.Length, remotePoint);
+            _Timer = new System.Threading.Timer(c => Nop(Token), default, 0, 60_000);
         }
 
         void ListenCallback()
@@ -193,7 +215,7 @@ namespace GY02.Publisher
             {
                 try
                 {
-                    var ip = new IPEndPoint(_RemotePoint.Address, 0);
+                    var ip = new IPEndPoint(RemoteEndPoint.Address, 0);
                     var buff = _Udp.Receive(ref ip);
                     Debug.WriteLine($"收到来自{ip}的数据，{buff.Length}字节。");
                     InvokeDataRecived(new DataRecivedEventArgs()
@@ -206,6 +228,18 @@ namespace GY02.Publisher
                     Debug.WriteLine(excp);
                 }
             }
+        }
+
+        /// <summary>
+        /// 通知服务器客户端在线。
+        /// </summary>
+        /// <param name="token"></param>
+        public void Nop(Guid token)
+        {
+            //通知服务器
+            var guts = token.ToByteArray();
+            _Udp.Send(guts, guts.Length, RemoteEndPoint);
+
         }
 
         #region 事件相关
@@ -295,6 +329,9 @@ namespace GY02.Publisher
                 {
                     //释放托管状态(托管对象)
                     _CancellationTokenSource?.Cancel();
+                    var waitHandle = new AutoResetEvent(false);
+                    _Timer?.Dispose(waitHandle);
+                    waitHandle.WaitOne();   //确保定时器退出
                     _Udp?.Dispose();
                 }
                 // 释放未托管的资源(未托管的对象)并重写终结器

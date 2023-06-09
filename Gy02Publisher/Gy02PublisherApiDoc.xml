@@ -46,6 +46,11 @@
             描述一组产出。
             </summary>
         </member>
+        <member name="M:GY02.Templates.SequenceGameEntitySummary.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.SequenceGameEntitySummary.TIds">
             <summary>
             多个物品的TId集合。
@@ -79,7 +84,7 @@
         </member>
         <member name="T:GY02.Templates.GameExpression">
             <summary>
-            一个通用的表达式对象。
+            一个通用的表达式对象。计划用于从寻找到的实体上提取属性。
             </summary>
         </member>
         <member name="M:GY02.Templates.GameExpression.#ctor">
@@ -136,7 +141,7 @@
             动态产出。
             </summary>
         </member>
-        <member name="P:GY02.Templates.SequenceOut.Preconditions">
+        <member name="P:GY02.Templates.SequenceOut.Conditions">
             <summary>
             过滤并获取一个实体，该实体使用 <see cref="P:GY02.Templates.SequenceOut.GetIndexExpression"/> 属性指定的方法提取索引值。
             </summary>
@@ -500,7 +505,7 @@
             卡池组数据。
             </summary>
         </member>
-        <member name="P:GY02.Templates.TemplateStringFullView.MultOut">
+        <member name="P:GY02.Templates.TemplateStringFullView.SequenceOut">
             <summary>
             动态产出对象。
             </summary>

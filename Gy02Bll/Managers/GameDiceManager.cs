@@ -164,7 +164,9 @@ namespace GY02.Managers
                 else //若无需保底
                 {
                     var count = diceTT.Dice.MaxCount;
-                    return Roll(diceTT.Dice.Items, ref count, diceTT.Dice.AllowRepetition, random);
+                    var result = Roll(diceTT.Dice.Items, ref count, diceTT.Dice.AllowRepetition, random);
+                    if (result is not null) history.GuaranteesCount++;  //增加保底计数
+                    return result;
                 }
             }
 
@@ -227,19 +229,20 @@ namespace GY02.Managers
             if (group is null)   //若找不到所属组
             {
                 result = gameChar.DiceHistory.FirstOrDefault(c => c.DiceTId == dice.TemplateId);
-                if (result is null)
+                if (result is null) //若需要初始化
                 {
                     result = new GameDiceHistoryItem
                     {
                         DiceTId = dice.TemplateId,
                         GuaranteesCount = 0,
                     };
+                    gameChar.DiceHistory.Add(result);
                 }
             }
             else //若找到了所属组
             {
                 result = gameChar.DiceHistory.FirstOrDefault(c => c.DiceTId == group.TemplateId);
-                if (result is null)
+                if (result is null) //若需要初始化
                 {
                     result = new GameDiceHistoryItem
                     {
@@ -247,6 +250,7 @@ namespace GY02.Managers
                         GuaranteesCount = 0,
                     };
                 }
+                gameChar.DiceHistory.Add(result);
             }
             return result;
         }

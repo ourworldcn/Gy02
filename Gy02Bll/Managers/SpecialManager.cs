@@ -51,10 +51,11 @@ namespace GY02.Managers
             var mounts = _DiceManager.Roll(info.Item2, gameChar, true);
             //获取皮肤槽选项
             var dicePifu = (GameDice)info.Item3.Dice.Clone();
-            var hs = new HashSet<Guid>((history.Items.SelectMany(d1 => d1.Outs.Select(d=>d.TId))));
+            var hs = new HashSet<Guid>((history.Items.SelectMany(d1 => d1.Outs.Select(d => d.TId))));
             dicePifu.Items.RemoveAll(c => hs.Overlaps(c.Outs.Select(d => d.TId)));
             var maxCount = dicePifu.MaxCount;
-            var pifus = _DiceManager.Roll(dicePifu.Items, ref maxCount, dicePifu.AllowRepetition);
+
+            var pifus = dicePifu.Items.Count > 0 ? _DiceManager.Roll(dicePifu.Items, ref maxCount, dicePifu.AllowRepetition) : new List<GameDiceItem>();
 
             result.AddRange(mounts);
             result.AddRange(pifus);

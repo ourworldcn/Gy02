@@ -1,5 +1,6 @@
 ﻿using GY02.Publisher;
 using GY02.Templates;
+using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
@@ -27,18 +28,21 @@ namespace GY02.Managers
     /// </summary>
     public class SequenceOutManager : GameManagerBase<SequenceOutManagerOptions, SequenceOutManager>
     {
-        public SequenceOutManager(IOptions<SequenceOutManagerOptions> options, ILogger<SequenceOutManager> logger, GameEntityManager entityManager) : base(options, logger)
+        public SequenceOutManager(IOptions<SequenceOutManagerOptions> options, ILogger<SequenceOutManager> logger, GameEntityManager entityManager, BlueprintManager blueprintManager) : base(options, logger)
         {
             _EntityManager = entityManager;
+            _BlueprintManager = blueprintManager;
         }
 
         GameEntityManager _EntityManager;
+
+        BlueprintManager _BlueprintManager;
 
         #region 获取信息相关
 
         public SequenceOut GetMultOutByTemplate(TemplateStringFullView template)
         {
-            var result = template.MultOut;
+            var result = template.SequenceOut;
             if (result is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
@@ -47,7 +51,19 @@ namespace GY02.Managers
             return result;
         }
 
+
         #endregion 获取信息相关
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="summaries"></param>
+        /// <param name="result"></param>
+        public void GetOuts(GameChar gameChar, IEnumerable<GameEntitySummary> summaries, List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> result)
+        {
+            
+        }
 
         /// <summary>
         /// 获取动态输出的实体摘要。
@@ -74,7 +90,8 @@ namespace GY02.Managers
             var mo = GetMultOutByTemplate(tt);
             if (mo is null) goto lbErr;
 
-            var coll = entities.Where(c => _EntityManager.IsMatch(c, mo.Preconditions));    //符合条件的实体集合
+
+            var coll = entities.Where(c => _EntityManager.IsMatch(c, mo.Conditions));    //符合条件的实体集合
             var entity = coll.FirstOrDefault();
             if (entity is null)
             {

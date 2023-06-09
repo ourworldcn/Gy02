@@ -82,6 +82,14 @@ namespace GY02.Templates
     /// </summary>
     public class SequenceGameEntitySummary
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public SequenceGameEntitySummary()
+        {
+            
+        }
+
         List<Guid> _TIds;
         /// <summary>
         /// 多个物品的TId集合。
@@ -165,7 +173,7 @@ namespace GY02.Templates
     }
 
     /// <summary>
-    /// 一个通用的表达式对象。
+    /// 一个通用的表达式对象。计划用于从寻找到的实体上提取属性。
     /// </summary>
     public class GameExpression
     {
@@ -351,7 +359,7 @@ namespace GY02.Templates
         /// <summary>
         /// 过滤并获取一个实体，该实体使用 <see cref="GetIndexExpression"/> 属性指定的方法提取索引值。
         /// </summary>
-        public GameThingPrecondition Preconditions { get; set; }
+        public GameThingPrecondition Conditions { get; set; }
 
         /// <summary>
         /// 获取索引的对象。
@@ -878,9 +886,10 @@ namespace GY02.Templates
         /// <summary>
         /// 动态产出对象。
         /// </summary>
-        public SequenceOut MultOut { get; set; }
+        public SequenceOut SequenceOut { get; set; }
 
         #endregion 动态产出相关
+
         /// <summary>
         /// 快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
         /// </summary>

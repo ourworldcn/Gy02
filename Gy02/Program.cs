@@ -41,21 +41,15 @@ internal class Program
         // Add services to the container.
         #region ≈‰÷√—πÀı
 
-        services.Configure<BrotliCompressionProviderOptions>(options =>
-        {
-            options.Level = CompressionLevel.Optimal;
-        }).Configure<GzipCompressionProviderOptions>(options =>
-        {
-            options.Level = CompressionLevel.Optimal;
-        }).AddResponseCompression(c =>
+        services.AddResponseCompression(c =>
         {
             c.EnableForHttps = true;
-
-            c.Providers.Add<BrotliCompressionProvider>();
             c.Providers.Add<GzipCompressionProvider>(); //ICompressionProvider
-            //c.Providers.Add<BrotliCompressionProvider>();  //ICompressionProvider
+            c.Providers.Add<BrotliCompressionProvider>();  //ICompressionProvider
 
-        });
+        })
+            .Configure<GzipCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; })
+            .Configure<BrotliCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; });
 
         #endregion ≈‰÷√—πÀı
 

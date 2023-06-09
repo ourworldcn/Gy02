@@ -65,7 +65,7 @@ namespace GY02.Commands
 
             if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
             {
-                var coll = tt.ShoppingItem.Outs.SelectMany(c => _DiceManager.Transformed(c, command.GameChar));
+                var coll = tt.ShoppingItem.Outs.SelectMany(c => _DiceManager.Transformed(c, command.GameChar)).ToArray();
                 if (!_EntityManager.CreateAndMove(coll.Select(c => (c.TId, c.Count, c.ParentTId)), command.GameChar, command.Changes)) goto lbErr;
             }
             command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem

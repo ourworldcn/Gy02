@@ -82,6 +82,17 @@ namespace GY02.Controllers
             applicationLifetime.StopApplication();
             return result;
         }
+
+        /// <summary>
+        /// 获取服务器时间接口。
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult<GetServerDateTimeUtcReturnDto> GetServerDateTimeUtc()
+        {
+            var result = new GetServerDateTimeUtcReturnDto { DateTimeUtc = DateTime.UtcNow };
+            return result;
+        }
     }
 
 }

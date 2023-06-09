@@ -160,6 +160,10 @@ namespace GY02.Managers
                     }
                     else
                     {
+                        if (_Token2EndPoint.TryGetValue(token, out var oldIpPoint) && !Equals(oldIpPoint, result.RemoteEndPoint)) //若更改ip地址
+                        {
+                            _Logger.LogWarning("检测到令牌 {token} 将客户端地址从 {oldIpEndPoint} 变更为 {newIpEndPoint}", token, oldIpPoint, result.RemoteEndPoint);
+                        }
                         _Token2EndPoint.AddOrUpdate(token, result.RemoteEndPoint, (t, p) => result.RemoteEndPoint);
                         SendObject(token, new ListenStartedDto() { Token = token, IPEndpoint = result.RemoteEndPoint.ToString() });  //发送确认
                     }

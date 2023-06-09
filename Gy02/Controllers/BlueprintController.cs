@@ -16,6 +16,8 @@ namespace GY02.Controllers
         /// 
         /// </summary>
         /// <param name="blueprintManager"></param>
+        /// <param name="syncCommandManager"></param>
+        /// <param name="mapper"></param>
         public BlueprintController(BlueprintManager blueprintManager, SyncCommandManager syncCommandManager, IMapper mapper)
         {
             _BlueprintManager = blueprintManager;

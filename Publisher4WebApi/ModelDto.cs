@@ -798,6 +798,17 @@ namespace GY02.Publisher
     #region 世界控制器功能相关
 
     /// <summary>
+    /// 获取服务器时间接口返回值封装类。
+    /// </summary>
+    public class GetServerDateTimeUtcReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 服务器时间。
+        /// </summary>
+        public DateTime DateTimeUtc { get; set; }
+    }
+
+    /// <summary>
     /// 
     /// </summary>
     public class GetTemplatesParamsDto

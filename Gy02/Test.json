@@ -1,24 +1,37 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
-    },
-    "GroupNumber": 0,
-    "MaxCount": 1,
-    "name_txt": 10963,
-    "comment_txt": 10928,
-    "JiaoBiao": [ "shopcorner zhekou", 10001 ],
-    "Ins": [],
-    "Outs": [
+  "Fuhua": {
+    "Parent1Conditional": [
       {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-        "Count": 5
+        "ParentTId": null,
+        "Genus": [ "zuoqi_tiger" ],
+        "TId": null,
+        "MinCount": 1,
+        "GeneralConditional": []
+      }
+    ],
+    "Parent2Conditional": [
+      {
+        "ParentTId": null,
+        "Genus": [ "zuoqi_giraffe" ],
+        "TId": null,
+        "MinCount": 1,
+        "GeneralConditional": []
+      }
+    ],
+    "DiceTId1": "b496948d-eb6d-4196-a742-c6f0ac9178b5",
+    "DiceTId2": "1857e628-e923-4725-beaa-f85178d9dfb3",
+    "In": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
+            "MinCount": 1
+          }
+        ],
+        "Count": 1,
+        "Genus": null
       }
     ]
   }

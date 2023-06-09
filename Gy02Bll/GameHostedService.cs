@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
@@ -17,6 +18,7 @@ using OW.DDD;
 using OW.Game;
 using OW.Game.Conditional;
 using OW.Game.Entity;
+using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
@@ -162,13 +164,31 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test()
         {
+            UdpClient udp = new UdpClient(0);
 
+            Task.Run(() =>
+            {
+                IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse("10.74.58.69"), 20888);
+                IPEndPoint iPEndPoint1 = new IPEndPoint(IPAddress.Parse("10.74.58.69"), 20888);
+                try
+                {
+                    var b = Equals(iPEndPoint,iPEndPoint1);
+                    var ss = udp.Receive(ref iPEndPoint);
+                }
+                catch (SocketException)
+                {
+                }
+            });
             var sw = Stopwatch.StartNew();
             dynamic dyn = new GameThingPreconditionItem();
             try
             {
+                var clock = _Services.GetServices<ISystemClock>();
+                Thread.Sleep(100);
+                udp.Dispose();
                 for (int i = 0; i < 1_000_000; i++)
                 {
+
                     //var dw = DisposeHelper.Create(c => { }, 1);
                 }
             }

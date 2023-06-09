@@ -604,6 +604,16 @@
             Udp连接的地址。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetServerDateTimeUtcReturnDto">
+            <summary>
+            获取服务器时间接口返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetServerDateTimeUtcReturnDto.DateTimeUtc">
+            <summary>
+            服务器时间。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetTemplatesParamsDto">
             <summary>
             
@@ -1276,14 +1286,19 @@
             侦听任务。
             </summary>
         </member>
-        <member name="F:GY02.Publisher.GyUdpClient._RemotePoint">
+        <member name="P:GY02.Publisher.GyUdpClient.CancellationTokenSource">
+            <summary>
+            请求停止的终止标志。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GyUdpClient.RemoteEndPoint">
             <summary>
             远程服务器的地址。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.GyUdpClient.CancellationTokenSource">
+        <member name="P:GY02.Publisher.GyUdpClient.Token">
             <summary>
-            请求停止的终止标志。
+            最后使用的令牌。
             </summary>
         </member>
         <member name="M:GY02.Publisher.GyUdpClient.Start">
@@ -1295,6 +1310,12 @@
             <summary>
             开始侦听。
             </summary>
+        </member>
+        <member name="M:GY02.Publisher.GyUdpClient.Nop(System.Guid)">
+            <summary>
+            通知服务器客户端在线。
+            </summary>
+            <param name="token"></param>
         </member>
         <member name="E:GY02.Publisher.GyUdpClient.DataRecived">
             <summary>
