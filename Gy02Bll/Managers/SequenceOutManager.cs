@@ -28,19 +28,40 @@ namespace GY02.Managers
     /// </summary>
     public class SequenceOutManager : GameManagerBase<SequenceOutManagerOptions, SequenceOutManager>
     {
-        public SequenceOutManager(IOptions<SequenceOutManagerOptions> options, ILogger<SequenceOutManager> logger, GameEntityManager entityManager, BlueprintManager blueprintManager) : base(options, logger)
+        public SequenceOutManager(IOptions<SequenceOutManagerOptions> options, ILogger<SequenceOutManager> logger, GameEntityManager entityManager, BlueprintManager blueprintManager, TemplateManager templateManager) : base(options, logger)
         {
             _EntityManager = entityManager;
             _BlueprintManager = blueprintManager;
+            _TemplateManager = templateManager;
         }
 
+        TemplateManager _TemplateManager;
         GameEntityManager _EntityManager;
 
         BlueprintManager _BlueprintManager;
 
         #region 获取信息相关
 
-        public SequenceOut GetMultOutByTemplate(TemplateStringFullView template)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="tid"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public bool GetTemplateById(Guid tid, out TemplateStringFullView result)
+        {
+            result = _TemplateManager.GetFullViewFromId(tid);
+            if (result is null) return false;
+            if (GetSequenceOutByTemplate(result) is null) return false;
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="template"></param>
+        /// <returns>true成功获取，false 指定模板不包含序列输出模板。</returns>
+        public SequenceOut GetSequenceOutByTemplate(TemplateStringFullView template)
         {
             var result = template.SequenceOut;
             if (result is null)
@@ -59,10 +80,37 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="gameChar"></param>
         /// <param name="summaries"></param>
-        /// <param name="result"></param>
-        public void GetOuts(GameChar gameChar, IEnumerable<GameEntitySummary> summaries, List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> result)
+        /// <param name="result">返回结果集合，(输入实体,实体对应的输出)，输出是集合，但当前只有一个实体。
+        /// 如果不是需要映射的实体，则原样返回。任何一个不存在的模板都将导致立即返回false,此时<paramref name="result"/>是空集合。</param>
+        /// <param name="changed">是否有变化，若有变化为true,否则为false。</param>
+        /// <returns>true成功获取了转换，否则出错。</returns>
+        public bool GetOuts(GameChar gameChar, IEnumerable<GameEntitySummary> summaries, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> result, out bool changed)
         {
-            
+            changed = false;
+            foreach (var summary in summaries)
+            {
+                var tt = _TemplateManager.GetFullViewFromId(summary.TId);
+                if (tt is null) goto lbErr;
+                if (GetSequenceOutByTemplate(tt) is null)   //若无需转换
+                {
+                    result.Add((summary, new GameEntitySummary[] { summary }));
+                    continue;
+                }
+                else
+                {
+                    if (!GetOut(gameChar, tt, out var entity)) goto lbErr;
+
+                    entity.Count = summary.Count;
+                    entity.ParentTId = summary.ParentTId;
+                    entity.Id = summary.Id;
+                    result.Add((summary, new GameEntitySummary[] { entity }));
+                    changed = true;
+                }
+            }
+            return true;
+        lbErr:
+            result.Clear();
+            return false;
         }
 
         /// <summary>
@@ -87,7 +135,7 @@ namespace GY02.Managers
         /// <returns>true成功获取到了实体摘要，false失败，此时调用<see cref="OwHelper.GetLastError(out string)"/>可获取详细信息。</returns>
         public bool GetOut(IEnumerable<GameEntity> entities, TemplateStringFullView tt, out GameEntitySummary result)
         {
-            var mo = GetMultOutByTemplate(tt);
+            var mo = GetSequenceOutByTemplate(tt);
             if (mo is null) goto lbErr;
 
 

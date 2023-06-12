@@ -110,25 +110,25 @@
       <Field Name="_EntityManager" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="OW.Game.Managers.GameManagerBase&lt;TOptions, TService&gt;" Collapsed="true">
-    <Position X="7" Y="1.75" Width="1.5" />
+  <Class Name="OW.Game.Managers.GameManagerBase&lt;TOptions, TService&gt;">
+    <Position X="7" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Managers\GameManagerBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GY02.Managers.SequenceOutManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="16" Y="2.75" Width="1.5" />
+  <Class Name="GY02.Managers.SequenceOutManagerOptions" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="2.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Managers\SequenceOutManager.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" Collapsed="true" />
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="GY02.Managers.SequenceOutManager">
     <Position X="3.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
+      <HashCode>ABAAABAAAAAAAAAAAAAgAAAAAAAAAAAAAABAAIAAAgA=</HashCode>
       <FileName>Managers\SequenceOutManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
