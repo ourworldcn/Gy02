@@ -2645,14 +2645,14 @@
     {
       "Id": "29028c4c-cde2-4791-b97e-0ff77b63dccb",
       "DisplayName": "金币288钻石购买",
-      "Gid": 180201013,
+      "Gid": 180201014,
       "PropertiesString": "{\"Genus\":[\"gs_jibigouma\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":288,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":288,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":88000}]},\"name_txt\":10968,\"comment_txt\":10962,\"JiaoBiao\":[]}"
     },
     {
       "Id": "396e3857-2f0a-497a-9642-5d77e8873127",
       "DisplayName": "商品分组信息",
       "Gid": 920101001,
-      "PropertiesString": "{\"groupSettings\":[{\"conditions\":[{\"gid\":180201010,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201011,\"order\":2,\"precond\":\"BuyedCount\"}]},{\"conditions\":[{\"gid\":180201007,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201008,\"order\":2,\"precond\":\"BuyedCount\"}]}]}"
+      "PropertiesString": "{\"groupSettings\":[{\"conditions\":[{\"gid\":180201008,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201009,\"order\":2,\"precond\":\"BuyedCount\"}]},{\"conditions\":[{\"gid\":180201011,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201012,\"order\":2,\"precond\":\"BuyedCount\"}]},{\"conditions\":[{\"gid\":180201001,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201007,\"order\":2,\"precond\":\"BuyedCount\"}]}]}"
     }
   ]
 }
