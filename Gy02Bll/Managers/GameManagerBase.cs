@@ -19,6 +19,14 @@ namespace OW.Game.Managers
     public class EntitySummaryConverterContext
     {
         /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public EntitySummaryConverterContext()
+        {
+            
+        }
+
+        /// <summary>
         /// 设置角色。
         /// </summary>
         public GameChar GameChar { get; set; }
