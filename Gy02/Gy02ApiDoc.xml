@@ -140,19 +140,19 @@
             封装模板数据配置文件的类。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.AdminController.VerifyTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Hosting.IHostEnvironment)">
+        <member name="M:GY02.Controllers.AdminController.VerifyTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String)">
             <summary>
             校验游戏模板数据。
             </summary>
             <param name="file"></param>
             <param name="token">令牌。</param>
-            <param name="applicationLifetime"></param>
-            <param name="environment"></param>
+            
+            
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.AdminController.UploadTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Hosting.IHostEnvironment)">
+        <member name="M:GY02.Controllers.AdminController.UploadTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
             <summary>
-            上传模板数据。随后应重启数据。
+            上传模板数据。如果成功随后应重启数据。
             </summary>
             <param name="file"></param>
             <param name="token"></param>
