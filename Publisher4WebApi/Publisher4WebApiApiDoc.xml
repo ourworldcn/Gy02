@@ -659,7 +659,7 @@
             
             </summary>
         </member>
-        <member name="P:GY02.Publisher.StopServiceParamsDto.Uid">
+        <member name="P:GY02.Publisher.StopServiceParamsDto.UId">
             <summary>
             用户名。
             </summary>

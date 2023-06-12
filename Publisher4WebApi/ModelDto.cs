@@ -861,7 +861,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 用户名。
         /// </summary>
-        public string Uid { get; set; }
+        public string UId { get; set; }
 
         /// <summary>
         /// 密码。

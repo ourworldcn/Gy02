@@ -1,6 +1,8 @@
 ﻿using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using OW.Game.Managers;
+using OW.GameDb;
 
 namespace GY02.Controllers
 {
@@ -63,20 +65,30 @@ namespace GY02.Controllers
 
 
         /// <summary>
-        /// 关闭服务并写入所有缓存数据。
+        /// 关闭服务并写入所有缓存数据并重新启动服务器。
         /// </summary>
         /// <param name="model"></param>
         /// <param name="applicationLifetime"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<StopServiceReturnDto> StopService(StopServiceParamsDto model, [FromServices] IHostApplicationLifetime applicationLifetime)
+        public ActionResult<StopServiceReturnDto> RebootService(StopServiceParamsDto model, [FromServices] IHostApplicationLifetime applicationLifetime)
         {
             var result = new StopServiceReturnDto();
-            if (model.Uid != "gy001" || model.Pwd != "210115")
+            if (model.UId != "gy001" || model.Pwd != "210115")
             {
                 result.ErrorCode = ErrorCodes.Unauthorized;
                 result.DebugMessage = "用户名或密码错误。";
                 result.HasError = true;
+            }
+            var dbLogging = HttpContext.RequestServices.GetService<GameSqlLoggingManager>();
+            if (dbLogging is not null)
+            {
+                var actionRecord = new GameActionRecord
+                {
+                    ActionId = "Reboot",
+                    JsonObjectString = $"{{\"UId\":\"{model.UId}\"}}",
+                };
+                dbLogging.AddLogging(actionRecord);
             }
             Global.Program.ReqireReboot = true;
             applicationLifetime.StopApplication();

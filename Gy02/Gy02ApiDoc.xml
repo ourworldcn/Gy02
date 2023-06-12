@@ -140,12 +140,22 @@
             封装模板数据配置文件的类。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.AdminController.ImportTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Hosting.IHostEnvironment)">
+        <member name="M:GY02.Controllers.AdminController.VerifyTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String)">
             <summary>
-            上传游戏模板数据。
+            校验游戏模板数据。
             </summary>
             <param name="file"></param>
             <param name="token">令牌。</param>
+            
+            
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Controllers.AdminController.UploadTemplates(Microsoft.AspNetCore.Http.IFormFile,System.String,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            上传模板数据。如果成功随后应重启数据。
+            </summary>
+            <param name="file"></param>
+            <param name="token"></param>
             <param name="applicationLifetime"></param>
             <param name="environment"></param>
             <returns></returns>
@@ -390,9 +400,9 @@
             <param name="manager"></param>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.VWorldController.StopService(GY02.Publisher.StopServiceParamsDto,Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
+        <member name="M:GY02.Controllers.VWorldController.RebootService(GY02.Publisher.StopServiceParamsDto,Microsoft.Extensions.Hosting.IHostApplicationLifetime)">
             <summary>
-            关闭服务并写入所有缓存数据。
+            关闭服务并写入所有缓存数据并重新启动服务器。
             </summary>
             <param name="model"></param>
             <param name="applicationLifetime"></param>

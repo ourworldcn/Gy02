@@ -2542,9 +2542,9 @@
     },
     {
       "Id": "85725ce3-09df-40d4-b781-eb288bc38f4e",
-      "DisplayName": "免费金币领取",
+      "DisplayName": "免费钻石领取",
       "Gid": 180201001,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1000}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":200}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
     },
     {
       "Id": "b507bd07-ece2-4a69-88c1-e72265a9e4f1",
@@ -2597,13 +2597,13 @@
     {
       "Id": "1681d08e-966a-4cd8-ba3f-4b5b49e9d576",
       "DisplayName": "一般卡池免费购买",
-      "Gid": 180201007,
+      "Gid": 180201008,
       "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
     },
     {
       "Id": "c25afdc9-e1cc-41b5-b790-80b80782cda1",
       "DisplayName": "一般卡池付费购买",
-      "Gid": 180201008,
+      "Gid": 180201009,
       "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
     },
     {
@@ -2621,38 +2621,38 @@
     {
       "Id": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
       "DisplayName": "付费卡池购买",
-      "Gid": 180201009,
+      "Gid": 180201010,
       "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":200,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":200,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"af719619-3934-45bf-aaec-669c6a8afdc6\",\"Count\":1}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\": []}"
     },
     {
       "Id": "90042124-a8e0-4534-b4a0-f54fb09d789b",
       "DisplayName": "金币免费购买",
-      "Gid": 180201010,
+      "Gid": 180201011,
       "PropertiesString": "{\"Genus\":[\"gs_jibigouma\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":8000}]},\"name_txt\":10966,\"comment_txt\":10960,\"JiaoBiao\":[]}"
     },
     {
       "Id": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
       "DisplayName": "金币30钻石购买",
-      "Gid": 180201011,
+      "Gid": 180201012,
       "PropertiesString": "{\"Genus\":[\"gs_jibigouma\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":30,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":8000}]},\"name_txt\":10966,\"comment_txt\":10960,\"JiaoBiao\":[]}"
     },
     {
       "Id": "3f1d2412-c5b4-4b3e-91ae-a91caefb8403",
       "DisplayName": "金币90钻石购买",
-      "Gid": 180201012,
+      "Gid": 180201013,
       "PropertiesString": "{\"Genus\":[\"gs_jibigouma\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":90,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":90,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":22000}]},\"name_txt\":10967,\"comment_txt\":10961,\"JiaoBiao\":[]}"
     },
     {
       "Id": "29028c4c-cde2-4791-b97e-0ff77b63dccb",
       "DisplayName": "金币288钻石购买",
-      "Gid": 180201013,
+      "Gid": 180201014,
       "PropertiesString": "{\"Genus\":[\"gs_jibigouma\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":288,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":288,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":88000}]},\"name_txt\":10968,\"comment_txt\":10962,\"JiaoBiao\":[]}"
     },
     {
       "Id": "396e3857-2f0a-497a-9642-5d77e8873127",
       "DisplayName": "商品分组信息",
       "Gid": 920101001,
-      "PropertiesString": "{\"groupSettings\":[{\"conditions\":[{\"gid\":180201010,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201011,\"order\":2,\"precond\":\"BuyedCount\"}]},{\"conditions\":[{\"gid\":180201007,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201008,\"order\":2,\"precond\":\"BuyedCount\"}]}]}"
+      "PropertiesString": "{\"groupSettings\":[{\"conditions\":[{\"gid\":180201008,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201009,\"order\":2,\"precond\":\"BuyedCount\"}]},{\"conditions\":[{\"gid\":180201011,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201012,\"order\":2,\"precond\":\"BuyedCount\"}]},{\"conditions\":[{\"gid\":180201001,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201007,\"order\":2,\"precond\":\"BuyedCount\"}]}]}"
     }
   ]
 }
