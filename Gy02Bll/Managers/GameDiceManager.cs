@@ -323,13 +323,35 @@ namespace GY02.Managers
         /// <summary>
         /// 在输出项中如果有指向卡池的项，则会自动使用卡池roll并返回相应项。
         /// </summary>
-        /// <param name="outItems"></param>
+        /// <param name="input">要转换的实体集合</param>
+        /// <param name="outs"></param>
+        /// <param name="context">上下文。</param>
+        /// <param name="changed">是否发生了至少一个转换。</param>
         /// <returns>(源,对应的转换项)</returns>
-        public IEnumerable<(GameDiceItem, IEnumerable<GameEntitySummary>)> Transformed(IEnumerable<GameDiceItem> outItems)
+        public bool Transformed(IEnumerable<GameEntitySummary> input, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> outs, TransformedContext context, out bool changed)
         {
             throw new NotImplementedException();
         }
 
         #endregion 计算卡池相关
+    }
+
+    public class TransformedContext
+    {
+        /// <summary>
+        /// 设置角色。
+        /// </summary>
+        public GameChar GameChar { get; set; }
+
+        private Dictionary<string, object> _ExtraParams;
+        /// <summary>
+        /// 设置额外参数，参数由各个转换器自己解释。
+        /// </summary>
+        public Dictionary<string, object> ExtraParams { get => _ExtraParams ??= new Dictionary<string, object>(); set => _ExtraParams = value; }
+    }
+
+    public interface IEntitySummaryConverter
+    {
+        public bool Convert(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, TransformedContext context, out bool changed);
     }
 }
