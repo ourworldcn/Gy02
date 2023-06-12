@@ -2577,6 +2577,12 @@
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0c5a7eaa-34e7-4d13-8462-89532c0354e9\",\"Count\":1}]},\"name_txt\":11824,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
     },
     {
+      "Id": "65e3578d-7ebb-44b2-9fa7-7c76cc186764",
+      "DisplayName": "武器购买项目",
+      "Gid": 180201007,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":6,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":200,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":200,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"385763e0-cd0b-47a8-9dc0-e4a41819dd47\",\"Count\":1}]},\"name_txt\":11824,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+    },
+    {
       "Id": "7657244e-ef96-4f4d-a07f-157b22198fd7",
       "DisplayName": "一般卡池",
       "Gid": 170101021,

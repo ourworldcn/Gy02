@@ -8,23 +8,13 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="GY02.Managers.GameDiceManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="GY02.Managers.GameCombatManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="17.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>Managers\GameDiceManager.cs</FileName>
+      <FileName>Managers\GameCombatManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
-  </Class>
-  <Class Name="GY02.Managers.GameDiceManager">
-    <Position X="0.5" Y="3.25" Width="2.5" />
-    <TypeIdentifier>
-      <HashCode>AEACAAAAEAAAAAAAICAAIAAABCgACAAABAAAAICAAAA=</HashCode>
-      <FileName>Managers\GameDiceManager.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_TemplateManager" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="GY02.Managers.GameEntityManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="19.5" Y="1.75" Width="1.5" />
@@ -117,18 +107,28 @@
       <FileName>Managers\GameManagerBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GY02.Managers.SequenceOutManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="GY02.Managers.GameShoppingManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="16" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>Managers\SequenceOutManager.cs</FileName>
+      <FileName>Managers\GameShoppingManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="GY02.Managers.GameDiceManager">
+    <Position X="0.5" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAEAAAAAAAICAAIAAABCgACAAABAAAAICAAAA=</HashCode>
+      <FileName>Managers\GameDiceManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_TemplateManager" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="GY02.Managers.SequenceOutManager">
     <Position X="3.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgA=</HashCode>
+      <HashCode>AAAAIAAAAAAAAAAAAAAgAAAAAAAAAAAAAABAAIAAAgA=</HashCode>
       <FileName>Managers\SequenceOutManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
