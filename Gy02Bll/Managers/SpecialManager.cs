@@ -158,7 +158,7 @@ namespace GY02.Managers
         }
         #endregion 孵化相关
 
-        public bool Transformed(GameChar gameChar,IEnumerable<GameEntitySummary> summaries,out bool changed, bool ignoreGuarantees = false, Random random = null)
+        public bool Transformed(GameChar gameChar, IEnumerable<GameEntitySummary> summaries, out bool changed, bool ignoreGuarantees = false, Random random = null)
         {
         lbErr:
             changed = false;
