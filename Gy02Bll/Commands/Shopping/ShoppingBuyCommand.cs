@@ -1,7 +1,9 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using OW.Game;
 using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -29,13 +31,14 @@ namespace GY02.Commands
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
     {
 
-        public ShoppingBuyHandler(GameAccountStore accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, BlueprintManager blueprintManager, GameDiceManager diceManager)
+        public ShoppingBuyHandler(GameAccountStore accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, BlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager)
         {
             AccountStore = accountStore;
             _ShoppingManager = shoppingManager;
             _EntityManager = entityManager;
             _BlueprintManager = blueprintManager;
             _DiceManager = diceManager;
+            _SpecialManager = specialManager;
         }
 
         public GameAccountStore AccountStore { get; }
@@ -44,6 +47,7 @@ namespace GY02.Commands
         BlueprintManager _BlueprintManager;
         GameShoppingManager _ShoppingManager;
         GameDiceManager _DiceManager;
+        SpecialManager _SpecialManager;
 
         public override void Handle(ShoppingBuyCommand command)
         {
@@ -65,8 +69,18 @@ namespace GY02.Commands
 
             if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
             {
-                var coll = tt.ShoppingItem.Outs.SelectMany(c => _DiceManager.Transformed(c, command.GameChar)).ToArray();
-                if (!_EntityManager.CreateAndMove(coll.Select(c => (c.TId, c.Count, c.ParentTId)), command.GameChar, command.Changes)) goto lbErr;
+                var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+                var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
+                {
+                    Change = null,
+                    GameChar = command.GameChar,
+                    IgnoreGuarantees = false,
+                    Random = new Random(),
+                });
+                if (!b) goto lbErr;
+
+                //var coll = tt.ShoppingItem.Outs.SelectMany(c => _DiceManager.Transformed(c, command.GameChar)).ToArray();
+                if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2).Select(c => (c.TId, c.Count, c.ParentTId)), command.GameChar, command.Changes)) goto lbErr;
             }
             command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
             {

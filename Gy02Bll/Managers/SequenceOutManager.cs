@@ -158,10 +158,17 @@ namespace GY02.Managers
             return false;
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="source"><inheritdoc/></param>
+        /// <param name="dest"><inheritdoc/></param>
+        /// <param name="context"><inheritdoc/></param>
+        /// <param name="changed"><inheritdoc/></param>
+        /// <returns><inheritdoc/></returns>
         public bool ConvertEntitySummary(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context, out bool changed)
         {
-            //TODO NotImplemented
-            throw new NotImplementedException();
+            return GetOuts(context.GameChar, source, dest, out changed);
         }
     }
 

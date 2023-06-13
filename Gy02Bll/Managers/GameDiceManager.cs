@@ -32,7 +32,7 @@ namespace GY02.Managers
     /// 卡池相关功能。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class GameDiceManager : GameManagerBase<GameDiceManagerOptions, GameDiceManager>,IEntitySummaryConverter
+    public class GameDiceManager : GameManagerBase<GameDiceManagerOptions, GameDiceManager>, IEntitySummaryConverter
     {
         public GameDiceManager(IOptions<GameDiceManagerOptions> options, ILogger<GameDiceManager> logger, TemplateManager templateManager) : base(options, logger)
         {
@@ -320,26 +320,38 @@ namespace GY02.Managers
             return result;
         }
 
+        #endregion 计算卡池相关
+
+        #region IEntitySummaryConverter接口及相关
+
         /// <summary>
-        /// 在输出项中如果有指向卡池的项，则会自动使用卡池roll并返回相应项。
+        /// <inheritdoc/>
         /// </summary>
-        /// <param name="input">要转换的实体集合</param>
-        /// <param name="outs"></param>
+        /// <param name="source">要转换的实体集合</param>
+        /// <param name="dest"></param>
         /// <param name="context">上下文。</param>
         /// <param name="changed">是否发生了至少一个转换。</param>
-        /// <returns>(源,对应的转换项)</returns>
-        public bool Transformed(IEnumerable<GameEntitySummary> input, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> outs, EntitySummaryConverterContext context, out bool changed)
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <returns><inheritdoc/></returns>
         public bool ConvertEntitySummary(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context, out bool changed)
         {
-            //TODO NotImplemented
-            throw new NotImplementedException();
+            changed = false;
+            List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)>();
+            foreach (var summary in source)
+            {
+                var tmp = Transformed(summary, context.GameChar, context.IgnoreGuarantees, context.Random);
+                if (tmp is null) goto lbErr;
+                if (tmp.Count != 1 || tmp[0] != summary) changed = true;
+                list.Add((summary, tmp));
+            }
+            list.ForEach(c => dest.Add(c));
+            return true;
+        lbErr:
+            changed = false;
+            return false;
         }
 
-        #endregion 计算卡池相关
+        #endregion IEntitySummaryConverter接口及相关
+
     }
 
 }

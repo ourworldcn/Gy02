@@ -42,6 +42,15 @@ namespace OW.Game.Managers
             set { ExtraParams[nameof(Change)] = value; }
         }
 
+        /// <summary>
+        /// 是否忽略保底策略。
+        /// </summary>
+        public bool IgnoreGuarantees { get => ExtraParams.GetBooleanOrDefaut(nameof(IgnoreGuarantees)) is bool b ? b : false; set => ExtraParams[nameof(IgnoreGuarantees)] = value; }
+
+        /// <summary>
+        /// 随机性输出时使用的随机数生成器。
+        /// </summary>
+        public Random Random { get => ExtraParams.GetValueOrDefault(nameof(Random)) as Random; set => ExtraParams[nameof(Random)] = value; }
 
         private Dictionary<string, object> _ExtraParams;
         /// <summary>
@@ -52,6 +61,14 @@ namespace OW.Game.Managers
 
     public interface IEntitySummaryConverter
     {
+        /// <summary>
+        /// 变换实体描述对象。
+        /// </summary>
+        /// <param name="source">源实体秒对象。</param>
+        /// <param name="dest">转换后的结果。</param>
+        /// <param name="context">上下文对象。</param>
+        /// <param name="changed">是否实际发生了转换。</param>
+        /// <returns></returns>
         public bool ConvertEntitySummary(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context, out bool changed);
     }
 
