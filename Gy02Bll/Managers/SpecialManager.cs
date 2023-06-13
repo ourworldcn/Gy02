@@ -1,17 +1,10 @@
-﻿using GY02.Managers;
-using GY02.Publisher;
+﻿using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
 using OW.Game.Managers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Managers
 {
@@ -26,14 +19,16 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class SpecialManager : GameManagerBase<SpecialManagerOptions, SpecialManager>
     {
-        public SpecialManager(IOptions<SpecialManagerOptions> options, ILogger<SpecialManager> logger, TemplateManager templateManager, GameDiceManager diceManager) : base(options, logger)
+        public SpecialManager(IOptions<SpecialManagerOptions> options, ILogger<SpecialManager> logger, TemplateManager templateManager, GameDiceManager diceManager, SequenceOutManager sequenceOutManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
             _DiceManager = diceManager;
+            _SequenceOutManager = sequenceOutManager;
         }
 
         TemplateManager _TemplateManager;
         GameDiceManager _DiceManager;
+        SequenceOutManager _SequenceOutManager;
 
         #region 孵化相关
 
@@ -158,8 +153,32 @@ namespace GY02.Managers
         }
         #endregion 孵化相关
 
-        public bool Transformed(GameChar gameChar, IEnumerable<GameEntitySummary> summaries, out bool changed, bool ignoreGuarantees = false, Random random = null)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="dest"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public bool Transformed(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context)
         {
+            IEntitySummaryConverter[] svcs = new IEntitySummaryConverter[] { _DiceManager, _SequenceOutManager };
+
+            IEnumerable<GameEntitySummary> tmpSource = source;
+            List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> tmpDest = null;
+            bool changed = true;
+            while (changed)
+            {
+                foreach (var svc in svcs)
+                {
+                    tmpDest = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)>();
+                    if (!svc.ConvertEntitySummary(tmpSource, tmpDest, context, out changed)) goto lbErr;  //若失败
+                    if (!changed) break;    //若结束转换
+                    tmpSource = tmpDest.SelectMany(c => c.Item2);
+                }
+            }
+            tmpDest?.ForEach(c => dest.Add(c));
+            return true;
         lbErr:
             changed = false;
             return false;

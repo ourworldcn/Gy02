@@ -164,33 +164,11 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test()
         {
-            UdpClient udp = new UdpClient(0);
-
-            Task.Run(() =>
-            {
-                IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse("10.74.58.69"), 20888);
-                IPEndPoint iPEndPoint1 = new IPEndPoint(IPAddress.Parse("10.74.58.69"), 20888);
-                try
-                {
-                    var b = Equals(iPEndPoint,iPEndPoint1);
-                    var ss = udp.Receive(ref iPEndPoint);
-                }
-                catch (SocketException)
-                {
-                }
-            });
             var sw = Stopwatch.StartNew();
-            dynamic dyn = new GameThingPreconditionItem();
             try
             {
-                var clock = _Services.GetServices<ISystemClock>();
-                Thread.Sleep(100);
-                udp.Dispose();
-                for (int i = 0; i < 1_000_000; i++)
-                {
-
-                    //var dw = DisposeHelper.Create(c => { }, 1);
-                }
+                var svcs = _Services.GetServices<IEntitySummaryConverter>();
+                var svcs2 = _Services.GetServices<SequenceOutManager>();
             }
             finally
             {

@@ -6,12 +6,14 @@ using GY02.Publisher;
 using GY02.TemplateDb;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
+using OW.SyncCommand;
 using System.IO.Compression;
 
 internal class Program
@@ -44,12 +46,12 @@ internal class Program
         services.AddResponseCompression(c =>
         {
             c.EnableForHttps = true;
-            c.Providers.Add<GzipCompressionProvider>(); //ICompressionProvider
             c.Providers.Add<BrotliCompressionProvider>();  //ICompressionProvider
+            c.Providers.Add<GzipCompressionProvider>(); //ICompressionProvider
 
         })
-            .Configure<GzipCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; })
-            .Configure<BrotliCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; });
+            .Configure<BrotliCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; })
+            .Configure<GzipCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; });
 
         #endregion ÅäÖÃÑ¹Ëõ
 
@@ -108,7 +110,6 @@ internal class Program
 
         services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(Gy02BllAutoMapperProfile).Assembly);
         services.AddPublisherT78();
-
         var app = builder.Build();
 
         #endregion ×·¼Ó·þÎñµ½ÈÝÆ÷

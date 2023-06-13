@@ -32,7 +32,7 @@ namespace GY02.Managers
     /// 卡池相关功能。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class GameDiceManager : GameManagerBase<GameDiceManagerOptions, GameDiceManager>
+    public class GameDiceManager : GameManagerBase<GameDiceManagerOptions, GameDiceManager>,IEntitySummaryConverter
     {
         public GameDiceManager(IOptions<GameDiceManagerOptions> options, ILogger<GameDiceManager> logger, TemplateManager templateManager) : base(options, logger)
         {
@@ -330,6 +330,12 @@ namespace GY02.Managers
         /// <returns>(源,对应的转换项)</returns>
         public bool Transformed(IEnumerable<GameEntitySummary> input, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> outs, EntitySummaryConverterContext context, out bool changed)
         {
+            throw new NotImplementedException();
+        }
+
+        public bool ConvertEntitySummary(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context, out bool changed)
+        {
+            //TODO NotImplemented
             throw new NotImplementedException();
         }
 

@@ -40,7 +40,7 @@ namespace OW.Game.Managers
 
     public interface IEntitySummaryConverter
     {
-        public bool Convert(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context, out bool changed);
+        public bool ConvertEntitySummary(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context, out bool changed);
     }
 
     public abstract class GameManagerBase<TOptions, TService> : OwServiceBase<TOptions, TService> where TOptions : class

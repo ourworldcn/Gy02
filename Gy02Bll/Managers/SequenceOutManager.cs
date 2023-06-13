@@ -1,5 +1,6 @@
 ﻿using GY02.Publisher;
 using GY02.Templates;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -26,7 +27,8 @@ namespace GY02.Managers
     /// <summary>
     /// 动态输出的管理器。
     /// </summary>
-    public class SequenceOutManager : GameManagerBase<SequenceOutManagerOptions, SequenceOutManager>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
+    public class SequenceOutManager : GameManagerBase<SequenceOutManagerOptions, SequenceOutManager>, IEntitySummaryConverter
     {
         public SequenceOutManager(IOptions<SequenceOutManagerOptions> options, ILogger<SequenceOutManager> logger, GameEntityManager entityManager, BlueprintManager blueprintManager, TemplateManager templateManager) : base(options, logger)
         {
@@ -154,6 +156,12 @@ namespace GY02.Managers
         lbErr:
             result = null;
             return false;
+        }
+
+        public bool ConvertEntitySummary(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context, out bool changed)
+        {
+            //TODO NotImplemented
+            throw new NotImplementedException();
         }
     }
 
