@@ -469,6 +469,7 @@ namespace GY02.Managers
                     if (tmp is null) return null;
                     var entity = GetEntity(tmp);
                     if (entity is null) return null;
+                    var oriCount = entity.Count;
                     entity.Count = item.Item2;
                     result.Add(entity);
                 }
@@ -487,6 +488,7 @@ namespace GY02.Managers
                     {
                         var tmpEntity = GetEntity(thing);
                         if (tmpEntity is null) return null;
+                        var oriCount = tmpEntity.Count;
                         tmpEntity.Count = 1;
                         result.Add(tmpEntity);
                     }
