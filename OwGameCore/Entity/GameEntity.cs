@@ -72,7 +72,7 @@ namespace OW.Game.Entity
                 }
                 else
                 {
-                    var dt = DateTime.UtcNow;
+                    var dt = fcp.LastDateTime;  //保持最后计算时间点不变，如果要更新最后时间点，则应进行读取
                     fcp.SetLastValue(value, ref dt);
                     CountOfLastModifyUtc = DateTime.UtcNow;
                 }
@@ -98,6 +98,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
         /// </summary>
+        [JsonPropertyOrder(12)]
         public Dictionary<string, FastChangingProperty> Fcps { get; set; } = new Dictionary<string, FastChangingProperty>();
 
         public override string ToString()
