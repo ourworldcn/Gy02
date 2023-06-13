@@ -153,6 +153,11 @@ namespace GY02.Controllers
                 var coll = tmp.Select(c => templateManager.GetEntityBase(c, out _)).OfType<GameEntity>();
                 if (coll is null || coll.Count() != tmp.Count)
                     continue;
+                coll.ForEach(c =>
+                {
+                    var s = c.Count;
+                    c.Count = model.Counts[i];
+                });
                 list.AddRange(coll);
             }
             var command = new MoveEntitiesCommand { Items = list, Container = null, GameChar = gc };
