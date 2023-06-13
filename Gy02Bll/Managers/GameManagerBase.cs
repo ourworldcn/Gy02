@@ -1,7 +1,9 @@
 ﻿using GY02.Templates;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
+using OW.Game.PropertyChange;
 using OW.Server;
 using System;
 using System.Collections.Generic;
@@ -23,13 +25,23 @@ namespace OW.Game.Managers
         /// </summary>
         public EntitySummaryConverterContext()
         {
-            
+
         }
 
         /// <summary>
         /// 设置角色。
         /// </summary>
         public GameChar GameChar { get; set; }
+
+        /// <summary>
+        /// 记录变化数据的集合。
+        /// </summary>
+        public ICollection<GamePropertyChangeItem<object>> Change
+        {
+            get { return ExtraParams.GetValueOrDefault(nameof(Change)) as ICollection<GamePropertyChangeItem<object>>; }
+            set { ExtraParams[nameof(Change)] = value; }
+        }
+
 
         private Dictionary<string, object> _ExtraParams;
         /// <summary>
