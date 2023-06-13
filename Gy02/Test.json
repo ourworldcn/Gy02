@@ -1,38 +1,18 @@
 {
-  "Fuhua": {
-    "Parent1Conditional": [
-      {
-        "ParentTId": null,
-        "Genus": [ "zuoqi_tiger" ],
-        "TId": null,
-        "MinCount": 1,
-        "GeneralConditional": []
-      }
-    ],
-    "Parent2Conditional": [
-      {
-        "ParentTId": null,
-        "Genus": [ "zuoqi_giraffe" ],
-        "TId": null,
-        "MinCount": 1,
-        "GeneralConditional": []
-      }
-    ],
-    "DiceTId1": "b496948d-eb6d-4196-a742-c6f0ac9178b5",
-    "DiceTId2": "1857e628-e923-4725-beaa-f85178d9dfb3",
-    "In": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
-            "MinCount": 1
-          }
-        ],
-        "Count": 1,
-        "Genus": null
-      }
-    ]
-  }
+  "EntranceFees": [
+    {
+      "Conditional": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "Genus": [],
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "MinCount": 5
+        }
+      ],
+      "Count": 5
+    }
+  ],
+  "name_txt": 13001,
+  "comment_txt": 13013,
+  "suggest": [ 200, 2000, 200 ]
 }
