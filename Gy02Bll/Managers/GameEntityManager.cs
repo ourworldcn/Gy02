@@ -469,7 +469,7 @@ namespace GY02.Managers
                     if (tmp is null) return null;
                     var entity = GetEntity(tmp);
                     if (entity is null) return null;
-                    var oriCount = entity.Count;
+                    var oriCount = entity.Count;    //预读fcp
                     entity.Count = item.Item2;
                     result.Add(entity);
                 }
@@ -488,7 +488,7 @@ namespace GY02.Managers
                     {
                         var tmpEntity = GetEntity(thing);
                         if (tmpEntity is null) return null;
-                        var oriCount = tmpEntity.Count;
+                        var oriCount = tmpEntity.Count; //预读fcp
                         tmpEntity.Count = 1;
                         result.Add(tmpEntity);
                     }

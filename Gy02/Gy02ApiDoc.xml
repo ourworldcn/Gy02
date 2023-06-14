@@ -160,6 +160,14 @@
             <param name="environment"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.AdminController.GetCharIdByLoginName(GY02.Publisher.GetCharIdByLoginNameParamsDto,OW.Game.Store.GY02UserContext)">
+            <summary>
+             用一组登录名获取当前角色Id的功能。
+            </summary>
+            <param name="model"></param>
+            <param name="db"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Controllers.BlueprintController">
             <summary>
             蓝图相关操作的控制器。

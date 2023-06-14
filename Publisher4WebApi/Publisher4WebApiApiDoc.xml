@@ -1136,6 +1136,16 @@
             邮件正文。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.SendMailItemDto.Dictionary1">
+            <summary>
+            存储一些特殊属性的字典。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.SendMailItemDto.Dictionary2">
+            <summary>
+            存储一些特殊属性的字典。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.SendMailItemDto.Attachment">
             <summary>
             附件集合。
@@ -1219,6 +1229,31 @@
         <member name="T:GY02.Publisher.SendMailReturnDto">
             <summary>
             发送邮件功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetCharIdByLoginNameParamsDto">
+            <summary>
+            用一组登录名获取当前角色Id的功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetCharIdByLoginNameParamsDto.LoginNames">
+            <summary>
+            登录名集合。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetCharIdByLoginNameReturnDto">
+            <summary>
+            用一组登录名获取当前角色Id的功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetCharIdByLoginNameReturnDto.CharIds">
+            <summary>
+            返回的当前角色的Id的集合，与<see cref="P:GY02.Publisher.GetCharIdByLoginNameReturnDto.LoginNames"/>顺序一致，若有错误的登录名则自动过滤掉。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetCharIdByLoginNameReturnDto.LoginNames">
+            <summary>
+            登录名集合。与<see cref="P:GY02.Publisher.GetCharIdByLoginNameReturnDto.CharIds"/>顺序一致。
             </summary>
         </member>
         <member name="T:GY02.Publisher.DispatcherDemo">

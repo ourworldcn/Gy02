@@ -2,7 +2,6 @@
 using AutoMapper.Configuration.Annotations;
 using GY02.Commands;
 using GY02.Templates;
-using Gy02Bll.Commands.Mail;
 using OW.Game.Entity;
 using OW.Game.Store;
 using System;
@@ -1489,6 +1488,16 @@ namespace GY02.Publisher
         public string Body { get; set; }
 
         /// <summary>
+        /// 存储一些特殊属性的字典。
+        /// </summary>
+        public Dictionary<string, string> Dictionary1 { get; set; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 存储一些特殊属性的字典。
+        /// </summary>
+        public Dictionary<string, string> Dictionary2 { get; set; } = new Dictionary<string, string>();
+
+        /// <summary>
         /// 附件集合。
         /// </summary>
         public List<GameEntitySummaryDto> Attachment { get; set; } = new List<GameEntitySummaryDto> { };
@@ -1600,6 +1609,37 @@ namespace GY02.Publisher
     }
 
     #endregion 邮件相关
+
+    #region 管理员功能相关
+
+    /// <summary>
+    /// 用一组登录名获取当前角色Id的功能的参数封装类。
+    /// </summary>
+    public class GetCharIdByLoginNameParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 登录名集合。
+        /// </summary>
+        public List<string> LoginNames { get; set; } = new List<string>();
+    }
+
+    /// <summary>
+    /// 用一组登录名获取当前角色Id的功能的返回值封装类。
+    /// </summary>
+    public class GetCharIdByLoginNameReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回的当前角色的Id的集合，与<see cref="LoginNames"/>顺序一致，若有错误的登录名则自动过滤掉。
+        /// </summary>
+        public List<Guid> CharIds { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 登录名集合。与<see cref="CharIds"/>顺序一致。
+        /// </summary>
+        public List<string> LoginNames { get; set; } = new List<string>();
+    }
+
+    #endregion 管理员功能相关
 }
 
 

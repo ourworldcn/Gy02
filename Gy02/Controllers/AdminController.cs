@@ -1,12 +1,15 @@
 ﻿using AutoMapper.Configuration.Annotations;
 using GY02;
+using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting.Internal;
 using OW.Game.Manager;
 using OW.Game.Managers;
+using OW.Game.Store;
 using System.IO.Compression;
+using System.Linq;
 using System.Text.Json;
 using System.Web;
 
@@ -86,7 +89,7 @@ namespace GY02.Controllers
                 var dic = TemplateManager.GetTemplateFullviews(list?.GameTemplates);
 
                 stream.Seek(0, SeekOrigin.Begin);
-                
+
                 var path = Path.Combine(environment.ContentRootPath, "GameTemplates.json");
                 using var writer = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Read);
                 stream.CopyTo(writer);
@@ -105,5 +108,27 @@ namespace GY02.Controllers
 
             return Ok("格式正确，并已上传。请重新启动服务器。");
         }
+
+        /// <summary>
+        ///  用一组登录名获取当前角色Id的功能。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="db"></param>
+        /// <returns></returns>
+        [HttpPost,]
+        public ActionResult<GetCharIdByLoginNameReturnDto> GetCharIdByLoginName(GetCharIdByLoginNameParamsDto model, [FromServices] GY02UserContext db)
+        {
+            var coll = from user in db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.UserTId && model.LoginNames.Contains(c.ExtraString))
+                       join gc in db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.CharTId)
+                       on user.Id equals gc.ParentId into gj
+                       from dc in gj.DefaultIfEmpty()
+                       select new { LoginName = user.ExtraString, CharId = dc.Id };
+            var list = coll.ToArray();
+            var result = new GetCharIdByLoginNameReturnDto { };
+            result.LoginNames.AddRange(coll.Select(c => c.LoginName));
+            result.CharIds.AddRange(coll.Select(c => c.CharId));
+            return result;
+        }
     }
+
 }

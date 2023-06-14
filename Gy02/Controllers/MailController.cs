@@ -3,8 +3,6 @@ using GY02;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
-using Gy02Bll.Commands.Mail;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OW.SyncCommand;
 

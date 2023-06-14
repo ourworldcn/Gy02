@@ -1,5 +1,4 @@
-﻿using GY02.Commands;
-using GY02.Managers;
+﻿using GY02.Managers;
 using Microsoft.EntityFrameworkCore;
 using OW.Game;
 using OW.Game.Entity;
@@ -11,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Mail
+namespace GY02.Commands
 {
     /// <summary>
     /// 

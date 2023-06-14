@@ -1,5 +1,4 @@
-﻿using GY02.Commands;
-using GY02.Managers;
+﻿using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
@@ -12,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Gy02Bll.Commands.Mail
+namespace GY02.Commands
 {
     public class SendMailItem
     {
@@ -37,6 +36,16 @@ namespace Gy02Bll.Commands.Mail
         /// 附件集合。
         /// </summary>
         public List<GameEntitySummary> Attachment { get; set; } = new List<GameEntitySummary> { };
+
+        /// <summary>
+        /// 存储一些特殊属性的字典。
+        /// </summary>
+        public Dictionary<string, string> Dictionary1 { get; set; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 存储一些特殊属性的字典。
+        /// </summary>
+        public Dictionary<string, string> Dictionary2 { get; set; } = new Dictionary<string, string>();
 
         #endregion 基本属性
 
@@ -95,6 +104,8 @@ namespace Gy02Bll.Commands.Mail
             var mail = _MailManager.CreateNewMail();
             mail.Subject = command.Mail.Subject;
             mail.Body = command.Mail.Body;
+            OwHelper.Copy(command.Mail.Dictionary1, mail.Dictionary1);
+            OwHelper.Copy(command.Mail.Dictionary2, mail.Dictionary2);
             mail.Attachment.AddRange(command.Mail.Attachment.Select(c => (GameEntitySummary)c.Clone()));
 
             var mails = new List<GameMail>();
