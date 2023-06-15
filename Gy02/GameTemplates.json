@@ -11,7 +11,7 @@
       "Id": "07664462-df05-4ba7-886d-b431bb88aa1c",
       "DisplayName": "角色",
       "Gid": 911101001,
-      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"atk\":[20],\"def\":[100],\"pow\":[350],\"crit\":100,\"crit_pct\":0}",
+      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"04AB4C60-9E5B-43A8-894F-3477655371BE\"],\"atk\":[20],\"def\":[100],\"pow\":[350],\"crit\":100,\"crit_pct\":0}",
       "Remark": "TIdsOfCreate是创建该对象时，需要一起创建的子对象的TIds"
     },
     {
@@ -24,6 +24,16 @@
       "DisplayName": "邮件",
       "PropertiesString": "{\"TypeGuid\":\"0465A794-42E7-4B14-AE8B-2BF282FAA0BE\",\"Count\":1,\"stk\":-1,\"Count0Reserved\":false}",
       "Remark": "0465A794-42E7-4B14-AE8B-2BF282FAA0BE是邮件类的标识。"
+    },
+    {
+      "Id": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+      "DisplayName": "成就槽",
+      "PropertiesString": "{\"cap\":-1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
+    },
+    {
+      "Id": "43E9286A-904C-4923-B477-482C0D6470A5}",
+      "DisplayName": "主线副本通关成就项",
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0}"
     },
     {
       "Id": "7A7A7058-CB88-4D54-80E9-22241774CF51",
@@ -547,6 +557,16 @@
       "DisplayName": "孵化次数货币",
       "Gid": 110201001,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-04-24T00:00:00.0000000+08:00\"}}}"
+    },
+    {
+      "Id": "62D3A545-7604-46BF-9837-95E286660BC8",
+      "DisplayName": "巡逻时间占位符",
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"}"
+    },
+    {
+      "Id": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
+      "DisplayName": "巡逻用主线副本最高记录占位符",
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"}"
     },
     {
       "Id": "c4c430e1-962a-458d-a1ce-026128edc377",
@@ -2274,13 +2294,13 @@
       "Id": "13c638fb-86cd-473a-ae33-113239fc4fb8",
       "DisplayName": "虎皮龙",
       "Gid": 160205007,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12442,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Giraffe\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12442,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Tiger\"}"
     },
     {
       "Id": "96c3230c-cc80-4d6b-b3f6-3804fc171bf0",
       "DisplayName": "鹿皮龙",
       "Gid": 160205008,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12443,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Tiger\"}"
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12443,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Giraffe\"}"
     },
     {
       "Id": "e4ace279-5ddb-4080-81e9-86e59f49a6b3",
@@ -2412,7 +2432,7 @@
       "Id": "97da5fb1-5a0f-4408-8662-f20c7e3475fb",
       "DisplayName": "羊和老虎孵化皮肤产出",
       "Gid": 170101006,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d26aadc0-f9e6-430e-88c9-8d61d0100a09\",\"Count\":1}],\"Weight\":16,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7b4b5142-80fe-4e95-adbe-32c71589efe8\",\"Count\":1}],\"Weight\":12,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6cbeaf9a-b2b5-4ed1-a2c3-201eb3b7f0ee\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"77e38e0c-089c-4d45-866f-6d9a1a3f5bde\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1bf4948d-fedc-4819-8e1f-41fe3a6d83f0\",\"Count\":1}],\"Weight\":2,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d26aadc0-f9e6-430e-88c9-8d61d0100a09\",\"Count\":1}],\"Weight\":16,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6cbeaf9a-b2b5-4ed1-a2c3-201eb3b7f0ee\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"77e38e0c-089c-4d45-866f-6d9a1a3f5bde\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1bf4948d-fedc-4819-8e1f-41fe3a6d83f0\",\"Count\":1}],\"Weight\":2,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "e4d113d3-c6bb-413c-8e81-0c4cb683c558",
@@ -2598,13 +2618,13 @@
       "Id": "1681d08e-966a-4cd8-ba3f-4b5b49e9d576",
       "DisplayName": "一般卡池免费购买",
       "Gid": 180201008,
-      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
     },
     {
       "Id": "c25afdc9-e1cc-41b5-b790-80b80782cda1",
       "DisplayName": "一般卡池付费购买",
       "Gid": 180201009,
-      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
     },
     {
       "Id": "af719619-3934-45bf-aaec-669c6a8afdc6",

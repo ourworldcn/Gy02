@@ -169,11 +169,12 @@ namespace GY02.Managers
             bool changed = true;
             while (changed)
             {
+                changed = false;
                 foreach (var svc in svcs)
                 {
                     tmpDest = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)>();
-                    if (!svc.ConvertEntitySummary(tmpSource, tmpDest, context, out changed)) goto lbErr;  //若失败
-                    if (!changed) break;    //若结束转换
+                    if (!svc.ConvertEntitySummary(tmpSource, tmpDest, context, out var changedTmp)) goto lbErr;  //若失败
+                    changed = changed || changedTmp;
                     tmpSource = tmpDest.SelectMany(c => c.Item2);
                 }
             }
