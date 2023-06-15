@@ -1,6 +1,6 @@
 {
   "SequenceOut": {
-    "Conditions": [ //条件
+    "Conditions": [ //条件,获取实体对象
       {
         "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //要求父容器的TId，可以是null表示不要求
         "Genus": [ //允许的页签值，需要包含的属名称（如果有多项则必须全部包含）。空集合则不限制。
@@ -22,14 +22,14 @@
         "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
       }
     ],
-    "GetIndexExpression": { //一个通用的表达式对象
+    "GetIndexExpression": { //一个通用的表达式对象，从实体对象上获取属性值
       "Operator": "ToInt32", //操作符（函数名）。暂定支持以下运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!=,ToInt32 等。特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
       "Args": [
         "Count" //特定的此处填写属性名如 Count
       ],
       "IgnoreIfDisplayList": false //是否可以忽略,此处暂无意义，填false
     },
-    "Outs": {
+    "Outs": { //序列输出对象，根据索引输出不同对象。
       "TIds": [ //多个物品的TId集合。可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
         "3fa85f64-5717-4562-b3fc-2c963f66afa6"
       ],

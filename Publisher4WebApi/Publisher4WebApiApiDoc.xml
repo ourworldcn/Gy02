@@ -1081,6 +1081,21 @@
             本周期的结束时间。空表示无结束时间。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.MakeReadAndPickUpParamsDto">
+            <summary>
+            标记邮件为已读状态，且如果有附件则领取附件功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.MakeReadAndPickUpParamsDto.MailIds">
+            <summary>
+            要标记已读且获取附件的邮件的唯一Id集合。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.MakeReadAndPickUpReturnDto">
+            <summary>
+            标记邮件为已读状态，且如果有附件则领取附件功能的返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.PickUpAttachmentParamsDto">
             <summary>
             收取附件功能的参数封装类。
@@ -1151,6 +1166,11 @@
             附件集合。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.SendMailItemDto.DeleteDelay">
+            <summary>
+            对没有附件且已读的邮件，多长时间删除。若为空则等待最长删除时间到来，当前是60天。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameMailDto">
             <summary>
             
@@ -1204,6 +1224,21 @@
         <member name="P:GY02.Publisher.GameMailDto.PickUpUtc">
             <summary>
             领取附件的日期，null标识尚未领取。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.DeleteDelay">
+            <summary>
+            对没有附件且已读的邮件，多长时间删除。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.Dictionary1">
+            <summary>
+            存储一些特殊属性的字典。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameMailDto.Dictionary2">
+            <summary>
+            存储一些特殊属性的字典。
             </summary>
         </member>
         <member name="T:GY02.Publisher.SendMailParamsDto">

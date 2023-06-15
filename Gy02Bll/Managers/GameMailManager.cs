@@ -76,6 +76,7 @@ namespace GY02.Managers
                 tmp.Attachment.AddRange(mail.Attachment.Select(c1 => (GameEntitySummary)c1.Clone()));
                 OwHelper.Copy(mail.Dictionary1, tmp.Dictionary1);
                 OwHelper.Copy(mail.Dictionary2, tmp.Dictionary2);
+                tmp.SendUtc = DateTime.UtcNow;
                 result.Add(tmp);
             }
             return result;

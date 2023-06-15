@@ -522,6 +522,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:Gy02.Controllers.MailController.MakeReadAndPickUp(GY02.Publisher.MakeReadAndPickUpParamsDto)">
+            <summary>
+            标记邮件为已读状态，且如果有附件则领取附件。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:Global.Program">
             <summary>
             

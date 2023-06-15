@@ -82,6 +82,11 @@ namespace OW.Game.Entity
         /// </summary>
         public DateTime? PickUpUtc { get; set; }
 
+        /// <summary>
+        /// 对没有附件且已读的邮件，多长时间删除。
+        /// </summary>
+        public TimeSpan? DeleteDelay { get; set; }
+
         #endregion 动态属性
 
     }

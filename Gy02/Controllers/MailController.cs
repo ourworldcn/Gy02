@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using GY02;
 using GY02.Commands;
+using GY02.Commands.Mail;
 using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
@@ -96,11 +97,50 @@ namespace Gy02.Controllers
                 return result;
             }
 
-            var command = new GetMailsCommand { GameChar = gc, };
+            var command = new PickUpAttachmentCommand { GameChar = gc, };
 
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);
             _Mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
+        /// 标记邮件为已读状态，且如果有附件则领取附件。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<MakeReadAndPickUpReturnDto> MakeReadAndPickUp(MakeReadAndPickUpParamsDto model)
+        {
+            var result = new MakeReadAndPickUpReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            //获取附件
+            var command = new PickUpAttachmentCommand { GameChar = gc, };
+            command.MailIds.AddRange(command.MailIds);
+            _SyncCommandManager.Handle(command);
+            if (command.HasError)
+            {
+                result.FillErrorFrom(command);
+                return result;
+            }
+            _Mapper.Map(command, result);
+            //标记已读
+            var commandMakeRead = new MakeMailReadCommand { GameChar = gc };
+            commandMakeRead.MailIds.AddRange(model.MailIds);
+            _SyncCommandManager.Handle(commandMakeRead);
+            if (commandMakeRead.HasError)
+            {
+                result.FillErrorFrom(commandMakeRead);
+                return result;
+            }
+
             return result;
         }
     }

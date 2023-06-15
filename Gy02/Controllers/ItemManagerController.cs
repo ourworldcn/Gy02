@@ -7,6 +7,7 @@ using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using OW.SyncCommand;
 
 namespace GY02.Controllers
@@ -148,21 +149,20 @@ namespace GY02.Controllers
             for (int i = 0; i < model.TIds.Count; i++)
             {
                 var item = model.TIds[i];
-                var tmp = CreateVirtualThingHandler.CreateThing(item, model.Counts[i], templateManager, commandManager);
+                var tmp = _EntityManager.Create(new (Guid, decimal)[] { (item, model.Counts[i]) });
                 if (tmp is null) goto lbErr; //若出错
-                var coll = tmp.Select(c => templateManager.GetEntityBase(c, out _)).OfType<GameEntity>();
-                if (coll is null || coll.Count() != tmp.Count)
-                    continue;
-                coll.ForEach(c =>
+
+                if (tmp.Count() != tmp.Count) continue;
+                tmp.ForEach(c =>
                 {
                     var s = c.Count;
                     c.Count = model.Counts[i];
                 });
-                list.AddRange(coll);
+                list.AddRange(tmp);
             }
-            var command = new MoveEntitiesCommand { Items = list, Container = null, GameChar = gc };
-            commandManager.Handle(command);
-            mapper.Map(command, result);
+            List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
+            _EntityManager.Move(list, gc, changes);
+            mapper.Map(changes, result.Changes);
             return result;
         lbErr:
             result.FillErrorFromWorld();

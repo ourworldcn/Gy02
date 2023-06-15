@@ -59,22 +59,21 @@ namespace GY02.Commands
 
             foreach (var item in totalCost) //退还材料
             {
-                var create = new CreateVirtualThingCommand { TemplateId = item.TId };
-                _SyncCommandManager.Handle(create);
-                var tmp = CreateVirtualThingHandler.CreateThing(item.TId, Math.Abs(item.Count), _TemplateManager, _SyncCommandManager);
+                var tmp = _EntityManager.Create(new (Guid, decimal)[] { (item.TId, Math.Abs(item.Count)) });
+
                 if (tmp is null)
                 {
                     command.FillErrorFromWorld();
                     return;
                 }
-                list.AddRange(tmp);
+                list.AddRange(tmp.Select(c => c.GetThing()));
             }
 
             //var move = new MoveEntitiesCommand { GameChar = command.GameChar, Items = list.Select(c => (GameEntity)_TemplateManager.GetEntityBase(c, out _)).ToList() };
             //_SyncCommandManager.Handle(move);
             //command.FillErrorFrom(move);
 
-            _EntityManager.Move(list.Select(c=>_EntityManager.GetEntity(c)), command.GameChar, command.Changes);
+            _EntityManager.Move(list.Select(c => _EntityManager.GetEntity(c)), command.GameChar, command.Changes);
             if (!command.HasError)
             {
                 command.Changes?.Add(new GamePropertyChangeItem<object>

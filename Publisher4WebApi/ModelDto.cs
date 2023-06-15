@@ -1414,6 +1414,24 @@ namespace GY02.Publisher
     #region 邮件相关
 
     /// <summary>
+    /// 标记邮件为已读状态，且如果有附件则领取附件功能的参数封装类。
+    /// </summary>
+    public class MakeReadAndPickUpParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要标记已读且获取附件的邮件的唯一Id集合。
+        /// </summary>
+        public List<Guid> MailIds { get; set; } = new List<Guid>();
+    }
+
+    /// <summary>
+    /// 标记邮件为已读状态，且如果有附件则领取附件功能的返回值封装类。
+    /// </summary>
+    public class MakeReadAndPickUpReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
     /// 收取附件功能的参数封装类。
     /// </summary>
     [AutoMap(typeof(PickUpAttachmentCommand), ReverseMap = true)]
@@ -1502,6 +1520,11 @@ namespace GY02.Publisher
         /// </summary>
         public List<GameEntitySummaryDto> Attachment { get; set; } = new List<GameEntitySummaryDto> { };
 
+        /// <summary>
+        /// 对没有附件且已读的邮件，多长时间删除。若为空则等待最长删除时间到来，当前是60天。
+        /// </summary>
+        public TimeSpan? DeleteDelay { get; set; }
+
         #endregion 基本属性
 
     }
@@ -1570,6 +1593,21 @@ namespace GY02.Publisher
         /// 领取附件的日期，null标识尚未领取。
         /// </summary>
         public DateTime? PickUpUtc { get; set; }
+
+        /// <summary>
+        /// 对没有附件且已读的邮件，多长时间删除。
+        /// </summary>
+        public TimeSpan? DeleteDelay { get; set; }
+
+        /// <summary>
+        /// 存储一些特殊属性的字典。
+        /// </summary>
+        public Dictionary<string, string> Dictionary1 { get; set; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 存储一些特殊属性的字典。
+        /// </summary>
+        public Dictionary<string, string> Dictionary2 { get; set; } = new Dictionary<string, string>();
 
         #endregion 动态属性
 

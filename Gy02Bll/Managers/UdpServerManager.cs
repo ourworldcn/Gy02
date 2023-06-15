@@ -1,8 +1,11 @@
-﻿using GY02.Templates;
+﻿using GY02.Commands;
+using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OW.DDD;
+using OW.SyncCommand;
 using System.Buffers;
 using System.Collections.Concurrent;
 using System.Net;
@@ -193,6 +196,14 @@ namespace GY02.Managers
             services.AddHostedService<UdpServerManager>();
             services.AddSingleton(c => (UdpServerManager)c.GetServices<IHostedService>().First(c => c is UdpServerManager));
             return services;
+        }
+    }
+
+    public class AccountLogoutingHandler : SyncCommandHandlerBase<AccountLogoutingCommand>
+    {
+        public override void Handle(AccountLogoutingCommand command)
+        {
+            
         }
     }
 }
