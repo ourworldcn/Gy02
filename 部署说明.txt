@@ -30,3 +30,5 @@ yun1.pandaglb.com:44489
 BeastBlitzKey
 
 https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-0d757090e71fb103e
+
+F871361D-A803-4F7E-B222-13216A89E9FA 上传模板的凭据

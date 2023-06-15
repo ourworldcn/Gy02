@@ -187,6 +187,13 @@ namespace GY02.Managers
             }
             base.Dispose();
         }
+        public class AccountLogoutingHandler : SyncCommandHandlerBase<AccountLogoutingCommand>
+        {
+            public override void Handle(AccountLogoutingCommand command)
+            {
+                _Token2EndPoint.TryRemove(command.User.Token, out _);
+            }
+        }
     }
 
     public static class UdpServerManagerExtensions
@@ -199,11 +206,4 @@ namespace GY02.Managers
         }
     }
 
-    public class AccountLogoutingHandler : SyncCommandHandlerBase<AccountLogoutingCommand>
-    {
-        public override void Handle(AccountLogoutingCommand command)
-        {
-            
-        }
-    }
 }
