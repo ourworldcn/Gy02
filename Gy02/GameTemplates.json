@@ -31,7 +31,7 @@
       "PropertiesString": "{\"cap\":-1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}"
     },
     {
-      "Id": "43E9286A-904C-4923-B477-482C0D6470A5}",
+      "Id": "43E9286A-904C-4923-B477-482C0D6470A5",
       "DisplayName": "主线副本通关成就项",
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0}"
     },
@@ -2642,7 +2642,7 @@
       "Id": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
       "DisplayName": "付费卡池购买",
       "Gid": 180201010,
-      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":200,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":200,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"af719619-3934-45bf-aaec-669c6a8afdc6\",\"Count\":1}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\": []}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":200,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":200,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"af719619-3934-45bf-aaec-669c6a8afdc6\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\":[]}"
     },
     {
       "Id": "90042124-a8e0-4534-b4a0-f54fb09d789b",
