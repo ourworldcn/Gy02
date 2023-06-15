@@ -82,6 +82,11 @@ namespace GY02.Publisher
         public static readonly Guid HuoBiSlotTId = new Guid("123a5ad1-d4f0-4cd9-9abc-d440419d9e0d");
 
         /// <summary>
+        /// 成就槽TId。
+        /// </summary>
+        public static readonly Guid ChengJiuSlotTId = new Guid("04AB4C60-9E5B-43A8-894F-3477655371BE");
+
+        /// <summary>
         /// 时装背包TId。
         /// </summary>
         public static readonly Guid ShiZhuangBagTId = new Guid("A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652");

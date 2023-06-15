@@ -997,6 +997,11 @@
             货币槽TId。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.ChengJiuSlotTId">
+            <summary>
+            成就槽TId。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.ShiZhuangBagTId">
             <summary>
             时装背包TId。

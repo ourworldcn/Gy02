@@ -17,7 +17,7 @@ namespace OW.Game.Entity
     /// 游戏角色类。
     /// </summary>
     [Guid("941917CC-E91C-46D7-9F53-A98C3EB4F92E")]
-    public class GameChar : GameEntity,IValidatableObject
+    public class GameChar : GameEntity, IValidatableObject
     {
         #region 构造函数
 
@@ -198,6 +198,12 @@ namespace OW.Game.Entity
         /// </summary>
         [JsonIgnore]
         public GameSlot<GameItem> HuoBiSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.HuoBiSlotTId)?.GetJsonObject<GameSlot<GameItem>>();
+
+        /// <summary>
+        /// 成就槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameItem> ChengJiuSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.ChengJiuSlotTId)?.GetJsonObject<GameSlot<GameItem>>();
         #endregion 各种槽
 
         #region 孵化相关
