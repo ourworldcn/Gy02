@@ -29,11 +29,11 @@ namespace OW.SyncCommand
 
         IServiceProvider _Service;
 
-        private Dictionary<string, object> items;
+        private Dictionary<string, object> _Items;
         /// <summary>
         /// 当前范围内的一些数据。
         /// </summary>
-        public IDictionary<string, object> Items => items ??= AutoClearPool<Dictionary<string, object>>.Shared.Get();
+        public IDictionary<string, object> Items => _Items ??= AutoClearPool<Dictionary<string, object>>.Shared.Get();
 
         [DebuggerHidden]
         public void Handle<T>(T command) where T : ISyncCommand
@@ -67,10 +67,10 @@ namespace OW.SyncCommand
 
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                if (items != null)
+                if (_Items != null)
                 {
-                    AutoClearPool<Dictionary<string, object>>.Shared.Return(items);
-                    items = null;
+                    AutoClearPool<Dictionary<string, object>>.Shared.Return(_Items);
+                    _Items = null;
                 }
                 _DisposedValue = true;
             }

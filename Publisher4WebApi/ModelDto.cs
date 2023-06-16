@@ -1416,6 +1416,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 标记邮件为已读状态，且如果有附件则领取附件功能的参数封装类。
     /// </summary>
+    [AutoMap(typeof(PickUpAttachmentCommand), ReverseMap = true)]
     public class MakeReadAndPickUpParamsDto : TokenDtoBase
     {
         /// <summary>
@@ -1427,6 +1428,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 标记邮件为已读状态，且如果有附件则领取附件功能的返回值封装类。
     /// </summary>
+    [AutoMap(typeof(PickUpAttachmentCommand))]
     public class MakeReadAndPickUpReturnDto : PropertyChangeReturnDto
     {
     }

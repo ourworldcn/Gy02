@@ -123,14 +123,14 @@ namespace Gy02.Controllers
             }
             //获取附件
             var command = new PickUpAttachmentCommand { GameChar = gc, };
-            command.MailIds.AddRange(command.MailIds);
+            command.MailIds.AddRange(model.MailIds);
             _SyncCommandManager.Handle(command);
             if (command.HasError)
             {
                 result.FillErrorFrom(command);
                 return result;
             }
-            _Mapper.Map(command, result);
+            _Mapper.Map(command.Changes, result.Changes);
             //标记已读
             var commandMakeRead = new MakeMailReadCommand { GameChar = gc };
             commandMakeRead.MailIds.AddRange(model.MailIds);

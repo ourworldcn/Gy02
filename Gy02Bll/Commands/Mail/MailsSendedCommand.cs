@@ -13,6 +13,11 @@ namespace GY02.Commands
 {
     public class MailsSendedCommand : SyncCommandBase, IGameCharCommand
     {
+        public MailsSendedCommand()
+        {
+            
+        }
+
         public GameChar GameChar { get; set; }
 
         /// <summary>
@@ -38,11 +43,13 @@ namespace GY02.Commands
             {
                 var charId = Guid.Parse(mail.To);
                 var key = _AccountStore.CharId2Key.GetValueOrDefault(charId);
+                var gu=_AccountStore._Key2User.GetValueOrDefault(key);
+                if (gu is null) continue;
                 var data = new MailArrivedDto { };
-                data.MailIds.Add(mail.Id);
+                data.MailIds.Add(mail.Id); 
                 try
                 {
-                    _UdpServerManager.SendObject(command.GameChar.GetUser().Token, data);
+                    _UdpServerManager.SendObject(gu.Token, data);
                 }
                 catch (Exception)
                 {

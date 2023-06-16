@@ -7,6 +7,7 @@ using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -167,7 +168,13 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                var svcs = _Services.GetServices<IEntitySummaryConverter>();
+                //6B15B341-C06C-4F52-BD94-F467C0C01CF3
+                var obj = new { Id = Guid.NewGuid(), str = "sd" };
+                var str = JsonSerializer.Serialize(obj);
+                var svcs = _Services.GetServices<ISystemClock>();
+                var ss = svcs.First().UtcNow;
+                var ss1 = new DateTime(ss.Ticks,DateTimeKind.Local).ToLocalTime();
+                var obj1 = JsonSerializer.Deserialize(str, obj.GetType());
                 var svcs2 = _Services.GetServices<SequenceOutManager>();
             }
             finally

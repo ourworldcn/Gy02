@@ -182,6 +182,7 @@ namespace GY02.Managers
             if (!_EntityManager.CreateAndMove(summary.Select(c => (c.TId, c.Count, c.ParentTId)), gameChar, changes))
                 return false;
             doMails.ForEach(c => c.PickUpUtc = nowUtc);
+            db.SaveChanges();
             return true;
         }
     }

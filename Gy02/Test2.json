@@ -1,43 +1,24 @@
 {
-  "Dice": {
-    "MaxCount": 3,
-    "AllowRepetition": false,
-    "Items": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "696e8311-b286-486c-931f-aff1eb72f1de",
-            "Count": 1
-          }
-        ],
-        "Weight": 30,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": null,
-            "TId": "1741c697-ea92-458b-a9e8-a839e41ad5f3",
-            "Count": 1
-          }
-        ],
-        "Weight": 3,
-        "ClearGuaranteesCount": false
+        "ParentTId": null,
+        "Genus": [ "gs_jibigouma" ],
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "IgnoreIfDisplayList": true
       }
     ],
-    "GuaranteesCount": null,
-    "GuaranteesDiceTId": null
+    "GetIndexExpression": {
+      "Operator": "ToInt32",
+      "Args": [ "Level" ],
+      "IgnoreIfDisplayList": false
+    },
+    "Outs": {
+      "TIds": [ "a45b3421-3688-43c5-b8f5-429db7621f69" ],
+      "Counts": [ 8000, 8000, 8000, 8000, 8000, 9000, 9000, 9000, 9000, 9000, 10000, 10000, 10000, 10000, 10000, 11000, 11000, 11000, 11000, 11000, 12000, 12000, 12000, 12000, 12000, 13000, 13000, 13000, 13000, 13000, 14000, 14000, 14000, 14000, 14000, 15000, 15000, 15000, 15000, 15000, 16000, 16000, 16000, 16000, 16000, 17000, 17000, 17000, 17000, 17000, 18000, 18000, 18000, 18000, 18000, 19000, 19000, 19000, 19000, 19000, 20000, 20000, 20000, 20000, 20000, 21000, 21000, 21000, 21000, 21000, 22000, 22000, 22000, 22000, 22000, 23000, 23000, 23000, 23000, 23000, 24000, 24000, 24000, 24000, 24000, 25000, 25000, 25000, 25000, 25000, 26000, 26000, 26000, 26000, 26000, 27000, 27000, 27000, 27000, 27000 ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ]
+    }
   }
 }
