@@ -80,7 +80,7 @@ namespace GY02.Commands
                 if (!b) goto lbErr;
 
                 //var coll = tt.ShoppingItem.Outs.SelectMany(c => _DiceManager.Transformed(c, command.GameChar)).ToArray();
-                if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2).Select(c => (c.TId, c.Count, c.ParentTId)), command.GameChar, command.Changes)) goto lbErr;
+                if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2), command.GameChar, command.Changes)) goto lbErr;
             }
             command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
             {

@@ -1539,7 +1539,7 @@
       "Id": "269448b5-b46c-4245-aab5-01b8fb53137e",
       "DisplayName": "狼蓝",
       "Gid": 120302003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11857,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_dragon\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"dbe26541-a174-4376-8a82-bfb089b68edb\",\"enable\":true},{\"skillsid\":\"ba24a141-f10a-412e-8791-27b522ee9996\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"d2df8392-07d2-4754-9c3d-81fa98ef7072\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11831,\"comment_txt\":11857,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_wolf\"],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true},{\"skillsid\":\"dbe26541-a174-4376-8a82-bfb089b68edb\",\"enable\":true},{\"skillsid\":\"ba24a141-f10a-412e-8791-27b522ee9996\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\",\"CompositeId\":\"d2df8392-07d2-4754-9c3d-81fa98ef7072\"}"
     },
     {
       "Id": "505dad1a-0d29-4052-97d7-f0843e393fec",
@@ -2673,6 +2673,18 @@
       "DisplayName": "商品分组信息",
       "Gid": 920101001,
       "PropertiesString": "{\"groupSettings\":[{\"conditions\":[{\"gid\":180201008,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201009,\"order\":2,\"precond\":\"BuyedCount\"}]},{\"conditions\":[{\"gid\":180201011,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201012,\"order\":2,\"precond\":\"BuyedCount\"}]},{\"conditions\":[{\"gid\":180201001,\"order\":1,\"precond\":\"BuyedCount\"},{\"gid\":180201007,\"order\":2,\"precond\":\"BuyedCount\"}]}]}"
+    },
+    {
+      "Id": "bbd8df20-3071-492a-8fef-aae2f848025a",
+      "DisplayName": "金币购买序列",
+      "Gid": 190101001,
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[\"gs_jibigouma\"],\"TId\":\"e3aeb7f1-f7de-4d32-8805-2f6a40b9db36\",\"MinCount\":null,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"ToInt32\",\"Args\":[\"Level\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"07664462-df05-4ba7-886d-b431bb88aa1c\"],\"Counts\":[8000,8000,8000,8000,8000,9000,9000,9000,9000,9000,10000,10000,10000,10000,10000,11000,11000,11000,11000,11000,12000,12000,12000,12000,12000,13000,13000,13000,13000,13000,14000,14000,14000,14000,14000,15000,15000,15000,15000,15000,16000,16000,16000,16000,16000,17000,17000,17000,17000,17000,18000,18000,18000,18000,18000,19000,19000,19000,19000,19000,20000,20000,20000,20000,20000,21000,21000,21000,21000,21000,22000,22000,22000,22000,22000,23000,23000,23000,23000,23000,24000,24000,24000,24000,24000,25000,25000,25000,25000,25000,26000,26000,26000,26000,26000,27000,27000,27000,27000,27000],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+    },
+    {
+      "Id": "b5fbed69-968a-4775-abc4-8396c9091aba",
+      "DisplayName": "金币序列购买",
+      "Gid": 180201015,
+      "PropertiesString": "{\"Genus\":[\"gs_jibigouma\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":288,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"bbd8df20-3071-492a-8fef-aae2f848025a\",\"Count\":1}]},\"name_txt\":10968,\"comment_txt\":10962,\"JiaoBiao\":[]}"
     }
   ]
 }

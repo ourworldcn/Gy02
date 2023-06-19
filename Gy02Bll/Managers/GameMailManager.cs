@@ -179,7 +179,7 @@ namespace GY02.Managers
             //}
             var summary = doMails.SelectMany(c => c.Attachment);
             var nowUtc = DateTime.UtcNow;
-            if (!_EntityManager.CreateAndMove(summary.Select(c => (c.TId, c.Count, c.ParentTId)), gameChar, changes))
+            if (!_EntityManager.CreateAndMove(summary, gameChar, changes))
                 return false;
             doMails.ForEach(c => c.PickUpUtc = nowUtc);
             db.SaveChanges();

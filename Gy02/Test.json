@@ -1,41 +1,24 @@
 {
-  "Genus": [ "gs_jibigouma" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "MinCount": 30,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 288,
-        "Genus": [],
+        "ParentTId": null,
+        "Genus": [ "gs_jibigouma" ],
+        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+        "MinCount": null,
+        "GeneralConditional": [],
         "IgnoreIfDisplayList": true
       }
     ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "bbd8df20-3071-492a-8fef-aae2f848025a",
-        "Count": 1
-      }
-    ]
-  },
-  "name_txt": 10968,
-  "comment_txt": 10962,
-  "JiaoBiao": []
+    "GetIndexExpression": {
+      "Operator": "ToInt32",
+      "Args": [ "Level" ],
+      "IgnoreIfDisplayList": false
+    },
+    "Outs": {
+      "TIds": [ "a45b3421-3688-43c5-b8f5-429db7621f69" ],
+      "Counts": [ 8000, 8000, 8000, 8000, 8000, 9000, 9000, 9000, 9000, 9000, 10000, 10000, 10000, 10000, 10000, 11000, 11000, 11000, 11000, 11000, 12000, 12000, 12000, 12000, 12000, 13000, 13000, 13000, 13000, 13000, 14000, 14000, 14000, 14000, 14000, 15000, 15000, 15000, 15000, 15000, 16000, 16000, 16000, 16000, 16000, 17000, 17000, 17000, 17000, 17000, 18000, 18000, 18000, 18000, 18000, 19000, 19000, 19000, 19000, 19000, 20000, 20000, 20000, 20000, 20000, 21000, 21000, 21000, 21000, 21000, 22000, 22000, 22000, 22000, 22000, 23000, 23000, 23000, 23000, 23000, 24000, 24000, 24000, 24000, 24000, 25000, 25000, 25000, 25000, 25000, 26000, 26000, 26000, 26000, 26000, 27000, 27000, 27000, 27000, 27000 ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ]
+    }
+  }
 }

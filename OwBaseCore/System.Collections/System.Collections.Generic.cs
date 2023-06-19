@@ -1,5 +1,8 @@
 ﻿
 using System.Diagnostics;
+using System.Diagnostics.Tracing;
+using System.Linq;
+using System.Runtime.CompilerServices;
 
 namespace System.Collections.Generic
 {
@@ -44,5 +47,13 @@ namespace System.Collections.Generic
             if (list?.Count > 0)
                 throw new AggregateException(list);
         }
+
+        /// <summary>
+        /// 返回指定枚举的实体状态，若指定枚举是编译时态的说明，则生成其数组。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static ICollection<T> TryToCollection<T>(this IEnumerable<T> source) => source is ICollection<T> coll ? coll : source.ToArray();
     }
 }

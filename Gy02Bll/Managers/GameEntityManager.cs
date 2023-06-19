@@ -454,12 +454,59 @@ namespace GY02.Managers
         /// <summary>
         /// 创建实体。
         /// </summary>
-        /// <param name="idAndCount">对不可堆叠物品，会创建多个对象，每个对象数量是1。</param>
+        /// <param name="entitySummarys">对不可堆叠物品，会创建多个对象，每个对象数量是1。</param>
+        /// <returns>创建(实体预览,实体)的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
+        public List<(GameEntitySummary, GameEntity)> Create(IEnumerable<GameEntitySummary> entitySummarys)
+        {
+            var result = new List<(GameEntitySummary, GameEntity)> { };
+            var coll = entitySummarys.TryToCollection();
+            foreach (var item in coll)
+            {
+                var tt = _TemplateManager.GetFullViewFromId(item.TId);
+                if (tt is null) return null;
+                if (tt.IsStk())  //可堆叠物
+                {
+                    var tmp = _VirtualThingManager.Create(tt);
+                    if (tmp is null) return null;
+                    var entity = GetEntity(tmp);
+                    if (entity is null) return null;
+                    var oriCount = entity.Count;    //预读fcp
+                    entity.Count = item.Count;
+                    result.Add((item, entity));
+                }
+                else //不可堆叠物
+                {
+                    var count = (int)item.Count;
+                    if (count != item.Count)
+                    {
+                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                        OwHelper.SetLastErrorMessage($"创建不可堆叠物的数量必须是整数。TId={item.TId}");
+                        return null;
+                    }
+                    var tmp = _VirtualThingManager.Create(tt.TemplateId, count);
+                    if (tmp is null) return null;
+                    foreach (var thing in tmp)
+                    {
+                        var tmpEntity = GetEntity(thing);
+                        if (tmpEntity is null) return null;
+                        var oriCount = tmpEntity.Count; //预读fcp
+                        tmpEntity.Count = 1;
+                        result.Add((item, tmpEntity));
+                    }
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 创建实体。
+        /// </summary>
+        /// <param name="entitySummarys">对不可堆叠物品，会创建多个对象，每个对象数量是1。</param>
         /// <returns>创建实体的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
-        public List<GameEntity> Create(IEnumerable<(Guid, decimal)> idAndCount)
+        public List<GameEntity> Create(IEnumerable<(Guid, decimal)> entitySummarys)
         {
             var result = new List<GameEntity> { };
-            foreach (var item in idAndCount)
+            foreach (var item in entitySummarys)
             {
                 var tt = _TemplateManager.GetFullViewFromId(item.Item1);
                 if (tt is null) return null;
@@ -599,23 +646,24 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 
+        /// 按预览对象创建并移动到指定角色上。
         /// </summary>
-        /// <param name="source">(实体的模板Id，数量，强行指定的容器Id。)</param>
+        /// <param name="summaries">(实体的模板Id，数量，强行指定的容器Id。)不指定容器则使用默认容器。</param>
         /// <param name="gameChar"></param>
         /// <param name="changes"></param>
         /// <returns></returns>
-        public bool CreateAndMove(IEnumerable<(Guid, decimal, Guid?)> source, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public bool CreateAndMove(IEnumerable<GameEntitySummary> summaries, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var allEntity = GetAllEntity(gameChar)?.ToArray();
+            var allEntity = GetAllEntity(gameChar).Append(gameChar)?.ToArray();
             if (allEntity is null) return false;
+            var coll = summaries.TryToCollection();
 
-            var result = Create(source.Select(c => (c.Item1, c.Item2)));
-            var coll = source.Zip(result);
-            foreach (var item in coll)
+            var list = Create(coll);
+            if (list is null) return false;
+            foreach (var item in list)
             {
-                var container = GetContainer(item.Second, item.First.Item3, allEntity);
-                Move(item.Second, container, changes);
+                var container = GetContainer(item.Item2, item.Item1.ParentTId, allEntity);
+                Move(item.Item2, container, changes);
             }
             return true;
         }
