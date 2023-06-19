@@ -48,7 +48,6 @@ namespace GY02.Commands
 
             AccountStore.Save(key);
             return;
-
         }
     }
 }

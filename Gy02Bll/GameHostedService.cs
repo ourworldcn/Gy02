@@ -87,12 +87,19 @@ namespace GY02
                 Task.Run(SetDbConfig);  //设置数据库配置项
                 var logger = _Services.GetService<ILogger<GameHostedService>>();
                 logger?.LogInformation("游戏虚拟世界服务成功上线。");
+                using var scope = _Services.CreateScope();
+                var service = scope.ServiceProvider;
+                var mailManager = service.GetService<GameMailManager>();
+                Task.Run(mailManager.ClearMail);
             }, _Services, cancellationToken);
 
             Test();
             return result;
         }
 
+        /// <summary>
+        /// 配置数据库。
+        /// </summary>
         private void SetDbConfig()
         {
             using var scope = _Services.CreateScope();
@@ -168,14 +175,7 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                //6B15B341-C06C-4F52-BD94-F467C0C01CF3
-                var obj = new { Id = Guid.NewGuid(), str = "sd" };
-                var str = JsonSerializer.Serialize(obj);
-                var svcs = _Services.GetServices<ISystemClock>();
-                var ss = svcs.First().UtcNow;
-                var ss1 = new DateTime(ss.Ticks,DateTimeKind.Local).ToLocalTime();
-                var obj1 = JsonSerializer.Deserialize(str, obj.GetType());
-                var svcs2 = _Services.GetServices<SequenceOutManager>();
+                var str = JsonSerializer.Deserialize("\"\u518D\u6B21\u6D4B\u8BD5\u9644\u4EF6\u9886\u53D6\u529F\u80FD \u53CAUI\u8868\u73B002\"", typeof(string));
             }
             finally
             {

@@ -2,6 +2,7 @@
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -184,6 +185,51 @@ namespace GY02.Managers
             doMails.ForEach(c => c.PickUpUtc = nowUtc);
             db.SaveChanges();
             return true;
+        }
+
+        /// <summary>
+        /// 清理过期邮件。
+        /// </summary>
+        public void ClearMail()
+        {
+            using var db = _ContextFactory.CreateDbContext();
+            var limit = (DateTime.UtcNow - TimeSpan.FromDays(60)).ToString();   //60天之前的时间点
+            var coll = from mail in db.Set<VirtualThing>()
+                       where mail.ExtraGuid == ProjectContent.MailTId && (SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.ReadUtc") != null || SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.PickUpUtc") != null ||
+                        StringComparer.CurrentCulture.Compare(SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.SendUtc"), limit) < 0)
+                       select mail;
+            var mails = coll.AsEnumerable().Select(c => c.GetJsonObject<GameMail>());
+            List<VirtualThing> remove = new List<VirtualThing>();
+            foreach (var mail in mails)
+            {
+                if (!IsExpiration(mail)) continue;
+                remove.Add(mail.GetThing());
+            }
+            try
+            {
+                db.RemoveRange(remove);
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        public bool IsExpiration(GameMail mail)
+        {
+            if (mail.DeleteDelay.HasValue)   //若有指定超期
+            {
+                DateTime last = DateTime.UtcNow;
+                if (mail.Attachment.Count > 0 && mail.PickUpUtc.HasValue)   //若有拾取附件的时间
+                    last = mail.PickUpUtc.Value;
+                if (mail.ReadUtc.HasValue)  //若有已读时间
+                    last = last < mail.ReadUtc.Value ? mail.ReadUtc.Value : last;
+                if (DateTime.UtcNow - last > mail.DeleteDelay.Value)  //若到期
+                    return true;
+            }
+            if (DateTime.UtcNow - mail.SendUtc >= TimeSpan.FromDays(60))
+                return true;
+            return false;
         }
     }
 }

@@ -1,28 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="GY02.Templates.RawTemplate" Collapsed="true">
-    <Position X="20.75" Y="1.5" Width="1.5" />
+    <Position X="23" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACEAAAAAAAACBACAAAABAAAAAAAAAAAAAAAAAAAQA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Templates.TemplateSkillItem">
-    <Position X="0.5" Y="2.75" Width="1.5" />
+    <Position X="12.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Templates.CostInfo">
-    <Position X="7.5" Y="7.75" Width="1.5" />
+    <Position X="5.75" Y="11.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Templates.BlueprintInfo">
-    <Position X="10.5" Y="7" Width="1.5" />
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -32,9 +32,9 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="GY02.Templates.TemplateStringFullView">
-    <Position X="3.5" Y="2.75" Width="2.75" />
+    <Position X="8.75" Y="4.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>UAgAEAAAAAIBAADAKQAYAAQjIICkgIRAagBAMQUCQSA=</HashCode>
+      <HashCode>UAgAEAAAAAIBAADAKQEYAAQjIICkgIRAagBAEQUCQSA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -42,6 +42,8 @@
       <Property Name="Fuhua" />
       <Property Name="Dice" />
       <Property Name="DiceGroup" />
+      <Property Name="SequenceOut" />
+      <Property Name="Achievement" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Skills" />
@@ -52,7 +54,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="GY02.Templates.GameThingPreconditionItem">
-    <Position X="15" Y="10" Width="1.5" />
+    <Position X="20.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAABAAAAAAAFCAAJAAAAAAAAAAAAAAAAAAAASAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -62,7 +64,7 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="GY02.Templates.BlueprintInItem">
-    <Position X="7.5" Y="3.75" Width="1.5" />
+    <Position X="4.75" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAQAAAAAAAAAAAAAAAAEQAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -72,39 +74,36 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="GY02.Templates.FuhuaInfo" Collapsed="true">
-    <Position X="7.5" Y="6.5" Width="1.5" />
+    <Position X="12.75" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAAAAQAAAAAAAAAAAAAAAIAAAAAAAAABAACA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Templates.GameEntitySummary" BaseTypeListCollapsed="true">
-    <Position X="12.25" Y="0.5" Width="1.5" />
+    <Position X="2.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAACAAIAAQAAAAAAAAAAAAAAAAACBA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="GY02.Templates.SequenceGameEntitySummary">
-    <Position X="16.5" Y="3.25" Width="1.5" />
+  <Class Name="GY02.Templates.SequenceGameEntitySummary" Collapsed="true">
+    <Position X="24.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAEAAAAAAAAQAAAAAAAAQAAIgBAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Templates.SequenceOut">
-    <Position X="13.5" Y="4.25" Width="1.5" />
+    <Position X="12.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAAgEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAABAAEAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Preconditions" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="GY02.Templates.ListenStartedDto" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="20.75" Y="0.5" Width="1.5" />
+    <Position X="24.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -112,7 +111,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Templates.MailArrivedDto" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="19" Y="1.5" Width="1.5" />
+    <Position X="26.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -120,7 +119,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Templates.GameShoppingItem">
-    <Position X="9.25" Y="1" Width="1.5" />
+    <Position X="3.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAACI=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -134,35 +133,35 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="GY02.Templates.GamePeriod" Collapsed="true">
-    <Position X="6.25" Y="1.5" Width="1.5" />
+    <Position X="0.5" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAIAAACAAgAAAAAgAAAAAAEAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Templates.GameThingPrecondition">
-    <Position X="10.5" Y="4" Width="1.5" />
+    <Position X="1.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GY02.Templates.GeneralConditionalItem" Collapsed="true">
-    <Position X="12" Y="11.25" Width="1.5" />
+  <Class Name="GY02.Templates.GeneralConditionalItem">
+    <Position X="17.5" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AABCAABAAAAAAAABAAABAAAAAAAAAAAAAEAAAIBEIAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Templates.GameDiceGoup" Collapsed="true">
-    <Position X="3.5" Y="11.5" Width="1.5" />
+    <Position X="5.75" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAABAAAABAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Templates.GameDice" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="5.5" Width="1.5" />
+    <Position X="12.75" Y="4.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAIAgCAAAAAAAAAAABAAAAAAAAAAAAAAAABA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -173,7 +172,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Templates.GameDiceItem" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="9" Width="1.5" />
+    <Position X="12.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgCAAAAAAACAAAAAAABA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -181,22 +180,33 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Templates.FastChangingProperty" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="3.5" Y="1.5" Width="1.5" />
+    <Position X="5.75" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>QAAAAQAUAECgAAgAAAAAAAAAABAIAAAAAAAgAAAAAFA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="GY02.Templates.GameMail" Collapsed="true">
-    <Position X="19" Y="0.5" Width="1.5" />
+  <Class Name="GY02.Templates.GameExpression" Collapsed="true">
+    <Position X="23" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgACAAAAAAAAEAAAAIABAAAAAAAIAAAAwAAAAAAAAAA=</HashCode>
+      <HashCode>CBBAAAAAAAAAAAABAAABAAAAAAAAAAAAAEAAAAAEIAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="GY02.Templates.GameAchievement">
+    <Position X="5.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgCAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Gy02TemplateJO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Ins" />
+      <Property Name="Outs" />
+    </ShowAsCollectionAssociation>
+  </Class>
   <Interface Name="GY02.Templates.IJsonData" Collapsed="true">
-    <Position X="19" Y="2.75" Width="1.5" />
+    <Position X="23" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>

@@ -87,7 +87,7 @@ namespace GY02.Templates
         /// </summary>
         public SequenceGameEntitySummary()
         {
-            
+
         }
 
         List<Guid> _TIds;
@@ -352,10 +352,18 @@ namespace GY02.Templates
     }
 
     /// <summary>
-    /// 动态产出。
+    /// 动态产出/消耗。
     /// </summary>
     public class SequenceOut
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public SequenceOut()
+        {
+
+        }
+
         /// <summary>
         /// 过滤并获取一个实体，该实体使用 <see cref="GetIndexExpression"/> 属性指定的方法提取索引值。
         /// </summary>
@@ -527,6 +535,38 @@ namespace GY02.Templates
 
     #endregion 商城相关
 
+    #region 成就相关
+
+    /// <summary>
+    /// 成就定义。
+    /// </summary>
+    public class GameAchievement
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public GameAchievement()
+        {
+
+        }
+
+        /// <summary>
+        /// 经验到等级转换用的序列，如[100,200]表示指标值>=100时达成该成就第1级（未达成前是0级），当指标值>=200时达成第2级成就；以此类推。
+        /// </summary>
+        public decimal[] ExpSequence { get; set; }
+
+        /// <summary>
+        /// 消耗物的集合。
+        /// </summary>
+        public BlueprintInItem[] Ins { get; set; }
+
+        /// <summary>
+        /// 产出物的集合。
+        /// </summary>
+        public GameEntitySummary[] Outs { get; set; }
+    }
+
+    #endregion
 
     /// <summary>
     /// 原始的的模板类。
@@ -889,6 +929,13 @@ namespace GY02.Templates
         public SequenceOut SequenceOut { get; set; }
 
         #endregion 动态产出相关
+
+        #region 成就相关
+        /// <summary>
+        /// 成就数据。
+        /// </summary>
+        public GameAchievement Achievement { get; set; }
+        #endregion
 
         /// <summary>
         /// 快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
