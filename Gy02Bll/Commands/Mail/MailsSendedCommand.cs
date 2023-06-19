@@ -43,6 +43,7 @@ namespace GY02.Commands
             {
                 var charId = Guid.Parse(mail.To);
                 var key = _AccountStore.CharId2Key.GetValueOrDefault(charId);
+                if (key is null) continue;  //若目标角色未登录
                 var gu=_AccountStore._Key2User.GetValueOrDefault(key);
                 if (gu is null) continue;
                 var data = new MailArrivedDto { };
