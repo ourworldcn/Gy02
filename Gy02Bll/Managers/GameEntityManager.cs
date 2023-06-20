@@ -38,13 +38,13 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameEntityManager : GameManagerBase<GameEntityManagerOptions, GameEntityManager>
     {
-        public GameEntityManager(IOptions<GameEntityManagerOptions> options, ILogger<GameEntityManager> logger, TemplateManager templateManager, VirtualThingManager virtualThingManager) : base(options, logger)
+        public GameEntityManager(IOptions<GameEntityManagerOptions> options, ILogger<GameEntityManager> logger, GameTemplateManager templateManager, VirtualThingManager virtualThingManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
             _VirtualThingManager = virtualThingManager;
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         VirtualThingManager _VirtualThingManager;
 
         #region 计算寻找物品的匹配
@@ -437,11 +437,11 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 获取指定角色下所有实体的枚举子。
+        /// 获取指定角色下所有实体的枚举子。包含角色自身。
         /// </summary>
         /// <param name="gameChar"></param>
         /// <returns>所有子虚拟物的枚举子。如果出错则返回null,此时用<see cref="OwHelper.GetLastError"/>确定具体信息。</returns>
-        public IEnumerable<GameEntity> GetAllEntity(GameChar gameChar) => gameChar.GetAllChildren()?.Select(c => GetEntity(c));
+        public IEnumerable<GameEntity> GetAllEntity(GameChar gameChar) => gameChar.GetAllChildren()?.Select(c => GetEntity(c)).Append(gameChar);
 
         #endregion 基础功能
 
@@ -654,7 +654,7 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool CreateAndMove(IEnumerable<GameEntitySummary> summaries, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var allEntity = GetAllEntity(gameChar).Append(gameChar)?.ToArray();
+            var allEntity = GetAllEntity(gameChar)?.ToArray();
             if (allEntity is null) return false;
             var coll = summaries.TryToCollection();
 

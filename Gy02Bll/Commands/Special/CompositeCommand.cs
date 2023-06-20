@@ -41,7 +41,7 @@ namespace GY02.Commands
 
     public class CompositeHandler : SyncCommandHandlerBase<CompositeCommand>
     {
-        public CompositeHandler(TemplateManager templateManager, GameAccountStore gameAccountStore, BlueprintManager blueprintManager, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager)
+        public CompositeHandler(GameTemplateManager templateManager, GameAccountStore gameAccountStore, GameBlueprintManager blueprintManager, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager)
         {
             _TemplateManager = templateManager;
             _GameAccountStore = gameAccountStore;
@@ -50,9 +50,9 @@ namespace GY02.Commands
             _SyncCommandManager = syncCommandManager;
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         GameAccountStore _GameAccountStore;
-        BlueprintManager _BlueprintManager;
+        GameBlueprintManager _BlueprintManager;
         GameEntityManager _GameEntityManager;
         SyncCommandManager _SyncCommandManager;
 

@@ -19,16 +19,16 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class SpecialManager : GameManagerBase<SpecialManagerOptions, SpecialManager>
     {
-        public SpecialManager(IOptions<SpecialManagerOptions> options, ILogger<SpecialManager> logger, TemplateManager templateManager, GameDiceManager diceManager, SequenceOutManager sequenceOutManager) : base(options, logger)
+        public SpecialManager(IOptions<SpecialManagerOptions> options, ILogger<SpecialManager> logger, GameTemplateManager templateManager, GameDiceManager diceManager, GameSequenceManager sequenceOutManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
             _DiceManager = diceManager;
             _SequenceOutManager = sequenceOutManager;
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         GameDiceManager _DiceManager;
-        SequenceOutManager _SequenceOutManager;
+        GameSequenceManager _SequenceOutManager;
 
         #region 孵化相关
 

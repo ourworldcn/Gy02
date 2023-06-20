@@ -27,7 +27,7 @@ namespace GY02.Commands
 
     public class FuhuaHandler : SyncCommandHandlerBase<FuhuaCommand>, IGameCharHandler<FuhuaCommand>
     {
-        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, TemplateManager templateManager, BlueprintManager blueprintManager,
+        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameTemplateManager templateManager, GameBlueprintManager blueprintManager,
             SpecialManager specialManager, GameDiceManager diceManager)
         {
             _AccountStore = accountStore;
@@ -44,13 +44,13 @@ namespace GY02.Commands
 
         SyncCommandManager _SyncCommandManager;
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
 
         GameDiceManager _DiceManager;
         GameEntityManager _GameEntityManager;
 
 
-        BlueprintManager _BlueprintManager;
+        GameBlueprintManager _BlueprintManager;
         SpecialManager _SpecialManager;
 
         public override void Handle(FuhuaCommand command)

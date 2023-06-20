@@ -47,6 +47,11 @@ namespace GY02.Commands
         /// </summary>
         public Dictionary<string, string> Dictionary2 { get; set; } = new Dictionary<string, string>();
 
+        /// <summary>
+        /// 对没有附件且已读的邮件，多长时间删除。若为空则等待最长删除时间到来，当前是60天。
+        /// </summary>
+        public TimeSpan? DeleteDelay { get; set; }
+
         #endregion 基本属性
 
     }
@@ -107,6 +112,7 @@ namespace GY02.Commands
             OwHelper.Copy(command.Mail.Dictionary1, mail.Dictionary1);
             OwHelper.Copy(command.Mail.Dictionary2, mail.Dictionary2);
             mail.Attachment.AddRange(command.Mail.Attachment.Select(c => (GameEntitySummary)c.Clone()));
+            mail.DeleteDelay = command.Mail.DeleteDelay;
 
             var mails = new List<GameMail>();
 

@@ -58,7 +58,7 @@ namespace GY02.Base
     {
         #region 构造函数相关
 
-        public ThingManager(IOptions<ThingManagerOptions> options, ILogger<ThingManager> logger, IServiceProvider service, TemplateManager templateManager) : base(options, logger)
+        public ThingManager(IOptions<ThingManagerOptions> options, ILogger<ThingManager> logger, IServiceProvider service, GameTemplateManager templateManager) : base(options, logger)
         {
             Initializer();
             Service = service;
@@ -326,11 +326,11 @@ namespace GY02.Base
 
         #endregion IDisposable接口相关
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         public GameEntityBase GetEntityBase(VirtualThing thing)
         {
             var tt = _TemplateManager.Id2FullView.GetValueOrDefault(thing.ExtraGuid, null);
-            var type = TemplateManager.GetTypeFromTemplate(tt);
+            var type = GameTemplateManager.GetTypeFromTemplate(tt);
             return thing.GetJsonObject(type) as GameEntityBase;
         }
 

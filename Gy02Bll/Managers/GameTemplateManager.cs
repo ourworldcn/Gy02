@@ -24,18 +24,18 @@ namespace OW.Game.Managers
 
     }
 
-    public class TemplateManagerOptions : IOptions<TemplateManagerOptions>
+    public class GameTemplateManagerOptions : IOptions<GameTemplateManagerOptions>
     {
-        public TemplateManagerOptions() { }
+        public GameTemplateManagerOptions() { }
 
-        public TemplateManagerOptions Value => this;
+        public GameTemplateManagerOptions Value => this;
     }
 
     /// <summary>
     /// 
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
-    public class TemplateManager : GameManagerBase<TemplateManagerOptions, TemplateManager>
+    public class GameTemplateManager : GameManagerBase<GameTemplateManagerOptions, GameTemplateManager>
     {
         #region 静态成员
 
@@ -111,7 +111,7 @@ namespace OW.Game.Managers
             return GetTypeFromTemplate(fv);
         }
 
-        public TemplateManager(IOptions<TemplateManagerOptions> options, GY02TemplateContext dbContext, ILogger<TemplateManager> logger, IHostApplicationLifetime lifetime,
+        public GameTemplateManager(IOptions<GameTemplateManagerOptions> options, GY02TemplateContext dbContext, ILogger<GameTemplateManager> logger, IHostApplicationLifetime lifetime,
             IOptionsMonitor<RawTemplateOptions> rawTemplateOptions)
             : base(options, logger)
         {

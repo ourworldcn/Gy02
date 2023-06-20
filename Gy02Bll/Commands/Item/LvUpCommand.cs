@@ -33,7 +33,7 @@ namespace GY02.Commands
     public class LvUpCommandHandler : SyncCommandHandlerBase<LvUpCommand>, IGameCharHandler<LvUpCommand>
     {
 
-        public LvUpCommandHandler(TemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStore accountStore)
+        public LvUpCommandHandler(GameTemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStore accountStore)
         {
             _TemplateManager = templateManager;
             _SyncCommandManager = syncCommandManager;
@@ -41,7 +41,7 @@ namespace GY02.Commands
             AccountStore = accountStore;
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         LvUpCommand _Command;
         SyncCommandManager _SyncCommandManager;
         GameEntityManager _GameEntityManager;

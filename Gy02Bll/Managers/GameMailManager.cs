@@ -78,6 +78,7 @@ namespace GY02.Managers
                 OwHelper.Copy(mail.Dictionary1, tmp.Dictionary1);
                 OwHelper.Copy(mail.Dictionary2, tmp.Dictionary2);
                 tmp.SendUtc = DateTime.UtcNow;
+                tmp.DeleteDelay = mail.DeleteDelay;
                 result.Add(tmp);
             }
             return result;

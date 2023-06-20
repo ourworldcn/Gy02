@@ -26,7 +26,7 @@ namespace GY02.Controllers
         /// <returns></returns>
         [HttpPost]
         [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any)]
-        public ActionResult<GetTemplates2ReturnDto> GetTemplates2(GetTemplates2ParamsDto model, [FromServices] TemplateManager manager)
+        public ActionResult<GetTemplates2ReturnDto> GetTemplates2(GetTemplates2ParamsDto model, [FromServices] GameTemplateManager manager)
         {
             var result = new GetTemplates2ReturnDto();
             if (model.Uid != "gy001" || model.Pwd != "210115")
@@ -48,7 +48,7 @@ namespace GY02.Controllers
         /// <returns></returns>
         [HttpGet]
         [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new string[] { nameof(GetTemplates2ParamsDto.Uid), nameof(GetTemplates2ParamsDto.Pwd) })]
-        public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery] GetTemplates2ParamsDto model, [FromServices] TemplateManager manager)
+        public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery] GetTemplates2ParamsDto model, [FromServices] GameTemplateManager manager)
         {
             var result = new GetTemplates2ReturnDto();
             if (model.Uid != "gy001" || model.Pwd != "210115")

@@ -173,7 +173,7 @@
             蓝图相关操作的控制器。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.BlueprintController.#ctor(GY02.Managers.BlueprintManager,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
+        <member name="M:GY02.Controllers.BlueprintController.#ctor(GY02.Managers.GameBlueprintManager,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
             <summary>
             
             </summary>
@@ -263,7 +263,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.ItemManagerController.AddItems(GY02.Publisher.AddItemsParamsDto,GY02.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.TemplateManager,AutoMapper.IMapper)">
+        <member name="M:GY02.Controllers.ItemManagerController.AddItems(GY02.Publisher.AddItemsParamsDto,GY02.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.GameTemplateManager,AutoMapper.IMapper)">
             <summary>
             增加物品，调试用接口。
             </summary>
@@ -392,7 +392,7 @@
             
             </summary>
         </member>
-        <member name="M:GY02.Controllers.VWorldController.GetTemplates2(GY02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.TemplateManager)">
+        <member name="M:GY02.Controllers.VWorldController.GetTemplates2(GY02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.GameTemplateManager)">
             <summary>
             获取模板数据。
             </summary>
@@ -400,7 +400,7 @@
             <param name="manager"></param>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.VWorldController.GetTemplates(GY02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.TemplateManager)">
+        <member name="M:GY02.Controllers.VWorldController.GetTemplates(GY02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.GameTemplateManager)">
             <summary>
             使用缓存获取配置。
             </summary>

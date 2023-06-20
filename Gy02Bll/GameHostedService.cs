@@ -175,7 +175,6 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                var str = JsonSerializer.Deserialize("\"\u518D\u6B21\u6D4B\u8BD5\u9644\u4EF6\u9886\u53D6\u529F\u80FD \u53CAUI\u8868\u73B002\"", typeof(string));
             }
             finally
             {

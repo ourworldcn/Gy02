@@ -41,7 +41,7 @@ namespace GY02.Commands
         /// 构造函数。
         /// </summary>
         /// <param name="gameAccountStore"></param>
-        public ApplyBlueprintHandler(GameAccountStore gameAccountStore, BlueprintManager blueprintManager, SyncCommandManager syncCommandManager, TemplateManager templateManager, GameEntityManager gameEntityManager)
+        public ApplyBlueprintHandler(GameAccountStore gameAccountStore, GameBlueprintManager blueprintManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEntityManager gameEntityManager)
         {
             _GameAccountStore = gameAccountStore;
             _BlueprintManager = blueprintManager;
@@ -51,9 +51,9 @@ namespace GY02.Commands
         }
 
         GameAccountStore _GameAccountStore;
-        BlueprintManager _BlueprintManager;
+        GameBlueprintManager _BlueprintManager;
         SyncCommandManager _SyncCommandManager;
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         GameEntityManager _GameEntityManager;
 
         public GameAccountStore AccountStore => _GameAccountStore;

@@ -18,14 +18,14 @@ namespace GY02.Controllers
         /// <param name="blueprintManager"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="mapper"></param>
-        public BlueprintController(BlueprintManager blueprintManager, SyncCommandManager syncCommandManager, IMapper mapper)
+        public BlueprintController(GameBlueprintManager blueprintManager, SyncCommandManager syncCommandManager, IMapper mapper)
         {
             _BlueprintManager = blueprintManager;
             _SyncCommandManager = syncCommandManager;
             _Mapper = mapper;
         }
 
-        private BlueprintManager _BlueprintManager;
+        private GameBlueprintManager _BlueprintManager;
         SyncCommandManager _SyncCommandManager;
         IMapper _Mapper;
 

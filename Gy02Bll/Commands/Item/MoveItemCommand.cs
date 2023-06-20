@@ -39,14 +39,14 @@ namespace GY02.Commands
 
     public class MoveItemsHandler : SyncCommandHandlerBase<MoveItemsCommand>
     {
-        public MoveItemsHandler(GameAccountStore store, TemplateManager templateManager)
+        public MoveItemsHandler(GameAccountStore store, GameTemplateManager templateManager)
         {
             _Store = store;
             _TemplateManager = templateManager;
         }
 
         GameAccountStore _Store;
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
 
         public override void Handle(MoveItemsCommand command)
         {

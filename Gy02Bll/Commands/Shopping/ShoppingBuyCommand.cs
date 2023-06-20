@@ -31,7 +31,7 @@ namespace GY02.Commands
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
     {
 
-        public ShoppingBuyHandler(GameAccountStore accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, BlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager)
+        public ShoppingBuyHandler(GameAccountStore accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager)
         {
             AccountStore = accountStore;
             _ShoppingManager = shoppingManager;
@@ -44,7 +44,7 @@ namespace GY02.Commands
         public GameAccountStore AccountStore { get; }
 
         GameEntityManager _EntityManager;
-        BlueprintManager _BlueprintManager;
+        GameBlueprintManager _BlueprintManager;
         GameShoppingManager _ShoppingManager;
         GameDiceManager _DiceManager;
         SpecialManager _SpecialManager;

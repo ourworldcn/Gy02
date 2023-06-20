@@ -64,7 +64,7 @@ namespace OW.Game.Manager
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class VirtualThingManager : GameManagerBase<VirtualThingManagerOptions, VirtualThingManager>
     {
-        public VirtualThingManager(IOptions<VirtualThingManagerOptions> options, ILogger<VirtualThingManager> logger, TemplateManager templateManager, IMapper mapper) : base(options, logger)
+        public VirtualThingManager(IOptions<VirtualThingManagerOptions> options, ILogger<VirtualThingManager> logger, GameTemplateManager templateManager, IMapper mapper) : base(options, logger)
         {
             _TemplateManager = templateManager;
 
@@ -77,7 +77,7 @@ namespace OW.Game.Manager
 
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
 
         IMapper _Mapper;
 
@@ -144,7 +144,7 @@ namespace OW.Game.Manager
 #if DEBUG 
             _TemplateManager.SetTemplate(result);
 #endif //DEBUG
-            var type = TemplateManager.GetTypeFromTemplate(tv);    //获取实例类型
+            var type = GameTemplateManager.GetTypeFromTemplate(tv);    //获取实例类型
 
             var view = result.GetJsonObject(type);
             _Mapper.Map(tv, view, tv.GetType(), view.GetType()); //复制一般性属性。

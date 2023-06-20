@@ -33,13 +33,13 @@ namespace GY02.Commands
         /// 构造函数。
         /// </summary>
         /// <param name="templateManager"></param>
-        public ModifyEntityCountHandler(TemplateManager templateManager, GameEntityManager gameEntityManager)
+        public ModifyEntityCountHandler(GameTemplateManager templateManager, GameEntityManager gameEntityManager)
         {
             _TemplateManager = templateManager;
             _GameEntityManager = gameEntityManager;
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         GameEntityManager _GameEntityManager;
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace GY02.Commands
         {
             Debug.Assert(template.Stk >= -1);
             Debug.Assert(template.TemplateId == entity.TemplateId);
-            var entityType = TemplateManager.GetTypeFromTemplate(template);
+            var entityType = GameTemplateManager.GetTypeFromTemplate(template);
 
             if (entity.Count + count < 0)  //数量过小
             {

@@ -14,33 +14,30 @@ using System.Threading.Tasks;
 
 namespace GY02.Managers
 {
-    public class SequenceOutManagerOptions : IOptions<SequenceOutManagerOptions>
+    public class GameSequenceManagerOptions : IOptions<GameSequenceManagerOptions>
     {
-        public SequenceOutManagerOptions()
+        public GameSequenceManagerOptions()
         {
 
         }
 
-        public SequenceOutManagerOptions Value => this;
+        public GameSequenceManagerOptions Value => this;
     }
 
     /// <summary>
     /// 动态输出的管理器。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class SequenceOutManager : GameManagerBase<SequenceOutManagerOptions, SequenceOutManager>, IEntitySummaryConverter
+    public class GameSequenceManager : GameManagerBase<GameSequenceManagerOptions, GameSequenceManager>, IEntitySummaryConverter
     {
-        public SequenceOutManager(IOptions<SequenceOutManagerOptions> options, ILogger<SequenceOutManager> logger, GameEntityManager entityManager, BlueprintManager blueprintManager, TemplateManager templateManager) : base(options, logger)
+        public GameSequenceManager(IOptions<GameSequenceManagerOptions> options, ILogger<GameSequenceManager> logger, GameEntityManager entityManager, GameTemplateManager templateManager) : base(options, logger)
         {
             _EntityManager = entityManager;
-            _BlueprintManager = blueprintManager;
             _TemplateManager = templateManager;
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         GameEntityManager _EntityManager;
-
-        BlueprintManager _BlueprintManager;
 
         #region 获取信息相关
 
@@ -124,7 +121,7 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool GetOut(GameChar gameChar, TemplateStringFullView tt, out GameEntitySummary result)
         {
-            var baseColl = _EntityManager.GetAllEntity(gameChar).Append(gameChar);  //获取所有的实体
+            var baseColl = _EntityManager.GetAllEntity(gameChar);  //获取所有的实体
             return GetOut(baseColl, tt, out result);
         }
 
@@ -139,7 +136,6 @@ namespace GY02.Managers
         {
             var mo = GetSequenceOutByTemplate(tt);
             if (mo is null) goto lbErr;
-
 
             var coll = entities.Where(c => _EntityManager.IsMatch(c, mo.Conditions));    //符合条件的实体集合
             var entity = coll.FirstOrDefault();

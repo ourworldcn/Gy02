@@ -21,29 +21,29 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Managers
 {
-    public class BlueprintOptions : IOptions<BlueprintOptions>
+    public class GameBlueprintOptions : IOptions<GameBlueprintOptions>
     {
-        public BlueprintOptions()
+        public GameBlueprintOptions()
         {
         }
 
-        public BlueprintOptions Value => this;
+        public GameBlueprintOptions Value => this;
     }
 
     /// <summary>
     /// 蓝图相关功能管理器。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class BlueprintManager : GameManagerBase<BlueprintOptions, BlueprintManager>
+    public class GameBlueprintManager : GameManagerBase<GameBlueprintOptions, GameBlueprintManager>
     {
-        public BlueprintManager(IOptions<BlueprintOptions> options, ILogger<BlueprintManager> logger, TemplateManager templateManager, GameEntityManager entityManager) : base(options, logger)
+        public GameBlueprintManager(IOptions<GameBlueprintOptions> options, ILogger<GameBlueprintManager> logger, GameEntityManager entityManager, GameSequenceManager sequenceManager) : base(options, logger)
         {
-            _TemplateManager = templateManager;
             _EntityManager = entityManager;
+            _SequenceManager = sequenceManager;
         }
 
-        TemplateManager _TemplateManager;
         GameEntityManager _EntityManager;
+        GameSequenceManager _SequenceManager;
 
         #region 获取信息
 
@@ -77,6 +77,15 @@ namespace GY02.Managers
         {
             if (inItem.IgnoreIfDisplayList && ignore) return true;  //若允许忽略
             if (inItem.Count > entity.Count) return false;  //若数量不满足
+            foreach (var item in inItem.Conditional)    //遍历检验是否是序列输入
+            {
+                if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是输入序列
+                {
+                    //if (!_SequenceManager.GetOut(entities, tt, out var summary)) continue;  //没有匹配序列输出
+                    //result = entities.FirstOrDefault(c => c.TemplateId == summary.TId && (!summary.ParentTId.HasValue || c.GetThing().Parent.ExtraGuid == summary.ParentTId.Value) && c.Count >= summary.Count);
+                    //if (result is not null) return result;
+                }
+            }
             return _EntityManager.IsMatch(entity, inItem.Conditional, ignore);
         }
 
@@ -94,7 +103,6 @@ namespace GY02.Managers
             var result = new List<(BlueprintInItem, GameEntity)>();
             var list = new List<BlueprintInItem>(conditionals);
             var all = new HashSet<GameEntity>(entities);
-
             foreach (var conditional in conditionals)
             {
                 var entity = all.Where(c => IsValid(conditional, c)).FirstOrDefault();
@@ -125,6 +133,25 @@ namespace GY02.Managers
             if (coll is null) return false;
             var tmp = coll.Select(c => (Entity: c.Item2, Count: -Math.Abs(c.Item1.Count))).Where(c => c.Count != 0);
             return _EntityManager.Modify(tmp, changes);
+        }
+
+        public GameEntity GetInputSequence(BlueprintInItem inItem, GameChar gameChar, IEnumerable<GameEntity> entities)
+        {
+            GameEntity result = null;
+            foreach (var item in inItem.Conditional)
+            {
+                if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //输入序列
+                {
+                    if (!_SequenceManager.GetOut(entities, tt, out var summary)) continue;  //没有匹配序列输出
+                    result = entities.FirstOrDefault(c => c.TemplateId == summary.TId && (!summary.ParentTId.HasValue || c.GetThing().Parent.ExtraGuid == summary.ParentTId.Value) && c.Count >= summary.Count);
+                    if (result is not null) return result;
+                }
+                else //普通条件
+                {
+                }
+            }
+
+            return result;
         }
     }
 }

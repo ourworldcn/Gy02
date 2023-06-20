@@ -50,7 +50,7 @@ namespace GY02.Base
         /// <param name="gc"></param>
         /// <param name="ids"></param>
         /// <returns></returns>
-        public static IEnumerable<T> GetEntityAndTemplateFullView<T>(this TemplateManager tm, GameChar gc, IEnumerable<Guid> ids) where T : GameEntityBase
+        public static IEnumerable<T> GetEntityAndTemplateFullView<T>(this GameTemplateManager tm, GameChar gc, IEnumerable<Guid> ids) where T : GameEntityBase
         {
             var id2Thing = gc.GetThing().GetAllChildren().ToDictionary(c => c.Id);
             var result = new List<T>();
@@ -87,7 +87,7 @@ namespace GY02.Base
         /// <param name="thing"></param>
         /// <returns>true成功，false失败，
         /// 此时使用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
-        public static bool SetTemplate(this TemplateManager manager, VirtualThing thing)
+        public static bool SetTemplate(this GameTemplateManager manager, VirtualThing thing)
         {
             var tt = manager.GetFullViewFromId(thing.ExtraGuid);
             if (tt is null)

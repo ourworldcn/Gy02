@@ -32,14 +32,14 @@ namespace GY02.Commands
     {
 
 
-        public MoveEntitiesHandler(TemplateManager templateManager, SyncCommandManager commandManager, GameAccountStore store, GameEntityManager gameEntityManager)
+        public MoveEntitiesHandler(GameTemplateManager templateManager, SyncCommandManager commandManager, GameAccountStore store, GameEntityManager gameEntityManager)
         {
             _TemplateManager = templateManager;
             _Store = store;
             _EntityManager = gameEntityManager;
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
         GameAccountStore _Store;
         GameEntityManager _EntityManager;
 

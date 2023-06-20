@@ -34,7 +34,7 @@ namespace GY02.Commands
 
     public class GetShoppingItemsHandler : SyncCommandHandlerBase<GetShoppingItemsCommand>, IGameCharHandler<GetShoppingItemsCommand>
     {
-        public GetShoppingItemsHandler(GameAccountStore accountStore, TemplateManager templateManager, GameShoppingManager shoppingManager)
+        public GetShoppingItemsHandler(GameAccountStore accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager)
         {
             AccountStore = accountStore;
             _TemplateManager = templateManager;
@@ -43,7 +43,7 @@ namespace GY02.Commands
 
         public GameAccountStore AccountStore { get; }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
 
         GameShoppingManager _ShoppingManager;
 

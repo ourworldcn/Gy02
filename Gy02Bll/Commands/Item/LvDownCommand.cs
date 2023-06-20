@@ -32,7 +32,7 @@ namespace GY02.Commands
         /// 构造函数。
         /// </summary>
         /// <param name="syncCommandManager"></param>
-        public LvDownHandler(SyncCommandManager syncCommandManager, TemplateManager templateManager, GameAccountStore accountStore, GameEntityManager entityManager)
+        public LvDownHandler(SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameAccountStore accountStore, GameEntityManager entityManager)
         {
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
@@ -41,7 +41,7 @@ namespace GY02.Commands
         }
 
         SyncCommandManager _SyncCommandManager;
-        private TemplateManager _TemplateManager;
+        private GameTemplateManager _TemplateManager;
 
         public GameAccountStore AccountStore { get; }
         GameEntityManager _EntityManager;

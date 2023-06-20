@@ -1,6 +1,6 @@
 {
-  "Subject": "\u518D\u6B21\u6D4B\u8BD5\u9644\u4EF6\u9886\u53D6\u529F\u80FD \u53CAUI\u8868\u73B002",
-  "Body": "\u518D\u6B21\u6D4B\u8BD5\u9644\u4EF6\u9886\u53D6\u529F\u80FD \u53CAUI\u8868\u73B002",
+  "Subject": "\u6D4B\u8BD50\u5929 \u5220\u9664\u90AE\u4EF6\u9644\u4EF6",
+  "Body": "\u5E84",
   "Attachment": [
     {
       "Id": null,
@@ -11,16 +11,40 @@
     {
       "Id": null,
       "ParentTId": null,
-      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "Count": 8.0
+      "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
+      "Count": 10.0
+    },
+    {
+      "Id": null,
+      "ParentTId": null,
+      "TId": "08e3996b-4547-4cc2-90dc-ac3000504be5",
+      "Count": 1.0
+    },
+    {
+      "Id": null,
+      "ParentTId": null,
+      "TId": "08e3996b-4547-4cc2-90dc-ac3000504be5",
+      "Count": 1.0
+    },
+    {
+      "Id": null,
+      "ParentTId": null,
+      "TId": "1bf4948d-fedc-4819-8e1f-41fe3a6d83f0",
+      "Count": 1.0
+    },
+    {
+      "Id": null,
+      "ParentTId": null,
+      "TId": "26f7e185-6daa-428a-a86f-715258c43b4b",
+      "Count": 1.0
     }
   ],
   "From": "be13feea-8aed-46ac-8e78-7389aad2822c",
-  "Dictionary1": { "Chinese": "\u518D\u6B21\u6D4B\u8BD5\u9644\u4EF6\u9886\u53D6\u529F\u80FD \u53CAUI\u8868\u73B002" },
-  "Dictionary2": { "Chinese": "\u518D\u6B21\u6D4B\u8BD5\u9644\u4EF6\u9886\u53D6\u529F\u80FD \u53CAUI\u8868\u73B002" },
-  "ReadUtc": "2023-06-19T06:59:28.2330356Z",
-  "SendUtc": "2023-06-16T08:34:22.2274619Z",
-  "PickUpUtc": "2023-06-16T08:34:28.5057147Z",
+  "Dictionary1": {},
+  "Dictionary2": {},
+  "ReadUtc": "2023-06-19T07:17:45.9160711Z",
+  "SendUtc": "2023-06-19T06:49:51.6432325Z",
+  "PickUpUtc": "2023-06-19T06:58:09.7137878Z",
   "DeleteDelay": null,
   "Seq": 0
 }

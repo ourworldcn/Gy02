@@ -43,7 +43,7 @@ namespace GY02.Controllers
             try
             {
                 var list = JsonSerializer.Deserialize<TemplateDatas>(stream);
-                var dic = TemplateManager.GetTemplateFullviews(list?.GameTemplates);
+                var dic = GameTemplateManager.GetTemplateFullviews(list?.GameTemplates);
 
                 //stream.Seek(0, SeekOrigin.Begin);
                 //var path = Path.Combine(environment.ContentRootPath, "GameTemplates.json");
@@ -86,7 +86,7 @@ namespace GY02.Controllers
             try
             {
                 var list = JsonSerializer.Deserialize<TemplateDatas>(stream);
-                var dic = TemplateManager.GetTemplateFullviews(list?.GameTemplates);
+                var dic = GameTemplateManager.GetTemplateFullviews(list?.GameTemplates);
 
                 stream.Seek(0, SeekOrigin.Begin);
 

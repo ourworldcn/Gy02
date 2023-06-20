@@ -80,7 +80,7 @@ namespace GY02.Controllers
             //加图纸
             model.TIds.Add(Guid.Parse("16a8b068-918b-46ad-8ae6-d3797c7683ac"));
             model.Counts.Add(100);
-            AddItems(model, store, _ServiceProvider.GetRequiredService<SyncCommandManager>(), _ServiceProvider.GetRequiredService<TemplateManager>(),
+            AddItems(model, store, _ServiceProvider.GetRequiredService<SyncCommandManager>(), _ServiceProvider.GetRequiredService<GameTemplateManager>(),
                 _ServiceProvider.GetRequiredService<IMapper>());
             return true;
         }
@@ -135,7 +135,7 @@ namespace GY02.Controllers
         /// <returns></returns>
         [HttpPost]
         public ActionResult<AddItemsReturnDto> AddItems(AddItemsParamsDto model, [FromServices] GameAccountStore store, [FromServices] SyncCommandManager commandManager,
-            [FromServices] TemplateManager templateManager, [FromServices] IMapper mapper)
+            [FromServices] GameTemplateManager templateManager, [FromServices] IMapper mapper)
         {
             var result = new AddItemsReturnDto { };
             using var dw = store.GetCharFromToken(model.Token, out var gc);
@@ -206,7 +206,7 @@ namespace GY02.Controllers
         public ActionResult<LvDownReturnDto> LvDown(LvDownParamsDto model)
         {
             var mapper = _ServiceProvider.GetRequiredService<IMapper>();
-            var tm = _ServiceProvider.GetRequiredService<TemplateManager>();
+            var tm = _ServiceProvider.GetRequiredService<GameTemplateManager>();
             var result = new LvDownReturnDto { };
             var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
             using var dw = store.GetCharFromToken(model.Token, out var gc);
@@ -273,7 +273,7 @@ namespace GY02.Controllers
             var command = mapper.Map<CompositeCommand>(model);
             command.GameChar = gc;
             command.RestoreLevel = true;
-            var tm = _ServiceProvider.GetRequiredService<TemplateManager>();
+            var tm = _ServiceProvider.GetRequiredService<GameTemplateManager>();
             var entities = tm.GetEntityAndTemplateFullView<GameEntity>(command.GameChar, model.Ids);
             if (entities is null)
             {

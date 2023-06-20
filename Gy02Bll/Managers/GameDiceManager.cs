@@ -34,12 +34,12 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameDiceManager : GameManagerBase<GameDiceManagerOptions, GameDiceManager>, IEntitySummaryConverter
     {
-        public GameDiceManager(IOptions<GameDiceManagerOptions> options, ILogger<GameDiceManager> logger, TemplateManager templateManager) : base(options, logger)
+        public GameDiceManager(IOptions<GameDiceManagerOptions> options, ILogger<GameDiceManager> logger, GameTemplateManager templateManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
         }
 
-        TemplateManager _TemplateManager;
+        GameTemplateManager _TemplateManager;
 
         #region 卡池相关
 
