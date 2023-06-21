@@ -1,44 +1,24 @@
 {
-  "Subject": "\u6D4B\u8BD5\u81EA\u52A8\u5220\u9664\u529F\u80FD -\u9644\u4EF6\u7248\u672C",
-  "Body": "\u6D4B\u8BD5\u5185\u5BB9\u4E00\u5929",
-  "Attachment": [
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-      "Count": 222.0
+  "SequenceOut": {
+    "Conditions": [
+      {
+        "ParentTId": null,
+        "Genus": [],
+        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "GetIndexExpression": {
+      "Operator": "ToInt32",
+      "Args": [ "Level" ],
+      "IgnoreIfDisplayList": false
     },
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-      "Count": 22.0
-    },
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "b564395a-487d-4682-8dec-1338daee3952",
-      "Count": 1.0
-    },
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
-      "Count": 1.0
-    },
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
-      "Count": 1.0
+    "Outs": {
+      "TIds": [],
+      "ParentTIds": [ null ],
+      "Counts": [ 1 ]
     }
-  ],
-  "From": "be13feea-8aed-46ac-8e78-7389aad2822c",
-  "Dictionary1": {},
-  "Dictionary2": {},
-  "ReadUtc": "2023-06-19T07:17:45.9160711Z",
-  "SendUtc": "2023-06-19T06:06:06.7206389Z",
-  "PickUpUtc": "2023-06-19T06:57:53.5870676Z",
-  "DeleteDelay": null,
-  "Seq": 0
+  }
 }

@@ -19,6 +19,7 @@
     <Content Remove="数据说明\卡池组结构说明.json" />
     <Content Remove="数据说明\卡池结构说明.json" />
     <Content Remove="数据说明\商品项结构说明.json" />
+    <Content Remove="数据说明\快速变化属性的说明.json" />
     <Content Remove="数据说明\选取实体条件对象的说明.json" />
   </ItemGroup>
 
@@ -26,6 +27,7 @@
     <None Include="GameTemplates.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="数据说明\快速变化属性的说明.json" />
     <None Include="数据说明\卡池组结构说明.json" />
     <None Include="数据说明\卡池结构说明.json" />
     <None Include="数据说明\动态产出说明.json" />

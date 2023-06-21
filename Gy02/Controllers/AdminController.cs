@@ -1,13 +1,16 @@
 ﻿using AutoMapper.Configuration.Annotations;
 using GY02;
+using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Hosting.Internal;
+using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.GameDb;
 using System.IO.Compression;
 using System.Linq;
 using System.Text.Json;
@@ -127,6 +130,38 @@ namespace GY02.Controllers
             var result = new GetCharIdByLoginNameReturnDto { };
             result.LoginNames.AddRange(coll.Select(c => c.LoginName));
             result.CharIds.AddRange(coll.Select(c => c.CharId));
+            return result;
+        }
+
+        /// <summary>
+        /// 获取留存数据。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="dbUser"></param>
+        /// <param name="dbLogger"></param>
+        /// <param name="entityManager"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GetLiucunReturnDto> GetLiucun(GetLiucunParamsDto model, [FromServices] GY02UserContext dbUser, [FromServices] GY02LogginContext dbLogger, [FromServices] GameEntityManager entityManager)
+        {
+            if (model.Uid != "gy001" || model.Pwd != "210115")
+                return Unauthorized();
+            var result = new GetLiucunReturnDto();
+            //取注册人数
+            var regColl = from user in dbUser.VirtualThings
+                          where user.ExtraGuid == ProjectContent.UserTId
+                          select user;
+            var ary = regColl.AsEnumerable().Select(c => c.GetJsonObject<GameUser>()).Where(c => c.CreateUtc >= model.StartReg && c.CreateUtc < model.EndReg).Select(c => c.Id).Distinct().ToArray();
+            result.RegCount = ary.Length;
+
+            var loginColl = from ar in dbLogger.ActionRecords
+                            where ar.ActionId == "Loginged" && ar.DateTimeUtc >= model.StartReg && ar.DateTimeUtc < model.EndReg && ary.Contains(ar.ParentId!.Value)
+                            group ar.ParentId by ar.ParentId into g
+                            select g.Key;
+
+            result.LoginCount = loginColl.Count();
+            if (result.RegCount > 0)
+                result.Liucun = (decimal)result.LoginCount / result.RegCount;
             return result;
         }
     }

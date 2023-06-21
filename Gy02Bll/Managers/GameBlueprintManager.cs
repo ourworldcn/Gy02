@@ -81,7 +81,8 @@ namespace GY02.Managers
             {
                 if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是输入序列
                 {
-                    //if (!_SequenceManager.GetOut(entities, tt, out var summary)) continue;  //没有匹配序列输出
+
+                    //if (!_SequenceManager.GetOut(entity, tt, out var summary)) continue;  //没有匹配序列输出
                     //result = entities.FirstOrDefault(c => c.TemplateId == summary.TId && (!summary.ParentTId.HasValue || c.GetThing().Parent.ExtraGuid == summary.ParentTId.Value) && c.Count >= summary.Count);
                     //if (result is not null) return result;
                 }
@@ -94,11 +95,11 @@ namespace GY02.Managers
         /// <summary>
         /// 在一组实体中选择条件指定实体。
         /// </summary>
-        /// <param name="entities"></param>
         /// <param name="conditionals"></param>
+        /// <param name="entities"></param>
         /// <returns>返回条件与实体配对的值元组的集合。如果出现任何错误将返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。
         /// 只会返回有消耗的需求的实体，不需要消耗的实体不会返回。</returns>
-        public IEnumerable<(BlueprintInItem, GameEntity)> GetCost(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals)
+        public IEnumerable<(BlueprintInItem, GameEntity)> GetInputs(IEnumerable<BlueprintInItem> conditionals, IEnumerable<GameEntity> entities)
         {
             var result = new List<(BlueprintInItem, GameEntity)>();
             var list = new List<BlueprintInItem>(conditionals);
@@ -120,6 +121,31 @@ namespace GY02.Managers
         }
 
         /// <summary>
+        /// 获取序列指定的匹配项。
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="entities"></param>
+        /// <returns>没找到匹配项，则返回空集合。</returns>
+        public IEnumerable<(GameEntity, decimal)> GetMatches(BlueprintInItem input, IEnumerable<GameEntity> entities)
+        {
+            var result = new List<(GameEntity, decimal)> { };
+            foreach (var item in input.Conditional)
+            {
+                if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是序列输入
+                {
+                    var matches = _SequenceManager.GetMatches(entities, tt);
+                    var match = matches.FirstOrDefault();
+                    if (match.Item2 is not null)  //若找到匹配项
+                    {
+                        result.Add((match.Item2, -Math.Abs(match.Item1.Count)));
+                        return result;
+                    }
+                }
+            }
+            return GetInputs(new BlueprintInItem[] { input }, entities).Where(c => c.Item1 == input).Select(c => (c.Item2, -Math.Abs(c.Item1.Count)));
+        }
+
+        /// <summary>
         /// 消耗指定材料。
         /// </summary>
         /// <param name="entities"></param>
@@ -129,29 +155,11 @@ namespace GY02.Managers
         /// <exception cref="InvalidOperationException"></exception>
         public bool Deplete(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var coll = GetCost(entities, conditionals);
+            var coll = GetInputs(conditionals, entities);
             if (coll is null) return false;
             var tmp = coll.Select(c => (Entity: c.Item2, Count: -Math.Abs(c.Item1.Count))).Where(c => c.Count != 0);
             return _EntityManager.Modify(tmp, changes);
         }
 
-        public GameEntity GetInputSequence(BlueprintInItem inItem, GameChar gameChar, IEnumerable<GameEntity> entities)
-        {
-            GameEntity result = null;
-            foreach (var item in inItem.Conditional)
-            {
-                if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //输入序列
-                {
-                    if (!_SequenceManager.GetOut(entities, tt, out var summary)) continue;  //没有匹配序列输出
-                    result = entities.FirstOrDefault(c => c.TemplateId == summary.TId && (!summary.ParentTId.HasValue || c.GetThing().Parent.ExtraGuid == summary.ParentTId.Value) && c.Count >= summary.Count);
-                    if (result is not null) return result;
-                }
-                else //普通条件
-                {
-                }
-            }
-
-            return result;
-        }
     }
 }

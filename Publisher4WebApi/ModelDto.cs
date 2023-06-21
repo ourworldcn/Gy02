@@ -1653,6 +1653,63 @@ namespace GY02.Publisher
     #region 管理员功能相关
 
     /// <summary>
+    /// 
+    /// </summary>
+    public class GetLiucunParamsDto
+    {
+        /// <summary>
+        /// 注册的起始时间。
+        /// </summary>
+        public DateTime StartReg { get; set; }
+
+        /// <summary>
+        /// 注册的结束时间。
+        /// </summary>
+        public DateTime EndReg { get; set; }
+
+        /// <summary>
+        /// 登录起始时间。
+        /// </summary>
+        public DateTime StartLogin { get; set; }
+
+        /// <summary>
+        /// 登录的终止时间。
+        /// </summary>
+        public DateTime EndLogin { get; set; }
+
+        /// <summary>
+        /// 用户名。
+        /// </summary>
+        public string Uid { get; set; }
+
+        /// <summary>
+        /// 密码。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class GetLiucunReturnDto
+    {
+        /// <summary>
+        /// 注册人数。
+        /// </summary>
+        public int RegCount { get; set; }
+
+        /// <summary>
+        /// 登陆人数。
+        /// </summary>
+        public int LoginCount { get; set; }
+
+        /// <summary>
+        /// 留存。
+        /// </summary>
+        public decimal Liucun { get; set; }
+    }
+
+    /// <summary>
     /// 用一组登录名获取当前角色Id的功能的参数封装类。
     /// </summary>
     public class GetCharIdByLoginNameParamsDto : TokenDtoBase

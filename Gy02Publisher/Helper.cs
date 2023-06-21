@@ -158,6 +158,13 @@ namespace GY02.Publisher
     /// </summary>
     public static class ErrorCodes
     {
+        /// <summary>
+        /// 获取错误码的操作系统语言说明。
+        /// </summary>
+        /// <param name="error"></param>
+        /// <returns>一个错误的说明，与运行操作系统的语言一致。</returns>
+        public static string GetMessage(int error) => new System.ComponentModel.Win32Exception(error).Message;
+
         public const int NO_ERROR = 0;
 
         /// <summary>

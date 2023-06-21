@@ -168,6 +168,16 @@
             <param name="db"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.AdminController.GetLiucun(GY02.Publisher.GetLiucunParamsDto,OW.Game.Store.GY02UserContext,OW.GameDb.GY02LogginContext,GY02.Managers.GameEntityManager)">
+            <summary>
+            获取留存数据。
+            </summary>
+            <param name="model"></param>
+            <param name="dbUser"></param>
+            <param name="dbLogger"></param>
+            <param name="entityManager"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Controllers.BlueprintController">
             <summary>
             蓝图相关操作的控制器。

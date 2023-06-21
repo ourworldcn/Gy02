@@ -1102,6 +1102,13 @@
             错误码封装。
             </summary>
         </member>
+        <member name="M:GY02.Publisher.ErrorCodes.GetMessage(System.Int32)">
+            <summary>
+            获取错误码的操作系统语言说明。
+            </summary>
+            <param name="error"></param>
+            <returns>一个错误的说明，与运行操作系统的语言一致。</returns>
+        </member>
         <member name="F:GY02.Publisher.ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED">
             <summary>
             功能未实现。

@@ -443,6 +443,29 @@ namespace GY02.Managers
         /// <returns>所有子虚拟物的枚举子。如果出错则返回null,此时用<see cref="OwHelper.GetLastError"/>确定具体信息。</returns>
         public IEnumerable<GameEntity> GetAllEntity(GameChar gameChar) => gameChar.GetAllChildren()?.Select(c => GetEntity(c)).Append(gameChar);
 
+        /// <summary>
+        /// 获取指示，确定摘要是否和指定实体匹配。
+        /// </summary>
+        /// <param name="summary"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public bool IsValid(GameEntitySummary summary, GameEntity entity)
+        {
+            if (summary.Id.HasValue && summary.Id.Value != entity.Id) return false;
+            if (summary.TId != entity.TemplateId) return false;
+            if (summary.Count > entity.Count) return false;
+            if (summary.ParentTId.HasValue && summary.ParentTId.Value != entity.GetThing()?.Parent?.ExtraGuid) return false;
+            return true;
+        }
+
+        /// <summary>
+        /// 获取指示匹配的一组实体。
+        /// </summary>
+        /// <param name="summary"></param>
+        /// <param name="entities"></param>
+        /// <returns>如果没有匹配的实体则返回空集合。</returns>
+        public IEnumerable<GameEntity> GetMatches(GameEntitySummary summary, IEnumerable<GameEntity> entities) => entities.Where(c => IsValid(summary, c));
+
         #endregion 基础功能
 
         #region 通用条件相关

@@ -1266,6 +1266,61 @@
             发送邮件功能的返回值封装类。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetLiucunParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunParamsDto.StartReg">
+            <summary>
+            注册的起始时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunParamsDto.EndReg">
+            <summary>
+            注册的结束时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunParamsDto.StartLogin">
+            <summary>
+            登录起始时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunParamsDto.EndLogin">
+            <summary>
+            登录的终止时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunParamsDto.Uid">
+            <summary>
+            用户名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunParamsDto.Pwd">
+            <summary>
+            密码。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetLiucunReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunReturnDto.RegCount">
+            <summary>
+            注册人数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunReturnDto.LoginCount">
+            <summary>
+            登陆人数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetLiucunReturnDto.Liucun">
+            <summary>
+            留存。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetCharIdByLoginNameParamsDto">
             <summary>
             用一组登录名获取当前角色Id的功能的参数封装类。

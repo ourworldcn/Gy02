@@ -99,7 +99,7 @@ internal class Program
 
         VWorld.TemplateContextOptions = new DbContextOptionsBuilder<GY02TemplateContext>().UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).Options;
         VWorld.UserContextOptions = new DbContextOptionsBuilder<GY02UserContext>().UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging().Options;
-
+        
         #endregion ≈‰÷√ ˝æ›ø‚
 
         services.AddGameServices();
