@@ -1,24 +1,36 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Genus": [ "gs_leijiqiandao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-04-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "60d",
+      "ValidPeriodString": "60d"
+    },
+    "GroupNumber": 0,
+    "Ins": [
       {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
-        "MinCount": null,
-        "GeneralConditional": [],
-        "IgnoreIfDisplayList": true
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ 60, 6 ]
+              }
+            ],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": []
       }
     ],
-    "GetIndexExpression": {
-      "Operator": "ToInt32",
-      "Args": [ "Level" ],
-      "IgnoreIfDisplayList": false
-    },
-    "Outs": {
-      "TIds": [],
-      "ParentTIds": [ null ],
-      "Counts": [ 1 ]
-    }
+    "Outs": [],
+    "MaxCount": 1
   }
 }

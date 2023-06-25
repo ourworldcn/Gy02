@@ -105,7 +105,7 @@ namespace GY02.Managers
             }
             else //若发送到所有人
             {
-                var coll = db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.CharTId && c.Id != gameChar.Id).Select(c => c.Id).AsEnumerable();
+                var coll = db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.CharTId /*&& c.Id != gameChar.Id*/).Select(c => c.Id).AsEnumerable();
                 tos = coll.Select(c => c.ToString());
             }
             if (tos.Any(c => c.Length > 64))

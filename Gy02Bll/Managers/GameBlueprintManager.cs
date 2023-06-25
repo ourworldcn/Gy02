@@ -90,6 +90,31 @@ namespace GY02.Managers
             return _EntityManager.IsMatch(entity, inItem.Conditional, ignore);
         }
 
+        /// <summary>
+        /// 获取序列指定的匹配项。
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="entities"></param>
+        /// <returns>没找到匹配项，则返回空集合。</returns>
+        public IEnumerable<(GameEntity, decimal)> GetMatches(BlueprintInItem input, IEnumerable<GameEntity> entities)
+        {
+            var result = new List<(GameEntity, decimal)> { };
+            foreach (var item in input.Conditional)
+            {
+                if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是序列输入
+                {
+                    var matches = _SequenceManager.GetMatches(entities, tt);
+                    var match = matches.FirstOrDefault();
+                    if (match.Item2 is not null)  //若找到匹配项
+                    {
+                        result.Add((match.Item2, -Math.Abs(match.Item1.Count)));
+                        return result;
+                    }
+                }
+            }
+            return GetInputs(new BlueprintInItem[] { input }, entities).Where(c => c.Item1 == input).Select(c => (c.Item2, -Math.Abs(c.Item1.Count)));
+        }
+
         #endregion 计算匹配
 
         /// <summary>
@@ -118,31 +143,6 @@ namespace GY02.Managers
                 all.Remove(entity); //去掉已经被匹配的项
             }
             return result;
-        }
-
-        /// <summary>
-        /// 获取序列指定的匹配项。
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="entities"></param>
-        /// <returns>没找到匹配项，则返回空集合。</returns>
-        public IEnumerable<(GameEntity, decimal)> GetMatches(BlueprintInItem input, IEnumerable<GameEntity> entities)
-        {
-            var result = new List<(GameEntity, decimal)> { };
-            foreach (var item in input.Conditional)
-            {
-                if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是序列输入
-                {
-                    var matches = _SequenceManager.GetMatches(entities, tt);
-                    var match = matches.FirstOrDefault();
-                    if (match.Item2 is not null)  //若找到匹配项
-                    {
-                        result.Add((match.Item2, -Math.Abs(match.Item1.Count)));
-                        return result;
-                    }
-                }
-            }
-            return GetInputs(new BlueprintInItem[] { input }, entities).Where(c => c.Item1 == input).Select(c => (c.Item2, -Math.Abs(c.Item1.Count)));
         }
 
         /// <summary>

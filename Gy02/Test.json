@@ -1,30 +1,42 @@
 {
-  "Genus": [ "gs_jibigoumai" ],
+  "Genus": [ "gs_leijiqiandao" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
+      "Start": "2023-04-09T00:00:00.000Z",
       "End": null,
-      "PeriodString": "1w",
-      "ValidPeriodString": "1w"
+      "PeriodString": "60d",
+      "ValidPeriodString": "60d"
     },
     "GroupNumber": 0,
-    "MaxCount": null,
     "Ins": [
-
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ 60, 3 ]
+              }
+            ],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": []
+      }
     ],
     "Outs": [
       {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "c259050b-7fd6-4cbb-bddc-7f7293d85046",
-        "Count": 1
-      },
-      {
-
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 10
       }
-    ]
-  },
-  "name_txt": 10968,
-  "comment_txt": 10962,
-  "JiaoBiao": []
+    ],
+    "MaxCount": 1
+  }
 }

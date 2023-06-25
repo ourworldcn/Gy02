@@ -122,15 +122,18 @@ namespace GY02.Commands
 
             var slot = allEntity[ProjectContent.LeijiQiandaoSlotTId].Single();
             var coll = from tmp in gc.ShoppingHistory
-                       where tmp.DateTime.Date.AddDays(1) == command.LoginDateTimeUtc.Date //昨日购买记录
+                       where tmp.DateTime.Date.AddDays(1) <= command.LoginDateTimeUtc.Date //往日购买记录
                        let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
                        where tt.Genus.Contains("gs_leijiqiandao")   //累计签到项
                        select tmp;
             var key = gc.Key;
-            if (coll.Any())  //若昨日买过累计签到项
+            if (coll.Any() && slot.CountOfLastModifyUtc.HasValue)  //若曾买过累计签到项
             {
-                slot.Count++;
-                _AccountStore.Save(key);
+                if (coll.Max(c => c.DateTime).Date == slot.CountOfLastModifyUtc.Value.Date)
+                {
+                    slot.Count++;
+                    _AccountStore.Save(key);
+                }
             }
 
             slot = allEntity[ProjectContent.SevenDayQiandaoSlotTId].Single();
@@ -139,10 +142,13 @@ namespace GY02.Commands
                    let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
                    where tt.Genus.Contains("gs_qiandao")   //7日签到项
                    select tmp;
-            if (coll.Any())  //若昨日买过累计签到项
+            if (coll.Any() && slot.CountOfLastModifyUtc.HasValue)  //若往日买过累计签到项
             {
-                slot.Count++;
-                _AccountStore.Save(key);
+                if (coll.Max(c => c.DateTime).Date == slot.CountOfLastModifyUtc.Value.Date)
+                {
+                    slot.Count++;
+                    _AccountStore.Save(key);
+                }
             }
             //增加累计登陆天数
             slot = allEntity[ProjectContent.LoginedDayTId]?.FirstOrDefault();
