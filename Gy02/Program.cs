@@ -112,7 +112,7 @@ internal class Program
         services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"))
             .Configure<UdpServerManagerOptions>(builder.Configuration.GetSection("UdpServerManagerOptions"));  //模板配置的选项模式
 
-        services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(Gy02BllAutoMapperProfile).Assembly);
+        services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(GY02AutoMapperProfile).Assembly);
         services.AddPublisherT78();
         var app = builder.Build();
 

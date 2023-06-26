@@ -32,7 +32,7 @@ namespace GY02.Base
             services.TryAddSingleton<OwServerMemoryCache>();
 
             services.AddOwScheduler();
-            services.TryAddSingleton<ISystemClock, OwSystemClock>();    //若没有时钟服务则增加时钟服务
+            services.Replace(new ServiceDescriptor(typeof(ISystemClock), typeof(OwSystemClock), ServiceLifetime.Singleton));    //若没有时钟服务则增加时钟服务
 
             services.AddUdpServerManager();
             return services;

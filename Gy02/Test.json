@@ -1,42 +1,24 @@
 {
-  "Genus": [ "gs_leijiqiandao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-04-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "60d",
-      "ValidPeriodString": "60d"
+  "SequenceOut": {
+    "Conditions": [
+      {
+        "ParentTId": null,
+        "Genus": [],
+        "TId": "62D3A545-7604-46BF-9837-95E286660BC8",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "GetIndexExpression": {
+      "Operator": "ToInt32",
+      "Args": [ "Count" ],
+      "IgnoreIfDisplayList": false
     },
-    "GroupNumber": 0,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ 60, 3 ]
-              }
-            ],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      }
-    ],
-    "Outs": [
-      {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 10
-      }
-    ],
-    "MaxCount": 1
+    "Outs": {
+      "TIds": [ "a45b3421-3688-43c5-b8f5-429db7621f69" ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
+      "Counts": [ 0, 210, 420, 630, 840, 1050, 1260, 1470, 1680, 1890, 2100, 2310, 2520, 2730, 2940, 3150, 3360, 3570, 3780, 3990, 4200, 4410, 4620, 4850, 5050, 5250, 5500, 5700, 5900, 6100, 6300, 6510, 6750, 6950, 7150, 7400, 7600, 7800, 8000, 8200, 8400, 8600, 8850, 9050, 9250, 9500, 9700, 9900, 10100, 10300, 10500, 10750, 10950, 11150, 11350, 11550, 11800, 12000, 12200, 12400, 12600, 12850, 13050, 13250, 13450, 13700, 13900, 14100, 14300, 14500, 14750, 14950, 15200 ]
+    }
   }
 }

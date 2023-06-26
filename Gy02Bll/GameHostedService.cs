@@ -175,7 +175,6 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             try
             {
-                var dt = OwHelper.WorldClock + TimeSpan.FromHours(8);
             }
             finally
             {

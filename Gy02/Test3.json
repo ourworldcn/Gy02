@@ -1,36 +1,37 @@
 {
-  "Genus": [ "gs_leijiqiandao" ],
+  "Genus": [ "gj_jiangli" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-04-09T00:00:00.000Z",
+      "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "60d",
-      "ValidPeriodString": "60d"
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
     },
     "GroupNumber": 0,
+    "MaxCount": null,
     "Ins": [
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
+            "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
             "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ 60, 6 ]
-              }
-            ],
+            "GeneralConditional": [],
             "IgnoreIfDisplayList": true
           }
         ],
         "Count": 0,
-        "Genus": []
+        "Genus": [],
+        "IgnoreIfDisplayList": true
       }
     ],
-    "Outs": [],
-    "MaxCount": 1
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "c259050b-7fd6-4cbb-bddc-7f7293d85046",
+        "Count": 1
+      }
+    ]
   }
-}

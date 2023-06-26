@@ -556,14 +556,14 @@ namespace GY02.Templates
         public decimal[] ExpSequence { get; set; }
 
         /// <summary>
-        /// 消耗物的集合。
+        /// 消耗物的集合。暂时未用。
         /// </summary>
         public BlueprintInItem[] Ins { get; set; }
 
         /// <summary>
         /// 产出物的集合。
         /// </summary>
-        public GameEntitySummary[] Outs { get; set; }
+        public List<GameEntitySummary[]> Outs { get; set; } = new List<GameEntitySummary[]>();
     }
 
     #endregion

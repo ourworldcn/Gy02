@@ -101,13 +101,14 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Managers.GameBlueprintManager">
-    <Position X="11" Y="5.5" Width="1.75" />
+    <Position X="7.25" Y="9.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AQAAAgAAAAAAAAAAAAgAAAIQAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Managers\GameBlueprintManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_EntityManager" />
+      <Field Name="_SequenceManager" />
     </ShowAsAssociation>
   </Class>
   <Class Name="GY02.Managers.GameSequenceManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
@@ -119,7 +120,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Managers.GameSequenceManager">
-    <Position X="6" Y="10.5" Width="1.5" />
+    <Position X="4.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAABAAAAAAAAAAAAAAAAAQAAAAAAAAAABAAIAAQgA=</HashCode>
       <FileName>Managers\GameSequenceManager.cs</FileName>
@@ -168,7 +169,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Managers.GameMailManager">
-    <Position X="9.5" Y="10.25" Width="1.5" />
+    <Position X="9.5" Y="6" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BAAAAAEAAACACAAgAAAAAAAAAAABAIAAAAAQAAAIAgA=</HashCode>
       <FileName>Managers\GameMailManager.cs</FileName>
@@ -186,7 +187,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Managers.GameShoppingManager">
-    <Position X="11.5" Y="10.25" Width="1.75" />
+    <Position X="10" Y="9.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAACAACAAAIAQggAAAAAAAAAAAAAAAAAIAACgA=</HashCode>
       <FileName>Managers\GameShoppingManager.cs</FileName>
@@ -202,6 +203,25 @@
       <HashCode>AIAAAAAAAABAAEIAAAAAAAAAAAAABAAAAAgAAAAAAAA=</HashCode>
       <FileName>Managers\GameManagerBase.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="GY02.Managers.SpecialManagerOptions" Collapsed="true">
+    <Position X="13.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Managers\SpecialManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GY02.Managers.SpecialManager">
+    <Position X="2.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAADAAAAAABAAAAAAAAAACAiAAAAAIggAAA=</HashCode>
+      <FileName>Managers\SpecialManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_DiceManager" />
+      <Field Name="_SequenceOutManager" />
+    </ShowAsAssociation>
   </Class>
   <Interface Name="OW.Game.Managers.IEntitySummaryConverter" Collapsed="true">
     <Position X="13.75" Y="5.25" Width="1.5" />

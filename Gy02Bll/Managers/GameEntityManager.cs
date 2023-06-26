@@ -477,7 +477,7 @@ namespace GY02.Managers
         /// <summary>
         /// 创建实体。
         /// </summary>
-        /// <param name="entitySummarys">对不可堆叠物品，会创建多个对象，每个对象数量是1。</param>
+        /// <param name="entitySummarys">对不可堆叠物品，会创建多个对象，每个对象数量是1。只能创建最终实体，不能识别序列，骰子等动态实体。</param>
         /// <returns>创建(实体预览,实体)的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
         public List<(GameEntitySummary, GameEntity)> Create(IEnumerable<GameEntitySummary> entitySummarys)
         {

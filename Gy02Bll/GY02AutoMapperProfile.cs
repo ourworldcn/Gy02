@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace GY02
 {
-    public class Gy02BllAutoMapperProfile : Profile
+    public class GY02AutoMapperProfile : Profile
     {
-        public Gy02BllAutoMapperProfile()
+        public GY02AutoMapperProfile()
         {
             //账号角色
             CreateMap<TemplateStringFullView, GameUser>().AfterMap(FillSeq);

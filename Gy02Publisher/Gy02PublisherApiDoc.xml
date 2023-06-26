@@ -284,7 +284,7 @@
         </member>
         <member name="P:GY02.Templates.GameAchievement.Ins">
             <summary>
-            消耗物的集合。
+            消耗物的集合。暂时未用。
             </summary>
         </member>
         <member name="P:GY02.Templates.GameAchievement.Outs">
