@@ -579,7 +579,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 属性发生变化的时间点。Utc计时。
         /// </summary>
-        public DateTime DateTimeUtc { get; set; } = DateTime.UtcNow;
+        public DateTime DateTimeUtc { get; set; } = OwHelper.WorldClock;
     }
 
     #endregion 通用数据变化相关
@@ -1589,7 +1589,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 发件日期。
         /// </summary>
-        public DateTime SendUtc { get; set; } = DateTime.UtcNow;
+        public DateTime SendUtc { get; set; } = OwHelper.WorldClock;
 
         /// <summary>
         /// 领取附件的日期，null标识尚未领取。

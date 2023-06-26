@@ -47,7 +47,7 @@ namespace System.Threading
         public static bool IsEntered(object obj)
         {
             obj = IsInterned(obj);
-            return obj is null ? false : Monitor.IsEntered(obj);
+            return obj is not null && Monitor.IsEntered(obj);
         }
 
 
@@ -61,7 +61,7 @@ namespace System.Threading
         public static bool TryEnter(ref object obj, TimeSpan timeout)
         {
             obj = Intern(obj);
-            var start = DateTime.UtcNow;
+            var start = OwHelper.WorldClock;
             if (!Monitor.TryEnter(obj, timeout))
                 return false;
             while (!ReferenceEquals(obj, IsInterned(obj)))  //若因并发导致对象被清理

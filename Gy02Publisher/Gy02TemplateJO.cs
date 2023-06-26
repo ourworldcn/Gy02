@@ -1533,8 +1533,8 @@ namespace GY02.Templates
         /// <summary>
         /// 获取或设置最后计算的时间。建议一律采用Utc时间。默认值是构造时的当前时间。
         /// </summary>
-        /// <value>默认值：<see cref="DateTime.UtcNow"/></value>
-        public DateTime LastDateTime { get; set; } = DateTime.UtcNow;
+        /// <value>默认值：<see cref="OwHelper.WorldClock"/></value>
+        public DateTime LastDateTime { get; set; } = OwHelper.WorldClock;
 
         /// <summary>
         /// 一个记录额外信息的属性。本类成员不使用该属性。
@@ -1589,7 +1589,7 @@ namespace GY02.Templates
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public decimal GetCurrentValueWithUtc()
         {
-            DateTime now = DateTime.UtcNow;
+            DateTime now = OwHelper.WorldClock;
             return GetCurrentValue(ref now);
         }
 

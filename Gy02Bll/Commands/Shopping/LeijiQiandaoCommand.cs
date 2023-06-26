@@ -44,7 +44,7 @@ namespace GY02.Commands
                 command.DebugMessage = $"找不到累计签到的占位符对象。";
                 return;
             }
-            var now = DateTime.UtcNow;
+            var now = OwHelper.WorldClock;
             DateTime? lastChange = null;
             var obj = slot.ExtensionProperties.GetValueOrDefault("LastChange");
             if (obj is JsonElement je)

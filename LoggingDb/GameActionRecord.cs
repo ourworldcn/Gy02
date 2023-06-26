@@ -14,7 +14,7 @@ namespace OW.GameDb
     /// <remarks>
     /// <code>
     /// IQueryable<GameActionRecord> query; //一个查询对象
-    /// DateTime dt = DateTime.UtcNow.Date;
+    /// DateTime dt = OwHelper.WorldClock.Date;
     /// Guid charId = Guid.NewGuid();
     /// string actionId = "someThing";
     /// var coll = query.Where(c => c.DateTimeUtc >= dt && c.Id == charId && c.ActionId == actionId);
@@ -46,7 +46,7 @@ namespace OW.GameDb
         /// 这个行为发生的时间。
         /// </summary>
         /// <value>默认是构造此对象的UTC时间。</value>
-        public DateTime DateTimeUtc { get; set; } = DateTime.UtcNow;
+        public DateTime DateTimeUtc { get; set; } = OwHelper.WorldClock;
 
         /// <summary>
         /// 一个人眼可读的说明。

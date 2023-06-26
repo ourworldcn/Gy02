@@ -245,7 +245,7 @@ namespace GY02.Managers
             {
                 Object = entity,
                 PropertyName = nameof(entity.Count),
-                DateTimeUtc = DateTime.UtcNow,
+                DateTimeUtc = OwHelper.WorldClock,
                 HasOldValue = true,
                 OldValue = oldCount,
                 HasNewValue = true,

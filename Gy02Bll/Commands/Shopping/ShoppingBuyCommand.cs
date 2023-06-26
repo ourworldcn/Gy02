@@ -58,18 +58,15 @@ namespace GY02.Commands
             var tt = _ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId);
             //var si = _ShoppingManager.GetShoppingItemByTId(command.ShoppingItemTId);
             if (tt is null) goto lbErr;
-            var now = DateTime.UtcNow;
+            var now = OwHelper.WorldClock;
             if (!_ShoppingManager.IsValid(command.GameChar, tt, now, out _)) goto lbErr;
 
             var allEntity = _EntityManager.GetAllEntity(command.GameChar)?.ToArray();
             if (allEntity is null) goto lbErr;
-
-            if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
-                if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes)) goto lbErr;
-
+            //提前缓存产出项
+            var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
             if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
             {
-                var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
                 var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
                 {
                     Change = null,
@@ -78,10 +75,12 @@ namespace GY02.Commands
                     Random = new Random(),
                 });
                 if (!b) goto lbErr;
-
-                //var coll = tt.ShoppingItem.Outs.SelectMany(c => _DiceManager.Transformed(c, command.GameChar)).ToArray();
-                if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2), command.GameChar, command.Changes)) goto lbErr;
             }
+            //消耗项
+            if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
+                if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes)) goto lbErr;
+
+            if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2), command.GameChar, command.Changes)) goto lbErr;
             command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
             {
                 Count = 1,

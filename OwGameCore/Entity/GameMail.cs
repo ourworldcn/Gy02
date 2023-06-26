@@ -75,7 +75,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 发件日期。
         /// </summary>
-        public DateTime SendUtc { get; set; } = DateTime.UtcNow;
+        public DateTime SendUtc { get; set; } = OwHelper.WorldClock;
 
         /// <summary>
         /// 领取附件的日期，null标识尚未领取。

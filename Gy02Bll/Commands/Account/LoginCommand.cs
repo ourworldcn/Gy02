@@ -74,11 +74,11 @@ namespace GY02.Commands
                 command.FillErrorFromWorld();
                 return;
             }
-            var nowUtc = DateTime.UtcNow;
+            var nowUtc = OwHelper.WorldClock;
             command.User = gu;
             //设置属性
             gu.Timeout = TimeSpan.FromMinutes(15);
-            gu.LastModifyDateTimeUtc = DateTime.UtcNow;
+            gu.LastModifyDateTimeUtc = OwHelper.WorldClock;
             if (exists)  //若是重新登录
             {
                 if (!svcStore.ChangeToken(gu, Guid.NewGuid()))

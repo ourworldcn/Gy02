@@ -155,9 +155,14 @@ namespace GY02.Managers
         /// <exception cref="InvalidOperationException"></exception>
         public bool Deplete(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var coll = GetInputs(conditionals, entities);
-            if (coll is null) return false;
-            var tmp = coll.Select(c => (Entity: c.Item2, Count: -Math.Abs(c.Item1.Count))).Where(c => c.Count != 0);
+            List<(GameEntity, decimal)> list = new List<(GameEntity, decimal)>();
+            foreach (var conditional in conditionals)
+            {
+                var ec = GetMatches(conditional, entities);
+                if (ec is null) return false;
+                list.AddRange(ec);
+            }
+            var tmp = list.Select(c => (Entity: c.Item1, Count: -Math.Abs(c.Item2))).Where(c => c.Count != 0);
             return _EntityManager.Modify(tmp, changes);
         }
 

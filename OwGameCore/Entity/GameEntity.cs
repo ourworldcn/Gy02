@@ -68,13 +68,13 @@ namespace OW.Game.Entity
                 if (fcp is null)
                 {
                     _Count = value;
-                    CountOfLastModifyUtc = DateTime.UtcNow;
+                    CountOfLastModifyUtc = OwHelper.WorldClock;
                 }
                 else
                 {
                     var dt = fcp.LastDateTime;  //保持最后计算时间点不变，如果要更新最后时间点，则应进行读取
                     fcp.SetLastValue(value, ref dt);
-                    CountOfLastModifyUtc = DateTime.UtcNow;
+                    CountOfLastModifyUtc = OwHelper.WorldClock;
                 }
             }
         }

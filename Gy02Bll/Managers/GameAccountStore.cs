@@ -244,7 +244,7 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"找不到指定的Key={key}代表的用户对象。");
                 return false;
             }
-            gu.LastModifyDateTimeUtc = DateTime.UtcNow;
+            gu.LastModifyDateTimeUtc = OwHelper.WorldClock;
             return true;
         }
 

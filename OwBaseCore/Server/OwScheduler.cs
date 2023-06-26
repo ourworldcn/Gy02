@@ -247,7 +247,7 @@ namespace OW.Server
         protected virtual bool RunCore(OwSchedulerEntry entry, out Exception exception)
         {
             Debug.Assert(Options.IsEnteredCallback(entry.Key));
-            var now = DateTime.UtcNow;
+            var now = OwHelper.WorldClock;
             bool b;
             try
             {
@@ -352,7 +352,7 @@ namespace OW.Server
                 var lastNow = DateTime.MinValue;    //上一轮运行时间点
                 while (!stoppingToken.IsCancellationRequested)
                 {
-                    now = DateTime.UtcNow;
+                    now = OwHelper.WorldClock;
                     if (!_Plans.IsEmpty)  //若有优先运行事务
                         RunPlans();
                     if (now - lastNow >= Options.Frequency)  //若需要运行完整的事务
@@ -367,7 +367,7 @@ namespace OW.Server
                         using var dw = DisposeHelper.Create(Monitor.TryEnter, Monitor.Exit, _Plans, ts);
                         if (!dw.IsEmpty)
                         {
-                            ts = OwHelper.ComputeTimeout(DateTime.UtcNow, now + Options.Frequency);
+                            ts = OwHelper.ComputeTimeout(OwHelper.WorldClock, now + Options.Frequency);
                             if (!_Plans.IsEmpty)   //若有优先执行任务
                                 return;
                             Monitor.Wait(_Plans, ts, true);

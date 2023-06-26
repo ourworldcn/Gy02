@@ -4,9 +4,11 @@ using GY02.Base;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.TemplateDb;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OW.Game.Manager;
@@ -99,9 +101,11 @@ internal class Program
 
         VWorld.TemplateContextOptions = new DbContextOptionsBuilder<GY02TemplateContext>().UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).Options;
         VWorld.UserContextOptions = new DbContextOptionsBuilder<GY02UserContext>().UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging().Options;
-        
-        #endregion 配置数据库
 
+        #endregion 配置数据库
+        if (TimeSpan.TryParse(builder.Configuration.GetSection("WorldClockOffset").Value, out var offerset))
+            OwHelper._Offset = offerset;  //配置游戏世界的时间。
+        //services.Replace(new ServiceDescriptor(typeof(ISystemClock), typeof(OwSystemClock), ServiceLifetime.Singleton));
         services.AddGameServices();
         services.AddHostedService<GameHostedService>();
 

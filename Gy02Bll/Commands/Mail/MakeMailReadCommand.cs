@@ -32,13 +32,13 @@ namespace GY02.Commands.Mail
         public MakeMailReadHandler(GameAccountStore accountStore, GameMailManager mailManager, GY02UserContext dbContext)
         {
             AccountStore = accountStore;
-            _MailManager = mailManager;
+            MailManager = mailManager;
             DbContext = dbContext;
         }
 
         public GameAccountStore AccountStore { get; }
 
-        public GameMailManager _MailManager { get; set; }
+        public GameMailManager MailManager { get; set; }
 
         public GY02UserContext DbContext { get; set; }
 
@@ -48,13 +48,13 @@ namespace GY02.Commands.Mail
             using var dw = ((IGameCharHandler<MakeMailReadCommand>)this).LockGameChar(command);
             if (dw.IsEmpty) return; //若锁定失败
 
-            var mails = _MailManager.GetMails(command.GameChar, DbContext);
+            var mails = MailManager.GetMails(command.GameChar, DbContext);
             if (mails is null)
             {
                 command.FillErrorFromWorld();
                 return;
             }
-            mails.ForEach(c => c.ReadUtc = DateTime.UtcNow);
+            mails.ForEach(c => c.ReadUtc = OwHelper.WorldClock);
             try
             {
                 DbContext.SaveChanges();

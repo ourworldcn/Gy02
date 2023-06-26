@@ -94,7 +94,7 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool IsValid(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart)
         {
-            if (!(tt.ShoppingItem is GameShoppingItem shoppingItem))
+            if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
             {
                 periodStart = default;
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
@@ -129,7 +129,7 @@ namespace GY02.Managers
                 periodStart = default;
                 return false;
             }
-            return IsValidWithoutBuyed(gameChar, shoppingItem, DateTime.UtcNow, out periodStart, ignore);
+            return IsValidWithoutBuyed(gameChar, shoppingItem, OwHelper.WorldClock, out periodStart, ignore);
         }
 
         /// <summary>

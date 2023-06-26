@@ -927,7 +927,7 @@
             <summary>
             获取或设置最后计算的时间。建议一律采用Utc时间。默认值是构造时的当前时间。
             </summary>
-            <value>默认值：<see cref="P:System.DateTime.UtcNow"/></value>
+            <value>默认值：<see cref="P:System.OwHelper.WorldClock"/></value>
         </member>
         <member name="P:GY02.Templates.FastChangingProperty.Tag">
             <summary>

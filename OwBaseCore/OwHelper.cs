@@ -1,6 +1,7 @@
 ﻿/*
  * 文件放置游戏专用的一些基础类
  */
+using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.ObjectPool;
 using System.Buffers;
 using System.Collections.Concurrent;
@@ -63,11 +64,25 @@ namespace System
         }
     }
 
+    public class OwSystemClock : ISystemClock
+    {
+        public DateTimeOffset UtcNow => OwHelper.WorldClock;
+    }
+
     /// <summary>
     /// 封装一些未详细分类的函数。
     /// </summary>
     public static class OwHelper
     {
+        /// <summary>
+        /// 游戏内使用的时间与Utc时间的偏移量。
+        /// </summary>
+        public static TimeSpan _Offset;
+        /// <summary>
+        /// 应用内使用的时间。
+        /// </summary>
+        public static DateTime WorldClock => DateTime.UtcNow + _Offset;
+
         /// <summary>
         /// 中英文逗号数组。分割字符串常用此数组，避免生成新对象。
         /// </summary>
@@ -155,7 +170,7 @@ namespace System
         /// <param name="errorCode"></param>
         /// <param name="msg"></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetLastErrorAndMessage(int errorCode,string msg)
+        public static void SetLastErrorAndMessage(int errorCode, string msg)
         {
             _LastError = errorCode;
             _LastErrorMessage = msg;
@@ -439,7 +454,7 @@ namespace System
         }
 
         /// <summary>
-        /// 用<see cref="DateTime.UtcNow"/>计算超时剩余时间。
+        /// 用<see cref="OwHelper.WorldClock"/>计算超时剩余时间。
         /// </summary>
         /// <param name="start">起始时间点。使用UTC时间。</param>
         /// <param name="timeout">超时值，可以是<see cref="Timeout.InfiniteTimeSpan"/></param>
@@ -447,7 +462,7 @@ namespace System
         /// 如果<paramref name="timeout"/>是<see cref="Timeout.InfiniteTimeSpan"/>，则立即返回<see cref="Timeout.InfiniteTimeSpan"/>。</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static TimeSpan ComputeTimeout(DateTime start, TimeSpan timeout) =>
-            Timeout.InfiniteTimeSpan == timeout ? Timeout.InfiniteTimeSpan : ComputeTimeout(DateTime.UtcNow, start + timeout);
+            Timeout.InfiniteTimeSpan == timeout ? Timeout.InfiniteTimeSpan : ComputeTimeout(OwHelper.WorldClock, start + timeout);
 
         /// <summary>
         /// 计算剩余时间间隔，若<paramref name="end"/>在<paramref name="start"/>之前则返回<see cref="TimeSpan.Zero"/>。
@@ -471,7 +486,7 @@ namespace System
         /// <returns>解锁接口。</returns>
         public static IDisposable LockWithOrder<T>([NotNull] IOrderedEnumerable<T> source, [NotNull] Func<T, TimeSpan, bool> locker, [NotNull] Action<T> unlocker, TimeSpan timeout)
         {
-            DateTime start = DateTime.UtcNow;
+            DateTime start = OwHelper.WorldClock;
             Stack<IDisposable> stack = new Stack<IDisposable>();  //辅助堆栈，用于回滚
             bool succ = true;   //成功标志
             try
@@ -513,7 +528,7 @@ namespace System
         /// <returns></returns>
         public static IDisposable LockWithOrder<T>([NotNull] IOrderedEnumerable<T> source, [NotNull] Func<T, TimeSpan, IDisposable> locker, TimeSpan timeout)
         {
-            DateTime start = DateTime.UtcNow;
+            DateTime start = OwHelper.WorldClock;
             Stack<IDisposable> stack = new Stack<IDisposable>();  //辅助堆栈，用于回滚
             bool succ = true;   //成功标志
             try
@@ -589,7 +604,7 @@ namespace System
         /// <returns>若全部锁定则返回true，否则返回false,此时没有任何对象被锁定。</returns>
         public static bool TryEnterAll<T>([NotNull] IEnumerable<T> objs, [NotNull] Func<T, TimeSpan, bool> enterCallback, [NotNull] Action<T> exitCallback, TimeSpan timeout)
         {
-            DateTime start = DateTime.UtcNow;
+            DateTime start = OwHelper.WorldClock;
             Stack<T> stack = new Stack<T>();  //辅助堆栈，用于回滚
             try
             {

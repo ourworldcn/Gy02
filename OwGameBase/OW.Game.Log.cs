@@ -67,7 +67,7 @@ namespace OW.Game.Log
         /// <returns></returns>
         public static SmallGameLogCollection Parse(IDictionary<string, object> dic, string key)
         {
-            if (!dic.TryGetValue(key, out var obj) || !(obj is string str))
+            if (!dic.TryGetValue(key, out var obj) || obj is not string str)
                 str = null;
             var result = Parse(str);
             result.Dictionary = dic;
@@ -123,7 +123,7 @@ namespace OW.Game.Log
 
         public SmallGameLog Add(string action, Guid id, decimal count)
         {
-            var tmp = new SmallGameLog() { Action = action, DateTime = DateTime.UtcNow };
+            var tmp = new SmallGameLog() { Action = action, DateTime = OwHelper.WorldClock };
             tmp.Params.Add(id.ToString());
             tmp.Params.Add(count.ToString());
             Add(tmp);
@@ -386,7 +386,7 @@ namespace OW.Game.Log
         /// <returns></returns>
         public new static TodayTimeGameLog<T> Parse(IDictionary<string, object> dic, string key)
         {
-            if (!dic.TryGetValue(key, out var obj) || !(obj is string str))
+            if (!dic.TryGetValue(key, out var obj) || obj is not string str)
                 str = null;
             var result = Parse(str);
             result.Dictionary = dic;

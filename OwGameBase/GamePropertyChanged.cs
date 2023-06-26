@@ -181,7 +181,7 @@ namespace OW.Game.PropertyChange
         /// 属性发生变化的时间点。Utc计时。
         /// </summary>
         /// <value>构造时的当前Utc时间。</value>
-        public DateTime DateTimeUtc { get; set; } = DateTime.UtcNow;
+        public DateTime DateTimeUtc { get; set; } = OwHelper.WorldClock;
 
         /// <summary>
         /// 事件发起方可以在这里记录一些额外信息。
@@ -253,7 +253,7 @@ namespace OW.Game.PropertyChange
         public override GamePropertyChangeItem<T> Get()
         {
             var result = base.Get();
-            result.DateTimeUtc = DateTime.UtcNow;
+            result.DateTimeUtc = OwHelper.WorldClock;
             return result;
         }
 
@@ -312,7 +312,7 @@ namespace OW.Game.PropertyChange
             {
                 Object = container,
                 PropertyName = propertyName,
-                DateTimeUtc = DateTime.UtcNow,
+                DateTimeUtc = OwHelper.WorldClock,
 
                 HasOldValue = true,
                 OldValue = child,
@@ -337,7 +337,7 @@ namespace OW.Game.PropertyChange
             {
                 Object = container,
                 PropertyName = propertyName,
-                DateTimeUtc = DateTime.UtcNow,
+                DateTimeUtc = OwHelper.WorldClock,
 
                 HasOldValue = false,
                 OldValue = default,

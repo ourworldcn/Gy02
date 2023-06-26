@@ -163,7 +163,7 @@ namespace Microsoft.Extensions.Caching.Memory
                     if (dw.IsEmpty)
                         throw new TimeoutException();
                     var factEntity = Cache.AddOrUpdateEntryCore(this);
-                    factEntity.LastUseUtc = DateTime.UtcNow;
+                    //factEntity.LastUseUtc = OwHelper.WorldClock;OwHelper
                     _IsDisposed = true;
                 }
                 //Cache.AddItemCore(this);
@@ -183,7 +183,7 @@ namespace Microsoft.Extensions.Caching.Memory
             /// <summary>
             /// 最后一次使用的Utc时间。
             /// </summary>
-            public DateTime LastUseUtc { get; internal set; } = DateTime.UtcNow;
+            public DateTime LastUseUtc { get; internal set; } = OwHelper.WorldClock;
 
             /// <summary>
             /// 获取此配置项是否超期。
@@ -279,7 +279,7 @@ namespace Microsoft.Extensions.Caching.Memory
                 };
             if (TryGetValueCore(key, out var entry))
             {
-                entry.LastUseUtc = DateTime.UtcNow;
+                entry.LastUseUtc = OwHelper.WorldClock;
                 value = entry.Value;
                 return true;
             }
@@ -449,7 +449,7 @@ namespace Microsoft.Extensions.Caching.Memory
         {
             ThrowIfDisposed();
             var last = Volatile.Read(ref _CompactTick);
-            var now = DateTime.UtcNow;
+            var now = OwHelper.WorldClock;
             if (now - new DateTime(last) < _Options.ExpirationScanFrequency)   //若最近已经压缩过
                 return;
             if (Interlocked.CompareExchange(ref _CompactTick, now.Ticks, last) != last) //若已经被并发更改
@@ -460,7 +460,7 @@ namespace Microsoft.Extensions.Caching.Memory
         /// <summary>
         /// 最后一次压缩的时间的刻度。
         /// </summary>
-        long _CompactTick = DateTime.UtcNow.Ticks;
+        long _CompactTick = OwHelper.WorldClock.Ticks;
 
         /// <summary>
         /// 压缩缓存。
@@ -473,7 +473,7 @@ namespace Microsoft.Extensions.Caching.Memory
             if (dwReenter.IsEmpty)
                 return;
             long count = 0;
-            var now = DateTime.UtcNow;
+            var now = OwHelper.WorldClock;
 
             foreach (var key in _Items.Keys)
             {

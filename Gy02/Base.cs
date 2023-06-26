@@ -2,6 +2,7 @@
 using GY02.Publisher;
 using Microsoft.Extensions.Options;
 using OW;
+using OW.Game.Manager;
 using OW.SyncCommand;
 using System;
 using System.Diagnostics;
@@ -106,7 +107,7 @@ namespace GY02
                 if (oVal != nVal) //若已经变化
                     _UdpServerManager.SendObject(item.Value.Token, new GamePropertyChangeItemDto
                     {
-                        DateTimeUtc = DateTime.UtcNow,
+                        DateTimeUtc = OwHelper.WorldClock,
                         ObjectId = tili.Id,
                         TId = tili.TemplateId,
                         PropertyName = nameof(tili.Count),
@@ -129,7 +130,7 @@ namespace GY02
                 {
                     _UdpServerManager.SendObject(item.Value.Token, new GamePropertyChangeItemDto
                     {
-                        DateTimeUtc = DateTime.UtcNow,
+                        DateTimeUtc = OwHelper.WorldClock,
                         ObjectId = cishu.Id,
                         TId = cishu.TemplateId,
                         PropertyName = nameof(cishu.Count),
