@@ -178,7 +178,7 @@ namespace GY02
                 #region 测试用代码
 
                 var store = _Services.GetService<GameAccountStoreManager>();
-                if (!store.LoadOrGetUser("string201", "string", out var user))
+                if (!store.LoadOrGetUser("string204", "string", out var user))
                     throw new InvalidOperationException { };
                 var gc = user.CurrentChar;
                 var entityManager = _Services.GetService<GameEntityManager>();

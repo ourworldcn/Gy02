@@ -521,8 +521,18 @@ namespace GY02.Managers
                     }
                 }
             }
-            //矫正fcp的初始值
-            foreach (var (summary, entity) in result)
+            InitializeEntity(result.Select(c => c.Item2));
+            return result;
+        }
+
+        /// <summary>
+        /// 初始化实体对象。将实体对象置为刚创建状态。
+        /// </summary>
+        /// <param name="entities"></param>
+        public void InitializeEntity(IEnumerable<GameEntity> entities)
+        {
+            DateTime now = OwHelper.WorldNow;
+            foreach (var entity in entities)
             {
                 var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId);
                 foreach (var fcp in entity.Fcps)
@@ -532,9 +542,7 @@ namespace GY02.Managers
                     fcp.Value.SetLastValue(ttFcp.CurrentValue, ref dt);
                 }
             }
-            return result;
         }
-
         #endregion 创建实体相关功能
 
         #region 删除实体相关功能

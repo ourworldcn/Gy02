@@ -106,10 +106,10 @@ namespace GY02.Commands
             }
             var guThing = commCreateUser.Result[0];
             var gu = guThing.GetJsonObject<GameUser>();
+            gu.SetDbContext(db);
             gu.LoginName = command.LoginName;
             gu.SetPwd(command.Pwd);
             db.Add(guThing);
-            gu.SetDbContext(db);
             gu.Token = Guid.NewGuid();
             gu.Timeout = TimeSpan.FromMinutes(1);
             //加入缓存

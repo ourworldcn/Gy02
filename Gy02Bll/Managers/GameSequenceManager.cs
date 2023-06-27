@@ -99,7 +99,7 @@ namespace GY02.Managers
                 {
                     if (!GetOut(gameChar, tt, out var entity)) goto lbErr;
 
-                    entity.Count = summary.Count;
+                    entity.Count *= summary.Count;
                     entity.ParentTId = summary.ParentTId;
                     entity.Id = summary.Id;
                     result.Add((summary, new GameEntitySummary[] { entity }));

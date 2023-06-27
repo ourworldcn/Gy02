@@ -1,5 +1,7 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using GY02.Managers;
+using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
+using OW.Game.Store;
 using OW.SyncCommand;
 
 namespace GY02.Commands
@@ -19,12 +21,14 @@ namespace GY02.Commands
     /// </summary>
     public class AccountCreatedHandler : SyncCommandHandlerBase<AccountCreatedCommand>
     {
-        public AccountCreatedHandler(IServiceProvider serviceProvider)
+        public AccountCreatedHandler(IServiceProvider serviceProvider, GameEntityManager entityManager)
         {
             _Service = serviceProvider;
+            _EntityManager = entityManager;
         }
 
         IServiceProvider _Service;
+        GameEntityManager _EntityManager;
 
         public override void Handle(AccountCreatedCommand command)
         {
@@ -41,7 +45,10 @@ namespace GY02.Commands
                 command.FillErrorFrom(comm);
                 return;
             }
+            var entities = _EntityManager.GetAllEntity((comm.User.Thing as VirtualThing).Children.FirstOrDefault()?.GetJsonObject<GameChar>());
+            _EntityManager.InitializeEntity(entities);
             command.User.CurrentChar = comm.Result;
+
         }
     }
 }
