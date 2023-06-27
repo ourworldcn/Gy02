@@ -58,7 +58,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 创建该对象的通用协调时间。
         /// </summary>
-        public DateTime CreateUtc { get; set; } = OwHelper.WorldClock;
+        public DateTime CreateUtc { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
         /// 是否由用户登录。

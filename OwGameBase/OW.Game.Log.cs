@@ -123,7 +123,7 @@ namespace OW.Game.Log
 
         public SmallGameLog Add(string action, Guid id, decimal count)
         {
-            var tmp = new SmallGameLog() { Action = action, DateTime = OwHelper.WorldClock };
+            var tmp = new SmallGameLog() { Action = action, DateTime = OwHelper.WorldNow };
             tmp.Params.Add(id.ToString());
             tmp.Params.Add(count.ToString());
             Add(tmp);

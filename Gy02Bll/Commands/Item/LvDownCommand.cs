@@ -32,7 +32,7 @@ namespace GY02.Commands
         /// 构造函数。
         /// </summary>
         /// <param name="syncCommandManager"></param>
-        public LvDownHandler(SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameAccountStore accountStore, GameEntityManager entityManager)
+        public LvDownHandler(SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameAccountStoreManager accountStore, GameEntityManager entityManager)
         {
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
@@ -43,7 +43,7 @@ namespace GY02.Commands
         SyncCommandManager _SyncCommandManager;
         private GameTemplateManager _TemplateManager;
 
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
         GameEntityManager _EntityManager;
 
         public override void Handle(LvDownCommand command)
@@ -59,14 +59,14 @@ namespace GY02.Commands
 
             foreach (var item in totalCost) //退还材料
             {
-                var tmp = _EntityManager.Create(new (Guid, decimal)[] { (item.TId, Math.Abs(item.Count)) });
+                var tmp = _EntityManager.Create(new GameEntitySummary[] { new GameEntitySummary { TId = item.TId, Count = Math.Abs(item.Count) } });
 
                 if (tmp is null)
                 {
                     command.FillErrorFromWorld();
                     return;
                 }
-                list.AddRange(tmp.Select(c => c.GetThing()));
+                list.AddRange(tmp.Select(c => c.Item2.GetThing()));
             }
 
             //var move = new MoveEntitiesCommand { GameChar = command.GameChar, Items = list.Select(c => (GameEntity)_TemplateManager.GetEntityBase(c, out _)).ToList() };

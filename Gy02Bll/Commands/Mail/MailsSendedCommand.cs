@@ -28,14 +28,14 @@ namespace GY02.Commands
 
     public class MailsSendedHandler : SyncCommandHandlerBase<MailsSendedCommand>
     {
-        public MailsSendedHandler(UdpServerManager udpServerManager, GameAccountStore accountStore)
+        public MailsSendedHandler(UdpServerManager udpServerManager, GameAccountStoreManager accountStore)
         {
             _UdpServerManager = udpServerManager;
             _AccountStore = accountStore;
         }
 
         UdpServerManager _UdpServerManager;
-        GameAccountStore _AccountStore;
+        GameAccountStoreManager _AccountStore;
 
         public override void Handle(MailsSendedCommand command)
         {

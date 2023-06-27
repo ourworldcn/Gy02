@@ -13,6 +13,11 @@ namespace GY02.Commands
     /// </summary>
     public class ApplyBlueprintCommand : PropertyChangeCommandBase, IGameCharCommand
     {
+        public ApplyBlueprintCommand()
+        {
+
+        }
+
         /// <summary>
         /// 针对的角色。
         /// </summary>
@@ -41,7 +46,7 @@ namespace GY02.Commands
         /// 构造函数。
         /// </summary>
         /// <param name="gameAccountStore"></param>
-        public ApplyBlueprintHandler(GameAccountStore gameAccountStore, GameBlueprintManager blueprintManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEntityManager gameEntityManager)
+        public ApplyBlueprintHandler(GameAccountStoreManager gameAccountStore, GameBlueprintManager blueprintManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEntityManager gameEntityManager)
         {
             _GameAccountStore = gameAccountStore;
             _BlueprintManager = blueprintManager;
@@ -50,13 +55,13 @@ namespace GY02.Commands
             _GameEntityManager = gameEntityManager;
         }
 
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
         GameBlueprintManager _BlueprintManager;
         SyncCommandManager _SyncCommandManager;
         GameTemplateManager _TemplateManager;
         GameEntityManager _GameEntityManager;
 
-        public GameAccountStore AccountStore => _GameAccountStore;
+        public GameAccountStoreManager AccountStore => _GameAccountStore;
 
         public override void Handle(ApplyBlueprintCommand command)
         {
@@ -82,20 +87,20 @@ namespace GY02.Commands
             var createThing = new CreateVirtualThingsCommand { };
             createThing.TIds.AddRange(bp.Out.Select(c => c.TId));
             _SyncCommandManager.Handle(createThing);
-            var results = _GameEntityManager.Create(createThing.TIds.Select(c => (c, 1m)));
             if (createThing.HasError)
             {
                 command.FillErrorFrom(createThing);
                 return;
             }
-            outs.AddRange(results);
+            var results = _GameEntityManager.Create(createThing.TIds.Select(c => new GameEntitySummary { TId = c, Count = 1m }));
+            outs.AddRange(results.Select(c => c.Item2));
             //消耗材料
             //foreach (var item in command.InItems)
             //{
             //    _GameEntityManager.Modify(item, -item.Count, command.Changes);
             //}
             //_GameEntityManager.Move(outs, command.GameChar, command.Changes);
-            command.OutItems.AddRange(results);
+            command.OutItems.AddRange(outs);
             _GameAccountStore.Save(key);
         }
     }

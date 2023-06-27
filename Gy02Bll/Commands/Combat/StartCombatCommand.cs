@@ -26,7 +26,7 @@ namespace GY02.Commands
 
     public class StartCombatHandler : SyncCommandHandlerBase<StartCombatCommand>
     {
-        public StartCombatHandler(GameAccountStore gameAccountStore, GameTemplateManager templateManager, GameBlueprintManager blueprintManager, GameEntityManager gameEntityManager)
+        public StartCombatHandler(GameAccountStoreManager gameAccountStore, GameTemplateManager templateManager, GameBlueprintManager blueprintManager, GameEntityManager gameEntityManager)
         {
             _GameAccountStore = gameAccountStore;
             _TemplateManager = templateManager;
@@ -34,7 +34,7 @@ namespace GY02.Commands
             _GameEntityManager = gameEntityManager;
         }
 
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
         GameTemplateManager _TemplateManager;
         GameBlueprintManager _BlueprintManager;
         GameEntityManager _GameEntityManager;

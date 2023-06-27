@@ -245,7 +245,7 @@ namespace GY02.Managers
             {
                 Object = entity,
                 PropertyName = nameof(entity.Count),
-                DateTimeUtc = OwHelper.WorldClock,
+                DateTimeUtc = OwHelper.WorldNow,
                 HasOldValue = true,
                 OldValue = oldCount,
                 HasNewValue = true,
@@ -477,12 +477,15 @@ namespace GY02.Managers
         /// <summary>
         /// 创建实体。
         /// </summary>
-        /// <param name="entitySummarys">对不可堆叠物品，会创建多个对象，每个对象数量是1。只能创建最终实体，不能识别序列，骰子等动态实体。</param>
+        /// <param name="entitySummarys">可以是空集合，此时则立即返回空集合。
+        /// 对不可堆叠物品，会创建多个对象，每个对象数量是1。
+        /// 只能创建最终实体，不能识别序列，骰子等动态实体。</param>
         /// <returns>创建(实体预览,实体)的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
-        public List<(GameEntitySummary, GameEntity)> Create(IEnumerable<GameEntitySummary> entitySummarys)
+        public virtual List<(GameEntitySummary, GameEntity)> Create(IEnumerable<GameEntitySummary> entitySummarys)
         {
             var result = new List<(GameEntitySummary, GameEntity)> { };
             var coll = entitySummarys.TryToCollection();
+            DateTime now = OwHelper.WorldNow;
             foreach (var item in coll)
             {
                 var tt = _TemplateManager.GetFullViewFromId(item.TId);
@@ -518,50 +521,15 @@ namespace GY02.Managers
                     }
                 }
             }
-            return result;
-        }
-
-        /// <summary>
-        /// 创建实体。
-        /// </summary>
-        /// <param name="entitySummarys">对不可堆叠物品，会创建多个对象，每个对象数量是1。</param>
-        /// <returns>创建实体的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
-        public List<GameEntity> Create(IEnumerable<(Guid, decimal)> entitySummarys)
-        {
-            var result = new List<GameEntity> { };
-            foreach (var item in entitySummarys)
+            //矫正fcp的初始值
+            foreach (var (summary, entity) in result)
             {
-                var tt = _TemplateManager.GetFullViewFromId(item.Item1);
-                if (tt is null) return null;
-                if (tt.IsStk())  //可堆叠物
+                var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId);
+                foreach (var fcp in entity.Fcps)
                 {
-                    var tmp = _VirtualThingManager.Create(tt);
-                    if (tmp is null) return null;
-                    var entity = GetEntity(tmp);
-                    if (entity is null) return null;
-                    var oriCount = entity.Count;    //预读fcp
-                    entity.Count = item.Item2;
-                    result.Add(entity);
-                }
-                else //不可堆叠物
-                {
-                    var count = (int)item.Item2;
-                    if (count != item.Item2)
-                    {
-                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                        OwHelper.SetLastErrorMessage($"创建不可堆叠物的数量必须是整数。TId={item.Item1}");
-                        return null;
-                    }
-                    var tmp = _VirtualThingManager.Create(tt.TemplateId, count);
-                    if (tmp is null) return null;
-                    foreach (var thing in tmp)
-                    {
-                        var tmpEntity = GetEntity(thing);
-                        if (tmpEntity is null) return null;
-                        var oriCount = tmpEntity.Count; //预读fcp
-                        tmpEntity.Count = 1;
-                        result.Add(tmpEntity);
-                    }
+                    var ttFcp = tt.Fcps.GetValueOrDefault(fcp.Key);
+                    var dt = now;
+                    fcp.Value.SetLastValue(ttFcp.CurrentValue, ref dt);
                 }
             }
             return result;

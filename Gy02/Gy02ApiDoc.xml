@@ -60,7 +60,7 @@
             分发变化数据的服务。
             </summary>
         </member>
-        <member name="M:GY02.UdpScanner.#ctor(GY02.Managers.UdpServerManager,GY02.Managers.GameAccountStore,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Options.IOptions{GY02.UdpScannerOptions},Microsoft.Extensions.Logging.ILogger{GY02.UdpScanner})">
+        <member name="M:GY02.UdpScanner.#ctor(GY02.Managers.UdpServerManager,GY02.Managers.GameAccountStoreManager,Microsoft.Extensions.Hosting.IHostApplicationLifetime,Microsoft.Extensions.Options.IOptions{GY02.UdpScannerOptions},Microsoft.Extensions.Logging.ILogger{GY02.UdpScanner})">
             <summary>
             构造函数。
             </summary>
@@ -91,7 +91,7 @@
             
             </summary>
         </member>
-        <member name="M:GY02.Controllers.AccountController.#ctor(GY02.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
+        <member name="M:GY02.Controllers.AccountController.#ctor(GY02.Managers.GameAccountStoreManager,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
             <summary>
             
             </summary>
@@ -235,7 +235,7 @@
             物品管理控制器
             </summary>
         </member>
-        <member name="M:GY02.Controllers.ItemManagerController.#ctor(System.IServiceProvider,AutoMapper.IMapper,GY02.Managers.GameEntityManager,OW.SyncCommand.SyncCommandManager,GY02.Managers.GameAccountStore)">
+        <member name="M:GY02.Controllers.ItemManagerController.#ctor(System.IServiceProvider,AutoMapper.IMapper,GY02.Managers.GameEntityManager,OW.SyncCommand.SyncCommandManager,GY02.Managers.GameAccountStoreManager)">
             <summary>
             
             </summary>
@@ -273,7 +273,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.ItemManagerController.AddItems(GY02.Publisher.AddItemsParamsDto,GY02.Managers.GameAccountStore,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.GameTemplateManager,AutoMapper.IMapper)">
+        <member name="M:GY02.Controllers.ItemManagerController.AddItems(GY02.Publisher.AddItemsParamsDto,GY02.Managers.GameAccountStoreManager,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.GameTemplateManager,AutoMapper.IMapper)">
             <summary>
             增加物品，调试用接口。
             </summary>
@@ -358,7 +358,7 @@
             商城功能控制器。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.ShoppingController.#ctor(GY02.Managers.GameAccountStore,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:GY02.Controllers.ShoppingController.#ctor(GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             
             </summary>
@@ -506,7 +506,7 @@
             邮件控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.MailController.#ctor(GY02.Managers.GameMailManager,GY02.Managers.GameAccountStore,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:Gy02.Controllers.MailController.#ctor(GY02.Managers.GameMailManager,GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
             
             </summary>

@@ -34,14 +34,14 @@ namespace GY02.Commands
 
     public class GetShoppingItemsHandler : SyncCommandHandlerBase<GetShoppingItemsCommand>, IGameCharHandler<GetShoppingItemsCommand>
     {
-        public GetShoppingItemsHandler(GameAccountStore accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager)
+        public GetShoppingItemsHandler(GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager)
         {
             AccountStore = accountStore;
             _TemplateManager = templateManager;
             _ShoppingManager = shoppingManager;
         }
 
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
 
         GameTemplateManager _TemplateManager;
 
@@ -64,7 +64,7 @@ namespace GY02.Commands
                 baseColl = _TemplateManager.Id2FullView.Where(c => c.Value.ShoppingItem is not null && c.Value.Genus is not null && genus.Overlaps(c.Value.Genus)).Select(c => c.Value);
             }
             //过滤
-            DateTime nowUtc = OwHelper.WorldClock;    //当前
+            DateTime nowUtc = OwHelper.WorldNow;    //当前
             List<(TemplateStringFullView, DateTime)> list = new List<(TemplateStringFullView, DateTime)>();
             foreach (var item in baseColl)  //遍历基础集合
             {

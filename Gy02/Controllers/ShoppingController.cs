@@ -19,14 +19,14 @@ namespace GY02.Controllers
         /// <param name="gameAccountStore"></param>
         /// <param name="mapper"></param>
         /// <param name="syncCommandManager"></param>
-        public ShoppingController(GameAccountStore gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager)
+        public ShoppingController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager)
         {
             _GameAccountStore = gameAccountStore;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
         }
 
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
 

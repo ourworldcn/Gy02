@@ -32,7 +32,7 @@ namespace GY02.Commands
     {
 
 
-        public MoveEntitiesHandler(GameTemplateManager templateManager, SyncCommandManager commandManager, GameAccountStore store, GameEntityManager gameEntityManager)
+        public MoveEntitiesHandler(GameTemplateManager templateManager, SyncCommandManager commandManager, GameAccountStoreManager store, GameEntityManager gameEntityManager)
         {
             _TemplateManager = templateManager;
             _Store = store;
@@ -40,7 +40,7 @@ namespace GY02.Commands
         }
 
         GameTemplateManager _TemplateManager;
-        GameAccountStore _Store;
+        GameAccountStoreManager _Store;
         GameEntityManager _EntityManager;
 
         public override void Handle(MoveEntitiesCommand command)

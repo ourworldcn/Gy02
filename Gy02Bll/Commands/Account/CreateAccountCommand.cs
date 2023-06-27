@@ -45,7 +45,7 @@ namespace GY02.Commands
     public class CreateAccountHandler : SyncCommandHandlerBase<CreateAccountCommand>
     {
         public CreateAccountHandler(IDbContextFactory<GY02UserContext> dbFactory, LoginNameGenerator loginNameGenerator, PasswordGenerator passwordGenerator, SyncCommandManager syncCommandManager,
-            GameAccountStore accountStore)
+            GameAccountStoreManager accountStore)
         {
             _DbFactory = dbFactory;
             _LoginNameGenerator = loginNameGenerator;
@@ -58,7 +58,7 @@ namespace GY02.Commands
         LoginNameGenerator _LoginNameGenerator;
         PasswordGenerator _PasswordGenerator;
         SyncCommandManager _SyncCommandManager;
-        GameAccountStore _AccountStore;
+        GameAccountStoreManager _AccountStore;
 
         /// <summary>
         /// 创建账号。
@@ -68,7 +68,7 @@ namespace GY02.Commands
         {
             if (string.IsNullOrWhiteSpace(command.LoginName))   //若需要生成登录名
             {
-                var date = OwHelper.WorldClock;
+                var date = OwHelper.WorldNow;
                 command.LoginName = _LoginNameGenerator.Generate();
             }
             using var dwLoginName = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, command.LoginName, TimeSpan.FromSeconds(2));   //锁定登录名

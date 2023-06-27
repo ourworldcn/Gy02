@@ -1533,8 +1533,8 @@ namespace GY02.Templates
         /// <summary>
         /// 获取或设置最后计算的时间。建议一律采用Utc时间。默认值是构造时的当前时间。
         /// </summary>
-        /// <value>默认值：<see cref="OwHelper.WorldClock"/></value>
-        public DateTime LastDateTime { get; set; } = OwHelper.WorldClock;
+        /// <value>默认值：<see cref="OwHelper.WorldNow"/></value>
+        public DateTime LastDateTime { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
         /// 一个记录额外信息的属性。本类成员不使用该属性。
@@ -1589,7 +1589,7 @@ namespace GY02.Templates
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public decimal GetCurrentValueWithUtc()
         {
-            DateTime now = OwHelper.WorldClock;
+            DateTime now = OwHelper.WorldNow;
             return GetCurrentValue(ref now);
         }
 
@@ -1614,17 +1614,17 @@ namespace GY02.Templates
         /// <summary>
         /// 设置最后计算得到的值，同时将计算时间更新到最接近指定点的时间。
         /// </summary>
-        /// <param name="val">这个时间点不晚于指定时间点，且又是正好一跳的时间点。</param>
+        /// <param name="currentValue">这个时间点不晚于指定时间点，且又是正好一跳的时间点。</param>
         /// <param name="dateTime"></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public void SetLastValue(decimal val, ref DateTime dateTime)
+        public void SetLastValue(decimal currentValue, ref DateTime dateTime)
         {
             var remainder = (dateTime - LastDateTime).Ticks % Delay.Ticks;
             LastDateTime = dateTime.AddTicks(-remainder);
             if (LastDateTime > dateTime)    //若时间点超过指定值
                 LastDateTime -= Delay;
             dateTime = LastDateTime;
-            _CurrentValue = val;
+            _CurrentValue = currentValue;
         }
 
         /// <summary>

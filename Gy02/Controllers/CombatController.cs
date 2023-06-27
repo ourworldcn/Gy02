@@ -13,7 +13,7 @@ namespace GY02.Controllers
     public class CombatController : GameControllerBase
     {
 #pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
-        public CombatController(IServiceProvider service, GameAccountStore gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper, SyncCommandManager syncCommandManager) : base(service)
+        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper, SyncCommandManager syncCommandManager) : base(service)
         {
             _GameAccountStore = gameAccountStore;
             _GameCombatManager = gameCombatManager;
@@ -22,7 +22,7 @@ namespace GY02.Controllers
         }
 #pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
 
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
         GameCombatManager _GameCombatManager;
         SyncCommandManager _SyncCommandManager;
         IMapper _Mapper;

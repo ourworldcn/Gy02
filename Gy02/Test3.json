@@ -1,37 +1,24 @@
 {
-  "Genus": [ "gj_jiangli" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 0,
-        "Genus": [],
+        "ParentTId": null,
+        "Genus": [ "gs_jibigouma" ],
+        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+        "MinCount": null,
+        "GeneralConditional": [],
         "IgnoreIfDisplayList": true
       }
     ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "c259050b-7fd6-4cbb-bddc-7f7293d85046",
-        "Count": 1
-      }
-    ]
+    "GetIndexExpression": {
+      "Operator": "ToInt32",
+      "Args": [ "Level" ],
+      "IgnoreIfDisplayList": false
+    },
+    "Outs": {
+      "TIds": [ "a45b3421-3688-43c5-b8f5-429db7621f69" ],
+      "Counts": [ 8000, 8000, 8000, 8000, 8000, 9000, 9000, 9000, 9000, 9000, 10000, 10000, 10000, 10000, 10000, 11000, 11000, 11000, 11000, 11000, 12000, 12000, 12000, 12000, 12000, 13000, 13000, 13000, 13000, 13000, 14000, 14000, 14000, 14000, 14000, 15000, 15000, 15000, 15000, 15000, 16000, 16000, 16000, 16000, 16000, 17000, 17000, 17000, 17000, 17000, 18000, 18000, 18000, 18000, 18000, 19000, 19000, 19000, 19000, 19000, 20000, 20000, 20000, 20000, 20000, 21000, 21000, 21000, 21000, 21000, 22000, 22000, 22000, 22000, 22000, 23000, 23000, 23000, 23000, 23000, 24000, 24000, 24000, 24000, 24000, 25000, 25000, 25000, 25000, 25000, 26000, 26000, 26000, 26000, 26000, 27000, 27000, 27000, 27000, 27000 ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ]
+    }
   }
+}

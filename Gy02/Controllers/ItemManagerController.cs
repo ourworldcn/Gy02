@@ -4,6 +4,7 @@ using GY02.Base;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -26,7 +27,7 @@ namespace GY02.Controllers
         /// <param name="gameEntityManager"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="gameAccountStore"></param>
-        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameAccountStore gameAccountStore)
+        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameAccountStoreManager gameAccountStore)
         {
             _ServiceProvider = serviceProvider;
             _Mapper = mapper;
@@ -39,7 +40,7 @@ namespace GY02.Controllers
         IMapper _Mapper;
         GameEntityManager _EntityManager;
         SyncCommandManager _SyncCommandManager;
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
 
         /// <summary>
         /// 移动物品接口。
@@ -70,7 +71,7 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<bool> TestAddItems()
         {
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
             var token = gu.Token;
             var model = new AddItemsParamsDto { Token = token };
@@ -92,7 +93,7 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<bool> TestLvUp()
         {
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
             var token = gu.Token;
             var item = gu.CurrentChar.ZhuangBeiBag.Children.First(c => c.TemplateId == Guid.Parse("402a7b1c-bd32-4540-9efe-f9801ed6946b"));
@@ -109,7 +110,7 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<bool> TestComp()
         {
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             store.LoadOrGetUser("string65", "string", out var gu);
             var token = gu.Token;
             var gc = gu.CurrentChar;
@@ -134,7 +135,7 @@ namespace GY02.Controllers
         /// <param name="mapper"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<AddItemsReturnDto> AddItems(AddItemsParamsDto model, [FromServices] GameAccountStore store, [FromServices] SyncCommandManager commandManager,
+        public ActionResult<AddItemsReturnDto> AddItems(AddItemsParamsDto model, [FromServices] GameAccountStoreManager store, [FromServices] SyncCommandManager commandManager,
             [FromServices] GameTemplateManager templateManager, [FromServices] IMapper mapper)
         {
             var result = new AddItemsReturnDto { };
@@ -149,16 +150,11 @@ namespace GY02.Controllers
             for (int i = 0; i < model.TIds.Count; i++)
             {
                 var item = model.TIds[i];
-                var tmp = _EntityManager.Create(new (Guid, decimal)[] { (item, model.Counts[i]) });
+                var tmp = _EntityManager.Create(new GameEntitySummary[] { new GameEntitySummary { TId = item, Count = model.Counts[i] } });
                 if (tmp is null) goto lbErr; //若出错
 
                 if (tmp.Count() != tmp.Count) continue;
-                tmp.ForEach(c =>
-                {
-                    var s = c.Count;
-                    c.Count = model.Counts[i];
-                });
-                list.AddRange(tmp);
+                list.AddRange(tmp.Select(c=>c.Item2));
             }
             List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
             _EntityManager.Move(list, gc, changes);
@@ -181,7 +177,7 @@ namespace GY02.Controllers
         {
             var mapper = _ServiceProvider.GetRequiredService<IMapper>();
             var result = new LvUpReturnDto { };
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
@@ -208,7 +204,7 @@ namespace GY02.Controllers
             var mapper = _ServiceProvider.GetRequiredService<IMapper>();
             var tm = _ServiceProvider.GetRequiredService<GameTemplateManager>();
             var result = new LvDownReturnDto { };
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
@@ -262,7 +258,7 @@ namespace GY02.Controllers
         {
             var mapper = _ServiceProvider.GetRequiredService<IMapper>();
             var result = new CompositeReturnDto { };
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
@@ -301,7 +297,7 @@ namespace GY02.Controllers
         public ActionResult<AutoCompositeReturnDto> AutoComposite(AutoCompositeParamsDto model)
         {
             var result = new AutoCompositeReturnDto { };
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
@@ -328,7 +324,7 @@ namespace GY02.Controllers
         public ActionResult<DecomposeReturnDto> Decompose(DecomposeParamsDto model)
         {
             var result = new DecomposeReturnDto { };
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             using var dw = store.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
@@ -369,7 +365,7 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<FuhuaPreviewReturnDto> TestFuhuaPreview()
         {
-            var store = _ServiceProvider.GetRequiredService<GameAccountStore>();
+            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
             store.LoadOrGetUser("string40", "string", out var gu);
             var token = gu.Token;
             //var gc = gu.CurrentChar;

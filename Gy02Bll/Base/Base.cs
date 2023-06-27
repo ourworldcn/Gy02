@@ -115,7 +115,7 @@ namespace OW.Game
     public interface IGameCharHandler<T> : ISyncCommandHandler<T> where T : IGameCharCommand, IResultCommand
     {
 
-        GameAccountStore AccountStore { get; }
+        GameAccountStoreManager AccountStore { get; }
 
         /// <summary>
         /// 锁定角色。

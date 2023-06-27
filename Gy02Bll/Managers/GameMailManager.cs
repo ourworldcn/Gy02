@@ -77,7 +77,7 @@ namespace GY02.Managers
                 tmp.Attachment.AddRange(mail.Attachment.Select(c1 => (GameEntitySummary)c1.Clone()));
                 OwHelper.Copy(mail.Dictionary1, tmp.Dictionary1);
                 OwHelper.Copy(mail.Dictionary2, tmp.Dictionary2);
-                tmp.SendUtc = OwHelper.WorldClock;
+                tmp.SendUtc = OwHelper.WorldNow;
                 tmp.DeleteDelay = mail.DeleteDelay;
                 result.Add(tmp);
             }
@@ -180,7 +180,7 @@ namespace GY02.Managers
             //    return false;
             //}
             var summary = doMails.SelectMany(c => c.Attachment);
-            var nowUtc = OwHelper.WorldClock;
+            var nowUtc = OwHelper.WorldNow;
             if (!_EntityManager.CreateAndMove(summary, gameChar, changes))
                 return false;
             doMails.ForEach(c => c.PickUpUtc = nowUtc);
@@ -194,7 +194,7 @@ namespace GY02.Managers
         public void ClearMail()
         {
             using var db = _ContextFactory.CreateDbContext();
-            var limit = (OwHelper.WorldClock - TimeSpan.FromDays(60)).ToString();   //60天之前的时间点
+            var limit = (OwHelper.WorldNow - TimeSpan.FromDays(60)).ToString();   //60天之前的时间点
             var coll = from mail in db.Set<VirtualThing>()
                        where mail.ExtraGuid == ProjectContent.MailTId && (SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.ReadUtc") != null || SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.PickUpUtc") != null ||
                         StringComparer.CurrentCulture.Compare(SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.SendUtc"), limit) < 0)
@@ -220,15 +220,15 @@ namespace GY02.Managers
         {
             if (mail.DeleteDelay.HasValue)   //若有指定超期
             {
-                DateTime last = OwHelper.WorldClock;
+                DateTime last = OwHelper.WorldNow;
                 if (mail.Attachment.Count > 0 && mail.PickUpUtc.HasValue)   //若有拾取附件的时间
                     last = mail.PickUpUtc.Value;
                 if (mail.ReadUtc.HasValue)  //若有已读时间
                     last = last < mail.ReadUtc.Value ? mail.ReadUtc.Value : last;
-                if (OwHelper.WorldClock - last > mail.DeleteDelay.Value)  //若到期
+                if (OwHelper.WorldNow - last > mail.DeleteDelay.Value)  //若到期
                     return true;
             }
-            if (OwHelper.WorldClock - mail.SendUtc >= TimeSpan.FromDays(60))
+            if (OwHelper.WorldNow - mail.SendUtc >= TimeSpan.FromDays(60))
                 return true;
             return false;
         }

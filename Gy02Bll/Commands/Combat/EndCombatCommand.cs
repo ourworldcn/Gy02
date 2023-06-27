@@ -52,16 +52,16 @@ namespace GY02.Commands
     /// </summary>
     public class EndCombatHandler : SyncCommandHandlerBase<EndCombatCommand>, IGameCharHandler<EndCombatCommand>
     {
-        public EndCombatHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager)
+        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager)
         {
             _AccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
         }
 
-        GameAccountStore _AccountStore;
+        GameAccountStoreManager _AccountStore;
         GameEntityManager _GameEntityManager;
 
-        public GameAccountStore AccountStore => _AccountStore;
+        public GameAccountStoreManager AccountStore => _AccountStore;
 
         public override void Handle(EndCombatCommand command)
         {
@@ -79,13 +79,10 @@ namespace GY02.Commands
             var coll = from tmp in command.Rewards
                        group tmp by tmp.TId into g
                        where g.Count() > 0
-                       select (TId: g.Key, Count: g.Sum(c => c.Count));
-            var list = new List<GameEntity>();
-            if (coll.Any())
-            {
-                list = _GameEntityManager.Create(coll);
-                _GameEntityManager.Move(list, command.GameChar, command.Changes);
-            }
+                       select new GameEntitySummary { TId = g.Key, Count = g.Sum(c => c.Count) };
+            var list = _GameEntityManager.Create(coll);
+            if (coll.Any()) //若有需要移动的实体
+                _GameEntityManager.Move(list.Select(c => c.Item2), command.GameChar, command.Changes);
             var change = new GamePropertyChangeItem<object>
             {
                 Object = command.GameChar,

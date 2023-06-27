@@ -927,7 +927,7 @@
             <summary>
             获取或设置最后计算的时间。建议一律采用Utc时间。默认值是构造时的当前时间。
             </summary>
-            <value>默认值：<see cref="P:System.OwHelper.WorldClock"/></value>
+            <value>默认值：<see cref="P:System.OwHelper.WorldNow"/></value>
         </member>
         <member name="P:GY02.Templates.FastChangingProperty.Tag">
             <summary>
@@ -958,7 +958,7 @@
             <summary>
             设置最后计算得到的值，同时将计算时间更新到最接近指定点的时间。
             </summary>
-            <param name="val">这个时间点不晚于指定时间点，且又是正好一跳的时间点。</param>
+            <param name="currentValue">这个时间点不晚于指定时间点，且又是正好一跳的时间点。</param>
             <param name="dateTime"></param>
         </member>
         <member name="M:GY02.Templates.FastChangingProperty.Clone">

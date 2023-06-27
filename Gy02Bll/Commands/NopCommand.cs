@@ -18,14 +18,14 @@ namespace GY02.Commands
     /// </summary>
     public class NopHandler : SyncCommandHandlerBase<NopCommand>, IGameCharHandler<NopCommand>
     {
-        public NopHandler(GameAccountStore accountStore)
+        public NopHandler(GameAccountStoreManager accountStore)
         {
             _AccountStore = accountStore;
         }
 
-        GameAccountStore _AccountStore;
+        GameAccountStoreManager _AccountStore;
 
-        public GameAccountStore AccountStore => _AccountStore;
+        public GameAccountStoreManager AccountStore => _AccountStore;
 
         public override void Handle(NopCommand command)
         {

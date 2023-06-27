@@ -22,13 +22,13 @@ namespace GY02.Commands
 
     public class LeijiQiandaoHandler : SyncCommandHandlerBase<LeijiQiandaoCommand>, IGameCharHandler<LeijiQiandaoCommand>
     {
-        public LeijiQiandaoHandler(GameAccountStore accountStore, GameEntityManager entityManager)
+        public LeijiQiandaoHandler(GameAccountStoreManager accountStore, GameEntityManager entityManager)
         {
             AccountStore = accountStore;
             _EntityManager = entityManager;
         }
 
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
 
         GameEntityManager _EntityManager;
 
@@ -44,7 +44,7 @@ namespace GY02.Commands
                 command.DebugMessage = $"找不到累计签到的占位符对象。";
                 return;
             }
-            var now = OwHelper.WorldClock;
+            var now = OwHelper.WorldNow;
             DateTime? lastChange = null;
             var obj = slot.ExtensionProperties.GetValueOrDefault("LastChange");
             if (obj is JsonElement je)

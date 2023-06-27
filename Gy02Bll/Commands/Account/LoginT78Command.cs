@@ -79,7 +79,7 @@ namespace GY02.Publisher
 
     public class LoginT78Handler : SyncCommandHandlerBase<LoginT78Command>
     {
-        public LoginT78Handler(PublisherT78Manager publisherT78Manager, GameAccountStore gameAccountStore, IDbContextFactory<GY02UserContext> dbContextFactory, SyncCommandManager syncCommandManager)
+        public LoginT78Handler(PublisherT78Manager publisherT78Manager, GameAccountStoreManager gameAccountStore, IDbContextFactory<GY02UserContext> dbContextFactory, SyncCommandManager syncCommandManager)
         {
             _PublisherT78Manager = publisherT78Manager;
             _GameAccountStore = gameAccountStore;
@@ -88,7 +88,7 @@ namespace GY02.Publisher
         }
 
         PublisherT78Manager _PublisherT78Manager;
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
         IDbContextFactory<GY02UserContext> _DbContextFactory;
         SyncCommandManager _SyncCommandManager;
 

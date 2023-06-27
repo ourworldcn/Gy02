@@ -61,7 +61,7 @@ namespace System.Threading
         public static bool TryEnter(ref object obj, TimeSpan timeout)
         {
             obj = Intern(obj);
-            var start = OwHelper.WorldClock;
+            var start = OwHelper.WorldNow;
             if (!Monitor.TryEnter(obj, timeout))
                 return false;
             while (!ReferenceEquals(obj, IsInterned(obj)))  //若因并发导致对象被清理

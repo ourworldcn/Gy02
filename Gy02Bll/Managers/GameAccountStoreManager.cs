@@ -26,14 +26,14 @@ using System.Threading.Tasks;
 
 namespace GY02.Managers
 {
-    public class GameAccountStoreOptions : IOptions<GameAccountStoreOptions>
+    public class GameAccountStoreManagerOptions : IOptions<GameAccountStoreManagerOptions>
     {
-        public GameAccountStoreOptions()
+        public GameAccountStoreManagerOptions()
         {
 
         }
 
-        public GameAccountStoreOptions Value => this;
+        public GameAccountStoreManagerOptions Value => this;
 
         /// <summary>
         /// 设置或获取锁定键的回调。应支持递归与<see cref="UnlockCallback"/>配对使用。
@@ -62,12 +62,12 @@ namespace GY02.Managers
     }
 
     /// <summary>
-    /// 存储及索引服务。
+    /// 账号和角色相关的存储及检索索引服务。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class GameAccountStore : GameManagerBase<GameAccountStoreOptions, GameAccountStore>
+    public class GameAccountStoreManager : GameManagerBase<GameAccountStoreManagerOptions, GameAccountStoreManager>
     {
-        public GameAccountStore(IOptions<GameAccountStoreOptions> options, ILogger<GameAccountStore> logger, IDbContextFactory<GY02UserContext> contextFactory,
+        public GameAccountStoreManager(IOptions<GameAccountStoreManagerOptions> options, ILogger<GameAccountStoreManager> logger, IDbContextFactory<GY02UserContext> contextFactory,
             IHostApplicationLifetime lifetime, IServiceProvider service) : base(options, logger)
         {
             _ContextFactory = contextFactory;
@@ -244,7 +244,7 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"找不到指定的Key={key}代表的用户对象。");
                 return false;
             }
-            gu.LastModifyDateTimeUtc = OwHelper.WorldClock;
+            gu.LastModifyDateTimeUtc = OwHelper.WorldNow;
             return true;
         }
 

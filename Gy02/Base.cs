@@ -66,7 +66,7 @@ namespace GY02
         /// <param name="hostLifetime"></param>
         /// <param name="logger"></param>
         /// <param name="options"></param>
-        public UdpScanner(UdpServerManager udpServerManager, GameAccountStore gameAccountStore, IHostApplicationLifetime hostLifetime, IOptions<UdpScannerOptions> options, ILogger<UdpScanner> logger) : base(options, logger)
+        public UdpScanner(UdpServerManager udpServerManager, GameAccountStoreManager gameAccountStore, IHostApplicationLifetime hostLifetime, IOptions<UdpScannerOptions> options, ILogger<UdpScanner> logger) : base(options, logger)
         {
             _UdpServerManager = udpServerManager;
             _GameAccountStore = gameAccountStore;
@@ -75,7 +75,7 @@ namespace GY02
         }
 
         UdpServerManager _UdpServerManager;
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
         IHostApplicationLifetime _HostLifetime;
         Timer? _Timer;
 
@@ -107,7 +107,7 @@ namespace GY02
                 if (oVal != nVal) //若已经变化
                     _UdpServerManager.SendObject(item.Value.Token, new GamePropertyChangeItemDto
                     {
-                        DateTimeUtc = OwHelper.WorldClock,
+                        DateTimeUtc = OwHelper.WorldNow,
                         ObjectId = tili.Id,
                         TId = tili.TemplateId,
                         PropertyName = nameof(tili.Count),
@@ -130,7 +130,7 @@ namespace GY02
                 {
                     _UdpServerManager.SendObject(item.Value.Token, new GamePropertyChangeItemDto
                     {
-                        DateTimeUtc = OwHelper.WorldClock,
+                        DateTimeUtc = OwHelper.WorldNow,
                         ObjectId = cishu.Id,
                         TId = cishu.TemplateId,
                         PropertyName = nameof(cishu.Count),

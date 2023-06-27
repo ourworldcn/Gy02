@@ -18,16 +18,16 @@ namespace GY02.Commands
 
     public class AutoLvUpHandler : SyncCommandHandlerBase<AutoLvUpCommand>, IGameCharHandler<AutoLvUpCommand>
     {
-        public AutoLvUpHandler(GameAccountStore accountStore, SyncCommandManager commandManager)
+        public AutoLvUpHandler(GameAccountStoreManager accountStore, SyncCommandManager commandManager)
         {
             _AccountStore = accountStore;
             _CommandManager = commandManager;
         }
 
-        GameAccountStore _AccountStore;
+        GameAccountStoreManager _AccountStore;
         SyncCommandManager _CommandManager;
 
-        public GameAccountStore AccountStore => _AccountStore;
+        public GameAccountStoreManager AccountStore => _AccountStore;
 
         public override void Handle(AutoLvUpCommand command)
         {

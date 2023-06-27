@@ -35,14 +35,14 @@ namespace GY02.Commands
     /// </summary>
     public class PickUpAttachmentHandler : SyncCommandHandlerBase<PickUpAttachmentCommand>, IGameCharHandler<PickUpAttachmentCommand>
     {
-        public PickUpAttachmentHandler(GameAccountStore accountStore, GameEntityManager entityManager, GameMailManager mailManager)
+        public PickUpAttachmentHandler(GameAccountStoreManager accountStore, GameEntityManager entityManager, GameMailManager mailManager)
         {
             AccountStore = accountStore;
             _EntityManager = entityManager;
             _MailManager = mailManager;
         }
 
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
 
         GameEntityManager _EntityManager;
         GameMailManager _MailManager;

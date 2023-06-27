@@ -17,7 +17,7 @@ namespace GY02.Commands
 
     public class AutoCompositeHandler : SyncCommandHandlerBase<AutoCompositeCommand>, IGameCharHandler<AutoCompositeCommand>
     {
-        public AutoCompositeHandler(SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEntityManager entityManager, GameAccountStore accountStore)
+        public AutoCompositeHandler(SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEntityManager entityManager, GameAccountStoreManager accountStore)
         {
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
@@ -28,9 +28,9 @@ namespace GY02.Commands
         SyncCommandManager _SyncCommandManager;
         GameTemplateManager _TemplateManager;
         GameEntityManager _EntityManager;
-        GameAccountStore _AccountStore;
+        GameAccountStoreManager _AccountStore;
 
-        public GameAccountStore AccountStore => _AccountStore;
+        public GameAccountStoreManager AccountStore => _AccountStore;
 
         public override void Handle(AutoCompositeCommand command)
         {

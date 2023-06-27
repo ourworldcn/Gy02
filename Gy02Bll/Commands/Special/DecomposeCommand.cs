@@ -1,5 +1,6 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using OW.Game.Entity;
 using OW.SyncCommand;
 using System;
@@ -25,13 +26,13 @@ namespace GY02.Commands
 
     public class DecomposeHandler : SyncCommandHandlerBase<DecomposeCommand>
     {
-        public DecomposeHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager)
+        public DecomposeHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager)
         {
             _GameAccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
         }
 
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
 
         GameEntityManager _GameEntityManager;
 
@@ -56,11 +57,11 @@ namespace GY02.Commands
                 return;
             }
 
-            var list = _GameEntityManager.Create(command.Item.CompositingAccruedCost.Select(c => (c.TId, c.Count)));
+            var list = _GameEntityManager.Create(command.Item.CompositingAccruedCost.Select(c => new GameEntitySummary { TId = c.TId, Count = c.Count }));
             if (list is null) goto lbErr;
             if (!_GameEntityManager.Modify(command.Item, -command.Item.Count, command.Changes)) goto lbErr;
 
-            _GameEntityManager.Move(list, command.GameChar, command.Changes);
+            _GameEntityManager.Move(list.Select(c => c.Item2), command.GameChar, command.Changes);
 
             return;
         lbErr:

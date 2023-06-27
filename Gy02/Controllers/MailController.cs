@@ -17,7 +17,7 @@ namespace Gy02.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public MailController(GameMailManager mailManager, GameAccountStore gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager)
+        public MailController(GameMailManager mailManager, GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager)
         {
             _MailManager = mailManager;
             _GameAccountStore = gameAccountStore;
@@ -26,7 +26,7 @@ namespace Gy02.Controllers
         }
 
         GameMailManager _MailManager;
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
 

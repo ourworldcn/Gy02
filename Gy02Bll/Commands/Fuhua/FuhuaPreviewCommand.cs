@@ -39,7 +39,7 @@ namespace GY02.Commands
 
     public class FuhuaPreviewHandler : SyncCommandHandlerBase<FuhuaPreviewCommand>, IGameCharHandler<FuhuaPreviewCommand>
     {
-        public FuhuaPreviewHandler(GameAccountStore gameAccountStore, GameEntityManager gameEntityManager, GameTemplateManager templateManager, GameDiceManager diceManager, SpecialManager specialManager, IMapper mapper)
+        public FuhuaPreviewHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, GameTemplateManager templateManager, GameDiceManager diceManager, SpecialManager specialManager, IMapper mapper)
         {
             _GameAccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
@@ -49,13 +49,13 @@ namespace GY02.Commands
             _Mapper = mapper;
         }
 
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
         GameEntityManager _GameEntityManager;
         GameTemplateManager _TemplateManager;
         GameDiceManager _DiceManager;
         IMapper _Mapper;
 
-        public GameAccountStore AccountStore => _GameAccountStore;
+        public GameAccountStoreManager AccountStore => _GameAccountStore;
 
         SpecialManager _SpecialManager;
 

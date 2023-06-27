@@ -79,14 +79,14 @@ namespace GY02.Commands
 
     public class SendMailHandler : SyncCommandHandlerBase<SendMailCommand>, IGameCharHandler<SendMailCommand>
     {
-        public SendMailHandler(GameAccountStore accountStore, GameMailManager mailManager, SyncCommandManager syncCommandManager)
+        public SendMailHandler(GameAccountStoreManager accountStore, GameMailManager mailManager, SyncCommandManager syncCommandManager)
         {
             AccountStore = accountStore;
             _MailManager = mailManager;
             _SyncCommandManager = syncCommandManager;
         }
 
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
 
         public GameMailManager _MailManager;
 

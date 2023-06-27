@@ -40,14 +40,14 @@ namespace GY02.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public AccountController(GameAccountStore gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper)
+        public AccountController(GameAccountStoreManager gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper)
         {
             _GameAccountStore = gameAccountStore;
             _SyncCommandManager = syncCommandManager;
             _Mapper = mapper;
         }
 
-        readonly GameAccountStore _GameAccountStore;
+        readonly GameAccountStoreManager _GameAccountStore;
         readonly SyncCommandManager _SyncCommandManager;
         readonly IMapper _Mapper;
 

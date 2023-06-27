@@ -183,7 +183,7 @@ namespace Microsoft.Extensions.Caching.Memory
             /// <summary>
             /// 最后一次使用的Utc时间。
             /// </summary>
-            public DateTime LastUseUtc { get; internal set; } = OwHelper.WorldClock;
+            public DateTime LastUseUtc { get; internal set; } = OwHelper.WorldNow;
 
             /// <summary>
             /// 获取此配置项是否超期。
@@ -279,7 +279,7 @@ namespace Microsoft.Extensions.Caching.Memory
                 };
             if (TryGetValueCore(key, out var entry))
             {
-                entry.LastUseUtc = OwHelper.WorldClock;
+                entry.LastUseUtc = OwHelper.WorldNow;
                 value = entry.Value;
                 return true;
             }
@@ -449,7 +449,7 @@ namespace Microsoft.Extensions.Caching.Memory
         {
             ThrowIfDisposed();
             var last = Volatile.Read(ref _CompactTick);
-            var now = OwHelper.WorldClock;
+            var now = OwHelper.WorldNow;
             if (now - new DateTime(last) < _Options.ExpirationScanFrequency)   //若最近已经压缩过
                 return;
             if (Interlocked.CompareExchange(ref _CompactTick, now.Ticks, last) != last) //若已经被并发更改
@@ -460,7 +460,7 @@ namespace Microsoft.Extensions.Caching.Memory
         /// <summary>
         /// 最后一次压缩的时间的刻度。
         /// </summary>
-        long _CompactTick = OwHelper.WorldClock.Ticks;
+        long _CompactTick = OwHelper.WorldNow.Ticks;
 
         /// <summary>
         /// 压缩缓存。
@@ -473,7 +473,7 @@ namespace Microsoft.Extensions.Caching.Memory
             if (dwReenter.IsEmpty)
                 return;
             long count = 0;
-            var now = OwHelper.WorldClock;
+            var now = OwHelper.WorldNow;
 
             foreach (var key in _Items.Keys)
             {

@@ -23,12 +23,12 @@ namespace GY02.Commands
 
     public class CombatMarkHandler : SyncCommandHandlerBase<CombatMarkCommand>
     {
-        public CombatMarkHandler(GameAccountStore gameAccountStore)
+        public CombatMarkHandler(GameAccountStoreManager gameAccountStore)
         {
             _GameAccountStore = gameAccountStore;
         }
 
-        GameAccountStore _GameAccountStore;
+        GameAccountStoreManager _GameAccountStore;
 
         public override void Handle(CombatMarkCommand command)
         {

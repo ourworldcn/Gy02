@@ -117,7 +117,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 创建该对象的通用协调时间。
         /// </summary>
-        public DateTime CreateUtc { get; set; } = OwHelper.WorldClock;
+        public DateTime CreateUtc { get; set; } = OwHelper.WorldNow;
 
         #region 非数据库属性
 
@@ -126,7 +126,7 @@ namespace OW.Game.Entity
         /// </summary>
         [NotMapped]
         [JsonIgnore]
-        public DateTime LastModifyDateTimeUtc { get; set; } = OwHelper.WorldClock;
+        public DateTime LastModifyDateTimeUtc { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
         /// 超时时间。

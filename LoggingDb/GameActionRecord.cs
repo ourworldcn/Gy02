@@ -46,7 +46,7 @@ namespace OW.GameDb
         /// 这个行为发生的时间。
         /// </summary>
         /// <value>默认是构造此对象的UTC时间。</value>
-        public DateTime DateTimeUtc { get; set; } = OwHelper.WorldClock;
+        public DateTime DateTimeUtc { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
         /// 一个人眼可读的说明。

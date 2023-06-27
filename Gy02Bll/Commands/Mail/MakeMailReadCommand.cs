@@ -29,14 +29,14 @@ namespace GY02.Commands.Mail
 
     public class MakeMailReadHandler : SyncCommandHandlerBase<MakeMailReadCommand>, IGameCharHandler<MakeMailReadCommand>
     {
-        public MakeMailReadHandler(GameAccountStore accountStore, GameMailManager mailManager, GY02UserContext dbContext)
+        public MakeMailReadHandler(GameAccountStoreManager accountStore, GameMailManager mailManager, GY02UserContext dbContext)
         {
             AccountStore = accountStore;
             MailManager = mailManager;
             DbContext = dbContext;
         }
 
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
 
         public GameMailManager MailManager { get; set; }
 
@@ -54,7 +54,7 @@ namespace GY02.Commands.Mail
                 command.FillErrorFromWorld();
                 return;
             }
-            mails.ForEach(c => c.ReadUtc = OwHelper.WorldClock);
+            mails.ForEach(c => c.ReadUtc = OwHelper.WorldNow);
             try
             {
                 DbContext.SaveChanges();

@@ -28,12 +28,12 @@ namespace GY02.Commands
 
     public class GetMailsHandler : SyncCommandHandlerBase<GetMailsCommand>, IGameCharHandler<GetMailsCommand>
     {
-        public GetMailsHandler(GameAccountStore accountStore, GameMailManager mailManager)
+        public GetMailsHandler(GameAccountStoreManager accountStore, GameMailManager mailManager)
         {
             AccountStore = accountStore;
             _MailManager = mailManager;
         }
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
 
         public GameMailManager _MailManager;
 

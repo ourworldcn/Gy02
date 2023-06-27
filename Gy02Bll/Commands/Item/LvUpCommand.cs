@@ -33,7 +33,7 @@ namespace GY02.Commands
     public class LvUpCommandHandler : SyncCommandHandlerBase<LvUpCommand>, IGameCharHandler<LvUpCommand>
     {
 
-        public LvUpCommandHandler(GameTemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStore accountStore)
+        public LvUpCommandHandler(GameTemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStoreManager accountStore)
         {
             _TemplateManager = templateManager;
             _SyncCommandManager = syncCommandManager;
@@ -46,7 +46,7 @@ namespace GY02.Commands
         SyncCommandManager _SyncCommandManager;
         GameEntityManager _GameEntityManager;
 
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
 
         int GetMaxLevel(TemplateStringFullView template)
         {

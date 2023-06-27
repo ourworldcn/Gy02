@@ -38,14 +38,14 @@ namespace GY02.Commands
 
     public class GetEntitiesHandler : SyncCommandHandlerBase<GetEntitiesCommand>, IGameCharHandler<GetEntitiesCommand>
     {
-        public GetEntitiesHandler(GameAccountStore accountStore, GameEntityManager entityManager)
+        public GetEntitiesHandler(GameAccountStoreManager accountStore, GameEntityManager entityManager)
         {
             _AccountStore = accountStore;
             _EntityManager = entityManager;
         }
 
-        GameAccountStore _AccountStore;
-        public GameAccountStore AccountStore => _AccountStore;
+        GameAccountStoreManager _AccountStore;
+        public GameAccountStoreManager AccountStore => _AccountStore;
 
         GameEntityManager _EntityManager;
 

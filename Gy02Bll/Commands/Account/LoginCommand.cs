@@ -61,7 +61,7 @@ namespace GY02.Commands
 
         public override void Handle(LoginCommand command)
         {
-            var svcStore = _Service.GetRequiredService<GameAccountStore>();
+            var svcStore = _Service.GetRequiredService<GameAccountStoreManager>();
             var exists = svcStore.LoginName2Key.ContainsKey(command.LoginName);  //是否已经登录
             if (!svcStore.LoadOrGetUser(command.LoginName, command.Pwd, out var gu))
             {
@@ -74,11 +74,11 @@ namespace GY02.Commands
                 command.FillErrorFromWorld();
                 return;
             }
-            var nowUtc = OwHelper.WorldClock;
+            var nowUtc = OwHelper.WorldNow;
             command.User = gu;
             //设置属性
             gu.Timeout = TimeSpan.FromMinutes(15);
-            gu.LastModifyDateTimeUtc = OwHelper.WorldClock;
+            gu.LastModifyDateTimeUtc = OwHelper.WorldNow;
             if (exists)  //若是重新登录
             {
                 if (!svcStore.ChangeToken(gu, Guid.NewGuid()))

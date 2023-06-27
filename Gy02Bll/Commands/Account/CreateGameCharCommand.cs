@@ -51,7 +51,7 @@ namespace GY02.Commands
         public override void Handle(CreateGameCharCommand command)
         {
             var key = command.User.Id.ToString();
-            var svcStore = _Service.GetRequiredService<GameAccountStore>();
+            var svcStore = _Service.GetRequiredService<GameAccountStoreManager>();
             using var dw = DisposeHelper.Create(svcStore.Lock, svcStore.Unlock, key, TimeSpan.FromSeconds(1));
             if (dw.IsEmpty)
             {

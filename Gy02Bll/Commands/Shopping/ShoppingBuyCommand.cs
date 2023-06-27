@@ -31,7 +31,7 @@ namespace GY02.Commands
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
     {
 
-        public ShoppingBuyHandler(GameAccountStore accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager)
+        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager)
         {
             AccountStore = accountStore;
             _ShoppingManager = shoppingManager;
@@ -41,7 +41,7 @@ namespace GY02.Commands
             _SpecialManager = specialManager;
         }
 
-        public GameAccountStore AccountStore { get; }
+        public GameAccountStoreManager AccountStore { get; }
 
         GameEntityManager _EntityManager;
         GameBlueprintManager _BlueprintManager;
@@ -58,7 +58,7 @@ namespace GY02.Commands
             var tt = _ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId);
             //var si = _ShoppingManager.GetShoppingItemByTId(command.ShoppingItemTId);
             if (tt is null) goto lbErr;
-            var now = OwHelper.WorldClock;
+            var now = OwHelper.WorldNow;
             if (!_ShoppingManager.IsValid(command.GameChar, tt, now, out _)) goto lbErr;
 
             var allEntity = _EntityManager.GetAllEntity(command.GameChar)?.ToArray();
@@ -99,7 +99,7 @@ namespace GY02.Commands
     /// </summary>
     public class CharFirstLoginedHandler : SyncCommandHandlerBase<CharFirstLoginedCommand>
     {
-        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStore accountStore)
+        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStoreManager accountStore)
         {
             _EntityManager = entityManager;
             _ShoppingManager = shoppingManager;
@@ -108,7 +108,7 @@ namespace GY02.Commands
 
         GameEntityManager _EntityManager;
         GameShoppingManager _ShoppingManager;
-        GameAccountStore _AccountStore;
+        GameAccountStoreManager _AccountStore;
 
         /// <summary>
         /// 

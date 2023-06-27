@@ -102,7 +102,7 @@ namespace GY02.Controllers
         [HttpGet]
         public ActionResult<GetServerDateTimeUtcReturnDto> GetServerDateTimeUtc()
         {
-            var result = new GetServerDateTimeUtcReturnDto { DateTimeUtc = OwHelper.WorldClock };
+            var result = new GetServerDateTimeUtcReturnDto { DateTimeUtc = OwHelper.WorldNow };
             return result;
         }
     }

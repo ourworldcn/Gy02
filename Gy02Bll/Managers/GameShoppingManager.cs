@@ -49,7 +49,7 @@ namespace GY02.Managers
         public TemplateStringFullView GetShoppingTemplateByTId(Guid shoppingItemTId)
         {
             var result = _TemplateManager.GetFullViewFromId(shoppingItemTId);
-            if (GetShoppingItemByTemplate(result) is null)
+            if (result is null || GetShoppingItemByTemplate(result) is null)
                 return null;
             return result;
         }
@@ -129,7 +129,7 @@ namespace GY02.Managers
                 periodStart = default;
                 return false;
             }
-            return IsValidWithoutBuyed(gameChar, shoppingItem, OwHelper.WorldClock, out periodStart, ignore);
+            return IsValidWithoutBuyed(gameChar, shoppingItem, OwHelper.WorldNow, out periodStart, ignore);
         }
 
         /// <summary>

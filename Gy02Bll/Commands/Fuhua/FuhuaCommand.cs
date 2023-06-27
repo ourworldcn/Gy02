@@ -27,7 +27,7 @@ namespace GY02.Commands
 
     public class FuhuaHandler : SyncCommandHandlerBase<FuhuaCommand>, IGameCharHandler<FuhuaCommand>
     {
-        public FuhuaHandler(GameAccountStore accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameTemplateManager templateManager, GameBlueprintManager blueprintManager,
+        public FuhuaHandler(GameAccountStoreManager accountStore, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameTemplateManager templateManager, GameBlueprintManager blueprintManager,
             SpecialManager specialManager, GameDiceManager diceManager)
         {
             _AccountStore = accountStore;
@@ -39,8 +39,8 @@ namespace GY02.Commands
             _DiceManager = diceManager;
         }
 
-        GameAccountStore _AccountStore;
-        public GameAccountStore AccountStore => _AccountStore;
+        GameAccountStoreManager _AccountStore;
+        public GameAccountStoreManager AccountStore => _AccountStore;
 
         SyncCommandManager _SyncCommandManager;
 
@@ -96,10 +96,10 @@ namespace GY02.Commands
             var specOut = OwHelper.GetRandom(preview.Items.Select(c => (c, c.Weight)));
             if (specOut is null) goto lbErr;
             var dices = _DiceManager.GetOutputs(Array.Empty<GameDiceItem>().Append(specOut.Value.Item1)).SelectMany(c => c.Item2);
-            IEnumerable<GameEntity> items = _GameEntityManager.Create(Array.Empty<(Guid, decimal)>().Concat(dices.Select(c => (c.TId, c.Count))));
+            var items = _GameEntityManager.Create(dices);
             if (items is null) goto lbErr;
-            var specOutPtid = _GameEntityManager.GetTemplate(items.First()).ParentTId;
-            _GameEntityManager.Move(items, gc, command.Changes);
+            var specOutPtid = _GameEntityManager.GetTemplate(items.First().Item2).ParentTId;
+            _GameEntityManager.Move(items.Select(c => c.Item2), gc, command.Changes);
             if (specOutPtid == ProjectContent.PiFuBagTId)    //若是皮肤
             {
                 var history = gc.FuhuaHistory.FirstOrDefault(c => c.ParentTIds.SequenceEqual(command.ParentGenus));
