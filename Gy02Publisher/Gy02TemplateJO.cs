@@ -553,7 +553,7 @@ namespace GY02.Templates
         /// <summary>
         /// 经验到等级转换用的序列，如[100,200]表示指标值>=100时达成该成就第1级（未达成前是0级），当指标值>=200时达成第2级成就；以此类推。
         /// </summary>
-        public decimal[] ExpSequence { get; set; }
+        public decimal[] Exp2LvSequence { get; set; }
 
         /// <summary>
         /// 消耗物的集合。暂时未用。
