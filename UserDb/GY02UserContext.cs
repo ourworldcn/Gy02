@@ -16,6 +16,26 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Store
 {
+    public class ServerConfigItem
+    {
+        /// <summary>
+        /// Key的名字。
+        /// </summary>
+        [MaxLength(64)]
+        [Key]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// 内容。
+        /// </summary>
+        public string Value { get; set; }
+
+        /// <summary>
+        /// 最后修改的日期。使用游戏世界时间。
+        /// </summary>
+        public DateTime LastModifyUtc { get; set; } = OwHelper.WorldNow;
+    }
+
     public static class MigrateDbInitializer
     {
         public static void Initialize(GY02UserContext context)
@@ -58,6 +78,11 @@ namespace OW.Game.Store
         /// 包含游戏世界内所有事物对象的表。
         /// </summary>
         public DbSet<VirtualThing> VirtualThings { get; set; }
+
+        /// <summary>
+        /// 服务器的全局配置项。
+        /// </summary>
+        public DbSet<ServerConfigItem> ServerConfig { get; set; }
 
     }
 }

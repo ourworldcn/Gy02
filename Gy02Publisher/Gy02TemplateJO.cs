@@ -383,6 +383,10 @@ namespace GY02.Templates
 
     #endregion 基础数据
 
+    #region 全服配置数据
+
+    #endregion 全服配置数据
+
     #region Udp相关
 
     /// <summary>

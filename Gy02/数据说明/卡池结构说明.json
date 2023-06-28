@@ -1,7 +1,7 @@
 {
   "Dice": { //定义一个卡池
     "MaxCount": 0, //投一次骰子产出多少项
-    "AllowRepetition": true, //投一次骰子产出项是否可以重复
+    "AllowRepetition": true, //投一次骰子产出项是否可以重复,true允许重复,false不允许。
     "Items": [ //里面每项是一个可能产出
       {
         "Outs": [

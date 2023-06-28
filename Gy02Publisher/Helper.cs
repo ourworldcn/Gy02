@@ -19,6 +19,35 @@ namespace GY02.Publisher
     /// </summary>
     public static class ProjectContent
     {
+        /// <summary>
+        /// 全服配置字典条目的名称。
+        /// </summary>
+        public const string ServerDictionaryName = "3872287E-E2A3-4D3D-A5FE-C6FF703FA544";
+
+        #region 权限相关
+
+        /// <summary>
+        /// 管理员登录名。
+        /// </summary>
+        public const string AdminLoginName = "0A630B86-0C8F-4CDA-B9BB-A13E35295D71";
+
+        /// <summary>
+        /// 管理员初始密码。
+        /// </summary>
+        public const string AdminPwd = "1954D1C0-5012-44C3-8F1B-0950544862A5";
+
+        /// <summary>
+        /// 超管角色标志。
+        /// </summary>
+        public const string SupperAdminRole = "D7A8EA19-2B37-4A70-A80A-708120796093";
+
+        /// <summary>
+        /// 管理员角色标志。
+        /// </summary>
+        public const string AdminRole = "221BBA0F-4DAF-4394-8622-39F4377B61F7";
+
+        #endregion 权限相关
+
         #region 各种槽和背包
 
         /// <summary>

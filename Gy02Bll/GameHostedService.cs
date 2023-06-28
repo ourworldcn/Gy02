@@ -1,4 +1,5 @@
 ﻿using GuangYuan.GY001.TemplateDb;
+using GY02.Base;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
@@ -23,6 +24,7 @@ using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
+using OW.SyncCommand;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net;
@@ -91,6 +93,7 @@ namespace GY02
                 var service = scope.ServiceProvider;
                 var mailManager = service.GetService<GameMailManager>();
                 Task.Run(mailManager.ClearMail);
+                Task.Run(InitializeAdmin);
             }, _Services, cancellationToken);
 
             Test();
@@ -135,6 +138,33 @@ namespace GY02
 #if !DEBUG  //若正式运行版本
 
 #endif
+        }
+
+        /// <summary>
+        /// 初始化管理员账号。
+        /// </summary>
+        void InitializeAdmin()
+        {
+            using var dw = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, ProjectContent.AdminLoginName, Timeout.InfiniteTimeSpan);
+            if (dw.IsEmpty) throw new InvalidOperationException("无法锁定管理员登录名。");
+
+            var store = _Services.GetRequiredService<GameAccountStoreManager>();
+            var fac = _Services.GetRequiredService<IDbContextFactory<GY02UserContext>>();
+            using var db = fac.CreateDbContext();
+            var tmp = db.VirtualThings.FirstOrDefault(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == ProjectContent.AdminLoginName);
+            if (tmp is null)    //若需要初始化管理员账号
+            {
+                using var scope = _Services.CreateScope();
+                CreateAccountCommand createUser = new CreateAccountCommand { LoginName = ProjectContent.AdminLoginName, Pwd = ProjectContent.AdminPwd };
+                var handler = scope.ServiceProvider.GetRequiredService<SyncCommandManager>();
+                handler.Handle(createUser);
+                if (createUser.HasError) throw new InvalidOperationException("无法创建超管账号。");
+                using var dwUser = DisposeHelper.Create(store.Lock, store.Unlock, createUser.User.Key, Timeout.InfiniteTimeSpan);
+                if (dw.IsEmpty) throw new InvalidOperationException("无法锁定管理员对象。");
+                var gc = createUser.User.CurrentChar;
+                gc.Roles.Add(ProjectContent.SupperAdminRole);
+                store.Save(createUser.User.Key);
+            }
         }
 
         private void CreateDb(IServiceProvider services)
