@@ -154,7 +154,7 @@ namespace GY02.Controllers
                 if (tmp is null) goto lbErr; //若出错
 
                 if (tmp.Count() != tmp.Count) continue;
-                list.AddRange(tmp.Select(c=>c.Item2));
+                list.AddRange(tmp.Select(c => c.Item2));
             }
             List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
             _EntityManager.Move(list, gc, changes);
@@ -447,6 +447,32 @@ namespace GY02.Controllers
                 return result;
             }
             var command = new GetEntitiesCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
+        /// 修改指定实体的客户端用字典内容的功能。
+        /// 获取字典可以使用GetEntities功能（返回实体中包含该字典）。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<ModifyClientDictionaryReturnDto> ModifyClientDictionary(ModifyClientDictionaryParamsDto model)
+        {
+            var result = new ModifyClientDictionaryReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new ModifyClientDictionaryCommand { GameChar = gc, };
 
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);

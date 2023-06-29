@@ -42,6 +42,11 @@ namespace GY02.Commands
 
         public override void Handle(ModifyServerDictionaryCommand command)
         {
+            if (command.GameChar.Roles.All(c => c != ProjectContent.SupperAdminRole && c != ProjectContent.AdminRole))   //若无权限
+            {
+                command.ErrorCode = ErrorCodes.ERROR_INVALID_ACL;
+                return;
+            }
             var item = DbContext.ServerConfig.Find(ProjectContent.ServerDictionaryName);
             if (item is null)
             {

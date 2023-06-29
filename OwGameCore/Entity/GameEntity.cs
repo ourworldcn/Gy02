@@ -101,6 +101,11 @@ namespace OW.Game.Entity
         [JsonPropertyOrder(12)]
         public Dictionary<string, FastChangingProperty> Fcps { get; set; } = new Dictionary<string, FastChangingProperty>();
 
+        /// <summary>
+        /// 客户端存储的数据，服务器不使用，仅原样记录和传递。
+        /// </summary>
+        public Dictionary<string, string> ClientDictionary { get; set; } = new Dictionary<string, string>();
+
         public override string ToString()
         {
             var name = ((Thing as VirtualThing)?.GetTemplate())?.DisplayName;

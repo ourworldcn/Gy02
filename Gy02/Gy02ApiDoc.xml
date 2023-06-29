@@ -135,6 +135,11 @@
             管理员工具的控制器。
             </summary>
         </member>
+        <member name="M:GY02.Controllers.AdminController.#ctor(GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
         <member name="T:GY02.Controllers.AdminController.TemplateDatas">
             <summary>
             封装模板数据配置文件的类。
@@ -176,6 +181,20 @@
             <param name="dbUser"></param>
             <param name="dbLogger"></param>
             <param name="entityManager"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Controllers.AdminController.ModifyServerDictionary(GY02.Publisher.ModifyServerDictionaryParamsDto)">
+            <summary>
+            修改服务器全局配置字典功能。仅超管和管理员可以成功执行。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Controllers.AdminController.GetServerDictionary(GY02.Publisher.GetServerDictionaryParamsDto)">
+            <summary>
+            获取服务器字典功能。任何登录用户都可以使用此功能。
+            </summary>
+            <param name="model"></param>
             <returns></returns>
         </member>
         <member name="T:GY02.Controllers.BlueprintController">
@@ -349,6 +368,14 @@
         <member name="M:GY02.Controllers.ItemManagerController.GetEntities(GY02.Publisher.GetEntitiesParamsDto)">
             <summary>
             返回指定对象数据。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Controllers.ItemManagerController.ModifyClientDictionary(GY02.Publisher.ModifyClientDictionaryParamsDto)">
+            <summary>
+            修改指定实体的客户端用字典内容的功能。
+            获取字典可以使用GetEntities功能（返回实体中包含该字典）。
             </summary>
             <param name="model"></param>
             <returns></returns>

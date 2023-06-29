@@ -155,6 +155,11 @@
             Count 属性最后的修改时间。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameEntityDto.ClientDictionary">
+            <summary>
+            客户端存储的数据，服务器不使用，仅原样记录和传递。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameUserDto">
             <summary>
             账号数据。
@@ -672,6 +677,26 @@
         <member name="T:GY02.Publisher.StopServiceReturnDto">
             <summary>
             
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.ModifyClientDictionaryParamsDto">
+            <summary>
+            修改指定实体的客户端用字典内容的功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.ModifyClientDictionaryParamsDto.EntityId">
+            <summary>
+            要修改实体的唯一Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.ModifyClientDictionaryParamsDto.Dictionary">
+            <summary>
+            字典内的键如果已经存在则覆盖值，没有则追加。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.ModifyClientDictionaryReturnDto">
+            <summary>
+            修改指定实体的客户端用字典内容的功能的返回值封装类。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GetEntitiesParamsDto">
@@ -1264,6 +1289,41 @@
         <member name="T:GY02.Publisher.SendMailReturnDto">
             <summary>
             发送邮件功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetServerDictionaryReturnDto">
+            <summary>
+            获取服务器字典功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetServerDictionaryReturnDto.Result">
+            <summary>
+            返回的键值字典，仅包含参数中需要的部分。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetServerDictionaryParamsDto">
+            <summary>
+            获取服务器字典功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetServerDictionaryParamsDto.Names">
+            <summary>
+            要获取的键值名。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.ModifyServerDictionaryParamsDto">
+            <summary>
+            修改全服配置字典的功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.ModifyServerDictionaryParamsDto.Dictionary">
+            <summary>
+            要设置的字典，若没有指定键值则追加，如果已有指定键值则覆盖。键的长度要小于或等于64个字。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.ModifyServerDictionaryReturnDto">
+            <summary>
+            修改全服配置字典的功能返回值封装类。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GetLiucunParamsDto">

@@ -6,9 +6,9 @@ using OW.Game.Entity;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.Json.Serialization;
 
@@ -192,6 +192,12 @@ namespace GY02.Publisher
         /// Count 属性最后的修改时间。
         /// </summary>
         public DateTime? CountOfLastModifyUtc { get; set; }
+
+        /// <summary>
+        /// 客户端存储的数据，服务器不使用，仅原样记录和传递。
+        /// </summary>
+        public Dictionary<string, string> ClientDictionary { get; set; } = new Dictionary<string, string>();
+
     }
 
     /// <summary>
@@ -878,6 +884,31 @@ namespace GY02.Publisher
     #endregion 世界控制器功能相关
 
     #region 物品管理相关
+
+    /// <summary>
+    /// 修改指定实体的客户端用字典内容的功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(ModifyClientDictionaryCommand), ReverseMap = true)]
+    public class ModifyClientDictionaryParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要修改实体的唯一Id。
+        /// </summary>
+        public Guid EntityId { get; set; }
+
+        /// <summary>
+        /// 字典内的键如果已经存在则覆盖值，没有则追加。
+        /// </summary>
+        public Dictionary<string, string> Dictionary { get; set; } = new Dictionary<string, string>();
+    }
+
+    /// <summary>
+    /// 修改指定实体的客户端用字典内容的功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(ModifyClientDictionaryCommand))]
+    public class ModifyClientDictionaryReturnDto : ReturnDtoBase
+    {
+    }
 
     /// <summary>
     /// 返回指定对象数据功能的参数封装类。
@@ -1651,6 +1682,51 @@ namespace GY02.Publisher
     #endregion 邮件相关
 
     #region 管理员功能相关
+
+    /// <summary>
+    /// 获取服务器字典功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(GetServerDictionaryCommand))]
+    public class GetServerDictionaryReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回的键值字典，仅包含参数中需要的部分。
+        /// </summary>
+        public Dictionary<string, string> Result { get; set; } = new Dictionary<string, string>();
+    }
+
+    /// <summary>
+    /// 获取服务器字典功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(GetServerDictionaryCommand), ReverseMap = true)]
+    public class GetServerDictionaryParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要获取的键值名。
+        /// </summary>
+        public List<string> Names { get; set; } = new List<string>();
+
+    }
+
+    /// <summary>
+    /// 修改全服配置字典的功能参数封装类。
+    /// </summary>
+    [AutoMap(typeof(ModifyServerDictionaryCommand), ReverseMap = true)]
+    public class ModifyServerDictionaryParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要设置的字典，若没有指定键值则追加，如果已有指定键值则覆盖。键的长度要小于或等于64个字。
+        /// </summary>
+        public Dictionary<string, string> Dictionary { get; set; } = new Dictionary<string, string>();
+    }
+
+    /// <summary>
+    /// 修改全服配置字典的功能返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(ModifyServerDictionaryCommand))]
+    public class ModifyServerDictionaryReturnDto : ReturnDtoBase
+    {
+    }
 
     /// <summary>
     /// 

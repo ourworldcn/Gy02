@@ -1,5 +1,7 @@
-﻿using AutoMapper.Configuration.Annotations;
+﻿using AutoMapper;
+using AutoMapper.Configuration.Annotations;
 using GY02;
+using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
@@ -11,6 +13,7 @@ using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
+using OW.SyncCommand;
 using System.IO.Compression;
 using System.Linq;
 using System.Text.Json;
@@ -23,6 +26,20 @@ namespace GY02.Controllers
     /// </summary>
     public class AdminController : GameControllerBase
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public AdminController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager)
+        {
+            _GameAccountStore = gameAccountStore;
+            _Mapper = mapper;
+            _SyncCommandManager = syncCommandManager;
+        }
+
+        GameAccountStoreManager _GameAccountStore;
+        IMapper _Mapper;
+        SyncCommandManager _SyncCommandManager;
+
         /// <summary>
         /// 封装模板数据配置文件的类。
         /// </summary>
@@ -163,6 +180,57 @@ namespace GY02.Controllers
             if (result.RegCount > 0)
                 result.Liucun = (decimal)result.LoginCount / result.RegCount;
             return result;
+        }
+
+        /// <summary>
+        /// 修改服务器全局配置字典功能。仅超管和管理员可以成功执行。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<ModifyServerDictionaryReturnDto> ModifyServerDictionary(ModifyServerDictionaryParamsDto model)
+        {
+            var result = new ModifyServerDictionaryReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new ModifyServerDictionaryCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
+        /// 获取服务器字典功能。任何登录用户都可以使用此功能。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GetServerDictionaryReturnDto> GetServerDictionary(GetServerDictionaryParamsDto model)
+        {
+            var result = new GetServerDictionaryReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new GetServerDictionaryCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+
         }
     }
 
