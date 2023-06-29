@@ -198,6 +198,11 @@ namespace GY02.Publisher
         /// </summary>
         public Dictionary<string, string> ClientDictionary { get; set; } = new Dictionary<string, string>();
 
+        /// <summary>
+        /// 快速变化属性。
+        /// </summary>
+        public Dictionary<string, FastChangingProperty> Fcps { get; set; } = new Dictionary<string, FastChangingProperty>();
+
     }
 
     /// <summary>
@@ -1699,7 +1704,7 @@ namespace GY02.Publisher
     /// 获取服务器字典功能的参数封装类。
     /// </summary>
     [AutoMap(typeof(GetServerDictionaryCommand), ReverseMap = true)]
-    public class GetServerDictionaryParamsDto : TokenDtoBase
+    public class GetServerDictionaryParamsDto 
     {
         /// <summary>
         /// 要获取的键值名。

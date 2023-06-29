@@ -160,6 +160,11 @@
             客户端存储的数据，服务器不使用，仅原样记录和传递。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameEntityDto.Fcps">
+            <summary>
+            快速变化属性。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameUserDto">
             <summary>
             账号数据。

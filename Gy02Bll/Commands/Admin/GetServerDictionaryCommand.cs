@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace GY02.Commands
 {
-    public class GetServerDictionaryCommand : SyncCommandBase, IGameCharCommand
+    public class GetServerDictionaryCommand : SyncCommandBase
     {
-        public GameChar GameChar { get; set; }
+        //public GameChar GameChar { get; set; }
 
         /// <summary>
         /// 要获取的键值名。
@@ -28,7 +28,7 @@ namespace GY02.Commands
         public Dictionary<string, string> Result { get; set; } = new Dictionary<string, string>();
     }
 
-    public class GetServerDictionaryHandler : SyncCommandHandlerBase<GetServerDictionaryCommand>, IGameCharHandler<GetServerDictionaryCommand>
+    public class GetServerDictionaryHandler : SyncCommandHandlerBase<GetServerDictionaryCommand>/*, IGameCharHandler<GetServerDictionaryCommand>*/
     {
         public GetServerDictionaryHandler(GameAccountStoreManager accountStore, GY02UserContext dbContext)
         {

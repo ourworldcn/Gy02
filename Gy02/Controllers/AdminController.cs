@@ -216,15 +216,15 @@ namespace GY02.Controllers
         public ActionResult<GetServerDictionaryReturnDto> GetServerDictionary(GetServerDictionaryParamsDto model)
         {
             var result = new GetServerDictionaryReturnDto { };
-            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
-            if (dw.IsEmpty)
-            {
-                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
-                result.FillErrorFromWorld();
-                return result;
-            }
+            //using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            //if (dw.IsEmpty)
+            //{
+            //    if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+            //    result.FillErrorFromWorld();
+            //    return result;
+            //}
 
-            var command = new GetServerDictionaryCommand { GameChar = gc, };
+            var command = new GetServerDictionaryCommand { /*GameChar = gc,*/ };
 
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);

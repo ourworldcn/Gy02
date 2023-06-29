@@ -47,7 +47,7 @@ namespace OW.Game.Store
         [JsonIgnore]
         public Guid TemplateId
         {
-            get => ((IDbQuickFind)Thing)?.ExtraGuid ?? Guid.Empty;
+            get => (Thing as IDbQuickFind)?.ExtraGuid ?? Guid.Empty;
             set => ((IDbQuickFind)Thing).ExtraGuid = value;
         }
 

@@ -449,12 +449,12 @@ namespace GY02.Managers
         /// <param name="summary"></param>
         /// <param name="entity"></param>
         /// <returns></returns>
-        public bool IsValid(GameEntitySummary summary, GameEntity entity)
+        public bool IsMatch(GameEntitySummary summary, GameEntity entity)
         {
             if (summary.Id.HasValue && summary.Id.Value != entity.Id) return false;
             if (summary.TId != entity.TemplateId) return false;
             if (summary.Count > entity.Count) return false;
-            if (summary.ParentTId.HasValue && summary.ParentTId.Value != entity.GetThing()?.Parent?.ExtraGuid) return false;
+            if (summary.ParentTId.HasValue && summary.ParentTId.Value != entity.TemplateId) return false;
             return true;
         }
 
@@ -464,7 +464,7 @@ namespace GY02.Managers
         /// <param name="summary"></param>
         /// <param name="entities"></param>
         /// <returns>如果没有匹配的实体则返回空集合。</returns>
-        public IEnumerable<GameEntity> GetMatches(GameEntitySummary summary, IEnumerable<GameEntity> entities) => entities.Where(c => IsValid(summary, c));
+        public IEnumerable<GameEntity> GetMatches(GameEntitySummary summary, IEnumerable<GameEntity> entities) => entities.Where(c => IsMatch(summary, c));
 
         #endregion 基础功能
 
