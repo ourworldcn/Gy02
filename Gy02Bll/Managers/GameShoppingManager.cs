@@ -92,7 +92,7 @@ namespace GY02.Managers
         /// <param name="nowUtc"></param>
         /// <param name="periodStart"></param>
         /// <returns></returns>
-        public bool IsValid(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart)
+        public bool IsMatch(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart)
         {
             if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
             {
@@ -101,9 +101,9 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
                 return false;
             }
-            if (!IsValidWithoutBuyed(gameChar, shoppingItem, nowUtc, out periodStart)) return false;  //若时间点无效
+            if (!IsMatchWithoutBuyed(gameChar, shoppingItem, nowUtc, out periodStart)) return false;  //若时间点无效
             var end = periodStart + shoppingItem.Period.ValidPeriod;
-            if (!IsValidOnlyCount(gameChar, tt, periodStart, end, out _))
+            if (!IsMatchOnlyCount(gameChar, tt, periodStart, end, out _))
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_NOT_ENOUGH_QUOTA);
                 OwHelper.SetLastErrorMessage($"已达最大购买数量。");
@@ -121,7 +121,7 @@ namespace GY02.Managers
         /// <param name="periodStart">返回true时这里返回<paramref name="nowUtc"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
         /// <param name="ignore">是否忽略仅用于购买的条件。</param>
         /// <returns>true指定的商品项对指定用户而言在指定时间点上有效。</returns>
-        public bool IsValidWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
+        public bool IsMatchWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
         {
             var shoppingItem = GetShoppingItemByTemplate(tt);
             if (shoppingItem is null)
@@ -129,7 +129,7 @@ namespace GY02.Managers
                 periodStart = default;
                 return false;
             }
-            return IsValidWithoutBuyed(gameChar, shoppingItem, OwHelper.WorldNow, out periodStart, ignore);
+            return IsMatchWithoutBuyed(gameChar, shoppingItem, OwHelper.WorldNow, out periodStart, ignore);
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace GY02.Managers
         /// <param name="nowUtc"></param>
         /// <param name="periodStart"></param>
         /// <returns></returns>
-        public bool IsValidWithoutBuyed(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
+        public bool IsMatchWithoutBuyed(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
         {
             if (!shoppingItem.Period.IsValid(nowUtc, out periodStart)) return false;  //若时间点无效
             //检测购买代价
@@ -163,7 +163,7 @@ namespace GY02.Managers
         /// <param name="end"></param>
         /// <param name="buyedCount">在指定时间段内已经购买的数量。</param>
         /// <returns></returns>
-        public bool IsValidOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
+        public bool IsMatchOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
         {
             buyedCount = gameChar.ShoppingHistory?.Where(c => c.DateTime >= start && c.DateTime < end && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
             return buyedCount <= (tt.ShoppingItem.MaxCount ?? decimal.MaxValue);
@@ -178,7 +178,7 @@ namespace GY02.Managers
         /// <param name="changes"></param>
         public bool Buy(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            if (!IsValid(gameChar, tt, nowUtc, out _)) return false;  //若不符合购买条件
+            if (!IsMatch(gameChar, tt, nowUtc, out _)) return false;  //若不符合购买条件
 
             return true;
         }

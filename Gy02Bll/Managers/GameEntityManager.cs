@@ -454,7 +454,7 @@ namespace GY02.Managers
             if (summary.Id.HasValue && summary.Id.Value != entity.Id) return false;
             if (summary.TId != entity.TemplateId) return false;
             if (summary.Count > entity.Count) return false;
-            if (summary.ParentTId.HasValue && summary.ParentTId.Value != entity.TemplateId) return false;
+            if (summary.ParentTId.HasValue && summary.ParentTId.Value != entity.GetThing()?.Parent?.ExtraGuid) return false;
             return true;
         }
 
@@ -521,7 +521,7 @@ namespace GY02.Managers
                     }
                 }
             }
-            InitializeEntity(result.Select(c => c.Item2));
+            //InitializeEntity(result.Select(c => c.Item2));
             return result;
         }
 

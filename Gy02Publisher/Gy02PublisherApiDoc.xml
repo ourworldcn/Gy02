@@ -67,6 +67,7 @@
             <summary>
             多个物品放入的父容器的TId集合。
             可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
+            若是空引用或空集合，则返回null。
             </summary>
         </member>
         <member name="P:GY02.Templates.SequenceGameEntitySummary.Count">

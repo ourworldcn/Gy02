@@ -125,6 +125,7 @@ namespace GY02.Templates
         /// <summary>
         /// 多个物品放入的父容器的TId集合。
         /// 可以填写的数量少于另外两个集合的数量，如果其它两集合更长，则取此集合最后一个。
+        /// 若是空引用或空集合，则返回null。
         /// </summary>
         public List<Guid?> ParentTIds
         {
@@ -166,8 +167,9 @@ namespace GY02.Templates
             {
                 Count = Counts.Count > index ? Counts[index] : Counts[Counts.Count - 1],
                 TId = TIds.Count > index ? TIds[index] : TIds[TIds.Count - 1],
-                ParentTId = ParentTIds.Count > index ? ParentTIds[index] : ParentTIds[ParentTIds.Count - 1],
             };
+            if (ParentTIds?.Count > 0)
+                result.ParentTId = ParentTIds.Count > index ? ParentTIds[index] : ParentTIds[ParentTIds.Count - 1];
             return result;
         }
     }

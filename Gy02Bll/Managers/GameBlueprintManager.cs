@@ -81,7 +81,8 @@ namespace GY02.Managers
             {
                 if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是输入序列
                 {
-
+                    var b = _SequenceManager.GetMatches(new GameEntity[] { entity }, tt);
+                    if(b.Any()) return true;
                     //if (!_SequenceManager.GetOut(entity, tt, out var summary)) continue;  //没有匹配序列输出
                     //result = entities.FirstOrDefault(c => c.TemplateId == summary.TId && (!summary.ParentTId.HasValue || c.GetThing().Parent.ExtraGuid == summary.ParentTId.Value) && c.Count >= summary.Count);
                     //if (result is not null) return result;
