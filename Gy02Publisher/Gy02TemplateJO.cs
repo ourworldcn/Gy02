@@ -38,6 +38,17 @@ namespace GY02.Templates
         }
 
         /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="tId"></param>
+        /// <param name="count">对可堆叠物可以是任何数量，对不可堆叠物只能是正整数。</param>
+        public GameEntitySummary(Guid tId, decimal count)
+        {
+            TId = tId;
+            Count = count;
+        }
+
+        /// <summary>
         /// 特定原因记录物品唯一Id，通常为null。
         /// </summary>
         public Guid? Id { get; set; }
@@ -53,7 +64,7 @@ namespace GY02.Templates
         public Guid TId { get; set; }
 
         /// <summary>
-        /// 数量。
+        /// 数量。对可堆叠物可以是任何数量，对不可堆叠物只能是正整数。
         /// </summary>
         public decimal Count { get; set; }
 
@@ -546,12 +557,12 @@ namespace GY02.Templates
     /// <summary>
     /// 成就定义。
     /// </summary>
-    public class GameAchievement
+    public class GameAchievementTO
     {
         /// <summary>
         /// 
         /// </summary>
-        public GameAchievement()
+        public GameAchievementTO()
         {
 
         }
@@ -940,7 +951,7 @@ namespace GY02.Templates
         /// <summary>
         /// 成就数据。
         /// </summary>
-        public GameAchievement Achievement { get; set; }
+        public GameAchievementTO Achievement { get; set; }
         #endregion
 
         /// <summary>

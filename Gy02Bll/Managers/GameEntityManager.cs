@@ -17,6 +17,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -475,53 +476,74 @@ namespace GY02.Managers
         #region 创建实体相关功能
 
         /// <summary>
+        /// 创建一个实体。
+        /// </summary>
+        /// <param name="summary">对可堆叠物可以是任何数量，对不可堆叠物只能是正整数。
+        /// 只能创建最终实体，不能识别序列，骰子等动态实体。</param>
+        /// <returns>null表示出错。此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
+        public virtual List<GameEntity> Create(GameEntitySummary summary)
+        {
+            var tt = _TemplateManager.GetFullViewFromId(summary.TId);
+            if (tt is null) return null;
+            List<GameEntity> result;
+            if (tt.IsStk())  //可堆叠物
+            {
+                result = new List<GameEntity>();
+                var tmp = _VirtualThingManager.Create(tt);
+                if (tmp is null) return null;
+                var entity = GetEntity(tmp);
+                if (entity is null) return null;
+                var oriCount = entity.Count;    //预读fcp
+                entity.Count = summary.Count;   //可以是任何数
+                result.Add(entity);
+            }
+            else //不可堆叠物
+            {
+                var count = (int)summary.Count;
+                if (count != summary.Count)
+                {
+                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                    OwHelper.SetLastErrorMessage($"创建不可堆叠物的数量必须是整数。TId={summary.TId}");
+                    return null;
+                }
+                else if (count < 0)
+                {
+                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                    OwHelper.SetLastErrorMessage($"创建不可堆叠物的数量必须是正数。TId={summary.TId}");
+                    return null;
+                }
+                var tmp = _VirtualThingManager.Create(tt.TemplateId, count);
+                if (tmp is null) return null;
+                result = new List<GameEntity>(count);
+                foreach (var thing in tmp)
+                {
+                    var tmpEntity = GetEntity(thing);
+                    if (tmpEntity is null) return null;
+                    var oriCount = tmpEntity.Count; //预读fcp
+                    tmpEntity.Count = 1;
+                    result.Add(tmpEntity);
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 创建实体。
         /// </summary>
         /// <param name="entitySummarys">可以是空集合，此时则立即返回空集合。
         /// 对不可堆叠物品，会创建多个对象，每个对象数量是1。
         /// 只能创建最终实体，不能识别序列，骰子等动态实体。</param>
         /// <returns>创建(实体预览,实体)的集合，任何错误导致返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
-        public virtual List<(GameEntitySummary, GameEntity)> Create(IEnumerable<GameEntitySummary> entitySummarys)
+        public List<(GameEntitySummary, GameEntity)> Create(IEnumerable<GameEntitySummary> entitySummarys)
         {
             var result = new List<(GameEntitySummary, GameEntity)> { };
             var coll = entitySummarys.TryToCollection();
-            DateTime now = OwHelper.WorldNow;
             foreach (var item in coll)
             {
-                var tt = _TemplateManager.GetFullViewFromId(item.TId);
-                if (tt is null) return null;
-                if (tt.IsStk())  //可堆叠物
-                {
-                    var tmp = _VirtualThingManager.Create(tt);
-                    if (tmp is null) return null;
-                    var entity = GetEntity(tmp);
-                    if (entity is null) return null;
-                    var oriCount = entity.Count;    //预读fcp
-                    entity.Count = item.Count;
-                    result.Add((item, entity));
-                }
-                else //不可堆叠物
-                {
-                    var count = (int)item.Count;
-                    if (count != item.Count)
-                    {
-                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                        OwHelper.SetLastErrorMessage($"创建不可堆叠物的数量必须是整数。TId={item.TId}");
-                        return null;
-                    }
-                    var tmp = _VirtualThingManager.Create(tt.TemplateId, count);
-                    if (tmp is null) return null;
-                    foreach (var thing in tmp)
-                    {
-                        var tmpEntity = GetEntity(thing);
-                        if (tmpEntity is null) return null;
-                        var oriCount = tmpEntity.Count; //预读fcp
-                        tmpEntity.Count = 1;
-                        result.Add((item, tmpEntity));
-                    }
-                }
+                var list = Create(item);
+                if (list is null) return null;
+                list.ForEach(c => result.Add((item, c)));
             }
-            //InitializeEntity(result.Select(c => c.Item2));
             return result;
         }
 
@@ -677,7 +699,8 @@ namespace GY02.Managers
         public void Move(IEnumerable<GameEntity> entities, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             //TODO 要测试是否能移动
-            foreach (var entity in entities)
+            var coll = entities.TryToCollection();
+            foreach (var entity in coll)
             {
                 var b = Move(entity, gameChar, changes);
                 if (!b)

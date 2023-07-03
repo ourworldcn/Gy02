@@ -59,14 +59,14 @@ namespace GY02.Commands
 
             foreach (var item in totalCost) //退还材料
             {
-                var tmp = _EntityManager.Create(new GameEntitySummary[] { new GameEntitySummary { TId = item.TId, Count = Math.Abs(item.Count) } });
+                var tmp = _EntityManager.Create(new GameEntitySummary { TId = item.TId, Count = Math.Abs(item.Count) });
 
                 if (tmp is null)
                 {
                     command.FillErrorFromWorld();
                     return;
                 }
-                list.AddRange(tmp.Select(c => c.Item2.GetThing()));
+                list.AddRange(tmp.Select(c => c.GetThing()));
             }
 
             //var move = new MoveEntitiesCommand { GameChar = command.GameChar, Items = list.Select(c => (GameEntity)_TemplateManager.GetEntityBase(c, out _)).ToList() };

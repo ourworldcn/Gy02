@@ -38,7 +38,7 @@
   <Class Name="GY02.Managers.GameEntityManager">
     <Position X="6" Y="3.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AQCGIAAAAKCBAAAAAAgRAQAQAAFAAEgAAEAIAIQAAAA=</HashCode>
+      <HashCode>AwCGIAAAAKCBAAAAAAARAQAQAAFAAEgAAEAIAIQAAAA=</HashCode>
       <FileName>Managers\GameEntityManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -122,7 +122,7 @@
   <Class Name="GY02.Managers.GameSequenceManager">
     <Position X="4.75" Y="9.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAABAAAAAAAAAAAAAAAAAQAAAAAAAAAABAAIAAQgA=</HashCode>
+      <HashCode>AAAAABAAAAQAAAAAAAAAAAAQAAAAAAAAAABAAIAAQgA=</HashCode>
       <FileName>Managers\GameSequenceManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -130,19 +130,19 @@
     </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="GY02.Managers.GameAccountStoreOptions" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="GY02.Managers.GameAccountStoreManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="17.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAgIAAgAAA=</HashCode>
-      <FileName>Managers\GameAccountStore.cs</FileName>
+      <FileName>Managers\GameAccountStoreManager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="GY02.Managers.GameAccountStore" Collapsed="true">
+  <Class Name="GY02.Managers.GameAccountStoreManager" Collapsed="true">
     <Position X="15.5" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>wAEQAIAAMDgAACAAAAAIAAQAACQQFAA4AABAAAAIAQA=</HashCode>
-      <FileName>Managers\GameAccountStore.cs</FileName>
+      <FileName>Managers\GameAccountStoreManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="GY02.Managers.GameCombatManagerOptions" Collapsed="true" BaseTypeListCollapsed="true">
@@ -189,7 +189,7 @@
   <Class Name="GY02.Managers.GameShoppingManager">
     <Position X="10" Y="9.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAACAACAAAIAQggAAAAAAAAAAAAAAAAAIAACgA=</HashCode>
+      <HashCode>AAICAAAACAAAAAAAIQAgAAAAAAAAAgAAAAAAAIAACgA=</HashCode>
       <FileName>Managers\GameShoppingManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -221,6 +221,24 @@
     <ShowAsAssociation>
       <Field Name="_DiceManager" />
       <Field Name="_SequenceOutManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="GY02.Managers.GameAchievementManagerOptions" Collapsed="true">
+    <Position X="11.25" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Managers\GameAchievementManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GY02.Managers.GameAchievementManager">
+    <Position X="0.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAgAAAAAAAAAAAAAAQAACAAAAAAAIAAIgA=</HashCode>
+      <FileName>Managers\GameAchievementManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_EntityManager" />
     </ShowAsAssociation>
   </Class>
   <Interface Name="OW.Game.Managers.IEntitySummaryConverter" Collapsed="true">

@@ -1,24 +1,42 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Genus": [ "gs_qiandao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "Ins": [
       {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "62D3A545-7604-46BF-9837-95E286660BC8",
-        "MinCount": null,
-        "GeneralConditional": [],
-        "IgnoreIfDisplayList": true
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ 7, 0 ]
+              }
+            ],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": []
       }
     ],
-    "GetIndexExpression": {
-      "Operator": "ToInt32",
-      "Args": [ "Count" ],
-      "IgnoreIfDisplayList": false
-    },
-    "Outs": {
-      "TIds": [ "62D3A545-7604-46BF-9837-95E286660BC8" ],
-      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
-      "Counts": [ 0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15, -16, -17, -18, -19, -20, -21, -22, -23, -24, -25, -26, -27, -28, -29, -30, -31, -32, -33, -34, -35, -36, -37, -38, -39, -40, -41, -42, -43, -44, -45, -46, -47, -48, -49, -50, -51, -52, -53, -54, -55, -56, -57, -58, -59, -60, -61, -62, -63, -64, -65, -66, -67, -67, -68, -69, -70, 71, -72 ]
-    }
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+        "Count": 5000
+      }
+    ],
+    "MaxCount": 1
   }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.ObjectPool;
+using OW.DDD;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
@@ -347,6 +348,29 @@ namespace OW.Game.PropertyChange
             return changes;
         }
 
+        /// <summary>
+        /// 标记一个变化项。不能对集合项变化执行。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="changes"></param>
+        /// <param name="obj"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="oldValue"></param>
+        /// <param name="newValue"></param>
+        public static void MarkChanges<T>(this ICollection<GamePropertyChangeItem<object>> changes, object obj, string propertyName, T oldValue, T newValue)
+        {
+            changes.Add(new GamePropertyChangeItem<object>
+            {
+                Object = obj,
+                PropertyName = propertyName,
 
+                HasOldValue = true,
+                OldValue = oldValue,
+
+                HasNewValue = true,
+                NewValue = newValue,
+
+            });
+        }
     }
 }

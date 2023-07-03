@@ -47,7 +47,7 @@ namespace OW.Game.Entity
         /// 等级。
         /// </summary>
         [JsonPropertyName("lv")]
-        public decimal Level { get; set; }
+        public virtual decimal Level { get; set; }
 
         decimal _Count;
 

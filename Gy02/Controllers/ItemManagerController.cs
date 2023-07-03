@@ -150,11 +150,11 @@ namespace GY02.Controllers
             for (int i = 0; i < model.TIds.Count; i++)
             {
                 var item = model.TIds[i];
-                var tmp = _EntityManager.Create(new GameEntitySummary[] { new GameEntitySummary { TId = item, Count = model.Counts[i] } });
+                var tmp = _EntityManager.Create(new GameEntitySummary { TId = item, Count = model.Counts[i] });
                 if (tmp is null) goto lbErr; //若出错
-                
+
                 if (tmp.Count() != tmp.Count) continue;
-                list.AddRange(tmp.Select(c => c.Item2));
+                list.AddRange(tmp);
             }
             List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
             _EntityManager.Move(list, gc, changes);

@@ -203,7 +203,7 @@ namespace OW.Game.Entity
         /// 成就槽。
         /// </summary>
         [JsonIgnore]
-        public GameSlot<GameItem> ChengJiuSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.ChengJiuSlotTId)?.GetJsonObject<GameSlot<GameItem>>();
+        public GameSlot<GameAchievement> ChengJiuSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.ChengJiuSlotTId)?.GetJsonObject<GameSlot<GameAchievement>>();
         #endregion 各种槽
 
         #region 孵化相关

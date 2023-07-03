@@ -14,6 +14,13 @@
             构造函数。
             </summary>
         </member>
+        <member name="M:GY02.Templates.GameEntitySummary.#ctor(System.Guid,System.Decimal)">
+            <summary>
+            构造函数。
+            </summary>
+            <param name="tId"></param>
+            <param name="count">对可堆叠物可以是任何数量，对不可堆叠物只能是正整数。</param>
+        </member>
         <member name="P:GY02.Templates.GameEntitySummary.Id">
             <summary>
             特定原因记录物品唯一Id，通常为null。
@@ -31,7 +38,7 @@
         </member>
         <member name="P:GY02.Templates.GameEntitySummary.Count">
             <summary>
-            数量。
+            数量。对可堆叠物可以是任何数量，对不可堆叠物只能是正整数。
             </summary>
         </member>
         <member name="M:GY02.Templates.GameEntitySummary.Clone">
@@ -268,27 +275,27 @@
             <param name="start">返回true时这里返回<paramref name="nowUtc"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
             <returns></returns>
         </member>
-        <member name="T:GY02.Templates.GameAchievement">
+        <member name="T:GY02.Templates.GameAchievementTO">
             <summary>
             成就定义。
             </summary>
         </member>
-        <member name="M:GY02.Templates.GameAchievement.#ctor">
+        <member name="M:GY02.Templates.GameAchievementTO.#ctor">
             <summary>
             
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameAchievement.Exp2LvSequence">
+        <member name="P:GY02.Templates.GameAchievementTO.Exp2LvSequence">
             <summary>
             经验到等级转换用的序列，如[100,200]表示指标值>=100时达成该成就第1级（未达成前是0级），当指标值>=200时达成第2级成就；以此类推。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameAchievement.Ins">
+        <member name="P:GY02.Templates.GameAchievementTO.Ins">
             <summary>
             消耗物的集合。暂时未用。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameAchievement.Outs">
+        <member name="P:GY02.Templates.GameAchievementTO.Outs">
             <summary>
             产出物的集合。
             </summary>

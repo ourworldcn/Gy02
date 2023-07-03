@@ -8,9 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.Json.Serialization;
+using System.Threading;
 
 namespace GY02.Publisher
 {
@@ -399,6 +401,12 @@ namespace GY02.Publisher
         /// 货币槽。
         /// </summary>
         public GameSlotDto<GameItemDto> HuoBiSlot { get; set; }
+
+        /// <summary>
+        /// 成就槽。所有成就在此槽下。
+        /// </summary>
+        public GameSlot<GameItemDto> ChengJiuSlot { get; set; }
+
         #endregion 各种槽
 
         #region 孵化相关
@@ -1704,7 +1712,7 @@ namespace GY02.Publisher
     /// 获取服务器字典功能的参数封装类。
     /// </summary>
     [AutoMap(typeof(GetServerDictionaryCommand), ReverseMap = true)]
-    public class GetServerDictionaryParamsDto 
+    public class GetServerDictionaryParamsDto
     {
         /// <summary>
         /// 要获取的键值名。
@@ -1818,6 +1826,68 @@ namespace GY02.Publisher
     }
 
     #endregion 管理员功能相关
+
+    #region 成就相关
+
+    /// <summary>
+    /// 成就的实体类。
+    /// </summary>
+    [AutoMap(typeof(GameAchievement))]
+    public class GameAchievementDto : GameEntityDto
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameAchievementDto()
+        {
+        }
+
+
+        #region 可复制属性
+
+        /// <summary>
+        /// 各个等级的具体数据。按顺序从0开始是等级1的的情况。
+        /// </summary>
+        public List<GameAchievementItemDto> Items { get; set; } = new List<GameAchievementItemDto>();
+
+        /// <summary>
+        /// 经验值。
+        /// </summary>
+        public decimal Count { get; set; }
+
+        #endregion 可复制属性
+
+    }
+
+    /// <summary>
+    /// 成就每个级别的状态。
+    /// </summary>
+    [AutoMap(typeof(GameAchievementItem))]
+    public class GameAchievementItemDto
+    {
+        /// <summary>
+        /// 奖励。注意该奖励是经过翻译的，即不会包含序列和卡池项。在生成该项时会确定随机性（虽然一般不会有随机奖励）。
+        /// 若需要找到原定义去找对应的模板数据。
+        /// </summary>
+        public List<GameEntitySummaryDto> Rewards { get; set; } = new List<GameEntitySummaryDto>();
+
+        /// <summary>
+        /// 是否已经达成该等级。true已经达成，false未达成。
+        /// </summary>
+        public bool IsCompleted { get; set; }
+
+        /// <summary>
+        /// 是否已经领取了该等级的奖励，true已经领取，false尚未领取，在未达成时此属性值也是false。
+        /// </summary>
+        public bool IsPicked { get; set; }
+
+        /// <summary>
+        /// 等级。从1开始，1表示达成第一级的状态，2表示达成第二级的状态，以此类推。
+        /// </summary>
+        public int Level { get; set; }
+    }
+
+    #endregion 成就相关
 }
 
 

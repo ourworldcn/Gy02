@@ -51,7 +51,7 @@ namespace GY02.Managers
         {
             result = _TemplateManager.GetFullViewFromId(tid);
             if (result is null) return false;
-            if (GetSequenceOutByTemplate(result) is null) return false;
+            if (GetGameSequenceByTemplate(result) is null) return false;
             return true;
         }
 
@@ -60,7 +60,7 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="template"></param>
         /// <returns>true成功获取，false 指定模板不包含序列输出模板。</returns>
-        public SequenceOut GetSequenceOutByTemplate(TemplateStringFullView template)
+        public SequenceOut GetGameSequenceByTemplate(TemplateStringFullView template)
         {
             var result = template.SequenceOut;
             if (result is null)
@@ -90,7 +90,7 @@ namespace GY02.Managers
             {
                 var tt = _TemplateManager.GetFullViewFromId(summary.TId);
                 if (tt is null) goto lbErr;
-                if (GetSequenceOutByTemplate(tt) is null)   //若无需转换
+                if (GetGameSequenceByTemplate(tt) is null)   //若无需转换
                 {
                     result.Add((summary, new GameEntitySummary[] { summary }));
                     continue;
@@ -134,7 +134,7 @@ namespace GY02.Managers
         /// <returns>true成功获取到了实体摘要，false失败，此时调用<see cref="OwHelper.GetLastError(out string)"/>可获取详细信息。</returns>
         public bool GetOut(IEnumerable<GameEntity> entities, TemplateStringFullView tt, out GameEntitySummary result)
         {
-            var mo = GetSequenceOutByTemplate(tt);
+            var mo = GetGameSequenceByTemplate(tt);
             if (mo is null) goto lbErr;
 
             var coll = entities.Where(c => _EntityManager.IsMatch(c, mo.Conditions));    //符合条件的实体集合

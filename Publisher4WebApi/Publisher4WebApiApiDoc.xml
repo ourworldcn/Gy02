@@ -336,6 +336,11 @@
             货币槽。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameCharDto.ChengJiuSlot">
+            <summary>
+            成就槽。所有成就在此槽下。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GameCharDto.FuhuaPreview">
             <summary>
             记录孵化的预览信息。
@@ -1409,6 +1414,52 @@
         <member name="P:GY02.Publisher.GetCharIdByLoginNameReturnDto.LoginNames">
             <summary>
             登录名集合。与<see cref="P:GY02.Publisher.GetCharIdByLoginNameReturnDto.CharIds"/>顺序一致。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GameAchievementDto">
+            <summary>
+            成就的实体类。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.GameAchievementDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameAchievementDto.Items">
+            <summary>
+            各个等级的具体数据。按顺序从0开始是等级1的的情况。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameAchievementDto.Count">
+            <summary>
+            经验值。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GameAchievementItemDto">
+            <summary>
+            成就每个级别的状态。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameAchievementItemDto.Rewards">
+            <summary>
+            奖励。注意该奖励是经过翻译的，即不会包含序列和卡池项。在生成该项时会确定随机性（虽然一般不会有随机奖励）。
+            若需要找到原定义去找对应的模板数据。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameAchievementItemDto.IsCompleted">
+            <summary>
+            是否已经达成该等级。true已经达成，false未达成。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameAchievementItemDto.IsPicked">
+            <summary>
+            是否已经领取了该等级的奖励，true已经领取，false尚未领取，在未达成时此属性值也是false。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameAchievementItemDto.Level">
+            <summary>
+            等级。从1开始，1表示达成第一级的状态，2表示达成第二级的状态，以此类推。
             </summary>
         </member>
         <member name="T:GY02.Publisher.DispatcherDemo">
