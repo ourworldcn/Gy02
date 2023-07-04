@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using GY02.Templates;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Managers;
@@ -24,8 +25,17 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameCombatManager : GameManagerBase<GameCombatManagerOptions, GameCombatManager>
     {
-        public GameCombatManager(IOptions<GameCombatManagerOptions> options, ILogger<GameCombatManager> logger) : base(options, logger)
+        public GameCombatManager(IOptions<GameCombatManagerOptions> options, ILogger<GameCombatManager> logger, GameTemplateManager templateManager) : base(options, logger)
         {
+            _TemplateManager = templateManager;
+        }
+
+        GameTemplateManager _TemplateManager;
+
+        public TemplateStringFullView GetTemplateById(Guid tId)
+        {
+            var tt = _TemplateManager.GetFullViewFromId(tId);
+            return tt;
         }
     }
 }

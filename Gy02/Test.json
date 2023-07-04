@@ -1,20 +1,18 @@
 {
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
-    "Exp2LvSequence": [ //经验到等级转换用的序列，如[100,200]表示指标值>=100时达成该成就第1级（未达成前是0级），当指标值>=200时达成第2级成就；以此类推。
-      1,
-      2,
-      3
-    ],
-    "Ins": [ //暂时未用，可以省略
-    ],
-    "Outs": [ //每级别领取奖励的集合
-      [ //一个级别内领取的多个奖励
-      ]
-    ]
-  }
+  "EntranceFees": [
+    {
+      "Conditional": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "Genus": [],
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "MinCount": 5
+        }
+      ],
+      "Count": 5
+    }
+  ],
+  "name_txt": 13001,
+  "comment_txt": 13013,
+  "suggest": [ 200, 2000, 200 ]
 }

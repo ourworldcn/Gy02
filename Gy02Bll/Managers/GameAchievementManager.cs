@@ -109,7 +109,8 @@ namespace GY02.Managers
                         IsPicked = false,
                         Level = i + 1,
                     };
-                    state.Rewards.AddRange(tt.Achievement.Outs[i]); //TODO 转换
+                    if (tt.Achievement.Outs.Count > i && tt.Achievement.Outs[i] is GameEntitySummary[] ary)
+                        state.Rewards.AddRange(ary); //TODO 转换
                     achievement.Items.Add(state);
                 }
             }

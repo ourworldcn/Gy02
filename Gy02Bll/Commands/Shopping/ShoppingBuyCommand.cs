@@ -1,12 +1,14 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
+using OW.DDD;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +33,7 @@ namespace GY02.Commands
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
     {
 
-        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager)
+        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager, SyncCommandManager commandManager)
         {
             AccountStore = accountStore;
             _ShoppingManager = shoppingManager;
@@ -39,6 +41,7 @@ namespace GY02.Commands
             _BlueprintManager = blueprintManager;
             _DiceManager = diceManager;
             _SpecialManager = specialManager;
+            _CommandManager = commandManager;
         }
 
         public GameAccountStoreManager AccountStore { get; }
@@ -48,6 +51,7 @@ namespace GY02.Commands
         GameShoppingManager _ShoppingManager;
         GameDiceManager _DiceManager;
         SpecialManager _SpecialManager;
+        SyncCommandManager _CommandManager;
 
         public override void Handle(ShoppingBuyCommand command)
         {
@@ -87,6 +91,15 @@ namespace GY02.Commands
                 DateTime = now,
                 TId = command.ShoppingItemTId
             });
+
+            //发出购买事件
+            var commandPost = new ShoppingBuyedCommand
+            {
+                GameChar = command.GameChar,
+                Count = 1,
+                ShoppingItemTId = command.ShoppingItemTId
+            };
+            _CommandManager.Handle(commandPost);
             AccountStore.Save(key);
             return;
         lbErr:
@@ -156,5 +169,42 @@ namespace GY02.Commands
         }
     }
 
+    public class ShoppingBuyedCommand : PropertyChangeCommandBase, IGameCharCommand
+    {
+        public ShoppingBuyedCommand()
+        {
+
+        }
+
+        public GameChar GameChar { get; set; }
+
+        /// <summary>
+        /// 购买的商品项Id。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+
+        /// <summary>
+        /// 购买次数。
+        /// </summary>
+        public decimal Count { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class MyClassShoppingBuyedHandler : SyncCommandHandlerBase<ShoppingBuyedCommand>
+    {
+        public MyClassShoppingBuyedHandler()
+        {
+
+        }
+
+        public override void Handle(ShoppingBuyedCommand command)
+        {
+            if (command.ShoppingItemTId != new Guid("16a21a09-c9c2-48cb-8f91-40b4d82f3477"))    //若不是购买普通巡逻的商品
+                return;
+
+        }
+    }
 }
 

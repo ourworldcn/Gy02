@@ -238,6 +238,7 @@ namespace GY02.Managers
         /// <returns>true成功，否则返回false,此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
         public bool Modify(GameEntity entity, decimal count, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
+            if (count == 0) return true;
             var template = _TemplateManager.GetFullViewFromId(entity.TemplateId);
             if (template is null) return false;
             var oldCount = entity.Count;

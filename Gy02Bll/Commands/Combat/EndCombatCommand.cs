@@ -132,7 +132,13 @@ namespace GY02.Commands
                 GameChar = command.GameChar,
                 CombatTId = command.CombatTId
             };
-            _SyncCommandManager.Handle(commandEnd);
+            try
+            {
+                _SyncCommandManager.Handle(commandEnd); //发送事件无需考虑出错
+            }
+            catch (Exception)
+            {
+            }
             _AccountStore.Save(key);
         }
     }
