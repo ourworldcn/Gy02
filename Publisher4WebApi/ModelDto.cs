@@ -8,11 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
-using System.Net.NetworkInformation;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.Json.Serialization;
-using System.Threading;
 
 namespace GY02.Publisher
 {
@@ -405,7 +402,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 成就槽。所有成就在此槽下。
         /// </summary>
-        public GameSlot<GameItemDto> ChengJiuSlot { get; set; }
+        public GameSlotDto<GameAchievementDto> ChengJiuSlot { get; set; }
 
         #endregion 各种槽
 
@@ -1846,7 +1843,7 @@ namespace GY02.Publisher
         #region 可复制属性
 
         /// <summary>
-        /// 各个等级的具体数据。按顺序从0开始是等级1的的情况。
+        /// 各个等级的具体数据。按顺序从索引0开始是等级1的的情况。
         /// </summary>
         public List<GameAchievementItemDto> Items { get; set; } = new List<GameAchievementItemDto>();
 
@@ -1885,6 +1882,56 @@ namespace GY02.Publisher
         /// 等级。从1开始，1表示达成第一级的状态，2表示达成第二级的状态，以此类推。
         /// </summary>
         public int Level { get; set; }
+    }
+
+    /// <summary>
+    /// 获取指定成就的状态功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(GetAchievementStateCommand), ReverseMap = true)]
+    public class GetAchievementStateParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 指定获取成就对象的模板Id集合。
+        /// </summary>
+        public List<Guid> TIds { get; set; } = new List<Guid>();
+
+    }
+
+    /// <summary>
+    /// 获取指定成就的状态功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(GetAchievementStateCommand))]
+    public class GetAchievementStateReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回的成就对象。当出错时此集合的状态未知。
+        /// </summary>
+        public List<GameAchievementDto> Result { get; set; } = new List<GameAchievementDto>();
+    }
+
+    /// <summary>
+    /// 获取成就奖励功能参数封装类。
+    /// </summary>
+    [AutoMap(typeof(GetAchievementRewardsCommand), ReverseMap = true)]
+    public class GetAchievementRewardsParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 指定获取成就对象的模板Id集合。
+        /// </summary>
+        public List<Guid> TIds { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 获取指定成就的指定等级的奖励，此集合顺序与 TIds 集合顺序一致。
+        /// </summary>
+        public List<int[]> Levels { get; set; } = new List<int[]>();
+    }
+
+    /// <summary>
+    /// 获取成就奖励功能返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(GetAchievementRewardsCommand))]
+    public class GetAchievementRewardsReturnDto : PropertyChangeReturnDto
+    {
     }
 
     #endregion 成就相关

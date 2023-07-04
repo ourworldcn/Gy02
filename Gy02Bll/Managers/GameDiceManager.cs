@@ -95,14 +95,15 @@ namespace GY02.Managers
                 if (total <= item.Weight) return item;
                 total -= item.Weight;
             }
-            return default;
+            return default; //210101
         }
 
         /// <summary>
         /// 在指定项中获取指定次数的项。
         /// </summary>
         /// <param name="items"></param>
-        /// <param name="maxCount">至多生成这么多项。可能实际生成的项，少于指定的项。返回时，是实际roll的次数，仅当不允许重复项时可能出现全部物品已经roll到，但次数未达到的情况。</param>
+        /// <param name="maxCount">至多生成这么多项。可能实际生成的项，少于指定的项。返回时，是实际roll的次数，仅当不允许重复项时可能出现全部物品已经roll到，但次数未达到的情况。
+        /// 若是0则立即返回空集合。</param>
         /// <param name="allowRepetition">true要求允许多次获取相同的结果。</param>
         /// <param name="random"></param>
         /// <returns></returns>
@@ -113,18 +114,21 @@ namespace GY02.Managers
             List<GameDiceItem> result = new List<GameDiceItem>();
             GameDiceItem tmp;
             int i;
-            for (i = 1; i <= maxCount; i++)
+            if (maxCount > 0)
             {
-                tmp = Roll(hs, random);
-                if (tmp is null) return null;
-                result.Add(tmp);
-                if (!allowRepetition)
+                for (i = 1; i <= maxCount; i++)
                 {
-                    hs.Remove(tmp);
-                    if (hs.Count <= 0) break;   //若已没有项
+                    tmp = Roll(hs, random);
+                    if (tmp is null) return null;
+                    result.Add(tmp);
+                    if (!allowRepetition)
+                    {
+                        hs.Remove(tmp);
+                        if (hs.Count <= 0) break;   //若已没有项
+                    }
                 }
+                maxCount = Math.Min(maxCount, i);
             }
-            maxCount = Math.Min(maxCount, i);
             return result;
 
         }

@@ -1,6 +1,7 @@
 ﻿using GY02.Base;
 using GY02.Publisher;
 using GY02.Templates;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
@@ -23,6 +24,7 @@ namespace GY02.Managers
     /// <summary>
     /// 成就管理器。
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameAchievementManager : GameManagerBase<GameAchievementManagerOptions, GameAchievementManager>
     {
         public GameAchievementManager(IOptions<GameAchievementManagerOptions> options, ILogger<GameAchievementManager> logger, GameTemplateManager templateManager, GameEntityManager entityManager) : base(options, logger)
@@ -182,11 +184,17 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"指定的等级中至少一个不能领取，TId={template.TemplateId} ,Level={errorItem.Level}");
                 return false;
             }
-            var summaries = achi.Items.Where(c => levels.Contains(c.Level)).SelectMany(c => c.Rewards);
+            var baseColl = achi.Items.Where(c => levels.Contains(c.Level)).ToArray();
+            var summaries = baseColl.SelectMany(c => c.Rewards);
             var entities = _EntityManager.Create(summaries);
             if (entities is null) return false;
 
             _EntityManager.Move(entities.Select(c => c.Item2), gameChar, changes);
+            baseColl.ForEach(c =>
+            {
+                c.IsPicked = true;
+                changes?.MarkChanges(c, nameof(c.IsPicked), false, true);   //标记变化项
+            });
             return true;
         }
         #endregion 功能性操作

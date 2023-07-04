@@ -19,28 +19,6 @@ namespace GY02.Controllers
         }
 
         /// <summary>
-        /// 获取模板数据。
-        /// </summary>
-        /// <param name="model"></param>
-        /// <param name="manager"></param>
-        /// <returns></returns>
-        [HttpPost]
-        [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any)]
-        public ActionResult<GetTemplates2ReturnDto> GetTemplates2(GetTemplates2ParamsDto model, [FromServices] GameTemplateManager manager)
-        {
-            var result = new GetTemplates2ReturnDto();
-            if (model.Uid != "gy001" || model.Pwd != "210115")
-            {
-                result.ErrorCode = ErrorCodes.Unauthorized;
-                result.DebugMessage = "用户名或密码错误。";
-                result.HasError = true;
-            }
-            else
-                result.Templates = manager.Id2FullView.Values.ToArray();
-            return result;
-        }
-
-        /// <summary>
         /// 使用缓存获取配置。
         /// </summary>
         /// <param name="model"></param>

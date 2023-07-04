@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 
 namespace GY02.Commands
 {
+    /// <summary>
+    /// 结算关卡命令。
+    /// </summary>
     public class EndCombatCommand : PropertyChangeCommandBase, IGameCharCommand
     {
         public EndCombatCommand()
@@ -52,14 +55,16 @@ namespace GY02.Commands
     /// </summary>
     public class EndCombatHandler : SyncCommandHandlerBase<EndCombatCommand>, IGameCharHandler<EndCombatCommand>
     {
-        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager)
+        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager)
         {
             _AccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
+            _SyncCommandManager = syncCommandManager;
         }
 
         GameAccountStoreManager _AccountStore;
         GameEntityManager _GameEntityManager;
+        SyncCommandManager _SyncCommandManager;
 
         public GameAccountStoreManager AccountStore => _AccountStore;
 
@@ -121,7 +126,33 @@ namespace GY02.Commands
                 }
             }
             #endregion 记录战斗信息
+            //发出完结事件
+            var commandEnd = new CombatEndCommand
+            {
+                GameChar = command.GameChar,
+                CombatTId = command.CombatTId
+            };
+            _SyncCommandManager.Handle(commandEnd);
             _AccountStore.Save(key);
         }
+    }
+
+    /// <summary>
+    /// 关卡已经被结算的通知。
+    /// </summary>
+    public class CombatEndCommand : SyncCommandBase
+    {
+        public CombatEndCommand()
+        {
+
+        }
+
+        public GameChar GameChar { get; set; }
+
+        /// <summary>
+        /// 战斗关卡的模板Id。
+        /// </summary>
+        public Guid CombatTId { get; set; }
+
     }
 }

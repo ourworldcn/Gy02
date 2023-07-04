@@ -141,7 +141,7 @@ namespace OW.Game.Store
             if (!Equals(field, newValue))    //若值不相等
             {
                 field = newValue;
-                Interlocked.Increment(ref _Seq);
+                Interlocked.Increment(ref _SeqNum);
                 return true;
             }
             return false;
@@ -152,18 +152,19 @@ namespace OW.Game.Store
             if (!ReferenceEquals(field, newValue))    //若值不相等
             {
                 field = newValue;
-                Interlocked.Increment(ref _Seq);
+                Interlocked.Increment(ref _SeqNum);
                 return true;
             }
             return false;
         }
 
-        volatile int _Seq;
+        volatile int _SeqNum;
 
         /// <summary>
         /// 获取对象的序列号，每次属性变化，此序列号会变化。
         /// </summary>
-        public int Seq => _Seq;
+        [JsonIgnore]
+        public int SeqNum => _SeqNum;
 
         /// <summary>
         /// <inheritdoc/>
@@ -176,7 +177,7 @@ namespace OW.Game.Store
         /// <param name="e"><inheritdoc/></param>
         virtual protected void OnPropertyChanged(PropertyChangedEventArgs e)
         {
-            Interlocked.Increment(ref _Seq);
+            Interlocked.Increment(ref _SeqNum);
             PropertyChanged?.Invoke(this, e);
         }
 

@@ -1428,7 +1428,7 @@
         </member>
         <member name="P:GY02.Publisher.GameAchievementDto.Items">
             <summary>
-            各个等级的具体数据。按顺序从0开始是等级1的的情况。
+            各个等级的具体数据。按顺序从索引0开始是等级1的的情况。
             </summary>
         </member>
         <member name="P:GY02.Publisher.GameAchievementDto.Count">
@@ -1460,6 +1460,46 @@
         <member name="P:GY02.Publisher.GameAchievementItemDto.Level">
             <summary>
             等级。从1开始，1表示达成第一级的状态，2表示达成第二级的状态，以此类推。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetAchievementStateParamsDto">
+            <summary>
+            获取指定成就的状态功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetAchievementStateParamsDto.TIds">
+            <summary>
+            指定获取成就对象的模板Id集合。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetAchievementStateReturnDto">
+            <summary>
+            获取指定成就的状态功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetAchievementStateReturnDto.Result">
+            <summary>
+            返回的成就对象。当出错时此集合的状态未知。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetAchievementRewardsParamsDto">
+            <summary>
+            获取成就奖励功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetAchievementRewardsParamsDto.TIds">
+            <summary>
+            指定获取成就对象的模板Id集合。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetAchievementRewardsParamsDto.Levels">
+            <summary>
+            获取指定成就的指定等级的奖励，此集合顺序与 TIds 集合顺序一致。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetAchievementRewardsReturnDto">
+            <summary>
+            获取成就奖励功能返回值封装类。
             </summary>
         </member>
         <member name="T:GY02.Publisher.DispatcherDemo">

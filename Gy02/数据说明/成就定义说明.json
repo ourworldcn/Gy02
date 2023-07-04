@@ -1,0 +1,46 @@
+{
+  "Achievement": {
+    "Exp2LvSequence": [ //经验到等级转换用的序列，如[100,200]表示指标值>=100时达成该成就第1级（未达成前是0级），当指标值>=200时达成第2级成就；以此类推。
+      1,2,3
+    ],
+    "Ins": [  //暂时未用，可以省略
+      { //参见选取实体条件对象的说明
+        "Conditional": [
+          {
+            "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "Genus": [
+              "string"
+            ],
+            "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "string",
+                "pn": "string",
+                "args": [
+                  0
+                ],
+                "IgnoreIfDisplayList": true
+              }
+            ],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": [
+          "string"
+        ],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [ //每级别领取奖励的集合
+      [ //一个级别内领取的多个奖励
+        {
+          "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //限定父容器，可以为null，表示放置到默认容器
+          "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //产出想的模板Id
+          "Count": 1 //产出物品的数量
+        }
+      ]
+    ]
+  }
+}

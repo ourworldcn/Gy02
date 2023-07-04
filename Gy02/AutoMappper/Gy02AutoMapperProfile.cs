@@ -27,9 +27,12 @@ namespace GY02.AutoMappper
                     { typeof(GameUser),typeof(GameUserDto)},
                     {typeof(GameChar),typeof(GameCharDto) },
                     {typeof(GameItem),typeof(GameItemDto) },
+                    { typeof(GameAchievement),typeof(GameAchievementDto)},
                     {typeof(GameEquipment),typeof(GameEquipmentDto) },
                     {typeof(GameSlot<GameItem>),typeof(GameSlotDto<GameItemDto>) },
-                    {typeof(GameSlot<GameEquipment>),typeof(GameSlotDto<GameEquipmentDto>) },};
+                    {typeof(GameSlot<GameEquipment>),typeof(GameSlotDto<GameEquipmentDto>) },
+                    { typeof(GameSlot<GameAchievement>),typeof(GameSlot<GameAchievementDto>)},
+                    };
                     Interlocked.CompareExchange(ref _Entyti2Dto, tmp, null);
                 }
                 return _Entyti2Dto;
@@ -68,6 +71,7 @@ namespace GY02.AutoMappper
 
             CreateMap<GameSlot<GameEquipment>, GameSlotDto<GameEquipmentDto>>();
             CreateMap<GameSlot<GameItem>, GameSlotDto<GameItemDto>>();
+            CreateMap<GameSlot<GameAchievement>, GameSlotDto<GameAchievementDto>>();
 
             CreateMap<GamePropertyChangeItem<object>, GamePropertyChangeItemDto>()
                 .ForMember(c => c.NewValue, opt => opt.MapFrom((src, dest, val, context) => AutoMapEntity(src.NewValue, context.Mapper)))
@@ -94,6 +98,8 @@ namespace GY02.AutoMappper
             //});
 
             CreateMap<TemplateStringFullView, GameMail>();
+            CreateMap<TemplateStringFullView, GameAchievement>();
+            CreateMap<TemplateStringFullView, GameSlot<GameAchievement>>();
         }
     }
 }
