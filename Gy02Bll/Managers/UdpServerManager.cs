@@ -142,7 +142,7 @@ namespace GY02.Managers
                     result = _Udp.ReceiveAsync(_Lifetime.ApplicationStopping).AsTask().Result;
                     _Logger.LogTrace($"收到信息{result.Buffer.Length}字节。");
                 }
-                catch (AggregateException excp) when (excp.InnerException is TaskCanceledException) //若应用已经试图推出
+                catch (AggregateException excp) when (excp.InnerException is TaskCanceledException) //若应用已经试图退出
                 {
                     break;
                 }
@@ -152,6 +152,9 @@ namespace GY02.Managers
                 catch (SocketException)  //访问套接字时出错。
                 {
 
+                }
+                catch
+                {
                 }
                 try
                 {

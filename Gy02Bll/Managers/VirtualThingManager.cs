@@ -153,7 +153,13 @@ namespace OW.Game.Manager
                 dynamic dyn = view;
                 dyn.Fcps.Clear();
                 foreach (var fcps in tv.Fcps)
-                    dyn.Fcps.Add(fcps.Key, (FastChangingProperty)fcps.Value.Clone());
+                {
+                    var fcp = (FastChangingProperty)fcps.Value.Clone();
+                    var ov = fcp.CurrentValue;
+                    fcp.GetCurrentValueWithUtc();
+                    fcp.CurrentValue = ov;
+                    dyn.Fcps.Add(fcps.Key, fcp);
+                }
             }
             if (tv.TIdsOfCreate is not null)
                 foreach (var item in tv.TIdsOfCreate) //创建所有子对象

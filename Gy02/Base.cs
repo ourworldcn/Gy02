@@ -149,7 +149,7 @@ namespace GY02
                 var fcpXunluo = xunluo.Fcps.GetValueOrDefault(nameof(xunluo.Count));
                 if (fcpXunluo is null) continue;
                 oVal = fcpXunluo.CurrentValue;
-                nVal = fcp.GetCurrentValueWithUtc();
+                nVal = fcpXunluo.GetCurrentValueWithUtc();
                 if (oVal != nVal) //若已经变化
                 {
                     _UdpServerManager.SendObject(item.Value.Token, new GamePropertyChangeItemDto
