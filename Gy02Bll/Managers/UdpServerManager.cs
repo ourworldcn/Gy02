@@ -155,6 +155,11 @@ namespace GY02.Managers
                 }
                 catch
                 {
+                    uint IOC_IN = 0x80000000;
+                    uint IOC_VENDOR = 0x18000000;
+                    uint IOC_UDP_RESET = IOC_IN | IOC_VENDOR | 12;
+                    _Udp.Client.IOControl((int)IOC_UDP_RESET, new byte[] { Convert.ToByte(false) }, null);
+                    continue;
                 }
                 try
                 {

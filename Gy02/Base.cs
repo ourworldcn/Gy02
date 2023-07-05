@@ -95,7 +95,7 @@ namespace GY02
                     continue;
                 using var dw = DisposeHelper.Create(c => _GameAccountStore.Unlock(c), item.Key);
                 Debug.Assert(!dw.IsEmpty);
-                var tili = item.Value.CurrentChar.HuoBiSlot.Children.Single(c => c.TemplateId == ProjectContent.PowerTId);
+                var tili = item.Value.CurrentChar.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.PowerTId);
                 if (tili is null)
                     continue;
                 var fcp = tili.Fcps.GetValueOrDefault(nameof(tili.Count));
@@ -144,7 +144,7 @@ namespace GY02
                     });
                 }
                 //巡逻币
-                var xunluo = item.Value.CurrentChar.HuoBiSlot.Children.Single(c => c.TemplateId == ProjectContent.XunluoTId);
+                var xunluo = item.Value.CurrentChar.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.XunluoTId);
                 if (xunluo is null) continue;
                 var fcpXunluo = xunluo.Fcps.GetValueOrDefault(nameof(xunluo.Count));
                 if (fcpXunluo is null) continue;

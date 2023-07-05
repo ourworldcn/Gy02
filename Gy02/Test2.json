@@ -1,24 +1,76 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Dice": {
+    "MaxCount": 5,
+    "AllowRepetition": false,
+    "Items": [
       {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
-        "MinCount": null,
-        "GeneralConditional": [],
-        "IgnoreIfDisplayList": true
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
+            "Count": 1
+          }
+        ],
+        "Weight": 50,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+            "Count": 1
+          }
+        ],
+        "Weight": 60,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "79391d55-a01f-4051-841b-5452908566ab",
+            "Count": 1
+          }
+        ],
+        "Weight": 80,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
+            "Count": 1
+          }
+        ],
+        "Weight": 37,
+        "ClearGuaranteesCount": false
       }
     ],
-    "GetIndexExpression": {
-      "Operator": "ToInt32",
-      "Args": [ "Count" ],
-      "IgnoreIfDisplayList": false
-    },
-    "Outs": {
-      "TIds": [ "1f96a737-6a27-4aa4-b69f-6f9369593e4d", "ae3af73d-344d-4f45-951a-20580295ba40", "eada6fc9-3ae1-4000-8874-26eb88316fe3", "7a9019f4-ead2-4e0d-8c9e-cf94e0a9e40b", "b63ad485-9b45-4f3e-85c5-e221493199bb", "14d70aa4-39ad-42ba-8e39-86e24c8c6ca0", "32568c7e-0d2a-4e8f-9203-f838b8c6658e", "70653263-50f1-4d1f-9778-7cf468a6d5a8", "daaedc61-2aef-482d-81a8-b89079e3ca93", "2eefbd52-c422-40f6-86cb-ea1a70201b96", "835d2d75-1ad3-472e-bf2c-0e3ca1ed3308", "45762299-1393-4a2b-ab5a-b923a0ffe77d" ],
-      "ParentTIds": [ null ],
-      "Counts": [ 1 ]
-    }
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
   }
 }
