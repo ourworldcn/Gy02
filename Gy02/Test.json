@@ -1,18 +1,50 @@
 {
-  "EntranceFees": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "MinCount": 5
-        }
-      ],
-      "Count": 5
-    }
-  ],
-  "name_txt": 13001,
-  "comment_txt": 13013,
-  "suggest": [ 200, 2000, 200 ]
+  "Genus": [ "gs_guaji" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "db1a91ed-8541-4a03-b073-a338212d5796",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 1,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "c259050b-7fd6-4cbb-bddc-7f7293d85046",
+        "Count": 0
+      },
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "4293aee9-74fb-435e-b321-2dc8cc406469",
+        "Count": 1
+      },
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "757f0fe5-995f-4d30-a684-d999aafaca94",
+        "Count": 1
+      }
+    ]
+  }
 }

@@ -110,7 +110,7 @@ namespace GY02.Managers
                 try
                 {
                     var tmp = _Queue.Take(_Lifetime.ApplicationStopping);
-                    using var dw = DisposeHelper.Create(c => ArrayPool<byte>.Shared.Return(c), tmp.Item2);  //回收
+                    //using var dw = DisposeHelper.Create(c => ArrayPool<byte>.Shared.Return(c), tmp.Item2);  //回收
                     if (_Token2EndPoint.TryGetValue(tmp.Item1, out var ip)) //若找到指定的ip地址
                     {
                         _Udp.Send(tmp.Item2, tmp.Item2.Length, ip);

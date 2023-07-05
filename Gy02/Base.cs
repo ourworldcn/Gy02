@@ -103,7 +103,9 @@ namespace GY02
                     continue;
                 var oVal = fcp.CurrentValue;
                 var nVal = fcp.GetCurrentValueWithUtc();
-
+#if DEBUG
+                nVal += 4;
+#endif
                 if (oVal != nVal) //若已经变化
                     _UdpServerManager.SendObject(item.Value.Token, new GamePropertyChangeItemDto
                     {
@@ -134,6 +136,28 @@ namespace GY02
                         ObjectId = cishu.Id,
                         TId = cishu.TemplateId,
                         PropertyName = nameof(cishu.Count),
+
+                        HasOldValue = true,
+                        OldValue = oVal,
+                        HasNewValue = true,
+                        NewValue = nVal,
+                    });
+                }
+                //巡逻币
+                var xunluo = item.Value.CurrentChar.HuoBiSlot.Children.Single(c => c.TemplateId == ProjectContent.XunluoTId);
+                if (xunluo is null) continue;
+                var fcpXunluo = xunluo.Fcps.GetValueOrDefault(nameof(xunluo.Count));
+                if (fcpXunluo is null) continue;
+                oVal = fcpXunluo.CurrentValue;
+                nVal = fcp.GetCurrentValueWithUtc();
+                if (oVal != nVal) //若已经变化
+                {
+                    _UdpServerManager.SendObject(item.Value.Token, new GamePropertyChangeItemDto
+                    {
+                        DateTimeUtc = OwHelper.WorldNow,
+                        ObjectId = xunluo.Id,
+                        TId = xunluo.TemplateId,
+                        PropertyName = nameof(xunluo.Count),
 
                         HasOldValue = true,
                         OldValue = oVal,

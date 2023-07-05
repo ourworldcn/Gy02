@@ -1125,6 +1125,11 @@
             累计登录天数的TId。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.XunluoTId">
+            <summary>
+            巡逻币。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.QiriQiandaoGenus">
             <summary>
             七日签到页签。

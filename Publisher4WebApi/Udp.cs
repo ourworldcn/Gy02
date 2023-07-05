@@ -206,11 +206,12 @@ namespace GY02.Publisher
             if (_ListenTask is null)
                 _ListenTask = Task.Factory.StartNew(ListenCallback, TaskCreationOptions.LongRunning);
             //通知服务器
-            _Timer = new System.Threading.Timer(c => Nop(Token), default, 0, 60_000);
+            //_Timer = new System.Threading.Timer(c => Nop(Token), default, 0, 60_000);
         }
 
         void ListenCallback()
         {
+            Nop(Token);
             while (!CancellationTokenSource.IsCancellationRequested)
             {
                 try
@@ -239,7 +240,6 @@ namespace GY02.Publisher
             //通知服务器
             var guts = token.ToByteArray();
             _Udp.Send(guts, guts.Length, RemoteEndPoint);
-
         }
 
         #region 事件相关
@@ -330,8 +330,8 @@ namespace GY02.Publisher
                     //释放托管状态(托管对象)
                     _CancellationTokenSource?.Cancel();
                     var waitHandle = new AutoResetEvent(false);
-                    _Timer?.Dispose(waitHandle);
-                    waitHandle.WaitOne();   //确保定时器退出
+                    _Timer?.Dispose(/*waitHandle*/);
+                    //waitHandle.WaitOne();   //确保定时器退出
                     _Udp?.Dispose();
                 }
                 // 释放未托管的资源(未托管的对象)并重写终结器

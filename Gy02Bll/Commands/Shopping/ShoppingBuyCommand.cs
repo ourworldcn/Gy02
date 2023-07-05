@@ -132,7 +132,8 @@ namespace GY02.Commands
             var gc = command.GameChar;
             var allEntity = _EntityManager.GetAllEntity(gc).ToLookup(c => c.TemplateId);
 
-            var slot = allEntity[ProjectContent.LeijiQiandaoSlotTId].Single();
+            var slot = allEntity[ProjectContent.LeijiQiandaoSlotTId].Single();  //累计签到占位符
+
             var coll = from tmp in gc.ShoppingHistory
                        where tmp.DateTime.Date.AddDays(1) <= command.LoginDateTimeUtc.Date //往日购买记录
                        let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板

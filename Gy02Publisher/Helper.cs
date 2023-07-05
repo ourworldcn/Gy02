@@ -177,6 +177,11 @@ namespace GY02.Publisher
         public static readonly Guid LoginedDayTId = new Guid("24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C");
 
         /// <summary>
+        /// 巡逻币。
+        /// </summary>
+        public static readonly Guid XunluoTId = new Guid("62D3A545-7604-46BF-9837-95E286660BC8");
+
+        /// <summary>
         /// 七日签到页签。
         /// </summary>
         public const string QiriQiandaoGenus = "gs_qiandao";

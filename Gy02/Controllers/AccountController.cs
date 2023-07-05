@@ -89,9 +89,9 @@ namespace GY02.Controllers
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
 #if DEBUG
-            var udp = new GyUdpClient();
-            var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
-            udp.Start(result.Token, serverIp);
+            //var udp = new GyUdpClient();
+            //var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
+            //udp.Start(result.Token, serverIp);
 #endif
             return result;
         }
