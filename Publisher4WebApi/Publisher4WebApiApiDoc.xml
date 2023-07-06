@@ -1586,11 +1586,13 @@
             <summary>
             开始侦听。在登录完成后调用此函数，开始侦听数据。
             </summary>
+            <exception cref="T:System.Net.Sockets.SocketException">访问套接字时出错。请务必拦截该异常并处理，以避免进程崩溃。</exception>
         </member>
         <member name="M:GY02.Publisher.GyUdpClient.Start(System.Guid,System.Net.IPEndPoint)">
             <summary>
             开始侦听。
             </summary>
+            <exception cref="T:System.Net.Sockets.SocketException">访问套接字时出错。请务必拦截该异常并处理，以避免进程崩溃。</exception>
         </member>
         <member name="M:GY02.Publisher.GyUdpClient.Nop(System.Guid)">
             <summary>

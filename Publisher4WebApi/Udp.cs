@@ -185,6 +185,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 开始侦听。在登录完成后调用此函数，开始侦听数据。
         /// </summary>
+        /// <exception cref="SocketException">访问套接字时出错。请务必拦截该异常并处理，以避免进程崩溃。</exception>
         public void Start()
         {
             _RemoteEndPoint = null;
@@ -193,11 +194,14 @@ namespace GY02.Publisher
         /// <summary>
         /// 开始侦听。
         /// </summary>
+        /// <exception cref="SocketException">访问套接字时出错。请务必拦截该异常并处理，以避免进程崩溃。</exception>
         public virtual void Start(Guid token, IPEndPoint remotePoint)
         {
             _RemoteEndPoint = remotePoint;
             _Udp?.Dispose();
             _Udp = new UdpClient(0);
+            _Udp.Connect(RemoteEndPoint);
+
             //初始化引发事件数据的任务
             if (_PostEventTask is null)
                 _PostEventTask = Task.Factory.StartNew(PostEventCallback, TaskCreationOptions.LongRunning);
@@ -211,12 +215,14 @@ namespace GY02.Publisher
 
         void ListenCallback()
         {
+
             Nop(Token);
             while (!CancellationTokenSource.IsCancellationRequested)
             {
                 try
                 {
-                    var ip = new IPEndPoint(RemoteEndPoint.Address, 0);
+                    var ip = new IPEndPoint(IPAddress.Any, 0);
+
                     var buff = _Udp.Receive(ref ip);
                     Debug.WriteLine($"收到来自{ip}的数据，{buff.Length}字节。");
                     InvokeDataRecived(new DataRecivedEventArgs()
@@ -239,7 +245,9 @@ namespace GY02.Publisher
         {
             //通知服务器
             var guts = token.ToByteArray();
-            _Udp.Send(guts, guts.Length, RemoteEndPoint);
+            //Socket socket = null;
+
+            _Udp.Send(guts, guts.Length);
         }
 
         #region 事件相关

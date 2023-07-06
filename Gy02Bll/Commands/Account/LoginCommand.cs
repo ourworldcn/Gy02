@@ -15,6 +15,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using OW.Game.Manager;
 
 namespace GY02.Commands
 {
@@ -48,16 +49,18 @@ namespace GY02.Commands
     public class LoginHandler : SyncCommandHandlerBase<LoginCommand>
     {
 
-        public LoginHandler(IServiceProvider service, GameSqlLoggingManager loggingManager, SyncCommandManager syncCommandManager)
+        public LoginHandler(IServiceProvider service, GameSqlLoggingManager loggingManager, SyncCommandManager syncCommandManager, VirtualThingManager virtualThingManager)
         {
             _Service = service;
             _LoggingManager = loggingManager;
             _SyncCommandManager = syncCommandManager;
+            _VirtualThingManager = virtualThingManager;
         }
 
         IServiceProvider _Service;
         GameSqlLoggingManager _LoggingManager;
         SyncCommandManager _SyncCommandManager;
+        VirtualThingManager _VirtualThingManager;
 
         public override void Handle(LoginCommand command)
         {
@@ -92,6 +95,8 @@ namespace GY02.Commands
             gu.CurrentChar.LogineCount++;
             _LoggingManager.AddLogging(new GameActionRecord { ActionId = "Loginged", ParentId = gu.Id });
             var gc = gu.CurrentChar;
+            _VirtualThingManager.Normal(gc.GetThing());
+
             if (gc.LastLoginDateTimeUtc is null || gc.LastLoginDateTimeUtc.Value.Date < nowUtc.Date) //若是今日第一次登录
             {
                 gc.LastLoginDateTimeUtc = nowUtc.Date;

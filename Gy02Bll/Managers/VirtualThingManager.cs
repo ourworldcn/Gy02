@@ -111,6 +111,34 @@ namespace OW.Game.Manager
         #endregion 基础功能
 
         /// <summary>
+        /// 对于缺失子项的虚拟对象，补足缺失的虚拟对象。
+        /// </summary>
+        /// <param name="root">修补此对象下 所有的缺失对象。</param>
+        /// <returns>true修补了对象，false没有修补。</returns>
+        public bool Normal(VirtualThing root)
+        {
+            var result = false;
+            var tt = _TemplateManager.GetFullViewFromId(root.ExtraGuid);    //根的子对象
+            if (tt.TIdsOfCreate is null) return result;    //若没有指定子对象
+            var tids = root.Children.Select(c => c.ExtraGuid).ToArray();    //已有子对象tid集合
+            var list = tt.TIdsOfCreate.Where(c => !tids.Contains(c)).ToArray();   //需要补足的对象tid集合
+            foreach (var item in list)  //补足子对象
+            {
+                var template = _TemplateManager.GetFullViewFromId(item);    //获取模板
+                if (template is null) continue;
+                var thing = Create(template);   //创建对象
+                if (thing is null) continue;
+                root.Children.Add(thing);
+                result = true;
+            }
+            foreach (var item in root.Children) //修补子对象
+            {
+                result = Normal(item) || result;
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 用指定的模板Id创建对象。
         /// </summary>
         /// <param name="tId"></param>
