@@ -62,7 +62,7 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 
+        /// 获取指定tid的卡池配置模板（不含卡池组）。
         /// </summary>
         /// <param name="tid"></param>
         /// <returns>卡池的模板，如果不是卡池模板则返回null。</returns>

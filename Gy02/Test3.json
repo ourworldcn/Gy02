@@ -1,6 +1,6 @@
 {
   "Dice": {
-    "MaxCount": 3,
+    "MaxCount": 24,
     "AllowRepetition": true,
     "Items": [
       {
@@ -231,11 +231,12 @@
             "Count": 1
           }
         ],
-        "Weight": 11,
+        "Weight": 6,
         "ClearGuaranteesCount": false
       }
     ],
     "GuaranteesCount": null,
     "GuaranteesDiceTId": null
-  }
+  },
+  "outEquipCount": 24
 }
