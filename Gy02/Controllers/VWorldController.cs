@@ -14,19 +14,21 @@ namespace GY02.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public VWorldController()
+        public VWorldController(GameTemplateManager templateManager)
         {
+            _TemplateManager = templateManager;
         }
+
+        GameTemplateManager _TemplateManager;
 
         /// <summary>
         /// 使用缓存获取配置。
         /// </summary>
         /// <param name="model"></param>
-        /// <param name="manager"></param>
         /// <returns></returns>
         [HttpGet]
         [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new string[] { nameof(GetTemplates2ParamsDto.Uid), nameof(GetTemplates2ParamsDto.Pwd) })]
-        public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery] GetTemplates2ParamsDto model, [FromServices] GameTemplateManager manager)
+        public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery] GetTemplates2ParamsDto model)
         {
             var result = new GetTemplates2ReturnDto();
             if (model.Uid != "gy001" || model.Pwd != "210115")
@@ -37,7 +39,7 @@ namespace GY02.Controllers
                 return Unauthorized(result);
             }
             else
-                result.Templates = manager.Id2FullView.Values.ToArray();
+                result.Templates = _TemplateManager.Id2FullView.Values.ToArray();
             return result;
         }
 

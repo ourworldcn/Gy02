@@ -1,11 +1,14 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using OW;
 using OW.Game.Manager;
 using OW.SyncCommand;
 using System;
 using System.Diagnostics;
+using System.IO.Compression;
 
 namespace GY02
 {
@@ -181,5 +184,56 @@ namespace GY02
             }
             base.Dispose(disposing);
         }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class OwDeflateCompressionProvider : Microsoft.AspNetCore.ResponseCompression.ICompressionProvider
+    {
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        public string EncodingName => "deflate";
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        public bool SupportsFlush => true;
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="outputStream"></param>
+        /// <returns></returns>
+        public Stream CreateStream(Stream outputStream)
+        {
+            var result = new DeflateStream(outputStream, CompressionLevel.Fastest);
+            return result;
+        }
+
+        //public byte[] Compress(byte[] value)
+        //{
+        //    MemoryStream ms;
+        //    using (ms = new MemoryStream())
+        //    using (var stream = new DeflateStream(ms, CompressionLevel.Optimal))
+        //    {
+        //        stream.Write(value, 0, value.Length);
+        //    }
+        //    return ms.ToArray();
+        //}
+
+        //public byte[] Decompress(byte[] value)
+        //{
+        //    MemoryStream ms;
+        //    using (ms = new MemoryStream(value))
+        //    using (var stream = new DeflateStream(ms, CompressionLevel.Optimal))
+        //    {
+        //        byte[] ary = new byte[10_000_000];
+        //        var count = stream.Read(value, 0, value.Length);
+        //        return ary[0..count];
+        //    }
+        //}
+
     }
 }

@@ -69,6 +69,10 @@ namespace GY02.Commands
                 command.DebugMessage = $"至少有一个唯一对象Id不正确，无法找到对应对象。";
                 return;
             }
+            command.Results.ForEach(c =>
+            {
+                var tmp = c.Count;
+            });
             return;
         }
     }

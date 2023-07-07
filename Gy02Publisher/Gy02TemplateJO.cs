@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -250,6 +251,10 @@ namespace GY02.Templates
                         else
                             result = null;
                     }
+                    break;
+                case "GetBuyedCount":
+                    result = null;
+                    succ = false;
                     break;
                 case "ModE":
                 ////获取属性值

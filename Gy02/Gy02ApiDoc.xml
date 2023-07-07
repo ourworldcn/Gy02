@@ -81,6 +81,28 @@
             </summary>
             <param name="disposing"></param>
         </member>
+        <member name="T:GY02.OwDeflateCompressionProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.OwDeflateCompressionProvider.EncodingName">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="P:GY02.OwDeflateCompressionProvider.SupportsFlush">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="M:GY02.OwDeflateCompressionProvider.CreateStream(System.IO.Stream)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="outputStream"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Controllers.AccountController">
             <summary>
             账号管理。
@@ -424,17 +446,16 @@
             虚拟世界公用Api控制器。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.VWorldController.#ctor">
+        <member name="M:GY02.Controllers.VWorldController.#ctor(OW.Game.Managers.GameTemplateManager)">
             <summary>
             
             </summary>
         </member>
-        <member name="M:GY02.Controllers.VWorldController.GetTemplates(GY02.Publisher.GetTemplates2ParamsDto,OW.Game.Managers.GameTemplateManager)">
+        <member name="M:GY02.Controllers.VWorldController.GetTemplates(GY02.Publisher.GetTemplates2ParamsDto)">
             <summary>
             使用缓存获取配置。
             </summary>
             <param name="model"></param>
-            <param name="manager"></param>
             <returns></returns>
         </member>
         <member name="M:GY02.Controllers.VWorldController.RebootService(GY02.Publisher.StopServiceParamsDto,Microsoft.Extensions.Hosting.IHostApplicationLifetime)">

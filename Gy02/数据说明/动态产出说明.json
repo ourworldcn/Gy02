@@ -23,9 +23,9 @@
       }
     ],
     "GetIndexExpression": { //一个通用的表达式对象，从实体对象上获取属性值
-      "Operator": "ToInt32", //操作符（函数名）。暂定支持以下运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!=,ToInt32 等。特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
+      "Operator": "ToInt32", //操作符（函数名）。可能是 GetBuyedCount 获取指定商品当前周期内已经购买的数量，此时选取实体必须是角色对象。暂定支持以下运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!=,ToInt32 等。特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
       "Args": [
-        "Count" //特定的此处填写属性名如 Count
+        "Count" //特定的此处填写属性名如 Count，若对 GetBuyedCount函数，这里填写要计算的商品TId。
       ],
       "IgnoreIfDisplayList": false //是否可以忽略,此处暂无意义，填false
     },

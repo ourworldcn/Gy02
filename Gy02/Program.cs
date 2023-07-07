@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OW.Game.Manager;
@@ -50,10 +51,11 @@ internal class Program
             c.EnableForHttps = true;
             c.Providers.Add<BrotliCompressionProvider>();  //ICompressionProvider
             c.Providers.Add<GzipCompressionProvider>(); //ICompressionProvider
-
+            c.Providers.Add<OwDeflateCompressionProvider>();
         })
-            .Configure<BrotliCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; })
-            .Configure<GzipCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; });
+        .Configure<BrotliCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; })
+        .Configure<GzipCompressionProviderOptions>(options => { options.Level = CompressionLevel.Optimal; });
+        //.Configure<OwDeflateCompressionProvider>(options=> options.le);
 
         #endregion ≈‰÷√—πÀı
 
