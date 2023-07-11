@@ -6,7 +6,6 @@ using Microsoft.Extensions.ObjectPool;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
 using System.Data.Common;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
@@ -16,25 +15,6 @@ using System.Threading.Tasks;
 
 namespace OW.Game.Store
 {
-    public class ServerConfigItem
-    {
-        /// <summary>
-        /// Key的名字。
-        /// </summary>
-        [MaxLength(64)]
-        [Key]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// 内容。
-        /// </summary>
-        public string Value { get; set; }
-
-        /// <summary>
-        /// 最后修改的日期。使用游戏世界时间。
-        /// </summary>
-        public DateTime LastModifyUtc { get; set; } = OwHelper.WorldNow;
-    }
 
     public static class MigrateDbInitializer
     {
@@ -84,5 +64,9 @@ namespace OW.Game.Store
         /// </summary>
         public DbSet<ServerConfigItem> ServerConfig { get; set; }
 
+        /// <summary>
+        /// 法币购买商品的订单信息。
+        /// </summary>
+        //public DbSet<GameShoppingOrder> ShoppingOrder { get; set; }
     }
 }

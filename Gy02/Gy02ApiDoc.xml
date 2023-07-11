@@ -441,6 +441,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.ShoppingController.CreateOrder(GY02.Publisher.CreateOrderParamsDto)">
+            <summary>
+            客户端发起创建一个订单。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Controllers.VWorldController">
             <summary>
             虚拟世界公用Api控制器。
@@ -599,6 +606,28 @@
         <member name="M:Gy02.Controllers.MailController.MakeReadAndPickUp(GY02.Publisher.MakeReadAndPickUpParamsDto)">
             <summary>
             标记邮件为已读状态，且如果有附件则领取附件。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gy02.Controllers.T78Controller">
+            <summary>
+            T78合作伙伴调入控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T78Controller.Payed(GY02.Publisher.PayedParamsDto,System.String,System.String)">
+            <summary>
+            T78合作伙伴充值回调。
+            </summary>
+            <param name="model"></param>
+            <param name="isSandbox">"1"表示沙箱；其他表示正式</param>
+            <param name="payType">"mycard"表示mycard;"google"表示google-play支付;"mol"表示mol支付;"apple"表示苹果支付;“onestore”韩国onestore商店支付;“samsung”三星支付
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.T78Controller.ClientPayed(GY02.Publisher.ClientPayedParamsDto)">
+            <summary>
+            客户端在T78合作伙伴上调用了充值信息后调用此接口通知服务器。
             </summary>
             <param name="model"></param>
             <returns></returns>

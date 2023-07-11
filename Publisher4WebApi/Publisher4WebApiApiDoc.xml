@@ -1041,6 +1041,107 @@
             孵化功能返回值封装类。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GameShoppingOrderDto">
+            <summary>
+            法币购买商品的订单。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.GameShoppingOrderDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.Id">
+            <summary>
+            Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.CustomerId">
+            <summary>
+            目前是角色Id的字符串形式。如果以后存在给账号购买的情况则可能是账号Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.Amount">
+            <summary>
+            订单总金额。注意金额为正是订单，负数是"冲红"单。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.Currency">
+            <summary>
+            币种。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.Detailes">
+            <summary>
+            订单的详细项。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.Confirm1">
+            <summary>
+            第一方是否已经确认。如客户端。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.Confirm2">
+            <summary>
+            第二方是否已经确认。如sdk方。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.BinaryArray">
+            <summary>
+            附属信息。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GameShoppingOrderDetailDto">
+            <summary>
+            法币购买商品的订单的详细项。目前情况，往往一个订单只有一项。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.GameShoppingOrderDetailDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDetailDto.Id">
+            <summary>
+            Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDetailDto.GoodsId">
+            <summary>
+            货物Id。商品的Id的字符串形式。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDetailDto.Count">
+            <summary>
+            数量。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDetailDto.Price">
+            <summary>
+            单价。暂时未用。币种要和订单内币种一致。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDetailDto.BinaryArray">
+            <summary>
+            附属信息。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.GameShoppingOrderDetailDto.Clone">
+            <summary>
+            获取一个深表副本。注意Id也被复制，通常需要调用<see cref="M:OW.Game.Store.GuidKeyObjectBase.GenerateNewId"/>换成新Id。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GY02.Publisher.CreateOrderParamsDto">
+            <summary>
+            客户端发起创建一个订单功能参数封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.CreateOrderReturnDto">
+            <summary>
+            客户端发起创建一个订单功能返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.ShoppingBuyParamsDto">
             <summary>
             购买功能参数封装类。
@@ -1500,6 +1601,123 @@
         <member name="T:GY02.Publisher.GetAchievementRewardsReturnDto">
             <summary>
             获取成就奖励功能返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.ClientPayedParamsDto">
+            <summary>
+            客户端结束付费回调功能的参数封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.ClientPayedReturnDto">
+            <summary>
+            客户端结束付费回调功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.PayedParamsDto">
+            <summary>
+            T78合作伙伴充值回调参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.GameId">
+            <summary>
+            游戏Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.ChannelId">
+            <summary>
+            渠道ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.AppId">
+            <summary>
+            游戏包ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.UserId">
+            <summary>
+            用户ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.CpOrderId">
+            <summary>
+            游戏方的订单ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.BfOrderId">
+            <summary>
+            游戏方的订单ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.ChannelOrderId">
+            <summary>
+            渠道的订单ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.Money">
+            <summary>
+            金额。单位分。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.CallbackInfo">
+            <summary>
+            支付透参。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.OrderStatus">
+            <summary>
+            订单状态。
+            0--支付失败，1—支付成功
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.ChannelInfo">
+            <summary>
+            渠道自定义信息。目前不支持，固定为空字符串。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.Currency">
+            <summary>
+            币种。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.ProductId">
+            <summary>
+            商品id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.ServerId">
+            <summary>
+            区服id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.GameRoleId">
+            <summary>
+            角色id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.Time">
+            <summary>
+            时间戳。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedParamsDto.Sign">
+            <summary>
+            签名。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.PayedReturnDto">
+            <summary>
+            T78合作伙伴充值回调返回值参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedReturnDto.Result">
+            <summary>
+            成功，表示游戏服务器成功接收了该次充值结果通知,注意是0为成功
+            失败，表示游戏服务器无法接收或识别该次充值结果通知，如：签名检验不正确、游戏服务器接收失败。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.PayedReturnDto.DebugMessage">
+            <summary>
+            调试用的信息。
             </summary>
         </member>
         <member name="T:GY02.Publisher.DispatcherDemo">

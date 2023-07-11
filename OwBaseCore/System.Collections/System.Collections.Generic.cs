@@ -49,7 +49,7 @@ namespace System.Collections.Generic
         }
 
         /// <summary>
-        /// 返回指定枚举的实体状态，若指定枚举是编译时态的说明，则生成其数组。
+        /// 返回指定枚举的实体状态，若能转换为<see cref="ICollection{T}"/>则返回该接口，否则生成其数组并返回。
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="source"></param>

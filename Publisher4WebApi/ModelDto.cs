@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text.Json.Serialization;
 
@@ -1356,6 +1357,133 @@ namespace GY02.Publisher
     #region 商城相关
 
     /// <summary>
+    /// 法币购买商品的订单。
+    /// </summary>
+    [AutoMap(typeof(GameShoppingOrder), ReverseMap = true)]
+    public class GameShoppingOrderDto
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameShoppingOrderDto()
+        {
+
+        }
+
+        /// <summary>
+        /// Id。
+        /// </summary>
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// 目前是角色Id的字符串形式。如果以后存在给账号购买的情况则可能是账号Id。
+        /// </summary>
+        public string CustomerId { get; set; }
+
+        /// <summary>
+        /// 订单总金额。注意金额为正是订单，负数是"冲红"单。
+        /// </summary>
+        public decimal Amount { get; set; }
+
+        /// <summary>
+        /// 币种。
+        /// </summary>
+        public string Currency { get; set; }
+
+        /// <summary>
+        /// 订单的详细项。
+        /// </summary>
+        public virtual List<GameShoppingOrderDetail> Detailes { get; set; } = new List<GameShoppingOrderDetail>();
+
+        /// <summary>
+        /// 第一方是否已经确认。如客户端。
+        /// </summary>
+        public bool Confirm1 { get; set; }
+
+        /// <summary>
+        /// 第二方是否已经确认。如sdk方。
+        /// </summary>
+        public bool Confirm2 { get; set; }
+
+        /// <summary>
+        /// 附属信息。
+        /// </summary>
+        public byte[] BinaryArray { get; set; }
+
+    }
+
+    /// <summary>
+    /// 法币购买商品的订单的详细项。目前情况，往往一个订单只有一项。
+    /// </summary>
+    [AutoMap(typeof(GameShoppingOrderDetail), ReverseMap = true)]
+    public class GameShoppingOrderDetailDto : ICloneable
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameShoppingOrderDetailDto()
+        {
+
+        }
+
+        /// <summary>
+        /// Id。
+        /// </summary>
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// 货物Id。商品的Id的字符串形式。
+        /// </summary>
+        public string GoodsId { get; set; }
+
+        /// <summary>
+        /// 数量。
+        /// </summary>
+        public decimal Count { get; set; }
+
+        /// <summary>
+        /// 单价。暂时未用。币种要和订单内币种一致。
+        /// </summary>
+        public decimal Price { get; set; }
+
+        /// <summary>
+        /// 附属信息。
+        /// </summary>
+        public byte[] BinaryArray { get; set; }
+
+        /// <summary>
+        /// 获取一个深表副本。注意Id也被复制，通常需要调用<see cref="GuidKeyObjectBase.GenerateNewId"/>换成新Id。
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
+        {
+            var result = new GameShoppingOrderDetailDto
+            {
+                Id = Id,
+                BinaryArray = BinaryArray.ToArray(),
+                Count = Count,
+                Price = Price,
+                GoodsId = GoodsId,
+            };
+            return result;
+        }
+    }
+
+    /// <summary>
+    /// 客户端发起创建一个订单功能参数封装类。
+    /// </summary>
+    public class CreateOrderParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 客户端发起创建一个订单功能返回值封装类。
+    /// </summary>
+    public class CreateOrderReturnDto : ReturnDtoBase
+    {
+    }
+
+    /// <summary>
     /// 购买功能参数封装类。
     /// </summary>
     [AutoMap(typeof(ShoppingBuyCommand), ReverseMap = true)]
@@ -1935,6 +2063,154 @@ namespace GY02.Publisher
     }
 
     #endregion 成就相关
+
+    #region T78相关
+
+    /// <summary>
+    /// 客户端结束付费回调功能的参数封装类。
+    /// </summary>
+    public class ClientPayedParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 客户端结束付费回调功能的返回值封装类。
+    /// </summary>
+    public class ClientPayedReturnDto : ReturnDtoBase
+    {
+    }
+
+    /// <summary>
+    /// T78合作伙伴充值回调参数封装类。
+    /// </summary>
+    public class PayedParamsDto
+    {
+        /// <summary>
+        /// 游戏Id。
+        /// </summary>
+        [JsonPropertyName("gameId")]
+        public string GameId { get; set; }
+
+        /// <summary>
+        /// 渠道ID。
+        /// </summary>
+        [JsonPropertyName("channelId")]
+        public string ChannelId { get; set; }
+
+        /// <summary>
+        /// 游戏包ID。
+        /// </summary>
+        [JsonPropertyName("appId")]
+        public string AppId { get; set; }
+
+        /// <summary>
+        /// 用户ID。
+        /// </summary>
+        [JsonPropertyName("userId")]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// 游戏方的订单ID。
+        /// </summary>
+        [JsonPropertyName("cpOrderId")]
+        public string CpOrderId { get; set; }
+
+        /// <summary>
+        /// 游戏方的订单ID。
+        /// </summary>
+        [JsonPropertyName("bfOrderId")]
+        public string BfOrderId { get; set; }
+
+        /// <summary>
+        /// 渠道的订单ID。
+        /// </summary>
+        [JsonPropertyName("channelOrderId")]
+        public string ChannelOrderId { get; set; }
+
+        /// <summary>
+        /// 金额。单位分。
+        /// </summary>
+        [JsonPropertyName("money")]
+        public string Money { get; set; }
+
+        /// <summary>
+        /// 支付透参。
+        /// </summary>
+        [JsonPropertyName("callbackInfo")]
+        public string CallbackInfo { get; set; }
+
+        /// <summary>
+        /// 订单状态。
+        /// 0--支付失败，1—支付成功
+        /// </summary>
+        [JsonPropertyName("orderStatus")]
+        public string OrderStatus { get; set; }
+
+        /// <summary>
+        /// 渠道自定义信息。目前不支持，固定为空字符串。
+        /// </summary>
+        [JsonPropertyName("channelInfo")]
+        public string ChannelInfo { get; set; }
+
+        /// <summary>
+        /// 币种。
+        /// </summary>
+        [JsonPropertyName("currency")]
+        public string Currency { get; set; }
+
+        /// <summary>
+        /// 商品id。
+        /// </summary>
+        [JsonPropertyName("product_id")]
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// 区服id。
+        /// </summary>
+        [JsonPropertyName("server_id")]
+        public string ServerId { get; set; }
+
+        /// <summary>
+        /// 角色id。
+        /// </summary>
+        [JsonPropertyName("game_role_id")]
+        public string GameRoleId { get; set; }
+
+        /// <summary>
+        /// 时间戳。
+        /// </summary>
+        [JsonPropertyName("time")]
+        public string Time { get; set; }
+
+        /// <summary>
+        /// 签名。
+        /// </summary>
+        [JsonPropertyName("sign")]
+        public string Sign { get; set; }
+
+    }
+
+    /// <summary>
+    /// T78合作伙伴充值回调返回值参数封装类。
+    /// </summary>
+    public class PayedReturnDto
+    {
+        /// <summary>
+        /// 成功，表示游戏服务器成功接收了该次充值结果通知,注意是0为成功
+        /// 失败，表示游戏服务器无法接收或识别该次充值结果通知，如：签名检验不正确、游戏服务器接收失败。
+        /// </summary>
+        [JsonPropertyName("ret")]
+        public int Result { get; set; }
+
+#if DEBUG
+        /// <summary>
+        /// 调试用的信息。
+        /// </summary>
+        public string DebugMessage { get; set; }
+#endif
+    }
+
+    #endregion
 }
 
 

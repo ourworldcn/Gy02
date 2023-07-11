@@ -1675,4 +1675,8 @@ namespace GY02.Templates
     #region 邮件相关
 
     #endregion 邮件相关
+
+    #region 法币购买相关
+
+    #endregion 法币购买相关
 }

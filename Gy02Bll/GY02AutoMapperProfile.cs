@@ -4,6 +4,7 @@ using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,7 @@ namespace GY02
             CreateMap<TemplateStringFullView, GameEquipment>().ForMember(c => c.Atk, opt => opt.Ignore()).ForMember(c => c.Def, opt => opt.Ignore()).ForMember(c => c.Pow, opt => opt.Ignore())
                 .AfterMap(FillSeq);
             CreateMap<TemplateStringFullView, GameItem>().AfterMap(FillSeq);
+
         }
 
         /// <summary>

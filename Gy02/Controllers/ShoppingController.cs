@@ -115,6 +115,18 @@ namespace GY02.Controllers
             _Mapper.Map(command, result);
             return result;
         }
+
+        /// <summary>
+        /// 客户端发起创建一个订单。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<CreateOrderReturnDto> CreateOrder(CreateOrderParamsDto model)
+        {
+            var result = new CreateOrderReturnDto { };
+            return result;
+        }
     }
 
 }

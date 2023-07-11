@@ -81,6 +81,15 @@ namespace OW.Game.Store
             return true;
         }
 
+        /// <summary>
+        /// 强制生成一个新Id。
+        /// 通常这是一个危险的操作。仅在克隆副本以后有可能需要调用。
+        /// </summary>
+        public void GenerateNewId()
+        {
+            Id = Guid.NewGuid();
+        }
+
         #region 减低内存分配速率
 
         private string _IdString;

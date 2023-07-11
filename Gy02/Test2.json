@@ -1,42 +1,41 @@
 {
-  "Genus": [ "gs_qiandao" ],
+  "Genus": [ "gs_jibigoumai" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-12T00:00:00.000Z",
+      "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
     },
     "GroupNumber": 0,
+    "MaxCount": null,
     "Ins": [
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ 7, 4 ]
-              }
-            ],
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "MinCount": 30,
+            "GeneralConditional": [],
             "IgnoreIfDisplayList": true
           }
         ],
-        "Count": 0,
-        "Genus": []
+        "Count": 288,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
       }
     ],
     "Outs": [
       {
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-        "Count": 5
+        "Id": null,
+        "ParentTId": null,
+        "TId": "bbd8df20-3071-492a-8fef-aae2f848025a",
+        "Count": 1
       }
-    ],
-    "MaxCount": 1
-  }
+    ]
+  },
+  "name_txt": 10968,
+  "comment_txt": 10962,
+  "JiaoBiao": []
 }

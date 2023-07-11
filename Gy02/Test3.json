@@ -1,28 +1,41 @@
 {
-  "Results": [
-    {
-      "Count": 30,
-      "LvUpAccruedCost": [],
-      "CompositingAccruedCost": [],
-      "CountOfLastModifyUtc": "2023-07-07T09:34:24.4543187Z",
-      "ClientDictionary": {},
-      "Fcps": {
-        "Count": {
-          "MinValue": 0,
-          "MaxValue": 30,
-          "StepValue": 1,
-          "Delay": "00:10:00",
-          "CurrentValue": 30,
-          "LastDateTime": "2023-07-07T14:53:50.0701102Z",
-          "Tag": null
-        }
-      },
-      "Id": "5c19dfbb-fbb5-4e71-b181-b006bc55a415",
-      "TemplateId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-      "lv": 0
-    }
-  ],
-  "HasError": false,
-  "ErrorCode": 0,
-  "DebugMessage": "操作成功完成。"
+  "Genus": [ "gs_jibigoumai" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "MinCount": 30,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 288,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "bbd8df20-3071-492a-8fef-aae2f848025a",
+        "Count": 1
+      }
+    ]
+  },
+  "name_txt": 10968,
+  "comment_txt": 10962,
+  "JiaoBiao": []
 }

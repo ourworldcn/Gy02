@@ -1,4 +1,5 @@
-﻿using GuangYuan.GY001.TemplateDb;
+﻿using AutoMapper;
+using GuangYuan.GY001.TemplateDb;
 using GY02.Base;
 using GY02.Commands;
 using GY02.Managers;
@@ -208,6 +209,9 @@ namespace GY02
                 #region 测试用代码
 
                 var store = _Services.GetService<GameAccountStoreManager>();
+                var mapper = _Services.GetService<IMapper>();
+                var ary = new byte[] { 21, 33 };
+                var dst = ary.ToArray();
                 //if (!store.LoadOrGetUser("string204", "string", out var user))
                 //    throw new InvalidOperationException { };
                 //var gc = user.CurrentChar;
@@ -217,6 +221,7 @@ namespace GY02
                 //if (slot.Count == 0) slot.Count++;
                 //slot = entities.FirstOrDefault(c => c.TemplateId == Guid.Parse("62D3A545-7604-46BF-9837-95E286660BC8"));  //巡逻时间占位符
                 //var i = slot.Count;
+
                 #endregion 测试用代码
             }
             finally

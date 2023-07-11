@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
+using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -194,5 +195,18 @@ namespace GY02.Managers
         {
             return default;
         }
+
+        #region 法币购买相关
+
+        /// <summary>
+        /// 创建一张订单。
+        /// </summary>
+        public GameShoppingOrder CreateOrder()
+        {
+            var result = new GameShoppingOrder { };
+            return result;
+        }
+
+        #endregion 法币购买相关
     }
 }
