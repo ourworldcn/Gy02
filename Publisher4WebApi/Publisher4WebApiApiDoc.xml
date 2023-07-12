@@ -1041,6 +1041,31 @@
             孵化功能返回值封装类。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetShoppingOrderParamsDto">
+            <summary>
+            获取订单信息功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetShoppingOrderParamsDto.Start">
+            <summary>
+            创建订单时间的最早时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetShoppingOrderParamsDto.End">
+            <summary>
+            创建订单时间的最晚时间。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetShoppingOrderReturnDto">
+            <summary>
+            获取订单信息功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetShoppingOrderReturnDto.Orders">
+            <summary>
+            订单集合。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameShoppingOrderDto">
             <summary>
             法币购买商品的订单。
@@ -1091,6 +1116,16 @@
             附属信息。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.State">
+            <summary>
+            状态。0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.CreateUtc">
+            <summary>
+            创建该订单的世界时间。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameShoppingOrderDetailDto">
             <summary>
             法币购买商品的订单的详细项。目前情况，往往一个订单只有一项。
@@ -1137,9 +1172,24 @@
             客户端发起创建一个订单功能参数封装类。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.CreateOrderParamsDto.BuyItems">
+            <summary>
+            要购买的物品清单。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.CreateOrderReturnDto">
             <summary>
             客户端发起创建一个订单功能返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CreateOrderReturnDto.Result">
+            <summary>
+            返回的字符串，原样传递给SDK当作透参即可。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CreateOrderReturnDto.ShoppingOrder">
+            <summary>
+            创建的订单。
             </summary>
         </member>
         <member name="T:GY02.Publisher.ShoppingBuyParamsDto">
@@ -1578,6 +1628,11 @@
             获取指定成就的状态功能的返回值封装类。
             </summary>
         </member>
+        <member name="M:GY02.Publisher.GetAchievementStateReturnDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GetAchievementStateReturnDto.Result">
             <summary>
             返回的成就对象。当出错时此集合的状态未知。
@@ -1703,6 +1758,12 @@
             <summary>
             签名。
             </summary>
+        </member>
+        <member name="M:GY02.Publisher.PayedParamsDto.GetDictionary">
+            <summary>
+            获取一个字典，包含属性名和值。属性名用json的键名。
+            </summary>
+            <returns></returns>
         </member>
         <member name="T:GY02.Publisher.PayedReturnDto">
             <summary>

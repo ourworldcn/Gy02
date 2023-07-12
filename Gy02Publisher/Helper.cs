@@ -185,6 +185,11 @@ namespace GY02.Publisher
         /// 七日签到页签。
         /// </summary>
         public const string QiriQiandaoGenus = "gs_qiandao";
+
+        /// <summary>
+        /// 法币购买项的页签。
+        /// </summary>
+        public const string CurrencyBuyGenus = "gs_zs";
     }
 
     /// <summary>

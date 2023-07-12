@@ -4,6 +4,8 @@ using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
+using OW.Game.Entity;
+using OW.Game.Store;
 using OW.SyncCommand;
 
 namespace GY02.Controllers
@@ -125,6 +127,45 @@ namespace GY02.Controllers
         public ActionResult<CreateOrderReturnDto> CreateOrder(CreateOrderParamsDto model)
         {
             var result = new CreateOrderReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new CreateOrderCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
+        /// 获取订单信息。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GetShoppingOrderReturnDto> GetShoppingOrder(GetShoppingOrderParamsDto model)
+        {
+            var result = new GetShoppingOrderReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var db = gc.GetUser().GetDbContext();
+            var coll = db.Set<GameShoppingOrder>().Where(c => c.CreateUtc >= model.Start && c.CreateUtc <= model.End).AsEnumerable();
+            foreach (var c in coll)
+            {
+                var order = _Mapper.Map<GameShoppingOrderDto>(c);
+                result.Orders.Add(order);
+            }
             return result;
         }
     }

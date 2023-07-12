@@ -1,4 +1,5 @@
 ﻿using GY02;
+using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +14,17 @@ namespace Gy02.Controllers
     public class T78Controller : GameControllerBase
     {
         /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="t78Manager"></param>
+        public T78Controller(PublisherT78Manager t78Manager)
+        {
+            _T78Manager = t78Manager;
+        }
+
+        PublisherT78Manager _T78Manager;
+
+        /// <summary>
         /// T78合作伙伴充值回调。
         /// </summary>
         /// <param name="model"></param>
@@ -24,6 +36,14 @@ namespace Gy02.Controllers
         public ActionResult<PayedReturnDto> Payed([FromForm] PayedParamsDto model, [FromHeader(Name = "X-BNPAY-SANDBOX")] string isSandbox, [FromHeader(Name = "X-BNPAY-PAYTYPE")] string payType)
         {
             var result = new PayedReturnDto();
+            var dic = model.GetDictionary();
+            var sign = _T78Manager.GetSignature(dic);
+            if (sign != model.Sign) //若签名不正确
+            {
+                result.Result = 1;
+                result.DebugMessage = $"签名不正确。";
+                return result;
+            }
             return result;
         }
 

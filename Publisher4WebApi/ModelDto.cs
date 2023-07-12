@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text.Json.Serialization;
 
@@ -1357,6 +1358,33 @@ namespace GY02.Publisher
     #region 商城相关
 
     /// <summary>
+    /// 获取订单信息功能的参数封装类。
+    /// </summary>
+    public class GetShoppingOrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 创建订单时间的最早时间。
+        /// </summary>
+        public DateTime Start { get; set; }
+
+        /// <summary>
+        /// 创建订单时间的最晚时间。
+        /// </summary>
+        public DateTime End { get; set; }
+    }
+
+    /// <summary>
+    /// 获取订单信息功能的返回值封装类。
+    /// </summary>
+    public class GetShoppingOrderReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 订单集合。
+        /// </summary>
+        public List<GameShoppingOrderDto> Orders { get; set; } = new List<GameShoppingOrderDto>();
+    }
+
+    /// <summary>
     /// 法币购买商品的订单。
     /// </summary>
     [AutoMap(typeof(GameShoppingOrder), ReverseMap = true)]
@@ -1409,6 +1437,16 @@ namespace GY02.Publisher
         /// 附属信息。
         /// </summary>
         public byte[] BinaryArray { get; set; }
+
+        /// <summary>
+        /// 状态。0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+        /// </summary>
+        public int State { get; set; }
+
+        /// <summary>
+        /// 创建该订单的世界时间。
+        /// </summary>
+        public DateTime CreateUtc { get; set; }
 
     }
 
@@ -1472,15 +1510,31 @@ namespace GY02.Publisher
     /// <summary>
     /// 客户端发起创建一个订单功能参数封装类。
     /// </summary>
+    [AutoMap(typeof(CreateOrderCommand), ReverseMap = true)]
     public class CreateOrderParamsDto : TokenDtoBase
     {
+        /// <summary>
+        /// 要购买的物品清单。
+        /// </summary>
+        public List<GameEntitySummaryDto> BuyItems { get; set; } = new List<GameEntitySummaryDto>();
+
     }
 
     /// <summary>
     /// 客户端发起创建一个订单功能返回值封装类。
     /// </summary>
+    [AutoMap(typeof(CreateOrderCommand))]
     public class CreateOrderReturnDto : ReturnDtoBase
     {
+        /// <summary>
+        /// 返回的字符串，原样传递给SDK当作透参即可。
+        /// </summary>
+        public string Result { get; set; }
+
+        /// <summary>
+        /// 创建的订单。
+        /// </summary>
+        public GameShoppingOrderDto ShoppingOrder { get; set; }
     }
 
     /// <summary>
@@ -1967,7 +2021,6 @@ namespace GY02.Publisher
         {
         }
 
-
         #region 可复制属性
 
         /// <summary>
@@ -2031,6 +2084,14 @@ namespace GY02.Publisher
     [AutoMap(typeof(GetAchievementStateCommand))]
     public class GetAchievementStateReturnDto : ReturnDtoBase
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GetAchievementStateReturnDto()
+        {
+
+        }
+
         /// <summary>
         /// 返回的成就对象。当出错时此集合的状态未知。
         /// </summary>
@@ -2188,6 +2249,22 @@ namespace GY02.Publisher
         [JsonPropertyName("sign")]
         public string Sign { get; set; }
 
+        /// <summary>
+        /// 获取一个字典，包含属性名和值。属性名用json的键名。
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, string> GetDictionary()
+        {
+            var result = new Dictionary<string, string>();
+            var pis = GetType().GetProperties();
+            foreach (var prop in pis)
+            {
+                var name = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
+                result.Add(name, Convert.ToString(prop.GetValue(this)));
+            }
+            result.Remove("sign", out _);
+            return result;
+        }
     }
 
     /// <summary>

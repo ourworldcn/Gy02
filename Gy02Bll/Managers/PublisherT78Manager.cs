@@ -112,6 +112,11 @@ namespace GY02.Managers
             dic["sign"] = GetSignature(dic as IReadOnlyDictionary<string, string>);
         }
 
+        public string GetSignature()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// 获取签名。
         /// </summary>

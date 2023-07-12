@@ -83,6 +83,27 @@ namespace GY02.Managers
             return shoppingItem;
         }
 
+        /// <summary>
+        /// 编码字符串为不可读形态。
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public string EncodeString(string str)
+        {
+            var ary = Encoding.UTF8.GetBytes(str);
+            return Convert.ToBase64String(ary);
+        }
+
+        /// <summary>
+        /// 从不可读形态获取可读形态字符串。
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public string DecodeString(string str)
+        {
+            var ary = Convert.FromBase64String(str);
+            return Encoding.UTF8.GetString(ary);
+        }
         #endregion 获取信息
 
         /// <summary>

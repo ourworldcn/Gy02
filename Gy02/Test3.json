@@ -1,5 +1,5 @@
 {
-  "Genus": [ "gs_jibigoumai" ],
+  "Genus": [ "gs_guaji" ],
   "ShoppingItem": {
     "Period": {
       "Start": "2023-05-30T00:00:00.000Z",
@@ -15,13 +15,13 @@
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "MinCount": 30,
+            "TId": "db1a91ed-8541-4a03-b073-a338212d5796",
+            "MinCount": 0,
             "GeneralConditional": [],
             "IgnoreIfDisplayList": true
           }
         ],
-        "Count": 288,
+        "Count": 1,
         "Genus": [],
         "IgnoreIfDisplayList": true
       }
@@ -30,12 +30,21 @@
       {
         "Id": null,
         "ParentTId": null,
-        "TId": "bbd8df20-3071-492a-8fef-aae2f848025a",
+        "TId": "c259050b-7fd6-4cbb-bddc-7f7293d85046",
+        "Count": 1
+      },
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "4293aee9-74fb-435e-b321-2dc8cc406469",
+        "Count": 1
+      },
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "757f0fe5-995f-4d30-a684-d999aafaca94",
         "Count": 1
       }
     ]
-  },
-  "name_txt": 10968,
-  "comment_txt": 10962,
-  "JiaoBiao": []
+  }
 }

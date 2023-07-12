@@ -210,8 +210,7 @@ namespace GY02
 
                 var store = _Services.GetService<GameAccountStoreManager>();
                 var mapper = _Services.GetService<IMapper>();
-                var ary = new byte[] { 21, 33 };
-                var dst = ary.ToArray();
+
                 //if (!store.LoadOrGetUser("string204", "string", out var user))
                 //    throw new InvalidOperationException { };
                 //var gc = user.CurrentChar;

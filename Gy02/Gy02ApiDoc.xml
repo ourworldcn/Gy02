@@ -448,6 +448,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.ShoppingController.GetShoppingOrder(GY02.Publisher.GetShoppingOrderParamsDto)">
+            <summary>
+            获取订单信息。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Controllers.VWorldController">
             <summary>
             虚拟世界公用Api控制器。
@@ -614,6 +621,12 @@
             <summary>
             T78合作伙伴调入控制器。
             </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T78Controller.#ctor(GY02.Managers.PublisherT78Manager)">
+            <summary>
+            构造函数。
+            </summary>
+            <param name="t78Manager"></param>
         </member>
         <member name="M:Gy02.Controllers.T78Controller.Payed(GY02.Publisher.PayedParamsDto,System.String,System.String)">
             <summary>

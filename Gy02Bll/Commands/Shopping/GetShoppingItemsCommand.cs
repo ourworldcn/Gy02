@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace GY02.Commands
 {
+
     public class GetShoppingItemsCommand : SyncCommandBase, IGameCharCommand
     {
         public GetShoppingItemsCommand()

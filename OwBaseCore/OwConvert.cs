@@ -5,6 +5,7 @@ using Microsoft.Extensions.ObjectPool;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.IO.Compression;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -394,6 +395,7 @@ namespace System
                 return new T();
             return (T)JsonSerializer.Deserialize(Uri.UnescapeDataString(str), typeof(T));
         }
+
 
     }
 }

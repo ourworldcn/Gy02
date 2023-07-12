@@ -54,9 +54,19 @@ namespace OW.Game.Store
         public bool Confirm2 { get; set; }
 
         /// <summary>
+        /// 状态。0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+        /// </summary>
+        public int State { get; set; }
+
+        /// <summary>
         /// 附属信息。
         /// </summary>
         public byte[] BinaryArray { get; set; }
+
+        /// <summary>
+        /// 创建该订单的世界时间。
+        /// </summary>
+        public DateTime CreateUtc { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
         /// 获取一个深表副本。注意Id也被复制，通常需要调用<see cref="GuidKeyObjectBase.GenerateNewId"/>换成新Id。

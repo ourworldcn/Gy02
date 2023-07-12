@@ -67,6 +67,6 @@ namespace OW.Game.Store
         /// <summary>
         /// 法币购买商品的订单信息。
         /// </summary>
-        //public DbSet<GameShoppingOrder> ShoppingOrder { get; set; }
+        public DbSet<GameShoppingOrder> ShoppingOrder { get; set; }
     }
 }
