@@ -54,7 +54,7 @@ namespace OW.Game.Store
         public bool Confirm2 { get; set; }
 
         /// <summary>
-        /// 状态。0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+        /// 状态。0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错;3至少有一方明确指出失败。
         /// </summary>
         public int State { get; set; }
 

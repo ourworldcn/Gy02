@@ -622,11 +622,13 @@
             T78合作伙伴调入控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.T78Controller.#ctor(GY02.Managers.PublisherT78Manager)">
+        <member name="M:Gy02.Controllers.T78Controller.#ctor(GY02.Managers.PublisherT78Manager,GY02.Managers.GameShoppingManager,GY02.Managers.GameAccountStoreManager)">
             <summary>
             构造函数。
             </summary>
             <param name="t78Manager"></param>
+            <param name="gameAccountStore"></param>
+            <param name="shoppingManager"></param>
         </member>
         <member name="M:Gy02.Controllers.T78Controller.Payed(GY02.Publisher.PayedParamsDto,System.String,System.String)">
             <summary>

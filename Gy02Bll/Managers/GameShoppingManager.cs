@@ -219,15 +219,6 @@ namespace GY02.Managers
 
         #region 法币购买相关
 
-        /// <summary>
-        /// 创建一张订单。
-        /// </summary>
-        public GameShoppingOrder CreateOrder()
-        {
-            var result = new GameShoppingOrder { };
-            return result;
-        }
-
         #endregion 法币购买相关
     }
 }

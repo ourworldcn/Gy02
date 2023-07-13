@@ -2279,12 +2279,12 @@ namespace GY02.Publisher
         [JsonPropertyName("ret")]
         public int Result { get; set; }
 
-#if DEBUG
+//#if DEBUG
         /// <summary>
         /// 调试用的信息。
         /// </summary>
         public string DebugMessage { get; set; }
-#endif
+//#endif
     }
 
     #endregion
