@@ -532,7 +532,7 @@
       "Id": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
       "DisplayName": "体力",
       "Gid": 110101003,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":20,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\", \"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":20,\"StepValue\":1,\"Delay\":\"00:20:00\",\"CurrentValue\":30}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":30,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\", \"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":30,\"StepValue\":1,\"Delay\":\"00:20:00\",\"CurrentValue\":30}}}"
     },
     {
       "Id": "a45b3421-3688-43c5-b8f5-429db7621f69",
@@ -2475,7 +2475,7 @@
       "Id": "44400571-975e-4a5d-a1db-4d606cc4363b",
       "DisplayName": "牧场小径",
       "Gid": 210101011,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13010,\"comment_txt\":13022,\"suggest\":[ 300,3000,300]}"
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[ 300,3000,300]}"
     },
     {
       "Id": "e4c4bc86-2b72-4bee-ac01-0f53909fb498",
@@ -2499,7 +2499,7 @@
       "Id": "6f0da752-94ba-4cb4-a52b-39dcbdb41f91",
       "DisplayName": "地火监牢",
       "Gid": 210101015,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13012,\"comment_txt\":13024,\"suggest\":[ 400,3000,400]}"
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13040,\"comment_txt\":13041,\"suggest\":[ 400,3000,400]}"
     },
     {
       "Id": "7e1408ab-d6f5-4928-ac6c-fba86800b585",
@@ -2523,19 +2523,13 @@
       "Id": "c303ba60-3b3c-4e21-a3f8-b0e43a4ed87b",
       "DisplayName": "极寒之地",
       "Gid": 210101019,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13031,\"comment_txt\":13038,\"suggest\":[ 500,3800,800]}"
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13031,\"comment_txt\":13042,\"suggest\":[ 500,3800,800]}"
     },
     {
       "Id": "9b6b2f9d-01cb-4847-8373-758f3c0baee2",
       "DisplayName": "坠落方舟",
       "Gid": 210101020,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[ 300,2800,250]}"
-    },
-    {
-      "Id": "9ce989a9-df89-40a6-a2f7-af95d8d0824c",
-      "DisplayName": "无尽沙漠",
-      "Gid": 210101021,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[ 400,3000,350]}"
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[ 300,2800,250]}"
     },
     {
       "Id": "1da0bea3-5765-48b5-aeb6-c8cb9ce6c82e",
@@ -4165,7 +4159,7 @@
       "Id": "89a66863-4d5e-48f6-b8e6-4f2b949239af",
       "DisplayName": "快速巡逻购买",
       "Gid": 180301002,
-      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":10,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":10,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]}}"
     },
     {
       "Id": "f7ad9c3c-c9d1-4773-9eb5-f77bf7b4162a",
