@@ -2493,7 +2493,7 @@
       "Id": "6510b97c-3317-43b8-a25c-f4ca0920a8ce",
       "DisplayName": "滑滑冰川",
       "Gid": 210101014,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[ 300,3000,300]}"
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13043,\"comment_txt\":13042,\"suggest\":[ 300,3000,300]}"
     },
     {
       "Id": "6f0da752-94ba-4cb4-a52b-39dcbdb41f91",
@@ -2517,7 +2517,7 @@
       "Id": "2cefd284-8d80-4beb-a1e6-0bce481593ca",
       "DisplayName": "迷路深林",
       "Gid": 210101018,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[ 300,2800,250]}"
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[ 300,2800,250]}"
     },
     {
       "Id": "c303ba60-3b3c-4e21-a3f8-b0e43a4ed87b",
@@ -2805,7 +2805,7 @@
       "Id": "3f1d2412-c5b4-4b3e-91ae-a91caefb8403",
       "DisplayName": "金币90钻石购买",
       "Gid": 180201013,
-      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":90,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"f45fcb92-c13b-4f7d-be7e-c60c73bff030\",\"Count\":1}]},\"name_txt\":10968,\"comment_txt\":10962,\"JiaoBiao\":[]}"
+      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":90,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"f45fcb92-c13b-4f7d-be7e-c60c73bff030\",\"Count\":1}]},\"name_txt\":10967,\"comment_txt\":10961,\"JiaoBiao\":[]}"
     },
     {
       "Id": "29028c4c-cde2-4791-b97e-0ff77b63dccb",
