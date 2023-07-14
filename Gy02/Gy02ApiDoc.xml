@@ -629,6 +629,7 @@
             <param name="t78Manager"></param>
             <param name="gameAccountStore"></param>
             <param name="shoppingManager"></param>
+            <param name="entityManager"></param>
         </member>
         <member name="M:Gy02.Controllers.T78Controller.Payed(GY02.Publisher.PayedParamsDto,System.String,System.String)">
             <summary>

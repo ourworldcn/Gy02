@@ -1,241 +1,311 @@
 {
-  "Dice": {
-    "MaxCount": 1,
-    "AllowRepetition": true,
-    "Items": [
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "40425703-830d-4f95-90c4-8d0833e7ee25",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "2f2f856a-002f-42be-b1b7-4219252b7de7",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "4bb3c291-612c-49cb-9d73-96af45a45e72",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "657cece9-27e4-40f3-9e69-069852716d7b",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "bd9db3a8-a310-41e8-8228-afa425183cb3",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "d3767e5c-e416-4d54-ba59-a701d980c1cc",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "f1ab32ad-0f36-4785-ac3b-907ceb9a0394",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "95377961-7ce6-4fa6-a2cf-35ffc6412b54",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "f7745ac0-2a75-4bdc-ab02-acec7b310e48",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "da670740-9a06-43c7-98c1-98155e0ca2e9",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "40c43dfc-2ad4-49dd-8582-f88c722e7dc8",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "6d31e692-9b63-483d-be8a-fe074c90a23a",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "24a70dea-2b51-4d93-b99d-728e42f4365c",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "abec555c-e63e-484a-8175-229b34c557ff",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "3753eb1b-4e97-49b4-a7c0-520e916fff9e",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "64fd7191-81f5-4c38-a5f9-fa73948b6ce9",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "1e1841e2-b2ca-46f0-9d65-fa58b85273a8",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "2d1d0094-0a37-4374-9d2f-317ebc79e7a3",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "6a8022cb-1863-47bc-b686-2d69676612c0",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "60a5302c-9a7a-47a0-9548-fc94874dc735",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "TId": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      }
-    ],
-    "GuaranteesCount": null,
-    "GuaranteesDiceTId": null
-  }
+  "Changes": [
+    {
+      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+      "ObjectId": "1e613f22-47b8-4612-a926-c675b767f21c",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 49350,
+      "HasNewValue": true,
+      "NewValue": 47350,
+      "DateTimeUtc": "2023-07-14T18:40:16.3726876Z"
+    },
+    {
+      "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+      "ObjectId": "9f1aef87-f00d-4416-a26f-03b6b71340b0",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 7,
+      "HasNewValue": true,
+      "NewValue": 6,
+      "DateTimeUtc": "2023-07-14T18:40:16.3729284Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "LvUpAccruedCost",
+      "HasOldValue": true,
+      "OldValue": [
+        {
+          "Id": "1e613f22-47b8-4612-a926-c675b767f21c",
+          "ParentTId": "ccbe3845-62dd-4862-abca-1e62bfa69fa9",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": -1000
+        },
+        {
+          "Id": "138181c9-7e21-4352-afae-62161c74b08e",
+          "ParentTId": "a681e2f8-4e92-4914-980f-f9b53c14c4c4",
+          "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+          "Count": -1
+        }
+      ],
+      "HasNewValue": true,
+      "NewValue": [
+        {
+          "Id": null,
+          "ParentTId": "ccbe3845-62dd-4862-abca-1e62bfa69fa9",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 3000
+        },
+        {
+          "Id": null,
+          "ParentTId": "a681e2f8-4e92-4914-980f-f9b53c14c4c4",
+          "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+          "Count": 2
+        }
+      ],
+      "DateTimeUtc": "2023-07-14T18:40:16.3767265Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "Def",
+      "HasOldValue": true,
+      "OldValue": 55,
+      "HasNewValue": true,
+      "NewValue": 60,
+      "DateTimeUtc": "2023-07-14T18:40:16.3809199Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "Level",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 2,
+      "DateTimeUtc": "2023-07-14T18:40:16.3810576Z"
+    },
+    {
+      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+      "ObjectId": "1e613f22-47b8-4612-a926-c675b767f21c",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 47350,
+      "HasNewValue": true,
+      "NewValue": 44350,
+      "DateTimeUtc": "2023-07-14T18:40:17.0194908Z"
+    },
+    {
+      "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+      "ObjectId": "9f1aef87-f00d-4416-a26f-03b6b71340b0",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 6,
+      "HasNewValue": true,
+      "NewValue": 5,
+      "DateTimeUtc": "2023-07-14T18:40:17.0194916Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "LvUpAccruedCost",
+      "HasOldValue": true,
+      "OldValue": [
+        {
+          "Id": null,
+          "ParentTId": "ccbe3845-62dd-4862-abca-1e62bfa69fa9",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 3000
+        },
+        {
+          "Id": null,
+          "ParentTId": "a681e2f8-4e92-4914-980f-f9b53c14c4c4",
+          "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+          "Count": 2
+        }
+      ],
+      "HasNewValue": true,
+      "NewValue": [
+        {
+          "Id": null,
+          "ParentTId": "ccbe3845-62dd-4862-abca-1e62bfa69fa9",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 6000
+        },
+        {
+          "Id": null,
+          "ParentTId": "a681e2f8-4e92-4914-980f-f9b53c14c4c4",
+          "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+          "Count": 3
+        }
+      ],
+      "DateTimeUtc": "2023-07-14T18:40:17.0195332Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "Def",
+      "HasOldValue": true,
+      "OldValue": 60,
+      "HasNewValue": true,
+      "NewValue": 65,
+      "DateTimeUtc": "2023-07-14T18:40:17.0196114Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "Level",
+      "HasOldValue": true,
+      "OldValue": 2,
+      "HasNewValue": true,
+      "NewValue": 3,
+      "DateTimeUtc": "2023-07-14T18:40:17.0196222Z"
+    },
+    {
+      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+      "ObjectId": "1e613f22-47b8-4612-a926-c675b767f21c",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 44350,
+      "HasNewValue": true,
+      "NewValue": 40350,
+      "DateTimeUtc": "2023-07-14T18:40:17.5977186Z"
+    },
+    {
+      "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+      "ObjectId": "9f1aef87-f00d-4416-a26f-03b6b71340b0",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 5,
+      "HasNewValue": true,
+      "NewValue": 3,
+      "DateTimeUtc": "2023-07-14T18:40:17.5977205Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "LvUpAccruedCost",
+      "HasOldValue": true,
+      "OldValue": [
+        {
+          "Id": null,
+          "ParentTId": "ccbe3845-62dd-4862-abca-1e62bfa69fa9",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 6000
+        },
+        {
+          "Id": null,
+          "ParentTId": "a681e2f8-4e92-4914-980f-f9b53c14c4c4",
+          "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+          "Count": 3
+        }
+      ],
+      "HasNewValue": true,
+      "NewValue": [
+        {
+          "Id": null,
+          "ParentTId": "ccbe3845-62dd-4862-abca-1e62bfa69fa9",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 10000
+        },
+        {
+          "Id": null,
+          "ParentTId": "a681e2f8-4e92-4914-980f-f9b53c14c4c4",
+          "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+          "Count": 5
+        }
+      ],
+      "DateTimeUtc": "2023-07-14T18:40:17.5977433Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "Def",
+      "HasOldValue": true,
+      "OldValue": 65,
+      "HasNewValue": true,
+      "NewValue": 70,
+      "DateTimeUtc": "2023-07-14T18:40:17.5978339Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "Level",
+      "HasOldValue": true,
+      "OldValue": 3,
+      "HasNewValue": true,
+      "NewValue": 4,
+      "DateTimeUtc": "2023-07-14T18:40:17.5978436Z"
+    },
+    {
+      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+      "ObjectId": "1e613f22-47b8-4612-a926-c675b767f21c",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 40350,
+      "HasNewValue": true,
+      "NewValue": 35350,
+      "DateTimeUtc": "2023-07-14T18:40:18.0735616Z"
+    },
+    {
+      "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+      "ObjectId": "9f1aef87-f00d-4416-a26f-03b6b71340b0",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 3,
+      "HasNewValue": true,
+      "NewValue": 1,
+      "DateTimeUtc": "2023-07-14T18:40:18.0735625Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "LvUpAccruedCost",
+      "HasOldValue": true,
+      "OldValue": [
+        {
+          "Id": null,
+          "ParentTId": "ccbe3845-62dd-4862-abca-1e62bfa69fa9",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 10000
+        },
+        {
+          "Id": null,
+          "ParentTId": "a681e2f8-4e92-4914-980f-f9b53c14c4c4",
+          "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+          "Count": 5
+        }
+      ],
+      "HasNewValue": true,
+      "NewValue": [
+        {
+          "Id": null,
+          "ParentTId": "ccbe3845-62dd-4862-abca-1e62bfa69fa9",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 15000
+        },
+        {
+          "Id": null,
+          "ParentTId": "a681e2f8-4e92-4914-980f-f9b53c14c4c4",
+          "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+          "Count": 7
+        }
+      ],
+      "DateTimeUtc": "2023-07-14T18:40:18.0735719Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "Def",
+      "HasOldValue": true,
+      "OldValue": 70,
+      "HasNewValue": true,
+      "NewValue": 75,
+      "DateTimeUtc": "2023-07-14T18:40:18.0736164Z"
+    },
+    {
+      "TId": "dde00d3f-e459-4928-a7d6-016e7dae3268",
+      "ObjectId": "fa6259dc-e104-4b4e-b24f-5ef8b177f090",
+      "PropertyName": "Level",
+      "HasOldValue": true,
+      "OldValue": 4,
+      "HasNewValue": true,
+      "NewValue": 5,
+      "DateTimeUtc": "2023-07-14T18:40:18.0736204Z"
+    }
+  ],
+  "HasError": false,
+  "ErrorCode": 0,
+  "DebugMessage": "操作成功完成。"
 }

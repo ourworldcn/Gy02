@@ -23,6 +23,7 @@ namespace Gy02.Controllers
         /// <param name="t78Manager"></param>
         /// <param name="gameAccountStore"></param>
         /// <param name="shoppingManager"></param>
+        /// <param name="entityManager"></param>
         public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager)
         {
             _T78Manager = t78Manager;
