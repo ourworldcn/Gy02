@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using OW.Game.Manager;
 using OW.Game.Store;
 using System;
 using System.Collections.Concurrent;

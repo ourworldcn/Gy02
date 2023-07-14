@@ -664,7 +664,7 @@
       "Id": "30b065d8-5a5f-449b-b7ef-1272c4ba9b4a",
       "DisplayName": "攻击范围提升10%",
       "Gid": 140301003,
-      "PropertiesString": "{\"skillParams\":[10],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[10],\"name_txt\":12103}"
     },
     {
       "Id": "e987c00e-50c9-4377-859a-e84519874a15",
@@ -682,13 +682,13 @@
       "Id": "126e82c2-1167-4e3a-aac1-7606521d5570",
       "DisplayName": "攻击后的闪击效果增加1次",
       "Gid": 140301005,
-      "PropertiesString": "{\"skillParams\":[1],\"name_txt\":12111}"
+      "PropertiesString": "{\"skillParams\":[1],\"name_txt\":12147}"
     },
     {
       "Id": "35ec2d0d-73d9-4f78-b1bc-6a0e3f3dc6ba",
       "DisplayName": "攻击后的闪击效果增加2次",
       "Gid": 141101005,
-      "PropertiesString": "{\"skillParams\":[2],\"name_txt\":12111}"
+      "PropertiesString": "{\"skillParams\":[2],\"name_txt\":12147}"
     },
     {
       "Id": "0304d960-e01b-44c7-bf5e-bd3f104cbadb",
@@ -862,79 +862,79 @@
       "Id": "71c93229-8b51-40dc-98d2-0a317fd183a7",
       "DisplayName": "长矛每次攻击产生3次连击",
       "Gid": 143101001,
-      "PropertiesString": "{\"skillParams\":[3,0.2],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[3,0.2],\"name_txt\":12144}"
     },
     {
       "Id": "9748c9ed-6615-453e-9280-82c406caf159",
       "DisplayName": "锤子的范围攻击的伤害和后退距离翻倍",
       "Gid": 143101002,
-      "PropertiesString": "{\"skillParams\":[80,80],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[80,80],\"name_txt\":12145}"
     },
     {
       "Id": "92c19f7e-a154-4e56-9236-a23f878fc9f0",
       "DisplayName": "攻击范围提升20%",
       "Gid": 143101003,
-      "PropertiesString": "{\"skillParams\":[20],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[20],\"name_txt\":12103}"
     },
     {
       "Id": "c4eeb8f4-ab1a-4fc7-8bd6-a847443b16a4",
       "DisplayName": "每移动3秒释放一次弩箭攻击",
       "Gid": 143101004,
-      "PropertiesString": "{\"skillParams\":[5],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[5],\"name_txt\":12146}"
     },
     {
       "Id": "77c6a162-9473-40d6-ae45-2fe780edffa3",
       "DisplayName": "攻击后的闪击效果增加4次",
       "Gid": 143101005,
-      "PropertiesString": "{\"skillParams\":[4],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[4],\"name_txt\":12147}"
     },
     {
       "Id": "1d5cdfb6-117d-4f52-9d07-9dfdda28afc9",
       "DisplayName": "有10%的几率产生暴击（2倍攻击）",
       "Gid": 141101023,
-      "PropertiesString": "{\"skillParams\":[10],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[10],\"name_txt\":12148}"
     },
     {
       "Id": "d3ccad94-fa3f-42cd-a586-0a8bae3a1dbf",
       "DisplayName": "对精英怪和Boss的伤害提升20%",
       "Gid": 142101014,
-      "PropertiesString": "{\"skillParams\":[20],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[20],\"name_txt\":12113}"
     },
     {
       "Id": "9cea81c2-c139-42ed-a587-d4f0bc547739",
       "DisplayName": "受到伤害，获得3秒无敌状态。",
       "Gid": 142101010,
-      "PropertiesString": "{\"skillParams\":[3],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[3],\"name_txt\":12149}"
     },
     {
       "Id": "e3d160e5-37b0-44a1-a398-6f1acfd6470a",
       "DisplayName": "战斗中拾取能量块，恢复效果增加5",
       "Gid": 141101016,
-      "PropertiesString": "{\"skillParams\":[5],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[5],\"name_txt\":12150}"
     },
     {
       "Id": "2f8f1355-16b3-4b2f-bb0c-63e660faf963",
       "DisplayName": "击败精英或boss后获得暴走10秒",
       "Gid": 141101017,
-      "PropertiesString": "{\"skillParams\":[50,50,10],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[50,50,10],\"name_txt\":12151}"
     },
     {
       "Id": "0757f46e-6c5e-41f6-ba4f-2d07c563d4cf",
       "DisplayName": "受击后有5%的几率反弹一击击飞对手。",
       "Gid": 142101019,
-      "PropertiesString": "{\"skillParams\":[5,10,5],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[5,10,5],\"name_txt\":12152}"
     },
     {
       "Id": "d01bfb97-1383-43de-900a-8be013517902",
       "DisplayName": "技能攻击的数量增加",
       "Gid": 142101016,
-      "PropertiesString": "{\"skillParams\":[1],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[1],\"name_txt\":12153}"
     },
     {
       "Id": "164df1a5-04d0-4a2c-bb8a-f53451cc5645",
       "DisplayName": "对精英怪和Boss的伤害提升50%",
       "Gid": 142101003,
-      "PropertiesString": "{\"skillParams\":[50],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[50],\"name_txt\":12113}"
     },
     {
       "Id": "07510d2a-4731-4793-b9d5-f5a482d75458",
@@ -970,7 +970,7 @@
       "Id": "851829c6-e6d6-4dd5-b0b6-004b6b0a5980",
       "DisplayName": "每移动3秒返回1%的HP",
       "Gid": 142101018,
-      "PropertiesString": "{\"skillParams\":[3,1],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[3,1],\"name_txt\":12126}"
     },
     {
       "Id": "4a28cf9b-199c-4b42-940a-a2e893eca0bf",
@@ -988,13 +988,13 @@
       "Id": "4e56c756-e469-47a0-a87e-70e459f8f74d",
       "DisplayName": "对精英怪和Boss的伤害提升30%",
       "Gid": 141101027,
-      "PropertiesString": "{\"skillParams\":[30],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[30],\"name_txt\":12113}"
     },
     {
       "Id": "e429c487-4c5d-46d5-8aac-d3492397babf",
       "DisplayName": "有30%的几率产生暴击（2倍攻击）",
       "Gid": 142101020,
-      "PropertiesString": "{\"skillParams\":[20],\"name_txt\":11111}"
+      "PropertiesString": "{\"skillParams\":[30],\"name_txt\":12112}"
     },
     {
       "Id": "e724dcbd-93a4-4682-b249-893dfc51b58e",
@@ -1863,7 +1863,7 @@
       "Id": "da693bae-da08-4c8f-b781-e4ad7a91fa8c",
       "DisplayName": "机械手套 紫色（升阶）",
       "Gid": 150201078,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"6104b422-8192-40c1-a047-a173cf4ae7f7\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"b3d0cdf7-513b-4bc0-9e28-ee24a83e04fb\",\"MinCount\": 3}],\"Count\": 3,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"6104b422-8192-40c1-a047-a173cf4ae7f7\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"95377961-7ce6-4fa6-a2cf-35ffc6412b54\",\"MinCount\": 3}],\"Count\": 3,\"Genus\": null}]}"
     },
     {
       "Id": "fb70fff9-0d39-44d3-911e-b073bac2d06e",
@@ -2448,82 +2448,94 @@
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13006,\"comment_txt\":13018,\"suggest\":[ 280,2500,250]}"
     },
     {
-      "Id": "2cefd284-8d80-4beb-a1e6-0bce481593ca",
-      "DisplayName": "迷路深林",
+      "Id": "1bc14a08-1551-4f53-9a51-11876aa7610a",
+      "DisplayName": "水晶矿洞",
       "Gid": 210101007,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[ 300,2800,250]}"
-    },
-    {
-      "Id": "9b6b2f9d-01cb-4847-8373-758f3c0baee2",
-      "DisplayName": "坠落方舟",
-      "Gid": 210101008,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[ 300,2800,250]}"
-    },
-    {
-      "Id": "6510b97c-3317-43b8-a25c-f4ca0920a8ce",
-      "DisplayName": "滑滑冰川",
-      "Gid": 210101009,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[ 300,3000,300]}"
-    },
-    {
-      "Id": "44400571-975e-4a5d-a1db-4d606cc4363b",
-      "DisplayName": "牧场小径",
-      "Gid": 210101010,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13010,\"comment_txt\":13022,\"suggest\":[ 300,3000,300]}"
-    },
-    {
-      "Id": "9ce989a9-df89-40a6-a2f7-af95d8d0824c",
-      "DisplayName": "无尽沙漠",
-      "Gid": 210101011,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[ 400,3000,350]}"
-    },
-    {
-      "Id": "6f0da752-94ba-4cb4-a52b-39dcbdb41f91",
-      "DisplayName": "地火监牢",
-      "Gid": 210101012,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13012,\"comment_txt\":13024,\"suggest\":[ 400,3000,400]}"
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[ 280,2500,250]}"
     },
     {
       "Id": "2105aabe-b1d8-4add-9ddf-bc512f673105",
       "DisplayName": "破败废墟",
-      "Gid": 210101013,
+      "Gid": 210101008,
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13025,\"comment_txt\":13032,\"suggest\":[ 400,3500,400]}"
     },
     {
       "Id": "b66e53bb-21ad-4b01-ba21-6f6196f102be",
       "DisplayName": "秘境草原",
-      "Gid": 210101014,
+      "Gid": 210101009,
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13026,\"comment_txt\":13033,\"suggest\":[ 400,3500,400]}"
     },
     {
       "Id": "3fb9edc2-1ba6-4f4a-aeeb-bcc93e9ce971",
       "DisplayName": "风暴沙漠",
-      "Gid": 210101015,
+      "Gid": 210101010,
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13027,\"comment_txt\":13034,\"suggest\":[ 500,3500,400]}"
+    },
+    {
+      "Id": "44400571-975e-4a5d-a1db-4d606cc4363b",
+      "DisplayName": "牧场小径",
+      "Gid": 210101011,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13010,\"comment_txt\":13022,\"suggest\":[ 300,3000,300]}"
+    },
+    {
+      "Id": "e4c4bc86-2b72-4bee-ac01-0f53909fb498",
+      "DisplayName": "高山松林",
+      "Gid": 210101012,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13038,\"comment_txt\":13039,\"suggest\":[ 300,3000,300]}"
     },
     {
       "Id": "7c1a30c2-e91d-4fca-9b26-fdaef4e2c249",
       "DisplayName": "神秘洞穴",
-      "Gid": 210101016,
+      "Gid": 210101013,
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13028,\"comment_txt\":13035,\"suggest\":[ 500,3500,400]}"
+    },
+    {
+      "Id": "6510b97c-3317-43b8-a25c-f4ca0920a8ce",
+      "DisplayName": "滑滑冰川",
+      "Gid": 210101014,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[ 300,3000,300]}"
+    },
+    {
+      "Id": "6f0da752-94ba-4cb4-a52b-39dcbdb41f91",
+      "DisplayName": "地火监牢",
+      "Gid": 210101015,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13012,\"comment_txt\":13024,\"suggest\":[ 400,3000,400]}"
     },
     {
       "Id": "7e1408ab-d6f5-4928-ac6c-fba86800b585",
       "DisplayName": "古老遗迹",
-      "Gid": 210101017,
+      "Gid": 210101016,
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13029,\"comment_txt\":13036,\"suggest\":[ 500,3500,600]}"
     },
     {
       "Id": "e987add9-00dd-4d03-83ff-bef717cae823",
       "DisplayName": "法老宝藏",
-      "Gid": 210101018,
+      "Gid": 210101017,
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13030,\"comment_txt\":13037,\"suggest\":[ 500,3500,600]}"
+    },
+    {
+      "Id": "2cefd284-8d80-4beb-a1e6-0bce481593ca",
+      "DisplayName": "迷路深林",
+      "Gid": 210101018,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[ 300,2800,250]}"
     },
     {
       "Id": "c303ba60-3b3c-4e21-a3f8-b0e43a4ed87b",
       "DisplayName": "极寒之地",
       "Gid": 210101019,
       "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13031,\"comment_txt\":13038,\"suggest\":[ 500,3800,800]}"
+    },
+    {
+      "Id": "9b6b2f9d-01cb-4847-8373-758f3c0baee2",
+      "DisplayName": "坠落方舟",
+      "Gid": 210101020,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[ 300,2800,250]}"
+    },
+    {
+      "Id": "9ce989a9-df89-40a6-a2f7-af95d8d0824c",
+      "DisplayName": "无尽沙漠",
+      "Gid": 210101021,
+      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[ 400,3000,350]}"
     },
     {
       "Id": "1da0bea3-5765-48b5-aeb6-c8cb9ce6c82e",
@@ -2541,7 +2553,7 @@
       "Id": "65578531-8325-4e6f-910f-12055f2eeb4f",
       "DisplayName": "羊和狼孵化皮肤产出",
       "Gid": 170101002,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dd2c75f5-176d-4af8-a47c-20bb6f313073\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be5d5262-9b67-4416-ba08-fa069bf4c311\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"18b7f5cf-fc73-4e8f-b443-a9204e010188\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dd2c75f5-176d-4af8-a47c-20bb6f313073\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be5d5262-9b67-4416-ba08-fa069bf4c311\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"18b7f5cf-fc73-4e8f-b443-a9204e010188\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "bd2fc6c4-61b3-4165-9f40-6948b27f0acd",
@@ -2763,7 +2775,7 @@
       "Id": "c25afdc9-e1cc-41b5-b790-80b80782cda1",
       "DisplayName": "一般卡池付费购买",
       "Gid": 180201009,
-      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"82e8eeb0-0f4d-406a-9fcb-3c84a8c3200d\",\"Count\":1}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"82e8eeb0-0f4d-406a-9fcb-3c84a8c3200d\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
     },
     {
       "Id": "af719619-3934-45bf-aaec-669c6a8afdc6",
@@ -2787,19 +2799,19 @@
       "Id": "82e8eeb0-0f4d-406a-9fcb-3c84a8c3200d",
       "DisplayName": "免费抽奖序列",
       "Gid": 190101005,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"GetBuyedCount\",\"Args\":[\"c25afdc9-e1cc-41b5-b790-80b80782cda1\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[0,0,80],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"GetBuyedCount\",\"Args\":[\"c25afdc9-e1cc-41b5-b790-80b80782cda1\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[0,80],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
     },
     {
       "Id": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
       "DisplayName": "金币30钻石购买",
       "Gid": 180201012,
-      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":30,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"acbd008f-20d7-4e29-837a-97d7c81d3f72\",\"Count\":1}]},\"name_txt\":10966,\"comment_txt\":10960,\"JiaoBiao\":[]}"
+      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"612ec963-4f73-437e-a51a-776478b4434a\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"acbd008f-20d7-4e29-837a-97d7c81d3f72\",\"Count\":1}]},\"name_txt\":10966,\"comment_txt\":10960,\"JiaoBiao\":[]}"
     },
     {
       "Id": "3f1d2412-c5b4-4b3e-91ae-a91caefb8403",
       "DisplayName": "金币90钻石购买",
       "Gid": 180201013,
-      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":288,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"f45fcb92-c13b-4f7d-be7e-c60c73bff030\",\"Count\":1}]},\"name_txt\":10968,\"comment_txt\":10962,\"JiaoBiao\":[]}"
+      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":90,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"f45fcb92-c13b-4f7d-be7e-c60c73bff030\",\"Count\":1}]},\"name_txt\":10968,\"comment_txt\":10962,\"JiaoBiao\":[]}"
     },
     {
       "Id": "29028c4c-cde2-4791-b97e-0ff77b63dccb",
@@ -2817,19 +2829,19 @@
       "Id": "acbd008f-20d7-4e29-837a-97d7c81d3f72",
       "DisplayName": "金币30钻石购买序列",
       "Gid": 190101003,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[\"gs_jibigoumai\"],\"TId\":\"9599B400-0BFD-498E-93DC-F44FF303B1B3\",\"MinCount\":null,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"ToInt32\",\"Args\":[\"Count\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\"],\"Counts\":[8000,8500,8500,9000,9000,9500,9500,9500,10000,10000,10000,10500,10500,10500,11000,11000,11500,11500,12000,12000],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9599B400-0BFD-498E-93DC-F44FF303B1B3\",\"MinCount\":null,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"ToInt32\",\"Args\":[\"Count\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\"],\"Counts\":[8000,8500,8500,9000,9000,9500,9500,9500,10000,10000,10000,10500,10500,10500,11000,11000,11500,11500,12000,12000],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
     },
     {
       "Id": "f45fcb92-c13b-4f7d-be7e-c60c73bff030",
       "DisplayName": "金币90钻石购买序列",
       "Gid": 190101004,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[\"gs_jibigoumai\"],\"TId\":\"9599B400-0BFD-498E-93DC-F44FF303B1B3\",\"MinCount\":null,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"ToInt32\",\"Args\":[\"Count\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\"],\"Counts\":[22000,25000,25000,25000,30000,30000,35000,40000,40000,40000,45000,45000,45000,50000,50000,50000,60000,60000,60000,65000],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9599B400-0BFD-498E-93DC-F44FF303B1B3\",\"MinCount\":null,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"ToInt32\",\"Args\":[\"Count\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\"],\"Counts\":[22000,25000,25000,25000,30000,30000,35000,40000,40000,40000,45000,45000,45000,50000,50000,50000,60000,60000,60000,65000],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
     },
     {
       "Id": "bbd8df20-3071-492a-8fef-aae2f848025a",
       "DisplayName": "金币288钻石购买序列",
       "Gid": 190101001,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[\"gs_jibigoumai\"],\"TId\":\"9599B400-0BFD-498E-93DC-F44FF303B1B3\",\"MinCount\":null,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"ToInt32\",\"Args\":[\"Counts\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\"],\"Counts\":[85000,85000,90000,90000,90000,95000,95000,95000,100000,100000,105000,105000,105000,110000,110000,110000,115000,115000,120000,120000],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9599B400-0BFD-498E-93DC-F44FF303B1B3\",\"MinCount\":null,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"Operator\":\"ToInt32\",\"Args\":[\"Count\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\"],\"Counts\":[85000,85000,90000,90000,90000,95000,95000,95000,100000,100000,105000,105000,105000,110000,110000,110000,115000,115000,120000,120000],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
     },
     {
       "Id": "612ec963-4f73-437e-a51a-776478b4434a",
@@ -2979,7 +2991,7 @@
       "Id": "bcaea296-ab57-4482-b72e-8a6a06712087",
       "DisplayName": "挂机120分钟产出道具池子",
       "Gid": 170101030,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":31,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":4}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":31,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":3}"
     },
     {
       "Id": "3c56ef1e-9d02-4fca-b3be-106bebfa41db",
@@ -2991,13 +3003,13 @@
       "Id": "2e2c0e21-d2d5-4df6-85bb-fc4f0af43be7",
       "DisplayName": "挂机160分钟产出道具池子",
       "Gid": 170101032,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":4,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":32,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":5}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":4,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":32,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":4}"
     },
     {
       "Id": "26c94fdb-abc5-4da0-aed9-af35da910add",
       "DisplayName": "挂机180分钟产出道具池子",
       "Gid": 170101033,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":4,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":32,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":5}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":4,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":32,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":4}"
     },
     {
       "Id": "4abb35d0-64e7-4382-a40a-9752268763c5",
@@ -3015,31 +3027,31 @@
       "Id": "8592f5d2-2876-4169-ab7a-c6986647f19d",
       "DisplayName": "挂机240分钟产出道具池子",
       "Gid": 170101036,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":5,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":33,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":7}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":5,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":33,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":5}"
     },
     {
       "Id": "ad474c4b-2084-48c7-a8ca-5a215b65c5c9",
       "DisplayName": "挂机260分钟产出道具池子",
       "Gid": 170101037,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":5,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":34,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":7}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":5,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":34,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":5}"
     },
     {
       "Id": "f85322ac-97b6-48c1-a3d1-d53ca6a6f9f5",
       "DisplayName": "挂机280分钟产出道具池子",
       "Gid": 170101038,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":6,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":34,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":8}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":6,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":34,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":6}"
     },
     {
       "Id": "445f6f56-16e5-4b39-9e7c-8e4e9df9392c",
       "DisplayName": "挂机300分钟产出道具池子",
       "Gid": 170101039,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":6,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":34,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":8}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":6,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":34,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":6}"
     },
     {
       "Id": "5a67ed33-5257-427d-903f-fda986d87da3",
       "DisplayName": "挂机320分钟产出道具池子",
       "Gid": 170101040,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":6,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":34,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":8}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":6,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":34,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":6}"
     },
     {
       "Id": "48dad0c5-a485-4b7c-b6cd-05495daea02a",
@@ -3069,13 +3081,13 @@
       "Id": "3caaaa15-26b6-4db3-9c72-c1dd826b7333",
       "DisplayName": "挂机420分钟产出道具池子",
       "Gid": 170101045,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":8,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":36,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":9}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":8,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":36,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":8}"
     },
     {
       "Id": "f6a34267-c308-49a4-9e15-bd5824af9965",
       "DisplayName": "挂机440分钟产出道具池子",
       "Gid": 170101046,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":8,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":36,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":10}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":8,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":1}],\"Weight\":36,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outPropCount\":8}"
     },
     {
       "Id": "daa0e9c0-8ffd-4cd0-993f-59352495bdc0",
@@ -4153,24 +4165,24 @@
       "Id": "89a66863-4d5e-48f6-b8e6-4f2b949239af",
       "DisplayName": "快速巡逻购买",
       "Gid": 180301002,
-      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":10,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":5,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":10,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]}}"
     },
     {
       "Id": "f7ad9c3c-c9d1-4773-9eb5-f77bf7b4162a",
       "DisplayName": "快速巡逻广告购买-1",
       "Gid": 180301003,
-      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]}}"
     },
     {
       "Id": "6969e916-893d-4cbe-9059-48904d24213a",
       "DisplayName": "装备穿戴升级引导用",
-      "Gid": 180301004,
+      "Gid": 180501001,
       "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c531cd34-fed9-4859-81f1-501c25c0926d\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}]}}"
     },
     {
       "Id": "0d05943c-2ed3-42c1-ab63-cfc92e785432",
       "DisplayName": "装备合成引导用",
-      "Gid": 180301005,
+      "Gid": 180501002,
       "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"Count\":3}]}}"
     }
   ]

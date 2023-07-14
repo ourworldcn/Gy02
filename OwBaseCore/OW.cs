@@ -112,9 +112,9 @@ namespace OW
             Logger = logger;
         }
 
-        protected TOptions Options { get; set; }
+        public TOptions Options { get; protected set; }
 
-        protected ILogger<TService> Logger { get; set; }
+        public ILogger<TService> Logger { get; protected set; }
 
         protected override void Dispose(bool disposing)
         {

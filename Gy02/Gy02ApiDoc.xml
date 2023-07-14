@@ -622,7 +622,7 @@
             T78合作伙伴调入控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.T78Controller.#ctor(GY02.Managers.PublisherT78Manager,GY02.Managers.GameShoppingManager,GY02.Managers.GameAccountStoreManager)">
+        <member name="M:Gy02.Controllers.T78Controller.#ctor(GY02.Managers.PublisherT78Manager,GY02.Managers.GameShoppingManager,GY02.Managers.GameAccountStoreManager,GY02.Managers.GameEntityManager)">
             <summary>
             构造函数。
             </summary>

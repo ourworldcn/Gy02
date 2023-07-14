@@ -45,5 +45,9 @@ namespace OW.Game.Manager
         /// </summary>
         public static JsonSerializerOptions JsonSerializerOptions = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip, AllowTrailingCommas = true, };
 
+        /// <summary>
+        /// 大致记录cpu繁忙度的同步元素。起始有与逻辑cpu相同的信号数量。
+        /// </summary>
+        public static SemaphoreSlim SemaphoreSlim = new SemaphoreSlim(Environment.ProcessorCount);
     }
 }

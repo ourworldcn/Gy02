@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -26,6 +27,7 @@ internal class Program
     lbStart:
         Environment.SetEnvironmentVariable("DOTNET_USE_POLLING_FILE_WATCHER", "1");
         var builder = WebApplication.CreateBuilder(args);
+
         var services = builder.Services;
 
         builder.Configuration.AddJsonFile("GameTemplates.json", false, true);    //加入模板信息配置文件

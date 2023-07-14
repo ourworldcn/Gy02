@@ -2273,8 +2273,8 @@ namespace GY02.Publisher
     public class PayedReturnDto
     {
         /// <summary>
-        /// 成功，表示游戏服务器成功接收了该次充值结果通知,注意是0为成功
-        /// 失败，表示游戏服务器无法接收或识别该次充值结果通知，如：签名检验不正确、游戏服务器接收失败。
+        /// 0=成功，表示游戏服务器成功接收了该次充值结果通知,注意是0为成功。
+        /// 1=失败，表示游戏服务器无法接收或识别该次充值结果通知，如：签名检验不正确、游戏服务器接收失败。
         /// </summary>
         [JsonPropertyName("ret")]
         public int Result { get; set; }

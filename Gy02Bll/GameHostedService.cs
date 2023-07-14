@@ -211,16 +211,6 @@ namespace GY02
                 var store = _Services.GetService<GameAccountStoreManager>();
                 var mapper = _Services.GetService<IMapper>();
 
-                //if (!store.LoadOrGetUser("string204", "string", out var user))
-                //    throw new InvalidOperationException { };
-                //var gc = user.CurrentChar;
-                //var entityManager = _Services.GetService<GameEntityManager>();
-                //var entities = entityManager.GetAllEntity(gc);
-                //var slot = entities.FirstOrDefault(c => c.TemplateId == Guid.Parse("9599B400-0BFD-498E-93DC-F44FF303B1B3"));  //巡逻用主线副本最高记录占位符
-                //if (slot.Count == 0) slot.Count++;
-                //slot = entities.FirstOrDefault(c => c.TemplateId == Guid.Parse("62D3A545-7604-46BF-9837-95E286660BC8"));  //巡逻时间占位符
-                //var i = slot.Count;
-
                 #endregion 测试用代码
             }
             finally

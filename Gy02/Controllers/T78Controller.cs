@@ -1,9 +1,11 @@
 ﻿using GY02;
 using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using OW.Game.PropertyChange;
 using OW.Game.Store;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -21,16 +23,18 @@ namespace Gy02.Controllers
         /// <param name="t78Manager"></param>
         /// <param name="gameAccountStore"></param>
         /// <param name="shoppingManager"></param>
-        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore)
+        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager)
         {
             _T78Manager = t78Manager;
             _ShoppingManager = shoppingManager;
             _GameAccountStore = gameAccountStore;
+            _EntityManager = entityManager;
         }
 
         PublisherT78Manager _T78Manager;
         GameShoppingManager _ShoppingManager;
         GameAccountStoreManager _GameAccountStore;
+        GameEntityManager _EntityManager;
 
         /// <summary>
         /// T78合作伙伴充值回调。
@@ -67,23 +71,11 @@ namespace Gy02.Controllers
                 result.DebugMessage = $"若无法获取角色Id。";
                 return result;
             }
-            var guId = (from gu in db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.UserTId)
-                        join gc in db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.CharTId)
-                        on gu.Id equals gc.ParentId
-                        where gc.Id == gcId
-                        select gu.Id).FirstOrDefault();
-            if (guId == Guid.Empty)    //若无法获取账号Id。
-            {
-                result.Result = 1;
-                result.DebugMessage = $"若无法获取账号Id。";
-                return result;
-            }
-            var key = guId.ToString();
-            using var dw = DisposeHelper.Create(_GameAccountStore.Lock, _GameAccountStore.Unlock, key, TimeSpan.FromSeconds(3));
+            using var dw = _GameAccountStore.LockByCharId(gcId, db);
             if (dw.IsEmpty) //若无法锁定key
             {
                 result.Result = 1;
-                result.DebugMessage = $"若无法锁定key。";
+                result.DebugMessage = OwHelper.GetLastErrorMessage();
                 return result;
             }
             GameShoppingOrder order = db.ShoppingOrder.Find(orderId)!;  //获取订单
@@ -111,6 +103,18 @@ namespace Gy02.Controllers
 
             order.Confirm2 = true;  //确定
             order.State = 1;
+
+            if (order.Detailes.Count > 0)    //若需要计算产出
+            {
+                var changes = new List<GamePropertyChangeItem<object>>();
+                var coll = order.Detailes.Select(c => new GameEntitySummary(Guid.Parse(c.GoodsId), c.Count));
+                if (!_EntityManager.CreateAndMove(coll, new OW.Game.Entity.GameChar { }, changes))
+                {
+                    result.Result = 1;
+                    result.DebugMessage = OwHelper.GetLastErrorMessage();
+                    goto lbReturn;
+                }
+            }
         lbReturn:
             db.SaveChanges();
             return result;

@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.Store;
@@ -193,6 +194,34 @@ namespace GY02.Managers
             //准备退出。
         }
 
+        #region 获取信息
+
+        /// <summary>
+        /// 用角色Id，从数据库中读取所属账号的key,key可以用于锁定。
+        /// </summary>
+        /// <param name="charId"></param>
+        /// <param name="context">数据库上下文，若省略或为null则自动生成一个临时上下文。</param>
+        /// <returns>所属账号的key,key可以用于锁定。null表示出错，此时调用<see cref="OwHelper.GetLastError()"/>获取信息。</returns>
+        public string GetKeyByCharId(Guid charId, DbContext context = null)
+        {
+            using var dw = DisposeHelper.Create(c => c?.Dispose(), context);
+            context ??= _ContextFactory.CreateDbContext();
+            var guId = (from gu in context.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.UserTId)
+                        join gc in context.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.CharTId)
+                        on gu.Id equals gc.ParentId
+                        where gc.Id == charId
+                        select gu.Id).FirstOrDefault();
+            if (guId == Guid.Empty)    //若无法获取账号Id。
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"无法找到指定Id的角色或指定的id不是角色，CharId={charId}。");
+                return null;
+            }
+            var key = guId.ToString();
+            return key;
+        }
+
+        #endregion
+
         void ClearUser(GameUser user)
         {
             //user.GetDbContext()?.Dispose();
@@ -279,6 +308,8 @@ namespace GY02.Managers
             return result;
         }
 
+        #region 锁定相关
+
         /// <summary>
         /// 
         /// </summary>
@@ -299,6 +330,35 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="key"></param>
         public void Unlock(object key) => Options.UnlockCallback(key);
+
+        /// <summary>
+        /// 锁定指定角色所属的账号，但并不试图加载账号和角色。
+        /// 首先试图在内存中寻找，以加速性能。
+        /// </summary>
+        /// <param name="charId"></param>
+        /// <param name="context">数据库上下文，若省略或为null则自动生成一个临时上下文。</param>
+        /// <returns></returns>
+        public DisposeHelper<object> LockByCharId(Guid charId, DbContext context = null)
+        {
+            var key = _CharId2Key.GetValueOrDefault(charId);
+            if (key is not null)    //若找到了key
+            {
+                var result = DisposeHelper.Create(Lock, Unlock, (object)key, Options.DefaultLockTimeout);
+                if (!result.IsEmpty)    //若成功锁定
+                {
+                    if (_Key2User.GetValueOrDefault(key)?.CurrentChar?.Id == charId) //若锁定有效
+                        return result;
+                    else
+                        result.Dispose();   //解锁
+                }
+            }
+            key = GetKeyByCharId(charId, context);
+            if (key is null) return DisposeHelper.Empty<object>();
+            var result1 = DisposeHelper.Create(Lock, Unlock, (object)key, Options.DefaultLockTimeout);
+            return result1;
+        }
+
+        #endregion 锁定相关
 
         /// <summary>
         /// 加入一个指定的账号对象。

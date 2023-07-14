@@ -142,7 +142,7 @@ namespace GY02.Managers
             if (entity is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"找不到适合条件的实体, TId = {tt.TemplateId}");
+                OwHelper.SetLastErrorMessage($"找不到适合条件的实体, 条件TId = {tt.TemplateId}");
                 goto lbErr;
             }
             var indexObj = GetInt32(mo.GetIndexExpression, entity);
@@ -171,7 +171,7 @@ namespace GY02.Managers
                         {
                             return 0;
                         }
-                        if (!Guid.TryParse(expression.Args[0] as string, out var tid)) //商品的TId
+                        if (!Guid.TryParse(expression.Args[0].ToString(), out var tid)) //商品的TId
                         {
                             return 0;
                         }
@@ -200,6 +200,11 @@ namespace GY02.Managers
         public IEnumerable<(GameEntitySummary, GameEntity)> GetMatches(IEnumerable<GameEntity> entities, TemplateStringFullView tt)
         {
             if (!GetOut(entities, tt, out var summary)) return Array.Empty<(GameEntitySummary, GameEntity)>();    //若没有匹配项
+            if (tt.SequenceOut is not null && entities.FirstOrDefault() is GameChar gc)
+            {
+                var matches1 = _EntityManager.GetMatches(summary, gc.HuoBiSlot.Children);
+                return matches1.Select(c => (summary, c));
+            }
             var matches = _EntityManager.GetMatches(summary, entities);
             return matches.Select(c => (summary, c));
         }

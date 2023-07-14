@@ -1,50 +1,241 @@
 {
-  "Genus": [ "gs_guaji" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
+  "Dice": {
+    "MaxCount": 1,
+    "AllowRepetition": true,
+    "Items": [
       {
-        "Conditional": [
+        "Outs": [
           {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "db1a91ed-8541-4a03-b073-a338212d5796",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "40425703-830d-4f95-90c4-8d0833e7ee25",
+            "Count": 1
           }
         ],
-        "Count": 1,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "2f2f856a-002f-42be-b1b7-4219252b7de7",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "4bb3c291-612c-49cb-9d73-96af45a45e72",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "657cece9-27e4-40f3-9e69-069852716d7b",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "bd9db3a8-a310-41e8-8228-afa425183cb3",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "d3767e5c-e416-4d54-ba59-a701d980c1cc",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "f1ab32ad-0f36-4785-ac3b-907ceb9a0394",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "95377961-7ce6-4fa6-a2cf-35ffc6412b54",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "f7745ac0-2a75-4bdc-ab02-acec7b310e48",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "da670740-9a06-43c7-98c1-98155e0ca2e9",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "40c43dfc-2ad4-49dd-8582-f88c722e7dc8",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "6d31e692-9b63-483d-be8a-fe074c90a23a",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "24a70dea-2b51-4d93-b99d-728e42f4365c",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "abec555c-e63e-484a-8175-229b34c557ff",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "3753eb1b-4e97-49b4-a7c0-520e916fff9e",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "64fd7191-81f5-4c38-a5f9-fa73948b6ce9",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "1e1841e2-b2ca-46f0-9d65-fa58b85273a8",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "2d1d0094-0a37-4374-9d2f-317ebc79e7a3",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "6a8022cb-1863-47bc-b686-2d69676612c0",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "60a5302c-9a7a-47a0-9548-fc94874dc735",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
       }
     ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "c259050b-7fd6-4cbb-bddc-7f7293d85046",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "4293aee9-74fb-435e-b321-2dc8cc406469",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "757f0fe5-995f-4d30-a684-d999aafaca94",
-        "Count": 1
-      }
-    ]
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
   }
 }

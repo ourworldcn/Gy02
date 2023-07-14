@@ -105,7 +105,7 @@ namespace GY02.Managers
 
             if (condition.TId.HasValue && condition.TId.Value != thing.ExtraGuid)
                 return false;
-            if (condition.Genus is not null && condition.Genus.Count > 0 && condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count)
+            if (condition.Genus is not null && condition.Genus.Count > 0 && (fullView.Genus is null || condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count))
                 return false;
             if (condition.ParentTId.HasValue && condition.ParentTId.Value != thing.Parent?.ExtraGuid)
                 return false;
