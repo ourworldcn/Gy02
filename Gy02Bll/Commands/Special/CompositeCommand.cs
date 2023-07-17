@@ -6,6 +6,9 @@ using OW.SyncCommand;
 
 namespace GY02.Commands
 {
+    /// <summary>
+    /// 合成功能命令。
+    /// </summary>
     public class CompositeCommand : PropertyChangeCommandBase
     {
         /// <summary>

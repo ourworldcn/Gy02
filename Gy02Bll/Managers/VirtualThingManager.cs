@@ -117,6 +117,8 @@ namespace OW.Game.Manager
         /// <returns>true修补了对象，false没有修补。</returns>
         public bool Normal(VirtualThing root)
         {
+            if (root.ExtraGuid == Guid.Parse("14d0e372-909b-485f-b8cb-07c9231b10ff") && root.Children.Count > 0)
+                return false;
             var result = false;
             var tt = _TemplateManager.GetFullViewFromId(root.ExtraGuid);    //根的子对象
             if (tt.TIdsOfCreate is null) return result;    //若没有指定子对象

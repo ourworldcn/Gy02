@@ -48,7 +48,7 @@ namespace GY02.Commands
                     bool changed = false;
                     foreach (var group in ary)
                     {
-                        var smallAry = group.Chunk(3);
+                        var smallAry = group.Chunk(3).ToList();
                         foreach (var items in smallAry)
                         {
                             if (items.Length != 3) continue;  //若不是3个
