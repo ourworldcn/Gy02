@@ -78,6 +78,7 @@ namespace GY02.Commands
             result.Parent = command.User.Thing as VirtualThing;
             ((VirtualThing)command.User.Thing).Children.Add(result);
 
+            _GameEntityManager.GetAllEntity(gc);
             var coll = gc.GetAllChildren().Select(c =>
             {
                 var entity = _GameEntityManager.GetEntity(c);

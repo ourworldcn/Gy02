@@ -190,6 +190,14 @@ namespace GY02.Publisher
         /// 法币购买项的页签。
         /// </summary>
         public const string CurrencyBuyGenus = "gs_zs";
+
+        #region 游戏内实体类型的类型Guid
+
+        /// <summary>
+        /// 槽类型的类型Guid。
+        /// </summary>
+        public static readonly Guid SlotTypeGuid = new Guid("57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38");
+        #endregion 游戏内实体类型的类型Guid
     }
 
     /// <summary>

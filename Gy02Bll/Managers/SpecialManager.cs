@@ -154,12 +154,12 @@ namespace GY02.Managers
         #endregion 孵化相关
 
         /// <summary>
-        /// 
+        /// 指定的实体预览内需要翻译的骰子和序列翻译为最终输出的实体。
         /// </summary>
         /// <param name="source"></param>
         /// <param name="dest"></param>
         /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>true成功翻译，false出现错误。</returns>
         public bool Transformed(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context)
         {
             IEntitySummaryConverter[] svcs = new IEntitySummaryConverter[] { _DiceManager, _SequenceOutManager };

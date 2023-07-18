@@ -308,12 +308,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.ItemManagerController.TestComp">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:GY02.Controllers.ItemManagerController.AddItems(GY02.Publisher.AddItemsParamsDto,GY02.Managers.GameAccountStoreManager,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.GameTemplateManager,AutoMapper.IMapper)">
             <summary>
             增加物品，调试用接口。

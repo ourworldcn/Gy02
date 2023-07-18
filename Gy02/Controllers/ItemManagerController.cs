@@ -103,26 +103,6 @@ namespace GY02.Controllers
             return true;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost]
-        public ActionResult<bool> TestComp()
-        {
-            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
-            store.LoadOrGetUser("string65", "string", out var gu);
-            var token = gu.Token;
-            var gc = gu.CurrentChar;
-            var model = new CompositeParamsDto { Token = token, BlueprintId = Guid.Parse("2fc38d58-86e5-4eff-ba68-ccf60f356f5a") };
-
-            var items = gc.GetAllChildren().Where(c => c.ExtraGuid == Guid.Parse("110b74ff-db7e-4a28-9e28-12beaf18a9e1")).Take(3).ToArray(); //兰山羊
-            model.MainId = items.First().Id;
-            model.Ids.AddRange(items.Skip(1).Select(c => c.Id));
-
-            Composite(model);
-            return true;
-        }
 #endif
 
         /// <summary>
@@ -214,7 +194,9 @@ namespace GY02.Controllers
             }
             var command = mapper.Map<LvDownCommand>(model);
             command.GameChar = gc;
-            command.Entity = tm.GetEntityBase(gc.GetAllChildren().FirstOrDefault(c => c.Id == model.ItemId), out _) as GameEntity;
+            //command.Entity = tm.GetEntityBase(gc.GetAllChildren().FirstOrDefault(c => c.Id == model.ItemId), out _) as GameEntity;
+            var entity = _EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.Id == model.ItemId);
+            command.Entity = entity;
             var chm = _ServiceProvider.GetRequiredService<SyncCommandManager>();
             chm.Handle(command);
             mapper.Map(command, result);
@@ -334,17 +316,19 @@ namespace GY02.Controllers
             }
             var command = new DecomposeCommand { GameChar = gc };
 
-            var item = gc.GetAllChildren().FirstOrDefault(c => c.Id == model.ItemId);
-            if (item is null)
+            //var item = gc.GetAllChildren().FirstOrDefault(c => c.Id == model.ItemId);
+            //if (item is null)
+            //{
+            //    result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+            //    result.DebugMessage = $"找不到指定的装备，Id={model.ItemId}";
+            //    return result;
+            //}
+            //var entity = _EntityManager.GetEntity(item);
+            var entity = _EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.Id == model.ItemId);
+            if (entity is null)
             {
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                 result.DebugMessage = $"找不到指定的装备，Id={model.ItemId}";
-                return result;
-            }
-            var entity = _EntityManager.GetEntity(item);
-            if (entity is null)
-            {
-                command.FillErrorFromWorld();
                 return result;
             }
             command.Item = entity;
