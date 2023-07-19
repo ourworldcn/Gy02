@@ -2,39 +2,24 @@
   "Genus": [ "gs_meirishangdian" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-06-01T00:00:00.000Z",
+      "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "5d",
+      "PeriodString": "1d",
       "ValidPeriodString": "1d"
     },
-    "GroupNumber": 1,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-            "MinCount": 7000,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 7000,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
-      }
-    ],
+    "GroupNumber": 0,
+    "MaxCount": 1,
+    "Ins": [],
     "Outs": [
       {
         "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-        "Count": 5
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 200
       }
     ]
   },
-  "name_txt": 11858,
-  "JiaoBiao": [ "ZheKou80", 10959 ]
+  "name_txt": 10963,
+  "comment_txt": 10928,
+  "JiaoBiao": [ "shopcorner zhekou", 10001 ]
 }

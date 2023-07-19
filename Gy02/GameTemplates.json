@@ -2547,7 +2547,7 @@
       "Id": "65578531-8325-4e6f-910f-12055f2eeb4f",
       "DisplayName": "羊和狼孵化皮肤产出",
       "Gid": 170101002,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dd2c75f5-176d-4af8-a47c-20bb6f313073\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be5d5262-9b67-4416-ba08-fa069bf4c311\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"18b7f5cf-fc73-4e8f-b443-a9204e010188\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dd2c75f5-176d-4af8-a47c-20bb6f313073\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be5d5262-9b67-4416-ba08-fa069bf4c311\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"18b7f5cf-fc73-4e8f-b443-a9204e010188\",\"Count\":1}],\"Weight\":150000,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "bd2fc6c4-61b3-4165-9f40-6948b27f0acd",
@@ -2721,31 +2721,151 @@
       "Id": "b507bd07-ece2-4a69-88c1-e72265a9e4f1",
       "DisplayName": "武器图纸购买项目1",
       "Gid": 180201002,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":7000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":7000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":5}]},\"name_txt\":11858,\"JiaoBiao\":[\"ZheKou80\",10959]}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":7000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":7000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":3}]},\"name_txt\":11858,\"JiaoBiao\":[\"ZheKou80\",10959]}"
     },
     {
       "Id": "44e57527-0c8d-4afc-8e0f-84ce37a818d0",
       "DisplayName": "腰带图纸购买项目1",
       "Gid": 180201003,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":3,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":9000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":9000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":5}]},\"name_txt\":11862,\"JiaoBiao\": [\"ZheKou60\",10958]}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":3,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":9000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":9000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":5}]},\"name_txt\":11862,\"JiaoBiao\": [\"ZheKou60\",10958]}"
     },
     {
       "Id": "ccda4569-98dd-4acf-a211-c8c81f62a59e",
       "DisplayName": "坐骑图纸购买项目1",
       "Gid": 180201004,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":5}]},\"name_txt\":11863,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":5}]},\"name_txt\":11863,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
     },
     {
       "Id": "29a09bf0-8ed5-4e3a-a85c-4457e29f0bcc",
       "DisplayName": "手套购买项目1",
       "Gid": 180201005,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":4,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f10a888e-b274-4bec-a5d9-f4cb1912b833\",\"Count\":1}]},\"name_txt\":11811,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":4,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f10a888e-b274-4bec-a5d9-f4cb1912b833\",\"Count\":1}]},\"name_txt\":11811,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "cb2e8b8c-81ac-42bc-90de-0296ca8fb743",
       "DisplayName": "腰带购买项目1",
       "Gid": 180201006,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0bd9990c-f4c1-489c-b25e-82cdd58961fb\",\"Count\":1}]},\"name_txt\":11824,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0bd9990c-f4c1-489c-b25e-82cdd58961fb\",\"Count\":1}]},\"name_txt\":11824,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "ad2f1fbf-970d-40ad-a1bc-6574dd486da1",
+      "DisplayName": "武器购买项目2--锤子",
+      "Gid": 180201015,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-31T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":100,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":100,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f76166e8-8199-404c-b4a8-7f6499681532\",\"Count\":1}]},\"name_txt\":11807,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "08911ab2-3c98-4c10-9b95-a570dd723718",
+      "DisplayName": "衣服购买项目2--兽甲",
+      "Gid": 180201016,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-31T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":100,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":100,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"Count\":1}]},\"name_txt\":11807,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "32a742b0-bc87-428a-bb7b-a16980b59a42",
+      "DisplayName": "腰带图纸购买项目2",
+      "Gid": 180201017,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-31T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":3,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":9000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":9000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":5}]},\"name_txt\":11862,\"JiaoBiao\": [\"ZheKou60\",10958]}"
+    },
+    {
+      "Id": "fcf57d1b-f3ed-4519-8de8-7339e23bd046",
+      "DisplayName": "装备购买项目2--骑士手套",
+      "Gid": 180201018,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-31T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":4,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"5eaf1a66-e799-4ae5-9237-75a3f5849301\",\"Count\":1}]},\"name_txt\":11811,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+    },
+    {
+      "Id": "1b8519dc-fedf-45a6-aff5-52b69d3e1877",
+      "DisplayName": "武器图纸购买项目2",
+      "Gid": 180201019,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-31T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":5}]},\"name_txt\":11863,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "b3ea8a35-25b8-46a0-a9de-32604d3181a6",
+      "DisplayName": "武器图纸购买项目3",
+      "Gid": 180201020,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-01T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":3,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":5}]},\"name_txt\":11863,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "4bd81d5a-20be-4c82-ac55-36801ea21d0e",
+      "DisplayName": "坐骑图纸购买项目3",
+      "Gid": 180201021,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-01T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":5}]},\"name_txt\":11863,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "a59b039c-1c13-4a2b-99e2-4eddedf85b79",
+      "DisplayName": "鞋子图纸购买项目3",
+      "Gid": 180201022,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-01T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":9000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":9000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":5}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+    },
+    {
+      "Id": "208be61b-56ad-487d-bad6-cc4b45cbd586",
+      "DisplayName": "装备购买项目3--法师袍",
+      "Gid": 180201023,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-01T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":4,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":100,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":100,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"08e3996b-4547-4cc2-90dc-ac3000504be5\",\"Count\":1}]},\"name_txt\":11807,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "97b93193-9579-40ce-b41c-8f5dd84eb00b",
+      "DisplayName": "装备购买项目3--机械腰带",
+      "Gid": 180201024,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-01T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":100,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":100,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f747dacc-0d72-4009-b8e7-08ad69689dc7\",\"Count\":1}]},\"name_txt\":11807,\"JiaoBiao\":[\"shopcorner zhekou\",10003]}"
+    },
+    {
+      "Id": "40890bfb-a67b-4c42-a809-81b9f246baa0",
+      "DisplayName": "衣服图纸购买项目4",
+      "Gid": 180201025,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-02T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":5}]},\"name_txt\":11863,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "4c1c6abf-3ecc-4dfc-89c9-5d777ffaeebf",
+      "DisplayName": "装备购买项目4--兽脚鞋",
+      "Gid": 180201026,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-02T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":3,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":100,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":100,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e20fb6f8-ff7f-4d40-980c-98509d800d7e\",\"Count\":1}]},\"name_txt\":11807,\"JiaoBiao\":[\"shopcorner zhekou\",10002]}"
+    },
+    {
+      "Id": "34f8f8c1-d2a9-4d0b-9742-0fb197d418b7",
+      "DisplayName": "武器图纸购买项目4",
+      "Gid": 180201027,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-02T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":7000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":7000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":5}]},\"name_txt\":11858,\"JiaoBiao\":[\"ZheKou80\",10959]}"
+    },
+    {
+      "Id": "f91f6835-34a3-438e-952e-3182ae5e3f03",
+      "DisplayName": "腰带购买项目4",
+      "Gid": 180201028,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-02T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0bd9990c-f4c1-489c-b25e-82cdd58961fb\",\"Count\":1}]},\"name_txt\":11824,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "2ebd8fb4-b6fa-4541-bdcd-ba1d094e816f",
+      "DisplayName": "手套购买项目4---",
+      "Gid": 180201029,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-02T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":4,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f10a888e-b274-4bec-a5d9-f4cb1912b833\",\"Count\":1}]},\"name_txt\":11811,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+    },
+    {
+      "Id": "35dbd9cf-74e8-4c98-8596-4f57e0eee12c",
+      "DisplayName": "鞋子图纸购买项目5",
+      "Gid": 180201030,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-03T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":5}]},\"name_txt\":11863,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "951c65df-0f9b-4e83-a7ac-90d476342e25",
+      "DisplayName": "腰带图纸购买项目5",
+      "Gid": 180201031,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-03T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":3,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":9000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":9000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":5}]},\"name_txt\":11862,\"JiaoBiao\": [\"ZheKou60\",10958]}"
+    },
+    {
+      "Id": "1132a8a3-771a-4db9-969b-da6100420dd7",
+      "DisplayName": "坐骑图纸购买项目5",
+      "Gid": 180201032,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-03T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":10000,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":5}]},\"name_txt\":11863,\"JiaoBiao\": [\"shopcorner zhekou\",10001]}"
+    },
+    {
+      "Id": "5a30c3d8-f214-4ca8-82d9-bb2de8a3d323",
+      "DisplayName": "手套购买项目5--机械",
+      "Gid": 180201033,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-03T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":4,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":80,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"8df564d6-4d78-42b5-9160-e16e995e02d8\",\"Count\":1}]},\"name_txt\":11811,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+    },
+    {
+      "Id": "1537d270-4b70-48ec-b795-858347c39bc3",
+      "DisplayName": "装备购买项目5--厚重铁甲",
+      "Gid": 180201034,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-06-03T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"5d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":100,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":100,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d9b43e81-e049-4ba0-94d3-f850300fdf2f\",\"Count\":1}]},\"name_txt\":11807,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
     },
     {
       "Id": "7657244e-ef96-4f4d-a07f-157b22198fd7",

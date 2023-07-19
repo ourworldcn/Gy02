@@ -1,23 +1,41 @@
 {
-  "Out": [
-    {
-      "ParentTId": null,
-      "TId": "40425703-830d-4f95-90c4-8d0833e7ee25",
-      "Count": 1
-    }
-  ],
-  "In": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": null,
-          "Genus": [],
-          "TId": "bd871154-1aab-4add-8433-be4886244560",
-          "MinCount": 3
-        }
-      ],
-      "Count": 3,
-      "Genus": null
-    }
-  ]
+  "Genus": [ "gs_choujiangbaoxiang" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "82e8eeb0-0f4d-406a-9fcb-3c84a8c3200d",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "7657244e-ef96-4f4d-a07f-157b22198fd7",
+        "Count": 1
+      }
+    ]
+  },
+  "name_txt": 10964,
+  "comment_txt": 10940,
+  "JiaoBiao": [ "shopcorner zhekou", 10001 ]
 }

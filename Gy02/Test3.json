@@ -1,23 +1,41 @@
 {
-  "Out": [
-    {
-      "ParentTId": null,
-      "TId": "aa235359-a945-4a8d-8bf6-f6ad82e2afc5",
-      "Count": 1
-    }
-  ],
-  "In": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": null,
-          "Genus": [],
-          "TId": "40425703-830d-4f95-90c4-8d0833e7ee25",
-          "MinCount": 3
-        }
-      ],
-      "Count": 3,
-      "Genus": null
-    }
-  ]
+  "Genus": [ "gs_jibigoumai" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "612ec963-4f73-437e-a51a-776478b4434a",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "acbd008f-20d7-4e29-837a-97d7c81d3f72",
+        "Count": 1
+      }
+    ]
+  },
+  "name_txt": 10966,
+  "comment_txt": 10960,
+  "JiaoBiao": []
 }
