@@ -1447,7 +1447,7 @@ namespace GY02.Templates
     }
 
     /// <summary>
-    /// 池子项。取代了 GameDiceItemSummary 类。
+    /// 池子项。
     /// </summary>
     public class GameDiceItem : ICloneable
     {

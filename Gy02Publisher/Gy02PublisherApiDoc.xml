@@ -855,7 +855,7 @@
         </member>
         <member name="T:GY02.Templates.GameDiceItem">
             <summary>
-            池子项。取代了 GameDiceItemSummary 类。
+            池子项。
             </summary>
         </member>
         <member name="M:GY02.Templates.GameDiceItem.#ctor">

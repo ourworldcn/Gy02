@@ -1421,7 +1421,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 订单的详细项。
         /// </summary>
-        public virtual List<GameShoppingOrderDetail> Detailes { get; set; } = new List<GameShoppingOrderDetail>();
+        public virtual List<GameShoppingOrderDetailDto> Detailes { get; set; } = new List<GameShoppingOrderDetailDto>();
 
         /// <summary>
         /// 第一方是否已经确认。如客户端。
@@ -2249,6 +2249,7 @@ namespace GY02.Publisher
         [JsonPropertyName("sign")]
         public string Sign { get; set; }
 
+#if NETCOREAPP2_1_OR_GREATER
         /// <summary>
         /// 获取一个字典，包含属性名和值。属性名用json的键名。
         /// </summary>
@@ -2265,6 +2266,7 @@ namespace GY02.Publisher
             result.Remove("sign", out _);
             return result;
         }
+#endif //NETCOREAPP3_1_OR_GREATER
     }
 
     /// <summary>
@@ -2279,12 +2281,12 @@ namespace GY02.Publisher
         [JsonPropertyName("ret")]
         public int Result { get; set; }
 
-//#if DEBUG
+        //#if DEBUG
         /// <summary>
         /// 调试用的信息。
         /// </summary>
         public string DebugMessage { get; set; }
-//#endif
+        //#endif
     }
 
     #endregion
