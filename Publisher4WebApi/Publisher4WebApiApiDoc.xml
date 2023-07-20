@@ -1126,6 +1126,11 @@
             创建该订单的世界时间。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameShoppingOrderDto.Changes">
+            <summary>
+            获取或设置装备/道具变化数据。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameShoppingOrderDetailDto">
             <summary>
             法币购买商品的订单的详细项。目前情况，往往一个订单只有一项。

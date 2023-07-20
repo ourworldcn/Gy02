@@ -144,7 +144,7 @@ namespace GY02.Publisher
                 return;
             }
             userKey = loginCommand.User.Key;
-            if (!_GameAccountStore.LoadOrGetUser(uid, uid, out var gu))
+            if (!_GameAccountStore.GetOrLoadUser(uid, uid, out var gu))
             {
                 command.FillErrorFromWorld();
                 return;

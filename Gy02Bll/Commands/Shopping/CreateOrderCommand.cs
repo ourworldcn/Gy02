@@ -31,16 +31,19 @@ namespace GY02.Commands
         public GameShoppingOrder ShoppingOrder { get; set; }
     }
 
-    public class CreateOrderHandler : SyncCommandHandlerBase<CreateOrderCommand>
+    public class CreateOrderHandler : SyncCommandHandlerBase<CreateOrderCommand>, IGameCharHandler<CreateOrderCommand>
     {
-        public CreateOrderHandler(GameTemplateManager templateManager, GameShoppingManager shoppingManager)
+        public CreateOrderHandler(GameTemplateManager templateManager, GameShoppingManager shoppingManager, GameAccountStoreManager accountStore)
         {
             _TemplateManager = templateManager;
             _ShoppingManager = shoppingManager;
+            AccountStore = accountStore;
         }
 
         GameTemplateManager _TemplateManager;
         GameShoppingManager _ShoppingManager;
+
+        public GameAccountStoreManager AccountStore { get; }
 
         public override void Handle(CreateOrderCommand command)
         {
@@ -77,6 +80,7 @@ namespace GY02.Commands
             //var str = JsonSerializer.Serialize(order.Id);
             var str = _ShoppingManager.EncodeString(order.IdString);
             command.Result = str;
+            AccountStore.Save(key);
             return;
         lbErr:
             command.FillErrorFromWorld();

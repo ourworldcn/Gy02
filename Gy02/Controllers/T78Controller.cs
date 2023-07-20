@@ -7,10 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// T78合作伙伴调入控制器。
@@ -24,18 +25,20 @@ namespace Gy02.Controllers
         /// <param name="gameAccountStore"></param>
         /// <param name="shoppingManager"></param>
         /// <param name="entityManager"></param>
-        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager)
+        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger)
         {
             _T78Manager = t78Manager;
             _ShoppingManager = shoppingManager;
             _GameAccountStore = gameAccountStore;
             _EntityManager = entityManager;
+            _Logger = logger;
         }
 
         PublisherT78Manager _T78Manager;
         GameShoppingManager _ShoppingManager;
         GameAccountStoreManager _GameAccountStore;
         GameEntityManager _EntityManager;
+        ILogger<T78Controller> _Logger;
 
         /// <summary>
         /// T78合作伙伴充值回调。
@@ -48,6 +51,7 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<PayedReturnDto> Payed([FromForm] PayedParamsDto model, [FromHeader(Name = "X-BNPAY-SANDBOX")] string isSandbox, [FromHeader(Name = "X-BNPAY-PAYTYPE")] string payType)
         {
+            _Logger.LogInformation("收到T78充值回调，参数 = {model},X-BNPAY-SANDBOX = {isSandbox}，X-BNPAY-PAYTYPE = {payType}", JsonSerializer.Serialize(model), isSandbox, payType);
             var result = new PayedReturnDto();
             var dic = model.GetDictionary();
             var sign = _T78Manager.GetSignature(dic);
@@ -55,13 +59,16 @@ namespace Gy02.Controllers
             {
                 result.Result = 1;
                 result.DebugMessage = $"签名不正确。";
+                _Logger.LogWarning("签名不正确");
                 return result;
             }
+
             var str = _ShoppingManager.DecodeString(model.CallbackInfo);
             if (!Guid.TryParse(str, out var orderId))   //若无法获取订单Id。
             {
                 result.Result = 1;
                 result.DebugMessage = $"透传参数错误。";
+                _Logger.LogWarning("透传参数错误。");
                 return result;
             }
             var db = HttpContext.RequestServices.GetRequiredService<GY02UserContext>();
@@ -70,6 +77,7 @@ namespace Gy02.Controllers
             {
                 result.Result = 1;
                 result.DebugMessage = $"若无法获取角色Id。";
+                _Logger.LogWarning("若无法获取角色Id。");
                 return result;
             }
             using var dw = _GameAccountStore.LockByCharId(gcId, db);
@@ -91,12 +99,14 @@ namespace Gy02.Controllers
                 order.State = 2;
                 result.Result = 1;
                 result.DebugMessage = $"商品Id不一致。";
+                _Logger.LogWarning("商品Id不一致。");
                 goto lbReturn;
             }
             if (!decimal.TryParse(model.Money, out var money))    //若无法获取金额
             {
                 result.Result = 1;
                 result.DebugMessage = $"若无法锁定key。";
+                _Logger.LogWarning("若无法锁定key。");
                 goto lbReturn;
             }
             order.Amount = money;
@@ -107,14 +117,26 @@ namespace Gy02.Controllers
 
             if (order.Detailes.Count > 0)    //若需要计算产出
             {
+                var key = dw.State as string;
+                var id = Guid.Parse(key!);
+                using var dwKey = _GameAccountStore.GetOrLoadUser(dw.State as string, out var gu);
+                if (dwKey.IsEmpty)
+                {
+                    result.Result = 1;
+                    result.DebugMessage = $"无法找到指定用户。key={dw.State as string}";
+                    _Logger.LogWarning("无法找到指定用户。key={key}", dw.State as string);
+                    goto lbReturn;
+                }
+
                 var changes = new List<GamePropertyChangeItem<object>>();
                 var coll = order.Detailes.Select(c => new GameEntitySummary(Guid.Parse(c.GoodsId), c.Count));
-                if (!_EntityManager.CreateAndMove(coll, new OW.Game.Entity.GameChar { }, changes))
+                if (!_EntityManager.CreateAndMove(coll, gu.CurrentChar, changes))
                 {
                     result.Result = 1;
                     result.DebugMessage = OwHelper.GetLastErrorMessage();
                     goto lbReturn;
                 }
+                order.BinaryArray = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(changes));  //设置变化数据
             }
         lbReturn:
             db.SaveChanges();

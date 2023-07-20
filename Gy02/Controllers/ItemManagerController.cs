@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
+using OW.Game.Store;
 using OW.SyncCommand;
 
 namespace GY02.Controllers
@@ -72,7 +73,7 @@ namespace GY02.Controllers
         public ActionResult<bool> TestAddItems()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
-            store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
+            store.GetOrLoadUser("gy20", "HtnXNCiJ", out var gu);
             var token = gu.Token;
             var model = new AddItemsParamsDto { Token = token };
             //加金币
@@ -94,7 +95,7 @@ namespace GY02.Controllers
         public ActionResult<bool> TestLvUp()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
-            store.LoadOrGetUser("gy20", "HtnXNCiJ", out var gu);
+            store.GetOrLoadUser("gy20", "HtnXNCiJ", out var gu);
             var token = gu.Token;
             var item = gu.CurrentChar.ZhuangBeiBag.Children.First(c => c.TemplateId == Guid.Parse("402a7b1c-bd32-4540-9efe-f9801ed6946b"));
             var sub = new LvUpParamsDto { Token = token, };
@@ -349,13 +350,17 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<FuhuaPreviewReturnDto> TestFuhuaPreview()
         {
-            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
-            store.LoadOrGetUser("string40", "string", out var gu);
-            var token = gu.Token;
+            var src = new GameShoppingOrder { };
+            var mapper = HttpContext.RequestServices.GetService<IMapper>()!;
+            var dest = mapper.Map<GameShoppingOrderDto>(src);
+
+            //var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
+            //store.LoadOrGetUser("string40", "string", out var gu);
+            //var token = gu.Token;
             //var gc = gu.CurrentChar;
             var model = new FuhuaPreviewParamsDto
             {
-                Token = token,
+                //Token = token,
                 ParentGenus = new List<string> { "zuoqi_wolf", "zuoqi_giraffe" },
             };
 

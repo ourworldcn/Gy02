@@ -1448,6 +1448,11 @@ namespace GY02.Publisher
         /// </summary>
         public DateTime CreateUtc { get; set; }
 
+        /// <summary>
+        /// 获取或设置装备/道具变化数据。
+        /// </summary>
+        public List<GamePropertyChangeItemDto> Changes { get; set; } = new List<GamePropertyChangeItemDto>();
+
     }
 
     /// <summary>
@@ -2279,12 +2284,12 @@ namespace GY02.Publisher
         [JsonPropertyName("ret")]
         public int Result { get; set; }
 
-//#if DEBUG
+        //#if DEBUG
         /// <summary>
         /// 调试用的信息。
         /// </summary>
         public string DebugMessage { get; set; }
-//#endif
+        //#endif
     }
 
     #endregion

@@ -1,4 +1,7 @@
-﻿using System.Runtime.InteropServices;
+﻿using OW.Game.PropertyChange;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Text.Json;
 
 namespace OW.Game.Store
 {
@@ -97,6 +100,16 @@ namespace OW.Game.Store
             GenerateNewId();
             Detailes.ForEach(c => c.GenerateNewId());
         }
+
+        /// <summary>
+        /// 获取或设置装备/道具变化数据。
+        /// </summary>
+        public List<GamePropertyChangeItem<object>> GetChanges()
+        {
+            var result = BinaryArray is null ? new List<GamePropertyChangeItem<object>>() : JsonSerializer.Deserialize<List<GamePropertyChangeItem<object>>>(Encoding.UTF8.GetString(BinaryArray));
+            return result;
+        }
+
     }
 
     /// <summary>

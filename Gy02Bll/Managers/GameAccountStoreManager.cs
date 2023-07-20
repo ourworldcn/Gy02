@@ -1,6 +1,8 @@
-﻿using GY02.Commands;
+﻿using GY02.Base;
+using GY02.Commands;
 using GY02.Publisher;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using Microsoft.Extensions.Caching.Memory;
@@ -21,7 +23,9 @@ using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -69,11 +73,12 @@ namespace GY02.Managers
     public class GameAccountStoreManager : GameManagerBase<GameAccountStoreManagerOptions, GameAccountStoreManager>
     {
         public GameAccountStoreManager(IOptions<GameAccountStoreManagerOptions> options, ILogger<GameAccountStoreManager> logger, IDbContextFactory<GY02UserContext> contextFactory,
-            IHostApplicationLifetime lifetime, IServiceProvider service) : base(options, logger)
+            IHostApplicationLifetime lifetime, IServiceProvider service, GameTemplateManager templateManager) : base(options, logger)
         {
             _ContextFactory = contextFactory;
             _Lifetime = lifetime;
             _Service = service;
+            _TemplateManager = templateManager;
 
             Task.Factory.StartNew(SaveCallback, TaskCreationOptions.LongRunning);
         }
@@ -81,6 +86,7 @@ namespace GY02.Managers
         IDbContextFactory<GY02UserContext> _ContextFactory;
         IHostApplicationLifetime _Lifetime;
         IServiceProvider _Service;
+        GameTemplateManager _TemplateManager;
 
         /// <summary>
         /// 记录所有用户对象。
@@ -316,7 +322,11 @@ namespace GY02.Managers
         /// <param name="key"></param>
         /// <param name="timeout"></param>
         /// <returns></returns>
-        public bool Lock(object key, TimeSpan timeout) => Options.LockCallback(key, timeout);
+        public bool Lock(object key, TimeSpan timeout)
+        {
+            var result = Options.LockCallback(key, timeout);
+            return result;
+        }
 
         /// <summary>
         /// 使用默认超时设置锁定key。
@@ -363,7 +373,7 @@ namespace GY02.Managers
         /// <summary>
         /// 加入一个指定的账号对象。
         /// </summary>
-        /// <param name="gu"></param>
+        /// <param name="gu">指定用户对象，此对象可以没有加载角色，但在加角色后需要调用<see cref="_CharId2Key"/>的方法。</param>
         /// <returns>true成功加入，false已经存在一个相同Id的对象。</returns>
         /// <exception cref="TimeoutException"></exception>
         public bool AddUser(GameUser gu)
@@ -396,6 +406,123 @@ namespace GY02.Managers
             _CharId2Key.TryAdd(gcThing.Id, key);
         }
 
+        #region 加载角色或用户
+
+        /// <summary>
+        /// 在缓存中获取指定key的账号对象，并锁定后返回。
+        /// </summary>
+        /// <param name="key">账号的key,</param>
+        /// <param name="user">返回的账号对象。</param>
+        /// <returns>释放的帮助器。
+        /// 若<see cref="DisposeHelper{String}.IsEmpty"/>是true则说明获取成功，此时<paramref name="user"/>是账号对象。false表示失败，此时调用<see cref="OwHelper.GetLastError()"/>可获取详细信息，
+        /// <seealso cref="ErrorCodes.WAIT_TIMEOUT"/> 锁定key超时。
+        /// <seealso cref="ErrorCodes.ERROR_NO_SUCH_USER"/> 内存中没有指定key的账号对象。
+        /// <seealso cref="ErrorCodes.E_CHANGED_STATE"/> 指定key的账号对象在获取时被并发处置。
+        /// </returns>
+        public virtual DisposeHelper<string> GetUser(string key, out GameUser user)
+        {
+            var dw = DisposeHelper.Create(Lock, Unlock, key, Options.DefaultLockTimeout);
+            if (dw.IsEmpty) //若锁定超时
+            {
+                user = null;
+                return DisposeHelper.Empty<string>();
+            }
+            try
+            {
+                user = _Key2User.GetValueOrDefault(key);
+                if (user is not null && !user.IsDisposed) return dw;    //若在内存中加载成功
+                if (user is null)    //若没有找到
+                    OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_NO_SUCH_USER, $"内存中没有指定key的账号对象，Key={key}");
+                else //若已并发处置
+                    OwHelper.SetLastErrorAndMessage(ErrorCodes.E_CHANGED_STATE, $"指定key的账号对象在获取时被并发处置，Key={key}");
+                dw.Dispose();
+                return DisposeHelper.Empty<string>();
+            }
+            catch (Exception)   //放置抛出异常导致错误锁定
+            {
+                dw.Dispose();
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// 从数据库加载一个指定条件的用户账号并返回，但不加入缓存（需要调用者自己加入）。
+        /// </summary>
+        /// <param name="loadFunc">加载函数，符合该条件的第一个用户对象将被加载并返回。条件会自动附加限定是账号的Guid，调用者不必限定。</param>
+        /// <param name="context">使用的上下文对象，如果省略或为空引用则自动生成。</param>
+        /// <returns>返回找到符合条件的第一账号，否则返回null。</returns>
+        public virtual GameUser LoadUser(Expression<Func<VirtualThing, bool>> loadFunc, DbContext context = null)
+        {
+            //开始从数据库加载
+            context ??= _ContextFactory.CreateDbContext();
+            var guThing = context.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children)
+                .Where(c => c.ExtraGuid == ProjectContent.UserTId).FirstOrDefault(loadFunc);
+            if (guThing is null)
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定条件的账号。");
+                return null;
+            }
+            var user = guThing.GetJsonObject<GameUser>();
+            //设置必要属性
+            user.SetDbContext(context);
+            var tt = _TemplateManager.GetFullViewFromId(ProjectContent.UserTId);
+            user.SetTemplate(tt);
+            if (user.Token == Guid.Empty) user.Token = Guid.NewGuid();  //设置令牌
+            user.CurrentChar = guThing.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.CharTId)?.GetJsonObject<GameChar>();  //设置当前用户
+            if (user.CurrentChar is not GameChar gc)
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"指定账号没有创建角色,UserKey={user.GetThing().IdString}");
+                return null;
+            }
+            return user;
+        }
+
+        /// <summary>
+        /// 获取或加载指定的账号。
+        /// </summary>
+        /// <param name="key">在缓存中找到此标志的用户对象则被直接返回。</param>
+        /// <param name="user"></param>
+        /// 
+        /// <returns></returns>
+        public virtual DisposeHelper<string> GetOrLoadUser(string key, out GameUser user)
+        {
+            var dw = GetUser(key, out user);
+            if (!dw.IsEmpty) return dw; //若在缓存中找到
+            dw = DisposeHelper.Create(Lock, Unlock, key, Options.DefaultLockTimeout);
+            if (dw.IsEmpty)
+            {
+                user = null;
+                return DisposeHelper.Empty<string>();
+            }
+            try //防止因抛出异常而导致错误的锁定key
+            {
+                //二次判定
+                using var dwUser = GetUser(key, out user);
+                if (!dwUser.IsEmpty) return dw; //若在缓存中找到
+
+                //开始从数据库加载
+                if (!Guid.TryParse(key, out var userId))
+                {
+                    dw.Dispose();
+                    OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"指定的Key不能转换为用户的唯一Id,Key={key}");
+                    return DisposeHelper.Empty<string>();
+                }
+                user = LoadUser(c => c.Id == userId);
+                if (user is null)
+                {
+                    dw.Dispose();
+                    return DisposeHelper.Empty<string>();
+                }
+                AddUser(user);
+                return dw;
+            }
+            catch (Exception)
+            {
+                dw.Dispose();
+                throw;
+            }
+        }
+
         /// <summary>
         /// 加载或获取已经存在的用户对象。
         /// </summary>
@@ -404,61 +531,43 @@ namespace GY02.Managers
         /// <param name="user"></param>
         /// <returns></returns>
         /// <exception cref="TimeoutException"></exception>
-        public bool LoadOrGetUser(string loginName, string pwd, out GameUser user)
+        public bool GetOrLoadUser(string loginName, string pwd, out GameUser user)
         {
-            using var dw = DisposeHelper.Create(Lock, Unlock, loginName, Options.DefaultLockTimeout);
-            if (dw.IsEmpty)
+            using var dwLoginName = DisposeHelper.Create(Lock, Unlock, loginName, Options.DefaultLockTimeout);  //极小概率错序死锁，忽略，当做锁定超时处理
+            if (dwLoginName.IsEmpty)
             {
                 OwHelper.SetLastError(ErrorCodes.WAIT_TIMEOUT);
-                OwHelper.SetLastErrorMessage($"无法锁定用户登录名，LoginName : {loginName}。");
+                OwHelper.SetLastErrorMessage($"无法锁定用户登录名，LoginName = {loginName}。");
                 user = null;
                 return false;
             }
-            GameUser gu;
-            if (_LoginName2Key.TryGetValue(loginName, out string key))    //若内存中找到了指定登录名的账号对象
-            {
-                using var dwKey = DisposeHelper.Create(Lock, Unlock, key, Options.DefaultLockTimeout);
-                if (dwKey.IsEmpty) throw new TimeoutException();
-                gu = _Key2User.GetValueOrDefault(key);
-                if (!gu.IsPwd(pwd))
-                {
-                    user = default;
-                    return false;
-                }
-                user = gu;
-                return true;
-            }
-            //加载
-            var db = _ContextFactory.CreateDbContext();
-            var guThing = db.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children)
-                .FirstOrDefault(c => c.ExtraString == loginName && c.ExtraGuid == ProjectContent.UserTId);
-            if (guThing is null) goto falut;
-            gu = guThing.GetJsonObject<GameUser>();
-            if (!gu.IsPwd(pwd)) goto falut;
-            //设置必要属性
-
-            using (var dwKey = DisposeHelper.Create(Lock, Unlock, guThing.IdString, Options.DefaultLockTimeout))
-            {
-                if (dwKey.IsEmpty) throw new TimeoutException();
-                gu.SetDbContext(db);
-                if (gu.Token == Guid.Empty)
-                    gu.Token = Guid.NewGuid();
-                gu.CurrentChar = guThing.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.CharTId)?.GetJsonObject<GameChar>();
-                if (gu.CurrentChar is null)
-                {
-                    goto falut;
-                }
-                AddUser(gu);
-                user = gu;
-                return true;
-            }
+            var pwdHash = GetPwdHash(pwd);
+            using var db = _ContextFactory.CreateDbContext();
+            var key = db.Set<VirtualThing>().FirstOrDefault(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == loginName && c.BinaryArray == pwdHash)?.IdString;
+            if (key is null) goto falut;    //若没有找到指定对象
+            var id = Guid.Parse(key);
+            using (var dw = GetOrLoadUser(key, out user))
+                if (dw.IsEmpty) return false;    //若加载失败
+            return true;
         falut:
-            OwHelper.SetLastError(ErrorCodes.ERROR_NO_SUCH_USER);
-            OwHelper.SetLastErrorMessage($"找不到指定的用户名或密码错误。");
+            OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_NO_SUCH_USER, $"找不到指定的用户名或密码错误。");
             user = null;
             return false;
         }
 
+        #endregion 加载角色或用户
+
+        /// <summary>
+        /// 获取密码的hash值。
+        /// </summary>
+        /// <param name="pwd"></param>
+        /// <returns>密码的hash值，如果pwd是空引用，则也返回空引用。</returns>
+        public byte[] GetPwdHash(string pwd)
+        {
+            var hash = pwd is null ? null : SHA1.HashData(Encoding.UTF8.GetBytes(pwd));
+            return hash;
+
+        }
         #region IDisposable接口相关
 
         /// <summary>
