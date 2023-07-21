@@ -482,7 +482,6 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="key">在缓存中找到此标志的用户对象则被直接返回。</param>
         /// <param name="user"></param>
-        /// 
         /// <returns></returns>
         public virtual DisposeHelper<string> GetOrLoadUser(string key, out GameUser user)
         {
@@ -543,9 +542,10 @@ namespace GY02.Managers
             }
             var pwdHash = GetPwdHash(pwd);
             using var db = _ContextFactory.CreateDbContext();
-            var key = db.Set<VirtualThing>().FirstOrDefault(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == loginName && c.BinaryArray == pwdHash)?.IdString;
-            if (key is null) goto falut;    //若没有找到指定对象
-            var id = Guid.Parse(key);
+            var id = db.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == loginName && c.BinaryArray == pwdHash).Select(c => c.Id).FirstOrDefault();
+
+            if (id == Guid.Empty) goto falut;    //若没有找到指定对象
+            var key = id.ToString();
             using (var dw = GetOrLoadUser(key, out user))
                 if (dw.IsEmpty) return false;    //若加载失败
             return true;

@@ -64,7 +64,7 @@ namespace GY02.Controllers
                 return result;
             }
 
-            var str = _ShoppingManager.DecodeString(model.CallbackInfo);
+            var str = _ShoppingManager.DecodeString(model.CallbackInfo ?? string.Empty);
             if (!Guid.TryParse(str, out var orderId))   //若无法获取订单Id。
             {
                 result.Result = 1;
