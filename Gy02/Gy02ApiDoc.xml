@@ -462,6 +462,7 @@
             <param name="gameAccountStore"></param>
             <param name="shoppingManager"></param>
             <param name="entityManager"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:GY02.Controllers.T78Controller.Payed(GY02.Publisher.PayedParamsDto,System.String,System.String)">
             <summary>
@@ -473,9 +474,9 @@
             </param>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.T78Controller.ClientPayed(GY02.Publisher.ClientPayedParamsDto)">
+        <member name="M:GY02.Controllers.T78Controller.Refund(GY02.Publisher.T78RefundParamsDto)">
             <summary>
-            客户端在T78合作伙伴上调用了充值信息后调用此接口通知服务器。
+            客户端在T78合作伙伴退款通知回调函数。
             </summary>
             <param name="model"></param>
             <returns></returns>

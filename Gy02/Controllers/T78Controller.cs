@@ -25,6 +25,7 @@ namespace GY02.Controllers
         /// <param name="gameAccountStore"></param>
         /// <param name="shoppingManager"></param>
         /// <param name="entityManager"></param>
+        /// <param name="logger"></param>
         public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger)
         {
             _T78Manager = t78Manager;
@@ -59,7 +60,7 @@ namespace GY02.Controllers
             {
                 result.Result = 1;
                 result.DebugMessage = $"签名不正确。";
-                _Logger.LogWarning("签名不正确");
+                _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
 
@@ -68,7 +69,7 @@ namespace GY02.Controllers
             {
                 result.Result = 1;
                 result.DebugMessage = $"透传参数错误。";
-                _Logger.LogWarning("透传参数错误。");
+                _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
             var db = HttpContext.RequestServices.GetRequiredService<GY02UserContext>();
@@ -76,8 +77,8 @@ namespace GY02.Controllers
             if (!Guid.TryParse(gcIdString, out var gcId))   //若无法获取角色Id。
             {
                 result.Result = 1;
-                result.DebugMessage = $"若无法获取角色Id。";
-                _Logger.LogWarning("若无法获取角色Id。");
+                result.DebugMessage = $"无法获取角色Id。{gcIdString}";
+                _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
             using var dw = _GameAccountStore.LockByCharId(gcId, db);
@@ -99,14 +100,14 @@ namespace GY02.Controllers
                 order.State = 2;
                 result.Result = 1;
                 result.DebugMessage = $"商品Id不一致。";
-                _Logger.LogWarning("商品Id不一致。");
+                _Logger.LogWarning(result.DebugMessage);
                 goto lbReturn;
             }
             if (!decimal.TryParse(model.Money, out var money))    //若无法获取金额
             {
                 result.Result = 1;
                 result.DebugMessage = $"若无法锁定key。";
-                _Logger.LogWarning("若无法锁定key。");
+                _Logger.LogWarning(result.DebugMessage);
                 goto lbReturn;
             }
             order.Amount = money;
@@ -124,7 +125,7 @@ namespace GY02.Controllers
                 {
                     result.Result = 1;
                     result.DebugMessage = $"无法找到指定用户。key={dw.State as string}";
-                    _Logger.LogWarning("无法找到指定用户。key={key}", dw.State as string);
+                    _Logger.LogWarning(result.DebugMessage);
                     goto lbReturn;
                 }
 
@@ -144,14 +145,62 @@ namespace GY02.Controllers
         }
 
         /// <summary>
-        /// 客户端在T78合作伙伴上调用了充值信息后调用此接口通知服务器。
+        /// 客户端在T78合作伙伴退款通知回调函数。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<ClientPayedReturnDto> ClientPayed(ClientPayedParamsDto model)
+        public ActionResult<T78RefundReturnDto> Refund([FromForm] T78RefundParamsDto model)
         {
-            ClientPayedReturnDto result = new ClientPayedReturnDto { };
+            _Logger.LogInformation("收到T78退款回调，参数 = {model}", JsonSerializer.Serialize(model));
+            T78RefundReturnDto result = new T78RefundReturnDto { };
+
+            var dic = model.GetDictionary();
+            var sign = _T78Manager.GetSignature(dic);
+            if (sign != model.Sign) //若签名不正确
+            {
+                result.Result = 1;
+                result.DebugMessage = $"签名不正确。";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            if (Guid.TryParse(model.CpOrderSn, out var orderId))  //若订单号无效
+            {
+                result.Result = 1;
+                result.DebugMessage = $"无效的研发订单号,CpOrderSn={model.CpOrderSn}";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            var db = HttpContext.RequestServices.GetRequiredService<GY02UserContext>();
+            var order = db.ShoppingOrder.Where(c => c.Id == orderId).FirstOrDefault();
+            if (order is null)
+            {
+                result.Result = 1;
+                result.DebugMessage = $"无法找到指定订单,OrderId={orderId}";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            var newOrder = new GameShoppingOrder
+            {
+                JsonObject = JsonSerializer.Serialize(model),
+                Confirm1 = true,
+                Confirm2 = true,
+                State = 1,
+                CustomerId = order.CustomerId,
+                Currency = order.Currency,
+                Amount = -order.Amount
+            };
+            try
+            {
+                db.Add(newOrder);
+                db.SaveChanges();
+            }
+            catch (Exception)
+            {
+                result.Result = 1;
+                result.DebugMessage = $"无法保存冲红订单,Order={JsonSerializer.Serialize(newOrder)}";
+                _Logger.LogWarning(result.DebugMessage);
+            }
             return result;
         }
     }

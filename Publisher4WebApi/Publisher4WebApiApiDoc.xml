@@ -1663,14 +1663,51 @@
             获取成就奖励功能返回值封装类。
             </summary>
         </member>
-        <member name="T:GY02.Publisher.ClientPayedParamsDto">
+        <member name="T:GY02.Publisher.T78RefundParamsDto">
             <summary>
-            客户端结束付费回调功能的参数封装类。
+            客户端在T78合作伙伴退款通知回调函数功能的参数封装类。
             </summary>
         </member>
-        <member name="T:GY02.Publisher.ClientPayedReturnDto">
+        <member name="P:GY02.Publisher.T78RefundParamsDto.BnOrderSn">
             <summary>
-            客户端结束付费回调功能的返回值封装类。
+            冰鸟订单号。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T78RefundParamsDto.CpOrderSn">
+            <summary>
+            研发订单号。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T78RefundParamsDto.CreateTime">
+            <summary>
+            创建时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T78RefundParamsDto.RefundTime">
+            <summary>
+            退款时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T78RefundParamsDto.Sign">
+            <summary>
+            签名。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.T78RefundParamsDto.GetDictionary">
+            <summary>
+            获取一个字典，包含属性名和值。属性名用json的键名。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GY02.Publisher.T78RefundReturnDto">
+            <summary>
+            客户端在T78合作伙伴退款通知回调函数功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T78RefundReturnDto.Result">
+            <summary>
+            成功，表示游戏服务器成功接收了该次退款结果通知,注意是0为成功。
+            失败，表示游戏服务器无法接收或识别该次退款结果通知，如：签名检验不正确、游戏服务器接收失败。
             </summary>
         </member>
         <member name="T:GY02.Publisher.PayedParamsDto">

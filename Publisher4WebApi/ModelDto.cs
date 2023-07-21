@@ -2133,17 +2133,72 @@ namespace GY02.Publisher
     #region T78相关
 
     /// <summary>
-    /// 客户端结束付费回调功能的参数封装类。
+    /// 客户端在T78合作伙伴退款通知回调函数功能的参数封装类。
     /// </summary>
-    public class ClientPayedParamsDto : TokenDtoBase
+    public class T78RefundParamsDto 
     {
+        /// <summary>
+        /// 冰鸟订单号。
+        /// </summary>
+        [JsonPropertyName("bnOrderSn")]
+        public string BnOrderSn { get; set; }
+
+        /// <summary>
+        /// 研发订单号。
+        /// </summary>
+        [JsonPropertyName("cpOrderSn")]
+        public string CpOrderSn { get; set; }
+
+        /// <summary>
+        /// 创建时间。
+        /// </summary>
+        [JsonPropertyName("createTime")]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 退款时间。
+        /// </summary>
+        [JsonPropertyName("refundTime")]
+        public string RefundTime { get; set; }
+
+        /// <summary>
+        /// 签名。
+        /// </summary>
+        [JsonPropertyName("sign")]
+        public string Sign { get; set; }
+
+#if NETCOREAPP2_1_OR_GREATER
+        /// <summary>
+        /// 获取一个字典，包含属性名和值。属性名用json的键名。
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, string> GetDictionary()
+        {
+            var result = new Dictionary<string, string>();
+            var pis = GetType().GetProperties();
+            foreach (var prop in pis)
+            {
+                var name = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
+                result.Add(name, Convert.ToString(prop.GetValue(this)));
+            }
+            result.Remove("sign", out _);
+            return result;
+        }
+#endif
+
     }
 
     /// <summary>
-    /// 客户端结束付费回调功能的返回值封装类。
+    /// 客户端在T78合作伙伴退款通知回调函数功能的返回值封装类。
     /// </summary>
-    public class ClientPayedReturnDto : ReturnDtoBase
+    public class T78RefundReturnDto : ReturnDtoBase
     {
+        /// <summary>
+        /// 成功，表示游戏服务器成功接收了该次退款结果通知,注意是0为成功。
+        /// 失败，表示游戏服务器无法接收或识别该次退款结果通知，如：签名检验不正确、游戏服务器接收失败。
+        /// </summary>
+        [JsonPropertyName("ret")]
+        public int Result { get; set; }
     }
 
     /// <summary>
@@ -2254,6 +2309,7 @@ namespace GY02.Publisher
         [JsonPropertyName("sign")]
         public string Sign { get; set; }
 
+#if NETCOREAPP2_1_OR_GREATER
         /// <summary>
         /// 获取一个字典，包含属性名和值。属性名用json的键名。
         /// </summary>
@@ -2270,6 +2326,7 @@ namespace GY02.Publisher
             result.Remove("sign", out _);
             return result;
         }
+#endif
     }
 
     /// <summary>

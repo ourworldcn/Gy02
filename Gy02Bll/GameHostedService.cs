@@ -48,7 +48,7 @@ namespace GY02
             _ApplicationLifetime = applicationLifetime;
             _Logger = logger;
 
-            _ApplicationLifetime.ApplicationStopping.Register(() =>
+            _ApplicationLifetime.ApplicationStopped.Register(() =>
             {
                 _Logger.LogInformation($"检测到游戏服务器正常下线。");
             });
@@ -207,7 +207,7 @@ namespace GY02
             try
             {
                 #region 测试用代码
-
+                var str = JsonSerializer.Serialize(Guid.NewGuid());
                 var store = _Services.GetService<GameAccountStoreManager>();
                 var mapper = _Services.GetService<IMapper>();
                 #endregion 测试用代码
