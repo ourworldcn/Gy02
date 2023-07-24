@@ -82,7 +82,7 @@ namespace GY02.Managers
         /// 用随机数获取指定的池项中的随机一项。
         /// </summary>
         /// <param name="items"></param>
-        /// <param name="random"></param>
+        /// <param name="random">指定的随机数生成器，省略或为空引用则生成一个。</param>
         /// <returns></returns>
         public GameDiceItem Roll(IEnumerable<GameDiceItem> items, Random random = null)
         {
@@ -130,7 +130,6 @@ namespace GY02.Managers
                 maxCount = Math.Min(maxCount, i);
             }
             return result;
-
         }
 
         /// <summary>

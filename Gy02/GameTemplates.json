@@ -723,7 +723,7 @@
     {
       "Id": "dc1e71df-f963-47d1-851c-fa4932b77501",
       "DisplayName": "范围攻击的伤害和后退距离翻倍",
-      "Gid": 141101003,
+      "Gid": 141101028,
       "PropertiesString": "{\"skillParams\":[],\"name_txt\":12117}"
     },
     {
