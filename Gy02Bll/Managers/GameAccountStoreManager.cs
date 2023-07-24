@@ -210,7 +210,11 @@ namespace GY02.Managers
         /// <returns>所属账号的key,key可以用于锁定。null表示出错，此时调用<see cref="OwHelper.GetLastError()"/>获取信息。</returns>
         public string GetKeyByCharId(Guid charId, DbContext context = null)
         {
-            using var dw = DisposeHelper.Create(c => c?.Dispose(), context);
+            bool ownerContext = context is null;
+            using var dw = DisposeHelper.Create(c =>
+            {
+                if (ownerContext) c?.Dispose();
+            }, context);
             context ??= _ContextFactory.CreateDbContext();
             var guId = (from gu in context.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.UserTId)
                         join gc in context.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.CharTId)

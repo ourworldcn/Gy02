@@ -101,8 +101,15 @@ namespace GY02.Managers
         /// <returns></returns>
         public string DecodeString(string str)
         {
-            var ary = Convert.FromBase64String(str);
-            return Encoding.UTF8.GetString(ary);
+            try
+            {
+                var ary = Convert.FromBase64String(str);
+                return Encoding.UTF8.GetString(ary);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
         #endregion 获取信息
 

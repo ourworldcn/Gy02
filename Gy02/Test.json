@@ -1,24 +1,41 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Genus": [ "gs_zs" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
       {
-        "ParentTId": null,
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
+            "MinCount": 0.99,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0.99,
         "Genus": [],
-        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
-        "MinCount": null,
-        "GeneralConditional": [],
         "IgnoreIfDisplayList": true
       }
     ],
-    "GetIndexExpression": {
-      "Operator": "ToInt32",
-      "Args": [ "Count" ],
-      "IgnoreIfDisplayList": false
-    },
-    "Outs": {
-      "TIds": [ "1f96a737-6a27-4aa4-b69f-6f9369593e4d", "ae3af73d-344d-4f45-951a-20580295ba40", "eada6fc9-3ae1-4000-8874-26eb88316fe3", "7a9019f4-ead2-4e0d-8c9e-cf94e0a9e40b", "b63ad485-9b45-4f3e-85c5-e221493199bb", "14d70aa4-39ad-42ba-8e39-86e24c8c6ca0", "32568c7e-0d2a-4e8f-9203-f838b8c6658e", "70653263-50f1-4d1f-9778-7cf468a6d5a8", "daaedc61-2aef-482d-81a8-b89079e3ca93", "2eefbd52-c422-40f6-86cb-ea1a70201b96", "835d2d75-1ad3-472e-bf2c-0e3ca1ed3308", "45762299-1393-4a2b-ab5a-b923a0ffe77d", "7166bc8e-e353-483a-9de6-dfa398c1595a", "a96ad259-a051-43e2-a235-48bb1bc0bcef", "891b2d61-71db-4d29-9bb3-cf8390bffb6b", "e22e00b3-9dfe-47c8-ab2c-c7320f35a8ee", "c0885cd1-8194-4628-84dc-6a668d99d62a", "7a1da149-f150-4fc6-9ea4-40e397d005bd", "a4c4edc9-0305-41df-aa50-ed4ee9b90f14", "9da00727-29e0-4353-ba61-ac23d9285609" ],
-      "ParentTIds": [ null ],
-      "Counts": [ 1 ]
-    }
-  }
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 80
+      }
+    ]
+  },
+  "name_txt": 10966,
+  "comment_txt": 10960,
+  "JiaoBiao": []
 }

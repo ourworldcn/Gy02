@@ -125,6 +125,12 @@ namespace GY02.Publisher
         /// </summary>
         public static readonly Guid PiFuBagTId = new Guid("3b163a62-6591-4a93-a385-cf079b20f589");
 
+        /// <summary>
+        /// T78注册占位符TId。
+        /// </summary>
+        public static readonly Guid T78SlotTId = new Guid("7A7A7058-CB88-4D54-80E9-22241774CF51");
+
+
         #endregion 各种槽和背包
 
         #region 邮件相关

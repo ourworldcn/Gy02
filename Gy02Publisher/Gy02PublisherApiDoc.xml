@@ -1080,6 +1080,11 @@
             皮肤背包。3b163a62-6591-4a93-a385-cf079b20f589
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.T78SlotTId">
+            <summary>
+            T78注册占位符TId。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.MailSlotTId">
             <summary>
             邮件槽TId。

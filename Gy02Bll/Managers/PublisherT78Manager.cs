@@ -127,7 +127,7 @@ namespace GY02.Managers
             var sb = AutoClearPool<StringBuilder>.Shared.Get();
             using var dw = DisposeHelper.Create(c => AutoClearPool<StringBuilder>.Shared.Return(c), sb);
             byte[] ary;
-            foreach (var item in dic.OrderBy(c => c.Key))
+            foreach (var item in dic.OrderBy(c => c.Key, StringComparer.Ordinal))
             {
                 sb.Append(item.Key);
                 sb.Append('=');

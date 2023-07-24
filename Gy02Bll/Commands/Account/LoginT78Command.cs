@@ -104,7 +104,7 @@ namespace GY02.Publisher
             }
             //若登录成功了
             using var db = _DbContextFactory.CreateDbContext();
-            var t78tid = new Guid("7A7A7058-CB88-4D54-80E9-22241774CF51");
+            var t78tid = ProjectContent.T78SlotTId;    // new Guid("7A7A7058-CB88-4D54-80E9-22241774CF51");
             var slot = db.Set<VirtualThing>().SingleOrDefault(c => c.ExtraGuid == t78tid && c.ExtraString == uid);
             bool isCreate = false;  //是否是第一次创建用户
             string userKey = null;

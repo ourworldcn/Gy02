@@ -4,6 +4,7 @@ using GY02.Templates;
 using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
+using System.Text.Json;
 
 namespace GY02.AutoMappper
 {
@@ -100,6 +101,13 @@ namespace GY02.AutoMappper
             CreateMap<TemplateStringFullView, GameMail>();
             CreateMap<TemplateStringFullView, GameAchievement>();
             CreateMap<TemplateStringFullView, GameSlot<GameAchievement>>();
+
+            CreateMap<GameShoppingOrder, GameShoppingOrderDto>().AfterMap((src, dest) =>
+            {
+                var tmp = src.BinaryArray is null ? null : JsonSerializer.Deserialize<List<GamePropertyChangeItemDto>>(src.BinaryArray);
+                if (tmp != null)
+                    dest.Changes.AddRange(tmp);
+            });
         }
     }
 }

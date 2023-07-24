@@ -1776,17 +1776,17 @@
             币种。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.PayedParamsDto.ProductId">
+        <member name="P:GY02.Publisher.PayedParamsDto.Product_Id">
             <summary>
             商品id。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.PayedParamsDto.ServerId">
+        <member name="P:GY02.Publisher.PayedParamsDto.Server_Id">
             <summary>
             区服id。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.PayedParamsDto.GameRoleId">
+        <member name="P:GY02.Publisher.PayedParamsDto.Game_Role_Id">
             <summary>
             角色id。
             </summary>
@@ -1816,11 +1816,6 @@
             <summary>
             0=成功，表示游戏服务器成功接收了该次充值结果通知,注意是0为成功。
             1=失败，表示游戏服务器无法接收或识别该次充值结果通知，如：签名检验不正确、游戏服务器接收失败。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.PayedReturnDto.DebugMessage">
-            <summary>
-            调试用的信息。
             </summary>
         </member>
         <member name="T:GY02.Publisher.DispatcherDemo">

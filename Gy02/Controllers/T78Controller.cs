@@ -1,10 +1,12 @@
-﻿using GY02;
+﻿using AutoMapper;
+using GY02;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using System.Text;
@@ -52,8 +54,14 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<PayedReturnDto> Payed([FromForm] PayedParamsDto model, [FromHeader(Name = "X-BNPAY-SANDBOX")] string isSandbox, [FromHeader(Name = "X-BNPAY-PAYTYPE")] string payType)
         {
+            //using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
+            //{
+            //    var str1 = reader.ReadToEndAsync().Result;
+            //    _Logger.LogInformation("收到T78充值回调，参数 = {str1}", str1);
+            //}
+
             _Logger.LogInformation("收到T78充值回调，参数 = {model},X-BNPAY-SANDBOX = {isSandbox}，X-BNPAY-PAYTYPE = {payType}", JsonSerializer.Serialize(model), isSandbox, payType);
-            var result = new PayedReturnDto();
+            var result = new PayedReturnDto { };
             var dic = model.GetDictionary();
             var sign = _T78Manager.GetSignature(dic);
             if (sign != model.Sign) //若签名不正确
@@ -90,12 +98,12 @@ namespace GY02.Controllers
             }
             GameShoppingOrder order = db.ShoppingOrder.Find(orderId)!;  //获取订单
             order.JsonObjectString = JsonSerializer.Serialize(model);   //记录入参数
-            if (model.OrderStatus == "0")  //若支付失败
+            if (model.OrderStatus != "1")  //若支付失败
             {
                 order.State = 3;
                 goto lbReturn;
             }
-            if (model.ProductId != order.Detailes[0].GoodsId)   //若商品Id不一致
+            if (model.Product_Id != order.Detailes[0].GoodsId)   //若商品Id不一致
             {
                 order.State = 2;
                 result.Result = 1;
@@ -113,9 +121,6 @@ namespace GY02.Controllers
             order.Amount = money;
             order.Currency = model.Currency;
 
-            order.Confirm2 = true;  //确定
-            order.State = 1;
-
             if (order.Detailes.Count > 0)    //若需要计算产出
             {
                 var key = dw.State as string;
@@ -130,17 +135,48 @@ namespace GY02.Controllers
                 }
 
                 var changes = new List<GamePropertyChangeItem<object>>();
-                var coll = order.Detailes.Select(c => new GameEntitySummary(Guid.Parse(c.GoodsId), c.Count));
-                if (!_EntityManager.CreateAndMove(coll, gu.CurrentChar, changes))
+                List<(List<GameEntitySummary>, int)> ges = new List<(List<GameEntitySummary>, int)>();  //物品要买的物品集合
+                foreach (var item in order.Detailes)
                 {
-                    result.Result = 1;
-                    result.DebugMessage = OwHelper.GetLastErrorMessage();
-                    goto lbReturn;
+                    if (!Guid.TryParse(item.GoodsId, out var tid)) goto lbErr;
+                    var tt = _ShoppingManager.GetShoppingItemByTId(tid);
+                    if (tt is null) goto lbErr;
+                    ges.Add((tt.Outs, (int)item.Count));
                 }
-                order.BinaryArray = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(changes));  //设置变化数据
+                List<(GameEntitySummary, GameEntity)> entities = new List<(GameEntitySummary, GameEntity)>();
+                foreach (var item in ges)
+                {
+                    for (int i = 0; i < item.Item2; i++)
+                    {
+                        if (!_EntityManager.CreateAndMove(item.Item1, gu.CurrentChar, changes))
+                        {
+                            result.Result = 1;
+                            result.DebugMessage = OwHelper.GetLastErrorMessage();
+                            goto lbReturn;
+                        }
+                    }
+                }
+                var mapper = HttpContext.RequestServices.GetRequiredService<IMapper>();
+                var tmp = changes.Select(c => mapper.Map<GamePropertyChangeItemDto>(c));
+                var str1 = JsonSerializer.Serialize(tmp);
+                order.BinaryArray = Encoding.UTF8.GetBytes(str1);  //设置变化数据
+                order.Confirm2 = true;
+                order.State = 1;
             }
+            _Logger.LogDebug("订单号{id}已经确认成功。", order.Id);
         lbReturn:
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception err)
+            {
+                _Logger.LogWarning("保存订单号{id}的订单时出错——{msg}", order.Id, err.Message);
+            }
+            return result;
+        lbErr:
+            result.FillErrorFromWorld();
+            result.Result = 1;
             return result;
         }
 

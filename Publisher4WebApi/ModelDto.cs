@@ -1387,7 +1387,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 法币购买商品的订单。
     /// </summary>
-    [AutoMap(typeof(GameShoppingOrder), ReverseMap = true)]
+    //[AutoMap(typeof(GameShoppingOrder), ReverseMap = true)]
     public class GameShoppingOrderDto
     {
         /// <summary>
@@ -2135,7 +2135,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 客户端在T78合作伙伴退款通知回调函数功能的参数封装类。
     /// </summary>
-    public class T78RefundParamsDto 
+    public class T78RefundParamsDto
     {
         /// <summary>
         /// 冰鸟订单号。
@@ -2283,19 +2283,19 @@ namespace GY02.Publisher
         /// 商品id。
         /// </summary>
         [JsonPropertyName("product_id")]
-        public string ProductId { get; set; }
+        public string Product_Id { get; set; }
 
         /// <summary>
         /// 区服id。
         /// </summary>
         [JsonPropertyName("server_id")]
-        public string ServerId { get; set; }
+        public string Server_Id { get; set; }
 
         /// <summary>
         /// 角色id。
         /// </summary>
         [JsonPropertyName("game_role_id")]
-        public string GameRoleId { get; set; }
+        public string Game_Role_Id { get; set; }
 
         /// <summary>
         /// 时间戳。
@@ -2332,7 +2332,7 @@ namespace GY02.Publisher
     /// <summary>
     /// T78合作伙伴充值回调返回值参数封装类。
     /// </summary>
-    public class PayedReturnDto
+    public class PayedReturnDto : ReturnDtoBase
     {
         /// <summary>
         /// 0=成功，表示游戏服务器成功接收了该次充值结果通知,注意是0为成功。
@@ -2341,12 +2341,6 @@ namespace GY02.Publisher
         [JsonPropertyName("ret")]
         public int Result { get; set; }
 
-        //#if DEBUG
-        /// <summary>
-        /// 调试用的信息。
-        /// </summary>
-        public string DebugMessage { get; set; }
-        //#endif
     }
 
     #endregion

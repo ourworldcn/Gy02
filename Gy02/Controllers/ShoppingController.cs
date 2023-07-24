@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
 using OW.Game.Store;
 using OW.SyncCommand;
+using System.Text.Json;
 
 namespace GY02.Controllers
 {
@@ -147,9 +148,10 @@ namespace GY02.Controllers
         /// 获取订单信息。
         /// </summary>
         /// <param name="model"></param>
+        /// <param name="db">数据库访问上下文。</param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<GetShoppingOrderReturnDto> GetShoppingOrder(GetShoppingOrderParamsDto model)
+        public ActionResult<GetShoppingOrderReturnDto> GetShoppingOrder(GetShoppingOrderParamsDto model, [FromServices] GY02UserContext db)
         {
             var result = new GetShoppingOrderReturnDto { };
             using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
@@ -159,7 +161,7 @@ namespace GY02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-            var db = gc.GetUser().GetDbContext();
+            //var db = gc.GetUser().GetDbContext();
             var coll = db.Set<GameShoppingOrder>().Where(c => c.CreateUtc >= model.Start && c.CreateUtc <= model.End).AsEnumerable();
             foreach (var c in coll)
             {
