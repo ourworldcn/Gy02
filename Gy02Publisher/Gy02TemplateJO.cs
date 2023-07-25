@@ -959,6 +959,15 @@ namespace GY02.Templates
         public GameAchievementTO Achievement { get; set; }
         #endregion
 
+        #region 唯一性相关
+
+        /// <summary>
+        /// 当该模板所代表物品需要在角色范围内做唯一性验证时配置此数据。一旦配置了该属性不是null则在发现违反角色唯一性的时候使用<see cref="GameEntitySummary"/>进行转化。
+        /// </summary>
+        public List<GameEntitySummary> UniInCharOuts { get; set; } = null;
+
+        #endregion 唯一性相关
+
         /// <summary>
         /// 快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
         /// </summary>

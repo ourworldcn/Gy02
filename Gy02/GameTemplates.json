@@ -4538,6 +4538,12 @@
       "DisplayName": "孵化引导用",
       "Gid": 180501003,
       "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}]}}"
+    },
+    {
+      "Id": "6516d816-236c-458b-b282-79e0c275026d",
+      "DisplayName": "一般卡池广告购买",
+      "Gid": 180201035,
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[\"shopcorner zhekou\",10001]}"
     }
   ]
 }

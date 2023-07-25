@@ -176,7 +176,10 @@ namespace GY02.Managers
             if (ignore && shoppingItem.Ins.All(c => c.IgnoreIfDisplayList))
                 return true;
             var b = _BlueprintManager.IsValid(shoppingItem.Ins, _EntityManager.GetAllEntity(gameChar));
-            if (!b) return false;
+            if (!b)
+            {
+                return false;
+            }
             //var costs = _BlueprintManager.GetCost(gameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)), shoppingItem.Ins);
             //if (costs is null)
             //    return false;

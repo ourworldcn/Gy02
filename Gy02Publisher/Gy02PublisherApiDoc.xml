@@ -553,6 +553,11 @@
             成就数据。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.UniInCharOuts">
+            <summary>
+            当该模板所代表物品需要在角色范围内做唯一性验证时配置此数据。一旦配置了该属性不是null则在发现违反角色唯一性的时候使用<see cref="T:GY02.Templates.GameEntitySummary"/>进行转化。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fcps">
             <summary>
             快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
@@ -1093,6 +1098,11 @@
         <member name="F:GY02.Publisher.ProjectContent.MailTId">
             <summary>
             邮件槽TId。（收件）
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.FabiTId">
+            <summary>
+            法币TID。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.GuanggaoCurrenyTId">

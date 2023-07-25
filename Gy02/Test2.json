@@ -1,19 +1,41 @@
 {
-  "gameId": "220000044",
-  "channelId": "3",
-  "appId": "210044002",
-  "userId": "u24206600006",
-  "cpOrderId": "7b47932b-c501-4319-973f-4ce41a6bcaa0",
-  "bfOrderId": "20230724123400000108kr",
-  "channelOrderId": "null",
-  "money": "100",
-  "callbackInfo": "7b47932b-c501-4319-973f-4ce41a6bcaa0",
-  "orderStatus": "1",
-  "channelInfo": "null",
-  "currency": "KRW",
-  "product_id": null,
-  "server_id": null,
-  "game_role_id": null,
-  "time": "1690173589",
-  "sign": "3191d4a3a6c23f4ea8df6b4ae4077342"
+  "Genus": [ "gs_choujiangbaoxiang" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "1de88b53-e5bf-4a60-9dfb-90284b94bdab",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 1,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "7657244e-ef96-4f4d-a07f-157b22198fd7",
+        "Count": 1
+      }
+    ]
+  },
+  "name_txt": 10964,
+  "comment_txt": 10940,
+  "JiaoBiao": [ "shopcorner zhekou", 10001 ]
 }

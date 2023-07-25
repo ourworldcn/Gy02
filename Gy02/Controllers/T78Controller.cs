@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GY02;
+using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
+using OW.SyncCommand;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -28,13 +30,15 @@ namespace GY02.Controllers
         /// <param name="shoppingManager"></param>
         /// <param name="entityManager"></param>
         /// <param name="logger"></param>
-        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger)
+        /// <param name="syncCommandManager"></param>
+        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager)
         {
             _T78Manager = t78Manager;
             _ShoppingManager = shoppingManager;
             _GameAccountStore = gameAccountStore;
             _EntityManager = entityManager;
             _Logger = logger;
+            _SyncCommandManager = syncCommandManager;
         }
 
         PublisherT78Manager _T78Manager;
@@ -42,6 +46,7 @@ namespace GY02.Controllers
         GameAccountStoreManager _GameAccountStore;
         GameEntityManager _EntityManager;
         ILogger<T78Controller> _Logger;
+        SyncCommandManager _SyncCommandManager;
 
         /// <summary>
         /// T78合作伙伴充值回调。
@@ -133,33 +138,31 @@ namespace GY02.Controllers
                     _Logger.LogWarning(result.DebugMessage);
                     goto lbReturn;
                 }
-
-                var changes = new List<GamePropertyChangeItem<object>>();
-                List<(List<GameEntitySummary>, int)> ges = new List<(List<GameEntitySummary>, int)>();  //物品要买的物品集合
+                var gc = gu.CurrentChar;
+                var bi = gc.HuoBiSlot.Children.First(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
+                var mapper = HttpContext.RequestServices.GetRequiredService<IMapper>();
+                var changes = new List<GamePropertyChangeItemDto> { };
+                //购买
                 foreach (var item in order.Detailes)
                 {
-                    if (!Guid.TryParse(item.GoodsId, out var tid)) goto lbErr;
-                    var tt = _ShoppingManager.GetShoppingItemByTId(tid);
-                    if (tt is null) goto lbErr;
-                    ges.Add((tt.Outs, (int)item.Count));
-                }
-                List<(GameEntitySummary, GameEntity)> entities = new List<(GameEntitySummary, GameEntity)>();
-                foreach (var item in ges)
-                {
-                    for (int i = 0; i < item.Item2; i++)
+                    for (int i = 0; i < item.Count; i++)
                     {
-                        if (!_EntityManager.CreateAndMove(item.Item1, gu.CurrentChar, changes))
+                        var command = new ShoppingBuyCommand()
                         {
-                            result.Result = 1;
-                            result.DebugMessage = OwHelper.GetLastErrorMessage();
+                            GameChar = null,
+                            ShoppingItemTId = Guid.Parse(item.GoodsId),
+                        };
+                        bi.Count++;
+                        _SyncCommandManager.Handle(command);
+                        if (command.HasError)
+                        {
+                            result.FillErrorFrom(command);
                             goto lbReturn;
                         }
+                        changes.AddRange(command.Changes.Select(c => mapper.Map<GamePropertyChangeItemDto>(c)));
                     }
                 }
-                var mapper = HttpContext.RequestServices.GetRequiredService<IMapper>();
-                var tmp = changes.Select(c => mapper.Map<GamePropertyChangeItemDto>(c));
-                var str1 = JsonSerializer.Serialize(tmp);
-                order.BinaryArray = Encoding.UTF8.GetBytes(str1);  //设置变化数据
+                order.BinaryArray = JsonSerializer.SerializeToUtf8Bytes(changes);  //设置变化数据
                 order.Confirm2 = true;
                 order.State = 1;
             }
@@ -173,10 +176,6 @@ namespace GY02.Controllers
             {
                 _Logger.LogWarning("保存订单号{id}的订单时出错——{msg}", order.Id, err.Message);
             }
-            return result;
-        lbErr:
-            result.FillErrorFromWorld();
-            result.Result = 1;
             return result;
         }
 

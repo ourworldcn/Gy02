@@ -18,6 +18,7 @@
     <Content Remove="数据说明\动态产出说明.json" />
     <Content Remove="数据说明\卡池组结构说明.json" />
     <Content Remove="数据说明\卡池结构说明.json" />
+    <Content Remove="数据说明\唯一性违反时转化结构说明.json" />
     <Content Remove="数据说明\商品项结构说明.json" />
     <Content Remove="数据说明\快速变化属性的说明.json" />
     <Content Remove="数据说明\成就定义说明.json" />
@@ -32,6 +33,9 @@
     <None Include="数据说明\卡池组结构说明.json" />
     <None Include="数据说明\卡池结构说明.json" />
     <None Include="数据说明\动态产出说明.json" />
+    <None Include="数据说明\唯一性违反时转化结构说明.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
     <None Include="数据说明\成就定义说明.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
