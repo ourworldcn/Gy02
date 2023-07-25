@@ -104,7 +104,7 @@ namespace GY02.AutoMappper
 
             CreateMap<GameShoppingOrder, GameShoppingOrderDto>().AfterMap((src, dest) =>
             {
-                var tmp = src.BinaryArray is null ? null : JsonSerializer.Deserialize<List<GamePropertyChangeItemDto>>(src.BinaryArray);
+                var tmp = src.BinaryArray is null || src.BinaryArray.Length < 2 ? null : JsonSerializer.Deserialize<List<GamePropertyChangeItemDto>>(src.BinaryArray);
                 if (tmp != null)
                     dest.Changes.AddRange(tmp);
             });

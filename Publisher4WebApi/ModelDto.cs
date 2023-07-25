@@ -898,6 +898,24 @@ namespace GY02.Publisher
     #region 物品管理相关
 
     /// <summary>
+    /// 增加广告币功能返回值封装类。
+    /// </summary>
+    public class AddItemForYourselfReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
+    /// 增加广告币功能参数封装类。
+    /// </summary>
+    public class AddItemForYourselfParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要增加物品的摘要，仅有TId和Count属性起作用。
+        /// </summary>
+        public List<GameEntitySummaryDto> Entities { get; set; } = new List<GameEntitySummaryDto>();
+    }
+
+    /// <summary>
     /// 修改指定实体的客户端用字典内容的功能的参数封装类。
     /// </summary>
     [AutoMap(typeof(ModifyClientDictionaryCommand), ReverseMap = true)]

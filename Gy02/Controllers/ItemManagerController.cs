@@ -64,29 +64,48 @@ namespace GY02.Controllers
             return result;
         }
 
-#if DEBUG
+        /// <summary>
+        /// 允许修改的物品的TId。
+        /// </summary>
+        static Guid[] tids = new Guid[] { ProjectContent.GuanggaoCurrenyTId };
 
         /// <summary>
-        /// 
+        /// 增加广告币。以后此函数会过滤TId，仅允许增加特定的TId物品
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<bool> TestAddItems()
+        public ActionResult<AddItemForYourselfReturnDto> AddItemForYourself(AddItemForYourselfParamsDto model)
         {
-            var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
-            store.GetOrLoadUser("gy20", "HtnXNCiJ", out var gu);
-            var token = gu.Token;
-            var model = new AddItemsParamsDto { Token = token };
-            //加金币
-            model.TIds.Add(ProjectContent.GoldTId);
-            model.Counts.Add(200_000);
-            //加图纸
-            model.TIds.Add(Guid.Parse("16a8b068-918b-46ad-8ae6-d3797c7683ac"));
-            model.Counts.Add(100);
-            AddItems(model, store, _ServiceProvider.GetRequiredService<SyncCommandManager>(), _ServiceProvider.GetRequiredService<GameTemplateManager>(),
-                _ServiceProvider.GetRequiredService<IMapper>());
-            return true;
+            var result = new AddItemForYourselfReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var errTid = tids.FirstOrDefault(c => !tids.Contains(c));
+            if (errTid != Guid.Empty)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"至少有一个物品不可以使用此接口更改，TId={errTid}";
+                return result;
+            }
+            var changes = new List<GamePropertyChangeItem<object>> { };
+
+            var entities = _Mapper.Map<List<GameEntitySummary>>(model.Entities);
+            entities.ForEach(c => c.Id = null);
+            //var entities = model.Entities.Select(c => _Mapper.Map<GameEntitySummary>(c));
+            if (!_EntityManager.CreateAndMove(entities, gc, changes))
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            _Mapper.Map(changes, result.Changes);
+            return result;
         }
+
+#if DEBUG
 
         /// <summary>
         /// 测试升级接口。

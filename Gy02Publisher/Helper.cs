@@ -148,6 +148,11 @@ namespace GY02.Publisher
         #endregion
 
         /// <summary>
+        /// 广告币TID。
+        /// </summary>
+        public static readonly Guid GuanggaoCurrenyTId = new Guid("1de88b53-e5bf-4a60-9dfb-90284b94bdab");
+
+        /// <summary>
         /// 金币TID。
         /// </summary>
         public static readonly Guid GoldTId = new Guid("a45b3421-3688-43c5-b8f5-429db7621f69");

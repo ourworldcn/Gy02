@@ -1095,6 +1095,11 @@
             邮件槽TId。（收件）
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.GuanggaoCurrenyTId">
+            <summary>
+            广告币TID。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.GoldTId">
             <summary>
             金币TID。

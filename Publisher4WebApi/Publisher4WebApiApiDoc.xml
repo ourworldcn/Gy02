@@ -689,6 +689,21 @@
             
             </summary>
         </member>
+        <member name="T:GY02.Publisher.AddItemForYourselfReturnDto">
+            <summary>
+            增加广告币功能返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.AddItemForYourselfParamsDto">
+            <summary>
+            增加广告币功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.AddItemForYourselfParamsDto.Entities">
+            <summary>
+            要增加物品的摘要，仅有TId和Count属性起作用。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.ModifyClientDictionaryParamsDto">
             <summary>
             修改指定实体的客户端用字典内容的功能的参数封装类。

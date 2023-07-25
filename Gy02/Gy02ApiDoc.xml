@@ -296,9 +296,14 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:GY02.Controllers.ItemManagerController.TestAddItems">
+        <member name="F:GY02.Controllers.ItemManagerController.tids">
             <summary>
-            
+            允许修改的物品的TId。
+            </summary>
+        </member>
+        <member name="M:GY02.Controllers.ItemManagerController.AddItemForYourself(GY02.Publisher.AddItemForYourselfParamsDto)">
+            <summary>
+            增加广告币。以后此函数会过滤TId，仅允许增加特定的TId物品
             </summary>
             <returns></returns>
         </member>
