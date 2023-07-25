@@ -1,41 +1,7 @@
 {
-  "Genus": [ "gs_zs" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 0.99,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 0.99,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 80
-      }
-    ]
-  },
-  "name_txt": 10966,
-  "comment_txt": 10960,
-  "JiaoBiao": []
+  "bnOrderSn": "20230724183900000208kr",
+  "cpOrderSn": "b6ce23ac-3acb-4298-95e8-c86bb0cf4e2a",
+  "createTime": "2023-07-24 18:39:26",
+  "refundTime": "2023-07-25 10:46:03",
+  "sign": "1b738a6cce975a537ac91be3c6482990"
 }

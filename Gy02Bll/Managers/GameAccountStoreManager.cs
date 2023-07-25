@@ -544,12 +544,24 @@ namespace GY02.Managers
                 user = null;
                 return false;
             }
+            //在缓存中查找
+            var key = _LoginName2Key.GetValueOrDefault(loginName);
+            if (key is not null) //若找到可能的对象
+            {
+                using var dw = GetUser(key, out user);
+                if (!dw.IsEmpty)    //若成功找到
+                {
+                    if (user.LoginName == loginName && user.IsPwd(pwd)) //若密码正确
+                        return true;
+                }
+            }
+            //加载
             var pwdHash = GetPwdHash(pwd);
             using var db = _ContextFactory.CreateDbContext();
             var id = db.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == loginName && c.BinaryArray == pwdHash).Select(c => c.Id).FirstOrDefault();
 
             if (id == Guid.Empty) goto falut;    //若没有找到指定对象
-            var key = id.ToString();
+            key = id.ToString();
             using (var dw = GetOrLoadUser(key, out user))
                 if (dw.IsEmpty) return false;    //若加载失败
             return true;

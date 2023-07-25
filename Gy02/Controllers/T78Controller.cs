@@ -200,7 +200,7 @@ namespace GY02.Controllers
                 _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
-            if (Guid.TryParse(model.CpOrderSn, out var orderId))  //若订单号无效
+            if (!Guid.TryParse(model.CpOrderSn, out var orderId))  //若订单号无效
             {
                 result.Result = 1;
                 result.DebugMessage = $"无效的研发订单号,CpOrderSn={model.CpOrderSn}";
