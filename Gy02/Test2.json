@@ -1,41 +1,7 @@
 {
-  "Genus": [ "gs_choujiangbaoxiang" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "1de88b53-e5bf-4a60-9dfb-90284b94bdab",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 1,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "7657244e-ef96-4f4d-a07f-157b22198fd7",
-        "Count": 1
-      }
-    ]
-  },
-  "name_txt": 10964,
-  "comment_txt": 10940,
-  "JiaoBiao": [ "shopcorner zhekou", 10001 ]
+  "name_txt": 11858,
+  "comment_txt": 11864,
+  "stk": -1,
+  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
+  "ptid": "9c559895-9a2c-43a7-b793-e879a600487c"
 }

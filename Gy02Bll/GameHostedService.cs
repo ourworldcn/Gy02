@@ -23,6 +23,7 @@ using OW.Game.Conditional;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.GameDb;
 using OW.SyncCommand;
@@ -201,15 +202,16 @@ namespace GY02
         public static Guid PingGuid = Guid.Parse("{D99A07D0-DF3E-43F7-8060-4C7140905A29}");
 
         [Conditional("DEBUG")]
-        private void Test()
+        private void Test(string str = null)
         {
             var sw = Stopwatch.StartNew();
             try
             {
                 #region 测试用代码
-                var str = JsonSerializer.Serialize(Guid.NewGuid());
+
                 var store = _Services.GetService<GameAccountStoreManager>();
                 var mapper = _Services.GetService<IMapper>();
+
                 #endregion 测试用代码
             }
             finally

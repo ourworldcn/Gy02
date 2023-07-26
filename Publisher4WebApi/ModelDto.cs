@@ -2151,6 +2151,63 @@ namespace GY02.Publisher
     #region T78相关
 
     /// <summary>
+    /// 问卷调查成功结束的回调参数。
+    /// </summary>
+    public class T78SurveiedParamsDto
+    {
+        /// <summary>
+        /// 每一种问卷一个唯一标识，相互约定好。暂由开发方提供给SDK方。
+        /// </summary>
+        [JsonPropertyName("tId")]
+        public string TId { get; set; }
+
+        /// <summary>
+        /// 玩家的Id,与登录接口中相同。
+        /// </summary>
+        [JsonPropertyName("userId")]
+        public string UserId { get; set; }
+
+        /// <summary>
+        /// 签名。
+        /// </summary>
+        [JsonPropertyName("sign")]
+        public string Sign { get; set; }
+
+#if NETCOREAPP2_1_OR_GREATER
+        /// <summary>
+        /// 获取一个字典，包含属性名和值。属性名用json的键名。
+        /// </summary>
+        /// <returns></returns>
+        public Dictionary<string, string> GetDictionary()
+        {
+            var result = new Dictionary<string, string>();
+            var pis = GetType().GetProperties();
+            foreach (var prop in pis)
+            {
+                var name = prop.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? prop.Name;
+                result.Add(name, Convert.ToString(prop.GetValue(this)));
+            }
+            result.Remove("sign", out _);
+            return result;
+        }
+#endif
+    }
+
+    /// <summary>
+    /// 问卷调查成功结束的回调返回值封装类。
+    /// </summary>
+    public class T78SurveiedReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 成功，表示游戏服务器成功接收了该次通知,注意是0为成功。
+        /// 失败，表示游戏服务器无法接收或识别该次结果通知，如：签名检验不正确、游戏服务器接收失败。
+        /// </summary>
+        [JsonPropertyName("ret")]
+        public int Result { get; set; }
+    }
+
+
+    /// <summary>
     /// 客户端在T78合作伙伴退款通知回调函数功能的参数封装类。
     /// </summary>
     public class T78RefundParamsDto

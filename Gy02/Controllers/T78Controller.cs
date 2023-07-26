@@ -238,6 +238,29 @@ namespace GY02.Controllers
             }
             return result;
         }
+
+        /// <summary>
+        /// 问卷调查成功结束的回调。
+        /// </summary>
+        /// <param name="model">application/x-www-form-urlencoded 格式传递参数时，手字母小写。</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<T78SurveiedReturnDto> Surveied([FromForm] T78SurveiedParamsDto model)
+        {
+            _Logger.LogInformation("收到T78问卷调查回调，参数 = {model}", JsonSerializer.Serialize(model));
+            var result = new T78SurveiedReturnDto { };
+
+            var dic = model.GetDictionary();
+            var sign = _T78Manager.GetSignature(dic);
+            if (sign != model.Sign) //若签名不正确
+            {
+                result.Result = 1;
+                result.DebugMessage = $"签名不正确。";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            return result;
+        }
     }
 
 }

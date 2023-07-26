@@ -1,10 +1,24 @@
 {
-  "UniInCharOuts": [  //角色范围内唯一性违反时的转化公式
+  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
+  "ptid": "3b163a62-6591-4a93-a385-cf079b20f589",
+  "name_txt": 12401,
+  "atk": null,
+  "def": null,
+  "pow": null,
+  "Genus": [ "rarity_cj", "e_zuoqi" ],
+  "UniInCharOuts": [
     {
-      "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //暂时无用，可以为null
-      "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //父容器TId，可以为null表示放置在默认容器中
-      "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //物品的TId
-      "Count": 0 //物品的数量
+      "Id": null,
+      "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+      "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
+      "Count": 3
     }
-  ]
+  ],
+  "p_skills": [
+    {
+      "skillsid": "0dfc1671-b37e-422c-b832-149585ffff2c",
+      "enable": true
+    }
+  ],
+  "equipskin": "Sheep_Color_777777"
 }

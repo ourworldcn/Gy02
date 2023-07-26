@@ -723,6 +723,12 @@ namespace GY02.Managers
             return Move(entity, container, changes);
         }
 
+        /// <summary>
+        /// 将指定的一组实体，放入一个容器中。
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <param name="container"></param>
+        /// <param name="changes"></param>
         public void Move(IEnumerable<GameEntity> entities, GameEntity container, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             //TODO 需要判断是否可以完整移入
@@ -746,7 +752,6 @@ namespace GY02.Managers
                 if (!RemoveFromContainer(entity, changes) && OwHelper.GetLastError() != ErrorCodes.NO_ERROR) return false;
                 if (IsMerge(entity, container, out var dest))  //若找到可合并物
                 {
-                    //Delete(entity);
                     Modify(dest, entity.Count, changes);
                 }
                 else //没有可合并物
@@ -766,6 +771,15 @@ namespace GY02.Managers
                 if (parentThing is null) return false;
                 var thing = entity.GetThing();
                 if (thing is null) return false;
+                if (tt.UniInCharOuts is not null)   //若需要唯一性验证
+                {
+                    var gc = (GameChar)GetEntity(container.GetThing().GetGameCharThing());
+                    if (gc.GetAllChildren().Any(c => c.ExtraGuid == tt.TemplateId)) //若发现重复
+                    {
+                        if (!CreateAndMove(tt.UniInCharOuts, (GameChar)GetEntity(container.GetThing().GetGameCharThing()), changes)) return false;
+                        return true;
+                    }
+                }
                 VirtualThingManager.Add(thing, parentThing);
                 changes?.CollectionAdd(entity, container);
             }
