@@ -224,7 +224,7 @@ namespace GY02.Publisher
                     var ip = new IPEndPoint(IPAddress.Any, 0);
 
                     var buff = _Udp.Receive(ref ip);
-                    Debug.WriteLine($"收到来自{ip}的数据，{buff.Length}字节。");
+                    Debug.WriteLine($"客户端收到来自{ip}的数据，{buff.Length}字节。");
                     InvokeDataRecived(new DataRecivedEventArgs()
                     {
                         Data = buff,

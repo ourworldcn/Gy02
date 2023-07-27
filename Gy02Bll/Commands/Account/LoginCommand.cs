@@ -66,13 +66,8 @@ namespace GY02.Commands
         {
             var svcStore = _Service.GetRequiredService<GameAccountStoreManager>();
             var exists = svcStore.LoginName2Key.ContainsKey(command.LoginName);  //是否已经登录
-            if (!svcStore.GetOrLoadUser(command.LoginName, command.Pwd, out var gu))
-            {
-                command.FillErrorFromWorld();
-                return;
-            }
-            using var dw = DisposeHelper.Create(svcStore.Lock, svcStore.Unlock, gu.Key, TimeSpan.FromSeconds(3));
-            if (dw.IsEmpty || gu.IsDisposed)
+            using var dw = svcStore.GetOrLoadUser(command.LoginName, command.Pwd, out var gu);
+            if (dw.IsEmpty)
             {
                 command.FillErrorFromWorld();
                 return;

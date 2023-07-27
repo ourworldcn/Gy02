@@ -64,7 +64,7 @@ namespace GY02.Commands
             //var si = _ShoppingManager.GetShoppingItemByTId(command.ShoppingItemTId);
             if (tt is null) goto lbErr;
             var now = OwHelper.WorldNow;
-            if (!_ShoppingManager.IsMatch(command.GameChar, tt, now, out _)) goto lbErr;
+            if (!_ShoppingManager.IsMatch(command.GameChar, tt, now, out _)) goto lbErr;    //若不能购买
 
             var allEntity = _EntityManager.GetAllEntity(command.GameChar)?.ToArray();
             if (allEntity is null) goto lbErr;

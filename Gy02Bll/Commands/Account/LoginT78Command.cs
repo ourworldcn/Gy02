@@ -124,8 +124,8 @@ namespace GY02.Publisher
                     command.FillErrorFromWorld();
                     return;
                 }
-                using var dw = DisposeHelper.Create(c => _GameAccountStore.Unlock(c), userKey);
-                if (dw.IsEmpty) { command.FillErrorFromWorld(); return; }
+                using var dwKey = DisposeHelper.Create(c => _GameAccountStore.Unlock(c), userKey);
+                if (dwKey.IsEmpty) { command.FillErrorFromWorld(); return; }
 
                 //标记绑定关系
                 //var t78slot = _VirtualThingManager.Create(t78tid, 1).First();
@@ -144,7 +144,8 @@ namespace GY02.Publisher
                 return;
             }
             userKey = loginCommand.User.Key;
-            if (!_GameAccountStore.GetOrLoadUser(uid, uid, out var gu))
+            using var dw = _GameAccountStore.GetOrLoadUser(uid, uid, out var gu);
+            if (dw.IsEmpty)
             {
                 command.FillErrorFromWorld();
                 return;

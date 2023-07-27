@@ -91,7 +91,11 @@ namespace GY02.Controllers
 #if DEBUG
             var udp = new GyUdpClient();
             var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
-            //udp.Start(result.Token, serverIp);
+            udp.Start(result.Token, serverIp);
+            Task.Run(() =>
+            {
+                udp.Nop(result.Token);
+            });
 #endif
             return result;
         }

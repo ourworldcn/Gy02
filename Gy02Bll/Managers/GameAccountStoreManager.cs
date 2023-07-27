@@ -452,7 +452,7 @@ namespace GY02.Managers
         /// <summary>
         /// 从数据库加载一个指定条件的用户账号并返回，但不加入缓存（需要调用者自己加入）。
         /// </summary>
-        /// <param name="loadFunc">加载函数，符合该条件的第一个用户对象将被加载并返回。条件会自动附加限定是账号的Guid，调用者不必限定。</param>
+        /// <param name="loadFunc">加载函数，符合该条件的第一个用户对象将被加载并返回。条件会自动附加限定是账号的模板Guid，调用者不必限定。</param>
         /// <param name="context">使用的上下文对象，如果省略或为空引用则自动生成。</param>
         /// <returns>返回找到符合条件的第一账号，否则返回null。</returns>
         public virtual GameUser LoadUser(Expression<Func<VirtualThing, bool>> loadFunc, DbContext context = null)
@@ -532,43 +532,49 @@ namespace GY02.Managers
         /// <param name="loginName"></param>
         /// <param name="pwd"></param>
         /// <param name="user"></param>
-        /// <returns></returns>
+        /// <returns>锁定凭据，调用者在不再需要锁定时应清理。</returns>
         /// <exception cref="TimeoutException"></exception>
-        public bool GetOrLoadUser(string loginName, string pwd, out GameUser user)
+        public DisposeHelper<string> GetOrLoadUser(string loginName, string pwd, out GameUser user)
         {
             using var dwLoginName = DisposeHelper.Create(Lock, Unlock, loginName, Options.DefaultLockTimeout);  //极小概率错序死锁，忽略，当做锁定超时处理
             if (dwLoginName.IsEmpty)
             {
                 OwHelper.SetLastError(ErrorCodes.WAIT_TIMEOUT);
-                OwHelper.SetLastErrorMessage($"无法锁定用户登录名，LoginName = {loginName}。");
+                OwHelper.SetLastErrorMessage($"无法锁定用户登录名。");
                 user = null;
-                return false;
+                return DisposeHelper.Empty<string>();
             }
             //在缓存中查找
             var key = _LoginName2Key.GetValueOrDefault(loginName);
             if (key is not null) //若找到可能的对象
             {
-                using var dw = GetUser(key, out user);
+                var dw = GetUser(key, out user);
                 if (!dw.IsEmpty)    //若成功找到
                 {
                     if (user.LoginName == loginName && user.IsPwd(pwd)) //若密码正确
-                        return true;
+                        return dw;
+                    else //若用户名或密码不正确
+                    {
+                        dw.Dispose();
+                        goto falut;
+                    }
                 }
             }
             //加载
             var pwdHash = GetPwdHash(pwd);
-            using var db = _ContextFactory.CreateDbContext();
-            var id = db.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == loginName && c.BinaryArray == pwdHash).Select(c => c.Id).FirstOrDefault();
-
-            if (id == Guid.Empty) goto falut;    //若没有找到指定对象
-            key = id.ToString();
-            using (var dw = GetOrLoadUser(key, out user))
-                if (dw.IsEmpty) return false;    //若加载失败
-            return true;
+            using (var db = _ContextFactory.CreateDbContext())
+            {
+                var id = db.Set<VirtualThing>().Where(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == loginName && c.BinaryArray == pwdHash).Select(c => c.Id).FirstOrDefault();
+                if (id == Guid.Empty) goto falut;    //若没有找到指定对象
+                key = id.ToString();
+                var dw = GetOrLoadUser(key, out user);
+                if (dw.IsEmpty) return dw;    //若加载失败
+                return dw;
+            }
         falut:
             OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_NO_SUCH_USER, $"找不到指定的用户名或密码错误。");
             user = null;
-            return false;
+            return DisposeHelper.Empty<string>();
         }
 
         #endregion 加载角色或用户

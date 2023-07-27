@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GY02;
+using GY02.Base;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
@@ -31,7 +33,8 @@ namespace GY02.Controllers
         /// <param name="entityManager"></param>
         /// <param name="logger"></param>
         /// <param name="syncCommandManager"></param>
-        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager)
+        /// <param name="specialManager"></param>
+        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager)
         {
             _T78Manager = t78Manager;
             _ShoppingManager = shoppingManager;
@@ -39,6 +42,7 @@ namespace GY02.Controllers
             _EntityManager = entityManager;
             _Logger = logger;
             _SyncCommandManager = syncCommandManager;
+            _SpecialManager = specialManager;
         }
 
         PublisherT78Manager _T78Manager;
@@ -47,6 +51,7 @@ namespace GY02.Controllers
         GameEntityManager _EntityManager;
         ILogger<T78Controller> _Logger;
         SyncCommandManager _SyncCommandManager;
+        SpecialManager _SpecialManager;
 
         /// <summary>
         /// T78合作伙伴充值回调。
@@ -243,12 +248,13 @@ namespace GY02.Controllers
         /// 问卷调查成功结束的回调。
         /// </summary>
         /// <param name="model">application/x-www-form-urlencoded 格式传递参数时，手字母小写。</param>
+        /// <param name="mailManager"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<T78SurveiedReturnDto> Surveied([FromForm] T78SurveiedParamsDto model)
+        public ActionResult<T78SurveiedReturnDto> Surveied([FromForm] T78SurveiedParamsDto model, [FromServices] GameMailManager mailManager)
         {
             _Logger.LogInformation("收到T78问卷调查回调，参数 = {model}", JsonSerializer.Serialize(model));
-            var result = new T78SurveiedReturnDto { };
+            T78SurveiedReturnDto result = new T78SurveiedReturnDto { };
 
             var dic = model.GetDictionary();
             var sign = _T78Manager.GetSignature(dic);
@@ -259,6 +265,69 @@ namespace GY02.Controllers
                 _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
+            if (!Guid.TryParse(model.TId, out var tid))
+            {
+                result.Result = 1;
+                result.DebugMessage = $"model.TId 是无效的TId。";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            using (var dwKey = _GameAccountStore.GetOrLoadUser(model.UserId, model.UserId, out var user))
+            {
+                if (dwKey.IsEmpty) goto lbErr;
+                var gc = user.CurrentChar;
+                //购买商品的输出项
+                var tt = _ShoppingManager.GetShoppingTemplateByTId(tid);
+                if (tt is null) goto lbErr; //若找不到模板
+                var now = OwHelper.WorldNow;
+                if (!_ShoppingManager.IsMatch(gc, tt, now, out _)) goto lbErr;    //若不能购买
+
+                var allEntity = _EntityManager.GetAllEntity(gc)?.ToArray();
+                if (allEntity is null) goto lbErr;  //若无法获取
+                                                    //提前缓存产出项
+                var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+                if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
+                {
+                    var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
+                    {
+                        Change = null,
+                        GameChar = gc,
+                        IgnoreGuarantees = false,
+                        Random = new Random(),
+                    });
+                    if (!b) goto lbErr;
+                }
+                var items = list.SelectMany(c => c.Item2);
+                //发邮件
+                using (var dwKeyAdmin = _GameAccountStore.GetOrLoadUser(ProjectContent.AdminLoginName, ProjectContent.AdminPwd, out var adminUser))
+                {
+                    if (dwKeyAdmin.IsEmpty) goto lbErr;
+                    var command = new SendMailCommand
+                    {
+                        GameChar = adminUser.CurrentChar,
+                        Mail = new SendMailItem
+                        {
+                            Body = "None",
+                            Subject = "None",
+                        },
+                    };
+                    command.ToIds.Add(gc.Id);   //加入收件人
+                    command.Mail.Attachment.AddRange(items);    //加入附件
+                    _SyncCommandManager.Handle(command);
+                    if (command.HasError)
+                    {
+                        result.Result = 1;
+                        result.FillErrorFrom(command);
+                        _Logger.LogWarning(result.DebugMessage);
+                        return result;
+                    }
+                }
+                return result;
+            }
+        lbErr:
+            result.Result = 1;
+            result.FillErrorFromWorld();
+            _Logger.LogWarning(result.DebugMessage);
             return result;
         }
     }
