@@ -211,7 +211,7 @@ namespace GY02
 
                 var store = _Services.GetService<GameAccountStoreManager>();
                 var mapper = _Services.GetService<IMapper>();
-
+                var str1 = store.GetPwdHash("gy123456");
                 #endregion 测试用代码
             }
             finally

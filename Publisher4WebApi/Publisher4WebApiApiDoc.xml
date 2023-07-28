@@ -1686,16 +1686,19 @@
         <member name="P:GY02.Publisher.T78SurveiedParamsDto.TId">
             <summary>
             每一种问卷一个唯一标识，相互约定好。暂由开发方提供给SDK方。
+            对application/x-www-form-urlencoded模式，参数名首字母小写。
             </summary>
         </member>
         <member name="P:GY02.Publisher.T78SurveiedParamsDto.UserId">
             <summary>
             玩家的Id,与登录接口中相同。
+            对application/x-www-form-urlencoded模式，参数名首字母小写。
             </summary>
         </member>
         <member name="P:GY02.Publisher.T78SurveiedParamsDto.Sign">
             <summary>
             签名。
+            对application/x-www-form-urlencoded模式，参数名首字母小写。
             </summary>
         </member>
         <member name="M:GY02.Publisher.T78SurveiedParamsDto.GetDictionary">
@@ -1930,9 +1933,9 @@
             引发事件的任务。
             </summary>
         </member>
-        <member name="F:GY02.Publisher.GyUdpClient._ListenTask">
+        <member name="F:GY02.Publisher.GyUdpClient._CancellationTokenSource">
             <summary>
-            侦听任务。
+            
             </summary>
         </member>
         <member name="P:GY02.Publisher.GyUdpClient.CancellationTokenSource">
@@ -1961,6 +1964,13 @@
             开始侦听。
             </summary>
             <exception cref="T:System.Net.Sockets.SocketException">访问套接字时出错。请务必拦截该异常并处理，以避免进程崩溃。</exception>
+        </member>
+        <member name="M:GY02.Publisher.GyUdpClient.DataRev(System.Threading.Tasks.Task{System.Net.Sockets.UdpReceiveResult},System.Object)">
+            <summary>
+            当侦听数据到达结束时。
+            </summary>
+            <param name="task"></param>
+            <param name="state"></param>
         </member>
         <member name="M:GY02.Publisher.GyUdpClient.Nop(System.Guid)">
             <summary>

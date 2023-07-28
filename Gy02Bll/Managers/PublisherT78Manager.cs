@@ -21,7 +21,7 @@ namespace GY02.Managers
         public PublisherT78ManagerOptions Value => this;
 
         /// <summary>
-        /// 基础加密矢量
+        /// 基础加密矢量。
         /// </summary>
         public string AppSecret { get; set; } = "c73f8a6a27cb3e13c4bf455bef422cdb"; //
 

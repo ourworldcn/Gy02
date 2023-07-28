@@ -32,19 +32,25 @@ namespace GY02.Managers
 
     public class UdpServerManager : BackgroundService
     {
-        public UdpServerManager(IHostApplicationLifetime lifetime, ILogger<UdpServerManager> logger, IOptions<UdpServerManagerOptions> options)
+        public UdpServerManager(IHostApplicationLifetime lifetime, ILogger<UdpServerManager> logger, IOptions<UdpServerManagerOptions> options, GameAccountStoreManager accountStoreManager)
         {
             _Lifetime = lifetime;
             _Logger = logger;
             _Options = options.Value;
+            _AccountStoreManager = accountStoreManager;
             var count = Interlocked.Increment(ref _Count);
             if (_Count > 1)
                 _Logger.LogWarning($"检测到UdpServerManager第{count}个实例。");
+            _Timer = new Timer(ClearToken, null, 60_000, 60_000);
+            _Lifetime.ApplicationStopping.Register(() => _Timer?.Dispose());    //试图关闭清理计时器
         }
         volatile static int _Count = 0;
         IHostApplicationLifetime _Lifetime;
         ILogger<UdpServerManager> _Logger;
         UdpServerManagerOptions _Options;
+        GameAccountStoreManager _AccountStoreManager;
+
+        Timer _Timer;
 
         /// <summary>
         /// 听的端口号。
@@ -183,6 +189,18 @@ namespace GY02.Managers
                 {
                     _Logger.LogWarning(excp, "回应信息时出错。");
                 }
+            }
+        }
+
+        /// <summary>
+        /// 清理过时的Token。
+        /// </summary>
+        void ClearToken(object state)
+        {
+            foreach (var item in _Token2EndPoint)
+            {
+                if (!_AccountStoreManager.Token2Key.ContainsKey(item.Key))   //若不存在指定的Token
+                    _Token2EndPoint.Remove(item.Key, out _);
             }
         }
 

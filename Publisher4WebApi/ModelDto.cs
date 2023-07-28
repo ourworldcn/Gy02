@@ -2157,18 +2157,21 @@ namespace GY02.Publisher
     {
         /// <summary>
         /// 每一种问卷一个唯一标识，相互约定好。暂由开发方提供给SDK方。
+        /// 对application/x-www-form-urlencoded模式，参数名首字母小写。
         /// </summary>
         [JsonPropertyName("tId")]
         public string TId { get; set; }
 
         /// <summary>
         /// 玩家的Id,与登录接口中相同。
+        /// 对application/x-www-form-urlencoded模式，参数名首字母小写。
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }
 
         /// <summary>
         /// 签名。
+        /// 对application/x-www-form-urlencoded模式，参数名首字母小写。
         /// </summary>
         [JsonPropertyName("sign")]
         public string Sign { get; set; }

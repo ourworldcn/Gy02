@@ -59,7 +59,7 @@ namespace GY02.Publisher
     public class LoginT78Command : SyncCommandBase
     {
         /// <summary>
-        /// 发行商SDK给的的sid。
+        /// 发行商SDK给的sid。
         /// </summary>
         public string Sid { get; set; }
 

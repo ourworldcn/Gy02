@@ -157,7 +157,7 @@ namespace GY02.Commands
                     NewValue = totalCost,
                 });
             }
-            SetLevel(entity, Convert.ToInt32(entity.Level + 1),_GameEntityManager, changes);
+            SetLevel(entity, Convert.ToInt32(entity.Level + 1), _GameEntityManager, changes);
             return true;
         }
 

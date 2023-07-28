@@ -141,11 +141,10 @@ namespace GY02.Publisher
         /// 引发事件的任务。
         /// </summary>
         Task _PostEventTask;
-        /// <summary>
-        /// 侦听任务。
-        /// </summary>
-        Task _ListenTask;
 
+        /// <summary>
+        /// 
+        /// </summary>
         CancellationTokenSource _CancellationTokenSource = new CancellationTokenSource();
 
         /// <summary>
@@ -207,34 +206,37 @@ namespace GY02.Publisher
                 _PostEventTask = Task.Factory.StartNew(PostEventCallback, TaskCreationOptions.LongRunning);
 
             //初始化接受网络数据的任务。
-            if (_ListenTask is null)
-                _ListenTask = Task.Factory.StartNew(ListenCallback, TaskCreationOptions.LongRunning);
-            //通知服务器
-            //_Timer = new System.Threading.Timer(c => Nop(Token), default, 0, 60_000);
+            _Udp.ReceiveAsync().ContinueWith(DataRev, CancellationTokenSource.Token, TaskContinuationOptions.ExecuteSynchronously);
+            //心跳
+            _Timer = new System.Threading.Timer(c => Nop(Token), default, 10_000, 10_000);
         }
 
-        void ListenCallback()
+        /// <summary>
+        /// 当侦听数据到达结束时。
+        /// </summary>
+        /// <param name="task"></param>
+        /// <param name="state"></param>
+        void DataRev(Task<UdpReceiveResult> task, object state)
         {
-
-            Nop(Token);
-            while (!CancellationTokenSource.IsCancellationRequested)
+            UdpReceiveResult udpResult;
+            try
             {
-                try
+                if (task.IsCanceled)    //若已经结束侦听
+                    return;
+                udpResult = task.Result;
+                InvokeDataRecived(new DataRecivedEventArgs()
                 {
-                    var ip = new IPEndPoint(IPAddress.Any, 0);
-
-                    var buff = _Udp.Receive(ref ip);
-                    Debug.WriteLine($"客户端收到来自{ip}的数据，{buff.Length}字节。");
-                    InvokeDataRecived(new DataRecivedEventArgs()
-                    {
-                        Data = buff,
-                    });
-                }
-                catch (Exception excp)
-                {
-                    Debug.WriteLine(excp);
-                }
+                    Data = udpResult.Buffer,
+                });
             }
+            catch //复位错误
+            {
+                uint IOC_IN = 0x80000000;
+                uint IOC_VENDOR = 0x18000000;
+                uint IOC_UDP_RESET = IOC_IN | IOC_VENDOR | 12;
+                _Udp.Client.IOControl((int)IOC_UDP_RESET, new byte[] { Convert.ToByte(false) }, null);
+            }
+            _Udp.ReceiveAsync().ContinueWith(DataRev, CancellationTokenSource.Token, TaskContinuationOptions.ExecuteSynchronously);
         }
 
         /// <summary>
@@ -246,8 +248,17 @@ namespace GY02.Publisher
             //通知服务器
             var guts = token.ToByteArray();
             //Socket socket = null;
-
-            _Udp.Send(guts, guts.Length);
+            try
+            {
+                _Udp.Send(guts, guts.Length);
+            }
+            catch
+            {
+                uint IOC_IN = 0x80000000;
+                uint IOC_VENDOR = 0x18000000;
+                uint IOC_UDP_RESET = IOC_IN | IOC_VENDOR | 12;
+                _Udp?.Client.IOControl((int)IOC_UDP_RESET, new byte[] { Convert.ToByte(false) }, null);
+            }
         }
 
         #region 事件相关
@@ -282,8 +293,11 @@ namespace GY02.Publisher
             {
                 try
                 {
-                    _EventDatas.TryTake(out item);
-
+                    if (!_EventDatas.TryTake(out item))
+                    {
+                        Thread.Sleep(1);
+                        continue;
+                    }
                 }
                 catch (ObjectDisposedException) //已释放了 BlockingCollection<T>。
                 {
@@ -338,8 +352,8 @@ namespace GY02.Publisher
                     //释放托管状态(托管对象)
                     _CancellationTokenSource?.Cancel();
                     var waitHandle = new AutoResetEvent(false);
-                    _Timer?.Dispose(/*waitHandle*/);
-                    //waitHandle.WaitOne();   //确保定时器退出
+                    _Timer?.Dispose(waitHandle);
+                    waitHandle.WaitOne(5_000);   //确保定时器退出
                     _Udp?.Dispose();
                 }
                 // 释放未托管的资源(未托管的对象)并重写终结器

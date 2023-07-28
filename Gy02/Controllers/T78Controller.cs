@@ -274,6 +274,7 @@ namespace GY02.Controllers
             }
             using (var dwKey = _GameAccountStore.GetOrLoadUser(model.UserId, model.UserId, out var user))
             {
+                //var dwKey1 = _GameAccountStore.GetOrLoadUser("string306", "string", out  user);
                 if (dwKey.IsEmpty) goto lbErr;
                 var gc = user.CurrentChar;
                 //购买商品的输出项
