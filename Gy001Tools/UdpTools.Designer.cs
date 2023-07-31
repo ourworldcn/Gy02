@@ -67,7 +67,7 @@
             this.btRecv.Name = "btRecv";
             this.btRecv.Size = new System.Drawing.Size(75, 23);
             this.btRecv.TabIndex = 3;
-            this.btRecv.Text = "button1";
+            this.btRecv.Text = "侦听";
             this.btRecv.UseVisualStyleBackColor = true;
             this.btRecv.Click += new System.EventHandler(this.btRecv_Click);
             // 
@@ -112,6 +112,7 @@
             this.Controls.Add(this.btSend);
             this.Name = "UdpTools";
             this.Text = "UdpTools";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UdpTools_FormClosing);
             this.Load += new System.EventHandler(this.UdpTools_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

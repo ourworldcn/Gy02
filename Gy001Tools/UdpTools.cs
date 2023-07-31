@@ -25,14 +25,22 @@ namespace Gy001Tools
 
         private void UdpTools_Load(object sender, EventArgs e)
         {
+            _Options = new UdpToolsOptions
+            {
+                IP = "192.168.0.104",
+                Port = 0,
+                RecvIp = "192.168.0.104",
+                RecvPort = 20090,
+            };
+
             propertyGrid1.SelectedObject = _Options;
         }
 
         private void btSend_Click(object sender, EventArgs e)
         {
             var bin = Encoding.UTF8.GetBytes(tbSend.Text);
-            var rip = new IPEndPoint(IPAddress.Parse(_Options.IP), _Options.Port);
-            using (var udp = new UdpClient(_Options.RecvPort))
+            var rip = new IPEndPoint(IPAddress.Parse(_Options.RecvIp), _Options.RecvPort);
+            using (var udp = new UdpClient(_Options.Port))
             {
                 udp.Send(bin, bin.Length, rip);
             }
@@ -48,13 +56,20 @@ namespace Gy001Tools
             {
                 try
                 {
-                    using (var udp = new UdpClient(_Options.RecvPort))
+                    CancellationTokenSource cts = new CancellationTokenSource(3000);
+                    var udp = new UdpClient(_Options.RecvPort);
                     {
                         var rip = new IPEndPoint(IPAddress.Parse(_Options.RecvIp), _Options.RecvPort);
-                        var data = udp.Receive(ref rip);
-                        var str = Encoding.UTF8.GetString(data, 0, data.Length);
-                        tbRecv.Text = $"From{rip.Address}:{rip.Port},Data:{str}";
-                        udp.Send(data, data.Length, rip);
+                        Task.Run(() =>
+                        {
+                            while (udp.Available <= 0) Thread.Sleep(1);
+                            var buff = udp.Receive(ref rip);
+                            var str = Encoding.UTF8.GetString(buff, 0, buff.Length);
+                            Invoke(new Action(() =>
+                            {
+                                tbRecv.Text = $"From{rip.Address}:{rip.Port},Data:{str}";
+                            }));
+                        });
                     }
                 }
                 catch (ThreadAbortException)
@@ -88,6 +103,11 @@ namespace Gy001Tools
                 Thread.Sleep(1000);
                 udp.Send(bin, bin.Length, rip1);
             }
+        }
+
+        private void UdpTools_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.Save();
         }
     }
 

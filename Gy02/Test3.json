@@ -1,24 +1,19 @@
 {
-  "ret": "0",
-  "msg": "Success!",
-  "content": {
-    "data": {
-      "gameId": "220000044",
-      "channelId": 3,
-      "appId": "210044002",
-      "userId": "u24206600006",
-      "sdkData": { "channelUid": "u24206600006" },
-      "accessToken": "02A2WZojaH7KaNQB3JaWpyauz-t3fsU3pLxhs-BlJ4K6M1NefUMiU1yV3p6SohngWoLshpOn4NDVz_tRGUulvf-rmYj8F0gvFZlyj4"
-    },
-    "cData": {
-      "ret": 1,
-      "msg": "success",
-      "content": {
-        "expires": 2592000,
-        "access_token": "02A2WZojaH7KaNQB3JaWpyauz-t3fsU3pLxhs-BlJ4K6M1NefUMiU1yV3p6SohngWoLshpOn4NDVz_tRGUulvf-rmYj8F0gvFZlyj4",
-        "user_id": "u24206600006",
-        "user_name": "24206600006"
-      }
-    }
-  }
+  "gameId": "220000044",
+  "channelId": "3",
+  "appId": "210044002",
+  "userId": "u24206600006",
+  "cpOrderId": "6d414dec-eb61-4b59-b6cf-6d9508e98805",
+  "bfOrderId": "20230731190600000108kr",
+  "channelOrderId": "null",
+  "money": "636000",
+  "callbackInfo": "NmQ0MTRkZWMtZWI2MS00YjU5LWI2Y2YtNmQ5NTA4ZTk4ODA1",
+  "orderStatus": "1",
+  "channelInfo": "null",
+  "currency": "KRW",
+  "product_id": "38aba4b4-fb67-4751-8c90-522425bb3545",
+  "server_id": "1",
+  "game_role_id": "ac575000-2e08-43fb-827f-7fc9cbd2cad1",
+  "time": "1690801582",
+  "sign": "565dad6beb5b54c5f13ad4dfd279b413"
 }

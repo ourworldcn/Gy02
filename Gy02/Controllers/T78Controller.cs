@@ -70,7 +70,7 @@ namespace GY02.Controllers
             //    _Logger.LogInformation("收到T78充值回调，参数 = {str1}", str1);
             //}
 
-            _Logger.LogInformation("收到T78充值回调，参数 = {model},X-BNPAY-SANDBOX = {isSandbox}，X-BNPAY-PAYTYPE = {payType}", JsonSerializer.Serialize(model), isSandbox, payType);
+            _Logger.LogInformation("收到T78充值回调，参数 : {model},X-BNPAY-SANDBOX = {isSandbox}，X-BNPAY-PAYTYPE = {payType}", JsonSerializer.Serialize(model), isSandbox, payType);
             var result = new PayedReturnDto { };
             var dic = model.GetDictionary();
             var sign = _T78Manager.GetSignature(dic);
@@ -124,12 +124,14 @@ namespace GY02.Controllers
             if (!decimal.TryParse(model.Money, out var money))    //若无法获取金额
             {
                 result.Result = 1;
-                result.DebugMessage = $"若无法锁定key。";
+                result.DebugMessage = $"若无法获取交易金额。";
                 _Logger.LogWarning(result.DebugMessage);
                 goto lbReturn;
             }
             order.Amount = money;
             order.Currency = model.Currency;
+
+            _Logger.LogDebug("开始计算产出。订单号={orderId}", orderId);
 
             if (order.Detailes.Count > 0)    //若需要计算产出
             {
@@ -144,7 +146,8 @@ namespace GY02.Controllers
                     goto lbReturn;
                 }
                 var gc = gu.CurrentChar;
-                var bi = gc.HuoBiSlot.Children.First(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
+                var bi = gc.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
+
                 var mapper = HttpContext.RequestServices.GetRequiredService<IMapper>();
                 var changes = new List<GamePropertyChangeItemDto> { };
                 //购买
@@ -168,9 +171,12 @@ namespace GY02.Controllers
                     }
                 }
                 order.BinaryArray = JsonSerializer.SerializeToUtf8Bytes(changes);  //设置变化数据
-                order.Confirm2 = true;
-                order.State = 1;
             }
+            else
+                _Logger.LogDebug("交易物品产出为空。");
+
+            order.Confirm2 = true;
+            order.State = 1;
             _Logger.LogDebug("订单号{id}已经确认成功。", order.Id);
         lbReturn:
             try

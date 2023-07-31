@@ -1,7 +1,45 @@
 {
-  "name_txt": 11858,
-  "comment_txt": 11864,
-  "stk": -1,
-  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
-  "ptid": "9c559895-9a2c-43a7-b793-e879a600487c"
+  "Genus": [ "gs_zs" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 1,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 500
+      }
+    ]
+  },
+  "productStoreId": "com.duangzs.02",
+  "productAmount": 6360,
+  "currencyCode": "KRW",
+  "currencyMark": "₩",
+  "productName": "钻石购买",
+  "productType": "礼包",
+  "productDesc": "一些钻石"
 }
