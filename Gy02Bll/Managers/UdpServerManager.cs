@@ -146,6 +146,7 @@ namespace GY02.Managers
                 try
                 {
                     result = _Udp.ReceiveAsync(_Lifetime.ApplicationStopping).AsTask().Result;
+                    
                     _Logger.LogDebug("服务器收到信息{len}字节。", result.Buffer.Length);
                 }
                 catch (AggregateException excp) when (excp.InnerException is TaskCanceledException) //若应用已经试图退出

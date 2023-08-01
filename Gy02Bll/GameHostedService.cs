@@ -208,12 +208,9 @@ namespace GY02
             try
             {
                 #region 测试用代码
-
                 var store = _Services.GetService<GameAccountStoreManager>();
                 var mapper = _Services.GetService<IMapper>();
-                var cts1 = new CancellationTokenSource();
-                var cts2 = CancellationTokenSource.CreateLinkedTokenSource(CancellationToken.None);
-                cts2.Cancel();
+
                 #endregion 测试用代码
             }
             finally

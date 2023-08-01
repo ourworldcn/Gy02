@@ -13,6 +13,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.Arm;
 using GY02.Templates;
 using System.Timers;
+using System.Net.Http.Headers;
 
 namespace GY02.Publisher
 {
@@ -135,12 +136,7 @@ namespace GY02.Publisher
         {
         }
 
-        volatile UdpClient _Udp;
-
-        /// <summary>
-        /// 引发事件的任务。
-        /// </summary>
-        Task _PostEventTask;
+        volatile OwUdpClient _Udp;
 
         /// <summary>
         /// 
@@ -198,45 +194,23 @@ namespace GY02.Publisher
         {
             _RemoteEndPoint = remotePoint;
             _Udp?.Dispose();
-            _Udp = new UdpClient(0);
-            _Udp.Connect(RemoteEndPoint);
+            _Udp = new OwUdpClient(new OwUdpClientOptions
+            {
+                //LocalPoint = remotePoint,
+                RemotePoint = RemoteEndPoint,
+                //RequestStop= Token,
+            });
 
             //初始化引发事件数据的任务
-            if (_PostEventTask is null)
-                _PostEventTask = Task.Factory.StartNew(PostEventCallback, TaskCreationOptions.LongRunning);
+            _Udp.UdpDataRecived += _Udp_UdpDataRecived;
 
-            //初始化接受网络数据的任务。
-            _Udp.ReceiveAsync().ContinueWith(DataRev, CancellationTokenSource.Token, TaskContinuationOptions.ExecuteSynchronously);
             //心跳
             _Timer = new System.Threading.Timer(c => Nop(Token), default, 10_000, 10_000);
         }
 
-        /// <summary>
-        /// 当侦听数据到达结束时。
-        /// </summary>
-        /// <param name="task"></param>
-        /// <param name="state"></param>
-        void DataRev(Task<UdpReceiveResult> task, object state)
+        private void _Udp_UdpDataRecived(object sender, UdpDataRecivedEventArgs e)
         {
-            UdpReceiveResult udpResult;
-            try
-            {
-                if (task.IsCanceled)    //若已经结束侦听
-                    return;
-                udpResult = task.Result;
-                InvokeDataRecived(new DataRecivedEventArgs()
-                {
-                    Data = udpResult.Buffer,
-                });
-            }
-            catch //复位错误
-            {
-                uint IOC_IN = 0x80000000;
-                uint IOC_VENDOR = 0x18000000;
-                uint IOC_UDP_RESET = IOC_IN | IOC_VENDOR | 12;
-                _Udp.Client.IOControl((int)IOC_UDP_RESET, new byte[] { Convert.ToByte(false) }, null);
-            }
-            _Udp.ReceiveAsync().ContinueWith(DataRev, CancellationTokenSource.Token, TaskContinuationOptions.ExecuteSynchronously);
+            OnDataRecived(new DataRecivedEventArgs { Data = e.Data });
         }
 
         /// <summary>
@@ -247,18 +221,7 @@ namespace GY02.Publisher
         {
             //通知服务器
             var guts = token.ToByteArray();
-            //Socket socket = null;
-            try
-            {
-                _Udp.Send(guts, guts.Length);
-            }
-            catch
-            {
-                uint IOC_IN = 0x80000000;
-                uint IOC_VENDOR = 0x18000000;
-                uint IOC_UDP_RESET = IOC_IN | IOC_VENDOR | 12;
-                _Udp?.Client.IOControl((int)IOC_UDP_RESET, new byte[] { Convert.ToByte(false) }, null);
-            }
+            _Udp.Send(guts, RemoteEndPoint);
         }
 
         #region 事件相关
@@ -275,48 +238,6 @@ namespace GY02.Publisher
         /// <param name="e"></param>
         protected virtual void OnDataRecived(DataRecivedEventArgs e) => DataRecived?.Invoke(this, e);
 
-        /// <summary>
-        /// 向排队增加一个事件数据。
-        /// </summary>
-        /// <param name="e"></param>
-        public void InvokeDataRecived(DataRecivedEventArgs e) => _EventDatas.Add(e);
-
-        BlockingCollection<DataRecivedEventArgs> _EventDatas = new BlockingCollection<DataRecivedEventArgs>();
-
-        /// <summary>
-        /// 将事件数据异步引发的线程函数。
-        /// </summary>
-        void PostEventCallback()
-        {
-            DataRecivedEventArgs item;
-            while (!CancellationTokenSource.IsCancellationRequested)
-            {
-                try
-                {
-                    if (!_EventDatas.TryTake(out item))
-                    {
-                        Thread.Sleep(1);
-                        continue;
-                    }
-                }
-                catch (ObjectDisposedException) //已释放了 BlockingCollection<T>。
-                {
-                    return;
-                }
-                catch (InvalidOperationException)   //该基础集合已在此 BlockingCollection<T> 实例外部进行了修改。
-                {
-                    //不可能出现
-                    throw;
-                }
-                try
-                {
-                    OnDataRecived(item);
-                }
-                catch (Exception)
-                {
-                }
-            }
-        }
         #endregion 事件相关
 
         #region IDisposable接口相关
@@ -359,7 +280,6 @@ namespace GY02.Publisher
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
                 _Udp = null;
-                _PostEventTask = null;
                 //base.Dispose(disposing);  //        IsDisposed = true;
             }
         }

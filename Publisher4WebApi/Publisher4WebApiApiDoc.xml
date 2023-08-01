@@ -1928,11 +1928,6 @@
             默认构造函数。
             </summary>
         </member>
-        <member name="F:GY02.Publisher.GyUdpClient._PostEventTask">
-            <summary>
-            引发事件的任务。
-            </summary>
-        </member>
         <member name="F:GY02.Publisher.GyUdpClient._CancellationTokenSource">
             <summary>
             
@@ -1965,13 +1960,6 @@
             </summary>
             <exception cref="T:System.Net.Sockets.SocketException">访问套接字时出错。请务必拦截该异常并处理，以避免进程崩溃。</exception>
         </member>
-        <member name="M:GY02.Publisher.GyUdpClient.DataRev(System.Threading.Tasks.Task{System.Net.Sockets.UdpReceiveResult},System.Object)">
-            <summary>
-            当侦听数据到达结束时。
-            </summary>
-            <param name="task"></param>
-            <param name="state"></param>
-        </member>
         <member name="M:GY02.Publisher.GyUdpClient.Nop(System.Guid)">
             <summary>
             通知服务器客户端在线。
@@ -1989,17 +1977,6 @@
             引发<see cref="E:GY02.Publisher.GyUdpClient.DataRecived"/>事件。
             </summary>
             <param name="e"></param>
-        </member>
-        <member name="M:GY02.Publisher.GyUdpClient.InvokeDataRecived(GY02.Publisher.DataRecivedEventArgs)">
-            <summary>
-            向排队增加一个事件数据。
-            </summary>
-            <param name="e"></param>
-        </member>
-        <member name="M:GY02.Publisher.GyUdpClient.PostEventCallback">
-            <summary>
-            将事件数据异步引发的线程函数。
-            </summary>
         </member>
         <member name="M:GY02.Publisher.GyUdpClient.ThrowIfDisposed">
             <summary>

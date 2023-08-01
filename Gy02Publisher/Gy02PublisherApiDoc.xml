@@ -1272,5 +1272,141 @@
             无法登录，通常是被封停账号。
             </summary>
         </member>
+        <member name="T:System.Net.Sockets.OwUdpClientOptions">
+            <summary>
+            Udp的配置数据类。
+            </summary>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClientOptions.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.LocalPoint">
+            <summary>
+            本地使用的终结点。
+            </summary>
+            <value>默认值：new IPEndPoint(IPAddress.Any, 0)</value>
+        </member>
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.RemotePoint">
+            <summary>
+            侦听远程的终结点。保留未用。
+            </summary>
+        </member>
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.SendBufferSize">
+            <summary>
+            发送缓冲区的大小，以字节为单位。
+            </summary>
+            <value>默认值：8192</value>
+        </member>
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.ReceiveBufferSize">
+            <summary>
+            接收缓冲区的大小，以字节为单位。
+            </summary>
+            <value>默认值：8192</value>
+        </member>
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.RequestStop">
+            <summary>
+            请求关闭的同步信号。
+            </summary>
+            <value>默认值：<seealso cref="P:System.Threading.CancellationToken.None"/></value>
+        </member>
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.SendPerSeconds">
+            <summary>
+            每秒发送多少个次数据。不精确，仅是大致的数字。
+            </summary>
+        </member>
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.Value">
+            <summary>
+            <inheritdoc/>
+            </summary>
+        </member>
+        <member name="T:System.Net.Sockets.UdpDataRecivedEventArgs">
+            <summary>
+            数据到达事件的事件参数类。
+            </summary>
+        </member>
+        <member name="M:System.Net.Sockets.UdpDataRecivedEventArgs.#ctor(System.Byte[],System.Net.IPEndPoint)">
+            <summary>
+            构造函数。
+            </summary>
+            <param name="data"></param>
+            <param name="remotePoint"></param>
+        </member>
+        <member name="P:System.Net.Sockets.UdpDataRecivedEventArgs.Data">
+            <summary>
+            接受的数据。
+            </summary>
+        </member>
+        <member name="P:System.Net.Sockets.UdpDataRecivedEventArgs.RemotePoint">
+            <summary>
+            接受数据来自的远程终结点。
+            </summary>
+        </member>
+        <member name="T:System.Net.Sockets.OwUdpClient">
+            <summary>
+            模拟全双工通讯的Udp工具类。
+            </summary>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClient.#ctor">
+            <summary>
+            默认构造函数。
+            </summary>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClient.#ctor(Microsoft.Extensions.Options.IOptions{System.Net.Sockets.OwUdpClientOptions})">
+            <summary>
+            构造函数。
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="F:System.Net.Sockets.OwUdpClient._RequestStop">
+            <summary>
+            内部的取消标记。
+            </summary>
+        </member>
+        <member name="F:System.Net.Sockets.OwUdpClient._Stopped">
+            <summary>
+            收发复位终止的信号。
+            </summary>
+        </member>
+        <member name="E:System.Net.Sockets.OwUdpClient.UdpDataRecived">
+            <summary>
+            数据到达事件。该事件可能在任何线程中引发。
+            </summary>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClient.OnUdpDataRecived(System.Net.Sockets.UdpDataRecivedEventArgs)">
+            <summary>
+            引发数据到达的事件的函数。
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClient.Send(System.Byte[],System.Net.IPEndPoint)">
+            <summary>
+            对指定端口发送数据。
+            </summary>
+            <param name="data"></param>
+            <param name="remotePoint"></param>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClient.IoWorker">
+            <summary>
+            用户收发网络数据的工作函数。
+            </summary>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClient.RaiseEvent">
+            <summary>
+            引发事件。
+            </summary>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClient.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:System.Net.Sockets.OwUdpClient.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
     </members>
 </doc>

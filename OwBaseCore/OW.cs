@@ -36,7 +36,7 @@ namespace OW
         /// 调用此实现以切换 <see cref="IsDisposed"/> 属性。
         /// </summary>
         /// <param name="disposing"></param>
-        protected abstract void Dispose(bool disposing);
+        protected virtual void Dispose(bool disposing) => IsDisposed = true;
         //{
         //    if (!IsDisposed)
         //    {
