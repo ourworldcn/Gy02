@@ -161,8 +161,8 @@ namespace GY02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-            //var db = gc.GetUser().GetDbContext();
-            var coll = db.Set<GameShoppingOrder>().Where(c => c.CreateUtc >= model.Start && c.CreateUtc <= model.End).AsEnumerable();
+            var cid = gc.Id.ToString();
+            var coll = db.Set<GameShoppingOrder>().Where(c => c.CreateUtc >= model.Start && c.CreateUtc <= model.End && c.CustomerId == cid).AsEnumerable();
             foreach (var c in coll)
             {
                 var order = _Mapper.Map<GameShoppingOrderDto>(c);

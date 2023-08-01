@@ -62,7 +62,7 @@ namespace GY02.Controllers
         /// </param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<PayedReturnDto> Payed([FromForm] PayedParamsDto model, [FromHeader(Name = "X-BNPAY-SANDBOX")] string isSandbox, [FromHeader(Name = "X-BNPAY-PAYTYPE")] string payType)
+        public ActionResult<PayedReturnDto> Payed([FromForm]PayedParamsDto model, [FromHeader(Name = "X-BNPAY-SANDBOX")] string isSandbox, [FromHeader(Name = "X-BNPAY-PAYTYPE")] string payType)
         {
             //using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
             //{
@@ -147,6 +147,13 @@ namespace GY02.Controllers
                 }
                 var gc = gu.CurrentChar;
                 var bi = gc.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
+                if (bi is null)
+                {
+                    result.Result = 1;
+                    result.DebugMessage = $"法币占位符为空。CharId={gc.Id}";
+                    _Logger.LogWarning(result.DebugMessage);
+                    goto lbReturn;
+                }
 
                 var mapper = HttpContext.RequestServices.GetRequiredService<IMapper>();
                 var changes = new List<GamePropertyChangeItemDto> { };
@@ -157,7 +164,7 @@ namespace GY02.Controllers
                     {
                         var command = new ShoppingBuyCommand()
                         {
-                            GameChar = null,
+                            GameChar = gc,
                             ShoppingItemTId = Guid.Parse(item.GoodsId),
                         };
                         bi.Count++;

@@ -1,45 +1,19 @@
 {
-  "Genus": [ "gs_zs" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 1,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 500
-      }
-    ]
-  },
-  "productStoreId": "com.duangzs.02",
-  "productAmount": 6360,
-  "currencyCode": "KRW",
-  "currencyMark": "₩",
-  "productName": "钻石购买",
-  "productType": "礼包",
-  "productDesc": "一些钻石"
+  "gameId": "220000044",
+  "channelId": "3",
+  "appId": "210044002",
+  "userId": "u24206600006",
+  "cpOrderId": "ec572c93-d009-4b1f-91ef-eeca0272fa13",
+  "bfOrderId": "20230731183500000108kr",
+  "channelOrderId": "null",
+  "money": "636000",
+  "callbackInfo": "ZWM1NzJjOTMtZDAwOS00YjFmLTkxZWYtZWVjYTAyNzJmYTEz",
+  "orderStatus": "1",
+  "channelInfo": "null",
+  "currency": "KRW",
+  "product_id": "38aba4b4-fb67-4751-8c90-522425bb3545",
+  "server_id": "1",
+  "game_role_id": "ac575000-2e08-43fb-827f-7fc9cbd2cad1",
+  "time": "1690799711",
+  "sign": "92c36909b141059eb4ad9a9dd7c5aa60"
 }
