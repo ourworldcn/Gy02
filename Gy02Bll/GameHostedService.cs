@@ -51,7 +51,7 @@ namespace GY02
 
             _ApplicationLifetime.ApplicationStopped.Register(() =>
             {
-                _Logger.LogInformation($"检测到游戏服务器正常下线。");
+                _Logger.LogInformation(new EventId(10001), "游戏虚拟世界服务正常下线。");
             });
         }
 

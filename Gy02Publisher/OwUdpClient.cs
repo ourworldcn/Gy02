@@ -1,11 +1,9 @@
 ﻿using Microsoft.Extensions.Options;
-using OW;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
 
 #if !NETCOREAPP //若非NetCore程序
-using Microsoft.Extensions.Options;
 
 namespace Microsoft.Extensions.Options
 {
@@ -143,8 +141,7 @@ namespace System.Net.Sockets
         OwUdpClientOptions _Options;
 
         UdpClient _UdpClient;
-
-        Task _IoWorker;
+        private Task _IoWorker;
 
         /// <summary>
         /// 内部的取消标记。
@@ -204,7 +201,7 @@ namespace System.Net.Sockets
                 {
                     while (_UdpClient.Available > 0)    //当有数据可以读取时
                     {
-                        IPEndPoint listen = new IPEndPoint(_Options.LocalPoint.Address, _Options.LocalPoint.Port);
+                        IPEndPoint listen = new IPEndPoint(_Options.RemotePoint.Address, _Options.RemotePoint.Port);
                         var data = _UdpClient.Receive(ref listen);
                         _ReceiveQueue.Enqueue((data, listen));
                     }
@@ -213,6 +210,11 @@ namespace System.Net.Sockets
                     {
                         _UdpClient.Send(data.Item1, data.Item1.Length, data.Item2);
                     }
+                }
+                catch (ObjectDisposedException) //异常处置
+                {
+                    //目前认为不可能发生
+                    throw;
                 }
                 catch
                 {
@@ -271,6 +273,7 @@ namespace System.Net.Sockets
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
                 _UdpClient = null;
+                _IoWorker = null;
                 disposedValue = true;
             }
         }

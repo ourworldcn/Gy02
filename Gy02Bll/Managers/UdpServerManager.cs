@@ -32,6 +32,13 @@ namespace GY02.Managers
 
     public class UdpServerManager : BackgroundService
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="lifetime"></param>
+        /// <param name="logger"></param>
+        /// <param name="options"></param>
+        /// <param name="accountStoreManager"></param>
         public UdpServerManager(IHostApplicationLifetime lifetime, ILogger<UdpServerManager> logger, IOptions<UdpServerManagerOptions> options, GameAccountStoreManager accountStoreManager)
         {
             _Lifetime = lifetime;
@@ -40,7 +47,7 @@ namespace GY02.Managers
             _AccountStoreManager = accountStoreManager;
             var count = Interlocked.Increment(ref _Count);
             if (_Count > 1)
-                _Logger.LogWarning($"检测到UdpServerManager第{count}个实例。");
+                _Logger.LogWarning("检测到UdpServerManager第{count}个实例。", count);
             _Timer = new Timer(ClearToken, null, 60_000, 60_000);
             _Lifetime.ApplicationStopping.Register(() => _Timer?.Dispose());    //试图关闭清理计时器
         }
@@ -146,7 +153,7 @@ namespace GY02.Managers
                 try
                 {
                     result = _Udp.ReceiveAsync(_Lifetime.ApplicationStopping).AsTask().Result;
-                    
+
                     _Logger.LogDebug("服务器收到信息{len}字节。", result.Buffer.Length);
                 }
                 catch (AggregateException excp) when (excp.InnerException is TaskCanceledException) //若应用已经试图退出
@@ -160,8 +167,9 @@ namespace GY02.Managers
                 {
 
                 }
-                catch
+                catch (Exception excp)
                 {
+                    _Logger.LogWarning(excp, "Udp服务器遇到错误出现错误。");
                     uint IOC_IN = 0x80000000;
                     uint IOC_VENDOR = 0x18000000;
                     uint IOC_UDP_RESET = IOC_IN | IOC_VENDOR | 12;
@@ -174,7 +182,7 @@ namespace GY02.Managers
                     if (token == PingGuid)
                     {
                         var count = _Udp.Send(new byte[] { 12, 34 }, 2, result.RemoteEndPoint);
-                        _Logger.LogWarning($"回应了{count}字节，ip={result.RemoteEndPoint}");
+                        _Logger.LogWarning("回应了{count}字节，ip={result.RemoteEndPoint}", count, result.RemoteEndPoint);
                     }
                     else
                     {
@@ -214,6 +222,7 @@ namespace GY02.Managers
             }
             base.Dispose();
         }
+
         public class AccountLogoutingHandler : SyncCommandHandlerBase<AccountLogoutingCommand>
         {
             public override void Handle(AccountLogoutingCommand command)
