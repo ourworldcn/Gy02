@@ -44,12 +44,12 @@ namespace System.Net.Sockets
         /// 本地使用的终结点。
         /// </summary>
         /// <value>默认值：new IPEndPoint(IPAddress.Any, 0)</value>
-        public IPEndPoint LocalPoint { get; set; } = new IPEndPoint(IPAddress.Any, 0);
+        public IPEndPoint LocalEndPoint { get; set; } = new IPEndPoint(IPAddress.Any, 0);
 
         /// <summary>
-        /// 侦听远程的终结点。保留未用。
+        /// 侦听远程的终结点。
         /// </summary>
-        public IPEndPoint RemotePoint { get; set; }
+        public IPEndPoint RemoteEndPoint { get; set; }
 
         /// <summary>
         /// 发送缓冲区的大小，以字节为单位。
@@ -159,6 +159,11 @@ namespace System.Net.Sockets
         private bool disposedValue;
 
         /// <summary>
+        /// 获取使用的本地终结点。可能是null。
+        /// </summary>
+        public IPEndPoint LocalEndPoint => _UdpClient?.Client.LocalEndPoint as IPEndPoint;
+
+        /// <summary>
         /// 数据到达事件。该事件可能在任何线程中引发。
         /// </summary>
         public event EventHandler<UdpDataRecivedEventArgs> UdpDataRecived;
@@ -188,7 +193,7 @@ namespace System.Net.Sockets
 
             TimeSpan delay = TimeSpan.FromMilliseconds(1000f / _Options.SendPerSeconds);    //默认延时
 
-            _UdpClient = new UdpClient(_Options.LocalPoint);
+            _UdpClient = new UdpClient(_Options.LocalEndPoint);
             _UdpClient.Client.SendBufferSize = _Options.SendBufferSize;
             _UdpClient.Client.ReceiveBufferSize = _Options.ReceiveBufferSize;
 
@@ -201,7 +206,7 @@ namespace System.Net.Sockets
                 {
                     while (_UdpClient.Available > 0)    //当有数据可以读取时
                     {
-                        IPEndPoint listen = new IPEndPoint(_Options.RemotePoint.Address, _Options.RemotePoint.Port);
+                        IPEndPoint listen = new IPEndPoint(_Options.RemoteEndPoint.Address, _Options.RemoteEndPoint.Port);
                         var data = _UdpClient.Receive(ref listen);
                         _ReceiveQueue.Enqueue((data, listen));
                     }
@@ -211,7 +216,7 @@ namespace System.Net.Sockets
                         _UdpClient.Send(data.Item1, data.Item1.Length, data.Item2);
                     }
                 }
-                catch (ObjectDisposedException) //异常处置
+                catch (ObjectDisposedException)  //已关闭基础 Socket。
                 {
                     //目前认为不可能发生
                     throw;

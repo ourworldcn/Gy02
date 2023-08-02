@@ -1282,15 +1282,15 @@
             构造函数。
             </summary>
         </member>
-        <member name="P:System.Net.Sockets.OwUdpClientOptions.LocalPoint">
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.LocalEndPoint">
             <summary>
             本地使用的终结点。
             </summary>
             <value>默认值：new IPEndPoint(IPAddress.Any, 0)</value>
         </member>
-        <member name="P:System.Net.Sockets.OwUdpClientOptions.RemotePoint">
+        <member name="P:System.Net.Sockets.OwUdpClientOptions.RemoteEndPoint">
             <summary>
-            侦听远程的终结点。保留未用。
+            侦听远程的终结点。
             </summary>
         </member>
         <member name="P:System.Net.Sockets.OwUdpClientOptions.SendBufferSize">
@@ -1367,6 +1367,11 @@
         <member name="F:System.Net.Sockets.OwUdpClient._Stopped">
             <summary>
             收发复位终止的信号。
+            </summary>
+        </member>
+        <member name="P:System.Net.Sockets.OwUdpClient.LocalEndPoint">
+            <summary>
+            获取使用的本地终结点。可能是null。
             </summary>
         </member>
         <member name="E:System.Net.Sockets.OwUdpClient.UdpDataRecived">

@@ -197,7 +197,7 @@ namespace GY02.Publisher
             _Udp = new OwUdpClient(new OwUdpClientOptions
             {
                 //LocalPoint = remotePoint,
-                RemotePoint = RemoteEndPoint,
+                RemoteEndPoint = RemoteEndPoint,
                 //RequestStop= Token,
             });
 
