@@ -638,7 +638,7 @@ namespace GY02.Templates
             }
             catch (Exception err)
             {
-                Debug.WriteLine($"{PropertiesString}{Environment.NewLine}{err.Message}");
+                Debug.WriteLine($"行Id={Id}——{PropertiesString}{Environment.NewLine}{err.Message}");
                 throw;
             }
         }

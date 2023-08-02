@@ -95,7 +95,8 @@ namespace GY02.Controllers
         /// <param name="environment"></param>
         /// <returns></returns>
         [HttpPost,]
-        public ActionResult UploadTemplates(IFormFile file, string token, [FromServices] IHostApplicationLifetime applicationLifetime, [FromServices] IWebHostEnvironment environment)
+        public ActionResult UploadTemplates(IFormFile file, string token, [FromServices] IHostApplicationLifetime applicationLifetime,
+            [FromServices] IWebHostEnvironment environment)
         {
             if (!Guid.TryParse(token, out var tokenGuid) || tokenGuid != new Guid("{F871361D-A803-4F7E-B222-13216A89E9FA}"))
             {
