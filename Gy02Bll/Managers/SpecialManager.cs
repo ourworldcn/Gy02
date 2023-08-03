@@ -80,7 +80,7 @@ namespace GY02.Managers
         /// <returns>(孵化模板，动物模板，皮肤模板)</returns>
         public (TemplateStringFullView, TemplateStringFullView, TemplateStringFullView) GetFuhuaInfo(IEnumerable<string> parentGenus)
         {
-            var fuhua = _TemplateManager.Id2FullView.Values.Where(c => c.Fuhua is not null).First(c => GetFuhuaKey(c.Fuhua).SequenceEqual(parentGenus));
+            var fuhua = _TemplateManager.Id2FullView.Values.Where(c => c.Fuhua is not null).FirstOrDefault(c => GetFuhuaKey(c.Fuhua).SequenceEqual(parentGenus));
             if (fuhua is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);

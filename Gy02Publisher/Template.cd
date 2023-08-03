@@ -34,7 +34,7 @@
   <Class Name="GY02.Templates.TemplateStringFullView">
     <Position X="8.75" Y="4.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>UAgAEAAAAAIBAADAKQEYAAQjIICkgIRAagBAEQUCQSA=</HashCode>
+      <HashCode>UAgAEAAAAAIBAADAKQEYAAQjIICkgIRAbgBAEQUCQSA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -43,7 +43,6 @@
       <Property Name="Dice" />
       <Property Name="DiceGroup" />
       <Property Name="SequenceOut" />
-      <Property Name="Achievement" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Skills" />
@@ -193,17 +192,6 @@
       <HashCode>CBBAAAAAAAAAAAABAAABAAAAAAAAAAAAAEAAAAAEIAA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
-  </Class>
-  <Class Name="GY02.Templates.GameAchievement">
-    <Position X="5.75" Y="7.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgCAAAAAAAAAAAAAAACA=</HashCode>
-      <FileName>Gy02TemplateJO.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Ins" />
-      <Property Name="Outs" />
-    </ShowAsCollectionAssociation>
   </Class>
   <Interface Name="GY02.Templates.IJsonData" Collapsed="true">
     <Position X="23" Y="2.75" Width="1.5" />

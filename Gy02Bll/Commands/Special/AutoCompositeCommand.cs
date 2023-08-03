@@ -36,7 +36,11 @@ namespace GY02.Commands
         {
             var key = ((IGameCharHandler<AutoCompositeCommand>)this).GetKey(command);
             using var dw = ((IGameCharHandler<AutoCompositeCommand>)this).LockGameChar(command);
-            if (dw.IsEmpty) return; //若锁定失败
+            if (dw.IsEmpty)
+            {
+                command.FillErrorFromWorld();
+                return; //若锁定失败
+            }
             while (true)
             {
                 var ary = command.GameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)).OfType<GameEquipment>().GroupBy(c => c.TemplateId).Where(c => c.Count() >= 3).ToArray();

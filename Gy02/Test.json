@@ -1,57 +1,43 @@
 {
-  "Genus": [ "gs_zs" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
+  "Dice": {
+    "MaxCount": 3,
+    "AllowRepetition": false,
+    "Items": [
       {
-        "Conditional": [
+        "Outs": [
           {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
+            "ParentTId": null,
+            "TId": "696e8311-b286-486c-931f-aff1eb72f1de",
+            "Count": 1
           }
         ],
-        "Count": 1,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
+        "Weight": 110,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "14a84b6c-8709-44bd-becf-dc19ed8f9f97",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": null,
+            "TId": "1741c697-ea92-458b-a9e8-a839e41ad5f3",
+            "Count": 1
+          }
+        ],
+        "Weight": 12,
+        "ClearGuaranteesCount": false
       }
     ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-        "TId": "e92a3375-9872-40ea-8cb4-10bb24add432",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "2e877976-2d3d-4e7e-8851-07163216319a",
-        "Count": 10
-      },
-      {
-        "Id": null,
-        "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
-        "Count": 10
-      }
-    ]
-  },
-  "productStoreId": "com.duangzs.01",
-  "productTId": "he438454-abd7-4ef7-gece-gcd81c132817",
-  "productAmount": 1260,
-  "currencyCode": "KRW",
-  "currencyMark": "₩",
-  "productName": "钻石购买",
-  "productType": "钻石",
-  "productDesc": "少量钻石"
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
+  }
 }

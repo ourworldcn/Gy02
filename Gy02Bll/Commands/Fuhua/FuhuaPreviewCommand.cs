@@ -81,11 +81,11 @@ namespace GY02.Commands
             {
                 var info = _SpecialManager.GetFuhuaInfo(command.ParentGenus);
                 if (info.Item1 is null) goto lbErr; //若出错
-                //var mounts = _SpecialManager.GetOutputs(info.Item2.Dice);
+                                                    //var mounts = _SpecialManager.GetOutputs(info.Item2.Dice);
 
                 //var pifus = _SpecialManager.GetOutputs(info.Item3.Dice, history.Items.Select(c => c.Entity.TId));
 
-               var coll= _SpecialManager.GetFuhuaEntitySummary(command.ParentGenus, command.GameChar);
+                var coll = _SpecialManager.GetFuhuaEntitySummary(command.ParentGenus, command.GameChar);
                 //var items = _DiceManager.Transformed(coll.Select(c => c.Outs));
                 preview = new FuhuaSummary { };
                 preview.ParentTIds.AddRange(command.ParentGenus);
