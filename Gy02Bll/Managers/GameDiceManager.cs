@@ -86,10 +86,11 @@ namespace GY02.Managers
         /// <returns></returns>
         public GameDiceItem Roll(IEnumerable<GameDiceItem> items, Random random = null)
         {
-            var totalWeight = items.Sum(c => c.Weight);    //总权重
+            var coll = items.TryToCollection();
+            var totalWeight = coll.Sum(c => c.Weight);    //总权重
             random ??= new Random();
             var total = (decimal)random.NextDouble() * totalWeight;
-            foreach (var item in items)
+            foreach (var item in coll)
             {
                 if (item.Weight <= decimal.Zero) continue; //容错
                 if (total <= item.Weight) return item;

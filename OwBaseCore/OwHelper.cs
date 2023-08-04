@@ -423,6 +423,21 @@ namespace System
             return default;
         }
 
+        //public static (T, decimal)? GetRandom<T>(IEnumerable<(T, decimal)> items, Random random = null)
+        //{
+        //    var coll = items.TryToCollection();
+        //    var totalWeight = coll.Sum(c => c.Item2);    //总权重
+        //    random ??= new Random();
+        //    var total = (decimal)random.NextDouble() * totalWeight; //此次随机权重
+        //    foreach (var item in coll)
+        //    {
+        //        if (item.Item2 <= decimal.Zero) continue; //容错
+        //        if (total <= item.Item2) return item;
+        //        total -= item.Item2;
+        //    }
+        //    return default; //210101
+        //}
+
         /// <summary>
         /// 按概率权重获取无重复的多项数据。
         /// </summary>

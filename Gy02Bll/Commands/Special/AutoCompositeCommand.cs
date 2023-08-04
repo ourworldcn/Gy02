@@ -41,9 +41,17 @@ namespace GY02.Commands
                 command.FillErrorFromWorld();
                 return; //若锁定失败
             }
+            var genus = new HashSet<string> { "p_wh", "p_gn", "p_bu" };
             while (true)
             {
-                var ary = command.GameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)).OfType<GameEquipment>().GroupBy(c => c.TemplateId).Where(c => c.Count() >= 3).ToArray();
+                var ary = command.GameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)).OfType<GameEquipment>()
+                    .Where(c => //仅选取白绿蓝三色
+                    {
+                        var g = _TemplateManager.GetFullViewFromId(c.TemplateId)?.Genus;
+                        if (!(g?.Length > 0)) return false;
+                        return genus.Overlaps(g);
+                    })
+                    .GroupBy(c => c.TemplateId).Where(c => c.Count() >= 3).ToArray();
                 if (ary.Length > 0) //若存在需要合成的物品
                 {
                     var allBlueprint = _TemplateManager.Id2FullView.Values

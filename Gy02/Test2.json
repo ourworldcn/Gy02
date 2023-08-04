@@ -1,23 +1,34 @@
 {
-  "Out": [
+  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
+  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+  "name_txt": 11874,
+  "comment_txt": 11875,
+  "atk": null,
+  "def": null,
+  "pow": [ 70, 78, 86, 94, 102, 110, 118, 126, 134, 142, 150, 158, 166, 174, 182, 190, 198, 206, 214, 222 ],
+  "Genus": [ "p_gn", "e_zuoqi", "zuoqi_cat" ],
+  "p_skills": [
     {
-      "ParentTId": null,
-      "TId": "1555a758-c31c-4b4b-9b93-5fa6537ba789",
-      "Count": 1
+      "skillsid": "4a28cf9b-199c-4b42-940a-a2e893eca0bf",
+      "enable": true
+    },
+    {
+      "skillsid": "2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3",
+      "enable": false
+    },
+    {
+      "skillsid": "dc16539b-cb34-4bb3-9d0a-6ba480fa80ff",
+      "enable": false
+    },
+    {
+      "skillsid": "0757f46e-6c5e-41f6-ba4f-2d07c563d4cf",
+      "enable": false
+    },
+    {
+      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
+      "enable": false
     }
   ],
-  "In": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": null,
-          "Genus": [],
-          "TId": "9b558fe1-db54-4e1b-a962-be0d6c55f1be",
-          "MinCount": 3
-        }
-      ],
-      "Count": 3,
-      "Genus": null
-    }
-  ]
+  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e",
+  "CompositeId": "c101096b-8606-4ad1-b268-81b77de67976"
 }

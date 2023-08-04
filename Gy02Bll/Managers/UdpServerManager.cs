@@ -60,7 +60,7 @@ namespace GY02.Managers
             };
             _Udp = new OwUdpClient(udpOpt);
             _Udp.UdpDataRecived += _Udp_UdpDataRecived;
-            Logger.LogInformation("UdpServer开始侦听{LocalEndPoint}。", _Udp.LocalEndPoint);
+            Logger.LogInformation("UdpServer开始侦听{LocalEndPoint}。", udpOpt.LocalEndPoint);
         }
 
 

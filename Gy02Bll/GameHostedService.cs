@@ -32,6 +32,7 @@ using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
 using System.Runtime;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -204,13 +205,12 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test(string str = null)
         {
+            var store = _Services.GetService<GameAccountStoreManager>();
+            var mapper = _Services.GetService<IMapper>();
             var sw = Stopwatch.StartNew();
             try
             {
                 #region 测试用代码
-                var store = _Services.GetService<GameAccountStoreManager>();
-                var mapper = _Services.GetService<IMapper>();
-                var b = Guid.TryParse("605d907f-2d17-46da-8d83-13aeb745f4f8", out var id);
                 #endregion 测试用代码
             }
             finally
@@ -219,7 +219,6 @@ namespace GY02
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
         }
-
     }
 
 
