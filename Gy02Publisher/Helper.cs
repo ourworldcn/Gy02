@@ -205,7 +205,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 法币购买项的页签。
         /// </summary>
-        public const string CurrencyBuyGenus = "gs_zs";
+        public const string CurrencyBuyGenus = "fb_goumai";
 
         #region 游戏内实体类型的类型Guid
 
