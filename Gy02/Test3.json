@@ -1,34 +1,41 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-  "name_txt": 11872,
-  "comment_txt": 11873,
-  "atk": null,
-  "def": null,
-  "pow": [ 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300, 315, 330, 345, 360, 375, 390, 405, 420, 435, 450, 465, 480, 495, 510, 525, 540, 555, 570, 585, 600, 615, 630, 645, 660, 675, 690, 705, 720, 735, 750, 765, 780, 795, 810, 825, 840, 855, 870, 885 ],
-  "Genus": [ "p_vt", "e_zuoqi", "zuoqi_turkey" ],
-  "p_skills": [
-    {
-      "skillsid": "4a28cf9b-199c-4b42-940a-a2e893eca0bf",
-      "enable": true
+  "Genus": [ "gs_jibigoumai" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
     },
-    {
-      "skillsid": "2a5fd523-6c7a-4098-a9e2-abfd87799593",
-      "enable": true
-    },
-    {
-      "skillsid": "b4611ecd-bc4c-4ac1-873f-3a3463bf6495",
-      "enable": true
-    },
-    {
-      "skillsid": "d3ccad94-fa3f-42cd-a586-0a8bae3a1dbf",
-      "enable": false
-    },
-    {
-      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
-      "enable": false
-    }
-  ],
-  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e",
-  "CompositeId": "fdbb6c80-7d0c-476b-861c-3f9c4e6450a3"
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "612ec963-4f73-437e-a51a-776478b4434a",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "acbd008f-20d7-4e29-837a-97d7c81d3f72",
+        "Count": 1
+      }
+    ]
+  },
+  "name_txt": 10966,
+  "comment_txt": 10960,
+  "JiaoBiao": []
 }

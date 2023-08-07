@@ -1,4 +1,5 @@
 ﻿using GY02.Managers;
+using GY02.Publisher;
 using GY02.Templates;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -59,6 +60,29 @@ namespace GY02.Commands
         GameEntityManager _GameEntityManager;
         SyncCommandManager _SyncCommandManager;
 
+        /// <summary>
+        /// 指定材料是否有已穿戴装备。
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <param name="container">返回第一个符合要求的容器。</param>
+        /// <returns>true任何一个装备是已穿戴的，则返回true,如果没有任何材料或任何材料都不是已经穿戴的装备则返回false。</returns>
+        bool IsEqu(IEnumerable<GameEntity> entities, out GameEntity container)
+        {
+            var entity = entities.FirstOrDefault(c =>
+            {
+                if (_GameEntityManager.GetParent(c) is not GameEntity entity) return false;
+                if (_TemplateManager.GetFullViewFromId(entity.TemplateId) is not TemplateStringFullView tt) return false;
+                return tt.Gid / 1000 == 912111;
+            });
+            if (entity == null)
+            {
+                container = null;
+                return false;
+            }
+            container = _GameEntityManager.GetParent(entity);
+            return true;
+        }
+
         public override void Handle(CompositeCommand command)
         {
             var key = command.GameChar.GetUser().Key;
@@ -113,6 +137,7 @@ namespace GY02.Commands
                 command.FillErrorFrom(commandApply);
                 return;
             }
+            var isEqu = IsEqu(command.Items.Append(command.MainItem), out var container);  //获取特定父容器
             //消耗代价
             var removes = command.Items.Append(command.MainItem).Select(c => (Entity: c, Count: -c.Count)).ToArray();
             foreach (var item in removes)
@@ -129,7 +154,7 @@ namespace GY02.Commands
             }
             //生成物品
             var mainOut = commandApply.OutItems.First(); //主要输出物
-            _GameEntityManager.Move(commandApply.OutItems, command.GameChar, command.Changes);
+            _GameEntityManager.Move(commandApply.OutItems, isEqu ? container : command.GameChar, command.Changes);
 
             //生成合成材料记录
             var oldCost = mainOut.CompositingAccruedCost?.ToArray() ?? Array.Empty<GameEntitySummary>().ToArray();    //旧的合成材料记录

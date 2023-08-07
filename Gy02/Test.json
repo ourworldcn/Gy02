@@ -1,33 +1,25 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-  "name_txt": 11874,
-  "comment_txt": 11875,
-  "atk": null,
-  "def": null,
-  "pow": [ 50, 55, 60, 65, 70, 75, 80, 85, 90, 95 ],
-  "Genus": [ "p_wh", "e_zuoqi", "                                                            zuoqi_cat" ],
-  "p_skills": [
-    {
-      "skillsid": "4a28cf9b-199c-4b42-940a-a2e893eca0bf",
-      "enable": false
+  "Genus": [ "gs_meirishangdian" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
     },
-    {
-      "skillsid": "2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3",
-      "enable": false
-    },
-    {
-      "skillsid": "dc16539b-cb34-4bb3-9d0a-6ba480fa80ff",
-      "enable": false
-    },
-    {
-      "skillsid": "0757f46e-6c5e-41f6-ba4f-2d07c563d4cf",
-      "enable": false
-    },
-    {
-      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
-      "enable": false
-    }
-  ],
-  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e"
+    "GroupNumber": 0,
+    "MaxCount": 1,
+    "Ins": [],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 200
+      }
+    ]
+  },
+  "name_txt": 10963,
+  "comment_txt": 10928,
+  "JiaoBiao": [ "shopcorner zhekou", 10001 ]
 }

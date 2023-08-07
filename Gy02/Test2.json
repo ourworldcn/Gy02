@@ -1,34 +1,41 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-  "name_txt": 11874,
-  "comment_txt": 11875,
-  "atk": null,
-  "def": null,
-  "pow": [ 70, 78, 86, 94, 102, 110, 118, 126, 134, 142, 150, 158, 166, 174, 182, 190, 198, 206, 214, 222 ],
-  "Genus": [ "p_gn", "e_zuoqi", "zuoqi_cat" ],
-  "p_skills": [
-    {
-      "skillsid": "4a28cf9b-199c-4b42-940a-a2e893eca0bf",
-      "enable": true
+  "Genus": [ "gs_choujiangbaoxiang" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
     },
-    {
-      "skillsid": "2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3",
-      "enable": false
-    },
-    {
-      "skillsid": "dc16539b-cb34-4bb3-9d0a-6ba480fa80ff",
-      "enable": false
-    },
-    {
-      "skillsid": "0757f46e-6c5e-41f6-ba4f-2d07c563d4cf",
-      "enable": false
-    },
-    {
-      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
-      "enable": false
-    }
-  ],
-  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e",
-  "CompositeId": "c101096b-8606-4ad1-b268-81b77de67976"
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "82e8eeb0-0f4d-406a-9fcb-3c84a8c3200d",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "7657244e-ef96-4f4d-a07f-157b22198fd7",
+        "Count": 1
+      }
+    ]
+  },
+  "name_txt": 10964,
+  "comment_txt": 10940,
+  "JiaoBiao": [ "shopcorner zhekou", 10001 ]
 }

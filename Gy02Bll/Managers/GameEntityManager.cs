@@ -326,8 +326,11 @@ namespace GY02.Managers
         /// <returns>容器的虚拟对象,返回null表示没有父或出错，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。0表示没有父对象。</returns>
         public VirtualThing GetParentThing(GameEntity entity)
         {
-            var thing = entity.GetThing();
-            if (thing is null) return null;
+            if (entity.GetThing() is not VirtualThing thing)
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"指定实体没有父实体，实体Id={entity.Id}");
+                return null;
+            }
             OwHelper.SetLastError(ErrorCodes.NO_ERROR);
             return thing.Parent;
         }
