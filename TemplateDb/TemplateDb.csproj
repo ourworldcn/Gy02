@@ -33,9 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="数据表\GameTemplates.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="数据表\TemplateData.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
