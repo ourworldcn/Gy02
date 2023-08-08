@@ -86,6 +86,7 @@ namespace GY02.Commands
                 if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes)) goto lbErr;
 
             if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2), command.GameChar, command.Changes)) goto lbErr;
+            //加入购买历史记录
             command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
             {
                 Count = 1,
