@@ -465,12 +465,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.T78Controller.Surveied(GY02.Publisher.T78SurveiedParamsDto,GY02.Managers.GameMailManager)">
+        <member name="M:GY02.Controllers.T78Controller.Surveied(GY02.Publisher.T78SurveiedParamsDto,GY02.Managers.GameMailManager,GY02.Managers.GameBlueprintManager)">
             <summary>
             问卷调查成功结束的回调。
             </summary>
             <param name="model">application/x-www-form-urlencoded 格式传递参数时，手字母小写。</param>
             <param name="mailManager"></param>
+            <param name="blueprintManager"></param>
             <returns></returns>
         </member>
         <member name="T:GY02.Controllers.VWorldController">

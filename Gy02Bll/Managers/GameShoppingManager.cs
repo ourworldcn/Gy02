@@ -198,7 +198,7 @@ namespace GY02.Managers
         public bool IsMatchOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
         {
             buyedCount = gameChar.ShoppingHistory?.Where(c => c.DateTime >= start && c.DateTime < end && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
-            return buyedCount <= (tt.ShoppingItem.MaxCount ?? decimal.MaxValue);
+            return buyedCount < (tt.ShoppingItem.MaxCount ?? decimal.MaxValue);
         }
 
         /// <summary>

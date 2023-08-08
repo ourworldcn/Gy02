@@ -124,7 +124,7 @@ namespace GY02.Managers
             if (!_Token2EndPoint.TryGetValue(token, out var ip))    //若未找到指定的ip地址
                 return false;
             _Udp.Send(data, ip);
-            Logger.LogTrace("发送信息{_Udp.Client.LocalEndPoint} -> {ip} : {tmp.Item2.Length}字节", _Udp.LocalEndPoint, ip, data.Length);
+            Logger.LogDebug("发送信息{_Udp.Client.LocalEndPoint} -> {ip} : {tmp.Item2.Length}字节", _Udp.LocalEndPoint, ip, data.Length);
             return true;
         }
 

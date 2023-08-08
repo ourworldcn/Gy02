@@ -16,6 +16,7 @@ using OW.SyncCommand;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Controllers
 {
@@ -62,7 +63,7 @@ namespace GY02.Controllers
         /// </param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<PayedReturnDto> Payed([FromForm]PayedParamsDto model, [FromHeader(Name = "X-BNPAY-SANDBOX")] string isSandbox, [FromHeader(Name = "X-BNPAY-PAYTYPE")] string payType)
+        public ActionResult<PayedReturnDto> Payed([FromForm] PayedParamsDto model, [FromHeader(Name = "X-BNPAY-SANDBOX")] string isSandbox, [FromHeader(Name = "X-BNPAY-PAYTYPE")] string payType)
         {
             //using (StreamReader reader = new StreamReader(Request.Body, Encoding.UTF8))
             //{
@@ -262,9 +263,10 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="model">application/x-www-form-urlencoded 格式传递参数时，手字母小写。</param>
         /// <param name="mailManager"></param>
+        /// <param name="blueprintManager"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<T78SurveiedReturnDto> Surveied([FromForm] T78SurveiedParamsDto model, [FromServices] GameMailManager mailManager)
+        public ActionResult<T78SurveiedReturnDto> Surveied([FromForm] T78SurveiedParamsDto model, [FromServices] GameMailManager mailManager, [FromServices] GameBlueprintManager blueprintManager)
         {
             _Logger.LogInformation("收到T78问卷调查回调，参数 = {model}", JsonSerializer.Serialize(model));
             T78SurveiedReturnDto result = new T78SurveiedReturnDto { };
@@ -287,7 +289,7 @@ namespace GY02.Controllers
             }
             using (var dwKey = _GameAccountStore.GetOrLoadUser(model.UserId, model.UserId, out var user))
             {
-                //var dwKey1 = _GameAccountStore.GetOrLoadUser("string306", "string", out  user);
+                //using var dwKey1 = _GameAccountStore.GetOrLoadUser("string306", "string", out user);
                 if (dwKey.IsEmpty) goto lbErr;
                 var gc = user.CurrentChar;
                 //购买商品的输出项
@@ -299,6 +301,10 @@ namespace GY02.Controllers
                 var allEntity = _EntityManager.GetAllEntity(gc)?.ToArray();
                 if (allEntity is null) goto lbErr;  //若无法获取
                                                     //提前缓存产出项
+                                                    //消耗项
+                if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
+                    if (!blueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins)) goto lbErr;
+
                 var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
                 if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
                 {
@@ -336,6 +342,13 @@ namespace GY02.Controllers
                         return result;
                     }
                 }
+                gc.ShoppingHistory.Add(new GameShoppingHistoryItem
+                {
+                    Count = 1,
+                    DateTime = now,
+                    TId = tid,
+                });
+                _Logger.LogInformation("收到T78问卷调查回调，正常发送奖励。CharId={gcId}", gc.Id);
                 return result;
             }
         lbErr:
