@@ -202,17 +202,27 @@ namespace GY02
 
         public static Guid PingGuid = Guid.Parse("{D99A07D0-DF3E-43F7-8060-4C7140905A29}");
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
         [Conditional("DEBUG")]
         private void Test(string str = null)
         {
             var store = _Services.GetService<GameAccountStoreManager>();
             var mapper = _Services.GetService<IMapper>();
             var sw = Stopwatch.StartNew();
+            #region 测试用代码
             try
             {
-                #region 测试用代码
-                #endregion 测试用代码
+                var ge1 = new Templates.GameExpression { };
+                ge1.Args.Add("111");
+                var str1 = JsonSerializer.Serialize(ge1);
+
+                var obj = JsonSerializer.Deserialize<Templates.GameExpression>(str1);
+                var str2 = obj.Args[0].ToString();
             }
+            #endregion 测试用代码
             finally
             {
                 sw.Stop();

@@ -3,6 +3,7 @@ using GY02;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
 using OW.SyncCommand;
 
@@ -29,6 +30,20 @@ namespace Gy02.Controllers
         IMapper _Mapper;
 
         SyncCommandManager _SyncCommandManager;
+
+#if DEBUG
+        /// <summary>
+        /// 获取一个样例。
+        /// </summary>
+        /// <param name="achievementManager"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult<TemplateStringFullView> GetTODemo([FromServices] GameAchievementManager achievementManager)
+        {
+            var tt = achievementManager.GetAchievementById(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"));
+            return tt;
+        }
+#endif
 
         /// <summary>
         /// 获取指定成就的状态。

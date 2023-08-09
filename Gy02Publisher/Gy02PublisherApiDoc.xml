@@ -277,7 +277,7 @@
         </member>
         <member name="T:GY02.Templates.GameAchievementTO">
             <summary>
-            成就定义。
+            成就/任务定义。
             </summary>
         </member>
         <member name="M:GY02.Templates.GameAchievementTO.#ctor">
@@ -285,19 +285,24 @@
             
             </summary>
         </member>
+        <member name="P:GY02.Templates.GameAchievementTO.Period">
+            <summary>
+            该项的游戏周期。仅在有效周期内才会计算任务/成就。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameAchievementTO.Ins">
+            <summary>
+            需求/消耗物的集合。暂时未用。未来也可以配置该任务/成就的前置任务/成就。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.GameAchievementTO.Exp2LvSequence">
             <summary>
             经验到等级转换用的序列，如[100,200]表示指标值>=100时达成该成就第1级（未达成前是0级），当指标值>=200时达成第2级成就；以此类推。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameAchievementTO.Ins">
-            <summary>
-            消耗物的集合。暂时未用。
-            </summary>
-        </member>
         <member name="P:GY02.Templates.GameAchievementTO.Outs">
             <summary>
-            产出物的集合。
+            产出物的集合。对应每个级别产出，每个级别可以产出多个物品。
             </summary>
         </member>
         <member name="T:GY02.Templates.RawTemplate">

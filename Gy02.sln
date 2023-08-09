@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "解决方案项", "解决�
 	ProjectSection(SolutionItems) = preProject
 		Graph1.dgml = Graph1.dgml
 		Notes.txt = Notes.txt
+		成就系统 玩法策划.docx = 成就系统 玩法策划.docx
 		部署说明.txt = 部署说明.txt
 		韩国海外服务端接口文档v1.0.4.docx = 韩国海外服务端接口文档v1.0.4.docx
 	EndProjectSection
@@ -43,7 +44,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gy001Tools", "Gy001Tools\Gy
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Publisher4WebApi", "Publisher4WebApi\Publisher4WebApi.csproj", "{9FD9A443-6731-4B51-96AE-021E6D22779B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoggingDb", "LoggingDb\LoggingDb.csproj", "{19025221-CC57-4FA2-897A-8C263CEA5CB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingDb", "LoggingDb\LoggingDb.csproj", "{19025221-CC57-4FA2-897A-8C263CEA5CB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

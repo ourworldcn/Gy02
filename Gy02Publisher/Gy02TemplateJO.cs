@@ -560,7 +560,7 @@ namespace GY02.Templates
     #region 成就相关
 
     /// <summary>
-    /// 成就定义。
+    /// 成就/任务定义。
     /// </summary>
     public class GameAchievementTO
     {
@@ -573,17 +573,22 @@ namespace GY02.Templates
         }
 
         /// <summary>
+        /// 该项的游戏周期。仅在有效周期内才会计算任务/成就。
+        /// </summary>
+        public GamePeriod Period { get; set; } = new GamePeriod();
+
+        /// <summary>
+        /// 需求/消耗物的集合。暂时未用。未来也可以配置该任务/成就的前置任务/成就。
+        /// </summary>
+        public BlueprintInItem[] Ins { get; set; }
+
+        /// <summary>
         /// 经验到等级转换用的序列，如[100,200]表示指标值>=100时达成该成就第1级（未达成前是0级），当指标值>=200时达成第2级成就；以此类推。
         /// </summary>
         public decimal[] Exp2LvSequence { get; set; }
 
         /// <summary>
-        /// 消耗物的集合。暂时未用。
-        /// </summary>
-        public BlueprintInItem[] Ins { get; set; }
-
-        /// <summary>
-        /// 产出物的集合。
+        /// 产出物的集合。对应每个级别产出，每个级别可以产出多个物品。
         /// </summary>
         public List<GameEntitySummary[]> Outs { get; set; } = new List<GameEntitySummary[]>();
     }
