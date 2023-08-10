@@ -608,7 +608,7 @@
             构造函数。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AchievementController.GetTODemo(GY02.Managers.GameAchievementManager)">
+        <member name="M:Gy02.Controllers.AchievementController.GetTemplateDemo(GY02.Managers.GameAchievementManager)">
             <summary>
             获取一个样例。
             </summary>

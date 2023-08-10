@@ -189,12 +189,12 @@ namespace GY02.Templates
     /// <summary>
     /// 一个通用的表达式对象。计划用于从寻找到的实体上提取属性。
     /// </summary>
-    public class GameExpression
+    public class GameExpressionToRemove
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public GameExpression()
+        public GameExpressionToRemove()
         {
 
         }
@@ -390,7 +390,7 @@ namespace GY02.Templates
         /// <summary>
         /// 获取索引的对象。
         /// </summary>
-        public GameExpression GetIndexExpression { get; set; }
+        public GeneralConditionalItem GetIndexExpression { get; set; }
 
         /// <summary>
         /// 产出的集合。
@@ -1126,7 +1126,8 @@ namespace GY02.Templates
     }
 
     /// <summary>
-    /// 通用属性条件项。
+    /// 一个通用的表达式对象。计划用于从寻找到的实体上提取属性。
+    /// 当前版本可能是一个bool或数值。
     /// </summary>
     public class GeneralConditionalItem
     {
@@ -1138,9 +1139,12 @@ namespace GY02.Templates
         #region 公共属性
 
         /// <summary>
-        /// 操作符（函数名）。暂定支持六种关系运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!= 等。
-        /// 特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
+        /// 操作符（函数名）。详细说明参见remarks。
         /// </summary>
+        /// <remarks>
+        /// ModE 返回bool类型， 如{"op":"ModE","PropertyName":"Count","args":["7","1"]}表示实体的Count属性对7求余数等于1则符合条件，否则不符合。
+        /// ToInt32 返回decimal类型，有唯一的参数，字符串类型，标识获取实体属性的名称。如{"op":"ModE","args":["Count"]}表示返回指定实体的Count属性值。
+        /// </remarks>
         [JsonPropertyName("op")]
         public string Operator
         {
@@ -1149,6 +1153,7 @@ namespace GY02.Templates
 
         /// <summary>
         /// 属性名。该属性只能是一个可以运算的类型，即可以转化为<see cref="decimal"/>的类型。
+        /// 可能省略，对于新版本这个属性保留不用，未来可能删除。
         /// </summary>
         [JsonPropertyName("pn")]
         public string PropertyName
@@ -1156,12 +1161,12 @@ namespace GY02.Templates
             get; set;
         }
 
-        List<decimal> _Args;
+        List<string> _Args;
         /// <summary>
-        /// 一组参数值，有多少个元素由运算符指定。
+        /// 一组参数值,参数的顺序和数量由运算符指定。，有多少个元素由运算符指定。
         /// </summary>
         [JsonPropertyName("args")]
-        public List<decimal> Args { get => _Args ?? (_Args = new List<decimal> { }); set => _Args = value; }
+        public List<string> Args { get => _Args ?? (_Args = new List<string> { }); set => _Args = value; }
 
         /// <summary>
         /// 在获取显示列表的时候，是否忽略该条件，视同满足。
@@ -1170,6 +1175,19 @@ namespace GY02.Templates
         public bool IgnoreIfDisplayList { get; set; } = false;
 
         #endregion 公共属性
+
+        #region 辅助方法
+
+        bool VerifyCount<T>(ICollection<T> objs, int count)
+        {
+            if (objs.Count != count)
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"{Operator} 需要 {count} 个参数，但是实际有 {objs.Count} 个参数");
+                return false;
+            }
+            return true;
+        }
+        #endregion 辅助方法
 
         #region 公共方法
 
@@ -1241,7 +1259,7 @@ namespace GY02.Templates
         /// 获取一个指示指定实体是否符合指定条件。
         /// </summary>
         /// <param name="entity"></param>
-        /// <param name="ignore">是否忽略<see cref="GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
+        /// <param name="ignore">是否忽略<see cref="IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
         /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError()"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
         public bool IsMatch(object entity, bool ignore = false)
         {
@@ -1267,30 +1285,37 @@ namespace GY02.Templates
                     }
                     else if (Args.Count > 2)
                         OwHelper.SetLastErrorMessage($"ModE要有两个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
-                    else
-                        OwHelper.SetLastError(ErrorCodes.NO_ERROR);
-                    result = val % Args[0] == Args[1];
-                    break;
-                case "<=":
-                    //获取属性值
-                    if (!TryGetDecimal(entity, out val))
-                    {
-                        result = false;
-                        break;
-                    }
-                    if (Args.Count < 1)
+                    if (!OwConvert.TryToDecimal(Args[0], out var arg0) || !OwConvert.TryToDecimal(Args[1], out var arg1))
                     {
                         OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                        OwHelper.SetLastErrorMessage($"<=要有一个参数但实际只有{Args.Count}个参数。");
+                        OwHelper.SetLastErrorMessage($"ModE要有两个参数都是数值型。");
                         result = false;
                         break;
                     }
-                    else if (Args.Count > 1)
-                        OwHelper.SetLastErrorMessage($"<=要有一个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
                     else
                         OwHelper.SetLastError(ErrorCodes.NO_ERROR);
-                    result = val <= Args[0];
+                    result = val % arg0 == arg1;
                     break;
+                case "<=":
+                //获取属性值
+                //if (!TryGetDecimal(entity, out val))
+                //{
+                //    result = false;
+                //    break;
+                //}
+                //if (Args.Count < 1)
+                //{
+                //    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                //    OwHelper.SetLastErrorMessage($"<=要有一个参数但实际只有{Args.Count}个参数。");
+                //    result = false;
+                //    break;
+                //}
+                //else if (Args.Count > 1)
+                //    OwHelper.SetLastErrorMessage($"<=要有一个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
+                //else
+                //    OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                //result = val <= Args[0];
+                //break;
                 case "<":
                 case ">=":
                 case ">":
@@ -1301,6 +1326,39 @@ namespace GY02.Templates
                     OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                     OwHelper.SetLastErrorMessage($"不支持的操作符{Operator}");
                     result = false;
+                    break;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">返回值</param>
+        /// <param name="objs">运行时附属参数。</param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool TryGetValue(out object value, params object[] objs)
+        {
+            var result = false;
+            switch (Operator)
+            {
+                case "ToInt32":
+                    if (!VerifyCount(Args, 1) || !VerifyCount(objs, 1))
+                    {
+                        value = default;
+                        break;
+                    }
+                    var obj = objs[0];
+                    if (!TryGetPropertyValue(obj, out var tmp) || !OwConvert.TryToDecimal(tmp, out var deci))
+                    {
+                        value = default;
+                        break;
+                    }
+                    value = Convert.ToInt32(deci);  //舍入为最接近的 32 位有符号整数。 如果 value 为两个整数中间的数字，则返回二者中的偶数；即 4.5 转换为 4，而 5.5 转换为 6。
+                    break;
+                default:
+                    value = default;
                     break;
             }
             return result;

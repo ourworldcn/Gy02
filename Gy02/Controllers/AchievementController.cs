@@ -38,7 +38,7 @@ namespace Gy02.Controllers
         /// <param name="achievementManager"></param>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult<TemplateStringFullView> GetTODemo([FromServices] GameAchievementManager achievementManager)
+        public ActionResult<TemplateStringFullView> GetTemplateDemo([FromServices] GameAchievementManager achievementManager)
         {
             var tt = achievementManager.GetAchievementById(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"));
             return tt;

@@ -36,6 +36,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace GY02
 {
@@ -215,12 +216,11 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var ge1 = new Templates.GameExpression { };
-                ge1.Args.Add("111");
+                var ge1 = new GeneralConditionalItem { };
+                //ge1.Args.Add("111");
                 var str1 = JsonSerializer.Serialize(ge1);
 
-                var obj = JsonSerializer.Deserialize<Templates.GameExpression>(str1);
-                var str2 = obj.Args[0].ToString();
+                //var obj = JsonSerializer.Deserialize<GeneralConditionalItem>(str1, new JsonSerializerOptions { NumberHandling = JsonNumberHandling.AllowReadingFromString });
             }
             #endregion 测试用代码
             finally

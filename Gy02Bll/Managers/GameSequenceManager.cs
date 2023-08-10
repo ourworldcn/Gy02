@@ -155,12 +155,12 @@ namespace GY02.Managers
             return false;
         }
 
-        public int GetInt32(GameExpression expression, GameEntity entity)
+        public int GetInt32(GeneralConditionalItem expression, GameEntity entity)
         {
             switch (expression.Operator)
             {
                 case "ToInt32":
-                    if (!expression.TryGetValue(entity, out var value))
+                    if (!expression.TryGetValue(out var value, entity))
                         return 0;
                     return Convert.ToInt32(value);
                 case "GetBuyedCount":
