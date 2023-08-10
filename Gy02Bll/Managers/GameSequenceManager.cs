@@ -145,7 +145,7 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"找不到适合条件的实体, 条件TId = {tt.TemplateId}");
                 goto lbErr;
             }
-            var indexObj = GetInt32(mo.GetIndexExpression, entity);
+            if (!_TemplateManager.TryGetValueFromConditionalItem(mo.GetIndexExpression, out var indexObj, entity)) goto lbErr;  //若无法获取索引
             //if (!mo.GetIndexExpression.TryGetValue(entity, out var indexObj)) goto lbErr;
             var index = Convert.ToInt32(indexObj);
             result = mo.Outs.GetItem(index);
@@ -153,42 +153,6 @@ namespace GY02.Managers
         lbErr:
             result = null;
             return false;
-        }
-
-        public int GetInt32(GeneralConditionalItem expression, GameEntity entity)
-        {
-            switch (expression.Operator)
-            {
-                case "ToInt32":
-                    if (!expression.TryGetValue(out var value, entity))
-                        return 0;
-                    return Convert.ToInt32(value);
-                case "GetBuyedCount":
-                    {
-                        var now = OwHelper.WorldNow;
-                        var gameChar = entity as GameChar;
-                        if (gameChar is null)
-                        {
-                            return 0;
-                        }
-                        if (!Guid.TryParse(expression.Args[0].ToString(), out var tid)) //商品的TId
-                        {
-                            return 0;
-                        }
-                        var tt = _TemplateManager.GetFullViewFromId(tid);
-                        if (!tt.ShoppingItem.Period.IsValid(now, out var start))
-                        {
-                            return 0;
-                        }
-
-                        var list = gameChar.ShoppingHistory;
-                        var result = list.Where(c => c.TId == tid && c.DateTime >= start && c.DateTime <= now).Sum(c => c.Count);
-                        return Convert.ToInt32(result);
-                    }
-                default:
-                    return 0;
-            }
-
         }
 
         /// <summary>

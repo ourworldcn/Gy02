@@ -111,7 +111,16 @@ namespace GY02.Managers
                 return false;
             if (condition.MinCount.HasValue && condition.MinCount.Value > entity.Count)
                 return false;
-            if (!condition.GeneralConditional.All(c => c.IsMatch(entity, ignore)))  //若通用属性要求的条件不满足
+            if (!condition.GeneralConditional.All(c =>
+            {
+                if (ignore && c.IgnoreIfDisplayList)
+                    return true;
+                if (!_TemplateManager.TryGetValueFromConditionalItem(c, out var obj, entity))
+                    return false;
+                if (!OwConvert.TryToBoolean(obj, out var result))
+                    return false;
+                return result;
+            }))  //若通用属性要求的条件不满足
                 return false;
             return true;
         }

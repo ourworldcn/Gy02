@@ -6,9 +6,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OW.DDD;
+using OW.Game.Entity;
 using OW.Game.Store;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq.Expressions;
 
 namespace OW.Game.Managers
 {
@@ -258,6 +262,91 @@ namespace OW.Game.Managers
         error:
             entity = null;
             return false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="conditionalItem"></param>
+        /// <param name="value"></param>
+        /// <param name="objects"></param>
+        /// <returns></returns>
+        public bool TryGetValueFromConditionalItem(GeneralConditionalItem conditionalItem, out object value, params object[] objects)
+        {
+            var result = false;
+            switch (conditionalItem.Operator)
+            {
+                case "ToInt32":
+                    {
+                        var pName = conditionalItem.Args[0];
+                        var obj = objects[0];
+                        var pi = obj.GetType().GetProperty(pName);
+                        if (pi is null)
+                        {
+                            OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定属性，属性名={pName}");
+                            break;
+                        }
+                        var tmp = pi.GetValue(obj);
+                        value = Convert.ToInt32(tmp);
+                        result = true;
+                    }
+                    break;
+                case "GetBuyedCount":
+                    {
+                        var now = OwHelper.WorldNow;
+                        var gameChar = objects[0] as GameChar;
+                        if (gameChar is null)
+                        {
+                            value = 0; break;
+                        }
+                        if (!Guid.TryParse(conditionalItem.Args[0].ToString(), out var tid)) //商品的TId
+                        {
+                            value = 0; break;
+
+                        }
+                        var tt = GetFullViewFromId(tid);
+                        if (!tt.ShoppingItem.Period.IsValid(now, out var start))
+                        {
+                            value = 0; break;
+                        }
+
+                        var list = gameChar.ShoppingHistory;
+                        var val = list.Where(c => c.TId == tid && c.DateTime >= start && c.DateTime <= now).Sum(c => c.Count);  //如果source不包含任何元素，则Sum(IEnumerable<Decimal>)方法返回零。
+                        value = Convert.ToInt32(val);
+                        result = true;
+                    }
+                    break;
+                case "ModE":
+                    {
+                        //获取属性值
+                        var pName = conditionalItem.PropertyName;
+                        var obj = objects[0];
+                        var pi = obj.GetType().GetProperty(pName);
+                        if (pi is null)
+                        {
+                            OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定属性，属性名={pName}");
+                            break;
+                        }
+                        var tmp = pi.GetValue(obj);
+                        var val = Convert.ToDecimal(tmp);
+                        if (!OwConvert.TryToDecimal(conditionalItem.Args[0], out var arg0) || !OwConvert.TryToDecimal(conditionalItem.Args[1], out var arg1))
+                        {
+                            OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                            OwHelper.SetLastErrorMessage($"ModE要有两个参数都是数值型。");
+                            result = false;
+                            break;
+                        }
+                        else
+                            OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                        value = val % arg0 == arg1;
+                        result = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+            value = default;
+            return result;
         }
 
         #region IDisposable

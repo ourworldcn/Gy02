@@ -90,60 +90,6 @@
             <returns>返回相应索引的预览对象，若索引过大，则取对应集合的最后一项（不会因为索引过大引发异常）。</returns>
             <exception cref="T:System.IndexOutOfRangeException">索引超出范围。</exception>
         </member>
-        <member name="T:GY02.Templates.GameExpressionToRemove">
-            <summary>
-            一个通用的表达式对象。计划用于从寻找到的实体上提取属性。
-            </summary>
-        </member>
-        <member name="M:GY02.Templates.GameExpressionToRemove.#ctor">
-            <summary>
-            构造函数。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.GameExpressionToRemove.Operator">
-            <summary>
-            操作符（函数名）。暂定支持以下运算,如 &lt;=,&lt;,&gt;=,&gt;,==,!=,ToInt32 等。
-            特别地，ModE标识求模等价，如{Operator="ModE",PropertyName="Count",Args={7,1}}表示实体的Count对7求余数等于1则符合条件，否则不符合。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.GameExpressionToRemove.Args">
-            <summary>
-            一组参数值,参数的顺序和数量由运算符指定。
-            </summary>
-            <remarks>对 ToInt32 运算，有唯一的参数，字符串类型，标识获取实体属性的名称。</remarks>
-        </member>
-        <member name="P:GY02.Templates.GameExpressionToRemove.IgnoreIfDisplayList">
-            <summary>
-            在获取显示列表的时候，是否忽略该条件，视同满足。
-            </summary>
-            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
-        </member>
-        <member name="M:GY02.Templates.GameExpressionToRemove.TryGetValue(System.Object,System.Object@)">
-            <summary>
-            获取一个指示指定实体是否符合指定条件。
-            </summary>
-            <param name="entity"></param>
-            <param name="result">返回的值</param>
-            <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
-        </member>
-        <member name="M:GY02.Templates.GameExpressionToRemove.TryGetPropertyInfo(System.Object,System.String,System.Reflection.PropertyInfo@)">
-            <summary>
-            获取指定属性的反射对象。
-            </summary>
-            <param name="entity"></param>
-            <param name="propertyName"></param>
-            <param name="propertyInfo"></param>
-            <returns>true找到值，false出错。</returns>
-        </member>
-        <member name="M:GY02.Templates.GameExpressionToRemove.TryGetPropertyValue(System.Object,System.String,System.Object@)">
-            <summary>
-            获取指定属性的值。
-            </summary>
-            <param name="entity"></param>
-            <param name="propertyName"></param>
-            <param name="result"></param>
-            <returns>true找到值，false出错。</returns>
-        </member>
         <member name="T:GY02.Templates.SequenceOut">
             <summary>
             动态产出/消耗。
@@ -719,47 +665,6 @@
             在获取显示列表的时候，是否忽略该条件，视同满足。
             </summary>
             <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
-        </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyInfo(System.Object,System.Reflection.PropertyInfo@)">
-            <summary>
-            获取指定属性的反射对象。
-            </summary>
-            <param name="entity"></param>
-            <param name="propertyInfo"></param>
-            <returns>true找到值，false出错。</returns>
-        </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyValue(System.Object,System.Object@)">
-            <summary>
-            获取指定属性的值。
-            </summary>
-            <param name="entity"></param>
-            <param name="result"></param>
-            <returns>true找到值，false出错。</returns>
-        </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetDecimal(System.Object,System.Decimal@)">
-            <summary>
-            获取条件对象中指定的属性值。
-            </summary>
-            <param name="entity"></param>
-            <param name="result"></param>
-            <returns>true找到值，false出错。</returns>
-        </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object,System.Boolean)">
-            <summary>
-            获取一个指示指定实体是否符合指定条件。
-            </summary>
-            <param name="entity"></param>
-            <param name="ignore">是否忽略<see cref="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
-            <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
-        </member>
-        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetValue(System.Object@,System.Object[])">
-            <summary>
-            
-            </summary>
-            <param name="value">返回值</param>
-            <param name="objs">运行时附属参数。</param>
-            <returns></returns>
-            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="T:GY02.Templates.BlueprintInItem">
             <summary>
