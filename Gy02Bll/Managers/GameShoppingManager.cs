@@ -175,7 +175,7 @@ namespace GY02.Managers
             //检测购买代价
             if (ignore && shoppingItem.Ins.All(c => c.IgnoreIfDisplayList))
                 return true;
-            var b = _BlueprintManager.IsValid(shoppingItem.Ins, _EntityManager.GetAllEntity(gameChar));
+            var b = _BlueprintManager.IsValid(shoppingItem.Ins, _EntityManager.GetAllEntity(gameChar), ignore);
             if (!b)
             {
                 return false;

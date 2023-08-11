@@ -251,6 +251,13 @@
             产出物的集合。对应每个级别产出，每个级别可以产出多个物品。
             </summary>
         </member>
+        <member name="M:GY02.Templates.GameAchievementTO.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Templates.RawTemplate">
             <summary>
             原始的的模板类。
@@ -520,6 +527,13 @@
             </summary>
             <returns>true可堆叠，false不可堆叠。</returns>
         </member>
+        <member name="M:GY02.Templates.TemplateStringFullView.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Templates.FuhuaInfo">
             <summary>
             孵化的信息项主要数据封装类。
@@ -549,6 +563,13 @@
             <summary>
             消耗物的集合。
             </summary>
+        </member>
+        <member name="M:GY02.Templates.FuhuaInfo.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
         </member>
         <member name="T:GY02.Templates.CostInfo">
             <summary>
@@ -666,6 +687,47 @@
             </summary>
             <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyInfo(System.Object,System.Reflection.PropertyInfo@)">
+            <summary>
+            获取指定属性的反射对象。
+            </summary>
+            <param name="entity"></param>
+            <param name="propertyInfo"></param>
+            <returns>true找到值，false出错。</returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyValue(System.Object,System.Object@)">
+            <summary>
+            获取指定属性的值。
+            </summary>
+            <param name="entity"></param>
+            <param name="result"></param>
+            <returns>true找到值，false出错。</returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetDecimal(System.Object,System.Decimal@)">
+            <summary>
+            获取条件对象中指定的属性值。
+            </summary>
+            <param name="entity"></param>
+            <param name="result"></param>
+            <returns>true找到值，false出错。</returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.IsMatch(System.Object,System.Boolean)">
+            <summary>
+            获取一个指示指定实体是否符合指定条件。
+            </summary>
+            <param name="entity"></param>
+            <param name="ignore">是否忽略<see cref="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
+            <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.TryGetValue(System.Object@,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="value">返回值</param>
+            <param name="objs">运行时附属参数。</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="T:GY02.Templates.BlueprintInItem">
             <summary>
             合成的材料信息。
@@ -697,6 +759,13 @@
             在获取显示列表的时候，是否忽略该条件，视同满足。
             </summary>
             <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+        </member>
+        <member name="M:GY02.Templates.BlueprintInItem.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
         </member>
         <member name="T:GY02.Templates.BlueprintInfo">
             <summary>

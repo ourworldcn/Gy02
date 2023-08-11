@@ -379,7 +379,7 @@ namespace GY02.Templates
     /// <summary>
     /// 成就/任务定义。
     /// </summary>
-    public class GameAchievementTO
+    public class GameAchievementTO : IValidatableObject
     {
         /// <summary>
         /// 
@@ -408,6 +408,16 @@ namespace GY02.Templates
         /// 产出物的集合。对应每个级别产出，每个级别可以产出多个物品。
         /// </summary>
         public List<GameEntitySummary[]> Outs { get; set; } = new List<GameEntitySummary[]>();
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return default;
+        }
     }
 
     #endregion
@@ -502,7 +512,7 @@ namespace GY02.Templates
     /// 模板的完整视图。
     /// </summary>
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    public partial class TemplateStringFullView
+    public partial class TemplateStringFullView : IValidatableObject
     {
         /// <summary>
         /// 构造函数。
@@ -809,13 +819,21 @@ namespace GY02.Templates
             return Stk != decimal.One;
         }
 
-
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return default;
+        }
     }
 
     /// <summary>
     /// 孵化的信息项主要数据封装类。
     /// </summary>
-    public class FuhuaInfo
+    public class FuhuaInfo : IValidatableObject
     {
         /// <summary>
         /// 双亲1的条件。
@@ -842,7 +860,15 @@ namespace GY02.Templates
         /// </summary>
         public List<BlueprintInItem> In { get; set; } = new List<BlueprintInItem>();
 
-
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return default;
+        }
     }
 
     /// <summary>
@@ -992,6 +1018,197 @@ namespace GY02.Templates
         public bool IgnoreIfDisplayList { get; set; } = false;
 
         #endregion 公共属性
+
+        #region 辅助方法
+
+        bool VerifyCount<T>(ICollection<T> objs, int count)
+        {
+            if (objs.Count != count)
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"{Operator} 需要 {count} 个参数，但是实际有 {objs.Count} 个参数");
+                return false;
+            }
+            return true;
+        }
+        #endregion 辅助方法
+
+        #region 公共方法 为客户端保留，服务器不再使用
+
+        /// <summary>
+        /// 获取指定属性的反射对象。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="propertyInfo"></param>
+        /// <returns>true找到值，false出错。</returns>
+        public bool TryGetPropertyInfo(object entity, out PropertyInfo propertyInfo)
+        {
+            propertyInfo = entity.GetType().GetProperty(PropertyName);
+            if (propertyInfo is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"无法找到指定的属性{PropertyName}");
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 获取指定属性的值。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="result"></param>
+        /// <returns>true找到值，false出错。</returns>
+        public bool TryGetPropertyValue(object entity, out object result)
+        {
+            if (!TryGetPropertyInfo(entity, out var pi))
+            {
+                result = default;
+                return false;
+            }
+            result = pi.GetValue(entity);
+            return true;
+        }
+
+        /// <summary>
+        /// 获取条件对象中指定的属性值。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="result"></param>
+        /// <returns>true找到值，false出错。</returns>
+        public bool TryGetDecimal(object entity, out decimal result)
+        {
+            if (!TryGetPropertyValue(entity, out var obj))
+            {
+                result = default;
+                return false;
+            }
+            try
+            {
+                result = Convert.ToDecimal(obj);
+            }
+            catch (Exception)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"属性值无法转化为Decimal,{obj}");
+                goto lbErr;
+            }
+            return true;
+        lbErr:
+            result = default;
+            return false;
+        }
+
+        /// <summary>
+        /// 获取一个指示指定实体是否符合指定条件。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="ignore">是否忽略<see cref="IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
+        /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError()"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
+        public bool IsMatch(object entity, bool ignore = false)
+        {
+            if (ignore && IgnoreIfDisplayList)  //若忽略此项
+                return true;
+            bool result;
+            decimal val;    //属性的值
+            switch (Operator)
+            {
+                case "ModE":
+                    //获取属性值
+                    if (!TryGetDecimal(entity, out val))
+                    {
+                        result = false;
+                        break;
+                    }
+                    if (Args.Count < 2)
+                    {
+                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                        OwHelper.SetLastErrorMessage($"ModE要有两个参数但实际只有{Args.Count}个参数。");
+                        result = false;
+                        break;
+                    }
+                    else if (Args.Count > 2)
+                        OwHelper.SetLastErrorMessage($"ModE要有两个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
+                    if (!OwConvert.TryToDecimal(Args[0], out var arg0) || !OwConvert.TryToDecimal(Args[1], out var arg1))
+                    {
+                        OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                        OwHelper.SetLastErrorMessage($"ModE要有两个参数都是数值型。");
+                        result = false;
+                        break;
+                    }
+                    else
+                        OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                    result = val % arg0 == arg1;
+                    break;
+                case "<=":
+                //获取属性值
+                //if (!TryGetDecimal(entity, out val))
+                //{
+                //    result = false;
+                //    break;
+                //}
+                //if (Args.Count < 1)
+                //{
+                //    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                //    OwHelper.SetLastErrorMessage($"<=要有一个参数但实际只有{Args.Count}个参数。");
+                //    result = false;
+                //    break;
+                //}
+                //else if (Args.Count > 1)
+                //    OwHelper.SetLastErrorMessage($"<=要有一个参数但实际有{Args.Count}个参数。程序将忽略尾部多余参数");
+                //else
+                //    OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                //result = val <= Args[0];
+                //break;
+                case "<":
+                case ">=":
+                case ">":
+                case "==":
+                case "!=":
+                    throw new NotImplementedException();
+                default:
+                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                    OwHelper.SetLastErrorMessage($"不支持的操作符{Operator}");
+                    result = false;
+                    break;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value">返回值</param>
+        /// <param name="objs">运行时附属参数。</param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public bool TryGetValue(out object value, params object[] objs)
+        {
+            var result = false;
+            switch (Operator)
+            {
+                case "ToInt32":
+                    if (!VerifyCount(Args, 1) || !VerifyCount(objs, 1))
+                    {
+                        value = default;
+                        break;
+                    }
+                    var obj = objs[0];
+                    if (!TryGetPropertyValue(obj, out var tmp) || !OwConvert.TryToDecimal(tmp, out var deci))
+                    {
+                        value = default;
+                        break;
+                    }
+                    value = Convert.ToInt32(deci);  //舍入为最接近的 32 位有符号整数。 如果 value 为两个整数中间的数字，则返回二者中的偶数；即 4.5 转换为 4，而 5.5 转换为 6。
+                    break;
+                default:
+                    value = default;
+                    break;
+            }
+            return result;
+        }
+
+        #endregion 公共方法
+
     }
 
     #region 合成相关
@@ -999,7 +1216,7 @@ namespace GY02.Templates
     /// <summary>
     /// 合成的材料信息。
     /// </summary>
-    public class BlueprintInItem
+    public class BlueprintInItem : IValidatableObject
     {
         /// <summary>
         /// 构造函数。
@@ -1030,6 +1247,16 @@ namespace GY02.Templates
         /// </summary>
         /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         public bool IgnoreIfDisplayList { get; set; } = false;
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return default;
+        }
     }
 
     /// <summary>

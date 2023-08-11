@@ -14,6 +14,7 @@ using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
 using OW.SyncCommand;
+using System.ComponentModel.DataAnnotations;
 using System.IO.Compression;
 using System.Linq;
 using System.Text.Json;
@@ -65,14 +66,15 @@ namespace GY02.Controllers
                 var list = JsonSerializer.Deserialize<TemplateDatas>(stream);
                 var dic = GameTemplateManager.GetTemplateFullviews(list?.GameTemplates);
 
-                //stream.Seek(0, SeekOrigin.Begin);
-                //var path = Path.Combine(environment.ContentRootPath, "GameTemplates.json");
-                //System.IO.File.Copy()
-                //using var writer = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.Read);
-                //stream.CopyTo(writer);
-
-                //Global.Program.ReqireReboot = true;
-                //applicationLifetime.StopApplication();
+                var coll = new List<ValidationResult>();
+                dic.Values.SafeForEach(c =>
+                {
+                    Validator.TryValidateObject(c, new ValidationContext(c), coll, true);
+                });
+                if (coll.Count > 0)
+                {
+                    return BadRequest(coll);
+                }
             }
             catch (AggregateException agg)
             {

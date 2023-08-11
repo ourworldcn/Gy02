@@ -1,4 +1,42 @@
 {
-  "Announcement": null,
-  "Questionnaire": "[{\u0022Index\u0022:0,\u0022Id\u0022:1,\u0022URL\u0022:\u0022https://duang.bingniao88.com/static/daung_wj_9\u0022,\u0022DisplayKey\u0022:\u0022MaxLevel\u0022,\u0022DisplayValue\u0022:210101001,\u0022Reward\u0022:180401006}]"
+  "Genus": [ "gs_leijiqiandao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-04-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "60d",
+      "ValidPeriodString": "60d"
+    },
+    "GroupNumber": 3,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ 60, 35 ]
+              }
+            ],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": []
+      }
+    ],
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 20
+      }
+    ],
+    "MaxCount": 1
+  }
 }

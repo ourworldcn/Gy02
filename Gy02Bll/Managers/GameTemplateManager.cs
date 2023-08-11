@@ -12,6 +12,7 @@ using OW.Game.Store;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq.Expressions;
 
 namespace OW.Game.Managers
@@ -160,6 +161,11 @@ namespace OW.Game.Managers
                     {
                         _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id));
                         _Id2FullView = new ConcurrentDictionary<Guid, TemplateStringFullView>(_Id2RawTemplate.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
+                        var list = new List<ValidationResult>();
+                        _Id2FullView.Values.SafeForEach(c =>
+                        {
+                            Validator.TryValidateObject(c, new ValidationContext(c), list, true);
+                        });
                     }
                 }
                 catch (Exception excp)
@@ -284,6 +290,7 @@ namespace OW.Game.Managers
                         if (pi is null)
                         {
                             OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定属性，属性名={pName}");
+                            value = default;
                             break;
                         }
                         var tmp = pi.GetValue(obj);
@@ -325,6 +332,7 @@ namespace OW.Game.Managers
                         if (pi is null)
                         {
                             OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定属性，属性名={pName}");
+                            value = default;
                             break;
                         }
                         var tmp = pi.GetValue(obj);
@@ -334,6 +342,7 @@ namespace OW.Game.Managers
                             OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                             OwHelper.SetLastErrorMessage($"ModE要有两个参数都是数值型。");
                             result = false;
+                            value = default;
                             break;
                         }
                         else
@@ -343,9 +352,9 @@ namespace OW.Game.Managers
                     }
                     break;
                 default:
+                    value = default;
                     break;
             }
-            value = default;
             return result;
         }
 
