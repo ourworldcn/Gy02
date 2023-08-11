@@ -219,7 +219,7 @@ namespace GY02
                 var ge1 = new GeneralConditionalItem { };
                 //ge1.Args.Add("111");
                 var str1 = JsonSerializer.Serialize(ge1);
-
+                Thread.Yield();
                 //var obj = JsonSerializer.Deserialize<GeneralConditionalItem>(str1, new JsonSerializerOptions { NumberHandling = JsonNumberHandling.AllowReadingFromString });
             }
             #endregion 测试用代码

@@ -64,7 +64,7 @@
   <Class Name="OW.Game.Manager.VirtualThingManager">
     <Position X="3.25" Y="3.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAQAAAQAAAAAABAAAAAEAAEAAAAAAAIAAAQA=</HashCode>
+      <HashCode>AAIAAAAAAQAAAQAAAAAABAAAAAEIAEAAAAAAAIAAAQA=</HashCode>
       <FileName>Managers\VirtualThingManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -74,7 +74,7 @@
   <Class Name="OW.Game.Managers.GameTemplateManager" Collapsed="true">
     <Position X="4.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAwAAACCABQAAAAAAAAGAgSQEABACIAQQEAAAgAA=</HashCode>
+      <HashCode>AAAAAwAAACCABQAAAAAAAIGAgSQEABACIAQQEAAAgAA=</HashCode>
       <FileName>Managers\GameTemplateManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -141,7 +141,7 @@
   <Class Name="GY02.Managers.GameAccountStoreManager" Collapsed="true">
     <Position X="15.5" Y="1" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>wAEQAIAAMDgAACAAAAAIAAQAACQQFAA4AABAAAAIAQA=</HashCode>
+      <HashCode>wAEQAKEAMDgAACAAAQAIAAQAACQQBAA4kAJAAIAIAQA=</HashCode>
       <FileName>Managers\GameAccountStoreManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -156,7 +156,7 @@
   <Class Name="GY02.Managers.GameCombatManager" Collapsed="true">
     <Position X="13.75" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAA=</HashCode>
       <FileName>Managers\GameCombatManager.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -189,7 +189,7 @@
   <Class Name="GY02.Managers.GameShoppingManager">
     <Position X="10" Y="9.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAICAAAACAAAAAAAIQAgAAAAAAAAAgAAAAAAAIAACgA=</HashCode>
+      <HashCode>AAJCAAQACAAAAAAAIQAgAAAAAAAAAgAAAAAAAIAACgA=</HashCode>
       <FileName>Managers\GameShoppingManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -223,7 +223,7 @@
       <Field Name="_SequenceOutManager" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="GY02.Managers.GameAchievementManagerOptions" Collapsed="true">
+  <Class Name="GY02.Managers.GameAchievementManagerOptions">
     <Position X="11.25" Y="2.25" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
@@ -234,7 +234,7 @@
   <Class Name="GY02.Managers.GameAchievementManager">
     <Position X="0.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAgAAAAAAAAAAAAAAQAACAAAAAAAIAAIgA=</HashCode>
+      <HashCode>AgAAAAAAAAAgAAAAAAAAAAAAUAQAAAAgAAAAAIAAIgA=</HashCode>
       <FileName>Managers\GameAchievementManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
