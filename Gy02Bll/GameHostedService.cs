@@ -26,6 +26,7 @@ using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.GameDb;
+using OW.Server;
 using OW.SyncCommand;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
@@ -212,15 +213,14 @@ namespace GY02
         {
             var store = _Services.GetService<GameAccountStoreManager>();
             var mapper = _Services.GetService<IMapper>();
+            var svc1 = _Services.GetService<OwBackgroundScheduler>();
             var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
             {
-                var ge1 = new GeneralConditionalItem { };
-                //ge1.Args.Add("111");
-                var str1 = JsonSerializer.Serialize(ge1);
-                Thread.Yield();
-                //var obj = JsonSerializer.Deserialize<GeneralConditionalItem>(str1, new JsonSerializerOptions { NumberHandling = JsonNumberHandling.AllowReadingFromString });
+                var obj = new TimeSpanEx("1m");
+                var s = JsonSerializer.Serialize(obj);
+                var obj2 = JsonSerializer.Deserialize<TimeSpanEx>(s);
             }
             #endregion 测试用代码
             finally

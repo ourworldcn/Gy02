@@ -55,7 +55,7 @@ namespace GY02.Commands
 
             foreach (var item in command.TIds)
             {
-                var tt = _AchievementManager.GetAchievementById(item);
+                var tt = _AchievementManager.GetTemplateById(item);
                 if (tt is null) goto lbErr;
                 var achi = _AchievementManager.GetOrCreate(command.GameChar, tt);
                 if (achi is null) goto lbErr;

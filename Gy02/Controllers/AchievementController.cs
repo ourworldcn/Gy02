@@ -40,7 +40,7 @@ namespace Gy02.Controllers
         [HttpGet]
         public ActionResult<TemplateStringFullView> GetTemplateDemo([FromServices] GameAchievementManager achievementManager)
         {
-            var tt = achievementManager.GetAchievementById(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"));
+            var tt = achievementManager.GetTemplateById(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"));
             return tt;
         }
 #endif

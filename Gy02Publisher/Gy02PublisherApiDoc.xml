@@ -203,6 +203,13 @@
             如1m，1y分别表示一月和一年，其中一些是不确定时长度的间间隔，但在实际应用中却常有需求。支持：s秒，d天，w周，m月，y年。
             </summary>
         </member>
+        <member name="M:GY02.Templates.GamePeriod.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
         <member name="P:GY02.Templates.GamePeriod.Period">
             <summary>
             循环周期长度。
@@ -217,8 +224,8 @@
             <summary>
             获取指定时间点是否在该对象标识的有效期内。
             </summary>
-            <param name="nowUtc"></param>
-            <param name="start">返回true时这里返回<paramref name="nowUtc"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
+            <param name="now"></param>
+            <param name="start">返回true时这里返回<paramref name="now"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
             <returns></returns>
         </member>
         <member name="T:GY02.Templates.GameAchievementTO">
@@ -238,7 +245,7 @@
         </member>
         <member name="P:GY02.Templates.GameAchievementTO.Ins">
             <summary>
-            需求/消耗物的集合。暂时未用。未来也可以配置该任务/成就的前置任务/成就。
+            需求/消耗物的集合。可以配置该任务/成就的前置任务/成就。
             </summary>
         </member>
         <member name="P:GY02.Templates.GameAchievementTO.Exp2LvSequence">

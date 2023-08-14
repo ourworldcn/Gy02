@@ -300,7 +300,7 @@ namespace GY02.Templates
     /// <summary>
     /// 定义周期的类。
     /// </summary>
-    public class GamePeriod
+    public class GamePeriod : IValidatableObject
     {
         /// <summary>
         /// 开始时间。
@@ -324,51 +324,61 @@ namespace GY02.Templates
         /// </summary>
         public string ValidPeriodString { get; set; }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if (Start > End)
+                yield return new ValidationResult($"{nameof(Start)}必须不晚于{nameof(End)}");
+        }
+
 #if NETCOREAPP3_0_OR_GREATER
 
+        TimeSpanEx? _Period;
         /// <summary>
         /// 循环周期长度。
         /// </summary>
         [JsonIgnore]
-        public TimeSpanEx Period => new TimeSpanEx(PeriodString);
+        public TimeSpanEx Period => _Period.HasValue ? _Period.Value : (_Period = new TimeSpanEx(PeriodString)).Value;
 
+        TimeSpanEx? _ValidPeriod;
         /// <summary>
         /// 有效周期长度。
         /// </summary>
         [JsonIgnore]
-        public TimeSpanEx ValidPeriod => new TimeSpanEx(ValidPeriodString);
+        public TimeSpanEx ValidPeriod => _ValidPeriod.HasValue ? _ValidPeriod.Value : (_ValidPeriod = new TimeSpanEx(ValidPeriodString)).Value;
 
         /// <summary>
         /// 获取指定时间点是否在该对象标识的有效期内。
         /// </summary>
-        /// <param name="nowUtc"></param>
-        /// <param name="start">返回true时这里返回<paramref name="nowUtc"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
+        /// <param name="now"></param>
+        /// <param name="start">返回true时这里返回<paramref name="now"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
         /// <returns></returns>
-        public bool IsValid(DateTime nowUtc, out DateTime start)
+        public bool IsValid(DateTime now, out DateTime start)
         {
             start = Start;
-            if (nowUtc > End)   //若已经超期
+            if (now < start || now > End)   //若已经超期
             {
-                OwHelper.SetLastError(ErrorCodes.ERROR_INVALID_DATA);
-                OwHelper.SetLastErrorMessage($"指定的时间{nowUtc}商品项最终有效期{End.Value}。");
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_INVALID_DATA,
+                    $"指定的时间 {now} 不在指定的时间范围内{Start} - {End}。");
                 return false;
             }
-            while (true)    //TODO 需要提高性能
+            for (start = Start; now >= start; start += Period)
             {
-                if (start > nowUtc) //若已经超期
+                if (now < start + ValidPeriod)    //若找到合适的项
                 {
-                    OwHelper.SetLastError(ErrorCodes.ERROR_INVALID_DATA);
-                    OwHelper.SetLastErrorMessage($"指定的时间{nowUtc}不在商品有效期内。");
-                    return false;
+                    OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                    return true;
                 }
-                if (start + ValidPeriod > nowUtc)    //若找到合适的项
-                {
-                    break;
-                }
-                start += Period;
             }
-            return true;
+            OwHelper.SetLastError(ErrorCodes.ERROR_INVALID_DATA);
+            OwHelper.SetLastErrorMessage($"指定的时间{now}不在商品有效期内。");
+            return false;
         }
+
 #endif
     }
 
@@ -395,7 +405,7 @@ namespace GY02.Templates
         public GamePeriod Period { get; set; } = new GamePeriod();
 
         /// <summary>
-        /// 需求/消耗物的集合。暂时未用。未来也可以配置该任务/成就的前置任务/成就。
+        /// 需求/消耗物的集合。可以配置该任务/成就的前置任务/成就。
         /// </summary>
         public BlueprintInItem[] Ins { get; set; }
 
@@ -416,7 +426,8 @@ namespace GY02.Templates
         /// <returns></returns>
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            return default;
+            if (!(Exp2LvSequence?.Length > 0))
+                yield return new ValidationResult($"成就的{nameof(Exp2LvSequence)}属性至少要有一个元素。");
         }
     }
 

@@ -1,42 +1,243 @@
 {
-  "Genus": [ "gs_leijiqiandao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-04-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "60d",
-      "ValidPeriodString": "60d"
+  "Changes": [
+    {
+      "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+      "ObjectId": "5f42edb4-45b4-4d63-aa47-fafab38bad7e",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-08-14T17:19:50.392093Z"
     },
-    "GroupNumber": 0,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "4527471A-FD91-4899-910C-DE7056AD67A1",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "60", "9" ]
-              }
-            ],
-            "IgnoreIfDisplayList": false
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      }
-    ],
-    "Outs": [
-      {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 30
-      }
-    ],
-    "MaxCount": 1
-  }
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "63676f51-941c-4a3b-a137-46579714700b",
+      "PropertyName": "Children",
+      "HasOldValue": true,
+      "OldValue": {
+        "atk": 0,
+        "def": 0,
+        "pow": 50,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "CountOfLastModifyUtc": "2023-08-14T17:19:50.3920929Z",
+        "ClientDictionary": {},
+        "Fcps": {},
+        "Id": "5f42edb4-45b4-4d63-aa47-fafab38bad7e",
+        "TemplateId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+        "lv": 0
+      },
+      "HasNewValue": false,
+      "NewValue": null,
+      "DateTimeUtc": "2023-08-14T17:19:50.3921665Z"
+    },
+    {
+      "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+      "ObjectId": "685e6670-71df-4b6c-ac77-1238d959a48d",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-08-14T17:19:50.3921674Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "63676f51-941c-4a3b-a137-46579714700b",
+      "PropertyName": "Children",
+      "HasOldValue": true,
+      "OldValue": {
+        "atk": 0,
+        "def": 0,
+        "pow": 50,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "CountOfLastModifyUtc": "2023-08-14T17:19:50.3921673Z",
+        "ClientDictionary": {},
+        "Fcps": {},
+        "Id": "685e6670-71df-4b6c-ac77-1238d959a48d",
+        "TemplateId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+        "lv": 0
+      },
+      "HasNewValue": false,
+      "NewValue": null,
+      "DateTimeUtc": "2023-08-14T17:19:50.3921765Z"
+    },
+    {
+      "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+      "ObjectId": "d5d0247b-6a34-41f4-a31f-2e8dc0befbc7",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-08-14T17:19:50.3921768Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "63676f51-941c-4a3b-a137-46579714700b",
+      "PropertyName": "Children",
+      "HasOldValue": true,
+      "OldValue": {
+        "atk": 0,
+        "def": 0,
+        "pow": 50,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "CountOfLastModifyUtc": "2023-08-14T17:19:50.3921768Z",
+        "ClientDictionary": {},
+        "Fcps": {},
+        "Id": "d5d0247b-6a34-41f4-a31f-2e8dc0befbc7",
+        "TemplateId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+        "lv": 0
+      },
+      "HasNewValue": false,
+      "NewValue": null,
+      "DateTimeUtc": "2023-08-14T17:19:50.3922018Z"
+    },
+    {
+      "TId": "07664462-df05-4ba7-886d-b431bb88aa1c", //e6edab87-0034-4f45-8040-1f0d565ccf58
+      "ObjectId": "b0c6f9b9-e071-4fd6-9498-558431ef03a5",
+      "PropertyName": "Children",
+      "HasOldValue": false,
+      "OldValue": null,
+      "HasNewValue": true,
+      "NewValue": {
+        "atk": 0,
+        "def": 0,
+        "pow": 70,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "CountOfLastModifyUtc": "2023-08-14T17:19:50.3920713Z",
+        "ClientDictionary": {},
+        "Fcps": {},
+        "Id": "d2553ae7-9885-4871-9db1-b6f54da84dbd",
+        "TemplateId": "14a84b6c-8709-44bd-becf-dc19ed8f9f97",
+        "lv": 0
+      },
+      "DateTimeUtc": "2023-08-14T17:19:50.3922044Z"
+    },
+    {
+      "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+      "ObjectId": "a8e5644e-75d6-4efd-a3ce-1193e9ddf381",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-08-14T17:19:50.3922723Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "63676f51-941c-4a3b-a137-46579714700b",
+      "PropertyName": "Children",
+      "HasOldValue": true,
+      "OldValue": {
+        "atk": 0,
+        "def": 0,
+        "pow": 50,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "CountOfLastModifyUtc": "2023-08-14T17:19:50.3922722Z",
+        "ClientDictionary": {},
+        "Fcps": {},
+        "Id": "a8e5644e-75d6-4efd-a3ce-1193e9ddf381",
+        "TemplateId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+        "lv": 0
+      },
+      "HasNewValue": false,
+      "NewValue": null,
+      "DateTimeUtc": "2023-08-14T17:19:50.3922999Z"
+    },
+    {
+      "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+      "ObjectId": "f618e431-70a8-4733-87ff-fd0d3a8e3358",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-08-14T17:19:50.3923006Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "63676f51-941c-4a3b-a137-46579714700b",
+      "PropertyName": "Children",
+      "HasOldValue": true,
+      "OldValue": {
+        "atk": 0,
+        "def": 0,
+        "pow": 50,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "CountOfLastModifyUtc": "2023-08-14T17:19:50.3923005Z",
+        "ClientDictionary": {},
+        "Fcps": {},
+        "Id": "f618e431-70a8-4733-87ff-fd0d3a8e3358",
+        "TemplateId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+        "lv": 0
+      },
+      "HasNewValue": false,
+      "NewValue": null,
+      "DateTimeUtc": "2023-08-14T17:19:50.3923067Z"
+    },
+    {
+      "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+      "ObjectId": "aee85394-266f-4e60-80ef-88f4a80d0100",
+      "PropertyName": "Count",
+      "HasOldValue": true,
+      "OldValue": 1,
+      "HasNewValue": true,
+      "NewValue": 0,
+      "DateTimeUtc": "2023-08-14T17:19:50.392307Z"
+    },
+    {
+      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+      "ObjectId": "63676f51-941c-4a3b-a137-46579714700b",
+      "PropertyName": "Children",
+      "HasOldValue": true,
+      "OldValue": {
+        "atk": 0,
+        "def": 0,
+        "pow": 50,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "CountOfLastModifyUtc": "2023-08-14T17:19:50.392307Z",
+        "ClientDictionary": {},
+        "Fcps": {},
+        "Id": "aee85394-266f-4e60-80ef-88f4a80d0100",
+        "TemplateId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+        "lv": 0
+      },
+      "HasNewValue": false,
+      "NewValue": null,
+      "DateTimeUtc": "2023-08-14T17:19:50.3923252Z"
+    },
+    {
+      "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+      "ObjectId": "b0c6f9b9-e071-4fd6-9498-558431ef03a5",
+      "PropertyName": "Children",
+      "HasOldValue": false,
+      "OldValue": null,
+      "HasNewValue": true,
+      "NewValue": {
+        "atk": 0,
+        "def": 0,
+        "pow": 70,
+        "LvUpAccruedCost": [],
+        "CompositingAccruedCost": [],
+        "CountOfLastModifyUtc": "2023-08-14T17:19:50.3922632Z",
+        "ClientDictionary": {},
+        "Fcps": {},
+        "Id": "93bb6682-493d-4482-a68e-1247eee4b57a",
+        "TemplateId": "60c28119-42b0-4ebc-bc37-24be3afaebf4",
+        "lv": 0
+      },
+      "DateTimeUtc": "2023-08-14T17:19:50.3923269Z"
+    }
+  ],
+  "HasError": false,
+  "ErrorCode": 0,
+  "DebugMessage": "操作成功完成。"
 }

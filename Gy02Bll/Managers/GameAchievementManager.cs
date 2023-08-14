@@ -22,7 +22,7 @@ namespace GY02.Managers
     }
 
     /// <summary>
-    /// 成就管理器。
+    /// 成就/任务管理器。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameAchievementManager : GameManagerBase<GameAchievementManagerOptions, GameAchievementManager>
@@ -59,7 +59,7 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="id"></param>
         /// <returns>返回null是出错，此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
-        public TemplateStringFullView GetAchievementById(Guid id)
+        public TemplateStringFullView GetTemplateById(Guid id)
         {
             var result = _TemplateManager.GetFullViewFromId(id);
             if (result is null) return null;
@@ -97,7 +97,7 @@ namespace GY02.Managers
         /// <returns>true成功，false出错，此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
         public bool InitializeState(GameAchievement achievement)
         {
-            var tt = GetAchievementById(achievement.TemplateId);
+            var tt = GetTemplateById(achievement.TemplateId);
             if (tt is null) return false;
             if (achievement.Items.Count == 0)   //若需要初始化
             {
@@ -128,7 +128,7 @@ namespace GY02.Managers
         /// <returns>true成功，false出错，此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
         public bool RefreshState(GameAchievement achievement)
         {
-            var tt = GetAchievementById(achievement.TemplateId);
+            var tt = GetTemplateById(achievement.TemplateId);
             if (tt is null) return false;
             achievement.RefreshLevel(tt);
             if (achievement.Items.Count == 0)    //若可能需要初始化

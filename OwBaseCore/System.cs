@@ -4,6 +4,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Text.Json.Serialization;
 using System.Threading;
 
 namespace System
@@ -65,6 +66,7 @@ namespace System
         /// </summary>
         /// <param name="value"></param>
         /// <param name="unit"></param>
+        [JsonConstructor]
         public TimeSpanEx(int value, char unit)
         {
             Value = value;
@@ -74,11 +76,13 @@ namespace System
         /// <summary>
         /// 数值。
         /// </summary>
+        [JsonInclude]
         public readonly int Value;
 
         /// <summary>
         /// 表示时间长度单位，支持：s秒，d天，w周，m月，y年
         /// </summary>
+        [JsonInclude]
         public readonly char Unit;
 
         /// <summary>

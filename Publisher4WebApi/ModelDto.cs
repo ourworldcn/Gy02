@@ -166,11 +166,6 @@ namespace GY02.Publisher
         /// </summary>
         public Guid TemplateId { get; set; }
 
-        /// <summary>
-        /// 等级。
-        /// </summary>
-        [JsonPropertyName("lv")]
-        public decimal Level { get; set; }
     }
 
     /// <summary>
@@ -204,6 +199,11 @@ namespace GY02.Publisher
         /// </summary>
         public Dictionary<string, FastChangingProperty> Fcps { get; set; } = new Dictionary<string, FastChangingProperty>();
 
+        /// <summary>
+        /// 等级。
+        /// </summary>
+        [JsonPropertyName("lv")]
+        public decimal Level { get; set; }
     }
 
     /// <summary>
@@ -485,6 +485,13 @@ namespace GY02.Publisher
         /// 槽内的道具/装备。
         /// </summary>
         public ICollection<T> Children { get; set; } = new List<T>();
+
+        /// <summary>
+        /// 等级。
+        /// </summary>
+        [JsonPropertyName("lv")]
+        public decimal Level { get; set; }
+
     }
 
     /// <summary>

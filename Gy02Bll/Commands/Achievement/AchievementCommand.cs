@@ -44,7 +44,7 @@ namespace GY02.Commands
                 return;
             }
             var count = gid % 1000; //通关经验值
-            var ttAchi = _AchievementManager.GetAchievementById(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"));
+            var ttAchi = _AchievementManager.GetTemplateById(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"));
             if (ttAchi is null) goto lbErr;
 
             var achi = _AchievementManager.GetOrCreate(command.GameChar, ttAchi);

@@ -36,14 +36,8 @@ namespace OW.Game.Entity
         /// </summary>
         public void RefreshLevel(TemplateStringFullView template)
         {
-            int lv = 0;
-            foreach (var summary in template.Achievement.Exp2LvSequence)
-            {
-                if (summary > Count)    //若找到第一个未达到的项
-                    break;
-                lv++;
-            }
-            Level = lv;
+            var index = Array.FindLastIndex(template.Achievement.Exp2LvSequence, c => Count >= c);  //如果找到与 match 定义的条件相匹配的最后一个元素，则为该元素的从零开始的索引；否则为 -1。
+            Level = index + 1;
         }
     }
 
@@ -69,7 +63,7 @@ namespace OW.Game.Entity
         public bool IsPicked { get; set; }
 
         /// <summary>
-        /// 等级。从1开始，1表示达成第一级的状态，2表示达成第二级的状态，以此类推。
+        /// 等级。1表示第一级的状态，2表示第二级的状态，以此类推。
         /// </summary>
         public int Level { get; set; }
     }

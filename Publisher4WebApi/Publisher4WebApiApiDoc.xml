@@ -130,11 +130,6 @@
             模板Id。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.GameJsonObjectBase.Level">
-            <summary>
-            等级。
-            </summary>
-        </member>
         <member name="T:GY02.Publisher.GameEntityDto">
             <summary>
             
@@ -163,6 +158,11 @@
         <member name="P:GY02.Publisher.GameEntityDto.Fcps">
             <summary>
             快速变化属性。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameEntityDto.Level">
+            <summary>
+            等级。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GameUserDto">
@@ -396,6 +396,11 @@
         <member name="P:GY02.Publisher.GameSlotDto`1.Children">
             <summary>
             槽内的道具/装备。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameSlotDto`1.Level">
+            <summary>
+            等级。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GameEquipmentDto">

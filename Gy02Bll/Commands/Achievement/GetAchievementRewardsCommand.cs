@@ -54,7 +54,7 @@ namespace GY02.Commands
             for (int i = 0; i < command.TIds.Count; i++)
             {
                 var item = command.TIds[i];
-                var tt = _AchievementManager.GetAchievementById(item);
+                var tt = _AchievementManager.GetTemplateById(item);
                 if (tt is null) goto lbErr;
                 var b = _AchievementManager.GetRewards(command.GameChar, tt, command.Levels[i], command.Changes);
                 if (!b) goto lbErr;
