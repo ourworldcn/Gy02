@@ -154,7 +154,10 @@ namespace GY02.Commands
             }
             //生成物品
             var mainOut = commandApply.OutItems.First(); //主要输出物
-            _GameEntityManager.Move(commandApply.OutItems, isEqu ? container : command.GameChar, command.Changes);
+            if (isEqu)   //若有装备中的物品
+                _GameEntityManager.Move(commandApply.OutItems, container, command.Changes);
+            else
+                _GameEntityManager.Move(commandApply.OutItems, command.GameChar, command.Changes);
 
             //生成合成材料记录
             var oldCost = mainOut.CompositingAccruedCost?.ToArray() ?? Array.Empty<GameEntitySummary>().ToArray();    //旧的合成材料记录
