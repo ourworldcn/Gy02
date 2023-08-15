@@ -758,6 +758,7 @@ namespace GY02.Managers
         public bool Move(GameEntity entity, GameEntity container, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId);
+
             if (tt is null) return false;
             if (tt.IsStk())  //若是可堆叠物
             {

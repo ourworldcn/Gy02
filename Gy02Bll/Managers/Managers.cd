@@ -36,7 +36,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="GY02.Managers.GameEntityManager">
-    <Position X="6" Y="3.5" Width="2" />
+    <Position X="6" Y="3.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AwCGIAAAAKCBAAAAAAARAQAQAAFAAEgAAEAIAIQAAAA=</HashCode>
       <FileName>Managers\GameEntityManager.cs</FileName>
@@ -62,7 +62,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="OW.Game.Manager.VirtualThingManager">
-    <Position X="3.25" Y="3.5" Width="1.5" />
+    <Position X="3" Y="3.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAIAAAAAAQAAAQAAAAAABAAAAAEIAEAAAAAAAIAAAQA=</HashCode>
       <FileName>Managers\VirtualThingManager.cs</FileName>
@@ -234,7 +234,7 @@
   <Class Name="GY02.Managers.GameAchievementManager">
     <Position X="0.75" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAgAAAAAAAAAAAAUAQAAAAgAAAAAIAAIgA=</HashCode>
+      <HashCode>AgAAABAAAAAgAAAAAAAAAAAAUAAAAAAgAAAAAIAAIgA=</HashCode>
       <FileName>Managers\GameAchievementManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
