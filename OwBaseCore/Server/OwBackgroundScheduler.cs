@@ -15,12 +15,17 @@ using System.Threading.Tasks;
 
 namespace OW.Server
 {
-
+    /// <summary>
+    /// <inheritdoc/>
+    /// </summary>
     public class OwBackgroundSchedulerOptions : IOptions<OwBackgroundSchedulerOptions>
     {
         public OwBackgroundSchedulerOptions Value => this;
     }
 
+    /// <summary>
+    /// <see cref="OwBackgroundScheduler"/> 内部配置条目。
+    /// </summary>
     class OwBackgroundSchedulerEntry
     {
         public object Key { get; set; }
@@ -28,7 +33,6 @@ namespace OW.Server
         public Func<object, bool> Func { get; set; }
 
         public object State { get; set; }
-
 
     }
 
@@ -114,7 +118,7 @@ namespace OW.Server
                     break;
             }
             Thread.CurrentThread.Priority = ThreadPriority.Normal;  //恢复正常优先级
-            while (_Enties.Count > 0)
+            while (!_Enties.IsEmpty)
                 ScanAndDo(true);
         }
 
