@@ -2129,6 +2129,30 @@ namespace GY02.Publisher
     }
 
     /// <summary>
+    /// 按类属返回一组成就/任务状态功能的参数封装类。
+    /// </summary>
+    [AutoMap(typeof(GetAchievementStateWithGenusCommand), ReverseMap = true)]
+    public class GetAchievementStateWithGenusParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 过滤的类属字符串集合，对于多个元素，任务/成就中只要含其中任一元素就会返回。
+        /// </summary>
+        public List<string> Genus { get; set; } = new List<string>();
+    }
+
+    /// <summary>
+    /// 按类属返回一组成就/任务状态功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(GetAchievementStateWithGenusCommand))]
+    public class GetAchievementStateWithGenusReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回的成就对象。当出错时此集合的状态未知。
+        /// </summary>
+        public List<GameAchievementDto> Result { get; set; } = new List<GameAchievementDto>();
+    }
+
+    /// <summary>
     /// 获取成就奖励功能参数封装类。
     /// </summary>
     [AutoMap(typeof(GetAchievementRewardsCommand), ReverseMap = true)]

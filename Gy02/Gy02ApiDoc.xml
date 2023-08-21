@@ -615,6 +615,13 @@
             <param name="achievementManager"></param>
             <returns></returns>
         </member>
+        <member name="M:Gy02.Controllers.AchievementController.GetAchievementStateWithGenus(GY02.Publisher.GetAchievementStateWithGenusParamsDto)">
+            <summary>
+            按指定的页签返回一组任务/成就的状态。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="M:Gy02.Controllers.AchievementController.GetAchievementState(GY02.Publisher.GetAchievementStateParamsDto)">
             <summary>
             获取指定成就的状态。

@@ -46,6 +46,31 @@ namespace Gy02.Controllers
 #endif
 
         /// <summary>
+        /// 按指定的页签返回一组任务/成就的状态。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GetAchievementStateWithGenusReturnDto> GetAchievementStateWithGenus(GetAchievementStateWithGenusParamsDto model)
+        {
+            var result = new GetAchievementStateWithGenusReturnDto { };
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new GetAchievementStateWithGenusCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
         /// 获取指定成就的状态。
         /// </summary>
         /// <param name="model"></param>

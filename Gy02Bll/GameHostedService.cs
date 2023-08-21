@@ -214,13 +214,13 @@ namespace GY02
             var store = _Services.GetService<GameAccountStoreManager>();
             var mapper = _Services.GetService<IMapper>();
             var svc1 = _Services.GetService<OwBackgroundScheduler>();
+            GameAccountStoreManager store1;
             var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
             {
-                var obj = new TimeSpanEx("1m");
-                var s = JsonSerializer.Serialize(obj);
-                var obj2 = JsonSerializer.Deserialize<TimeSpanEx>(s);
+                for (int i = 0; i < 1_000_000; i++)
+                    store1 = _Services.GetService<GameAccountStoreManager>();
             }
             #endregion 测试用代码
             finally
