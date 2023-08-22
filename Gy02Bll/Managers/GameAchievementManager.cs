@@ -8,6 +8,7 @@ using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -24,18 +25,44 @@ namespace GY02.Managers
     /// <summary>
     /// 成就/任务管理器。
     /// </summary>
-    [OwAutoInjection(ServiceLifetime.Singleton)]
+    [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class GameAchievementManager : GameManagerBase<GameAchievementManagerOptions, GameAchievementManager>
     {
-        public GameAchievementManager(IOptions<GameAchievementManagerOptions> options, ILogger<GameAchievementManager> logger, GameTemplateManager templateManager, GameEntityManager entityManager) : base(options, logger)
+        public GameAchievementManager(IOptions<GameAchievementManagerOptions> options, ILogger<GameAchievementManager> logger, GameTemplateManager templateManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
             _EntityManager = entityManager;
+            Task.Run(() =>
+            {
+                var tts = Templates;
+                return tts;
+            });
+            _BlueprintManager = blueprintManager;
         }
 
         GameTemplateManager _TemplateManager;
         GameEntityManager _EntityManager;
+        GameBlueprintManager _BlueprintManager;
+        ConcurrentDictionary<Guid, TemplateStringFullView> _Templates;
 
+        /// <summary>
+        /// 所有任务/成就模板。
+        /// </summary>
+        /// <remarks>支持并发访问。</remarks>
+        public ConcurrentDictionary<Guid, TemplateStringFullView> Templates
+        {
+            get
+            {
+                LazyInitializer.EnsureInitialized(ref _Templates, () =>
+                {
+                    var coll = from tmp in _TemplateManager.Id2FullView
+                               where tmp.Value.Achievement is not null
+                               select tmp;
+                    return new ConcurrentDictionary<Guid, TemplateStringFullView>(coll);
+                });
+                return _Templates;
+            }
+        }
         #region 基础操作
 
         /// <summary>
@@ -125,8 +152,10 @@ namespace GY02.Managers
         /// 刷新状态。
         /// </summary>
         /// <param name="achievement"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="now"></param>
         /// <returns>true成功，false出错，此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
-        public bool RefreshState(GameAchievement achievement)
+        public bool RefreshState(GameAchievement achievement, GameChar gameChar, DateTime now)
         {
             var tt = GetTemplateById(achievement.TemplateId);
             if (tt is null) return false;
@@ -135,6 +164,8 @@ namespace GY02.Managers
                 if (!InitializeState(achievement)) return false;
 
             achievement.Items.ForEach(state => state.IsCompleted = achievement.Level >= state.Level);
+            //刷新有效性
+            achievement.IsValid = IsValid(achievement, gameChar, now);
             return true;
         }
 
@@ -171,6 +202,7 @@ namespace GY02.Managers
         /// <returns>true成功，false出错，此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
         public bool GetRewards(GameChar gameChar, TemplateStringFullView template, IEnumerable<int> levels, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
+            var now = OwHelper.WorldNow;
             var achi = GetOrCreate(gameChar, template, changes);  //成就对象
             if (levels.Any(c => c < 1 || c > achi.Count))   //若参数出错
             {
@@ -178,7 +210,7 @@ namespace GY02.Managers
                 return false;
             }
             if (achi is null) return false; //若找不到指定成就对象或创建失败
-            if (!RefreshState(achi)) return false;   //若刷新状态失败
+            if (!RefreshState(achi, gameChar, now)) return false;   //若刷新状态失败
             var errorItem = achi.Items.FirstOrDefault(c => !levels.Contains(c.Level) || !c.IsCompleted || c.IsPicked);
             if (errorItem is not null)  //若有错误
             {
@@ -197,6 +229,29 @@ namespace GY02.Managers
                 changes?.MarkChanges(c, nameof(c.IsPicked), false, true);   //标记变化项
             });
             return true;
+        }
+
+        /// <summary>
+        /// 获取指示该成就/任务对象是否在有效状态。
+        /// </summary>
+        /// <param name="achievement"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="now"></param>
+        /// <returns>true有效，false无效。</returns>
+        public bool IsValid(GameAchievement achievement, GameChar gameChar, DateTime now)
+        {
+            var tt = GetTemplateById(achievement.TemplateId);
+            if (tt == null) goto lbErr;
+            if (!tt.Achievement.Period.IsValid(now, out _))
+                return false;
+
+            var b = _BlueprintManager.IsValid(tt.Achievement.Ins, _EntityManager.GetAllEntity(gameChar));
+            if (!b)
+                return false;
+
+            return true;
+        lbErr:
+            return false;
         }
         #endregion 功能性操作
     }

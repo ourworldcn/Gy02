@@ -1,5 +1,6 @@
 ﻿using GY02.Managers;
 using GY02.Templates;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using OW.Game;
 using OW.Game.Entity;
 using OW.SyncCommand;
@@ -36,16 +37,37 @@ namespace GY02.Commands
 
     public class GetAchievementStateWithGenusHandler : SyncCommandHandlerBase<GetAchievementStateWithGenusCommand>, IGameCharHandler<GetAchievementStateWithGenusCommand>
     {
-        public GetAchievementStateWithGenusHandler(GameAccountStoreManager accountStore)
+        public GetAchievementStateWithGenusHandler(GameAccountStoreManager accountStore, GameAchievementManager achievementManager, GameEntityManager entityManager)
         {
             AccountStore = accountStore;
+            _AchievementManager = achievementManager;
+            _EntityManager = entityManager;
         }
 
         public GameAccountStoreManager AccountStore { get; }
 
+        GameAchievementManager _AchievementManager;
+        GameEntityManager _EntityManager;
+
         public override void Handle(GetAchievementStateWithGenusCommand command)
         {
+            var key = ((IGameCharHandler<GetAchievementStateWithGenusCommand>)this).GetKey(command);
+            using var dw = ((IGameCharHandler<GetAchievementStateWithGenusCommand>)this).LockGameChar(command);
+            if (dw.IsEmpty) return; //若锁定失败
 
+            var now = OwHelper.WorldNow;
+            var hs = new HashSet<string>(command.Genus);
+
+            var templates = _AchievementManager.Templates.Where(c => hs.Overlaps(c.Value.Genus)); //需要成就/任务的模板
+            var dic = new Dictionary<Guid, TemplateStringFullView>(templates);    //TId到模板的映射字典
+
+            foreach ((var tid, var tt) in templates)
+            {
+                var achi = _AchievementManager.GetOrCreate(command.GameChar, tt);    //成就对象
+                _AchievementManager.RefreshState(achi, command.GameChar, now);
+                command.Result.Add(achi);
+            }
+            return;
         }
     }
 }

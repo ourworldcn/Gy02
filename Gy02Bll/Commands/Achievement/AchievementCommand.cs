@@ -5,6 +5,7 @@
 
 using GY02.Managers;
 using GY02.Publisher;
+using OW.Game.Manager;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace GY02.Commands
 
         public override void Handle(CombatEndCommand command)
         {
+            var now = OwHelper.WorldNow;
             var tt = _CombatManager.GetTemplateById(command.CombatTId);
             if (tt is null) goto lbErr;
             if (!tt.Gid.HasValue)
@@ -53,7 +55,7 @@ namespace GY02.Commands
             {
                 var olvLv = achi.Level; //记录旧的等级
                 achi.Count = count;
-                _AchievementManager.RefreshState(achi);
+                _AchievementManager.RefreshState(achi, command.GameChar, now);
             }
             return;
         lbErr:

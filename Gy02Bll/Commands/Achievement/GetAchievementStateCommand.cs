@@ -53,13 +53,14 @@ namespace GY02.Commands
             using var dw = ((IGameCharHandler<GetAchievementStateCommand>)this).LockGameChar(command);
             if (dw.IsEmpty) return; //若锁定失败
 
+            var now = OwHelper.WorldNow;
             foreach (var item in command.TIds)
             {
                 var tt = _AchievementManager.GetTemplateById(item);
                 if (tt is null) goto lbErr;
                 var achi = _AchievementManager.GetOrCreate(command.GameChar, tt);
                 if (achi is null) goto lbErr;
-                if (!_AchievementManager.RefreshState(achi)) goto lbErr;
+                if (!_AchievementManager.RefreshState(achi, command.GameChar, now)) goto lbErr;
                 command.Result.Add(achi);
             }
             return;

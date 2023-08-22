@@ -2063,6 +2063,11 @@ namespace GY02.Publisher
         /// </summary>
         public decimal Count { get; set; }
 
+        /// <summary>
+        /// 当前该成就/任务是否有效。true有效，false无效此时成就任务的计数不会推进，但已有的奖励仍然可以领取（若已完成且未领取）。UI可以在无效时不让领取。
+        /// </summary>
+        public bool IsValid { get; set; }
+
         #endregion 可复制属性
 
     }
