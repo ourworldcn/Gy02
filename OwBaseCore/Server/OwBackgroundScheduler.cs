@@ -37,7 +37,7 @@ namespace OW.Server
     }
 
     /// <summary>
-    /// 用于执行后台任务的服务。通常这些任务，优先级低，耗时多，且可能短时间内有多个key相同的任务排入，实际仅执行一次即可。
+    /// 用于执行后台任务的服务。通常这些任务，优先级低，耗时多，且可能短时间内有多个key相同的任务排入，实际仅需要执行一次即可。
     /// </summary>
     public class OwBackgroundScheduler : OwServiceBase<OwBackgroundSchedulerOptions, OwBackgroundScheduler>
     {

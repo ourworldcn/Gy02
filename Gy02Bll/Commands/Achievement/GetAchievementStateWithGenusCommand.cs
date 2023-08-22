@@ -58,7 +58,7 @@ namespace GY02.Commands
             var now = OwHelper.WorldNow;
             var hs = new HashSet<string>(command.Genus);
 
-            var templates = _AchievementManager.Templates.Where(c => hs.Overlaps(c.Value.Genus)); //需要成就/任务的模板
+            var templates = _AchievementManager.Templates.Where(c => c.Value.Genus is not null && hs.Overlaps(c.Value.Genus)); //需要成就/任务的模板
             var dic = new Dictionary<Guid, TemplateStringFullView>(templates);    //TId到模板的映射字典
 
             foreach ((var tid, var tt) in templates)

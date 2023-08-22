@@ -30,7 +30,7 @@ namespace OW
         /// <summary>
         /// 获取或设置对象是否已经处置的属性，派生类需要自己切换该属性。
         /// </summary>
-        protected bool IsDisposed { get => _IsDisposed; set => _IsDisposed = value; }
+        public bool IsDisposed { get => _IsDisposed; protected set => _IsDisposed = value; }
 
         /// <summary>
         /// 调用此实现以切换 <see cref="IsDisposed"/> 属性。
@@ -130,6 +130,27 @@ namespace OW
                 Options = null;
                 Logger = null;
                 IsDisposed = true;
+            }
+        }
+    }
+
+    /// <summary>
+    /// 提供池化对象的基类，派生类重载<seealso cref="Dispose(bool)"/>在参数为True时，不是真的处置对象，而是将对象状态清理，并返回池。
+    /// </summary>
+    public abstract class OwPoolingObjectBase : OwDisposableBase
+    {
+        protected override void Dispose(bool disposing)
+        {
+            if (!IsDisposed)
+            {
+                if (disposing)
+                {
+                    //释放托管状态(托管对象)
+                }
+
+                // 释放未托管的资源(未托管的对象)并重写终结器
+                // 将大型字段设置为 null
+                base.Dispose(disposing);  //        IsDisposed = true;
             }
         }
     }
