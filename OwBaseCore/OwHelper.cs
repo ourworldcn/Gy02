@@ -78,10 +78,15 @@ namespace System
         /// 游戏内使用的时间与Utc时间的偏移量。
         /// </summary>
         public static TimeSpan _Offset;
+
         /// <summary>
         /// 应用内使用的时间。
         /// </summary>
-        public static DateTime WorldNow => DateTime.UtcNow + _Offset;
+        public static DateTime WorldNow
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => DateTime.UtcNow + _Offset;
+        }
 
         /// <summary>
         /// 中英文逗号数组。分割字符串常用此数组，避免生成新对象。

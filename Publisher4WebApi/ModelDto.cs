@@ -2039,6 +2039,26 @@ namespace GY02.Publisher
     #region 成就相关
 
     /// <summary>
+    /// 任务成就状态变化通知数据类。
+    /// </summary>
+    [Guid("88AC80D3-84F0-4D96-9B27-2C78FA72080A")]
+    public class AchievementChangedDto : IJsonData
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public AchievementChangedDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 变化的任务/成就项。这是变化后的数据，需要与本机缓存的数据比对。
+        /// </summary>
+        public GameAchievementDto Achievement { get; set; }
+    }
+
+    /// <summary>
     /// 成就的实体类。
     /// </summary>
     [AutoMap(typeof(GameAchievement))]

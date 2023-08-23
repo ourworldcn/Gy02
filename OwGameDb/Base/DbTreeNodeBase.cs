@@ -69,13 +69,24 @@ namespace OW.Game.Store
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="node"></param>
-        /// <returns></returns>
-        public static IDbTreeNode<T> GetRoot<T>(this IDbTreeNode<T> node) where T : IEntityWithSingleKey<Guid>
+        /// <returns>树状结构的根节点。如没有父节点则返回null。</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static IDbTreeNode<T> GetRoot<T>(this IDbTreeNode<T> node) where T : IEntityWithSingleKey<Guid> =>
+            node.GetAncestor(c => c.Parent is null);
+
+        /// <summary>
+        /// 在指定节点的祖先(包括双亲,不包括自身)链条上找到第一个符合条件的节点返回。
+        /// </summary>
+        /// <typeparam name="T"><inheritdoc/></typeparam>
+        /// <param name="node">指定节点。不能为空。</param>
+        /// <param name="predicate">条件，第一个返沪true的节点被返回。</param>
+        /// <returns><paramref name="predicate"/>返回true的第一个节点被返回。</returns>
+        public static IDbTreeNode<T> GetAncestor<T>(this IDbTreeNode<T> node, Predicate<IDbTreeNode<T>> predicate) where T : IEntityWithSingleKey<Guid>
         {
-            IDbTreeNode<T> tmp, result = null;
-            for (tmp = node.Parent as IDbTreeNode<T>; tmp is not null; tmp = tmp.Parent as IDbTreeNode<T>)
-                result = tmp;
-            return result;
+            for (var tmp = node.Parent as IDbTreeNode<T>; tmp is not null; tmp = tmp.Parent as IDbTreeNode<T>)
+                if (predicate(tmp)) //若找到符合条件的节点
+                    return tmp;
+            return default;
         }
     }
 

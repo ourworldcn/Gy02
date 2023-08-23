@@ -1592,6 +1592,21 @@
             登录名集合。与<see cref="P:GY02.Publisher.GetCharIdByLoginNameReturnDto.CharIds"/>顺序一致。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.AchievementChangedDto">
+            <summary>
+            任务成就状态变化通知数据类。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.AchievementChangedDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.AchievementChangedDto.Achievement">
+            <summary>
+            变化的任务/成就项。这是变化后的数据，需要与本机缓存的数据比对。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GameAchievementDto">
             <summary>
             成就的实体类。

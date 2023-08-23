@@ -15,12 +15,7 @@ namespace OW.Game.Entity
 
         public static VirtualThing GetGameCharThing(this VirtualThing thing)
         {
-            for (var tmp = thing; tmp is not null; tmp = tmp.Parent)
-            {
-                if (tmp.ExtraGuid == ProjectContent.CharTId)
-                    return tmp;
-            }
-            return null;
+            return thing.ExtraGuid == ProjectContent.CharTId ? thing : thing.GetAncestor(c => (c as IDbQuickFind).ExtraGuid == ProjectContent.CharTId) as VirtualThing;
         }
 
         /// <summary>

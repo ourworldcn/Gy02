@@ -573,6 +573,16 @@
             </summary>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
+        <member name="T:GY02.Handler.AchievementChangedHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GY02.Handler.AchievementChangedHandler.#ctor(GY02.Managers.GameAchievementManager,GY02.Managers.UdpServerManager,AutoMapper.IMapper,GY02.Managers.GameEntityManager)">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:GY02.WeatherForecast">
             <summary>
             

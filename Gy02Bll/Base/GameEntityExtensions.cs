@@ -24,16 +24,6 @@ namespace GY02.Base
         public static void SetTemplate(this GameEntityBase entity, TemplateStringFullView tfv) => entity.GetThing().SetTemplate(tfv);
 
         /// <summary>
-        /// 获取实体对象宿主对象。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns>宿主对象，如果没有找到则返回null。</returns>
-        public static VirtualThing GetThing(this GameEntityBase entity)
-        {
-            return entity.Thing as VirtualThing;
-        }
-
-        /// <summary>
         /// 设置指定属性的值。
         /// </summary>
         /// <param name="entity">实体。</param>

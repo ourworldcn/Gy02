@@ -170,6 +170,7 @@ namespace GY02.Commands
             if (slot is not null)
             {
                 slot.Count++;
+                _EntityManager.InvokeEntityChanged(new GameEntity[] { slot});
                 _AccountStore.Save(key);
             }
         }

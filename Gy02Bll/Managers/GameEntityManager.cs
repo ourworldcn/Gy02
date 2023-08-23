@@ -28,6 +28,21 @@ using System.Xml;
 
 namespace GY02.Managers
 {
+    public class EntityChangedEventArgs : EventArgs
+    {
+        public EntityChangedEventArgs()
+        {
+
+        }
+
+        public EntityChangedEventArgs(IEnumerable<GameEntity> entities)
+        {
+            Entities = entities;
+        }
+
+        public IEnumerable<GameEntity> Entities { get; internal set; }
+    }
+
     public class GameEntityManagerOptions : IOptions<GameEntityManagerOptions>
     {
         public GameEntityManagerOptions Value => this;
@@ -43,10 +58,30 @@ namespace GY02.Managers
         {
             _TemplateManager = templateManager;
             _VirtualThingManager = virtualThingManager;
+
         }
 
         GameTemplateManager _TemplateManager;
         VirtualThingManager _VirtualThingManager;
+
+        #region 事件相关
+
+        /// <summary>
+        /// 引发实体变化的通知。
+        /// </summary>
+        /// <param name="entities"></param>
+        public void InvokeEntityChanged(IEnumerable<GameEntity> entities)
+        {
+            //var gc = entities.First().GetThing().GetAncestor(c => (c as IDbQuickFind)?.ExtraGuid == ProjectContent.CharTId); //寻找角色对象
+            EntityChanged?.Invoke(this, new EntityChangedEventArgs() { Entities = entities, });
+        }
+
+        /// <summary>
+        /// 当实体属性变化时发生的事件。
+        /// </summary>
+        public event EventHandler<EntityChangedEventArgs> EntityChanged;
+
+        #endregion  事件相关
 
         #region 计算寻找物品的匹配
 
@@ -266,6 +301,7 @@ namespace GY02.Managers
             {
                 Delete(entity, changes);
             }
+            InvokeEntityChanged(new GameEntity[] { entity });
             return true;
         }
 
@@ -755,7 +791,7 @@ namespace GY02.Managers
         /// <param name="container"></param>
         /// <param name="changes"></param>
         /// <returns></returns>
-        public bool Move(GameEntity entity, GameEntity container, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public virtual bool Move(GameEntity entity, GameEntity container, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var tt = _TemplateManager.GetFullViewFromId(entity.TemplateId);
 
@@ -775,6 +811,7 @@ namespace GY02.Managers
                     if (thing is null) return false;
                     VirtualThingManager.Add(thing, parentThing);
                     changes?.CollectionAdd(entity, container);
+                    InvokeEntityChanged(new GameEntity[] { entity });
                 }
             }
             else //若非可堆叠物
@@ -795,11 +832,13 @@ namespace GY02.Managers
                 }
                 VirtualThingManager.Add(thing, parentThing);
                 changes?.CollectionAdd(entity, container);
+                InvokeEntityChanged(new GameEntity[] { entity });
             }
             return true;
         }
 
         #endregion 改变实体相关功能
+
 
     }
 }

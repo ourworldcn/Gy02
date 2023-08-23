@@ -109,7 +109,8 @@ namespace OW.Game.Entity
         public override string ToString()
         {
             var name = ((Thing as VirtualThing)?.GetTemplate())?.DisplayName;
-            return $"{base.ToString()}({name})";
+            name ??= $"TId = {TemplateId.ToString()[0..2]}...{TemplateId.ToString()[^2..^0]} , Count = {Count}";
+            return $"{GetType().Name}({name})";
         }
     }
 
@@ -137,7 +138,7 @@ namespace OW.Game.Entity
         /// </summary>
         /// <param name="entity"></param>
         /// <returns>虚拟对象，如果出错则返回null,此时用<see cref="OwHelper.GetLastError"/>确定具体信息。</returns>
-        public static VirtualThing GetThing(this GameEntity entity)
+        public static VirtualThing GetThing(this GameEntityBase entity)
         {
             var result = entity.Thing as VirtualThing;
             if (result == null)

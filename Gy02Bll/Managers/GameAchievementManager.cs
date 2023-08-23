@@ -22,6 +22,21 @@ namespace GY02.Managers
         public GameAchievementManagerOptions Value => this;
     }
 
+    public class AchievementChangedEventArgs : EventArgs
+    {
+        public AchievementChangedEventArgs()
+        {
+
+        }
+
+        public AchievementChangedEventArgs(GameAchievement achievement)
+        {
+            Achievement = achievement;
+        }
+
+        public GameAchievement Achievement { get; internal set; }
+    }
+
     /// <summary>
     /// 成就/任务管理器。
     /// </summary>
@@ -63,6 +78,38 @@ namespace GY02.Managers
                 return _Templates;
             }
         }
+
+        #region 事件及相关
+
+        public event EventHandler<AchievementChangedEventArgs> AchievementChanged;
+
+        /// <summary>
+        /// 引发成就/任务项，变化事件。
+        /// </summary>
+        /// <param name="args"></param>
+        public void InvokeAchievementChanged(AchievementChangedEventArgs args) => AchievementChanged?.Invoke(this, args);
+
+        /// <summary>
+        /// 对指定的成就任务项增加计数，若等级发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
+        /// </summary>
+        /// <param name="achievement"></param>
+        /// <param name="inc">任务/成就项的计数值的增量数值，小于或等于0则立即返回false。</param>
+        /// <param name="gameChar"></param>
+        /// <param name="now"></param>
+        /// <returns></returns>
+        public bool RaiseEventIfLevelChanged(GameAchievement achievement, decimal inc, GameChar gameChar, DateTime now)
+        {
+            if (inc <= 0) return false;
+            var olv = achievement.Level;
+            achievement.Count += inc;
+            if (!RefreshState(achievement, gameChar, now)) return false;
+            if (achievement.Level > olv)
+                InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achievement });
+            return true;
+        }
+
+        #endregion 事件及相关
+
         #region 基础操作
 
         /// <summary>
@@ -163,9 +210,10 @@ namespace GY02.Managers
             if (achievement.Items.Count == 0)    //若可能需要初始化
                 if (!InitializeState(achievement)) return false;
 
-            achievement.Items.ForEach(state => state.IsCompleted = achievement.Level >= state.Level);
             //刷新有效性
             achievement.IsValid = IsValid(achievement, gameChar, now);
+            //刷新每个等级的达成标志
+            achievement.Items.ForEach(state => state.IsCompleted = achievement.Level >= state.Level);
             return true;
         }
 
@@ -254,6 +302,7 @@ namespace GY02.Managers
             return false;
         }
         #endregion 功能性操作
+
     }
 
 }
