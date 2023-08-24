@@ -4,6 +4,7 @@ using GY02.Base;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.TemplateDb;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
@@ -133,7 +134,7 @@ internal class Program
         app.UseResponseCaching();
         //app.UseAuthorization();
         app.MapControllers();
-
+        
         #region 启用中间件服务生成Swagger
         app.UseSwagger();
         //app.UseSwaggerUI();

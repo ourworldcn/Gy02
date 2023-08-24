@@ -74,12 +74,13 @@ namespace GY02.Managers
     public class GameAccountStoreManager : GameManagerBase<GameAccountStoreManagerOptions, GameAccountStoreManager>
     {
         public GameAccountStoreManager(IOptions<GameAccountStoreManagerOptions> options, ILogger<GameAccountStoreManager> logger, IDbContextFactory<GY02UserContext> contextFactory,
-            IHostApplicationLifetime lifetime, IServiceProvider service, GameTemplateManager templateManager) : base(options, logger)
+            IHostApplicationLifetime lifetime, IServiceProvider service, GameTemplateManager templateManager, OwScheduler scheduler) : base(options, logger)
         {
             _ContextFactory = contextFactory;
             _Lifetime = lifetime;
             _Service = service;
             _TemplateManager = templateManager;
+            _Scheduler = scheduler;
 
             Task.Factory.StartNew(SaveCallback, TaskCreationOptions.LongRunning);
         }
@@ -88,6 +89,7 @@ namespace GY02.Managers
         IHostApplicationLifetime _Lifetime;
         IServiceProvider _Service;
         GameTemplateManager _TemplateManager;
+        OwScheduler _Scheduler;
 
         /// <summary>
         /// 记录所有用户对象。
@@ -113,9 +115,34 @@ namespace GY02.Managers
         public ConcurrentDictionary<string, string> LoginName2Key { get => _LoginName2Key; }
 
         /// <summary>
-        /// 需要保存的账号的key。
+        /// 保存用户信息的幂等操作。
         /// </summary>
-        ConcurrentDictionary<string, string> _Queue = new ConcurrentDictionary<string, string>();
+        /// <param name="key"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        bool SaveUserCallback(object key, object user)
+        {
+            if (user is not GameUser gu) return false;
+            try
+            {
+                gu.GetDbContext().SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException excp)
+            {
+                var ids = string.Join(',', excp.Entries.Select(c => (c.Entity as VirtualThing)?.IdString));
+                var tids = string.Join(',', excp.Entries.Select(c => (c.Entity as VirtualThing)?.ExtraGuid));
+                var states = string.Join(',', excp.Entries.Select(c => c?.State));
+                Logger.LogWarning(excp, $"保存数据时出现并发错误——ids:{ids}。tids:{tids}。state{states}");
+                throw;
+            }
+            catch (Exception excp)
+            {
+                Logger.LogWarning(excp, $"保存数据时出错——{excp.Message}。{excp.InnerException?.Message}。");
+                throw;
+            }
+
+            return true;
+        }
 
         /// <summary>
         /// 后台保存函数。
@@ -124,33 +151,6 @@ namespace GY02.Managers
         {
             while (!_Lifetime.ApplicationStopped.IsCancellationRequested)
             {
-                foreach (var item in _Queue)    //遍历优先保存项
-                {
-                    using var dw = DisposeHelper.Create(Lock, Unlock, item.Key, TimeSpan.Zero);
-                    if (dw.IsEmpty)
-                        continue;
-                    if (!_Queue.Remove(item.Key, out _))  //若已经并发去除
-                        continue;
-                    var gu = _Key2User.GetValueOrDefault(item.Key);
-                    if (gu is null) continue;
-                    try
-                    {
-                        gu.GetDbContext().SaveChanges();
-                    }
-                    catch (DbUpdateConcurrencyException excp)
-                    {
-                        _Queue.TryAdd(item.Key, null);  //加入队列以备未来写入
-                        var ids = string.Join(',', excp.Entries.Select(c => (c.Entity as VirtualThing)?.IdString));
-                        var tids = string.Join(',', excp.Entries.Select(c => (c.Entity as VirtualThing)?.ExtraGuid));
-                        var states = string.Join(',', excp.Entries.Select(c => c?.State));
-                        Logger.LogWarning(excp, $"保存数据时出现并发错误——ids:{ids}。tids:{tids}。state{states}");
-                    }
-                    catch (Exception excp)
-                    {
-                        _Queue.TryAdd(item.Key, null);  //加入队列以备未来写入
-                        Logger.LogWarning(excp, $"保存数据时出错——{excp.Message}。{excp.InnerException?.Message}。");
-                    }
-                }
                 //计算超时
                 if (_Key2User.Any())    //若有账号
                 {
@@ -175,28 +175,21 @@ namespace GY02.Managers
                         {
                             Logger.LogWarning(excp, "用户即将登出事件中产生错误。");
                         }
-                        gu.GetDbContext().SaveChanges(true);
-                        if (RemoveUser(item.Key))
+                        if (_Scheduler.EnsureComplateIdempotent(item.Key, Options.DefaultLockTimeout))  //若保存成功或无保存任务
                         {
-                            ClearUser(gu);
-                            isRemoved = true;
+
+                            gu.GetDbContext().SaveChanges(true);
+                            if (RemoveUser(item.Key))
+                            {
+                                ClearUser(gu);
+                                isRemoved = true;
+                            }
                         }
                     }
                     if (isRemoved) GC.Collect(GC.MaxGeneration, GCCollectionMode.Optimized);
                 }
                 if (_Lifetime.ApplicationStopping.IsCancellationRequested) break;
-                try
-                {
-                    if (Monitor.TryEnter(_Queue, TimeSpan.FromSeconds(1)))
-                    {
-                        Monitor.Wait(_Queue, 10000);
-                        Monitor.Enter(_Queue);
-                    }
-                }
-                catch (Exception)
-                {
-                    return;
-                }
+                _Lifetime.ApplicationStopped.WaitHandle.WaitOne(1);
             }
             //准备退出。
         }
@@ -261,13 +254,10 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool Save(string key)
         {
-            var result = _Queue.TryAdd(key, null);
-            if (result && Monitor.TryEnter(_Queue, TimeSpan.Zero))
-            {
-                Monitor.Pulse(_Queue);
-                Monitor.Exit(_Queue);
-            }
-            return result;
+            var gu = _Key2User.GetValueOrDefault(key);
+            if (gu is null) return false;
+            _Scheduler.TryAddIdempotent(key, SaveUserCallback, gu);
+            return true;
         }
 
         /// <summary>
@@ -615,7 +605,6 @@ namespace GY02.Managers
                 _ContextFactory = default;
                 _Lifetime = default;
                 _Service = default;
-                _Queue = default;
                 base.Dispose(disposing);
             }
         }

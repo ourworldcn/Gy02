@@ -173,6 +173,7 @@ namespace OW.Server
     /// 每个任务会有一个唯一标识key，调用任务会首先锁定key,若不能锁定则会再下次扫描时调用任务。
     /// 每个任务都有一个object型的key,用于标识任务，但不同类型的任务即使key一样也被认为是不同的任务。
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
     public class OwScheduler : BackgroundService
     {
         #region 构造函数及相关
@@ -199,6 +200,7 @@ namespace OW.Server
             {
                 Priority = ThreadPriority.BelowNormal,
                 IsBackground = false,
+                Name = "幂等操作任务执行线程。",
             };
             _IdempotentThread.Start();
             _HostApplicationLifetime.ApplicationStopped.Register(() => _RequestCancel.Cancel());
