@@ -293,7 +293,7 @@ namespace GY02.Managers
             if (!tt.Achievement.Period.IsValid(now, out _))
                 return false;
 
-            var b = _BlueprintManager.IsValid(tt.Achievement.Ins, _EntityManager.GetAllEntity(gameChar));
+            var b = tt.Achievement.Ins is null || _BlueprintManager.IsValid(tt.Achievement.Ins, _EntityManager.GetAllEntity(gameChar));
             if (!b)
                 return false;
 

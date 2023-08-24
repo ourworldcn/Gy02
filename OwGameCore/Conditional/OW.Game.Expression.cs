@@ -8,6 +8,11 @@ namespace OW.Game.Conditional
 {
     public class GameExpression
     {
+        public GameExpression(string @operator = null)
+        {
+            _Operator = @operator;
+        }
+
         /// <summary>
         /// 操作符。
         /// </summary>

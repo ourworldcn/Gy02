@@ -18,10 +18,11 @@ namespace GY02.Commands.Achievement
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class AchievementEventHandler
     {
-        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager)
+        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager)
         {
             _EntityManager = entityManager;
             _AchievementManager = achievementManager;
+            _BlueprintManager = blueprintManager;
             Initialize();
         }
 
@@ -32,6 +33,7 @@ namespace GY02.Commands.Achievement
 
         GameEntityManager _EntityManager;
         GameAchievementManager _AchievementManager;
+        GameBlueprintManager _BlueprintManager;
 
         /// <summary>
         /// 所有装备的类属集合。
@@ -115,6 +117,26 @@ namespace GY02.Commands.Achievement
                     }
                 }
 
+                if (tt.Genus is not null && (tt.Genus.Contains("e_zuoqi") || tt.Genus.Contains("equipskin")))  //获得了坐骑或皮肤
+                {
+                    var achiTt = _AchievementManager.Templates.Where(c => c.Value.Genus.Contains("tj_jiangli")).FirstOrDefault(c => //实体对应的图鉴成就
+                    {
+                        var ary = c.Value.Achievement?.TjIns;
+                        if (ary is null || ary.Length <= 0) return false;
+                        var entities = new GameEntity[] { entity };
+                        return _BlueprintManager.IsValid(ary, entities);
+                    }).Value;
+                    if (achiTt is null) continue;
+                    var achi = _AchievementManager.GetOrCreate(gc, achiTt);
+                    if (!_AchievementManager.IsValid(achi, gc, now)) continue;    //若处于无效状态
+                    var oldLv = achi.Level;
+                    achi.Count += Math.Max(1, achi.Count);
+                    if (!_AchievementManager.RefreshState(achi, gc, now)) continue;
+                    if (achi.Level > oldLv)    //若发生了变化
+                    {
+                        _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
+                    }
+                }
             }
         }
 

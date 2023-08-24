@@ -2163,6 +2163,12 @@ namespace GY02.Publisher
         /// 过滤的类属字符串集合，对于多个元素，任务/成就中只要含其中任一元素就会返回。
         /// </summary>
         public List<string> Genus { get; set; } = new List<string>();
+
+        /// <summary>
+        /// 是否仅返回有效状态的任务/成就。
+        /// </summary>
+        /// <value>true仅返回有效状态的任务/成就;false无论指定任务/成就是否有效都会返回。</value>
+        public bool OnlyValid { get; set; }
     }
 
     /// <summary>

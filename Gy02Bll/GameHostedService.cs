@@ -213,7 +213,6 @@ namespace GY02
         {
             var store = _Services.GetService<GameAccountStoreManager>();
             var mapper = _Services.GetService<IMapper>();
-            var svc1 = _Services.GetService<OwBackgroundScheduler>();
             GameAccountStoreManager store1;
             var sw = Stopwatch.StartNew();
             #region 测试用代码

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="OW.Server.OwSchedulerEntry" Collapsed="true">
-    <Position X="5.25" Y="1.5" Width="1.5" />
+  <Class Name="OW.Server.OwSchedulerEntry">
+    <Position X="5.25" Y="1.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAIAAAAAAQAAAgAAAAAAIAAAAAAACABBAAAAAI=</HashCode>
       <FileName>Server\OwScheduler.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="OW.Server.OwSchedulerOptions" BaseTypeListCollapsed="true">
-    <Position X="3.5" Y="2.5" Width="1.5" />
+    <Position X="2.5" Y="2.5" Width="2" />
     <TypeIdentifier>
       <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAIIAAAAAAAAgAAAgAAA=</HashCode>
       <FileName>Server\OwScheduler.cs</FileName>
@@ -16,14 +16,21 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="OW.Server.OwScheduler">
-    <Position X="7" Y="3" Width="2" />
+    <Position X="8" Y="2.5" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEDABAABABAgBAACAAAAAAAAABAAAABBABEI=</HashCode>
+      <HashCode>AAAAAAAAEDABAABABAABAACAAAAAAAAABAAAAABCJEI=</HashCode>
       <FileName>Server\OwScheduler.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Options" />
     </ShowAsAssociation>
+  </Class>
+  <Class Name="OW.Server.OwSchedulerExtensions" Collapsed="true">
+    <Position X="1" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Server\OwScheduler.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Microsoft YaHei UI" Size="9" />
 </ClassDiagram>

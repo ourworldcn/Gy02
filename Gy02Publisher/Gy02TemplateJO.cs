@@ -415,6 +415,11 @@ namespace GY02.Templates
         public decimal[] Exp2LvSequence { get; set; }
 
         /// <summary>
+        /// 图鉴成就特有的条件。
+        /// </summary>
+        public BlueprintInItem[] TjIns { get; set; }
+
+        /// <summary>
         /// 产出物的集合。对应每个级别产出，每个级别可以产出多个物品。
         /// </summary>
         public List<GameEntitySummary[]> Outs { get; set; } = new List<GameEntitySummary[]>();

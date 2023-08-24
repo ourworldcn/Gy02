@@ -67,6 +67,8 @@ namespace Gy02.Controllers
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);
             _Mapper.Map(command, result);
+            if (model.OnlyValid)
+                result.Result.RemoveAll(c => !c.IsValid);
             return result;
         }
 

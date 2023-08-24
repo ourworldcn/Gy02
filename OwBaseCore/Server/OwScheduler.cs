@@ -12,6 +12,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.Cache;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
@@ -22,8 +23,43 @@ using System.Timers;
 
 namespace OW.Server
 {
+    /// <summary>
+    /// 任务类型。
+    /// </summary>
+    public enum OwTaskType
+    {
+        /// <summary>
+        /// 未知类型。
+        /// </summary>
+        Unknow = 0,
+
+        /// <summary>
+        /// 幂等任务。调用多次与调用一次结果一样。成功执行一次就会自动清除。
+        /// </summary>
+        Idempotent = 1,
+
+        /// <summary>
+        /// 定时任务。
+        /// </summary>
+        Timer = 2,
+
+        /// <summary>
+        /// 长时间运行任务。
+        /// </summary>
+        LongRunning = 4,
+    }
+
+    /// <summary>
+    /// 任务项的详细配置类。
+    /// </summary>
     public class OwSchedulerEntry
     {
+        public OwSchedulerEntry()
+        {
+        }
+
+        public OwTaskType TaskType { get; set; }
+
         /// <summary>
         /// 任务的唯一标识对象。
         /// </summary>
@@ -92,7 +128,7 @@ namespace OW.Server
     }
 
     /// <summary>
-    /// 
+    /// OwScheduler 服务的配置数据类。
     /// </summary>
     public class OwSchedulerOptions : IOptions<OwSchedulerOptions>
     {
@@ -135,6 +171,7 @@ namespace OW.Server
     /// 一个用于处理长时间任务的任务计划器。
     /// 默认它仅用一个线程（不并行），因为假设的场景是一个服务器的IO线程。
     /// 每个任务会有一个唯一标识key，调用任务会首先锁定key,若不能锁定则会再下次扫描时调用任务。
+    /// 每个任务都有一个object型的key,用于标识任务，但不同类型的任务即使key一样也被认为是不同的任务。
     /// </summary>
     public class OwScheduler : BackgroundService
     {
@@ -144,19 +181,27 @@ namespace OW.Server
         /// 构造函数。
         /// </summary>
         /// <param name="options"></param>
-        public OwScheduler(IOptions<OwSchedulerOptions> options, ILogger<OwScheduler> logger)
+        public OwScheduler(IOptions<OwSchedulerOptions> options, ILogger<OwScheduler> logger, IHostApplicationLifetime hostApplicationLifetime)
         {
             Options = options.Value;
             _Logger = logger;
+            _HostApplicationLifetime = hostApplicationLifetime;
             Initializer();
         }
 
         /// <summary>
         /// 初始化函数。
         /// </summary>
-        [SuppressMessage("Performance", "CA1822:将成员标记为 static", Justification = "<挂起>")]
         private void Initializer()
         {
+            //执行幂等任务的初始化
+            _IdempotentThread = new Thread(IdempotentWorker)
+            {
+                Priority = ThreadPriority.BelowNormal,
+                IsBackground = false,
+            };
+            _IdempotentThread.Start();
+            _HostApplicationLifetime.ApplicationStopped.Register(() => _RequestCancel.Cancel());
         }
 
         #endregion 构造函数及相关
@@ -164,10 +209,15 @@ namespace OW.Server
         ILogger<OwScheduler> _Logger;
 
         private OwSchedulerOptions _Options;
+
+        IHostApplicationLifetime _HostApplicationLifetime;
+
         /// <summary>
         /// 配置对象。
         /// </summary>
         public OwSchedulerOptions Options { get => _Options ??= new OwSchedulerOptions(); init => _Options = value; }
+
+        CancellationTokenSource _RequestCancel = new CancellationTokenSource();
 
         /// <summary>
         /// 任务项。
@@ -178,6 +228,48 @@ namespace OW.Server
         /// 优先执行任务的列表。键是锁定项的键，使用此类可避免锁定。
         /// </summary>
         ConcurrentDictionary<object, object> _Plans = new ConcurrentDictionary<object, object>();
+
+        /// <summary>
+        /// 记录所有幂等任务的数据结构，(任务的键，任务条目).
+        /// </summary>
+        ConcurrentDictionary<object, OwSchedulerEntry> _IdempotentEntries = new ConcurrentDictionary<object, OwSchedulerEntry>();
+
+        /// <summary>
+        /// 幂等任务的工作线程。
+        /// </summary>
+        Thread _IdempotentThread;
+
+        /// <summary>
+        /// 执行幂等任务的工作函数。
+        /// </summary>
+        public void IdempotentWorker()
+        {
+            var cts = CancellationTokenSource.CreateLinkedTokenSource(_RequestCancel.Token);
+            var ct = cts.Token;
+            var list = new List<OwSchedulerEntry>();    //没有成功完成的任务项放在此处
+            while (!ct.IsCancellationRequested)
+            {
+                foreach (var kvp in _IdempotentEntries)   //扫描循环
+                {
+                    var key = kvp.Key;
+                    if (!Options.LockCallback(key, TimeSpan.Zero)) continue;    //若无法锁定键
+                    using var dw = DisposeHelper.Create(c => Options.UnlockCallback(c), kvp.Key); Debug.Assert(!dw.IsEmpty);
+                    if (!_IdempotentEntries.TryRemove(key, out var entry)) continue;    //若已经并发处置
+                    try
+                    {
+                        if (!entry.TaskCallback(entry.Key, entry.State))    //若任务不成功
+                            list.Add(entry);
+                    }
+                    catch (Exception)
+                    {
+                        list.Add(entry);
+                    }
+                    Thread.Yield();
+                }
+                list.ForEach(c => _IdempotentEntries.TryAdd(c.Key, c)); //加入未正常完成的项
+                ct.WaitHandle.WaitOne(1);
+            }
+        }
 
         /// <summary>
         /// 运行所有任务。
@@ -289,6 +381,53 @@ namespace OW.Server
                 if (!dw.IsEmpty) Monitor.Pulse(_Plans);
                 return b;
             }
+        }
+
+        /// <summary>
+        /// 增加一个幂等任务。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="task"></param>
+        /// <param name="state"></param>
+        public void TryAddIdempotent(object key, Func<object, object, bool> task, object state)
+        {
+            var entry = new OwSchedulerEntry
+            {
+                TaskType = OwTaskType.Idempotent,
+                Key = key,
+                State = state,
+                TaskCallback = task,
+            };
+            _IdempotentEntries.AddOrUpdate(key, entry, (lkey, ov) => entry);
+        }
+
+        /// <summary>
+        /// 确保指定键的幂等任务完成。
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="timeout">锁定键等待的超时时间。</param>
+        /// <returns>true成功执行并移除或不存在指定key的幂等操作任务；false无法锁定key或任务无法成功完成。
+        /// </returns>
+        public bool EnsureComplateIdempotent(object key, TimeSpan timeout)
+        {
+            using var dw = DisposeHelper.Create(Options.LockCallback, Options.UnlockCallback, key, timeout);
+            if (dw.IsEmpty)
+            {
+                OwHelper.SetLastErrorAndMessage(258, $"锁定键时超时,Key={key} ,Timeout={timeout}");
+                return false;
+            }
+            if (!_IdempotentEntries.TryRemove(key, out var entry)) return true;
+            try
+            {
+                if (!entry.TaskCallback(entry.Key, entry.State))
+                    _IdempotentEntries.TryAdd(entry.Key, entry);
+            }
+            catch (Exception)
+            {
+                _IdempotentEntries.TryAdd(entry.Key, entry);
+                return false;
+            }
+            return true;
         }
 
         /// <summary>
