@@ -670,7 +670,6 @@ namespace GY02.Templates
         /// <summary>
         /// 类属字符串集合。
         /// </summary>
-        //[JsonPropertyName("genus")]
         public string[] Genus { get; set; }
 
         /// <summary>

@@ -1,38 +1,168 @@
 {
-  "Genus": [ "tj_jiangli", "cj_pifu" ],
+  "Genus": [ "cj_changqi" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
   "Achievement": {
     "Period": {
       "Start": "2023-05-30T03:03:28.385Z",
       "End": null,
-      "PeriodString": "90y",
-      "ValidPeriodString": "90y"
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    "TjIns": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
-            "Genus": [],
-            "TId": "7f917637-8767-47ec-a317-157b6540d5e4",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 0,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
-      }
-    ],
-    "Exp2LvSequence": [ 1 ],
+    "Ins": [],
+    "Exp2LvSequence": [ 3, 5, 8, 10, 15, 20, 27, 36, 45, 55, 65, 80, 95, 110, 130, 150, 170, 200, 230, 260 ],
     "Outs": [
       [
         {
           "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 2000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 2000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 5000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 5000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 10000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 10000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 15000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 15000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 20000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 30000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 50000
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
           "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5
+          "Count": 20
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50
         }
       ]
     ]
-  }
+  },
+  "name_txt": 3006
 }

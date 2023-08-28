@@ -5809,7 +5809,7 @@
     },
     {
       "Id": "A934D181-087E-4BD1-BD90-8EBA1020AA99",
-      "DisplayName": "皮肤成就1",
+      "DisplayName": "收集皮肤总数的成就",
       "Gid": 220101020,
       "PropertiesString": "{\"Genus\":[\"cj_changqi\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Exp2LvSequence\":[1,3,5,7,10,13,16,20,25,30,35,40,45,50,55,60,65,70,75,80],\"Ins\":[],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}]]}}"
     },
@@ -6340,6 +6340,1272 @@
       "DisplayName": "帽衫狗图鉴奖励",
       "Gid": 220102088,
       "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"561e90a4-c683-4ddf-85d4-f82919db4535\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15}]]}}"
+    },
+    {
+      "Id": "8a04e3b5-cfd6-428b-ba2c-62f9fec87afd",
+      "DisplayName": "小黑怪",
+      "Gid": 320101001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "f483ef68-31e2-4a39-90d0-4cd23f334f18",
+      "DisplayName": "自爆怪",
+      "Gid": 320101002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "902fa2f2-056b-446f-9544-e230b58a4b2b",
+      "DisplayName": "帽子怪",
+      "Gid": 320101003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "286f52a1-6532-47dc-88da-5de3225990db",
+      "DisplayName": "冰雪怪",
+      "Gid": 320101004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ad511724-842b-45be-a90b-1d1159351652",
+      "DisplayName": "快速波利",
+      "Gid": 320101005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "f4b35afa-d4d1-4962-adfa-2d98af0507e6",
+      "DisplayName": "南瓜爆炸怪",
+      "Gid": 320101006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "16738abc-f359-4128-a3a3-059219aa80b8",
+      "DisplayName": "叶子怪（绿色怪）",
+      "Gid": 320101007,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "33018749-92e5-48f8-89d5-0d31f94ca958",
+      "DisplayName": "石头人",
+      "Gid": 320101008,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "3c37ae45-55cc-4531-9aca-5a2b86a5df6b",
+      "DisplayName": "猫头鹰",
+      "Gid": 320101009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4248c66f-f57a-44b1-a0b2-cc2cea18cb0c",
+      "DisplayName": "火山熔岩怪",
+      "Gid": 320101010,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e1f630ac-81d3-4ab9-9ee3-5e1f2733f8a1",
+      "DisplayName": "碰撞爆炸怪",
+      "Gid": 320101011,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "43f4a6ad-6e75-4a28-ad5d-b94fc9087cfd",
+      "DisplayName": "熔岩石头人",
+      "Gid": 320101012,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "67e8f181-b5c5-4143-a25a-8e4dd9c6b837",
+      "DisplayName": "荒草石头人",
+      "Gid": 320101013,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "cc1542ca-79f8-48e7-be5f-93eb17e84bbe",
+      "DisplayName": "仙人掌近战怪",
+      "Gid": 320101014,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c6e0f032-d6fd-4924-b04b-53473802d91c",
+      "DisplayName": "伸缩小丑怪（伸缩怪）",
+      "Gid": 320101015,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4c43f2a1-c7f0-4f64-beb3-0936949d5a68",
+      "DisplayName": "鳐鱼怪",
+      "Gid": 320101016,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "473ad6e1-ab06-49a7-99d4-f706abcda366",
+      "DisplayName": "蓝色速度怪（废弃）",
+      "Gid": 320102001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4f2965b1-8c6d-43cd-a86a-365e468934cc",
+      "DisplayName": "螃蟹怪",
+      "Gid": 320102002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8c524929-9a7b-4782-9aa4-cebeb550cf59",
+      "DisplayName": "鲨鱼怪",
+      "Gid": 320102003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "849231fc-8cc4-44b8-b134-f23e886e5278",
+      "DisplayName": "冰雪蓝色鹿角怪",
+      "Gid": 320102004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "dd43058c-b652-4bc5-b0f0-5df8425a3514",
+      "DisplayName": "大脚怪",
+      "Gid": 320102005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "1c684e76-eaed-4f9f-a197-9bb4c764ee3e",
+      "DisplayName": "六脚怪",
+      "Gid": 320102006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "6bb85f0f-24fe-4e2f-a698-2f15a399dd24",
+      "DisplayName": "冰雪粉色鹿角怪",
+      "Gid": 320102007,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "3ff860c5-75d7-4b0d-a13e-1e9020e5c274",
+      "DisplayName": "旋风怪",
+      "Gid": 320102008,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "af185628-6933-41aa-834a-0dc785538fbb",
+      "DisplayName": "车轮怪",
+      "Gid": 320102009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "86ee78ac-747e-4af5-bff6-423bc1749232",
+      "DisplayName": "甲虫怪",
+      "Gid": 320102010,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "420fce32-2c09-46ad-a5b3-ab4a02f29138",
+      "DisplayName": "海狮怪",
+      "Gid": 320102011,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "0bda70e4-4ee2-4374-908d-9269f1b0a29e",
+      "DisplayName": "河豚怪",
+      "Gid": 320102012,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7530c4a8-38ad-416b-a364-d4c314c7771c",
+      "DisplayName": "大脚跳跃怪",
+      "Gid": 320102501,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4d595fc6-4962-4112-8a33-a64a3e0a7a24",
+      "DisplayName": "钻头怪（钻地怪）",
+      "Gid": 320102601,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "bee1d129-392b-4677-822b-8663d9b91634",
+      "DisplayName": "子弹小恶魔",
+      "Gid": 320103001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "d3973c2b-efa9-49de-a46a-262239a09e49",
+      "DisplayName": "海星子弹怪",
+      "Gid": 320103002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9e6a8054-c2bf-4522-891c-5ab9aaecf6e0",
+      "DisplayName": "菜头子弹怪",
+      "Gid": 320103003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7a48e8d3-7bea-415c-b173-3d7412a7a7b8",
+      "DisplayName": "帽子子弹怪",
+      "Gid": 320103004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "47298a76-7ec5-46b8-9450-1b23bfc4f6e8",
+      "DisplayName": "仙人掌大妈",
+      "Gid": 320103005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "10b08991-89ae-404f-875e-ae06bd219d7c",
+      "DisplayName": "太阳花",
+      "Gid": 320103006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "327f736f-1ce9-4d66-b87c-fc7ad5633c2d",
+      "DisplayName": "章鱼怪",
+      "Gid": 320103007,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "45bac93a-7ef6-4cc6-9892-e33697a12999",
+      "DisplayName": "飞镖蘑菇",
+      "Gid": 320103008,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "234cf050-ec63-4bbd-9330-4eb2b3c69327",
+      "DisplayName": "激光炮",
+      "Gid": 320103009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "82349a6c-e630-4a9e-b542-24ccc832b37e",
+      "DisplayName": "愤怒火炉",
+      "Gid": 320103501,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8a03b165-2cbb-4461-a76d-f512fb427939",
+      "DisplayName": "大炮怪",
+      "Gid": 320103502,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5e2ef038-a86a-4da2-9408-47a5b0b40e66",
+      "DisplayName": "贝壳怪",
+      "Gid": 320103503,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8bf56fe9-c928-4c9d-a129-1304093e0a13",
+      "DisplayName": "乌贼怪",
+      "Gid": 320103504,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "349c902f-fc60-4630-acf0-967e409e8a53",
+      "DisplayName": "豌豆炮",
+      "Gid": 320104001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "32dbc1c1-8504-4a60-ab87-c6293b7ff792",
+      "DisplayName": "大豆炮",
+      "Gid": 320104002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "f16b9a92-cd24-45e0-8d7b-63df71a794da",
+      "DisplayName": "投石车",
+      "Gid": 320104003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "cf23bd77-19aa-4f6d-a53d-e035c2601fcd",
+      "DisplayName": "散弹投石车",
+      "Gid": 320104004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ff2895d9-fb21-4cd6-a2e8-d507ce4b5157",
+      "DisplayName": "萝卜导弹",
+      "Gid": 320104005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "6af36ecd-f913-4fdb-bc0b-25c790f46757",
+      "DisplayName": "多发萝卜导弹",
+      "Gid": 320104006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "a36663b4-dba2-471c-af98-d6ea5ba43423",
+      "DisplayName": "兔子怪",
+      "Gid": 320105001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "af7e7923-de1d-4dde-9e0a-efda6b4e3473",
+      "DisplayName": "兔子怪（分身1）",
+      "Gid": 320105002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c03a9962-9ad5-4f05-b5e5-d483041c3b56",
+      "DisplayName": "兔子怪（分身2）",
+      "Gid": 320105003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9b5df4a2-d64c-407d-bae4-f445031c1462",
+      "DisplayName": "兔子怪（分身3）",
+      "Gid": 320105004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "d98c97b4-d429-4076-be0b-f2b4273c7ebf",
+      "DisplayName": "冲击兔子怪",
+      "Gid": 320105011,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "58ccb1b6-5512-4feb-bfaf-692d996a043a",
+      "DisplayName": "冲击兔子怪（分身1）",
+      "Gid": 320105012,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b7d1bc34-b39c-4593-940e-6487f4471106",
+      "DisplayName": "冲击兔子怪（分身2）",
+      "Gid": 320105013,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "63d06c66-fd56-401f-8887-ae85a9a290cd",
+      "DisplayName": "萝卜兔子怪",
+      "Gid": 320105021,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ba1f6ad5-6826-4cca-91c8-3498ac8c0c40",
+      "DisplayName": "萝卜兔子怪（分身1）",
+      "Gid": 320105022,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "f084f8f6-bd73-4318-ac7e-ba170c8b9137",
+      "DisplayName": "萝卜兔子怪（分身2）",
+      "Gid": 320105023,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "112fc775-63f8-407d-8b2a-c47cff05031c",
+      "DisplayName": "关卡宝箱1",
+      "Gid": 320105401,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_box\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "485ecea1-032e-493f-b718-b866fe366d31",
+      "DisplayName": "关卡宝箱2",
+      "Gid": 320105402,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_box\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "45dc318d-d618-4816-a92a-319e0ecf24ac",
+      "DisplayName": "关卡宝箱3",
+      "Gid": 320105403,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_box\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5cd402d0-5642-42f4-a811-5e60364e0732",
+      "DisplayName": "关卡宝箱4",
+      "Gid": 320105404,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_box\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "0c6565f7-164a-4be0-b19b-f51c92a6ac7f",
+      "DisplayName": "关卡宝箱5",
+      "Gid": 320105405,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_box\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "2a457b3a-7ce3-47ee-ada5-de005076ac22",
+      "DisplayName": "关卡宝箱6",
+      "Gid": 320105406,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_box\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b2d3f029-42e8-4842-838a-e4137d911b09",
+      "DisplayName": "关卡宝箱7",
+      "Gid": 320105407,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_box\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "2f3e6142-9ea1-4477-ac31-8e9fa357445a",
+      "DisplayName": "毒液怪",
+      "Gid": 320105501,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "fbb0b1da-10ea-4d8b-ada6-c37a46a8a896",
+      "DisplayName": "冰雪毒液怪",
+      "Gid": 320105502,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "08108d6a-2986-492c-88da-19483b367d81",
+      "DisplayName": "刺壳怪",
+      "Gid": 320105503,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "35ef1bbb-dcaa-48dd-8a01-6faceae60c45",
+      "DisplayName": "死亡刺壳怪",
+      "Gid": 320105504,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "a00a483d-c8c2-4fcf-a2ba-770b31f99628",
+      "DisplayName": "绿色石身怪",
+      "Gid": 320105601,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "add5d36f-b158-4a2f-84cb-2075da7ffc43",
+      "DisplayName": "石身怪",
+      "Gid": 320105602,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c82dc06f-1b0e-4dc8-b773-eaf476be1ca1",
+      "DisplayName": "炸弹木桩",
+      "Gid": 320105701,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "52f91d16-7d7e-4ea5-a579-fb9d8b6332aa",
+      "DisplayName": "炸弹",
+      "Gid": 320105702,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c12e0658-3b66-4253-bc9d-37c9314f283d",
+      "DisplayName": "爆炸蛋",
+      "Gid": 320105703,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b17899b3-2514-4604-aa2b-37cc7dace8b8",
+      "DisplayName": "绿袍巫师",
+      "Gid": 320107001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "6f7fa0a1-bb12-49f6-a45b-0d705eb7d730",
+      "DisplayName": "红袍巫师",
+      "Gid": 320107002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b91379fb-30b0-47fe-941e-8f070445d42a",
+      "DisplayName": "紫袍巫师",
+      "Gid": 320107003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7bb99005-4511-4286-adb6-ddca601b3462",
+      "DisplayName": "旋风技能",
+      "Gid": 320108001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "dfd2d6a6-997c-47c6-9c6e-53da1bbeacd5",
+      "DisplayName": "小黑怪精英",
+      "Gid": 320201001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "92d5b456-8bc8-43f1-a868-9f0759b02818",
+      "DisplayName": "自爆怪精英",
+      "Gid": 320201002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8849a28e-b132-4b8a-a995-fc788a4836c8",
+      "DisplayName": "帽子怪精英",
+      "Gid": 320201003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "cf5ca1d6-8829-4c6f-ae07-d7859de44696",
+      "DisplayName": "冰雪怪精英",
+      "Gid": 320201004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "d2112b5b-6bc5-4701-8471-46ddcfcc62a5",
+      "DisplayName": "快速近战怪精英",
+      "Gid": 320201005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "45385488-91e2-4bbb-ab64-cafd3fde06bc",
+      "DisplayName": "南瓜爆炸怪精英",
+      "Gid": 320201006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8a35f368-0d5e-4829-b88f-80c857b1fa9e",
+      "DisplayName": "叶子怪（绿色怪）精英",
+      "Gid": 320201007,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e0f5ee04-8c42-411f-b898-0590318e249f",
+      "DisplayName": "石头人精英",
+      "Gid": 320201008,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "701884bc-29b1-48e1-85b2-a7f4c9819494",
+      "DisplayName": "猫头鹰精英",
+      "Gid": 320201009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ad3fa48c-0354-412a-90ea-8eaf83212f84",
+      "DisplayName": "火山熔岩怪精英",
+      "Gid": 320201010,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "11a9977a-6e18-4bca-82f6-7ed8f7dd246e",
+      "DisplayName": "熔岩石头人精英",
+      "Gid": 320201012,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "40190fc2-0e47-4c50-8bb0-c89e209d3e56",
+      "DisplayName": "荒草石头人精英",
+      "Gid": 320201013,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4a3542d5-e441-4651-8441-dbb2fb6f450b",
+      "DisplayName": "仙人掌近战怪精英",
+      "Gid": 320201014,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "a53f30d2-5334-4fce-b5eb-f6104597cd4f",
+      "DisplayName": "伸缩小丑怪（伸缩怪）精英",
+      "Gid": 320201015,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e91c693f-8bdc-44d6-974c-e2b4b259f0c4",
+      "DisplayName": "鳐鱼怪精英",
+      "Gid": 320201016,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "47762de8-ad64-4dc7-99ed-43ff9600e8b7",
+      "DisplayName": "螃蟹怪精英",
+      "Gid": 320202002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "974f882a-4ae8-4643-ad94-f76fbf271d13",
+      "DisplayName": "鲨鱼怪精英",
+      "Gid": 320202003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e2aa8b00-efb2-407c-9b9e-527e856fb75a",
+      "DisplayName": "冰雪蓝色鹿角怪精英",
+      "Gid": 320202004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "45927e01-1eaf-497e-b098-d3f0a72a3d87",
+      "DisplayName": "大脚怪精英",
+      "Gid": 320202005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8bdf9118-5835-434c-9694-a53474ab4e7d",
+      "DisplayName": "六脚怪精英",
+      "Gid": 320202006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "cda75a7f-1f45-4249-99a5-f7a737b1655b",
+      "DisplayName": "冰雪粉色鹿角怪精英",
+      "Gid": 320202007,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4389aa8f-a621-4438-8a7d-2efb4579cd95",
+      "DisplayName": "旋风怪精英",
+      "Gid": 320202008,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ba2f5b7e-3119-4463-9174-598858048ad6",
+      "DisplayName": "车轮怪精英",
+      "Gid": 320202009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "79c9aef9-a624-470c-be8e-9a5c5b4d7518",
+      "DisplayName": "甲虫怪精英",
+      "Gid": 320202010,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5ef1ed05-a141-41d3-a982-fb2005ab9572",
+      "DisplayName": "海狮怪精英",
+      "Gid": 320202011,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "670d4f33-6d7a-4760-b843-7c9e38fbd8e6",
+      "DisplayName": "河豚怪精英",
+      "Gid": 320202012,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9e9b4e78-3989-4f90-9d05-e9aee44d6ea7",
+      "DisplayName": "灰狼辅助boss",
+      "Gid": 320202101,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5fffe134-06a7-4b24-a969-2206d42f4c16",
+      "DisplayName": "大脚弹跳怪精英",
+      "Gid": 320202501,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7b669379-0643-46d6-bf17-319db6c742ce",
+      "DisplayName": "钻头怪（钻地怪）精英",
+      "Gid": 320202601,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "dd625fa3-fb80-46d9-8394-a97ab5cc5191",
+      "DisplayName": "子弹小恶魔精英",
+      "Gid": 320203001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5a8a8dfc-822f-4e5e-b91c-d628a6545cdf",
+      "DisplayName": "海星子弹怪精英",
+      "Gid": 320203002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "df1c31c8-ee8d-44e8-bfd1-b5e1f635c699",
+      "DisplayName": "菜头子弹怪精英",
+      "Gid": 320203003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c66c0417-be07-4055-8859-676394a9fb3a",
+      "DisplayName": "帽子子弹怪精英",
+      "Gid": 320203004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ff4f55cb-dbd8-4121-9e24-66ee1b49ce19",
+      "DisplayName": "仙人掌大妈精英",
+      "Gid": 320203005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "37886de7-56e1-4e75-8d5d-30faae08745a",
+      "DisplayName": "太阳花精英",
+      "Gid": 320203006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "a42fff01-1071-43fe-a200-94940017ed1f",
+      "DisplayName": "章鱼怪精英",
+      "Gid": 320203007,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "50a46a44-6c66-428b-81a6-2dbfaf7aa161",
+      "DisplayName": "飞镖蘑菇精英",
+      "Gid": 320203008,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "fd1c9edc-40ef-4132-9b6a-10ae118562f5",
+      "DisplayName": "激光炮精英",
+      "Gid": 320203009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "96449397-b5d6-4a95-b40c-c1398a1cebf9",
+      "DisplayName": "愤怒火炉精英",
+      "Gid": 320203501,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "32ddc1b6-4aee-4372-bb26-e94938fd19d1",
+      "DisplayName": "大炮怪精英",
+      "Gid": 320203502,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "fc804803-03d9-4be4-977f-b6412c99ca7b",
+      "DisplayName": "贝壳怪精英",
+      "Gid": 320203503,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8d8a874f-dde7-4b3f-8a0e-9a37a2029ca8",
+      "DisplayName": "乌贼怪精英",
+      "Gid": 320203504,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "0bcaed20-2d9f-46c7-b4c7-0c33ae3f2c91",
+      "DisplayName": "毒液怪精英",
+      "Gid": 320205501,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "2db427ec-fee9-4514-bdaa-1301f6a947eb",
+      "DisplayName": "冰雪毒液怪精英",
+      "Gid": 320205502,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "204200d4-bd47-4a07-9f0f-73cf114c7dc9",
+      "DisplayName": "刺壳怪精英",
+      "Gid": 320205503,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "fccb02e2-8c6b-466c-b5ea-2583dc89b793",
+      "DisplayName": "死亡刺壳怪精英",
+      "Gid": 320205504,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5ab76062-f9f0-4e46-98fc-d8798bec6be7",
+      "DisplayName": "炸弹木桩精英",
+      "Gid": 320205701,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "3c5d4fe8-9e97-4b80-9ab5-f58254a0418b",
+      "DisplayName": "炸弹精英用工具",
+      "Gid": 320205702,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_gongju\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8d0e6ed4-74a9-4f75-9f4c-e8c2912b4186",
+      "DisplayName": "旗子1",
+      "Gid": 320206001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7f33abcf-f2b1-4d60-a5b5-8f3388b396b3",
+      "DisplayName": "旗子2",
+      "Gid": 320206002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "486c72be-6159-449d-ac31-3133e6dd24a9",
+      "DisplayName": "旗子3",
+      "Gid": 320206003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "60ac6d2c-268e-4779-8831-73d0342ac925",
+      "DisplayName": "旗子4",
+      "Gid": 320206004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e07131d8-6dc5-4af4-80b0-b4d73f2eb4c9",
+      "DisplayName": "旗子5",
+      "Gid": 320206005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8e92ce8f-47c4-417b-b4f8-147377d42502",
+      "DisplayName": "旗子6",
+      "Gid": 320206006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "d1dcd2dc-e65d-447d-a897-a3049f47dd31",
+      "DisplayName": "旗子7",
+      "Gid": 320206007,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9acfacda-ef11-4689-8bb5-ac3bdc0548a6",
+      "DisplayName": "旗子8",
+      "Gid": 320206008,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "cad7eaf1-0b32-4f30-8fef-e158efd1886a",
+      "DisplayName": "旗子9",
+      "Gid": 320206009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8f67df73-0359-4d7f-ac0f-a2c30f7d8fd4",
+      "DisplayName": "旗子10",
+      "Gid": 320206010,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "6efdaebd-7adb-4ca6-963a-81db548938dc",
+      "DisplayName": "旗子11",
+      "Gid": 320206011,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7075c864-cbd3-4422-87e8-1f9264d41af8",
+      "DisplayName": "旗子12",
+      "Gid": 320206012,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9ef26a65-d624-4818-8e43-b21d125edd82",
+      "DisplayName": "旗子13",
+      "Gid": 320206013,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "cbb10648-b29a-477b-bb76-e0c4ba54a4b0",
+      "DisplayName": "旗子14",
+      "Gid": 320206014,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "833dcee0-c955-4272-a78c-82f8fcd3dfe4",
+      "DisplayName": "旗子15",
+      "Gid": 320206015,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "0d7cb50d-c542-48c0-80d8-f1404a09b3d6",
+      "DisplayName": "旗子16",
+      "Gid": 320206016,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "94ad4e65-50ec-4a26-a5f0-c9b73b1fe579",
+      "DisplayName": "旗子17",
+      "Gid": 320206017,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "6998cf21-a4a3-4ed7-bb40-ba0371b8ad4d",
+      "DisplayName": "旗子18",
+      "Gid": 320206018,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "210ff449-325a-49a6-8e61-563a6d614dc9",
+      "DisplayName": "旗子19",
+      "Gid": 320206019,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "115d811c-b473-4ef8-acd3-888ad2a89391",
+      "DisplayName": "旗子20",
+      "Gid": 320206020,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9c38545f-5bd9-4b1c-882b-d49683dcafff",
+      "DisplayName": "旗子21",
+      "Gid": 320206021,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "0bed7910-955f-4fc3-867c-b7c144470af4",
+      "DisplayName": "旗子22",
+      "Gid": 320206022,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5b0120a6-d1c3-4427-9456-6dfafce2b4ed",
+      "DisplayName": "旗子23",
+      "Gid": 320206023,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "741a1f73-eee5-40af-98e7-0acbb8655632",
+      "DisplayName": "旗子24",
+      "Gid": 320206024,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "845f6cd9-aa62-43f0-bd38-08e243af7407",
+      "DisplayName": "旗子25",
+      "Gid": 320206025,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "6bf687af-97e0-4ec7-bab0-4853d6c9bbbc",
+      "DisplayName": "旗子26",
+      "Gid": 320206026,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ed6e9270-6a67-4e57-be78-f12807ced7fd",
+      "DisplayName": "旗子27",
+      "Gid": 320206027,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "12d84092-6137-4021-a3ab-50f07f00aafe",
+      "DisplayName": "旗子28",
+      "Gid": 320206028,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "2993f043-3285-43f2-83f5-55eee5f699f8",
+      "DisplayName": "旗子29",
+      "Gid": 320206029,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ea833cf0-680c-4ffd-aa0f-dbabff08d524",
+      "DisplayName": "旗子30",
+      "Gid": 320206030,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "454e80f4-930c-43e5-9bee-9dbffb47f436",
+      "DisplayName": "旗子31",
+      "Gid": 320206031,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ef1d2915-746a-4019-b83b-26b77299611a",
+      "DisplayName": "旗子32",
+      "Gid": 320206032,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "28c141d2-65f7-46b7-9337-76167bd24d58",
+      "DisplayName": "旗子33",
+      "Gid": 320206033,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "12272535-5a7b-49ae-a6b6-690d733d4992",
+      "DisplayName": "旗子34",
+      "Gid": 320206034,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ecd46d30-b0c6-4628-b80c-3f14ed5edddb",
+      "DisplayName": "旗子35",
+      "Gid": 320206035,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "fb48a1a8-9711-4ec0-ba57-0f219975e12a",
+      "DisplayName": "旗子36",
+      "Gid": 320206036,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b33f6a62-08af-4670-8ca0-bb96d06da90a",
+      "DisplayName": "旗子37",
+      "Gid": 320206037,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "bf4e8558-7f98-46a6-9c74-89c2c0adba42",
+      "DisplayName": "旗子38",
+      "Gid": 320206038,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "d0cb1083-5bd2-4e92-8158-1053c11d9eab",
+      "DisplayName": "旗子39",
+      "Gid": 320206039,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b49a65b2-54f8-435f-88c6-0ad34d5a3ef4",
+      "DisplayName": "旗子40",
+      "Gid": 320206040,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9fac302c-c8bb-4db6-8c4a-5eceb29c58c5",
+      "DisplayName": "旗子41",
+      "Gid": 320206041,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5f4509ea-df42-4352-99cb-94c304e74600",
+      "DisplayName": "旗子42",
+      "Gid": 320206042,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "87b2e7e8-9cb7-46a8-ac37-886b82bdc25f",
+      "DisplayName": "怪物蛋1",
+      "Gid": 320206501,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "273918a4-3cd9-4ce4-9101-911796925537",
+      "DisplayName": "怪物蛋2",
+      "Gid": 320206502,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9274d3bd-b842-427b-9d75-861d52ff5c8d",
+      "DisplayName": "怪物蛋3",
+      "Gid": 320206509,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "81b2dca4-5b29-4a6f-b2b0-7eabd8cf89e6",
+      "DisplayName": "怪物蛋4",
+      "Gid": 320206522,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4b505159-bd77-4d86-867d-600dfd1dc97e",
+      "DisplayName": "怪物蛋5",
+      "Gid": 320206601,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c65532dc-8efa-40f0-979f-9e6286c9e6e1",
+      "DisplayName": "怪物蛋6",
+      "Gid": 320206701,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "a1393ee5-a7fb-499d-b7b5-51076a292ee0",
+      "DisplayName": "怪物蛋7",
+      "Gid": 320206702,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e5700cd1-7c99-498e-8afd-0bf98f805a39",
+      "DisplayName": "怪物蛋8",
+      "Gid": 320206709,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "eb9cba4a-749e-4c84-8197-41a1ba67b388",
+      "DisplayName": "快速波利boss",
+      "Gid": 320301005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "23b82bb3-9791-4534-869a-3b1b72f581a6",
+      "DisplayName": "发狂的小羊boss",
+      "Gid": 320301101,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "dd53e4d9-b89b-4a4b-beb4-3473ba76df80",
+      "DisplayName": "发狂的老虎boss（本体）",
+      "Gid": 320301102,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "59100d50-af0a-42a4-9d5c-85800d0f6988",
+      "DisplayName": "发狂的老虎boss（变大）",
+      "Gid": 320301502,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7f085f79-5741-40e7-b2e4-ce6cdd26a973",
+      "DisplayName": "发狂的长颈鹿",
+      "Gid": 320301103,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "f29b7f2d-117c-4ecb-bd9e-c347017276f5",
+      "DisplayName": "螃蟹boss",
+      "Gid": 320302002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9b6cd8f1-3654-42a8-b390-8c46f65f3d1e",
+      "DisplayName": "鲨鱼boss",
+      "Gid": 320302003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "ab04538e-f048-42f4-9bf1-7ea034246e14",
+      "DisplayName": "跳跃大脚怪boss",
+      "Gid": 320302005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "bc5d0aef-9fef-4188-9984-7c90bb8a722a",
+      "DisplayName": "联发萝卜炮boss",
+      "Gid": 320304006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c8e03f35-aa9b-448a-af7d-a8e517188330",
+      "DisplayName": "发狂的狼boss",
+      "Gid": 320302101,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "75b8ab58-cd46-476a-aa5e-e88902a96bc0",
+      "DisplayName": "发狂的狼（白）boss",
+      "Gid": 320302102,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "03822ce1-f8d1-45e5-b3b5-961a7ea3f255",
+      "DisplayName": "发狂的龙boss",
+      "Gid": 320302103,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "0ead66d7-fce5-49ea-992c-28a83a551f45",
+      "DisplayName": "菜头怪boss",
+      "Gid": 320303003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "74f917d3-79a5-45a5-ace7-d1bbacbbf9e5",
+      "DisplayName": "帽子子弹怪boss",
+      "Gid": 320303004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "42b12b00-7d98-47aa-baaf-94ccf307480c",
+      "DisplayName": "发条羊boss",
+      "Gid": 320301151,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "bbe0ebb4-4419-4979-8772-09ee62fb8284",
+      "DisplayName": "部落长颈鹿boss",
+      "Gid": 320301153,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "10de604d-198e-4619-8ed6-a9edfa3d3100",
+      "DisplayName": "闪电狼boss",
+      "Gid": 320302151,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "862b0c50-b651-449d-b0e4-c5e2554891f2",
+      "DisplayName": "向日葵boss",
+      "Gid": 320307001,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "76f6eaa0-275f-4f6e-9f34-dc61e36f8b21",
+      "DisplayName": "发狂的柯基boss1",
+      "Gid": 320301104,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "561564d7-4d71-4014-8a06-2576196aecc5",
+      "DisplayName": "发狂的柯基boss2",
+      "Gid": 320301105,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "214c707b-c175-4435-8957-1ecd76db94ae",
+      "DisplayName": "发狂的柯基boss3",
+      "Gid": 320301106,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "f94f8e45-5f17-448f-a1cc-c13d8851db2c",
+      "DisplayName": "发狂的火鸡",
+      "Gid": 320301107,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "16fd4450-a839-46f5-b5ed-977be55a25cb",
+      "DisplayName": "发狂的狮子",
+      "Gid": 320301108,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "9578d544-6abb-4f5b-9312-f30ca55f5dae",
+      "DisplayName": "发狂的山羊",
+      "Gid": 320301109,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4b4caa33-6ae6-4ff2-94d2-872797c0d762",
+      "DisplayName": "发狂的狮鹫",
+      "Gid": 320301110,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c39eafea-d72e-4b46-8272-aeb0ed11e7e6",
+      "DisplayName": "发狂的马boss1",
+      "Gid": 320301111,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "a6196e3f-c9d9-4878-ae54-ac72dc2fe536",
+      "DisplayName": "发狂的马boss2",
+      "Gid": 320301112,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "92510707-ba59-47ad-adb3-f0ce43fb1e29",
+      "DisplayName": "发狂的羊驼boss",
+      "Gid": 320301113,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7597f1f6-edfb-496b-9988-5210fad6e246",
+      "DisplayName": "发狂的飞马boss",
+      "Gid": 320301115,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "55c37bed-c247-4f2e-a0bd-e66d839c26a4",
+      "DisplayName": "盔甲火鸡boss",
+      "Gid": 320301157,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "2f22437c-c92f-40f0-aba4-f5a25d64ca96",
+      "DisplayName": "石头山神boss",
+      "Gid": 320307002,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "7c3e7a59-cb10-4cd4-812c-b40596da8638",
+      "DisplayName": "陆行蟹boss1",
+      "Gid": 320307003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e27e6e12-2dfa-4634-85a6-93578023ed7b",
+      "DisplayName": "陆行蟹boss2",
+      "Gid": 320307004,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "92af5b27-b1ac-4dc6-b31d-e373b024f127",
+      "DisplayName": "陆行蟹boss2",
+      "Gid": 320307005,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     }
   ]
 }

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using OW.DDD;
 using OW.Game.Entity;
 using OW.Game.Store;
+using System;
 using System.Collections.Concurrent;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -166,6 +167,7 @@ namespace OW.Game.Managers
                         {
                             Validator.TryValidateObject(c, new ValidationContext(c), list, true);
                         });
+                        Task.Run(() => GetTemplatesFromGenus(string.Empty));
                     }
                 }
                 catch (Exception excp)
@@ -193,6 +195,9 @@ namespace OW.Game.Managers
             }
         }
 
+        /// <summary>
+        /// 记录所有模板。
+        /// </summary>
         ConcurrentDictionary<Guid, TemplateStringFullView> _Id2FullView;
         /// <summary>
         /// 所有模板全量视图。
@@ -356,6 +361,32 @@ namespace OW.Game.Managers
                     break;
             }
             return result;
+        }
+
+        ConcurrentDictionary<string, ConcurrentDictionary<Guid, TemplateStringFullView>> _Genus2Dic;
+
+        /// <summary>
+        /// 获取指定类属的所有模板的字典(Id,模板)。
+        /// </summary>
+        /// <param name="genus"></param>
+        /// <returns>指定类属的所有模板，没有找到则返回null。</returns>
+        public IDictionary<Guid, TemplateStringFullView> GetTemplatesFromGenus(string genus)
+        {
+            LazyInitializer.EnsureInitialized(ref _Genus2Dic, () =>
+            {
+                var result = new ConcurrentDictionary<string, ConcurrentDictionary<Guid, TemplateStringFullView>>();
+                foreach (var item in Id2FullView.Values)
+                {
+                    if (item.Genus is not null)
+                        foreach (var genus in item.Genus)
+                        {
+                            var dic = result.GetOrAdd(genus, c => new ConcurrentDictionary<Guid, TemplateStringFullView>());
+                            dic[item.TemplateId] = item;
+                        }
+                }
+                return result;
+            });
+            return _Genus2Dic.GetValueOrDefault(genus);
         }
 
         #region IDisposable

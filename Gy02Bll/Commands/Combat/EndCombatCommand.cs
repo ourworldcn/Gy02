@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Commands
 {
@@ -130,7 +131,8 @@ namespace GY02.Commands
             var commandEnd = new CombatEndCommand
             {
                 GameChar = command.GameChar,
-                CombatTId = command.CombatTId
+                CombatTId = command.CombatTId,
+                Others = command.Others,
             };
             try
             {
@@ -141,6 +143,7 @@ namespace GY02.Commands
             }
             _AccountStore.Save(key);
         }
+
     }
 
     /// <summary>
@@ -160,5 +163,6 @@ namespace GY02.Commands
         /// </summary>
         public Guid CombatTId { get; set; }
 
+        public List<GameEntitySummary> Others { get; set; }
     }
 }

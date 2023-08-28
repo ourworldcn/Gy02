@@ -259,7 +259,7 @@ namespace GY02.Managers
             }
             if (achi is null) return false; //若找不到指定成就对象或创建失败
             if (!RefreshState(achi, gameChar, now)) return false;   //若刷新状态失败
-            var errorItem = achi.Items.FirstOrDefault(c => !levels.Contains(c.Level) || !c.IsCompleted || c.IsPicked);
+            var errorItem = achi.Items.FirstOrDefault(c => levels.Contains(c.Level) && (!c.IsCompleted || c.IsPicked));
             if (errorItem is not null)  //若有错误
             {
                 OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"指定的等级中至少一个不能领取，TId={template.TemplateId} ,Level={errorItem.Level}");
@@ -271,10 +271,14 @@ namespace GY02.Managers
             if (entities is null) return false;
 
             _EntityManager.Move(entities.Select(c => c.Item2), gameChar, changes);
-            baseColl.ForEach(c =>
+            baseColl.ForEach(c => c.IsPicked = true);
+            changes?.Add(new GamePropertyChangeItem<object>
             {
-                c.IsPicked = true;
-                changes?.MarkChanges(c, nameof(c.IsPicked), false, true);   //标记变化项
+                Object = achi,
+                PropertyName = nameof(achi.Items),
+
+                HasNewValue = true,
+                NewValue = achi.Items,
             });
             return true;
         }
