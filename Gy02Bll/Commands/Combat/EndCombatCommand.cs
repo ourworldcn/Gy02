@@ -49,6 +49,11 @@ namespace GY02.Commands
         /// </summary>
         public TimeSpan? MinTimeSpanOfPass { get; set; }
 
+        /// <summary>
+        /// 是否成功的完成此关卡
+        /// </summary>
+        /// <value>true成功完成了此管卡，false没有完成。</value>
+        public bool IsSuccess { get; set; }
     }
 
     /// <summary>
@@ -133,6 +138,7 @@ namespace GY02.Commands
                 GameChar = command.GameChar,
                 CombatTId = command.CombatTId,
                 Others = command.Others,
+                Command = command,
             };
             try
             {
@@ -164,5 +170,10 @@ namespace GY02.Commands
         public Guid CombatTId { get; set; }
 
         public List<GameEntitySummary> Others { get; set; }
+
+        /// <summary>
+        /// 命令数据。
+        /// </summary>
+        public EndCombatCommand Command { get; set; }
     }
 }

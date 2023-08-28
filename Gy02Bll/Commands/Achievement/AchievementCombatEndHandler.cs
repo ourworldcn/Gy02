@@ -32,7 +32,7 @@ namespace GY02.Commands.Achievement
                        where tt?.Genus is not null
                        group summary by tt into g
                        select (tt: g.Key, count: g.Sum(c => c.Count));
-            //types_jingying types_putong types_all types_boss types_egg
+            #region 杀怪数量 types_jingying types_putong types_all types_boss types_egg
             var types_all = coll.Where(c => c.tt.Genus.Contains("types_all")).Sum(c => c.count);
             var types_putong = coll.Where(c => c.tt.Genus.Contains("types_putong")).Sum(c => c.count);
             var types_jingying = coll.Where(c => c.tt.Genus.Contains("types_jingying")).Sum(c => c.count);
@@ -54,7 +54,9 @@ namespace GY02.Commands.Achievement
             //8d1ea12f-26be-4fe4-acbe-ad1c7d053131	关卡中的打蛋数量成就
             ttAchi = _AchievementManager.GetTemplateById(new Guid("8d1ea12f-26be-4fe4-acbe-ad1c7d053131"));
             achievement = _AchievementManager.GetOrCreate(command.GameChar, ttAchi);
-            _AchievementManager.RaiseEventIfLevelChanged(achievement, types_boss, command.GameChar, now);
+            _AchievementManager.RaiseEventIfLevelChanged(achievement, types_egg, command.GameChar, now);
+            #endregion 杀怪数量 
+            //2913b8e2-3db3-4204-b36c-415d6bc6b3f0	闯关数量成就
         }
     }
 }

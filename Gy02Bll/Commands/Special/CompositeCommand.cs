@@ -197,6 +197,23 @@ namespace GY02.Commands
                         command.Changes.AddRange(lvupCommand.Changes);
                 }
             }
+            //引发后处理事件
+            var commandPost = new CompositedCommand { Command = command };
+            commandPost.Changes.AddRange(command.Changes);
+            _SyncCommandManager.Handle(commandPost);
         }
+    }
+
+    /// <summary>
+    /// 已经合成了一个物品的后处理事件。
+    /// </summary>
+    public class CompositedCommand : PropertyChangeCommandBase
+    {
+        public CompositedCommand()
+        {
+
+        }
+
+        public CompositeCommand Command { get; set; }
     }
 }

@@ -101,6 +101,8 @@ namespace GY02.Commands
                 Count = 1,
                 ShoppingItemTId = command.ShoppingItemTId
             };
+            commandPost.Changes.AddRange(command.Changes);
+            commandPost.FillErrorFrom(command);
             _CommandManager.Handle(commandPost);
             AccountStore.Save(key);
             return;
@@ -194,24 +196,6 @@ namespace GY02.Commands
         /// 购买次数。
         /// </summary>
         public decimal Count { get; set; }
-    }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    public class MyClassShoppingBuyedHandler : SyncCommandHandlerBase<ShoppingBuyedCommand>
-    {
-        public MyClassShoppingBuyedHandler()
-        {
-
-        }
-
-        public override void Handle(ShoppingBuyedCommand command)
-        {
-            if (command.ShoppingItemTId != new Guid("16a21a09-c9c2-48cb-8f91-40b4d82f3477"))    //若不是购买普通巡逻的商品
-                return;
-
-        }
     }
 }
 

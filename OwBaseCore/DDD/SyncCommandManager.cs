@@ -38,14 +38,42 @@ namespace OW.SyncCommand
         [DebuggerHidden]
         public void Handle<T>(T command) where T : ISyncCommand
         {
+            #region 预处理
+
+            #endregion 预处理
             orderNumber = 0;
             var coll = _Service.GetServices<ISyncCommandHandler<T>>();
+            var post = _Service.GetServices<ISyncCommandHandled<T>>();
 
-            coll.SafeForEach(c =>
+            try
             {
-                c.Handle(command);
-                orderNumber++;
-            });
+                coll.SafeForEach(c =>
+                {
+                    c.Handle(command);
+                    orderNumber++;
+                });
+                try
+                {
+                    post.SafeForEach(c =>
+                    {
+                        c.Handled(command);
+                        orderNumber++;
+                    });
+                }
+                catch
+                {
+                    //TODO 暂时忽略命令后处理的异常
+                }
+            }
+            catch (Exception excp)
+            {
+                post.SafeForEach(c =>
+                {
+                    c.Handled(command, excp);
+                    orderNumber++;
+                });
+                throw;
+            }
         }
 
         private int orderNumber;
@@ -149,6 +177,30 @@ namespace OW.SyncCommand
         /// </summary>
         /// <param name="command"></param>
         public abstract void Handle(T command);
+    }
+
+    /// <summary>
+    /// 对命令预处理的接口。多个同命令的预处理接口被调用的顺序无法确定。
+    /// </summary>
+    /// <typeparam name="TCommand"></typeparam>
+    public interface ISyncCommandHandling<TCommand> where TCommand : ISyncCommand
+    {
+        public void Handling(TCommand command);
+    }
+
+    /// <summary>
+    /// 对命令进行后处理的接口。多个同命令的后处理接口被调用的顺序无法确定。
+    /// </summary>
+    /// <typeparam name="TCommand"></typeparam>
+    public interface ISyncCommandHandled<TCommand> where TCommand : ISyncCommand
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="exception">若命令的处理过程中(<see cref="ISyncCommandHandler{T}"/>)引发了异常则在此给出，否则为空引用。</param>
+        public void Handled(TCommand command, Exception exception = null);
+
     }
 
     /// <summary>

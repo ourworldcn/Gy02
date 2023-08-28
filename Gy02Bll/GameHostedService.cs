@@ -102,6 +102,7 @@ namespace GY02
             }, _Services, cancellationToken);
 
             Test();
+
             return result;
         }
 
@@ -222,6 +223,10 @@ namespace GY02
                     store1 = _Services.GetService<GameAccountStoreManager>();
             }
             #endregion 测试用代码
+            catch (Exception)
+            {
+                throw;
+            }
             finally
             {
                 sw.Stop();

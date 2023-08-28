@@ -14,6 +14,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Managers
 {
@@ -106,6 +107,23 @@ namespace GY02.Managers
             if (achievement.Level > olv)
                 InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achievement });
             return true;
+        }
+
+        /// <summary>
+        /// 对指定的成就任务项增加计数，若等级发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
+        /// </summary>
+        /// <param name="achievementTId"></param>
+        /// <param name="inc"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="now"></param>
+        /// <returns></returns>
+        public bool RaiseEventIfLevelChanged(Guid achievementTId, decimal inc, GameChar gameChar, DateTime now)
+        {
+            var tt = GetTemplateById(achievementTId);
+            if (tt is null) return false;
+            var achi = GetOrCreate(gameChar, tt);
+            if (achi is null) return false;
+            return RaiseEventIfLevelChanged(achi, inc, gameChar, now);
         }
 
         #endregion 事件及相关

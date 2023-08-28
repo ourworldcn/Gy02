@@ -573,6 +573,19 @@
             </summary>
             <exception cref="T:System.InvalidOperationException"></exception>
         </member>
+        <member name="M:GY02.GameControllerBase.Handle``3(``0,``1,``2,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
+            <summary>
+            处理命令。
+            </summary>
+            <typeparam name="TParamsDto"></typeparam>
+            <typeparam name="TCommand"></typeparam>
+            <typeparam name="TReturnDto"></typeparam>
+            <param name="paramsDto"></param>
+            <param name="command"></param>
+            <param name="returnDto"></param>
+            <param name="commandManager"></param>
+            <param name="mapper"></param>
+        </member>
         <member name="T:GY02.Handler.AchievementChangedHandler">
             <summary>
             

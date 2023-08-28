@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
 using OW.Game.Manager;
+using OW.SyncCommand;
 
 namespace GY02
 {
@@ -46,5 +47,24 @@ namespace GY02
             if (lifetime.ApplicationStopping.IsCancellationRequested)
                 throw new InvalidOperationException("服务器正在关闭。");
         }
+
+        /// <summary>
+        /// 处理命令。
+        /// </summary>
+        /// <typeparam name="TParamsDto"></typeparam>
+        /// <typeparam name="TCommand"></typeparam>
+        /// <typeparam name="TReturnDto"></typeparam>
+        /// <param name="paramsDto"></param>
+        /// <param name="command"></param>
+        /// <param name="returnDto"></param>
+        /// <param name="commandManager"></param>
+        /// <param name="mapper"></param>
+        public void Handle<TParamsDto, TCommand, TReturnDto>(TParamsDto paramsDto, TCommand command, TReturnDto returnDto, SyncCommandManager commandManager, IMapper mapper) where TCommand : ISyncCommand
+        {
+            mapper.Map(paramsDto, command);
+            commandManager.Handle(command);
+            mapper.Map(command, returnDto);
+        }
+
     }
 }

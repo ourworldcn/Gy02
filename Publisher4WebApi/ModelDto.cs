@@ -1230,6 +1230,12 @@ namespace GY02.Publisher
         /// 该关卡的最短时间，如果null,表示不记录。
         /// </summary>
         public TimeSpan? MinTimeSpanOfPass { get; set; }
+
+        /// <summary>
+        /// 是否成功的完成此关卡
+        /// </summary>
+        /// <value>true成功完成了此管卡，false没有完成。</value>
+        public bool IsSuccess { get; set; }
     }
 
     /// <summary>
