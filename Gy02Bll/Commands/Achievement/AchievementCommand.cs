@@ -5,6 +5,7 @@
 
 using GY02.Managers;
 using GY02.Publisher;
+using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Manager;
 using OW.SyncCommand;
 using System;
@@ -18,7 +19,8 @@ namespace GY02.Commands
     /// <summary>
     /// 主线副本通关成就记录事件。
     /// </summary>
-    public class ZhuxianFubenTongguanHandler : SyncCommandHandlerBase<CombatEndCommand>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<EndCombatCommand>))]
+    public class ZhuxianFubenTongguanHandler : ISyncCommandHandled<EndCombatCommand>
     {
         public ZhuxianFubenTongguanHandler(GameAchievementManager achievementManager, GameCombatManager combatManager)
         {
@@ -29,7 +31,7 @@ namespace GY02.Commands
         GameAchievementManager _AchievementManager;
         GameCombatManager _CombatManager;
 
-        public override void Handle(CombatEndCommand command)
+        public void Handled(EndCombatCommand command, Exception exception = null)
         {
             var now = OwHelper.WorldNow;
             var tt = _CombatManager.GetTemplateById(command.CombatTId);

@@ -4,6 +4,7 @@ using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OW.DDD;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
@@ -322,6 +323,23 @@ namespace GY02.Managers
             return true;
         lbErr:
             return false;
+        }
+
+        /// <summary>
+        /// 获取含指定类属且特别标记了TId的任务/成就模板。
+        /// </summary>
+        /// <param name="genus"></param>
+        /// <param name="insTId"></param>
+        /// <returns></returns>
+        public TemplateStringFullView GetTemplate(string genus, Guid insTId)
+        {
+            var achiTt = Templates.Where(c => c.Value.Genus?.Contains(genus) ?? false).FirstOrDefault(c => //实体对应的图鉴成就
+            {
+                var ary = c.Value.Achievement?.TjIns;
+                if (ary is null || ary.Length <= 0) return false;
+                return ary[0].Conditional?[0].TId == insTId;
+            }).Value;
+            return achiTt;
         }
         #endregion 功能性操作
 

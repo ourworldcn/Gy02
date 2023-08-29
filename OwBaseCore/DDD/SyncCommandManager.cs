@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace OW.SyncCommand
 {
     [OwAutoInjection(ServiceLifetime.Scoped)]
-    public class SyncCommandManager : IDisposable
+    public class SyncCommandManager : OwDisposableBase
     {
         public SyncCommandManager()
         {
@@ -41,23 +41,43 @@ namespace OW.SyncCommand
             #region 预处理
 
             #endregion 预处理
-            orderNumber = 0;
+            _OrderNumber = 0;
+            var pre = _Service.GetServices<ISyncCommandHandling<T>>();
             var coll = _Service.GetServices<ISyncCommandHandler<T>>();
+            Exception exception = null;
             var post = _Service.GetServices<ISyncCommandHandled<T>>();
 
+            try
+            {
+                pre.SafeForEach(c =>
+                {
+                    c.Handling(command);
+                });
+            }
+            catch (Exception)
+            {
+                //TODO 暂时忽略命令预处理的异常
+            }
             try
             {
                 coll.SafeForEach(c =>
                 {
                     c.Handle(command);
-                    orderNumber++;
+                    _OrderNumber++;
                 });
+            }
+            catch (Exception excp)
+            {
+                exception = excp;
+                throw;
+            }
+            finally
+            {
                 try
                 {
                     post.SafeForEach(c =>
                     {
                         c.Handled(command);
-                        orderNumber++;
                     });
                 }
                 catch
@@ -65,28 +85,17 @@ namespace OW.SyncCommand
                     //TODO 暂时忽略命令后处理的异常
                 }
             }
-            catch (Exception excp)
-            {
-                post.SafeForEach(c =>
-                {
-                    c.Handled(command, excp);
-                    orderNumber++;
-                });
-                throw;
-            }
         }
 
-        private int orderNumber;
+        private int _OrderNumber;
 
-        public int OrderNumber { get => orderNumber; set => orderNumber = value; }
+        public int OrderNumber { get => _OrderNumber; set => _OrderNumber = value; }
 
         #region IDisposable接口相关
 
-        private bool _DisposedValue;
-
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
-            if (!_DisposedValue)
+            if (!IsDisposed)
             {
                 if (disposing)
                 {
@@ -100,23 +109,10 @@ namespace OW.SyncCommand
                     AutoClearPool<Dictionary<string, object>>.Shared.Return(_Items);
                     _Items = null;
                 }
-                _DisposedValue = true;
+                base.Dispose(disposing);
             }
         }
 
-        // 仅当“Dispose(bool disposing)”拥有用于释放未托管资源的代码时才替代终结器
-        // ~GameCommandManager()
-        // {
-        //     // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-        //     Dispose(disposing: false);
-        // }
-
-        public void Dispose()
-        {
-            // 不要更改此代码。请将清理代码放入“Dispose(bool disposing)”方法中
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
-        }
         #endregion IDisposable接口相关
     }
 

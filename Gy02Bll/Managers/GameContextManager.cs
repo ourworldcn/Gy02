@@ -1,6 +1,7 @@
 ﻿using GY02.Publisher;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using OW;
 using OW.DDD;
@@ -33,11 +34,12 @@ namespace GY02.Managers
         /// <param name="scopeServiceProvider"></param>
         /// <param name="accountStoreManager"></param>
         /// <param name="logger"></param>
-        public GameContextManager(IServiceProvider scopeServiceProvider, GameAccountStoreManager accountStoreManager, ILogger<GameContextManager> logger)
+        public GameContextManager(IServiceProvider scopeServiceProvider, GameAccountStoreManager accountStoreManager, ILogger<GameContextManager> logger, SyncCommandManager commandManager)
         {
             AccountStoreManager = accountStoreManager;
             ScopeServiceProvider = scopeServiceProvider;
             Logger = logger;
+            _CommandManager = commandManager;
         }
 
         #region 属性及相关
@@ -52,12 +54,14 @@ namespace GY02.Managers
         /// </summary>
         public ILogger<GameContextManager> Logger { get; internal set; }
 
+        public GameAccountStoreManager AccountStoreManager { get; }
+
+        SyncCommandManager _CommandManager;
+
         /// <summary>
         /// 连接此上下文的Token。
         /// </summary>
         public Guid Token { get; internal set; }
-
-        public GameAccountStoreManager AccountStoreManager { get; }
 
         /// <summary>
         /// 角色。
@@ -115,11 +119,9 @@ namespace GY02.Managers
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="command"></param>
-        public void Handle<T>(T command)
+        public void Handle<T>(T command) where T : ISyncCommand
         {
-            //PreProcessing,CommandHandling
-            var svcs = ScopeServiceProvider.GetServices<ICommand<T>>();
-            //PostProcessing,CommandHandled
+            _CommandManager.Handle(command);
         }
 
         #region MyRegion
@@ -151,6 +153,15 @@ namespace GY02.Managers
         }
 
         #endregion IDisposable接口相关
+    }
+
+    /// <summary>
+    /// 游戏上下文环境信息。
+    /// </summary>
+    [OwAutoInjection(ServiceLifetime.Singleton)]
+    public class GameContextLifetime
+    {
+        public SemaphoreSlim ContextSemaphore { get; internal set; }
     }
 
     public static class GameContextExtensions

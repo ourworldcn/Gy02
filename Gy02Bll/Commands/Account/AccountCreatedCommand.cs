@@ -21,14 +21,14 @@ namespace GY02.Commands
     /// </summary>
     public class AccountCreatedHandler : SyncCommandHandlerBase<AccountCreatedCommand>
     {
-        public AccountCreatedHandler(IServiceProvider serviceProvider, GameEntityManager entityManager)
+        public AccountCreatedHandler(GameEntityManager entityManager, SyncCommandManager commandManager)
         {
-            _Service = serviceProvider;
             _EntityManager = entityManager;
+            _CommandManager = commandManager;
         }
 
-        IServiceProvider _Service;
         GameEntityManager _EntityManager;
+        SyncCommandManager _CommandManager;
 
         public override void Handle(AccountCreatedCommand command)
         {
@@ -38,7 +38,7 @@ namespace GY02.Commands
                 DisplayName = command.User.LoginName,
                 User = command.User,
             };
-            _Service.GetRequiredService<SyncCommandManager>().Handle(comm);
+            _CommandManager.Handle(comm);
 
             if (comm.HasError)
             {

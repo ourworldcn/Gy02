@@ -132,48 +132,9 @@ namespace GY02.Commands
                 }
             }
             #endregion 记录战斗信息
-            //发出完结事件
-            var commandEnd = new CombatEndCommand
-            {
-                GameChar = command.GameChar,
-                CombatTId = command.CombatTId,
-                Others = command.Others,
-                Command = command,
-            };
-            try
-            {
-                _SyncCommandManager.Handle(commandEnd); //发送事件无需考虑出错
-            }
-            catch (Exception)
-            {
-            }
             _AccountStore.Save(key);
         }
 
     }
 
-    /// <summary>
-    /// 关卡已经被结算的通知。
-    /// </summary>
-    public class CombatEndCommand : SyncCommandBase
-    {
-        public CombatEndCommand()
-        {
-
-        }
-
-        public GameChar GameChar { get; set; }
-
-        /// <summary>
-        /// 战斗关卡的模板Id。
-        /// </summary>
-        public Guid CombatTId { get; set; }
-
-        public List<GameEntitySummary> Others { get; set; }
-
-        /// <summary>
-        /// 命令数据。
-        /// </summary>
-        public EndCombatCommand Command { get; set; }
-    }
 }

@@ -1,5 +1,6 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
+using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.SyncCommand;
 
@@ -8,7 +9,8 @@ namespace GY02.Commands
     /// <summary>
     /// 
     /// </summary>
-    public class AchievementShoppingBuyedHandler : SyncCommandHandlerBase<ShoppingBuyedCommand>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<ShoppingBuyCommand>))]
+    public class AchievementShoppingBuyedHandler : ISyncCommandHandled<ShoppingBuyCommand>
     {
         public AchievementShoppingBuyedHandler(GameAchievementManager achievementManager)
         {
@@ -17,7 +19,7 @@ namespace GY02.Commands
 
         GameAchievementManager _AchievementManager;
 
-        public override void Handle(ShoppingBuyedCommand command)
+        public void Handled(ShoppingBuyCommand command, Exception exception)
         {
             if (command.HasError) return;
             //体力商品的TId

@@ -94,16 +94,6 @@ namespace GY02.Commands
                 TId = command.ShoppingItemTId
             });
 
-            //发出购买事件
-            var commandPost = new ShoppingBuyedCommand
-            {
-                GameChar = command.GameChar,
-                Count = 1,
-                ShoppingItemTId = command.ShoppingItemTId
-            };
-            commandPost.Changes.AddRange(command.Changes);
-            commandPost.FillErrorFrom(command);
-            _CommandManager.Handle(commandPost);
             AccountStore.Save(key);
             return;
         lbErr:
@@ -172,30 +162,10 @@ namespace GY02.Commands
             if (slot is not null)
             {
                 slot.Count++;
-                _EntityManager.InvokeEntityChanged(new GameEntity[] { slot});
+                _EntityManager.InvokeEntityChanged(new GameEntity[] { slot });
                 _AccountStore.Save(key);
             }
         }
-    }
-
-    public class ShoppingBuyedCommand : PropertyChangeCommandBase, IGameCharCommand
-    {
-        public ShoppingBuyedCommand()
-        {
-
-        }
-
-        public GameChar GameChar { get; set; }
-
-        /// <summary>
-        /// 购买的商品项Id。
-        /// </summary>
-        public Guid ShoppingItemTId { get; set; }
-
-        /// <summary>
-        /// 购买次数。
-        /// </summary>
-        public decimal Count { get; set; }
     }
 }
 

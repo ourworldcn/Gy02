@@ -175,7 +175,6 @@ namespace GY02.Commands
             //    HasNewValue = newCost.Length > 0,
             //    NewValue = newCost,
             //});
-            _GameAccountStore.Save(key);
             mainOut.CompositingAccruedCost.Clear();
             //TODO 暂时屏蔽
             //mainOut.CompositingAccruedCost.AddRange(newCost);
@@ -197,23 +196,7 @@ namespace GY02.Commands
                         command.Changes.AddRange(lvupCommand.Changes);
                 }
             }
-            //引发后处理事件
-            var commandPost = new CompositedCommand { Command = command };
-            commandPost.Changes.AddRange(command.Changes);
-            _SyncCommandManager.Handle(commandPost);
+            _GameAccountStore.Save(key);
         }
-    }
-
-    /// <summary>
-    /// 已经合成了一个物品的后处理事件。
-    /// </summary>
-    public class CompositedCommand : PropertyChangeCommandBase
-    {
-        public CompositedCommand()
-        {
-
-        }
-
-        public CompositeCommand Command { get; set; }
     }
 }

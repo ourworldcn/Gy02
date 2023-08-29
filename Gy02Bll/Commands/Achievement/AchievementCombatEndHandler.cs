@@ -1,4 +1,6 @@
 ﻿using GY02.Managers;
+using Microsoft.Extensions.DependencyInjection;
+using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
 using System;
@@ -12,7 +14,8 @@ namespace GY02.Commands.Achievement
     /// <summary>
     /// 统计杀怪成就的处理器。
     /// </summary>
-    public class AchievementCombatEndHandler : SyncCommandHandlerBase<CombatEndCommand>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<EndCombatCommand>))]
+    public class AchievementCombatEndHandler : ISyncCommandHandled<EndCombatCommand>
     {
         public AchievementCombatEndHandler(GameTemplateManager templateManager, GameAchievementManager achievementManager)
         {
@@ -23,7 +26,7 @@ namespace GY02.Commands.Achievement
         GameTemplateManager _TemplateManager;
         GameAchievementManager _AchievementManager;
 
-        public override void Handle(CombatEndCommand command)
+        public void Handled(EndCombatCommand command, Exception exception = null)
         {
             if (command.HasError) return;   //忽略错误的结算信息
             var now = OwHelper.WorldNow;
@@ -57,6 +60,16 @@ namespace GY02.Commands.Achievement
             _AchievementManager.RaiseEventIfLevelChanged(achievement, types_egg, command.GameChar, now);
             #endregion 杀怪数量 
             //2913b8e2-3db3-4204-b36c-415d6bc6b3f0	闯关数量成就
+
+            //cj_guanqia 单个关卡通关成就
+            if (command.IsSuccess)
+            {
+                var achiTt = _AchievementManager.GetTemplate("cj_guanqia", command.CombatTId);
+                if (achiTt is not null && _AchievementManager.GetOrCreate(command.GameChar, achiTt) is GameAchievement achi && achi.Count < achiTt.Achievement.Exp2LvSequence[^1])
+                {
+                    _AchievementManager.RaiseEventIfLevelChanged(achi, 1, command.GameChar, now);
+                }
+            }
         }
     }
 }
