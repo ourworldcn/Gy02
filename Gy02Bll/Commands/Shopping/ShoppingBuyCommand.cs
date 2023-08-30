@@ -165,6 +165,18 @@ namespace GY02.Commands
                 _EntityManager.InvokeEntityChanged(new GameEntity[] { slot });
                 _AccountStore.Save(key);
             }
+            //用户注册天数
+            slot = allEntity[Guid.Parse("A1414D6E-C3A1-44C3-BBBD-E8B4357A8796")]?.FirstOrDefault();
+            if (slot is not null)
+            {
+                var ov = slot.Count;
+                slot.Count = Convert.ToDecimal((now.Date - gc.CreateUtc.Date).TotalDays);
+                if(ov!=slot.Count)
+                {
+                    _EntityManager.InvokeEntityChanged(new GameEntity[] { slot });
+                    _AccountStore.Save(key);
+                }
+            }
         }
     }
 }

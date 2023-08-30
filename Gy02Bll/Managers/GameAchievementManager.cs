@@ -303,6 +303,20 @@ namespace GY02.Managers
         }
 
         /// <summary>
+        /// 检测指定任务/成就模板的有效性。
+        /// </summary>
+        /// <param name="achiTId"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="now"></param>
+        /// <returns></returns>
+        public bool IsValid(Guid achiTId, GameChar gameChar, DateTime now)
+        {
+            if (GetTemplateById(achiTId) is not TemplateStringFullView tt) return false;
+            if (GetOrCreate(gameChar, tt) is not GameAchievement achi) return false;
+            return IsValid(achi, gameChar, now);
+        }
+
+        /// <summary>
         /// 获取指示该成就/任务对象是否在有效状态。
         /// </summary>
         /// <param name="achievement"></param>

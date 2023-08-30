@@ -65,6 +65,9 @@ namespace GY02.Commands.Achievement
                     {
                         _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
                     }
+                    //cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d	开服活动1日成就-累计看广告次数
+                    if (_AchievementManager.IsValid(Guid.Parse("cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d"), gc, now))
+                        _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d"), entity.Count, gc, now);
                 }
                 if (tt.TemplateId == ProjectContent.LoginedDayTId)    //累计登录天数
                 {

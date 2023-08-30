@@ -573,6 +573,12 @@
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-04-24T00:00:00.0000000+08:00\"}}}"
     },
     {
+      "Id": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
+      "DisplayName": "活动兑换货币",
+      "Gid": 130101003,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\"}"
+    },
+    {
       "Id": "62D3A545-7604-46BF-9837-95E286660BC8",
       "DisplayName": "巡逻时间占位符",
       "Gid": 110201005,
@@ -6460,6 +6466,48 @@
       "DisplayName": "坠落方舟首通奖励",
       "Gid": 220103020,
       "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"9b6b2f9d-01cb-4847-8373-758f3c0baee2\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}]]}}"
+    },
+    {
+      "Id": "cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d",
+      "DisplayName": "开服活动1日成就-累计看广告次数",
+      "Gid": 220104001,
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-09-15T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"TjIns\":[],\"Exp2LvSequence\":[3,5,8,12,15],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "1fbe6bb9-84be-4098-8430-e7c46a6135f1",
+      "DisplayName": "开服活动1日成就- 累计杀怪数量",
+      "Gid": 220104002,
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-09-15T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"TjIns\":[],\"Exp2LvSequence\":[500,900,2000,3000,4500],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "e2c2cf15-263f-4341-acdd-c3135c73097b",
+      "DisplayName": "开服活动1日成就 - 累计升级装备次数",
+      "Gid": 220104003,
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-09-15T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"TjIns\":[],\"Exp2LvSequence\":[3,5,7,10,15,20],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "db98951e-a908-482a-a2e4-0e851a3e1c95",
+      "DisplayName": "开服活动1日成就- 累计合装备合成次数",
+      "Gid": 220104004,
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-09-15T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"TjIns\":[],\"Exp2LvSequence\":[1,3,5,10,15,20],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "86833e6b-81bf-47ca-9965-b57c2012ecfd",
+      "DisplayName": "开服活动1日成就-累计挑战关卡次数",
+      "Gid": 220104005,
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-09-15T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"TjIns\":[],\"Exp2LvSequence\":[2,3,5,7,10,15,20],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "5173f53e-6534-4594-82cc-d989f52f03c7",
+      "DisplayName": "开服活动1日成就- 累计开宝箱次数",
+      "Gid": 220104006,
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-09-15T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"TjIns\":[],\"Exp2LvSequence\":[2,3,5,7,10,15,18,20,25],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "c7772592-50ab-4f98-be01-b58c02571d46",
+      "DisplayName": "开服活动1日成就- 累计孵化次数",
+      "Gid": 220104007,
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-09-15T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"TjIns\":[],\"Exp2LvSequence\":[2,3,5,7,10,15,18,20],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}]]}}"
     },
     {
       "Id": "8a04e3b5-cfd6-428b-ba2c-62f9fec87afd",

@@ -7,40 +7,47 @@
   "Count": 0,
   "Achievement": {
     "Period": {
-      "Start": "2023-05-30T03:03:28.385Z",
+      "Start": "2023-09-15T00:00:00.000Z",
       "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
     },
-    "TjIns": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
-            "Genus": [],
-            "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 0,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
-      }
-    ],
-    "Exp2LvSequence": [ 1 ],
+    "TjIns": [],
+    "Exp2LvSequence": [ 500, 900, 2000, 3000, 4500 ],
     "Outs": [
       [
         {
-          "ParentTId": "29b7e726-387f-409d-a6ac-ad8670a814f0",
-          "TId": "c531cd34-fed9-4859-81f1-501c25c0926d",
-          "Count": 1
-        },
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
+          "Count": 2
+        }
+      ],
+      [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 1000
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
+          "Count": 3
+        }
+      ],
+      [
+        {
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
+          "Count": 10
         }
       ]
     ]
