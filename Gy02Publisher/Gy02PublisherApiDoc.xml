@@ -615,6 +615,47 @@
             构造函数。
             </summary>
         </member>
+        <member name="T:GY02.Templates.NumberCondition">
+            <summary>
+            针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。
+            以下等式成立则条件为真：(获取属性值 - 减数) Mod Modulus = Remainder
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.NumberCondition.PropertyName">
+            <summary>
+            属性名，通常是Count。该属性必须是一个数值型的属性。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.NumberCondition.MinValue">
+            <summary>
+            最小值。省略或为null表示不限制。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.NumberCondition.MaxValue">
+            <summary>
+            最大值。省略或为null表示不限制。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.NumberCondition.Subtrahend">
+            <summary>
+            减数。省略视同为0。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.NumberCondition.Modulus">
+            <summary>
+            求模的模数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.NumberCondition.MinRemainder">
+            <summary>
+            最小余数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.NumberCondition.MaxRemainder">
+            <summary>
+            最小余数。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.GameThingPreconditionItem">
             <summary>
             定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
@@ -638,6 +679,11 @@
         <member name="P:GY02.Templates.GameThingPreconditionItem.TId">
             <summary>
             物品的TId。省略则不限制。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameThingPreconditionItem.NumberCondition">
+            <summary>
+            针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。省略或为null表示不限定。
             </summary>
         </member>
         <member name="P:GY02.Templates.GameThingPreconditionItem.MinCount">

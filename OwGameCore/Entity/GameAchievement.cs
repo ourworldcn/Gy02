@@ -14,10 +14,17 @@ namespace OW.Game.Entity
     [Guid("48CD339A-3B21-4DA7-9B0A-2B914B3DD42C")]
     public class GameAchievement : GameEntity
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
         public GameAchievement()
         {
         }
 
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="thing"></param>
         public GameAchievement(object thing) : base(thing)
         {
         }
@@ -33,6 +40,11 @@ namespace OW.Game.Entity
         /// 当前该成就/任务是否有效。true有效，false无效此时成就任务的计数不会推进，但已有的奖励仍然可以领取（若已完成且未领取）。UI可以在无效时不让领取。
         /// </summary>
         public bool IsValid { get; set; }
+
+        /// <summary>
+        /// 最后一次修改的时间。
+        /// </summary>
+        public DateTime LastModifyDateTime { get; set; }
 
         #endregion 可复制属性
 

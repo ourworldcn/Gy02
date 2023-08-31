@@ -926,6 +926,48 @@ namespace GY02.Templates
     }
 
     /// <summary>
+    /// 针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。
+    /// 以下等式成立则条件为真：(获取属性值 - 减数) Mod Modulus = Remainder
+    /// </summary>
+    public class NumberCondition
+    {
+        /// <summary>
+        /// 属性名，通常是Count。该属性必须是一个数值型的属性。
+        /// </summary>
+        public string PropertyName { get; set; }
+
+        /// <summary>
+        /// 最小值。省略或为null表示不限制。
+        /// </summary>
+        public decimal? MinValue { get; set; }
+
+        /// <summary>
+        /// 最大值。省略或为null表示不限制。
+        /// </summary>
+        public decimal? MaxValue { get; set; }
+
+        /// <summary>
+        /// 减数。省略视同为0。
+        /// </summary>
+        public decimal Subtrahend { get; set; }
+
+        /// <summary>
+        /// 求模的模数。
+        /// </summary>
+        public decimal Modulus { get; set; }
+
+        /// <summary>
+        /// 最小余数。
+        /// </summary>
+        public decimal MinRemainder { get; set; }
+
+        /// <summary>
+        /// 最小余数。
+        /// </summary>
+        public decimal MaxRemainder { get; set; }
+    }
+
+    /// <summary>
     /// 定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
     /// </summary>
     public partial class GameThingPreconditionItem
@@ -951,6 +993,11 @@ namespace GY02.Templates
         /// 物品的TId。省略则不限制。
         /// </summary>
         public Guid? TId { get; set; }
+
+        /// <summary>
+        /// 针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。省略或为null表示不限定。
+        /// </summary>
+        public NumberCondition NumberCondition { get; set; }
 
         /// <summary>
         /// 要求的最小数量。省略(null)则不限制。

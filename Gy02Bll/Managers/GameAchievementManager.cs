@@ -223,16 +223,18 @@ namespace GY02.Managers
         /// <returns>true成功，false出错，此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
         public bool RefreshState(GameAchievement achievement, GameChar gameChar, DateTime now)
         {
-            var tt = GetTemplateById(achievement.TemplateId);
-            if (tt is null) return false;
+            if (GetTemplateById(achievement.TemplateId) is not TemplateStringFullView tt) return false;
+            //刷新有效性
+            achievement.IsValid = IsValid(achievement, gameChar, now);
+            if (!achievement.IsValid) achievement.Count = 0;
+
             achievement.RefreshLevel(tt);
             if (achievement.Items.Count == 0)    //若可能需要初始化
                 if (!InitializeState(achievement)) return false;
 
-            //刷新有效性
-            achievement.IsValid = IsValid(achievement, gameChar, now);
             //刷新每个等级的达成标志
-            achievement.Items.ForEach(state => state.IsCompleted = achievement.Level >= state.Level);
+            if (achievement.IsValid)
+                achievement.Items.ForEach(state => state.IsCompleted = achievement.Level >= state.Level);
             return true;
         }
 

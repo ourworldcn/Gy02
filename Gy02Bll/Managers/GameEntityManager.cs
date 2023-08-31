@@ -21,6 +21,7 @@ using System.Diagnostics;
 using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,7 @@ namespace GY02.Managers
         }
 
         public IEnumerable<GameEntity> Entities { get; internal set; }
+
     }
 
     public class GameEntityManagerOptions : IOptions<GameEntityManagerOptions>
@@ -146,6 +148,13 @@ namespace GY02.Managers
                 return false;
             if (condition.MinCount.HasValue && condition.MinCount.Value > entity.Count)
                 return false;
+            if (condition.NumberCondition is NumberCondition nc) //若需要判断数值条件
+            {
+                if (entity.GetType().GetProperty(nc.PropertyName) is not PropertyInfo pi || !OwConvert.TryToDecimal(pi.GetValue(entity), out var deci)) return false; //若非数值属性
+                if (deci > nc.MaxValue || deci < nc.MinValue) return false;
+                var tmp = (deci - nc.Subtrahend) % nc.Modulus;  //余数
+                if (tmp < nc.MinRemainder || tmp > nc.MaxRemainder) return false;
+            }
             if (!condition.GeneralConditional.All(c =>
             {
                 if (ignore && c.IgnoreIfDisplayList)
@@ -173,33 +182,6 @@ namespace GY02.Managers
             return true;
         }
 
-
-        /// <summary>
-        /// 忽略计数的情况下判断是否符合条件。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="condition"></param>
-        /// <returns></returns>
-        public bool IsPartialMatch(GameEntity entity, GameThingPreconditionItem condition)
-        {
-            var thing = entity.GetThing();
-            TemplateStringFullView fullView = _TemplateManager.Id2FullView[entity.TemplateId];
-            if (condition.TId.HasValue && condition.TId.Value != entity.TemplateId)
-                return false;
-            if (condition.Genus is not null && condition.Genus.Count > 0 && condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count)
-                return false;
-            if (condition.ParentTId.HasValue && condition.ParentTId.Value != thing.Parent?.ExtraGuid)
-                return false;
-            return true;
-        }
-
-        //public bool IsNoStk(GameThingPreconditionItem condition)
-        //{
-        //    if (!condition.TId.HasValue)
-        //        return false;
-        //    TemplateStringFullView fullView = _TemplateManager.Id2FullView[entity.TemplateId];
-
-        //}
         #endregion 计算寻找物品的匹配
 
         /// <summary>
