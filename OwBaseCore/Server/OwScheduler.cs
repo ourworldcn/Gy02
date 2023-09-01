@@ -581,4 +581,46 @@ namespace OW.Server
             return services;
         }
     }
+
+    public class OwTimerSchedulerEntry
+    {
+
+    }
+
+    /// <summary>
+    /// 一次性的定时任务
+    /// </summary>
+    public class OwDelayScheduler
+    {
+        public OwDelayScheduler()
+        {
+
+        }
+
+        ConcurrentDictionary<object, OwTimerSchedulerEntry> keys;
+        PriorityQueue<object, DateTime> values;
+
+        public void Add()
+        {
+            
+        }
+
+        public void Remove()
+        {
+
+        }
+
+        public void Delay()
+        {
+        }
+
+        protected void Scan()
+        {
+
+        }
+
+        public void EnsureRunAndRemove()
+        {
+        }
+    }
 }

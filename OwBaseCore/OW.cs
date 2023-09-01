@@ -2,6 +2,7 @@
 using System;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.ObjectPool;
 
 namespace OW
 {
@@ -135,22 +136,32 @@ namespace OW
     }
 
     /// <summary>
-    /// 提供池化对象的基类，派生类重载<seealso cref="Dispose(bool)"/>在参数为True时，不是真的处置对象，而是将对象状态清理，并返回池。
+    /// 提供池化对象的基类，派生类重载<seealso cref="Dispose(bool)"/>在参数为True时，不是真的处置对象，而是将对象状态清理，并试图返回池。
     /// </summary>
-    public abstract class OwPoolingObjectBase : OwDisposableBase
+    /// <typeparam name="T">池化对象的类型。</typeparam>
+    public abstract class OwPooledObjectBase<T> : OwDisposableBase, IPooledObjectPolicy<T> where T : class, new()
     {
+        public virtual T Create()
+        {
+            return new T();
+        }
+
+        public abstract bool Return(T obj);
+
         protected override void Dispose(bool disposing)
         {
             if (!IsDisposed)
             {
                 if (disposing)
                 {
-                    //释放托管状态(托管对象)
+                    //试图将对象返回池中
                 }
-
-                // 释放未托管的资源(未托管的对象)并重写终结器
-                // 将大型字段设置为 null
-                base.Dispose(disposing);  //        IsDisposed = true;
+                else
+                {
+                    // 释放未托管的资源(未托管的对象)并重写终结器
+                    // 将大型字段设置为 null
+                    //base.Dispose(disposing);  //        IsDisposed = true;
+                }
             }
         }
     }

@@ -214,13 +214,13 @@ namespace GY02
         {
             var store = _Services.GetService<GameAccountStoreManager>();
             var mapper = _Services.GetService<IMapper>();
-            GameAccountStoreManager store1;
             var sw = Stopwatch.StartNew();
+
             #region 测试用代码
             try
             {
-                for (int i = 0; i < 1_000_000; i++)
-                    store1 = _Services.GetService<GameAccountStoreManager>();
+                var svc = _Services.CreateScope().ServiceProvider; 
+
             }
             #endregion 测试用代码
             catch (Exception)
