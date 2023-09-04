@@ -760,10 +760,11 @@ namespace GY02.Templates
         #endregion 合成相关
 
         #region 战斗相关
+
         /// <summary>
         /// 关卡入场费。
         /// </summary>
-        public List<BlueprintInItem> EntranceFees { get; set; } = new List<BlueprintInItem>();
+        public List<BlueprintInItem> Ins { get; set; } = new List<BlueprintInItem>();
 
         #endregion
 

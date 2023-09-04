@@ -1,34 +1,18 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-  "name_txt": 11829,
-  "comment_txt": 11855,
-  "atk": null,
-  "def": null,
-  "pow": [ 70, 78, 86, 94, 102, 110, 118, 126, 134, 142, 150, 158, 166, 174, 182, 190, 198, 206, 214, 222 ],
-  "Genus": [ "p_gn", "e_zuoqi", "zuoqi_tiger" ],
-  "p_skills": [
+  "EntranceFees": [
     {
-      "skillsid": "4a28cf9b-199c-4b42-940a-a2e893eca0bf",
-      "enable": true
-    },
-    {
-      "skillsid": "2a5fd523-6c7a-4098-a9e2-abfd87799593",
-      "enable": false
-    },
-    {
-      "skillsid": "4e56c756-e469-47a0-a87e-70e459f8f74d",
-      "enable": false
-    },
-    {
-      "skillsid": "164df1a5-04d0-4a2c-bb8a-f53451cc5645",
-      "enable": false
-    },
-    {
-      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
-      "enable": false
+      "Conditional": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "Genus": [],
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "MinCount": 5
+        }
+      ],
+      "Count": 5
     }
   ],
-  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e",
-  "CompositeId": "88260b19-7315-4598-85b1-5c68b1d4d3f7"
+  "name_txt": 13008,
+  "comment_txt": 13020,
+  "suggest": [ 300, 2800, 250 ]
 }

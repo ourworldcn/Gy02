@@ -75,8 +75,8 @@ namespace GY02.Commands
                     }
                     all.Add(entity);
                 }
-                if (tt.EntranceFees?.Count > 0) //若需要消耗资源
-                    if (!_BlueprintManager.Deplete(all, tt.EntranceFees, command.Changes)) { command.FillErrorFromWorld(); return; }
+                if (tt.Ins?.Count > 0) //若需要消耗资源
+                    if (!_BlueprintManager.Deplete(all, tt.Ins, command.Changes)) { command.FillErrorFromWorld(); return; }
                 command.GameChar.CombatTId = command.CombatTId;
                 command.Changes?.Add(new GamePropertyChangeItem<object>
                 {

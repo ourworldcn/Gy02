@@ -1,55 +1,17 @@
 {
-  "Genus": [ "cj_guanqia" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
-    "Period": {
-      "Start": "2023-09-15T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
-    },
-    "TjIns": [],
-    "Exp2LvSequence": [ 500, 900, 2000, 3000, 4500 ],
-    "Outs": [
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
-          "Count": 2
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
-          "Count": 3
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
-          "Count": 5
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
-          "Count": 5
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
-          "Count": 10
-        }
-      ]
-    ]
-  }
+  "Ins": [
+    {
+      "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+      "Genus": [],
+      "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+      "MinCount": 5,
+      "NumberCondition": {},
+      "GeneralConditional": null,
+      "Count": 5,
+      "IgnoreIfDisplayList": true
+    }
+  ],
+  "name_txt": 13001,
+  "comment_txt": 13013,
+  "suggest": [ 200, 2000, 200 ]
 }

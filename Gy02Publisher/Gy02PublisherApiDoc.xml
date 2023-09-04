@@ -493,7 +493,7 @@
             合成公式的Id。省略则没有合成公式。
             </summary>
         </member>
-        <member name="P:GY02.Templates.TemplateStringFullView.EntranceFees">
+        <member name="P:GY02.Templates.TemplateStringFullView.Ins">
             <summary>
             关卡入场费。
             </summary>

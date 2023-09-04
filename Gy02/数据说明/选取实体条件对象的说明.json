@@ -8,7 +8,7 @@
     "MinCount": 0, //要求的最小数量。省略(null)则不限制。
     "NumberCondition": { //针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。以下不等式成立则条件为真：(获取属性值 - 减数) Mod Modulus >= MinRemainder 且 <= MaxRemainder
       "PropertyName": "Count", //属性名，通常是Count。该属性必须是一个数值型的属性。
-      "MinValue": null, //最小值。省略或为null表示不限制。
+      "MinValue": 1, //最小值。省略或为null表示不限制。
       "MaxValue": null, //最大值。省略或为null表示不限制。
       "Subtrahend": 0, //减数，省略视同0
       "Modulus": 1, //求模的模数

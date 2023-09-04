@@ -579,8 +579,21 @@
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\"}"
     },
     {
+      "Id": "547865b2-fa3d-4d7f-957f-0219b8318b73",
+      "DisplayName": "特殊关卡-追箱子-次数",
+      "Gid": 110201009,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":30,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3}}}"
+    },
+    {
+      "Id": "d4828a12-534a-4a32-ae17-792b6bfd29cd",
+      "DisplayName": "特殊关卡-弹珠-次数",
+      "Gid": 110201010,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":30,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3}}}"
+    },
+    {
       "Id": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
       "DisplayName": "用户注册天数占位符，0是第一天",
+      "Gid": 110201008,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"}"
     },
     {
@@ -3190,121 +3203,133 @@
       "Id": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
       "DisplayName": "牧野草原",
       "Gid": 210101001,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13001,\"comment_txt\":13013,\"suggest\":[ 200,2000,200]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13001,\"comment_txt\":13013,\"suggest\":[200,2000,200]}"
     },
     {
       "Id": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
       "DisplayName": "残破牧场",
       "Gid": 210101002,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13002,\"comment_txt\":13014,\"suggest\":[ 200,2000,200]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13002,\"comment_txt\":13014,\"suggest\":[200,2000,200]}"
     },
     {
       "Id": "1e5fc645-2833-48a1-add5-6b83a3407d03",
       "DisplayName": "荒野雪原",
       "Gid": 210101003,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13003,\"comment_txt\":13015,\"suggest\":[ 250,2200,200]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13003,\"comment_txt\":13015,\"suggest\":["
     },
     {
       "Id": "f8b2fd94-8e7e-4c62-9c37-411f24a9b6a1",
       "DisplayName": "平原小路",
       "Gid": 210101004,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13004,\"comment_txt\":13016,\"suggest\":[ 250,2200,200]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13004,\"comment_txt\":13016,\"suggest\":[250,2200,200]}"
     },
     {
       "Id": "28314d37-7d90-4a13-992f-22485de7b020",
       "DisplayName": "火山溶洞",
       "Gid": 210101005,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[ 280,2500,250]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[280,2500,250]}"
     },
     {
       "Id": "da564dad-8b75-420a-b7e9-d1aab85617ec",
       "DisplayName": "荒废古道",
       "Gid": 210101006,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13006,\"comment_txt\":13018,\"suggest\":[ 280,2500,250]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13006,\"comment_txt\":13018,\"suggest\":[280,2500,250]}"
     },
     {
       "Id": "1bc14a08-1551-4f53-9a51-11876aa7610a",
       "DisplayName": "水晶矿洞",
       "Gid": 210101007,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[ 280,2500,250]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[280,2500,250]}"
     },
     {
       "Id": "2105aabe-b1d8-4add-9ddf-bc512f673105",
       "DisplayName": "破败废墟",
       "Gid": 210101008,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13025,\"comment_txt\":13032,\"suggest\":[ 400,3500,400]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13025,\"comment_txt\":13032,\"suggest\":[400,3500,400]}"
     },
     {
       "Id": "b66e53bb-21ad-4b01-ba21-6f6196f102be",
       "DisplayName": "秘境草原",
       "Gid": 210101009,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13026,\"comment_txt\":13033,\"suggest\":[ 400,3500,400]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13026,\"comment_txt\":13033,\"suggest\":[400,3500,400]}"
     },
     {
       "Id": "3fb9edc2-1ba6-4f4a-aeeb-bcc93e9ce971",
       "DisplayName": "风暴沙漠",
       "Gid": 210101010,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13027,\"comment_txt\":13034,\"suggest\":[ 500,3500,400]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13027,\"comment_txt\":13034,\"suggest\":[500,3500,400]}"
     },
     {
       "Id": "44400571-975e-4a5d-a1db-4d606cc4363b",
       "DisplayName": "牧场小径",
       "Gid": 210101011,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[ 300,3000,300]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[300,3000,300]}"
     },
     {
       "Id": "e4c4bc86-2b72-4bee-ac01-0f53909fb498",
       "DisplayName": "高山松林",
       "Gid": 210101012,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13038,\"comment_txt\":13039,\"suggest\":[ 300,3000,300]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13038,\"comment_txt\":13039,\"suggest\":[300,3000,300]}"
     },
     {
       "Id": "7c1a30c2-e91d-4fca-9b26-fdaef4e2c249",
       "DisplayName": "神秘洞穴",
       "Gid": 210101013,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13028,\"comment_txt\":13035,\"suggest\":[ 500,3500,400]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13028,\"comment_txt\":13035,\"suggest\":[500,3500,400]}"
     },
     {
       "Id": "6510b97c-3317-43b8-a25c-f4ca0920a8ce",
       "DisplayName": "滑滑冰川",
       "Gid": 210101014,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13043,\"comment_txt\":13044,\"suggest\":[ 300,3000,300]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13043,\"comment_txt\":13044,\"suggest\":[300,3000,300]}"
     },
     {
       "Id": "6f0da752-94ba-4cb4-a52b-39dcbdb41f91",
       "DisplayName": "地火监牢",
       "Gid": 210101015,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13040,\"comment_txt\":13041,\"suggest\":[ 400,3000,400]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13040,\"comment_txt\":13041,\"suggest\":[400,3000,400]}"
     },
     {
       "Id": "7e1408ab-d6f5-4928-ac6c-fba86800b585",
       "DisplayName": "古老遗迹",
       "Gid": 210101016,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13029,\"comment_txt\":13036,\"suggest\":[ 500,3500,600]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13029,\"comment_txt\":13036,\"suggest\":[500,3500,600]}"
     },
     {
       "Id": "e987add9-00dd-4d03-83ff-bef717cae823",
       "DisplayName": "法老宝藏",
       "Gid": 210101017,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13030,\"comment_txt\":13037,\"suggest\":[ 500,3500,600]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13030,\"comment_txt\":13037,\"suggest\":[500,3500,600]}"
     },
     {
       "Id": "2cefd284-8d80-4beb-a1e6-0bce481593ca",
       "DisplayName": "迷路深林",
       "Gid": 210101018,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[ 300,2800,250]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[300,2800,250]}"
     },
     {
       "Id": "c303ba60-3b3c-4e21-a3f8-b0e43a4ed87b",
       "DisplayName": "极寒之地",
       "Gid": 210101019,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13031,\"comment_txt\":13042,\"suggest\":[ 500,3800,800]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13031,\"comment_txt\":13042,\"suggest\":[500,3800,800]}"
     },
     {
       "Id": "9b6b2f9d-01cb-4847-8373-758f3c0baee2",
       "DisplayName": "坠落方舟",
       "Gid": 210101020,
-      "PropertiesString": "{\"EntranceFees\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[ 300,2800,250]}"
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":5,\"IgnoreIfDisplayList\":true}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[300,2800"
+    },
+    {
+      "Id": "cabe2c3c-56c0-4afe-abae-14dfbf96d4a2",
+      "DisplayName": "特殊关卡-追箱子",
+      "Gid": 210204001,
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":1,\"MaxValue\":null,\"Subtrahend\":1,\"Modulus\":6,\"MinRemainder\":0,\"MaxRemainder\":3},\"GeneralConditional\":[],\"Count\":0,\"IgnoreIfDisplayList\":true},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"547865b2-fa3d-4d7f-957f-0219b8318b73\",\"MinCount\":1,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":1,\"IgnoreIfDisplayList\":true}],\"name_txt\":40000,\"comment_txt\":40002,\"suggest\":[300,2800,250]}"
+    },
+    {
+      "Id": "dbbb8d4c-92f0-49ff-9add-682c6caaa200",
+      "DisplayName": "特殊关卡-弹珠",
+      "Gid": 210203001,
+      "PropertiesString": "{\"Ins\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":3,\"MaxValue\":null,\"Subtrahend\":1,\"Modulus\":6,\"MinRemainder\":0,\"MaxRemainder\":3},\"GeneralConditional\":[],\"Count\":0,\"IgnoreIfDisplayList\":true},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d4828a12-534a-4a32-ae17-792b6bfd29cd\",\"MinCount\":1,\"NumberCondition\":null,\"GeneralConditional\":null,\"Count\":1,\"IgnoreIfDisplayList\":true}],\"name_txt\":40000,\"comment_txt\":40002,\"suggest\":[300,2800,250]}"
     },
     {
       "Id": "1da0bea3-5765-48b5-aeb6-c8cb9ce6c82e",
