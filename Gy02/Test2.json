@@ -1,41 +1,43 @@
 {
-  "Ins": [
-    {
-      "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-      "Genus": [],
-      "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
-      "MinCount": 0,
-      "NumberCondition": {
-        "PropertyName": "Count",
-        "MinValue": 4,
-        "MaxValue": null,
-        "Subtrahend": 4,
-        "Modulus": 6,
-        "MinRemainder": 0,
-        "MaxRemainder": 2
-      },
-      "GeneralConditional": [
-      ],
-      "Count": 0,
-      "IgnoreIfDisplayList": true
+  "Genus": [ "cj_guanqia" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
+    "Period": {
+      "Start": "2023-05-30T03:03:28.385Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    {
-      "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-      "Genus": [],
-      "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
-      "MinCount": 1,
-      "NumberCondition": null,
-      "GeneralConditional": [
-      ],
-      "Count": 1,
-      "IgnoreIfDisplayList": true
-    }
-  ],
-  "name_txt": 40000,
-  "comment_txt": 40002,
-  "suggest": [
-    300,
-    2800,
-    250
-  ]
+    "TjIns": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
+            "Genus": [],
+            "TId": "c303ba60-3b3c-4e21-a3f8-b0e43a4ed87b",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Exp2LvSequence": [ 1 ],
+    "Outs": [
+      [
+        {
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
+          "Count": 5
+        }
+      ]
+    ]
+  }
 }

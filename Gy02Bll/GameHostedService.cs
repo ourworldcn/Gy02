@@ -219,12 +219,12 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var svc = _Services.CreateScope().ServiceProvider; 
-
+                var svc = _Services.CreateScope().ServiceProvider;
             }
             #endregion 测试用代码
             catch (Exception)
             {
+
                 throw;
             }
             finally

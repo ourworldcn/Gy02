@@ -1,11 +1,35 @@
 {
   "Ins": [
     {
+      "ParentTId": null,
+      "Genus": [
+
+      ],
+      "TId": null,
+      "MinCount": null,
+      "NumberCondition": {
+        "PropertyName": "Count",
+        "MinValue": null,
+        "MaxValue": null,
+        "Subtrahend": null,
+        "Modulus": null,
+        "MinRemainder": null,
+        "MaxRemainder": null
+      },
+      "GeneralConditional": [
+
+      ],
+      "Count": 0,
+      "IgnoreIfDisplayList": true
+    },
+    {
       "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-      "Genus": [],
+      "Genus": [
+
+      ],
       "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
       "MinCount": 5,
-      "NumberCondition": {},
+      "NumberCondition": null,
       "GeneralConditional": null,
       "Count": 5,
       "IgnoreIfDisplayList": true
@@ -13,5 +37,9 @@
   ],
   "name_txt": 13001,
   "comment_txt": 13013,
-  "suggest": [ 200, 2000, 200 ]
+  "suggest": [
+    200,
+    2000,
+    200
+  ]
 }

@@ -30,6 +30,7 @@
                 "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
               }
             ],
+            "NumberCondition": null,
             "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
           }
         ],

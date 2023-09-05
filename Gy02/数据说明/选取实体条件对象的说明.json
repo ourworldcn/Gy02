@@ -26,6 +26,7 @@
         "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
       }
     ],
+    "Count": 0, //消耗数量
     "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
   }
 ]

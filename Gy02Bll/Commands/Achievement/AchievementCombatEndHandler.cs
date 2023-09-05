@@ -60,7 +60,8 @@ namespace GY02.Commands.Achievement
             _AchievementManager.RaiseEventIfLevelChanged(achievement, types_egg, command.GameChar, now);
             #endregion 杀怪数量 
             //2913b8e2-3db3-4204-b36c-415d6bc6b3f0	闯关数量成就
-
+            if (command.IsSuccess)
+                _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("2913b8e2-3db3-4204-b36c-415d6bc6b3f0"), 1, command.GameChar, now);
             //cj_guanqia 单个关卡通关成就
             if (command.IsSuccess)
             {

@@ -762,7 +762,7 @@ namespace GY02.Templates
         #region 战斗相关
 
         /// <summary>
-        /// 关卡入场费。
+        /// 关卡入场条件。
         /// </summary>
         public List<BlueprintInItem> Ins { get; set; } = new List<BlueprintInItem>();
 

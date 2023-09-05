@@ -495,7 +495,7 @@
         </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Ins">
             <summary>
-            关卡入场费。
+            关卡入场条件。
             </summary>
         </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fuhua">
