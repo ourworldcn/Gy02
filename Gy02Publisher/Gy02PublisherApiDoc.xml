@@ -120,6 +120,11 @@
             表示类是一个需要udp解码的类。
             </summary>
         </member>
+        <member name="P:GY02.Templates.IJsonData.Seq">
+            <summary>
+            序号。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.ListenStartedDto">
             <summary>
             Udp通知数据类。在侦听成功后会收到一次该数据。
@@ -135,9 +140,19 @@
             服务器所见的客户端地址。
             </summary>
         </member>
+        <member name="P:GY02.Templates.ListenStartedDto.Seq">
+            <summary>
+            序号。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.MailArrivedDto">
             <summary>
             邮件到达的Udp通知数据类。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.MailArrivedDto.Seq">
+            <summary>
+            序号。
             </summary>
         </member>
         <member name="P:GY02.Templates.MailArrivedDto.MailIds">
@@ -618,7 +633,7 @@
         <member name="T:GY02.Templates.NumberCondition">
             <summary>
             针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。
-            以下等式成立则条件为真：(获取属性值 - 减数) Mod Modulus = Remainder
+            以下条件为真：(获取属性值 - Subtrahend) 对 Modulus 求余数，余数要在 [MinRemainder, MaxRemainder] 邻域中。
             </summary>
         </member>
         <member name="P:GY02.Templates.NumberCondition.PropertyName">
@@ -655,6 +670,22 @@
             <summary>
             最小余数。
             </summary>
+        </member>
+        <member name="M:GY02.Templates.NumberCondition.GetCurrentPeriod(System.Decimal,System.Decimal@,System.Decimal@)">
+            <summary>
+            获取指定数值所处周期。仅能对整数求解。
+            </summary>
+            <param name="now"></param>
+            <param name="start">所处周期的起始数。</param>
+            <param name="end">所处周期的结束数。</param>
+            <returns>true指定值在有效周期内，false指定值不在指定周期内。</returns>
+        </member>
+        <member name="M:GY02.Templates.NumberCondition.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
         </member>
         <member name="T:GY02.Templates.GameThingPreconditionItem">
             <summary>

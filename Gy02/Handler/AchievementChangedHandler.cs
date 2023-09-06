@@ -15,12 +15,14 @@ namespace GY02.Handler
         /// <summary>
         /// 
         /// </summary>
-        public AchievementChangedHandler(GameAchievementManager achievementManager, UdpServerManager udpServerManager, IMapper mapper, GameEntityManager entityManager)
+        /// <param name="achievementManager"></param>
+        /// <param name="udpServerManager"></param>
+        /// <param name="mapper"></param>
+        public AchievementChangedHandler(GameAchievementManager achievementManager, UdpServerManager udpServerManager, IMapper mapper)
         {
             _AchievementManager = achievementManager;
             _UdpServerManager = udpServerManager;
             _Mapper = mapper;
-            _EntityManager = entityManager;
             Initialize();
         }
 
@@ -41,7 +43,6 @@ namespace GY02.Handler
 
         GameAchievementManager _AchievementManager;
         UdpServerManager _UdpServerManager;
-        GameEntityManager _EntityManager;
         IMapper _Mapper;
     }
 }

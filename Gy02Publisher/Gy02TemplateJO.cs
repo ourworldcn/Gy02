@@ -229,7 +229,10 @@ namespace GY02.Templates
     /// </summary>
     public interface IJsonData
     {
-
+        /// <summary>
+        /// 序号。
+        /// </summary>
+        long Seq { get; set; }
     }
 
     /// <summary>
@@ -247,6 +250,11 @@ namespace GY02.Templates
         /// 服务器所见的客户端地址。
         /// </summary>
         public string IPEndpoint { get; set; }
+
+        /// <summary>
+        /// 序号。
+        /// </summary>
+        public long Seq { get; set; }
     }
 
     /// <summary>
@@ -255,6 +263,11 @@ namespace GY02.Templates
     [Guid("4E556F0D-8A46-4B7D-8A7B-2D24753DB68A")]
     public class MailArrivedDto : IJsonData
     {
+        /// <summary>
+        /// 序号。
+        /// </summary>
+        public long Seq { get; set; }
+
         /// <summary>
         /// 新到达邮件的唯一Id集合。
         /// </summary>
@@ -928,9 +941,9 @@ namespace GY02.Templates
 
     /// <summary>
     /// 针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。
-    /// 以下等式成立则条件为真：(获取属性值 - 减数) Mod Modulus = Remainder
+    /// 以下条件为真：(获取属性值 - Subtrahend) 对 Modulus 求余数，余数要在 [MinRemainder, MaxRemainder] 邻域中。
     /// </summary>
-    public class NumberCondition
+    public class NumberCondition : IValidatableObject
     {
         /// <summary>
         /// 属性名，通常是Count。该属性必须是一个数值型的属性。
@@ -966,6 +979,37 @@ namespace GY02.Templates
         /// 最小余数。
         /// </summary>
         public decimal MaxRemainder { get; set; }
+
+        /// <summary>
+        /// 获取指定数值所处周期。仅能对整数求解。
+        /// </summary>
+        /// <param name="now"></param>
+        /// <param name="start">所处周期的起始数。</param>
+        /// <param name="end">所处周期的结束数。</param>
+        /// <returns>true指定值在有效周期内，false指定值不在指定周期内。</returns>
+        public bool GetCurrentPeriod(decimal now, out decimal start, out decimal end)
+        {
+            if (now < MinValue || now > MaxValue) goto lbErr;   //若本身超出范围
+            var ren = (now - Subtrahend) % Modulus; //求余数
+            if (ren < MinRemainder || ren > MaxRemainder) goto lbErr;   //若余数超出范围
+            var floor = Convert.ToInt32(Math.Floor((now - Subtrahend) / Modulus));  //整除商
+            start = floor * Modulus + MinRemainder + Subtrahend;
+            end = start - MinRemainder + MaxRemainder;
+            return true;
+        lbErr:
+            start = end = 0;
+            return false;
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return Array.Empty<ValidationResult>();
+        }
     }
 
     /// <summary>

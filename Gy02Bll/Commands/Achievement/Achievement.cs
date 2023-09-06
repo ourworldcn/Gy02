@@ -32,10 +32,10 @@ namespace GY02.Commands
         public void Handled(CompositeCommand command, Exception exception)
         {
             if (command.HasError || exception is not null) return;
-            if (!_AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("4f6a92f2-3aac-479b-92e8-0dfffa74536b"), 1, command.GameChar, OwHelper.WorldNow))
+            if (!_AchievementManager.RaiseEventIfChanged(Guid.Parse("4f6a92f2-3aac-479b-92e8-0dfffa74536b"), 1, command.GameChar, OwHelper.WorldNow))
                 command.FillErrorFromWorld();
             //db98951e-a908-482a-a2e4-0e851a3e1c95	开服活动成就- 累计合装备合成次数
-            _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("db98951e-a908-482a-a2e4-0e851a3e1c95"), 1, command.GameChar, OwHelper.WorldNow);
+            _AchievementManager.RaiseEventIfChanged(Guid.Parse("db98951e-a908-482a-a2e4-0e851a3e1c95"), 1, command.GameChar, OwHelper.WorldNow);
         }
     }
 
@@ -54,10 +54,10 @@ namespace GY02.Commands
         public void Handled(FuhuaCommand command, Exception exception = null)
         {
             if (command.HasError || exception is not null) return;
-            if (!_AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("22f48e2b-8e81-43fb-80dd-af900eb21a29"), 1, command.GameChar, OwHelper.WorldNow))
+            if (!_AchievementManager.RaiseEventIfChanged(Guid.Parse("22f48e2b-8e81-43fb-80dd-af900eb21a29"), 1, command.GameChar, OwHelper.WorldNow))
                 command.FillErrorFromWorld();
             //c7772592-50ab-4f98-be01-b58c02571d46	开服活动成就- 累计孵化次数
-            _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("c7772592-50ab-4f98-be01-b58c02571d46"), 1, command.GameChar, OwHelper.WorldNow);
+            _AchievementManager.RaiseEventIfChanged(Guid.Parse("c7772592-50ab-4f98-be01-b58c02571d46"), 1, command.GameChar, OwHelper.WorldNow);
 
         }
     }
@@ -79,7 +79,7 @@ namespace GY02.Commands
             if (command.HasError || exception is not null) return;
             var now = OwHelper.WorldNow;
             if (command.Ids.Count > 0)
-                _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("e2c2cf15-263f-4341-acdd-c3135c73097b"), command.Ids.Count, command.GameChar, now);
+                _AchievementManager.RaiseEventIfChanged(Guid.Parse("e2c2cf15-263f-4341-acdd-c3135c73097b"), command.Ids.Count, command.GameChar, now);
         }
     }
 
@@ -105,8 +105,8 @@ namespace GY02.Commands
             if (_ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId) is TemplateStringFullView tt)
                 if (tt.Genus.Contains("gs_choujiangbaoxiang"))
                 {
-                    _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("4963c720-2b8f-4def-aed2-7bc8925f6a91"), 1, command.GameChar, OwHelper.WorldNow);
-                    _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("5173f53e-6534-4594-82cc-d989f52f03c7"), 1, command.GameChar, OwHelper.WorldNow);
+                    _AchievementManager.RaiseEventIfChanged(Guid.Parse("4963c720-2b8f-4def-aed2-7bc8925f6a91"), 1, command.GameChar, OwHelper.WorldNow);
+                    _AchievementManager.RaiseEventIfChanged(Guid.Parse("5173f53e-6534-4594-82cc-d989f52f03c7"), 1, command.GameChar, OwHelper.WorldNow);
                 }
         }
     }
@@ -144,7 +144,7 @@ namespace GY02.Commands
                 var nv = entitis.Sum(c => c.Level); //新的总等级
                 var inc = nv - achi.Count;  //等级差
                 if (inc > 0)
-                    if (!_AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("2d023b02-fb74-4320-9ee4-b6c761938fbe"), inc, command.GameChar, OwHelper.WorldNow))
+                    if (!_AchievementManager.RaiseEventIfChanged(Guid.Parse("2d023b02-fb74-4320-9ee4-b6c761938fbe"), inc, command.GameChar, OwHelper.WorldNow))
                         command.FillErrorFromWorld();
             }
         }

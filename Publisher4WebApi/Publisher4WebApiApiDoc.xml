@@ -449,6 +449,11 @@
             构造函数。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GamePropertyChangeItemDto.Seq">
+            <summary>
+            序号。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GamePropertyChangeItemDto.TId">
             <summary>
             对象的模板Id。
@@ -1606,6 +1611,11 @@
         <member name="M:GY02.Publisher.AchievementChangedDto.#ctor">
             <summary>
             构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.AchievementChangedDto.Seq">
+            <summary>
+            序号。
             </summary>
         </member>
         <member name="P:GY02.Publisher.AchievementChangedDto.Achievement">

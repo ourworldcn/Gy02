@@ -82,7 +82,7 @@ namespace GY02.Managers
                 if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是输入序列
                 {
                     var b = _SequenceManager.GetMatches(new GameEntity[] { entity }, tt);
-                    if(b.Any()) return true;
+                    if (b.Any()) return true;
                     //if (!_SequenceManager.GetOut(entity, tt, out var summary)) continue;  //没有匹配序列输出
                     //result = entities.FirstOrDefault(c => c.TemplateId == summary.TId && (!summary.ParentTId.HasValue || c.GetThing().Parent.ExtraGuid == summary.ParentTId.Value) && c.Count >= summary.Count);
                     //if (result is not null) return result;
@@ -167,5 +167,19 @@ namespace GY02.Managers
             return _EntityManager.Modify(tmp, changes);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="i"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns></returns>
+        public bool GetNext(GameThingPreconditionItem item, GameChar gameChar, int i, out int start, out int end)
+        {
+            start = end = 0;
+            return true;
+        }
     }
 }

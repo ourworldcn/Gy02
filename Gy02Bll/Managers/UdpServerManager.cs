@@ -63,6 +63,7 @@ namespace GY02.Managers
             Logger.LogInformation("UdpServer开始侦听{LocalEndPoint}。", udpOpt.LocalEndPoint);
         }
 
+        long _Seq = 0;
 
         private void _Udp_UdpDataRecived(object sender, UdpDataRecivedEventArgs e)
         {
@@ -104,6 +105,7 @@ namespace GY02.Managers
         {
             var type = obj.GetType();
             var guid = type.GUID;
+            if (obj is IJsonData jd) jd.Seq = Interlocked.Increment(ref _Seq);  //增加序号
             MemoryStream ms;
             using (ms = new MemoryStream())
             {

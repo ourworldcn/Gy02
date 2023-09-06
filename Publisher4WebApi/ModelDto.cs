@@ -559,6 +559,11 @@ namespace GY02.Publisher
         }
 
         /// <summary>
+        /// 序号。
+        /// </summary>
+        public long Seq { get; set; }
+
+        /// <summary>
         /// 对象的模板Id。
         /// </summary>
         public Guid TId { get; set; }
@@ -2057,6 +2062,11 @@ namespace GY02.Publisher
         {
 
         }
+
+        /// <summary>
+        /// 序号。
+        /// </summary>
+        public long Seq { get; set; }
 
         /// <summary>
         /// 变化的任务/成就项。这是变化后的数据，需要与本机缓存的数据比对。

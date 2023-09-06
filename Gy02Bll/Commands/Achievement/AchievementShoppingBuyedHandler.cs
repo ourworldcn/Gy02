@@ -40,7 +40,7 @@ namespace GY02.Commands
                     if (tt is null) { command.FillErrorFromWorld(); }
                     var achi = _AchievementManager.GetOrCreate(command.GameChar, tt);
                     if (achi is null) { command.FillErrorFromWorld(); }
-                    if (!_AchievementManager.RaiseEventIfLevelChanged(achi, inc, command.GameChar, now)) command.FillErrorFromWorld();
+                    if (!_AchievementManager.RaiseEventIfChanged(achi, inc, command.GameChar, now)) command.FillErrorFromWorld();
                 }
             }
         }

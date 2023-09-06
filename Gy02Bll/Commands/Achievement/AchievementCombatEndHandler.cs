@@ -50,30 +50,30 @@ namespace GY02.Commands.Achievement
             //杀死怪物数量成就
             var ttAchi = _AchievementManager.GetTemplateById(new Guid("e4947911-e113-47ba-b28b-62d1ac441ab8"));
             var achievement = _AchievementManager.GetOrCreate(command.GameChar, ttAchi);
-            _AchievementManager.RaiseEventIfLevelChanged(achievement, types_all, command.GameChar, now);
+            _AchievementManager.RaiseEventIfChanged(achievement, types_all, command.GameChar, now);
             //杀死精英怪物数量成就
             ttAchi = _AchievementManager.GetTemplateById(new Guid("ad102f96-b971-460b-a894-9fde078fee4d"));
             achievement = _AchievementManager.GetOrCreate(command.GameChar, ttAchi);
-            _AchievementManager.RaiseEventIfLevelChanged(achievement, types_jingying, command.GameChar, now);
+            _AchievementManager.RaiseEventIfChanged(achievement, types_jingying, command.GameChar, now);
             //杀死Boss怪物数量成就
             ttAchi = _AchievementManager.GetTemplateById(new Guid("21889fad-e13e-4b8a-b580-f31274aa9d65"));
             achievement = _AchievementManager.GetOrCreate(command.GameChar, ttAchi);
-            _AchievementManager.RaiseEventIfLevelChanged(achievement, types_boss, command.GameChar, now);
+            _AchievementManager.RaiseEventIfChanged(achievement, types_boss, command.GameChar, now);
             //8d1ea12f-26be-4fe4-acbe-ad1c7d053131	关卡中的打蛋数量成就
             ttAchi = _AchievementManager.GetTemplateById(new Guid("8d1ea12f-26be-4fe4-acbe-ad1c7d053131"));
             achievement = _AchievementManager.GetOrCreate(command.GameChar, ttAchi);
-            _AchievementManager.RaiseEventIfLevelChanged(achievement, types_egg, command.GameChar, now);
+            _AchievementManager.RaiseEventIfChanged(achievement, types_egg, command.GameChar, now);
             #endregion 杀怪数量 
             //2913b8e2-3db3-4204-b36c-415d6bc6b3f0	闯关数量成就
             if (command.IsSuccess)
-                _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("2913b8e2-3db3-4204-b36c-415d6bc6b3f0"), 1, command.GameChar, now);
+                _AchievementManager.RaiseEventIfChanged(Guid.Parse("2913b8e2-3db3-4204-b36c-415d6bc6b3f0"), 1, command.GameChar, now);
             //cj_guanqia 单个关卡通关成就
             if (command.IsSuccess)
             {
                 var achiTt = _AchievementManager.GetTemplate("cj_guanqia", command.CombatTId);
                 if (achiTt is not null && _AchievementManager.GetOrCreate(command.GameChar, achiTt) is GameAchievement achi && achi.Count < achiTt.Achievement.Exp2LvSequence[^1])
                 {
-                    _AchievementManager.RaiseEventIfLevelChanged(achi, 1, command.GameChar, now);
+                    _AchievementManager.RaiseEventIfChanged(achi, 1, command.GameChar, now);
                 }
             }
         }
@@ -122,7 +122,7 @@ namespace GY02.Commands.Achievement
             var tts = _TemplateManager.GetTemplatesFromGenus("types_all");  //符合要求怪的模板集合
             var tids = new HashSet<Guid>(tts.Select(c => c.TemplateId));    //符合要求怪的模板Id集合
             var inc = command.Others.Where(c => tids.Contains(c.TId)).Sum(c => c.Count);    //增加的杀怪数量
-            _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("1fbe6bb9-84be-4098-8430-e7c46a6135f1"), inc, command.GameChar, now);
+            _AchievementManager.RaiseEventIfChanged(Guid.Parse("1fbe6bb9-84be-4098-8430-e7c46a6135f1"), inc, command.GameChar, now);
             return;
         lbErr:
             command.FillErrorFromWorld();
@@ -150,7 +150,7 @@ namespace GY02.Commands.Achievement
             var now = OwHelper.WorldNow;
             if (_CombatManager.GetTemplateById(command.CombatTId) is TemplateStringFullView tt && tt.Gid is int gid && gid / 1000 == 210101)    //主线关卡
                 if (tt.Genus?.Contains("") ?? false)
-                    _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("86833e6b-81bf-47ca-9965-b57c2012ecfd"), 1, command.GameChar, now);
+                    _AchievementManager.RaiseEventIfChanged(Guid.Parse("86833e6b-81bf-47ca-9965-b57c2012ecfd"), 1, command.GameChar, now);
         }
     }
 }

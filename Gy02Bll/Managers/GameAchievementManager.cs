@@ -92,39 +92,39 @@ namespace GY02.Managers
         public void InvokeAchievementChanged(AchievementChangedEventArgs args) => AchievementChanged?.Invoke(this, args);
 
         /// <summary>
-        /// 对指定的成就任务项增加计数，若等级发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
+        /// 对指定的成就任务项增加计数，若计数发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
         /// </summary>
         /// <param name="achievement"></param>
         /// <param name="inc">任务/成就项的计数值的增量数值，小于或等于0则立即返回false。</param>
         /// <param name="gameChar"></param>
         /// <param name="now"></param>
         /// <returns></returns>
-        public bool RaiseEventIfLevelChanged(GameAchievement achievement, decimal inc, GameChar gameChar, DateTime now)
+        public bool RaiseEventIfChanged(GameAchievement achievement, decimal inc, GameChar gameChar, DateTime now)
         {
             if (inc <= 0) return false;
             var olv = achievement.Level;
             achievement.Count += inc;
             if (!RefreshState(achievement, gameChar, now)) return false;
-            if (achievement.Level > olv)
+            if (inc > 0)
                 InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achievement });
             return true;
         }
 
         /// <summary>
-        /// 对指定的成就任务项增加计数，若等级发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
+        /// 对指定的成就任务项增加计数，若计数发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
         /// </summary>
         /// <param name="achievementTId"></param>
         /// <param name="inc"></param>
         /// <param name="gameChar"></param>
         /// <param name="now"></param>
         /// <returns></returns>
-        public bool RaiseEventIfLevelChanged(Guid achievementTId, decimal inc, GameChar gameChar, DateTime now)
+        public bool RaiseEventIfChanged(Guid achievementTId, decimal inc, GameChar gameChar, DateTime now)
         {
             var tt = GetTemplateById(achievementTId);
             if (tt is null) return false;
             var achi = GetOrCreate(gameChar, tt);
             if (achi is null) return false;
-            return RaiseEventIfLevelChanged(achi, inc, gameChar, now);
+            return RaiseEventIfChanged(achi, inc, gameChar, now);
         }
 
         #endregion 事件及相关
