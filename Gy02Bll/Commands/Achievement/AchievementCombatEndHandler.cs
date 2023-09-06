@@ -1,4 +1,9 @@
-﻿using GY02.Managers;
+﻿/*
+ * 副本结算相关成就。
+ */
+
+using GY02.Managers;
+using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -71,6 +76,81 @@ namespace GY02.Commands.Achievement
                     _AchievementManager.RaiseEventIfLevelChanged(achi, 1, command.GameChar, now);
                 }
             }
+        }
+    }
+
+    /// <summary>
+    /// 主线副本通关成就记录事件。
+    /// </summary>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<EndCombatCommand>))]
+    public class ZhuxianFubenTongguanHandler : ISyncCommandHandled<EndCombatCommand>
+    {
+        public ZhuxianFubenTongguanHandler(GameAchievementManager achievementManager, GameCombatManager combatManager, GameTemplateManager templateManager)
+        {
+            _AchievementManager = achievementManager;
+            _CombatManager = combatManager;
+            _TemplateManager = templateManager;
+        }
+
+        GameAchievementManager _AchievementManager;
+        GameCombatManager _CombatManager;
+        GameTemplateManager _TemplateManager;
+
+        public void Handled(EndCombatCommand command, Exception exception = null)
+        {
+            if (command.HasError || exception is not null) return;
+            var now = OwHelper.WorldNow;
+            var tt = _CombatManager.GetTemplateById(command.CombatTId);
+            if (tt is null) goto lbErr;
+
+            if (tt.Gid is not int gid || gid / 1000 != 210101)   //若不是主线任务副本
+            {
+                return;
+            }
+            var count = gid % 1000; //通关经验值
+            if (_AchievementManager.GetTemplateById(new Guid("43E9286A-904C-4923-B477-482C0D6470A5")) is TemplateStringFullView ttAchi &&
+                _AchievementManager.GetOrCreate(command.GameChar, ttAchi) is GameAchievement achi)
+            {
+                if (achi.Count < count) //若完成了新成就。
+                {
+                    var olvLv = achi.Level; //记录旧的等级
+                    achi.Count = count;
+                    _AchievementManager.RefreshState(achi, command.GameChar, now);
+                }
+            }
+            // 1fbe6bb9-84be-4098-8430-e7c46a6135f1	开服活动成就- 累计杀怪数量
+            var tts = _TemplateManager.GetTemplatesFromGenus("types_all");  //符合要求怪的模板集合
+            var tids = new HashSet<Guid>(tts.Select(c => c.TemplateId));    //符合要求怪的模板Id集合
+            var inc = command.Others.Where(c => tids.Contains(c.TId)).Sum(c => c.Count);    //增加的杀怪数量
+            _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("1fbe6bb9-84be-4098-8430-e7c46a6135f1"), inc, command.GameChar, now);
+            return;
+        lbErr:
+            command.FillErrorFromWorld();
+            return;
+        }
+    }
+
+    /// <summary>
+    /// 86833e6b-81bf-47ca-9965-b57c2012ecfd	开服活动成就-累计挑战关卡次数
+    /// </summary>
+    public class CombatStartHandler : ISyncCommandHandled<StartCombatCommand>
+    {
+        public CombatStartHandler(GameAchievementManager achievementManager, GameCombatManager combatManager)
+        {
+            _AchievementManager = achievementManager;
+            _CombatManager = combatManager;
+        }
+
+        GameAchievementManager _AchievementManager;
+        GameCombatManager _CombatManager;
+
+        public void Handled(StartCombatCommand command, Exception exception = null)
+        {
+            if (command.HasError || exception is not null) return;
+            var now = OwHelper.WorldNow;
+            if (_CombatManager.GetTemplateById(command.CombatTId) is TemplateStringFullView tt && tt.Gid is int gid && gid / 1000 == 210101)    //主线关卡
+                if (tt.Genus?.Contains("") ?? false)
+                    _AchievementManager.RaiseEventIfLevelChanged(Guid.Parse("86833e6b-81bf-47ca-9965-b57c2012ecfd"), 1, command.GameChar, now);
         }
     }
 }

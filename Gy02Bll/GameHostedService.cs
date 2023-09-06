@@ -220,6 +220,9 @@ namespace GY02
             try
             {
                 var svc = _Services.CreateScope().ServiceProvider;
+                Guid? ss = null;
+                if (ss is Guid id)
+                    ss = Guid.Empty;
             }
             #endregion 测试用代码
             catch (Exception)

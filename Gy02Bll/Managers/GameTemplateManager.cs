@@ -122,62 +122,37 @@ namespace OW.Game.Managers
             : base(options, logger)
         {
             DbContext = dbContext;
-            logger.LogDebug("上线:模板管理器。");
             _Lifetime = lifetime;
             _RawTemplateOptions = rawTemplateOptions;
             _RawTemplateOptionsChangedMonitor = _RawTemplateOptions.OnChange(RawTemplateOptionsChanged);
             Initialize();
+            logger.LogDebug("上线:模板管理器。");
         }
 
         private void RawTemplateOptionsChanged(RawTemplateOptions arg1, string arg2)
         {
-            var raws = new ConcurrentDictionary<Guid, RawTemplate>(arg1.ToDictionary(c => c.Id));
-            var fullViews = new ConcurrentDictionary<Guid, TemplateStringFullView>(raws.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
-
-            lock (this)
-            {
-                _Id2RawTemplate = raws;
-                _Id2FullView = fullViews;
-            }
+            _Id2RawTemplate = null;
+            _Id2FullView = null;
         }
 
         IDisposable _RawTemplateOptionsChangedMonitor;
         IOptionsMonitor<RawTemplateOptions> _RawTemplateOptions;
         IHostApplicationLifetime _Lifetime;
-        Task _InitTask;
 
         private void Initialize()
         {
-            //    var ary = DbContext.ThingTemplates.ToArray();
-            //    _Id2Template = new ConcurrentDictionary<Guid, GY02ThingTemplate>(ary.ToDictionary(c => c.Id));
-
             _Lifetime.ApplicationStarted.Register(() =>
             {
             });
-            _InitTask = Task.Run(() =>
+            try
             {
-                try
-                {
-                    lock (this)
-                    {
-                        _Id2RawTemplate = new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id));
-                        _Id2FullView = new ConcurrentDictionary<Guid, TemplateStringFullView>(_Id2RawTemplate.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId));
-                        var list = new List<ValidationResult>();
-                        _Id2FullView.Values.SafeForEach(c =>
-                        {
-                            Validator.TryValidateObject(c, new ValidationContext(c), list, true);
-                        });
-                        Task.Run(() => GetTemplatesFromGenus(string.Empty));
-                    }
-                }
-                catch (Exception excp)
-                {
-                    Logger.LogWarning(excp, "读取模板数据出现错误。");
-                    throw;
-                }
-
-            });
-
+                Task.Run(() => GetTemplatesFromGenus(string.Empty));
+            }
+            catch (Exception excp)
+            {
+                Logger.LogWarning(excp, "读取模板数据出现错误。");
+                throw;
+            }
         }
 
         /// <summary>
@@ -186,11 +161,15 @@ namespace OW.Game.Managers
         public GY02TemplateContext DbContext { get; set; }
 
         ConcurrentDictionary<Guid, RawTemplate> _Id2RawTemplate;
+
+        /// <summary>
+        /// 模板的原始形态。
+        /// </summary>
         public ConcurrentDictionary<Guid, RawTemplate> Id2RawTemplate
         {
             get
             {
-                _InitTask.Wait();
+                LazyInitializer.EnsureInitialized(ref _Id2RawTemplate, () => new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id)));
                 return _Id2RawTemplate;
             }
         }
@@ -206,7 +185,8 @@ namespace OW.Game.Managers
         {
             get
             {
-                _InitTask.Wait();
+                LazyInitializer.EnsureInitialized(ref _Id2FullView,
+                    () => new ConcurrentDictionary<Guid, TemplateStringFullView>(Id2RawTemplate.Select(c => c.Value.GetJsonObject<TemplateStringFullView>()).ToDictionary(c => c.TemplateId)));
                 return _Id2FullView;
             }
         }
@@ -363,30 +343,27 @@ namespace OW.Game.Managers
             return result;
         }
 
-        ConcurrentDictionary<string, ConcurrentDictionary<Guid, TemplateStringFullView>> _Genus2Dic;
+        ILookup<string, TemplateStringFullView> _Genus2Templates;
 
         /// <summary>
         /// 获取指定类属的所有模板的字典(Id,模板)。
         /// </summary>
         /// <param name="genus"></param>
-        /// <returns>指定类属的所有模板，没有找到则返回null。</returns>
-        public IDictionary<Guid, TemplateStringFullView> GetTemplatesFromGenus(string genus)
+        /// <returns>指定类属的所有模板集合，如果找不到该序列，则返回空序列。</returns>
+        public IEnumerable<TemplateStringFullView> GetTemplatesFromGenus(string genus)
         {
-            LazyInitializer.EnsureInitialized(ref _Genus2Dic, () =>
+            LazyInitializer.EnsureInitialized(ref _Genus2Templates, () =>
             {
-                var result = new ConcurrentDictionary<string, ConcurrentDictionary<Guid, TemplateStringFullView>>();
-                foreach (var item in Id2FullView.Values)
-                {
-                    if (item.Genus is not null)
-                        foreach (var genus in item.Genus)
-                        {
-                            var dic = result.GetOrAdd(genus, c => new ConcurrentDictionary<Guid, TemplateStringFullView>());
-                            dic[item.TemplateId] = item;
-                        }
-                }
+                var coll = from fv in Id2FullView.Values
+                           where fv.Genus is not null
+                           from genus in fv.Genus
+                           select (genus, fv);
+                var result = coll.ToLookup(c => c.genus, c => c.fv);
                 return result;
             });
-            return _Genus2Dic.GetValueOrDefault(genus);
+            var result = _Genus2Templates[genus];
+            if (!result.Any()) OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定类属的模板，Genus = {genus} 。");
+            return result;
         }
 
         #region IDisposable

@@ -27,6 +27,9 @@ namespace GY02.Commands
         /// </summary>
         public GameChar GameChar { get; set; }
 
+        /// <summary>
+        /// 唯一物品Id的集合。
+        /// </summary>
         public List<Guid> Ids { get; set; } = new List<Guid>();
     }
 
