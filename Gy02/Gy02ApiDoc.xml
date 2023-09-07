@@ -271,6 +271,13 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.CombatController.GetDuration(GY02.Publisher.GetDurationParamsDto)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Controllers.ItemManagerController">
             <summary>
             物品管理控制器

@@ -157,25 +157,13 @@ namespace GY02.Commands
                 slot.ExtensionProperties["LastMark"] = now.ToString();
                 _AccountStore.Save(key);
             }
-            //增加累计登陆天数
+            //增加累计登录天数
             slot = allEntity[ProjectContent.LoginedDayTId]?.FirstOrDefault();
             if (slot is not null)
             {
                 slot.Count++;
                 _EntityManager.InvokeEntityChanged(new GameEntity[] { slot });
                 _AccountStore.Save(key);
-            }
-            //用户注册天数
-            slot = allEntity[Guid.Parse("A1414D6E-C3A1-44C3-BBBD-E8B4357A8796")]?.FirstOrDefault();
-            if (slot is not null)
-            {
-                var ov = slot.Count;
-                slot.Count = Convert.ToDecimal((now.Date - gc.CreateUtc.Date).TotalDays);
-                if(ov!=slot.Count)
-                {
-                    _EntityManager.InvokeEntityChanged(new GameEntity[] { slot });
-                    _AccountStore.Save(key);
-                }
             }
         }
     }

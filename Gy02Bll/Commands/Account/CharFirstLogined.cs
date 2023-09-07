@@ -1,5 +1,9 @@
-﻿using OW.Game;
+﻿using GY02.Managers;
+using GY02.Publisher;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using OW.Game;
 using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -27,4 +31,45 @@ namespace GY02.Commands
         public DateTime LoginDateTimeUtc { get; set; }
     }
 
+    public class CharFirstLoginedHandled : ISyncCommandHandled<CharFirstLoginedCommand>
+    {
+        public CharFirstLoginedHandled(GameEntityManager entityManager)
+        {
+            _EntityManager = entityManager;
+        }
+
+        GameEntityManager _EntityManager;
+        GameTemplateManager _TemplateManager;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="exception"></param>
+        public void Handled(CharFirstLoginedCommand command, Exception exception = null)
+        {
+            if (command.HasError || exception is not null) return;
+            var now = OwHelper.WorldNow;
+            //fl_ExistsDayNumber 此类实体在每天第一次登录时会自动把Count置为该实体存在的总天数，从0开始。副作用，此类属实体的Count设置由系统完成单独设置无用
+            var allEntityAndTemplate = _EntityManager.GetAllEntity(command.GameChar).Select(c => (Entity: c, Template: _TemplateManager.GetFullViewFromId(c.TemplateId)))
+                .Where(c => c.Item2 is not null); //容错
+            allEntityAndTemplate.Where(c => c.Template.Genus?.Contains("fl_ExistsDayNumber") ?? false).ForEach(c =>
+            {
+                if (OwConvert.TryGetDateTime(c.Entity.ExtensionProperties.GetValueOrDefault("CreateDateTime"), out var dt))
+                    c.Entity.Count = (now.Date - dt.Date).Days;
+            });
+        }
+
+        //static void sub(string[] args)
+        //{
+        //    //增加累计登陆天数
+        //    slot = allEntity[ProjectContent.LoginedDayTId]?.FirstOrDefault();
+        //    if (slot is not null)
+        //    {
+        //        slot.Count++;
+        //        _EntityManager.InvokeEntityChanged(new GameEntity[] { slot });
+        //        _AccountStore.Save(key);
+        //    }
+        //}
+    }
 }

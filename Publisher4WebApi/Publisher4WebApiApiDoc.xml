@@ -915,6 +915,31 @@
             使用的蓝图模板Id。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetDurationParamsDto">
+            <summary>
+            获取特殊关卡有效周期功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetDurationParamsDto.TId">
+            <summary>
+            模板Id，通常是关卡TId。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetDurationReturnDto">
+            <summary>
+            获取特殊关卡有效周期功能返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetDurationReturnDto.Start">
+            <summary>
+            返回的起始时间。若无有效周期则为null。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetDurationReturnDto.End">
+            <summary>
+            返回的终止时间。若无有效周期则为null。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.CombatHistoryItemDto">
             <summary>
             战斗的相关记录信息。

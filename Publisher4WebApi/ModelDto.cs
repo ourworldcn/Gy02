@@ -1193,6 +1193,35 @@ namespace GY02.Publisher
     #region 战斗相关
 
     /// <summary>
+    /// 获取特殊关卡有效周期功能参数封装类。
+    /// </summary>
+    [AutoMap(typeof(GetDurationCommand),ReverseMap = true)]
+    public class GetDurationParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 模板Id，通常是关卡TId。
+        /// </summary>
+        public Guid TId { get; set; }
+    }
+
+    /// <summary>
+    /// 获取特殊关卡有效周期功能返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(GetDurationCommand))]
+    public class GetDurationReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回的起始时间。若无有效周期则为null。
+        /// </summary>
+        public DateTime? Start { get; set; }
+
+        /// <summary>
+        /// 返回的终止时间。若无有效周期则为null。
+        /// </summary>
+        public DateTime? End { get; set; }
+    }
+
+    /// <summary>
     /// 战斗的相关记录信息。
     /// </summary>
     [AutoMap(typeof(CombatHistoryItem), ReverseMap = true)]

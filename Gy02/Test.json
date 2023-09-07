@@ -22,19 +22,17 @@
         }
       ]
     },
-    [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "547865b2-fa3d-4d7f-957f-0219b8318b73",
-            "MinCount": 1
-          }
-        ],
-        "Count": 1
-      }
-    ]
+    {
+      "Conditional": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "Genus": [],
+          "TId": "547865b2-fa3d-4d7f-957f-0219b8318b73",
+          "MinCount": 1
+        }
+      ],
+      "Count": 1
+    }
   ],
   "name_txt": 40000,
   "comment_txt": 40002,
