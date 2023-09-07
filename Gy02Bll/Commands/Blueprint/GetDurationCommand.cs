@@ -80,8 +80,8 @@ namespace GY02.Commands
                 });
                 if (entity is null)  //若前置条件实体还不存在
                 {
-                    command.Start[i] = null;
-                    command.End[i] = null;
+                    command.Start.Add(null);
+                    command.End.Add(null);
                     continue;
                 }
                 var count = entity.Count;
@@ -90,14 +90,14 @@ namespace GY02.Commands
                 {
                     if (nc.GetCurrentPeriod(count, out decimal start, out decimal end))
                     {
-                        command.Start[i] = now.Date.AddDays((double)start);
-                        command.End[i] = now.Date.AddDays((double)end + 1);
+                        command.Start.Add( now.Date.AddDays((double)start));
+                        command.End.Add(now.Date.AddDays((double)end + 1));
                         break;
                     }
                     else if (++tmp > nc.Modulus)
                     {
-                        command.Start[i] = null;
-                        command.End[i] = null;
+                        command.Start.Add(null);
+                        command.End.Add(null);
                         break;
                     }
                     count++;

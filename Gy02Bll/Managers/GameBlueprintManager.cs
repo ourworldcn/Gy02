@@ -160,7 +160,7 @@ namespace GY02.Managers
             foreach (var conditional in conditionals)
             {
                 var ec = GetMatches(conditional, entities);
-                if (ec is null) return false;
+                if (ec is not IEnumerable<(GameEntity, decimal)> r || !r.Any()) return false;
                 list.AddRange(ec);
             }
             var tmp = list.Select(c => (Entity: c.Item1, Count: -Math.Abs(c.Item2))).Where(c => c.Count != 0);
