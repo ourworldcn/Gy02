@@ -133,6 +133,7 @@ namespace GY02.Commands.Achievement
     /// <summary>
     /// 86833e6b-81bf-47ca-9965-b57c2012ecfd	开服活动成就-累计挑战关卡次数
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<StartCombatCommand>))]
     public class CombatStartHandler : ISyncCommandHandled<StartCombatCommand>
     {
         public CombatStartHandler(GameAchievementManager achievementManager, GameCombatManager combatManager)

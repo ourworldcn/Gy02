@@ -1199,9 +1199,9 @@ namespace GY02.Publisher
     public class GetDurationParamsDto : TokenDtoBase
     {
         /// <summary>
-        /// 模板Id，通常是关卡TId。
+        /// 模板Id集合，通常是关卡TId集合。
         /// </summary>
-        public Guid TId { get; set; }
+        public List<Guid> TIds { get; set; } = new List<Guid>();
     }
 
     /// <summary>
@@ -1213,12 +1213,12 @@ namespace GY02.Publisher
         /// <summary>
         /// 返回的起始时间。若无有效周期则为null。
         /// </summary>
-        public DateTime? Start { get; set; }
+        public List<DateTime?> Start { get; set; } = new List<DateTime?>();
 
         /// <summary>
         /// 返回的终止时间。若无有效周期则为null。
         /// </summary>
-        public DateTime? End { get; set; }
+        public List<DateTime?> End { get; set; } = new List<DateTime?>();
     }
 
     /// <summary>

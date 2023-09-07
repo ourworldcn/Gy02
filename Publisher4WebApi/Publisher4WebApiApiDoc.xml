@@ -920,9 +920,9 @@
             获取特殊关卡有效周期功能参数封装类。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.GetDurationParamsDto.TId">
+        <member name="P:GY02.Publisher.GetDurationParamsDto.TIds">
             <summary>
-            模板Id，通常是关卡TId。
+            模板Id集合，通常是关卡TId集合。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GetDurationReturnDto">

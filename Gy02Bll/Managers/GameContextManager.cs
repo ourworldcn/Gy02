@@ -103,7 +103,7 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 当前上线文是否已经初始化角色对象并锁定。
+        /// 当前上下文是否已经初始化角色对象并锁定。
         /// </summary>
         /// <returns>true已经正确初始化，否则返回false。</returns>
         public bool Validate()

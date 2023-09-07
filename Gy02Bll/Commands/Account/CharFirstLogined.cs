@@ -1,6 +1,7 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Extensions.DependencyInjection;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
@@ -31,6 +32,7 @@ namespace GY02.Commands
         public DateTime LoginDateTimeUtc { get; set; }
     }
 
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<CharFirstLoginedCommand>))]
     public class CharFirstLoginedHandled : ISyncCommandHandled<CharFirstLoginedCommand>
     {
         public CharFirstLoginedHandled(GameEntityManager entityManager)

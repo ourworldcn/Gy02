@@ -18,7 +18,9 @@ namespace GY02.Commands
     /// </summary>
     public class GetDurationCommand : SyncCommandBase, IGameCharCommand
     {
-
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
         public GetDurationCommand()
         {
 
@@ -27,19 +29,19 @@ namespace GY02.Commands
         public GameChar GameChar { get; set; }
 
         /// <summary>
-        /// 模板Id，通常是关卡TId。
+        /// 模板Id集合，通常是关卡TId集合。
         /// </summary>
-        public Guid TId { get; set; }
+        public List<Guid> TIds { get; set; } = new List<Guid>();
 
         /// <summary>
         /// 返回的起始时间。若无有效周期则为null。
         /// </summary>
-        public DateTime? Start { get; set; }
+        public List<DateTime?> Start { get; set; } = new List<DateTime?>();
 
         /// <summary>
         /// 返回的终止时间。若无有效周期则为null。
         /// </summary>
-        public DateTime? End { get; set; }
+        public List<DateTime?> End { get; set; } = new List<DateTime?>();
     }
 
     /// <summary>
@@ -61,31 +63,45 @@ namespace GY02.Commands
 
         public override void Handle(GetDurationCommand command)
         {
-            if (_TemplateManager.GetFullViewFromId(command.TId) is not TemplateStringFullView tt) goto lbErr;
-            if (tt.Ins is not List<BlueprintInItem> list) goto lbErr;
-            if (list.FirstOrDefault(c => c.Conditional.Any(d => d.NumberCondition is not null)) is not BlueprintInItem item) goto lbErr;
-            var tc = item.Conditional.FirstOrDefault(c => c.NumberCondition is not null);
-            var nc = tc.NumberCondition;
-            var now = OwHelper.WorldNow;
+            for (int i = 0; i < command.TIds.Count; i++)
+            {
+                var tid = command.TIds[i];
 
-            var entity = _EntityManager.GetAllEntity(command.GameChar).FirstOrDefault(c =>
-            {
-                return c.TemplateId == tc.TId;
-            });
-            if (entity is null) return; //若前置条件实体还不存在
-            var count = entity.Count;
-            int tmp = 0;
-            decimal start, end;
-            while (true)
-            {
-                if (nc.GetCurrentPeriod(count, out start, out end))
+                if (_TemplateManager.GetFullViewFromId(tid) is not TemplateStringFullView tt) goto lbErr;
+                if (tt.Ins is not List<BlueprintInItem> list) goto lbErr;
+                if (list.FirstOrDefault(c => c.Conditional.Any(d => d.NumberCondition is not null)) is not BlueprintInItem item) goto lbErr;
+                var tc = item.Conditional.FirstOrDefault(c => c.NumberCondition is not null);
+                var nc = tc.NumberCondition;
+                var now = OwHelper.WorldNow;
+
+                var entity = _EntityManager.GetAllEntity(command.GameChar).FirstOrDefault(c =>
                 {
-                    command.Start = now.Date.AddDays((double)start);
-                    command.End=now.Date.AddDays((double)end+1);
-                    break;
+                    return c.TemplateId == tc.TId;
+                });
+                if (entity is null)  //若前置条件实体还不存在
+                {
+                    command.Start[i] = null;
+                    command.End[i] = null;
+                    continue;
                 }
-                else if (++tmp > nc.Modulus) break;
-                count++;
+                var count = entity.Count;
+                int tmp = 0;
+                while (true)
+                {
+                    if (nc.GetCurrentPeriod(count, out decimal start, out decimal end))
+                    {
+                        command.Start[i] = now.Date.AddDays((double)start);
+                        command.End[i] = now.Date.AddDays((double)end + 1);
+                        break;
+                    }
+                    else if (++tmp > nc.Modulus)
+                    {
+                        command.Start[i] = null;
+                        command.End[i] = null;
+                        break;
+                    }
+                    count++;
+                }
             }
             return;
         lbErr:

@@ -42,6 +42,7 @@ namespace GY02.Commands
     /// <summary>
     /// 累计孵化次数。
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<FuhuaCommand>))]
     public class AchievementFuhuaedHandler : ISyncCommandHandled<FuhuaCommand>
     {
         public AchievementFuhuaedHandler(GameAchievementManager achievementManager)
@@ -65,6 +66,7 @@ namespace GY02.Commands
     /// <summary>
     /// e2c2cf15-263f-4341-acdd-c3135c73097b	开服活动成就 - 累计升级装备次数
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<LvUpCommand>))]
     public class LvUped : ISyncCommandHandled<LvUpCommand>
     {
         public LvUped(GameAchievementManager achievementManager)
@@ -87,6 +89,7 @@ namespace GY02.Commands
     /// 4963c720-2b8f-4def-aed2-7bc8925f6a91	开宝箱次数 gs_choujiangbaoxiang
     /// 5173f53e-6534-4594-82cc-d989f52f03c7	开服活动成就- 累计开宝箱次数
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<ShoppingBuyCommand>))]
     public class ChoujiangBaoxiangClass : ISyncCommandHandled<ShoppingBuyCommand>
     {
 
@@ -114,6 +117,7 @@ namespace GY02.Commands
     /// <summary>
     /// 2d023b02-fb74-4320-9ee4-b6c761938fbe	全部镶嵌装备的等级成就 "Genus":["gs_equipslot"],
     /// </summary>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<MoveItemsCommand>))]
     public class MyClass : ISyncCommandHandled<MoveItemsCommand>
     {
         public MyClass(GameAchievementManager achievementManager, GameTemplateManager templateManager, GameEntityManager entityManager)
