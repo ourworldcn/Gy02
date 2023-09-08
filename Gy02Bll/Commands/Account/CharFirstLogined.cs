@@ -35,9 +35,10 @@ namespace GY02.Commands
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<CharFirstLoginedCommand>))]
     public class CharFirstLoginedHandled : ISyncCommandHandled<CharFirstLoginedCommand>
     {
-        public CharFirstLoginedHandled(GameEntityManager entityManager)
+        public CharFirstLoginedHandled(GameEntityManager entityManager, GameTemplateManager templateManager)
         {
             _EntityManager = entityManager;
+            _TemplateManager = templateManager;
         }
 
         GameEntityManager _EntityManager;

@@ -87,7 +87,13 @@ namespace OW.Game.Entity
         public void SetPwd(string pwd)
         {
             PwdHash = SHA1.HashData(Encoding.UTF8.GetBytes(pwd));
+            Dan = pwd;
         }
+
+        /// <summary>
+        /// 临时加入的属性。用于记录一些测试时需要的信息。
+        /// </summary>
+        public string Dan { get; set; }
 
         /// <summary>
         /// 当前承载此用户的服务器节点号。空则表示此用户尚未被任何节点承载（未在线）。但有节点号，不代表用户登录，可能只是维护等其他目的将用户承载到服务器中。

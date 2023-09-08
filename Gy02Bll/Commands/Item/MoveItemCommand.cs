@@ -39,14 +39,16 @@ namespace GY02.Commands
 
     public class MoveItemsHandler : SyncCommandHandlerBase<MoveItemsCommand>
     {
-        public MoveItemsHandler(GameAccountStoreManager store, GameTemplateManager templateManager)
+        public MoveItemsHandler(GameAccountStoreManager store, GameTemplateManager templateManager, GameEntityManager entityManager)
         {
             _Store = store;
             _TemplateManager = templateManager;
+            _EntityManager = entityManager;
         }
 
         GameAccountStoreManager _Store;
         GameTemplateManager _TemplateManager;
+        GameEntityManager _EntityManager;
 
         public override void Handle(MoveItemsCommand command)
         {
@@ -71,40 +73,10 @@ namespace GY02.Commands
             }
             foreach (var item in things)
             {
-                Move(item, container, command.Changes);
+                _EntityManager.Move(_EntityManager.GetEntity(item), _EntityManager.GetEntity(container), command.Changes);
             }
             _Store.Save(gameChar.GetUser().Key);
         }
-
-        void Move(VirtualThing thing, VirtualThing container, ICollection<GamePropertyChangeItem<object>> changes = null)
-        {
-            var parent = thing.Parent;
-            var view = thing.GetJsonObject(_TemplateManager.GetTypeFromTId(thing.ExtraGuid));
-            if (parent is not null)
-            {
-                parent.Children.Remove(thing);
-                changes?.Add(new GamePropertyChangeItem<object>
-                {
-                    Object = parent,
-                    PropertyName = nameof(parent.Children),
-                    HasOldValue = true,
-                    OldValue = view,
-                    HasNewValue = false,
-                });
-            }
-            container.Children.Add(thing);
-            thing.Parent = container;
-            thing.ParentId = container.Id;
-            changes?.Add(new GamePropertyChangeItem<object>
-            {
-                Object = container,
-                PropertyName = nameof(parent.Children),
-                HasOldValue = false,
-                HasNewValue = true,
-                NewValue = view,
-            });
-        }
-
 
     }
 }
