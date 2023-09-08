@@ -1,1 +1,48 @@
-{}
+{
+  "Genus": [ "gs_choujiangbaoxiang" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "82e8eeb0-0f4d-406a-9fcb-3c84a8c3200d",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "7657244e-ef96-4f4d-a07f-157b22198fd7",
+        "Count": 1
+      },
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+        "Count": 300
+      }
+    ]
+  },
+  "name_txt": 10964,
+  "comment_txt": 10940,
+  "JiaoBiao": [ "shopcorner zhekou", 10001 ],
+  "display_icon": "RaffleBoxBg_180201009"
+}

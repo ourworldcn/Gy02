@@ -1,14 +1,18 @@
 ﻿using GY02.Base;
 using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
+using OW.DDD;
 using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Commands.Achievement
 {
@@ -18,12 +22,13 @@ namespace GY02.Commands.Achievement
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class AchievementEventHandler
     {
-        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager)
+        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager, GameTemplateManager templateManager)
         {
             _EntityManager = entityManager;
             _AchievementManager = achievementManager;
             _BlueprintManager = blueprintManager;
             Initialize();
+            _TemplateManager = templateManager;
         }
 
         private void Initialize()
@@ -34,6 +39,7 @@ namespace GY02.Commands.Achievement
         GameEntityManager _EntityManager;
         GameAchievementManager _AchievementManager;
         GameBlueprintManager _BlueprintManager;
+        GameTemplateManager _TemplateManager;
 
         /// <summary>
         /// 所有装备的类属集合。
@@ -43,13 +49,23 @@ namespace GY02.Commands.Achievement
         private void _EntityManager_EntityChanged(object sender, EntityChangedEventArgs e)
         {
             var now = OwHelper.WorldNow;
+            GameChar gc = null;
+            foreach (var entity in e.Entities)
+            {
+                var gcThing = entity.GetThing()?.GetAncestor(c => (c as IDbQuickFind)?.ExtraGuid == ProjectContent.CharTId) as VirtualThing;   //获取用户的宿主对象
+                if (gcThing is null) continue;
+                //var gc = _EntityManager.GetEntity(gcThing) as GameChar; //获取角色对象
+                if (_EntityManager.GetEntity(gcThing) is GameChar gameChar)
+                {
+                    gc = gameChar;
+                    break;
+                }
+            }
             foreach (var entity in e.Entities)
             {
                 var tt = _EntityManager.GetTemplate(entity);    //获取模板
                 if (tt is null) continue;
-                var gcThing = entity.GetThing()?.GetAncestor(c => (c as IDbQuickFind)?.ExtraGuid == ProjectContent.CharTId) as VirtualThing;   //获取用户的宿主对象
-                if (gcThing is null) continue;
-                var gc = _EntityManager.GetEntity(gcThing) as GameChar; //获取角色对象
+
                 if (gc is null) continue;
 
                 if (tt.TemplateId == ProjectContent.GuanggaoCurrenyTId)    //广告币
@@ -140,6 +156,53 @@ namespace GY02.Commands.Achievement
                         _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
                     }
                 }
+            }
+            if (gc is not null)
+            {
+                //1c5e6055-d754-4f9d-83c1-c2b31238afa1	拥有动物数量 Gid 12xx02
+                {
+                    if (_AchievementManager.GetTemplateById(Guid.Parse("1c5e6055-d754-4f9d-83c1-c2b31238afa1")) is TemplateStringFullView achiTT &&
+                        _AchievementManager.GetOrCreate(gc, achiTT) is GameAchievement achi)
+                    {
+                        var count = _EntityManager.GetAllEntity(gc).Where(c =>  //获取动物数量
+                        {
+                            if (_TemplateManager.GetFullViewFromId(c.TemplateId) is not TemplateStringFullView tt) return false;
+                            return tt.GetCatalog1() == 12 && tt.GetCatalog3() == 2;
+                        }).Count();
+                        var inc = count - achi.Count;
+                        if (inc > 0) _AchievementManager.RaiseEventIfChanged(achi, inc, gc, now);
+                    }
+                }
+                //A934D181-087E-4BD1-BD90-8EBA1020AA99	收集皮肤总数的成就 Gid 1602
+                {
+                    if (_AchievementManager.GetTemplateById(Guid.Parse("A934D181-087E-4BD1-BD90-8EBA1020AA99")) is TemplateStringFullView achiTT &&
+                        _AchievementManager.GetOrCreate(gc, achiTT) is GameAchievement achi)
+                    {
+                        var count = _EntityManager.GetAllEntity(gc).Where(c =>  //获取皮肤数量
+                        {
+                            if (_TemplateManager.GetFullViewFromId(c.TemplateId) is not TemplateStringFullView tt) return false;
+                            return tt.Gid / 100000 == 1602;
+                        }).Count();
+                        var inc = count - achi.Count;
+                        if (inc > 0) _AchievementManager.RaiseEventIfChanged(achi, inc, gc, now);
+                    }
+                }
+                //2d023b02-fb74-4320-9ee4-b6c761938fbe	全部镶嵌装备的等级成就 "Genus":["gs_equipslot"]
+                do
+                {
+                    if (_TemplateManager.GetTemplatesFromGenus("gs_equipslot") is not IEnumerable<TemplateStringFullView> tts) break;  //获取所有装备槽模板
+                    var ttIds = new HashSet<Guid>(tts.Select(c => c.TemplateId));   //所有装备槽模板Id集合
+                    var things = gc.GetThing().GetAllChildren().Where(c => ttIds.Contains(c.Parent?.ExtraGuid ?? Guid.Empty));   //所有装备的数据对象
+                    var nv = things.Select(c => _EntityManager.GetEntity(c)).Sum(c => c.Level); //现有总穿戴的装备等级
+
+                    var achiTId = Guid.Parse("2d023b02-fb74-4320-9ee4-b6c761938fbe");
+                    if (_AchievementManager.GetTemplateById(achiTId) is not TemplateStringFullView achiTt) break;
+                    if (_AchievementManager.GetOrCreate(gc, achiTt) is not GameAchievement achi) break;
+
+                    var inc = nv - achi.Count;  //等级差
+                    if (inc > 0)
+                        _AchievementManager.RaiseEventIfChanged(achiTId, inc, gc, OwHelper.WorldNow);
+                } while (false);
             }
         }
 

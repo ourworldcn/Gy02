@@ -83,7 +83,9 @@ namespace GY02.Commands
             }
             //消耗项
             if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
-                if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes)) goto lbErr;
+                if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes))
+                    if (OwHelper.GetLastError() != ErrorCodes.NO_ERROR)
+                        goto lbErr;
 
             if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2), command.GameChar, command.Changes)) goto lbErr;
             //加入购买历史记录
@@ -162,7 +164,7 @@ namespace GY02.Commands
             if (slot is not null)
             {
                 slot.Count++;
-                _EntityManager.InvokeEntityChanged(new GameEntity[] { slot });
+                _EntityManager.InvokeEntityChanged(new GameEntity[] { slot },gc);
                 _AccountStore.Save(key);
             }
         }

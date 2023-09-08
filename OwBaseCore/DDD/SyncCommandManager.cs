@@ -191,9 +191,9 @@ namespace OW.SyncCommand
     public interface ISyncCommandHandled<TCommand> where TCommand : ISyncCommand
     {
         /// <summary>
-        /// 
+        /// 对命令进行后处理。
         /// </summary>
-        /// <param name="command"></param>
+        /// <param name="command">处理的命令，更改该对象内容，导致返回时的内容发生变化，不建议在这里更改命令内容。</param>
         /// <param name="exception">若命令的处理过程中(<see cref="ISyncCommandHandler{T}"/>)引发了异常则在此给出，否则为空引用。</param>
         public void Handled(TCommand command, Exception exception = null);
 

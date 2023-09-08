@@ -43,6 +43,11 @@ namespace GY02.Managers
 
         public IEnumerable<GameEntity> Entities { get; internal set; }
 
+        /// <summary>
+        /// 操作的角色对象。
+        /// </summary>
+        public GameChar GameChar { get; set; }
+
     }
 
     public class GameEntityManagerOptions : IOptions<GameEntityManagerOptions>
@@ -72,10 +77,10 @@ namespace GY02.Managers
         /// 引发实体变化的通知。
         /// </summary>
         /// <param name="entities"></param>
-        public void InvokeEntityChanged(IEnumerable<GameEntity> entities)
+        public void InvokeEntityChanged(IEnumerable<GameEntity> entities, GameChar gameChar)
         {
             //var gc = entities.First().GetThing().GetAncestor(c => (c as IDbQuickFind)?.ExtraGuid == ProjectContent.CharTId); //寻找角色对象
-            EntityChanged?.Invoke(this, new EntityChangedEventArgs() { Entities = entities, });
+            EntityChanged?.Invoke(this, new EntityChangedEventArgs() { Entities = entities, GameChar = gameChar });
         }
 
         /// <summary>
@@ -283,7 +288,7 @@ namespace GY02.Managers
             {
                 Delete(entity, changes);
             }
-            InvokeEntityChanged(new GameEntity[] { entity });
+            InvokeEntityChanged(new GameEntity[] { entity }, null);
             return true;
         }
 
@@ -793,7 +798,7 @@ namespace GY02.Managers
                     if (thing is null) return false;
                     VirtualThingManager.Add(thing, parentThing);
                     changes?.CollectionAdd(entity, container);
-                    InvokeEntityChanged(new GameEntity[] { entity });
+                    InvokeEntityChanged(new GameEntity[] { entity }, null);
                 }
             }
             else //若非可堆叠物
@@ -814,7 +819,7 @@ namespace GY02.Managers
                 }
                 VirtualThingManager.Add(thing, parentThing);
                 changes?.CollectionAdd(entity, container);
-                InvokeEntityChanged(new GameEntity[] { entity });
+                InvokeEntityChanged(new GameEntity[] { entity }, null);
             }
             return true;
         }

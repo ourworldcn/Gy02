@@ -150,8 +150,7 @@ namespace GY02.Commands.Achievement
             if (command.HasError || exception is not null) return;
             var now = OwHelper.WorldNow;
             if (_CombatManager.GetTemplateById(command.CombatTId) is TemplateStringFullView tt && tt.Gid is int gid && gid / 1000 == 210101)    //主线关卡
-                if (tt.Genus?.Contains("") ?? false)
-                    _AchievementManager.RaiseEventIfChanged(Guid.Parse("86833e6b-81bf-47ca-9965-b57c2012ecfd"), 1, command.GameChar, now);
+                _AchievementManager.RaiseEventIfChanged(Guid.Parse("86833e6b-81bf-47ca-9965-b57c2012ecfd"), 1, command.GameChar, now);
         }
     }
 }

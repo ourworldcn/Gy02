@@ -114,43 +114,4 @@ namespace GY02.Commands
         }
     }
 
-    /// <summary>
-    /// 2d023b02-fb74-4320-9ee4-b6c761938fbe	全部镶嵌装备的等级成就 "Genus":["gs_equipslot"],
-    /// </summary>
-    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<MoveItemsCommand>))]
-    public class MyClass : ISyncCommandHandled<MoveItemsCommand>
-    {
-        public MyClass(GameAchievementManager achievementManager, GameTemplateManager templateManager, GameEntityManager entityManager)
-        {
-            _AchievementManager = achievementManager;
-            _TemplateManager = templateManager;
-            _EntityManager = entityManager;
-        }
-
-        GameAchievementManager _AchievementManager;
-        GameTemplateManager _TemplateManager;
-        GameEntityManager _EntityManager;
-
-        public void Handled(MoveItemsCommand command, Exception exception = null)
-        {
-            if (command.HasError || exception is not null) return;
-            if (_TemplateManager.GetFullViewFromId(command.ContainerId) is not TemplateStringFullView tt) return;
-            if (tt.Genus.Contains("gs_equipslot"))
-            {
-                var achiTId = Guid.Parse("2d023b02-fb74-4320-9ee4-b6c761938fbe");
-                if (_AchievementManager.GetTemplateById(achiTId) is not TemplateStringFullView achiTt) return;
-                if (_AchievementManager.GetOrCreate(command.GameChar, achiTt) is not GameAchievement achi) return;
-                var tts = _TemplateManager.Id2FullView.Where(c => c.Value.Genus?.Contains("gs_equipslot") ?? false).Select(c => c.Value);   //所有装备槽
-                var ttIds = tts.Select(c => c.TemplateId).ToArray();
-                var gc = command.GameChar;
-                var things = gc.GetAllChildren().Where(c => c.Parent is not null && ttIds.Contains(c.Parent.ExtraGuid));
-                var entitis = things.Select(c => _EntityManager.GetEntity(c));
-                var nv = entitis.Sum(c => c.Level); //新的总等级
-                var inc = nv - achi.Count;  //等级差
-                if (inc > 0)
-                    if (!_AchievementManager.RaiseEventIfChanged(Guid.Parse("2d023b02-fb74-4320-9ee4-b6c761938fbe"), inc, command.GameChar, OwHelper.WorldNow))
-                        command.FillErrorFromWorld();
-            }
-        }
-    }
 }
