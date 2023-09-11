@@ -65,7 +65,7 @@ namespace System.Collections.Generic
         public static bool TryGetGuid(this IReadOnlyDictionary<string, object> dic, string name, out Guid result)
         {
             result = default;
-            return dic.TryGetValue(name.ToString(), out var obj) && OwConvert.TryToGuid(obj, out result);
+            return dic.TryGetValue(name.ToString(), out var obj) && OwConvert.TryGetGuid(obj, out result);
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace System.Collections.Generic
         {
             if (!dic.TryGetValue(key, out var obj))
                 return defaultVal;
-            return OwConvert.TryToBoolean(obj, out var result) ? result : defaultVal;
+            return OwConvert.TryGetBoolean(obj, out var result) ? result : defaultVal;
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace System.Collections.Generic
         {
             if (!dic.TryGetValue(key, out _))
                 return null;
-            return OwConvert.TryToBoolean(key, out var result) ? (bool?)result : null;
+            return OwConvert.TryGetBoolean(key, out var result) ? (bool?)result : null;
         }
 
         /// <summary>

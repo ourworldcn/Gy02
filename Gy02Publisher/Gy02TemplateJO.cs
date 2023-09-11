@@ -983,7 +983,7 @@ namespace GY02.Templates
         /// <summary>
         /// 获取指定数值所处周期。仅能对整数求解。
         /// </summary>
-        /// <param name="now"></param>
+        /// <param name="now">要测试的属性数。</param>
         /// <param name="start">所处周期的起始数。</param>
         /// <param name="end">所处周期的结束数。</param>
         /// <returns>true指定值在有效周期内，false指定值不在指定周期内。</returns>

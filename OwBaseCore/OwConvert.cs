@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
+using System.Threading;
 
 namespace System
 {
@@ -168,41 +169,31 @@ namespace System
         /// <param name="result"></param>
         /// <returns>true成功转换，false未成功。</returns>
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-        public static bool TryToGuid([AllowNull] object obj, out Guid result)
+        public static bool TryGetGuid([AllowNull] object obj, out Guid result)
         {
-            if (obj is null)
-            {
-                result = default;
-                return false;
-            }
+            bool succ = false;
+            if (obj is null) result = default;
             else if (obj is Guid id)
             {
                 result = id;
-                return true;
+                succ = true;
             }
-            else if (obj is string str)
-            {
-                return TryToGuid(str, out result);
-            }
+            else if (obj is string str) succ = TryToGuid(str, out result);
             else if (obj is byte[] ary && ary.Length == 16)
             {
                 try
                 {
                     result = new Guid(ary);
-
+                    succ = true;
                 }
                 catch (Exception)
                 {
                     result = default;
-                    return false;
                 }
-                return true;
             }
-            else
-            {
-                result = default;
-                return false;
-            }
+            else if (obj is JsonElement jsonElement && jsonElement.TryGetGuid(out result)) succ = true;
+            else result = default;
+            return succ;
         }
 
         /// <summary>
@@ -212,22 +203,22 @@ namespace System
         /// <param name="result"></param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-        public static bool TryToBoolean(object obj, out bool result)
+        public static bool TryGetBoolean(object obj, out bool result)
         {
+            bool success = false;
             if (obj is bool b)
             {
                 result = b;
-                return true;
+                success = true;
             }
-            else if (obj is string str && bool.TryParse(str, out result))
-                return true;
+            else if (obj is string str && bool.TryParse(str, out result)) success = true;
             else if (TryToDecimal(obj, out var deci))
             {
                 result = deci != decimal.Zero;
-                return true;
+                success = true;
             }
-            result = false;
-            return false;
+            else result = default;
+            return success;
         }
         #endregion 试图转换类型
 
@@ -352,23 +343,27 @@ namespace System
         }
 
         /// <summary>
-        /// 
+        /// 试图转换为日期类型。
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="obj">可以为null。支持日期型，字符串型，以及 JsonElement 类型(如果JsonElement.TryGetDateTime调用成功)。</param>
         /// <param name="result"></param>
-        /// <returns></returns>
+        /// <returns>true转换成功，此时result是转换的结果；否则失败，此时result未定义。</returns>
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
         public static bool TryGetDateTime(object obj, out DateTime result)
         {
+            bool b = false;
             if (obj is DateTime dt)
             {
                 result = dt;
-                return true;
+                b = true;
             }
-            if (obj is string str && DateTime.TryParse(str, out result))
-                return true;
-            result = default;
-            return false;
+            else if (obj is string str && DateTime.TryParse(str, out result))
+                b = true;
+            else if (obj is JsonElement jsonElement && jsonElement.TryGetDateTime(out result))
+                b = true;
+            else
+                result = default;
+            return b;
         }
 
         /// <summary>

@@ -125,7 +125,7 @@ namespace System
         /// 获取最后的错误信息。
         /// </summary>
         /// <returns></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining),]
         public static string GetLastErrorMessage()
         {
             if (_LastErrorMessage is null)
@@ -206,7 +206,8 @@ namespace System
         /// 复制字典。
         /// </summary>
         /// <typeparam name="Tkey"></typeparam>
-        /// <typeparam name="TValue"></typeparam>
+        /// <typeparam name="TSrc"></typeparam>
+        /// <typeparam name="TDest"></typeparam>
         /// <param name="src"></param>
         /// <param name="dest">追加或覆盖该字典的内容。</param>
         /// <param name="predicate">过滤器，返回false则不会复制，省略或者为null，则不调用过滤器。</param>

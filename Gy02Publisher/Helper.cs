@@ -207,6 +207,12 @@ namespace GY02.Publisher
         /// </summary>
         public const string CurrencyBuyGenus = "fb_goumai";
 
+        /// <summary>
+        /// 此类实体在每天第一次登录时会自动把Count置为该实体存在的总天数，从0开始。副作用，此类属实体的Count设置由系统完成单独设置无用。
+        /// </summary>
+        public const string ExistsDayNumberGenus = "fl_ExistsDayNumber";
+
+
         #region 游戏内实体类型的类型Guid
 
         /// <summary>

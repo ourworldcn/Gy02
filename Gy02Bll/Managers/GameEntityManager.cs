@@ -166,7 +166,7 @@ namespace GY02.Managers
                     return true;
                 if (!_TemplateManager.TryGetValueFromConditionalItem(c, out var obj, entity))
                     return false;
-                if (!OwConvert.TryToBoolean(obj, out var result))
+                if (!OwConvert.TryGetBoolean(obj, out var result))
                     return false;
                 return result;
             }))  //若通用属性要求的条件不满足
@@ -531,6 +531,8 @@ namespace GY02.Managers
                 if (entity is null) return null;
                 var oriCount = entity.Count;    //预读fcp
                 entity.Count = summary.Count;   //可以是任何数
+                if (tt.Genus.Contains(ProjectContent.ExistsDayNumberGenus))
+                    entity.ExtensionProperties["CreateDateTime"] = OwHelper.WorldNow;
                 result.Add(entity);
             }
             else //不可堆叠物
@@ -557,6 +559,8 @@ namespace GY02.Managers
                     if (tmpEntity is null) return null;
                     var oriCount = tmpEntity.Count; //预读fcp
                     tmpEntity.Count = 1;
+                    if (tt.Genus.Contains(ProjectContent.ExistsDayNumberGenus))
+                        tmpEntity.ExtensionProperties["CreateDateTime"] = OwHelper.WorldNow;
                     result.Add(tmpEntity);
                 }
             }

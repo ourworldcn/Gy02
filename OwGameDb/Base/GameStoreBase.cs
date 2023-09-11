@@ -398,13 +398,13 @@ namespace OW.Game.Store
                 result = default;
                 return false;
             }
-            return OwConvert.TryToGuid(obj, out result);
+            return OwConvert.TryGetGuid(obj, out result);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid GetSdpGuidOrDefault(this ISimpleDynamicProperty<object> sdp, string name, Guid defaultVal = default)
         {
-            return sdp.TryGetSdp(name, out var obj) && OwConvert.TryToGuid(obj, out var result) ? result : defaultVal;
+            return sdp.TryGetSdp(name, out var obj) && OwConvert.TryGetGuid(obj, out var result) ? result : defaultVal;
         }
 
 
@@ -457,7 +457,7 @@ namespace OW.Game.Store
         {
             if (!sdp.TryGetSdp(key, out var obj))
                 return defaultVal;
-            return OwConvert.TryToBoolean(obj, out var result) ? result : defaultVal;
+            return OwConvert.TryGetBoolean(obj, out var result) ? result : defaultVal;
         }
 
         /// <summary>

@@ -675,7 +675,7 @@
             <summary>
             获取指定数值所处周期。仅能对整数求解。
             </summary>
-            <param name="now"></param>
+            <param name="now">要测试的属性数。</param>
             <param name="start">所处周期的起始数。</param>
             <param name="end">所处周期的结束数。</param>
             <returns>true指定值在有效周期内，false指定值不在指定周期内。</returns>
@@ -1240,6 +1240,11 @@
         <member name="F:GY02.Publisher.ProjectContent.CurrencyBuyGenus">
             <summary>
             法币购买项的页签。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.ExistsDayNumberGenus">
+            <summary>
+            此类实体在每天第一次登录时会自动把Count置为该实体存在的总天数，从0开始。副作用，此类属实体的Count设置由系统完成单独设置无用。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.SlotTypeGuid">
