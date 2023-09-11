@@ -14,6 +14,11 @@ namespace GY02.Commands
     /// </summary>
     public class CreateVirtualThingsCommand : PropertyChangeCommandBase
     {
+        public CreateVirtualThingsCommand()
+        {
+            
+        }
+
         /// <summary>
         /// 要创建的虚拟对象的模板Id集合。
         /// 注意这里不考虑数量问题。如果有一个模板Id就会创建一个对象，多个相同模板Id会创建多个相同模板的对象。

@@ -90,7 +90,7 @@ namespace GY02.Commands
                 {
                     if (nc.GetCurrentPeriod(count, out decimal start, out decimal end))
                     {
-                        command.Start.Add( now.Date.AddDays((double)start));
+                        command.Start.Add(now.Date.AddDays((double)start));
                         command.End.Add(now.Date.AddDays((double)end + 1));
                         break;
                     }

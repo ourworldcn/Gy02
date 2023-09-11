@@ -683,7 +683,7 @@ namespace GY02.Templates
         /// <summary>
         /// 类属字符串集合。
         /// </summary>
-        public string[] Genus { get; set; }
+        public string[] Genus { get; set; } = Array.Empty<string>();
 
         /// <summary>
         /// 初始数量。

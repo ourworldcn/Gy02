@@ -1,41 +1,24 @@
 {
-  "Ins": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "dbbb8d4c-92f0-49ff-9add-682c6caaa200",
-          "MinCount": 0,
-          "NumberCondition": {
-            "PropertyName": "Count",
-            "MinValue": 2,
-            "MaxValue": null,
-            "Subtrahend": 2,
-            "Modulus": 2,
-            "MinRemainder": 0,
-            "MaxRemainder": 0
-          },
-          "GeneralConditional": [],
-          "Count": 0,
-          "IgnoreIfDisplayList": true
-        }
-      ]
+  "SequenceOut": {
+    "Conditions": [
+      {
+        "ParentTId": null,
+        "Genus": [],
+        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+        "MinCount": 0,
+        "GeneralConditional": [],
+        "IgnoreIfDisplayList": true
+      }
+    ],
+    "GetIndexExpression": {
+      "op": "GetBuyedCount",
+      "args": [ "c25afdc9-e1cc-41b5-b790-80b80782cda1" ],
+      "IgnoreIfDisplayList": false
     },
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "d4828a12-534a-4a32-ae17-792b6bfd29cd",
-          "MinCount": 1
-        }
-      ],
-      "Count": 1
+    "Outs": {
+      "TIds": [ "c9575f24-a33d-49ba-b130-29b6ff4d62c7" ],
+      "Counts": [ 0, 80 ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ]
     }
-  ],
-  "name_txt": 40001,
-  "comment_txt": 40003,
-  "comment2_txt": 40005,
-  "suggest": [ 300, 2800, 250 ]
+  }
 }

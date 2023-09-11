@@ -3565,13 +3565,13 @@
       "Id": "cabe2c3c-56c0-4afe-abae-14dfbf96d4a2",
       "DisplayName": "特殊关卡-追箱子",
       "Gid": 210204001,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":1,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":1},\"GeneralConditional\":[],\"Count\":0,\"IgnoreIfDisplayList\":true}]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"547865b2-fa3d-4d7f-957f-0219b8318b73\",\"MinCount\":1}],\"Count\":1}],\"name_txt\":40000,\"comment_txt\":40002,\"comment2_txt\":40004,\"suggest\":[300,2800,250]}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":1,\"MaxValue\":null,\"Subtrahend\":1,\"Modulus\":2,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"IgnoreIfDisplayList\":true}]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"547865b2-fa3d-4d7f-957f-0219b8318b73\",\"MinCount\":1}],\"Count\":1}],\"name_txt\":40000,\"comment_txt\":40002,\"comment2_txt\":40004,\"suggest\":[300,2800,250]}"
     },
     {
       "Id": "5d919d31-6ba7-4da2-b238-8ec18fb7ec50",
       "DisplayName": "特殊关卡-弹珠",
       "Gid": 210203001,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":1,\"MaxValue\":null,\"Subtrahend\":1,\"Modulus\":6,\"MinRemainder\":0,\"MaxRemainder\":3},\"GeneralConditional\":[],\"Count\":0,\"IgnoreIfDisplayList\":true}]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d4828a12-534a-4a32-ae17-792b6bfd29cd\",\"MinCount\":1}],\"Count\":1}],\"name_txt\":40001,\"comment_txt\":40003,\"comment2_txt\":40005,\"suggest\":[300,2800,250]}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":1,\"MaxValue\":null,\"Subtrahend\":1,\"Modulus\":2,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"IgnoreIfDisplayList\":true}]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d4828a12-534a-4a32-ae17-792b6bfd29cd\",\"MinCount\":1}],\"Count\":1}],\"name_txt\":40001,\"comment_txt\":40003,\"comment2_txt\":40005,\"suggest\":[300,2800,250]}"
     },
     {
       "Id": "1da0bea3-5765-48b5-aeb6-c8cb9ce6c82e",

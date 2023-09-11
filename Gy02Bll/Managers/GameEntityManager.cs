@@ -531,7 +531,7 @@ namespace GY02.Managers
                 if (entity is null) return null;
                 var oriCount = entity.Count;    //预读fcp
                 entity.Count = summary.Count;   //可以是任何数
-                if (tt.Genus.Contains(ProjectContent.ExistsDayNumberGenus))
+                if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
                     entity.ExtensionProperties["CreateDateTime"] = OwHelper.WorldNow;
                 result.Add(entity);
             }
@@ -559,7 +559,7 @@ namespace GY02.Managers
                     if (tmpEntity is null) return null;
                     var oriCount = tmpEntity.Count; //预读fcp
                     tmpEntity.Count = 1;
-                    if (tt.Genus.Contains(ProjectContent.ExistsDayNumberGenus))
+                    if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
                         tmpEntity.ExtensionProperties["CreateDateTime"] = OwHelper.WorldNow;
                     result.Add(tmpEntity);
                 }
