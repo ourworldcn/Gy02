@@ -114,11 +114,10 @@ namespace GY02.Commands
             gu.Timeout = TimeSpan.FromMinutes(1);
             //加入缓存
             _AccountStore.AddUser(gu);
-            //发出创建后事件
-            var commCreated = new AccountCreatedCommand() { User = gu };
-            _SyncCommandManager.Handle(commCreated);
-
             command.User = gu;
+            var key = gu.GetThing().IdString;
+            if (_AccountStore.Lock(key))
+                _SyncCommandManager.Post.Enqueue(new UnlockCommand { Key = key });
             _AccountStore.Save(guThing.IdString);
 
         }
@@ -126,4 +125,22 @@ namespace GY02.Commands
 
     }
 
+    public class UnlockCommand : SyncCommandBase
+    {
+        public object Key { get; set; }
+    }
+
+    public class UnlockHandler : SyncCommandHandlerBase<UnlockCommand>
+    {
+        public UnlockHandler(GameAccountStoreManager accountStore)
+        {
+            _AccountStore = accountStore;
+        }
+        GameAccountStoreManager _AccountStore;
+
+        public override void Handle(UnlockCommand command)
+        {
+            _AccountStore.Unlock(command.Key);
+        }
+    }
 }

@@ -8,6 +8,44 @@ using OW.SyncCommand;
 namespace GY02.Commands
 {
     /// <summary>
+    /// 
+    /// </summary>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<CreateAccountCommand>))]
+    public class AccountCreatedHandler : ISyncCommandHandled<CreateAccountCommand>
+    {
+        public AccountCreatedHandler(GameEntityManager entityManager, SyncCommandManager commandManager)
+        {
+            _EntityManager = entityManager;
+            _CommandManager = commandManager;
+        }
+
+        GameEntityManager _EntityManager;
+        SyncCommandManager _CommandManager;
+
+        public void Handled(CreateAccountCommand command, Exception exception = null)
+        {
+            //创建角色
+            var comm = new CreateGameCharCommand()
+            {
+                DisplayName = command.User.LoginName,
+                User = command.User,
+            };
+            _CommandManager.Handle(comm);
+
+            if (comm.HasError)
+            {
+                command.FillErrorFrom(comm);
+                return;
+            }
+            var entities = _EntityManager.GetAllEntity((comm.User.Thing as VirtualThing).Children.FirstOrDefault()?.GetJsonObject<GameChar>());
+            _EntityManager.InitializeEntity(entities);
+            command.User.CurrentChar = comm.Result;
+
+        }
+
+    }
+
+    /// <summary>
     /// 创建角色的命令。
     /// </summary>
     public class CreateGameCharCommand : SyncCommandBase
@@ -36,22 +74,21 @@ namespace GY02.Commands
     /// </summary>
     public class CreateGameCharHandler : SyncCommandHandlerBase<CreateGameCharCommand>
     {
-        public CreateGameCharHandler(IServiceProvider service, GameEntityManager gameEntityManager)
+        public CreateGameCharHandler(GameEntityManager gameEntityManager, SyncCommandManager commandManager, GameAccountStoreManager accountStoreManager)
         {
-            _Service = service;
             _GameEntityManager = gameEntityManager;
+            _CommandManager = commandManager;
+            _AccountStoreManager = accountStoreManager;
         }
 
-        /// <summary>
-        /// 范围服务容器。
-        /// </summary>
-        IServiceProvider _Service;
         GameEntityManager _GameEntityManager;
+        SyncCommandManager _CommandManager;
+        GameAccountStoreManager _AccountStoreManager;
 
         public override void Handle(CreateGameCharCommand command)
         {
-            var key = command.User.Id.ToString();
-            var svcStore = _Service.GetRequiredService<GameAccountStoreManager>();
+            var key = command.User.GetThing().IdString;
+            var svcStore = _AccountStoreManager;
             using var dw = DisposeHelper.Create(svcStore.Lock, svcStore.Unlock, key, TimeSpan.FromSeconds(1));
             if (dw.IsEmpty)
             {
@@ -63,8 +100,7 @@ namespace GY02.Commands
             //{
             //    TemplateId = ProjectContent.CharTId,
             //};
-            var gcm = _Service.GetRequiredService<SyncCommandManager>();
-            gcm.Handle(commandCvt);
+            _CommandManager.Handle(commandCvt);
             if (commandCvt.HasError)
             {
                 command.FillErrorFrom(commandCvt);

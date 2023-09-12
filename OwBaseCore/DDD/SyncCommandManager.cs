@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -28,6 +29,10 @@ namespace OW.SyncCommand
         }
 
         IServiceProvider _Service;
+        /// <summary>
+        /// 该服务使用的范围服务容器。
+        /// </summary>
+        public IServiceProvider Service => _Service;
 
         private Dictionary<string, object> _Items;
         /// <summary>
@@ -35,60 +40,161 @@ namespace OW.SyncCommand
         /// </summary>
         public IDictionary<string, object> Items => _Items ??= AutoClearPool<Dictionary<string, object>>.Shared.Get();
 
-        [DebuggerHidden]
         public void Handle<T>(T command) where T : ISyncCommand
         {
-            #region 预处理
-
-            #endregion 预处理
-            _OrderNumber = 0;
-            var pre = _Service.GetServices<ISyncCommandHandling<T>>();
-            var coll = _Service.GetServices<ISyncCommandHandler<T>>();
-            Exception exception = null;
-            var post = _Service.GetServices<ISyncCommandHandled<T>>();
-
+            List<Exception> exceptions = new List<Exception>();
+            NestedCommand.Push(command);
             try
             {
-                pre.SafeForEach(c =>
-                {
-                    c.Handling(command);
-                });
-            }
-            catch (Exception)
-            {
-                //TODO 暂时忽略命令预处理的异常
-            }
-            try
-            {
-                coll.SafeForEach(c =>
-                {
-                    c.Handle(command);
-                    _OrderNumber++;
-                });
-            }
-            catch (Exception excp)
-            {
-                exception = excp;
-                throw;
+                HandleCore(command, exceptions);
             }
             finally
             {
+                NestedCommand.TryPop(out _);
+            }
+            if (NestedCommand.IsEmpty) //若已处理完所有任务
+                while (Post.TryDequeue(out var postCommand))
+                {
+                    NestedCommand.Push(command);
+                    try
+                    {
+                        HandleCore(postCommand, exceptions);
+                    }
+                    finally
+                    {
+                        NestedCommand.TryPop(out _);
+                    }
+                }
+        }
+
+        /// <summary>
+        /// 处理单个命令。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="command"></param>
+        /// <param name="exceptions">该函数不会抛出异常，将所有异常追加到此集合。省略或为null则忽略异常。</param>
+        [DebuggerHidden]
+        protected virtual void HandleCore<T>(T command, ICollection<Exception> exceptions = null) where T : ISyncCommand
+        {
+            var pre = _Service.GetServices<ISyncCommandHandling<T>>();
+            var coll = _Service.GetServices<ISyncCommandHandler<T>>();
+            var post = _Service.GetServices<ISyncCommandHandled<T>>();
+
+            foreach (var item in pre)
+            {
                 try
                 {
-                    post.SafeForEach(c =>
-                    {
-                        c.Handled(command);
-                    });
+                    item.Handling(command);
                 }
-                catch
+                catch (Exception excp)
                 {
-                    //TODO 暂时忽略命令后处理的异常
+                    exceptions?.Add(excp);
+                }
+            }
+            foreach (var item in coll)
+            {
+                try
+                {
+                    item.Handle(command);
+                }
+                catch (Exception excp)
+                {
+                    exceptions?.Add(excp);
+                }
+            }
+            if (post.Any())
+            {
+                var excpTmp = exceptions?.Count > 0 ? new AggregateException(exceptions) : null;
+                foreach (var c in post)
+                {
+                    try
+                    {
+                        c.Handled(command, excpTmp);
+                    }
+                    catch (Exception excp)
+                    {
+                        exceptions?.Add(excp);
+                    }
                 }
             }
         }
 
-        private int _OrderNumber;
+        /// <summary>
+        /// 处理单个命令。
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="exceptions">该函数不会抛出异常，将所有异常追加到此集合。省略或为null则忽略异常。</param>
+        protected virtual void HandleCore(ISyncCommand command, ICollection<Exception> exceptions = null)
+        {
+            var preType = typeof(ISyncCommandHandling<>).MakeGenericType(command.GetType());
+            var pre = _Service.GetServices(preType);
+            var type = typeof(ISyncCommandHandler<>).MakeGenericType(command.GetType());
+            var coll = _Service.GetServices(type);
+            var postType = typeof(ISyncCommandHandled<>).MakeGenericType(command.GetType());
+            var post = _Service.GetServices(postType);
 
+            foreach (dynamic c in pre)
+            {
+                try
+                {
+                    c.Handling(command);
+                }
+                catch (Exception excp)
+                {
+                    exceptions?.Add(excp);
+                }
+            }
+            foreach (var c in coll)
+            {
+                try
+                {
+                    var typeService = c.GetType();
+                    var mi = typeService.GetMethod("Handle");
+                    var result = mi.Invoke(c, new object[] { command });
+                }
+                catch (Exception excp)
+                {
+                    exceptions?.Add(excp);
+                }
+            }
+            if (post.Any())
+            {
+                var excpTmp = exceptions?.Count > 0 ? new AggregateException(exceptions) : null;
+                foreach (dynamic c in post)
+                {
+                    try
+                    {
+                        c.Handled(command, excpTmp);
+                    }
+                    catch (Exception excp)
+                    {
+                        exceptions?.Add(excp);
+                    }
+                }
+            }
+        }
+
+        ConcurrentQueue<ISyncCommand> _Post;
+        /// <summary>
+        /// 后续处理的命令。
+        /// </summary>
+        public ConcurrentQueue<ISyncCommand> Post => LazyInitializer.EnsureInitialized(ref _Post);
+
+        ConcurrentStack<ISyncCommand> _NestedCommand;
+        /// <summary>
+        /// 命令栈，顶层是当前在处理的命令。
+        /// </summary>
+        public ConcurrentStack<ISyncCommand> NestedCommand => LazyInitializer.EnsureInitialized(ref _NestedCommand);
+
+        /// <summary>
+        /// 获取命令处理器的嵌套深度。没有处理命令时是0，1表示正在处理顶层命令。
+        /// </summary>
+        public int NestedCount => _NestedCommand?.Count ?? 0;
+
+        private int _OrderNumber;
+        /// <summary>
+        /// 命令处理的顺序。
+        /// </summary>
         public int OrderNumber { get => _OrderNumber; set => _OrderNumber = value; }
 
         #region IDisposable接口相关
@@ -172,7 +278,7 @@ namespace OW.SyncCommand
         /// 命令处理函数。
         /// </summary>
         /// <param name="command"></param>
-        public abstract void Handle(T command);
+        public void Handle(T command);
     }
 
     /// <summary>
