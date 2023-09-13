@@ -532,7 +532,10 @@ namespace GY02.Managers
                 var oriCount = entity.Count;    //预读fcp
                 entity.Count = summary.Count;   //可以是任何数
                 if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
+                {
                     entity.ExtensionProperties["CreateDateTime"] = OwHelper.WorldNow;
+                    entity.Count = 0;
+                }
                 result.Add(entity);
             }
             else //不可堆叠物
@@ -560,7 +563,10 @@ namespace GY02.Managers
                     var oriCount = tmpEntity.Count; //预读fcp
                     tmpEntity.Count = 1;
                     if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
+                    {
                         tmpEntity.ExtensionProperties["CreateDateTime"] = OwHelper.WorldNow;
+                        tmpEntity.Count = 0;
+                    }
                     result.Add(tmpEntity);
                 }
             }
@@ -603,6 +609,8 @@ namespace GY02.Managers
                     var dt = now;
                     fcp.Value.SetLastValue(ttFcp.CurrentValue, ref dt);
                 }
+                if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
+                    entity.ExtensionProperties["CreateDateTime"] = now;
             }
         }
         #endregion 创建实体相关功能

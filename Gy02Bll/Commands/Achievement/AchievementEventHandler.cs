@@ -120,18 +120,19 @@ namespace GY02.Commands.Achievement
                             _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
                         }
                     }
+                    //0f83e776-7c47-4fc6-b27b-c5f14f1b158f	拥有武器的数量成就
                     if (tt.Genus.Contains("e_wuqi"))   //拥有武器的数量成就
                     {
-                        var achiTt = _AchievementManager.GetTemplateById(Guid.Parse("0f83e776-7c47-4fc6-b27b-c5f14f1b158f")); //拥有武器的数量成就
-                        if (achiTt is null) continue;
-                        var achi = _AchievementManager.GetOrCreate(gc, achiTt);
-                        if (!_AchievementManager.IsValid(achi, gc, now)) continue;    //若处于无效状态
-                        var oldLv = achi.Level;
-                        achi.Count++;   //计算计数
-                        if (!_AchievementManager.RefreshState(achi, gc, now)) continue;
-                        if (achi.Level > oldLv)    //若发生了变化
+                        var nv = _EntityManager.GetAllEntity(gc).Select(c => (c, _TemplateManager.GetFullViewFromId(c.TemplateId))).Where(c =>
                         {
-                            _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
+                            if (c.Item2 is TemplateStringFullView fv && (fv.Genus?.Contains("e_wuqi") ?? false)) return true;
+                            return false;
+                        }).Count();
+                        if (_AchievementManager.GetTemplateById(Guid.Parse("0f83e776-7c47-4fc6-b27b-c5f14f1b158f")) is TemplateStringFullView achiTt //拥有武器的数量成就
+                            && _AchievementManager.GetOrCreate(gc, achiTt) is GameAchievement achi)
+                        {
+                            var inc = nv - achi.Count;
+                            if (inc > 0) _AchievementManager.RaiseEventIfChanged(achi, inc, gc, now);
                         }
                     }
                 }

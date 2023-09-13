@@ -32,8 +32,8 @@ namespace GY02.Commands
         public void Handled(CompositeCommand command, Exception exception)
         {
             if (command.HasError || exception is not null) return;
-            if (!_AchievementManager.RaiseEventIfChanged(Guid.Parse("4f6a92f2-3aac-479b-92e8-0dfffa74536b"), 1, command.GameChar, OwHelper.WorldNow))
-                command.FillErrorFromWorld();
+            //4f6a92f2-3aac-479b-92e8-0dfffa74536b	装备合成次数成就
+            _AchievementManager.RaiseEventIfChanged(Guid.Parse("4f6a92f2-3aac-479b-92e8-0dfffa74536b"), 1, command.GameChar, OwHelper.WorldNow);
             //db98951e-a908-482a-a2e4-0e851a3e1c95	开服活动成就- 累计合装备合成次数
             _AchievementManager.RaiseEventIfChanged(Guid.Parse("db98951e-a908-482a-a2e4-0e851a3e1c95"), 1, command.GameChar, OwHelper.WorldNow);
         }
@@ -55,10 +55,11 @@ namespace GY02.Commands
         public void Handled(FuhuaCommand command, Exception exception = null)
         {
             if (command.HasError || exception is not null) return;
-            if (!_AchievementManager.RaiseEventIfChanged(Guid.Parse("22f48e2b-8e81-43fb-80dd-af900eb21a29"), 1, command.GameChar, OwHelper.WorldNow))
-                command.FillErrorFromWorld();
+            var now = OwHelper.WorldNow;
+            //22f48e2b-8e81-43fb-80dd-af900eb21a29	累计孵化次数成就
+            _AchievementManager.RaiseEventIfChanged(Guid.Parse("22f48e2b-8e81-43fb-80dd-af900eb21a29"), 1, command.GameChar, now);
             //c7772592-50ab-4f98-be01-b58c02571d46	开服活动成就- 累计孵化次数
-            _AchievementManager.RaiseEventIfChanged(Guid.Parse("c7772592-50ab-4f98-be01-b58c02571d46"), 1, command.GameChar, OwHelper.WorldNow);
+            _AchievementManager.RaiseEventIfChanged(Guid.Parse("c7772592-50ab-4f98-be01-b58c02571d46"), 1, command.GameChar, now);
 
         }
     }

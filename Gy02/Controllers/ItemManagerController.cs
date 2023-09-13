@@ -153,8 +153,12 @@ namespace GY02.Controllers
             {
                 var item = model.TIds[i];
                 var tmp = _EntityManager.Create(new GameEntitySummary { TId = item, Count = model.Counts[i] });
-                if (tmp is null) goto lbErr; //若出错
 
+                if (tmp is null) goto lbErr; //若出错
+                tmp.ForEach(c =>    //强制增加数量
+                {
+                    c.Count = model.Counts[i];
+                });
                 if (tmp.Count() != tmp.Count) continue;
                 list.AddRange(tmp);
             }

@@ -12,7 +12,7 @@
       "MaxValue": null, //最大值。省略或为null表示不限制。
       "Subtrahend": 0, //减数，省略视同0
       "Modulus": 1, //求模的模数
-      "MinRemainder": 0, //最下余数
+      "MinRemainder": 0, //最小余数
       "MaxRemainder": 0 //最大余数
     },
     "GeneralConditional": [ //通用条件，这个比较复杂，一般是空集合，特定情况特定约定

@@ -3,6 +3,7 @@ using GY02.Managers;
 using GY02.Templates;
 using OW.Game;
 using OW.Game.Entity;
+using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.SyncCommand;
 
@@ -46,13 +47,14 @@ namespace GY02.Commands
         /// 构造函数。
         /// </summary>
         /// <param name="gameAccountStore"></param>
-        public ApplyBlueprintHandler(GameAccountStoreManager gameAccountStore, GameBlueprintManager blueprintManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEntityManager gameEntityManager)
+        public ApplyBlueprintHandler(GameAccountStoreManager gameAccountStore, GameBlueprintManager blueprintManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEntityManager gameEntityManager, VirtualThingManager virtualThingManager)
         {
             _GameAccountStore = gameAccountStore;
             _BlueprintManager = blueprintManager;
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
             _GameEntityManager = gameEntityManager;
+            _VirtualThingManager = virtualThingManager;
         }
 
         GameAccountStoreManager _GameAccountStore;
@@ -60,6 +62,7 @@ namespace GY02.Commands
         SyncCommandManager _SyncCommandManager;
         GameTemplateManager _TemplateManager;
         GameEntityManager _GameEntityManager;
+        VirtualThingManager _VirtualThingManager;
 
         public GameAccountStoreManager AccountStore => _GameAccountStore;
 
@@ -84,16 +87,13 @@ namespace GY02.Commands
             //}
             //生成输出项
             List<GameEntity> outs = new List<GameEntity>();
-            var createThing = new CreateVirtualThingsCommand { };
-            createThing.TIds.AddRange(bp.Out.Select(c => c.TId));
-            _SyncCommandManager.Handle(createThing);
-            if (createThing.HasError)
+            var creates = _GameEntityManager.Create(bp.Out);
+            if (creates is null)
             {
-                command.FillErrorFrom(createThing);
+                command.FillErrorFromWorld();
                 return;
             }
-            var results = _GameEntityManager.Create(createThing.TIds.Select(c => new GameEntitySummary { TId = c, Count = 1m }));
-            outs.AddRange(results.Select(c => c.Item2));
+            outs.AddRange(creates.Select(c => c.Item2));
             //消耗材料
             //foreach (var item in command.InItems)
             //{

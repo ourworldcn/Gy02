@@ -137,7 +137,9 @@ namespace OW.SyncCommand
             {
                 try
                 {
-                    c.Handling(command);
+                    var typeService = c.GetType();
+                    var mi = typeService.GetMethod("Handling");
+                    var result = mi.Invoke(c, new object[] { command });
                 }
                 catch (Exception excp)
                 {
@@ -164,7 +166,9 @@ namespace OW.SyncCommand
                 {
                     try
                     {
-                        c.Handled(command, excpTmp);
+                        var typeService = c.GetType();
+                        var mi = typeService.GetMethod("Handled");
+                        var result = mi.Invoke(c, new object[] { command, excpTmp });
                     }
                     catch (Exception excp)
                     {

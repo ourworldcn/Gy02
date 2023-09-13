@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using OW;
 using OW.Game.Entity;
+using OW.Game.Manager;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System.Diagnostics.CodeAnalysis;
@@ -45,13 +46,15 @@ namespace GY02.Commands
     public class CreateAccountHandler : SyncCommandHandlerBase<CreateAccountCommand>
     {
         public CreateAccountHandler(IDbContextFactory<GY02UserContext> dbFactory, LoginNameGenerator loginNameGenerator, PasswordGenerator passwordGenerator, SyncCommandManager syncCommandManager,
-            GameAccountStoreManager accountStore)
+            GameAccountStoreManager accountStore, GameEntityManager gameEntityManager, VirtualThingManager virtualThingManager)
         {
             _DbFactory = dbFactory;
             _LoginNameGenerator = loginNameGenerator;
             _PasswordGenerator = passwordGenerator;
             _SyncCommandManager = syncCommandManager;
             _AccountStore = accountStore;
+            _GameEntityManager = gameEntityManager;
+            _VirtualThingManager = virtualThingManager;
         }
 
         IDbContextFactory<GY02UserContext> _DbFactory;
@@ -59,6 +62,8 @@ namespace GY02.Commands
         PasswordGenerator _PasswordGenerator;
         SyncCommandManager _SyncCommandManager;
         GameAccountStoreManager _AccountStore;
+        GameEntityManager _GameEntityManager;
+        VirtualThingManager _VirtualThingManager;
 
         /// <summary>
         /// 创建账号。
@@ -96,15 +101,12 @@ namespace GY02.Commands
             }
 #pragma warning restore CA1827 // Do not use Count() or LongCount() when Any() can be used
             //构造账号信息
-            var commCreateUser = new CreateVirtualThingsCommand();
-            commCreateUser.TIds.Add(ProjectContent.UserTId);
-            _SyncCommandManager.Handle(commCreateUser);
-            if (commCreateUser.HasError)
+            var guThing = _VirtualThingManager.Create(ProjectContent.UserTId, 1)?[0];
+            if (guThing is null)
             {
-                command.FillErrorFrom(commCreateUser);
+                command.FillErrorFromWorld();
                 return;
             }
-            var guThing = commCreateUser.Result[0];
             var gu = guThing.GetJsonObject<GameUser>();
             gu.SetDbContext(db);
             gu.LoginName = command.LoginName;

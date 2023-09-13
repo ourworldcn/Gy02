@@ -2,6 +2,7 @@
 using GY02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
+using OW.Game.Manager;
 using OW.Game.Store;
 using OW.SyncCommand;
 
@@ -74,16 +75,18 @@ namespace GY02.Commands
     /// </summary>
     public class CreateGameCharHandler : SyncCommandHandlerBase<CreateGameCharCommand>
     {
-        public CreateGameCharHandler(GameEntityManager gameEntityManager, SyncCommandManager commandManager, GameAccountStoreManager accountStoreManager)
+        public CreateGameCharHandler(GameEntityManager gameEntityManager, SyncCommandManager commandManager, GameAccountStoreManager accountStoreManager, VirtualThingManager virtualThingManager)
         {
             _GameEntityManager = gameEntityManager;
             _CommandManager = commandManager;
             _AccountStoreManager = accountStoreManager;
+            _VirtualThingManager = virtualThingManager;
         }
 
         GameEntityManager _GameEntityManager;
         SyncCommandManager _CommandManager;
         GameAccountStoreManager _AccountStoreManager;
+        VirtualThingManager _VirtualThingManager;
 
         public override void Handle(CreateGameCharCommand command)
         {
@@ -95,18 +98,12 @@ namespace GY02.Commands
                 command.ErrorCode = ErrorCodes.WAIT_TIMEOUT;
                 return;
             }
-            var commandCvt = new CreateVirtualThingsCommand() { };
-            commandCvt.TIds.Add(ProjectContent.CharTId);
-            //{
-            //    TemplateId = ProjectContent.CharTId,
-            //};
-            _CommandManager.Handle(commandCvt);
-            if (commandCvt.HasError)
+            var result = _VirtualThingManager.Create(ProjectContent.CharTId, 1)?.FirstOrDefault();
+            if (result is null)
             {
-                command.FillErrorFrom(commandCvt);
+                command.FillErrorFromWorld();
                 return;
             }
-            var result = commandCvt.Result.First();
             //设置角色的属性
             var gc = result.GetJsonObject<GameChar>();
             gc.UserId = command.User.Id;
