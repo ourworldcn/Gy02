@@ -6,7 +6,7 @@
           "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
           "Genus": [],
           "TId": "dbbb8d4c-92f0-49ff-9add-682c6caaa200",
-          "MinCount": 1,
+          "MinCount": 0,
           "NumberCondition": {
             "PropertyName": "Count",
             "MinValue": 1,

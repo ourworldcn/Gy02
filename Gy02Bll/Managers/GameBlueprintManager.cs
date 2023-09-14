@@ -139,8 +139,8 @@ namespace GY02.Managers
                     OwHelper.SetLastErrorMessage($"无法找到符合条件{conditional}的实体。");
                     return null;
                 }
-                if (conditional.Count == decimal.Zero) continue;    //若此项不消耗
                 result.Add((conditional, entity));
+                if (conditional.Count == decimal.Zero) continue;    //若此项不消耗
                 all.Remove(entity); //去掉已经被匹配的项
             }
             return result;

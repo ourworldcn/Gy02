@@ -61,30 +61,19 @@ namespace GY02.Commands.Achievement
                     break;
                 }
             }
+            if (gc is null) return;
+            if (e.Entities.Any(c => c.TemplateId == ProjectContent.GuanggaoCurrenyTId && c.Count>0))
+            {
+                //192db3ea-2147-4743-849e-9c20236c7771	看广告数量成就
+                _AchievementManager.RaiseEventIfChanged(Guid.Parse("192db3ea-2147-4743-849e-9c20236c7771"), 1, gc, now);
+                //cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d	开服活动1日成就-累计看广告次数
+                _AchievementManager.RaiseEventIfChanged(Guid.Parse("cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d"), 1, gc, now);
+            }
             foreach (var entity in e.Entities)
             {
                 var tt = _EntityManager.GetTemplate(entity);    //获取模板
                 if (tt is null) continue;
 
-                if (gc is null) continue;
-
-                if (tt.TemplateId == ProjectContent.GuanggaoCurrenyTId)    //广告币
-                {
-                    var achiTt = _AchievementManager.GetTemplateById(Guid.Parse("192db3ea-2147-4743-849e-9c20236c7771")); //看广告数量成就
-                    if (achiTt is null) continue;
-                    var achi = _AchievementManager.GetOrCreate(gc, achiTt);
-                    if (!_AchievementManager.IsValid(achi, gc, now)) continue;    //若处于无效状态
-                    var oldLv = achi.Level;
-                    achi.Count += entity.Count;
-                    if (!_AchievementManager.RefreshState(achi, gc, now)) continue;
-                    if (achi.Level > oldLv)    //若发生了变化
-                    {
-                        _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
-                    }
-                    //cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d	开服活动1日成就-累计看广告次数
-                    if (_AchievementManager.IsValid(Guid.Parse("cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d"), gc, now))
-                        _AchievementManager.RaiseEventIfChanged(Guid.Parse("cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d"), entity.Count, gc, now);
-                }
                 if (tt.TemplateId == ProjectContent.LoginedDayTId)    //累计登录天数
                 {
                     var achiTt = _AchievementManager.GetTemplateById(Guid.Parse("0d8071a9-34a0-44fc-8264-c5827f95f1e6")); //登录天数成就

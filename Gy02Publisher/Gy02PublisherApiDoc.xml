@@ -1384,13 +1384,13 @@
             <summary>
             发送缓冲区的大小，以字节为单位。
             </summary>
-            <value>默认值：8192</value>
+            <value>默认值：1MByte</value>
         </member>
         <member name="P:System.Net.Sockets.OwUdpClientOptions.ReceiveBufferSize">
             <summary>
             接收缓冲区的大小，以字节为单位。
             </summary>
-            <value>默认值：8192</value>
+            <value>默认值：1MByte</value>
         </member>
         <member name="P:System.Net.Sockets.OwUdpClientOptions.RequestStop">
             <summary>
@@ -1430,6 +1430,26 @@
             接受数据来自的远程终结点。
             </summary>
         </member>
+        <member name="T:System.Net.Sockets.OwUdpHeader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:System.Net.Sockets.OwUdpHeader.Seq">
+            <summary>
+            此包包号。
+            </summary>
+        </member>
+        <member name="F:System.Net.Sockets.OwUdpHeader.ReceivedMaxSeq">
+            <summary>
+            已经收到的连续包的最大包号。
+            </summary>
+        </member>
+        <member name="F:System.Net.Sockets.OwUdpHeader.Lakes">
+            <summary>
+            已经确定丢失的包范围，Item1=最小包号，Item2=最大包号。
+            </summary>
+        </member>
         <member name="T:System.Net.Sockets.OwUdpClient">
             <summary>
             模拟全双工通讯的Udp工具类。
@@ -1454,6 +1474,21 @@
         <member name="F:System.Net.Sockets.OwUdpClient._Stopped">
             <summary>
             收发复位终止的信号。
+            </summary>
+        </member>
+        <member name="F:System.Net.Sockets.OwUdpClient.SendEntry.Seq">
+            <summary>
+            当前可用的序号。
+            </summary>
+        </member>
+        <member name="F:System.Net.Sockets.OwUdpClient.SendEntry.Buffer">
+            <summary>
+            待发送队列。
+            </summary>
+        </member>
+        <member name="F:System.Net.Sockets.OwUdpClient.SendEntry.History">
+            <summary>
+            已经发送的队列。
             </summary>
         </member>
         <member name="P:System.Net.Sockets.OwUdpClient.LocalEndPoint">

@@ -3,6 +3,7 @@ using GY02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.SyncCommand;
+using System.Data;
 
 namespace GY02.Commands
 {
@@ -22,26 +23,20 @@ namespace GY02.Commands
         public void Handled(ShoppingBuyCommand command, Exception exception)
         {
             if (command.HasError || exception is not null) return;
+            //822b1d80-70fe-417d-baea-e9c2aacbdcd8	购买体力的数量成就
             //体力商品的TId
             var tiliGoodsTId = new Guid[] { Guid.Parse("59bf4cb7-5bc2-48ee-98ad-2efbf116b162"), Guid.Parse("622b4572-782d-4bee-b4c5-2d512daa3714") };
             if (tiliGoodsTId.Contains(command.ShoppingItemTId)) //可能需要处理购买体力的成就
             {
                 var now = OwHelper.WorldNow;
-                var inc = command.Changes.Where(c =>  //获取体力增量
-                {
-                    if (c.Object is not GameEntity entity) return false;
-                    if (entity.TemplateId != ProjectContent.PowerTId) return false;
-                    return true;
-                }).Select(c => (c.HasOldValue && OwConvert.TryToDecimal(c.OldValue, out var ov) ? ov : 0m, c.HasNewValue && OwConvert.TryToDecimal(c.NewValue, out var nv) ? nv : 0))
-                .Sum(c => c.Item2 - c.Item1);
-                if (inc > 0)
-                {
-                    var tt = _AchievementManager.GetTemplateById(Guid.Parse("822b1d80-70fe-417d-baea-e9c2aacbdcd8"));
-                    if (tt is null) { command.FillErrorFromWorld(); }
-                    var achi = _AchievementManager.GetOrCreate(command.GameChar, tt);
-                    if (achi is null) { command.FillErrorFromWorld(); }
-                    if (!_AchievementManager.RaiseEventIfChanged(achi, inc, command.GameChar, now)) command.FillErrorFromWorld();
-                }
+                //var inc = command.Changes.Where(c =>  //获取体力增量
+                //{
+                //    if (c.Object is not GameEntity entity) return false;
+                //    if (entity.TemplateId != ProjectContent.PowerTId) return false;
+                //    return true;
+                //}).Select(c => (c.HasOldValue && OwConvert.TryToDecimal(c.OldValue, out var ov) ? ov : 0m, c.HasNewValue && OwConvert.TryToDecimal(c.NewValue, out var nv) ? nv : 0))
+                //.Sum(c => c.Item2 - c.Item1);
+                if (!_AchievementManager.RaiseEventIfChanged(Guid.Parse("822b1d80-70fe-417d-baea-e9c2aacbdcd8"), 1, command.GameChar, now)) command.FillErrorFromWorld();
             }
         }
     }
@@ -63,7 +58,8 @@ namespace GY02.Commands
         {
             if (command.HasError || exception is not null) return;
             // 89a66863-4d5e-48f6-b8e6-4f2b949239af	快速巡逻购买
-            if (command.ShoppingItemTId != Guid.Parse("89a66863-4d5e-48f6-b8e6-4f2b949239af")) return;
+            var tids = new Guid[] { Guid.Parse("89a66863-4d5e-48f6-b8e6-4f2b949239af"), Guid.Parse("f7ad9c3c-c9d1-4773-9eb5-f77bf7b4162a") };
+            if (!tids.Contains(command.ShoppingItemTId)) return;
             var achiTId = Guid.Parse("60be1c6e-e144-4109-9684-b2038df7ee2b");
             var now = OwHelper.WorldNow;
             _AchievementManager.RaiseEventIfChanged(achiTId, 1, command.GameChar, now);

@@ -65,8 +65,7 @@ namespace GY02.Commands.Achievement
             _AchievementManager.RaiseEventIfChanged(achievement, types_egg, command.GameChar, now);
             #endregion 杀怪数量 
             //2913b8e2-3db3-4204-b36c-415d6bc6b3f0	闯关数量成就
-            if (command.IsSuccess)
-                _AchievementManager.RaiseEventIfChanged(Guid.Parse("2913b8e2-3db3-4204-b36c-415d6bc6b3f0"), 1, command.GameChar, now);
+            _AchievementManager.RaiseEventIfChanged(Guid.Parse("2913b8e2-3db3-4204-b36c-415d6bc6b3f0"), 1, command.GameChar, now);
             //cj_guanqia 单个关卡通关成就
             if (command.IsSuccess)
             {
@@ -102,22 +101,13 @@ namespace GY02.Commands.Achievement
             var now = OwHelper.WorldNow;
             var tt = _CombatManager.GetTemplateById(command.CombatTId);
             if (tt is null) goto lbErr;
+            //43E9286A-904C-4923-B477-482C0D6470A5	主线副本通关进度,必须成功
+            if (command.IsSuccess && tt.Gid is int gid && gid / 1000 == 210101)   //若不是主线任务副本
+            {
+                var count = gid % 1000; //通关经验值
+                _AchievementManager.RaiseEventIfIncrease(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"), count, command.GameChar, now);
+            }
 
-            if (tt.Gid is not int gid || gid / 1000 != 210101)   //若不是主线任务副本
-            {
-                return;
-            }
-            var count = gid % 1000; //通关经验值
-            if (_AchievementManager.GetTemplateById(new Guid("43E9286A-904C-4923-B477-482C0D6470A5")) is TemplateStringFullView ttAchi &&
-                _AchievementManager.GetOrCreate(command.GameChar, ttAchi) is GameAchievement achi)
-            {
-                if (achi.Count < count) //若完成了新成就。
-                {
-                    var olvLv = achi.Level; //记录旧的等级
-                    achi.Count = count;
-                    _AchievementManager.RefreshState(achi, command.GameChar, now);
-                }
-            }
             // 1fbe6bb9-84be-4098-8430-e7c46a6135f1	开服活动成就- 累计杀怪数量
             var tts = _TemplateManager.GetTemplatesFromGenus("types_all");  //符合要求怪的模板集合
             var tids = new HashSet<Guid>(tts.Select(c => c.TemplateId));    //符合要求怪的模板Id集合

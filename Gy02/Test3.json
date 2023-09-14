@@ -1,25 +1,31 @@
 {
-  "Genus": [ "tj_jiangli", "cj_pifu" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
+  "Genus": [ "gs_kaifu" ],
+  "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-30T03:03:28.385Z",
+      "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
     },
-    "TjIns": [
+    "GroupNumber": 0,
+    "MaxCount": 1,
+    "Ins": [
       {
         "Conditional": [
           {
-            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
-            "MinCount": 1,
+            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
+            "MinCount": null,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": 13,
+              "Subtrahend": 0,
+              "Modulus": 13,
+              "MinRemainder": 0,
+              "MaxRemainder": 13
+            },
             "GeneralConditional": [],
             "IgnoreIfDisplayList": true
           }
@@ -27,17 +33,32 @@
         "Count": 0,
         "Genus": [],
         "IgnoreIfDisplayList": true
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 60,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
       }
     ],
-    "Exp2LvSequence": [ 1 ],
     "Outs": [
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5
-        }
-      ]
+      {
+        "Id": null,
+        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+        "TId": "e012e8bc-882f-4b0c-a3c1-719ac003efed",
+        "Count": 1
+      }
     ]
-  }
+  },
+  "name_txt": 10213,
+  "comment_txt": 10214
 }

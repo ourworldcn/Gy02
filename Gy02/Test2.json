@@ -1,41 +1,11 @@
 {
-  "Ins": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "dbbb8d4c-92f0-49ff-9add-682c6caaa200",
-          "MinCount": 0,
-          "NumberCondition": {
-            "PropertyName": "Count",
-            "MinValue": 0,
-            "MaxValue": null,
-            "Subtrahend": 0,
-            "Modulus": 2,
-            "MinRemainder": 0,
-            "MaxRemainder": 0
-          },
-          "GeneralConditional": [],
-          "Count": 0,
-          "IgnoreIfDisplayList": true
-        }
-      ]
-    },
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "d4828a12-534a-4a32-ae17-792b6bfd29cd",
-          "MinCount": 1
-        }
-      ],
-      "Count": 1
-    }
-  ],
-  "name_txt": 40001,
-  "comment_txt": 40003,
-  "comment2_txt": 40005,
-  "suggest": [ 300, 2800, 250 ]
+  "Seq": 37,
+  "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+  "ObjectId": "18b0eea5-c739-497e-82b0-022d3d850149",
+  "PropertyName": "Count",
+  "HasOldValue": true,
+  "OldValue": 7,
+  "HasNewValue": true,
+  "NewValue": 11,
+  "DateTimeUtc": "2023-09-14T11:37:21.8123953Z"
 }

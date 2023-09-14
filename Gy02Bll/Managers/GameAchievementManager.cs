@@ -110,23 +110,6 @@ namespace GY02.Managers
             return true;
         }
 
-        /// <summary>
-        /// 对指定的成就任务项增加计数，若计数发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
-        /// </summary>
-        /// <param name="achievementTId"></param>
-        /// <param name="inc"></param>
-        /// <param name="gameChar"></param>
-        /// <param name="now"></param>
-        /// <returns></returns>
-        public bool RaiseEventIfChanged(Guid achievementTId, decimal inc, GameChar gameChar, DateTime now)
-        {
-            var tt = GetTemplateById(achievementTId);
-            if (tt is null) return false;
-            var achi = GetOrCreate(gameChar, tt);
-            if (achi is null) return false;
-            return RaiseEventIfChanged(achi, inc, gameChar, now);
-        }
-
         #endregion 事件及相关
 
         #region 基础操作
@@ -361,4 +344,52 @@ namespace GY02.Managers
 
     }
 
+    public static class GameAchievementManagerExtensions
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="achievementMng"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="achiTId"></param>
+        /// <returns>null表示出错。此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
+        public static GameAchievement GetOrCreate(this GameAchievementManager achievementMng, GameChar gameChar, Guid achiTId)
+        {
+            if (achievementMng.GetTemplateById(achiTId) is not TemplateStringFullView tt) return null;
+            return achievementMng.GetOrCreate(gameChar, tt);
+        }
+
+        /// <summary>
+        /// 如果新的值大于成就对象已有经验值则刷新对象状态。
+        /// </summary>
+        /// <param name="achievementManager"></param>
+        /// <param name="achiTId"></param>
+        /// <param name="newValue"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="now"></param>
+        /// <returns></returns>
+        public static bool RaiseEventIfIncrease(this GameAchievementManager achievementManager, Guid achiTId, decimal newValue, GameChar gameChar, DateTime now)
+        {
+            if (achievementManager.GetOrCreate(gameChar, achiTId) is not GameAchievement achi) return false;
+            if (achi.Count >= newValue) return false;
+            return achievementManager.RaiseEventIfChanged(achi, newValue - achi.Count, gameChar, now);
+        }
+
+        /// <summary>
+        /// 对指定的成就任务项增加计数，若计数发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
+        /// </summary>
+        /// <param name="achievementTId"></param>
+        /// <param name="inc"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="now"></param>
+        /// <returns></returns>
+
+        public static bool RaiseEventIfChanged(this GameAchievementManager achievementManager, Guid achievementTId, decimal inc, GameChar gameChar, DateTime now)
+        {
+            if (inc <= 0) return false;
+            if (achievementManager.GetOrCreate(gameChar, achievementTId) is not GameAchievement achi) return false;
+            return achievementManager.RaiseEventIfChanged(achi, inc, gameChar, now);
+        }
+
+    }
 }

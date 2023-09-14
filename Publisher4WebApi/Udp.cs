@@ -175,7 +175,7 @@ namespace GY02.Publisher
         /// </summary>
         public Guid Token { get => _Token ?? (_Token = LastToken).Value; }
 
-        System.Threading.Timer _Timer;
+        //System.Threading.Timer _Timer;
 
         /// <summary>
         /// 开始侦听。在登录完成后调用此函数，开始侦听数据。
@@ -205,7 +205,8 @@ namespace GY02.Publisher
             _Udp.UdpDataRecived += _Udp_UdpDataRecived;
 
             //心跳
-            _Timer = new System.Threading.Timer(c => Nop(Token), default, 10_000, 10_000);
+            Nop(Token);
+            //_Timer = new System.Threading.Timer(c => Nop(Token), default, 10_000, 10_000);
         }
 
         private void _Udp_UdpDataRecived(object sender, UdpDataRecivedEventArgs e)
@@ -272,9 +273,9 @@ namespace GY02.Publisher
                 {
                     //释放托管状态(托管对象)
                     _CancellationTokenSource?.Cancel();
-                    var waitHandle = new AutoResetEvent(false);
-                    _Timer?.Dispose(waitHandle);
-                    waitHandle.WaitOne(5_000);   //确保定时器退出
+                    //var waitHandle = new AutoResetEvent(false);
+                    //_Timer?.Dispose(waitHandle);
+                    //waitHandle.WaitOne(5_000);   //确保定时器退出
                     _Udp?.Dispose();
                 }
                 // 释放未托管的资源(未托管的对象)并重写终结器

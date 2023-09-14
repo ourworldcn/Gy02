@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using System.Buffers;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
@@ -54,14 +55,14 @@ namespace System.Net.Sockets
         /// <summary>
         /// 发送缓冲区的大小，以字节为单位。
         /// </summary>
-        /// <value>默认值：8192</value>
-        public int SendBufferSize { get; set; } = 8192;
+        /// <value>默认值：1MByte</value>
+        public int SendBufferSize { get; set; } = 1024 * 1024;
 
         /// <summary>
         /// 接收缓冲区的大小，以字节为单位。
         /// </summary>
-        /// <value>默认值：8192</value>
-        public int ReceiveBufferSize { get; set; } = 8192;
+        /// <value>默认值：1MByte</value>
+        public int ReceiveBufferSize { get; set; } = 1024 * 1024;
 
         /// <summary>
         /// 请求关闭的同步信号。
@@ -105,6 +106,27 @@ namespace System.Net.Sockets
         /// 接受数据来自的远程终结点。
         /// </summary>
         public IPEndPoint RemotePoint { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class OwUdpHeader
+    {
+        /// <summary>
+        /// 此包包号。
+        /// </summary>
+        public int Seq;
+
+        /// <summary>
+        /// 已经收到的连续包的最大包号。
+        /// </summary>
+        public int ReceivedMaxSeq;
+
+        /// <summary>
+        /// 已经确定丢失的包范围，Item1=最小包号，Item2=最大包号。
+        /// </summary>
+        public (int, int)[] Lakes;
     }
 
     /// <summary>
@@ -156,6 +178,34 @@ namespace System.Net.Sockets
         ConcurrentQueue<(byte[], IPEndPoint)> _ReceiveQueue = new ConcurrentQueue<(byte[], IPEndPoint)>();
 
         ConcurrentQueue<(byte[], IPEndPoint)> _SendQueue = new ConcurrentQueue<(byte[], IPEndPoint)>();
+
+        class SendEntry
+        {
+            public SendEntry()
+            {
+
+            }
+
+            public IPEndPoint RemoteEndPoint;
+
+            /// <summary>
+            /// 当前可用的序号。
+            /// </summary>
+            public int Seq = 0;
+
+            /// <summary>
+            /// 待发送队列。
+            /// </summary>
+            public ConcurrentQueue<byte[]> Buffer = new ConcurrentQueue<byte[]>();
+
+            /// <summary>
+            /// 已经发送的队列。
+            /// </summary>
+            public ConcurrentDictionary<int, byte[]> History = new ConcurrentDictionary<int, byte[]>();
+        }
+
+        ConcurrentDictionary<IPEndPoint, SendEntry> _SendEntry = new ConcurrentDictionary<IPEndPoint, SendEntry>();
+
         private bool disposedValue;
 
         /// <summary>
