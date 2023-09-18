@@ -38,7 +38,6 @@ namespace System.Net.Sockets
         /// </summary>
         public OwUdpClientOptions()
         {
-
         }
 
         /// <summary>
@@ -107,26 +106,47 @@ namespace System.Net.Sockets
         /// </summary>
         public IPEndPoint RemotePoint { get; set; }
     }
-
     /// <summary>
     /// 
     /// </summary>
-    public class OwUdpHeader
+    public class OwUdpDgram
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public OwUdpDgram()
+        {
+            //IPAddress.HostToNetworkOrder()
+            //BitConverter.TryWriteBytes()
+            //IPAddress.NetworkToHostOrder(BitConverter.ToInt32(_Buffer, 0));
+            //BitConverter.GetBytes(IPAddress.HostToNetworkOrder(value));
+        }
+
+        byte[] _Buffer;
+        //unsafe byte* _Buff;
+
         /// <summary>
         /// 此包包号。
         /// </summary>
-        public int Seq;
+        public uint Seq
+        {
+            get => (uint)IPAddress.NetworkToHostOrder(BitConverter.ToInt32(_Buffer, 0));
+            set => Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((int)value)), 0, _Buffer, 0, 4);
+        }
 
         /// <summary>
         /// 已经收到的连续包的最大包号。
         /// </summary>
-        public int ReceivedMaxSeq;
+        public uint ReceivedMaxSeq
+        {
+            get => (uint)IPAddress.NetworkToHostOrder(BitConverter.ToInt32(_Buffer, 4));
+            set => Buffer.BlockCopy(BitConverter.GetBytes(IPAddress.HostToNetworkOrder((int)value)), 0, _Buffer, 4, 4);
+        }
 
         /// <summary>
-        /// 已经确定丢失的包范围，Item1=最小包号，Item2=最大包号。
+        /// 负载内容。
         /// </summary>
-        public (int, int)[] Lakes;
+        public byte[] Data { get; set; }
     }
 
     /// <summary>
@@ -260,7 +280,7 @@ namespace System.Net.Sockets
                         var data = _UdpClient.Receive(ref listen);
                         _ReceiveQueue.Enqueue((data, listen));
                     }
-                    if (_ReceiveQueue.Count > 0) Task.Run(RaiseEvent);   //若需要引发事件
+                    if (!_ReceiveQueue.IsEmpty) Task.Run(RaiseEvent);   //若需要引发事件
                     while (_SendQueue.TryDequeue(out var data))
                     {
                         _UdpClient.Send(data.Item1, data.Item1.Length, data.Item2);
