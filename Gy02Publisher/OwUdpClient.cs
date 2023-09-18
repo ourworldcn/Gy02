@@ -55,14 +55,14 @@ namespace System.Net.Sockets
         /// <summary>
         /// 发送缓冲区的大小，以字节为单位。
         /// </summary>
-        /// <value>默认值：1MByte</value>
-        public int SendBufferSize { get; set; } = 1024 * 1024;
+        /// <value>默认值：0.5MByte</value>
+        public int SendBufferSize { get; set; } = 512 * 1024;
 
         /// <summary>
         /// 接收缓冲区的大小，以字节为单位。
         /// </summary>
         /// <value>默认值：1MByte</value>
-        public int ReceiveBufferSize { get; set; } = 1024 * 1024;
+        public int ReceiveBufferSize { get; set; } = 512 * 1024;
 
         /// <summary>
         /// 请求关闭的同步信号。

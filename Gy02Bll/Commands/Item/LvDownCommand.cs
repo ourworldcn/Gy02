@@ -53,7 +53,7 @@ namespace GY02.Commands
             if (dw.IsEmpty) return; //若锁定失败
 
             var totalCost = command.Entity.LvUpAccruedCost.ToArray();
-            LvUpCommandHandler.SetLevel(command.Entity, 0, _EntityManager, command.Changes);
+            _EntityManager.SetLevel(command.Entity, 0, command.Changes);
             command.Entity.LvUpAccruedCost = new List<GameEntitySummary>();
             List<VirtualThing> list = new List<VirtualThing>();
 

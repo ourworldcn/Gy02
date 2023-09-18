@@ -160,50 +160,7 @@ namespace GY02.Commands
                     NewValue = totalCost,
                 });
             }
-            SetLevel(entity, Convert.ToInt32(entity.Level + 1), _GameEntityManager, changes);
-            return true;
-        }
-
-        /// <summary>
-        /// 设置等级和相关的序列属性。
-        /// </summary>
-        /// <param name="entity">信息完备的实体（设置了模板属性）。</param>
-        /// <param name="newLevel"></param>
-        /// <returns></returns>
-        public static bool SetLevel(GameEntity entity, int newLevel, GameEntityManager entityManager, ICollection<GamePropertyChangeItem<object>> changes = null)
-        {
-            var tfv = entityManager.GetTemplate(entity);
-            if (tfv is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"无法找到对象(Id={entity.Id})的模板。");
-                return false;
-            }
-            var oldLv = Convert.ToInt32(entity.Level);
-            var pis = TypeDescriptor.GetProperties(tfv).OfType<PropertyDescriptor>().Where(c => c.PropertyType.IsAssignableTo(typeof(IList<decimal>)));
-            var pis2 = TypeDescriptor.GetProperties(entity).OfType<PropertyDescriptor>();
-            var coll = pis.Join(pis2, c => c.Name, c => c.Name, (l, r) => (seq: l, prop: r));
-            foreach (var pi in coll)
-            {
-                var seq = pi.seq.GetValue(tfv) as IList<decimal>;
-                if (seq is null)    //若该属性未设置
-                    continue;   //忽略该序列
-                var oldVal = seq[oldLv];
-                var newVal = seq[newLevel];
-                if (oldVal != newVal)
-                    entity.SetPropertyValue(pi.prop, newVal - oldVal, changes);
-            }
-            //设置级别属性值
-            entity.Level = newLevel;
-            changes?.Add(new GamePropertyChangeItem<object>
-            {
-                Object = entity,
-                PropertyName = nameof(entity.Level),
-                OldValue = oldLv,
-                HasOldValue = true,
-                NewValue = newLevel,
-                HasNewValue = true,
-            });
+            _GameEntityManager.SetLevel(entity, Convert.ToInt32(entity.Level + 1), changes);
             return true;
         }
 

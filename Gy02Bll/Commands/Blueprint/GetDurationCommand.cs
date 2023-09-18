@@ -90,8 +90,8 @@ namespace GY02.Commands
                 {
                     if (nc.GetCurrentPeriod(count, out decimal start, out decimal end))
                     {
-                        command.Start.Add(now.Date.AddDays((double)start));
-                        command.End.Add(now.Date.AddDays((double)end + 1));
+                        command.Start.Add(now.Date.AddDays((double)(start - entity.Count)));
+                        command.End.Add(now.Date.AddDays((double)(end - entity.Count + 1)));
                         break;
                     }
                     else if (++tmp > nc.Modulus)

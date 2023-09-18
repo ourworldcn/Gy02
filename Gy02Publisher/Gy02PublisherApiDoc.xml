@@ -1384,7 +1384,7 @@
             <summary>
             发送缓冲区的大小，以字节为单位。
             </summary>
-            <value>默认值：1MByte</value>
+            <value>默认值：0.5MByte</value>
         </member>
         <member name="P:System.Net.Sockets.OwUdpClientOptions.ReceiveBufferSize">
             <summary>

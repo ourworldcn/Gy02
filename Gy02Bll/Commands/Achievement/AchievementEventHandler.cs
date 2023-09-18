@@ -62,7 +62,7 @@ namespace GY02.Commands.Achievement
                 }
             }
             if (gc is null) return;
-            if (e.Entities.Any(c => c.TemplateId == ProjectContent.GuanggaoCurrenyTId && c.Count>0))
+            if (e.Entities.Any(c => c.TemplateId == ProjectContent.GuanggaoCurrenyTId && c.Count > 0))
             {
                 //192db3ea-2147-4743-849e-9c20236c7771	看广告数量成就
                 _AchievementManager.RaiseEventIfChanged(Guid.Parse("192db3ea-2147-4743-849e-9c20236c7771"), 1, gc, now);
@@ -183,15 +183,12 @@ namespace GY02.Commands.Achievement
                     if (_TemplateManager.GetTemplatesFromGenus("gs_equipslot") is not IEnumerable<TemplateStringFullView> tts) break;  //获取所有装备槽模板
                     var ttIds = new HashSet<Guid>(tts.Select(c => c.TemplateId));   //所有装备槽模板Id集合
                     var things = gc.GetThing().GetAllChildren().Where(c => ttIds.Contains(c.Parent?.ExtraGuid ?? Guid.Empty));   //所有装备的数据对象
-                    var nv = things.Select(c => _EntityManager.GetEntity(c)).Sum(c => c.Level); //现有总穿戴的装备等级
+                    var entitis = things.Select(c => _EntityManager.GetEntity(c));
+                    var nv = entitis.Sum(c => c.Level); //现有总穿戴的装备等级
 
                     var achiTId = Guid.Parse("2d023b02-fb74-4320-9ee4-b6c761938fbe");
-                    if (_AchievementManager.GetTemplateById(achiTId) is not TemplateStringFullView achiTt) break;
-                    if (_AchievementManager.GetOrCreate(gc, achiTt) is not GameAchievement achi) break;
 
-                    var inc = nv - achi.Count;  //等级差
-                    if (inc > 0)
-                        _AchievementManager.RaiseEventIfChanged(achiTId, inc, gc, OwHelper.WorldNow);
+                    _AchievementManager.RaiseEventIfIncrease(achiTId, nv, gc, OwHelper.WorldNow);
                 } while (false);
             }
         }

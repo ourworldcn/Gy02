@@ -646,25 +646,25 @@ namespace GY02.Managers
         /// <summary>
         /// 设置等级和相关的序列属性。
         /// </summary>
-        /// <param name="entity">有Level属性的实体。</param>
+        /// <param name="entity">信息完备的实体（设置了模板属性）。</param>
         /// <param name="newLevel"></param>
         /// <returns></returns>
-        public bool SetLevel(GameEntity entity, int newLevel, ICollection<GamePropertyChangeItem<object>> changes = null)
+        public bool SetLevel(GameEntity entity, int newLevel,ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            var tt = GetTemplate(entity);
-            if (tt is null)
+            var tfv = GetTemplate(entity);
+            if (tfv is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                 OwHelper.SetLastErrorMessage($"无法找到对象(Id={entity.Id})的模板。");
                 return false;
             }
             var oldLv = Convert.ToInt32(entity.Level);
-            var pis = TypeDescriptor.GetProperties(tt).OfType<PropertyDescriptor>().Where(c => c.PropertyType.IsAssignableTo(typeof(IList<decimal>)));
+            var pis = TypeDescriptor.GetProperties(tfv).OfType<PropertyDescriptor>().Where(c => c.PropertyType.IsAssignableTo(typeof(IList<decimal>)));
             var pis2 = TypeDescriptor.GetProperties(entity).OfType<PropertyDescriptor>();
             var coll = pis.Join(pis2, c => c.Name, c => c.Name, (l, r) => (seq: l, prop: r));
             foreach (var pi in coll)
             {
-                var seq = pi.seq.GetValue(tt) as IList<decimal>;
+                var seq = pi.seq.GetValue(tfv) as IList<decimal>;
                 if (seq is null)    //若该属性未设置
                     continue;   //忽略该序列
                 var oldVal = seq[oldLv];
@@ -683,6 +683,8 @@ namespace GY02.Managers
                 NewValue = newLevel,
                 HasNewValue = true,
             });
+            //引发变化事件
+            InvokeEntityChanged(new GameEntity[] { entity }, entity.GetThing().GetGameCharThing().GetJsonObject<GameChar>());
             return true;
         }
 

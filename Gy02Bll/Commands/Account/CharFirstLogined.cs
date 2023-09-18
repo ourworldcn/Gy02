@@ -55,11 +55,13 @@ namespace GY02.Commands
             var now = OwHelper.WorldNow;
             //fl_ExistsDayNumber 此类实体在每天第一次登录时会自动把Count置为该实体存在的总天数，从0开始。副作用，此类属实体的Count设置由系统完成单独设置无用
             var allEntityAndTemplate = _EntityManager.GetAllEntity(command.GameChar).Select(c => (Entity: c, Template: _TemplateManager.GetFullViewFromId(c.TemplateId)))
-                .Where(c => c.Item2 is not null); //容错
-            allEntityAndTemplate.Where(c => c.Template.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false).ForEach(c =>
+                .Where(c => c.Item2 is not null).Where(c => c.Template.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false); //容错
+            allEntityAndTemplate.ForEach(c =>
             {
                 if (OwConvert.TryGetDateTime(c.Entity.ExtensionProperties.GetValueOrDefault("CreateDateTime"), out var dt))
+                {
                     c.Entity.Count = (now.Date - dt.Date).Days;
+                }
             });
         }
 

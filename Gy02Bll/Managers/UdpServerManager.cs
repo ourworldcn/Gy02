@@ -53,8 +53,8 @@ namespace GY02.Managers
             {
                 LocalEndPoint = new IPEndPoint(IPAddress.Any, Options.LocalPort),
                 RemoteEndPoint = new IPEndPoint(IPAddress.Any, 0),
-                ReceiveBufferSize = 1024_000,
-                SendBufferSize = 1024_000,
+                //ReceiveBufferSize = 1024_000,
+                //SendBufferSize = 1024_000,
                 RequestStop = _Lifetime.ApplicationStopping,
                 SendPerSeconds = 100,
             };
