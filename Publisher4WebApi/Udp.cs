@@ -206,11 +206,21 @@ namespace GY02.Publisher
 
             //心跳
             Nop(Token);
-            //_Timer = new System.Threading.Timer(c => Nop(Token), default, 10_000, 10_000);
+
+            _LastPing = new System.Threading.Timer(Timer_Callback, null, 11_000, Timeout.Infinite);
         }
+
+        private void Timer_Callback(object state)
+        {
+            Nop(Token);
+            _LastPing.Change(11_000, Timeout.Infinite);
+        }
+
+        System.Threading.Timer _LastPing;
 
         private void _Udp_UdpDataRecived(object sender, UdpDataRecivedEventArgs e)
         {
+            _LastPing.Change(11_000, Timeout.Infinite);
             OnDataRecived(new DataRecivedEventArgs { Data = e.Data });
         }
 
@@ -276,10 +286,12 @@ namespace GY02.Publisher
                     //var waitHandle = new AutoResetEvent(false);
                     //_Timer?.Dispose(waitHandle);
                     //waitHandle.WaitOne(5_000);   //确保定时器退出
+                    _LastPing?.Dispose();
                     _Udp?.Dispose();
                 }
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
+                _LastPing = null;
                 _Udp = null;
                 //base.Dispose(disposing);  //        IsDisposed = true;
             }

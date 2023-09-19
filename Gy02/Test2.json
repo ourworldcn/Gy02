@@ -1,126 +1,278 @@
 {
-  "Genus": [ "cj_changqi", "goto_equip_hecheng" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
+  "Seq": 45,
   "Achievement": {
-    "Period": {
-      "Start": "2023-05-30T03:03:28.385Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "Ins": [],
-    "Exp2LvSequence": [ 3, 8, 10, 12, 15, 18, 20, 25, 30, 35, 40, 45, 50, 55, 60 ],
-    "Outs": [
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 100
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 100
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 100
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 200
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 200
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 200
-        }
-      ]
-    ]
-  },
-  "name_txt": 3012
+    "Items": [
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 2
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 1
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 2
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 2
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 2
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 3
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 2
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 4
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 5
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 6
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 7
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 8
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 9
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 10
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 11
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 12
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 5
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 13
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 10
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 14
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 10
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 15
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 10
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 16
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 10
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 17
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 10
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 18
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 10
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 19
+      },
+      {
+        "Rewards": [
+          {
+            "Id": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "Count": 20
+          }
+        ],
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 20
+      }
+    ],
+    "Count": 1,
+    "LastModifyDateTime": "0001-01-01T00:00:00",
+    "IsValid": true,
+    "LvUpAccruedCost": [],
+    "CompositingAccruedCost": [],
+    "CountOfLastModifyUtc": "2023-09-19T12:00:20.9285809Z",
+    "ClientDictionary": {},
+    "Fcps": {},
+    "lv": 0,
+    "Id": "cb4de821-70a0-413a-b186-3683563d1113",
+    "TemplateId": "22f48e2b-8e81-43fb-80dd-af900eb21a29"
+  }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using System.Buffers;
 using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -106,6 +107,7 @@ namespace System.Net.Sockets
         /// </summary>
         public IPEndPoint RemotePoint { get; set; }
     }
+
     /// <summary>
     /// 
     /// </summary>
@@ -120,9 +122,10 @@ namespace System.Net.Sockets
             //BitConverter.TryWriteBytes()
             //IPAddress.NetworkToHostOrder(BitConverter.ToInt32(_Buffer, 0));
             //BitConverter.GetBytes(IPAddress.HostToNetworkOrder(value));
+            
         }
 
-        byte[] _Buffer;
+        byte[] _Buffer = new byte[4096];
         //unsafe byte* _Buff;
 
         /// <summary>
@@ -146,7 +149,7 @@ namespace System.Net.Sockets
         /// <summary>
         /// 负载内容。
         /// </summary>
-        public byte[] Data { get; set; }
+        public byte[] Data { get => _Buffer; set => _Buffer = value; }
     }
 
     /// <summary>
