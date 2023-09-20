@@ -122,7 +122,6 @@ namespace System.Net.Sockets
             //BitConverter.TryWriteBytes()
             //IPAddress.NetworkToHostOrder(BitConverter.ToInt32(_Buffer, 0));
             //BitConverter.GetBytes(IPAddress.HostToNetworkOrder(value));
-            
         }
 
         byte[] _Buffer = new byte[4096];
@@ -269,6 +268,7 @@ namespace System.Net.Sockets
             _UdpClient = new UdpClient(_Options.LocalEndPoint);
             _UdpClient.Client.SendBufferSize = _Options.SendBufferSize;
             _UdpClient.Client.ReceiveBufferSize = _Options.ReceiveBufferSize;
+            //_UdpClient.Client.DontFragment = false;
 
             var ct = _RequestStop.Token;
             #endregion 初始化

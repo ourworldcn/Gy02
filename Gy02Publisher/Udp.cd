@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System.Net.Sockets.OwUdpClientOptions" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAABAgAAAAAAAAAQAEAAAAAAAAEgAAAAAAA=</HashCode>
+      <FileName>OwUdpClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Net.Sockets.UdpDataRecivedEventArgs">
+    <Position X="5.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAIAAAAAAAAA=</HashCode>
+      <FileName>OwUdpClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Sockets.OwUdpDgram">
+    <Position X="8" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAIAABAAACAAAAAAAAA=</HashCode>
+      <FileName>OwUdpClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Net.Sockets.OwUdpClient" BaseTypeListCollapsed="true">
+    <Position X="1" Y="1" Width="1.5" />
+    <NestedTypes>
+      <Class Name="System.Net.Sockets.OwUdpClient.SendEntry" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>OwUdpClient.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAEAACACAAAQAAAEABAABQgQAAAAAEMgAAAkAAAAE=</HashCode>
+      <FileName>OwUdpClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
