@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using System.Buffers;
 using System.Collections.Concurrent;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -118,14 +119,10 @@ namespace System.Net.Sockets
         /// </summary>
         public OwUdpDgram()
         {
-            //IPAddress.HostToNetworkOrder()
-            //BitConverter.TryWriteBytes()
-            //IPAddress.NetworkToHostOrder(BitConverter.ToInt32(_Buffer, 0));
-            //BitConverter.GetBytes(IPAddress.HostToNetworkOrder(value));
+            MemoryStream ms = new MemoryStream(_Buffer, 8, _Buffer.Length - 8);
         }
 
         byte[] _Buffer = new byte[4096];
-        //unsafe byte* _Buff;
 
         /// <summary>
         /// 此包包号。
@@ -149,6 +146,7 @@ namespace System.Net.Sockets
         /// 负载内容。
         /// </summary>
         public byte[] Data { get => _Buffer; set => _Buffer = value; }
+
     }
 
     /// <summary>

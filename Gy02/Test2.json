@@ -1,278 +1,36 @@
 {
-  "Seq": 45,
-  "Achievement": {
-    "Items": [
+  "Genus": [],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "Ins": [
       {
-        "Rewards": [
+        "Conditional": [
           {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 2
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "38c418b7-3662-4ad8-b613-032d68f544fc",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": false
           }
         ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 1
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 2
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 2
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 2
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 3
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 2
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 4
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 5
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 6
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 7
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 8
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 9
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 10
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 11
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 12
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 5
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 13
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 10
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 14
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 10
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 15
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 10
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 16
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 10
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 17
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 10
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 18
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 10
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 19
-      },
-      {
-        "Rewards": [
-          {
-            "Id": null,
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "Count": 20
-          }
-        ],
-        "IsCompleted": false,
-        "IsPicked": false,
-        "Level": 20
+        "Count": 1,
+        "Genus": []
       }
     ],
-    "Count": 1,
-    "LastModifyDateTime": "0001-01-01T00:00:00",
-    "IsValid": true,
-    "LvUpAccruedCost": [],
-    "CompositingAccruedCost": [],
-    "CountOfLastModifyUtc": "2023-09-19T12:00:20.9285809Z",
-    "ClientDictionary": {},
-    "Fcps": {},
-    "lv": 0,
-    "Id": "cb4de821-70a0-413a-b186-3683563d1113",
-    "TemplateId": "22f48e2b-8e81-43fb-80dd-af900eb21a29"
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
+        "Count": 1
+      }
+    ],
+    "MaxCount": 1
   }
 }

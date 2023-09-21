@@ -203,8 +203,6 @@ namespace GY02
             }
         }
 
-        public static Guid PingGuid = Guid.Parse("{D99A07D0-DF3E-43F7-8060-4C7140905A29}");
-
         /// <summary>
         /// 
         /// </summary>
