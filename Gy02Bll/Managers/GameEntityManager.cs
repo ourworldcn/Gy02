@@ -269,7 +269,7 @@ namespace GY02.Managers
         /// <returns>true成功，否则返回false,此时用<see cref="OwHelper.GetLastError"/>获取详细信息。</returns>
         public bool Modify(GameEntity entity, decimal count, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
-            if (count == 0) return true;
+            //if (count == 0) return true;
             var template = _TemplateManager.GetFullViewFromId(entity.TemplateId);
             if (template is null) return false;
             var oldCount = entity.Count;
@@ -533,7 +533,12 @@ namespace GY02.Managers
                 entity.Count = summary.Count;   //可以是任何数
                 if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
                 {
-                    entity.ExtensionProperties["CreateDateTime"] = OwHelper.WorldNow;
+                    entity.SetCreateDateTime(OwHelper.WorldNow);
+                    entity.Count = 0;
+                }
+                if (tt.Genus?.Contains(ProjectContent.AutoIncGenus) ?? false)
+                {
+                    entity.SetCreateDateTime(OwHelper.WorldNow);
                     entity.Count = 0;
                 }
                 result.Add(entity);
@@ -564,7 +569,12 @@ namespace GY02.Managers
                     tmpEntity.Count = 1;
                     if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
                     {
-                        tmpEntity.ExtensionProperties["CreateDateTime"] = OwHelper.WorldNow;
+                        tmpEntity.SetCreateDateTime(OwHelper.WorldNow);
+                        tmpEntity.Count = 0;
+                    }
+                    if (tt.Genus?.Contains(ProjectContent.AutoIncGenus) ?? false)
+                    {
+                        tmpEntity.SetCreateDateTime(OwHelper.WorldNow);
                         tmpEntity.Count = 0;
                     }
                     result.Add(tmpEntity);
@@ -610,7 +620,13 @@ namespace GY02.Managers
                     fcp.Value.SetLastValue(ttFcp.CurrentValue, ref dt);
                 }
                 if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
-                    entity.ExtensionProperties["CreateDateTime"] = now;
+                    if (!entity.TryGetCreateDateTime(out _))
+                        entity.SetCreateDateTime(now);
+                if (tt.Genus?.Contains(ProjectContent.AutoIncGenus) ?? false)
+                {
+                    if (!entity.TryGetCreateDateTime(out _))
+                        entity.SetCreateDateTime(OwHelper.WorldNow);
+                }
             }
         }
         #endregion 创建实体相关功能
@@ -618,7 +634,7 @@ namespace GY02.Managers
         #region 删除实体相关功能
 
         /// <summary>
-        /// 从数据库中删除指定实体极其宿主对象。
+        /// 从数据库中删除指定实体及其宿主对象。
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="changes"></param>
@@ -629,7 +645,7 @@ namespace GY02.Managers
             if (thing is null) return false;
             var parent = GetParent(entity);
             if (parent is null) return false;   //若没有找到指定实体的父
-            var db = _VirtualThingManager.GetDbContext(thing);
+            var db = (thing.GetRoot() as VirtualThing)?.GetDbContext();
             if (db is null) return false;
             var result = _VirtualThingManager.Delete(thing, db);
             if (parent is not null)
@@ -649,7 +665,7 @@ namespace GY02.Managers
         /// <param name="entity">信息完备的实体（设置了模板属性）。</param>
         /// <param name="newLevel"></param>
         /// <returns></returns>
-        public bool SetLevel(GameEntity entity, int newLevel,ICollection<GamePropertyChangeItem<object>> changes = null)
+        public bool SetLevel(GameEntity entity, int newLevel, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var tfv = GetTemplate(entity);
             if (tfv is null)

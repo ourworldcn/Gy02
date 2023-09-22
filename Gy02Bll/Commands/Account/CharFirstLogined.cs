@@ -1,10 +1,12 @@
-﻿using GY02.Managers;
+﻿using GY02.Base;
+using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.Store;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -58,23 +60,21 @@ namespace GY02.Commands
                 .Where(c => c.Item2 is not null).Where(c => c.Template.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false); //容错
             allEntityAndTemplate.ForEach(c =>
             {
-                if (OwConvert.TryGetDateTime(c.Entity.ExtensionProperties.GetValueOrDefault("CreateDateTime"), out var dt))
+                if (c.Entity.TryGetCreateDateTime(out var dt))
                 {
                     c.Entity.Count = (now.Date - dt.Date).Days;
                 }
             });
+            //fl_AutoInc 此类实体在每天第一次登录时会自动把Count+1，从0开始。
+            var allEntity = _EntityManager.GetAllEntity(command.GameChar).Select(c => (Entity: c, Template: _TemplateManager.GetFullViewFromId(c.TemplateId)))
+                 .Where(c => c.Item2 is not null).Where(c => c.Template.Genus?.Contains(ProjectContent.AutoIncGenus) ?? false);
+            allEntity.SafeForEach(c =>
+            {
+                if (c.Entity.TryGetCreateDateTime(out var dt) && dt.Date < now.Date)
+                {
+                    c.Entity.Count++;
+                }
+            });
         }
-
-        //static void sub(string[] args)
-        //{
-        //    //增加累计登陆天数
-        //    slot = allEntity[ProjectContent.LoginedDayTId]?.FirstOrDefault();
-        //    if (slot is not null)
-        //    {
-        //        slot.Count++;
-        //        _EntityManager.InvokeEntityChanged(new GameEntity[] { slot });
-        //        _AccountStore.Save(key);
-        //    }
-        //}
     }
 }

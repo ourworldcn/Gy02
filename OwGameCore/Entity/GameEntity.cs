@@ -109,7 +109,7 @@ namespace OW.Game.Entity
         public override string ToString()
         {
             var name = ((Thing as VirtualThing)?.GetTemplate())?.DisplayName;
-            name ??= $"TId = {TemplateId.ToString()[0..2]}...{TemplateId.ToString()[^2..^0]} , Count = {Count}";
+            name ??= $"TId = {TemplateId.ToString()[0..3]}...{TemplateId.ToString()[^2..^0]} , Count = {Count}";
             return $"{GetType().Name}({name})";
         }
     }

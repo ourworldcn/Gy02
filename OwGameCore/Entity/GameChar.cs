@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -410,6 +411,7 @@ namespace OW.Game.Entity
         /// <param name="gc"></param>
         /// <returns>所有子虚拟物的枚举子。如果出错则返回null,此时用<see cref="OwHelper.GetLastError"/>确定具体信息。</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [DebuggerHidden]
         public static IEnumerable<VirtualThing> GetAllChildren(this GameChar gc) => gc.GetThing()?.GetAllChildren();
     }
 }

@@ -212,6 +212,11 @@ namespace GY02.Publisher
         /// </summary>
         public const string ExistsDayNumberGenus = "fl_ExistsDayNumber";
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string AutoIncGenus = "fl_AutoInc";
+
 
         #region 游戏内实体类型的类型Guid
 

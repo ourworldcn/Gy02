@@ -352,7 +352,9 @@ namespace System
         public static bool TryGetDateTime(object obj, out DateTime result)
         {
             bool b = false;
-            if (obj is DateTime dt)
+            if (obj is null)
+                result = default;
+            else if (obj is DateTime dt)
             {
                 result = dt;
                 b = true;

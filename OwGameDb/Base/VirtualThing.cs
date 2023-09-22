@@ -81,12 +81,7 @@ namespace OW.Game.Store
         [NotMapped, JsonIgnore]
         public ConcurrentDictionary<string, object> RuntimeProperties
         {
-            get
-            {
-                if (_RuntimeProperties is null)
-                    Interlocked.CompareExchange(ref _RuntimeProperties, new ConcurrentDictionary<string, object>(), null);
-                return _RuntimeProperties;
-            }
+            get => LazyInitializer.EnsureInitialized(ref _RuntimeProperties);
         }
 
         /// <summary>
@@ -102,7 +97,7 @@ namespace OW.Game.Store
     /// 存储游戏世界事物的基本类。一般认为他们具有树状结构。
     /// </summary>
     [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
-    public class VirtualThing : VirtualThingBase<VirtualThing>,IValidatableObject
+    public class VirtualThing : VirtualThingBase<VirtualThing>, IValidatableObject
     {
         #region 构造函数
 
@@ -198,5 +193,37 @@ namespace OW.Game.Store
         {
             return default;
         }
+    }
+
+    /// <summary>
+    /// <see cref="VirtualThing"/>的扩展方法封装类。
+    /// </summary>
+    public static class VirtualThingExtensions
+    {
+        /// <summary>
+        /// 存储数据上下文的键名。
+        /// </summary>
+        public const string DbContextKeyName = "DbContext_30D12001-71FC-4CE2-AFD2-B1E2E0B7A0F4";
+
+        /// <summary>
+        /// 获取管理该数据存储的上下文。通常不必在每个数据存储对象上设置，仅需设置在树的根节点上即可。
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <returns>没有找到则返回null。</returns>
+        public static DbContext GetDbContext(this VirtualThing thing)
+        {
+            return thing.RuntimeProperties.GetValueOrDefault(DbContextKeyName) as DbContext;
+        }
+
+        /// <summary>
+        /// 设置管理该数据存储的上下文。通常不必在每个数据存储对象上设置，仅需设置在树的根节点上即可。
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <param name="value"></param>
+        public static void SetDbContext(this VirtualThing thing, DbContext value)
+        {
+            thing.RuntimeProperties[DbContextKeyName] = value;
+        }
+
     }
 }

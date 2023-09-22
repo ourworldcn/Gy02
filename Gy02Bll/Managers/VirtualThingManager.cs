@@ -68,8 +68,8 @@ namespace OW.Game.Manager
         {
             _TemplateManager = templateManager;
 
-            Initialize();
             _Mapper = mapper;
+            Initialize();
         }
 
         void Initialize()
@@ -80,35 +80,6 @@ namespace OW.Game.Manager
         GameTemplateManager _TemplateManager;
 
         IMapper _Mapper;
-
-        #region 基础功能
-
-        /// <summary>
-        /// 获取虚拟对象树中存储的数据库上下文对象。
-        /// </summary>
-        /// <param name="thing">树中节点，数据库上下文存储在根节点的<see cref="VirtualThingBase.RuntimeProperties"/>中。</param>
-        /// <returns>没有或出错可能返回null。</returns>
-        public DbContext GetDbContext(VirtualThing thing)
-        {
-            var root = thing.GetRoot();
-            if (root is null) return null;   //若找不到根
-            if (root is not VirtualThing rootThing)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"指定虚拟对象的根不是 {typeof(VirtualThing)} 类型。");
-                return null;
-            }
-            if (rootThing.RuntimeProperties.GetValueOrDefault(nameof(DbContext)) is not DbContext db)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"找不到对象中存储的数据库上下文属性。Id={rootThing.Id}");
-                return null;
-            }
-            OwHelper.SetLastError(ErrorCodes.NO_ERROR);
-            return db;
-        }
-
-        #endregion 基础功能
 
         /// <summary>
         /// 对于缺失子项的虚拟对象，补足缺失的虚拟对象。

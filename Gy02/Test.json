@@ -1,61 +1,161 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
-  "ShoppingItem": {
+  "Genus": [ "cj_changqi", "goto_equip_hecheng" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
     "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
+      "Start": "2023-05-30T03:03:28.385Z",
       "End": null,
-      "PeriodString": "5d",
-      "ValidPeriodString": "1d"
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    "GroupNumber": 2,
-    "MaxCount": 2,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "b957c891-33b6-4b28-ab5f-def1e2060a31",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "5", "1" ]
-              }
-            ],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 0,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-            "MinCount": 10000,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 10000,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
-      }
-    ],
+    "Ins": [],
+    "Exp2LvSequence": [ 2, 5, 7, 9, 13, 18, 22, 27, 33, 39, 45, 51, 57, 65, 75, 85, 95, 105, 115, 140 ],
     "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-        "Count": 5
-      }
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20
+        }
+      ]
     ]
   },
-  "name_txt": 11863,
-  "JiaoBiao": []
+  "name_txt": 3009
 }

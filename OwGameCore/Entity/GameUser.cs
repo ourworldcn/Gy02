@@ -251,17 +251,20 @@ namespace OW.Game.Entity
         /// <summary>
         /// 管理该用户数据存储的上下文。
         /// </summary>
+        /// <param name="user"></param>
         public static DbContext GetDbContext(this GameUser user)
         {
-            return ((VirtualThing)user.Thing).RuntimeProperties.GetValueOrDefault("DbContext") as DbContext;
+            return ((VirtualThing)user.Thing).GetDbContext();
         }
 
         /// <summary>
         /// 管理该用户数据存储的上下文。
         /// </summary>
+        /// <param name="user"></param>
+        /// <param name="value"></param>
         public static void SetDbContext(this GameUser user, DbContext value)
         {
-            ((VirtualThing)user.Thing).RuntimeProperties["DbContext"] = value;
+            ((VirtualThing)user.Thing).SetDbContext(value);
         }
 
     }
