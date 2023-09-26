@@ -47,12 +47,7 @@ namespace OW.Game.Store
         [NotMapped, JsonIgnore]
         public ConcurrentDictionary<string, object> RuntimeProperties
         {
-            get
-            {
-                if (_RuntimeProperties is null)
-                    Interlocked.CompareExchange(ref _RuntimeProperties, new ConcurrentDictionary<string, object>(), null);
-                return _RuntimeProperties;
-            }
+            get => LazyInitializer.EnsureInitialized(ref _RuntimeProperties);
         }
 
         /// <summary>

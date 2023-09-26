@@ -124,12 +124,7 @@ namespace Microsoft.Extensions.Caching.Memory
             [NotNull]
             public IList<PostEvictionCallbackRegistration> PostEvictionCallbacks
             {
-                get
-                {
-                    if (_PostEvictionCallbacksLazyer is null)
-                        Interlocked.CompareExchange(ref _PostEvictionCallbacksLazyer, new List<PostEvictionCallbackRegistration>(), null);
-                    return _PostEvictionCallbacksLazyer;
-                }
+                get => LazyInitializer.EnsureInitialized(ref _PostEvictionCallbacksLazyer);
             }
 
             /// <summary>

@@ -413,12 +413,7 @@ namespace OW.Game.Log
         [JsonIgnore]
         public static TypeConverter Converter
         {
-            get
-            {
-                if (_Converter is null)
-                    Interlocked.CompareExchange(ref _Converter, TypeDescriptor.GetConverter(typeof(T)), null);
-                return _Converter;
-            }
+            get => LazyInitializer.EnsureInitialized(ref _Converter, () => TypeDescriptor.GetConverter(typeof(T)));
         }
 
         /// <summary>
@@ -480,8 +475,8 @@ namespace OW.Game.Log
         /// <param name="date"></param>
         public void RemoveLastData(T data, DateTime date)
         {
-            var item= this.FirstOrDefault(c => c.DateTime.Date == date.Date && c.Action == LastValuesKeyName);
-            if(null!=item)
+            var item = this.FirstOrDefault(c => c.DateTime.Date == date.Date && c.Action == LastValuesKeyName);
+            if (null != item)
             {
                 var tmp = Converter.ConvertToString(data);
                 item.Params.RemoveAll(c => c == tmp);
