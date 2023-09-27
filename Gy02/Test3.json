@@ -1,61 +1,24 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-06-03T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "5d",
-      "ValidPeriodString": "1d"
-    },
-    "GroupNumber": 3,
-    "MaxCount": 2,
-    "Ins": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "5", "5" ]
-              }
-            ],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 0,
+        "ParentTId": null,
         "Genus": [],
-        "IgnoreIfDisplayList": true
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-            "MinCount": 9000,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 9000,
-        "Genus": [],
+        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+        "MinCount": 0,
+        "GeneralConditional": [],
         "IgnoreIfDisplayList": true
       }
     ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-        "Count": 8
-      }
-    ]
-  },
-  "name_txt": 11862,
-  "JiaoBiao": [ "ZheKou60", 10958 ]
+    "GetIndexExpression": {
+      "op": "GetBuyedCount",
+      "args": [ "b957c891-33b6-4b28-ab5f-def1e2060a31" ],
+      "IgnoreIfDisplayList": false
+    },
+    "Outs": {
+      "TIds": [ "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "c9575f24-a33d-49ba-b130-29b6ff4d62c7" ],
+      "Counts": [ 1, 100 ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ]
+    }
+  }
 }

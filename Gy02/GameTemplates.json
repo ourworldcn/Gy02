@@ -2012,31 +2012,61 @@
       "Id": "0d4336cb-87c4-4598-a0c6-fe85570fecfe",
       "DisplayName": "熊猫 白",
       "Gid": 120102010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11878,\"comment_txt\":11879,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95],\"Genus\":[\"p_wh\",\"e_zuoqi\",\"zuoqi_pand\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11878,\"comment_txt\":11879,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95],\"Genus\":[\"p_wh\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "3f37e371-eee4-49a6-bd20-5122f1e88fad",
       "DisplayName": "熊猫 绿",
       "Gid": 120202010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222],\"Genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_pand\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222],\"Genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "fa658261-f1b7-4d6e-8633-27873eac7995",
       "DisplayName": "熊猫 蓝",
       "Gid": 120302010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_pand\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "5d10ca8a-1874-4a1d-a71b-db1706142461",
       "DisplayName": "熊猫 紫",
       "Gid": 121102010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_pand\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":true},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":true},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "7646818c-0cb2-443f-83f6-55269674e747",
       "DisplayName": "熊猫 紫+1",
       "Gid": 121202010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[180,198,216,234,252,270,288,306,324,342,360,378,396,414,432,450,468,486,504,522,540,558,576,594,612,630,648,666,684,702,720,738,756,774,792,810,828,846,864,882,900,918,936,954,972,990,1008,1026,1044,1062,1080,1098,1116,1134,1152,1170,1188,1206,1224,1242],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_pand\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":true},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":true},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[180,198,216,234,252,270,288,306,324,342,360,378,396,414,432,450,468,486,504,522,540,558,576,594,612,630,648,666,684,702,720,738,756,774,792,810,828,846,864,882,900,918,936,954,972,990,1008,1026,1044,1062,1080,1098,1116,1134,1152,1170,1188,1206,1224,1242],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":true},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+    },
+    {
+      "Id": "f8c8d599-df2e-42ee-bd40-7a1739656f67",
+      "DisplayName": "熊 白",
+      "Gid": 120102011,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11880,\"comment_txt\":11881,\"atk\":null,\"def\":null,\"pow\":[50,55,60,65,70,75,80,85,90,95],\"Genus\":[\"p_wh\",\"e_zuoqi\",\"zuoqi_bear\"],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":false},{\"skillsid\":\"e429c487-4c5d-46d5-8aac-d3492397babf\",\"enable\":false},{\"skillsid\":\"a4789c2b-26ab-4b8d-b2b7-4a33cf01cbb7\",\"enable\":false},{\"skillsid\":\"851829c6-e6d6-4dd5-b0b6-004b6b0a5980\",\"enable\":false},{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+    },
+    {
+      "Id": "2d72144f-239f-40e6-902b-c77506719698",
+      "DisplayName": "熊 绿",
+      "Gid": 120202011,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11880,\"comment_txt\":11881,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222],\"Genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true},{\"skillsid\":\"e429c487-4c5d-46d5-8aac-d3492397babf\",\"enable\":false},{\"skillsid\":\"a4789c2b-26ab-4b8d-b2b7-4a33cf01cbb7\",\"enable\":false},{\"skillsid\":\"851829c6-e6d6-4dd5-b0b6-004b6b0a5980\",\"enable\":false},{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+    },
+    {
+      "Id": "4caced11-8773-43ff-8c19-23d2a703c61b",
+      "DisplayName": "熊 蓝",
+      "Gid": 120302011,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11880,\"comment_txt\":11881,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true},{\"skillsid\":\"e429c487-4c5d-46d5-8aac-d3492397babf\",\"enable\":true},{\"skillsid\":\"a4789c2b-26ab-4b8d-b2b7-4a33cf01cbb7\",\"enable\":false},{\"skillsid\":\"851829c6-e6d6-4dd5-b0b6-004b6b0a5980\",\"enable\":false},{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+    },
+    {
+      "Id": "b765092d-2a8f-4375-b633-99f781609fd0",
+      "DisplayName": "熊 紫",
+      "Gid": 121102011,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11880,\"comment_txt\":11881,\"atk\":null,\"def\":null,\"pow\":[150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true},{\"skillsid\":\"e429c487-4c5d-46d5-8aac-d3492397babf\",\"enable\":true},{\"skillsid\":\"a4789c2b-26ab-4b8d-b2b7-4a33cf01cbb7\",\"enable\":true},{\"skillsid\":\"851829c6-e6d6-4dd5-b0b6-004b6b0a5980\",\"enable\":false},{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+    },
+    {
+      "Id": "ff0be92f-acfb-4202-a6ea-8a6d42427926",
+      "DisplayName": "熊  紫+1",
+      "Gid": 121202011,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11880,\"comment_txt\":11881,\"atk\":null,\"def\":null,\"pow\":[180,198,216,234,252,270,288,306,324,342,360,378,396,414,432,450,468,486,504,522,540,558,576,594,612,630,648,666,684,702,720,738,756,774,792,810,828,846,864,882,900,918,936,954,972,990,1008,1026,1044,1062,1080,1098,1116,1134,1152,1170,1188,1206,1224,1242],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true},{\"skillsid\":\"e429c487-4c5d-46d5-8aac-d3492397babf\",\"enable\":true},{\"skillsid\":\"a4789c2b-26ab-4b8d-b2b7-4a33cf01cbb7\",\"enable\":true},{\"skillsid\":\"851829c6-e6d6-4dd5-b0b6-004b6b0a5980\",\"enable\":false},{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "5D7340B6-F784-4F20-A8DA-EE72E1288727",
@@ -2761,7 +2791,55 @@
       "Id": "3fb1eeb5-dd0d-4ba8-82fd-598413f1502e",
       "DisplayName": "鲨鱼 紫+1（升阶）",
       "Gid": 150201118,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"c4300f4d-e92a-4010-a22a-d092ca36425b\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"159acab0-db83-4133-b975-5a2939c7e6a1\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_shark\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"159acab0-db83-4133-b975-5a2939c7e6a1\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"c4300f4d-e92a-4010-a22a-d092ca36425b\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_shark\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+    },
+    {
+      "Id": "204269ba-d3e0-4383-9faa-234ce17cd39f",
+      "DisplayName": "熊猫 绿（升阶）",
+      "Gid": 150201119,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"3f37e371-eee4-49a6-bd20-5122f1e88fad\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "Id": "1b4a77b4-a1d1-4344-84be-1a5f18ea5288",
+      "DisplayName": "熊猫 蓝（升阶）",
+      "Gid": 150201120,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"fa658261-f1b7-4d6e-8633-27873eac7995\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3f37e371-eee4-49a6-bd20-5122f1e88fad\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "Id": "a086d023-81a6-4e47-903a-d76417b61f4a",
+      "DisplayName": "熊猫 紫（升阶）",
+      "Gid": 150201121,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"5d10ca8a-1874-4a1d-a71b-db1706142461\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"fa658261-f1b7-4d6e-8633-27873eac7995\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "Id": "68940dac-2501-4d71-835a-0584ea4ab0cf",
+      "DisplayName": "熊猫 紫+1（升阶）",
+      "Gid": 150201122,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"7646818c-0cb2-443f-83f6-55269674e747\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"5d10ca8a-1874-4a1d-a71b-db1706142461\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+    },
+    {
+      "Id": "036f4144-d10f-4bee-92aa-58497577309e",
+      "DisplayName": "熊 绿（升阶）",
+      "Gid": 150201123,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"2d72144f-239f-40e6-902b-c77506719698\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "Id": "a61fc1c4-2e90-44b0-8cd3-e95f38d35fcf",
+      "DisplayName": "熊 蓝（升阶）",
+      "Gid": 150201124,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"4caced11-8773-43ff-8c19-23d2a703c61b\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"2d72144f-239f-40e6-902b-c77506719698\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "Id": "1d0692a6-34da-4846-bc90-c67bf0888d32",
+      "DisplayName": "熊 紫（升阶）",
+      "Gid": 150201125,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"b765092d-2a8f-4375-b633-99f781609fd0\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"4caced11-8773-43ff-8c19-23d2a703c61b\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "Id": "9ca20614-16ca-417b-bed1-e2d89c5dc326",
+      "DisplayName": "熊 紫+1（升阶）",
+      "Gid": 150201126,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"ff0be92f-acfb-4202-a6ea-8a6d42427926\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b765092d-2a8f-4375-b633-99f781609fd0\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
     },
     {
       "Id": "a380e125-2640-409b-8c45-359ea2f734bb",
@@ -3418,6 +3496,150 @@
       "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12514,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":15}],\"p_skills\":[{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true}],\"equipskin\":\"Shark_Legend_01\"}"
     },
     {
+      "Id": "54692dbf-9ee4-4594-bcbd-0057f84184ff",
+      "DisplayName": "墨镜熊猫",
+      "Gid": 160209014,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12515,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true}],\"equipskin\":\"pandaa_Legend_01\"}"
+    },
+    {
+      "Id": "824409e8-5968-4d4b-929d-1ba6e629cbc6",
+      "DisplayName": "功夫熊猫",
+      "Gid": 160209015,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12516,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"f25f5afb-8997-41ac-8755-4403001172ce\",\"enable\":true}],\"equipskin\":\"pandaa_Legend_02\"}"
+    },
+    {
+      "Id": "506ebaf2-7060-4056-a047-31d383525848",
+      "DisplayName": "羊头熊身",
+      "Gid": 160209016,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12517,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"7cbb0485-3903-46d2-ab7e-e0bc0290a5b4\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "084d2322-56f0-4ec4-9c4f-c9325ad12889",
+      "DisplayName": "狼头熊",
+      "Gid": 160209017,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12518,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "d338d279-fed9-4ea7-8224-075dac1cc02d",
+      "DisplayName": "鹿头熊",
+      "Gid": 160209018,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12519,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "d33ac59b-50ca-4841-857d-c6fbfdab3e5e",
+      "DisplayName": "虎头熊",
+      "Gid": 160209019,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12520,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "1fdb9155-4a43-4f1d-85fd-404dd23d511c",
+      "DisplayName": "龙头熊",
+      "Gid": 160209020,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12521,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "b363d058-f630-4c97-8de0-7ffcb0add6f3",
+      "DisplayName": "鸡头熊",
+      "Gid": 160209021,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12522,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "71862474-2072-4407-896d-657e760f0dbf",
+      "DisplayName": "猫头熊",
+      "Gid": 160209022,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12523,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "1538d804-d608-4f9e-ab85-7d28f4c66ab0",
+      "DisplayName": "狗头熊",
+      "Gid": 160209023,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12524,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"b1dfb6b7-768a-4f07-ac60-282b4376a320\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "a571ab9d-cf3b-45c5-bf99-1f538937d684",
+      "DisplayName": "鲨鱼熊",
+      "Gid": 160209024,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12525,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Bear\"}"
+    },
+    {
+      "Id": "b813aa95-4c63-40c7-8bfc-4c227b1a48d5",
+      "DisplayName": "黑熊",
+      "Gid": 160209025,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12526,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_322820\"}"
+    },
+    {
+      "Id": "e4310a40-6a01-4e4a-80e0-eeb88ee71979",
+      "DisplayName": "棕熊",
+      "Gid": 160209026,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12527,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_A45733\"}"
+    },
+    {
+      "Id": "387be40e-90dd-49b2-8fb9-4986e8f2b73e",
+      "DisplayName": "白熊",
+      "Gid": 160209027,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12528,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_C3BEB7\"}"
+    },
+    {
+      "Id": "c62629bd-2181-4153-9103-86f889b663d8",
+      "DisplayName": "熊头羊",
+      "Gid": 160209028,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12529,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"7cbb0485-3903-46d2-ab7e-e0bc0290a5b4\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Sheep\"}"
+    },
+    {
+      "Id": "64c5edbf-42e6-4d8c-847b-f25454f727f8",
+      "DisplayName": "熊头狼",
+      "Gid": 160209029,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12530,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Wolf\"}"
+    },
+    {
+      "Id": "4d6167fd-cc0c-453c-ac08-78bcb98752b2",
+      "DisplayName": "熊头鹿",
+      "Gid": 160209030,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12531,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Giraffe\"}"
+    },
+    {
+      "Id": "aeedf7e8-72c3-4fea-91ab-2dd340fe7d94",
+      "DisplayName": "熊头虎",
+      "Gid": 160209031,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12532,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Tiger\"}"
+    },
+    {
+      "Id": "740e727f-9623-4355-bda7-8f6e4e52dc84",
+      "DisplayName": "熊头龙",
+      "Gid": 160209032,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12533,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Dragon\"}"
+    },
+    {
+      "Id": "a8c2377c-a098-4a98-8285-03f191499539",
+      "DisplayName": "熊头鸡",
+      "Gid": 160209033,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12534,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Chick\"}"
+    },
+    {
+      "Id": "442c5187-2f9a-4500-9a84-454381ef8d72",
+      "DisplayName": "熊头猫",
+      "Gid": 160209034,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12535,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Cat\"}"
+    },
+    {
+      "Id": "8618e094-050f-4fc6-aa91-16e9571317b4",
+      "DisplayName": "熊头狗",
+      "Gid": 160209035,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12536,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"b1dfb6b7-768a-4f07-ac60-282b4376a320\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Corgi\"}"
+    },
+    {
+      "Id": "e84514f2-85b5-4e90-bf5c-4ea6d870a10b",
+      "DisplayName": "熊头鲨",
+      "Gid": 160209036,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12537,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Shark\"}"
+    },
+    {
+      "Id": "1984e8b9-cc67-43c2-b210-67f27f08945e",
+      "DisplayName": "轻松熊",
+      "Gid": 160209037,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12538,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true}],\"equipskin\":\"Bear_Legend_01\"}"
+    },
+    {
       "Id": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
       "DisplayName": "牧野草原",
       "Gid": 210101001,
@@ -3754,6 +3976,42 @@
       "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3b69a843-2e89-4ef5-9d9c-2779152ed2b1\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"089c207b-d43e-4929-81bf-246b3fd2bd48\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"4399dd8c-d004-4c26-9346-7fbbcf9eadbd\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
+      "Id": "d1244a6f-fda1-4b69-a489-aaf08ba7a0f6",
+      "DisplayName": "羊和熊猫的孵化",
+      "Gid": 171101037,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_panda\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"c94d1566-b7ab-44f2-b1f6-3f3152271832\",\"DiceTId2\":\"2b2f318f-d902-42cf-8254-a80b24441e91\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "c94d1566-b7ab-44f2-b1f6-3f3152271832",
+      "DisplayName": "羊和熊猫的孵化动物产出",
+      "Gid": 170101260,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "2b2f318f-d902-42cf-8254-a80b24441e91",
+      "DisplayName": "羊和熊猫孵化皮肤产出",
+      "Gid": 170101261,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "6b87bf64-f252-4746-a9ae-db1193272e4d",
+      "DisplayName": "羊和熊的孵化",
+      "Gid": 171101046,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"9f30a604-0f52-43ad-ba1a-a0daf626413b\",\"DiceTId2\":\"7e91d604-952b-4d69-9597-99346f520eb4\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "9f30a604-0f52-43ad-ba1a-a0daf626413b",
+      "DisplayName": "羊和熊的孵化动物产出",
+      "Gid": 170101277,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "7e91d604-952b-4d69-9597-99346f520eb4",
+      "DisplayName": "羊和熊的孵化皮肤产出",
+      "Gid": 170101278,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c62629bd-2181-4153-9103-86f889b663d8\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"506ebaf2-7060-4056-a047-31d383525848\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
       "Id": "355c268d-d0a3-45ab-9951-78db410313da",
       "DisplayName": "狼和虎的孵化",
       "Gid": 171101005,
@@ -3880,6 +4138,42 @@
       "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e5666b70-a567-46f3-967f-208a6877fb59\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c9cbc2b3-0f41-496b-9865-2980b298f400\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"77aaeda3-d6ef-46be-ae72-61775472211c\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
+      "Id": "18e3ab1d-af64-48f5-b848-6ee14eac0985",
+      "DisplayName": "狼和熊猫的孵化",
+      "Gid": 171101038,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"c1b36e5f-8191-47fc-824b-b4c1c6c0ec0c\",\"DiceTId2\":\"d2d18964-b310-4004-83d8-2debaba74908\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "c1b36e5f-8191-47fc-824b-b4c1c6c0ec0c",
+      "DisplayName": "狼和熊猫的孵化动物产出",
+      "Gid": 170101262,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "d2d18964-b310-4004-83d8-2debaba74908",
+      "DisplayName": "狼和熊猫孵化皮肤产出",
+      "Gid": 170101263,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "d8454c73-ce6a-410d-83a6-7fe9f5fe61c6",
+      "DisplayName": "狼和熊的孵化",
+      "Gid": 171101047,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"a1fcba2c-9765-4e61-9293-c772e49e4054\",\"DiceTId2\":\"088b5239-9b39-4e1a-9c8f-8413de7744e3\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "a1fcba2c-9765-4e61-9293-c772e49e4054",
+      "DisplayName": "狼和熊的孵化动物产出",
+      "Gid": 170101279,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "088b5239-9b39-4e1a-9c8f-8413de7744e3",
+      "DisplayName": "狼和熊孵化皮肤产出",
+      "Gid": 170101280,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"084d2322-56f0-4ec4-9c4f-c9325ad12889\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"64c5edbf-42e6-4d8c-847b-f25454f727f8\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
       "Id": "6f0b6144-83a8-4aa1-99ca-5730ca51dea6",
       "DisplayName": "虎和长颈鹿的孵化",
       "Gid": 171101008,
@@ -3988,6 +4282,42 @@
       "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"bd71928c-334e-4433-84a1-5941ea8148e4\",\"Count\":1}],\"Weight\":16,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7c674d2a-8bc2-4aa6-823d-0f887820117f\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"60c16e21-b22e-4a3a-94dd-99b552b30230\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
+      "Id": "159df590-37f6-430f-9ffb-954c5e26b03e",
+      "DisplayName": "虎和熊猫的孵化",
+      "Gid": 171101039,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"fd20605a-d79e-4af4-8b30-ce51532e8cd3\",\"DiceTId2\":\"ff14ded3-9c1b-4db8-8ff0-31c10423ded1\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "fd20605a-d79e-4af4-8b30-ce51532e8cd3",
+      "DisplayName": "虎和熊猫的孵化动物产出",
+      "Gid": 170101264,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "ff14ded3-9c1b-4db8-8ff0-31c10423ded1",
+      "DisplayName": "虎和熊猫孵化皮肤产出",
+      "Gid": 170101265,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "c1dd81b5-00f4-404c-a5ff-be8b82918516",
+      "DisplayName": "虎和熊的孵化",
+      "Gid": 171101048,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"4b5aa652-3d0f-4743-8e78-f78f64415b06\",\"DiceTId2\":\"edb94615-3ef1-4436-80bc-df53e0bc4858\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "4b5aa652-3d0f-4743-8e78-f78f64415b06",
+      "DisplayName": "虎和熊的孵化动物产出",
+      "Gid": 170101281,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "edb94615-3ef1-4436-80bc-df53e0bc4858",
+      "DisplayName": "虎和熊孵化皮肤产出",
+      "Gid": 170101282,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d33ac59b-50ca-4841-857d-c6fbfdab3e5e\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"aeedf7e8-72c3-4fea-91ab-2dd340fe7d94\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
       "Id": "e9b365ab-16be-485e-8d4c-79c7b19eb350",
       "DisplayName": "长颈鹿和龙的孵化",
       "Gid": 171101010,
@@ -4078,6 +4408,42 @@
       "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ad18e13f-7af8-4e4f-a545-064607ce0a8b\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"39954cb7-873a-407c-8afb-0dc043265a55\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
+      "Id": "792600ab-88c2-4bb5-80dd-071b6f37523e",
+      "DisplayName": "长颈鹿和熊猫的孵化",
+      "Gid": 171101040,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"e68fb34f-a662-4209-af36-f8892725a93d\",\"DiceTId2\":\"54dce087-5d8a-4818-9ee0-09a04637a179\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "e68fb34f-a662-4209-af36-f8892725a93d",
+      "DisplayName": "长颈鹿和熊猫的孵化动物产出",
+      "Gid": 170101266,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "54dce087-5d8a-4818-9ee0-09a04637a179",
+      "DisplayName": "长颈鹿和熊猫孵化皮肤产出",
+      "Gid": 170101267,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "bce911a9-c236-4be5-b493-9522ed097ca5",
+      "DisplayName": "长颈鹿和熊的孵化",
+      "Gid": 171101049,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"82e0143e-b2d1-4a90-8c1d-6e31ec4203cf\",\"DiceTId2\":\"5057b6c3-dca3-4355-bf35-fc62ab68d451\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "82e0143e-b2d1-4a90-8c1d-6e31ec4203cf",
+      "DisplayName": "长颈鹿和熊的孵化动物产出",
+      "Gid": 170101283,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "5057b6c3-dca3-4355-bf35-fc62ab68d451",
+      "DisplayName": "长颈鹿和熊孵化皮肤产出",
+      "Gid": 170101284,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d338d279-fed9-4ea7-8224-075dac1cc02d\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"4d6167fd-cc0c-453c-ac08-78bcb98752b2\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
       "Id": "39fc0648-c3d8-449d-a8a3-6e8b1292b44f",
       "DisplayName": "龙和火鸡的孵化",
       "Gid": 171101023,
@@ -4130,6 +4496,42 @@
       "DisplayName": "龙和鲨鱼孵化皮肤产出",
       "Gid": 170101253,
       "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"23539a5f-78e5-49d8-b349-be11556757dd\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"03787b62-d1ea-42d8-b961-6f31995f930a\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "86a8bac7-472c-485f-a471-80808e8a0677",
+      "DisplayName": "龙和熊猫的孵化",
+      "Gid": 171101041,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_dragon\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"50a2a5db-ddce-4a0d-9045-6a10edf4cd9d\",\"DiceTId2\":\"63e570a6-36d1-4ada-b232-549deb3870d7\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "50a2a5db-ddce-4a0d-9045-6a10edf4cd9d",
+      "DisplayName": "龙和熊猫的孵化动物产出",
+      "Gid": 170101268,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "63e570a6-36d1-4ada-b232-549deb3870d7",
+      "DisplayName": "龙和熊猫孵化皮肤产出",
+      "Gid": 170101269,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "795109aa-61a9-4157-80f2-390f03a94ee1",
+      "DisplayName": "龙和熊的孵化",
+      "Gid": 171101049,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_dragon\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"db01e374-d71f-4ee4-96d8-1f7fbcf42230\",\"DiceTId2\":\"aebac5f9-63c8-496c-ad18-54fbe0073c3f\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "db01e374-d71f-4ee4-96d8-1f7fbcf42230",
+      "DisplayName": "龙和熊的孵化动物产出",
+      "Gid": 170101283,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "aebac5f9-63c8-496c-ad18-54fbe0073c3f",
+      "DisplayName": "龙和熊孵化皮肤产出",
+      "Gid": 170101284,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1fdb9155-4a43-4f1d-85fd-404dd23d511c\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"740e727f-9623-4355-bda7-8f6e4e52dc84\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1984e8b9-cc67-43c2-b210-67f27f08945e\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "c84b7d9a-334f-4208-be50-e8adfcd3b97f",
@@ -4186,6 +4588,42 @@
       "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"5941cc1f-32f1-4210-ac96-33f834febc43\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"61c6d72a-4c44-4d97-9501-ff5e5d9c6fa1\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
+      "Id": "872ceb45-cbb7-4e5f-bc80-93a027506202",
+      "DisplayName": "火鸡和熊猫的孵化",
+      "Gid": 171101042,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_chick\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"f488d2a4-7be7-4316-a596-8575fd5877aa\",\"DiceTId2\":\"3d1173d4-ad89-41b0-bc57-1dbd18645a5a\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "f488d2a4-7be7-4316-a596-8575fd5877aa",
+      "DisplayName": "火鸡和熊猫的孵化动物产出",
+      "Gid": 170101270,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "3d1173d4-ad89-41b0-bc57-1dbd18645a5a",
+      "DisplayName": "火鸡和熊猫孵化皮肤产出",
+      "Gid": 170101271,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "5493c7ea-1fec-4741-8de4-0e0ef5a96078",
+      "DisplayName": "火鸡和熊的孵化",
+      "Gid": 171101050,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_chick\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"d486af63-87ed-483f-810d-ae9fcb693dce\",\"DiceTId2\":\"3db7d3c9-ee42-43f6-9e3c-4670dd040bf9\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "d486af63-87ed-483f-810d-ae9fcb693dce",
+      "DisplayName": "火鸡和熊的孵化动物产出",
+      "Gid": 170101285,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "3db7d3c9-ee42-43f6-9e3c-4670dd040bf9",
+      "DisplayName": "火鸡和熊孵化皮肤产出",
+      "Gid": 170101286,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a8c2377c-a098-4a98-8285-03f191499539\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b363d058-f630-4c97-8de0-7ffcb0add6f3\",\"Count\":1}],\"Weight\":18,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e4310a40-6a01-4e4a-80e0-eeb88ee71979\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
       "Id": "f4842b62-863a-4c5a-a092-8f6afef74bc3",
       "DisplayName": "狗和猫的孵化",
       "Gid": 171101027,
@@ -4240,6 +4678,42 @@
       "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ef631e00-a039-44d7-b481-ab5885c12c3f\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2de0e114-2d24-4b16-8102-907ec5ef1ec8\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ac541f0c-b3dd-490a-a815-8ccc8f763003\",\"Count\":1}],\"Weight\":1,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
+      "Id": "dcc476f7-a4d5-4ee3-8824-9c4b01a8008e",
+      "DisplayName": "狗和熊猫的孵化",
+      "Gid": 171101043,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_corgi\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"eaf1e939-c1ed-4ceb-b3d2-72495614d498\",\"DiceTId2\":\"a530ce8a-cba0-4743-8907-0745ef05266a\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "eaf1e939-c1ed-4ceb-b3d2-72495614d498",
+      "DisplayName": "狗和熊猫的孵化动物产出",
+      "Gid": 170101272,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":90,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "a530ce8a-cba0-4743-8907-0745ef05266a",
+      "DisplayName": "狗和熊猫孵化皮肤产出",
+      "Gid": 170101273,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "f6d1c0bd-6071-4127-95b8-3afb51663530",
+      "DisplayName": "狗和熊的孵化",
+      "Gid": 171101051,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_corgi\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"a1b28822-e46f-4646-8e57-3060f72001d9\",\"DiceTId2\":\"4d61e4a3-dad7-4214-8288-6f1be531f536\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "a1b28822-e46f-4646-8e57-3060f72001d9",
+      "DisplayName": "狗和熊的孵化动物产出",
+      "Gid": 170101287,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":90,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "4d61e4a3-dad7-4214-8288-6f1be531f536",
+      "DisplayName": "狗和熊孵化皮肤产出",
+      "Gid": 170101288,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1538d804-d608-4f9e-ab85-7d28f4c66ab0\",\"Count\":1}],\"Weight\":18,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"8618e094-050f-4fc6-aa91-16e9571317b4\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b813aa95-4c63-40c7-8bfc-4c227b1a48d5\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
       "Id": "d8257b90-a76b-40a8-b9fe-a1448c7268dc",
       "DisplayName": "猫和鲨鱼的孵化",
       "Gid": 171101036,
@@ -4256,6 +4730,96 @@
       "DisplayName": "猫和鲨鱼孵化皮肤产出",
       "Gid": 170101259,
       "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d80dddc-ab67-4a17-bc19-ff2eb6a6192f\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6849e6dc-a75c-4903-a98e-589ebfe4112b\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "ca14c49f-e44c-426e-89ce-0120d176494d",
+      "DisplayName": "猫和熊猫的孵化",
+      "Gid": 171101044,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_cat\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"0c6c5cea-ee39-4af8-b044-36d667b0bfcf\",\"DiceTId2\":\"035034fd-cdb3-49a7-9424-46b3bb6952bc\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "0c6c5cea-ee39-4af8-b044-36d667b0bfcf",
+      "DisplayName": "猫和熊猫的孵化动物产出",
+      "Gid": 170101273,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":90,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "035034fd-cdb3-49a7-9424-46b3bb6952bc",
+      "DisplayName": "猫和熊猫孵化皮肤产出",
+      "Gid": 170101274,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "b756c546-764f-4eb2-87ca-8ad7a278ab94",
+      "DisplayName": "猫和熊的孵化",
+      "Gid": 171101052,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_cat\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"972aa2fa-18d1-4f58-858f-24ea89e037de\",\"DiceTId2\":\"dd802b17-c358-4fe1-bad4-4f0ab9fad1a3\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "972aa2fa-18d1-4f58-858f-24ea89e037de",
+      "DisplayName": "猫和熊的孵化动物产出",
+      "Gid": 170101289,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":90,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "dd802b17-c358-4fe1-bad4-4f0ab9fad1a3",
+      "DisplayName": "猫和熊孵化皮肤产出",
+      "Gid": 170101290,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"71862474-2072-4407-896d-657e760f0dbf\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"442c5187-2f9a-4500-9a84-454381ef8d72\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"387be40e-90dd-49b2-8fb9-4986e8f2b73e\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "f8a6bc3c-186a-464b-99b0-7c4dee37499a",
+      "DisplayName": "鲨鱼和熊猫的孵化",
+      "Gid": 171101045,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_shark\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"65cd7243-9102-4dc4-8df6-41c339882050\",\"DiceTId2\":\"7b5d4f7a-7558-461f-b9d3-4669f2006b33\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "65cd7243-9102-4dc4-8df6-41c339882050",
+      "DisplayName": "鲨鱼和熊猫的孵化动物产出",
+      "Gid": 170101275,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":90,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "7b5d4f7a-7558-461f-b9d3-4669f2006b33",
+      "DisplayName": "鲨鱼和熊猫孵化皮肤产出",
+      "Gid": 170101276,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "46d31410-eb5b-41a0-adcc-3614c8328847",
+      "DisplayName": "鲨鱼和熊的孵化",
+      "Gid": 171101053,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_shark\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"a1b1b47b-1126-42f8-b480-f558542e4881\",\"DiceTId2\":\"42096ea5-53d8-4385-9123-9d1370e738f7\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "a1b1b47b-1126-42f8-b480-f558542e4881",
+      "DisplayName": "鲨鱼和熊的孵化动物产出",
+      "Gid": 170101291,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":90,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "42096ea5-53d8-4385-9123-9d1370e738f7",
+      "DisplayName": "鲨鱼和熊孵化皮肤产出",
+      "Gid": 170101292,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e84514f2-85b5-4e90-bf5c-4ea6d870a10b\",\"Count\":1}],\"Weight\":18,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a571ab9d-cf3b-45c5-bf99-1f538937d684\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1984e8b9-cc67-43c2-b210-67f27f08945e\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "1018611b-56ab-4db3-b5ce-4d8a8ab9f458",
+      "DisplayName": "熊和熊猫的孵化",
+      "Gid": 171101054,
+      "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_pand\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"6189b795-512b-4768-b4e0-859ef0636d36\",\"DiceTId2\":\"5b3624bd-01d2-445b-90eb-f37f0fcf039f\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
+    },
+    {
+      "Id": "6189b795-512b-4768-b4e0-859ef0636d36",
+      "DisplayName": "熊和熊猫的孵化动物产出",
+      "Gid": 170101293,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":90,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+    },
+    {
+      "Id": "5b3624bd-01d2-445b-90eb-f37f0fcf039f",
+      "DisplayName": "熊和熊猫孵化皮肤产出",
+      "Gid": 170101294,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":0,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "85725ce3-09df-40d4-b781-eb288bc38f4e",
@@ -4416,7 +4980,8 @@
     {
       "Id": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
       "DisplayName": "可刷新商品占位符",
-      "PropertiesString": "{\"Genus\":[\"fl_AutoInc\"],\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"}",
+      "Gid": 110201014,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"}",
       "Remark": "fl_AutoInc此类实体在每天第一次登录时会自动把Count+1，从0开始。"
     },
     {
@@ -4429,7 +4994,7 @@
       "Id": "b957c891-33b6-4b28-ab5f-def1e2060a31",
       "DisplayName": "用于可新商品的刷新商品",
       "Gid": 180401007,
-      "PropertiesString": "{\"Genus\":[],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"38c418b7-3662-4ad8-b613-032d68f544fc\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":false}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"Count\":1}],\"MaxCount\":null}}"
+      "PropertiesString": "{\"Genus\":[\"gs_shuaxin\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"38c418b7-3662-4ad8-b613-032d68f544fc\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"Count\":1}],\"MaxCount\":null}}"
     },
     {
       "Id": "7657244e-ef96-4f4d-a07f-157b22198fd7",
@@ -6107,7 +6672,7 @@
       "Id": "6969e916-893d-4cbe-9059-48904d24213a",
       "DisplayName": "装备穿戴升级引导用",
       "Gid": 180501001,
-      "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c531cd34-fed9-4859-81f1-501c25c0926d\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}]}}"
     },
     {
       "Id": "0d05943c-2ed3-42c1-ab63-cfc92e785432",
@@ -6173,7 +6738,7 @@
       "Id": "10a3f9a4-c440-45af-b720-a8e850069ca1",
       "DisplayName": "首充购买礼包",
       "Gid": 180212001,
-      "PropertiesString": "{\"Genus\":[\"gs_shoucong\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e92a3375-9872-40ea-8cb4-10bb24add432\",\"Count\":1}]},\"productStoreId\":\"com.duangzs.1b1\",\"productAmount\":2538,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"首充礼包\",\"productType\":\"礼包\",\"productDesc\":\"超值礼包不容错过\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_shoucong\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e92a3375-9872-40ea-8cb4-10bb24add432\",\"Count\":1}]},\"productStoreId\":\"com.duangzs.1b1\",\"productAmount\":2538,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"首充礼包\",\"productType\":\"礼包\",\"productDesc\":\"超值礼包不容错过\"}"
     },
     {
       "Id": "e4947911-e113-47ba-b28b-62d1ac441ab8",
@@ -6948,6 +7513,150 @@
       "DisplayName": "鲨鱼头柯基身成就奖励",
       "Gid": 220102106,
       "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"2de0e114-2d24-4b16-8102-907ec5ef1ec8\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":8}]]}}"
+    },
+    {
+      "Id": "7190f1cc-c589-45b4-a357-ee3091150030",
+      "DisplayName": "墨镜熊猫",
+      "Gid": 220102107,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"54692dbf-9ee4-4594-bcbd-0057f84184ff\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}]]}}"
+    },
+    {
+      "Id": "673834a2-db54-4c6c-a336-ce60573e6fc8",
+      "DisplayName": "功夫熊猫",
+      "Gid": 220102108,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}]]}}"
+    },
+    {
+      "Id": "22a107bc-44cc-457e-8b8a-e65b5601742d",
+      "DisplayName": "羊头熊身",
+      "Gid": 220102109,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"506ebaf2-7060-4056-a047-31d383525848\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "fdf93f9f-fc90-45f3-944d-e15858e697d3",
+      "DisplayName": "狼头熊",
+      "Gid": 220102110,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"084d2322-56f0-4ec4-9c4f-c9325ad12889\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "2180d35f-4bbe-4325-b1dc-8910217eed54",
+      "DisplayName": "鹿头熊",
+      "Gid": 220102111,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"d338d279-fed9-4ea7-8224-075dac1cc02d\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "857c9af7-fde4-486c-a691-31ab753c0c5f",
+      "DisplayName": "虎头熊",
+      "Gid": 220102112,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"d33ac59b-50ca-4841-857d-c6fbfdab3e5e\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "7feeb425-f481-4eda-acd5-2273b0029869",
+      "DisplayName": "龙头熊",
+      "Gid": 220102113,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"1fdb9155-4a43-4f1d-85fd-404dd23d511c\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "834dc354-1b60-46ba-b365-ffca44e0df2a",
+      "DisplayName": "鸡头熊",
+      "Gid": 220102114,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"b363d058-f630-4c97-8de0-7ffcb0add6f3\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "37cf17ac-03a9-40b3-9af1-b4b6fcd65617",
+      "DisplayName": "猫头熊",
+      "Gid": 220102115,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"71862474-2072-4407-896d-657e760f0dbf\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "230da7da-da99-45bd-a4ef-eb637900aec7",
+      "DisplayName": "狗头熊",
+      "Gid": 220102116,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"1538d804-d608-4f9e-ab85-7d28f4c66ab0\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "44226672-c379-4736-a63b-ebf0c63c23e1",
+      "DisplayName": "鲨鱼熊",
+      "Gid": 220102117,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"a571ab9d-cf3b-45c5-bf99-1f538937d684\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "b8845494-fa0a-4c49-bfce-999c5660c2cf",
+      "DisplayName": "黑熊",
+      "Gid": 220102118,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"b813aa95-4c63-40c7-8bfc-4c227b1a48d5\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}]]}}"
+    },
+    {
+      "Id": "d6d58212-e45e-4874-836c-a8031e7884ec",
+      "DisplayName": "棕熊",
+      "Gid": 220102119,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"e4310a40-6a01-4e4a-80e0-eeb88ee71979\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}]]}}"
+    },
+    {
+      "Id": "5c717f2c-e68f-423b-847f-5a9172957fb3",
+      "DisplayName": "白熊",
+      "Gid": 220102120,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"387be40e-90dd-49b2-8fb9-4986e8f2b73e\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}]]}}"
+    },
+    {
+      "Id": "f9d5a42f-f7ee-4c48-8b0e-2232c9c0881f",
+      "DisplayName": "熊头羊",
+      "Gid": 220102121,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"c62629bd-2181-4153-9103-86f889b663d8\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "2afcc5da-6833-48fa-8753-4a31d13a4691",
+      "DisplayName": "熊头狼",
+      "Gid": 220102122,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"64c5edbf-42e6-4d8c-847b-f25454f727f8\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "b7faf17e-5bf8-4c99-821d-16d72c02dd4e",
+      "DisplayName": "熊头鹿",
+      "Gid": 220102123,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"4d6167fd-cc0c-453c-ac08-78bcb98752b2\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "e001a9eb-a3ed-40e8-bbd0-4c52120ffbf0",
+      "DisplayName": "熊头虎",
+      "Gid": 220102124,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"aeedf7e8-72c3-4fea-91ab-2dd340fe7d94\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "3dee7dde-f7aa-426a-9c0e-9ebfb19e07a4",
+      "DisplayName": "熊头龙",
+      "Gid": 220102125,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"740e727f-9623-4355-bda7-8f6e4e52dc84\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "cfe82bf0-d27b-4564-883b-1de77ce5ab7e",
+      "DisplayName": "熊头鸡",
+      "Gid": 220102126,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"a8c2377c-a098-4a98-8285-03f191499539\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "6d2fa478-ac0c-4ec6-a8b9-9cd6f0986140",
+      "DisplayName": "熊头猫",
+      "Gid": 220102127,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"442c5187-2f9a-4500-9a84-454381ef8d72\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "7bf1f436-7802-4613-9f6b-849cc1d24f26",
+      "DisplayName": "熊头狗",
+      "Gid": 220102128,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"8618e094-050f-4fc6-aa91-16e9571317b4\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "57f65d79-1481-4651-b320-f2e2a97fba69",
+      "DisplayName": "熊头鲨",
+      "Gid": 220102129,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"e84514f2-85b5-4e90-bf5c-4ea6d870a10b\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+    },
+    {
+      "Id": "783bc9dc-17a8-4cfd-85bb-a573b184dd67",
+      "DisplayName": "轻松熊",
+      "Gid": 220102130,
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"1984e8b9-cc67-43c2-b210-67f27f08945e\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":0,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
     },
     {
       "Id": "8776e0fb-7e89-42cd-97a6-c12b646f9fd6",
@@ -8711,49 +9420,49 @@
       "Id": "56510b07-824f-4f63-b2bb-3387f6e14d11",
       "DisplayName": "装备礼包1",
       "Gid": 180213001,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f1ab32ad-0f36-4785-ac3b-907ceb9a0394\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6d31e692-9b63-483d-be8a-fe074c90a23a\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"64fd7191-81f5-4c38-a5f9-fa73948b6ce9\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60a5302c-9a7a-47a0-9548-fc94874dc735\",\"Count\":1}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":2666,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f1ab32ad-0f36-4785-ac3b-907ceb9a0394\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6d31e692-9b63-483d-be8a-fe074c90a23a\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"64fd7191-81f5-4c38-a5f9-fa73948b6ce9\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60a5302c-9a7a-47a0-9548-fc94874dc735\",\"Count\":1}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":2666,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
     },
     {
       "Id": "ef5fdab3-3e7b-49b2-93d2-e0bb6356a3a1",
       "DisplayName": "武器礼包1",
       "Gid": 180213002,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d9d0b916-285c-441a-a68d-543596b1dcd5\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"4bb3c291-612c-49cb-9d73-96af45a45e72\",\"Count\":1}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":2666,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d9d0b916-285c-441a-a68d-543596b1dcd5\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"4bb3c291-612c-49cb-9d73-96af45a45e72\",\"Count\":1}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":2666,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
     },
     {
       "Id": "5fced16d-e4fd-4670-aac6-985e37e4255a",
       "DisplayName": "金币礼包1",
       "Gid": 180213003,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1000000}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":1321,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"金币礼包\",\"productType\":\"装备\",\"productDesc\":\"很多金币\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1000000}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":1321,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"金币礼包\",\"productType\":\"装备\",\"productDesc\":\"很多金币\"}"
     },
     {
       "Id": "8a19ed1e-e792-4c60-848e-1eed052cfdce",
       "DisplayName": "金币礼包2",
       "Gid": 180213004,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000000}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":1321,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"金币礼包\",\"productType\":\"装备\",\"productDesc\":\"很多金币\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000000}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":1321,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"金币礼包\",\"productType\":\"装备\",\"productDesc\":\"很多金币\"}"
     },
     {
       "Id": "497895b5-bf4d-4bcb-af3d-fd5c35ee009f",
       "DisplayName": "材料礼包1",
       "Gid": 180213005,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":30}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":2666,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":30}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":2666,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
     },
     {
       "Id": "fc4ed8f3-b1b0-4022-8583-553c1c5d1c39",
       "DisplayName": "材料礼包1",
       "Gid": 180213006,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":50}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":2666,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":50}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":2666,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
     },
     {
       "Id": "5b69edb3-b3c5-4dc0-8f0d-24077e3f26e8",
       "DisplayName": "钥匙礼包",
       "Gid": 180213007,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":20}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":10000,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":20}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":10000,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
     },
     {
       "Id": "e00241f2-3b57-465e-a465-11e9caf9fca4",
       "DisplayName": "钻石礼包",
       "Gid": 180213008,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":3000}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":13333,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"Count\":1,\"Genus\":[],\"IgnoreIfDisplayList\":true}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":3000}]},\"productStoreId\":\"com.duangzs.01\",\"productAmount\":13333,\"currencyCode\":\"KRW\",\"currencyMark\":\"₩\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\"}"
     }
   ]
 }

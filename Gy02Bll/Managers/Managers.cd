@@ -64,7 +64,7 @@
   <Class Name="OW.Game.Manager.VirtualThingManager">
     <Position X="3" Y="3.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAIAAAAAAQAAAQAAAAAABAAAAAEIAEAAAAAAAIAAAQA=</HashCode>
+      <HashCode>AAIAAAAAAAAAAQAAAAAABAAAAAEIAEAAAAAAAIAAAQA=</HashCode>
       <FileName>Managers\VirtualThingManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -204,7 +204,7 @@
       <FileName>Managers\GameManagerBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="GY02.Managers.SpecialManagerOptions" Collapsed="true">
+  <Class Name="GY02.Managers.SpecialManagerOptions">
     <Position X="13.75" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
@@ -224,7 +224,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="GY02.Managers.GameAchievementManagerOptions">
-    <Position X="11.25" Y="2.25" Width="2.25" />
+    <Position X="10.25" Y="2.25" Width="3.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
       <FileName>Managers\GameAchievementManager.cs</FileName>
@@ -232,13 +232,13 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GY02.Managers.GameAchievementManager">
-    <Position X="0.75" Y="4.75" Width="1.5" />
+    <Position X="7.25" Y="12.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AkAAABAAQEAgAAAAAAggAAAAUACCAAAgAEAAAIAAIgA=</HashCode>
       <FileName>Managers\GameAchievementManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="_EntityManager" />
+      <Field Name="_BlueprintManager" />
     </ShowAsAssociation>
   </Class>
   <Class Name="GY02.Managers.GameContextExtensions" Collapsed="true">

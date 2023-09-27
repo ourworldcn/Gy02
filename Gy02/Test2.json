@@ -1,36 +1,61 @@
 {
-  "Genus": [],
+  "Genus": [ "gs_meirishangdian" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
+      "Start": "2023-06-03T00:00:00.000Z",
       "End": null,
-      "PeriodString": "1d",
+      "PeriodString": "5d",
       "ValidPeriodString": "1d"
     },
-    "GroupNumber": 0,
+    "GroupNumber": 1,
+    "MaxCount": 2,
     "Ins": [
       {
         "Conditional": [
           {
             "ParentTId": null,
             "Genus": [],
-            "TId": "38c418b7-3662-4ad8-b613-032d68f544fc",
+            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
             "MinCount": 0,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": false
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ "5", "5" ]
+              }
+            ],
+            "IgnoreIfDisplayList": true
           }
         ],
-        "Count": 1,
-        "Genus": []
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "MinCount": 100,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 100,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
       }
     ],
     "Outs": [
       {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
+        "Id": null,
+        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+        "TId": "d9b43e81-e049-4ba0-94d3-f850300fdf2f",
         "Count": 1
       }
-    ],
-    "MaxCount": 1
-  }
+    ]
+  },
+  "name_txt": 11816,
+  "JiaoBiao": []
 }
