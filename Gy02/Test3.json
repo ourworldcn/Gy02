@@ -1,24 +1,61 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Genus": [ "gs_meirishangdian" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-06-01T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "5d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 5,
+    "MaxCount": 2,
+    "Ins": [
       {
-        "ParentTId": null,
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ "5", "3" ]
+              }
+            ],
+            "IgnoreIfDisplayList": false
+          }
+        ],
+        "Count": 0,
         "Genus": [],
-        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
-        "MinCount": 0,
-        "GeneralConditional": [],
+        "IgnoreIfDisplayList": true
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+            "MinCount": 6000,
+            "GeneralConditional": [],
+            "IgnoreIfDisplayList": true
+          }
+        ],
+        "Count": 6000,
+        "Genus": [],
         "IgnoreIfDisplayList": true
       }
     ],
-    "GetIndexExpression": {
-      "op": "GetBuyedCount",
-      "args": [ "b957c891-33b6-4b28-ab5f-def1e2060a31" ],
-      "IgnoreIfDisplayList": false
-    },
-    "Outs": {
-      "TIds": [ "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "c9575f24-a33d-49ba-b130-29b6ff4d62c7" ],
-      "Counts": [ 1, 100 ],
-      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ]
-    }
-  }
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+        "TId": "79391d55-a01f-4051-841b-5452908566ab",
+        "Count": 5
+      }
+    ]
+  },
+  "name_txt": 11861,
+  "JiaoBiao": [ "ZheKou60", 10958 ]
 }

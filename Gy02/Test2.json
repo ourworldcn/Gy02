@@ -1,61 +1,48 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
-  "ShoppingItem": {
+  "Genus": [ "cj_guanqia" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
     "Period": {
-      "Start": "2023-06-03T00:00:00.000Z",
+      "Start": "2023-05-30T03:03:28.385Z",
       "End": null,
-      "PeriodString": "5d",
-      "ValidPeriodString": "1d"
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    "GroupNumber": 1,
-    "MaxCount": 2,
-    "Ins": [
+    "TjIns": [
       {
         "Conditional": [
           {
-            "ParentTId": null,
+            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
             "Genus": [],
-            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "5", "5" ]
-              }
-            ],
+            "TId": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
+            "MinCount": 1,
+            "GeneralConditional": [],
             "IgnoreIfDisplayList": true
           }
         ],
         "Count": 0,
         "Genus": [],
         "IgnoreIfDisplayList": true
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "MinCount": 100,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
-          }
-        ],
-        "Count": 100,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
       }
     ],
+    "Exp2LvSequence": [ 1 ],
     "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-        "TId": "d9b43e81-e049-4ba0-94d3-f850300fdf2f",
-        "Count": 1
-      }
+      [
+        {
+          "ParentTId": "29b7e726-387f-409d-a6ac-ad8670a814f0",
+          "TId": "f10a888e-b274-4bec-a5d9-f4cb1912b833",
+          "Count": 1
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 2000
+        }
+      ]
     ]
-  },
-  "name_txt": 11816,
-  "JiaoBiao": []
+  }
 }

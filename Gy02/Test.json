@@ -1,36 +1,57 @@
 {
-  "Genus": [ "gs_shuaxin" ],
-  "ShoppingItem": {
+  "Genus": [ "cj_guanqia" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
     "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
+      "Start": "2023-05-30T03:03:28.385Z",
       "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    "GroupNumber": 0,
-    "Ins": [
+    "TjIns": [
       {
         "Conditional": [
           {
-            "ParentTId": null,
+            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
             "Genus": [],
-            "TId": "38c418b7-3662-4ad8-b613-032d68f544fc",
-            "MinCount": 0,
+            "TId": "1e5fc645-2833-48a1-add5-6b83a3407d03",
+            "MinCount": 1,
             "GeneralConditional": [],
-            "IgnoreIfDisplayList": false
+            "IgnoreIfDisplayList": true
           }
         ],
-        "Count": 1,
-        "Genus": []
+        "Count": 0,
+        "Genus": [],
+        "IgnoreIfDisplayList": true
       }
     ],
+    "Exp2LvSequence": [ 1 ],
     "Outs": [
-      {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
-        "Count": 1
-      }
-    ],
-    "MaxCount": null
+      [
+        {
+          "ParentTId": "29b7e726-387f-409d-a6ac-ad8670a814f0",
+          "TId": "f10a888e-b274-4bec-a5d9-f4cb1912b833",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 1000
+        }
+      ],
+      [
+        {
+          "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+          "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+          "Count": 1
+        }
+      ]
+    ]
   }
 }
