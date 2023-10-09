@@ -16,7 +16,7 @@ namespace Gy001Tools
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UdpTools());
+            Application.Run(new Form1());
            
         }
     }

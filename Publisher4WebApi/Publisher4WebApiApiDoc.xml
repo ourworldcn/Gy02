@@ -1258,9 +1258,20 @@
             购买功能参数封装类。
             </summary>
         </member>
+        <member name="M:GY02.Publisher.ShoppingBuyParamsDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.ShoppingBuyParamsDto.ShoppingItemTId">
             <summary>
             购买的商品项Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.ShoppingBuyParamsDto.Count">
+            <summary>
+            购买数量。
+            如果购买商品超过上限则返回错误，此时没有购买任何商品。
             </summary>
         </member>
         <member name="T:GY02.Publisher.ShoppingBuyReturnDto">

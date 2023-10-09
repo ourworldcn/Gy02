@@ -16,6 +16,9 @@ using System.Threading.Tasks;
 
 namespace GY02.Commands
 {
+    /// <summary>
+    /// 购买商品。
+    /// </summary>
     public class ShoppingBuyCommand : PropertyChangeCommandBase, IGameCharCommand
     {
         public ShoppingBuyCommand()
@@ -29,6 +32,12 @@ namespace GY02.Commands
         /// 购买的商品项Id。
         /// </summary>
         public Guid ShoppingItemTId { get; set; }
+
+        /// <summary>
+        /// 购买的商品数量。
+        /// 如果购买商品超过上限则返回错误，此时没有购买任何商品。
+        /// </summary>
+        public int Count { get; set; }
     }
 
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
@@ -61,42 +70,61 @@ namespace GY02.Commands
             if (dw.IsEmpty) return; //若锁定失败
 
             var tt = _ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId);
-            //var si = _ShoppingManager.GetShoppingItemByTId(command.ShoppingItemTId);
             if (tt is null) goto lbErr;
             var now = OwHelper.WorldNow;
-            if (!_ShoppingManager.IsMatch(command.GameChar, tt, now, out _)) goto lbErr;    //若不能购买
-
-            var allEntity = _EntityManager.GetAllEntity(command.GameChar)?.ToArray();
-            if (allEntity is null) goto lbErr;
-            //提前缓存产出项
-            var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
-            if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
+            if (command.Count <= 0)
             {
-                var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
-                {
-                    Change = null,
-                    GameChar = command.GameChar,
-                    IgnoreGuarantees = false,
-                    Random = new Random(),
-                });
-                if (!b) goto lbErr;
+                command.HasError = true;
+                command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                command.DebugMessage = $"购买商品数量需要大于0。";
+                return;
             }
-            //消耗项
-            if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
-                if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes))
-                    if (OwHelper.GetLastError() != ErrorCodes.NO_ERROR)
-                        goto lbErr;
 
-            if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2), command.GameChar, command.Changes)) goto lbErr;
-            //加入购买历史记录
-            command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
+            if (!_ShoppingManager.IsMatch(command.GameChar, tt, now, out var periodStart)) goto lbErr;    //若不能购买
+            var end = periodStart + tt.ShoppingItem.Period.ValidPeriod;
+            //避免超量购买
+            var r = _ShoppingManager.IsMatchOnlyCount(command.GameChar, tt, periodStart, end, out var buyedCount);
+            if (tt.ShoppingItem.MaxCount < buyedCount + command.Count)
             {
-                Count = 1,
-                DateTime = now,
-                TId = command.ShoppingItemTId
-            });
+                command.HasError = true;
+                command.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
+                command.DebugMessage = $"购买商品数量超过限制。";
+                return;
+            }
+            for (int i = 0; i < command.Count; i++)
+            {
+                var allEntity = _EntityManager.GetAllEntity(command.GameChar)?.ToArray();
+                if (allEntity is null) goto lbErr;
+                //提前缓存产出项
+                var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+                if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
+                {
+                    var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
+                    {
+                        Change = null,
+                        GameChar = command.GameChar,
+                        IgnoreGuarantees = false,
+                        Random = new Random(),
+                    });
+                    if (!b) goto lbErr;
+                }
+                //消耗项
+                if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
+                    if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes))
+                        if (OwHelper.GetLastError() != ErrorCodes.NO_ERROR)
+                            goto lbErr;
 
-            AccountStore.Save(key);
+                if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2), command.GameChar, command.Changes)) goto lbErr;
+                //加入购买历史记录
+                command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
+                {
+                    Count = 1,
+                    DateTime = now,
+                    TId = command.ShoppingItemTId,
+                });
+
+                AccountStore.Save(key);
+            }
             return;
         lbErr:
             command.FillErrorFromWorld();
@@ -164,7 +192,7 @@ namespace GY02.Commands
             if (slot is not null)
             {
                 slot.Count++;
-                _EntityManager.InvokeEntityChanged(new GameEntity[] { slot },gc);
+                _EntityManager.InvokeEntityChanged(new GameEntity[] { slot }, gc);
                 _AccountStore.Save(key);
             }
         }

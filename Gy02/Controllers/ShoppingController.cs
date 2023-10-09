@@ -111,7 +111,10 @@ namespace GY02.Controllers
                 return result;
             }
 
-            var command = new ShoppingBuyCommand { GameChar = gc, };
+            var command = new ShoppingBuyCommand
+            {
+                GameChar = gc,
+            };
 
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);

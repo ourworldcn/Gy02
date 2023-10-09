@@ -1195,7 +1195,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 获取特殊关卡有效周期功能参数封装类。
     /// </summary>
-    [AutoMap(typeof(GetDurationCommand),ReverseMap = true)]
+    [AutoMap(typeof(GetDurationCommand), ReverseMap = true)]
     public class GetDurationParamsDto : TokenDtoBase
     {
         /// <summary>
@@ -1614,9 +1614,24 @@ namespace GY02.Publisher
     public class ShoppingBuyParamsDto : TokenDtoBase
     {
         /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public ShoppingBuyParamsDto()
+        {
+
+        }
+
+        /// <summary>
         /// 购买的商品项Id。
         /// </summary>
         public Guid ShoppingItemTId { get; set; }
+
+        /// <summary>
+        /// 购买数量。
+        /// 如果购买商品超过上限则返回错误，此时没有购买任何商品。
+        /// </summary>
+        [Range(1, int.MaxValue, ErrorMessage = "购买数量需要大于0.")]
+        public int Count { get; set; }
     }
 
     /// <summary>
