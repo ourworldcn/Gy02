@@ -232,5 +232,17 @@ namespace GY02.Managers
                 return true;
             return false;
         }
+
+        /// <summary>
+        /// 彻底删除一个邮件。
+        /// </summary>
+        /// <param name="mail"></param>
+        public void Delete(GameMail mail)
+        {
+            var thing = mail.GetThing();
+            thing.Parent?.Children.Remove(thing);
+            thing.Parent = null;
+            thing.ParentId = null;
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using GY02.Managers;
 using GY02.Templates;
+using Microsoft.Extensions.DependencyInjection;
+using OW.DDD;
 using OW.Game;
 using OW.Game.Entity;
 using OW.SyncCommand;
@@ -48,6 +50,37 @@ namespace GY02.Commands
 
             AccountStore.Save(key);
             return;
+        }
+    }
+
+    /// <summary>
+    /// 移除超期邮件。
+    /// </summary>
+    [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<CharFirstLoginedCommand>))]
+    public class MailRemoveHandled : ISyncCommandHandled<CharFirstLoginedCommand>
+    {
+        public MailRemoveHandled(GameMailManager mailManager, GameAccountStoreManager accountStoreManager)
+        {
+            _MailManager = mailManager;
+            _AccountStoreManager = accountStoreManager;
+        }
+
+        GameMailManager _MailManager;
+        GameAccountStoreManager _AccountStoreManager;
+
+        public void Handled(CharFirstLoginedCommand command, Exception exception = null)
+        {
+            if (command.HasError || exception is not null) return;
+            var mails = _MailManager.GetMails(command.GameChar);
+            var key = command.GameChar.GetUser().Key;
+            foreach (var mail in mails)
+            {
+                if (_MailManager.IsExpiration(mail))
+                {
+                    _MailManager.Delete(mail);
+                    _AccountStoreManager.Save(key);
+                }
+            }
         }
     }
 }
