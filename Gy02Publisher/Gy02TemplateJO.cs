@@ -17,6 +17,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Threading;
 
 namespace GY02.Templates
 {
@@ -69,6 +70,28 @@ namespace GY02.Templates
         /// </summary>
         public decimal Count { get; set; }
 
+        Dictionary<string, decimal> _AddPropertyDictionary;
+        /// <summary>
+        /// 合并计算的数值属性。此属性将根据名称累加到已有的属性上。
+        /// </summary>
+        public Dictionary<string, decimal> AddPropertyDictionary
+        {
+            get => LazyInitializer.EnsureInitialized(ref _AddPropertyDictionary);
+            set => _AddPropertyDictionary = value;
+        }
+
+        Dictionary<string, object> _ExtraDictionary;
+        /// <summary>
+        /// 额外的一些属性。
+        /// 这里只能支持数值，字符串，bool，日期等简单属性。
+        /// </summary>
+        [JsonExtensionData]
+        public Dictionary<string, object> ExtraDictionary
+        {
+            get => LazyInitializer.EnsureInitialized(ref _ExtraDictionary);
+            set => _ExtraDictionary = value;
+        }
+
         /// <summary>
         /// 获取一个深表副本。
         /// </summary>
@@ -80,6 +103,8 @@ namespace GY02.Templates
             Id = Id,
             ParentTId = ParentTId,
             TId = TId,
+            _AddPropertyDictionary = _AddPropertyDictionary is null ? null : new Dictionary<string, decimal>(_AddPropertyDictionary),
+            _ExtraDictionary = _ExtraDictionary is null ? null : new Dictionary<string, object>(_ExtraDictionary),
         };
 
         private string GetDebuggerDisplay()
@@ -1024,6 +1049,13 @@ namespace GY02.Templates
         {
         }
 
+        #region 简写属性，都可以使用通用属性替代，仅仅因为常用所以提供了简写的方式
+
+        /// <summary>
+        /// 物品的TId。省略则不限制。
+        /// </summary>
+        public Guid? TId { get; set; }
+
         /// <summary>
         /// 容器的模板Id。省略则不限制。
         /// </summary>
@@ -1035,11 +1067,6 @@ namespace GY02.Templates
         public List<string> Genus { get; set; } = new List<string>();
 
         /// <summary>
-        /// 物品的TId。省略则不限制。
-        /// </summary>
-        public Guid? TId { get; set; }
-
-        /// <summary>
         /// 针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。省略或为null表示不限定。
         /// </summary>
         public NumberCondition NumberCondition { get; set; }
@@ -1048,6 +1075,8 @@ namespace GY02.Templates
         /// 要求的最小数量。省略(null)则不限制。
         /// </summary>
         public decimal? MinCount { get; set; }
+
+        #endregion 简写属性
 
         private List<GeneralConditionalItem> _Contional;
         /// <summary>
@@ -1064,6 +1093,14 @@ namespace GY02.Templates
         /// </summary>
         /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         public bool IgnoreIfDisplayList { get; set; } = false;
+
+        /// <summary>
+        /// 条件组掩码。最多可以有32个条件组。在测试是否满足条件时，根据条件组选取的掩码来测试条件。如要求符合条件的掩码是2，则此属性为2，6，7的条件都被考虑在内。
+        /// 目前预先定义的值：1 表示执行条件组，2 表示获取列表的条件组（未来可能有其它定义，如4可能表示预览条件组，它既不同于执行也不同于获取列表的要求）。
+        /// 设置为3则表示执行和获取列表时都要考虑在内。
+        /// </summary>
+        /// <value>值为0则表示这是一个旧式条件，不使用掩码决定测试的场景。仅为兼容性考虑，暂时保留0.未来0是临时使该条件失效的设置。</value>
+        public int GroupMask { get; set; }
 
         /// <summary>
         /// <inheritdoc/>

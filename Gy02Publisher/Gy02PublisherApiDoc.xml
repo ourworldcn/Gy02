@@ -41,6 +41,17 @@
             数量。对可堆叠物可以是任何数量，对不可堆叠物只能是正整数。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GameEntitySummary.AddPropertyDictionary">
+            <summary>
+            合并计算的数值属性。此属性将根据名称累加到已有的属性上。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEntitySummary.ExtraDictionary">
+            <summary>
+            额外的一些属性。
+            这里只能支持数值，字符串，bool，日期等简单属性。
+            </summary>
+        </member>
         <member name="M:GY02.Templates.GameEntitySummary.Clone">
             <summary>
             获取一个深表副本。
@@ -697,6 +708,11 @@
             构造函数。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GameThingPreconditionItem.TId">
+            <summary>
+            物品的TId。省略则不限制。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.GameThingPreconditionItem.ParentTId">
             <summary>
             容器的模板Id。省略则不限制。
@@ -705,11 +721,6 @@
         <member name="P:GY02.Templates.GameThingPreconditionItem.Genus">
             <summary>
             需要包含的属名称（如果有多项则必须全部包含）。空集合则不限制。
-            </summary>
-        </member>
-        <member name="P:GY02.Templates.GameThingPreconditionItem.TId">
-            <summary>
-            物品的TId。省略则不限制。
             </summary>
         </member>
         <member name="P:GY02.Templates.GameThingPreconditionItem.NumberCondition">
@@ -732,6 +743,14 @@
             在获取显示列表的时候，是否忽略该条件，视同满足。
             </summary>
             <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+        </member>
+        <member name="P:GY02.Templates.GameThingPreconditionItem.GroupMask">
+            <summary>
+            条件组掩码。最多可以有32个条件组。在测试是否满足条件时，根据条件组选取的掩码来测试条件。如要求符合条件的掩码是2，则此属性为2，6，7的条件都被考虑在内。
+            目前预先定义的值：1 表示执行条件组，2 表示获取列表的条件组（未来可能有其它定义，如4可能表示预览条件组，它既不同于执行也不同于获取列表的要求）。
+            设置为3则表示执行和获取列表时都要考虑在内。
+            </summary>
+            <value>值为0则表示这是一个旧式条件，不使用掩码决定测试的场景。仅为兼容性考虑，暂时保留0.未来0是临时使该条件失效的设置。</value>
         </member>
         <member name="M:GY02.Templates.GameThingPreconditionItem.ToString">
             <summary>

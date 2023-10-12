@@ -1,61 +1,60 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
-  "ShoppingItem": {
+  "Genus": [ "cj_meiri", "goto_main_level" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
     "Period": {
-      "Start": "2023-06-01T00:00:00.000Z",
+      "Start": "2023-05-30T03:03:28.385Z",
       "End": null,
-      "PeriodString": "5d",
-      "ValidPeriodString": "1d"
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    "GroupNumber": 5,
-    "MaxCount": 2,
     "Ins": [
       {
         "Conditional": [
           {
-            "ParentTId": null,
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
+            "TId": "dbbb8d4c-92f0-49ff-9add-682c6caaa200",
             "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "5", "3" ]
-              }
-            ],
-            "IgnoreIfDisplayList": false
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 28,
+              "MinRemainder": 0,
+              "MaxRemainder": 6
+            },
+            "GeneralConditional": [],
+            "Count": 0,
+            "IgnoreIfDisplayList": true
           }
-        ],
-        "Count": 0,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
+        ]
       },
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-            "MinCount": 6000,
-            "GeneralConditional": [],
-            "IgnoreIfDisplayList": true
+            "TId": "547865b2-fa3d-4d7f-957f-0219b8318b73",
+            "MinCount": 1
           }
         ],
-        "Count": 6000,
-        "Genus": [],
-        "IgnoreIfDisplayList": true
+        "Count": 1
       }
     ],
+    "Exp2LvSequence": [ 2000 ],
     "Outs": [
       {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "79391d55-a01f-4051-841b-5452908566ab",
-        "Count": 5
+        "ParentTId": null,
+        "TId": "48f485cf-c942-43d7-a4e1-f4e23bdfff93",
+        "Count": 20
       }
     ]
   },
-  "name_txt": 11861,
-  "JiaoBiao": [ "ZheKou60", 10958 ]
+  "name_txt": 111111
 }
