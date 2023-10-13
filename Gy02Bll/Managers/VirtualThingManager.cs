@@ -88,7 +88,8 @@ namespace OW.Game.Manager
         /// <returns>true修补了对象，false没有修补。</returns>
         public bool Normal(VirtualThing root)
         {
-            if (root.ExtraGuid == Guid.Parse("14d0e372-909b-485f-b8cb-07c9231b10ff") && root.Children.Count > 0)
+            var ignTids = new Guid[] { Guid.Parse("29b7e726-387f-409d-a6ac-ad8670a814f0"), Guid.Parse("14d0e372-909b-485f-b8cb-07c9231b10ff") };
+            if (ignTids.Contains(root.ExtraGuid) || root.Children.Count > 0)
                 return false;
             var result = false;
             var tt = _TemplateManager.GetFullViewFromId(root.ExtraGuid);    //根的子对象
