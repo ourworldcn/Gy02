@@ -691,6 +691,14 @@
             <param name="end">所处周期的结束数。</param>
             <returns>true指定值在有效周期内，false指定值不在指定周期内。</returns>
         </member>
+        <member name="M:GY02.Templates.NumberCondition.GetFirstPeriod(System.Decimal@,System.Decimal@)">
+            <summary>
+            获取第一个周期的起始和终止数。
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns>true找到了第一个有效周期，false没有找到有效周期。</returns>
+        </member>
         <member name="M:GY02.Templates.NumberCondition.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
             <summary>
             <inheritdoc/>

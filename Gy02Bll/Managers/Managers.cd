@@ -171,7 +171,7 @@
   <Class Name="GY02.Managers.GameMailManager">
     <Position X="9.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAEAAACACAAgAAAAAAAAAAABAIAAAAAQAAAIAgA=</HashCode>
+      <HashCode>BAAAAAEAAACACAAgAAAAAAAAAAEBAIAAAAAQAAAIAgA=</HashCode>
       <FileName>Managers\GameMailManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

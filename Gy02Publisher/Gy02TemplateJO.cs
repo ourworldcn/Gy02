@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Net.NetworkInformation;
@@ -978,6 +979,7 @@ namespace GY02.Templates
         /// <summary>
         /// 最小值。省略或为null表示不限制。
         /// </summary>
+        [AllowNull]
         public decimal? MinValue { get; set; }
 
         /// <summary>
@@ -1022,6 +1024,23 @@ namespace GY02.Templates
             end = start - MinRemainder + MaxRemainder;
             return true;
         lbErr:
+            start = end = 0;
+            return false;
+        }
+
+        /// <summary>
+        /// 获取第一个周期的起始和终止数。
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <returns>true找到了第一个有效周期，false没有找到有效周期。</returns>
+        public bool GetFirstPeriod(out decimal start, out decimal end)
+        {
+            var tmp = MinValue ?? 0;
+            for (int i = 0; i < Modulus; i++)
+            {
+                if (GetCurrentPeriod(i, out start, out end)) return true;
+            }
             start = end = 0;
             return false;
         }
