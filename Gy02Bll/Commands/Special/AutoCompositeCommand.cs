@@ -55,7 +55,7 @@ namespace GY02.Commands
                 if (ary.Length > 0) //若存在需要合成的物品
                 {
                     var allBlueprint = _TemplateManager.Id2FullView.Values
-                        .Where(c => c.Out?.Count > 0 && c?.In.Count == 1 && c.In[0].Conditional.Count == 1 && c.In[0].Conditional[0].TId.HasValue)
+                        .Where(c => c.Out?.Count > 0 && c?.In.Count == 1 && c.In[0].Conditional.Length == 1 && c.In[0].Conditional[0].TId.HasValue)
                         .ToLookup(c => c.In[0].Conditional[0].TId.Value);    //获得所有蓝图
                     bool changed = false;
                     foreach (var group in ary)

@@ -127,9 +127,9 @@ namespace GY02.Managers
         /// <param name="ignore">是否忽略可以忽略的项。</param>
         /// <returns></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool IsMatch(GameEntity entity, GameThingPrecondition conditions, bool ignore = false)
+        public bool IsMatch(GameEntity entity, IEnumerable<GameThingPreconditionItem> conditions, bool ignore = false)
         {
-            return conditions.Count == 0 || conditions.Any(c => IsMatch(entity, c, ignore));
+            return conditions.Count() == 0 || conditions.Any(c => IsMatch(entity, c, ignore));
         }
 
         /// <summary>
@@ -856,6 +856,10 @@ namespace GY02.Managers
 
         #endregion 改变实体相关功能
 
+    }
+
+    public static class GameEntityManagerExtensions
+    {
 
     }
 }

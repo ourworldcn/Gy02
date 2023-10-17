@@ -228,7 +228,7 @@ namespace GY02.Templates
         /// <summary>
         /// 过滤并获取一个实体，该实体使用 <see cref="GetIndexExpression"/> 属性指定的方法提取索引值。
         /// </summary>
-        public GameThingPrecondition Conditions { get; set; }
+        public GameThingPreconditionItem[] Conditions { get; set; }
 
         /// <summary>
         /// 获取索引的对象。
@@ -893,12 +893,12 @@ namespace GY02.Templates
         /// <summary>
         /// 双亲1的条件。
         /// </summary>
-        public GameThingPrecondition Parent1Conditional { get; set; }
+        public GameThingPreconditionItem[] Parent1Conditional { get; set; }
 
         /// <summary>
         /// 双亲2的条件。
         /// </summary>
-        public GameThingPrecondition Parent2Conditional { get; set; }
+        public GameThingPreconditionItem[] Parent2Conditional { get; set; }
 
         /// <summary>
         /// 卡池1的。
@@ -941,28 +941,13 @@ namespace GY02.Templates
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        public GameThingPreconditionItem[] Conditional { get; set; }
 
         /// <summary>
         /// 消耗的数量。第一个值是由0级升级到1级这个动作的消耗数量。
         /// 注意消耗数量可能是0，代表需要此物品但不消耗此物品。若是null或空则表示所有级别都不消耗。
         /// </summary>
         public List<decimal> Counts { get; set; } = new List<decimal>();
-    }
-
-    /// <summary>
-    /// 定位一个物品的结构。
-    /// 一组条件中满足任何一个都认为匹配。
-    /// </summary>
-    public partial class GameThingPrecondition : Collection<GameThingPreconditionItem>
-    {
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        public GameThingPrecondition()
-        {
-
-        }
     }
 
     /// <summary>
@@ -1059,7 +1044,7 @@ namespace GY02.Templates
     /// <summary>
     /// 定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
     /// </summary>
-    public partial class GameThingPreconditionItem
+    public partial class GameThingPreconditionItem: IValidatableObject
     {
         /// <summary>
         /// 构造函数。
@@ -1114,7 +1099,7 @@ namespace GY02.Templates
         public bool IgnoreIfDisplayList { get; set; } = false;
 
         /// <summary>
-        /// 条件组掩码。最多可以有32个条件组。在测试是否满足条件时，根据条件组选取的掩码来测试条件。如要求符合条件的掩码是2，则此属性为2，6，7的条件都被考虑在内。
+        /// 条件组掩码。最多可以有32个条件组。在测试是否满足条件时，根据条件组选取的掩码来测试条件。如要求符合条件的掩码是2，则此属性为2，3，6，7的条件都被考虑在内。
         /// 目前预先定义的值：1 表示执行条件组，2 表示获取列表的条件组（未来可能有其它定义，如4可能表示预览条件组，它既不同于执行也不同于获取列表的要求）。
         /// 设置为3则表示执行和获取列表时都要考虑在内。
         /// </summary>
@@ -1128,6 +1113,16 @@ namespace GY02.Templates
         public override string ToString()
         {
             return base.ToString();
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return default;
         }
     }
 
@@ -1392,7 +1387,7 @@ namespace GY02.Templates
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        public GameThingPrecondition Conditional { get; set; } = new GameThingPrecondition();
+        public GameThingPreconditionItem[] Conditional { get; set; }
 
         /// <summary>
         /// 消耗的数量。
