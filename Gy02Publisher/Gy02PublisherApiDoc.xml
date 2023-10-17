@@ -749,6 +749,13 @@
             </summary>
             <value>值为0则表示这是一个旧式条件，不使用掩码决定测试的场景。仅为兼容性考虑，暂时保留0.未来0是临时使该条件失效的设置。</value>
         </member>
+        <member name="M:GY02.Templates.GameThingPreconditionItem.IsValidate(System.Int32)">
+            <summary>
+            此项是否符合掩码条件。
+            </summary>
+            <param name="mask"></param>
+            <returns></returns>
+        </member>
         <member name="M:GY02.Templates.GameThingPreconditionItem.ToString">
             <summary>
             <inheritdoc/>

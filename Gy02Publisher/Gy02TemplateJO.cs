@@ -1044,7 +1044,7 @@ namespace GY02.Templates
     /// <summary>
     /// 定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
     /// </summary>
-    public partial class GameThingPreconditionItem: IValidatableObject
+    public partial class GameThingPreconditionItem : IValidatableObject
     {
         /// <summary>
         /// 构造函数。
@@ -1107,6 +1107,14 @@ namespace GY02.Templates
         public int GroupMask { get; set; }
 
         /// <summary>
+        /// 此项是否符合掩码条件。
+        /// </summary>
+        /// <param name="mask"></param>
+        /// <returns></returns>
+        public bool IsValidate(int mask) =>
+            (GroupMask & mask) == mask;
+
+        /// <summary>
         /// <inheritdoc/>
         /// </summary>
         /// <returns></returns>
@@ -1122,7 +1130,7 @@ namespace GY02.Templates
         /// <returns></returns>
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            return default;
+            return Array.Empty<ValidationResult>();
         }
     }
 

@@ -48,8 +48,8 @@
       <Property Name="Skills" />
       <Property Name="LvUpData" />
       <Property Name="In" />
-      <Property Name="Fcps" />
       <Property Name="Ins" />
+      <Property Name="Fcps" />
     </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
@@ -126,6 +126,11 @@
   </Class>
   <Class Name="GY02.Templates.GameShoppingItem">
     <Position X="8" Y="14.25" Width="2" />
+    <AssociationLine Name="Period" Type="GY02.Templates.GamePeriod">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.016" Y="0.404" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
       <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAgAAAAAAACI=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>

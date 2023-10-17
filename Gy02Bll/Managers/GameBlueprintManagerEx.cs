@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace GY02.Managers
@@ -47,13 +48,14 @@ namespace GY02.Managers
         /// 指定实体是否符合指定条件的要求。此函数不考虑条件组掩码问题，
         /// </summary>
         /// <param name="entity"></param>
-        /// <param name="condition"></param>
+        /// <param name="condition">最终条件，指定的所有模板id必须已被翻译。</param>
         /// <returns></returns>
         public bool IsMatch(GameEntity entity, GameThingPreconditionItem condition)
         {
             if (condition.TId.HasValue) //若需要考虑模板id
                 if (condition.TId.Value != entity.TemplateId)
                     return false;
+            if (condition.MinCount.Value > entity.Count) return false;
 
             VirtualThing thing = entity.GetThing();
             TemplateStringFullView fullView = _TemplateManager.Id2FullView[thing.ExtraGuid];
@@ -61,8 +63,6 @@ namespace GY02.Managers
             if (condition.Genus is not null && condition.Genus.Count > 0 && (fullView.Genus is null || condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count))
                 return false;
             if (condition.ParentTId.HasValue && condition.ParentTId.Value != thing.Parent?.ExtraGuid)
-                return false;
-            if (condition.MinCount.HasValue && condition.MinCount.Value > entity.Count)
                 return false;
             if (condition.NumberCondition is NumberCondition nc) //若需要判断数值条件
             {
@@ -102,7 +102,7 @@ namespace GY02.Managers
         /// <returns></returns>
         public static bool IsMatch(this GameBlueprintManagerEx mng, GameEntity entity, IEnumerable<GameThingPreconditionItem> conditions, int mask)
         {
-            var coll = conditions.Where(c => (c.GroupMask & mask) == mask);
+            var coll = conditions.Where(c => c.IsValidate(mask));
             return coll.All(c => mng.IsMatch(entity, c));
         }
     }

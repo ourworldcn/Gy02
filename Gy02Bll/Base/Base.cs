@@ -159,4 +159,40 @@ namespace OW.Game
         }
     }
 
+    /// <summary>
+    /// 处理一个数据包内的加速器。
+    /// </summary>
+    public interface IGameContextAccelerator
+    {
+        /// <summary>
+        /// 针对的用户。
+        /// </summary>
+        public GameChar GameChar { get; set; }
+
+        /// <summary>
+        /// 数据包的世界时间。
+        /// </summary>
+        public DateTime WorldDateTime { get; set; }
+    }
+
+    public class GameContextAccelerator : IGameContextAccelerator
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameContextAccelerator()
+        {
+
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        public GameChar GameChar { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        public DateTime WorldDateTime { get; set; } = OwHelper.WorldNow;
+    }
 }
