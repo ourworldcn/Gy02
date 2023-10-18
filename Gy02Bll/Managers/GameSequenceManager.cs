@@ -187,5 +187,9 @@ namespace GY02.Managers
         }
     }
 
+    public static class GameSequenceManagerExtensions
+    {
+
+    }
 }
 

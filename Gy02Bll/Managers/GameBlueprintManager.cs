@@ -1,25 +1,13 @@
-﻿using GY02.Commands;
-using GY02.Publisher;
+﻿using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
-using OW.DDD;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
-using OW.Game.Store;
-using OW.SyncCommand;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using System.Buffers;
 
 namespace GY02.Managers
 {
@@ -38,14 +26,17 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameBlueprintManager : GameManagerBase<GameBlueprintOptions, GameBlueprintManager>
     {
-        public GameBlueprintManager(IOptions<GameBlueprintOptions> options, ILogger<GameBlueprintManager> logger, GameEntityManager entityManager, GameSequenceManager sequenceManager) : base(options, logger)
+        public GameBlueprintManager(IOptions<GameBlueprintOptions> options, ILogger<GameBlueprintManager> logger,
+            GameEntityManager entityManager, GameSequenceManager sequenceManager, GameDiceManager diceManager) : base(options, logger)
         {
             _EntityManager = entityManager;
             _SequenceManager = sequenceManager;
+            _DiceManager = diceManager;
         }
 
         GameEntityManager _EntityManager;
         GameSequenceManager _SequenceManager;
+        GameDiceManager _DiceManager;
 
         #region 获取信息
 
@@ -64,7 +55,7 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool IsValid(IEnumerable<BlueprintInItem> ins, IEnumerable<GameEntity> entities, bool ignore = false)
         {
-            var result = ins.All(inItem => entities.Any(entity => IsValid(inItem, entity, ignore)));
+            var result = ins.All(inItem => entities.Any(entity => IsMatch(inItem, entity, ignore)));
             return result;
         }
 
@@ -75,7 +66,7 @@ namespace GY02.Managers
         /// <param name="entity"></param>
         /// <param name="ignore"></param>
         /// <returns></returns>
-        public bool IsValid(BlueprintInItem inItem, GameEntity entity, bool ignore = false)
+        public bool IsMatch(BlueprintInItem inItem, GameEntity entity, bool ignore = false)
         {
             if (inItem.IgnoreIfDisplayList && ignore) return true;  //若允许忽略
             if (inItem.Count > entity.Count) return false;  //若数量不满足
@@ -118,6 +109,74 @@ namespace GY02.Managers
             return GetInputs(new BlueprintInItem[] { input }, entities).Where(c => c.Item1 == input).Select(c => (c.Item2, -Math.Abs(c.Item1.Count)));
         }
 
+        /// <summary>
+        /// 按条件掩码确定是否匹配。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="inItem"></param>
+        /// <param name="mask"></param>
+        /// <returns></returns>
+        public bool IsMatch(GameEntity entity, BlueprintInItem inItem, int mask)
+        {
+            if (_EntityManager.IsMatch(entity, inItem.Conditional, mask)) return false;
+            if (inItem.Count > entity.Count) return false;
+            return true;
+        }
+
+        public IEnumerable<(BlueprintInItem, GameEntity)> GetMatches(IEnumerable<GameEntity> entities, BlueprintInItem inItem)
+        {
+            return default;
+        }
+
+        /// <summary>
+        /// 翻译需求序列为普通条件。
+        /// </summary>
+        /// <param name="inItem"></param>
+        /// <param name="entities"></param>
+        /// <returns>若实现了翻译则返回新对象，否则返回参数对象。</returns>
+        public BlueprintInItem Translation(BlueprintInItem inItem, IEnumerable<GameEntity> entities)
+        {
+            bool changed = false;
+            int index = 0;
+            var buff = ArrayPool<GameThingPreconditionItem>.Shared.Rent(inItem.Conditional.Count);
+            using var dw = DisposeHelper.Create(c => ArrayPool<GameThingPreconditionItem>.Shared.Return(c), buff);
+            foreach (var cond in inItem.Conditional)
+            {
+                var tmp = Translation(cond, entities);
+                buff[index++] = tmp;
+                changed = changed || !ReferenceEquals(tmp, cond);
+            }
+            if (changed)    //若发生了变化
+            {
+                var result = new BlueprintInItem
+                {
+                    Conditional = buff.Take(inItem.Conditional.Count).ToList(),
+                };
+                result.Count = result.Conditional.Max(c => c.MinCount ?? 0);
+                return result;
+            }
+            else //若未发生变化
+                return inItem;
+        }
+
+        /// <summary>
+        /// 翻译需求序列为普通条件。
+        /// </summary>
+        /// <param name="conditional"></param>
+        /// <param name="entities"></param>
+        public GameThingPreconditionItem Translation(GameThingPreconditionItem conditional, IEnumerable<GameEntity> entities)
+        {
+            if (!conditional.TId.HasValue) return conditional;
+            if (!_SequenceManager.GetTemplateById(conditional.TId.Value, out var tt)) return conditional;
+            if (!_SequenceManager.GetOut(entities, tt, out var summary)) return null;
+            var result = new GameThingPreconditionItem
+            {
+                TId = summary.TId,
+                ParentTId = summary.ParentTId,
+                MinCount = summary.Count,
+            };
+            return result;
+        }
         #endregion 计算匹配
 
         /// <summary>
@@ -134,7 +193,7 @@ namespace GY02.Managers
             var all = new HashSet<GameEntity>(entities);
             foreach (var conditional in conditionals)
             {
-                var entity = all.Where(c => IsValid(conditional, c)).FirstOrDefault();
+                var entity = all.Where(c => IsMatch(conditional, c)).FirstOrDefault();
                 if (entity is null)
                 {
                     OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
@@ -169,19 +228,10 @@ namespace GY02.Managers
             return _EntityManager.Modify(tmp, changes);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="item"></param>
-        /// <param name="gameChar"></param>
-        /// <param name="i"></param>
-        /// <param name="start"></param>
-        /// <param name="end"></param>
-        /// <returns></returns>
-        public bool GetNext(GameThingPreconditionItem item, GameChar gameChar, int i, out int start, out int end)
-        {
-            start = end = 0;
-            return true;
-        }
+    }
+
+    public static class GameBlueprintManagerExtensions
+    {
+
     }
 }

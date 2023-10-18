@@ -182,7 +182,6 @@ namespace OW.Game
         /// </summary>
         public GameContextAccelerator()
         {
-
         }
 
         /// <summary>
@@ -194,5 +193,19 @@ namespace OW.Game
         /// <inheritdoc/>
         /// </summary>
         public DateTime WorldDateTime { get; set; } = OwHelper.WorldNow;
+
+        /// <summary>
+        /// 实体服务类。
+        /// </summary>
+        public GameEntityManager EntityManager { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IEnumerable<GameEntity> GetAllChildren()
+        {
+            return EntityManager.GetAllEntity(GameChar);
+        }
     }
 }

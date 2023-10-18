@@ -30,7 +30,7 @@ namespace GY02.Templates
     [DisplayName("实体摘要")]
     [Description("由 OutItem 改名而来。")]
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
-    public class GameEntitySummary : ICloneable
+    public class GameEntitySummary : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 构造函数。
@@ -113,6 +113,15 @@ namespace GY02.Templates
             return $"Summary({TId},{Count})";
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return Array.Empty<ValidationResult>();
+        }
     }
 
     /// <summary>
@@ -215,7 +224,7 @@ namespace GY02.Templates
     /// <summary>
     /// 动态产出/消耗。
     /// </summary>
-    public class SequenceOut
+    public class SequenceOut : IValidatableObject
     {
         /// <summary>
         /// 构造函数。
@@ -240,6 +249,15 @@ namespace GY02.Templates
         /// </summary>
         public SequenceGameEntitySummary Outs { get; set; }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return Array.Empty<ValidationResult>();
+        }
     }
 
     #endregion 基础数据
@@ -307,7 +325,7 @@ namespace GY02.Templates
     /// <summary>
     /// 
     /// </summary>
-    public partial class GameShoppingItem
+    public partial class GameShoppingItem : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 该商品项的游戏周期。
@@ -334,12 +352,39 @@ namespace GY02.Templates
         /// 获得的物品。
         /// </summary>
         public List<GameEntitySummary> Outs { get; set; } = new List<GameEntitySummary>();
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public object Clone()
+        {
+            return new GameShoppingItem
+            {
+                Period = Period.Clone() as GamePeriod,
+                GroupNumber = GroupNumber,
+                Ins = new List<BlueprintInItem>(Ins.Select(c => c.Clone() as BlueprintInItem)),
+                MaxCount = MaxCount,
+                Outs = Outs.Select(c => c.Clone() as GameEntitySummary).ToList(),
+            };
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return Array.Empty<ValidationResult>();
+        }
     }
 
     /// <summary>
     /// 定义周期的类。
     /// </summary>
-    public class GamePeriod : IValidatableObject
+    public class GamePeriod : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 开始时间。
@@ -416,6 +461,22 @@ namespace GY02.Templates
             OwHelper.SetLastError(ErrorCodes.ERROR_INVALID_DATA);
             OwHelper.SetLastErrorMessage($"指定的时间{now}不在商品有效期内。");
             return false;
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public object Clone()
+        {
+            return new GamePeriod
+            {
+                End = End,
+                PeriodString = PeriodString,
+                Start = Start,
+                ValidPeriodString = ValidPeriodString,
+            };
         }
 
 #endif
@@ -954,7 +1015,7 @@ namespace GY02.Templates
     /// 针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。
     /// 以下条件为真：(获取属性值 - Subtrahend) 对 Modulus 求余数，余数要在 [MinRemainder, MaxRemainder] 邻域中。
     /// </summary>
-    public class NumberCondition : IValidatableObject
+    public class NumberCondition : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 属性名，通常是Count。该属性必须是一个数值型的属性。
@@ -991,6 +1052,25 @@ namespace GY02.Templates
         /// 最小余数。
         /// </summary>
         public decimal MaxRemainder { get; set; }
+
+        /// <summary>
+        /// 返回一个深表副本。
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public object Clone()
+        {
+            return new NumberCondition
+            {
+                MaxRemainder = MaxRemainder,
+                MaxValue = MaxValue,
+                Subtrahend = Subtrahend,
+                MinRemainder = MinRemainder,
+                MinValue = MinValue,
+                Modulus = Modulus,
+                PropertyName = PropertyName,
+            };
+        }
 
         /// <summary>
         /// 获取指定数值所处周期。仅能对整数求解。
@@ -1044,7 +1124,7 @@ namespace GY02.Templates
     /// <summary>
     /// 定位一个物品的条件的详细项。如果指定多种属性过滤则需要满足所有属性要求。
     /// </summary>
-    public partial class GameThingPreconditionItem : IValidatableObject
+    public partial class GameThingPreconditionItem : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 构造函数。
@@ -1105,6 +1185,7 @@ namespace GY02.Templates
         /// </summary>
         /// <value>值为0则表示这是一个旧式条件，不使用掩码决定测试的场景。仅为兼容性考虑，暂时保留0.未来0是临时使该条件失效的设置。</value>
         public int GroupMask { get; set; }
+            = 3;    //暂时预制为3，需求使然
 
         /// <summary>
         /// 此项是否符合掩码条件。
@@ -1132,13 +1213,32 @@ namespace GY02.Templates
         {
             return Array.Empty<ValidationResult>();
         }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public object Clone()
+        {
+            return new GameThingPreconditionItem
+            {
+                GeneralConditional = new List<GeneralConditionalItem>(GeneralConditional.Select(c => c.Clone() as GeneralConditionalItem)),
+                Genus = new List<string>(Genus),
+                NumberCondition = NumberCondition.Clone() as NumberCondition,
+                GroupMask = GroupMask,
+                MinCount = MinCount,
+                ParentTId = ParentTId,
+                TId = TId,
+            };
+        }
     }
 
     /// <summary>
     /// 一个通用的表达式对象。计划用于从寻找到的实体上提取属性。
     /// 当前版本可能是一个bool或数值。
     /// </summary>
-    public class GeneralConditionalItem
+    public class GeneralConditionalItem : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 有效操作符列表。
@@ -1373,6 +1473,31 @@ namespace GY02.Templates
             return result;
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return Array.Empty<ValidationResult>();
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public object Clone()
+        {
+            return new GeneralConditionalItem
+            {
+                Args = new List<string>(Args),
+                Operator = Operator,
+                PropertyName = PropertyName,
+            };
+        }
+
         #endregion 公共方法
 
     }
@@ -1382,7 +1507,7 @@ namespace GY02.Templates
     /// <summary>
     /// 合成的材料信息。
     /// </summary>
-    public class BlueprintInItem : IValidatableObject
+    public class BlueprintInItem : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 构造函数。
@@ -1395,18 +1520,13 @@ namespace GY02.Templates
         /// <summary>
         /// 选取物品的条件。
         /// </summary>
-        public GameThingPreconditionItem[] Conditional { get; set; }
+        public List<GameThingPreconditionItem> Conditional { get; set; } = new List<GameThingPreconditionItem>();
 
         /// <summary>
         /// 消耗的数量。
         /// 注意消耗数量可能是0，代表需要此物品但不消耗此物品。
         /// </summary>
         public decimal Count { get; set; }
-
-        /// <summary>
-        /// 与主材料共有类属。暂时未启用。
-        /// </summary>
-        public List<string> Genus { get; set; }
 
         /// <summary>
         /// 在获取显示列表的时候，是否忽略该条件，视同满足。
@@ -1417,11 +1537,25 @@ namespace GY02.Templates
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public object Clone()
+        {
+            return new BlueprintInItem
+            {
+                Conditional = Conditional.Select(c => c.Clone() as GameThingPreconditionItem).ToList(),
+                Count = Count,
+            };
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
         /// <param name="validationContext"></param>
         /// <returns></returns>
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            return default;
+            return Array.Empty<ValidationResult>();
         }
     }
 
@@ -1482,7 +1616,7 @@ namespace GY02.Templates
     /// <summary>
     /// 定义一个"池子"
     /// </summary>
-    public class GameDice : ICloneable
+    public class GameDice : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 构造函数。
@@ -1520,6 +1654,16 @@ namespace GY02.Templates
         public Guid? GuaranteesDiceTId { get; set; }
 
         /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return Array.Empty<ValidationResult>();
+        }
+
+        /// <summary>
         /// 获取一个深表副本。
         /// </summary>
         /// <returns></returns>
@@ -1541,7 +1685,7 @@ namespace GY02.Templates
     /// <summary>
     /// 池子项。
     /// </summary>
-    public class GameDiceItem : ICloneable
+    public class GameDiceItem : IValidatableObject, ICloneable
     {
         /// <summary>
         /// 构造函数。
@@ -1580,6 +1724,17 @@ namespace GY02.Templates
             };
             result.Outs.AddRange(Outs.Select(c => (GameEntitySummary)c.Clone()));
             return result;
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="validationContext"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            return Array.Empty<ValidationResult>();
         }
     }
 
