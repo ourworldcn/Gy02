@@ -123,17 +123,12 @@ namespace GY02.Managers
             return true;
         }
 
-        public IEnumerable<(BlueprintInItem, GameEntity)> GetMatches(IEnumerable<GameEntity> entities, BlueprintInItem inItem)
-        {
-            return default;
-        }
-
         /// <summary>
         /// 翻译需求序列为普通条件。
         /// </summary>
         /// <param name="inItem"></param>
         /// <param name="entities"></param>
-        /// <returns>若实现了翻译则返回新对象，否则返回参数对象。</returns>
+        /// <returns>若无需转换则返回<paramref name="inItem"/>，否则返回新实例。</returns>
         public BlueprintInItem Translation(BlueprintInItem inItem, IEnumerable<GameEntity> entities)
         {
             bool changed = false;
@@ -164,10 +159,10 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="conditional"></param>
         /// <param name="entities"></param>
+        /// <return>若无需转换则返回<paramref name="conditional"/>,否则返回转换后的实例。</return>
         public GameThingPreconditionItem Translation(GameThingPreconditionItem conditional, IEnumerable<GameEntity> entities)
         {
-            if (!conditional.TId.HasValue) return conditional;
-            if (!_SequenceManager.GetTemplateById(conditional.TId.Value, out var tt)) return conditional;
+            if (!IsNeedTranslation(conditional, out var tt)) return conditional;
             if (!_SequenceManager.GetOut(entities, tt, out var summary)) return null;
             var result = new GameThingPreconditionItem
             {
@@ -176,6 +171,25 @@ namespace GY02.Managers
                 MinCount = summary.Count,
             };
             return result;
+        }
+
+        /// <summary>
+        /// 是否需要转换。
+        /// </summary>
+        /// <param name="conditional"></param>
+        /// <param name="template"></param>
+        /// <returns></returns>
+        public bool IsNeedTranslation(GameThingPreconditionItem conditional, out TemplateStringFullView template)
+        {
+            if (conditional.TId.HasValue)
+            {
+                return _SequenceManager.GetTemplateById(conditional.TId.Value, out template);
+            }
+            else
+            {
+                template = null;
+                return false;
+            }
         }
         #endregion 计算匹配
 
@@ -232,6 +246,24 @@ namespace GY02.Managers
 
     public static class GameBlueprintManagerExtensions
     {
+        /// <summary>
+        /// 获取第一个匹配项。
+        /// 不考虑转换等因素。
+        /// </summary>
+        /// <param name="mng">蓝图管理器。</param>
+        /// <param name="entities"></param>
+        /// <param name="inItem"></param>
+        /// <param name="mask">条件组掩码</param>
+        /// <returns>返回符合条件的实体，null表示没有找到合适的实体。</returns>
+        public static GameEntity GetMatch(this GameBlueprintManager mng, IEnumerable<GameEntity> entities, BlueprintInItem inItem, int mask)
+        {
+            var result = entities.FirstOrDefault(c =>
+            {
+                return mng.IsMatch(c, inItem, mask);
+            });
+            return result;
+        }
+
 
     }
 }

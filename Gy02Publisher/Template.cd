@@ -29,7 +29,7 @@
         <Point X="6.292" Y="10" Type="JumpStart" />
         <Point X="6.458" Y="10" Type="JumpEnd" />
         <Point X="7.75" Y="10" />
-        <Point X="7.75" Y="9.243" />
+        <Point X="7.75" Y="9.058" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -82,6 +82,9 @@
       <HashCode>AAAAAAAAAACAAAABAAAAAAQAAAAAAAAAAAAAAAAEABA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Conditional" />
+    </ShowAsCollectionAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GY02.Templates.FuhuaInfo">
