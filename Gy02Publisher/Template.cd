@@ -29,7 +29,7 @@
         <Point X="6.292" Y="10" Type="JumpStart" />
         <Point X="6.458" Y="10" Type="JumpEnd" />
         <Point X="7.75" Y="10" />
-        <Point X="7.75" Y="9.058" />
+        <Point X="7.75" Y="8.873" />
       </Path>
     </AssociationLine>
     <TypeIdentifier>
@@ -65,7 +65,7 @@
   <Class Name="GY02.Templates.GameThingPreconditionItem">
     <Position X="3.25" Y="5.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>QAAAAAABAACAAAAFCAAJAAAACAAAAAAAAAAAAAAASBA=</HashCode>
+      <HashCode>QAAAAAABAACAAAAECAAJAAAACAAAAAAAAAAAAAAASBA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -79,7 +79,7 @@
   <Class Name="GY02.Templates.BlueprintInItem">
     <Position X="7" Y="7" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAAAABAAAAAAQAAAAAAAAAAAAAAAAEABA=</HashCode>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAAEABA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
@@ -165,7 +165,7 @@
   <Class Name="GY02.Templates.GeneralConditionalItem">
     <Position X="3.25" Y="0.75" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>CABCAQBAAACAAAABAAABAAAAAAAAAAAAAEAAAIBEIBA=</HashCode>
+      <HashCode>CABCAQBAAACAAAAAAAABAAAAAAAAAAAAAEAAAIBEIBA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

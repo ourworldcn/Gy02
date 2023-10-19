@@ -315,7 +315,7 @@ namespace GY02.Managers
             if (!tt.Achievement.Period.IsValid(now, out _))
                 return false;
 
-            var b = tt.Achievement.Ins is null || _BlueprintManager.IsValid(tt.Achievement.Ins, _EntityManager.GetAllEntity(gameChar));
+            var b = tt.Achievement.Ins is null || _BlueprintManager.GetMatches(_EntityManager.GetAllEntity(gameChar), tt.Achievement.Ins, 1).All(c => c.Item1 is not null);
             if (!b)
                 return false;
 

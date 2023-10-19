@@ -1173,12 +1173,6 @@ namespace GY02.Templates
         }
 
         /// <summary>
-        /// 在获取显示列表的时候，是否忽略该条件，视同满足。
-        /// </summary>
-        /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
-        public bool IgnoreIfDisplayList { get; set; } = false;
-
-        /// <summary>
         /// 条件组掩码。最多可以有32个条件组。在测试是否满足条件时，根据条件组选取的掩码来测试条件。如要求符合条件的掩码是2，则此属性为2，3，6，7的条件都被考虑在内。
         /// 目前预先定义的值：1 表示执行条件组，2 表示获取列表的条件组（未来可能有其它定义，如4可能表示预览条件组，它既不同于执行也不同于获取列表的要求）。
         /// 设置为3则表示执行和获取列表时都要考虑在内。
@@ -1277,12 +1271,6 @@ namespace GY02.Templates
         [JsonPropertyName("args")]
         public List<string> Args { get => _Args ?? (_Args = new List<string> { }); set => _Args = value; }
 
-        /// <summary>
-        /// 在获取显示列表的时候，是否忽略该条件，视同满足。
-        /// </summary>
-        /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
-        public bool IgnoreIfDisplayList { get; set; } = false;
-
         #endregion 公共属性
 
         #region 辅助方法
@@ -1368,12 +1356,10 @@ namespace GY02.Templates
         /// 获取一个指示指定实体是否符合指定条件。
         /// </summary>
         /// <param name="entity"></param>
-        /// <param name="ignore">是否忽略<see cref="IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
+        /// <param name="ignore">保留未用。</param>
         /// <returns>true符合条件，false不符合条件或出错，<see cref="OwHelper.GetLastError()"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
         public bool IsMatch(object entity, bool ignore = false)
         {
-            if (ignore && IgnoreIfDisplayList)  //若忽略此项
-                return true;
             bool result;
             decimal val;    //属性的值
             switch (Operator)
@@ -1527,12 +1513,6 @@ namespace GY02.Templates
         /// 注意消耗数量可能是0，代表需要此物品但不消耗此物品。
         /// </summary>
         public decimal Count { get; set; }
-
-        /// <summary>
-        /// 在获取显示列表的时候，是否忽略该条件，视同满足。
-        /// </summary>
-        /// <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
-        public bool IgnoreIfDisplayList { get; set; } = false;
 
         /// <summary>
         /// <inheritdoc/>

@@ -90,141 +90,6 @@ namespace GY02.Managers
 
         #endregion  事件相关
 
-        #region 计算寻找物品的匹配
-
-        /// <summary>
-        /// 指定材料是否符合指定条件的要求。
-        /// </summary>
-        /// <param name="main">要升级的物品</param>
-        /// <param name="cost">要求的条件。</param>
-        /// <param name="entity">材料的实体。</param>
-        /// <param name="count">实际耗费的数量</param>
-        /// <returns>true表示指定实体符合指定条件，否则返回false。</returns>
-        public bool IsMatch(GameEntity main, CostInfo cost, GameEntity entity, out decimal count)
-        {
-            if (IsMatch(entity, cost.Conditional))
-            {
-                var lv = Convert.ToInt32(main.Level);
-                if (cost.Conditional is not null && cost.Counts.Count > lv)
-                {
-                    var tmp = cost.Counts[lv];  //耗费的数量
-                    if (tmp <= entity.Count)
-                    {
-                        count = -Math.Abs(tmp);
-                        return true;
-                    }
-                }
-            }
-            count = 0;
-            return false;
-        }
-
-        /// <summary>
-        /// 指定材料是否符合指定条件的要求。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="conditions"></param>
-        /// <param name="ignore">是否忽略可以忽略的项。</param>
-        /// <returns></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool IsMatch(GameEntity entity, IEnumerable<GameThingPreconditionItem> conditions, bool ignore = false)
-        {
-            return conditions.Count() == 0 || conditions.Any(c => IsMatch(entity, c, ignore));
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="condition"></param>
-        /// <param name="ignore"></param>
-        /// <returns></returns>
-        public bool IsMatch(GameEntity entity, GameThingPreconditionItem condition, bool ignore = false)
-        {
-            if (ignore && condition.IgnoreIfDisplayList) return true;   //若忽略此项
-            VirtualThing thing = (VirtualThing)entity.Thing;
-            TemplateStringFullView fullView = _TemplateManager.Id2FullView[thing.ExtraGuid];
-
-            if (condition.TId.HasValue && condition.TId.Value != thing.ExtraGuid)
-                return false;
-            if (condition.Genus is not null && condition.Genus.Count > 0 && (fullView.Genus is null || condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count))
-                return false;
-            if (condition.ParentTId.HasValue && condition.ParentTId.Value != thing.Parent?.ExtraGuid)
-                return false;
-            if (condition.MinCount.HasValue && condition.MinCount.Value > entity.Count)
-                return false;
-            if (condition.NumberCondition is NumberCondition nc) //若需要判断数值条件
-            {
-                if (entity.GetType().GetProperty(nc.PropertyName) is not PropertyInfo pi || !OwConvert.TryToDecimal(pi.GetValue(entity), out var deci)) return false; //若非数值属性
-                if (deci > nc.MaxValue || deci < nc.MinValue) return false;
-                var tmp = (deci - nc.Subtrahend) % nc.Modulus;  //余数
-                if (tmp < nc.MinRemainder || tmp > nc.MaxRemainder) return false;
-            }
-            if (!condition.GeneralConditional.All(c =>
-            {
-                if (ignore && c.IgnoreIfDisplayList)
-                    return true;
-                if (!_TemplateManager.TryGetValueFromConditionalItem(c, out var obj, entity))
-                    return false;
-                if (!OwConvert.TryGetBoolean(obj, out var result))
-                    return false;
-                return result;
-            }))  //若通用属性要求的条件不满足
-                return false;
-            return true;
-        }
-
-        #endregion 计算寻找物品的匹配
-
-        /// <summary>
-        /// 获取指定物品的升级所需材料及数量列表。
-        /// </summary>
-        /// <param name="entity">要升级的物品。</param>
-        /// <param name="alls">搜索物品的集合。</param>
-        /// <returns>升级所需物及数量列表。返回null表示出错了 <seealso cref="OwHelper.GetLastError"/>。
-        /// 如果返回了找到的条目<see cref="ValueTuple{GameEntity,Decimal}.Item2"/> 对于消耗的物品是负数，可能包含0.。</returns>
-        public List<(GameEntity, decimal)> GetCost(GameEntity entity, IEnumerable<GameEntity> alls)
-        {
-            List<(GameEntity, decimal)> result = null;
-            var fullView = _TemplateManager.Id2FullView.GetValueOrDefault(entity.TemplateId);
-
-            if (fullView?.LvUpTId is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
-                return result;
-            }
-            var tt = _TemplateManager.Id2FullView.GetValueOrDefault(fullView.LvUpTId.Value);
-            if (tt?.LvUpData is null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
-                return result;
-            }
-            var lv = Convert.ToInt32(entity.Level);
-            var coll = tt.LvUpData.Select(c =>
-            {
-                decimal count = 0;
-                var tmp = alls.FirstOrDefault(item => IsMatch(entity, c, item, out count));
-                return (entity: tmp, count);
-            }).ToArray();
-            if (coll.Count(c => c.entity is not null) != tt.LvUpData.Count)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_IMPLEMENTATION_LIMIT);
-                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})升级材料不全。");
-                return result;
-            }
-            var errItem = coll.GroupBy(c => c.entity.Id).Where(c => c.Count() > 1).FirstOrDefault();
-            if (errItem is not null)
-            {
-                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"物品(Id={errItem.First().entity.Id})同时符合两个或更多条件。");
-                return result;
-            }
-
-            return result = coll.ToList();
-        }
-
         /// <summary>
         /// 修改一组实体的数量，若有任何一个实体在减少数量后，数量值为负数，则不会减少任何实体的数量并立即返回错误。
         /// </summary>
@@ -889,11 +754,11 @@ namespace GY02.Managers
     public static class GameEntityManagerExtensions
     {
         /// <summary>
-        /// 
+        /// 获取一个指示，指定实体是否满足一组条件的要求。
         /// </summary>
         /// <param name="mng"></param>
         /// <param name="entity"></param>
-        /// <param name="conditions"></param>
+        /// <param name="conditions">其中条件必须已经被转换为最终，不能仍含有序列等条件。</param>
         /// <param name="mask"></param>
         /// <returns></returns>
         public static bool IsMatch(this GameEntityManager mng, GameEntity entity, IEnumerable<GameThingPreconditionItem> conditions, int mask)

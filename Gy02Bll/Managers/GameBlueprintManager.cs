@@ -8,6 +8,7 @@ using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using System.Buffers;
+using System.Runtime.CompilerServices;
 
 namespace GY02.Managers
 {
@@ -27,16 +28,18 @@ namespace GY02.Managers
     public class GameBlueprintManager : GameManagerBase<GameBlueprintOptions, GameBlueprintManager>
     {
         public GameBlueprintManager(IOptions<GameBlueprintOptions> options, ILogger<GameBlueprintManager> logger,
-            GameEntityManager entityManager, GameSequenceManager sequenceManager, GameDiceManager diceManager) : base(options, logger)
+            GameEntityManager entityManager, GameSequenceManager sequenceManager, GameDiceManager diceManager, GameTemplateManager templateManager) : base(options, logger)
         {
             _EntityManager = entityManager;
             _SequenceManager = sequenceManager;
             _DiceManager = diceManager;
+            _TemplateManager = templateManager;
         }
 
         GameEntityManager _EntityManager;
         GameSequenceManager _SequenceManager;
         GameDiceManager _DiceManager;
+        GameTemplateManager _TemplateManager;
 
         #region 获取信息
 
@@ -46,79 +49,15 @@ namespace GY02.Managers
         #region 计算匹配
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="ins"></param>
-        /// <param name="entities"></param>
-        /// <param name="ignore"></param>
-        /// 
-        /// <returns></returns>
-        public bool IsValid(IEnumerable<BlueprintInItem> ins, IEnumerable<GameEntity> entities, bool ignore = false)
-        {
-            var result = ins.All(inItem => entities.Any(entity => IsMatch(inItem, entity, ignore)));
-            return result;
-        }
-
-        /// <summary>
-        /// 获取指示，指定的实体是否符合蓝图输入项的要求。
-        /// </summary>
-        /// <param name="inItem"></param>
-        /// <param name="entity"></param>
-        /// <param name="ignore"></param>
-        /// <returns></returns>
-        public bool IsMatch(BlueprintInItem inItem, GameEntity entity, bool ignore = false)
-        {
-            if (inItem.IgnoreIfDisplayList && ignore) return true;  //若允许忽略
-            if (inItem.Count > entity.Count) return false;  //若数量不满足
-            foreach (var item in inItem.Conditional)    //遍历检验是否是序列输入
-            {
-                if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是输入序列
-                {
-                    var b = _SequenceManager.GetMatches(new GameEntity[] { entity }, tt);
-                    if (b.Any()) return true;
-                    //if (!_SequenceManager.GetOut(entity, tt, out var summary)) continue;  //没有匹配序列输出
-                    //result = entities.FirstOrDefault(c => c.TemplateId == summary.TId && (!summary.ParentTId.HasValue || c.GetThing().Parent.ExtraGuid == summary.ParentTId.Value) && c.Count >= summary.Count);
-                    //if (result is not null) return result;
-                }
-            }
-            return _EntityManager.IsMatch(entity, inItem.Conditional, ignore);
-        }
-
-        /// <summary>
-        /// 获取序列指定的匹配项。
-        /// </summary>
-        /// <param name="input"></param>
-        /// <param name="entities"></param>
-        /// <returns>没找到匹配项，则返回空集合。</returns>
-        public IEnumerable<(GameEntity, decimal)> GetMatches(BlueprintInItem input, IEnumerable<GameEntity> entities)
-        {
-            var result = new List<(GameEntity, decimal)> { };
-            foreach (var item in input.Conditional)
-            {
-                if (item.TId.HasValue && _SequenceManager.GetTemplateById(item.TId.Value, out var tt)) //若是序列输入
-                {
-                    var matches = _SequenceManager.GetMatches(entities, tt);
-                    var match = matches.FirstOrDefault();
-                    if (match.Item2 is not null)  //若找到匹配项
-                    {
-                        result.Add((match.Item2, -Math.Abs(match.Item1.Count)));
-                        return result;
-                    }
-                }
-            }
-            return GetInputs(new BlueprintInItem[] { input }, entities).Where(c => c.Item1 == input).Select(c => (c.Item2, -Math.Abs(c.Item1.Count)));
-        }
-
-        /// <summary>
         /// 按条件掩码确定是否匹配。
         /// </summary>
         /// <param name="entity"></param>
-        /// <param name="inItem"></param>
+        /// <param name="inItem">必须是最终条件，不考虑转换问题。</param>
         /// <param name="mask"></param>
         /// <returns></returns>
         public bool IsMatch(GameEntity entity, BlueprintInItem inItem, int mask)
         {
-            if (_EntityManager.IsMatch(entity, inItem.Conditional, mask)) return false;
+            if (!_EntityManager.IsMatch(entity, inItem.Conditional, mask)) return false;
             if (inItem.Count > entity.Count) return false;
             return true;
         }
@@ -193,33 +132,86 @@ namespace GY02.Managers
         }
         #endregion 计算匹配
 
+        #region 计算寻找物品的匹配
+
         /// <summary>
-        /// 在一组实体中选择条件指定实体。
+        /// 指定材料是否符合指定条件的要求。
         /// </summary>
-        /// <param name="conditionals"></param>
-        /// <param name="entities"></param>
-        /// <returns>返回条件与实体配对的值元组的集合。如果出现任何错误将返回null，此时用<see cref="OwHelper.GetLastError"/>获取详细信息。
-        /// 只会返回有消耗的需求的实体，不需要消耗的实体不会返回。</returns>
-        public IEnumerable<(BlueprintInItem, GameEntity)> GetInputs(IEnumerable<BlueprintInItem> conditionals, IEnumerable<GameEntity> entities)
+        /// <param name="main">要升级的物品</param>
+        /// <param name="cost">要求的条件。</param>
+        /// <param name="entity">材料的实体。</param>
+        /// <param name="count">实际耗费的数量</param>
+        /// <returns>true表示指定实体符合指定条件，否则返回false。</returns>
+        public bool IsMatch(GameEntity main, CostInfo cost, GameEntity entity, out decimal count)
         {
-            var result = new List<(BlueprintInItem, GameEntity)>();
-            var list = new List<BlueprintInItem>(conditionals);
-            var all = new HashSet<GameEntity>(entities);
-            foreach (var conditional in conditionals)
+            if (_EntityManager.IsMatch(entity, cost.Conditional, 1))
             {
-                var entity = all.Where(c => IsMatch(conditional, c)).FirstOrDefault();
-                if (entity is null)
+                var lv = Convert.ToInt32(main.Level);
+                if (cost.Conditional is not null && cost.Counts.Count > lv)
                 {
-                    OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                    OwHelper.SetLastErrorMessage($"无法找到符合条件{conditional}的实体。");
-                    return null;
+                    var tmp = cost.Counts[lv];  //耗费的数量
+                    if (tmp <= entity.Count)
+                    {
+                        count = -Math.Abs(tmp);
+                        return true;
+                    }
                 }
-                result.Add((conditional, entity));
-                if (conditional.Count == decimal.Zero) continue;    //若此项不消耗
-                all.Remove(entity); //去掉已经被匹配的项
             }
-            return result;
+            count = 0;
+            return false;
         }
+
+        /// <summary>
+        /// 获取指定物品的升级所需材料及数量列表。
+        /// </summary>
+        /// <param name="entity">要升级的物品。</param>
+        /// <param name="alls">搜索物品的集合。</param>
+        /// <returns>升级所需物及数量列表。返回null表示出错了 <seealso cref="OwHelper.GetLastError"/>。
+        /// 如果返回了找到的条目<see cref="ValueTuple{GameEntity,Decimal}.Item2"/> 对于消耗的物品是负数，可能包含0.。</returns>
+        public List<(GameEntity, decimal)> GetCost(GameEntity entity, IEnumerable<GameEntity> alls)
+        {
+            List<(GameEntity, decimal)> result = null;
+            var fullView = _TemplateManager.Id2FullView.GetValueOrDefault(entity.TemplateId);
+
+            if (fullView?.LvUpTId is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
+                return result;
+            }
+            var tt = _TemplateManager.Id2FullView.GetValueOrDefault(fullView.LvUpTId.Value);
+            if (tt?.LvUpData is null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
+                return result;
+            }
+            var lv = Convert.ToInt32(entity.Level);
+            var coll = tt.LvUpData.Select(c =>
+            {
+                decimal count = 0;
+                var tmp = alls.FirstOrDefault(item => IsMatch(entity, c, item, out count));
+                return (entity: tmp, count);
+            }).ToArray();
+            if (coll.Count(c => c.entity is not null) != tt.LvUpData.Count)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_IMPLEMENTATION_LIMIT);
+                OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})升级材料不全。");
+                return result;
+            }
+            var errItem = coll.GroupBy(c => c.entity.Id).Where(c => c.Count() > 1).FirstOrDefault();
+            if (errItem is not null)
+            {
+                OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                OwHelper.SetLastErrorMessage($"物品(Id={errItem.First().entity.Id})同时符合两个或更多条件。");
+                return result;
+            }
+
+            return result = coll.ToList();
+        }
+
+        #endregion 计算寻找物品的匹配
+
 
         /// <summary>
         /// 消耗指定材料。
@@ -232,13 +224,13 @@ namespace GY02.Managers
         public bool Deplete(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             List<(GameEntity, decimal)> list = new List<(GameEntity, decimal)>();
-            foreach (var conditional in conditionals)
+            var coll = this.GetMatches(entities, conditionals, 1);
+            var errItem = coll.FirstOrDefault(c => c.Item1 is null);
+            if (errItem.Item2 is not null)   //若存在无法找到的项
             {
-                var ec = GetMatches(conditional, entities);
-                if (ec is not IEnumerable<(GameEntity, decimal)> r || !r.Any()) return false;
-                list.AddRange(ec);
+                return false;
             }
-            var tmp = list.Select(c => (Entity: c.Item1, Count: -Math.Abs(c.Item2))).Where(c => c.Count != 0);
+            var tmp = coll.Select(c => (Entity: c.Item1, Count: -Math.Abs(c.Item2.Count))).Where(c => c.Count != 0);
             return _EntityManager.Modify(tmp, changes);
         }
 
@@ -264,6 +256,39 @@ namespace GY02.Managers
             return result;
         }
 
+        /// <summary>
+        /// 获取每个条件匹配的项。
+        /// </summary>
+        /// <param name="mng"></param>
+        /// <param name="entities"></param>
+        /// <param name="inItems">必须都是最终条件。</param>
+        /// <param name="mask">只考虑符合该掩码的条件。</param>
+        /// <returns>针对每一个输入项有一个匹配项。如果某个项是null则说明没有找到匹配项。</returns>
+        public static IEnumerable<(GameEntity, BlueprintInItem)> GetMatches(this GameBlueprintManager mng, IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> inItems, int mask)
+        {
+            var result = new List<(GameEntity, BlueprintInItem)>();
+            var hs = new HashSet<GameEntity>(entities);
+            foreach (var item in inItems.TryToCollection())
+            {
+                var tmp = mng.GetMatch(hs, item, mask);
+                if (tmp is not null) hs.Remove(tmp);    //若移除对应的项
+                result.Add((tmp, item));
+            }
+            return result;
+        }
 
+        /// <summary>
+        /// 获取一个指示，指定实体是否满足所有指定条件。
+        /// </summary>
+        /// <param name="mng"></param>
+        /// <param name="entity"></param>
+        /// <param name="inItems">必须都是最终条件。</param>
+        /// <param name="mask">只考虑符合该掩码的条件。</param>
+        /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsMatch(this GameBlueprintManager mng, GameEntity entity, IEnumerable<BlueprintInItem> inItems, int mask)
+        {
+            return inItems.All(c => mng.IsMatch(entity, c, mask));
+        }
     }
 }

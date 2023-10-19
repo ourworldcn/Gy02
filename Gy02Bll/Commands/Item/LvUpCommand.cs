@@ -36,18 +36,20 @@ namespace GY02.Commands
     public class LvUpCommandHandler : SyncCommandHandlerBase<LvUpCommand>, IGameCharHandler<LvUpCommand>
     {
 
-        public LvUpCommandHandler(GameTemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStoreManager accountStore)
+        public LvUpCommandHandler(GameTemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStoreManager accountStore, GameBlueprintManager blueprintManager)
         {
             _TemplateManager = templateManager;
             _SyncCommandManager = syncCommandManager;
             _GameEntityManager = gameEntityManager;
             AccountStore = accountStore;
+            _BlueprintManager = blueprintManager;
         }
 
         GameTemplateManager _TemplateManager;
         LvUpCommand _Command;
         SyncCommandManager _SyncCommandManager;
         GameEntityManager _GameEntityManager;
+        GameBlueprintManager _BlueprintManager;
 
         public GameAccountStoreManager AccountStore { get; }
 
@@ -110,7 +112,7 @@ namespace GY02.Commands
                 OwHelper.SetLastErrorMessage($"对象(Id={entity.Id})没有升级模板数据。");
                 return false;
             }
-            var all = _GameEntityManager.GetCost(entity, gc.GetAllChildren().Select(c => _TemplateManager.GetEntityBase(c, out _)).OfType<GameEntity>());
+            var all = _BlueprintManager.GetCost(entity, gc.GetAllChildren().Select(c => _TemplateManager.GetEntityBase(c, out _)).OfType<GameEntity>());
             if (all is null)
             {
                 _Command.FillErrorFromWorld();

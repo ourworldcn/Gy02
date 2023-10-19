@@ -69,7 +69,7 @@ namespace GY02.Commands
             List<(TemplateStringFullView, DateTime)> list = new List<(TemplateStringFullView, DateTime)>();
             foreach (var item in baseColl)  //遍历基础集合
             {
-                var b = _ShoppingManager.IsMatchWithoutBuyed(command.GameChar, item, nowUtc, out var startUtc, true);
+                var b = _ShoppingManager.IsMatchWithoutBuyed(command.GameChar, item, nowUtc, out var startUtc, 2);
                 if (!b) continue;   //若不符合条件
                 list.Add((item, startUtc));
             }

@@ -133,7 +133,8 @@ namespace GY02.Commands.Achievement
                         var ary = c.Value.Achievement?.TjIns;
                         if (ary is null || ary.Length <= 0) return false;
                         var entities = new GameEntity[] { entity };
-                        return _BlueprintManager.IsValid(ary, entities);
+                        var tmpInItems = ary.Select(c => _BlueprintManager.Translation(c, entities));
+                        return _BlueprintManager.GetMatches(entities, tmpInItems, 1).All(c => c.Item1 is not null);
                     }).Value;
                     if (achiTt is null) continue;
                     var achi = _AchievementManager.GetOrCreate(gc, achiTt);

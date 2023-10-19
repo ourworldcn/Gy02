@@ -777,12 +777,6 @@
             扩展条件，针对属性的不等式。有多项时需要同时都符合才认为命中。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameThingPreconditionItem.IgnoreIfDisplayList">
-            <summary>
-            在获取显示列表的时候，是否忽略该条件，视同满足。
-            </summary>
-            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
-        </member>
         <member name="P:GY02.Templates.GameThingPreconditionItem.GroupMask">
             <summary>
             条件组掩码。最多可以有32个条件组。在测试是否满足条件时，根据条件组选取的掩码来测试条件。如要求符合条件的掩码是2，则此属性为2，3，6，7的条件都被考虑在内。
@@ -849,12 +843,6 @@
             一组参数值,参数的顺序和数量由运算符指定。，有多少个元素由运算符指定。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList">
-            <summary>
-            在获取显示列表的时候，是否忽略该条件，视同满足。
-            </summary>
-            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
-        </member>
         <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyInfo(System.Object,System.Reflection.PropertyInfo@)">
             <summary>
             获取指定属性的反射对象。
@@ -884,7 +872,7 @@
             获取一个指示指定实体是否符合指定条件。
             </summary>
             <param name="entity"></param>
-            <param name="ignore">是否忽略<see cref="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
+            <param name="ignore">保留未用。</param>
             <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
         </member>
         <member name="M:GY02.Templates.GeneralConditionalItem.TryGetValue(System.Object@,System.Object[])">
@@ -930,12 +918,6 @@
             消耗的数量。
             注意消耗数量可能是0，代表需要此物品但不消耗此物品。
             </summary>
-        </member>
-        <member name="P:GY02.Templates.BlueprintInItem.IgnoreIfDisplayList">
-            <summary>
-            在获取显示列表的时候，是否忽略该条件，视同满足。
-            </summary>
-            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         </member>
         <member name="M:GY02.Templates.BlueprintInItem.Clone">
             <summary>
