@@ -173,10 +173,12 @@ namespace GY02.Managers
         public bool IsMatchWithoutBuyed(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart, int mask)
         {
             if (!shoppingItem.Period.IsValid(nowUtc, out periodStart)) return false;  //若时间点无效
-            //检测购买代价
-            if (shoppingItem.Ins.All(c => c.Conditional.All(d => d.IsValidate(mask))))
-                return true;
-            var b = _BlueprintManager.GetMatches(_EntityManager.GetAllEntity(gameChar), shoppingItem.Ins, mask);
+                                                                                      //检测购买代价
+                                                                                      //if (!shoppingItem.Ins.All(c => c.Conditional.All(d => d.IsValidate(mask))))
+                                                                                      //    return false;
+            var entities = _EntityManager.GetAllEntity(gameChar);
+            var ins = shoppingItem.Ins.Select(c => _BlueprintManager.Translation(c, entities));
+            var b = _BlueprintManager.GetMatches(entities, ins, mask);
             if (b.Any(c => c.Item1 is null))
             {
                 return false;

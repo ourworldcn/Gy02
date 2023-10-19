@@ -224,7 +224,8 @@ namespace GY02.Managers
         public bool Deplete(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             List<(GameEntity, decimal)> list = new List<(GameEntity, decimal)>();
-            var coll = this.GetMatches(entities, conditionals, 1);
+            var collCond = conditionals.Select(c => Translation(c,entities));
+            var coll = this.GetMatches(entities, collCond, 1);
             var errItem = coll.FirstOrDefault(c => c.Item1 is null);
             if (errItem.Item2 is not null)   //若存在无法找到的项
             {

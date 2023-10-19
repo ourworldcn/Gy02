@@ -121,6 +121,8 @@ namespace Gy02.Controllers
             _Mapper.Map(command, result);
             return result;
         }
+
+
     }
 
 }
