@@ -2153,6 +2153,15 @@ namespace GY02.Publisher
         /// </summary>
         public bool IsValid { get; set; }
 
+        /// <summary>
+        /// 起始时间，若当前不在有效时间段内，则是随后最近的一个有效周期的起始时间。
+        /// </summary>
+        public DateTime Start { get; set; }
+
+        /// <summary>
+        /// 终止时间，若当前不在有效时间段内，则是随后最近的一个有效周期的终止时间。
+        /// </summary>
+        public DateTime End { get; set; }
         #endregion 可复制属性
 
     }

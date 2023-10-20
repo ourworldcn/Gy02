@@ -275,7 +275,13 @@ namespace GY02.Managers
             if (entities is null) return false;
 
             _EntityManager.Move(entities.Select(c => c.Item2), gameChar, changes);
-            baseColl.ForEach(c => c.IsPicked = true);
+            //判断有没有连锁的变化
+            
+            //设置拾取标志变化
+            baseColl.ForEach(c =>
+            {
+                c.IsPicked = true;
+            });
             changes?.Add(new GamePropertyChangeItem<object>
             {
                 Object = achi,

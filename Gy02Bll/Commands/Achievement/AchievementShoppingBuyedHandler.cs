@@ -59,10 +59,14 @@ namespace GY02.Commands
             if (command.HasError || exception is not null) return;
             // 89a66863-4d5e-48f6-b8e6-4f2b949239af	快速巡逻购买
             var tids = new Guid[] { Guid.Parse("89a66863-4d5e-48f6-b8e6-4f2b949239af"), Guid.Parse("f7ad9c3c-c9d1-4773-9eb5-f77bf7b4162a") };
-            if (!tids.Contains(command.ShoppingItemTId)) return;
-            var achiTId = Guid.Parse("60be1c6e-e144-4109-9684-b2038df7ee2b");
-            var now = OwHelper.WorldNow;
-            _AchievementManager.RaiseEventIfChanged(achiTId, 1, command.GameChar, now);
+            if (tids.Contains(command.ShoppingItemTId))
+            {
+                var achiTId = Guid.Parse("60be1c6e-e144-4109-9684-b2038df7ee2b");
+                var now = OwHelper.WorldNow;
+                _AchievementManager.RaiseEventIfChanged(achiTId, command.Count, command.GameChar, now);
+                //2b773be5-a6fb-41e0-a8bd-e3c1ed61d150	每日任务-子任务1（领取快速巡逻收益）
+                _AchievementManager.RaiseEventIfChanged(Guid.Parse("2b773be5-a6fb-41e0-a8bd-e3c1ed61d150"), command.Count, command.GameChar, now);
+            }
         }
     }
 

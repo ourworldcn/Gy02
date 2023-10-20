@@ -68,6 +68,8 @@ namespace GY02.Commands.Achievement
                 _AchievementManager.RaiseEventIfChanged(Guid.Parse("192db3ea-2147-4743-849e-9c20236c7771"), 1, gc, now);
                 //cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d	开服活动1日成就-累计看广告次数
                 _AchievementManager.RaiseEventIfChanged(Guid.Parse("cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d"), 1, gc, now);
+                //1910fc23-d0f2-49a8-976f-e87d79dddbad	每日任务-子任务1（看广告数量）
+                _AchievementManager.RaiseEventIfChanged(Guid.Parse("1910fc23-d0f2-49a8-976f-e87d79dddbad"), 1, gc, now);
             }
             foreach (var entity in e.Entities)
             {

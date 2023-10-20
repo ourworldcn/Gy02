@@ -37,14 +37,16 @@ namespace GY02.Commands
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<CharFirstLoginedCommand>))]
     public class CharFirstLoginedHandled : ISyncCommandHandled<CharFirstLoginedCommand>
     {
-        public CharFirstLoginedHandled(GameEntityManager entityManager, GameTemplateManager templateManager)
+        public CharFirstLoginedHandled(GameEntityManager entityManager, GameTemplateManager templateManager, GameAchievementManager achievementManager)
         {
             _EntityManager = entityManager;
             _TemplateManager = templateManager;
+            _AchievementManager = achievementManager;
         }
 
         GameEntityManager _EntityManager;
         GameTemplateManager _TemplateManager;
+        GameAchievementManager _AchievementManager;
 
         /// <summary>
         /// 
@@ -75,6 +77,8 @@ namespace GY02.Commands
                     c.Entity.Count++;
                 }
             });
+            //52b2351f-fb1a-4872-8cfb-e38d7ff08637	每日任务-子任务1（登录游戏1次）
+            _AchievementManager.RaiseEventIfChanged(Guid.Parse("52b2351f-fb1a-4872-8cfb-e38d7ff08637"), 1, command.GameChar, now);
         }
     }
 }

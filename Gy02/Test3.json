@@ -1,62 +1,23 @@
 {
-  "Genus": [ "gs_kaifu" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
-    },
-    "GroupNumber": 0,
-    "MaxCount": 1,
-    "Ins": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
-            "MinCount": null,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": 13,
-              "Subtrahend": 0,
-              "Modulus": 13,
-              "MinRemainder": 0,
-              "MaxRemainder": 13
-            },
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "90a6e9a9-5814-4bb1-9d74-5f7945f8856a",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 60,
-        "Genus": []
+        "ParentTId": null,
+        "Genus": [],
+        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "GroupMask": 1
       }
     ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-        "TId": "e012e8bc-882f-4b0c-a3c1-719ac003efed",
-        "Count": 1
-      }
-    ]
-  },
-  "name_txt": 10213,
-  "comment_txt": 10214
+    "GetIndexExpression": {
+      "op": "ToInt32",
+      "args": [ "Count" ]
+    },
+    "Outs": {
+      "TIds": [ "a45b3421-3688-43c5-b8f5-429db7621f69" ],
+      "Counts": [ 8000, 8500, 8500, 9000, 9000, 9500, 9500, 9500, 10000, 10000, 10000, 10500, 10500, 10500, 11000, 11000, 11500, 11500, 12000, 12000 ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ]
+    }
+  }
 }
