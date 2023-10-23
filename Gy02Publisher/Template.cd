@@ -34,7 +34,7 @@
   <Class Name="GY02.Templates.TemplateStringFullView">
     <Position X="8.75" Y="11.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>UAgAEAAAAAKBAADAKQEYAAQjIICkgIRALgBAEQUCQSA=</HashCode>
+      <HashCode>UAgAEAAAAAKBAADAKQEYAAQjKICkgIRALgBAEQUCQSA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -208,6 +208,13 @@
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GY02.Templates.GameEventTO" Collapsed="true">
+    <Position X="1.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Gy02TemplateJO.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="GY02.Templates.IJsonData" Collapsed="true">
     <Position X="15.5" Y="2.75" Width="1.5" />

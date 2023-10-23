@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace OW.Game.Entity
@@ -72,16 +73,25 @@ namespace OW.Game.Entity
         /// <summary>
         /// 是否已经达成该等级。true已经达成，false未达成。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public bool IsCompleted { get; set; }
 
         /// <summary>
         /// 是否已经领取了该等级的奖励，true已经领取，false尚未领取，在未达成时此属性值也是false。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public bool IsPicked { get; set; }
 
         /// <summary>
         /// 等级。1表示第一级的状态，2表示第二级的状态，以此类推。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public int Level { get; set; }
     }
 }

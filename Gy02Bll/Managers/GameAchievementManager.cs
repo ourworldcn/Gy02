@@ -276,7 +276,32 @@ namespace GY02.Managers
 
             _EntityManager.Move(entities.Select(c => c.Item2), gameChar, changes);
             //判断有没有连锁的变化
-            
+            if (changes?.Select(c => c.Object as GameAchievement).OfType<GameAchievement>().ToArray() is GameAchievement[] achis) //找到新增或变化的任务/成就
+            {
+                foreach (var tmp in achis)
+                {
+                    var olv = tmp.Level;
+                    if (!RefreshState(tmp, gameChar, now)) continue;
+                    if (tmp.Level > olv)    //若等级发生了变化
+                    {
+                        changes?.Add(new GamePropertyChangeItem<object>
+                        {
+                            Object = tmp,
+                            PropertyName = nameof(tmp.Level),
+                            HasNewValue = true,
+                            NewValue = tmp.Level,
+                        });
+                        changes?.Add(new GamePropertyChangeItem<object>
+                        {
+                            Object = tmp,
+                            PropertyName = nameof(tmp.Items),
+
+                            HasNewValue = true,
+                            NewValue = tmp.Items,
+                        });
+                    }
+                }
+            }
             //设置拾取标志变化
             baseColl.ForEach(c =>
             {

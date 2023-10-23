@@ -185,6 +185,11 @@ namespace GY02.Publisher
         public List<GameEntitySummaryDto> CompositingAccruedCost { get; set; } = new List<GameEntitySummaryDto>();
 
         /// <summary>
+        /// 创建此对象的世界时间。
+        /// </summary>
+        public DateTime? CreateDateTime { get; set; }
+
+        /// <summary>
         /// Count 属性最后的修改时间。
         /// </summary>
         public DateTime? CountOfLastModifyUtc { get; set; }

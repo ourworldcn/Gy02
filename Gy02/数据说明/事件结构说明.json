@@ -1,0 +1,53 @@
+{
+  "GameEvent": {
+    "EventId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "Genus": [
+              "string"
+            ],
+            "NumberCondition": {
+              "PropertyName": "string",
+              "MinValue": 0,
+              "MaxValue": 9999,
+              "Subtrahend": 0,
+              "Modulus": 1,
+              "MinRemainder": 0,
+              "MaxRemainder": 9999
+            },
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "string",
+                "pn": "string",
+                "args": [
+                  "string"
+                ]
+              }
+            ],
+            "GroupMask": 0
+          }
+        ],
+        "Count": 0
+      }
+    ],
+    "Outs": [
+      {
+        //"Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "Count": 0  //这里保留为0
+        //"AddPropertyDictionary": {  //暂时无用
+        //  "additionalProp1": 0,
+        //  "additionalProp2": 0,
+        //  "additionalProp3": 0
+        //},
+        //"additionalProp1": "string",  //可以增加追加的属性
+      }
+    ]
+  }
+}

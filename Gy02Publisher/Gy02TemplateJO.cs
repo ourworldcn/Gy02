@@ -54,11 +54,17 @@ namespace GY02.Templates
         /// <summary>
         /// 特定原因记录物品唯一Id，通常为null。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public Guid? Id { get; set; }
 
         /// <summary>
         /// 父容器模板Id，为null则放置在默认容器中。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public Guid? ParentTId { get; set; }
 
         /// <summary>
@@ -69,6 +75,9 @@ namespace GY02.Templates
         /// <summary>
         /// 数量。对可堆叠物可以是任何数量，对不可堆叠物只能是正整数。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal Count { get; set; }
 
         Dictionary<string, decimal> _AddPropertyDictionary;
@@ -916,6 +925,15 @@ namespace GY02.Templates
 
         #endregion 唯一性相关
 
+        #region 事件相关
+
+        /// <summary>
+        /// 游戏内事件模板。
+        /// </summary>
+        public GameEventTO GameEvent { get; set; }
+
+        #endregion 事件相关
+
         /// <summary>
         /// 快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
         /// </summary>
@@ -1238,6 +1256,14 @@ namespace GY02.Templates
         /// 有效操作符列表。
         /// </summary>
         public static string[] ValidOperator { get; } = new string[] { ">=", ">", "<=", "<", "==", "!=", "ModE" };
+
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GeneralConditionalItem()
+        {
+
+        }
 
         #region 公共属性
 
@@ -1688,6 +1714,9 @@ namespace GY02.Templates
         /// 保底忽略标志。
         /// </summary>
         /// <value>true当命中此项时会清除保底计数，置为0。</value>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public bool ClearGuaranteesCount { get; set; }
 
         /// <summary>
@@ -1906,4 +1935,37 @@ namespace GY02.Templates
     #region 法币购买相关
 
     #endregion 法币购买相关
+
+    #region 事件相关
+
+    /// <summary>
+    /// 事件模板类。
+    /// </summary>
+    public class GameEventTO
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameEventTO()
+        {
+
+        }
+
+        /// <summary>
+        /// 事件Id。这个Id有由服务器给列表，标记出每个id的意义。
+        /// </summary>
+        public Guid EventId { get; set; }
+
+        /// <summary>
+        /// 守卫条件，仅当所有条件满足时猜执行后续任务。
+        /// </summary>
+        public BlueprintInItem[] Ins { get; set; }
+
+        /// <summary>
+        /// 要改变的实体摘要集合。特别地，其中 GameEntitySummary.Count 属性应设置为0，表示使用事件的增量值（如增加了多少个击杀的精英怪）替代。
+        /// </summary>
+        public GameEntitySummary[] Outs { get; set; }
+    }
+    #endregion 事件相关
+
 }

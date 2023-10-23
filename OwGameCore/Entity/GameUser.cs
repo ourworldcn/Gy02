@@ -182,11 +182,17 @@ namespace OW.Game.Entity
         /// <summary>
         /// 禁言到期时间。空表示没有禁言。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public DateTime? SilenceUtc { get; set; }
 
         /// <summary>
         /// 封停账号到期时间。空表示没有被封停。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public DateTime? BlockUtc { get; set; }
 
         #endregion 扩展属性

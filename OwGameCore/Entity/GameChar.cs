@@ -70,40 +70,61 @@ namespace OW.Game.Entity
         /// 攻击数值序列。
         /// </summary>
         [JsonPropertyName("atk")]
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal Atk { get; set; }
 
         /// <summary>
         /// 防御数值序列。
         /// </summary>
         [JsonPropertyName("def")]
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal Def { get; set; }
 
         /// <summary>
         /// 力量属性数值序列。
         /// </summary>
         [JsonPropertyName("pow")]
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal Pow { get; set; }
 
         /// <summary>
         /// 暴击率。
         /// </summary>
         [JsonPropertyName("crit_pct")]
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal CritPct { get; set; }
 
         /// <summary>
         /// 暴击倍数。1表示暴击和普通伤害一致。
         /// </summary>
         [JsonPropertyName("crit")]
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal Crit { get; set; }
 
         /// <summary>
         /// 角色当前所处战斗的关卡模板Id。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public Guid? CombatTId { get; set; }
 
         /// <summary>
         /// 客户端用于记录战斗内信息的字符串。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public string ClientCombatInfo { get; set; }
 
         /// <summary>
@@ -316,6 +337,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 当前周期下的已经购买数量。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal BuyedCount { get; set; }
 
         /// <summary>
@@ -326,6 +350,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 本周期的结束时间。空表示无结束时间。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public DateTime? EndUtc { get; set; }
     }
 
@@ -350,6 +377,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 购买的商品的次数。如两次可能购买总计2000金币，但这里是2。具体获得物品的数量取决于商品项的配置。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal Count { get; set; }
 
         /// <summary>
@@ -361,6 +391,9 @@ namespace OW.Game.Entity
         /// 该项是否有效。在同组数据返回时，有些项是无效项。
         /// </summary>
         /// <value>true有效数据，false无效数据，无效数据包含已达最大购买数量，已过期，未到期三种情况。</value>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public bool Valid { get; set; }
     }
 
@@ -377,6 +410,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 该关卡的最短时间，如果null,表示没有记录过。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public TimeSpan? MinTimeSpanOfPass { get; set; }
     }
 

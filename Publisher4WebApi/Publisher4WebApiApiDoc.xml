@@ -145,6 +145,11 @@
             升品的累计用品。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameEntityDto.CreateDateTime">
+            <summary>
+            创建此对象的世界时间。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GameEntityDto.CountOfLastModifyUtc">
             <summary>
             Count 属性最后的修改时间。

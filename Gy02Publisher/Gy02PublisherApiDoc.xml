@@ -589,6 +589,11 @@
             当该模板所代表物品需要在角色范围内做唯一性验证时配置此数据。一旦配置了该属性不是null则在发现违反角色唯一性的时候使用<see cref="T:GY02.Templates.GameEntitySummary"/>进行转化。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.GameEvent">
+            <summary>
+            游戏内事件模板。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fcps">
             <summary>
             快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
@@ -821,6 +826,11 @@
         <member name="P:GY02.Templates.GeneralConditionalItem.ValidOperator">
             <summary>
             有效操作符列表。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.#ctor">
+            <summary>
+            构造函数。
             </summary>
         </member>
         <member name="P:GY02.Templates.GeneralConditionalItem.Operator">
@@ -1153,6 +1163,31 @@
             深度克隆该对象。
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:GY02.Templates.GameEventTO">
+            <summary>
+            事件模板类。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.GameEventTO.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEventTO.EventId">
+            <summary>
+            事件Id。这个Id有由服务器给列表，标记出每个id的意义。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEventTO.Ins">
+            <summary>
+            守卫条件，仅当所有条件满足时猜执行后续任务。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEventTO.Outs">
+            <summary>
+            要改变的实体摘要集合。特别地，其中 GameEntitySummary.Count 属性应设置为0，表示使用事件的增量值（如增加了多少个击杀的精英怪）替代。
+            </summary>
         </member>
         <member name="T:GY02.Publisher.ProjectContent">
             <summary>
