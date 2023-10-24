@@ -217,8 +217,6 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var tmp = new GameEntitySummary { };
-                var str1=JsonSerializer.Serialize(tmp);
             }
             #endregion 测试用代码
             catch (Exception)
