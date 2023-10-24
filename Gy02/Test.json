@@ -1,63 +1,36 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Genus": [ "gs_shuaxin" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "Ins": [
       {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "d050c2e9-b7c9-4b43-98ec-b00fc39fb899",
-        "MinCount": null,
-        "GeneralConditional": [],
-        "GroupMask": 1
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "38c418b7-3662-4ad8-b613-032d68f544fc",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0,
+        "Genus": []
       }
     ],
-    "GetIndexExpression": {
-      "op": "ToInt32",
-      "args": "Count"
-    },
     "Outs": [
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 2000
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
-          "Count": 5
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "2e877976-2d3d-4e7e-8851-07163216319a",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
-          "Count": 5
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 100
-        }
-      ]
-    ]
-  },
-  "name_txt": 111111
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
+        "Count": 1
+      }
+    ],
+    "MaxCount": null
+  }
 }

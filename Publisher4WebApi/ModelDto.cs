@@ -296,35 +296,35 @@ namespace GY02.Publisher
         /// </summary>
         public string DisplayName { get; set; }
 
-        /// <summary>
-        /// 攻击数值序列。
-        /// </summary>
-        [JsonPropertyName("atk")]
-        public decimal Atk { get; set; }
+        /*     /// <summary>
+             /// 攻击数值序列。
+             /// </summary>
+             //[JsonPropertyName("atk")]
+             //public decimal Atk { get; set; }
 
-        /// <summary>
-        /// 防御数值序列。
-        /// </summary>
-        [JsonPropertyName("def")]
-        public decimal Def { get; set; }
+             ///// <summary>
+             ///// 防御数值序列。
+             ///// </summary>
+             //[JsonPropertyName("def")]
+             //public decimal Def { get; set; }
 
-        /// <summary>
-        /// 力量属性数值序列。
-        /// </summary>
-        [JsonPropertyName("pow")]
-        public decimal Pow { get; set; }
+             ///// <summary>
+             ///// 力量属性数值序列。
+             ///// </summary>
+             //[JsonPropertyName("pow")]
+             //public decimal Pow { get; set; }
 
-        /// <summary>
-        /// 暴击率。
-        /// </summary>
-        [JsonPropertyName("crit_pct")]
-        public decimal CritPct { get; set; }
+             ///// <summary>
+             ///// 暴击率。
+             ///// </summary>
+             //[JsonPropertyName("crit_pct")]
+             //public decimal CritPct { get; set; }
 
-        /// <summary>
-        /// 暴击倍数。1表示暴击和普通上海一致。
-        /// </summary>
-        [JsonPropertyName("crit")]
-        public decimal Crit { get; set; }
+             ///// <summary>
+             ///// 暴击倍数。1表示暴击和普通上海一致。
+             ///// </summary>
+             //[JsonPropertyName("crit")]
+             //public decimal Crit { get; set; }*/
 
         /// <summary>
         /// 角色当前所处战斗的关卡模板Id。
@@ -513,26 +513,28 @@ namespace GY02.Publisher
 
         }
 
+        /*
         #region 装备数据
         /// <summary>
         /// 攻击数值序列。
         /// </summary>
-        [JsonPropertyName("atk")]
-        public decimal Atk { get; set; }
+        //[JsonPropertyName("atk")]
+        //public decimal Atk { get; set; }
 
-        /// <summary>
-        /// 防御数值序列。
-        /// </summary>
-        [JsonPropertyName("def")]
-        public decimal Def { get; set; }
+        ///// <summary>
+        ///// 防御数值序列。
+        ///// </summary>
+        //[JsonPropertyName("def")]
+        //public decimal Def { get; set; }
 
-        /// <summary>
-        /// 力量属性数值序列。
-        /// </summary>
-        [JsonPropertyName("pow")]
-        public decimal Pow { get; set; }
+        ///// <summary>
+        ///// 力量属性数值序列。
+        ///// </summary>
+        //[JsonPropertyName("pow")]
+        //public decimal Pow { get; set; }
 
         #endregion 装备数据
+        */
     }
 
     /// <summary>

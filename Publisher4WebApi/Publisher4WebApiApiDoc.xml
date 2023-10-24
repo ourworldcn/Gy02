@@ -240,31 +240,6 @@
             昵称。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.GameCharDto.Atk">
-            <summary>
-            攻击数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.Def">
-            <summary>
-            防御数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.Pow">
-            <summary>
-            力量属性数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.CritPct">
-            <summary>
-            暴击率。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.Crit">
-            <summary>
-            暴击倍数。1表示暴击和普通上海一致。
-            </summary>
-        </member>
         <member name="P:GY02.Publisher.GameCharDto.CombatTId">
             <summary>
             角色当前所处战斗的关卡模板Id。
@@ -416,21 +391,6 @@
         <member name="M:GY02.Publisher.GameEquipmentDto.#ctor">
             <summary>
             构造函数。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameEquipmentDto.Atk">
-            <summary>
-            攻击数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameEquipmentDto.Def">
-            <summary>
-            防御数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameEquipmentDto.Pow">
-            <summary>
-            力量属性数值序列。
             </summary>
         </member>
         <member name="T:GY02.Publisher.PropertyChangeReturnDto">

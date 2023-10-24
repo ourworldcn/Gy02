@@ -108,6 +108,7 @@ namespace GY02.Managers
                 TId = summary.TId,
                 ParentTId = summary.ParentTId,
                 MinCount = summary.Count,
+                GroupMask= conditional.GroupMask,
             };
             return result;
         }
