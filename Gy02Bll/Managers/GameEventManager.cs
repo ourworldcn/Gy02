@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -53,7 +54,7 @@ namespace GY02.Managers
         /// <summary>
         /// 
         /// </summary>
-        public void SendEvent(Guid eventTId, GameChar gameChar, ICollection<OW.Game.PropertyChange.GamePropertyChangeItem<object>> changes = null)
+        public void SendEvent(Guid eventTId, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             var tts = EventId2Template[eventTId];   //处理模板
             var now = OwHelper.WorldNow;
