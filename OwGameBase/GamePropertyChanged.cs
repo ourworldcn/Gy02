@@ -54,7 +54,8 @@ namespace OW.Game.PropertyChange
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static GamePropertyChangeItem<T> Create(ISimpleDynamicProperty<T> sdep, string name, T newValue, object tag = null)
         {
-            var result = GamePropertyChangeItemPool<T>.Shared.Get();
+            var result = AutoClearPool<GamePropertyChangeItem<T>>.Shared.Get();
+            result.WorldDateTime = OwHelper.WorldNow;
             result.Object = sdep; result.PropertyName = name; result.Tag = tag;
             if (sdep.TryGetSdp(name, out var oldValue) && oldValue is T old)
             {
@@ -179,15 +180,27 @@ namespace OW.Game.PropertyChange
         #endregion 新值相关
 
         /// <summary>
-        /// 属性发生变化的时间点。Utc计时。
+        /// 属性发生变化的时间点。
         /// </summary>
-        /// <value>构造时的当前Utc时间。</value>
-        public DateTime DateTimeUtc { get; set; } = OwHelper.WorldNow;
+        /// <value>构造时的当前世界时间。</value>
+        public DateTime WorldDateTime { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
         /// 事件发起方可以在这里记录一些额外信息。
         /// </summary>
         public object Tag { get; set; }
+
+        /// <summary>
+        /// 为保证<see cref="AutoClearPool{T}.Shared"/>可以正确的缓存此类，必须有该函数。
+        /// </summary>
+        public void Clear()
+        {
+            Object = default; PropertyName = default;
+            HasOldValue = false; OldValue = default;
+            HasNewValue = default; NewValue = default;
+            WorldDateTime = default;
+            Tag = default;
+        }
 
         #region 调试相关
 
@@ -200,63 +213,6 @@ namespace OW.Game.PropertyChange
             return $"{Object}.{PropertyName} : {{{OldValue}}} -> {{{NewValue}}}";
         }
         #endregion 调试相关
-
-    }
-
-    /// <summary>
-    /// 提供可重复使用 <see cref="GamePropertyChangeItem{T}"/> 类型实例的资源池。
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
-    public class GamePropertyChangeItemPool<T> : DefaultObjectPool<GamePropertyChangeItem<T>>
-    {
-        public static readonly ObjectPool<GamePropertyChangeItem<T>> Shared;
-
-        /// <summary>
-        /// 静态构造函数。
-        /// </summary>
-        static GamePropertyChangeItemPool()
-        {
-            if (Shared is null)
-                Interlocked.CompareExchange(ref Shared, new GamePropertyChangeItemPool<T>(new SimplePropertyChangedItemPooledObjectPolicy()), null);
-        }
-
-        public GamePropertyChangeItemPool(IPooledObjectPolicy<GamePropertyChangeItem<T>> policy) : base(policy)
-        {
-
-        }
-
-        public GamePropertyChangeItemPool(IPooledObjectPolicy<GamePropertyChangeItem<T>> policy, int maximumRetained) : base(policy, maximumRetained)
-        {
-        }
-
-        private class SimplePropertyChangedItemPooledObjectPolicy : DefaultPooledObjectPolicy<GamePropertyChangeItem<T>>
-        {
-            public override bool Return(GamePropertyChangeItem<T> obj)
-            {
-                obj.Object = default;
-                obj.PropertyName = default;
-
-                obj.HasOldValue = default;
-                obj.OldValue = default;
-                obj.HasNewValue = default;
-                obj.NewValue = default;
-
-                obj.DateTimeUtc = default;
-                obj.Tag = default;
-                return true;
-            }
-        }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <returns></returns>
-        public override GamePropertyChangeItem<T> Get()
-        {
-            var result = base.Get();
-            result.DateTimeUtc = OwHelper.WorldNow;
-            return result;
-        }
 
     }
 
@@ -313,7 +269,7 @@ namespace OW.Game.PropertyChange
             {
                 Object = container,
                 PropertyName = propertyName,
-                DateTimeUtc = OwHelper.WorldNow,
+                WorldDateTime = OwHelper.WorldNow,
 
                 HasOldValue = true,
                 OldValue = child,
@@ -338,7 +294,7 @@ namespace OW.Game.PropertyChange
             {
                 Object = container,
                 PropertyName = propertyName,
-                DateTimeUtc = OwHelper.WorldNow,
+                WorldDateTime = OwHelper.WorldNow,
 
                 HasOldValue = false,
                 OldValue = default,

@@ -130,7 +130,7 @@ namespace GY02.Managers
             {
                 Object = entity,
                 PropertyName = nameof(entity.Count),
-                DateTimeUtc = OwHelper.WorldNow,
+                WorldDateTime = OwHelper.WorldNow,
                 HasOldValue = true,
                 OldValue = oldCount,
                 HasNewValue = true,

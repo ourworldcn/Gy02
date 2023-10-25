@@ -331,7 +331,8 @@ namespace OW.Game.Store
             {
                 if (null != changes)    //若需要设置变化数据
                 {
-                    var item = GamePropertyChangeItemPool<object>.Shared.Get();
+                    var item = AutoClearPool<GamePropertyChangeItem<object>>.Shared.Get();
+                    item.WorldDateTime = OwHelper.WorldNow;
                     item.Object = obj; item.PropertyName = name; item.Tag = tag;
                     if (isExists)
                         item.OldValue = oldValue;

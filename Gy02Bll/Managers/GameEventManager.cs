@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
@@ -54,18 +55,27 @@ namespace GY02.Managers
         /// <summary>
         /// 
         /// </summary>
-        public void SendEvent(Guid eventTId, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        /// <param name="eventTId">事件的Id。</param>
+        /// <param name="count">此次发生的值。</param>
+        /// <param name="context">上下文。</param>
+        public void SendEvent(Guid eventTId, decimal count, IGameContext context)
         {
             var tts = EventId2Template[eventTId];   //处理模板
-            var now = OwHelper.WorldNow;
             foreach (var tt in tts)
             {
-                _EntityManager.CreateAndMove(tt.GameEvent.Outs, gameChar, changes);
+                var achis = tt.GameEvent.Outs.Where(c => _AchievementManager.GetTemplateById(c.TId) is TemplateStringFullView).ToArray(); //对成就/任务
+                var summaries = tt.GameEvent.Outs.Where(c => _AchievementManager.GetTemplateById(c.TId) is not TemplateStringFullView).ToArray(); //对成就/任务
+
+                foreach (var achi in achis)
+                {
+                    _AchievementManager.RaiseEventIfChanged(achi.TId, achi.Count == 0 ? count : achi.Count, context.GameChar, context.WorldDateTime);
+                }
+                _EntityManager.CreateAndMove(summaries, context.GameChar, context.Changes);
             }
-            var coll = changes.Select(c => c.Object as GameAchievement).OfType<GameAchievement>().ToArray();
+            var coll = context.Changes?.Select(c => c.Object as GameAchievement).OfType<GameAchievement>().ToArray();
             foreach (var achi in coll)
             {
-                if (!_AchievementManager.RefreshState(achi, gameChar, now)) continue;
+                if (!_AchievementManager.RefreshState(achi, context.GameChar, context.WorldDateTime)) continue;
                 _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
             }
         }
