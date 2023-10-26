@@ -1,1 +1,20 @@
-﻿
+﻿杀死主线关卡怪物数量变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"3fa85f64-5717-4562-b3fc-2c963f66afa6"
+杀死主线关卡普通怪数量变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"63a1dbe9-993a-4dc1-986b-451e863e374e"
+杀死主线关卡精英怪数量变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"187b938c-c48a-4539-aecf-844c5665691f"
+杀死主线关卡boss数量变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"e30caeba-d6e7-4553-9ade-519a8f78a965"
+特殊关卡挑战次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"acbe9300-4476-47c1-a2f6-75b30e9b7b62"
+主线关卡挑战次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"c23f5f0a-f4b9-4a27-bad3-8556a18f83ff"
+		
+合成装备次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"8b948fa5-5a0d-44b9-a4de-1dcced307dee"
+升级装备次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"b13aa107-0134-492c-bb8d-c3c5855954c5"
+坐骑孵化次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"156d8052-ded1-42a4-95b0-63d40d9fc52c"
+领取快速巡逻收益次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"41fb793d-43cf-4dc6-8fdc-526142058d6a"
+领取一般巡逻收益次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"1d715f99-9b38-4241-ae95-f6335cea5e6a"
+		
+登录游戏次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"f77691d3-2916-42c2-88d7-339febc791fa"
+商店中购买物品次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"d23ee35e-2e49-402b-83a3-effc4d8ff7aa"
+开宝箱次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"5d809337-9782-457d-a71d-8c6f1ac0e976"
+看广告数量变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"f607ef05-801d-4a48-9f44-0673e55d2bf3"
+充值次数变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"32ab0b6a-d143-4dce-81a0-dc9c21fb977f"
+消耗金币数量变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"7f6b561a-705c-47ba-9765-22e41e1ce1d9"
+消耗钻石数量变化事件		{"GameEvent":{/*游戏内事件*/"EventId":"94aabc9c-79da-475b-af43-b837246a681e"

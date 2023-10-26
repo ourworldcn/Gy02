@@ -50,7 +50,7 @@ namespace OW.Game.Entity
         #endregion 可复制属性
 
         /// <summary>
-        /// 按完成进度刷新等级属性。
+        /// 按完成进度刷新等级属性。在 <see cref="GameEntity.Count"/> 属性变化后调用此方法以正确设置 <see cref="GameEntity.Level"/> 属性。
         /// </summary>
         public void RefreshLevel(TemplateStringFullView template)
         {

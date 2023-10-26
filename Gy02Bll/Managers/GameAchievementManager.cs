@@ -11,9 +11,11 @@ using OW.Game.PropertyChange;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -45,7 +47,7 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class GameAchievementManager : GameManagerBase<GameAchievementManagerOptions, GameAchievementManager>
     {
-        public GameAchievementManager(IOptions<GameAchievementManagerOptions> options, ILogger<GameAchievementManager> logger, GameTemplateManager templateManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager) : base(options, logger)
+        public GameAchievementManager(IOptions<GameAchievementManagerOptions> options, ILogger<GameAchievementManager> logger, GameTemplateManager templateManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, SpecialManager specialManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
             _EntityManager = entityManager;
@@ -55,12 +57,19 @@ namespace GY02.Managers
                 return tts;
             });
             _BlueprintManager = blueprintManager;
+            Initialize();
+            _SpecialManager = specialManager;
+        }
+
+        private void Initialize()
+        {
         }
 
         GameTemplateManager _TemplateManager;
         GameEntityManager _EntityManager;
         GameBlueprintManager _BlueprintManager;
         ConcurrentDictionary<Guid, TemplateStringFullView> _Templates;
+        SpecialManager _SpecialManager;
 
         /// <summary>
         /// 所有任务/成就模板。
@@ -144,7 +153,24 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 获取指定的成就对象，如果没有则创建。
+        /// 获取含指定类属且特别标记了TId的任务/成就模板。
+        /// </summary>
+        /// <param name="genus"></param>
+        /// <param name="insTId"></param>
+        /// <returns></returns>
+        public TemplateStringFullView GetTemplateByGenus(string genus, Guid insTId)
+        {
+            var achiTt = Templates.Where(c => c.Value.Genus?.Contains(genus) ?? false).FirstOrDefault(c => //实体对应的图鉴成就
+            {
+                var ary = c.Value.Achievement?.TjIns;
+                if (ary is null || ary.Length <= 0) return false;
+                return ary[0].Conditional?[0].TId == insTId;
+            }).Value;
+            return achiTt;
+        }
+
+        /// <summary>
+        /// 获取指定的成就对象，如果没有则创建并自动初始化。
         /// </summary>
         /// <param name="gameChar">角色。</param>
         /// <param name="template">模板。</param>
@@ -162,6 +188,7 @@ namespace GY02.Managers
                 var list = _EntityManager.Create(new GameEntitySummary { TId = template.TemplateId, Count = 0 });
                 thing = list.First().GetThing();
                 _EntityManager.Move(list, gameChar.ChengJiuSlot, changes);
+                InitializeState(thing.GetJsonObject<GameAchievement>());
             }
             return thing.GetJsonObject<GameAchievement>();
         }
@@ -186,10 +213,42 @@ namespace GY02.Managers
                         Level = i + 1,
                     };
                     if (tt.Achievement.Outs.Count > i && tt.Achievement.Outs[i] is GameEntitySummary[] ary)
+                    {
                         state.Rewards.AddRange(ary); //TODO 转换
+                    }
                     achievement.Items.Add(state);
                 }
             }
+            return true;
+        }
+
+        /// <summary>
+        /// 给指定成就的经验设置新值。忽略了初始化，有效性，切换周期等问题。
+        /// </summary>
+        /// <param name="achi">成就。</param>
+        /// <param name="newExp">成就新经验值。即使经验值没有变换，也会试图刷新等级。</param>
+        /// <param name="context">该处理所处上下文。</param>
+        /// <returns>true成功，false出错，此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
+        public bool SetExperience(GameAchievement achi, decimal newExp, IGameContext context)
+        {
+            if (GetTemplateById(achi.TemplateId) is not TemplateStringFullView tt) return false;
+            var oldLv = achi.Level;
+            if (achi.Count != newExp)   //若经验变化了
+            {
+                var oldCount = achi.Count;
+                achi.Count = newExp;
+                context.Changes?.MarkChanges(achi, nameof(achi.Count), oldCount, achi.Count);
+            }
+
+            achi.RefreshLevel(tt);    //刷新等级
+            if (oldLv != achi.Level)   //若等级变化了
+            {
+                context.Changes?.MakeLevelChanged(achi, oldLv, achi.Level);
+            }
+            //刷新每个等级的达成标志
+            achi.IsValid = IsValid(achi, context.GameChar, context.WorldDateTime);
+            if (achi.IsValid)
+                achi.Items.ForEach(state => state.IsCompleted = achi.Level >= state.Level);
             return true;
         }
 
@@ -218,29 +277,16 @@ namespace GY02.Managers
             //刷新每个等级的达成标志
             if (achievement.IsValid)
                 achievement.Items.ForEach(state => state.IsCompleted = achievement.Level >= state.Level);
-            return true;
-        }
+            else //若处于无效状态
+            {
+                achievement.Count = 0; achievement.Level = 0;
+                achievement.Items.ForEach(state =>
+                {
+                    state.IsCompleted = false;
+                    state.IsPicked = false;
+                });
+            }
 
-        /// <summary>
-        /// 给指定成就的指标值增加增量。
-        /// </summary>
-        /// <param name="gameChar"></param>
-        /// <param name="template">成就的模板。</param>
-        /// <param name="exp">成就经验值的增量</param>
-        /// <param name="changes">记录变化数据。如果成就对象尚未初始化，可能会增加一个成就对象。</param>
-        /// <returns>true成功，false出错，此时调用<see cref="OwHelper.GetLastError()"/>获取详细信息。</returns>
-        public bool AddExperience(GameChar gameChar, TemplateStringFullView template, decimal exp, ICollection<GamePropertyChangeItem<object>> changes = null)
-        {
-            var achi = GetOrCreate(gameChar, template, changes);  //成就对象
-            if (achi is null) return false;
-            if (exp == 0) return true;
-
-            var oldLv = achi.Level;
-            if (!achi.ModifyPropertyAndMarkChanges(nameof(achi.Count), achi.Count + exp, changes)) return false;
-
-            achi.RefreshLevel(template);    //刷新等级
-
-            changes?.MarkChanges(achi, nameof(achi.Level), oldLv, achi.Level);
             return true;
         }
 
@@ -271,7 +317,17 @@ namespace GY02.Managers
             }
             var baseColl = achi.Items.Where(c => levels.Contains(c.Level)).ToArray();
             var summaries = baseColl.SelectMany(c => c.Rewards);
-            var entities = _EntityManager.Create(summaries);
+
+            var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+            var b = _SpecialManager.Transformed(summaries, list, new EntitySummaryConverterContext
+            {
+                Change = null,
+                GameChar = gameChar,
+                IgnoreGuarantees = false,
+                Random = new Random(),
+            });
+
+            var entities = _EntityManager.Create(list.SelectMany(c=>c.Item2));
             if (entities is null) return false;
 
             _EntityManager.Move(entities.Select(c => c.Item2), gameChar, changes);
@@ -355,22 +411,6 @@ namespace GY02.Managers
             return false;
         }
 
-        /// <summary>
-        /// 获取含指定类属且特别标记了TId的任务/成就模板。
-        /// </summary>
-        /// <param name="genus"></param>
-        /// <param name="insTId"></param>
-        /// <returns></returns>
-        public TemplateStringFullView GetTemplate(string genus, Guid insTId)
-        {
-            var achiTt = Templates.Where(c => c.Value.Genus?.Contains(genus) ?? false).FirstOrDefault(c => //实体对应的图鉴成就
-            {
-                var ary = c.Value.Achievement?.TjIns;
-                if (ary is null || ary.Length <= 0) return false;
-                return ary[0].Conditional?[0].TId == insTId;
-            }).Value;
-            return achiTt;
-        }
         #endregion 功能性操作
 
     }
@@ -399,7 +439,7 @@ namespace GY02.Managers
         /// <param name="gameChar"></param>
         /// <param name="now"></param>
         /// <returns></returns>
-        public static bool RaiseEventIfIncrease(this GameAchievementManager achievementManager, Guid achiTId, decimal newValue, GameChar gameChar, DateTime now)
+        public static bool RaiseEventIfSetAndChanged(this GameAchievementManager achievementManager, Guid achiTId, decimal newValue, GameChar gameChar, DateTime now)
         {
             if (achievementManager.GetOrCreate(gameChar, achiTId) is not GameAchievement achi) return false;
             if (achi.Count >= newValue) return false;
@@ -409,18 +449,39 @@ namespace GY02.Managers
         /// <summary>
         /// 对指定的成就任务项增加计数，若计数发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
         /// </summary>
-        /// <param name="achievementTId"></param>
+        /// <param name="achiTId"></param>
         /// <param name="inc"></param>
         /// <param name="gameChar"></param>
         /// <param name="now"></param>
         /// <returns></returns>
 
-        public static bool RaiseEventIfChanged(this GameAchievementManager achievementManager, Guid achievementTId, decimal inc, GameChar gameChar, DateTime now)
+        public static bool RaiseEventIfIncreaseAndChanged(this GameAchievementManager achievementManager, Guid achiTId, decimal inc, GameChar gameChar, DateTime now)
         {
             if (inc <= 0) return false;
-            if (achievementManager.GetOrCreate(gameChar, achievementTId) is not GameAchievement achi) return false;
+            if (achievementManager.GetOrCreate(gameChar, achiTId) is not GameAchievement achi) return false;
             return achievementManager.RaiseEventIfChanged(achi, inc, gameChar, now);
         }
 
+        /// <summary>
+        /// 标记等级变化。
+        /// </summary>
+        /// <param name="coll"></param>
+        /// <param name="achi"></param>
+        /// <param name="oldLevel"></param>
+        /// <param name="newLevel"></param>
+        public static void MakeLevelChanged(this ICollection<GamePropertyChangeItem<object>> coll, GameAchievement achi, decimal oldLevel, decimal newLevel)
+        {
+            Debug.Assert(oldLevel != newLevel);
+            coll?.MarkChanges(achi, nameof(achi.Level), oldLevel, newLevel);
+            coll?.Add(new GamePropertyChangeItem<object>
+            {
+                Object = achi,
+                PropertyName = nameof(achi.Items),
+
+                HasNewValue = true,
+                NewValue = achi.Items,
+            });
+
+        }
     }
 }

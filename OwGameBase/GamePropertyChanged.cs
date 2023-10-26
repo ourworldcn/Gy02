@@ -313,9 +313,9 @@ namespace OW.Game.PropertyChange
         /// <param name="propertyName"></param>
         /// <param name="oldValue"></param>
         /// <param name="newValue"></param>
-        public static void MarkChanges<T>(this ICollection<GamePropertyChangeItem<object>> changes, object obj, string propertyName, T oldValue, T newValue)
+        public static GamePropertyChangeItem<T> MarkChanges<T>(this ICollection<GamePropertyChangeItem<T>> changes, object obj, string propertyName, T oldValue, T newValue)
         {
-            changes.Add(new GamePropertyChangeItem<object>
+            var result = new GamePropertyChangeItem<T>
             {
                 Object = obj,
                 PropertyName = propertyName,
@@ -326,7 +326,9 @@ namespace OW.Game.PropertyChange
                 HasNewValue = true,
                 NewValue = newValue,
 
-            });
+            };
+            changes.Add(result);
+            return result;
         }
     }
 }

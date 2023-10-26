@@ -13,6 +13,11 @@ namespace OW.Game.Entity
     {
         public const string TemplateKeyName = "Template";
 
+        /// <summary>
+        /// 获取所属的角色对象。
+        /// </summary>
+        /// <param name="thing"></param>
+        /// <returns>返回角色对象的宿主，否则返回null</returns>
         public static VirtualThing GetGameCharThing(this VirtualThing thing)
         {
             return thing.ExtraGuid == ProjectContent.CharTId ? thing : thing.GetAncestor(c => (c as IDbQuickFind).ExtraGuid == ProjectContent.CharTId) as VirtualThing;

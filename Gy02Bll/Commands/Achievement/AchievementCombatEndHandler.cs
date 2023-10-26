@@ -71,18 +71,18 @@ namespace GY02.Commands.Achievement
                     _AchievementManager.RaiseEventIfChanged(achievement, types_egg, command.GameChar, now);
                     #endregion 杀怪数量 
                     //2913b8e2-3db3-4204-b36c-415d6bc6b3f0	闯关数量成就
-                    _AchievementManager.RaiseEventIfChanged(Guid.Parse("2913b8e2-3db3-4204-b36c-415d6bc6b3f0"), 1, command.GameChar, now);
+                    _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("2913b8e2-3db3-4204-b36c-415d6bc6b3f0"), 1, command.GameChar, now);
                     //cj_guanqia 单个关卡通关成就
                     if (command.IsSuccess)
                     {
-                        var achiTt = _AchievementManager.GetTemplate("cj_guanqia", command.CombatTId);
+                        var achiTt = _AchievementManager.GetTemplateByGenus("cj_guanqia", command.CombatTId);
                         if (achiTt is not null && _AchievementManager.GetOrCreate(command.GameChar, achiTt) is GameAchievement achi && achi.Count < achiTt.Achievement.Exp2LvSequence[^1])
                         {
                             _AchievementManager.RaiseEventIfChanged(achi, 1, command.GameChar, now);
                         }
                     }
                     //b8e00fd4-df86-4570-952a-8bd3c0435fd2	每日任务-子任务1（杀死主线关卡怪物数量）
-                    _AchievementManager.RaiseEventIfChanged(Guid.Parse("b8e00fd4-df86-4570-952a-8bd3c0435fd2"), types_all, command.GameChar, now);
+                    _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("b8e00fd4-df86-4570-952a-8bd3c0435fd2"), types_all, command.GameChar, now);
                 }
             }
         }
@@ -115,14 +115,14 @@ namespace GY02.Commands.Achievement
             if (command.IsSuccess && tt.Gid is int gid && gid / 1000 == 210101)   //若不是主线任务副本
             {
                 var count = gid % 1000; //通关经验值
-                _AchievementManager.RaiseEventIfIncrease(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"), count, command.GameChar, now);
+                _AchievementManager.RaiseEventIfSetAndChanged(new Guid("43E9286A-904C-4923-B477-482C0D6470A5"), count, command.GameChar, now);
             }
 
             // 1fbe6bb9-84be-4098-8430-e7c46a6135f1	开服活动成就- 累计杀怪数量
             var tts = _TemplateManager.GetTemplatesFromGenus("types_all");  //符合要求怪的模板集合
             var tids = new HashSet<Guid>(tts.Select(c => c.TemplateId));    //符合要求怪的模板Id集合
             var inc = command.Others.Where(c => tids.Contains(c.TId)).Sum(c => c.Count);    //增加的杀怪数量
-            _AchievementManager.RaiseEventIfChanged(Guid.Parse("1fbe6bb9-84be-4098-8430-e7c46a6135f1"), inc, command.GameChar, now);
+            _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("1fbe6bb9-84be-4098-8430-e7c46a6135f1"), inc, command.GameChar, now);
             return;
         lbErr:
             command.FillErrorFromWorld();
@@ -150,7 +150,7 @@ namespace GY02.Commands.Achievement
             if (command.HasError || exception is not null) return;
             var now = OwHelper.WorldNow;
             if (_CombatManager.GetTemplateById(command.CombatTId) is TemplateStringFullView tt && tt.Gid is int gid && gid / 1000 == 210101)    //主线关卡
-                _AchievementManager.RaiseEventIfChanged(Guid.Parse("86833e6b-81bf-47ca-9965-b57c2012ecfd"), 1, command.GameChar, now);
+                _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("86833e6b-81bf-47ca-9965-b57c2012ecfd"), 1, command.GameChar, now);
         }
     }
 }

@@ -43,7 +43,7 @@ namespace GY02.Commands
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
     {
 
-        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager, SyncCommandManager commandManager)
+        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager, SyncCommandManager commandManager, GameAchievementManager achievementManager)
         {
             AccountStore = accountStore;
             _ShoppingManager = shoppingManager;
@@ -52,9 +52,12 @@ namespace GY02.Commands
             _DiceManager = diceManager;
             _SpecialManager = specialManager;
             _CommandManager = commandManager;
+            _AchievementManager = achievementManager;
         }
 
         public GameAccountStoreManager AccountStore { get; }
+
+        GameAchievementManager _AchievementManager;
 
         GameEntityManager _EntityManager;
         GameBlueprintManager _BlueprintManager;
@@ -113,8 +116,16 @@ namespace GY02.Commands
                     if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes))
                         if (OwHelper.GetLastError() != ErrorCodes.NO_ERROR)
                             goto lbErr;
+                var entitySummary = list.SelectMany(c => c.Item2).Where(c => _AchievementManager.GetTemplateById(c.TId) is not TemplateStringFullView).ToArray();
+                var achis = list.SelectMany(c => c.Item2).Where(c => _AchievementManager.GetTemplateById(c.TId) is TemplateStringFullView).ToArray();   //成就/任务
+                if (!_EntityManager.CreateAndMove(entitySummary, command.GameChar, command.Changes)) goto lbErr;
 
-                if (!_EntityManager.CreateAndMove(list.SelectMany(c => c.Item2), command.GameChar, command.Changes)) goto lbErr;
+                foreach (var summary in achis)  //遍历任务/成就
+                {
+                    if (_AchievementManager.GetOrCreate(command.GameChar, summary.TId) is not GameAchievement achi) continue;
+                    if (!_AchievementManager.IsValid(achi, command.GameChar, now)) continue;    //无效时则不处理
+                    _AchievementManager.SetExperience(achi, achi.Count + summary.Count, new SimpleGameContext(Guid.Empty, command.GameChar, now, command.Changes));
+                }
                 //加入购买历史记录
                 command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
                 {

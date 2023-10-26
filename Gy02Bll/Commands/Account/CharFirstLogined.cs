@@ -78,7 +78,7 @@ namespace GY02.Commands
                 }
             });
             //52b2351f-fb1a-4872-8cfb-e38d7ff08637	每日任务-子任务1（登录游戏1次）
-            _AchievementManager.RaiseEventIfChanged(Guid.Parse("52b2351f-fb1a-4872-8cfb-e38d7ff08637"), 1, command.GameChar, now);
+            _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("52b2351f-fb1a-4872-8cfb-e38d7ff08637"), 1, command.GameChar, now);
         }
     }
 }

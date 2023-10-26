@@ -119,6 +119,7 @@ namespace GY02.Controllers
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);
             _Mapper.Map(command, result);
+            if (result.Changes?.Count > 0) result.HasError = false; //对多个购买物品时，买一次成功就算成功
             return result;
         }
 

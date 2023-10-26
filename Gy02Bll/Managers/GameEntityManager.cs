@@ -61,11 +61,11 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameEntityManager : GameManagerBase<GameEntityManagerOptions, GameEntityManager>
     {
-        public GameEntityManager(IOptions<GameEntityManagerOptions> options, ILogger<GameEntityManager> logger, GameTemplateManager templateManager, VirtualThingManager virtualThingManager) : base(options, logger)
+        public GameEntityManager(IOptions<GameEntityManagerOptions> options, ILogger<GameEntityManager> logger,
+            GameTemplateManager templateManager, VirtualThingManager virtualThingManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
             _VirtualThingManager = virtualThingManager;
-
         }
 
         GameTemplateManager _TemplateManager;

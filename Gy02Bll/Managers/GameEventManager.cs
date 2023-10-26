@@ -33,6 +33,12 @@ namespace GY02.Managers
             _TemplateManager = gameTemplateManager;
             _EntityManager = entityManager;
             _AchievementManager = achievementManager;
+
+            Initialize();
+        }
+
+        void Initialize()
+        {
         }
 
         GameTemplateManager _TemplateManager;
@@ -53,7 +59,7 @@ namespace GY02.Managers
             () => Id2Template.ToLookup(c => c.Value.GameEvent.EventId, c => c.Value));
 
         /// <summary>
-        /// 
+        /// 发送游戏内事件。
         /// </summary>
         /// <param name="eventTId">事件的Id。</param>
         /// <param name="count">此次发生的值。</param>
@@ -61,23 +67,22 @@ namespace GY02.Managers
         public void SendEvent(Guid eventTId, decimal count, IGameContext context)
         {
             var tts = EventId2Template[eventTId];   //处理模板
+            List<GameEntitySummary> entities = new List<GameEntitySummary>();
             foreach (var tt in tts)
             {
-                var achis = tt.GameEvent.Outs.Where(c => _AchievementManager.GetTemplateById(c.TId) is TemplateStringFullView).ToArray(); //对成就/任务
-                var summaries = tt.GameEvent.Outs.Where(c => _AchievementManager.GetTemplateById(c.TId) is not TemplateStringFullView).ToArray(); //对成就/任务
-
-                foreach (var achi in achis)
+                foreach (var entitySummary in tt.GameEvent.Outs)
                 {
-                    _AchievementManager.RaiseEventIfChanged(achi.TId, achi.Count == 0 ? count : achi.Count, context.GameChar, context.WorldDateTime);
+                    if (_AchievementManager.GetTemplateById(entitySummary.TId) is TemplateStringFullView achi)   //若是成就
+                    {
+                        _AchievementManager.RaiseEventIfIncreaseAndChanged(entitySummary.TId, achi.Count == 0 ? count : achi.Count, context.GameChar, context.WorldDateTime);
+                    }
+                    else //若是其它实体
+                    {
+                        entities.Add(entitySummary);    //暂存需要创建的实体摘要
+                    }
                 }
-                _EntityManager.CreateAndMove(summaries, context.GameChar, context.Changes);
             }
-            var coll = context.Changes?.Select(c => c.Object as GameAchievement).OfType<GameAchievement>().ToArray();
-            foreach (var achi in coll)
-            {
-                if (!_AchievementManager.RefreshState(achi, context.GameChar, context.WorldDateTime)) continue;
-                _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
-            }
+            _EntityManager.CreateAndMove(entities, context.GameChar, context.Changes);  //创建实体
         }
     }
 }

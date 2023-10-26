@@ -1,5 +1,5 @@
 {
-  "Genus": [ "cj_changqi", "goto_main_level" ],
+  "Genus": [ "cj_saiji" ],
   "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
   "stk": -1,
   "Count0Reserved": true,
@@ -7,155 +7,248 @@
   "Count": 0,
   "Achievement": {
     "Period": {
-      "Start": "2023-05-30T03:03:28.385Z",
+      "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
+      "PeriodString": "999y",
+      "ValidPeriodString": "999y"
     },
-    "Ins": [],
-    "Exp2LvSequence": [ 500, 1500, 3500, 8500, 15500, 25500, 40500, 60500, 85500, 115500, 155500, 210500, 280500, 370500, 480500, 610500, 760500, 940500, 1160500, 1410500 ],
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
+            "MinCount": 0,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 30,
+              "MinRemainder": 0,
+              "MaxRemainder": 29
+            },
+            "GeneralConditional": [],
+            "Count": 0,
+            "GroupMask": 3
+          }
+        ]
+      }
+    ],
+    "Exp2LvSequence": [ 30, 80, 130, 180, 230, 280, 330, 380, 430, 480, 530, 580, 630, 680, 730, 780, 830, 880, 930, 980, 1030, 1080, 1130, 1180, 1230, 1280, 1330, 1380, 1430, 1480 ],
     "Outs": [
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 1000
+          "ParentTId": null,
+          "TId": "5cbccd7f-ce14-4dfa-b23a-c8fccfca6e49",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 2000
+          "ParentTId": null,
+          "TId": "dff6f0de-ac1e-47c3-8cdb-3c02e58d773c",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5000
+          "ParentTId": null,
+          "TId": "65c960a0-2da7-4009-8a4f-a6bfd6905490",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 5
+          "ParentTId": null,
+          "TId": "995d3ec1-071a-45b4-b310-456561a0a6a3",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5
+          "ParentTId": null,
+          "TId": "35e96b90-68b1-490a-8b59-aac7cecf26fd",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10
+          "ParentTId": null,
+          "TId": "488f66b5-b6fb-43ba-bac5-cf234c4993cc",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10
+          "ParentTId": null,
+          "TId": "e0f74373-5517-449f-b8df-b747ccfeb75e",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
+          "ParentTId": null,
+          "TId": "a27e9d98-4f33-4f07-b9f0-f5e42e167462",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
+          "ParentTId": null,
+          "TId": "1ffc3cae-92c8-4503-b75f-5b0789ccaa56",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
+          "ParentTId": null,
+          "TId": "d2eb07a9-5bad-4d74-8e35-091787464ddc",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
+          "ParentTId": null,
+          "TId": "ef0b2adf-3cd0-4206-8f1b-d04bec82cde1",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
+          "ParentTId": null,
+          "TId": "dfdc76ed-3806-42b0-86a0-ffa2c3db11d8",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
+          "ParentTId": null,
+          "TId": "f7655433-f79c-422e-ad1f-463d269d3a53",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
+          "ParentTId": null,
+          "TId": "c1644374-b0ca-4a06-9acb-f3d2c21664fc",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
+          "ParentTId": null,
+          "TId": "1fc36dec-db3a-4357-8a4d-29359fd60070",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
+          "ParentTId": null,
+          "TId": "af0f71c0-38d7-42de-8013-991d46a11456",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
+          "ParentTId": null,
+          "TId": "801738db-c299-4034-967d-fe835d77da2f",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
+          "ParentTId": null,
+          "TId": "7204bba1-1b51-4263-aa29-422ef81a8bee",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
+          "ParentTId": null,
+          "TId": "51487ba0-afc6-4dd3-a44e-bcbd1a0d572c",
+          "Count": 1
         }
       ],
       [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
+          "ParentTId": null,
+          "TId": "f9eb26e9-d850-43d7-8fde-6ac0e441c500",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "ea82fe0e-142a-4f33-8069-e829d9aa52aa",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "29c2c39a-010e-4c55-af3b-72c12ea10581",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "9a9224fd-b697-44e9-ace7-2af15f328c7d",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "38f7dd7d-1e9b-4b3b-9590-ebdbf035078e",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "e9751697-0720-4f92-9dd7-86ce3d886e40",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "b6bbb0ee-09f9-4af8-9d36-91ba0f0ffe88",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "cdec54db-3b7a-492b-8f68-4adbb5762c3d",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "b70628eb-aa98-4fde-ad09-22f95d8c1a11",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "6f6d523b-90f1-49f5-b1a6-c1a1e63c41d6",
+          "Count": 1
+        }
+      ],
+      [
+        {
+          "ParentTId": null,
+          "TId": "6f131d59-608e-4c57-816b-921091115d08",
+          "Count": 1
         }
       ]
     ]
   },
-  "name_txt": 3001
+  "name_txt": 111111
 }

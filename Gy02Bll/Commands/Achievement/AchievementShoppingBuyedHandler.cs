@@ -36,7 +36,7 @@ namespace GY02.Commands
                 //    return true;
                 //}).Select(c => (c.HasOldValue && OwConvert.TryToDecimal(c.OldValue, out var ov) ? ov : 0m, c.HasNewValue && OwConvert.TryToDecimal(c.NewValue, out var nv) ? nv : 0))
                 //.Sum(c => c.Item2 - c.Item1);
-                if (!_AchievementManager.RaiseEventIfChanged(Guid.Parse("822b1d80-70fe-417d-baea-e9c2aacbdcd8"), 1, command.GameChar, now)) command.FillErrorFromWorld();
+                if (!_AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("822b1d80-70fe-417d-baea-e9c2aacbdcd8"), 1, command.GameChar, now)) command.FillErrorFromWorld();
             }
         }
     }
@@ -63,9 +63,9 @@ namespace GY02.Commands
             {
                 var achiTId = Guid.Parse("60be1c6e-e144-4109-9684-b2038df7ee2b");
                 var now = OwHelper.WorldNow;
-                _AchievementManager.RaiseEventIfChanged(achiTId, command.Count, command.GameChar, now);
+                _AchievementManager.RaiseEventIfIncreaseAndChanged(achiTId, command.Count, command.GameChar, now);
                 //2b773be5-a6fb-41e0-a8bd-e3c1ed61d150	每日任务-子任务1（领取快速巡逻收益）
-                _AchievementManager.RaiseEventIfChanged(Guid.Parse("2b773be5-a6fb-41e0-a8bd-e3c1ed61d150"), command.Count, command.GameChar, now);
+                _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("2b773be5-a6fb-41e0-a8bd-e3c1ed61d150"), command.Count, command.GameChar, now);
             }
         }
     }
@@ -111,7 +111,7 @@ namespace GY02.Commands
                 return Math.Max(0, ov - nv);
             });
             if (inc > 0)
-                _AchievementManager.RaiseEventIfChanged(Guid.Parse("663310b0-79d7-403c-9b03-078fd5155c9a"), inc, command.GameChar, now);
+                _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("663310b0-79d7-403c-9b03-078fd5155c9a"), inc, command.GameChar, now);
         }
     }
 }
