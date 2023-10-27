@@ -74,7 +74,7 @@ namespace GY02.Managers
                 {
                     if (_AchievementManager.GetTemplateById(entitySummary.TId) is TemplateStringFullView achi)   //若是成就
                     {
-                        _AchievementManager.RaiseEventIfIncreaseAndChanged(entitySummary.TId, achi.Count == 0 ? count : achi.Count, context.GameChar, context.WorldDateTime);
+                        _AchievementManager.RaiseEventIfIncreaseAndChanged(entitySummary.TId, entitySummary.Count == 0 ? count : entitySummary.Count, context.GameChar, context.WorldDateTime);
                     }
                     else //若是其它实体
                     {

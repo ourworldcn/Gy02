@@ -91,7 +91,7 @@ namespace OW.Game.Entity
 #if NETCOREAPP
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
-        public DateTime? CreateDateTime { get; set; }
+        public DateTime? CreateDateTime { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
         /// Count 属性最后的修改时间。修改Count属性时自动修改此属性。
@@ -122,6 +122,21 @@ namespace OW.Game.Entity
         /// 客户端存储的数据，服务器不使用，仅原样记录和传递。
         /// </summary>
         public Dictionary<string, string> ClientDictionary { get; set; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 按给定序列和当前对象的 <see cref="Count"/> 属性设置 <see cref="Level"/> 属性。
+        /// </summary>
+        /// <param name="seq">经验序列，必须严格递增。否则行为未知。</param>
+        public void RefreshLevel(IList<decimal> seq)
+        {
+            var count = Count;
+            var i = seq.Count - 1;
+            for (; i >= 0; i--)
+                if (count >= seq[i])    //若找到
+                    break;
+            Level = i + 1;
+        }
+
 
         /// <summary>
         /// <inheritdoc/>

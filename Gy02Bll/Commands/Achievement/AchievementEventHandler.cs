@@ -22,13 +22,15 @@ namespace GY02.Commands.Achievement
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class AchievementEventHandler
     {
-        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager, GameTemplateManager templateManager)
+        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager, GameTemplateManager templateManager, GameEventManager eventManager)
         {
             _EntityManager = entityManager;
             _AchievementManager = achievementManager;
             _BlueprintManager = blueprintManager;
-            Initialize();
             _TemplateManager = templateManager;
+            _EventManager = eventManager;
+
+            Initialize();
         }
 
         private void Initialize()
@@ -40,12 +42,17 @@ namespace GY02.Commands.Achievement
         GameAchievementManager _AchievementManager;
         GameBlueprintManager _BlueprintManager;
         GameTemplateManager _TemplateManager;
+        GameEventManager _EventManager;
 
         /// <summary>
         /// 所有装备的类属集合。
         /// </summary>
         static HashSet<string> _Equ = new HashSet<string>() { "e_wuqi", "e_yifu", "e_yaodai", "e_shoutao", "e_xiezi", "e_zuoqi" };
 
+        /// <summary>
+        /// 
+        /// </summary>
+        static Guid GuanggaoEventTId = new Guid("baacde4d-972d-4d26-ba36-5e59440ac798");
         private void _EntityManager_EntityChanged(object sender, EntityChangedEventArgs e)
         {
             var now = OwHelper.WorldNow;
@@ -62,14 +69,9 @@ namespace GY02.Commands.Achievement
                 }
             }
             if (gc is null) return;
-            if (e.Entities.Any(c => c.TemplateId == ProjectContent.GuanggaoCurrenyTId && c.Count > 0))
+            if (e.Entities.Any(c => c.TemplateId == ProjectContent.GuanggaoCurrenyTId && c.Count > 0))  //看广告事件
             {
-                //192db3ea-2147-4743-849e-9c20236c7771	看广告数量成就
-                _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("192db3ea-2147-4743-849e-9c20236c7771"), 1, gc, now);
-                //cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d	开服活动1日成就-累计看广告次数
-                _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d"), 1, gc, now);
-                //1910fc23-d0f2-49a8-976f-e87d79dddbad	每日任务-子任务1（看广告数量）
-                _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("1910fc23-d0f2-49a8-976f-e87d79dddbad"), 1, gc, now);
+                _EventManager.SendEvent(GuanggaoEventTId, 1, new SimpleGameContext(Guid.Empty, gc, now, null));
             }
             foreach (var entity in e.Entities)
             {

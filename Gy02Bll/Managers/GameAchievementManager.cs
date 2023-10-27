@@ -188,9 +188,10 @@ namespace GY02.Managers
                 var list = _EntityManager.Create(new GameEntitySummary { TId = template.TemplateId, Count = 0 });
                 thing = list.First().GetThing();
                 _EntityManager.Move(list, gameChar.ChengJiuSlot, changes);
-                InitializeState(thing.GetJsonObject<GameAchievement>());
             }
-            return thing.GetJsonObject<GameAchievement>();
+            var result = thing.GetJsonObject<GameAchievement>();
+            if (result.Items.Count <= 0) InitializeState(result);
+            return result;
         }
 
         /// <summary>
@@ -218,6 +219,7 @@ namespace GY02.Managers
                     }
                     achievement.Items.Add(state);
                 }
+                achievement.LastModifyDateTime = OwHelper.WorldNow;
             }
             return true;
         }
@@ -240,7 +242,7 @@ namespace GY02.Managers
                 context.Changes?.MarkChanges(achi, nameof(achi.Count), oldCount, achi.Count);
             }
 
-            achi.RefreshLevel(tt);    //刷新等级
+            achi.RefreshLevel(tt.Achievement.Exp2LvSequence);    //刷新等级
             if (oldLv != achi.Level)   //若等级变化了
             {
                 context.Changes?.MakeLevelChanged(achi, oldLv, achi.Level);
@@ -270,7 +272,7 @@ namespace GY02.Managers
             achievement.IsValid = IsValid(achievement, gameChar, now);
             if (!achievement.IsValid) achievement.Count = 0;
 
-            achievement.RefreshLevel(tt);
+            achievement.RefreshLevel(tt.Achievement.Exp2LvSequence);
             if (achievement.Items.Count == 0)    //若可能需要初始化
                 if (!InitializeState(achievement)) return false;
 
@@ -316,8 +318,19 @@ namespace GY02.Managers
                 return false;
             }
             var baseColl = achi.Items.Where(c => levels.Contains(c.Level)).ToArray();
-            var summaries = baseColl.SelectMany(c => c.Rewards);
-
+            var summaries = baseColl.SelectMany(c => c.Rewards).ToList();
+            #region 不满足条件时排除赛季积分货币
+            var saijiBaoxianHuobiTid = Guid.Parse("e93c4aa4-ab58-4262-a93b-0118edfe8afb");  //赛季开宝箱货币
+            if (summaries.Any(c => c.TId == saijiBaoxianHuobiTid))  //若有赛季积分货币
+            {
+                var tt = GetTemplateById(Guid.Parse("008d96c5-9545-44fb-965d-6d1c9d97f97d"));   //赛季免费门票成就
+                var saiji = GetOrCreate(gameChar, tt);
+                if (saiji.Count < tt.Achievement.Exp2LvSequence.Last()) //已经满级
+                {
+                    summaries.RemoveAll(c => c.TId == saijiBaoxianHuobiTid);
+                }
+            }
+            #endregion 不满足条件时排除赛季积分货币
             var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
             var b = _SpecialManager.Transformed(summaries, list, new EntitySummaryConverterContext
             {
@@ -327,7 +340,7 @@ namespace GY02.Managers
                 Random = new Random(),
             });
 
-            var entities = _EntityManager.Create(list.SelectMany(c=>c.Item2));
+            var entities = _EntityManager.Create(list.SelectMany(c => c.Item2));
             if (entities is null) return false;
 
             _EntityManager.Move(entities.Select(c => c.Item2), gameChar, changes);
@@ -340,21 +353,7 @@ namespace GY02.Managers
                     if (!RefreshState(tmp, gameChar, now)) continue;
                     if (tmp.Level > olv)    //若等级发生了变化
                     {
-                        changes?.Add(new GamePropertyChangeItem<object>
-                        {
-                            Object = tmp,
-                            PropertyName = nameof(tmp.Level),
-                            HasNewValue = true,
-                            NewValue = tmp.Level,
-                        });
-                        changes?.Add(new GamePropertyChangeItem<object>
-                        {
-                            Object = tmp,
-                            PropertyName = nameof(tmp.Items),
-
-                            HasNewValue = true,
-                            NewValue = tmp.Items,
-                        });
+                        changes?.MakeLevelChanged(tmp, olv, tmp.Level);
                     }
                 }
             }

@@ -45,18 +45,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 最后一次修改的时间。
         /// </summary>
-        public DateTime LastModifyDateTime { get; set; }
+        public DateTime LastModifyDateTime { get; set; } = OwHelper.WorldNow;
 
         #endregion 可复制属性
-
-        /// <summary>
-        /// 按完成进度刷新等级属性。在 <see cref="GameEntity.Count"/> 属性变化后调用此方法以正确设置 <see cref="GameEntity.Level"/> 属性。
-        /// </summary>
-        public void RefreshLevel(TemplateStringFullView template)
-        {
-            var index = Array.FindLastIndex(template.Achievement.Exp2LvSequence, c => Count >= c);  //如果找到与 match 定义的条件相匹配的最后一个元素，则为该元素的从零开始的索引；否则为 -1。
-            Level = index + 1;
-        }
     }
 
     /// <summary>
