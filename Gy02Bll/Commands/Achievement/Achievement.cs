@@ -22,20 +22,23 @@ namespace GY02.Commands
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<CompositeCommand>))]
     public class AchievementCompositedHandler : ISyncCommandHandled<CompositeCommand>
     {
-        public AchievementCompositedHandler(GameAchievementManager achievementManager)
+        public AchievementCompositedHandler(GameAchievementManager achievementManager, GameEventManager eventManager)
         {
             _AchievementManager = achievementManager;
+            _EventManager = eventManager;
         }
 
         GameAchievementManager _AchievementManager;
+        GameEventManager _EventManager;
 
         public void Handled(CompositeCommand command, Exception exception)
         {
             if (command.HasError || exception is not null) return;
-            //4f6a92f2-3aac-479b-92e8-0dfffa74536b	装备合成次数成就
-            _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("4f6a92f2-3aac-479b-92e8-0dfffa74536b"), 1, command.GameChar, OwHelper.WorldNow);
-            //db98951e-a908-482a-a2e4-0e851a3e1c95	开服活动成就- 累计合装备合成次数
-            _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("db98951e-a908-482a-a2e4-0e851a3e1c95"), 1, command.GameChar, OwHelper.WorldNow);
+
+            var now = OwHelper.WorldNow;
+            SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, now, null);
+            //8b948fa5-5a0d-44b9-a4de-1dcced307dee	合成装备次数变化事件
+            _EventManager.SendEvent(Guid.Parse("8b948fa5-5a0d-44b9-a4de-1dcced307dee"), 1, context);
         }
     }
 
@@ -45,86 +48,87 @@ namespace GY02.Commands
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<FuhuaCommand>))]
     public class AchievementFuhuaedHandler : ISyncCommandHandled<FuhuaCommand>
     {
-        public AchievementFuhuaedHandler(GameAchievementManager achievementManager)
+        public AchievementFuhuaedHandler(GameAchievementManager achievementManager, GameEventManager eventManager)
         {
             _AchievementManager = achievementManager;
+            _EventManager = eventManager;
         }
 
         GameAchievementManager _AchievementManager;
+        GameEventManager _EventManager;
 
         public void Handled(FuhuaCommand command, Exception exception = null)
         {
             if (command.HasError || exception is not null) return;
             var now = OwHelper.WorldNow;
-            //22f48e2b-8e81-43fb-80dd-af900eb21a29	累计孵化次数成就
-            _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("22f48e2b-8e81-43fb-80dd-af900eb21a29"), 1, command.GameChar, now);
-            //c7772592-50ab-4f98-be01-b58c02571d46	开服活动成就- 累计孵化次数
-            _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("c7772592-50ab-4f98-be01-b58c02571d46"), 1, command.GameChar, now);
-            //401cbe25-ed70-4a43-a5a8-524cf57f56c2	每日任务-子任务1（坐骑孵化次数）
-            _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("401cbe25-ed70-4a43-a5a8-524cf57f56c2"), 1, command.GameChar, now);
+            SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, now, null);
+            //156d8052-ded1-42a4-95b0-63d40d9fc52c	坐骑孵化次数变化事件
+            _EventManager.SendEvent(Guid.Parse("156d8052-ded1-42a4-95b0-63d40d9fc52c"), 1, context);
         }
     }
 
     /// <summary>
-    /// e2c2cf15-263f-4341-acdd-c3135c73097b	开服活动成就 - 累计升级装备次数
+    /// 升级装备次数变化事件。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<LvUpCommand>))]
     public class LvUped : ISyncCommandHandled<LvUpCommand>
     {
-        public LvUped(GameAchievementManager achievementManager)
+        public LvUped(GameAchievementManager achievementManager, GameEventManager eventManager)
         {
             _AchievementManager = achievementManager;
+            _EventManager = eventManager;
         }
 
         GameAchievementManager _AchievementManager;
+        GameEventManager _EventManager;
 
         public void Handled(LvUpCommand command, Exception exception = null)
         {
             if (command.HasError || exception is not null) return;
             var now = OwHelper.WorldNow;
-            if (command.Ids.Count > 0)
-                _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("e2c2cf15-263f-4341-acdd-c3135c73097b"), command.Ids.Count, command.GameChar, now);
-            //f7647e8e-cdf1-4a30-982e-fb676cfc6c34	每日任务-子任务1（升级装备次数）
-            if (command.Ids.Count > 0)
-                _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("f7647e8e-cdf1-4a30-982e-fb676cfc6c34"), command.Ids.Count, command.GameChar, now);
+            SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, now, null);
 
+            //b13aa107-0134-492c-bb8d-c3c5855954c5	升级装备次数变化事件
+            if (command.Ids.Count > 0)
+                _EventManager.SendEvent(Guid.Parse("b13aa107-0134-492c-bb8d-c3c5855954c5"), command.Ids.Count, context);
         }
     }
 
     /// <summary>
-    /// 4963c720-2b8f-4def-aed2-7bc8925f6a91	开宝箱次数 gs_choujiangbaoxiang
-    /// 5173f53e-6534-4594-82cc-d989f52f03c7	开服活动成就- 累计开宝箱次数
+    /// 04382674-0309-432c-b400-1bc80955eff2	开宝箱次数变化事件
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<ShoppingBuyCommand>))]
     public class ChoujiangBaoxiangClass : ISyncCommandHandled<ShoppingBuyCommand>
     {
 
-        public ChoujiangBaoxiangClass(GameAchievementManager achievementManager, GameShoppingManager shoppingManager)
+        public ChoujiangBaoxiangClass(GameAchievementManager achievementManager, GameShoppingManager shoppingManager, GameEventManager eventManager)
         {
             _AchievementManager = achievementManager;
             _ShoppingManager = shoppingManager;
+            _EventManager = eventManager;
         }
 
         GameAchievementManager _AchievementManager;
         GameShoppingManager _ShoppingManager;
+        GameEventManager _EventManager;
 
         public void Handled(ShoppingBuyCommand command, Exception exception = null)
         {
             if (command.HasError || exception is not null) return;
+            var now = OwHelper.WorldNow;
+            SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, now, null);
             if (_ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId) is TemplateStringFullView tt)
             {
-                if (tt.Genus?.Contains("gs_choujiangbaoxiang") ?? false)
+                if (tt.Genus?.Contains("gs_choujiangbaoxiang") ?? false)    //若是宝箱
                 {
-                    _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("4963c720-2b8f-4def-aed2-7bc8925f6a91"), command.Count, command.GameChar, OwHelper.WorldNow);
-                    _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("5173f53e-6534-4594-82cc-d989f52f03c7"), command.Count, command.GameChar, OwHelper.WorldNow);
-                    //f9ec4736-d926-43a6-98fb-44d1adb11faf	每日任务-子任务1（开宝箱次数）
-                    _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("f9ec4736-d926-43a6-98fb-44d1adb11faf"), command.Count, command.GameChar, OwHelper.WorldNow);
+                    // 5d809337-9782-457d-a71d-8c6f1ac0e976	开宝箱次数变化事件
+                    _EventManager.SendEvent(Guid.Parse("5d809337-9782-457d-a71d-8c6f1ac0e976"), command.Count, context);
                 }
-                //6020445b-ff60-4a8d-96b3-78e79f56fcf6	每日任务-子任务1（商店中购买物品次数）
                 string[] tmpGenus = new string[] { "gs_jibigoumai", "gs_zs", "gs_meirishangdian" };
                 if (tt.Genus is not null && tmpGenus.Intersect(tt.Genus).Any())
                 {
-                    _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("6020445b-ff60-4a8d-96b3-78e79f56fcf6"), command.Count, command.GameChar, OwHelper.WorldNow);
+                    //d23ee35e-2e49-402b-83a3-effc4d8ff7aa	商店中购买物品次数变化事件
+                    _EventManager.SendEvent(Guid.Parse("d23ee35e-2e49-402b-83a3-effc4d8ff7aa"), command.Count, context);
                 }
             }
         }

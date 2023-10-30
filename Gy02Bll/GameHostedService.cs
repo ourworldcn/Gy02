@@ -34,6 +34,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Runtime;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
@@ -232,5 +233,12 @@ namespace GY02
         }
     }
 
+    //private unsafe void Awake()
+    //{
+    //    byte[] sendByte = Encoding.ASCII.GetBytes("");
 
+    //    fixed (byte* pointerToFirst = &sendByte[0])
+    //    {
+    //    }
+    //}
 }

@@ -434,10 +434,10 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="achievementManager"></param>
         /// <param name="achiTId"></param>
-        /// <param name="newValue"></param>
+        /// <param name="newValue">仅当新值大于旧值时惨生效。</param>
         /// <param name="gameChar"></param>
         /// <param name="now"></param>
-        /// <returns></returns>
+        /// <returns>true成功设置，false新值小于或等于旧值。</returns>
         public static bool RaiseEventIfSetAndChanged(this GameAchievementManager achievementManager, Guid achiTId, decimal newValue, GameChar gameChar, DateTime now)
         {
             if (achievementManager.GetOrCreate(gameChar, achiTId) is not GameAchievement achi) return false;

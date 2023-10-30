@@ -1,24 +1,86 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Genus": [ "cj_zhourenwu", "goto_main_level" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "Ins": [
       {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "d050c2e9-b7c9-4b43-98ec-b00fc39fb899",
-        "MinCount": null,
-        "GeneralConditional": [],
-        "GroupMask": 1
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
+            "MinCount": 0,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 28,
+              "MinRemainder": 0,
+              "MaxRemainder": 6
+            },
+            "GeneralConditional": [],
+            "Count": 0,
+            "GroupMask": 3
+          }
+        ]
       }
     ],
-    "GetIndexExpression": {
-      "op": "ToInt32",
-      "args": [ "Count" ]
-    },
-    "Outs": {
-      "ParentTIds": [ "e6edab87-0034-4f45-8040-1f0d565ccf58", "e6edab87-0034-4f45-8040-1f0d565ccf58", "e6edab87-0034-4f45-8040-1f0d565ccf58" ],
-      "TIds": [ "9c2d37c2-1f65-4809-a51b-bf1e22e9525f", "60c28119-42b0-4ebc-bc37-24be3afaebf4", "9b558fe1-db54-4e1b-a962-be0d6c55f1be" ],
-      "Counts": [ 1, 1, 1 ]
-    }
+    "Exp2LvSequence": [ 10, 30, 60, 90, 160, 220 ],
+    "Outs": [
+      [
+        {
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
+          "Count": 3
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 5000
+        }
+      ],
+      [
+        {
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "fe312261-2233-4c35-aaf4-bd698e328baf",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
+          "Count": 20
+        }
+      ],
+      [
+        {
+          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+          "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
+          "Count": 5
+        }
+      ],
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 100
+        }
+      ]
+    ]
   },
   "name_txt": 111111
 }

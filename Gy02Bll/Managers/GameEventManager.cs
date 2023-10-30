@@ -62,7 +62,7 @@ namespace GY02.Managers
         /// 发送游戏内事件。
         /// </summary>
         /// <param name="eventTId">事件的Id。</param>
-        /// <param name="count">此次发生的值。</param>
+        /// <param name="count">此次发生的值(增量)。</param>
         /// <param name="context">上下文。</param>
         public void SendEvent(Guid eventTId, decimal count, IGameContext context)
         {
@@ -75,6 +75,33 @@ namespace GY02.Managers
                     if (_AchievementManager.GetTemplateById(entitySummary.TId) is TemplateStringFullView achi)   //若是成就
                     {
                         _AchievementManager.RaiseEventIfIncreaseAndChanged(entitySummary.TId, entitySummary.Count == 0 ? count : entitySummary.Count, context.GameChar, context.WorldDateTime);
+                    }
+                    else //若是其它实体
+                    {
+                        entities.Add(entitySummary);    //暂存需要创建的实体摘要
+                    }
+                }
+            }
+            _EntityManager.CreateAndMove(entities, context.GameChar, context.Changes);  //创建实体
+        }
+
+        /// <summary>
+        /// 发送游戏内事件。
+        /// </summary>
+        /// <param name="eventTId"></param>
+        /// <param name="count">此时发生的值(全量)仅对任务/成就，对一般实体仍使用增量。</param>
+        /// <param name="context"></param>
+        public void SendEventWithNewValue(Guid eventTId, decimal count, IGameContext context)
+        {
+            var tts = EventId2Template[eventTId];   //处理模板
+            List<GameEntitySummary> entities = new List<GameEntitySummary>();
+            foreach (var tt in tts)
+            {
+                foreach (var entitySummary in tt.GameEvent.Outs)
+                {
+                    if (_AchievementManager.GetTemplateById(entitySummary.TId) is TemplateStringFullView achi)   //若是成就
+                    {
+                        _AchievementManager.RaiseEventIfSetAndChanged(entitySummary.TId, entitySummary.Count == 0 ? count : entitySummary.Count, context.GameChar, context.WorldDateTime);
                     }
                     else //若是其它实体
                     {
