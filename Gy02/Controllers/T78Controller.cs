@@ -167,7 +167,7 @@ namespace GY02.Controllers
                         {
                             GameChar = gc,
                             ShoppingItemTId = Guid.Parse(item.GoodsId),
-                            Count=1,
+                            Count = 1,
                         };
                         bi.Count++;
                         _SyncCommandManager.Handle(command);

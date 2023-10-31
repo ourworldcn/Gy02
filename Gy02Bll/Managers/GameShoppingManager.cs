@@ -177,7 +177,7 @@ namespace GY02.Managers
                                                                                       //if (!shoppingItem.Ins.All(c => c.Conditional.All(d => d.IsValidate(mask))))
                                                                                       //    return false;
             var entities = _EntityManager.GetAllEntity(gameChar);
-            var ins = shoppingItem.Ins.Select(c => _BlueprintManager.Translation(c, entities));
+            var ins = shoppingItem.Ins.Select(c => _BlueprintManager.Transformed(c, entities));
             var b = _BlueprintManager.GetMatches(entities, ins, mask);
             if (b.Any(c => c.Item1 is null))
             {

@@ -62,13 +62,15 @@ namespace GY02.Managers
             return true;
         }
 
+        #region 条件转化
+
         /// <summary>
         /// 翻译需求序列为普通条件。
         /// </summary>
         /// <param name="inItem"></param>
         /// <param name="entities"></param>
         /// <returns>若无需转换则返回<paramref name="inItem"/>，否则返回新实例。</returns>
-        public BlueprintInItem Translation(BlueprintInItem inItem, IEnumerable<GameEntity> entities)
+        public BlueprintInItem Transformed(BlueprintInItem inItem, IEnumerable<GameEntity> entities)
         {
             bool changed = false;
             int index = 0;
@@ -76,7 +78,7 @@ namespace GY02.Managers
             using var dw = DisposeHelper.Create(c => ArrayPool<GameThingPreconditionItem>.Shared.Return(c), buff);
             foreach (var cond in inItem.Conditional)
             {
-                var tmp = Translation(cond, entities);
+                var tmp = Transformed(cond, entities);
                 buff[index++] = tmp;
                 changed = changed || !ReferenceEquals(tmp, cond);
             }
@@ -99,7 +101,7 @@ namespace GY02.Managers
         /// <param name="conditional"></param>
         /// <param name="entities"></param>
         /// <return>若无需转换则返回<paramref name="conditional"/>,否则返回转换后的实例。</return>
-        public GameThingPreconditionItem Translation(GameThingPreconditionItem conditional, IEnumerable<GameEntity> entities)
+        public GameThingPreconditionItem Transformed(GameThingPreconditionItem conditional, IEnumerable<GameEntity> entities)
         {
             if (!IsNeedTranslation(conditional, out var tt)) return conditional;
             if (!_SequenceManager.GetOut(entities, tt, out var summary)) return null;
@@ -108,7 +110,7 @@ namespace GY02.Managers
                 TId = summary.TId,
                 ParentTId = summary.ParentTId,
                 MinCount = summary.Count,
-                GroupMask= conditional.GroupMask,
+                GroupMask = conditional.GroupMask,
             };
             return result;
         }
@@ -131,7 +133,11 @@ namespace GY02.Managers
                 return false;
             }
         }
+
+        #endregion 条件转化
+
         #endregion 计算匹配
+
 
         #region 计算寻找物品的匹配
 
@@ -213,7 +219,6 @@ namespace GY02.Managers
 
         #endregion 计算寻找物品的匹配
 
-
         /// <summary>
         /// 消耗指定材料。
         /// </summary>
@@ -225,7 +230,7 @@ namespace GY02.Managers
         public bool Deplete(IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> conditionals, ICollection<GamePropertyChangeItem<object>> changes = null)
         {
             List<(GameEntity, decimal)> list = new List<(GameEntity, decimal)>();
-            var collCond = conditionals.Select(c => Translation(c,entities));
+            var collCond = conditionals.Select(c => Transformed(c, entities));
             var coll = this.GetMatches(entities, collCond, 1);
             var errItem = coll.FirstOrDefault(c => c.Item1 is null);
             if (errItem.Item2 is not null)   //若存在无法找到的项

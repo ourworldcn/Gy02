@@ -77,8 +77,6 @@ namespace GY02.Commands.Achievement
                             _AchievementManager.RaiseEventIfChanged(achi, 1, command.GameChar, now);
                         }
                     }
-                    //b8e00fd4-df86-4570-952a-8bd3c0435fd2	每日任务-子任务1（杀死主线关卡怪物数量）
-                    _AchievementManager.RaiseEventIfIncreaseAndChanged(Guid.Parse("b8e00fd4-df86-4570-952a-8bd3c0435fd2"), types_all, command.GameChar, now);
                 }
             }
         }

@@ -149,7 +149,7 @@ namespace GY02.Commands.Achievement
                         var ary = c.Value.Achievement?.TjIns;
                         if (ary is null || ary.Length <= 0) return false;
                         var entities = new GameEntity[] { entity };
-                        var tmpInItems = ary.Select(c => _BlueprintManager.Translation(c, entities));
+                        var tmpInItems = ary.Select(c => _BlueprintManager.Transformed(c, entities));
                         return _BlueprintManager.GetMatches(entities, tmpInItems, 1).All(c => c.Item1 is not null);
                     }).Value;
                     if (achiTt is null) continue;
@@ -166,20 +166,6 @@ namespace GY02.Commands.Achievement
             }
             if (gc is not null)
             {
-                //1c5e6055-d754-4f9d-83c1-c2b31238afa1	拥有动物数量 Gid 12xx02
-                {
-                    if (_AchievementManager.GetTemplateById(Guid.Parse("1c5e6055-d754-4f9d-83c1-c2b31238afa1")) is TemplateStringFullView achiTT &&
-                        _AchievementManager.GetOrCreate(gc, achiTT) is GameAchievement achi)
-                    {
-                        var count = _EntityManager.GetAllEntity(gc).Where(c =>  //获取动物数量
-                        {
-                            if (_TemplateManager.GetFullViewFromId(c.TemplateId) is not TemplateStringFullView tt) return false;
-                            return tt.GetCatalog1() == 12 && tt.GetCatalog3() == 2;
-                        }).Count();
-                        var inc = count - achi.Count;
-                        if (inc > 0) _AchievementManager.RaiseEventIfChanged(achi, inc, gc, now);
-                    }
-                }
                 //A934D181-087E-4BD1-BD90-8EBA1020AA99	收集皮肤总数的成就 Gid 1602
                 {
                     if (_AchievementManager.GetTemplateById(Guid.Parse("A934D181-087E-4BD1-BD90-8EBA1020AA99")) is TemplateStringFullView achiTT &&
@@ -188,7 +174,7 @@ namespace GY02.Commands.Achievement
                         var count = _EntityManager.GetAllEntity(gc).Where(c =>  //获取皮肤数量
                         {
                             if (_TemplateManager.GetFullViewFromId(c.TemplateId) is not TemplateStringFullView tt) return false;
-                            return tt.Gid / 100000 == 1602;
+                            return tt.Gid / 100_000 == 1602;
                         }).Count();
                         var inc = count - achi.Count;
                         if (inc > 0) _AchievementManager.RaiseEventIfChanged(achi, inc, gc, now);
