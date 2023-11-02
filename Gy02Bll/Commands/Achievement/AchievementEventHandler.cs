@@ -22,13 +22,15 @@ namespace GY02.Commands.Achievement
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class AchievementEventHandler
     {
-        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager, GameTemplateManager templateManager)
+        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager, GameTemplateManager templateManager, GameEventManager eventManager)
         {
             _EntityManager = entityManager;
             _AchievementManager = achievementManager;
             _BlueprintManager = blueprintManager;
-            Initialize();
             _TemplateManager = templateManager;
+            _EventManager = eventManager;
+
+            Initialize();
         }
 
         private void Initialize()
@@ -40,12 +42,17 @@ namespace GY02.Commands.Achievement
         GameAchievementManager _AchievementManager;
         GameBlueprintManager _BlueprintManager;
         GameTemplateManager _TemplateManager;
+        GameEventManager _EventManager;
 
         /// <summary>
         /// 所有装备的类属集合。
         /// </summary>
         static HashSet<string> _Equ = new HashSet<string>() { "e_wuqi", "e_yifu", "e_yaodai", "e_shoutao", "e_xiezi", "e_zuoqi" };
 
+        /// <summary>
+        /// 
+        /// </summary>
+        static Guid GuanggaoEventTId = new Guid("f607ef05-801d-4a48-9f44-0673e55d2bf3");
         private void _EntityManager_EntityChanged(object sender, EntityChangedEventArgs e)
         {
             var now = OwHelper.WorldNow;
@@ -62,12 +69,10 @@ namespace GY02.Commands.Achievement
                 }
             }
             if (gc is null) return;
-            if (e.Entities.Any(c => c.TemplateId == ProjectContent.GuanggaoCurrenyTId && c.Count > 0))
+            SimpleGameContext context = new SimpleGameContext(Guid.Empty, gc, now, null);
+            if (e.Entities.Any(c => c.TemplateId == ProjectContent.GuanggaoCurrenyTId && c.Count > 0))  //看广告事件
             {
-                //192db3ea-2147-4743-849e-9c20236c7771	看广告数量成就
-                _AchievementManager.RaiseEventIfChanged(Guid.Parse("192db3ea-2147-4743-849e-9c20236c7771"), 1, gc, now);
-                //cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d	开服活动1日成就-累计看广告次数
-                _AchievementManager.RaiseEventIfChanged(Guid.Parse("cd6f3fde-0b5e-4c53-9b30-cb9c6da8fc3d"), 1, gc, now);
+                _EventManager.SendEvent(GuanggaoEventTId, 1, context);
             }
             foreach (var entity in e.Entities)
             {
@@ -88,6 +93,7 @@ namespace GY02.Commands.Achievement
                         _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
                     }
                 }
+                //拥有装备的数量变化事件（含武器和坐骑）401d63c4-0b2a-42e2-8828-f6d0c80582a2
                 if (tt.Genus is not null && _Equ.Overlaps(tt.Genus))    //装备拥有数量成就
                 {
                     {
@@ -102,11 +108,9 @@ namespace GY02.Commands.Achievement
                             var genus = _EntityManager.GetTemplate(c)?.Genus;
                             return genus is null ? false : _Equ.Overlaps(genus);
                         });
-                        achi.Count = Math.Max(achi.Count, nv);  //只增不减
-                        if (!_AchievementManager.RefreshState(achi, gc, now)) continue;
-                        if (achi.Level > oldLv)    //若发生了变化
+                        if (achi.Count < nv)   //若装备总数增加了
                         {
-                            _AchievementManager.InvokeAchievementChanged(new AchievementChangedEventArgs { Achievement = achi });
+                            _EventManager.SendEventWithNewValue(Guid.Parse("401d63c4-0b2a-42e2-8828-f6d0c80582a2"), nv, context);
                         }
                     }
                     //0f83e776-7c47-4fc6-b27b-c5f14f1b158f	拥有武器的数量成就
@@ -120,9 +124,21 @@ namespace GY02.Commands.Achievement
                         if (_AchievementManager.GetTemplateById(Guid.Parse("0f83e776-7c47-4fc6-b27b-c5f14f1b158f")) is TemplateStringFullView achiTt //拥有武器的数量成就
                             && _AchievementManager.GetOrCreate(gc, achiTt) is GameAchievement achi)
                         {
-                            var inc = nv - achi.Count;
-                            if (inc > 0) _AchievementManager.RaiseEventIfChanged(achi, inc, gc, now);
+                            //拥有装备的数量变化事件（含武器和坐骑） 35f7d6af-503a-4292-83e7-610a6155ce88
+                            if (achi.Count < nv)   //若武器数量增加
+                                _EventManager.SendEventWithNewValue(Guid.Parse("35f7d6af-503a-4292-83e7-610a6155ce88"), nv, context);
                         }
+                    }
+                    if (tt.Genus.Contains("e_zuoqi"))   //若拥有坐骑的数量变化了 2db6d491-67f3-49ea-bfa1-16413a0b9999
+                    {
+                        var achi = _AchievementManager.GetOrCreate(context.GameChar, Guid.Parse("1c5e6055-d754-4f9d-83c1-c2b31238afa1"));  //拥有动物数量成就
+                        var nv = _EntityManager.GetAllEntity(gc).Select(c => (c, _TemplateManager.GetFullViewFromId(c.TemplateId))).Where(c =>
+                        {
+                            if (c.Item2 is TemplateStringFullView fv && (fv.Genus?.Contains("e_zuoqi") ?? false)) return true;
+                            return false;
+                        }).Count();
+                        if (nv > achi.Count)    //若坐骑数量增加
+                            _EventManager.SendEventWithNewValue(Guid.Parse("2db6d491-67f3-49ea-bfa1-16413a0b9999"), nv, context);
                     }
                 }
 
@@ -133,7 +149,8 @@ namespace GY02.Commands.Achievement
                         var ary = c.Value.Achievement?.TjIns;
                         if (ary is null || ary.Length <= 0) return false;
                         var entities = new GameEntity[] { entity };
-                        return _BlueprintManager.IsValid(ary, entities);
+                        var tmpInItems = ary.Select(c => _BlueprintManager.Transformed(c, entities));
+                        return _BlueprintManager.GetMatches(entities, tmpInItems, 1).All(c => c.Item1 is not null);
                     }).Value;
                     if (achiTt is null) continue;
                     var achi = _AchievementManager.GetOrCreate(gc, achiTt);
@@ -149,20 +166,6 @@ namespace GY02.Commands.Achievement
             }
             if (gc is not null)
             {
-                //1c5e6055-d754-4f9d-83c1-c2b31238afa1	拥有动物数量 Gid 12xx02
-                {
-                    if (_AchievementManager.GetTemplateById(Guid.Parse("1c5e6055-d754-4f9d-83c1-c2b31238afa1")) is TemplateStringFullView achiTT &&
-                        _AchievementManager.GetOrCreate(gc, achiTT) is GameAchievement achi)
-                    {
-                        var count = _EntityManager.GetAllEntity(gc).Where(c =>  //获取动物数量
-                        {
-                            if (_TemplateManager.GetFullViewFromId(c.TemplateId) is not TemplateStringFullView tt) return false;
-                            return tt.GetCatalog1() == 12 && tt.GetCatalog3() == 2;
-                        }).Count();
-                        var inc = count - achi.Count;
-                        if (inc > 0) _AchievementManager.RaiseEventIfChanged(achi, inc, gc, now);
-                    }
-                }
                 //A934D181-087E-4BD1-BD90-8EBA1020AA99	收集皮肤总数的成就 Gid 1602
                 {
                     if (_AchievementManager.GetTemplateById(Guid.Parse("A934D181-087E-4BD1-BD90-8EBA1020AA99")) is TemplateStringFullView achiTT &&
@@ -171,25 +174,26 @@ namespace GY02.Commands.Achievement
                         var count = _EntityManager.GetAllEntity(gc).Where(c =>  //获取皮肤数量
                         {
                             if (_TemplateManager.GetFullViewFromId(c.TemplateId) is not TemplateStringFullView tt) return false;
-                            return tt.Gid / 100000 == 1602;
+                            return tt.Gid / 100_000 == 1602;
                         }).Count();
                         var inc = count - achi.Count;
                         if (inc > 0) _AchievementManager.RaiseEventIfChanged(achi, inc, gc, now);
                     }
                 }
-                //2d023b02-fb74-4320-9ee4-b6c761938fbe	全部镶嵌装备的等级成就 "Genus":["gs_equipslot"]
-                do
+                //ce076015-1938-4df6-aa97-d165cbe32547	玩家镶嵌装备的等级数量变化事件（镶嵌物品等级总和） "Genus":["gs_equipslot"]
+                if (_TemplateManager.GetTemplatesFromGenus("gs_equipslot") is IEnumerable<TemplateStringFullView> tts)   //获取所有装备槽模板
                 {
-                    if (_TemplateManager.GetTemplatesFromGenus("gs_equipslot") is not IEnumerable<TemplateStringFullView> tts) break;  //获取所有装备槽模板
+
                     var ttIds = new HashSet<Guid>(tts.Select(c => c.TemplateId));   //所有装备槽模板Id集合
                     var things = gc.GetThing().GetAllChildren().Where(c => ttIds.Contains(c.Parent?.ExtraGuid ?? Guid.Empty));   //所有装备的数据对象
                     var entitis = things.Select(c => _EntityManager.GetEntity(c));
                     var nv = entitis.Sum(c => c.Level); //现有总穿戴的装备等级
 
-                    var achiTId = Guid.Parse("2d023b02-fb74-4320-9ee4-b6c761938fbe");
+                    var achi = _AchievementManager.GetOrCreate(context.GameChar, Guid.Parse("2d023b02-fb74-4320-9ee4-b6c761938fbe"));
 
-                    _AchievementManager.RaiseEventIfIncrease(achiTId, nv, gc, OwHelper.WorldNow);
-                } while (false);
+                    if (achi?.Count < nv)
+                        _EventManager.SendEventWithNewValue(Guid.Parse("ce076015-1938-4df6-aa97-d165cbe32547"), nv, context);
+                }
             }
         }
 

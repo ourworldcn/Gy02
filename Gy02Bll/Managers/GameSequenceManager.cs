@@ -134,10 +134,9 @@ namespace GY02.Managers
         /// <returns>true成功获取到了实体摘要，false失败，此时调用<see cref="OwHelper.GetLastError(out string)"/>可获取详细信息。</returns>
         public bool GetOut(IEnumerable<GameEntity> entities, TemplateStringFullView tt, out GameEntitySummary result)
         {
-            var mo = GetGameSequenceByTemplate(tt);
-            if (mo is null) goto lbErr;
+            if (GetGameSequenceByTemplate(tt) is not SequenceOut mo) goto lbErr;
 
-            var coll = entities.Where(c => _EntityManager.IsMatch(c, mo.Conditions));    //符合条件的实体集合
+            var coll = entities.Where(c => _EntityManager.IsMatch(c, mo.Conditions, 1));    //符合条件的实体集合
             var entity = coll.FirstOrDefault();
             if (entity is null)
             {
@@ -187,5 +186,9 @@ namespace GY02.Managers
         }
     }
 
+    public static class GameSequenceManagerExtensions
+    {
+
+    }
 }
 

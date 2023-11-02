@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace OW.Game.Entity
@@ -44,18 +45,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 最后一次修改的时间。
         /// </summary>
-        public DateTime LastModifyDateTime { get; set; }
+        public DateTime LastModifyDateTime { get; set; } = OwHelper.WorldNow;
 
         #endregion 可复制属性
-
-        /// <summary>
-        /// 按完成进度刷新等级属性。
-        /// </summary>
-        public void RefreshLevel(TemplateStringFullView template)
-        {
-            var index = Array.FindLastIndex(template.Achievement.Exp2LvSequence, c => Count >= c);  //如果找到与 match 定义的条件相匹配的最后一个元素，则为该元素的从零开始的索引；否则为 -1。
-            Level = index + 1;
-        }
     }
 
     /// <summary>
@@ -72,16 +64,25 @@ namespace OW.Game.Entity
         /// <summary>
         /// 是否已经达成该等级。true已经达成，false未达成。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public bool IsCompleted { get; set; }
 
         /// <summary>
         /// 是否已经领取了该等级的奖励，true已经领取，false尚未领取，在未达成时此属性值也是false。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public bool IsPicked { get; set; }
 
         /// <summary>
         /// 等级。1表示第一级的状态，2表示第二级的状态，以此类推。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public int Level { get; set; }
     }
 }

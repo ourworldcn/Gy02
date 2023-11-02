@@ -145,6 +145,11 @@
             升品的累计用品。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameEntityDto.CreateDateTime">
+            <summary>
+            创建此对象的世界时间。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GameEntityDto.CountOfLastModifyUtc">
             <summary>
             Count 属性最后的修改时间。
@@ -233,31 +238,6 @@
         <member name="P:GY02.Publisher.GameCharDto.DisplayName">
             <summary>
             昵称。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.Atk">
-            <summary>
-            攻击数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.Def">
-            <summary>
-            防御数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.Pow">
-            <summary>
-            力量属性数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.CritPct">
-            <summary>
-            暴击率。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameCharDto.Crit">
-            <summary>
-            暴击倍数。1表示暴击和普通上海一致。
             </summary>
         </member>
         <member name="P:GY02.Publisher.GameCharDto.CombatTId">
@@ -411,21 +391,6 @@
         <member name="M:GY02.Publisher.GameEquipmentDto.#ctor">
             <summary>
             构造函数。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameEquipmentDto.Atk">
-            <summary>
-            攻击数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameEquipmentDto.Def">
-            <summary>
-            防御数值序列。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GameEquipmentDto.Pow">
-            <summary>
-            力量属性数值序列。
             </summary>
         </member>
         <member name="T:GY02.Publisher.PropertyChangeReturnDto">
@@ -1687,6 +1652,16 @@
         <member name="P:GY02.Publisher.GameAchievementDto.IsValid">
             <summary>
             当前该成就/任务是否有效。true有效，false无效此时成就任务的计数不会推进，但已有的奖励仍然可以领取（若已完成且未领取）。UI可以在无效时不让领取。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameAchievementDto.Start">
+            <summary>
+            起始时间，若当前不在有效时间段内，则是随后最近的一个有效周期的起始时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameAchievementDto.End">
+            <summary>
+            终止时间，若当前不在有效时间段内，则是随后最近的一个有效周期的终止时间。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GameAchievementItemDto">

@@ -180,7 +180,7 @@ namespace GY02.Managers
             }
             tmpDest?.ForEach(c => dest.Add(c));
             return true;
-        lbErr:
+        lbErr:  //出错
             changed = false;
             return false;
         }

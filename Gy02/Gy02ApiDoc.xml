@@ -636,7 +636,7 @@
             成就功能控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AchievementController.#ctor(GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:Gy02.Controllers.AchievementController.#ctor(GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.GameTemplateManager)">
             <summary>
             构造函数。
             </summary>
@@ -648,11 +648,13 @@
             <param name="achievementManager"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.AchievementController.GetAchievementStateWithGenus(GY02.Publisher.GetAchievementStateWithGenusParamsDto)">
+        <member name="M:Gy02.Controllers.AchievementController.GetAchievementStateWithGenus(GY02.Publisher.GetAchievementStateWithGenusParamsDto,GY02.Managers.GameBlueprintManager,GY02.Managers.GameEntityManager)">
             <summary>
             按指定的页签返回一组任务/成就的状态。
             </summary>
             <param name="model"></param>
+            <param name="blueprintManager"></param>
+            <param name="entityManager"></param>
             <returns></returns>
         </member>
         <member name="M:Gy02.Controllers.AchievementController.GetAchievementState(GY02.Publisher.GetAchievementStateParamsDto)">

@@ -59,6 +59,13 @@
             <remarks>所有成员都是结构时，深表副本等价于浅表副本。</remarks>
             <returns></returns>
         </member>
+        <member name="M:GY02.Templates.GameEntitySummary.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Templates.SequenceGameEntitySummary">
             <summary>
             描述一组产出。
@@ -125,6 +132,13 @@
             <summary>
             产出的集合。
             </summary>
+        </member>
+        <member name="M:GY02.Templates.SequenceOut.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
         </member>
         <member name="T:GY02.Templates.IJsonData">
             <summary>
@@ -202,6 +216,20 @@
             获得的物品。
             </summary>
         </member>
+        <member name="M:GY02.Templates.GameShoppingItem.Clone">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:GY02.Templates.GameShoppingItem.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Templates.GamePeriod">
             <summary>
             定义周期的类。
@@ -253,6 +281,13 @@
             <param name="now"></param>
             <param name="start">返回true时这里返回<paramref name="now"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
             <returns></returns>
+        </member>
+        <member name="M:GY02.Templates.GamePeriod.Clone">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="T:GY02.Templates.GameAchievementTO">
             <summary>
@@ -554,6 +589,11 @@
             当该模板所代表物品需要在角色范围内做唯一性验证时配置此数据。一旦配置了该属性不是null则在发现违反角色唯一性的时候使用<see cref="T:GY02.Templates.GameEntitySummary"/>进行转化。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.GameEvent">
+            <summary>
+            游戏内事件模板。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fcps">
             <summary>
             快速变化属性的字典集合，键是属性名，值快速变化属性的对象。
@@ -630,17 +670,6 @@
             注意消耗数量可能是0，代表需要此物品但不消耗此物品。若是null或空则表示所有级别都不消耗。
             </summary>
         </member>
-        <member name="T:GY02.Templates.GameThingPrecondition">
-            <summary>
-            定位一个物品的结构。
-            一组条件中满足任何一个都认为匹配。
-            </summary>
-        </member>
-        <member name="M:GY02.Templates.GameThingPrecondition.#ctor">
-            <summary>
-            构造函数。
-            </summary>
-        </member>
         <member name="T:GY02.Templates.NumberCondition">
             <summary>
             针对数值属性的组合条件，可以用于限定角色自己的某些周期性行为。
@@ -682,6 +711,13 @@
             最小余数。
             </summary>
         </member>
+        <member name="M:GY02.Templates.NumberCondition.Clone">
+            <summary>
+            返回一个深表副本。
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
         <member name="M:GY02.Templates.NumberCondition.GetCurrentPeriod(System.Decimal,System.Decimal@,System.Decimal@)">
             <summary>
             获取指定数值所处周期。仅能对整数求解。
@@ -690,6 +726,14 @@
             <param name="start">所处周期的起始数。</param>
             <param name="end">所处周期的结束数。</param>
             <returns>true指定值在有效周期内，false指定值不在指定周期内。</returns>
+        </member>
+        <member name="M:GY02.Templates.NumberCondition.GetFirstPeriod(System.Decimal@,System.Decimal@)">
+            <summary>
+            获取第一个周期的起始和终止数。
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns>true找到了第一个有效周期，false没有找到有效周期。</returns>
         </member>
         <member name="M:GY02.Templates.NumberCondition.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
             <summary>
@@ -738,25 +782,40 @@
             扩展条件，针对属性的不等式。有多项时需要同时都符合才认为命中。
             </summary>
         </member>
-        <member name="P:GY02.Templates.GameThingPreconditionItem.IgnoreIfDisplayList">
-            <summary>
-            在获取显示列表的时候，是否忽略该条件，视同满足。
-            </summary>
-            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
-        </member>
         <member name="P:GY02.Templates.GameThingPreconditionItem.GroupMask">
             <summary>
-            条件组掩码。最多可以有32个条件组。在测试是否满足条件时，根据条件组选取的掩码来测试条件。如要求符合条件的掩码是2，则此属性为2，6，7的条件都被考虑在内。
+            条件组掩码。最多可以有32个条件组。在测试是否满足条件时，根据条件组选取的掩码来测试条件。如要求符合条件的掩码是2，则此属性为2，3，6，7的条件都被考虑在内。
             目前预先定义的值：1 表示执行条件组，2 表示获取列表的条件组（未来可能有其它定义，如4可能表示预览条件组，它既不同于执行也不同于获取列表的要求）。
             设置为3则表示执行和获取列表时都要考虑在内。
             </summary>
             <value>值为0则表示这是一个旧式条件，不使用掩码决定测试的场景。仅为兼容性考虑，暂时保留0.未来0是临时使该条件失效的设置。</value>
+        </member>
+        <member name="M:GY02.Templates.GameThingPreconditionItem.IsValidate(System.Int32)">
+            <summary>
+            此项是否符合掩码条件。
+            </summary>
+            <param name="mask"></param>
+            <returns></returns>
         </member>
         <member name="M:GY02.Templates.GameThingPreconditionItem.ToString">
             <summary>
             <inheritdoc/>
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:GY02.Templates.GameThingPreconditionItem.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Templates.GameThingPreconditionItem.Clone">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="T:GY02.Templates.GeneralConditionalItem">
             <summary>
@@ -767,6 +826,11 @@
         <member name="P:GY02.Templates.GeneralConditionalItem.ValidOperator">
             <summary>
             有效操作符列表。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.#ctor">
+            <summary>
+            构造函数。
             </summary>
         </member>
         <member name="P:GY02.Templates.GeneralConditionalItem.Operator">
@@ -788,12 +852,6 @@
             <summary>
             一组参数值,参数的顺序和数量由运算符指定。，有多少个元素由运算符指定。
             </summary>
-        </member>
-        <member name="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList">
-            <summary>
-            在获取显示列表的时候，是否忽略该条件，视同满足。
-            </summary>
-            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
         </member>
         <member name="M:GY02.Templates.GeneralConditionalItem.TryGetPropertyInfo(System.Object,System.Reflection.PropertyInfo@)">
             <summary>
@@ -824,7 +882,7 @@
             获取一个指示指定实体是否符合指定条件。
             </summary>
             <param name="entity"></param>
-            <param name="ignore">是否忽略<see cref="P:GY02.Templates.GeneralConditionalItem.IgnoreIfDisplayList"/>为true的项，即立即返回true。</param>
+            <param name="ignore">保留未用。</param>
             <returns>true符合条件，false不符合条件或出错，<see cref="M:System.OwHelper.GetLastError"/>是ErrorCodes.NO_ERROR则是不符合条件。</returns>
         </member>
         <member name="M:GY02.Templates.GeneralConditionalItem.TryGetValue(System.Object@,System.Object[])">
@@ -833,6 +891,20 @@
             </summary>
             <param name="value">返回值</param>
             <param name="objs">运行时附属参数。</param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Templates.GeneralConditionalItem.Clone">
+            <summary>
+            <inheritdoc/>
+            </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
@@ -857,16 +929,12 @@
             注意消耗数量可能是0，代表需要此物品但不消耗此物品。
             </summary>
         </member>
-        <member name="P:GY02.Templates.BlueprintInItem.Genus">
+        <member name="M:GY02.Templates.BlueprintInItem.Clone">
             <summary>
-            与主材料共有类属。暂时未启用。
+            <inheritdoc/>
             </summary>
-        </member>
-        <member name="P:GY02.Templates.BlueprintInItem.IgnoreIfDisplayList">
-            <summary>
-            在获取显示列表的时候，是否忽略该条件，视同满足。
-            </summary>
-            <value>true在获取显示列表的时候，是否忽略该条件，视同满足。false或省略此项则表示不忽略。</value>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
         </member>
         <member name="M:GY02.Templates.BlueprintInItem.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
             <summary>
@@ -952,6 +1020,13 @@
             达到优惠次数时，使用此TId使用的卡池进行1次抽奖。可以是null。
             </summary>
         </member>
+        <member name="M:GY02.Templates.GameDice.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
+            <returns></returns>
+        </member>
         <member name="M:GY02.Templates.GameDice.Clone">
             <summary>
             获取一个深表副本。
@@ -989,6 +1064,14 @@
             <summary>
             获取一个深表副本。
             </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:GY02.Templates.GameDiceItem.Validate(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            <inheritdoc/>
+            </summary>
+            <param name="validationContext"></param>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
@@ -1080,6 +1163,31 @@
             深度克隆该对象。
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:GY02.Templates.GameEventTO">
+            <summary>
+            事件模板类。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.GameEventTO.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEventTO.EventId">
+            <summary>
+            事件Id。这个Id有由服务器给列表，标记出每个id的意义。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEventTO.Ins">
+            <summary>
+            守卫条件，仅当所有条件满足时猜执行后续任务。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameEventTO.Outs">
+            <summary>
+            要改变的实体摘要集合。特别地，其中 GameEntitySummary.Count 属性应设置为0，表示使用事件的增量值（如增加了多少个击杀的精英怪）替代。
+            </summary>
         </member>
         <member name="T:GY02.Publisher.ProjectContent">
             <summary>

@@ -38,7 +38,7 @@
   <Class Name="GY02.Managers.GameEntityManager">
     <Position X="6" Y="3.5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AwCGIACAAKCBAAAAAAARAQAQAAEAAEgAAEAJAIQAAAA=</HashCode>
+      <HashCode>AgCGIACAAKCBAAAAAAARAQAQAAEAAEgAAEAJAIQAAAA=</HashCode>
       <FileName>Managers\GameEntityManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -72,7 +72,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="OW.Game.Managers.GameTemplateManager" Collapsed="true">
-    <Position X="4.75" Y="2.25" Width="1.5" />
+    <Position X="4.75" Y="2.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAwAAACCABQAAACAAAIGAgTQEABACIAQQEAAAAAA=</HashCode>
       <FileName>Managers\GameTemplateManager.cs</FileName>
@@ -103,7 +103,7 @@
   <Class Name="GY02.Managers.GameBlueprintManager">
     <Position X="7.25" Y="9.75" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AQAAAgAAAAAAAAAAAAgAAAIQAAAAAAIAAAAAAAAAAgA=</HashCode>
+      <HashCode>AQACCgAAAAAAAAAAAABAAAIAAAAAAAAAAAAAAIAAAgA=</HashCode>
       <FileName>Managers\GameBlueprintManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -171,7 +171,7 @@
   <Class Name="GY02.Managers.GameMailManager">
     <Position X="9.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>BAAAAAEAAACACAAgAAAAAAAAAAABAIAAAAAQAAAIAgA=</HashCode>
+      <HashCode>BAAAAAEAAACACAAgAAAAAAAAAAEBAIAAAAAQAAAIAgA=</HashCode>
       <FileName>Managers\GameMailManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -232,9 +232,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GY02.Managers.GameAchievementManager">
-    <Position X="7.25" Y="12.25" Width="1.5" />
+    <Position X="7.5" Y="12.75" Width="1.5" />
+    <AssociationLine Name="_BlueprintManager" Type="GY02.Managers.GameBlueprintManager">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.152" Y="0.07" Height="0.174" Width="0.608" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AkAAABAAQEAgAAAAAAggAAAAUACCAAAgAEAAAIAAIgA=</HashCode>
+      <HashCode>AkQAABAAQEAgAQAAAAggAAAAVACCAAAIAAAAAIAAIgA=</HashCode>
       <FileName>Managers\GameAchievementManager.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

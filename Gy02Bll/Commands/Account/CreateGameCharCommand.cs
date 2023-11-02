@@ -25,6 +25,7 @@ namespace GY02.Commands
 
         public void Handled(CreateAccountCommand command, Exception exception = null)
         {
+            if (command.HasError || exception is not null) return;
             //创建角色
             var comm = new CreateGameCharCommand()
             {

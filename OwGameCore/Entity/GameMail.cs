@@ -80,11 +80,17 @@ namespace OW.Game.Entity
         /// <summary>
         /// 领取附件的日期，null标识尚未领取。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public DateTime? PickUpUtc { get; set; }
 
         /// <summary>
         /// 对没有附件且已读的邮件，多长时间删除。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public TimeSpan? DeleteDelay { get; set; }
 
         #endregion 动态属性

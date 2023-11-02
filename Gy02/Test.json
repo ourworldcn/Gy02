@@ -1,26 +1,80 @@
 {
-  "LvUpData": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "MinCount": 0
-        }
-      ],
-      "Counts": [ 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 15000, 15000, 15000, 15000, 15000, 20000, 20000, 20000, 20000, 20000, 25000, 25000, 25000, 25000, 25000, 30000, 30000, 30000, 30000, 30000, 35000, 35000, 35000, 35000, 35000, 40000, 40000, 40000, 40000, 40000, 45000, 45000, 45000, 45000, 45000, 50000, 50000, 50000, 50000, 50000, 55000, 55000, 55000, 55000, 55000, 60000, 60000, 60000, 60000, 60000 ]
-    },
-    {
-      "Conditional": [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "Genus": [],
-          "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-          "MinCount": 0
-        }
-      ],
-      "Counts": [ 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 10, 10, 10, 10, 10, 15, 15, 15, 15, 15, 20, 20, 20, 20, 20, 25, 25, 25, 25, 25, 30, 30, 30, 30, 30, 35, 35, 35, 35, 35, 40, 40, 40, 40, 40, 50, 50, 50, 50, 50 ]
-    }
-  ]
+  "GameEvent": {
+    "EventId": "c23f5f0a-f4b9-4a27-bad3-8556a18f83ff",
+    "Ins": [],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "2913b8e2-3db3-4204-b36c-415d6bc6b3f0",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "9ee462a9-36a6-4199-8169-ad64e83c3ccc",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "5f91380c-961c-4311-a51a-57ad73222045",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "d6448445-f7da-42e9-a383-36f63731de6b",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "0d188f0d-0040-48ed-9ba1-b946413ea82b",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "0913a1e2-dbd5-4b4c-a1f8-ca6c6680c794",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "388ae832-9556-43a8-9165-c2d5ffc6b2f4",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "4556b66a-5565-4f3c-87e4-d8f4434217fb",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "4556b66a-5565-4f3c-87e4-d8f4434217fb",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      }
+    ]
+  }
 }

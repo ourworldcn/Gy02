@@ -5,6 +5,7 @@ using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
+using OW.Game.Managers;
 using OW.SyncCommand;
 
 namespace Gy02.Controllers
@@ -18,11 +19,12 @@ namespace Gy02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public AchievementController(GameAccountStoreManager accountStore, IMapper mapper, SyncCommandManager syncCommandManager)
+        public AchievementController(GameAccountStoreManager accountStore, IMapper mapper, SyncCommandManager syncCommandManager, GameTemplateManager templateManager)
         {
             _AccountStore = accountStore;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
+            _TemplateManager = templateManager;
         }
 
         private GameAccountStoreManager _AccountStore;
@@ -30,6 +32,8 @@ namespace Gy02.Controllers
         IMapper _Mapper;
 
         SyncCommandManager _SyncCommandManager;
+
+        GameTemplateManager _TemplateManager;
 
 #if DEBUG
         /// <summary>
@@ -49,9 +53,12 @@ namespace Gy02.Controllers
         /// 按指定的页签返回一组任务/成就的状态。
         /// </summary>
         /// <param name="model"></param>
+        /// <param name="blueprintManager"></param>
+        /// <param name="entityManager"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<GetAchievementStateWithGenusReturnDto> GetAchievementStateWithGenus(GetAchievementStateWithGenusParamsDto model)
+        public ActionResult<GetAchievementStateWithGenusReturnDto> GetAchievementStateWithGenus(GetAchievementStateWithGenusParamsDto model,
+            [FromServices] GameBlueprintManager blueprintManager, [FromServices] GameEntityManager entityManager)
         {
             var result = new GetAchievementStateWithGenusReturnDto { };
             using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
@@ -63,12 +70,42 @@ namespace Gy02.Controllers
             }
 
             var command = new GetAchievementStateWithGenusCommand { GameChar = gc, };
+            var now = OwHelper.WorldNow;
 
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);
             _Mapper.Map(command, result);
-            if (model.OnlyValid)
-                result.Result.RemoveAll(c => !c.IsValid);
+
+            if (!result.HasError)   //若需要后处理
+            {
+                if (model.OnlyValid)
+                    result.Result.RemoveAll(c => !c.IsValid);
+
+                foreach (var item in result.Result)
+                {
+                    if (!item.IsValid) continue;
+                    if (_TemplateManager.GetFullViewFromId(item.TemplateId) is not TemplateStringFullView tt) continue;
+                    if (tt.Genus is null || tt.Genus.Length <= 0) continue;
+                    if (tt.Genus.Contains("cj_meiri"))  //日任务
+                    {
+                        item.Start = now.Date;
+                        item.End = now.Date + TimeSpan.FromDays(1);
+                    }
+                    else if (tt.Genus.Contains("cj_zhourenwu"))//周任务
+                    {
+                        var inItem = tt.Achievement.Ins?[0];
+                        if (inItem is null) continue;
+                        var cond = inItem.Conditional?[0];
+                        if (cond is null) continue;
+                        if (cond.NumberCondition is not NumberCondition nc) continue;
+                        if (blueprintManager.GetMatch(entityManager.GetAllEntity(command.GameChar), inItem, 1) is not OW.Game.Entity.GameEntity ge) continue;    //转轮
+                        var current = ge.Count;
+                        if (!nc.GetCurrentPeriod(current, out var s, out var e)) continue;
+                        item.Start = now.Date - TimeSpan.FromDays((double)(current - s));
+                        item.End = now.Date + TimeSpan.FromDays((double)(e - current));
+                    }
+                }
+            }
             return result;
         }
 
@@ -121,6 +158,8 @@ namespace Gy02.Controllers
             _Mapper.Map(command, result);
             return result;
         }
+
+
     }
 
 }

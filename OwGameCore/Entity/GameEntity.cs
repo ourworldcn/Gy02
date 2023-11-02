@@ -46,6 +46,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 等级。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         [JsonPropertyName("lv")]
         public virtual decimal Level { get; set; }
 
@@ -54,7 +57,10 @@ namespace OW.Game.Entity
         /// <summary>
         /// 数量。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         [JsonPropertyOrder(10)]
+#endif
         public decimal Count
         {
             get
@@ -80,9 +86,20 @@ namespace OW.Game.Entity
         }
 
         /// <summary>
+        /// 创建此对象的世界时间。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public DateTime? CreateDateTime { get; set; } = OwHelper.WorldNow;
+
+        /// <summary>
         /// Count 属性最后的修改时间。修改Count属性时自动修改此属性。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         [JsonPropertyOrder(11)]
+#endif
         public DateTime? CountOfLastModifyUtc { get; set; }
 
         /// <summary>
@@ -106,6 +123,25 @@ namespace OW.Game.Entity
         /// </summary>
         public Dictionary<string, string> ClientDictionary { get; set; } = new Dictionary<string, string>();
 
+        /// <summary>
+        /// 按给定序列和当前对象的 <see cref="Count"/> 属性设置 <see cref="Level"/> 属性。
+        /// </summary>
+        /// <param name="seq">经验序列，必须严格递增。否则行为未知。</param>
+        public void RefreshLevel(IList<decimal> seq)
+        {
+            var count = Count;
+            var i = seq.Count - 1;
+            for (; i >= 0; i--)
+                if (count >= seq[i])    //若找到
+                    break;
+            Level = i + 1;
+        }
+
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             var name = ((Thing as VirtualThing)?.GetTemplate())?.DisplayName;

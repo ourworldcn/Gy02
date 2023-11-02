@@ -185,6 +185,11 @@ namespace GY02.Publisher
         public List<GameEntitySummaryDto> CompositingAccruedCost { get; set; } = new List<GameEntitySummaryDto>();
 
         /// <summary>
+        /// 创建此对象的世界时间。
+        /// </summary>
+        public DateTime? CreateDateTime { get; set; }
+
+        /// <summary>
         /// Count 属性最后的修改时间。
         /// </summary>
         public DateTime? CountOfLastModifyUtc { get; set; }
@@ -291,35 +296,35 @@ namespace GY02.Publisher
         /// </summary>
         public string DisplayName { get; set; }
 
-        /// <summary>
-        /// 攻击数值序列。
-        /// </summary>
-        [JsonPropertyName("atk")]
-        public decimal Atk { get; set; }
+        /*     /// <summary>
+             /// 攻击数值序列。
+             /// </summary>
+             //[JsonPropertyName("atk")]
+             //public decimal Atk { get; set; }
 
-        /// <summary>
-        /// 防御数值序列。
-        /// </summary>
-        [JsonPropertyName("def")]
-        public decimal Def { get; set; }
+             ///// <summary>
+             ///// 防御数值序列。
+             ///// </summary>
+             //[JsonPropertyName("def")]
+             //public decimal Def { get; set; }
 
-        /// <summary>
-        /// 力量属性数值序列。
-        /// </summary>
-        [JsonPropertyName("pow")]
-        public decimal Pow { get; set; }
+             ///// <summary>
+             ///// 力量属性数值序列。
+             ///// </summary>
+             //[JsonPropertyName("pow")]
+             //public decimal Pow { get; set; }
 
-        /// <summary>
-        /// 暴击率。
-        /// </summary>
-        [JsonPropertyName("crit_pct")]
-        public decimal CritPct { get; set; }
+             ///// <summary>
+             ///// 暴击率。
+             ///// </summary>
+             //[JsonPropertyName("crit_pct")]
+             //public decimal CritPct { get; set; }
 
-        /// <summary>
-        /// 暴击倍数。1表示暴击和普通上海一致。
-        /// </summary>
-        [JsonPropertyName("crit")]
-        public decimal Crit { get; set; }
+             ///// <summary>
+             ///// 暴击倍数。1表示暴击和普通上海一致。
+             ///// </summary>
+             //[JsonPropertyName("crit")]
+             //public decimal Crit { get; set; }*/
 
         /// <summary>
         /// 角色当前所处战斗的关卡模板Id。
@@ -508,26 +513,28 @@ namespace GY02.Publisher
 
         }
 
+        /*
         #region 装备数据
         /// <summary>
         /// 攻击数值序列。
         /// </summary>
-        [JsonPropertyName("atk")]
-        public decimal Atk { get; set; }
+        //[JsonPropertyName("atk")]
+        //public decimal Atk { get; set; }
 
-        /// <summary>
-        /// 防御数值序列。
-        /// </summary>
-        [JsonPropertyName("def")]
-        public decimal Def { get; set; }
+        ///// <summary>
+        ///// 防御数值序列。
+        ///// </summary>
+        //[JsonPropertyName("def")]
+        //public decimal Def { get; set; }
 
-        /// <summary>
-        /// 力量属性数值序列。
-        /// </summary>
-        [JsonPropertyName("pow")]
-        public decimal Pow { get; set; }
+        ///// <summary>
+        ///// 力量属性数值序列。
+        ///// </summary>
+        //[JsonPropertyName("pow")]
+        //public decimal Pow { get; set; }
 
         #endregion 装备数据
+        */
     }
 
     /// <summary>
@@ -2153,6 +2160,15 @@ namespace GY02.Publisher
         /// </summary>
         public bool IsValid { get; set; }
 
+        /// <summary>
+        /// 起始时间，若当前不在有效时间段内，则是随后最近的一个有效周期的起始时间。
+        /// </summary>
+        public DateTime Start { get; set; }
+
+        /// <summary>
+        /// 终止时间，若当前不在有效时间段内，则是随后最近的一个有效周期的终止时间。
+        /// </summary>
+        public DateTime End { get; set; }
         #endregion 可复制属性
 
     }

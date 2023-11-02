@@ -42,7 +42,7 @@ namespace Microsoft.Extensions.ObjectPool
             /// </summary>
             public AutoClearPooledObjectPolicy()
             {
-                _Clear = typeof(T).GetMethod("Clear", Array.Empty<Type>());
+                _Clear = typeof(T).GetMethod("Clear", Type.EmptyTypes);
             }
 
 

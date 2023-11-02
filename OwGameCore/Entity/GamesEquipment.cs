@@ -24,18 +24,27 @@ namespace OW.Game.Entity
         /// <summary>
         /// 攻击数值序列。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         [JsonPropertyName("atk")]
         public decimal Atk { get; set; }
 
         /// <summary>
         /// 防御数值序列。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         [JsonPropertyName("def")]
         public decimal Def { get; set; }
 
         /// <summary>
         /// 力量属性数值序列。
         /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         [JsonPropertyName("pow")]
         public decimal Pow { get; set; }
 

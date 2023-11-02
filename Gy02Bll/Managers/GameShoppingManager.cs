@@ -130,7 +130,7 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
                 return false;
             }
-            if (!IsMatchWithoutBuyed(gameChar, shoppingItem, nowUtc, out periodStart)) return false;  //若时间点无效
+            if (!IsMatchWithoutBuyed(gameChar, shoppingItem, nowUtc, out periodStart, 1)) return false;  //若时间点无效
             var end = periodStart + shoppingItem.Period.ValidPeriod;
             if (!IsMatchOnlyCount(gameChar, tt, periodStart, end, out _))
             {
@@ -148,9 +148,9 @@ namespace GY02.Managers
         /// <param name="tt"></param>
         /// <param name="nowUtc"></param>
         /// <param name="periodStart">返回true时这里返回<paramref name="nowUtc"/>时间点所处周期的起始时间点。其它情况此值是随机值。</param>
-        /// <param name="ignore">是否忽略仅用于购买的条件。</param>
+        /// <param name="mask">条件组掩码。</param>
         /// <returns>true指定的商品项对指定用户而言在指定时间点上有效。</returns>
-        public bool IsMatchWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
+        public bool IsMatchWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart, int mask)
         {
             var shoppingItem = GetShoppingItemByTemplate(tt);
             if (shoppingItem is null)
@@ -158,7 +158,7 @@ namespace GY02.Managers
                 periodStart = default;
                 return false;
             }
-            return IsMatchWithoutBuyed(gameChar, shoppingItem, OwHelper.WorldNow, out periodStart, ignore);
+            return IsMatchWithoutBuyed(gameChar, shoppingItem, OwHelper.WorldNow, out periodStart, mask);
         }
 
         /// <summary>
@@ -168,21 +168,21 @@ namespace GY02.Managers
         /// <param name="shoppingItem"></param>
         /// <param name="nowUtc"></param>
         /// <param name="periodStart"></param>
+        /// <param name="mask"></param>
         /// <returns></returns>
-        public bool IsMatchWithoutBuyed(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart, bool ignore = false)
+        public bool IsMatchWithoutBuyed(GameChar gameChar, GameShoppingItem shoppingItem, DateTime nowUtc, out DateTime periodStart, int mask)
         {
             if (!shoppingItem.Period.IsValid(nowUtc, out periodStart)) return false;  //若时间点无效
-            //检测购买代价
-            if (ignore && shoppingItem.Ins.All(c => c.IgnoreIfDisplayList))
-                return true;
-            var b = _BlueprintManager.IsValid(shoppingItem.Ins, _EntityManager.GetAllEntity(gameChar), ignore);
-            if (!b)
+                                                                                      //检测购买代价
+                                                                                      //if (!shoppingItem.Ins.All(c => c.Conditional.All(d => d.IsValidate(mask))))
+                                                                                      //    return false;
+            var entities = _EntityManager.GetAllEntity(gameChar);
+            var ins = shoppingItem.Ins.Select(c => _BlueprintManager.Transformed(c, entities));
+            var b = _BlueprintManager.GetMatches(entities, ins, mask);
+            if (b.Any(c => c.Item1 is null))
             {
                 return false;
             }
-            //var costs = _BlueprintManager.GetCost(gameChar.GetAllChildren().Select(c => _EntityManager.GetEntity(c)), shoppingItem.Ins);
-            //if (costs is null)
-            //    return false;
             return true;
         }
 
