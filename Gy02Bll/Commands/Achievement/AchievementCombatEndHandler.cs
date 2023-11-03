@@ -41,6 +41,7 @@ namespace GY02.Commands.Achievement
             var now = OwHelper.WorldNow;
             if (_CombatManager.GetTemplateById(command.CombatTId) is TemplateStringFullView ttCombat)
             {
+                SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, now, null);
                 if (ttCombat.Gid / 1000 == 210101)   //若是主线任务关卡
                 {
                     var coll = from summary in command.Others
@@ -55,7 +56,6 @@ namespace GY02.Commands.Achievement
                     var types_boss = coll.Where(c => c.tt.Genus.Contains("types_boss")).Sum(c => c.count);
                     var types_egg = coll.Where(c => c.tt.Genus.Contains("types_egg")).Sum(c => c.count);
 
-                    SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, now, null);
                     //杀主线副本所有怪物物数量变化事件 3fa85f64-5717-4562-b3fc-2c963f66afa6
                     _EventManager.SendEvent(Guid.Parse("3fa85f64-5717-4562-b3fc-2c963f66afa6"), types_all, context);
 
@@ -77,6 +77,13 @@ namespace GY02.Commands.Achievement
                             _AchievementManager.RaiseEventIfChanged(achi, 1, command.GameChar, now);
                         }
                     }
+                }
+                //处理角色经验/等级
+                Guid tidJingyan = Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061");
+                if (command.Others.Concat(command.Others).Any(c => c.TId == tidJingyan))   //若奖励了经验
+                {
+                    var count = command.Others.Concat(command.Others).Sum(c => c.Count);
+                    _EventManager.SendEvent(Guid.Parse("6afdddd0-b98d-45fc-8f8d-41fb1f929cf8"), count, context);
                 }
             }
         }
