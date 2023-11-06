@@ -80,9 +80,9 @@ namespace GY02.Commands.Achievement
                 }
                 //处理角色经验/等级
                 Guid tidJingyan = Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061");
-                if (command.Others.Concat(command.Others).Any(c => c.TId == tidJingyan))   //若奖励了经验
+                if (command.Rewards.Concat(command.Others).Any(c => c.TId == tidJingyan))   //若奖励了经验
                 {
-                    var count = command.Others.Concat(command.Others).Sum(c => c.Count);
+                    var count = command.Rewards.Concat(command.Others).Where(c => c.TId == tidJingyan).Sum(c => c.Count);
                     _EventManager.SendEvent(Guid.Parse("6afdddd0-b98d-45fc-8f8d-41fb1f929cf8"), count, context);
                 }
             }

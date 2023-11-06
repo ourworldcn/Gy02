@@ -2183,7 +2183,7 @@ namespace GY02.Publisher
         /// 奖励。注意该奖励是经过翻译的，即不会包含序列和卡池项。在生成该项时会确定随机性（虽然一般不会有随机奖励）。
         /// 若需要找到原定义去找对应的模板数据。
         /// </summary>
-        public List<GameEntitySummaryDto> Rewards { get; set; } = new List<GameEntitySummaryDto>();
+        //public List<GameEntitySummaryDto> Rewards { get; set; } = new List<GameEntitySummaryDto>();
 
         /// <summary>
         /// 是否已经达成该等级。true已经达成，false未达成。
