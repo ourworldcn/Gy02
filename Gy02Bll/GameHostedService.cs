@@ -223,6 +223,11 @@ namespace GY02
                 int i = 1000;
                 var coll = EF.CompileQuery((GY02UserContext c) => c.VirtualThings.OrderBy(c => c.ExtraGuid).Skip(i).Take(5).Select(c => c.Id));
                 var ss = coll.Invoke(db).ToArray();
+
+                Dictionary<string, string> dic = new Dictionary<string, string> { { "Id", "C5F67A61-0385-4FB8-BA50-CD23399C06EE" },
+                    { "Atk","4"} };
+
+                var tmp = mapper.Map<GameChar>(dic);
             }
             #endregion 测试用代码
             catch (Exception)
