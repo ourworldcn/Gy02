@@ -218,8 +218,16 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var str1 = "{\"GameEvent\":{/*游戏内事件*/\"EventId\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\",/*服务器定义*/\"Ins\":[/*守卫条件，有多条则需要都满足*/{\"Conditional\":[{\"TId\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"ParentTId\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Genus\":[],\"NumberCondition\":{/*通常不用\"PropertyName\":\"string\",\"MinValue\":0,\"MaxValue\":0,\"Subtrahend\":0,\"Modulus\":0,\"MinRemainder\":0,\"MaxRemainder\":0*/},\"MinCount\":0,\"GeneralConditional\":[/*根据需要设置{\"op\":\"string\",\"pn\":\"string\",\"args\":[\"string\"]}*/],\"GroupMask\":0}],\"Count\":0/*对事件通常为0*/}],\"Outs\":[/*产出*/{\"Id\":null,/*通常为null*/\"ParentTId\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"TId\":\"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\"Count\":0,/*对事件设置一般保留为0*/\"AddPropertyDictionary\":{/*合并计算的数值属性*/\"additionalProp1\":0},\"additionalProp1\":\"string\"/*追加属性*/}]}}";
-                var obj = JsonSerializer.Deserialize<TemplateStringFullView>(str1, new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip });
+                var fac = _Services.GetRequiredService<IDbContextFactory<GY02UserContext>>();
+                using var db = fac.CreateDbContext();
+                int i = 1000;
+                var coll = EF.CompileQuery((GY02UserContext c) => c.VirtualThings.OrderBy(c => c.ExtraGuid).Skip(i).Take(5).Select(c => c.Id));
+                var ss = coll.Invoke(db).ToArray();
+
+                Dictionary<string, string> dic = new Dictionary<string, string> { { "Id", "C5F67A61-0385-4FB8-BA50-CD23399C06EE" },
+                    { "Atk","4"} };
+
+                var tmp = mapper.Map<GameChar>(dic);
             }
             #endregion 测试用代码
             catch (Exception)
@@ -235,7 +243,7 @@ namespace GY02
 
     //private unsafe void Awake()
     //{
-    //    byte[] sendByte = Encoding.ASCII.GetBytes("");
+    //    byte[] sendByte = Encoding.ASCII.GetBytes("");//FORWARDERS
 
     //    fixed (byte* pointerToFirst = &sendByte[0])
     //    {

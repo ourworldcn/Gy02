@@ -1,40 +1,16 @@
 {
-  "GameEvent": {
-    "EventId": "1d715f99-9b38-4241-ae95-f6335cea5e6a",
-    "Ins": [],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "ca978435-2d9e-43f8-91e6-f512fdbb7f70",
-        "Count": 1,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "deab47f9-cb5d-413b-9d84-e6998421022c",
-        "Count": 1,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "deab47f9-cb5d-413b-9d84-e6998421022c",
-        "Count": 1,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "5bc22823-23c3-444f-a7f1-c7a1389e54ff",
-        "Count": 1,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      }
-    ]
+  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
+  "Count": 30,
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+  "Fcps": {
+    "Count": {
+      "MinValue": 0,
+      "MaxValue": 30,
+      "StepValue": 1,
+      "Delay": "00:20:00",
+      "CurrentValue": 30
+    }
   }
 }

@@ -711,7 +711,14 @@ namespace GY02.Managers
                 if (!RemoveFromContainer(entity, changes) && OwHelper.GetLastError() != ErrorCodes.NO_ERROR) return false;
                 if (IsMerge(entity, container, out var dest))  //若找到可合并物
                 {
+                    var oldLv = dest.Level;
                     Modify(dest, entity.Count, changes);
+                    if (tt.Exp2LvSequence is decimal[] e2l && e2l.Length > 0)  //若需要转化等级
+                    {
+                        dest.RefreshLevel(e2l);
+                        if (oldLv != dest.Level)
+                            changes?.MarkChanges(dest, nameof(dest.Level), oldLv, dest.Level);
+                    }
                 }
                 else //没有可合并物
                 {
@@ -721,6 +728,13 @@ namespace GY02.Managers
                     if (thing is null) return false;
                     VirtualThingManager.Add(thing, parentThing);
                     changes?.CollectionAdd(entity, container);
+                    if (tt.Exp2LvSequence is decimal[] e2l && e2l.Length > 0)  //若需要转化等级
+                    {
+                        var oldLv = entity.Level;
+                        entity.RefreshLevel(e2l);
+                        if (oldLv != entity.Level)
+                            changes?.MarkChanges(entity, nameof(entity.Level), oldLv, entity.Level);
+                    }
                     InvokeEntityChanged(new GameEntity[] { entity }, null);
                 }
             }

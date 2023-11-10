@@ -47,6 +47,11 @@ namespace OW.Game.Entity
         /// </summary>
         public DateTime LastModifyDateTime { get; set; } = OwHelper.WorldNow;
 
+        /// <summary>
+        /// 最后一次标记的自传周期号。用于解决周期结束开始之间需要发生两个事件的问题。
+        /// </summary>
+        public decimal? LastMarkPeriodIndex { get; set; }
+
         #endregion 可复制属性
     }
 

@@ -46,7 +46,7 @@
       <FileName>Entity\GameSlot.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="OW.Game.Entity.GameUser" Collapsed="true">
+  <Class Name="OW.Game.Entity.GameUser">
     <Position X="14.75" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AMBAAAABoAAgAQAAAAAQAAAAIAAAAgIAAQAgAIABIAA=</HashCode>

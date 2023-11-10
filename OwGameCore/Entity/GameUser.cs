@@ -121,7 +121,7 @@ namespace OW.Game.Entity
         public string Region { get; set; }
 
         /// <summary>
-        /// 创建该对象的通用协调时间。
+        /// 创建该对象的世界时间。
         /// </summary>
         public DateTime CreateUtc { get; set; } = OwHelper.WorldNow;
 
