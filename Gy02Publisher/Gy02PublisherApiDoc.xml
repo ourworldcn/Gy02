@@ -724,6 +724,27 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
+        <member name="M:GY02.Templates.NumberCondition.GetNumber(System.Object)">
+            <summary>
+            从对象上获取属性值。
+            </summary>
+            <param name="obj"></param>
+            <returns>null表示对象上没有指定名称的属性或属性值无法转换为数值。否则返回属性值。</returns>
+        </member>
+        <member name="M:GY02.Templates.NumberCondition.IsMatch(System.Decimal)">
+            <summary>
+            获取指示：指定属性数是否在有效范围内。
+            </summary>
+            <param name="now"></param>
+            <returns>true有效，false无效。</returns>
+        </member>
+        <member name="M:GY02.Templates.NumberCondition.GetPeriodIndex(System.Decimal)">
+            <summary>
+            获取属性数，处于第几个周期内。
+            </summary>
+            <param name="now"></param>
+            <returns>null当前不在有效周期内，否则返回所处周期数，从0开始。</returns>
+        </member>
         <member name="M:GY02.Templates.NumberCondition.GetCurrentPeriod(System.Decimal,System.Decimal@,System.Decimal@)">
             <summary>
             获取指定数值所处周期。仅能对整数求解。

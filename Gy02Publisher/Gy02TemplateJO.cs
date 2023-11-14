@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using OW.DDD;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
@@ -1098,6 +1099,41 @@ namespace GY02.Templates
         }
 
         /// <summary>
+        /// 从对象上获取属性值。
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns>null表示对象上没有指定名称的属性或属性值无法转换为数值。否则返回属性值。</returns>
+        public decimal? GetNumber(object obj)
+        {
+            if (obj.GetType().GetProperty(PropertyName) is PropertyInfo pi && OwConvert.TryToDecimal(pi.GetValue(obj), out var deci)) return deci; //若非数值属性
+            return null;
+        }
+
+        /// <summary>
+        /// 获取指示：指定属性数是否在有效范围内。
+        /// </summary>
+        /// <param name="now"></param>
+        /// <returns>true有效，false无效。</returns>
+        public bool IsMatch(decimal now)
+        {
+            if (now < MinValue || now > MaxValue) return false;   //若本身超出范围
+            var ren = (now - Subtrahend) % Modulus; //求余数
+            return ren >= MinRemainder && ren <= MaxRemainder;
+        }
+
+        /// <summary>
+        /// 获取属性数，处于第几个周期内。
+        /// </summary>
+        /// <param name="now"></param>
+        /// <returns>null当前不在有效周期内，否则返回所处周期数，从0开始。</returns>
+        public int? GetPeriodIndex(decimal now)
+        {
+            if (!IsMatch(now)) return null;
+            var floor = Convert.ToInt32(Math.Floor((now - Subtrahend) / Modulus));  //整除商 ,周期号
+            return floor;
+        }
+
+        /// <summary>
         /// 获取指定数值所处周期。仅能对整数求解。
         /// </summary>
         /// <param name="now">要测试的属性数。</param>
@@ -1106,11 +1142,9 @@ namespace GY02.Templates
         /// <returns>true指定值在有效周期内，false指定值不在指定周期内。</returns>
         public bool GetCurrentPeriod(decimal now, out decimal start, out decimal end)
         {
-            if (now < MinValue || now > MaxValue) goto lbErr;   //若本身超出范围
-            var ren = (now - Subtrahend) % Modulus; //求余数
-            if (ren < MinRemainder || ren > MaxRemainder) goto lbErr;   //若余数超出范围
-            var floor = Convert.ToInt32(Math.Floor((now - Subtrahend) / Modulus));  //整除商
-            start = floor * Modulus + MinRemainder + Subtrahend;
+            var floor = GetPeriodIndex(now);  //周期号
+            if (floor is null) goto lbErr;
+            start = floor.Value * Modulus + MinRemainder + Subtrahend;
             end = start - MinRemainder + MaxRemainder;
             return true;
         lbErr:

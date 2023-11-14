@@ -367,6 +367,23 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool IsMatch(GameEntity entity, GameThingPreconditionItem condition)
         {
+            if (!IsMatchWithoutNumberCondition(entity, condition)) return false;
+            if (condition.NumberCondition is NumberCondition nc) //若需要判断数值条件
+            {
+                if (entity.GetType().GetProperty(nc.PropertyName) is not PropertyInfo pi || !OwConvert.TryToDecimal(pi.GetValue(entity), out var deci)) return false; //若非数值属性
+                if (!nc.IsMatch(deci)) return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// 指定实体是否符合指定条件的要求。此函数不考虑 <see cref="GameThingPreconditionItem.NumberCondition"/> 及条件组掩码问题，
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="condition"></param>
+        /// <returns>true符合条件，否则返回false。</returns>
+        public virtual bool IsMatchWithoutNumberCondition(GameEntity entity, GameThingPreconditionItem condition)
+        {
             if (condition.TId.HasValue) //若需要考虑模板id
                 if (condition.TId.Value != entity.TemplateId)
                     return false;
@@ -381,13 +398,6 @@ namespace GY02.Managers
             if (condition.ParentTId.HasValue)
                 if (thing.Parent is null || condition.ParentTId.Value != thing.Parent.ExtraGuid)
                     return false;
-            if (condition.NumberCondition is NumberCondition nc) //若需要判断数值条件
-            {
-                if (entity.GetType().GetProperty(nc.PropertyName) is not PropertyInfo pi || !OwConvert.TryToDecimal(pi.GetValue(entity), out var deci)) return false; //若非数值属性
-                if (deci > nc.MaxValue || deci < nc.MinValue) return false;
-                var tmp = (deci - nc.Subtrahend) % nc.Modulus;  //余数
-                if (tmp < nc.MinRemainder || tmp > nc.MaxRemainder) return false;
-            }
             if (!condition.GeneralConditional.All(c =>
             {
                 if (!_TemplateManager.TryGetValueFromConditionalItem(c, out var obj, entity))
