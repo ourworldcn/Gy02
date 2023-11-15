@@ -2934,800 +2934,800 @@
     {
       "Id": "a380e125-2640-409b-8c45-359ea2f734bb",
       "DisplayName": "灰山羊",
-      "Gid": 160201002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12401,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_777777\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
+      "Gid": 160201102,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12401,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_777777\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "b564395a-487d-4682-8dec-1338daee3952",
       "DisplayName": "粉山羊",
-      "Gid": 160201003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12402,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_e99b9c\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
+      "Gid": 160201103,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12402,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_e99b9c\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "26f7e185-6daa-428a-a86f-715258c43b4b",
       "DisplayName": "金山羊",
-      "Gid": 160201004,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12403,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_cj\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_e2b261\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_giraffe\"]}"
+      "Gid": 160201104,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12403,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_e2b261\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "18b7f5cf-fc73-4e8f-b443-a9204e010188",
       "DisplayName": "灰狼羊",
-      "Gid": 160201005,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12404,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Wolf\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
+      "Gid": 160201205,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12404,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Wolf\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "39f9e0eb-b143-493f-9100-4703f60ed632",
       "DisplayName": "鹿身羊",
-      "Gid": 160201006,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12405,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Giraffe\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_giraffe\"]}"
+      "Gid": 160201206,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12405,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Giraffe\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "77e38e0c-089c-4d45-866f-6d9a1a3f5bde",
       "DisplayName": "虎皮羊",
-      "Gid": 160201007,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12406,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_xy\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Tiger\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_tiger\"]}"
+      "Gid": 160201207,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12406,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Tiger\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "3b69a843-2e89-4ef5-9d9c-2779152ed2b1",
       "DisplayName": "羊头鲨",
-      "Gid": 160201013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12494,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Shark\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_shark\"]}"
+      "Gid": 160201213,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12494,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Shark\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "d81beb39-1ad4-4306-ba39-47f090640afe",
       "DisplayName": "守护羊",
-      "Gid": 160201008,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12407,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Dragon\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_dragon\"]}"
+      "Gid": 160201208,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12407,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Dragon\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "1bf4948d-fedc-4819-8e1f-41fe3a6d83f0",
       "DisplayName": "发条羊",
-      "Gid": 160201009,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12408,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Sheep_Legend_01\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_tiger\"]}"
+      "Gid": 160201309,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12408,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Sheep_Legend_01\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "90e13abc-aade-402c-9bc3-6bfb9d58d1d1",
       "DisplayName": "匪徒羊（七日登录）",
-      "Gid": 160201014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12513,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_qiandao\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Sheep_Legend_03\",\"source2\":[\"qiridenglu\",\"50007\"]}"
+      "Gid": 160201314,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12513,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_qiandao\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Sheep_Legend_03\",\"source2\":[\"qiridenglu\",\"50007\"]}"
     },
     {
       "Id": "cb2e74d5-43d9-4f70-9d16-31079cc8ef6d",
       "DisplayName": "羊头鸡身",
-      "Gid": 160201010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12479,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Chick\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_chick\"]}"
+      "Gid": 160201210,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12479,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Chick\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_chick\"]}"
     },
     {
       "Id": "84ed3da9-7c6d-4984-b3b5-916247e7aaa2",
       "DisplayName": "羊头猫身",
-      "Gid": 160201011,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12480,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Cat\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_cat\"]}"
+      "Gid": 160201211,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12480,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Cat\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_cat\"]}"
     },
     {
       "Id": "6d2f5bbc-e152-433d-a883-9b398735cac9",
       "DisplayName": "羊头狗身",
-      "Gid": 160201012,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12481,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Corgi\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_corgi\"]}"
+      "Gid": 160201212,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12481,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Corgi\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "506ebaf2-7060-4056-a047-31d383525848",
       "DisplayName": "羊头熊身",
-      "Gid": 160201015,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12517,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"7cbb0485-3903-46d2-ab7e-e0bc0290a5b4\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Bear\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_bear\"]}"
+      "Gid": 160201215,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12517,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"7cbb0485-3903-46d2-ab7e-e0bc0290a5b4\",\"enable\":true}],\"equipskin\":\"Sheep_Hybrid_Bear\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "dd2c75f5-176d-4af8-a47c-20bb6f313073",
       "DisplayName": "灰狼",
-      "Gid": 160203002,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12410,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_cj\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Wolf_Color_565866\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
+      "Gid": 160203102,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12410,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Wolf_Color_565866\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "6b7f8db2-3563-443b-9f85-174a1a226263",
       "DisplayName": "紫狼",
-      "Gid": 160203003,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12411,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_cj\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Wolf_Color_b6c0ad\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_giraffe\"]}"
+      "Gid": 160203103,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12411,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Wolf_Color_b6c0ad\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "9451d8a6-507b-46eb-b1be-1f653af21f0a",
       "DisplayName": "白狼",
-      "Gid": 160203004,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12412,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_cj\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Color_6f50ae\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_tiger\"]}"
+      "Gid": 160203104,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12412,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Color_6f50ae\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "be5d5262-9b67-4416-ba08-fa069bf4c311",
       "DisplayName": "狼头羊身",
-      "Gid": 160203005,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12413,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
+      "Gid": 160203205,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12413,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "4d87f0f0-5c82-4a83-a654-05bfdd3e95a5",
       "DisplayName": "狼头长颈鹿身",
-      "Gid": 160203006,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12414,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Hybrid_Giraffe\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_giraffe\"]}"
+      "Gid": 160203206,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12414,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Hybrid_Giraffe\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "6ce19f8f-4c23-4c56-805e-4a649318108f",
       "DisplayName": "狼头虎身",
-      "Gid": 160203007,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12415,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Hybrid_Tiger\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_tiger\"]}"
+      "Gid": 160203207,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12415,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Hybrid_Tiger\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "d0c41279-ed69-4a17-b2fa-2e1a37c81e7c",
       "DisplayName": "狼头龙身",
-      "Gid": 160203008,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12416,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Hybrid_Dragon\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_dragon\"]}"
+      "Gid": 160203208,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12416,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Wolf_Hybrid_Dragon\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "3a47c56c-fa8b-4293-98cd-d6c64690604a",
       "DisplayName": "闪电狼",
-      "Gid": 160203009,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12417,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_zg\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Wolf_Legend_01\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_dragon\"]}"
+      "Gid": 160203309,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12417,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Wolf_Legend_01\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "b4fa9009-5652-4ea1-9ca2-6c8beed3753d",
       "DisplayName": "狼头鸡身",
-      "Gid": 160203010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12476,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Chick\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_chick\"]}"
+      "Gid": 160203210,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12476,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Chick\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_chick\"]}"
     },
     {
       "Id": "714356af-4948-46b6-9dce-2b6fdc3ee2ab",
       "DisplayName": "狼头猫身",
-      "Gid": 160203011,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12477,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Cat\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_cat\"]}"
+      "Gid": 160203211,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12477,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Cat\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_cat\"]}"
     },
     {
       "Id": "fa112e6f-eb1c-4f46-a2e7-03cfbf70a320",
       "DisplayName": "狼头狗身",
-      "Gid": 160203012,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12478,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Corgi\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_corgi\"]}"
+      "Gid": 160203212,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12478,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Corgi\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "77aaeda3-d6ef-46be-ae72-61775472211c",
       "DisplayName": "狼头鲨",
-      "Gid": 160203013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12495,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Shark\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_shark\"]}"
+      "Gid": 160203213,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12495,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Shark\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "084d2322-56f0-4ec4-9c4f-c9325ad12889",
       "DisplayName": "狼头熊",
-      "Gid": 160203014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12518,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Bear\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_bear\"]}"
+      "Gid": 160203214,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12518,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Wolf_Hybrid_Bear\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "d05fd0f3-db38-4089-9ad9-f1dc677e217e",
       "DisplayName": "绿色鹿",
-      "Gid": 160204002,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12419,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_cj\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Giraffe_Color_dce555\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_dragon\"]}"
+      "Gid": 160204102,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12419,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Giraffe_Color_dce555\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "b4827ef0-710b-4ba0-8d43-187a685c673b",
       "DisplayName": "蓝色鹿",
-      "Gid": 160204003,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12420,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_cj\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Giraffe_Color_50dbe7\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_dragon\"]}"
+      "Gid": 160204103,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12420,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Giraffe_Color_50dbe7\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "9f12ff15-8e24-4672-b2da-d5a2263e3afb",
       "DisplayName": "紫色鹿",
-      "Gid": 160204004,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12421,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_cj\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Giraffe_Color_d955ac\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_dragon\"]}"
+      "Gid": 160204104,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12421,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Giraffe_Color_d955ac\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "7b4b5142-80fe-4e95-adbe-32c71589efe8",
       "DisplayName": "山羊鹿",
-      "Gid": 160204005,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12422,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Giraffe_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204205,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12422,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Giraffe_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "b14c117f-ad3d-47ed-9c96-2bbf5c2f9d04",
       "DisplayName": "狼皮鹿",
-      "Gid": 160204006,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12423,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Giraffe_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204206,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12423,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Giraffe_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "83ccf074-77b4-4ca5-82f4-84b0349dfb5b",
       "DisplayName": "虎身鹿",
-      "Gid": 160204007,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12424,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_xy\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Giraffe_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204207,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12424,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Giraffe_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "643d2f0c-2cc1-475c-a686-ae75981bdc19",
       "DisplayName": "守护鹿",
-      "Gid": 160204008,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12425,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Giraffe_Hybrid_Dragon\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204208,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12425,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Giraffe_Hybrid_Dragon\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "c2aa963d-a568-45fc-b4f0-646843e1a4fc",
       "DisplayName": "部落鹿",
-      "Gid": 160204009,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12426,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Giraffe_Legend_01\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204309,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12426,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Giraffe_Legend_01\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "7f917637-8767-47ec-a317-157b6540d5e4",
       "DisplayName": "长颈鹿头鸡身",
-      "Gid": 160204010,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12482,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204210,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12482,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "a649e568-f65b-4a64-ad51-ccfce73cf224",
       "DisplayName": "长颈鹿头猫身",
-      "Gid": 160204011,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12483,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204211,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12483,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "e2474a81-9404-457e-8932-ba063447d251",
       "DisplayName": "长颈鹿头狗身",
-      "Gid": 160204012,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12483,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Corgi\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204212,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12483,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Corgi\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "ad18e13f-7af8-4e4f-a545-064607ce0a8b",
       "DisplayName": "鹿头鲨",
-      "Gid": 160204013,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12496,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Shark\",\"source1\":[\"zuoqi_shark\",\"zuoqi_giraffe\"]}"
+      "Gid": 160204213,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12496,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Shark\",\"source1\":[\"zuoqi_shark\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "d338d279-fed9-4ea7-8224-075dac1cc02d",
       "DisplayName": "鹿头熊",
-      "Gid": 160204014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12519,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Bear\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_bear\"]}"
+      "Gid": 160204214,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12519,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Giraffe_Hybrid_Bear\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "d26aadc0-f9e6-430e-88c9-8d61d0100a09",
       "DisplayName": "丛林虎",
-      "Gid": 160202002,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12428,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Tiger_Color_beca55\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_tiger\"]}"
+      "Gid": 160202102,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12428,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Tiger_Color_beca55\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "524b552f-6ecc-4fbf-a388-4f70eab305b2",
       "DisplayName": "蓝皮虎",
-      "Gid": 160202003,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12429,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Tiger_Color_5997e5\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_tiger\"]}"
+      "Gid": 160202103,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12429,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Tiger_Color_5997e5\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "662b5b60-44a4-42d6-90d0-e5f422667890",
       "DisplayName": "白色虎",
-      "Gid": 160202004,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12430,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Tiger_Color_e0d5cc\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_giraffe\"]}"
+      "Gid": 160202104,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12430,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\": [],\"equipskin\":\"Tiger_Color_e0d5cc\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "6cbeaf9a-b2b5-4ed1-a2c3-201eb3b7f0ee",
       "DisplayName": "羊皮虎",
-      "Gid": 160202005,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12431,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Tiger_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_tiger\"]}"
+      "Gid": 160202205,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12431,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Tiger_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "928fb8a2-f3ab-4863-abf9-3992049cac4e",
       "DisplayName": "狼身虎",
-      "Gid": 160202006,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12432,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Tiger_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_tiger\"]}"
+      "Gid": 160202206,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12432,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Tiger_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "76cd417d-a78f-4818-8d84-1fb7c0a37fdb",
       "DisplayName": "鹿身虎",
-      "Gid": 160202007,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12433,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Tiger_Hybrid_Giraffe\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_giraffe\"]}"
+      "Gid": 160202207,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12433,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Tiger_Hybrid_Giraffe\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "c9bc26a8-7d8b-4c61-8be5-6d74dd7e3b9b",
       "DisplayName": "守护虎",
-      "Gid": 160202008,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12434,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Tiger_Hybrid_Dragon\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_dragon\"]}"
+      "Gid": 160202208,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12434,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Tiger_Hybrid_Dragon\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "b030897d-d5f3-439d-8910-624a76811b79",
       "DisplayName": "南瓜虎",
-      "Gid": 160202009,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12435,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Tiger_Legend_01\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_corgi\"]}"
+      "Gid": 160202309,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12435,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Tiger_Legend_01\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "52651918-cb98-412f-bb9c-7681cb2bc3f2",
       "DisplayName": "虎头鸡身",
-      "Gid": 160202010,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12485,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Chick\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_chick\"]}"
+      "Gid": 160202210,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12485,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Chick\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_chick\"]}"
     },
     {
       "Id": "7dc18013-ae81-409a-8c5e-d33374702346",
       "DisplayName": "虎头猫身",
-      "Gid": 160202011,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12486,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Cat\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_cat\"]}"
+      "Gid": 160202211,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12486,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Cat\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_cat\"]}"
     },
     {
       "Id": "c2399cf1-4bbe-4518-b077-3a5919678422",
       "DisplayName": "虎头狗身",
-      "Gid": 160202012,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12487,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Corgi\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_corgi\"]}"
+      "Gid": 160202212,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12487,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Corgi\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "7c674d2a-8bc2-4aa6-823d-0f887820117f",
       "DisplayName": "虎头鲨",
-      "Gid": 160202013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12497,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Shark\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_shark\"]}"
+      "Gid": 160202213,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12497,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Shark\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "d33ac59b-50ca-4841-857d-c6fbfdab3e5e",
       "DisplayName": "虎头熊",
-      "Gid": 160202014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12520,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Bear\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_bear\"]}"
+      "Gid": 160202214,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12520,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Tiger_Hybrid_Bear\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "3d28629d-0cc1-44f3-89e5-ae0ce6fde6dc",
       "DisplayName": "草原龙",
-      "Gid": 160205002,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12437,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Color_46b793\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_sheep\"]}"
+      "Gid": 160205102,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12437,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Color_46b793\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_sheep\"]}"
     },
     {
       "Id": "944a8ebc-b1f7-4b02-b090-5fd76d827b75",
       "DisplayName": "紫皮龙",
-      "Gid": 160205003,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12438,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Color_6550a4\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_dragon\"]}"
+      "Gid": 160205103,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12438,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Color_6550a4\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "20310983-8374-4dd1-805f-309e04cb6f9c",
       "DisplayName": "黄金龙",
-      "Gid": 160205004,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12439,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\", \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Color_ffe743\",\"source1\":[\"zuoqi_cat\",\"zuoqi_dragon\"]}"
+      "Gid": 160205104,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12439,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[ \"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Color_ffe743\",\"source1\":[\"zuoqi_cat\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "a4566768-ef1d-4498-b297-60ed005d6191",
       "DisplayName": "山羊龙",
-      "Gid": 160205005,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12440,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Sheep\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_sheep\"]}"
+      "Gid": 160205205,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12440,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Sheep\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_sheep\"]}"
     },
     {
       "Id": "45c351d1-3147-438d-b8c0-366f6a61d3eb",
       "DisplayName": "狼皮龙",
-      "Gid": 160205006,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12441,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_dragon\"]}"
+      "Gid": 160205206,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12441,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "13c638fb-86cd-473a-ae33-113239fc4fb8",
       "DisplayName": "虎皮龙",
-      "Gid": 160205007,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12442,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_dragon\"]}"
+      "Gid": 160205207,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12442,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "96c3230c-cc80-4d6b-b3f6-3804fc171bf0",
       "DisplayName": "鹿皮龙",
-      "Gid": 160205008,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12443,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Giraffe\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_dragon\"]}"
+      "Gid": 160205208,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12443,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\": [],\"equipskin\":\"Dragon_Hybrid_Giraffe\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "e4ace279-5ddb-4080-81e9-86e59f49a6b3",
       "DisplayName": "火焰龙",
-      "Gid": 160205009,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12444,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Dragon_Legend_01\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_dragon\"]}"
+      "Gid": 160205309,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12444,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\": [],\"equipskin\":\"Dragon_Legend_01\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "355dad94-7706-4765-bbf0-7cd4f85f7db2",
       "DisplayName": "龙头鸡身",
-      "Gid": 160205010,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12488,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_dragon\"]}"
+      "Gid": 160205210,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12488,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "a7610cfc-79de-4f95-b522-d3faf0d02499",
       "DisplayName": "龙头猫身",
-      "Gid": 160205011,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12489,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}] ,\"equipskin\":\"Dragon_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_dragon\"]}"
+      "Gid": 160205211,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12489,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}] ,\"equipskin\":\"Dragon_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "c5f671cf-32c7-46cd-ab97-47b43086159b",
       "DisplayName": "龙头狗身",
-      "Gid": 160205012,
-      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12490,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [ \"rarity_xy\", \"e_zuoqi\" ],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Corgi\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_dragon\"]}"
+      "Gid": 160205212,
+      "PropertiesString": "{\"TypeGuid\": \"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\": \"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\": 12490,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\": [  \"e_zuoqi\" ],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Corgi\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "23539a5f-78e5-49d8-b349-be11556757dd",
       "DisplayName": "龙头鲨",
-      "Gid": 160205013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12498,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Shark\",\"source1\":[\"zuoqi_shark\",\"zuoqi_dragon\"]}"
+      "Gid": 160205213,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12498,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Shark\",\"source1\":[\"zuoqi_shark\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "1fdb9155-4a43-4f1d-85fd-404dd23d511c",
       "DisplayName": "龙头熊",
-      "Gid": 160205014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12521,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Bear\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_bear\"]}"
+      "Gid": 160205214,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12521,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true}],\"equipskin\":\"Dragon_Hybrid_Bear\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "0bc7c3af-8cd5-4dd5-8c8c-548de10c027f",
       "DisplayName": "白色火鸡",
-      "Gid": 160207002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12445,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Color_E6EDEC\",\"source1\":[\"zuoqi_chick\",\"zuoqi_sheep\"]}"
+      "Gid": 160207102,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12445,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Color_E6EDEC\",\"source1\":[\"zuoqi_chick\",\"zuoqi_sheep\"]}"
     },
     {
       "Id": "3d716d41-ee18-4445-831d-96bf7a45f1fa",
       "DisplayName": "紫色火鸡",
-      "Gid": 160207003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12446,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Color_A050AE\",\"source1\":[\"zuoqi_chick\",\"zuoqi_wolf\"]}"
+      "Gid": 160207103,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12446,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Color_A050AE\",\"source1\":[\"zuoqi_chick\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "59dcec3c-0c5b-404f-a19d-402468cd84b6",
       "DisplayName": "金色火鸡",
-      "Gid": 160207004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12447,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Color_FDA31C\",\"source1\":[\"zuoqi_chick\",\"zuoqi_giraffe\"]}"
+      "Gid": 160207104,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12447,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Color_FDA31C\",\"source1\":[\"zuoqi_chick\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "f45a1b76-8b24-450d-8c93-d6fb5b81960f",
       "DisplayName": "鸡头羊身",
-      "Gid": 160207005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12448,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Sheep\",\"source1\":[\"zuoqi_chick\",\"zuoqi_sheep\"]}"
+      "Gid": 160207205,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12448,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Sheep\",\"source1\":[\"zuoqi_chick\",\"zuoqi_sheep\"]}"
     },
     {
       "Id": "5345cc96-ecee-4b31-a73a-0bee76824847",
       "DisplayName": "鸡头狼身",
-      "Gid": 160207006,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12449,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Wolf\",\"source1\":[\"zuoqi_chick\",\"zuoqi_wolf\"]}"
+      "Gid": 160207206,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12449,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Wolf\",\"source1\":[\"zuoqi_chick\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "1c2c1076-f013-444e-bf4a-f208fb071c68",
       "DisplayName": "鸡头长颈鹿身",
-      "Gid": 160207007,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12450,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Giraffe\",\"source1\":[\"zuoqi_chick\",\"zuoqi_giraffe\"]}"
+      "Gid": 160207207,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12450,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Giraffe\",\"source1\":[\"zuoqi_chick\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "2f9175aa-52ae-4da0-a1ae-793a3cb23bfb",
       "DisplayName": "鸡头虎身",
-      "Gid": 160207008,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12451,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Tiger\",\"source1\":[\"zuoqi_chick\",\"zuoqi_tiger\"]}"
+      "Gid": 160207208,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12451,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Tiger\",\"source1\":[\"zuoqi_chick\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "2f9156a9-36f3-457c-b369-a83035a3b8c5",
       "DisplayName": "鸡头龙身",
-      "Gid": 160207009,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12452,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Dragon\",\"source1\":[\"zuoqi_chick\",\"zuoqi_dragon\"]}"
+      "Gid": 160207209,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12452,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Dragon\",\"source1\":[\"zuoqi_chick\",\"zuoqi_dragon\"]}"
     },
     {
       "Id": "12430b1f-09c3-427a-b14b-c6923d82ed2f",
       "DisplayName": "鸡头猫身",
-      "Gid": 160207010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12453,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Cat\",\"source1\":[\"zuoqi_chick\",\"zuoqi_cat\"]}"
+      "Gid": 160207210,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12453,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Cat\",\"source1\":[\"zuoqi_chick\",\"zuoqi_cat\"]}"
     },
     {
       "Id": "27f0ee29-52dd-40b5-bb9b-3366c2eedfec",
       "DisplayName": "鸡头狗身",
-      "Gid": 160207011,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12454,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Corgi\",\"source1\":[\"zuoqi_chick\",\"zuoqi_corgi\"]}"
+      "Gid": 160207211,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12454,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Corgi\",\"source1\":[\"zuoqi_chick\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "d887a620-e675-49f3-a1f8-e82137b2034a",
       "DisplayName": "勇士火鸡",
-      "Gid": 160207012,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12493,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Legend_01\",\"source1\":[\"zuoqi_chick\",\"zuoqi_tiger\"]}"
+      "Gid": 160207312,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12493,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Chick_Legend_01\",\"source1\":[\"zuoqi_chick\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "5941cc1f-32f1-4210-ac96-33f834febc43",
       "DisplayName": "鸡头鲨",
-      "Gid": 160207013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12499,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Shark\",\"source1\":[\"zuoqi_chick\",\"zuoqi_shark\"]}"
+      "Gid": 160207213,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12499,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Shark\",\"source1\":[\"zuoqi_chick\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "b363d058-f630-4c97-8de0-7ffcb0add6f3",
       "DisplayName": "鸡头熊",
-      "Gid": 160211015,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12522,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Bear\",\"source1\":[\"zuoqi_chick\",\"zuoqi_bear\"]}"
+      "Gid": 160211215,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12522,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Chick_Hybrid_Bear\",\"source1\":[\"zuoqi_chick\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "cd917e6a-754b-463c-922e-2d1d565a7513",
       "DisplayName": "蓝猫",
-      "Gid": 160208002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12456,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Cat_Color_6A6D87\",\"source1\":[\"zuoqi_cat\",\"zuoqi_wolf\"]}"
+      "Gid": 160208102,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12456,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Cat_Color_6A6D87\",\"source1\":[\"zuoqi_cat\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "22b08a3f-1e7d-49a6-8875-c2dbaab574ff",
       "DisplayName": "黑猫",
-      "Gid": 160208003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12457,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Cat_Color_191919\",\"source1\":[\"zuoqi_cat\",\"zuoqi_sheep\"]}"
+      "Gid": 160208103,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12457,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Cat_Color_191919\",\"source1\":[\"zuoqi_cat\",\"zuoqi_sheep\"]}"
     },
     {
       "Id": "987cee4e-6919-4f24-b13e-ffb30cb311a5",
       "DisplayName": "橘猫",
-      "Gid": 160208004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12458,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Cat_Color_D88A36\",\"source1\":[\"zuoqi_cat\",\"zuoqi_giraffe\"]}"
+      "Gid": 160208104,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12458,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Cat_Color_D88A36\",\"source1\":[\"zuoqi_cat\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "601cd29c-2a7b-4c44-bc50-b9e80f328c45",
       "DisplayName": "猫头羊身",
-      "Gid": 160208005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12459,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Sheep\",\"source1\":[\"zuoqi_cat\",\"zuoqi_sheep\"]}"
+      "Gid": 160208205,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12459,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Sheep\",\"source1\":[\"zuoqi_cat\",\"zuoqi_sheep\"]}"
     },
     {
       "Id": "6aa7900e-f44c-4bd5-baca-76b4e1d8eb72",
       "DisplayName": "猫头狼身",
-      "Gid": 160208006,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12460,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Wolf\",\"source1\":[\"zuoqi_cat\",\"zuoqi_wolf\"]}"
+      "Gid": 160208206,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12460,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Wolf\",\"source1\":[\"zuoqi_cat\",\"zuoqi_wolf\"]}"
     },
     {
       "Id": "53d8a334-b8a0-4214-9382-cf3c64e2a82d",
       "DisplayName": "猫头长颈鹿身",
-      "Gid": 160208007,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12461,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Giraffe\",\"source1\":[\"zuoqi_cat\",\"zuoqi_giraffe\"]}"
+      "Gid": 160208207,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12461,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Giraffe\",\"source1\":[\"zuoqi_cat\",\"zuoqi_giraffe\"]}"
     },
     {
       "Id": "3fece1b2-cb3f-4302-9db4-5268bed05ea6",
       "DisplayName": "猫头虎身",
-      "Gid": 160208008,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12462,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Tiger\",\"source1\":[\"zuoqi_cat\",\"zuoqi_tiger\"]}"
+      "Gid": 160208208,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12462,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Tiger\",\"source1\":[\"zuoqi_cat\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "bf07c036-98ee-4bab-9d70-56b5be95cad2",
       "DisplayName": "猫头龙身",
-      "Gid": 160208009,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12463,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Dragon\",\"source1\":[\"zuoqi_cat\",\"zuoqi_gragon\"]}"
+      "Gid": 160208209,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12463,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Dragon\",\"source1\":[\"zuoqi_cat\",\"zuoqi_gragon\"]}"
     },
     {
       "Id": "22f114f0-cd71-4978-bb44-84409717a373",
       "DisplayName": "猫头鸡身",
-      "Gid": 160208010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12464,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Chick\",\"source1\":[\"zuoqi_cat\",\"zuoqi_chick\"]}"
+      "Gid": 160208210,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12464,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Chick\",\"source1\":[\"zuoqi_cat\",\"zuoqi_chick\"]}"
     },
     {
       "Id": "7f87e41c-fec6-44c3-bd0a-9c121ac580ae",
       "DisplayName": "猫头狗身",
-      "Gid": 160208011,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12465,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Corgi\",\"source1\":[\"zuoqi_cat\",\"zuoqi_corgi\"]}"
+      "Gid": 160208211,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12465,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Corgi\",\"source1\":[\"zuoqi_cat\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "4f299a2e-3b61-4a26-a561-7fba6591fad4",
       "DisplayName": "螃蟹猫",
-      "Gid": 160208012,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12492,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Legend_01\",\"source1\":[\"zuoqi_cat\",\"zuoqi_tiger\"]}"
+      "Gid": 160208312,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12492,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Legend_01\",\"source1\":[\"zuoqi_cat\",\"zuoqi_tiger\"]}"
     },
     {
       "Id": "0d80dddc-ab67-4a17-bc19-ff2eb6a6192f",
       "DisplayName": "猫头鲨",
-      "Gid": 160208013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12500,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Shark\",\"source1\":[\"zuoqi_cat\",\"zuoqi_shark\"]}"
+      "Gid": 160208213,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12500,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Shark\",\"source1\":[\"zuoqi_cat\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "71862474-2072-4407-896d-657e760f0dbf",
       "DisplayName": "猫头熊",
-      "Gid": 160208014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12523,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Bear\",\"source1\":[\"zuoqi_cat\",\"zuoqi_bear\"]}"
+      "Gid": 160208214,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12523,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Cat_Hybrid_Bear\",\"source1\":[\"zuoqi_cat\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "07b7a4f1-c7e9-4aa2-a0aa-354e59c842b9",
       "DisplayName": "黑色柯基",
-      "Gid": 160206002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12466,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Color_4D5157\",\"source1\":[\"zuoqi_cat\",\"zuoqi_corgi\"]}"
+      "Gid": 160206102,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12466,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Color_4D5157\",\"source1\":[\"zuoqi_cat\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "cb2429b7-6308-4ae7-8695-826706508cac",
       "DisplayName": "蓝色柯基",
-      "Gid": 160206003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12467,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Color_568BE2\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_corgi\"]}"
+      "Gid": 160206103,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12467,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Color_568BE2\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "ff72cfb0-a14a-4f6c-8dd2-6c1190cb9078",
       "DisplayName": "红色柯基",
-      "Gid": 160206004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12468,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Color_DB524A\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_corgi\"]}"
+      "Gid": 160206104,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12468,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Color_DB524A\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "5f15bb19-073c-4c00-a5d8-87959d820a3d",
       "DisplayName": "柯基头羊身",
-      "Gid": 160206005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12469,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_corgi\"]}"
+      "Gid": 160206205,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12469,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "fa96f361-f300-40b7-abd4-752eeb24ff43",
       "DisplayName": "柯基头狼身",
-      "Gid": 160206006,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12470,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_corgi\"]}"
+      "Gid": 160206206,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12470,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "01928e28-ee77-4f11-98aa-721e5ebec9a6",
       "DisplayName": "柯基头长颈鹿身",
-      "Gid": 160206007,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12471,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Giraffe\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_corgi\"]}"
+      "Gid": 160206207,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12471,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Giraffe\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "e7e7007a-b9f7-4de5-9570-a601300208a2",
       "DisplayName": "柯基头虎身",
-      "Gid": 160206008,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12472,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_corgi\"]}"
+      "Gid": 160206208,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12472,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "2a6b7077-e084-4519-92cb-e29260f908b6",
       "DisplayName": "柯基头龙身",
-      "Gid": 160206009,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12473,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Dragon\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_corgi\"]}"
+      "Gid": 160206209,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12473,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Dragon\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "7407d55f-c653-4487-9de0-75ec5a76e659",
       "DisplayName": "柯基头鸡身",
-      "Gid": 160206010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12474,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_corgi\"]}"
+      "Gid": 160206210,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12474,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "ddeb2a86-bc6e-42d4-a8e3-d866f8abb219",
       "DisplayName": "柯基头猫身",
-      "Gid": 160206011,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12475,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_corgi\"]}"
+      "Gid": 160206211,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12475,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "ef631e00-a039-44d7-b481-ab5885c12c3f",
       "DisplayName": "狗头鲨",
-      "Gid": 160206013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12501,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Shark\",\"source1\":[\"zuoqi_shark\",\"zuoqi_corgi\"]}"
+      "Gid": 160206213,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12501,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Shark\",\"source1\":[\"zuoqi_shark\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "561e90a4-c683-4ddf-85d4-f82919db4535",
       "DisplayName": "帽衫狗",
-      "Gid": 160206012,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12491,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Legend_01\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_corgi\"]}"
+      "Gid": 160206312,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12491,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Corgi_Legend_01\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_corgi\"]}"
     },
     {
       "Id": "1538d804-d608-4f9e-ab85-7d28f4c66ab0",
       "DisplayName": "狗头熊",
-      "Gid": 160206014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12524,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"b1dfb6b7-768a-4f07-ac60-282b4376a320\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Bear\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_bear\"]}"
+      "Gid": 160206214,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12524,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"b1dfb6b7-768a-4f07-ac60-282b4376a320\",\"enable\":true}],\"equipskin\":\"Corgi_Hybrid_Bear\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "4399dd8c-d004-4c26-9346-7fbbcf9eadbd",
       "DisplayName": "黄色鲨鱼",
-      "Gid": 160209002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12502,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":2}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Shark_Color_BC9A38\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_shark\"]}"
+      "Gid": 160209102,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12502,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":2}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Shark_Color_BC9A38\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "c9cbc2b3-0f41-496b-9865-2980b298f400",
       "DisplayName": "绿色鲨鱼",
-      "Gid": 160209003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12503,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Shark_Color_289D7B\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_shark\"]}"
+      "Gid": 160209103,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12503,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Shark_Color_289D7B\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "bd71928c-334e-4433-84a1-5941ea8148e4",
       "DisplayName": "黑色鲨鱼",
-      "Gid": 160209004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12504,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Shark_Color_242535\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_shark\"]}"
+      "Gid": 160209104,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12504,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":3}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Shark_Color_242535\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "089c207b-d43e-4929-81bf-246b3fd2bd48",
       "DisplayName": "鲨鱼头羊身",
-      "Gid": 160209005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12505,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_shark\"]}"
+      "Gid": 160209205,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12505,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "e5666b70-a567-46f3-967f-208a6877fb59",
       "DisplayName": "鲨鱼头狼身",
-      "Gid": 160209006,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12506,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_shark\"]}"
+      "Gid": 160209206,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12506,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "39954cb7-873a-407c-8afb-0dc043265a55",
       "DisplayName": "鲨鱼头长颈鹿身",
-      "Gid": 160209007,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12507,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Giraffe\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_shark\"]}"
+      "Gid": 160209207,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12507,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"979c4439-318e-4fa3-a26a-8811d5de6c2a\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Giraffe\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "60c16e21-b22e-4a3a-94dd-99b552b30230",
       "DisplayName": "鲨鱼头虎身",
-      "Gid": 160209008,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12508,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_shark\"]}"
+      "Gid": 160209208,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12508,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "03787b62-d1ea-42d8-b961-6f31995f930a",
       "DisplayName": "鲨鱼头龙身",
-      "Gid": 160209009,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12509,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Dragon\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_shark\"]}"
+      "Gid": 160209209,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12509,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Dragon\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "61c6d72a-4c44-4d97-9501-ff5e5d9c6fa1",
       "DisplayName": "鲨鱼头鸡身",
-      "Gid": 160209010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12510,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_shark\"]}"
+      "Gid": 160209210,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12510,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "6849e6dc-a75c-4903-a98e-589ebfe4112b",
       "DisplayName": "鲨鱼头猫身",
-      "Gid": 160209011,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12511,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_shark\"]}"
+      "Gid": 160209211,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12511,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "2de0e114-2d24-4b16-8102-907ec5ef1ec8",
       "DisplayName": "鲨鱼头柯基身",
-      "Gid": 160209012,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12512,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Corgi\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_shark\"]}"
+      "Gid": 160209212,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12512,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Corgi\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "ac541f0c-b3dd-490a-a815-8ccc8f763003",
       "DisplayName": "水果鲨",
-      "Gid": 160209013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12514,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":15}],\"p_skills\":[{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true}],\"equipskin\":\"Shark_Legend_01\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_shark\"]}"
+      "Gid": 160209313,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12514,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":15}],\"p_skills\":[{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true}],\"equipskin\":\"Shark_Legend_01\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_shark\"]}"
     },
     {
       "Id": "a571ab9d-cf3b-45c5-bf99-1f538937d684",
       "DisplayName": "鲨鱼熊",
-      "Gid": 160209014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12525,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Bear\",\"source1\":[\"zuoqi_shark\",\"zuoqi_bear\"]}"
+      "Gid": 160209214,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12525,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true}],\"equipskin\":\"Shark_Hybrid_Bear\",\"source1\":[\"zuoqi_shark\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "54692dbf-9ee4-4594-bcbd-0057f84184ff",
       "DisplayName": "墨镜熊猫",
-      "Gid": 160210002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12515,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true}],\"equipskin\":\"panda_Legend_01\",\"source1\":[\"huodong\",\"50008\"]}"
+      "Gid": 160210302,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12515,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"46b40bae-67d8-4523-8281-ce81bb3b7b7e\",\"enable\":true}],\"equipskin\":\"panda_Legend_01\",\"source1\":[\"huodong\",\"50008\"]}"
     },
     {
       "Id": "824409e8-5968-4d4b-929d-1ba6e629cbc6",
       "DisplayName": "功夫熊猫",
-      "Gid": 160210003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12516,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"f25f5afb-8997-41ac-8755-4403001172ce\",\"enable\":true}],\"equipskin\":\"panda_Legend_02\",\"source1\":[\"huodong\",\"50008\"]}"
+      "Gid": 160210303,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12516,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"f25f5afb-8997-41ac-8755-4403001172ce\",\"enable\":true}],\"equipskin\":\"panda_Legend_02\",\"source1\":[\"huodong\",\"50008\"]}"
     },
     {
       "Id": "b813aa95-4c63-40c7-8bfc-4c227b1a48d5",
       "DisplayName": "黑熊",
-      "Gid": 160211011,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12526,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_322820\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_bear\"]}"
+      "Gid": 160211111,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12526,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_322820\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "e4310a40-6a01-4e4a-80e0-eeb88ee71979",
       "DisplayName": "棕熊",
-      "Gid": 160211012,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12527,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_A45733\",\"source1\":[\"zuoqi_chick\",\"zuoqi_bear\"]}"
+      "Gid": 160211112,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12527,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_A45733\",\"source1\":[\"zuoqi_chick\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "387be40e-90dd-49b2-8fb9-4986e8f2b73e",
       "DisplayName": "白熊",
-      "Gid": 160211013,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12528,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_cj\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_C3BEB7\",\"source1\":[\"zuoqi_cat\",\"zuoqi_bear\"]}"
+      "Gid": 160211113,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12528,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Color_C3BEB7\",\"source1\":[\"zuoqi_cat\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "c62629bd-2181-4153-9103-86f889b663d8",
       "DisplayName": "熊头羊",
-      "Gid": 160211014,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12529,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"7cbb0485-3903-46d2-ab7e-e0bc0290a5b4\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_bear\"]}"
+      "Gid": 160211214,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12529,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"7cbb0485-3903-46d2-ab7e-e0bc0290a5b4\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "64c5edbf-42e6-4d8c-847b-f25454f727f8",
       "DisplayName": "熊头狼",
-      "Gid": 160211016,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12530,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_bear\"]}"
+      "Gid": 160211216,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12530,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"2d9db8af-cf5d-4a43-a4e7-44051a6e9ee3\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Wolf\",\"source1\":[\"zuoqi_wolf\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "4d6167fd-cc0c-453c-ac08-78bcb98752b2",
       "DisplayName": "熊头鹿",
-      "Gid": 160211017,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12531,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Giraffe\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_bear\"]}"
+      "Gid": 160211217,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12531,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Giraffe\",\"source1\":[\"zuoqi_giraffe\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "aeedf7e8-72c3-4fea-91ab-2dd340fe7d94",
       "DisplayName": "熊头虎",
-      "Gid": 160211018,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12532,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_bear\"]}"
+      "Gid": 160211218,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12532,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Tiger\",\"source1\":[\"zuoqi_tiger\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "740e727f-9623-4355-bda7-8f6e4e52dc84",
       "DisplayName": "熊头龙",
-      "Gid": 160211019,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12533,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Dragon\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_bear\"]}"
+      "Gid": 160211219,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12533,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"099a64ff-c761-4de5-9838-36ed24e271f1\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Dragon\",\"source1\":[\"zuoqi_dragon\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "a8c2377c-a098-4a98-8285-03f191499539",
       "DisplayName": "熊头鸡",
-      "Gid": 160211020,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12534,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_bear\"]}"
+      "Gid": 160211220,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12534,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Chick\",\"source1\":[\"zuoqi_chick\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "442c5187-2f9a-4500-9a84-454381ef8d72",
       "DisplayName": "熊头猫",
-      "Gid": 160211021,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12535,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_bear\"]}"
+      "Gid": 160211221,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12535,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"dc16539b-cb34-4bb3-9d0a-6ba480fa80ff\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Cat\",\"source1\":[\"zuoqi_cat\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "8618e094-050f-4fc6-aa91-16e9571317b4",
       "DisplayName": "熊头狗",
-      "Gid": 160211022,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12536,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"b1dfb6b7-768a-4f07-ac60-282b4376a320\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Corgi\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_bear\"]}"
+      "Gid": 160211222,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12536,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"b1dfb6b7-768a-4f07-ac60-282b4376a320\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Corgi\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "e84514f2-85b5-4e90-bf5c-4ea6d870a10b",
       "DisplayName": "熊头鲨",
-      "Gid": 160211023,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12537,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_xy\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Shark\",\"source1\":[\"zuoqi_shark\",\"zuoqi_bear\"]}"
+      "Gid": 160211223,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12537,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Shark\",\"source1\":[\"zuoqi_shark\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "1984e8b9-cc67-43c2-b210-67f27f08945e",
       "DisplayName": "轻松熊",
-      "Gid": 160211024,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12538,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"rarity_zg\",\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true}],\"equipskin\":\"Bear_Legend_01\",\"source1\":[\"zuoqi_pand\",\"zuoqi_bear\"]}"
+      "Gid": 160211324,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12538,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true}],\"equipskin\":\"Bear_Legend_01\",\"source1\":[\"zuoqi_pand\",\"zuoqi_bear\"]}"
     },
     {
       "Id": "1b22b987-4f2c-4bfc-b105-0e845914b99d",

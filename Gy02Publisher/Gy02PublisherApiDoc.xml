@@ -618,6 +618,11 @@
             <param name="validationContext"></param>
             <returns></returns>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.Mail">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:GY02.Templates.FuhuaInfo">
             <summary>
             孵化的信息项主要数据封装类。
@@ -1190,6 +1195,46 @@
             深度克隆该对象。
             </summary>
             <returns></returns>
+        </member>
+        <member name="T:GY02.Templates.GameMailTo">
+            <summary>
+            邮件模板。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.GameMailTo.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Subject">
+            <summary>
+            邮件标题。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Body">
+            <summary>
+            邮件正文。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Attachment">
+            <summary>
+            附件集合。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Dictionary1">
+            <summary>
+            存储一些特殊属性的字典。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Dictionary2">
+            <summary>
+            存储一些特殊属性的字典。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.DeleteDelay">
+            <summary>
+            对没有附件且已读的邮件，多长时间删除。若为空则等待最长删除时间到来，当前是60天。
+            </summary>
         </member>
         <member name="T:GY02.Templates.GameEventTO">
             <summary>

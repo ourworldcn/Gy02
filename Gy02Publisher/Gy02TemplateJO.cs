@@ -970,6 +970,11 @@ namespace GY02.Templates
         {
             return default;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public GameMailTo Mail { get; set; }
     }
 
     /// <summary>
@@ -1970,6 +1975,54 @@ namespace GY02.Templates
     }
 
     #region 邮件相关
+    /// <summary>
+    /// 邮件模板。
+    /// </summary>
+    public class GameMailTo
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GameMailTo()
+        {
+
+        }
+
+        #region 基本属性
+
+        /// <summary>
+        /// 邮件标题。
+        /// </summary>
+        public string Subject { get; set; }
+
+        /// <summary>
+        /// 邮件正文。
+        /// </summary>
+        public string Body { get; set; }
+
+        /// <summary>
+        /// 附件集合。
+        /// </summary>
+        public List<GameEntitySummary> Attachment { get; set; } = new List<GameEntitySummary> { };
+
+        /// <summary>
+        /// 存储一些特殊属性的字典。
+        /// </summary>
+        public Dictionary<string, string> Dictionary1 { get; set; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 存储一些特殊属性的字典。
+        /// </summary>
+        public Dictionary<string, string> Dictionary2 { get; set; } = new Dictionary<string, string>();
+
+        /// <summary>
+        /// 对没有附件且已读的邮件，多长时间删除。若为空则等待最长删除时间到来，当前是60天。
+        /// </summary>
+        public TimeSpan? DeleteDelay { get; set; }
+
+        #endregion 基本属性
+
+    }
 
     #endregion 邮件相关
 

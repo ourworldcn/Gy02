@@ -1,41 +1,32 @@
 {
-  "Genus": [ "gs_qiandao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
-    },
-    "GroupNumber": 0,
-    "Ins": [
+  "Mail": {
+    "Subject": "string", //标题，可能是多语言资源Id，具体与前端协商
+    "Body": "string", //正文，可能是多语言资源Id，具体与前端协商
+    "Attachment": [ //附件的集合
       {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "7", "1" ]
-              }
-            ]
-          }
-        ],
+        "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
         "Count": 0,
-        "Genus": []
+        "AddPropertyDictionary": {
+          "additionalProp1": 0,
+          "additionalProp2": 0,
+          "additionalProp3": 0
+        },
+        "additionalProp1": "string",
+        "additionalProp2": "string",
+        "additionalProp3": "string"
       }
     ],
-    "Outs": [
-      {
-        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-        "TId": "47fcdd7f-6206-48c1-b1e0-af65dbb65855",
-        "Count": 1
-      }
-    ],
-    "MaxCount": 1
+    "Dictionary1": { //前端使用
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    },
+    "Dictionary2": { //前端使用
+      "additionalProp1": "string",
+      "additionalProp2": "string",
+      "additionalProp3": "string"
+    }
   }
 }
