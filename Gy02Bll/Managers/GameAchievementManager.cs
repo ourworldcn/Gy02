@@ -135,7 +135,20 @@ namespace GY02.Managers
         /// </summary>
         public event EventHandler<AchievementPeriodChangedEventArgs> AchievementPeriodChanged;
 
-        protected virtual void OnAchievementPeriodChanged(AchievementPeriodChangedEventArgs e) => AchievementPeriodChanged?.Invoke(this, e);
+        protected virtual void OnAchievementPeriodChanged(AchievementPeriodChangedEventArgs e)
+        {
+            AchievementPeriodChanged?.Invoke(this, e);
+            if (e.OldValue != e.NewValue)   //若周期发生了变化
+            {
+                e.Achievement.Count = 0;
+                e.Achievement.Level = 0;
+                e.Achievement?.Items.ForEach(state =>
+                {
+                    state.IsCompleted = false;
+                    state.IsPicked = false;
+                });
+            }
+        }
 
         /// <summary>
         /// 刷新当前所处周期，并在周期变化时，引发<see cref="AchievementPeriodChanged"/>事件。
