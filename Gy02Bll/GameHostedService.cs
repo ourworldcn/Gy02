@@ -219,15 +219,14 @@ namespace GY02
             try
             {
                 var fac = _Services.GetRequiredService<IDbContextFactory<GY02UserContext>>();
-                using var db = fac.CreateDbContext();
-                int i = 1000;
-                var coll = EF.CompileQuery((GY02UserContext c) => c.VirtualThings.OrderBy(c => c.ExtraGuid).Skip(i).Take(5).Select(c => c.Id));
-                var ss = coll.Invoke(db).ToArray();
-
-                Dictionary<string, string> dic = new Dictionary<string, string> { { "Id", "C5F67A61-0385-4FB8-BA50-CD23399C06EE" },
-                    { "Atk","4"} };
-
-                var tmp = mapper.Map<GameChar>(dic);
+                StringBuilder sb=new StringBuilder();
+                for (int i = 65; i < 91; i++)
+                {
+                    var c = char.ConvertFromUtf32(i);
+                    sb.Append("'");
+                    sb.Append(c);
+                    sb.Append("',");
+                }
             }
             #endregion 测试用代码
             catch (Exception)

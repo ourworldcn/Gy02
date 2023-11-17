@@ -709,6 +709,33 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="T:Gy02.Controllers.RedeemCodeController">
+            <summary>
+            兑换码功能控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.RedeemCodeController.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.RedeemCodeController.GenerateRedeemCode(Gy02.Controllers.GenerateRedeemCodeParamsDto)">
+            <summary>
+            生成兑换码。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gy02.Controllers.GenerateRedeemCodeParamsDto">
+            <summary>
+            生成兑换码功能参数封装类。
+            </summary>
+        </member>
+        <member name="T:Gy02.Controllers.GenerateRedeemCodeReturnDto">
+            <summary>
+            生成兑换码功能返回值封装类。
+            </summary>
+        </member>
         <member name="T:Global.Program">
             <summary>
             

@@ -1,16 +1,77 @@
 {
-  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
-  "Count": 30,
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-  "Fcps": {
-    "Count": {
-      "MinValue": 0,
-      "MaxValue": 30,
-      "StepValue": 1,
-      "Delay": "00:20:00",
-      "CurrentValue": 30
-    }
-  }
+  "Dice": {
+    "MaxCount": 25,
+    "AllowRepetition": true,
+    "Items": [
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
+            "Count": 1
+          }
+        ],
+        "Weight": 50,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+            "Count": 1
+          }
+        ],
+        "Weight": 60,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "79391d55-a01f-4051-841b-5452908566ab",
+            "Count": 1
+          }
+        ],
+        "Weight": 80,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
+            "Count": 1
+          }
+        ],
+        "Weight": 53,
+        "ClearGuaranteesCount": false
+      }
+    ],
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
+  },
+  "outPropCount": 25
 }

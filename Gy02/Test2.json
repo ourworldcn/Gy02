@@ -1,32 +1,23 @@
 {
-  "Mail": {
-    "Subject": "string", //标题，可能是多语言资源Id，具体与前端协商
-    "Body": "string", //正文，可能是多语言资源Id，具体与前端协商
-    "Attachment": [ //附件的集合
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "Count": 0,
-        "AddPropertyDictionary": {
-          "additionalProp1": 0,
-          "additionalProp2": 0,
-          "additionalProp3": 0
-        },
-        "additionalProp1": "string",
-        "additionalProp2": "string",
-        "additionalProp3": "string"
+        "ParentTId": null,
+        "Genus": [],
+        "TId": "62D3A545-7604-46BF-9837-95E286660BC8",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "GroupMask": 1
       }
     ],
-    "Dictionary1": { //前端使用
-      "additionalProp1": "string",
-      "additionalProp2": "string",
-      "additionalProp3": "string"
+    "GetIndexExpression": {
+      "op": "ToInt32",
+      "args": [ "Count" ]
     },
-    "Dictionary2": { //前端使用
-      "additionalProp1": "string",
-      "additionalProp2": "string",
-      "additionalProp3": "string"
+    "Outs": {
+      "TIds": [ "a45b3421-3688-43c5-b8f5-429db7621f69", "8e7cd43e-b1ba-42ce-adfb-a599f2272ae3", "fb234ca8-b439-4bc8-a072-ef5bce1a1f54", "a94cd935-2d55-4967-a793-184f3190dbdb", "3b658476-a044-4852-8dfd-c7eca97ac974", "49c0797f-eea1-4e7d-830b-ce3b994a6483", "bcaea296-ab57-4482-b72e-8a6a06712087", "3c56ef1e-9d02-4fca-b3be-106bebfa41db", "2e2c0e21-d2d5-4df6-85bb-fc4f0af43be7", "26c94fdb-abc5-4da0-aed9-af35da910add", "4abb35d0-64e7-4382-a40a-9752268763c5", "7413af26-1182-4cb7-81d2-de46162eae85", "8592f5d2-2876-4169-ab7a-c6986647f19d", "ad474c4b-2084-48c7-a8ca-5a215b65c5c9", "f85322ac-97b6-48c1-a3d1-d53ca6a6f9f5", "445f6f56-16e5-4b39-9e7c-8e4e9df9392c", "5a67ed33-5257-427d-903f-fda986d87da3", "48dad0c5-a485-4b7c-b6cd-05495daea02a", "c52d67ac-8fb6-4802-b504-7720c11c9582", "25aadd28-332a-4b86-94cb-d052c6a3812c", "8b621cd3-593f-4cdc-a7dc-62666e7ecd83", "3caaaa15-26b6-4db3-9c72-c1dd826b7333", "f6a34267-c308-49a4-9e15-bd5824af9965", "daa0e9c0-8ffd-4cd0-993f-59352495bdc0", "fa0d600c-d9a7-4e15-9c8c-72bcf7946d81", "807a8688-0df4-461c-9feb-b7db651cf7ce", "31a613c6-ff4d-4d6e-a80f-0e6d08243458", "d75f83f1-5729-47bc-971a-8bd01c6499bb", "45068325-2b6c-40fd-bd2c-77d638410670", "4b1b60e6-7a6d-423c-89f4-bb87d5c19b19", "f1985d52-4ace-4432-a950-c6f98771a6d9", "cfbb16a8-d284-46ab-960b-bd0eb9af18b4", "0546439a-b34c-4607-9d96-3250bd6d7759", "12428740-73bf-4c67-9032-1502de41416b", "c8f5f98f-2096-478a-aa3a-e6070dcb8287", "fdea571b-a218-4f9c-8dc0-46fa502a140c", "de6e0cbe-d785-4ae0-894a-988efa9fe47b", "cb607c07-57d2-4079-ba39-6b24f1631da8", "c578da53-c7a1-4018-adfb-dec872dad9ea", "4004501e-4dfc-4b2d-84e0-7226a6581e20", "cd790358-4d13-410c-ade3-5549e34c0223", "06bd4a9e-66de-4cfa-bc78-eb5444f363f6", "b85d6b24-cdaa-4b70-9bad-bc95f693ed24", "3d818779-995b-4c5b-81a0-ef117fff0f27", "75489bd2-6d62-47cc-9503-63ea7cbc6abb", "a3a181f7-5484-4fa4-aec6-c08f72fae305", "ab84815a-f22b-4344-855f-456fe469570a", "a9f859c5-a24f-4468-b39e-c919b3f912b4", "d7675df2-151c-4afe-a183-b7f8316d593a", "5aa4ea7f-e5ba-4682-9bcb-dfe93497e667", "c11689c3-63e2-4f48-a3e7-458c6e3bf123", "c8a720e2-9e23-41a5-830f-9e5b8c7a1ebb", "91dfd737-bcf9-4b1a-a9bc-16e8cad80c3b", "f0811413-3291-4ecb-af66-713540e2628f", "6ec1de46-3b3f-40d6-8ac8-f9d5512ff182", "78fab0c8-8447-4c29-968c-8e98ffc37c2c", "5b56d07d-6bf0-4872-91e8-7ea8c2ba845d", "55267453-d4aa-44f1-82dc-ac0197ce5648", "564f38d8-951c-4703-8fa8-6fe122526a64", "0938f2b7-2d8f-4e42-80e3-c6b27a73cb20", "0eddea01-08bf-48a0-98c7-35752fdaec07", "4651e04f-bd5d-408a-9d77-35e75304302f", "3fbf8006-daf7-47c9-a2a8-fa58e91b0f52", "ed10a6fd-3078-4575-8956-9975638425f4", "13088b15-b9b3-4c0c-8bbe-5014b6a2f65b", "11019da3-a837-428f-8071-8188ec81a0d4", "8fdb69a0-e244-45ba-8ecb-47baa9ad90ce", "fd6c5fde-c681-442a-a49f-f24b83eff868", "257303de-1d61-403e-bf3e-f6292f18bf7c", "13787535-4998-4245-9737-6bf41a58b935", "7be88674-bacc-4eb2-9e3c-af38cb2a8d9d", "7fa3900b-4f23-4972-867b-eba001db90a6", "f44701d9-c271-457b-b75e-1ec67eb08408" ],
+      "ParentTIds": null,
+      "Counts": [ 0, 1 ]
     }
   }
 }
