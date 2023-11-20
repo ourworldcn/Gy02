@@ -157,7 +157,7 @@
             管理员工具的控制器。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.AdminController.#ctor(GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:GY02.Controllers.AdminController.#ctor(GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,OW.Game.Store.GY02UserContext,GY02.Managers.GameRedeemCodeManager)">
             <summary>
             构造函数。
             </summary>
@@ -215,6 +215,13 @@
         <member name="M:GY02.Controllers.AdminController.GetServerDictionary(GY02.Publisher.GetServerDictionaryParamsDto)">
             <summary>
             获取服务器字典功能。任何登录用户都可以使用此功能。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GY02.Controllers.AdminController.GenerateRedeemCode(GY02.Publisher.GenerateRedeemCodeParamsDto)">
+            <summary>
+            生成兑换码。
             </summary>
             <param name="model"></param>
             <returns></returns>
@@ -462,6 +469,13 @@
             <param name="db">数据库访问上下文。</param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.ShoppingController.Redeem(GY02.Publisher.RedeemParamsDto)">
+            <summary>
+            执行兑换码兑换功能。
+            </summary>
+            <param name="model"></param>
+            <returns>错误码是160表示指定的兑换码不存在。若错误码是1219则表示兑换码失效。</returns>
+        </member>
         <member name="T:GY02.Controllers.T78Controller">
             <summary>
             T78合作伙伴调入控制器。
@@ -708,33 +722,6 @@
             </summary>
             <param name="model"></param>
             <returns></returns>
-        </member>
-        <member name="T:Gy02.Controllers.RedeemCodeController">
-            <summary>
-            兑换码功能控制器。
-            </summary>
-        </member>
-        <member name="M:Gy02.Controllers.RedeemCodeController.#ctor">
-            <summary>
-            构造函数。
-            </summary>
-        </member>
-        <member name="M:Gy02.Controllers.RedeemCodeController.GenerateRedeemCode(Gy02.Controllers.GenerateRedeemCodeParamsDto)">
-            <summary>
-            生成兑换码。
-            </summary>
-            <param name="model"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Gy02.Controllers.GenerateRedeemCodeParamsDto">
-            <summary>
-            生成兑换码功能参数封装类。
-            </summary>
-        </member>
-        <member name="T:Gy02.Controllers.GenerateRedeemCodeReturnDto">
-            <summary>
-            生成兑换码功能返回值封装类。
-            </summary>
         </member>
         <member name="T:Global.Program">
             <summary>

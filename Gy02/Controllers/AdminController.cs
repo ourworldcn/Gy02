@@ -7,11 +7,13 @@ using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.Game.Store.Base;
 using OW.GameDb;
 using OW.SyncCommand;
 using System.ComponentModel.DataAnnotations;
@@ -30,16 +32,20 @@ namespace GY02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public AdminController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager)
+        public AdminController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager, GY02UserContext dbContext, GameRedeemCodeManager redeemCodeManager)
         {
-            _GameAccountStore = gameAccountStore;
+            _AccountStore = gameAccountStore;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
+            _DbContext = dbContext;
+            _RedeemCodeManager = redeemCodeManager;
         }
 
-        GameAccountStoreManager _GameAccountStore;
+        GameAccountStoreManager _AccountStore;
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
+        GY02UserContext _DbContext;
+        GameRedeemCodeManager _RedeemCodeManager;
 
         /// <summary>
         /// 封装模板数据配置文件的类。
@@ -194,7 +200,7 @@ namespace GY02.Controllers
         public ActionResult<ModifyServerDictionaryReturnDto> ModifyServerDictionary(ModifyServerDictionaryParamsDto model)
         {
             var result = new ModifyServerDictionaryReturnDto { };
-            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
                 if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
@@ -235,6 +241,67 @@ namespace GY02.Controllers
             return result;
 
         }
+
+        /// <summary>
+        /// 生成兑换码。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GenerateRedeemCodeReturnDto> GenerateRedeemCode(GenerateRedeemCodeParamsDto model)
+        {
+            var result = new GenerateRedeemCodeReturnDto();
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            if (gc.GetThing().Parent.GetJsonObject<GameUser>().LoginName != "1D22F0CF-1704-412C-AD8D-32CE5FA5A7D5")   //若非超管账号
+            {
+                result.ErrorCode = ErrorCodes.ERROR_NO_SUCH_PRIVILEGE;
+                result.DebugMessage = "需要超管权限执行此操作";
+                return result;
+            }
+            if (model.CodeType == 2)
+            {
+                var redeems = _RedeemCodeManager.Generat(model.Count, model.CodeType, _DbContext);
+                var catalog = new GameRedeemCodeCatalog
+                {
+                    DisplayName = "",
+                    CodeType = model.CodeType,
+                    ShoppingTId = model.ShoppingItemTId,
+                };
+                _DbContext.Add(catalog);
+                _DbContext.AddRange(redeems.Select(c => new GameRedeemCode
+                {
+                    Code = c,
+                    CatalogId = catalog.Id,
+                }));
+                _DbContext.SaveChanges();
+                result.Codes.AddRange(redeems);
+            }
+            else if (model.CodeType == 1)
+            {
+                var catalog = new GameRedeemCodeCatalog
+                {
+                    DisplayName = "",
+                    CodeType = model.CodeType,
+                    ShoppingTId = model.ShoppingItemTId,
+                };
+                _DbContext.Add(catalog);
+                _DbContext.Add(new GameRedeemCode
+                {
+                    Code = model.Code,
+                    CatalogId = catalog.Id,
+                });
+                _DbContext.SaveChanges();
+                result.Codes.AddRange(new string[] { model.Code });
+            }
+            return result;
+        }
     }
+
 
 }

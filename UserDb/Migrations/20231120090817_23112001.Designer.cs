@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OW.Game.Store;
 
@@ -11,9 +12,10 @@ using OW.Game.Store;
 namespace UserDb.Migrations
 {
     [DbContext(typeof(GY02UserContext))]
-    partial class GY02UserContextModelSnapshot : ModelSnapshot
+    [Migration("20231120090817_23112001")]
+    partial class _23112001
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,35 +35,9 @@ namespace UserDb.Migrations
                     b.Property<Guid>("CatalogId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
                     b.HasKey("Code");
 
-                    b.ToTable("GameRedeemCodes");
-                });
-
-            modelBuilder.Entity("OW.Game.Store.Base.GameRedeemCodeCatalog", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnOrder(0);
-
-                    b.Property<int>("CodeType")
-                        .HasColumnType("int")
-                        .HasComment("生成的码的类型，1=通用码，2=一次性码。");
-
-                    b.Property<string>("DisplayName")
-                        .HasColumnType("nvarchar(max)")
-                        .HasComment("显示名称");
-
-                    b.Property<Guid>("ShoppingTId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasComment("兑换码使用的商品TId");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GameRedeemCodeCatalogs");
+                    b.ToTable("GameRedeemCode");
                 });
 
             modelBuilder.Entity("OW.Game.Store.GameShoppingOrder", b =>

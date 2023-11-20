@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OW.Game.Store;
 
@@ -11,9 +12,10 @@ using OW.Game.Store;
 namespace UserDb.Migrations
 {
     [DbContext(typeof(GY02UserContext))]
-    partial class GY02UserContextModelSnapshot : ModelSnapshot
+    [Migration("20231120090907_23112002")]
+    partial class _23112002
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +34,6 @@ namespace UserDb.Migrations
 
                     b.Property<Guid>("CatalogId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
 
                     b.HasKey("Code");
 

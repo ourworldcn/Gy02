@@ -174,6 +174,31 @@ namespace GY02.Controllers
             }
             return result;
         }
+
+        /// <summary>
+        /// 执行兑换码兑换功能。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>错误码是160表示指定的兑换码不存在。若错误码是1219则表示兑换码失效。</returns>
+        [HttpPost]
+        public ActionResult<RedeemReturnDto> Redeem(RedeemParamsDto model)
+        {
+            var result = new RedeemReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            var command = new RedeemCommand { GameChar = gc, };
+
+            _Mapper.Map(model, command);
+            _SyncCommandManager.Handle(command);
+            _Mapper.Map(command, result);
+            return result;
+        }
     }
 
 }

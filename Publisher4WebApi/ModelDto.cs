@@ -1430,6 +1430,28 @@ namespace GY02.Publisher
     #region 商城相关
 
     /// <summary>
+    /// 执行兑换码兑换功能的参数封装类。
+    /// 错误码是160表示指定的兑换码不存在。若错误码是1219则表示兑换码失效。
+    /// </summary>
+    [AutoMap(typeof(RedeemCommand), ReverseMap = true)]
+    public class RedeemParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 兑换码。
+        /// </summary>
+        [StringLength(64, MinimumLength = 4)]
+        public string Code { get; set; }
+    }
+
+    /// <summary>
+    /// 执行兑换码兑换功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(RedeemCommand))]
+    public class RedeemReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
     /// 获取订单信息功能的参数封装类。
     /// </summary>
     public class GetShoppingOrderParamsDto : TokenDtoBase
@@ -2565,6 +2587,47 @@ namespace GY02.Publisher
     }
 
     #endregion
+
+    #region 兑换码相关
+
+    /// <summary>
+    /// 生成兑换码功能参数封装类。
+    /// </summary>
+    public class GenerateRedeemCodeParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 生成的数量。
+        /// </summary>
+        public int Count { get; set; }
+
+        /// <summary>
+        /// 对应的商品TId。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+
+        /// <summary>
+        /// 强行指定生成一个通用兑换码。仅当 CodeType == 1时，指定这一项才有用。
+        /// </summary>
+        public string Code { get; set; }
+
+        /// <summary>
+        /// 生成的码的类型，1=通用码，2=一次性码。通用性兑换码通常一批只生成一个，如：VIP6666。
+        /// </summary>
+        public int CodeType { get; set; }
+    }
+
+    /// <summary>
+    /// 生成兑换码功能返回值封装类。
+    /// </summary>
+    public class GenerateRedeemCodeReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 生成的码的集合。
+        /// </summary>
+        public List<string> Codes { get; set; } = new List<string>();
+    }
+
+    #endregion 兑换码相关
 }
 
 

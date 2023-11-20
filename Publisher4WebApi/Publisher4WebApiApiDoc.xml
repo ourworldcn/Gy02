@@ -1062,6 +1062,22 @@
             孵化功能返回值封装类。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.RedeemParamsDto">
+            <summary>
+            执行兑换码兑换功能的参数封装类。
+            错误码是160表示指定的兑换码不存在。若错误码是1219则表示兑换码失效。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.RedeemParamsDto.Code">
+            <summary>
+            兑换码。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.RedeemReturnDto">
+            <summary>
+            执行兑换码兑换功能的返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetShoppingOrderParamsDto">
             <summary>
             获取订单信息功能的参数封装类。
@@ -1948,6 +1964,41 @@
             <summary>
             0=成功，表示游戏服务器成功接收了该次充值结果通知,注意是0为成功。
             1=失败，表示游戏服务器无法接收或识别该次充值结果通知，如：签名检验不正确、游戏服务器接收失败。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GenerateRedeemCodeParamsDto">
+            <summary>
+            生成兑换码功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GenerateRedeemCodeParamsDto.Count">
+            <summary>
+            生成的数量。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GenerateRedeemCodeParamsDto.ShoppingItemTId">
+            <summary>
+            对应的商品TId。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GenerateRedeemCodeParamsDto.Code">
+            <summary>
+            强行指定生成一个通用兑换码。仅当 CodeType == 1时，指定这一项才有用。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GenerateRedeemCodeParamsDto.CodeType">
+            <summary>
+            生成的码的类型，1=通用码，2=一次性码。通用性兑换码通常一批只生成一个，如：VIP6666。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GenerateRedeemCodeReturnDto">
+            <summary>
+            生成兑换码功能返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GenerateRedeemCodeReturnDto.Codes">
+            <summary>
+            生成的码的集合。
             </summary>
         </member>
         <member name="T:GY02.Publisher.DispatcherDemo">
