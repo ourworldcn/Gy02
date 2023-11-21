@@ -595,7 +595,7 @@
       "Id": "97b9acc1-fb9f-455b-94e3-a9ce5ba8cf43",
       "DisplayName": "免广告道具-VIP赠送",
       "Gid": 130101006,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10295,\"comment_txt\":10296,\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":10,\"StepValue\":10,\"Delay\":\"1.00:00:00\",\"CurrentValue\":10,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10295,\"comment_txt\":10296,\"Fcps\":{\"Count\":{\"MinValue\":-1,\"MaxValue\":10,\"StepValue\":10,\"Delay\":\"1.00:00:00\",\"CurrentValue\":10,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
     },
     {
       "Id": "547865b2-fa3d-4d7f-957f-0219b8318b73",
@@ -3003,6 +3003,366 @@
       "DisplayName": "角色所有装备基属性+5%",
       "Gid": 140101299,
       "PropertiesString": "{\"skillParams\":[1],\"comment_txt\":12176}"
+    },
+    {
+      "Id": "a86856b9-8f93-4190-858b-e7dff9d971ff",
+      "DisplayName": "羊--白色碎片",
+      "Gid": 132101201,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10298}"
+    },
+    {
+      "Id": "6335b66c-09fe-4b23-a5e0-ee86199a7d98",
+      "DisplayName": "羊--绿色碎片",
+      "Gid": 132102201,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10298}"
+    },
+    {
+      "Id": "91a68d03-cc11-4dc5-924b-669ecad20045",
+      "DisplayName": "羊--蓝色碎片",
+      "Gid": 132103201,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10298}"
+    },
+    {
+      "Id": "625bcec8-fc02-4f1a-9399-7e27d74b130f",
+      "DisplayName": "羊--紫色碎片",
+      "Gid": 132111201,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10298}"
+    },
+    {
+      "Id": "83d640b4-ab6c-4624-a332-d4f96256662d",
+      "DisplayName": "羊--橙色碎片",
+      "Gid": 132121201,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10298}"
+    },
+    {
+      "Id": "5717c78a-1548-4a64-8699-aca95a2e0943",
+      "DisplayName": "羊--红色碎片",
+      "Gid": 132131201,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10298}"
+    },
+    {
+      "Id": "25536dd5-212a-4932-9627-e0a2350bd51b",
+      "DisplayName": "老虎--白色碎片",
+      "Gid": 132101202,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10299}"
+    },
+    {
+      "Id": "468695b4-d8fa-4805-9111-156d0060c217",
+      "DisplayName": "老虎--绿色碎片",
+      "Gid": 132102202,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10299}"
+    },
+    {
+      "Id": "2df31956-e473-4bd3-8c47-eb83bf67c184",
+      "DisplayName": "老虎--蓝色碎片",
+      "Gid": 132103202,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10299}"
+    },
+    {
+      "Id": "9f246873-2e81-4517-8562-c38eeb48d1ee",
+      "DisplayName": "老虎--紫色碎片",
+      "Gid": 132111202,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10299}"
+    },
+    {
+      "Id": "2da618e8-aa2e-49a5-84d3-0cb44fd0d5fe",
+      "DisplayName": "老虎--橙色碎片",
+      "Gid": 132121202,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10299}"
+    },
+    {
+      "Id": "b1284669-1bd7-4648-9ad8-f8a2e7b22ec8",
+      "DisplayName": "老虎--红色碎片",
+      "Gid": 132131202,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10299}"
+    },
+    {
+      "Id": "1f31d9c1-a59a-4f60-9109-d33a5864ddde",
+      "DisplayName": "狼--白色碎片",
+      "Gid": 132101203,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10230}"
+    },
+    {
+      "Id": "b5b92ab3-36d9-4e2c-a718-cff80f4f7942",
+      "DisplayName": "狼--绿色碎片",
+      "Gid": 132102203,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10230}"
+    },
+    {
+      "Id": "314e56c7-72a2-4632-8cb6-fbe030630f30",
+      "DisplayName": "狼--蓝色碎片",
+      "Gid": 132103203,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10230}"
+    },
+    {
+      "Id": "51ca3cd8-0d33-41b6-ad21-fbc721bd9cbc",
+      "DisplayName": "狼--紫色碎片",
+      "Gid": 132111203,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10230}"
+    },
+    {
+      "Id": "110a5006-ccc3-44f6-b13d-0b221e1ca78c",
+      "DisplayName": "狼--橙色碎片",
+      "Gid": 132121203,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10230}"
+    },
+    {
+      "Id": "ff80b1bb-9cae-435a-ba83-6fc81903c90d",
+      "DisplayName": "狼--红色碎片",
+      "Gid": 132131203,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10230}"
+    },
+    {
+      "Id": "70663ec0-cc40-4c22-82b7-2ce7f87cab7a",
+      "DisplayName": "长颈鹿--白色碎片",
+      "Gid": 132101204,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10231}"
+    },
+    {
+      "Id": "b82c34c3-e531-4a7b-acdc-cd88586d957b",
+      "DisplayName": "长颈鹿--绿色碎片",
+      "Gid": 132102204,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10231}"
+    },
+    {
+      "Id": "57cca3f1-39c1-4c9b-8109-de94058eb299",
+      "DisplayName": "长颈鹿--蓝色碎片",
+      "Gid": 132103204,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10231}"
+    },
+    {
+      "Id": "45365577-2d0f-4f48-9067-23adc862ae98",
+      "DisplayName": "长颈鹿--紫色碎片",
+      "Gid": 132111204,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10231}"
+    },
+    {
+      "Id": "3fbb2280-b70f-43e7-8c19-88224d7fd4b0",
+      "DisplayName": "长颈鹿--橙色碎片",
+      "Gid": 132121204,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10231}"
+    },
+    {
+      "Id": "94e1f97a-244f-447f-8f62-41780f16aa37",
+      "DisplayName": "长颈鹿--红色碎片",
+      "Gid": 132131204,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10231}"
+    },
+    {
+      "Id": "d1b7f903-cccf-498d-9a64-f5c39e1b7714",
+      "DisplayName": "龙--白色碎片",
+      "Gid": 132101205,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10232}"
+    },
+    {
+      "Id": "9c79a55a-106f-4f32-9d44-484d86a665fd",
+      "DisplayName": "龙--绿色碎片",
+      "Gid": 132102205,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10232}"
+    },
+    {
+      "Id": "800e78af-e9c4-480b-a0f3-8e15b93979f3",
+      "DisplayName": "龙--蓝色碎片",
+      "Gid": 132103205,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10232}"
+    },
+    {
+      "Id": "2c4908e9-1a74-43c4-a776-b112ac86c112",
+      "DisplayName": "龙--紫色碎片",
+      "Gid": 132111205,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10232}"
+    },
+    {
+      "Id": "9e4bd9ec-0a16-4526-a5c8-1654bcc8d1fd",
+      "DisplayName": "龙--橙色碎片",
+      "Gid": 132121205,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10232}"
+    },
+    {
+      "Id": "c850cf67-1498-42b6-921c-f90a0a0226e7",
+      "DisplayName": "龙--红色碎片",
+      "Gid": 132131205,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10232}"
+    },
+    {
+      "Id": "af123a1b-e729-4c3c-9d90-188f89a8e749",
+      "DisplayName": "柯基狗--白色碎片",
+      "Gid": 132101206,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10233}"
+    },
+    {
+      "Id": "2ad31a00-903f-46fc-b802-e98e7a69525a",
+      "DisplayName": "柯基狗--绿色碎片",
+      "Gid": 132102206,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10233}"
+    },
+    {
+      "Id": "12c33ec5-1500-4e0e-91a5-90cceb1b49a4",
+      "DisplayName": "柯基狗--蓝色碎片",
+      "Gid": 132103206,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10233}"
+    },
+    {
+      "Id": "480bf300-b723-4d9d-ab7b-3ce5d2483d68",
+      "DisplayName": "柯基狗--紫色碎片",
+      "Gid": 132111206,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10233}"
+    },
+    {
+      "Id": "3204d287-a84e-48cc-a2d3-c47e88e3929a",
+      "DisplayName": "柯基狗--橙色碎片",
+      "Gid": 132121206,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10233}"
+    },
+    {
+      "Id": "be34183c-d195-44cb-bbb3-f9031f514b30",
+      "DisplayName": "柯基狗--红色碎片",
+      "Gid": 132131206,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10233}"
+    },
+    {
+      "Id": "9fec11b1-8050-4027-ad8b-2637e6b49d42",
+      "DisplayName": "火鸡--白色碎片",
+      "Gid": 132101207,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10234}"
+    },
+    {
+      "Id": "b4864644-156c-4e40-ac2e-b4e428eb7913",
+      "DisplayName": "火鸡--绿色碎片",
+      "Gid": 132102207,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10234}"
+    },
+    {
+      "Id": "08a3c90e-b14f-40f0-ab38-9bc40a50c617",
+      "DisplayName": "火鸡--蓝色碎片",
+      "Gid": 132103207,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10234}"
+    },
+    {
+      "Id": "929e4d6f-8240-425d-ab5c-1f31480d6350",
+      "DisplayName": "火鸡--紫色碎片",
+      "Gid": 132111207,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10234}"
+    },
+    {
+      "Id": "fe5343fd-8f1f-4495-88ad-0bc4f6960350",
+      "DisplayName": "火鸡--橙色碎片",
+      "Gid": 132121207,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10234}"
+    },
+    {
+      "Id": "d72c7ba7-c1cf-4c31-ab5f-de7d2300c427",
+      "DisplayName": "火鸡--红色碎片",
+      "Gid": 132131207,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10234}"
+    },
+    {
+      "Id": "3480ff53-a036-4ba2-9af9-fbf749774897",
+      "DisplayName": "猫--白色碎片",
+      "Gid": 132101208,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10235}"
+    },
+    {
+      "Id": "8f772e03-b9b8-48cc-acae-280dfcca842d",
+      "DisplayName": "猫--绿色碎片",
+      "Gid": 132102208,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10235}"
+    },
+    {
+      "Id": "69d3fdca-5bb2-42b8-85a4-272e2eed95f9",
+      "DisplayName": "猫--蓝色碎片",
+      "Gid": 132103208,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10235}"
+    },
+    {
+      "Id": "7683a573-d909-47a9-95d4-7c2200916749",
+      "DisplayName": "猫--紫色碎片",
+      "Gid": 132111208,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10235}"
+    },
+    {
+      "Id": "4b05ae95-0b4e-47c0-bb80-92abd98ddc81",
+      "DisplayName": "猫--橙色碎片",
+      "Gid": 132121208,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10235}"
+    },
+    {
+      "Id": "d4e40a21-47b8-417f-b284-c73cf541356b",
+      "DisplayName": "猫--红色碎片",
+      "Gid": 132131208,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10235}"
+    },
+    {
+      "Id": "97d2639a-048e-4426-bec7-f8043093c57f",
+      "DisplayName": "熊猫--白色碎片",
+      "Gid": 132101210,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10236}"
+    },
+    {
+      "Id": "d79bf01e-0eba-427d-a4a6-c280a801f096",
+      "DisplayName": "熊猫--绿色碎片",
+      "Gid": 132102210,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10236}"
+    },
+    {
+      "Id": "c06b7de2-7ae5-4897-a11a-f025a827617c",
+      "DisplayName": "熊猫--蓝色碎片",
+      "Gid": 132103210,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10236}"
+    },
+    {
+      "Id": "cea3ece9-e036-4264-b9ef-7a62d3a2d7f3",
+      "DisplayName": "熊猫--紫色碎片",
+      "Gid": 132111210,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10236}"
+    },
+    {
+      "Id": "fa452add-4d44-4dd4-ad4d-45a99fefe8da",
+      "DisplayName": "熊猫--橙色碎片",
+      "Gid": 132121210,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10236}"
+    },
+    {
+      "Id": "3e98d55f-e05e-4773-8b52-67c45bdb49c7",
+      "DisplayName": "熊猫--红色碎片",
+      "Gid": 132131210,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10236}"
+    },
+    {
+      "Id": "8c1a6b45-6e46-48b7-a024-412047eb3412",
+      "DisplayName": "熊--白色碎片",
+      "Gid": 132101211,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10237}"
+    },
+    {
+      "Id": "f14e79dd-8daf-4924-8b4b-357632b5f294",
+      "DisplayName": "熊--绿色碎片",
+      "Gid": 132102211,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10237}"
+    },
+    {
+      "Id": "887b5c87-6726-4054-b929-10f223efa4e0",
+      "DisplayName": "熊--蓝色碎片",
+      "Gid": 132103211,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10237}"
+    },
+    {
+      "Id": "c3c67a9d-c679-42ad-b2df-7427ac185a0d",
+      "DisplayName": "熊--紫色碎片",
+      "Gid": 132111211,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10237}"
+    },
+    {
+      "Id": "1804a079-8674-47a7-82cf-54937ec2d828",
+      "DisplayName": "熊--橙色碎片",
+      "Gid": 132121211,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10237}"
+    },
+    {
+      "Id": "81b2015c-6b88-434a-b64a-65a8d1e7a94a",
+      "DisplayName": "熊--红色碎片",
+      "Gid": 132131211,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":10297,\"comment_txt\":10237}"
     },
     {
       "Id": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
@@ -7010,7 +7370,7 @@
       "Id": "d5b2958c-7d49-40bf-a482-d54474c8cf1d",
       "DisplayName": "动物抽奖付费购买",
       "Gid": 180201036,
-      "PropertiesString": "{\"Genus\":[\"gs_dongwuchoujiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"MinCount\":10,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"88c92efc-fb43-43df-997d-c5918808de5d\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\":[]}"
+      "PropertiesString": "{\"Genus\":[\"gs_dongwuchoujiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"MinCount\":30,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"88c92efc-fb43-43df-997d-c5918808de5d\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\":[]}"
     },
     {
       "Id": "af719619-3934-45bf-aaec-669c6a8afdc6",
@@ -7052,7 +7412,7 @@
       "Id": "46f2aeb1-fcce-482d-a918-0c4b650673dc",
       "DisplayName": "Arppu宝箱卡池付费购买---商品",
       "Gid": 180612002,
-      "PropertiesString": "{\"Genus\":[\"gs_dongwuchoujiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":200,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"a65dd1ff-dac0-42d7-9167-9cad64dd0b9e\",\"Count\":1}]},\"name_txt\":10274,\"comment_txt\":10275,\"JiaoBiao\":[]}"
+      "PropertiesString": "{\"Genus\":[\"gs_dongwuchoujiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"a65dd1ff-dac0-42d7-9167-9cad64dd0b9e\",\"Count\":1}]},\"name_txt\":10274,\"comment_txt\":10275,\"JiaoBiao\":[]}"
     },
     {
       "Id": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
@@ -7100,7 +7460,7 @@
       "Id": "612ec963-4f73-437e-a51a-776478b4434a",
       "DisplayName": "金币广告购买项目序列",
       "Gid": 190101002,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"IgnoreIfDisplayList\":true}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"e3aeb7f1-f7de-4d32-8805-2f6a40b9db36\"],\"IgnoreIfDisplayList\":false},\"Outs\":{\"TIds\":[\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[0,0,30],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"e3aeb7f1-f7de-4d32-8805-2f6a40b9db36\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,30]}}}"
     },
     {
       "Id": "ae438454-abd7-4ef7-9ece-9cd81c132817",
