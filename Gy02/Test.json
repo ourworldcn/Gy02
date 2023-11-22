@@ -1,399 +1,237 @@
 {
-  "Changes": [
+  "Items": [
     {
-      "Seq": 0,
-      "TId": "62d3a545-7604-46bf-9837-95e286660bc8",
-      "ObjectId": "1dce2f44-b64b-428b-a37a-27fa5e297005",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 72.0,
-      "HasNewValue": true,
-      "NewValue": 0.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2247789Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 1
     },
     {
-      "Seq": 0,
-      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "ObjectId": "f878481f-38e3-47a7-b719-84adce936a74",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 38215.0,
-      "HasNewValue": true,
-      "NewValue": 47575.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2247835Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 2
     },
     {
-      "Seq": 0,
-      "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-      "ObjectId": "d62c751a-a6a2-4b2d-91c8-7eb89fe3d280",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 12.0,
-      "HasNewValue": true,
-      "NewValue": 13.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.224784Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 3
     },
     {
-      "Seq": 0,
-      "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-      "ObjectId": "cfb7a410-5300-48d7-812d-d927775dbc65",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 4.0,
-      "HasNewValue": true,
-      "NewValue": 5.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2247843Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 4
     },
     {
-      "Seq": 0,
-      "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-      "ObjectId": "8f189878-edf1-495e-b779-a14b63fe028c",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 2,
-      "HasNewValue": true,
-      "NewValue": 3,
-      "DateTimeUtc": "2023-11-17T19:13:21.2247846Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 5
     },
     {
-      "Seq": 0,
-      "TId": "9c559895-9a2c-43a7-b793-e879a600487c",
-      "ObjectId": "49e802d4-92b2-4265-9808-360818c8ca1c",
-      "PropertyName": "Children",
-      "HasOldValue": false,
-      "OldValue": null,
-      "HasNewValue": true,
-      "NewValue": {
-        "Count": 3,
-        "LvUpAccruedCost": [],
-        "CompositingAccruedCost": [],
-        "CreateDateTime": "2023-11-17T19:13:10.8510332Z",
-        "CountOfLastModifyUtc": "2023-11-17T19:13:10.8753981Z",
-        "ClientDictionary": {},
-        "Fcps": {},
-        "lv": 0,
-        "Id": "bc4a92f4-3448-4246-8e5a-a1dab97a94c1",
-        "TemplateId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb"
-      },
-      "DateTimeUtc": "2023-11-17T19:13:21.2247852Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 6
     },
     {
-      "Seq": 0,
-      "TId": "79391d55-a01f-4051-841b-5452908566ab",
-      "ObjectId": "6c777104-7e62-4ab4-bdef-a26fb10b02de",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 8,
-      "HasNewValue": true,
-      "NewValue": 9,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270244Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 7
     },
     {
-      "Seq": 0,
-      "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-      "ObjectId": "d62c751a-a6a2-4b2d-91c8-7eb89fe3d280",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 13.0,
-      "HasNewValue": true,
-      "NewValue": 14.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270258Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 8
     },
     {
-      "Seq": 0,
-      "TId": "79391d55-a01f-4051-841b-5452908566ab",
-      "ObjectId": "6c777104-7e62-4ab4-bdef-a26fb10b02de",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 9,
-      "HasNewValue": true,
-      "NewValue": 10,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270262Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 9
     },
     {
-      "Seq": 0,
-      "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
-      "ObjectId": "bc4a92f4-3448-4246-8e5a-a1dab97a94c1",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 1,
-      "HasNewValue": true,
-      "NewValue": 2,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270273Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 10
     },
     {
-      "Seq": 0,
-      "TId": "79391d55-a01f-4051-841b-5452908566ab",
-      "ObjectId": "6c777104-7e62-4ab4-bdef-a26fb10b02de",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 10,
-      "HasNewValue": true,
-      "NewValue": 11,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270276Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 11
     },
     {
-      "Seq": 0,
-      "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
-      "ObjectId": "5d99a6e3-9d6f-4f2f-985f-3f1dc93ca58c",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 6,
-      "HasNewValue": true,
-      "NewValue": 7,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270279Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 12
     },
     {
-      "Seq": 0,
-      "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-      "ObjectId": "d62c751a-a6a2-4b2d-91c8-7eb89fe3d280",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 14.0,
-      "HasNewValue": true,
-      "NewValue": 15.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270282Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 13
     },
     {
-      "Seq": 0,
-      "TId": "79391d55-a01f-4051-841b-5452908566ab",
-      "ObjectId": "6c777104-7e62-4ab4-bdef-a26fb10b02de",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 11,
-      "HasNewValue": true,
-      "NewValue": 12,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270284Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 14
     },
     {
-      "Seq": 0,
-      "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-      "ObjectId": "d62c751a-a6a2-4b2d-91c8-7eb89fe3d280",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 15.0,
-      "HasNewValue": true,
-      "NewValue": 16.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270287Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 15
     },
     {
-      "Seq": 0,
-      "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
-      "ObjectId": "5d99a6e3-9d6f-4f2f-985f-3f1dc93ca58c",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 7,
-      "HasNewValue": true,
-      "NewValue": 8,
-      "DateTimeUtc": "2023-11-17T19:13:21.227029Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 16
     },
     {
-      "Seq": 0,
-      "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-      "ObjectId": "cfb7a410-5300-48d7-812d-d927775dbc65",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 5.0,
-      "HasNewValue": true,
-      "NewValue": 6.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270292Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 17
     },
     {
-      "Seq": 0,
-      "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
-      "ObjectId": "bc4a92f4-3448-4246-8e5a-a1dab97a94c1",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 2,
-      "HasNewValue": true,
-      "NewValue": 3,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270297Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 18
     },
     {
-      "Seq": 0,
-      "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-      "ObjectId": "cfb7a410-5300-48d7-812d-d927775dbc65",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 6.0,
-      "HasNewValue": true,
-      "NewValue": 7.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270299Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 19
     },
     {
-      "Seq": 0,
-      "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-      "ObjectId": "cfb7a410-5300-48d7-812d-d927775dbc65",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 7.0,
-      "HasNewValue": true,
-      "NewValue": 8.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270302Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
-      "ObjectId": "5d99a6e3-9d6f-4f2f-985f-3f1dc93ca58c",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 8,
-      "HasNewValue": true,
-      "NewValue": 9,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270304Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
-      "ObjectId": "5d99a6e3-9d6f-4f2f-985f-3f1dc93ca58c",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 9,
-      "HasNewValue": true,
-      "NewValue": 10,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270307Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "79391d55-a01f-4051-841b-5452908566ab",
-      "ObjectId": "6c777104-7e62-4ab4-bdef-a26fb10b02de",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 12,
-      "HasNewValue": true,
-      "NewValue": 13,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270309Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
-      "ObjectId": "5d99a6e3-9d6f-4f2f-985f-3f1dc93ca58c",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 10,
-      "HasNewValue": true,
-      "NewValue": 11,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270312Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-      "ObjectId": "d62c751a-a6a2-4b2d-91c8-7eb89fe3d280",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 16.0,
-      "HasNewValue": true,
-      "NewValue": 17.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270315Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "79391d55-a01f-4051-841b-5452908566ab",
-      "ObjectId": "6c777104-7e62-4ab4-bdef-a26fb10b02de",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 13,
-      "HasNewValue": true,
-      "NewValue": 14,
-      "DateTimeUtc": "2023-11-17T19:13:21.2270318Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-      "ObjectId": "d62c751a-a6a2-4b2d-91c8-7eb89fe3d280",
-      "PropertyName": "Count",
-      "HasOldValue": true,
-      "OldValue": 17.0,
-      "HasNewValue": true,
-      "NewValue": 18.0,
-      "DateTimeUtc": "2023-11-17T19:13:21.227032Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-      "ObjectId": "13d27fc1-c28d-4632-94d8-93e636a62104",
-      "PropertyName": "Children",
-      "HasOldValue": false,
-      "OldValue": null,
-      "HasNewValue": true,
-      "NewValue": {
-        "LvUpAccruedCost": [],
-        "CompositingAccruedCost": [],
-        "CreateDateTime": "2023-11-17T19:13:10.8594237Z",
-        "CountOfLastModifyUtc": "2023-11-17T19:13:10.8614756Z",
-        "ClientDictionary": {},
-        "Fcps": {},
-        "lv": 0,
-        "Id": "79c37d8b-eb55-4c97-9a18-dc443a33b00c",
-        "TemplateId": "f8e9ce28-e0fd-4b1b-b297-2c96423c860e"
-      },
-      "DateTimeUtc": "2023-11-17T19:13:21.2270322Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-      "ObjectId": "13d27fc1-c28d-4632-94d8-93e636a62104",
-      "PropertyName": "Children",
-      "HasOldValue": false,
-      "OldValue": null,
-      "HasNewValue": true,
-      "NewValue": {
-        "LvUpAccruedCost": [],
-        "CompositingAccruedCost": [],
-        "CreateDateTime": "2023-11-17T19:13:10.8614855Z",
-        "CountOfLastModifyUtc": "2023-11-17T19:13:10.8615576Z",
-        "ClientDictionary": {},
-        "Fcps": {},
-        "lv": 0,
-        "Id": "e5cba34f-2d4f-4eb4-bec7-8b30e716866c",
-        "TemplateId": "f747dacc-0d72-4009-b8e7-08ad69689dc7"
-      },
-      "DateTimeUtc": "2023-11-17T19:13:21.228938Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-      "ObjectId": "13d27fc1-c28d-4632-94d8-93e636a62104",
-      "PropertyName": "Children",
-      "HasOldValue": false,
-      "OldValue": null,
-      "HasNewValue": true,
-      "NewValue": {
-        "LvUpAccruedCost": [],
-        "CompositingAccruedCost": [],
-        "CreateDateTime": "2023-11-17T19:13:10.8615629Z",
-        "CountOfLastModifyUtc": "2023-11-17T19:13:10.8615829Z",
-        "ClientDictionary": {},
-        "Fcps": {},
-        "lv": 0,
-        "Id": "086ac227-9230-4fcc-af02-d2ff03c380d2",
-        "TemplateId": "f8e9ce28-e0fd-4b1b-b297-2c96423c860e"
-      },
-      "DateTimeUtc": "2023-11-17T19:13:21.2289407Z"
-    },
-    {
-      "Seq": 0,
-      "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-      "ObjectId": "13d27fc1-c28d-4632-94d8-93e636a62104",
-      "PropertyName": "Children",
-      "HasOldValue": false,
-      "OldValue": null,
-      "HasNewValue": true,
-      "NewValue": {
-        "LvUpAccruedCost": [],
-        "CompositingAccruedCost": [],
-        "CreateDateTime": "2023-11-17T19:13:10.8615867Z",
-        "CountOfLastModifyUtc": "2023-11-17T19:13:10.8616455Z",
-        "ClientDictionary": {},
-        "Fcps": {},
-        "lv": 0,
-        "Id": "fac68217-bb8b-4270-ab6c-b250c8b4adfc",
-        "TemplateId": "c531cd34-fed9-4859-81f1-501c25c0926d"
-      },
-      "DateTimeUtc": "2023-11-17T19:13:21.2289416Z"
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 20
     }
   ],
-  "HasError": false,
-  "ErrorCode": 0,
-  "DebugMessage": "操作成功完成。"
+  "ClientDictionary": {},
+  "CompositingAccruedCost": [],
+  "LvUpAccruedCost": [],
+  "CreateDateTime": "2023-11-15T01:37:30.6252786Z",
+  "lv": 1,
+  "LastMarkPeriodIndex": null,
+  "LastModifyDateTime": "2023-11-16T05:57:12.3368368Z",
+  "IsValid": true,
+  "Count": 3,
+  "CountOfLastModifyUtc": "2023-11-17T02:47:16.671427Z",
+  "Fcps": {}
 }

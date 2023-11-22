@@ -144,8 +144,15 @@ namespace OW.Game.Entity
         /// <returns></returns>
         public override string ToString()
         {
-            var name = ((Thing as VirtualThing)?.GetTemplate())?.DisplayName;
-            name ??= $"TId = {TemplateId.ToString()[0..3]}...{TemplateId.ToString()[^2..^0]} , Count = {Count}";
+            string name;
+            if ((Thing as VirtualThing)?.GetTemplate() is TemplateStringFullView tt)    //若找到模板
+            {
+                name = $"{tt.DisplayName} ,Count = {Count}";
+            }
+            else
+            {
+                name = $"TId = {TemplateId.ToString()[..3]}...{TemplateId.ToString()[^2..]} ,Count = {Count}";
+            }
             return $"{GetType().Name}({name})";
         }
     }

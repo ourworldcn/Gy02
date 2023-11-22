@@ -469,6 +469,10 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"指定账号没有创建角色,UserKey={user.GetThing().IdString}");
                 return null;
             }
+#if DEBUG
+            foreach (var child in guThing.GetAllChildren())
+                child.SetTemplate(_TemplateManager.GetFullViewFromId(child.ExtraGuid));
+#endif
             return user;
         }
 

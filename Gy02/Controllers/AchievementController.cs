@@ -19,12 +19,14 @@ namespace Gy02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public AchievementController(GameAccountStoreManager accountStore, IMapper mapper, SyncCommandManager syncCommandManager, GameTemplateManager templateManager)
+        public AchievementController(GameAccountStoreManager accountStore, IMapper mapper, SyncCommandManager syncCommandManager, 
+            GameTemplateManager templateManager, GameAchievementManager achievementManager)
         {
             _AccountStore = accountStore;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
+            _AchievementManager = achievementManager;
         }
 
         private GameAccountStoreManager _AccountStore;
@@ -34,6 +36,7 @@ namespace Gy02.Controllers
         SyncCommandManager _SyncCommandManager;
 
         GameTemplateManager _TemplateManager;
+        GameAchievementManager _AchievementManager;
 
 #if DEBUG
         /// <summary>

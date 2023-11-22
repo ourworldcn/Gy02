@@ -650,7 +650,7 @@
             成就功能控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.AchievementController.#ctor(GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.GameTemplateManager)">
+        <member name="M:Gy02.Controllers.AchievementController.#ctor(GY02.Managers.GameAccountStoreManager,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.GameTemplateManager,GY02.Managers.GameAchievementManager)">
             <summary>
             构造函数。
             </summary>
