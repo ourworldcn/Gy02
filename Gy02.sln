@@ -46,6 +46,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Publisher4WebApi", "Publish
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoggingDb", "LoggingDb\LoggingDb.csproj", "{19025221-CC57-4FA2-897A-8C263CEA5CB4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestClassLib", "..\Bak\TestClassLib\TestClassLib.csproj", "{7FE9A34E-BE79-49A5-A7C4-7DEFC72C2BE8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -104,6 +106,10 @@ Global
 		{19025221-CC57-4FA2-897A-8C263CEA5CB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19025221-CC57-4FA2-897A-8C263CEA5CB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19025221-CC57-4FA2-897A-8C263CEA5CB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FE9A34E-BE79-49A5-A7C4-7DEFC72C2BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE9A34E-BE79-49A5-A7C4-7DEFC72C2BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE9A34E-BE79-49A5-A7C4-7DEFC72C2BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE9A34E-BE79-49A5-A7C4-7DEFC72C2BE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
