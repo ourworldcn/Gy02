@@ -12,7 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OwBaseCore\OwBaseCore.csproj" />
     <ProjectReference Include="..\UserDb\UserDb.csproj" />
   </ItemGroup>
 
