@@ -25,7 +25,7 @@
     {
       "Id": "04AB4C60-9E5B-43A8-894F-3477655371BE",
       "DisplayName": "成就/任务槽",
-      "PropertiesString": "{\"cap\":-1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"TIdsOfCreate\":[\"A934D181-087E-4BD1-BD90-8EBA1020AA99\",\"A934D181-087E-4BD1-BD90-8EBA1020AA99\"]}"
+      "PropertiesString": "{\"cap\":-1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"TIdsOfCreate\":[]}"
     },
     {
       "Id": "7A7A7058-CB88-4D54-80E9-22241774CF51",
@@ -46,45 +46,129 @@
     },
     {
       "Id": "f00fbec7-7465-4344-8443-6b4b43260b3c",
-      "DisplayName": "7日签到第1天",
+      "DisplayName": "7日签到第1天 第一组",
       "Gid": 180101001,
-      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"7\",\"0\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"0\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000}],\"MaxCount\":1}}"
     },
     {
       "Id": "75137bd7-882d-4580-b011-e92e8a36fbd5",
-      "DisplayName": "7日签到第2天",
+      "DisplayName": "7日签到第2天 第一组",
       "Gid": 180101002,
-      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"7\",\"1\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"47fcdd7f-6206-48c1-b1e0-af65dbb65855\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"1\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"47fcdd7f-6206-48c1-b1e0-af65dbb65855\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "ee0ae75e-9e45-4d8c-9ec1-09219e7684e4",
-      "DisplayName": "7日签到第3天",
+      "DisplayName": "7日签到第3天 第一组",
       "Gid": 180101003,
       "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-10T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"7\",\"2\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"TId\":\"90e13abc-aade-402c-9bc3-6bfb9d58d1d1\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "c7640cab-5178-4447-9456-76fa807645ae",
-      "DisplayName": "7日签到第4天",
+      "DisplayName": "7日签到第4天 第一组",
       "Gid": 180101004,
-      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-11T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"7\",\"3\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-11T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"3\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}],\"MaxCount\":1}}"
     },
     {
       "Id": "4c087d38-ec50-42bc-ab59-b8af3101d9af",
-      "DisplayName": "7日签到第5天",
+      "DisplayName": "7日签到第5天 第一组",
       "Gid": 180101005,
-      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-12T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"7\",\"4\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":3}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-12T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"4\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":3}],\"MaxCount\":1}}"
     },
     {
       "Id": "94f21d1a-3b55-40c6-9748-7abd43e2dc47",
-      "DisplayName": "7日签到第6天",
+      "DisplayName": "7日签到第6天 第一组",
       "Gid": 180101006,
-      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-13T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"7\",\"5\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":10}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-13T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"5\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":10}],\"MaxCount\":1}}"
     },
     {
       "Id": "f34df47a-2397-4751-9e2f-961879ef2f6d",
-      "DisplayName": "7日签到第7天",
+      "DisplayName": "7日签到第7天 第一组",
       "Gid": 180101007,
-      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-14T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"7\",\"6\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":10},{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":10},{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"fa658261-f1b7-4d6e-8633-27873eac7995\",\"Count\":1}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-14T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"6\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":10},{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":10},{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"fa658261-f1b7-4d6e-8633-27873eac7995\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "1a4eeb46-207e-4b61-b7ef-4886cbc29faf",
+      "DisplayName": "7日签到第1天 第二组",
+      "Gid": 180101008,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"7\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":8000}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "6fe8ca81-8db8-4ca7-a450-dc79ff032481",
+      "DisplayName": "7日签到第2天 第二组",
+      "Gid": 180101009,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"8\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":3}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "34ed89da-4a7f-41b6-baf1-c948765525c3",
+      "DisplayName": "7日签到第3天 第二组",
+      "Gid": 180101010,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-10T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"9\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "b7c03093-fa38-41c3-9bd3-74e5960fff72",
+      "DisplayName": "7日签到第4天 第二组",
+      "Gid": 180101011,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"10\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd871154-1aab-4add-8433-be4886244560\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "cd67e4d4-a1d5-4973-9ca1-14518baa8c9e",
+      "DisplayName": "7日签到第5天 第二组",
+      "Gid": 180101012,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-13T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"11\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":10}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "3c77e261-f74e-417a-8a56-55a644f857f5",
+      "DisplayName": "7日签到第6天 第二组",
+      "Gid": 180101013,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-12T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"12\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":3}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "12a5817e-edaa-4c56-82c7-58e797d3a838",
+      "DisplayName": "7日签到第7天 第二组",
+      "Gid": 180101014,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-14T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"13\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":10},{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":10},{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7858514e-1011-4de2-9c9f-f0a2ebf152f2\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "72ed6c57-6a26-419c-a594-0429bf8331ac",
+      "DisplayName": "7日签到第1天 第三组",
+      "Gid": 180101015,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"14\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":8000}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "8ace5770-e16d-44c2-877c-2e99be81b729",
+      "DisplayName": "7日签到第2天 第三组",
+      "Gid": 180101016,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"15\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":3}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "f6d15fe4-eb71-43d5-9bb2-3e2f2f82c538",
+      "DisplayName": "7日签到第3天 第三组",
+      "Gid": 180101017,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"16\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"40425703-830d-4f95-90c4-8d0833e7ee25\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "2032bad2-3040-410d-9157-32f9859b89f4",
+      "DisplayName": "7日签到第4天 第三组",
+      "Gid": 180101018,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"17\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd871154-1aab-4add-8433-be4886244560\",\"Count\":1}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "4082b328-ebb9-4d1a-bf53-7ee50507d108",
+      "DisplayName": "7日签到第5天 第三组",
+      "Gid": 180101019,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-13T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"18\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":10}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "8313cb95-f5e7-42b5-bd53-240b6b118e17",
+      "DisplayName": "7日签到第6天 第三组",
+      "Gid": 180101020,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-12T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"19\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":3}],\"MaxCount\":1}}"
+    },
+    {
+      "Id": "4cc24e24-1e30-4113-b999-dc33aaabfc7c",
+      "DisplayName": "7日签到第7天 第三组",
+      "Gid": 180101021,
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"21\",\"16\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7858514e-1011-4de2-9c9f-f0a2ebf152f2\",\"Count\":1}],\"MaxCount\":1}}"
     },
     {
       "Id": "59eb329d-ba4e-4370-b7bb-c3556556f334",
@@ -2952,15 +3036,15 @@
     },
     {
       "Id": "9c1f1704-a064-4e9b-90ed-9e1d36b64106",
-      "DisplayName": "巡逻金币收益增加",
+      "DisplayName": "增加补给箱1个",
       "Gid": 140101291,
       "PropertiesString": "{\"skillParams\":[10],\"comment_txt\":12168}"
     },
     {
       "Id": "ddb6db4a-31c5-4db1-8613-33c24489b682",
-      "DisplayName": "巡逻获得装备数量+1",
+      "DisplayName": "怪物子弹伤害减少 5%",
       "Gid": 140101292,
-      "PropertiesString": "{\"skillParams\":[1],\"comment_txt\":12169}"
+      "PropertiesString": "{\"skillParams\":[5],\"comment_txt\":12169}"
     },
     {
       "Id": "161ee74b-b0d0-415e-addc-28da54114df1",
@@ -2976,7 +3060,7 @@
     },
     {
       "Id": "eedc1288-23b7-4f26-ad3d-9d9fd8fc7960",
-      "DisplayName": "关卡那HP恢复技能效果",
+      "DisplayName": "关卡内HP恢复技能效果",
       "Gid": 140101295,
       "PropertiesString": "{\"skillParams\":[5],\"comment_txt\":12172}"
     },
@@ -2990,11 +3074,11 @@
       "Id": "4969f80a-7087-41f9-9d2a-1d154cdba13a",
       "DisplayName": "击败精英怪可以获得图纸",
       "Gid": 140101297,
-      "PropertiesString": "{\"skillParams\":[0],\"comment_txt\":12174}"
+      "PropertiesString": "{\"skillParams\":[1],\"comment_txt\":12174}"
     },
     {
       "Id": "38ffac3f-63c7-454f-877b-14ca082b91ae",
-      "DisplayName": "动物技能攻击次数+1",
+      "DisplayName": "动物技能攻击时间增加",
       "Gid": 140101298,
       "PropertiesString": "{\"skillParams\":[1],\"comment_txt\":12175}"
     },
@@ -7171,7 +7255,7 @@
       "Id": "b507bd07-ece2-4a69-88c1-e72265a9e4f1",
       "DisplayName": "武器图纸购买项目1",
       "Gid": 180201002,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"5\",\"0\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"5\",\"0\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":10000,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "44e57527-0c8d-4afc-8e0f-84ce37a818d0",
@@ -7196,6 +7280,24 @@
       "DisplayName": "腰带购买项目1",
       "Gid": 180201006,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"5\",\"0\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":80,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":200,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0bd9990c-f4c1-489c-b25e-82cdd58961fb\",\"Count\":1}]},\"name_txt\":11824,\"JiaoBiao\":[]}"
+    },
+    {
+      "Id": "20250ca6-16e0-4062-b8d6-033cce94291b",
+      "DisplayName": "动物兑换1--火鸡",
+      "Gid": 180201037,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"5\",\"0\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+    },
+    {
+      "Id": "fed2f0eb-9799-48bd-aeda-c8735e06e157",
+      "DisplayName": "孵化币购买1",
+      "Gid": 180201038,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"5\",\"0\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":200,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+    },
+    {
+      "Id": "ecd5ebd4-dd20-46ce-8d7d-65101fa163cd",
+      "DisplayName": "动物兑换1--狼",
+      "Gid": 180201039,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"5\",\"0\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "ad2f1fbf-970d-40ad-a1bc-6574dd486da1",
@@ -14753,7 +14855,7 @@
       "Id": "9c8ea669-08bf-41ad-9628-736fe16bd226",
       "DisplayName": "高级天赋占位符",
       "Gid": 110201018,
-      "PropertiesString": "{\"Genus\":[],\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"skillTIds\":[null,null,null,null,null,null,null,\"2ee94e69-8a26-4242-a046-09348c82d87d\",null,null,null,null,null,null,null,null,\"eac01cc9-2514-468a-8d46-546b66666f6d\",null,null,null,null,null,null,null,null,\"d610bea9-787d-4934-9a3f-60c8e6f971ca\",null,null,null,null,null,null,null,null,\"2df89f4f-a04e-410b-ba15-502dec4d9769\",null,null,null,null,null,null,null,null,\"e227868c-95dc-4a42-acc4-6b36b7cf20ae\",null,null,null,null,null,null,null,null,\"a0767743-15d1-4154-bb02-46a7e0cec8a9\",null,null,null,null,null,null,null,null,\"0f774ddb-9663-4e1f-8db8-627f2df1ca67\",null,null,null,null,null,null,null,null,null,null,null,\"2f338c8c-172b-4c7c-bf7f-d1e1d4bfc3a2\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"4a34020f-4d8a-4132-8585-28fa6a03a353\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"f1264091-5c14-41d4-b782-2faf5f863af4\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"7c00528e-b941-42c1-b7d4-750a2da5a1cc\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"b5e1a643-1337-473c-8af1-d24d2446285f\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"08c6759f-da17-4fb8-9988-6b2a83747531\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"97d2dfb4-cac8-40fc-b923-b9b77f9d3210\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"9c1f1704-a064-4e9b-90ed-9e1d36b64106\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"ddb6db4a-31c5-4db1-8613-33c24489b682\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"161ee74b-b0d0-415e-addc-28da54114df1\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"db1dbcd1-7d31-4809-b5f2-bb6254a1eab7\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"eedc1288-23b7-4f26-ad3d-9d9fd8fc7960\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"909f8408-84e3-420c-aa8b-138ef060b86f\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"4969f80a-7087-41f9-9d2a-1d154cdba13a\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"38ffac3f-63c7-454f-877b-14ca082b91ae\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"cee5b164-6a63-462b-86be-75593ea3a667\",null],\"lvLimits\":[0,0,0,1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6,7,6,6,8,8,8,9,9,9,10,10,10,11,11,11,12,12,12,13,13,13,14,14,14,15,15,15,16,16,16,17,17,17,18,18,18,19,19,19,20,20,20,21,21,21,22,22,22,23,23,23,24,24,24,25,25,25,26,26,26,27,27,27,28,28,28,29,29,29,30,30,30,31,31,31,32,32,32,33,33,33,34,34,34,35,35,35,36,36,36,37,37,37,38,38,38,39,39,39,40,40,40,41,41,41,42,42,42,43,43,43,44,44,44,45,45,45,46,46,46,47,47,47,48,48,48,49,49,49,50,50,50,51,51,51,52,52,52,53,53,53,54,54,54,55,55,55,56,56,56,57,57,57,58,58,58,59,59,59,60,60,60,61,61,61,62,62,62,63,63,63,64,64,64,65,65,65,66,66,66,67,67,67,68,68,68,69,69,69,70,70,70,71,71,71,72,72,72,73,73,73,74,74,74,75,75,75,76,76,76,77,77,77,78,78,78,79,79,79,80,80,80,81,81,81,82,82,82,83,83,83,84,84,84,85,85,85,86,86,86,87,87,87,88,88,88,89,89,89,90,90,90,91,91,91,92,92,92,93,93,93,94,94,94,95,95,95,96,96,96,97,97,97,98,98,98,99,99,99]}"
+      "PropertiesString": "{\"Genus\":[],\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"skillTIds\":[null,null,null,null,null,null,null,\"2ee94e69-8a26-4242-a046-09348c82d87d\",null,null,null,null,null,null,null,null,\"eac01cc9-2514-468a-8d46-546b66666f6d\",null,null,null,null,null,null,null,null,\"d610bea9-787d-4934-9a3f-60c8e6f971ca\",null,null,null,null,null,null,null,null,\"2df89f4f-a04e-410b-ba15-502dec4d9769\",null,null,null,null,null,null,null,null,\"e227868c-95dc-4a42-acc4-6b36b7cf20ae\",null,null,null,null,null,null,null,null,\"a0767743-15d1-4154-bb02-46a7e0cec8a9\",null,null,null,null,null,null,null,null,\"0f774ddb-9663-4e1f-8db8-627f2df1ca67\",null,null,null,null,null,null,null,null,null,null,null,\"2f338c8c-172b-4c7c-bf7f-d1e1d4bfc3a2\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"4a34020f-4d8a-4132-8585-28fa6a03a353\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"f1264091-5c14-41d4-b782-2faf5f863af4\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"7c00528e-b941-42c1-b7d4-750a2da5a1cc\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"b5e1a643-1337-473c-8af1-d24d2446285f\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"08c6759f-da17-4fb8-9988-6b2a83747531\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"97d2dfb4-cac8-40fc-b923-b9b77f9d3210\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"9c1f1704-a064-4e9b-90ed-9e1d36b64106\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"ddb6db4a-31c5-4db1-8613-33c24489b682\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"161ee74b-b0d0-415e-addc-28da54114df1\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"db1dbcd1-7d31-4809-b5f2-bb6254a1eab7\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"eedc1288-23b7-4f26-ad3d-9d9fd8fc7960\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"909f8408-84e3-420c-aa8b-138ef060b86f\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"4969f80a-7087-41f9-9d2a-1d154cdba13a\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"38ffac3f-63c7-454f-877b-14ca082b91ae\",null,null,null,null,null,null,null,null,null,null,null,null,null,null,\"cee5b164-6a63-462b-86be-75593ea3a667\",null],\"lvLimits\":[0,0,0,1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6,7,7,7,8,8,8,9,9,9,10,10,10,11,11,11,12,12,12,13,13,13,14,14,14,15,15,15,16,16,16,17,17,17,18,18,18,19,19,19,20,20,20,21,21,21,22,22,22,23,23,23,24,24,24,25,25,25,26,26,26,27,27,27,28,28,28,29,29,29,30,30,30,31,31,31,32,32,32,33,33,33,34,34,34,35,35,35,36,36,36,37,37,37,38,38,38,39,39,39,40,40,40,41,41,41,42,42,42,43,43,43,44,44,44,45,45,45,46,46,46,47,47,47,48,48,48,49,49,49,50,50,50,51,51,51,52,52,52,53,53,53,54,54,54,55,55,55,56,56,56,57,57,57,58,58,58,59,59,59,60,60,60,61,61,61,62,62,62,63,63,63,64,64,64,65,65,65,66,66,66,67,67,67,68,68,68,69,69,69,70,70,70,71,71,71,72,72,72,73,73,73,74,74,74,75,75,75,76,76,76,77,77,77,78,78,78,79,79,79,80,80,80,81,81,81,82,82,82,83,83,83,84,84,84,85,85,85,86,86,86,87,87,87,88,88,88,89,89,89,90,90,90,91,91,91,92,92,92,93,93,93,94,94,94,95,95,95,96,96,96,97,97,97,98,98,98,99,99,99]}"
     },
     {
       "Id": "acca7c0a-fdd5-4343-a6ec-e6c7f5c91e1c",

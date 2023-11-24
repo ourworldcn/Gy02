@@ -1,41 +1,96 @@
 {
-  "Genus": [ "gs_qiandao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
-    },
-    "GroupNumber": 0,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "7", "0" ]
-              }
-            ]
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      }
-    ],
+  "GameEvent": {
+    "EventId": "f77691d3-2916-42c2-88d7-339febc791fa",
+    "Ins": [],
     "Outs": [
       {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-        "Count": 5000
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "52b2351f-fb1a-4872-8cfb-e38d7ff08637",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "d9f62847-df1f-4899-a428-e7a65cdb02b3",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "cf33381f-950d-43bd-ba17-cd5ae948e250",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "49ef3f2c-c434-4069-9407-ae09b2f80596",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "1205f9e3-5f61-45a4-a803-6c0442c376e8",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "aea8e667-1f4b-4097-910b-4f63a9633ff3",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "4b651fd4-ab4b-409b-93e7-b7be8bd0ce2f",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "6d8372ee-cacd-40df-b32a-05920ae6b134",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "1a332240-e5a3-4313-9c72-45a5fd051a27",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "410a8468-5faa-4014-81bf-b335f08bc1db",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "572c425b-deb9-4187-9ddd-0e5d3db1f478",
+        "Count": 1,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
       }
-    ],
-    "MaxCount": 1
+    ]
   }
 }
