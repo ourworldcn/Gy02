@@ -388,7 +388,6 @@ namespace GY02.Managers
                 if (condition.TId.Value != entity.TemplateId)
                     return false;
             if (condition.MinCount > entity.Count) return false;
-
             VirtualThing thing = entity.GetThing();
             TemplateStringFullView fullView = _TemplateManager.GetFullViewFromId(thing.ExtraGuid);
 

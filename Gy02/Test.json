@@ -1,86 +1,48 @@
 {
-  "Genus": [ "cj_meiri", "goto_main_level" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
-            "MinCount": 0,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 7,
-              "MinRemainder": 0,
-              "MaxRemainder": 0
-            },
-            "GeneralConditional": [],
-            "Count": 0,
-            "GroupMask": 3
-          }
-        ]
-      }
-    ],
-    "Exp2LvSequence": [ 20, 40, 80, 140, 180, 220 ],
-    "Outs": [
-      [
+  {
+    "Genus": [ "gs_dongwuchoujiang" ],
+    "ShoppingItem": {
+      "Period": {
+        "Start": "2023-05-30T00:00:00.000Z",
+        "End": null,
+        "PeriodString": "1d",
+        "ValidPeriodString": "1d"
+      },
+      "GroupNumber": 2,
+      "MaxCount": null,
+      "Ins": [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
+          "Conditional": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "Genus": [],
+              "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
+              "MinCount": 10,
+              "GeneralConditional": [],
+              "GroupMask": 1
+            }
+          ],
+          "Count": 10,
+          "Genus": []
         }
       ],
-      [
+      "Outs": [
         {
+          "Id": null,
+          "ParentTId": null,
+          "TId": "88c92efc-fb43-43df-997d-c5918808de5d",
+          "Count": 1
+        },
+        {
+          "Id": null,
           "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
           "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 2000
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
-          "Count": 5
-        }
-      ],
-      [
-        {
-          "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-          "TId": "2e877976-2d3d-4e7e-8851-07163216319a",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 100
+          "Count": 300
         }
       ]
-    ]
-  },
-  "name_txt": 111111
+    },
+    "name_txt": 10965,
+    "comment_txt": 10943,
+    "JiaoBiao": []
+  }
 }

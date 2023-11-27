@@ -117,7 +117,7 @@ namespace GY02
             var sqlSb = AutoClearPool<StringBuilder>.Shared.Get();
             using var dwSb = DisposeHelper.Create(c => AutoClearPool<StringBuilder>.Shared.Return(c), sqlSb);
             #region 设置sql server使用内存，避免sql server 贪婪使用内存导致内存过大
-
+            
             var fact = _Services.GetService<IDbContextFactory<GY02UserContext>>();
             using var db = fact.CreateDbContext();
             sqlSb.AppendLine(@$"EXEC sys.sp_configure N'show advanced options', N'1'  RECONFIGURE WITH OVERRIDE;" +
