@@ -213,7 +213,7 @@ namespace GY02.Publisher
         public const string ExistsDayNumberGenus = "fl_ExistsDayNumber";
 
         /// <summary>
-        /// 
+        /// 每日递增。
         /// </summary>
         public const string AutoIncGenus = "fl_AutoInc";
 

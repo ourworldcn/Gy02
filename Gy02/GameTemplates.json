@@ -3038,7 +3038,7 @@
       "Id": "9c1f1704-a064-4e9b-90ed-9e1d36b64106",
       "DisplayName": "增加补给箱1个",
       "Gid": 140101291,
-      "PropertiesString": "{\"skillParams\":[10],\"comment_txt\":12168}"
+      "PropertiesString": "{\"skillParams\":[1],\"comment_txt\":12168}"
     },
     {
       "Id": "ddb6db4a-31c5-4db1-8613-33c24489b682",
@@ -3078,9 +3078,9 @@
     },
     {
       "Id": "38ffac3f-63c7-454f-877b-14ca082b91ae",
-      "DisplayName": "动物技能攻击时间增加",
+      "DisplayName": "动物技能攻击时间增加 20%",
       "Gid": 140101298,
-      "PropertiesString": "{\"skillParams\":[1],\"comment_txt\":12175}"
+      "PropertiesString": "{\"skillParams\":[20],\"comment_txt\":12175}"
     },
     {
       "Id": "cee5b164-6a63-462b-86be-75593ea3a667",
@@ -6070,16 +6070,16 @@
       "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13003,\"comment_txt\":13015,\"suggest\":[ 250,2200,200],\"scoreTime\":[450,500,600],\"charExp\":200}"
     },
     {
-      "Id": "28314d37-7d90-4a13-992f-22485de7b020",
-      "DisplayName": "火山溶洞",
-      "Gid": 210101004,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[ 280,2500,250],\"scoreTime\":[450,500,600],\"charExp\":200}"
-    },
-    {
       "Id": "f8b2fd94-8e7e-4c62-9c37-411f24a9b6a1",
       "DisplayName": "平原小路",
       "Gid": 210101005,
       "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13004,\"comment_txt\":13016,\"suggest\":[ 250,2200,200],\"scoreTime\":[450,500,600],\"charExp\":200}"
+    },
+    {
+      "Id": "28314d37-7d90-4a13-992f-22485de7b020",
+      "DisplayName": "火山溶洞",
+      "Gid": 210101004,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[ 280,2500,250],\"scoreTime\":[450,500,600],\"charExp\":200}"
     },
     {
       "Id": "da564dad-8b75-420a-b7e9-d1aab85617ec",
@@ -6283,7 +6283,7 @@
       "Id": "4c796274-eaac-4625-b341-4eb93fa22510",
       "DisplayName": "羊和长颈鹿孵化动物产出",
       "Gid": 170101003,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "bd7777a3-05f9-4536-b1f6-7a4e97ff29ed",
@@ -6319,7 +6319,7 @@
       "Id": "7801b358-1ab6-4376-b4b0-27ec8fdde735",
       "DisplayName": "羊和龙孵化动物产出",
       "Gid": 170101007,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "d03b2daf-c754-46da-83e7-3ec29e8b1447",
@@ -6463,7 +6463,7 @@
       "Id": "70c73d0f-59d1-428d-8359-f3feb79f7e63",
       "DisplayName": "狼和长颈鹿孵化动物产出",
       "Gid": 170101011,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "7d728204-1858-44ec-b909-6e8bb8e6d01b",
@@ -6517,7 +6517,7 @@
       "Id": "5ab190f6-abb5-4c47-ab83-c3f26a1742e0",
       "DisplayName": "狼和狗的孵化动物产出",
       "Gid": 170101029,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "148ccd35-dd66-4abd-ae99-c65874e010bd",
@@ -6571,7 +6571,7 @@
       "Id": "c1b36e5f-8191-47fc-824b-b4c1c6c0ec0c",
       "DisplayName": "狼和熊猫的孵化动物产出",
       "Gid": 170101075,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "d2d18964-b310-4004-83d8-2debaba74908",

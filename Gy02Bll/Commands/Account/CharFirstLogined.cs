@@ -66,7 +66,9 @@ namespace GY02.Commands
                 .Where(c => c.Item2 is not null).Where(c => c.Template.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false); //容错
             allEntityAndTemplate.ForEach(c =>
             {
-                if (c.Entity.TryGetCreateDateTime(out var dt))
+                if (!c.Entity.TryGetCreateDateTime(out var dt))
+                    c.Entity.SetCreateDateTime(OwHelper.WorldNow);
+                if (c.Entity.TryGetCreateDateTime(out dt))
                 {
                     c.Entity.Count = (now.Date - dt.Date).Days;
                 }
