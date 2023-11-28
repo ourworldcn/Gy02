@@ -218,6 +218,8 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var ss = GC.GetGCMemoryInfo();
+                var sd = GC.GetTotalMemory(true);
                 var fac = _Services.GetRequiredService<IDbContextFactory<GY02UserContext>>();
                 StringBuilder sb=new StringBuilder();
                 for (int i = 65; i < 91; i++)

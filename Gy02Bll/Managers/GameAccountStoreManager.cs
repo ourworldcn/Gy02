@@ -450,7 +450,7 @@ namespace GY02.Managers
         {
             //开始从数据库加载
             context ??= _ContextFactory.CreateDbContext();
-            var guThing = context.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children)
+            var guThing = context.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children)/*.ThenInclude(c => c.Children).ThenInclude(c => c.Children)*/
                 .Where(c => c.ExtraGuid == ProjectContent.UserTId).FirstOrDefault(loadFunc);
             if (guThing is null)
             {

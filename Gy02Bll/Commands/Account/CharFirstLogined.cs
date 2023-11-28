@@ -66,19 +66,16 @@ namespace GY02.Commands
                 .Where(c => c.Item2 is not null).Where(c => c.Template.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false); //容错
             allEntityAndTemplate.ForEach(c =>
             {
-                if (!c.Entity.TryGetCreateDateTime(out var dt))
-                    c.Entity.SetCreateDateTime(OwHelper.WorldNow);
-                if (c.Entity.TryGetCreateDateTime(out dt))
-                {
-                    c.Entity.Count = (now.Date - dt.Date).Days;
-                }
+                if (c.Entity.CreateDateTime is null)
+                    c.Entity.CreateDateTime = OwHelper.WorldNow;
+                c.Entity.Count = (now.Date - c.Entity.CreateDateTime.Value.Date).Days;
             });
             //fl_AutoInc 此类实体在每天第一次登录时会自动把Count+1，从0开始。
             var allEntity = _EntityManager.GetAllEntity(command.GameChar).Select(c => (Entity: c, Template: _TemplateManager.GetFullViewFromId(c.TemplateId)))
                  .Where(c => c.Item2 is not null).Where(c => c.Template.Genus?.Contains(ProjectContent.AutoIncGenus) ?? false);
             allEntity.SafeForEach(c =>
             {
-                if (c.Entity.TryGetCreateDateTime(out var dt) && dt.Date < now.Date)
+                if (c.Entity.CreateDateTime.Value.Date < now.Date)
                 {
                     c.Entity.Count++;
                 }

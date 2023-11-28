@@ -435,12 +435,12 @@ namespace GY02.Managers
                 entity.Count = summary.Count;   //可以是任何数
                 if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
                 {
-                    entity.SetCreateDateTime(OwHelper.WorldNow);
+                    entity.CreateDateTime = OwHelper.WorldNow;
                     entity.Count = 0;
                 }
                 if (tt.Genus?.Contains(ProjectContent.AutoIncGenus) ?? false)
                 {
-                    entity.SetCreateDateTime(OwHelper.WorldNow);
+                    entity.CreateDateTime = OwHelper.WorldNow;
                     entity.Count = 0;
                 }
                 result.Add(entity);
@@ -471,12 +471,12 @@ namespace GY02.Managers
                     tmpEntity.Count = 1;
                     if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
                     {
-                        tmpEntity.SetCreateDateTime(OwHelper.WorldNow);
+                        tmpEntity.CreateDateTime = OwHelper.WorldNow;
                         tmpEntity.Count = 0;
                     }
                     if (tt.Genus?.Contains(ProjectContent.AutoIncGenus) ?? false)
                     {
-                        tmpEntity.SetCreateDateTime(OwHelper.WorldNow);
+                        tmpEntity.CreateDateTime = OwHelper.WorldNow;
                         tmpEntity.Count = 0;
                     }
                     result.Add(tmpEntity);
@@ -522,12 +522,12 @@ namespace GY02.Managers
                     fcp.Value.SetLastValue(ttFcp.CurrentValue, ref dt);
                 }
                 if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
-                    if (!entity.TryGetCreateDateTime(out _))
-                        entity.SetCreateDateTime(now);
+                    if (entity.CreateDateTime is null)
+                        entity.CreateDateTime = now;
                 if (tt.Genus?.Contains(ProjectContent.AutoIncGenus) ?? false)
                 {
-                    if (!entity.TryGetCreateDateTime(out _))
-                        entity.SetCreateDateTime(OwHelper.WorldNow);
+                    if (entity.CreateDateTime is null)
+                        entity.CreateDateTime = now;
                 }
             }
         }

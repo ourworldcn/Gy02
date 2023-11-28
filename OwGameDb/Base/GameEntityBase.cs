@@ -207,39 +207,5 @@ namespace OW.Game.Store
     /// </summary>
     public static class GameEntityBaseExtensions
     {
-        public const string CreateDateTimeKeyName = "CreateDateTime";
-
-        /// <summary>
-        /// 设置创建时间。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="date"></param>
-        public static void SetCreateDateTime(this GameEntityBase entity, DateTime date)
-        {
-            entity.ExtensionProperties[CreateDateTimeKeyName] = date;
-        }
-
-        /// <summary>
-        /// 获取创建时间。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <returns>没有创建时间则返回default。</returns>
-        public static DateTime GetCreateDateTime(this GameEntityBase entity)
-        {
-            return OwConvert.TryGetDateTime(entity.ExtensionProperties.GetValueOrDefault(CreateDateTimeKeyName), out var dt) ? dt : default;
-        }
-
-        /// <summary>
-        /// 试图获取创建时间。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="dateTime"></param>
-        /// <returns>有创建时间则返回true，否则返回false。</returns>
-        public static bool TryGetCreateDateTime(this GameEntityBase entity, out DateTime dateTime)
-        {
-            if (entity.ExtensionProperties.TryGetValue(CreateDateTimeKeyName, out var tmp) && OwConvert.TryGetDateTime(tmp, out dateTime)) return true;
-            dateTime = default;
-            return false;
-        }
     }
 }
