@@ -301,7 +301,39 @@ namespace GY02.Controllers
             }
             return result;
         }
-    }
 
+        /// <summary>
+        /// 修改系统时间。仅能开发调试版使用。需要超管权限执行此操作。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="environment"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<ModifyWorldDateTimeReturnDto> ModifyWorldDateTime(ModifyWorldDateTimeParamsDto model, [FromServices] IHostEnvironment environment)
+        {
+            var result = new ModifyWorldDateTimeReturnDto();
+            if (environment.EnvironmentName != Environments.Production)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED;
+                result.DebugMessage = "仅能开发调试版才能使用";
+                return result;
+            }
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            if (gc.GetThing().Parent.GetJsonObject<GameUser>().LoginName != "1D22F0CF-1704-412C-AD8D-32CE5FA5A7D5")   //若非超管账号
+            {
+                result.ErrorCode = ErrorCodes.ERROR_NO_SUCH_PRIVILEGE;
+                result.DebugMessage = "需要超管权限执行此操作";
+                return result;
+            }
+            OwHelper._Offset = TimeSpan.FromSeconds(model.Offset);
+            return result;
+        }
+    }
 
 }

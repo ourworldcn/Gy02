@@ -226,6 +226,14 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.AdminController.ModifyWorldDateTime(GY02.Publisher.ModifyWorldDateTimeParamsDto,Microsoft.Extensions.Hosting.IHostEnvironment)">
+            <summary>
+            修改系统时间。仅能开发调试版使用。需要超管权限执行此操作。
+            </summary>
+            <param name="model"></param>
+            <param name="environment"></param>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Controllers.BlueprintController">
             <summary>
             蓝图相关操作的控制器。

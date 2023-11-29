@@ -1505,6 +1505,21 @@
             发送邮件功能的返回值封装类。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.ModifyWorldDateTimeParamsDto">
+            <summary>
+            修改系统时间的功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.ModifyWorldDateTimeParamsDto.Offset">
+            <summary>
+            服务器使用的时间与Utc时间的偏移值。单位：秒
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.ModifyWorldDateTimeReturnDto">
+            <summary>
+            修改系统时间的功能返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetServerDictionaryReturnDto">
             <summary>
             获取服务器字典功能的返回值封装类。

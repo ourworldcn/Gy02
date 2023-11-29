@@ -1990,6 +1990,24 @@ namespace GY02.Publisher
     #region 管理员功能相关
 
     /// <summary>
+    /// 修改系统时间的功能参数封装类。
+    /// </summary>
+    public class ModifyWorldDateTimeParamsDto :TokenDtoBase
+    {
+        /// <summary>
+        /// 服务器使用的时间与Utc时间的偏移值。单位：秒
+        /// </summary>
+        public int Offset { get; set; }
+    }
+
+    /// <summary>
+    /// 修改系统时间的功能返回值封装类。
+    /// </summary>
+    public class ModifyWorldDateTimeReturnDto : ReturnDtoBase
+    {
+    }
+
+    /// <summary>
     /// 获取服务器字典功能的返回值封装类。
     /// </summary>
     [AutoMap(typeof(GetServerDictionaryCommand))]
