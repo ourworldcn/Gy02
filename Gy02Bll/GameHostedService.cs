@@ -28,6 +28,7 @@ using OW.Game.Store;
 using OW.GameDb;
 using OW.Server;
 using OW.SyncCommand;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net;
@@ -117,11 +118,18 @@ namespace GY02
             var sqlSb = AutoClearPool<StringBuilder>.Shared.Get();
             using var dwSb = DisposeHelper.Create(c => AutoClearPool<StringBuilder>.Shared.Return(c), sqlSb);
             #region 设置sql server使用内存，避免sql server 贪婪使用内存导致内存过大
-            
+            var sqlMemoryInMB = 4096;   //SQL服务器内存大小
+            var mi = new MEMORYINFO(); mi.Initialize();
+            if (Win32Methods.GlobalMemoryStatusEx(ref mi))
+            {
+                var tmp = (decimal)mi.ullTotalPhys / 1024 / 1024;
+                sqlMemoryInMB = Math.Max(sqlMemoryInMB, (int)Math.Round(tmp / 3));
+            }
+
             var fact = _Services.GetService<IDbContextFactory<GY02UserContext>>();
             using var db = fact.CreateDbContext();
             sqlSb.AppendLine(@$"EXEC sys.sp_configure N'show advanced options', N'1'  RECONFIGURE WITH OVERRIDE;" +
-                "EXEC sys.sp_configure N'max server memory (MB)', N'4096';" +
+                $"EXEC sys.sp_configure N'max server memory (MB)', N'{sqlMemoryInMB}';" +
                 "RECONFIGURE WITH OVERRIDE;" +
                 "EXEC sys.sp_configure N'show advanced options', N'0'  RECONFIGURE WITH OVERRIDE;");
             #endregion
@@ -218,17 +226,6 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var ss = GC.GetGCMemoryInfo();
-                var sd = GC.GetTotalMemory(true);
-                var fac = _Services.GetRequiredService<IDbContextFactory<GY02UserContext>>();
-                StringBuilder sb=new StringBuilder();
-                for (int i = 65; i < 91; i++)
-                {
-                    var c = char.ConvertFromUtf32(i);
-                    sb.Append("'");
-                    sb.Append(c);
-                    sb.Append("',");
-                }
             }
             #endregion 测试用代码
             catch (Exception)
