@@ -63,7 +63,15 @@ namespace GY02.Commands
             };
             _syncCommand.Handle(shopping);
             if (shopping.HasError)
+            {
                 command.FillErrorFrom(shopping);
+                command.ErrorCode = 1219;
+            }
+            else
+            {
+                redeem.Count++;
+                _DbContext.SaveChanges();
+            }
         }
     }
 }

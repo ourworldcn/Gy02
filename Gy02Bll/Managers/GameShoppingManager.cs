@@ -181,6 +181,7 @@ namespace GY02.Managers
             var b = _BlueprintManager.GetMatches(entities, ins, mask);
             if (b.Any(c => c.Item1 is null))
             {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到符合条件的实体。");
                 return false;
             }
             return true;
