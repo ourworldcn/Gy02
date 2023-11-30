@@ -7,6 +7,7 @@ using OW.Game.PropertyChange;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,17 +95,9 @@ namespace GY02.Commands
             var list = _GameEntityManager.Create(coll);
             if (coll.Any()) //若有需要移动的实体
                 _GameEntityManager.Move(list.Select(c => c.Item2), command.GameChar, command.Changes);
-            var change = new GamePropertyChangeItem<object>
-            {
-                Object = command.GameChar,
-                PropertyName = nameof(command.GameChar.CombatTId),
-                HasOldValue = true,
-                OldValue = command.GameChar.CombatTId,
-                HasNewValue = false,
-                NewValue = null,
-            };
+            var change = command.Changes?.MarkChanges(command.GameChar, nameof(command.GameChar.CombatTId), command.GameChar.CombatTId, null);
+            if (change is not null) change.HasNewValue = false;
             command.GameChar.CombatTId = null;
-            command.Changes?.Add(change);
             #region 记录战斗信息
             var gc = command.GameChar;
             if (command.MinTimeSpanOfPass.HasValue) //若需要记录战斗信息
@@ -117,18 +110,14 @@ namespace GY02.Commands
                 }
                 if (!ch.MinTimeSpanOfPass.HasValue || ch.MinTimeSpanOfPass > command.MinTimeSpanOfPass)
                 {
-                    var change1 = new GamePropertyChangeItem<object>
+                    var change1 = command.Changes?.MarkChanges(gc, nameof(gc.CombatHistory), new CombatHistoryItem { TId = ch.TId, MinTimeSpanOfPass = ch.MinTimeSpanOfPass }, ch);
+                    if (change1 != null)
                     {
-                        Object = gc,
-                        PropertyName = nameof(gc.CombatHistory),
-                        HasOldValue = ch.MinTimeSpanOfPass.HasValue,
-                        OldValue = new CombatHistoryItem { TId = ch.TId, MinTimeSpanOfPass = ch.MinTimeSpanOfPass },
-                        HasNewValue = command.MinTimeSpanOfPass.HasValue,
-                        NewValue = ch,
-                    };
+                        change1.HasOldValue = ch.MinTimeSpanOfPass.HasValue;
+                        change1.HasNewValue = command.MinTimeSpanOfPass.HasValue;
+                    }
                     ch.MinTimeSpanOfPass = command.MinTimeSpanOfPass;
 
-                    command.Changes?.Add(change1);
                 }
             }
             #endregion 记录战斗信息

@@ -737,6 +737,8 @@ namespace GY02.Managers
                     if (thing is null) return false;
                     VirtualThingManager.Add(thing, parentThing);
                     changes?.CollectionAdd(entity, container);
+                    changes?.MarkChanges(entity, nameof(entity.Count), 0, entity.Count);
+
                     if (tt.Exp2LvSequence is decimal[] e2l && e2l.Length > 0)  //若需要转化等级
                     {
                         var oldLv = entity.Level;

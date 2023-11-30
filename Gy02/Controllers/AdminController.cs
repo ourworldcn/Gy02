@@ -258,13 +258,14 @@ namespace GY02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-            if (gc.GetThing().Parent.GetJsonObject<GameUser>().LoginName != "1D22F0CF-1704-412C-AD8D-32CE5FA5A7D5")   //若非超管账号
+            if (gc.GetThing().Parent.GetJsonObject<GameUser>().LoginName != ProjectContent.AdminLoginName)   //若非超管账号
             {
                 result.ErrorCode = ErrorCodes.ERROR_NO_SUCH_PRIVILEGE;
                 result.DebugMessage = "需要超管权限执行此操作";
+                result.HasError = true;
                 return result;
             }
-            if (model.CodeType == 2)
+            if (model.CodeType == 2)    //若是一次性码
             {
                 var redeems = _RedeemCodeManager.Generat(model.Count, model.CodeType, _DbContext);
                 var catalog = new GameRedeemCodeCatalog
@@ -282,8 +283,15 @@ namespace GY02.Controllers
                 _DbContext.SaveChanges();
                 result.Codes.AddRange(redeems);
             }
-            else if (model.CodeType == 1)
+            else if (model.CodeType == 1)   //若是通用码
             {
+                if (string.IsNullOrEmpty(model.Code))
+                {
+                    result.HasError = true;
+                    result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    result.DebugMessage = $"生成通用码必须明确指定。";
+                    return result;
+                }
                 var catalog = new GameRedeemCodeCatalog
                 {
                     DisplayName = "",

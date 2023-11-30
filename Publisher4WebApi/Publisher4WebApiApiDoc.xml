@@ -1986,6 +1986,11 @@
             生成兑换码功能参数封装类。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GenerateRedeemCodeParamsDto.CodeType">
+            <summary>
+            生成的码的类型，1=通用码，2=一次性码。通用性兑换码通常一批只生成一个，如：VIP6666。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GenerateRedeemCodeParamsDto.Count">
             <summary>
             生成的数量。
@@ -1999,11 +2004,6 @@
         <member name="P:GY02.Publisher.GenerateRedeemCodeParamsDto.Code">
             <summary>
             强行指定生成一个通用兑换码。仅当 CodeType == 1时，指定这一项才有用。
-            </summary>
-        </member>
-        <member name="P:GY02.Publisher.GenerateRedeemCodeParamsDto.CodeType">
-            <summary>
-            生成的码的类型，1=通用码，2=一次性码。通用性兑换码通常一批只生成一个，如：VIP6666。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GenerateRedeemCodeReturnDto">

@@ -2614,6 +2614,11 @@ namespace GY02.Publisher
     public class GenerateRedeemCodeParamsDto : TokenDtoBase
     {
         /// <summary>
+        /// 生成的码的类型，1=通用码，2=一次性码。通用性兑换码通常一批只生成一个，如：VIP6666。
+        /// </summary>
+        public int CodeType { get; set; }
+
+        /// <summary>
         /// 生成的数量。
         /// </summary>
         public int Count { get; set; }
@@ -2627,11 +2632,6 @@ namespace GY02.Publisher
         /// 强行指定生成一个通用兑换码。仅当 CodeType == 1时，指定这一项才有用。
         /// </summary>
         public string Code { get; set; }
-
-        /// <summary>
-        /// 生成的码的类型，1=通用码，2=一次性码。通用性兑换码通常一批只生成一个，如：VIP6666。
-        /// </summary>
-        public int CodeType { get; set; }
     }
 
     /// <summary>

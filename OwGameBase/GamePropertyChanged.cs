@@ -330,5 +330,33 @@ namespace OW.Game.PropertyChange
             changes.Add(result);
             return result;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="changes"></param>
+        /// <param name="obj"></param>
+        /// <param name="propertyName"></param>
+        /// <param name="newValue"></param>
+        /// 
+        /// <returns></returns>
+        public static GamePropertyChangeItem<T> MarkNewValueChanges<T>(this ICollection<GamePropertyChangeItem<T>> changes, object obj, string propertyName, T newValue)
+        {
+            var result = new GamePropertyChangeItem<T>
+            {
+                Object = obj,
+                PropertyName = propertyName,
+
+                HasOldValue = false,
+                OldValue = default,
+
+                HasNewValue = true,
+                NewValue = newValue,
+
+            };
+            changes.Add(result);
+            return result;
+        }
     }
 }
