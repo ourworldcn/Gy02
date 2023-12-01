@@ -102,7 +102,7 @@
       "Id": "34ed89da-4a7f-41b6-baf1-c948765525c3",
       "DisplayName": "7日签到第3天 第二组",
       "Gid": 180101010,
-      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-10T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"42\",\"9\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":5}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-10T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"42\",\"9\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":5}],\"MaxCount\":1}}"
     },
     {
       "Id": "b7c03093-fa38-41c3-9bd3-74e5960fff72",
@@ -920,7 +920,7 @@
       "Id": "1d28ac5b-69b8-4d00-8d33-a81e5953884e",
       "DisplayName": "增加20%的击飞概率",
       "Gid": 140301002,
-      "PropertiesString": "{\"skillParams\":[20,20],\"name_txt\":12106}"
+      "PropertiesString": "{\"skillParams\":[5,5],\"name_txt\":12106}"
     },
     {
       "Id": "c0acf35b-7a33-481b-af29-12483f788ba4",
@@ -6356,6 +6356,126 @@
       "DisplayName": "沙漠神殿",
       "Gid": 210101030,
       "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13067,\"comment_txt\":13068,\"suggest\":[450,4000,1500],\"scoreTime\":[480,540,720],\"charExp\":200}"
+    },
+    {
+      "Id": "3197b329-68b8-4c31-8334-b88b161fd728",
+      "DisplayName": "向日葵平原",
+      "Gid": 210101031,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13069,\"comment_txt\":13070,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "bad56592-6e8a-4dcd-b559-2aedbadb0ce7",
+      "DisplayName": "部落之地",
+      "Gid": 210101032,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13071,\"comment_txt\":13072,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "26eef17b-04a6-4318-a9f8-ef16384a0bc5",
+      "DisplayName": "玛雅神殿",
+      "Gid": 210101033,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13073,\"comment_txt\":13074,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "bb50d515-03c3-407d-a8e5-da4ca1232f02",
+      "DisplayName": "丛林之巅",
+      "Gid": 210101034,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13075,\"comment_txt\":13076,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "0f8c1aaa-ae17-4ee2-8ffa-f333ea34f4e8",
+      "DisplayName": "鲨鱼领地",
+      "Gid": 210101035,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13077,\"comment_txt\":13078,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "3c1808eb-c50a-4248-bb0f-c508bec82556",
+      "DisplayName": "冰雪小屋",
+      "Gid": 210101036,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13079,\"comment_txt\":13080,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "04a41e03-6ed4-416d-8a5c-911dfcafb9c2",
+      "DisplayName": "风车磨坊",
+      "Gid": 210101037,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13081,\"comment_txt\":13082,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "de8687fa-57f3-43d0-8ea6-2d957b75ddab",
+      "DisplayName": "祭祀之地",
+      "Gid": 210101038,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13083,\"comment_txt\":13084,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "40112c4b-6253-44d5-aa45-04281f9b3b07",
+      "DisplayName": "神殿之间",
+      "Gid": 210101039,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13085,\"comment_txt\":13086,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "b5cdac6b-6281-4346-bc82-2cfff1229b80",
+      "DisplayName": "高山营地",
+      "Gid": 210101040,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13087,\"comment_txt\":13088,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "90b39779-ef6f-47ea-8993-e8793b471a13",
+      "DisplayName": "魔法矿场",
+      "Gid": 210101041,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13091,\"comment_txt\":13092,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "a6da7950-5556-4fa8-a8df-d39a1de57b97",
+      "DisplayName": "岩浆巢穴",
+      "Gid": 210101042,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13089,\"comment_txt\":13090,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "d64a7d8e-c8cb-4e01-b4a2-86b183ac8c6b",
+      "DisplayName": "草原古树",
+      "Gid": 210101043,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13091,\"comment_txt\":13092,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "990298ce-3b4b-408f-964c-e63cd07af035",
+      "DisplayName": "祭祀神殿",
+      "Gid": 210101044,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13093,\"comment_txt\":13094,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "81beeb25-2a87-4fe2-b9f9-a7ba8bb44786",
+      "DisplayName": "法老遗迹",
+      "Gid": 210101045,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13095,\"comment_txt\":13096,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "5e88a59b-7f22-459d-8c29-658f896dc9f4",
+      "DisplayName": "丛林秘境",
+      "Gid": 210101046,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13097,\"comment_txt\":13098,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "ce0ca55d-5148-4c0b-bcd9-8ca2adf87def",
+      "DisplayName": "潜水圣地",
+      "Gid": 210101047,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13099,\"comment_txt\":13100,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "14b5c71d-3c3f-4aa8-a755-8461992d5869",
+      "DisplayName": "冰雪乐园",
+      "Gid": 210101048,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13101,\"comment_txt\":13102,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "1464690b-26a0-441f-94aa-30a4472db4d6",
+      "DisplayName": "部落农场",
+      "Gid": 210101049,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":130103,\"comment_txt\":13104,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
+    },
+    {
+      "Id": "d937fe48-5230-41cd-b6f6-39fd318a1fec",
+      "DisplayName": "圣地遗迹",
+      "Gid": 210101050,
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":130105,\"comment_txt\":13106,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":300}"
     },
     {
       "Id": "cabe2c3c-56c0-4afe-abae-14dfbf96d4a2",
@@ -14963,13 +15083,13 @@
       "Id": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
       "DisplayName": "普通天赋商品内容",
       "Gid": 180603001,
-      "PropertiesString": "{\"Genus\":[\"gs_tianfu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"999y\",\"ValidPeriodString\":\"999y\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a9afdc4d-080c-4d8a-9b37-64481ff525c6\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":0}],\"Count\":1}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"3f10bd41-e97c-49f0-84ae-127506d90c60\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_tianfu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"999y\",\"ValidPeriodString\":\"999y\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a9afdc4d-080c-4d8a-9b37-64481ff525c6\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"3f10bd41-e97c-49f0-84ae-127506d90c60\",\"Count\":1}]}}"
     },
     {
       "Id": "42fe780b-2ccf-4bb0-b306-ed2562d94a23",
       "DisplayName": "高级天赋商品内容",
       "Gid": 180603002,
-      "PropertiesString": "{\"Genus\":[\"gs_tianfu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"999y\",\"ValidPeriodString\":\"999y\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a35f374b-c5a2-4933-82cd-9cb9f3bc6242\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":0}],\"Count\":1}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":3},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":5}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_tianfu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"999y\",\"ValidPeriodString\":\"999y\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"a35f374b-c5a2-4933-82cd-9cb9f3bc6242\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9c8ea669-08bf-41ad-9628-736fe16bd226\",\"Count\":1}]}}"
     },
     {
       "Id": "3f10bd41-e97c-49f0-84ae-127506d90c60",

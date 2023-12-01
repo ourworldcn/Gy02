@@ -1,58 +1,36 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
+  "Genus": [ "gs_tianfu" ],
   "ShoppingItem": {
     "Period": {
       "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
+      "PeriodString": "999y",
+      "ValidPeriodString": "999y"
     },
-    "GroupNumber": 1,
-    "MaxCount": 2,
+    "GroupNumber": 0,
+    "MaxCount": null,
     "Ins": [
       {
         "Conditional": [
           {
             "ParentTId": null,
             "Genus": [],
-            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
+            "TId": "a35f374b-c5a2-4933-82cd-9cb9f3bc6242",
             "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "5", "0" ]
-              }
-            ]
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-            "MinCount": 10000,
             "GeneralConditional": [],
-            "GroupMask": 1
+            "GroupMask": 0
           }
         ],
-        "Count": 10000,
-        "Genus": []
+        "Count": 1
       }
     ],
     "Outs": [
       {
         "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-        "Count": 3
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "9c8ea669-08bf-41ad-9628-736fe16bd226",
+        "Count": 1
       }
     ]
-  },
-  "name_txt": 11862,
-  "JiaoBiao": [ "ZheKou60", 10958 ]
+  }
 }

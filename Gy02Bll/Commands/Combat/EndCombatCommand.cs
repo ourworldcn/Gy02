@@ -87,6 +87,7 @@ namespace GY02.Commands
                 command.DebugMessage = $"客户端指定战斗模板Id={command.CombatTId},但用户实际的战斗模板Id={command.GameChar.CombatTId}";
                 return;
             }
+            command.GameChar.ClientCombatInfo = null;
             //把掉落物品增加到角色背包中
             var coll = from tmp in command.Rewards
                        group tmp by tmp.TId into g
@@ -120,6 +121,7 @@ namespace GY02.Commands
 
                 }
             }
+
             #endregion 记录战斗信息
             _AccountStore.Save(key);
         }
