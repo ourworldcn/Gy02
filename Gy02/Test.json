@@ -18,7 +18,7 @@
             "TId": "a35f374b-c5a2-4933-82cd-9cb9f3bc6242",
             "MinCount": 0,
             "GeneralConditional": [],
-            "GroupMask": 0
+            "GroupMask": 3
           }
         ],
         "Count": 1
@@ -27,8 +27,8 @@
     "Outs": [
       {
         "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "9c8ea669-08bf-41ad-9628-736fe16bd226",
+        "ParentTId": null,
+        "TId": "942509a8-73a2-41ea-be08-f5f43f7cddc7",
         "Count": 1
       }
     ]
