@@ -1,23 +1,16 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "GameEvent": {
+    "EventId": "6afdddd0-b98d-45fc-8f8d-41fb1f929cf8",
+    "Ins": [],
+    "Outs": [
       {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
-        "MinCount": 0,
-        "GeneralConditional": [],
-        "GroupMask": 1
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "23c52c58-c5ef-4c53-824c-c6a377af7075",
+        "Count": 0,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
       }
-    ],
-    "GetIndexExpression": {
-      "op": "GetBuyedCount",
-      "args": [ "42fe780b-2ccf-4bb0-b306-ed2562d94a23" ]
-    },
-    "Outs": {
-      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
-      "TIds": [ "9c8ea669-08bf-41ad-9628-736fe16bd226" ],
-      "Counts": [ 8, 9, 9, 9, 9, 9, 9, 12, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 ]
-    }
+    ]
   }
 }

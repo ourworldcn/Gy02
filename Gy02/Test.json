@@ -1,36 +1,18 @@
 {
-  "Genus": [ "gs_tianfu" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "999y",
-      "ValidPeriodString": "999y"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "a35f374b-c5a2-4933-82cd-9cb9f3bc6242",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "GroupMask": 3
-          }
-        ],
-        "Count": 1
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "942509a8-73a2-41ea-be08-f5f43f7cddc7",
-        "Count": 1
-      }
-    ]
-  }
+  "currencyGid": 110201007,
+  "currencyType": 110201007,
+  "propGid": 110201007,
+  "propType": 1,
+  "propRarity": 1,
+  "propName": 0,
+  "Count": 200.0,
+  "LvUpAccruedCost": [],
+  "CompositingAccruedCost": [],
+  "CreateDateTime": "2023-12-05T16:46:28.9762978Z",
+  "CountOfLastModifyUtc": "2023-12-05T16:46:28.9762981Z",
+  "ClientDictionary": {},
+  "Fcps": {},
+  "lv": 1.0,
+  "Id": "0bce611e-e5e1-4e72-9816-517cdfbc80e7",
+  "TemplateId": "1f31807a-f633-4d3a-8e8e-382ad105d061"
 }

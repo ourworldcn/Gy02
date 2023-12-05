@@ -194,6 +194,13 @@ namespace GY02.Commands.Achievement
                     if (achi?.Count < nv)
                         _EventManager.SendEventWithNewValue(Guid.Parse("ce076015-1938-4df6-aa97-d165cbe32547"), nv, context);
                 }
+                //b528646c-070a-4776-a408-825cf4f437ed	角色经验变化事件
+                var ss = Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061");
+                var entityExp = e.Entities.FirstOrDefault(c => c.TemplateId == ss);
+                if (entityExp is not null)
+                {
+                    _EventManager.SendEventWithNewValue(Guid.Parse("6afdddd0-b98d-45fc-8f8d-41fb1f929cf8"), entityExp.Count, context);
+                }
             }
         }
 

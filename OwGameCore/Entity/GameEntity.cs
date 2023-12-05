@@ -65,11 +65,15 @@ namespace OW.Game.Entity
         {
             get
             {
+                //if (Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061") == TemplateId)
+                //    ;
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
                 return fcp is null ? _Count : fcp.GetCurrentValueWithUtc();
             }
             set
             {
+                //if (Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061") == TemplateId)
+                //    ;
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
                 if (fcp is null)
                 {
