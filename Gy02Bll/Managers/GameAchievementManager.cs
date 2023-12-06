@@ -109,7 +109,12 @@ namespace GY02.Managers
         /// 引发成就/任务项，变化事件。
         /// </summary>
         /// <param name="args"></param>
-        public void InvokeAchievementChanged(AchievementChangedEventArgs args) => AchievementChanged?.Invoke(this, args);
+        public void InvokeAchievementChanged(AchievementChangedEventArgs args)
+        {
+            //if (Guid.Parse("23c52c58-c5ef-4c53-824c-c6a377af7075") == args.Achievement.TemplateId)
+            //    ;
+            AchievementChanged?.Invoke(this, args);
+        }
 
         /// <summary>
         /// 对指定的成就任务项增加计数，若计数发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）

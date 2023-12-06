@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
+using OW.Data;
 using OW.Game.Store;
 using System;
 using System.Collections.Concurrent;

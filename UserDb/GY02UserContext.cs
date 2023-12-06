@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.ObjectPool;
+using OW.Data;
 using OW.Game.Store.Base;
 using System;
 using System.Collections.Generic;

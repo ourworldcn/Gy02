@@ -7,7 +7,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading;
 
-namespace OW.Game.Store
+namespace OW.Data
 {
     /// <summary>
     /// 玩家数据对象的基类。

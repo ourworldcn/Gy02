@@ -1,4 +1,5 @@
-﻿using OW.DDD;
+﻿using OW.Data;
+using OW.DDD;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;

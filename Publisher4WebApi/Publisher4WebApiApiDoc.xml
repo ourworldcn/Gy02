@@ -1205,7 +1205,7 @@
         </member>
         <member name="M:GY02.Publisher.GameShoppingOrderDetailDto.Clone">
             <summary>
-            获取一个深表副本。注意Id也被复制，通常需要调用<see cref="M:OW.Game.Store.GuidKeyObjectBase.GenerateNewId"/>换成新Id。
+            获取一个深表副本。注意Id也被复制，通常需要调用<see cref="M:OW.Data.GuidKeyObjectBase.GenerateNewId"/>换成新Id。
             </summary>
             <returns></returns>
         </member>

@@ -1,36 +1,521 @@
 {
-  "Genus": [ "gs_tianfu" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "999y",
-      "ValidPeriodString": "999y"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
+  "Seq": 55,
+  "Achievement": {
+    "Items": [
       {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "a35f374b-c5a2-4933-82cd-9cb9f3bc6242",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "GroupMask": 0
-          }
-        ],
-        "Count": 1
+        "IsCompleted": true,
+        "IsPicked": false,
+        "Level": 1
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 2
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 3
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 4
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 5
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 6
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 7
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 8
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 9
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 10
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 11
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 12
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 13
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 14
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 15
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 16
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 17
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 18
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 19
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 20
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 21
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 22
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 23
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 24
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 25
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 26
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 27
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 28
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 29
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 30
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 31
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 32
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 33
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 34
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 35
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 36
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 37
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 38
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 39
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 40
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 41
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 42
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 43
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 44
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 45
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 46
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 47
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 48
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 49
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 50
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 51
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 52
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 53
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 54
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 55
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 56
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 57
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 58
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 59
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 60
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 61
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 62
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 63
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 64
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 65
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 66
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 67
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 68
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 69
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 70
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 71
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 72
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 73
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 74
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 75
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 76
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 77
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 78
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 79
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 80
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 81
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 82
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 83
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 84
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 85
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 86
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 87
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 88
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 89
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 90
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 91
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 92
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 93
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 94
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 95
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 96
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 97
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 98
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 99
+      },
+      {
+        "IsCompleted": false,
+        "IsPicked": false,
+        "Level": 100
       }
     ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "942509a8-73a2-41ea-be08-f5f43f7cddc7",
-        "Count": 1
-      }
-    ]
+    "Count": 200.0,
+    "LastModifyDateTime": "2023-12-06T18:24:19.9422543Z",
+    "IsValid": true,
+    "Start": "0001-01-01T00:00:00",
+    "End": "0001-01-01T00:00:00",
+    "LvUpAccruedCost": [],
+    "CompositingAccruedCost": [],
+    "CreateDateTime": "2023-12-06T18:24:19.9421555Z",
+    "CountOfLastModifyUtc": "2023-12-06T18:27:31.9112945Z",
+    "ClientDictionary": {},
+    "Fcps": {},
+    "lv": 1,
+    "Id": "c35b51be-5d88-4bb3-9de4-8d15c43b6a0b",
+    "TemplateId": "23c52c58-c5ef-4c53-824c-c6a377af7075"
   }
 }
