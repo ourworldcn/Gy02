@@ -335,10 +335,10 @@ namespace GY02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-            if (gc.GetThing().Parent.GetJsonObject<GameUser>().LoginName != "1D22F0CF-1704-412C-AD8D-32CE5FA5A7D5")   //若非超管账号
+            if (gc.GetThing().Parent.GetJsonObject<GameUser>().LoginName != "0A630B86-0C8F-4CDA-B9BB-A13E35295D71")   //若非超管账号
             {
                 result.ErrorCode = ErrorCodes.ERROR_NO_SUCH_PRIVILEGE;
-                result.DebugMessage = "需要超管权限执行此操作";
+                result.DebugMessage = "需要超管权限执行此操作。";
                 return result;
             }
             OwHelper._Offset = TimeSpan.FromSeconds(model.Offset);

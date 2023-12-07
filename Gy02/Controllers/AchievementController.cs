@@ -19,7 +19,7 @@ namespace Gy02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public AchievementController(GameAccountStoreManager accountStore, IMapper mapper, SyncCommandManager syncCommandManager, 
+        public AchievementController(GameAccountStoreManager accountStore, IMapper mapper, SyncCommandManager syncCommandManager,
             GameTemplateManager templateManager, GameAchievementManager achievementManager)
         {
             _AccountStore = accountStore;
@@ -105,7 +105,7 @@ namespace Gy02.Controllers
                         var current = ge.Count;
                         if (!nc.GetCurrentPeriod(current, out var s, out var e)) continue;
                         item.Start = now.Date - TimeSpan.FromDays((double)(current - s));
-                        item.End = now.Date + TimeSpan.FromDays((double)(e - current));
+                        item.End = item.Start + TimeSpan.FromDays((double)(e - s + 1));
                     }
                 }
             }

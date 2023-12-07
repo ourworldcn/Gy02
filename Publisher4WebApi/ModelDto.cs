@@ -1993,7 +1993,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 修改系统时间的功能参数封装类。
     /// </summary>
-    public class ModifyWorldDateTimeParamsDto :TokenDtoBase
+    public class ModifyWorldDateTimeParamsDto : TokenDtoBase
     {
         /// <summary>
         /// 服务器使用的时间与Utc时间的偏移值。单位：秒
@@ -2606,6 +2606,41 @@ namespace GY02.Publisher
     }
 
     #endregion
+
+    #region T127相关
+
+    /// <summary>
+    /// 通知服务器完成T127的订单功能参数封装类。
+    /// </summary>
+    public class CompleteOrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public CompleteOrderParamsDto()
+        {
+            
+        }
+
+        /// <summary>
+        /// 对应购买商品的商品ID。
+        /// </summary>
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// 购买成功后Purchase对象的getPurchaseToken()
+        /// </summary>
+        public string PurchaseToken { get; set; }
+    }
+
+    /// <summary>
+    /// 通知服务器完成T127的订单功能返回值封装类。
+    /// </summary>
+    public class CompleteOrderReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    #endregion T127相关
 
     #region 兑换码相关
 

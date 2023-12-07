@@ -32,6 +32,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net;
+using System.Net.Http.Json;
 using System.Net.Sockets;
 using System.Runtime;
 using System.Runtime.CompilerServices;
@@ -226,6 +227,9 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var svc = _Services.GetRequiredService<T127Manager>();
+                using HttpClient client = new HttpClient();
+                var result = svc.GetOrderState("", "");
             }
             #endregion 测试用代码
             catch (Exception)
@@ -237,6 +241,7 @@ namespace GY02
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
         }
+
     }
 
     //private unsafe void Awake()

@@ -1981,6 +1981,31 @@
             1=失败，表示游戏服务器无法接收或识别该次充值结果通知，如：签名检验不正确、游戏服务器接收失败。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.CompleteOrderParamsDto">
+            <summary>
+            通知服务器完成T127的订单功能参数封装类。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.CompleteOrderParamsDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CompleteOrderParamsDto.ProductId">
+            <summary>
+            对应购买商品的商品ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CompleteOrderParamsDto.PurchaseToken">
+            <summary>
+            购买成功后Purchase对象的getPurchaseToken()
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.CompleteOrderReturnDto">
+            <summary>
+            通知服务器完成T127的订单功能返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GenerateRedeemCodeParamsDto">
             <summary>
             生成兑换码功能参数封装类。

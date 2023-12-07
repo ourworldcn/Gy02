@@ -1,8 +1,19 @@
 {
-  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-  "Count": 0,
-  "Exp2LvSequence": [ 0, 1000, 3000, 5000, 7000, 9025, 11055, 13100, 15200, 17330, 19510, 21755, 24070, 26470, 28970, 31580, 34300, 37185, 40205, 43400, 46775, 50350, 54140, 58160, 62430, 66965, 71785, 76900, 82360, 88145, 94295, 100825, 107755, 115105, 122900, 131155, 139895, 149145, 158920, 169245, 180145, 191645, 203765, 216530, 229960, 244085, 258930, 274500, 290865, 308000, 325970, 344780, 364455, 385029, 406530, 428980, 452400, 476840, 502310, 528840, 556455, 585195, 615080, 646140, 678410, 711910, 746680, 782745, 820130, 858875, 899005, 940555, 983550, 1028025, 1074015, 1121545, 1170650, 1221365, 1273720, 1327745, 1383480, 1440950, 1500190, 1561240, 1624130, 1688890, 1755560, 1824170, 1894760, 1967360, 2042000, 2118730, 2197570, 2278570, 2361755, 2447160, 2534830, 2624795, 2717090, 2811760, 2908835 ]
+  "web": {
+    "client_id": "520270928290-96jsrklmrf5ftuqfslsns83aeg8eq44i.apps.googleusercontent.com",
+    "project_id": "harvest-bumpers-407402",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "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",
+    "redirect_uris": [ "https://developers.google.com" ],
+    "javascript_origins": [ "https://developers.google.com" ]
+  }
 }
+//https://developers.google.com/?code=4%2F0AfJohXlQpQpxoPOEDj_rSZPy3MTvgOJagDUJzHz--gWOQw12TcnG-UQYWTGwN4zE83vVXQ&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fandroidpublisher&hl=zh-cn
+//Harvest Bumpers
+//520270928290-96jsrklmrf5ftuqfslsns83aeg8eq44i.apps.googleusercontent.com
+  //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
+//https://accounts.google.com/o/oauth2/auth?scope=https://wwwoooc eapis com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri=&client_id=520270928290-us4kcllgq2l8m284aquniophj5vlgae8.apps.googleusercontent.com
+//https://developers.google.com
+//https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri=https://developers.google.com&client_id=520270928290-96jsrklmrf5ftuqfslsns83aeg8eq44i.apps.googleusercontent.com
