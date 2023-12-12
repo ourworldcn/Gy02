@@ -1,7 +1,40 @@
 {
-  "access_token": "ya29.a0AfB_byAYX_vUD8ozEQgBuwskeDl2rqSE2DZxRvweCnsvWPm4DXRHCByIOadi5ci57SRf4Ls2JqZwID5v27TKw_PpPUGf5vfld3Avr75yC7fOiqCoiML2pApYsdbMss3PELu6WsjOk-_d678BSHnXP2zTCOxXZeZGMu32aCgYKATUSARMSFQHGX2MiYk0Sj5kys3Cz1eKZabsfPg0171",
-  "expires_in": 3599,
-  "refresh_token": "1//0evSbxh9VRvhvCgYIARAAGA4SNwF-L9IriEbNd4J3zykf3pL3LbcYW70IC3YjD2xhBuIr4ZOeALMS8bO2O1dI7KQblNqD-8Dt6W4",
-  "scope": "https://www.googleapis.com/auth/androidpublisher",
-  "token_type": "Bearer"
+  "Genus": [ "gs_meirishangdian" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "MaxCount": 1,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "1de88b53-e5bf-4a60-9dfb-90284b94bdab",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 1,
+        "Genus": []
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 100
+      }
+    ]
+  },
+  "name_txt": 10963,
+  "comment_txt": 10928,
+  "JiaoBiao": []
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using GY02.Publisher;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Manager;
@@ -44,6 +45,14 @@ namespace GY02.Managers
         public string _ClientSecret = "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";
         public string _RedirectUri = "https://developers.google.com";
 
+        /// <summary>
+        /// api项目-同意屏幕，发布状态为测试（有效期7天）
+        /// RefreshToken 6个月都未使用，这个要维护accessToken的有效性，应该可以不必考虑
+        /// 授权账号改密码了（笔者未测试，修改开发者账号密码是否会导致过期）
+        /// 授权超过50个刷新令牌，最先的刷新令牌就会失效（这里50个应该够用了，除了测试时，可能会授权多个）
+        /// 取消了授权
+        /// 属于具有有效会话控制策略的 Google Cloud Platform 组织
+        /// </summary>
         public string _RefreshToken = "1//0evSbxh9VRvhvCgYIARAAGA4SNwF-L9IriEbNd4J3zykf3pL3LbcYW70IC3YjD2xhBuIr4ZOeALMS8bO2O1dI7KQblNqD-8Dt6W4";
 
         /// <summary>
@@ -66,7 +75,7 @@ namespace GY02.Managers
             return result;
         }
 
-        public HttpResponseMessage GetAccessTokenFromRefreshToken(string refreshToken, string clientId, string clientSecret)
+        public virtual HttpResponseMessage GetAccessTokenFromRefreshToken(string refreshToken, string clientId, string clientSecret)
         {
             var pa = new FormUrlEncodedContent(new KeyValuePair<string, string>[]
             {
@@ -80,6 +89,27 @@ namespace GY02.Managers
             return result;
         }
 
+        public bool GetAccessTokenFromRefreshToken(string refreshToken, string clientId, string clientSecret, out string accessToken)
+        {
+            var r = GetAccessTokenFromRefreshToken(refreshToken, clientId, clientSecret);
+            GetAccessTokenFromRefreshTokenReturn obj;
+            try
+            {
+                r.EnsureSuccessStatusCode();
+                var str1 = r.Content.ReadAsStringAsync().Result;
+                obj = JsonSerializer.Deserialize<GetAccessTokenFromRefreshTokenReturn>(str1);
+                accessToken = obj.access_token;
+                OwHelper.SetLastError(0);
+            }
+            catch (HttpRequestException)
+            {
+                accessToken = null;
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_INVALID_DATA, "无法获取访问令牌");
+                return false;
+            }
+            return true;
+        }
+
         /// <summary>
         /// 查询订单状态。
         /// </summary>
@@ -88,19 +118,48 @@ namespace GY02.Managers
         /// <param name="accessToken">获取到的accessToken。省略或为null则自动刷新一个。</param>
         /// 
         /// <returns></returns>
-        public HttpResponseMessage GetOrderState(string productId, string token, string accessToken = null)
+        public virtual HttpResponseMessage GetOrderState(string productId, string token, string accessToken = null)
         {
             if (string.IsNullOrWhiteSpace(accessToken))
             {
-                var r = GetAccessTokenFromRefreshToken(_RefreshToken, _ClientId, _ClientSecret);
-                var str1 = r.Content.ReadAsStringAsync().Result;
-                var obj = JsonSerializer.Deserialize<GetAccessTokenFromRefreshTokenReturn>(str1);
-                accessToken = obj.access_token;
+                if (!GetAccessTokenFromRefreshToken(_RefreshToken, _ClientId, _ClientSecret, out accessToken))
+                    return null;
             }
             var uri = $"https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{_PackageName}/purchases/products/{productId}/tokens/{token}?access_token={accessToken}";
             //var uri2 = "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{packageName}/purchases/products/{productId}/tokens/{token}?access_token={access_token}";
             var result = _HttpClient.GetAsync(uri).Result;
             return result;
+        }
+
+        /// <summary>
+        /// 获取验证订单的返回信息。
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="token"></param>
+        /// <param name="accessToken"></param>
+        /// <returns></returns>
+        public bool GetOrderState(string productId, string token, out T127OrderState result)
+        {
+            var r = GetOrderState(productId, token);
+            if (r is null)
+            {
+                result = null;
+                return false;
+            }
+            string str;
+            try
+            {
+                str = r.Content.ReadAsStringAsync().Result;
+                result = JsonSerializer.Deserialize<T127OrderState>(str);
+            }
+            catch (Exception err)
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_INVALID_DATA, err.Message);
+                result = null;
+                return false;
+            }
+            OwHelper.SetLastError(0);
+            return true;
         }
     }
 

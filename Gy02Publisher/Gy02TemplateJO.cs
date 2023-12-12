@@ -795,6 +795,11 @@ namespace GY02.Templates
         /// </summary>
         public GameShoppingItem ShoppingItem { get; set; }
 
+        /// <summary>
+        /// 支付平台的商品Id。
+        /// </summary>
+        [JsonPropertyName("productStoreId")]
+        public string ProductStoreId { get; set; }
         #endregion 商城相关
 
         #region 装备数据

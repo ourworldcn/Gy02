@@ -2001,6 +2001,21 @@
             购买成功后Purchase对象的getPurchaseToken()
             </summary>
         </member>
+        <member name="P:GY02.Publisher.CompleteOrderParamsDto.ObfuscatedExternalAccountId">
+            <summary>
+            透传参数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CompleteOrderParamsDto.Amount">
+            <summary>
+            金额。约定为法币标准单位。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CompleteOrderParamsDto.Currency">
+            <summary>
+            币种编码。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.CompleteOrderReturnDto">
             <summary>
             通知服务器完成T127的订单功能返回值封装类。

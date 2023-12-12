@@ -738,7 +738,7 @@
             127伙伴接入相关。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.T127Controller.#ctor(GY02.Managers.T127Manager,System.Net.Http.IHttpClientFactory)">
+        <member name="M:Gy02.Controllers.T127Controller.#ctor(GY02.Managers.T127Manager,System.Net.Http.IHttpClientFactory,Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.T127Controller},GY02.Managers.GameShoppingManager,OW.Game.Managers.GameTemplateManager,GY02.Managers.GameAccountStoreManager,OW.Game.Store.GY02UserContext,OW.SyncCommand.SyncCommandManager,AutoMapper.IMapper)">
             <summary>
             构造函数。
             </summary>

@@ -26,7 +26,6 @@
         "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
       }
     ],
-    "Count": 0, //消耗数量
-    "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
+    "GroupMask": 1  //条件掩码-D0=1表示执行时检测该项，D1=1时表示列表时检测该项。
   }
 ]

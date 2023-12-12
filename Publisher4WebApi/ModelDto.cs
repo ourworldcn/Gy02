@@ -2619,7 +2619,7 @@ namespace GY02.Publisher
         /// </summary>
         public CompleteOrderParamsDto()
         {
-            
+
         }
 
         /// <summary>
@@ -2631,6 +2631,21 @@ namespace GY02.Publisher
         /// 购买成功后Purchase对象的getPurchaseToken()
         /// </summary>
         public string PurchaseToken { get; set; }
+
+        /// <summary>
+        /// 透传参数。
+        /// </summary>
+        public string ObfuscatedExternalAccountId { get; set; }
+
+        /// <summary>
+        /// 金额。约定为法币标准单位。
+        /// </summary>
+        public decimal Amount { get; set; }
+
+        /// <summary>
+        /// 币种编码。
+        /// </summary>
+        public string Currency { get; set; }
     }
 
     /// <summary>

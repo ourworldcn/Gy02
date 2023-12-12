@@ -152,6 +152,8 @@ namespace GY02.Managers
         /// <returns>true指定的商品项对指定用户而言在指定时间点上有效。</returns>
         public bool IsMatchWithoutBuyed(GameChar gameChar, TemplateStringFullView tt, DateTime nowUtc, out DateTime periodStart, int mask)
         {
+            //if (tt.DisplayName.Contains("第1组-"))
+            //    ;
             var shoppingItem = GetShoppingItemByTemplate(tt);
             if (shoppingItem is null)
             {

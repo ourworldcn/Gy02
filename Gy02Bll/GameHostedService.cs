@@ -229,7 +229,8 @@ namespace GY02
             {
                 var svc = _Services.GetRequiredService<T127Manager>();
                 using HttpClient client = new HttpClient();
-                var result = svc.GetOrderState("", "");
+                var b = svc.GetOrderState("10000", "oijplppfpfgonppejjbhfpje.AO-J1Owp0D1J1Kr_SF5iS3sZmH5eLuP9QZGXV6eSMD81c1p8tpmKv42IyiUarcEEtWHX45o7E6KCkQ8x6AdycQ9TMHjnLV6rIc5Jibi225huAFZwLpXNA_g",
+                    out var result);
             }
             #endregion 测试用代码
             catch (Exception)

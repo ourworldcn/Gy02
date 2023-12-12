@@ -499,6 +499,11 @@
             商城配置项。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.ProductStoreId">
+            <summary>
+            支付平台的商品Id。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Atk">
             <summary>
             攻击数值序列。
