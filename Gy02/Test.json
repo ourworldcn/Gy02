@@ -2,12 +2,12 @@
   "Genus": [ "gs_meirishangdian" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
+      "Start": "2023-05-30T12:00:00.000Z",
       "End": null,
       "PeriodString": "1d",
       "ValidPeriodString": "43200s"
     },
-    "GroupNumber": 3,
+    "GroupNumber": 1,
     "MaxCount": 2,
     "Ins": [
       {
@@ -21,7 +21,7 @@
               {
                 "op": "ModE",
                 "pn": "Count",
-                "args": [ "10", "0" ]
+                "args": [ "10", "2" ]
               }
             ]
           }
@@ -37,10 +37,10 @@
             "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
             "MinCount": 0,
             "GeneralConditional": [],
-            "GroupMask": 3
+            "GroupMask": 1
           }
         ],
-        "Count": 500,
+        "Count": 1500,
         "Genus": []
       }
     ],
@@ -48,7 +48,7 @@
       {
         "Id": null,
         "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "2e877976-2d3d-4e7e-8851-07163216319a",
+        "TId": "09d9062c-84fe-4cc1-846a-5daab6a23b1e",
         "Count": 3
       }
     ]

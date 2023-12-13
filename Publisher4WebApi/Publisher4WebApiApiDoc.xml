@@ -2001,7 +2001,7 @@
             购买成功后Purchase对象的getPurchaseToken()
             </summary>
         </member>
-        <member name="P:GY02.Publisher.CompleteOrderParamsDto.ObfuscatedExternalAccountId">
+        <member name="P:GY02.Publisher.CompleteOrderParamsDto.OrderId">
             <summary>
             透传参数。
             </summary>

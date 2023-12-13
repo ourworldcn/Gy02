@@ -73,7 +73,7 @@ namespace GY02.Commands
                 if (!b) continue;   //若不符合条件
                 list.Add((item, startUtc));
             }
-
+            var coll1 = list.Where(c => c.Item1.Genus.Contains("gs_meirishangdian")).ToArray();
             command.ShoppingItemStates.AddRange(list.Select(c => new ShoppingItemState
             {
                 TId = c.Item1.TemplateId,

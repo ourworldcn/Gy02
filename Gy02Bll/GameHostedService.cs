@@ -229,7 +229,7 @@ namespace GY02
             {
                 var svc = _Services.GetRequiredService<T127Manager>();
                 using HttpClient client = new HttpClient();
-                var b = svc.GetOrderState("10000", "oijplppfpfgonppejjbhfpje.AO-J1Owp0D1J1Kr_SF5iS3sZmH5eLuP9QZGXV6eSMD81c1p8tpmKv42IyiUarcEEtWHX45o7E6KCkQ8x6AdycQ9TMHjnLV6rIc5Jibi225huAFZwLpXNA_g",
+                var b = svc.GetOrderState("10001", "difcmdipfplohjejdkedbpng.AO-J1OwDekYaJx6G9yq8Ji1DSnFVr2PjSPqyvVm6AuvDx4I1E6t70KDE7KzOG8B452j1J2V4MgZrtoGDQMytZDVPlwB1CevFYxerrlgslpewcqbh8Cx1-60",
                     out var result);
             }
             #endregion 测试用代码

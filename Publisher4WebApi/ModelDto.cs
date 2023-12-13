@@ -2635,7 +2635,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 透传参数。
         /// </summary>
-        public string ObfuscatedExternalAccountId { get; set; }
+        public string OrderId { get; set; }
 
         /// <summary>
         /// 金额。约定为法币标准单位。

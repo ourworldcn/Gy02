@@ -63,7 +63,7 @@ namespace Gy02.Controllers
             }
             using var client = _HttpClientFactory.CreateClient();
             _Logger.LogInformation("收到T127购买确认，参数 :ProductId= {ProductId},X-Token= {Token}，AccountId = {AccountId},Amount= {Amount},Currency= {Currency}",
-                model.ProductId, model.PurchaseToken, model.ObfuscatedExternalAccountId, model.Amount, model.Currency);
+                model.ProductId, model.PurchaseToken, model.OrderId, model.Amount, model.Currency);
 
             var tt = _TemplateManager.Id2FullView.FirstOrDefault(c => c.Value.ShoppingItem is not null && c.Value.ProductStoreId == model.ProductId).Value;
             if (tt is null)    //找不到指定的ProductId对应的商品
@@ -81,7 +81,7 @@ namespace Gy02.Controllers
                 return result;
             }
 
-            if (returnData.obfuscatedExternalAccountId != model.ObfuscatedExternalAccountId)   //若无法对应透传参数
+            if (returnData.orderId != model.OrderId)   //若无法对应透传参数
             {
                 result.DebugMessage = $"透传参数ObfuscatedExternalAccountId错误。";
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
@@ -116,7 +116,7 @@ namespace Gy02.Controllers
             order.State = 1;
             _Mapper.Map(command.Changes, result.Changes);
             _Logger.LogDebug("订单号{id}已经确认成功。", order.Id);
-        
+
             try
             {
                 _DbContext.SaveChanges();
