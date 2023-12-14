@@ -14,6 +14,11 @@ using System.Threading.Tasks;
 
 namespace GY02.Managers
 {
+    /*
+     * https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri={重定向址}&client_id={创建的clientld}
+     * https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri={重定向址}&client_id={创建的clientId}
+     * https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri=https://developers.google.com&client_id=520270928290-qrd2n0u7ksknrgeulah2hhooim4mgg8v.apps.googleusercontent.com
+     * */
     public class T127ManagerOptions : IOptions<T127ManagerOptions>
     {
         public T127ManagerOptions Value => this;
@@ -25,25 +30,44 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class T127Manager : GameManagerBase<T127ManagerOptions, T127Manager>
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="logger"></param>
+        /// <param name="httpClient"></param>
         public T127Manager(IOptions<T127ManagerOptions> options, ILogger<T127Manager> logger, HttpClient httpClient) : base(options, logger)
         {
             _HttpClient = httpClient;
         }
 
+        /// <summary>
+        /// https://blog.csdn.net/Jason_HD/article/details/130180064
+        /// https://www.jianshu.com/p/76416ebc0db0
+        /// </summary>
         private readonly HttpClient _HttpClient;
 
         /// <summary>
         /// 编码过的Code。
         /// </summary>
-        public const string _Encode = "4%2F0AfJohXlQpQpxoPOEDj_rSZPy3MTvgOJagDUJzHz--gWOQw12TcnG-UQYWTGwN4zE83vVXQ";
-
+        public const string _EncodedCode = "4%2F0AfJohXmshrd_rvdpyYaDpCv43JXUptt7Z-y5Hn6KwLJD51XSg06arLLPO_xZf1jI9rzOJg";
+                                          //4%2F0AfJohXklLsgG8RhhJ3bqOJzaZDW6SALYRjBZc5AqAG-0w6S29lb64lGrHW7XjG2GXva0jg
         /// <summary>
         /// 解码后的Code。
         /// </summary>
-        public string Code => Uri.UnescapeDataString(_Encode);
-        public string _ClientId = "520270928290-96jsrklmrf5ftuqfslsns83aeg8eq44i.apps.googleusercontent.com";
-        public string _ClientSecret = "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";
+        public string Code => Uri.UnescapeDataString(_EncodedCode);
+        public string _ClientId = "520270928290-f1hikn5t63agi221l6fp35p0ql83vlap.apps.googleusercontent.com";
+        public string _ClientSecret = "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";
+
+        /// <summary>
+        /// 重定向地址。
+        /// </summary>
         public string _RedirectUri = "https://developers.google.com";
+
+        /// <summary>
+        /// 获取code的地址。
+        /// </summary>
+        public string _GetCodeUrl = "https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri=https://developers.google.com&client_id=520270928290-f1hikn5t63agi221l6fp35p0ql83vlap.apps.googleusercontent.com";
 
         /// <summary>
         /// api项目-同意屏幕，发布状态为测试（有效期7天）
@@ -53,7 +77,7 @@ namespace GY02.Managers
         /// 取消了授权
         /// 属于具有有效会话控制策略的 Google Cloud Platform 组织
         /// </summary>
-        public string _RefreshToken = "1//0evSbxh9VRvhvCgYIARAAGA4SNwF-L9IriEbNd4J3zykf3pL3LbcYW70IC3YjD2xhBuIr4ZOeALMS8bO2O1dI7KQblNqD-8Dt6W4";
+        public string _RefreshToken = "1//0eoaD3WrQzyDLCgYIARAAGA4SNwF-L9IrwX-Cz_9IUj1_KSbwTgdZfQK8cgUmh2OZC5CDCbsfCiH4xtNzMZNXhBTppNgZiRbM1EM";
 
         /// <summary>
         /// app包名，必须是创建登录api项目时，创建android客户端Id使用包名。
@@ -165,6 +189,10 @@ namespace GY02.Managers
 
     public class GetAccessTokenFromRefreshTokenReturn
     {
+        public string error { get; set; }
+
+        public string error_description { get; set; }
+
         public string access_token { get; set; }
     }
 

@@ -1,58 +1,8 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T12:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "43200s"
-    },
-    "GroupNumber": 2,
-    "MaxCount": 2,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "10", "1" ]
-              }
-            ]
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 500,
-        "Genus": []
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
-        "Count": 2
-      }
-    ]
-  },
-  "name_txt": 11862,
-  "JiaoBiao": [ "ZheKou60", 10958 ]
+  "ProductId": "com.duangzs.01",
+  "PurchaseToken": "deadcoclhandfpfbpicgmnna.AO-J1OzM1o9_G89ecmV81me5X1EdPJCdbVfjgx3aO7_krfR4GynNTdh0VO3o_Mr-pGOjBH5cHwEa4aZXl_HmcXu8OErpgtPyPP9-YauUm9-d0ErXfS4JXQs",
+  "OrderId": "GPA.3346-6474-8616-70839",
+  "Amount": 110.0,
+  "Currency": "PHP",
+  "Token": "eebaa7b9-20f1-4893-9f93-0bf87b24a920"
 }

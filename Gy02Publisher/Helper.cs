@@ -151,7 +151,7 @@ namespace GY02.Publisher
         /// 法币TID。
         /// </summary>
         public static readonly Guid FabiTId = new Guid("d577e084-4aa4-44d9-9510-20ccea041375");
-
+        
         /// <summary>
         /// 广告币TID。
         /// </summary>

@@ -739,7 +739,7 @@
       "Id": "a45b3421-3688-43c5-b8f5-429db7621f69",
       "DisplayName": "金币",
       "Gid": 110101002,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":20000,\"name_txt\":10253,\"comment_txt\":10254}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":5000,\"name_txt\":10253,\"comment_txt\":10254}"
     },
     {
       "Id": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
@@ -6493,13 +6493,13 @@
       "Id": "d1e25bdc-d125-42ca-9661-3e64d65d5024",
       "DisplayName": "特殊关卡-黄金大作战-次数",
       "Gid": 210201001,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":1,\"MaxValue\":null,\"Subtrahend\":2,\"Modulus\":4,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"GroupMask\":1}]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"e4eacb80-3b91-495f-8d08-4dfe451acf25\",\"MinCount\":1}],\"Count\":1}],\"name_txt\":40006,\"comment_txt\":40007,\"comment2_txt\":40008,\"suggest\":[300,2800,250],\"scoreTime\":[480,540,720]}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":2,\"MaxValue\":null,\"Subtrahend\":2,\"Modulus\":4,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"GroupMask\":1}]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"e4eacb80-3b91-495f-8d08-4dfe451acf25\",\"MinCount\":1}],\"Count\":1}],\"name_txt\":40006,\"comment_txt\":40007,\"comment2_txt\":40008,\"suggest\":[300,2800,250],\"scoreTime\":[480,540,720]}"
     },
     {
       "Id": "df112787-13a4-4006-a523-251a29648375",
       "DisplayName": "特殊关卡-生存关卡-次数",
       "Gid": 210202001,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":1,\"MaxValue\":null,\"Subtrahend\":3,\"Modulus\":4,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"GroupMask\":1}]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"7b81fa89-029d-4928-8de6-4fc19d6fff34\",\"MinCount\":1}],\"Count\":1}],\"name_txt\":40009,\"comment_txt\":40010,\"comment2_txt\":40011,\"suggest\":[300,2800,250],\"scoreTime\":[480,540,720]}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":3,\"MaxValue\":null,\"Subtrahend\":3,\"Modulus\":4,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"GroupMask\":1}]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"7b81fa89-029d-4928-8de6-4fc19d6fff34\",\"MinCount\":1}],\"Count\":1}],\"name_txt\":40009,\"comment_txt\":40010,\"comment2_txt\":40011,\"suggest\":[300,2800,250],\"scoreTime\":[480,540,720]}"
     },
     {
       "Id": "1da0bea3-5765-48b5-aeb6-c8cb9ce6c82e",
@@ -7692,769 +7692,769 @@
     {
       "Id": "bc35dce8-8117-4122-afa0-6e68c587380f",
       "DisplayName": "第3组-1 免广告道具 x3",
-      "Gid": 180201033,
+      "Gid": 180201034,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "a222f5ee-af31-4ef0-8a35-1bd85ec5184b",
       "DisplayName": "第3组-1 孵化币 X2",
-      "Gid": 180201033,
+      "Gid": 180201035,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "dd6d8738-6a78-4c4b-b93d-5b3ecde95a67",
       "DisplayName": "第3组-1 宝箱开启钥匙 X2",
-      "Gid": 180201033,
+      "Gid": 180201036,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "349a309e-043e-4b52-ace7-5afe278be84c",
       "DisplayName": "第3组-1 动物升级图纸 x3",
-      "Gid": 180201033,
+      "Gid": 180201037,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "10192c1b-f553-4813-b270-5e10c637a91c",
       "DisplayName": "第3组-1 白色狼",
-      "Gid": 180201033,
+      "Gid": 180201038,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "643b4ab8-a711-4bbe-a2c4-1893ee1a0679",
       "DisplayName": "第3组-1 蓝色鸡",
-      "Gid": 180201033,
+      "Gid": 180201039,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1555a758-c31c-4b4b-9b93-5fa6537ba789\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "26be8ec3-4261-46cf-8a95-b8efddfeb653",
       "DisplayName": "第3组-1 绿色羊",
-      "Gid": 180201033,
+      "Gid": 180201040,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "be59ca66-55fe-45fd-b2dd-925e053dcc59",
       "DisplayName": "第3组-1 紫色狗",
-      "Gid": 180201033,
+      "Gid": 180201041,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"480bf300-b723-4d9d-ab7b-3ce5d2483d68\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"92eebe70-ae9a-44a8-8ac2-ad4ae61de313\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "d7b74783-5873-4031-8df1-48d9e1f562e3",
       "DisplayName": "第3组-2 免广告道具 x3",
-      "Gid": 180201033,
+      "Gid": 180201042,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "a00c2397-37e5-4728-9d2a-9cac8f4f30c6",
       "DisplayName": "第3组-2 孵化币 X2",
-      "Gid": 180201033,
+      "Gid": 180201043,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "f4dc1d85-08f8-4684-af54-5964508253a1",
       "DisplayName": "第3组-2 飞镖绿",
-      "Gid": 180201033,
+      "Gid": 180201044,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"47fcdd7f-6206-48c1-b1e0-af65dbb65855\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "be01571a-9208-4fb1-b9eb-3a5b6cfcdf3d",
       "DisplayName": "第3组-2 鞋子升级道具 x3",
-      "Gid": 180201033,
+      "Gid": 180201045,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "999e0728-f01c-41d7-8711-ae577fd9ebb0",
       "DisplayName": "第3组-2 白色熊",
-      "Gid": 180201033,
+      "Gid": 180201046,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "e067dbf4-1e58-411d-be52-9604f61d38e1",
       "DisplayName": "第3组-2 绿色虎",
-      "Gid": 180201033,
+      "Gid": 180201047,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"14a84b6c-8709-44bd-becf-dc19ed8f9f97\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "64c98117-e0c2-44eb-9a07-25a27a8efa00",
       "DisplayName": "第3组-2 蓝色狗",
-      "Gid": 180201033,
+      "Gid": 180201048,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7858514e-1011-4de2-9c9f-f0a2ebf152f2\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "e24d0c4b-0f96-4bc9-852c-c02fe1302ad0",
       "DisplayName": "第3组-2 紫色龙",
-      "Gid": 180201033,
+      "Gid": 180201049,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"2\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"2c4908e9-1a74-43c4-a776-b112ac86c112\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7b08d03a-1804-4a32-93b2-31736ffc1fb6\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "d5055dc3-2ce8-407a-9194-c90ee602fc85",
       "DisplayName": "第4组-1 免广告道具 x3",
-      "Gid": 180201034,
+      "Gid": 180201050,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "0481c2fd-29f4-4450-bffe-bd793f09f953",
       "DisplayName": "第4组-1 孵化币 X2",
-      "Gid": 180201035,
+      "Gid": 180201051,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "e2260ebc-6697-41c9-abfd-3dd5afcfdef3",
       "DisplayName": "第4组-1 腰带升级图纸 x3",
-      "Gid": 180201036,
+      "Gid": 180201052,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "5183c831-6c45-4a47-9218-2808c120eaac",
       "DisplayName": "第4组-1 手套升级图纸 x3",
-      "Gid": 180201037,
+      "Gid": 180201053,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "73652d6a-e572-4230-ab10-4bbd53ddab29",
       "DisplayName": "第4组-1 白色虎",
-      "Gid": 180201038,
+      "Gid": 180201054,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "c24bcf1b-c2f3-4ee6-a9fe-838330c93290",
       "DisplayName": "第4组-1 蓝色羊",
-      "Gid": 180201039,
+      "Gid": 180201055,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"91a68d03-cc11-4dc5-924b-669ecad20045\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"110b74ff-db7e-4a28-9e28-12beaf18a9e1\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "94a592e6-5ebb-4f16-bb79-4c307ec51e64",
       "DisplayName": "第4组-1 绿色狼",
-      "Gid": 180201040,
+      "Gid": 180201056,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60c28119-42b0-4ebc-bc37-24be3afaebf4\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "581f9355-c26c-455b-beda-66c48ee67232",
       "DisplayName": "第4组-1 紫色鸡",
-      "Gid": 180201041,
+      "Gid": 180201057,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"929e4d6f-8240-425d-ab5c-1f31480d6350\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1ea68558-2928-4d42-a891-c8947c5326d9\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "5ebe5205-6a0c-41e6-b2ca-0035c5634045",
       "DisplayName": "第4组-2 免广告道具 x3",
-      "Gid": 180201042,
+      "Gid": 180201058,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "54980ea3-e390-41c5-86b8-f80a611356dd",
       "DisplayName": "第4组-2 孵化币 X2",
-      "Gid": 180201043,
+      "Gid": 180201059,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "e3430e66-23ff-4445-b78d-abeb32698cdd",
       "DisplayName": "第4组-2 宝箱开启钥匙 X2",
-      "Gid": 180201044,
+      "Gid": 180201060,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "8ade3562-bbd3-438e-a00b-3001f2595fd6",
       "DisplayName": "第4组-2 法杖绿",
-      "Gid": 180201045,
+      "Gid": 180201061,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":600,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3eac8a90-e8f9-4244-917f-98d37c7a6094\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "6fe9c470-16e2-45d9-8c66-000675ca2173",
       "DisplayName": "第4组-2 白色龙",
-      "Gid": 180201046,
+      "Gid": 180201062,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "fa6e890e-1445-4bbd-8e99-8b1b29b90e5a",
       "DisplayName": "第4组-2 绿色鸡",
-      "Gid": 180201047,
+      "Gid": 180201063,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9b558fe1-db54-4e1b-a962-be0d6c55f1be\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "5108a1db-a832-4a54-91c2-5e5a90ed7e1c",
       "DisplayName": "第4组-2 蓝色猫",
-      "Gid": 180201048,
+      "Gid": 180201064,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"585a2015-fef6-4eae-a146-f2a656838b4a\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "54b484a8-c963-4f85-aa52-e016b311f1e0",
       "DisplayName": "第4组-2 紫色熊",
-      "Gid": 180201049,
+      "Gid": 180201065,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"3\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"c3c67a9d-c679-42ad-b2df-7427ac185a0d\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b765092d-2a8f-4375-b633-99f781609fd0\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "de39a4e5-588a-4d5c-bdea-b486fbab8074",
       "DisplayName": "第5组-1 免广告道具 x3",
-      "Gid": 180201050,
+      "Gid": 180201066,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "5a5ab822-ae7e-4d87-b2d2-8aff3d875a5a",
       "DisplayName": "第5组-1 孵化币 X2",
-      "Gid": 180201051,
+      "Gid": 180201067,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "36836630-b267-4e09-b55c-7e7e5f433068",
       "DisplayName": "第5组-1 宝箱开启钥匙 X2",
-      "Gid": 180201052,
+      "Gid": 180201068,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "bc949f61-fc26-4eb5-a276-e9c77cfa22c7",
       "DisplayName": "第5组-1 锤子绿",
-      "Gid": 180201053,
+      "Gid": 180201069,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":300,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"385763e0-cd0b-47a8-9dc0-e4a41819dd47\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "dc2faae3-4af8-4301-915e-dcd168a4e271",
       "DisplayName": "第5组-1 白色猫",
-      "Gid": 180201054,
+      "Gid": 180201070,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "61595704-15f6-4195-bfd4-84c3ea79bb15",
       "DisplayName": "第5组-1 蓝色狼",
-      "Gid": 180201055,
+      "Gid": 180201071,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"269448b5-b46c-4245-aab5-01b8fb53137e\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "25d1e9cf-57dd-40e4-bd20-3f293623b1e9",
       "DisplayName": "第5组-1 绿色鹿",
-      "Gid": 180201056,
+      "Gid": 180201072,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"365b7755-2042-4faa-aa47-408b5201e84f\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "ccce4c9f-2151-41c4-be51-0eef0a6aea89",
       "DisplayName": "第5组-1 紫色羊",
-      "Gid": 180201057,
+      "Gid": 180201073,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"625bcec8-fc02-4f1a-9399-7e27d74b130f\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"402a7b1c-bd32-4540-9efe-f9801ed6946b\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "365dc778-52ab-4ac4-8a8c-b5e532e886d2",
       "DisplayName": "第5组-2 免广告道具 x3",
-      "Gid": 180201058,
+      "Gid": 180201074,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "223181c3-ad05-4ffd-9dae-cfce57c6cc48",
       "DisplayName": "第5组-2 孵化币 X2",
-      "Gid": 180201059,
+      "Gid": 180201075,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "9420426a-2478-40fb-91a1-63c762438836",
       "DisplayName": "第5组-2 长矛绿",
-      "Gid": 180201060,
+      "Gid": 180201076,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":300,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd871154-1aab-4add-8433-be4886244560\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "bccdf5fa-34a2-4630-bf10-53688ea22992",
       "DisplayName": "第5组-2 手套升级图纸",
-      "Gid": 180201061,
+      "Gid": 180201077,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "5acaa7d4-3d66-438e-a787-cfd00d72eb51",
       "DisplayName": "第5组-2 白色羊",
-      "Gid": 180201062,
+      "Gid": 180201078,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "8af9a5cf-6a41-4ec8-ae4a-551d7a657fd7",
       "DisplayName": "第5组-2 蓝色虎",
-      "Gid": 180201063,
+      "Gid": 180201079,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f38fe707-ed6a-4d3e-9453-7e2df60bbb39\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "b5207581-7ef9-43db-b9ad-e16debd5fe31",
       "DisplayName": "第5组-2 绿色猫",
-      "Gid": 180201064,
+      "Gid": 180201080,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f5ccc14d-a385-4a2c-9da4-2b769eee846e\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "409cd764-1e10-4d1e-afc3-63ecfe453fd6",
       "DisplayName": "第5组-2 紫色鹿",
-      "Gid": 180201065,
+      "Gid": 180201081,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"4\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"45365577-2d0f-4f48-9067-23adc862ae98\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b09eda4f-c978-480e-a7d2-644f414b3298\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "ab01d179-74b1-4810-a6e0-e5ec7ccfaad0",
       "DisplayName": "第6组-1 免广告道具 x3",
-      "Gid": 180201066,
+      "Gid": 180201082,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "7f4af55e-8be5-4dd0-a295-790caf212e4b",
       "DisplayName": "第6组-1 孵化币 X2",
-      "Gid": 180201067,
+      "Gid": 180201083,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "cbdf8723-c30d-4c88-8085-6d1ac8b4cb16",
       "DisplayName": "第6组-1 长矛绿",
-      "Gid": 180201068,
+      "Gid": 180201084,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":300,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd871154-1aab-4add-8433-be4886244560\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "90e06a09-4cd5-48fa-9549-f02a5608e4db",
       "DisplayName": "第6组-1 腰带升级图纸 x3",
-      "Gid": 180201069,
+      "Gid": 180201085,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "269ad455-3d85-4eca-a836-7921922de25f",
       "DisplayName": "第6组-1 白色鹿",
-      "Gid": 180201070,
+      "Gid": 180201086,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "4de2393e-20de-4939-b2f8-235a11eacefd",
       "DisplayName": "第6组-1 蓝色羊",
-      "Gid": 180201071,
+      "Gid": 180201087,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "77365bcf-0f39-4863-9efc-0ed0434e67d1",
       "DisplayName": "第6组-1 绿色虎",
-      "Gid": 180201072,
+      "Gid": 180201088,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"14a84b6c-8709-44bd-becf-dc19ed8f9f97\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "494af1cb-fa29-4e6f-8146-22d75371654f",
       "DisplayName": "第6组-1 紫色狼",
-      "Gid": 180201073,
+      "Gid": 180201089,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"51ca3cd8-0d33-41b6-ad21-fbc721bd9cbc\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"505dad1a-0d29-4052-97d7-f0843e393fec\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "2add7915-2928-4824-9277-eaa2e8757642",
       "DisplayName": "第6组-2 免广告道具 x3",
-      "Gid": 180201074,
+      "Gid": 180201090,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "3b10ec30-81ce-4e83-b2e3-2fd95943d273",
       "DisplayName": "第6组-2 孵化币 X2",
-      "Gid": 180201075,
+      "Gid": 180201091,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "5ce7e7fc-ef51-4d8d-aeef-d488cb771f7d",
       "DisplayName": "第6组-2 宝箱开启钥匙 X2",
-      "Gid": 180201076,
+      "Gid": 180201092,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "8f452bde-564f-48fc-acbb-7ceeab0c02bd",
       "DisplayName": "第6组-2 武器升级图纸",
-      "Gid": 180201077,
+      "Gid": 180201093,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":5}],\"Count\":12000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":5}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "10f97e7d-fc11-4d1e-99ba-f4a72dbebf37",
       "DisplayName": "第6组-2 白色狗",
-      "Gid": 180201078,
+      "Gid": 180201094,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "16094ddb-22ce-4b6a-bf9d-bcc6e411b346",
       "DisplayName": "第6组-2 绿色鸡",
-      "Gid": 180201079,
+      "Gid": 180201095,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9b558fe1-db54-4e1b-a962-be0d6c55f1be\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "82eda7ff-bb07-4064-92ed-a1fe7742773c",
       "DisplayName": "第6组-2 蓝色熊",
-      "Gid": 180201080,
+      "Gid": 180201096,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "5e438446-7ef6-4da7-86ac-83716a14cdc5",
       "DisplayName": "第6组-2 紫色虎",
-      "Gid": 180201081,
+      "Gid": 180201097,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"5\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"9f246873-2e81-4517-8562-c38eeb48d1ee\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0e6f9a4d-e198-4549-83be-9b9c9f67db53\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "5c034d84-3bd8-4b42-b780-0ce513d310e7",
       "DisplayName": "第7组-1 免广告道具 x3",
-      "Gid": 180201082,
+      "Gid": 180201098,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "6cdb811d-3116-47a9-b670-b9e9e928de58",
       "DisplayName": "第7组-1 孵化币 X2",
-      "Gid": 180201083,
+      "Gid": 180201099,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "1d32c7bb-4561-4d50-893e-ad048f1474fc",
       "DisplayName": "第7组-1 宝箱开启钥匙 X2",
-      "Gid": 180201084,
+      "Gid": 180201100,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "bfc24b7f-4981-42c6-b664-add0d2045535",
       "DisplayName": "第7组-1 法杖绿",
-      "Gid": 180201085,
+      "Gid": 180201101,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":600,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3eac8a90-e8f9-4244-917f-98d37c7a6094\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "a932867f-3e62-4c4e-b8b3-cc59afec4058",
       "DisplayName": "第7组-1 白色龙",
-      "Gid": 180201086,
+      "Gid": 180201102,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "364d8cea-c3f8-4f6d-9250-388f5c5c09fb",
       "DisplayName": "第7组-1 绿色鸡",
-      "Gid": 180201087,
+      "Gid": 180201103,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9b558fe1-db54-4e1b-a962-be0d6c55f1be\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "b73330d4-2a8a-47cc-bfd3-af6b86988c9b",
       "DisplayName": "第7组-1 蓝色猫",
-      "Gid": 180201088,
+      "Gid": 180201104,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"585a2015-fef6-4eae-a146-f2a656838b4a\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "da184f64-6491-4d9c-b09a-ac63175720ca",
       "DisplayName": "第7组-1 紫色熊",
-      "Gid": 180201089,
+      "Gid": 180201105,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"c3c67a9d-c679-42ad-b2df-7427ac185a0d\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b765092d-2a8f-4375-b633-99f781609fd0\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "1727f164-e3b4-46a3-9dd1-9f201348135e",
       "DisplayName": "第7组-2 免广告道具 x3",
-      "Gid": 180201090,
+      "Gid": 180201106,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "80f7d37a-97e4-4df2-b7ec-6473babc8a2f",
       "DisplayName": "第7组-2 孵化币 X2",
-      "Gid": 180201091,
+      "Gid": 180201107,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "f1f216db-f3e8-4a79-85ad-38f0a89b0a3d",
       "DisplayName": "第7组-2 宝箱开启钥匙 X2",
-      "Gid": 180201092,
+      "Gid": 180201108,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "d1e2248d-83df-4ab0-add4-095562f6f568",
       "DisplayName": "第7组-2 动物升级图纸 x3",
-      "Gid": 180201093,
+      "Gid": 180201109,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "892bc752-a4ce-42d8-bce0-3befd0302f44",
       "DisplayName": "第7组-2 白色猫",
-      "Gid": 180201094,
+      "Gid": 180201110,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "e27403ba-4f1f-42fa-acaa-df6b7f7f756e",
       "DisplayName": "第7组-2 蓝色羊",
-      "Gid": 180201095,
+      "Gid": 180201111,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "94e3feda-e46a-49c2-b7b9-1960e93497d9",
       "DisplayName": "第7组-2 绿色猫",
-      "Gid": 180201096,
+      "Gid": 180201112,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f5ccc14d-a385-4a2c-9da4-2b769eee846e\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "80a147c6-6c8a-4e5c-99c5-b06b6a68de8b",
       "DisplayName": "第7组-2 紫色狗",
-      "Gid": 180201097,
+      "Gid": 180201113,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"6\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"480bf300-b723-4d9d-ab7b-3ce5d2483d68\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"92eebe70-ae9a-44a8-8ac2-ad4ae61de313\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "97022882-427a-4eed-9b46-e90614cc896c",
       "DisplayName": "第8组-1 免广告道具 x3",
-      "Gid": 180201098,
+      "Gid": 180201114,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "56b793f1-5580-4e38-8785-dee2e428a337",
       "DisplayName": "第8组-1 孵化币 X2",
-      "Gid": 180201099,
+      "Gid": 180201115,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "dd9bf2bd-cba6-41b8-9b09-8c802472b0f7",
       "DisplayName": "第8组-1 飞镖绿",
-      "Gid": 180201100,
+      "Gid": 180201116,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"47fcdd7f-6206-48c1-b1e0-af65dbb65855\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "0866e45c-de54-4304-b663-213c72f4fc16",
       "DisplayName": "第8组-1 鞋子升级图纸",
-      "Gid": 180201101,
+      "Gid": 180201117,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "7bd8b3e2-5304-44a8-9ef4-362ac8d11501",
       "DisplayName": "第8组-1 白色羊",
-      "Gid": 180201102,
+      "Gid": 180201118,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "3b580a64-cebd-4c68-b8dc-13c8cff04d2f",
       "DisplayName": "第8组-1 绿色猫",
-      "Gid": 180201103,
+      "Gid": 180201119,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f5ccc14d-a385-4a2c-9da4-2b769eee846e\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "6fe4fb33-bf11-42e2-8526-38035d34896d",
       "DisplayName": "第8组-1 蓝色狗",
-      "Gid": 180201104,
+      "Gid": 180201120,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7858514e-1011-4de2-9c9f-f0a2ebf152f2\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "9ded4852-408b-4346-a549-140552697ae0",
       "DisplayName": "第8组-1 紫色鹿",
-      "Gid": 180201105,
+      "Gid": 180201121,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"45365577-2d0f-4f48-9067-23adc862ae98\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b09eda4f-c978-480e-a7d2-644f414b3298\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "cf1dfd8f-27ee-4ae7-9a55-a9dabf13824f",
       "DisplayName": "第8组-2 免广告道具 x3",
-      "Gid": 180201106,
+      "Gid": 180201122,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "db73058d-8c97-4965-8387-9fc11768d480",
       "DisplayName": "第8组-2 孵化币 X2",
-      "Gid": 180201107,
+      "Gid": 180201123,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "b81e410a-3702-414e-b12f-cda914d271a9",
       "DisplayName": "第8组-2 衣服升级图纸 x3",
-      "Gid": 180201108,
+      "Gid": 180201124,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "697e3b2f-b9c1-474c-829f-ff2472e1d549",
       "DisplayName": "第8组-2 腰带升级图纸 x3",
-      "Gid": 180201109,
+      "Gid": 180201125,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "4f090511-fb1b-4a35-9d6e-3af4e413c81f",
       "DisplayName": "第8组-2 白色鸡",
-      "Gid": 180201110,
+      "Gid": 180201126,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "97b6a829-f6d6-49ea-abd8-844587d2ba91",
       "DisplayName": "第8组-2 蓝色虎",
-      "Gid": 180201111,
+      "Gid": 180201127,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f38fe707-ed6a-4d3e-9453-7e2df60bbb39\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "8cfaaa86-ab5a-406c-b65f-01c54c9bf846",
       "DisplayName": "第8组-2 绿色狗",
-      "Gid": 180201112,
+      "Gid": 180201128,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9d401e1b-fd86-4a39-a8e8-01f335fae625\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "9001681b-d222-4186-ad48-46f91107249c",
       "DisplayName": "第8组-2 紫色狼",
-      "Gid": 180201113,
+      "Gid": 180201129,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"51ca3cd8-0d33-41b6-ad21-fbc721bd9cbc\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"505dad1a-0d29-4052-97d7-f0843e393fec\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "4b639e67-f6bd-4360-ae81-08cec1bc107b",
       "DisplayName": "第9组-1 免广告道具 x3",
-      "Gid": 180201114,
+      "Gid": 180201130,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "06b1a472-c3a6-4614-a653-45f9531bcaa1",
       "DisplayName": "第9组-1 孵化币 X2",
-      "Gid": 180201115,
+      "Gid": 180201131,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "7ba1dc73-ad61-473b-9f3f-913ff6dad5d4",
       "DisplayName": "第9组-1 宝箱开启钥匙 X2",
-      "Gid": 180201116,
+      "Gid": 180201132,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "90643e0c-1f78-497f-a836-d45d67fd6c7c",
       "DisplayName": "第9组-1 弩箭绿",
-      "Gid": 180201117,
+      "Gid": 180201133,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":300,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6aff80ac-84ad-4adc-a353-a700406cbe5a\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "18c5e271-291e-417d-a22e-010decbc22fd",
       "DisplayName": "第9组-1 白色狗",
-      "Gid": 180201118,
+      "Gid": 180201134,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "d3a24a98-ac54-4190-a21d-c8c382cd8587",
       "DisplayName": "第9组-1 绿色龙",
-      "Gid": 180201119,
+      "Gid": 180201135,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9c79a55a-106f-4f32-9d44-484d86a665fd\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "a2635851-dfbc-489d-9123-6644dc837fd8",
       "DisplayName": "第9组-1 蓝色狼",
-      "Gid": 180201120,
+      "Gid": 180201136,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"269448b5-b46c-4245-aab5-01b8fb53137e\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "9b5dbfdf-b7ff-43ab-83a0-78385c0acd3f",
       "DisplayName": "第9组-1 紫色猫",
-      "Gid": 180201121,
+      "Gid": 180201137,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"7683a573-d909-47a9-95d4-7c2200916749\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"36de54eb-26c9-479f-bc91-2e5c9861c00f\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "69227d45-57af-4b85-8bb2-e4430291ff76",
       "DisplayName": "第9组-2 免广告道具 x3",
-      "Gid": 180201122,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+      "Gid": 180201138,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "3b4b8d37-bc34-4f79-9217-f4a0baabc3ec",
       "DisplayName": "第9组-2 孵化币 X2",
-      "Gid": 180201123,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"7\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
+      "Gid": 180201139,
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "d8703398-eaf6-4002-be60-52000c561b5f",
       "DisplayName": "第9组-2 鞋子升级图纸 x3",
-      "Gid": 180201124,
+      "Gid": 180201140,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "737d7f60-00a1-423e-8a05-f07fa89c1751",
       "DisplayName": "第9组-2 手套升级图纸 x3",
-      "Gid": 180201125,
+      "Gid": 180201141,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "a6610ab1-2fe5-4233-8c36-e887ceec830e",
       "DisplayName": "第9组-2 白色鹿",
-      "Gid": 180201126,
+      "Gid": 180201142,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "85a89244-41ac-41c8-8eb8-d9e65dfa8db0",
       "DisplayName": "第9组-2 蓝色鸡",
-      "Gid": 180201127,
+      "Gid": 180201143,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1555a758-c31c-4b4b-9b93-5fa6537ba789\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "1cefcd3d-17d0-4d54-8727-00c8bd1862da",
       "DisplayName": "第9组-2 绿色羊",
-      "Gid": 180201128,
+      "Gid": 180201144,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "ca0f1357-328b-4422-a953-b64f32711a4b",
       "DisplayName": "第9组-2 紫色猫",
-      "Gid": 180201129,
+      "Gid": 180201145,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"8\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"7683a573-d909-47a9-95d4-7c2200916749\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"36de54eb-26c9-479f-bc91-2e5c9861c00f\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "65f6e423-b313-4c77-90ff-89fc183dfd72",
       "DisplayName": "第10组-1 免广告道具 x3",
-      "Gid": 180201130,
+      "Gid": 180201146,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "b96febd1-df50-4668-991f-315ad8ea6b60",
       "DisplayName": "第10组-1 孵化币 X2",
-      "Gid": 180201131,
+      "Gid": 180201147,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "4489c7c2-b9e0-48a7-ae1c-fbc55ed92919",
       "DisplayName": "第10组-1 宝箱开启钥匙 X2",
-      "Gid": 180201132,
+      "Gid": 180201148,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "43430e05-6dbd-4cd7-a6b3-5e3ba502f1b8",
       "DisplayName": "第10组-1 衣服升级图纸 x3",
-      "Gid": 180201133,
+      "Gid": 180201149,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10000,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "44c1c294-5b98-4304-aae7-c13059e76142",
       "DisplayName": "第10组-1 白色狼",
-      "Gid": 180201134,
+      "Gid": 180201150,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "9fe47273-b1f8-40e6-aff8-2a2b7dd23ece",
       "DisplayName": "第10组-1 绿色熊",
-      "Gid": 180201135,
+      "Gid": 180201151,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"2d72144f-239f-40e6-902b-c77506719698\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "d7a29b3d-4073-4187-8afa-b0e6f9ae3d5c",
       "DisplayName": "第10组-1 蓝色龙",
-      "Gid": 180201136,
+      "Gid": 180201152,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"800e78af-e9c4-480b-a0f3-8e15b93979f3\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e92a3375-9872-40ea-8cb4-10bb24add432\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "b34f2999-d9c4-44ce-a047-011409434aa0",
       "DisplayName": "第10组-1 紫色羊",
-      "Gid": 180201137,
+      "Gid": 180201153,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "3a953a69-3dfe-4891-839d-5a0f46cd2525",
       "DisplayName": "第10组-2 免广告道具 x3",
-      "Gid": 180201138,
+      "Gid": 180201154,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":1,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":3}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "8979f0f2-214d-4938-8dc6-e10314b28bbd",
       "DisplayName": "第10组-2 孵化币 X2",
-      "Gid": 180201139,
+      "Gid": 180201155,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "3a05d928-c380-46dd-b8a2-364b0c795698",
       "DisplayName": "第10组-2 宝箱开启钥匙 X2",
-      "Gid": 180201140,
+      "Gid": 180201156,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":3,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":500,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "b253ca39-dffd-43af-9636-a5a00ca18576",
       "DisplayName": "第10组-2 法杖绿",
-      "Gid": 180201141,
+      "Gid": 180201157,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":4,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":600,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3eac8a90-e8f9-4244-917f-98d37c7a6094\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "172bd892-3ec0-490b-b81e-669ee8e7f218",
       "DisplayName": "第10组-2 白色龙",
-      "Gid": 180201142,
+      "Gid": 180201158,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":5,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "eb8fbe81-c298-4cb8-a90a-b370ed4017de",
       "DisplayName": "第10组-2 绿色熊",
-      "Gid": 180201143,
+      "Gid": 180201159,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":6,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":8,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"2d72144f-239f-40e6-902b-c77506719698\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "83246fd3-6e1a-49ba-9064-e067808af955",
       "DisplayName": "第10组-2 蓝色鸡",
-      "Gid": 180201144,
+      "Gid": 180201160,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":7,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":6,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1555a758-c31c-4b4b-9b93-5fa6537ba789\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
       "Id": "0f09b8d9-4672-4ac4-876f-35acae39bd44",
       "DisplayName": "第10组-2 紫色猫",
-      "Gid": 180201145,
+      "Gid": 180201161,
       "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T12:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":8,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"10\",\"9\"]}]}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Genus\":[],\"TId\":\"7683a573-d909-47a9-95d4-7c2200916749\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":3,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"36de54eb-26c9-479f-bc91-2e5c9861c00f\",\"Count\":1}]},\"name_txt\":11862,\"JiaoBiao\":[\"ZheKou60\",10958]}"
     },
     {
@@ -8508,15 +8508,15 @@
     },
     {
       "Id": "e2d2115d-cee6-4f1a-b173-ab3b647307b7",
-      "DisplayName": "动物抽奖序列",
+      "DisplayName": "动物彩蛋--广告抽奖",
       "Gid": 190101007,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"d5b2958c-7d49-40bf-a482-d54474c8cf1d\"]},\"Outs\":{\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\"],\"Counts\":[1,5],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"9c559895-9a2c-43a7-b793-e879a600487c\"]}}}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"88c92efc-fb43-43df-997d-c5918808de5d\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]}}"
     },
     {
       "Id": "d5b2958c-7d49-40bf-a482-d54474c8cf1d",
       "DisplayName": "动物抽奖付费购买",
       "Gid": 180201167,
-      "PropertiesString": "{\"Genus\":[\"gs_niudan\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e2d2115d-cee6-4f1a-b173-ab3b647307b7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"88c92efc-fb43-43df-997d-c5918808de5d\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\":[]}"
+      "PropertiesString": "{\"Genus\":[\"gs_niudan\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"88c92efc-fb43-43df-997d-c5918808de5d\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]}}"
     },
     {
       "Id": "af719619-3934-45bf-aaec-669c6a8afdc6",
@@ -12216,7 +12216,7 @@
       "Id": "7784b128-b6bf-4c64-930d-a5d6c0c858dd",
       "DisplayName": "地火监牢成就奖励",
       "Gid": 220103015,
-      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6f0da752-94ba-4cb4-a52b-39dcbdb41f91\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":2},{\"ParentTId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"TId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":3000}]]}}"
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6f0da752-94ba-4cb4-a52b-39dcbdb41f91\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":2},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":3000}]]}}"
     },
     {
       "Id": "5cc94577-c6db-47f4-8410-7fc17bf89f0e",

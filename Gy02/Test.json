@@ -1,58 +1,44 @@
 {
-  "Genus": [ "gs_meirishangdian" ],
+  "Genus": [ "gs_zs", "fb_goumai" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-30T12:00:00.000Z",
+      "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "43200s"
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
     },
-    "GroupNumber": 1,
-    "MaxCount": 2,
+    "GroupNumber": 0,
+    "MaxCount": null,
     "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
-            "MinCount": 0,
-            "GeneralConditional": [
-              {
-                "op": "ModE",
-                "pn": "Count",
-                "args": [ "10", "2" ]
-              }
-            ]
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      },
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-            "MinCount": 0,
+            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
+            "MinCount": 1,
             "GeneralConditional": [],
             "GroupMask": 1
           }
         ],
-        "Count": 1500,
+        "Count": 1,
         "Genus": []
       }
     ],
     "Outs": [
       {
         "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "09d9062c-84fe-4cc1-846a-5daab6a23b1e",
-        "Count": 3
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 80
       }
     ]
   },
-  "name_txt": 11862,
-  "JiaoBiao": [ "ZheKou60", 10958 ]
+  "productStoreId": "com.duangzs.01",
+  "productAmount": 1260,
+  "currencyCode": "KRW",
+  "currencyMark": "₩",
+  "productName": "钻石购买",
+  "productType": "钻石",
+  "productDesc": "少量钻石"
 }

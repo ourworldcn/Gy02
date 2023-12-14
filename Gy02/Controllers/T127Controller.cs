@@ -91,16 +91,25 @@ namespace Gy02.Controllers
 
             var order = new GameShoppingOrder
             {
-                Amount = (decimal)model.Amount,
+                Amount = model.Amount,
                 Currency = model.Currency,
                 Confirm1 = true,
                 Confirm2 = true,
-                CustomerId = gc.Id.ToString(),
+                CustomerId = gc?.Id.ToString(),
             };
 
             _DbContext.ShoppingOrder.Add(order);
             _Logger.LogDebug("开始计算产出。订单号={orderId}", order.Id);
-
+                
+            var bi = gc!.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
+            if (bi is null)
+            {
+                result.DebugMessage = $"法币占位符为空。CharId={gc.Id}";
+                result.ErrorCode = ErrorCodes.ERROR_INVALID_DATA;
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            bi.Count++;
             var command = new ShoppingBuyCommand
             {
                 Count = 1,
@@ -110,6 +119,7 @@ namespace Gy02.Controllers
             _SyncCommandManager.Handle(command);
             if (command.HasError)
             {
+                if (bi.Count > 0) bi.Count--;
                 result.FillErrorFrom(command);
                 return result;
             }

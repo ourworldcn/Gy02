@@ -229,7 +229,9 @@ namespace GY02
             {
                 var svc = _Services.GetRequiredService<T127Manager>();
                 using HttpClient client = new HttpClient();
-                var b = svc.GetOrderState("10001", "difcmdipfplohjejdkedbpng.AO-J1OwDekYaJx6G9yq8Ji1DSnFVr2PjSPqyvVm6AuvDx4I1E6t70KDE7KzOG8B452j1J2V4MgZrtoGDQMytZDVPlwB1CevFYxerrlgslpewcqbh8Cx1-60",
+                //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
+                //var str1 = r.Content.ReadAsStringAsync().Result;
+                var b = svc.GetOrderState("com.duangzs.01", "agpmnngbdoedgmimigfgaalk.AO-J1OzNiKfslLkiMO6uCQjDWiPZdhgCzdvAFGvPDOEK33l470WT4X9E7ToTZGOK0WVWlQ30ttlUZiMsz0o0VlSBSSssy1P7JmLVHgheFm5KP7m7BtjVRdU",
                     out var result);
             }
             #endregion 测试用代码
