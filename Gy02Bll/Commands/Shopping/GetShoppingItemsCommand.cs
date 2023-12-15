@@ -73,6 +73,8 @@ namespace GY02.Commands
                 if (!b) continue;   //若不符合条件
                 list.Add((item, startUtc));
             }
+            //var tmp = _TemplateManager.Id2FullView.Values.FirstOrDefault(c => c.TemplateId == Guid.Parse("e2d2115d-cee6-4f1a-b173-ab3b647307b7"));
+
             var coll1 = list.Where(c => c.Item1.Genus.Contains("gs_meirishangdian")).ToArray();
             command.ShoppingItemStates.AddRange(list.Select(c => new ShoppingItemState
             {

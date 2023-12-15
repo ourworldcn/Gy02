@@ -1,44 +1,17 @@
 {
-  "Genus": [ "gs_zs", "fb_goumai" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
-    },
-    "GroupNumber": 0,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1,
-        "Genus": []
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 80
-      }
-    ]
-  },
-  "productStoreId": "com.duangzs.01",
-  "productAmount": 1260,
-  "currencyCode": "KRW",
-  "currencyMark": "₩",
-  "productName": "钻石购买",
-  "productType": "钻石",
-  "productDesc": "少量钻石"
+  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
+  "Count": 1,
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+  "Fcps": {
+    "Count": {
+      "MinValue": 0,
+      "MaxValue": 1,
+      "StepValue": 1,
+      "Delay": "1.00:00:00",
+      "CurrentValue": 1,
+      "LastDateTime": "2023-06-01T00:00:00.0000000+08:00"
+    }
+  }
 }

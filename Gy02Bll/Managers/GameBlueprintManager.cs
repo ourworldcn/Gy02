@@ -116,7 +116,7 @@ namespace GY02.Managers
                 {
                     Conditional = buff.Take(inItem.Conditional.Count).ToList(),
                 };
-                result.Count = result.Conditional.Max(c => c.MinCount ?? 0);
+                result.Count = result.Conditional.Max(c => c?.MinCount ?? 0);
                 return result;
             }
             else //若未发生变化
