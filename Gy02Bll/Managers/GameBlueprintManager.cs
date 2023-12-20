@@ -86,7 +86,7 @@ namespace GY02.Managers
         public bool IsMatch(GameEntity entity, BlueprintInItem inItem, int mask)
         {
             if (!_EntityManager.IsMatch(entity, inItem.Conditional, mask)) return false;
-            if (inItem.Count > entity.Count) return false;
+            if (inItem.Count > entity.Count && inItem.Conditional.Any(c => c.IsValidate(mask))) return false;
             return true;
         }
 

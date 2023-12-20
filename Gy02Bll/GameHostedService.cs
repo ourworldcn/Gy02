@@ -233,6 +233,8 @@ namespace GY02
                 //var str1 = r.Content.ReadAsStringAsync().Result;
                 var b = svc.GetOrderState("com.duangzs.01", "agpmnngbdoedgmimigfgaalk.AO-J1OzNiKfslLkiMO6uCQjDWiPZdhgCzdvAFGvPDOEK33l470WT4X9E7ToTZGOK0WVWlQ30ttlUZiMsz0o0VlSBSSssy1P7JmLVHgheFm5KP7m7BtjVRdU",
                     out var result);
+                var host = Dns.GetHostAddresses("phl.self.1stlightstudio.com");
+                var host1 = Dns.GetHostAddresses(host[0].ToString());
             }
             #endregion 测试用代码
             catch (Exception)

@@ -30,7 +30,18 @@ namespace GY02.Controllers
                         tmp = addressList.Last(c => c.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
                     }
                     else
-                        tmp = IPAddress.Parse(Request.Host.Host);
+                    {
+                        try
+                        {
+                            var host = Dns.GetHostAddresses(Request.Host.Host);
+
+                            tmp = IPAddress.Parse(host[0].ToString());
+                        }
+                        catch
+                        {
+                            throw new InvalidOperationException($"不认识的Ip格式,Ip={Request.Host.Host}");
+                        }
+                    }
                     Interlocked.CompareExchange(ref _LocalIp, tmp, null);
                 }
                 return _LocalIp;
@@ -38,18 +49,20 @@ namespace GY02.Controllers
         }
 
         /// <summary>
-        /// 
+        /// 构造函数。
         /// </summary>
-        public AccountController(GameAccountStoreManager gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper)
+        public AccountController(GameAccountStoreManager gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper, ILogger<AccountController> logger)
         {
             _GameAccountStore = gameAccountStore;
             _SyncCommandManager = syncCommandManager;
             _Mapper = mapper;
+            _Logger = logger;
         }
 
         readonly GameAccountStoreManager _GameAccountStore;
         readonly SyncCommandManager _SyncCommandManager;
         readonly IMapper _Mapper;
+        ILogger<AccountController> _Logger;
 
         /// <summary>
         /// 创建一个新账号。
@@ -82,7 +95,18 @@ namespace GY02.Controllers
             var command = mapper.Map<LoginCommand>(model);
             commandMng.Handle(command);
             var result = mapper.Map<LoginReturnDto>(command);
-            string ip = LocalIp.ToString();
+            string ip;
+            try
+            {
+                ip = LocalIp.ToString();
+            }
+            catch (Exception err)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = err.Message;
+                _Logger.LogWarning(err.Message);
+                return result;
+            }
 
             var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
             var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
