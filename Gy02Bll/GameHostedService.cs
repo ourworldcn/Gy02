@@ -28,9 +28,11 @@ using OW.Game.Store;
 using OW.GameDb;
 using OW.Server;
 using OW.SyncCommand;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net;
+using System.Net.Http.Json;
 using System.Net.Sockets;
 using System.Runtime;
 using System.Runtime.CompilerServices;
@@ -117,11 +119,18 @@ namespace GY02
             var sqlSb = AutoClearPool<StringBuilder>.Shared.Get();
             using var dwSb = DisposeHelper.Create(c => AutoClearPool<StringBuilder>.Shared.Return(c), sqlSb);
             #region 设置sql server使用内存，避免sql server 贪婪使用内存导致内存过大
+            var sqlMemoryInMB = 4096;   //SQL服务器内存大小
+            var mi = new MEMORYINFO(); mi.Initialize();
+            if (Win32Methods.GlobalMemoryStatusEx(ref mi))
+            {
+                var tmp = (decimal)mi.ullTotalPhys / 1024 / 1024;
+                sqlMemoryInMB = Math.Max(sqlMemoryInMB, (int)Math.Round(tmp / 3));
+            }
 
             var fact = _Services.GetService<IDbContextFactory<GY02UserContext>>();
             using var db = fact.CreateDbContext();
             sqlSb.AppendLine(@$"EXEC sys.sp_configure N'show advanced options', N'1'  RECONFIGURE WITH OVERRIDE;" +
-                "EXEC sys.sp_configure N'max server memory (MB)', N'4096';" +
+                $"EXEC sys.sp_configure N'max server memory (MB)', N'{sqlMemoryInMB}';" +
                 "RECONFIGURE WITH OVERRIDE;" +
                 "EXEC sys.sp_configure N'show advanced options', N'0'  RECONFIGURE WITH OVERRIDE;");
             #endregion
@@ -218,16 +227,14 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var fac = _Services.GetRequiredService<IDbContextFactory<GY02UserContext>>();
-                using var db = fac.CreateDbContext();
-                int i = 1000;
-                var coll = EF.CompileQuery((GY02UserContext c) => c.VirtualThings.OrderBy(c => c.ExtraGuid).Skip(i).Take(5).Select(c => c.Id));
-                var ss = coll.Invoke(db).ToArray();
-
-                Dictionary<string, string> dic = new Dictionary<string, string> { { "Id", "C5F67A61-0385-4FB8-BA50-CD23399C06EE" },
-                    { "Atk","4"} };
-
-                var tmp = mapper.Map<GameChar>(dic);
+                var svc = _Services.GetRequiredService<T127Manager>();
+                using HttpClient client = new HttpClient();
+                //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
+                //var str1 = r.Content.ReadAsStringAsync().Result;
+                var b = svc.GetOrderState("com.duangzs.01", "agpmnngbdoedgmimigfgaalk.AO-J1OzNiKfslLkiMO6uCQjDWiPZdhgCzdvAFGvPDOEK33l470WT4X9E7ToTZGOK0WVWlQ30ttlUZiMsz0o0VlSBSSssy1P7JmLVHgheFm5KP7m7BtjVRdU",
+                    out var result);
+                var host = Dns.GetHostAddresses("phl.self.1stlightstudio.com");
+                var host1 = Dns.GetHostAddresses(host[0].ToString());
             }
             #endregion 测试用代码
             catch (Exception)
@@ -239,6 +246,7 @@ namespace GY02
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
         }
+
     }
 
     //private unsafe void Awake()

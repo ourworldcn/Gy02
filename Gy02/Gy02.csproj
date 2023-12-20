@@ -15,6 +15,9 @@
 
   <ItemGroup>
     <Content Remove="GameTemplates.json" />
+    <Content Remove="Test.json" />
+    <Content Remove="Test2.json" />
+    <Content Remove="Test3.json" />
     <Content Remove="数据说明\动态产出说明.json" />
     <Content Remove="数据说明\卡池组结构说明.json" />
     <Content Remove="数据说明\卡池结构说明.json" />
@@ -28,6 +31,15 @@
   <ItemGroup>
     <None Include="GameTemplates.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Test.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="Test2.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="Test3.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Include="数据说明\快速变化属性的说明.json" />
     <None Include="数据说明\卡池组结构说明.json" />
@@ -60,6 +72,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Bak\OwDbBase\OwDbBase.csproj" />
     <ProjectReference Include="..\Gy02Bll\Gy02Bll.csproj" />
     <ProjectReference Include="..\Gy02Publisher\Gy02Publisher.csproj" />
     <ProjectReference Include="..\OwGameCore\OwGameCore.csproj" />
@@ -67,15 +80,6 @@
     <ProjectReference Include="..\Publisher4WebApi\Publisher4WebApi.csproj" />
     <ProjectReference Include="..\TemplateDb\TemplateDb.csproj" />
     <ProjectReference Include="..\UserDb\UserDb.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Update="Test3.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
-    <Content Update="Test2.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>

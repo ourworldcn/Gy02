@@ -41,6 +41,17 @@ namespace GY02.Managers
         public GameAchievement Achievement { get; internal set; }
     }
 
+    public class AchievementPeriodChangedEventArgs : EventArgs
+    {
+        public GameAchievement Achievement { get; set; }
+
+        public int? OldValue { get; set; }
+
+        public int? NewValue { get; set; }
+
+        public GameChar GameChar { get; set; }
+    }
+
     /// <summary>
     /// 成就/任务管理器。
     /// </summary>
@@ -98,7 +109,12 @@ namespace GY02.Managers
         /// 引发成就/任务项，变化事件。
         /// </summary>
         /// <param name="args"></param>
-        public void InvokeAchievementChanged(AchievementChangedEventArgs args) => AchievementChanged?.Invoke(this, args);
+        public void InvokeAchievementChanged(AchievementChangedEventArgs args)
+        {
+            //if (Guid.Parse("23c52c58-c5ef-4c53-824c-c6a377af7075") == args.Achievement.TemplateId)
+            //    ;
+            AchievementChanged?.Invoke(this, args);
+        }
 
         /// <summary>
         /// 对指定的成就任务项增加计数，若计数发生变化则引发事件（通过<see cref="InvokeAchievementChanged(AchievementChangedEventArgs)"/>）
@@ -119,6 +135,46 @@ namespace GY02.Managers
             return true;
         }
 
+        /// <summary>
+        /// 成就任务的所处周期或有效性发生变化的事件。
+        /// </summary>
+        public event EventHandler<AchievementPeriodChangedEventArgs> AchievementPeriodChanged;
+
+        protected virtual void OnAchievementPeriodChanged(AchievementPeriodChangedEventArgs e)
+        {
+            AchievementPeriodChanged?.Invoke(this, e);
+            if (e.OldValue != e.NewValue)   //若周期发生了变化
+            {
+                e.Achievement.Count = 0;
+                e.Achievement.Level = 0;
+                e.Achievement?.Items.ForEach(state =>
+                {
+                    state.IsCompleted = false;
+                    state.IsPicked = false;
+                });
+            }
+        }
+
+        /// <summary>
+        /// 刷新当前所处周期，并在周期变化时，引发<see cref="AchievementPeriodChanged"/>事件。
+        /// </summary>
+        /// <param name="achi"></param>
+        /// <param name="gameChar"></param>
+        /// <returns></returns>
+        public bool RaisePeriodChangedIfChanged(GameAchievement achi, GameChar gameChar)
+        {
+            var ov = achi.LastMarkPeriodIndex;
+            achi.LastMarkPeriodIndex = GetPeriodIndex(achi, gameChar);
+            if (ov == achi.LastMarkPeriodIndex) return false;
+            OnAchievementPeriodChanged(new AchievementPeriodChangedEventArgs
+            {
+                Achievement = achi,
+                OldValue = ov.HasValue ? (int)ov.Value : null,
+                NewValue = achi.LastMarkPeriodIndex.HasValue ? (int)achi.LastMarkPeriodIndex.Value : null,
+                GameChar = gameChar,
+            });
+            return true;
+        }
         #endregion 事件及相关
 
         #region 基础操作
@@ -191,7 +247,24 @@ namespace GY02.Managers
             }
             var result = thing.GetJsonObject<GameAchievement>();
             if (result.Items.Count <= 0) InitializeState(result);
+
+            RaisePeriodChangedIfChanged(result, gameChar);
             return result;
+        }
+
+        /// <summary>
+        /// 获取周期数。
+        /// </summary>
+        /// <param name="achi"></param>
+        /// <param name="gameChar"></param>
+        /// <returns>不是空则获取到了周期数。否则是无效周期。</returns>
+        public int? GetPeriodIndex(GameAchievement achi, GameChar gameChar)
+        {
+            if (GetTemplateById(achi.TemplateId) is not TemplateStringFullView tt) return null;
+            var item1 = tt.Achievement.Ins?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is NumberCondition));
+            if (item1 is null) return null;
+            var index = _BlueprintManager.GetPeriodIndex(item1, gameChar, out _);
+            return index;
         }
 
         /// <summary>

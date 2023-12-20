@@ -279,6 +279,15 @@ namespace OW.Game.Entity
         }
 
         #endregion 权限相关
+
+        #region 兑换码
+
+        /// <summary>
+        /// 记录兑换码历史记录。
+        /// </summary>
+        public List<string> RedeemCodeHistory { get; set; }
+
+        #endregion 兑换码
     }
 
     /// <summary>

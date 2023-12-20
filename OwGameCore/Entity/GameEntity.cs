@@ -65,11 +65,15 @@ namespace OW.Game.Entity
         {
             get
             {
+                //if (Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061") == TemplateId)
+                //    ;
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
                 return fcp is null ? _Count : fcp.GetCurrentValueWithUtc();
             }
             set
             {
+                //if (Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061") == TemplateId)
+                //    ;
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
                 if (fcp is null)
                 {
@@ -144,8 +148,15 @@ namespace OW.Game.Entity
         /// <returns></returns>
         public override string ToString()
         {
-            var name = ((Thing as VirtualThing)?.GetTemplate())?.DisplayName;
-            name ??= $"TId = {TemplateId.ToString()[0..3]}...{TemplateId.ToString()[^2..^0]} , Count = {Count}";
+            string name;
+            if ((Thing as VirtualThing)?.GetTemplate() is TemplateStringFullView tt)    //若找到模板
+            {
+                name = $"{tt.DisplayName} ,Count = {Count}";
+            }
+            else
+            {
+                name = $"TId = {TemplateId.ToString()[..3]}...{TemplateId.ToString()[^2..]} ,Count = {Count}";
+            }
             return $"{GetType().Name}({name})";
         }
     }

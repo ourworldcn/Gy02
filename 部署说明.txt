@@ -16,6 +16,8 @@ WebApi网站
 修正数据库最大内存限制，一般4GB足够，避免长期运行时，其贪婪内存算法导致内存紧张。
 
 超管账号 : 1D22F0CF-1704-412C-AD8D-32CE5FA5A7D5//37A87267-77DC-4AA3-8220-02F9538779AB
+
+新超管账号：0A630B86-0C8F-4CDA-B9BB-A13E35295D71//1954D1C0-5012-44C3-8F1B-0950544862A5
 好友机器人登录名//密码：A3B4B3F7-8CAD-4B95-9983-4D5DAFDAA5F0//9D4C2381-F000-43F2-AB75-1A53718D44C0
 
 主网站部署参见 https://docs.microsoft.com/zh-cn/aspnet/core/tutorials/publish-to-iis?view=aspnetcore-3.1&tabs=visual-studio
@@ -33,3 +35,6 @@ BeastBlitzKey
 https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-0d757090e71fb103e
 
 F871361D-A803-4F7E-B222-13216A89E9FA 上传模板的凭据
+
+phl.self.1stlightstudio.com 自测服务器地址。
+9bK2frUv0ivRjLFtGlZ?aOf*CL(!4e6Y

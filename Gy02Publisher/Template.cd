@@ -34,7 +34,7 @@
   <Class Name="GY02.Templates.TemplateStringFullView">
     <Position X="8.75" Y="11.5" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>UAgAEAAAAAKBAADAKQEYAAQjKICkgIRALgBAEQUCQSA=</HashCode>
+      <HashCode>UAgAEAAAAAKBAADIKQEYAAQjKICkgIRALgBAEQUCQSA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -43,6 +43,7 @@
       <Property Name="Dice" />
       <Property Name="DiceGroup" />
       <Property Name="SequenceOut" />
+      <Property Name="GameEvent" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Property Name="Skills" />
@@ -79,7 +80,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="GY02.Templates.FuhuaInfo">
-    <Position X="13" Y="17" Width="1.5" />
+    <Position X="13" Y="16.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAACAAACAQAAAAAAAAAAAAAAAIAAAAAAAAABAACA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
@@ -204,13 +205,13 @@
   <Class Name="GY02.Templates.NumberCondition" BaseTypeListCollapsed="true">
     <Position X="9.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAAAAABAACAAAgAAAAAAAAQAAAAAAAAAAAgAADAAFA=</HashCode>
+      <HashCode>AQACAAABAACAAAgAAAAAAAQQAAAAAAAgAAAgAADAAFA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="GY02.Templates.GameEventTO" Collapsed="true">
-    <Position X="1.25" Y="6.25" Width="1.5" />
+  <Class Name="GY02.Templates.GameEventTO">
+    <Position X="13" Y="19" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Gy02TemplateJO.cs</FileName>

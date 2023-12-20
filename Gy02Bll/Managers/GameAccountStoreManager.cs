@@ -450,7 +450,7 @@ namespace GY02.Managers
         {
             //开始从数据库加载
             context ??= _ContextFactory.CreateDbContext();
-            var guThing = context.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children).ThenInclude(c => c.Children)
+            var guThing = context.Set<VirtualThing>().Include(c => c.Children).ThenInclude(c => c.Children)/*.ThenInclude(c => c.Children).ThenInclude(c => c.Children)*/
                 .Where(c => c.ExtraGuid == ProjectContent.UserTId).FirstOrDefault(loadFunc);
             if (guThing is null)
             {
@@ -469,6 +469,10 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"指定账号没有创建角色,UserKey={user.GetThing().IdString}");
                 return null;
             }
+#if DEBUG
+            foreach (var child in guThing.GetAllChildren())
+                child.SetTemplate(_TemplateManager.GetFullViewFromId(child.ExtraGuid));
+#endif
             return user;
         }
 

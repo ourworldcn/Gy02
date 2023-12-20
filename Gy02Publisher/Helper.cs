@@ -151,7 +151,7 @@ namespace GY02.Publisher
         /// 法币TID。
         /// </summary>
         public static readonly Guid FabiTId = new Guid("d577e084-4aa4-44d9-9510-20ccea041375");
-
+        
         /// <summary>
         /// 广告币TID。
         /// </summary>
@@ -208,12 +208,12 @@ namespace GY02.Publisher
         public const string CurrencyBuyGenus = "fb_goumai";
 
         /// <summary>
-        /// 此类实体在每天第一次登录时会自动把Count置为该实体存在的总天数，从0开始。副作用，此类属实体的Count设置由系统完成单独设置无用。
+        /// 此类实体在每天第一次登录时会自动把Count置为该实体存在的总天数，从0开始。副作用，此类属实体的Count设置由系统完成单独设置无用。fl_ExistsDayNumber
         /// </summary>
         public const string ExistsDayNumberGenus = "fl_ExistsDayNumber";
 
         /// <summary>
-        /// 
+        /// 每日递增。
         /// </summary>
         public const string AutoIncGenus = "fl_AutoInc";
 

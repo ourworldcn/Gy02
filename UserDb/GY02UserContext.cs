@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.ObjectPool;
+using OW.Data;
+using OW.Game.Store.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,5 +70,15 @@ namespace OW.Game.Store
         /// 法币购买商品的订单信息。
         /// </summary>
         public DbSet<GameShoppingOrder> ShoppingOrder { get; set; }
+
+        /// <summary>
+        /// 兑换码表。
+        /// </summary>
+        public DbSet<GameRedeemCode> GameRedeemCodes { get; set; }
+
+        /// <summary>
+        /// 兑换码批次表。
+        /// </summary>
+        public DbSet<GameRedeemCodeCatalog> GameRedeemCodeCatalogs { get; set; }
     }
 }

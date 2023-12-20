@@ -129,7 +129,7 @@ namespace GY02.Commands
                 //加入购买历史记录
                 command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
                 {
-                    Count = 1,
+                    Count = command.Count,
                     DateTime = now,
                     TId = command.ShoppingItemTId,
                 });

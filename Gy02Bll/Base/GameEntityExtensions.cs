@@ -35,15 +35,7 @@ namespace GY02.Base
             var oldVal = Convert.ToDecimal(pi.GetValue(entity));   //旧属性值
             var newVal = oldVal + difference; //新属性值
             pi.SetValue(entity, newVal);    //设置属性值
-            changes?.Add(new GamePropertyChangeItem<object>
-            {
-                Object = entity,
-                PropertyName = pi.Name,
-                OldValue = oldVal,
-                HasOldValue = true,
-                NewValue = newVal,
-                HasNewValue = true,
-            });
+            changes?.MarkChanges(entity, pi.Name, oldVal, newVal);
         }
 
         public static bool ModifyPropertyAndMarkChanges<T>(this GameEntityBase entityBase, string propertyName, T newValue, ICollection<GamePropertyChangeItem<object>> changes = null)
@@ -61,18 +53,9 @@ namespace GY02.Base
             }
             var oldValue = (T)pi.GetValue(entityBase);
             pi.SetValue(entityBase, newValue);
-            changes.Add(new GamePropertyChangeItem<object>
-            {
-                Object = entityBase,
-                PropertyName = propertyName,
-
-                HasOldValue = typeof(T).IsClass && oldValue != null || typeof(T).IsValueType,
-                OldValue = oldValue,
-
-                HasNewValue = true,
-                NewValue = newValue,
-
-            });
+            var tmp = changes?.MarkChanges(entityBase, propertyName, oldValue, newValue);
+            if (tmp != null)
+                tmp.HasOldValue = typeof(T).IsClass && oldValue != null || typeof(T).IsValueType;
             return true;
 
 

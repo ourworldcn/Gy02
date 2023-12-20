@@ -116,7 +116,7 @@ namespace GY02.Controllers
         public ActionResult<bool> TestLvUp()
         {
             var store = _ServiceProvider.GetRequiredService<GameAccountStoreManager>();
-            store.GetOrLoadUser("gy20", "HtnXNCiJ", out var gu);
+            store.GetOrLoadUser("string404", "string", out var gu);
             var token = gu.Token;
             var item = gu.CurrentChar.ZhuangBeiBag.Children.First(c => c.TemplateId == Guid.Parse("402a7b1c-bd32-4540-9efe-f9801ed6946b"));
             var sub = new LvUpParamsDto { Token = token, };

@@ -43,6 +43,34 @@ namespace GY02.Managers
 
         #region 获取信息
 
+        /// <summary>
+        /// 获取周期数。
+        /// </summary>
+        /// <param name="inItem"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="entity"></param>
+        /// <returns>不是空则获取到了周期数。否则是无效周期。</returns>
+        public int? GetPeriodIndex(BlueprintInItem inItem, GameChar gameChar, out GameEntity entity)
+        {
+            var allEntity = _EntityManager.GetAllEntity(gameChar);
+            var gtc = inItem.Conditional.FirstOrDefault(c => c.NumberCondition is not null);
+
+            entity = allEntity.Where(c =>
+            {
+                return _EntityManager.IsMatch(c, gtc);
+            }).FirstOrDefault();
+            if (entity is null) goto lbEmpty;
+
+            var number = gtc.NumberCondition.GetNumber(entity);
+            if (number is null) goto lbEmpty;
+
+            var period = gtc.NumberCondition.GetPeriodIndex(number.Value);
+
+            return period;
+        lbEmpty:
+            entity = null;
+            return null;
+        }
 
         #endregion 获取信息
 
@@ -58,7 +86,7 @@ namespace GY02.Managers
         public bool IsMatch(GameEntity entity, BlueprintInItem inItem, int mask)
         {
             if (!_EntityManager.IsMatch(entity, inItem.Conditional, mask)) return false;
-            if (inItem.Count > entity.Count) return false;
+            if (inItem.Count > entity.Count && inItem.Conditional.Any(c => c.IsValidate(mask))) return false;
             return true;
         }
 
@@ -88,7 +116,7 @@ namespace GY02.Managers
                 {
                     Conditional = buff.Take(inItem.Conditional.Count).ToList(),
                 };
-                result.Count = result.Conditional.Max(c => c.MinCount ?? 0);
+                result.Count = result.Conditional.Max(c => c?.MinCount ?? 0);
                 return result;
             }
             else //若未发生变化
@@ -281,6 +309,7 @@ namespace GY02.Managers
                 if (tmp is not null) hs.Remove(tmp);    //若移除对应的项
                 result.Add((tmp, item));
             }
+            var tmp1 = hs.FirstOrDefault(c => c.TemplateId == Guid.Parse("3ecf10c0-f5e5-4996-8ed0-2e16547310a5"));
             return result;
         }
 

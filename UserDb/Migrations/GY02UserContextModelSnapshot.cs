@@ -22,6 +22,48 @@ namespace UserDb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("OW.Game.Store.Base.GameRedeemCode", b =>
+                {
+                    b.Property<string>("Code")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)")
+                        .HasColumnOrder(0)
+                        .HasComment("兑换码，也是Id。");
+
+                    b.Property<Guid>("CatalogId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Count")
+                        .HasColumnType("int");
+
+                    b.HasKey("Code");
+
+                    b.ToTable("GameRedeemCodes");
+                });
+
+            modelBuilder.Entity("OW.Game.Store.Base.GameRedeemCodeCatalog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnOrder(0);
+
+                    b.Property<int>("CodeType")
+                        .HasColumnType("int")
+                        .HasComment("生成的码的类型，1=通用码，2=一次性码。");
+
+                    b.Property<string>("DisplayName")
+                        .HasColumnType("nvarchar(max)")
+                        .HasComment("显示名称");
+
+                    b.Property<Guid>("ShoppingTId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasComment("兑换码使用的商品TId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GameRedeemCodeCatalogs");
+                });
+
             modelBuilder.Entity("OW.Game.Store.GameShoppingOrder", b =>
                 {
                     b.Property<Guid>("Id")

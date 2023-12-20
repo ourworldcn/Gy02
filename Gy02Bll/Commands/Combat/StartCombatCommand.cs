@@ -78,13 +78,7 @@ namespace GY02.Commands
                 if (tt.Ins?.Count > 0) //若需要消耗资源
                     if (!_BlueprintManager.Deplete(all, tt.Ins, command.Changes)) { command.FillErrorFromWorld(); return; }
                 command.GameChar.CombatTId = command.CombatTId;
-                command.Changes?.Add(new GamePropertyChangeItem<object>
-                {
-                    Object = command.GameChar,
-                    PropertyName = nameof(command.GameChar.CombatTId),
-                    HasNewValue = true,
-                    NewValue = command.GameChar.CombatTId,
-                });
+                command.Changes?.MarkNewValueChanges(command.GameChar, nameof(command.GameChar.CombatTId), command.GameChar.CombatTId);
             }
             _GameAccountStore.Save(key);
         }

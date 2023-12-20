@@ -12,8 +12,5 @@ namespace OW.Game
     {
         public static object MetadataReference { get; private set; }
 
-        public static void Test()
-        {
-        }
     }
 }

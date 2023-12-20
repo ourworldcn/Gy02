@@ -1,4 +1,5 @@
-﻿using GY02.Managers;
+﻿using AutoMapper;
+using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +14,7 @@ using System.Threading.Tasks;
 
 namespace GY02.Commands
 {
+    [AutoMap(typeof(GameMailTo))]
     public class SendMailItem
     {
         public SendMailItem()

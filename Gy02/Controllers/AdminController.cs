@@ -7,11 +7,13 @@ using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.Game.Store.Base;
 using OW.GameDb;
 using OW.SyncCommand;
 using System.ComponentModel.DataAnnotations;
@@ -30,16 +32,20 @@ namespace GY02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public AdminController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager)
+        public AdminController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager, GY02UserContext dbContext, GameRedeemCodeManager redeemCodeManager)
         {
-            _GameAccountStore = gameAccountStore;
+            _AccountStore = gameAccountStore;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
+            _DbContext = dbContext;
+            _RedeemCodeManager = redeemCodeManager;
         }
 
-        GameAccountStoreManager _GameAccountStore;
+        GameAccountStoreManager _AccountStore;
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
+        GY02UserContext _DbContext;
+        GameRedeemCodeManager _RedeemCodeManager;
 
         /// <summary>
         /// 封装模板数据配置文件的类。
@@ -194,7 +200,7 @@ namespace GY02.Controllers
         public ActionResult<ModifyServerDictionaryReturnDto> ModifyServerDictionary(ModifyServerDictionaryParamsDto model)
         {
             var result = new ModifyServerDictionaryReturnDto { };
-            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
                 if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
@@ -234,6 +240,109 @@ namespace GY02.Controllers
             _Mapper.Map(command, result);
             return result;
 
+        }
+
+        /// <summary>
+        /// 生成兑换码。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <response code="200">未发生系统级错误。但可能出现应用错误，具体参见 HasError 和 ErrorCode 。</response>  
+        /// <response code="500">指定的通用码重复。</response>  
+        [HttpPost]
+        public ActionResult<GenerateRedeemCodeReturnDto> GenerateRedeemCode(GenerateRedeemCodeParamsDto model)
+        {
+            var result = new GenerateRedeemCodeReturnDto();
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            if (gc.GetThing().Parent.GetJsonObject<GameUser>().LoginName != ProjectContent.AdminLoginName)   //若非超管账号
+            {
+                result.ErrorCode = ErrorCodes.ERROR_NO_SUCH_PRIVILEGE;
+                result.DebugMessage = "需要超管权限执行此操作";
+                result.HasError = true;
+                return result;
+            }
+            if (model.CodeType == 2)    //若是一次性码
+            {
+                var redeems = _RedeemCodeManager.Generat(model.Count, model.CodeType, _DbContext);
+                var catalog = new GameRedeemCodeCatalog
+                {
+                    DisplayName = "",
+                    CodeType = model.CodeType,
+                    ShoppingTId = model.ShoppingItemTId,
+                };
+                _DbContext.Add(catalog);
+                _DbContext.AddRange(redeems.Select(c => new GameRedeemCode
+                {
+                    Code = c,
+                    CatalogId = catalog.Id,
+                }));
+                _DbContext.SaveChanges();
+                result.Codes.AddRange(redeems);
+            }
+            else if (model.CodeType == 1)   //若是通用码
+            {
+                if (string.IsNullOrEmpty(model.Code))
+                {
+                    result.HasError = true;
+                    result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    result.DebugMessage = $"生成通用码必须明确指定。";
+                    return result;
+                }
+                var catalog = new GameRedeemCodeCatalog
+                {
+                    DisplayName = "",
+                    CodeType = model.CodeType,
+                    ShoppingTId = model.ShoppingItemTId,
+                };
+                _DbContext.Add(catalog);
+                _DbContext.Add(new GameRedeemCode
+                {
+                    Code = model.Code,
+                    CatalogId = catalog.Id,
+                });
+                _DbContext.SaveChanges();
+                result.Codes.AddRange(new string[] { model.Code });
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 修改系统时间。仅能开发调试版使用。需要超管权限执行此操作。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="environment"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<ModifyWorldDateTimeReturnDto> ModifyWorldDateTime(ModifyWorldDateTimeParamsDto model, [FromServices] IHostEnvironment environment)
+        {
+            var result = new ModifyWorldDateTimeReturnDto();
+            if (environment.EnvironmentName != Environments.Production)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED;
+                result.DebugMessage = "仅能开发调试版才能使用";
+                return result;
+            }
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            if (gc.GetThing().Parent.GetJsonObject<GameUser>().LoginName != "0A630B86-0C8F-4CDA-B9BB-A13E35295D71")   //若非超管账号
+            {
+                result.ErrorCode = ErrorCodes.ERROR_NO_SUCH_PRIVILEGE;
+                result.DebugMessage = "需要超管权限执行此操作。";
+                return result;
+            }
+            OwHelper._Offset = TimeSpan.FromSeconds(model.Offset);
+            return result;
         }
     }
 

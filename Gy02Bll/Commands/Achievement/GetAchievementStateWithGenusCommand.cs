@@ -63,6 +63,8 @@ namespace GY02.Commands
 
             foreach ((var tid, var tt) in templates)
             {
+                //if (Guid.Parse("7baf0fb0-8701-4a85-b86f-a95855d64747") == tt.TemplateId)
+                //    ;
                 var achi = _AchievementManager.GetOrCreate(command.GameChar, tt);    //成就对象
                 _AchievementManager.RefreshState(achi, command.GameChar, now);
                 command.Result.Add(achi);

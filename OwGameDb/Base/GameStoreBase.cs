@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.ObjectPool;
+using OW.Data;
 using OW.Game.PropertyChange;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,129 +11,6 @@ using System.Text.Json.Serialization;
 
 namespace OW.Game.Store
 {
-    /// <summary>
-    /// POCO类在被保存前需要调用此接口将一些数据写入可存储的字段中。
-    /// </summary>
-    public interface IBeforeSave
-    {
-        /// <summary>
-        /// 实体类在被保存前需要调用该成员。应该仅写入自身拥有的直接存储于数据库的简单字段。
-        /// 不要引用其他存储于数据库中的实体。否则，需要考虑重载其他实体的该接口方法，保证不会反复提交，或者是有序的保存。
-        /// </summary>
-        /// <param name="db">该实体类将被保存到的数据库上下文。</param>
-        void PrepareSaving(DbContext db);
-
-        /// <summary>
-        /// 是否取消<see cref="PrepareSaving"/>的调用。
-        /// </summary>
-        /// <value>true不会调用保存方法，false(默认值)在保存前调用保存方法。</value>
-        bool SuppressSave => false;
-    }
-
-    public interface IEntityWithSingleKey<T>
-    {
-        abstract T Id { get; set; }
-
-    }
-
-    /// <summary>
-    /// 以<see cref="Guid"/>为键类型的实体类的基类。
-    /// </summary>
-    public abstract class GuidKeyObjectBase : IEntityWithSingleKey<Guid>
-    {
-        #region 构造函数
-
-        /// <summary>
-        /// 构造函数。
-        /// 会自动用<see cref="Guid.NewGuid"/>生成<see cref="Id"/>属性值。
-        /// </summary>
-        public GuidKeyObjectBase()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        /// <param name="id">指定该实体对象的<see cref="Id"/>属性。</param>
-        public GuidKeyObjectBase(Guid id)
-        {
-            Id = id;
-        }
-
-        #endregion 构造函数
-
-        /// <summary>
-        /// 主键。
-        /// </summary>
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.None), Column(Order = 0)]
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// 如果Id是Guid.Empty则生成新Id,否则立即返回false。
-        /// </summary>
-        /// <returns>true生成了新Id，false已经有了非空Id。</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool GenerateIdIfEmpty()
-        {
-            if (Guid.Empty != Id)
-                return false;
-            Id = Guid.NewGuid();
-            return true;
-        }
-
-        /// <summary>
-        /// 强制生成一个新Id。
-        /// 通常这是一个危险的操作。仅在克隆副本以后有可能需要调用。
-        /// </summary>
-        public void GenerateNewId()
-        {
-            Id = Guid.NewGuid();
-        }
-
-        #region 减低内存分配速率
-
-        private string _IdString;
-
-        /// <summary>
-        /// 获取或设置Id的字符串表现形式。Id的字符串形式"00000000-0000-0000-0000-000000000000"从 a 到 f 的十六进制数字是小写的。
-        /// 该属性第一次读取时才初始化。有利于id的池化处理。
-        /// </summary>
-        [NotMapped]
-        [JsonIgnore]
-        public string IdString
-        {
-            get
-            {
-                return _IdString ??= Id.ToString();
-            }
-            internal set
-            {
-                Id = Guid.Parse(value);
-                _IdString = null;
-            }
-        }
-
-        private string _Base64IdString;
-
-        /// <summary>
-        /// 获取或设置Id的Base64字符串表现形式。
-        /// 该属性第一次读取时才初始化。并有利于id的池化处理。
-        /// </summary>
-        [NotMapped]
-        [JsonIgnore]
-        public string Base64IdString
-        {
-            get { return _Base64IdString ??= Id.ToBase64String(); }
-            internal set
-            {
-                Id = OwConvert.ToGuid(value);
-                _Base64IdString = value;
-            }
-        }
-
-        #endregion 减低内存分配速率
-    }
 
     /// <summary>
     /// 提供一个基类，包含一个编码为字符串的压缩属性。且该字符串可以理解为一个字典的内容。

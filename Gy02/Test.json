@@ -1,254 +1,58 @@
 {
-  "Genus": [ "cj_saiji" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
+  "Genus": [ "gs_meirishangdian" ],
+  "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
+      "Start": "2023-05-30T12:00:00.000Z",
       "End": null,
-      "PeriodString": "999y",
-      "ValidPeriodString": "999y"
+      "PeriodString": "1d",
+      "ValidPeriodString": "43200s"
     },
+    "GroupNumber": 4,
+    "MaxCount": 2,
     "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ "10", "0" ]
+              }
+            ]
+          }
+        ],
+        "Count": 0,
+        "Genus": []
+      },
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
+            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
             "MinCount": 0,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 30,
-              "MinRemainder": 0,
-              "MaxRemainder": 29
-            },
             "GeneralConditional": [],
-            "Count": 0,
-            "GroupMask": 3
+            "GroupMask": 1
           }
-        ]
+        ],
+        "Count": 10000,
+        "Genus": []
       }
     ],
-    "Exp2LvSequence": [ 30, 80, 130, 180, 230, 280, 330, 380, 430, 480, 530, 580, 630, 680, 730, 780, 830, 880, 930, 980, 1030, 1080, 1130, 1180, 1230, 1280, 1330, 1380, 1430, 1480 ],
     "Outs": [
-      [
-        {
-          "ParentTId": null,
-          "TId": "d1172b94-747c-4194-b43f-550cda314fb4",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "d1cd9943-afbb-4fd2-bc90-3f62e6f18078",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "e0b38f30-a516-489e-99f8-7f6637d174ab",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "49e5e985-4cd4-4c2d-9af1-5ec4e311f5ab",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "8bec25a5-db06-4828-83b6-04f3a605c848",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "263975b8-544a-4733-9ced-582f305cd228",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "1bb0a398-2911-49f7-89f5-598a3236fb00",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "0925e80c-029c-42da-9853-9cb608884aea",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "710b2975-4cb9-430d-8882-7ad0cc1d661b",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "bea3e97b-ad1a-46fe-9e8e-2c79018b35aa",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "280573d4-2160-4840-ace9-67e0d24ad5c6",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "a830f800-015a-4e4e-8fd0-e898fb4348c6",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "0b5576af-3328-4ad2-b847-491ef1fea2a1",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "57ec5337-3ffb-4ae5-876b-ef3ee504da49",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "f7484990-2f43-4105-a298-744141fac3d1",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "a407da38-71ec-436e-b7a7-b6f97efa4da1",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "dedef392-b39f-4060-ac11-57c820f5f311",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "539adcec-7256-476b-b4b6-5bb4e0efd722",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "ab4624b7-608e-4dba-a11f-2a08dde60794",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "b3d25476-94e2-4a00-8e19-0c102b58d1ae",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "c281bf25-62f4-4289-9f3e-486b38166d94",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "7e6e5ffa-b1e5-4e4f-aac1-0758ca3b4904",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "9f4c303a-fffd-4e81-9251-504f05301aa0",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "2718e15e-2346-46f1-9b21-d540c851ddc0",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "53de1285-f633-49d2-a3c0-08bbc8104029",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "ff29d181-11e3-42d0-89b1-1be6e306d891",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "9bef4810-74fb-43e1-a964-90647d683bcd",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "bca1f86f-5174-4225-ada8-14f59be8ce9b",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "c7134b43-f6ff-466a-9bb8-0393d93c6c90",
-          "Count": 1
-        }
-      ],
-      [
-        {
-          "ParentTId": null,
-          "TId": "0dea5d61-dc50-4901-91a5-3a100a446fa2",
-          "Count": 1
-        }
-      ]
+      {
+        "Id": null,
+        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+        "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+        "Count": 3
+      }
     ]
   },
-  "name_txt": 111111
+  "name_txt": 11860,
+  "JiaoBiao": [ "ZheKou60", 10958 ]
 }

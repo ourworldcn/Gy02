@@ -2,6 +2,7 @@
 using AutoMapper.Configuration.Annotations;
 using GY02.Commands;
 using GY02.Templates;
+using OW.Data;
 using OW.Game.Entity;
 using OW.Game.Store;
 using System;
@@ -1430,6 +1431,28 @@ namespace GY02.Publisher
     #region 商城相关
 
     /// <summary>
+    /// 执行兑换码兑换功能的参数封装类。
+    /// 错误码是160表示指定的兑换码不存在。若错误码是1219则表示兑换码失效。
+    /// </summary>
+    [AutoMap(typeof(RedeemCommand), ReverseMap = true)]
+    public class RedeemParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 兑换码。
+        /// </summary>
+        [StringLength(64, MinimumLength = 4)]
+        public string Code { get; set; }
+    }
+
+    /// <summary>
+    /// 执行兑换码兑换功能的返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(RedeemCommand))]
+    public class RedeemReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
     /// 获取订单信息功能的参数封装类。
     /// </summary>
     public class GetShoppingOrderParamsDto : TokenDtoBase
@@ -1968,6 +1991,24 @@ namespace GY02.Publisher
     #region 管理员功能相关
 
     /// <summary>
+    /// 修改系统时间的功能参数封装类。
+    /// </summary>
+    public class ModifyWorldDateTimeParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 服务器使用的时间与Utc时间的偏移值。单位：秒
+        /// </summary>
+        public int Offset { get; set; }
+    }
+
+    /// <summary>
+    /// 修改系统时间的功能返回值封装类。
+    /// </summary>
+    public class ModifyWorldDateTimeReturnDto : ReturnDtoBase
+    {
+    }
+
+    /// <summary>
     /// 获取服务器字典功能的返回值封装类。
     /// </summary>
     [AutoMap(typeof(GetServerDictionaryCommand))]
@@ -2179,11 +2220,11 @@ namespace GY02.Publisher
     [AutoMap(typeof(GameAchievementItem))]
     public class GameAchievementItemDto
     {
-        /// <summary>
+        /*/// <summary>
         /// 奖励。注意该奖励是经过翻译的，即不会包含序列和卡池项。在生成该项时会确定随机性（虽然一般不会有随机奖励）。
         /// 若需要找到原定义去找对应的模板数据。
         /// </summary>
-        //public List<GameEntitySummaryDto> Rewards { get; set; } = new List<GameEntitySummaryDto>();
+        //public List<GameEntitySummaryDto> Rewards { get; set; } = new List<GameEntitySummaryDto>();*/
 
         /// <summary>
         /// 是否已经达成该等级。true已经达成，false未达成。
@@ -2565,6 +2606,97 @@ namespace GY02.Publisher
     }
 
     #endregion
+
+    #region T127相关
+
+    /// <summary>
+    /// 通知服务器完成T127的订单功能参数封装类。
+    /// </summary>
+    public class CompleteOrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public CompleteOrderParamsDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 对应购买商品的商品ID。
+        /// </summary>
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// 购买成功后Purchase对象的getPurchaseToken()
+        /// </summary>
+        public string PurchaseToken { get; set; }
+
+        /// <summary>
+        /// 透传参数。
+        /// </summary>
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// 金额。约定为法币标准单位。
+        /// </summary>
+        public decimal Amount { get; set; }
+
+        /// <summary>
+        /// 币种编码。
+        /// </summary>
+        public string Currency { get; set; }
+    }
+
+    /// <summary>
+    /// 通知服务器完成T127的订单功能返回值封装类。
+    /// </summary>
+    public class CompleteOrderReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    #endregion T127相关
+
+    #region 兑换码相关
+
+    /// <summary>
+    /// 生成兑换码功能参数封装类。
+    /// </summary>
+    public class GenerateRedeemCodeParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 生成的码的类型，1=通用码，2=一次性码。通用性兑换码通常一批只生成一个，如：VIP6666。
+        /// </summary>
+        public int CodeType { get; set; }
+
+        /// <summary>
+        /// 生成的数量。
+        /// </summary>
+        public int Count { get; set; }
+
+        /// <summary>
+        /// 对应的商品TId。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+
+        /// <summary>
+        /// 强行指定生成一个通用兑换码。仅当 CodeType == 1时，指定这一项才有用。
+        /// </summary>
+        public string Code { get; set; }
+    }
+
+    /// <summary>
+    /// 生成兑换码功能返回值封装类。
+    /// </summary>
+    public class GenerateRedeemCodeReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 生成的码的集合。
+        /// </summary>
+        public List<string> Codes { get; set; } = new List<string>();
+    }
+
+    #endregion 兑换码相关
 }
 
 

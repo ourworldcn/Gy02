@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OW.Game.Store
+namespace OW.Data
 {
     public class GameThingTemplate : JsonDynamicPropertyBase
     {

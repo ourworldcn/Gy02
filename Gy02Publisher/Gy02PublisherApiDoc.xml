@@ -499,6 +499,11 @@
             商城配置项。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.ProductStoreId">
+            <summary>
+            支付平台的商品Id。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Atk">
             <summary>
             攻击数值序列。
@@ -618,6 +623,11 @@
             <param name="validationContext"></param>
             <returns></returns>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.Mail">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:GY02.Templates.FuhuaInfo">
             <summary>
             孵化的信息项主要数据封装类。
@@ -723,6 +733,27 @@
             </summary>
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:GY02.Templates.NumberCondition.GetNumber(System.Object)">
+            <summary>
+            从对象上获取属性值。
+            </summary>
+            <param name="obj"></param>
+            <returns>null表示对象上没有指定名称的属性或属性值无法转换为数值。否则返回属性值。</returns>
+        </member>
+        <member name="M:GY02.Templates.NumberCondition.IsMatch(System.Decimal)">
+            <summary>
+            获取指示：指定属性数是否在有效范围内。
+            </summary>
+            <param name="now"></param>
+            <returns>true有效，false无效。</returns>
+        </member>
+        <member name="M:GY02.Templates.NumberCondition.GetPeriodIndex(System.Decimal)">
+            <summary>
+            获取属性数，处于第几个周期内。
+            </summary>
+            <param name="now"></param>
+            <returns>null当前不在有效周期内，否则返回所处周期数，从0开始。</returns>
         </member>
         <member name="M:GY02.Templates.NumberCondition.GetCurrentPeriod(System.Decimal,System.Decimal@,System.Decimal@)">
             <summary>
@@ -1170,6 +1201,46 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:GY02.Templates.GameMailTo">
+            <summary>
+            邮件模板。
+            </summary>
+        </member>
+        <member name="M:GY02.Templates.GameMailTo.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Subject">
+            <summary>
+            邮件标题。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Body">
+            <summary>
+            邮件正文。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Attachment">
+            <summary>
+            附件集合。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Dictionary1">
+            <summary>
+            存储一些特殊属性的字典。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.Dictionary2">
+            <summary>
+            存储一些特殊属性的字典。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.GameMailTo.DeleteDelay">
+            <summary>
+            对没有附件且已读的邮件，多长时间删除。若为空则等待最长删除时间到来，当前是60天。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.GameEventTO">
             <summary>
             事件模板类。
@@ -1377,12 +1448,12 @@
         </member>
         <member name="F:GY02.Publisher.ProjectContent.ExistsDayNumberGenus">
             <summary>
-            此类实体在每天第一次登录时会自动把Count置为该实体存在的总天数，从0开始。副作用，此类属实体的Count设置由系统完成单独设置无用。
+            此类实体在每天第一次登录时会自动把Count置为该实体存在的总天数，从0开始。副作用，此类属实体的Count设置由系统完成单独设置无用。fl_ExistsDayNumber
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.AutoIncGenus">
             <summary>
-            
+            每日递增。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.SlotTypeGuid">
