@@ -267,7 +267,7 @@ namespace GY02
                 using HttpClient client = new HttpClient();
                 //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
                 //var str1 = r.Content.ReadAsStringAsync().Result;
-                var b = svc.GetOrderState("com.duangzs.01", "agpmnngbdoedgmimigfgaalk.AO-J1OzNiKfslLkiMO6uCQjDWiPZdhgCzdvAFGvPDOEK33l470WT4X9E7ToTZGOK0WVWlQ30ttlUZiMsz0o0VlSBSSssy1P7JmLVHgheFm5KP7m7BtjVRdU",
+                var b = svc.GetOrderState("com.duangphl.07", "hpohhpfgbielodmhiflcefhd.AO-J1OwdtIEgJGxcMDtxK880anOSCy7yirhq0W6S4--tlDmmTrZOEv-CLcJzMwBuxLJ1xiw_1uaTX2-i4dppDQAY0SPTAeFHEFl6V1yTpTwVxBKiObGjjlA",
                     out var result);
                 var host = Dns.GetHostAddresses("phl.self.1stlightstudio.com");
                 var host1 = Dns.GetHostAddresses(host[0].ToString());

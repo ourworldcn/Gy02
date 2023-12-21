@@ -81,6 +81,13 @@ namespace Gy02.Controllers
                 return result;
             }
 
+            if (/*returnData.purchaseState != 0 ||*/ returnData.consumptionState != 1)    //若尚未付款成功
+            {
+                result.DebugMessage = $"未付款成功。";
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
             if (returnData.orderId != model.OrderId)   //若无法对应透传参数
             {
                 result.DebugMessage = $"透传参数ObfuscatedExternalAccountId错误。";
@@ -100,7 +107,7 @@ namespace Gy02.Controllers
 
             _DbContext.ShoppingOrder.Add(order);
             _Logger.LogDebug("开始计算产出。订单号={orderId}", order.Id);
-                
+
             var bi = gc!.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
             if (bi is null)
             {

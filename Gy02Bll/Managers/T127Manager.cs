@@ -50,8 +50,8 @@ namespace GY02.Managers
         /// <summary>
         /// 编码过的Code。
         /// </summary>
-        public const string _EncodedCode = "4%2F0AfJohXmshrd_rvdpyYaDpCv43JXUptt7Z-y5Hn6KwLJD51XSg06arLLPO_xZf1jI9rzOJg";
-                                          //4%2F0AfJohXklLsgG8RhhJ3bqOJzaZDW6SALYRjBZc5AqAG-0w6S29lb64lGrHW7XjG2GXva0jg
+        //public const string _EncodedCode = "4%2F0AfJohXmshrd_rvdpyYaDpCv43JXUptt7Z-y5Hn6KwLJD51XSg06arLLPO_xZf1jI9rzOJg";
+        public const string _EncodedCode = "4%2F0AfJohXmdQZhQsY87pjCzJPR22NadZJud7czeCUwrZlxTBQMmQNjWTlldWiTK5semhr1HkA";
         /// <summary>
         /// 解码后的Code。
         /// </summary>
@@ -77,7 +77,8 @@ namespace GY02.Managers
         /// 取消了授权
         /// 属于具有有效会话控制策略的 Google Cloud Platform 组织
         /// </summary>
-        public string _RefreshToken = "1//0eoaD3WrQzyDLCgYIARAAGA4SNwF-L9IrwX-Cz_9IUj1_KSbwTgdZfQK8cgUmh2OZC5CDCbsfCiH4xtNzMZNXhBTppNgZiRbM1EM";
+        //public string _RefreshToken = "1//0eoaD3WrQzyDLCgYIARAAGA4SNwF-L9IrwX-Cz_9IUj1_KSbwTgdZfQK8cgUmh2OZC5CDCbsfCiH4xtNzMZNXhBTppNgZiRbM1EM";
+        public string _RefreshToken = "1//0euCPrfGX7X29CgYIARAAGA4SNwF-L9IrzrSKDtN3-PmOMDkzgstJjCw6hru8yzHnSz9OXrGNDhcTbr-xfJUPLGxIMCIyJTC19A0";
 
         /// <summary>
         /// app包名，必须是创建登录api项目时，创建android客户端Id使用包名。
@@ -149,7 +150,7 @@ namespace GY02.Managers
                 if (!GetAccessTokenFromRefreshToken(_RefreshToken, _ClientId, _ClientSecret, out accessToken))
                     return null;
             }
-            var uri = $"https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{_PackageName}/purchases/products/{productId}/tokens/{token}?access_token={accessToken}";
+            var uri = $"https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{_PackageName}/purchases/products/{productId}/tokens/{token}?access_token={accessToken}";  //2023-12-21
             //var uri2 = "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{packageName}/purchases/products/{productId}/tokens/{token}?access_token={access_token}";
             var result = _HttpClient.GetAsync(uri).Result;
             return result;

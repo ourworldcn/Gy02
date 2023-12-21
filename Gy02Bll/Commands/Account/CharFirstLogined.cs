@@ -37,18 +37,22 @@ namespace GY02.Commands
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<CharFirstLoginedCommand>))]
     public class CharFirstLoginedHandled : ISyncCommandHandled<CharFirstLoginedCommand>
     {
-        public CharFirstLoginedHandled(GameEntityManager entityManager, GameTemplateManager templateManager, GameAchievementManager achievementManager, GameEventManager eventManager)
+        public CharFirstLoginedHandled(GameEntityManager entityManager, GameTemplateManager templateManager, GameAchievementManager achievementManager, GameEventManager eventManager, GameMailManager mailManager, SyncCommandManager syncCommandManager)
         {
             _EntityManager = entityManager;
             _TemplateManager = templateManager;
             _AchievementManager = achievementManager;
             _EventManager = eventManager;
+            _MailManager = mailManager;
+            _SyncCommandManager = syncCommandManager;
         }
 
         GameEntityManager _EntityManager;
         GameTemplateManager _TemplateManager;
         GameAchievementManager _AchievementManager;
         GameEventManager _EventManager;
+        GameMailManager _MailManager;
+        SyncCommandManager _SyncCommandManager;
 
         /// <summary>
         /// 
@@ -83,6 +87,32 @@ namespace GY02.Commands
             //f77691d3-2916-42c2-88d7-339febc791fa	登录游戏天数变化事件
             _EventManager.SendEvent(Guid.Parse("f77691d3-2916-42c2-88d7-339febc791fa"), 1, context);
 
+            //发送欢迎邮件
+            /*AllChars	English	Welcome to the open beta test	"Dear Hero,
+            Congratulations on your participation in Open Beta!
+            Take up weapons and join the battle in a world full of monsters! Fight with every enemy!
+            Feel free to provide us with feedback as we continue to improve the gaming experience.
+            The adventure will begin soon!"	110101001	100	30	新建玩家邮件
+            */
+            if (command.GameChar.LogineCount <= 1)  //若第一次登录
+            {
+                var commandMail = new SendMailCommand
+                {
+                    GameChar = command.GameChar,
+                    Mail = new SendMailItem
+                    {
+                        Subject = "Welcome to the open beta test",
+                        Body = "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!",
+                    },
+                };
+                commandMail.ToIds.Add(command.GameChar.Id);   //加入收件人
+                commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary
+                {
+                    TId = Guid.Parse("c9575f24-a33d-49ba-b130-29b6ff4d62c7"),
+                    Count = 100,
+                }); ;    //加入附件
+                _SyncCommandManager.Handle(commandMail);
+            }
         }
     }
 }
