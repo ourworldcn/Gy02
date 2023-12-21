@@ -152,7 +152,7 @@
         </member>
         <member name="P:GY02.Publisher.GameEntityDto.CountOfLastModifyUtc">
             <summary>
-            Count 属性最后的修改时间。
+            Count 属性最后的修改的世界时间。
             </summary>
         </member>
         <member name="P:GY02.Publisher.GameEntityDto.ClientDictionary">

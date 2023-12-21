@@ -54,8 +54,6 @@ namespace OW.Game.Store
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<OrphanedThing> OrphanedThings { get; set; }
-
         /// <summary>
         /// 包含游戏世界内所有事物对象的表。
         /// </summary>

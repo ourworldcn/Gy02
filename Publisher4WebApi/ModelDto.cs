@@ -191,7 +191,7 @@ namespace GY02.Publisher
         public DateTime? CreateDateTime { get; set; }
 
         /// <summary>
-        /// Count 属性最后的修改时间。
+        /// Count 属性最后的修改的世界时间。
         /// </summary>
         public DateTime? CountOfLastModifyUtc { get; set; }
 

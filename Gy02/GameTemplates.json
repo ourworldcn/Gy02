@@ -918,9 +918,9 @@
     },
     {
       "Id": "1d28ac5b-69b8-4d00-8d33-a81e5953884e",
-      "DisplayName": "增加20%的击飞概率",
+      "DisplayName": "增加5%的击飞概率",
       "Gid": 140301002,
-      "PropertiesString": "{\"skillParams\":[5,5],\"name_txt\":12106}"
+      "PropertiesString": "{\"skillParams\":[20,2],\"name_txt\":12106}"
     },
     {
       "Id": "c0acf35b-7a33-481b-af29-12483f788ba4",
@@ -1284,15 +1284,15 @@
     },
     {
       "Id": "a19be467-0de7-4148-baf5-4e15470f246c",
-      "DisplayName": "生命（天赋）1",
+      "DisplayName": "力量（天赋）1",
       "Gid": 140101002,
-      "PropertiesString": "{\"pow_val\":10,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":10,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "7ba949df-8a3a-49ce-a3d9-2eab614a9464",
-      "DisplayName": "力量（天赋）1",
+      "DisplayName": "生命（天赋）1",
       "Gid": 140101003,
-      "PropertiesString": "{\"def_val\":3,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":3,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "2bdc15a1-7e82-4969-8e18-d944cfa4facc",
@@ -1302,15 +1302,15 @@
     },
     {
       "Id": "41c77eac-1cf6-48a9-997a-6b9b430d8b6a",
-      "DisplayName": "生命（天赋）2",
+      "DisplayName": "力量（天赋）2",
       "Gid": 140101005,
-      "PropertiesString": "{\"pow_val\":10,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":10,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "047e99fe-e474-47c8-b6b4-917876297edc",
-      "DisplayName": "力量（天赋）2",
+      "DisplayName": "生命（天赋）2",
       "Gid": 140101006,
-      "PropertiesString": "{\"def_val\":3,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":3,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "8681838c-7ae3-418c-8f56-df941cb1f62d",
@@ -1320,15 +1320,15 @@
     },
     {
       "Id": "a072b099-505e-43c8-9f29-29a626f25e07",
-      "DisplayName": "生命（天赋）3",
+      "DisplayName": "力量（天赋）3",
       "Gid": 140101008,
-      "PropertiesString": "{\"pow_val\":13,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":13,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "c098d1d4-58a8-41ca-bcf4-e1ef13e1fdfa",
-      "DisplayName": "力量（天赋）3",
+      "DisplayName": "生命（天赋）3",
       "Gid": 140101009,
-      "PropertiesString": "{\"def_val\":3,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":3,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "d367db9a-d172-4cbe-b95d-bd2a6089e0b4",
@@ -1338,15 +1338,15 @@
     },
     {
       "Id": "809df470-6992-4e20-a36c-bbf07057505f",
-      "DisplayName": "生命（天赋）4",
+      "DisplayName": "力量（天赋）4",
       "Gid": 140101011,
-      "PropertiesString": "{\"pow_val\":13,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":13,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "7502868c-4dc9-4e7a-b437-2c07bac4f75f",
-      "DisplayName": "力量（天赋）4",
+      "DisplayName": "生命（天赋）4",
       "Gid": 140101012,
-      "PropertiesString": "{\"def_val\":5,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":5,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "ddf0c7e5-8e24-45d2-8cbd-80f3da7fdcf2",
@@ -1356,15 +1356,15 @@
     },
     {
       "Id": "19578a41-cad6-453f-b620-e03fba782137",
-      "DisplayName": "生命（天赋）5",
+      "DisplayName": "力量（天赋）5",
       "Gid": 140101014,
-      "PropertiesString": "{\"pow_val\":13,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":13,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "f7fba447-caaf-48d6-a294-d4fe2ac2d769",
-      "DisplayName": "力量（天赋）5",
+      "DisplayName": "生命（天赋）5",
       "Gid": 140101015,
-      "PropertiesString": "{\"def_val\":5,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":5,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "b381791b-5387-4d4c-8511-c07f14add105",
@@ -1374,15 +1374,15 @@
     },
     {
       "Id": "50bc8233-fee4-4489-b75e-ea8c7c19e806",
-      "DisplayName": "生命（天赋）6",
+      "DisplayName": "力量（天赋）6",
       "Gid": 140101017,
-      "PropertiesString": "{\"pow_val\":15,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":15,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "ffb6ea74-77f6-4341-9143-17827f392a71",
-      "DisplayName": "力量（天赋）6",
+      "DisplayName": "生命（天赋）6",
       "Gid": 140101018,
-      "PropertiesString": "{\"def_val\":5,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":5,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "d8e834ed-9be6-4714-8ade-499ed28d1805",
@@ -1392,15 +1392,15 @@
     },
     {
       "Id": "b5a5ca6b-2d7c-433c-8da5-3f1402dc934a",
-      "DisplayName": "生命（天赋）7",
+      "DisplayName": "力量（天赋）7",
       "Gid": 140101020,
-      "PropertiesString": "{\"pow_val\":15,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":15,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "d9861d5e-af6b-481f-bf0e-eed3da41ef71",
-      "DisplayName": "力量（天赋）7",
+      "DisplayName": "生命（天赋）7",
       "Gid": 140101021,
-      "PropertiesString": "{\"def_val\":7,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":7,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "c59d65bd-f711-4fce-b67f-89f2fd2e12e2",
@@ -1410,15 +1410,15 @@
     },
     {
       "Id": "392b3905-de12-4453-97dc-1e05a7125206",
-      "DisplayName": "生命（天赋）8",
+      "DisplayName": "力量（天赋）8",
       "Gid": 140101023,
-      "PropertiesString": "{\"pow_val\":16,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":16,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "f66e4e8f-1df2-409e-aabc-c3373e12b1cf",
-      "DisplayName": "力量（天赋）8",
+      "DisplayName": "生命（天赋）8",
       "Gid": 140101024,
-      "PropertiesString": "{\"def_val\":7,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":7,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "e482bb35-59e1-4326-8d25-cad96bb7d85a",
@@ -1428,15 +1428,15 @@
     },
     {
       "Id": "9e4bb51d-c357-4b09-8f05-a6deb7c70561",
-      "DisplayName": "生命（天赋）9",
+      "DisplayName": "力量（天赋）9",
       "Gid": 140101026,
-      "PropertiesString": "{\"pow_val\":16,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":16,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "fb8f5ef0-0c78-4d58-9546-5be8b5888b0a",
-      "DisplayName": "力量（天赋）9",
+      "DisplayName": "生命（天赋）9",
       "Gid": 140101027,
-      "PropertiesString": "{\"def_val\":7,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":7,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "19c22e16-a567-497b-b2fd-5920bec166c5",
@@ -1446,15 +1446,15 @@
     },
     {
       "Id": "6cd55c4b-5645-4f46-831f-0375b0844ecc",
-      "DisplayName": "生命（天赋）10",
+      "DisplayName": "力量（天赋）10",
       "Gid": 140101029,
-      "PropertiesString": "{\"pow_val\":16,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":16,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "c046ef67-6701-4f1f-af24-249cbd2376e0",
-      "DisplayName": "力量（天赋）10",
+      "DisplayName": "生命（天赋）10",
       "Gid": 140101030,
-      "PropertiesString": "{\"def_val\":8,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":8,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "ae6bd457-72eb-46d0-b569-f9a1f5f05c83",
@@ -1464,15 +1464,15 @@
     },
     {
       "Id": "265a5a4b-2a10-4a24-9603-0f07b57080c7",
-      "DisplayName": "生命（天赋）11",
+      "DisplayName": "力量（天赋）11",
       "Gid": 140101032,
-      "PropertiesString": "{\"pow_val\":16,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":16,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "adbbf040-9c66-4823-83ff-3b899be7612e",
-      "DisplayName": "力量（天赋）11",
+      "DisplayName": "生命（天赋）11",
       "Gid": 140101033,
-      "PropertiesString": "{\"def_val\":8,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":8,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "b5a8d918-cd80-4dea-a194-3d7ed217dbd9",
@@ -1482,15 +1482,15 @@
     },
     {
       "Id": "86661446-004f-4407-ac59-e90cb285d32e",
-      "DisplayName": "生命（天赋）12",
+      "DisplayName": "力量（天赋）12",
       "Gid": 140101035,
-      "PropertiesString": "{\"pow_val\":18,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":18,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "dd20eab9-bb26-47c3-a6a5-5524df96a523",
-      "DisplayName": "力量（天赋）12",
+      "DisplayName": "生命（天赋）12",
       "Gid": 140101036,
-      "PropertiesString": "{\"def_val\":8,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":8,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "4ee17c56-b919-470d-83ba-8b626e29927b",
@@ -1500,15 +1500,15 @@
     },
     {
       "Id": "87e9859e-d68f-4015-8773-e2a8d5afb94a",
-      "DisplayName": "生命（天赋）13",
+      "DisplayName": "力量（天赋）13",
       "Gid": 140101038,
-      "PropertiesString": "{\"pow_val\":18,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":18,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "2d12391d-281b-4659-9328-020c0471e589",
-      "DisplayName": "力量（天赋）13",
+      "DisplayName": "生命（天赋）13",
       "Gid": 140101039,
-      "PropertiesString": "{\"def_val\":8,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":8,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "41a1b141-9f00-4163-8b5a-ae5cfe8441e8",
@@ -1518,15 +1518,15 @@
     },
     {
       "Id": "52be51f2-8a75-44eb-903c-b11446fabb07",
-      "DisplayName": "生命（天赋）14",
+      "DisplayName": "力量（天赋）14",
       "Gid": 140101041,
-      "PropertiesString": "{\"pow_val\":20,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":20,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "6c838f1f-034a-434f-acaa-ba237d8b27e3",
-      "DisplayName": "力量（天赋）14",
+      "DisplayName": "生命（天赋）14",
       "Gid": 140101042,
-      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "b5b6088d-2036-4c95-bede-bc3e7d2ce3fb",
@@ -1536,15 +1536,15 @@
     },
     {
       "Id": "8375fc90-2672-483c-bdea-872791d13bec",
-      "DisplayName": "生命（天赋）15",
+      "DisplayName": "力量（天赋）15",
       "Gid": 140101044,
-      "PropertiesString": "{\"pow_val\":20,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":20,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "a1c9cb59-9661-486b-8e19-837247f926a7",
-      "DisplayName": "力量（天赋）15",
+      "DisplayName": "生命（天赋）15",
       "Gid": 140101045,
-      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "402ccd7a-dc49-4c4c-893c-931ebfc4b2f5",
@@ -1554,15 +1554,15 @@
     },
     {
       "Id": "91a71f1b-fb27-4c2d-b499-dd52c19ab443",
-      "DisplayName": "生命（天赋）16",
+      "DisplayName": "力量（天赋）16",
       "Gid": 140101047,
-      "PropertiesString": "{\"pow_val\":21,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":21,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "e5916736-fe3b-4358-847a-e89d91fe43a3",
-      "DisplayName": "力量（天赋）16",
+      "DisplayName": "生命（天赋）16",
       "Gid": 140101048,
-      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "ba88336b-1e25-4495-bc71-f3268c178ef1",
@@ -1572,15 +1572,15 @@
     },
     {
       "Id": "9141b8f8-5ec8-4e83-9a63-9a97e84a8bb4",
-      "DisplayName": "生命（天赋）17",
+      "DisplayName": "力量（天赋）17",
       "Gid": 140101050,
-      "PropertiesString": "{\"pow_val\":21,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":21,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "c62cd8d5-fe29-430c-bc90-930eb4cfc730",
-      "DisplayName": "力量（天赋）17",
+      "DisplayName": "生命（天赋）17",
       "Gid": 140101051,
-      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "610f3196-189d-49d8-b798-9fb4bccf91d3",
@@ -1590,15 +1590,15 @@
     },
     {
       "Id": "3ec16a15-ed78-4125-a38d-2fbe8378762c",
-      "DisplayName": "生命（天赋）18",
+      "DisplayName": "力量（天赋）18",
       "Gid": 140101053,
-      "PropertiesString": "{\"pow_val\":22,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":22,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "794c2a43-625d-4427-b06b-61404f261cc2",
-      "DisplayName": "力量（天赋）18",
+      "DisplayName": "生命（天赋）18",
       "Gid": 140101054,
-      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "89811578-7c6b-4f57-810b-07a2e39e732c",
@@ -1608,15 +1608,15 @@
     },
     {
       "Id": "0d0cf62e-a036-4bfb-873d-017a73a720e6",
-      "DisplayName": "生命（天赋）19",
+      "DisplayName": "力量（天赋）19",
       "Gid": 140101056,
-      "PropertiesString": "{\"pow_val\":22,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":22,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "68f533e1-b20c-491e-8c02-493b6150d393",
-      "DisplayName": "力量（天赋）19",
+      "DisplayName": "生命（天赋）19",
       "Gid": 140101057,
-      "PropertiesString": "{\"def_val\":12,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":12,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "a3760a93-58e1-45a8-ae37-e4f8911febf8",
@@ -1626,15 +1626,15 @@
     },
     {
       "Id": "3773b9db-9786-4f32-ad59-c7a7f62fa2bb",
-      "DisplayName": "生命（天赋）20",
+      "DisplayName": "力量（天赋）20",
       "Gid": 140101059,
-      "PropertiesString": "{\"pow_val\":23,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":23,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "d7276056-2926-43be-be22-b0952b78607d",
-      "DisplayName": "力量（天赋）20",
+      "DisplayName": "生命（天赋）20",
       "Gid": 140101060,
-      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":10,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "a9f4a27d-1ef4-42fc-adb2-64d797312493",
@@ -1644,15 +1644,15 @@
     },
     {
       "Id": "15a38158-b22f-43f2-9858-3204f5e9c316",
-      "DisplayName": "生命（天赋）21",
+      "DisplayName": "力量（天赋）21",
       "Gid": 140101062,
-      "PropertiesString": "{\"pow_val\":23,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":23,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "b5fe5a1d-17e1-4a69-baae-6e11d2b5ce83",
-      "DisplayName": "力量（天赋）21",
+      "DisplayName": "生命（天赋）21",
       "Gid": 140101063,
-      "PropertiesString": "{\"def_val\":12,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":12,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "a9aaec7f-d230-450d-8de2-c34cb93987d8",
@@ -1662,15 +1662,15 @@
     },
     {
       "Id": "a5aa7bc9-8631-4ff3-900e-dec9e02692d2",
-      "DisplayName": "生命（天赋）22",
+      "DisplayName": "力量（天赋）22",
       "Gid": 140101065,
-      "PropertiesString": "{\"pow_val\":24,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":24,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "8e20c1a6-508e-49b5-b362-67c38ed6bc6f",
-      "DisplayName": "力量（天赋）22",
+      "DisplayName": "生命（天赋）22",
       "Gid": 140101066,
-      "PropertiesString": "{\"def_val\":12,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":12,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "54ac8ce9-f18c-41d3-9b1a-68509c0f937b",
@@ -1680,15 +1680,15 @@
     },
     {
       "Id": "9ff465be-6b1c-4ccf-9928-5eb250702a45",
-      "DisplayName": "生命（天赋）23",
+      "DisplayName": "力量（天赋）23",
       "Gid": 140101068,
-      "PropertiesString": "{\"pow_val\":24,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":24,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "63478c7b-00a9-432d-9a6d-59fb71299410",
-      "DisplayName": "力量（天赋）23",
+      "DisplayName": "生命（天赋）23",
       "Gid": 140101069,
-      "PropertiesString": "{\"def_val\":12,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":12,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "f2cc86a0-3591-480f-87f9-33dccdf13830",
@@ -1698,15 +1698,15 @@
     },
     {
       "Id": "b13ce077-2f5e-4410-b478-e8b01c9dcbe9",
-      "DisplayName": "生命（天赋）24",
+      "DisplayName": "力量（天赋）24",
       "Gid": 140101071,
-      "PropertiesString": "{\"pow_val\":24,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":24,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "417e5b04-eadb-48e1-a5fc-a401f88f9fb4",
-      "DisplayName": "力量（天赋）24",
+      "DisplayName": "生命（天赋）24",
       "Gid": 140101072,
-      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "70a855e3-40bf-4a7b-b298-e832b2c55627",
@@ -1716,15 +1716,15 @@
     },
     {
       "Id": "e8dc74ff-2a45-4201-a24f-2be7a7c6ea67",
-      "DisplayName": "生命（天赋）25",
+      "DisplayName": "力量（天赋）25",
       "Gid": 140101074,
-      "PropertiesString": "{\"pow_val\":24,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":24,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "e5993ef5-2ff8-4e4c-a0cc-1a22024d7fc8",
-      "DisplayName": "力量（天赋）25",
+      "DisplayName": "生命（天赋）25",
       "Gid": 140101075,
-      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "96863693-6a4f-4ace-ab29-21ad380407a5",
@@ -1734,15 +1734,15 @@
     },
     {
       "Id": "b51fd818-c226-4db5-a9ca-a9de3d332bfc",
-      "DisplayName": "生命（天赋）26",
+      "DisplayName": "力量（天赋）26",
       "Gid": 140101077,
-      "PropertiesString": "{\"pow_val\":26,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":26,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "cf3c0b88-af49-4846-9c58-dc740fa9f0dd",
-      "DisplayName": "力量（天赋）26",
+      "DisplayName": "生命（天赋）26",
       "Gid": 140101078,
-      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "b7898f62-1e18-4697-ba26-19dd4d5b14d8",
@@ -1752,15 +1752,15 @@
     },
     {
       "Id": "fb9525f1-2523-4788-b4e5-f74bf01485c3",
-      "DisplayName": "生命（天赋）27",
+      "DisplayName": "力量（天赋）27",
       "Gid": 140101080,
-      "PropertiesString": "{\"pow_val\":26,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":26,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "2b1b9d96-4554-49f6-b851-989f57a4c017",
-      "DisplayName": "力量（天赋）27",
+      "DisplayName": "生命（天赋）27",
       "Gid": 140101081,
-      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "8b46e177-7cdf-49fe-8efa-72f2ff436e2e",
@@ -1770,15 +1770,15 @@
     },
     {
       "Id": "32500034-3c7a-4953-81be-626aebe00edc",
-      "DisplayName": "生命（天赋）28",
+      "DisplayName": "力量（天赋）28",
       "Gid": 140101083,
-      "PropertiesString": "{\"pow_val\":27,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":27,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "f26b2b78-f6f2-44e0-9e49-7ef5ea3737f4",
-      "DisplayName": "力量（天赋）28",
+      "DisplayName": "生命（天赋）28",
       "Gid": 140101084,
-      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":15,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "3d8f239a-14f2-4c59-af07-d52f207d06df",
@@ -1788,15 +1788,15 @@
     },
     {
       "Id": "dfb50f65-daa3-4425-9d6a-f54e193234fc",
-      "DisplayName": "生命（天赋）29",
+      "DisplayName": "力量（天赋）29",
       "Gid": 140101086,
-      "PropertiesString": "{\"pow_val\":27,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":27,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "8ebf936d-e16c-4984-a4e9-67aaf0deb5a9",
-      "DisplayName": "力量（天赋）29",
+      "DisplayName": "生命（天赋）29",
       "Gid": 140101087,
-      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "65b6b928-41bb-40e8-954d-bd4d5ab7ba1c",
@@ -1806,15 +1806,15 @@
     },
     {
       "Id": "52a9fc35-509c-4630-86c5-d2679130e4e5",
-      "DisplayName": "生命（天赋）30",
+      "DisplayName": "力量（天赋）30",
       "Gid": 140101089,
-      "PropertiesString": "{\"pow_val\":28,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":28,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "5692d51d-d475-4629-9d7a-fc419748431d",
-      "DisplayName": "力量（天赋）30",
+      "DisplayName": "生命（天赋）30",
       "Gid": 140101090,
-      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "1c944483-3010-4399-bf37-084b1d421535",
@@ -1824,15 +1824,15 @@
     },
     {
       "Id": "b2d04581-0f57-4af6-a7ef-5736e8b31d87",
-      "DisplayName": "生命（天赋）31",
+      "DisplayName": "力量（天赋）31",
       "Gid": 140101092,
-      "PropertiesString": "{\"pow_val\":28,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":28,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "a6a98168-107f-42c4-9dba-7cf53941311c",
-      "DisplayName": "力量（天赋）31",
+      "DisplayName": "生命（天赋）31",
       "Gid": 140101093,
-      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "82a78d5f-82e5-4c58-ad1f-d8e7233d5d75",
@@ -1842,15 +1842,15 @@
     },
     {
       "Id": "4b42cfa9-c7e0-4ca6-88b9-7042d1fb97ff",
-      "DisplayName": "生命（天赋）32",
+      "DisplayName": "力量（天赋）32",
       "Gid": 140101095,
-      "PropertiesString": "{\"pow_val\":29,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":29,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "77a06f7b-12f3-48a9-af8f-045f9953c9b3",
-      "DisplayName": "力量（天赋）32",
+      "DisplayName": "生命（天赋）32",
       "Gid": 140101096,
-      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "a64fdd39-98e9-4fa7-8b2e-35a9f1899c91",
@@ -1860,15 +1860,15 @@
     },
     {
       "Id": "cd48c379-572f-4587-8b97-706bb5bfec9c",
-      "DisplayName": "生命（天赋）33",
+      "DisplayName": "力量（天赋）33",
       "Gid": 140101098,
-      "PropertiesString": "{\"pow_val\":29,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":29,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "009f3605-2884-4565-ab80-eef9ff57eb42",
-      "DisplayName": "力量（天赋）33",
+      "DisplayName": "生命（天赋）33",
       "Gid": 140101099,
-      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":18,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "29dcc1bd-eee3-456e-9fa9-a5e947459d7b",
@@ -1878,15 +1878,15 @@
     },
     {
       "Id": "f1652e1c-342a-4dbf-8c3e-592fcdc7de52",
-      "DisplayName": "生命（天赋）34",
+      "DisplayName": "力量（天赋）34",
       "Gid": 140101101,
-      "PropertiesString": "{\"pow_val\":30,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":30,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "2d8520d7-93d4-4c10-a370-c3ca3385a3ad",
-      "DisplayName": "力量（天赋）34",
+      "DisplayName": "生命（天赋）34",
       "Gid": 140101102,
-      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "d34223ed-b503-4b4e-abd3-35d509f6d870",
@@ -1896,15 +1896,15 @@
     },
     {
       "Id": "74dba7c0-9ba7-4a87-b357-99f699abf295",
-      "DisplayName": "生命（天赋）35",
+      "DisplayName": "力量（天赋）35",
       "Gid": 140101104,
-      "PropertiesString": "{\"pow_val\":30,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":30,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "851bde4d-4327-4b04-ba58-29587762649c",
-      "DisplayName": "力量（天赋）35",
+      "DisplayName": "生命（天赋）35",
       "Gid": 140101105,
-      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "44a9c889-741f-400e-8c4f-0e88788f8c94",
@@ -1914,15 +1914,15 @@
     },
     {
       "Id": "62f79e89-2884-48cb-b5db-76a1b2b3a6cc",
-      "DisplayName": "生命（天赋）36",
+      "DisplayName": "力量（天赋）36",
       "Gid": 140101107,
-      "PropertiesString": "{\"pow_val\":30,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":30,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "97921c15-76c8-465d-94a1-34ebea6933ee",
-      "DisplayName": "力量（天赋）36",
+      "DisplayName": "生命（天赋）36",
       "Gid": 140101108,
-      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "efe49593-2488-4e72-ae9d-a6d59ad2ba23",
@@ -1932,15 +1932,15 @@
     },
     {
       "Id": "db7cc9ae-b025-4cba-9de7-49a981a8ab0f",
-      "DisplayName": "生命（天赋）37",
+      "DisplayName": "力量（天赋）37",
       "Gid": 140101110,
-      "PropertiesString": "{\"pow_val\":31,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":31,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "035df4ee-9de5-47b8-875b-02fa605c0fcd",
-      "DisplayName": "力量（天赋）37",
+      "DisplayName": "生命（天赋）37",
       "Gid": 140101111,
-      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "f4f27755-ea44-4a9e-931f-e54b4240adfc",
@@ -1950,15 +1950,15 @@
     },
     {
       "Id": "f1cec7f4-1d00-478e-b4c9-0266bd710b6f",
-      "DisplayName": "生命（天赋）38",
+      "DisplayName": "力量（天赋）38",
       "Gid": 140101113,
-      "PropertiesString": "{\"pow_val\":32,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":32,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "37179843-7f6e-4599-b63a-52f1420b198e",
-      "DisplayName": "力量（天赋）38",
+      "DisplayName": "生命（天赋）38",
       "Gid": 140101114,
-      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":20,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "b962b4d7-99d5-424c-88db-6eca4ee302ef",
@@ -1968,15 +1968,15 @@
     },
     {
       "Id": "e72d1613-f6ba-4a08-81f3-e5a7d7493932",
-      "DisplayName": "生命（天赋）39",
+      "DisplayName": "力量（天赋）39",
       "Gid": 140101116,
-      "PropertiesString": "{\"pow_val\":32,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":32,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "74beb306-6897-42a8-a234-b05772eec3cd",
-      "DisplayName": "力量（天赋）39",
+      "DisplayName": "生命（天赋）39",
       "Gid": 140101117,
-      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "e3dc5234-a11a-4166-a709-2083f1a4f733",
@@ -1986,15 +1986,15 @@
     },
     {
       "Id": "b4ff9c66-e6e2-4537-9a26-ace08babdba0",
-      "DisplayName": "生命（天赋）40",
+      "DisplayName": "力量（天赋）40",
       "Gid": 140101119,
-      "PropertiesString": "{\"pow_val\":33,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":33,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "4faf7761-4c3f-4c2d-99a9-e4ced057f5b4",
-      "DisplayName": "力量（天赋）40",
+      "DisplayName": "生命（天赋）40",
       "Gid": 140101120,
-      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "e8ee51ec-f410-48d1-af0f-c12e7f548c93",
@@ -2004,15 +2004,15 @@
     },
     {
       "Id": "e509547d-2e6e-425a-9cda-f6373bddeb65",
-      "DisplayName": "生命（天赋）41",
+      "DisplayName": "力量（天赋）41",
       "Gid": 140101122,
-      "PropertiesString": "{\"pow_val\":33,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":33,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "0ebb6ca0-420c-4d25-a9f3-b9a63b5fe637",
-      "DisplayName": "力量（天赋）41",
+      "DisplayName": "生命（天赋）41",
       "Gid": 140101123,
-      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "e7e9edc1-6fc7-4b8c-94c2-484b46c52298",
@@ -2022,15 +2022,15 @@
     },
     {
       "Id": "62c47c31-f66e-4e4e-abac-b4507c38f2f0",
-      "DisplayName": "生命（天赋）42",
+      "DisplayName": "力量（天赋）42",
       "Gid": 140101125,
-      "PropertiesString": "{\"pow_val\":34,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":34,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "cbdbb34c-6acf-4037-8e71-6ccb37fd4c8d",
-      "DisplayName": "力量（天赋）42",
+      "DisplayName": "生命（天赋）42",
       "Gid": 140101126,
-      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "ab321469-abfb-4a3d-bf29-64f6d6e17acf",
@@ -2040,15 +2040,15 @@
     },
     {
       "Id": "75285bad-6fbb-40de-9fb9-85ac96d389af",
-      "DisplayName": "生命（天赋）43",
+      "DisplayName": "力量（天赋）43",
       "Gid": 140101128,
-      "PropertiesString": "{\"pow_val\":34,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":34,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "d9d07bad-1dc1-413f-98a3-bcb21f1db172",
-      "DisplayName": "力量（天赋）43",
+      "DisplayName": "生命（天赋）43",
       "Gid": 140101129,
-      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":22,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "24794929-aa9f-4645-91dc-36627793a707",
@@ -2058,15 +2058,15 @@
     },
     {
       "Id": "cfc17921-ddb7-4a37-b238-1e439f504463",
-      "DisplayName": "生命（天赋）44",
+      "DisplayName": "力量（天赋）44",
       "Gid": 140101131,
-      "PropertiesString": "{\"pow_val\":35,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":35,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "e98e202d-061a-4f12-bfbc-c162db824a98",
-      "DisplayName": "力量（天赋）44",
+      "DisplayName": "生命（天赋）44",
       "Gid": 140101132,
-      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "c352e8fe-b0c8-41e2-abc7-fb323d656416",
@@ -2076,15 +2076,15 @@
     },
     {
       "Id": "cdfe9d09-f93f-4af7-887e-ec6d3433c182",
-      "DisplayName": "生命（天赋）45",
+      "DisplayName": "力量（天赋）45",
       "Gid": 140101134,
-      "PropertiesString": "{\"pow_val\":35,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":35,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "4d89f687-f90c-4850-9335-5d32bf9ecec7",
-      "DisplayName": "力量（天赋）45",
+      "DisplayName": "生命（天赋）45",
       "Gid": 140101135,
-      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "0fa9eba1-6fa2-4b11-9684-99a01b98b0fc",
@@ -2094,15 +2094,15 @@
     },
     {
       "Id": "7767d5bb-b43d-443d-b95f-f08daff1e14a",
-      "DisplayName": "生命（天赋）46",
+      "DisplayName": "力量（天赋）46",
       "Gid": 140101137,
-      "PropertiesString": "{\"pow_val\":36,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":36,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "79d25d3e-7c11-4abe-92ad-f4c71e6b0093",
-      "DisplayName": "力量（天赋）46",
+      "DisplayName": "生命（天赋）46",
       "Gid": 140101138,
-      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "281c98b0-b39f-47cb-a593-394fb254ff37",
@@ -2112,15 +2112,15 @@
     },
     {
       "Id": "9f9a7259-a620-466e-bd02-b600b36fb4ef",
-      "DisplayName": "生命（天赋）47",
+      "DisplayName": "力量（天赋）47",
       "Gid": 140101140,
-      "PropertiesString": "{\"pow_val\":36,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":36,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "5739be55-f242-4472-86bb-6ff2b78d12da",
-      "DisplayName": "力量（天赋）47",
+      "DisplayName": "生命（天赋）47",
       "Gid": 140101141,
-      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "5fa6ae38-157d-465b-b12d-932e7e1ba623",
@@ -2130,15 +2130,15 @@
     },
     {
       "Id": "96ac10f3-90cd-4c95-aae8-516f49324ace",
-      "DisplayName": "生命（天赋）48",
+      "DisplayName": "力量（天赋）48",
       "Gid": 140101143,
-      "PropertiesString": "{\"pow_val\":37,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":37,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "058063d1-a8c3-42ed-8f76-284d92471c7b",
-      "DisplayName": "力量（天赋）48",
+      "DisplayName": "生命（天赋）48",
       "Gid": 140101144,
-      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":25,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "32e43d0e-3be3-4a84-a2db-f89890ecbacb",
@@ -2148,15 +2148,15 @@
     },
     {
       "Id": "d6426023-3720-436f-9257-a6dd9b459c63",
-      "DisplayName": "生命（天赋）49",
+      "DisplayName": "力量（天赋）49",
       "Gid": 140101146,
-      "PropertiesString": "{\"pow_val\":37,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":37,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "21142ef0-594d-42f4-8e84-bc121b0456ed",
-      "DisplayName": "力量（天赋）49",
+      "DisplayName": "生命（天赋）49",
       "Gid": 140101147,
-      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "fb0bab05-5328-400c-8235-0875048f8df9",
@@ -2166,15 +2166,15 @@
     },
     {
       "Id": "63e193a0-7a57-4572-b990-eb3a180740a8",
-      "DisplayName": "生命（天赋）50",
+      "DisplayName": "力量（天赋）50",
       "Gid": 140101149,
-      "PropertiesString": "{\"pow_val\":38,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":38,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "07870c62-59db-4e96-ae48-ec6f19a3f32d",
-      "DisplayName": "力量（天赋）50",
+      "DisplayName": "生命（天赋）50",
       "Gid": 140101150,
-      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "c9341d4d-6fbc-447f-b412-477d02db50b1",
@@ -2184,15 +2184,15 @@
     },
     {
       "Id": "98310f1c-2d18-4ce4-b550-ff1a271a7381",
-      "DisplayName": "生命（天赋）51",
+      "DisplayName": "力量（天赋）51",
       "Gid": 140101152,
-      "PropertiesString": "{\"pow_val\":38,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":38,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "f59a537f-29b5-4bda-b86e-f20fbecb4867",
-      "DisplayName": "力量（天赋）51",
+      "DisplayName": "生命（天赋）51",
       "Gid": 140101153,
-      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "6e306db3-a066-4ff3-b23e-09ad1e9db5c7",
@@ -2202,15 +2202,15 @@
     },
     {
       "Id": "3c6a4305-5c66-4c35-b31f-52fca91018f6",
-      "DisplayName": "生命（天赋）52",
+      "DisplayName": "力量（天赋）52",
       "Gid": 140101155,
-      "PropertiesString": "{\"pow_val\":39,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":39,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "aec12219-6fa0-43d3-91fb-84b986156db1",
-      "DisplayName": "力量（天赋）52",
+      "DisplayName": "生命（天赋）52",
       "Gid": 140101156,
-      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "41bddeed-06ec-455c-9842-3af9c8dcbe87",
@@ -2220,15 +2220,15 @@
     },
     {
       "Id": "78fced7b-8c03-4bc3-8dba-d78f002128dc",
-      "DisplayName": "生命（天赋）53",
+      "DisplayName": "力量（天赋）53",
       "Gid": 140101158,
-      "PropertiesString": "{\"pow_val\":39,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":39,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "00ee5193-e37e-46a6-94f0-dbceff3e4e23",
-      "DisplayName": "力量（天赋）53",
+      "DisplayName": "生命（天赋）53",
       "Gid": 140101159,
-      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":28,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "dc572c1c-8c6c-4d58-9078-123b7dffe516",
@@ -2238,15 +2238,15 @@
     },
     {
       "Id": "f87db415-2aaa-4019-a522-0ac8adcd45a8",
-      "DisplayName": "生命（天赋）54",
+      "DisplayName": "力量（天赋）54",
       "Gid": 140101161,
-      "PropertiesString": "{\"pow_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "a056ff2c-6caa-4fae-9b5a-8a8db46d4cfd",
-      "DisplayName": "力量（天赋）54",
+      "DisplayName": "生命（天赋）54",
       "Gid": 140101162,
-      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "ac910f87-b9da-454e-823a-aca366fa725a",
@@ -2256,15 +2256,15 @@
     },
     {
       "Id": "ddc1a870-59a9-4429-9f22-513ceb5d193d",
-      "DisplayName": "生命（天赋）55",
+      "DisplayName": "力量（天赋）55",
       "Gid": 140101164,
-      "PropertiesString": "{\"pow_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "a49fdb50-ed89-4f51-b32c-90cdaeb9c01c",
-      "DisplayName": "力量（天赋）55",
+      "DisplayName": "生命（天赋）55",
       "Gid": 140101165,
-      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "0b3edd84-59fb-4a5f-8b0a-38c838354398",
@@ -2274,15 +2274,15 @@
     },
     {
       "Id": "a966773f-5ac3-4a6c-bd93-d96ee80b3f3e",
-      "DisplayName": "生命（天赋）56",
+      "DisplayName": "力量（天赋）56",
       "Gid": 140101167,
-      "PropertiesString": "{\"pow_val\":41,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":41,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "240c4791-b606-4f77-b035-f3620e3a6678",
-      "DisplayName": "力量（天赋）56",
+      "DisplayName": "生命（天赋）56",
       "Gid": 140101168,
-      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "3cdb2550-20b4-4ab8-9cd1-b7dba71b80b2",
@@ -2292,15 +2292,15 @@
     },
     {
       "Id": "2e238584-a0b1-4866-bfcc-f465ef705f98",
-      "DisplayName": "生命（天赋）57",
+      "DisplayName": "力量（天赋）57",
       "Gid": 140101170,
-      "PropertiesString": "{\"pow_val\":41,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":41,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "a89cfaed-ba61-49a7-8d08-1715d106faa1",
-      "DisplayName": "力量（天赋）57",
+      "DisplayName": "生命（天赋）57",
       "Gid": 140101171,
-      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "329c2df4-cd4b-457d-b09c-d70759b7a7c7",
@@ -2310,15 +2310,15 @@
     },
     {
       "Id": "6219c5af-051c-44cb-bbea-876c42991cc0",
-      "DisplayName": "生命（天赋）58",
+      "DisplayName": "力量（天赋）58",
       "Gid": 140101173,
-      "PropertiesString": "{\"pow_val\":42,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":42,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "4a67eda6-c547-442a-94c6-87f68959655d",
-      "DisplayName": "力量（天赋）58",
+      "DisplayName": "生命（天赋）58",
       "Gid": 140101174,
-      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":30,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "d7aade45-3270-4f89-b923-cd06a4ca67da",
@@ -2328,15 +2328,15 @@
     },
     {
       "Id": "86c691f6-7568-41b7-bf9d-231778f7f484",
-      "DisplayName": "生命（天赋）59",
+      "DisplayName": "力量（天赋）59",
       "Gid": 140101176,
-      "PropertiesString": "{\"pow_val\":42,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":42,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "0e981d9f-577d-4681-b953-5921be3dd9a3",
-      "DisplayName": "力量（天赋）59",
+      "DisplayName": "生命（天赋）59",
       "Gid": 140101177,
-      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "d33ca919-739a-4050-9be0-5150beb339e0",
@@ -2346,15 +2346,15 @@
     },
     {
       "Id": "ab4035ba-73d9-46b9-b9e8-f467a000d959",
-      "DisplayName": "生命（天赋）60",
+      "DisplayName": "力量（天赋）60",
       "Gid": 140101179,
-      "PropertiesString": "{\"pow_val\":43,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":43,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "27124045-9707-4028-9c31-55490c6635c1",
-      "DisplayName": "力量（天赋）60",
+      "DisplayName": "生命（天赋）60",
       "Gid": 140101180,
-      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "334f6342-4467-4a9f-9a2f-75400e463129",
@@ -2364,15 +2364,15 @@
     },
     {
       "Id": "04d63a24-9688-475f-a3cb-5eff57792cce",
-      "DisplayName": "生命（天赋）61",
+      "DisplayName": "力量（天赋）61",
       "Gid": 140101182,
-      "PropertiesString": "{\"pow_val\":43,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":43,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "2755d054-f88f-4aae-921e-2d794e9a94ba",
-      "DisplayName": "力量（天赋）61",
+      "DisplayName": "生命（天赋）61",
       "Gid": 140101183,
-      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "2cbd9ac4-41b1-4b2d-b753-d6fd97ff123c",
@@ -2382,15 +2382,15 @@
     },
     {
       "Id": "e607575d-0df8-4b0c-9a2b-1051dea2b451",
-      "DisplayName": "生命（天赋）62",
+      "DisplayName": "力量（天赋）62",
       "Gid": 140101185,
-      "PropertiesString": "{\"pow_val\":44,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":44,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "5b39d97e-844f-4b74-bdce-626733151f98",
-      "DisplayName": "力量（天赋）62",
+      "DisplayName": "生命（天赋）62",
       "Gid": 140101186,
-      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "e959c342-d9b9-4731-a5d0-23ff8e319aaa",
@@ -2400,15 +2400,15 @@
     },
     {
       "Id": "eb3cfcac-b895-49b7-b78a-6e4cd58216ee",
-      "DisplayName": "生命（天赋）63",
+      "DisplayName": "力量（天赋）63",
       "Gid": 140101188,
-      "PropertiesString": "{\"pow_val\":44,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":44,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "69aa0095-d413-40d1-bcf0-6bffd9c6fb66",
-      "DisplayName": "力量（天赋）63",
+      "DisplayName": "生命（天赋）63",
       "Gid": 140101189,
-      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":35,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "c51d347f-2eaf-419c-b3af-7104a2119097",
@@ -2418,15 +2418,15 @@
     },
     {
       "Id": "b882d037-8b29-4d1e-b57c-a7f73f328f6f",
-      "DisplayName": "生命（天赋）64",
+      "DisplayName": "力量（天赋）64",
       "Gid": 140101191,
-      "PropertiesString": "{\"pow_val\":45,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":45,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "92832b3c-b7f6-4805-96a0-c44049367682",
-      "DisplayName": "力量（天赋）64",
+      "DisplayName": "生命（天赋）64",
       "Gid": 140101192,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "ea978798-929b-4ee3-8f02-84201ce942b4",
@@ -2436,15 +2436,15 @@
     },
     {
       "Id": "6d81755e-229a-4d33-a2db-e290a0c55ffd",
-      "DisplayName": "生命（天赋）65",
+      "DisplayName": "力量（天赋）65",
       "Gid": 140101194,
-      "PropertiesString": "{\"pow_val\":45,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":45,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "67cc7352-4474-4be9-905e-58eba88d2acd",
-      "DisplayName": "力量（天赋）65",
+      "DisplayName": "生命（天赋）65",
       "Gid": 140101195,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "92b46a2e-f563-4adf-8801-62cdc8df4c6c",
@@ -2454,15 +2454,15 @@
     },
     {
       "Id": "11b2f96d-e5a4-4466-ad41-165397c5c67d",
-      "DisplayName": "生命（天赋）66",
+      "DisplayName": "力量（天赋）66",
       "Gid": 140101197,
-      "PropertiesString": "{\"pow_val\":46,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":46,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "c48efa4b-e3b7-43c7-924e-5f9028c046f1",
-      "DisplayName": "力量（天赋）66",
+      "DisplayName": "生命（天赋）66",
       "Gid": 140101198,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "1bd6f332-f69c-4e1a-975a-fab7203d9766",
@@ -2472,15 +2472,15 @@
     },
     {
       "Id": "afe2dd6b-233c-4650-8f64-4bf91a0e474b",
-      "DisplayName": "生命（天赋）67",
+      "DisplayName": "力量（天赋）67",
       "Gid": 140101200,
-      "PropertiesString": "{\"pow_val\":46,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":46,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "b5da9af7-45fe-4763-a213-1e212e4d84e7",
-      "DisplayName": "力量（天赋）67",
+      "DisplayName": "生命（天赋）67",
       "Gid": 140101201,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "09e52905-cce8-4d23-ae7a-6e62003d185b",
@@ -2490,15 +2490,15 @@
     },
     {
       "Id": "ca85c0ff-f4ae-49a1-9439-c4b7f9bea5fe",
-      "DisplayName": "生命（天赋）68",
+      "DisplayName": "力量（天赋）68",
       "Gid": 140101203,
-      "PropertiesString": "{\"pow_val\":47,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":47,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "b0d59f2c-a540-4958-bd75-254c3251efc8",
-      "DisplayName": "力量（天赋）68",
+      "DisplayName": "生命（天赋）68",
       "Gid": 140101204,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "e4b326c8-7088-4ef3-9430-ae9218739d56",
@@ -2508,15 +2508,15 @@
     },
     {
       "Id": "d84966ee-7590-4d3d-8c95-c65cecc02906",
-      "DisplayName": "生命（天赋）69",
+      "DisplayName": "力量（天赋）69",
       "Gid": 140101206,
-      "PropertiesString": "{\"pow_val\":47,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":47,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "339448bd-8216-4dd4-94e6-530009a66bfa",
-      "DisplayName": "力量（天赋）69",
+      "DisplayName": "生命（天赋）69",
       "Gid": 140101207,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "f1afeec3-b68e-4c0d-a7e1-2394882ab03c",
@@ -2526,15 +2526,15 @@
     },
     {
       "Id": "0f32799e-dfd5-4770-9c96-47c27b1c1959",
-      "DisplayName": "生命（天赋）70",
+      "DisplayName": "力量（天赋）70",
       "Gid": 140101209,
-      "PropertiesString": "{\"pow_val\":48,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":48,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "1d0cd447-1256-4024-9689-0893d3ab8f63",
-      "DisplayName": "力量（天赋）70",
+      "DisplayName": "生命（天赋）70",
       "Gid": 140101210,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "c98bf8a5-2518-430e-a472-5eedf8c9995d",
@@ -2544,15 +2544,15 @@
     },
     {
       "Id": "8a37bb43-4e15-423a-97c9-f41f4f998b22",
-      "DisplayName": "生命（天赋）71",
+      "DisplayName": "力量（天赋）71",
       "Gid": 140101212,
-      "PropertiesString": "{\"pow_val\":48,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":48,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "0924ca8c-928a-49c3-8584-deee897bb998",
-      "DisplayName": "力量（天赋）71",
+      "DisplayName": "生命（天赋）71",
       "Gid": 140101213,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "84ece5b6-397c-4948-9a8c-03c4594c4bc9",
@@ -2562,15 +2562,15 @@
     },
     {
       "Id": "9366e216-f210-43c2-8922-9097b990efb4",
-      "DisplayName": "生命（天赋）72",
+      "DisplayName": "力量（天赋）72",
       "Gid": 140101215,
-      "PropertiesString": "{\"pow_val\":49,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":49,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "d8fceec1-d70f-457c-aaf6-c786dc5326ce",
-      "DisplayName": "力量（天赋）72",
+      "DisplayName": "生命（天赋）72",
       "Gid": 140101216,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "3e43571b-e852-4f40-99cd-5706d0a45b78",
@@ -2580,15 +2580,15 @@
     },
     {
       "Id": "92bc265a-de39-4011-bbda-b8931c782f3f",
-      "DisplayName": "生命（天赋）73",
+      "DisplayName": "力量（天赋）73",
       "Gid": 140101218,
-      "PropertiesString": "{\"pow_val\":49,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":49,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "900db465-1bc3-40a4-a416-afae30c8485d",
-      "DisplayName": "力量（天赋）73",
+      "DisplayName": "生命（天赋）73",
       "Gid": 140101219,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "f6de7478-0e5d-4626-bcd5-53fff6b5ef69",
@@ -2598,15 +2598,15 @@
     },
     {
       "Id": "8e52a1d7-8f5a-4125-9e07-aad2998135d1",
-      "DisplayName": "生命（天赋）74",
+      "DisplayName": "力量（天赋）74",
       "Gid": 140101221,
-      "PropertiesString": "{\"pow_val\":50,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":50,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "dd66bb15-1464-4a40-93a0-f93413608188",
-      "DisplayName": "力量（天赋）74",
+      "DisplayName": "生命（天赋）74",
       "Gid": 140101222,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "05cde81c-34ac-4bd8-85c8-be5301c46919",
@@ -2616,15 +2616,15 @@
     },
     {
       "Id": "16b91013-6ada-455a-b94a-8ce0ce7dfb3e",
-      "DisplayName": "生命（天赋）75",
+      "DisplayName": "力量（天赋）75",
       "Gid": 140101224,
-      "PropertiesString": "{\"pow_val\":50,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":50,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "b571f286-d4d4-4c2f-b7bd-d4593ee2a8bf",
-      "DisplayName": "力量（天赋）75",
+      "DisplayName": "生命（天赋）75",
       "Gid": 140101225,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "3c52ae93-91a5-465d-840e-4f0f449192c1",
@@ -2634,15 +2634,15 @@
     },
     {
       "Id": "d285c51b-83ed-43ed-be7a-12f7de2b4297",
-      "DisplayName": "生命（天赋）76",
+      "DisplayName": "力量（天赋）76",
       "Gid": 140101227,
-      "PropertiesString": "{\"pow_val\":51,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":51,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "c6513a6d-498e-47dd-8296-0209d7c087fc",
-      "DisplayName": "力量（天赋）76",
+      "DisplayName": "生命（天赋）76",
       "Gid": 140101228,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "947b10f8-a0a8-4e59-8d71-df8ac8e0469e",
@@ -2652,15 +2652,15 @@
     },
     {
       "Id": "5640a107-0f29-4ae3-850f-b6f4a4292cb0",
-      "DisplayName": "生命（天赋）77",
+      "DisplayName": "力量（天赋）77",
       "Gid": 140101230,
-      "PropertiesString": "{\"pow_val\":51,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":51,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "7ae4eb9c-4c75-400b-a53e-1d2ce4832aba",
-      "DisplayName": "力量（天赋）77",
+      "DisplayName": "生命（天赋）77",
       "Gid": 140101231,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "16d32e34-a9a7-4884-8d45-b8f55cf3c486",
@@ -2670,15 +2670,15 @@
     },
     {
       "Id": "84549a9d-2689-4c6e-b675-72c10e1f18a4",
-      "DisplayName": "生命（天赋）78",
+      "DisplayName": "力量（天赋）78",
       "Gid": 140101233,
-      "PropertiesString": "{\"pow_val\":52,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":52,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "84404741-1f73-4513-a19d-40b85541a36c",
-      "DisplayName": "力量（天赋）78",
+      "DisplayName": "生命（天赋）78",
       "Gid": 140101234,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "6121be05-de98-4863-8f55-c36f4470a94f",
@@ -2688,15 +2688,15 @@
     },
     {
       "Id": "60ea864c-84fc-4f5c-afac-74797bbadf13",
-      "DisplayName": "生命（天赋）79",
+      "DisplayName": "力量（天赋）79",
       "Gid": 140101236,
-      "PropertiesString": "{\"pow_val\":52,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":52,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "09a5d057-37be-4e6c-a120-bad2c386bb8c",
-      "DisplayName": "力量（天赋）79",
+      "DisplayName": "生命（天赋）79",
       "Gid": 140101237,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "617302f6-7142-44c0-a473-80a51e447d01",
@@ -2706,15 +2706,15 @@
     },
     {
       "Id": "35e48826-129f-43c0-98a2-c9b8ac86866c",
-      "DisplayName": "生命（天赋）80",
+      "DisplayName": "力量（天赋）80",
       "Gid": 140101239,
-      "PropertiesString": "{\"pow_val\":53,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":53,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "1b057978-22ff-4f3c-adde-3a59cfd9ced1",
-      "DisplayName": "力量（天赋）80",
+      "DisplayName": "生命（天赋）80",
       "Gid": 140101240,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "68863dd7-4e9f-47da-99df-12e6c0238185",
@@ -2724,15 +2724,15 @@
     },
     {
       "Id": "4a0bce74-7684-4edc-a3e3-b6a15a2d982b",
-      "DisplayName": "生命（天赋）81",
+      "DisplayName": "力量（天赋）81",
       "Gid": 140101242,
-      "PropertiesString": "{\"pow_val\":53,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":53,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "6b0a56db-6a6f-4dba-a52e-8c5607ac867b",
-      "DisplayName": "力量（天赋）81",
+      "DisplayName": "生命（天赋）81",
       "Gid": 140101243,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "c9f78177-786c-4587-a907-032c9958914e",
@@ -2742,15 +2742,15 @@
     },
     {
       "Id": "f788b965-a4ff-4101-b067-6afe889dcca7",
-      "DisplayName": "生命（天赋）82",
+      "DisplayName": "力量（天赋）82",
       "Gid": 140101245,
-      "PropertiesString": "{\"pow_val\":54,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":54,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "f7467c7d-8d70-46ab-9119-e4cd60966d28",
-      "DisplayName": "力量（天赋）82",
+      "DisplayName": "生命（天赋）82",
       "Gid": 140101246,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "131938dd-884d-44e0-ae0d-51e185eabcf5",
@@ -2760,15 +2760,15 @@
     },
     {
       "Id": "fdbe5a3e-1fdd-4a37-bfeb-4cb4c9e9c87a",
-      "DisplayName": "生命（天赋）83",
+      "DisplayName": "力量（天赋）83",
       "Gid": 140101248,
-      "PropertiesString": "{\"pow_val\":54,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":54,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "d94c8bab-0688-4539-963a-ca5ea206f36f",
-      "DisplayName": "力量（天赋）83",
+      "DisplayName": "生命（天赋）83",
       "Gid": 140101249,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "396e8d5f-42a8-412e-9bd1-ef53bb19a22d",
@@ -2778,15 +2778,15 @@
     },
     {
       "Id": "068cbbd5-3ac2-4564-8f2c-bf5e1a2661c9",
-      "DisplayName": "生命（天赋）84",
+      "DisplayName": "力量（天赋）84",
       "Gid": 140101251,
-      "PropertiesString": "{\"pow_val\":55,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":55,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "03ce544e-86b9-4039-b245-d545a240a89d",
-      "DisplayName": "力量（天赋）84",
+      "DisplayName": "生命（天赋）84",
       "Gid": 140101252,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "b85f400d-84c8-42ba-b14e-11be34381584",
@@ -2796,15 +2796,15 @@
     },
     {
       "Id": "9f23094a-441c-462b-a69d-9f0ea9bf42d4",
-      "DisplayName": "生命（天赋）85",
+      "DisplayName": "力量（天赋）85",
       "Gid": 140101254,
-      "PropertiesString": "{\"pow_val\":55,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":55,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "e04586e8-73d9-4742-ba27-5b0a1fa8e2c1",
-      "DisplayName": "力量（天赋）85",
+      "DisplayName": "生命（天赋）85",
       "Gid": 140101255,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "a82e68ea-3f57-44fb-b2fe-8976ce7192e9",
@@ -2814,15 +2814,15 @@
     },
     {
       "Id": "5c812d32-1922-4254-a31d-f842dfde8303",
-      "DisplayName": "生命（天赋）86",
+      "DisplayName": "力量（天赋）86",
       "Gid": 140101257,
-      "PropertiesString": "{\"pow_val\":56,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":56,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "1fb333ca-7f4a-4214-ad0a-39db968547c8",
-      "DisplayName": "力量（天赋）86",
+      "DisplayName": "生命（天赋）86",
       "Gid": 140101258,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "31445143-a24d-49c0-9c51-e8ef8719e3e0",
@@ -2832,15 +2832,15 @@
     },
     {
       "Id": "a1647f06-518c-479b-9eef-e1485e4ed85c",
-      "DisplayName": "生命（天赋）87",
+      "DisplayName": "力量（天赋）87",
       "Gid": 140101260,
-      "PropertiesString": "{\"pow_val\":56,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":56,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "d9150eae-f1cf-40b7-8e1c-1b80fcb3b479",
-      "DisplayName": "力量（天赋）87",
+      "DisplayName": "生命（天赋）87",
       "Gid": 140101261,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "40a96807-3c71-49b1-b228-d1c3a68eefc7",
@@ -2850,15 +2850,15 @@
     },
     {
       "Id": "6af0e21a-dfcd-44e9-9678-84e14f631518",
-      "DisplayName": "生命（天赋）88",
+      "DisplayName": "力量（天赋）88",
       "Gid": 140101263,
-      "PropertiesString": "{\"pow_val\":57,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":57,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "eac92b75-ba78-4e34-9055-ccd3857a5dc8",
-      "DisplayName": "力量（天赋）88",
+      "DisplayName": "生命（天赋）88",
       "Gid": 140101264,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "7c33550d-e391-41a5-b5c4-4f1281ee81b1",
@@ -2868,15 +2868,15 @@
     },
     {
       "Id": "19ad3c19-7937-4230-8b5a-65708429a927",
-      "DisplayName": "生命（天赋）89",
+      "DisplayName": "力量（天赋）89",
       "Gid": 140101266,
-      "PropertiesString": "{\"pow_val\":57,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":57,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "f0040074-17c6-49a0-92fa-9f0e4bb501f1",
-      "DisplayName": "力量（天赋）89",
+      "DisplayName": "生命（天赋）89",
       "Gid": 140101267,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "1afacbdd-e967-463d-81f7-478faf542140",
@@ -2886,15 +2886,15 @@
     },
     {
       "Id": "85fa97e1-83f1-434d-a8e0-bba23f6f43b5",
-      "DisplayName": "生命（天赋）90",
+      "DisplayName": "力量（天赋）90",
       "Gid": 140101269,
-      "PropertiesString": "{\"pow_val\":58,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":58,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "34ba3d54-404e-448f-95ea-2ed8290bb6be",
-      "DisplayName": "力量（天赋）90",
+      "DisplayName": "生命（天赋）90",
       "Gid": 140101270,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "30671f82-5d87-436d-8e20-706724d591a7",
@@ -2904,15 +2904,15 @@
     },
     {
       "Id": "cbdacd15-5263-4855-a978-e5538c0b3938",
-      "DisplayName": "生命（天赋）91",
+      "DisplayName": "力量（天赋）91",
       "Gid": 140101272,
-      "PropertiesString": "{\"pow_val\":58,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":58,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "52ee657a-9022-4217-9323-1ddcabc1be4f",
-      "DisplayName": "力量（天赋）91",
+      "DisplayName": "生命（天赋）91",
       "Gid": 140101273,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "e2ca89a4-ec0d-4e4d-b280-35f911b674c1",
@@ -2922,15 +2922,15 @@
     },
     {
       "Id": "f043fb0c-485c-4fcc-a28b-e7bd454a73f9",
-      "DisplayName": "生命（天赋）92",
+      "DisplayName": "力量（天赋）92",
       "Gid": 140101275,
-      "PropertiesString": "{\"pow_val\":59,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":59,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "1b50a43a-842a-4dbf-8ebd-f04e0259963a",
-      "DisplayName": "力量（天赋）92",
+      "DisplayName": "生命（天赋）92",
       "Gid": 140101276,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "91747ee8-3aa3-4e8e-b595-f93b0168356c",
@@ -2940,15 +2940,15 @@
     },
     {
       "Id": "2276e004-ef02-487b-a2a1-4007aae31597",
-      "DisplayName": "生命（天赋）93",
+      "DisplayName": "力量（天赋）93",
       "Gid": 140101278,
-      "PropertiesString": "{\"pow_val\":59,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":59,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "0b698889-9300-445f-9a72-0d19cb3634e5",
-      "DisplayName": "力量（天赋）93",
+      "DisplayName": "生命（天赋）93",
       "Gid": 140101279,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "7619fe58-5ef9-442b-8b3d-caaa2a063de8",
@@ -2958,15 +2958,15 @@
     },
     {
       "Id": "d131fe5c-aa4c-429c-aec3-5692898f78f3",
-      "DisplayName": "生命（天赋）94",
+      "DisplayName": "力量（天赋）94",
       "Gid": 140101281,
-      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "0fab9f5b-b04a-4a5d-92be-8d39435863d9",
-      "DisplayName": "力量（天赋）94",
+      "DisplayName": "生命（天赋）94",
       "Gid": 140101282,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "ad1b4305-c9ab-4c0e-9206-9a3545c434ca",
@@ -2976,15 +2976,15 @@
     },
     {
       "Id": "d74ce6d8-3115-463f-b446-82bbb1c42a2a",
-      "DisplayName": "生命（天赋）95",
+      "DisplayName": "力量（天赋）95",
       "Gid": 140101284,
-      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "0ca84905-bfec-4c6b-a9b5-7c97df939f22",
-      "DisplayName": "力量（天赋）95",
+      "DisplayName": "生命（天赋）95",
       "Gid": 140101285,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "acc8f2b2-e916-47ca-921f-2686b99c2c13",
@@ -2994,15 +2994,15 @@
     },
     {
       "Id": "afa09b76-79c6-4c22-b879-adfe9c9a520b",
-      "DisplayName": "生命（天赋）96",
+      "DisplayName": "力量（天赋）96",
       "Gid": 140101287,
-      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "b0ae07d7-8901-46bd-badd-44b5cfeec653",
-      "DisplayName": "力量（天赋）96",
+      "DisplayName": "生命（天赋）96",
       "Gid": 140101288,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "028f72ee-7347-4d64-bc78-a9627ede76d6",
@@ -3012,15 +3012,15 @@
     },
     {
       "Id": "32f203a8-1859-4977-8fea-7130a7094a34",
-      "DisplayName": "生命（天赋）97",
+      "DisplayName": "力量（天赋）97",
       "Gid": 140101290,
-      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "3ffabe11-cc40-40fe-a0bc-a580d3e5e58b",
-      "DisplayName": "力量（天赋）97",
+      "DisplayName": "生命（天赋）97",
       "Gid": 140101291,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "7f0ab19a-e502-4038-99fa-4a52752bed9c",
@@ -3030,15 +3030,15 @@
     },
     {
       "Id": "6c411eb6-bd23-4a48-9727-8fb4f6fffc4d",
-      "DisplayName": "生命（天赋）98",
+      "DisplayName": "力量（天赋）98",
       "Gid": 140101293,
-      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "f98db03d-7697-4645-82a4-068891168ded",
-      "DisplayName": "力量（天赋）98",
+      "DisplayName": "生命（天赋）98",
       "Gid": 140101294,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "5e7b76cd-1c47-49df-9368-24129dcdb216",
@@ -3048,15 +3048,15 @@
     },
     {
       "Id": "5e99440f-9799-4818-aa5f-cba3b2f89efd",
-      "DisplayName": "生命（天赋）99",
+      "DisplayName": "力量（天赋）99",
       "Gid": 140101296,
-      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "6cd2e595-c4f0-4fb4-8228-bb46d84770d2",
-      "DisplayName": "力量（天赋）99",
+      "DisplayName": "生命（天赋）99",
       "Gid": 140101297,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "a9e1cd00-4011-4003-b076-36017652e3df",
@@ -3066,15 +3066,15 @@
     },
     {
       "Id": "d4b1ea88-92cd-4d02-a1e6-728eb68abcce",
-      "DisplayName": "生命（天赋）100",
+      "DisplayName": "力量（天赋）100",
       "Gid": 140101299,
-      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12155,\"name_txt\":12178}"
+      "PropertiesString": "{\"pow_val\":60,\"comment_txt\":12156,\"name_txt\":12179}"
     },
     {
       "Id": "2a5a7836-0056-43da-bf0e-b375aeaf8b16",
-      "DisplayName": "力量（天赋）100",
+      "DisplayName": "生命（天赋）100",
       "Gid": 140101300,
-      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12156,\"name_txt\":12179}"
+      "PropertiesString": "{\"def_val\":40,\"comment_txt\":12155,\"name_txt\":12178}"
     },
     {
       "Id": "2ee94e69-8a26-4242-a046-09348c82d87d",
@@ -6274,7 +6274,6 @@
       "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13029,\"comment_txt\":13036,\"suggest\":[ 500,3500,600],\"scoreTime\":[480,540,720],\"charExp\":1750}"
     },
     {
-      "Id": "e987add9-00dd-4d03-83ff-bef717cae823",
       "DisplayName": "法老宝藏",
       "Gid": 210101017,
       "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13030,\"comment_txt\":13037,\"suggest\":[ 500,3500,600],\"scoreTime\":[480,540,720],\"charExp\":1950}"
@@ -6469,13 +6468,13 @@
       "Id": "1464690b-26a0-441f-94aa-30a4472db4d6",
       "DisplayName": "部落农场",
       "Gid": 210101049,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":130103,\"comment_txt\":13104,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":40000}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13103,\"comment_txt\":13104,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":40000}"
     },
     {
       "Id": "d937fe48-5230-41cd-b6f6-39fd318a1fec",
       "DisplayName": "圣地遗迹",
       "Gid": 210101050,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":130105,\"comment_txt\":13106,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":45000}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13105,\"comment_txt\":13106,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":45000}"
     },
     {
       "Id": "cabe2c3c-56c0-4afe-abae-14dfbf96d4a2",
@@ -8498,7 +8497,7 @@
       "Id": "88c92efc-fb43-43df-997d-c5918808de5d",
       "DisplayName": "动物抽奖卡池",
       "Gid": 170101111,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":1,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":1}],\"Weight\":2000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"110b74ff-db7e-4a28-9e28-12beaf18a9e1\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"402a7b1c-bd32-4540-9efe-f9801ed6946b\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"625bcec8-fc02-4f1a-9399-7e27d74b130f\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"14a84b6c-8709-44bd-becf-dc19ed8f9f97\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f38fe707-ed6a-4d3e-9453-7e2df60bbb39\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0e6f9a4d-e198-4549-83be-9b9c9f67db53\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":70,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9f246873-2e81-4517-8562-c38eeb48d1ee\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9f246873-2e81-4517-8562-c38eeb48d1ee\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60c28119-42b0-4ebc-bc37-24be3afaebf4\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"269448b5-b46c-4245-aab5-01b8fb53137e\",\"Count\":1}],\"Weight\":120,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"505dad1a-0d29-4052-97d7-f0843e393fec\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":350,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":180,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"51ca3cd8-0d33-41b6-ad21-fbc721bd9cbc\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"365b7755-2042-4faa-aa47-408b5201e84f\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c2e12564-f3cc-4222-8f4e-d04235297efd\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b09eda4f-c978-480e-a7d2-644f414b3298\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"45365577-2d0f-4f48-9067-23adc862ae98\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b92ce078-670e-4870-a244-a638880dc41b\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e92a3375-9872-40ea-8cb4-10bb24add432\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7b08d03a-1804-4a32-93b2-31736ffc1fb6\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9c79a55a-106f-4f32-9d44-484d86a665fd\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"800e78af-e9c4-480b-a0f3-8e15b93979f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2c4908e9-1a74-43c4-a776-b112ac86c112\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9d401e1b-fd86-4a39-a8e8-01f335fae625\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7858514e-1011-4de2-9c9f-f0a2ebf152f2\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"92eebe70-ae9a-44a8-8ac2-ad4ae61de313\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"480bf300-b723-4d9d-ab7b-3ce5d2483d68\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9b558fe1-db54-4e1b-a962-be0d6c55f1be\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1555a758-c31c-4b4b-9b93-5fa6537ba789\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1ea68558-2928-4d42-a891-c8947c5326d9\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":450,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"929e4d6f-8240-425d-ab5c-1f31480d6350\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f5ccc14d-a385-4a2c-9da4-2b769eee846e\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"585a2015-fef6-4eae-a146-f2a656838b4a\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"36de54eb-26c9-479f-bc91-2e5c9861c00f\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"7683a573-d909-47a9-95d4-7c2200916749\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"41ec4fed-39a4-420f-a247-19ab32aca193\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"2d72144f-239f-40e6-902b-c77506719698\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"4caced11-8773-43ff-8c19-23d2a703c61b\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b765092d-2a8f-4375-b633-99f781609fd0\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c3c67a9d-c679-42ad-b2df-7427ac185a0d\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":20,\"GuaranteesDiceTId\":\"9734bad6-0aa2-481d-8b3f-70c4bb7d91bc\"}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":1,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":1}],\"Weight\":2500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"110b74ff-db7e-4a28-9e28-12beaf18a9e1\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"402a7b1c-bd32-4540-9efe-f9801ed6946b\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"625bcec8-fc02-4f1a-9399-7e27d74b130f\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"14a84b6c-8709-44bd-becf-dc19ed8f9f97\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f38fe707-ed6a-4d3e-9453-7e2df60bbb39\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0e6f9a4d-e198-4549-83be-9b9c9f67db53\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":70,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9f246873-2e81-4517-8562-c38eeb48d1ee\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9f246873-2e81-4517-8562-c38eeb48d1ee\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60c28119-42b0-4ebc-bc37-24be3afaebf4\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"269448b5-b46c-4245-aab5-01b8fb53137e\",\"Count\":1}],\"Weight\":120,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"505dad1a-0d29-4052-97d7-f0843e393fec\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":350,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":180,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"51ca3cd8-0d33-41b6-ad21-fbc721bd9cbc\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"365b7755-2042-4faa-aa47-408b5201e84f\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c2e12564-f3cc-4222-8f4e-d04235297efd\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b09eda4f-c978-480e-a7d2-644f414b3298\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":900,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"45365577-2d0f-4f48-9067-23adc862ae98\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b92ce078-670e-4870-a244-a638880dc41b\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e92a3375-9872-40ea-8cb4-10bb24add432\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7b08d03a-1804-4a32-93b2-31736ffc1fb6\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9c79a55a-106f-4f32-9d44-484d86a665fd\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"800e78af-e9c4-480b-a0f3-8e15b93979f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2c4908e9-1a74-43c4-a776-b112ac86c112\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9d401e1b-fd86-4a39-a8e8-01f335fae625\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"7858514e-1011-4de2-9c9f-f0a2ebf152f2\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"92eebe70-ae9a-44a8-8ac2-ad4ae61de313\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":1200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"480bf300-b723-4d9d-ab7b-3ce5d2483d68\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"9b558fe1-db54-4e1b-a962-be0d6c55f1be\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1555a758-c31c-4b4b-9b93-5fa6537ba789\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1ea68558-2928-4d42-a891-c8947c5326d9\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":450,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"929e4d6f-8240-425d-ab5c-1f31480d6350\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f5ccc14d-a385-4a2c-9da4-2b769eee846e\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"585a2015-fef6-4eae-a146-f2a656838b4a\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"36de54eb-26c9-479f-bc91-2e5c9861c00f\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":1200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"7683a573-d909-47a9-95d4-7c2200916749\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"41ec4fed-39a4-420f-a247-19ab32aca193\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"2d72144f-239f-40e6-902b-c77506719698\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"4caced11-8773-43ff-8c19-23d2a703c61b\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b765092d-2a8f-4375-b633-99f781609fd0\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":250,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c3c67a9d-c679-42ad-b2df-7427ac185a0d\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":20,\"GuaranteesDiceTId\":\"9734bad6-0aa2-481d-8b3f-70c4bb7d91bc\"}}"
     },
     {
       "Id": "9734bad6-0aa2-481d-8b3f-70c4bb7d91bc",
@@ -8528,7 +8527,7 @@
       "Id": "af719619-3934-45bf-aaec-669c6a8afdc6",
       "DisplayName": "付费卡池",
       "Gid": 170101113,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":1,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd871154-1aab-4add-8433-be4886244560\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"40425703-830d-4f95-90c4-8d0833e7ee25\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"aa235359-a945-4a8d-8bf6-f6ad82e2afc5\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"385763e0-cd0b-47a8-9dc0-e4a41819dd47\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"2f2f856a-002f-42be-b1b7-4219252b7de7\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6d551fec-702b-44d6-b94b-b62405d1e056\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3eac8a90-e8f9-4244-917f-98d37c7a6094\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"4bb3c291-612c-49cb-9d73-96af45a45e72\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"05d53c61-11d7-4f12-bbd5-e1d0f8aaad51\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6aff80ac-84ad-4adc-a353-a700406cbe5a\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"657cece9-27e4-40f3-9e69-069852716d7b\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d9d0b916-285c-441a-a68d-543596b1dcd5\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"47fcdd7f-6206-48c1-b1e0-af65dbb65855\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"5c4b8d36-5776-453a-a415-f31c03a26776\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0130307a-36fa-4804-b24e-c1c457ae2721\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1e809108-ac47-4ea3-912b-bb446dd89179\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd9db3a8-a310-41e8-8228-afa425183cb3\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"058c4bfc-a69d-4298-b449-f88f2a9e2870\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"ce7756d8-53c6-46da-811e-3a011c6a7a25\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d3767e5c-e416-4d54-ba59-a701d980c1cc\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d584b885-8b7e-49c7-94cd-61ab9febb8a1\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"572898a8-3c5a-4e18-9334-e1dba1a50547\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f1ab32ad-0f36-4785-ac3b-907ceb9a0394\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d47174ce-ebc0-49c5-a7e4-c8607328f5eb\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b3d0cdf7-513b-4bc0-9e28-ee24a83e04fb\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"95377961-7ce6-4fa6-a2cf-35ffc6412b54\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6104b422-8192-40c1-a047-a173cf4ae7f7\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"5dc5ec4b-c546-43a9-af17-0e5ef7406f5d\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f7745ac0-2a75-4bdc-ab02-acec7b310e48\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b6615372-3a40-4c39-ae16-cd36a46d58b8\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"00a17afe-062f-4bdf-be5d-6a069e9b304a\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"da670740-9a06-43c7-98c1-98155e0ca2e9\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"a62dbe6b-6479-4b00-9eac-272b90347ba7\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d476a951-a6a2-4f9e-b372-f3ebe9715daa\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"40c43dfc-2ad4-49dd-8582-f88c722e7dc8\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0e5352ba-9adc-4eb7-ad76-4b40077680b1\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"037712cd-fb7b-4329-a3d1-3870cef97ecc\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6d31e692-9b63-483d-be8a-fe074c90a23a\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"420b0d88-b0f3-468e-aebf-826092c5ef9f\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"90c996cd-ca1f-4dc6-a21c-62fda991c4e1\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"24a70dea-2b51-4d93-b99d-728e42f4365c\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"aa2d91d9-90a3-4f42-889e-00e020782982\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"40830896-4457-4c3d-af6a-16e49eee331d\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"abec555c-e63e-484a-8175-229b34c557ff\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bb4e9528-167f-4e14-9756-6451fbf0591d\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"891fa169-bc23-4c4a-b8cc-400588a16990\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3753eb1b-4e97-49b4-a7c0-520e916fff9e\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d305fc0b-1d3f-4f1a-a420-2ab3f2b80265\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"fb69f6fc-e137-4408-90ce-cd4e25cb67e1\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"64fd7191-81f5-4c38-a5f9-fa73948b6ce9\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3697065f-af43-40fa-9f93-3fa62f3596ee\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"8b172c1b-ffad-44fb-9fdc-31773e22964b\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1e1841e2-b2ca-46f0-9d65-fa58b85273a8\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"8d510f7c-7be8-46ed-b3b9-a1934dd31127\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0c5a7eaa-34e7-4d13-8462-89532c0354e9\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"2d1d0094-0a37-4374-9d2f-317ebc79e7a3\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3f48cd38-b26d-4fbf-8cef-8834b9e3ab72\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"992dfa6f-edb1-4d78-a162-cd5c436777b0\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6a8022cb-1863-47bc-b686-2d69676612c0\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c0261f53-a3f3-43eb-b1b7-ae1062f4889a\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d7835aeb-3a05-4b83-9dc7-bd87c4a964a4\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60a5302c-9a7a-47a0-9548-fc94874dc735\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"8dc9b487-eee8-4f9e-9cf6-06ebb1bc64e6\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true}],\"GuaranteesCount\":8,\"GuaranteesDiceTId\":\"5dce7b0c-4858-465a-9d65-1551febab548\"}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":1,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd871154-1aab-4add-8433-be4886244560\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"40425703-830d-4f95-90c4-8d0833e7ee25\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"aa235359-a945-4a8d-8bf6-f6ad82e2afc5\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"385763e0-cd0b-47a8-9dc0-e4a41819dd47\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"2f2f856a-002f-42be-b1b7-4219252b7de7\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6d551fec-702b-44d6-b94b-b62405d1e056\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3eac8a90-e8f9-4244-917f-98d37c7a6094\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"4bb3c291-612c-49cb-9d73-96af45a45e72\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"05d53c61-11d7-4f12-bbd5-e1d0f8aaad51\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6aff80ac-84ad-4adc-a353-a700406cbe5a\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"657cece9-27e4-40f3-9e69-069852716d7b\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d9d0b916-285c-441a-a68d-543596b1dcd5\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"47fcdd7f-6206-48c1-b1e0-af65dbb65855\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"5c4b8d36-5776-453a-a415-f31c03a26776\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0130307a-36fa-4804-b24e-c1c457ae2721\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1e809108-ac47-4ea3-912b-bb446dd89179\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd9db3a8-a310-41e8-8228-afa425183cb3\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"058c4bfc-a69d-4298-b449-f88f2a9e2870\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"ce7756d8-53c6-46da-811e-3a011c6a7a25\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d3767e5c-e416-4d54-ba59-a701d980c1cc\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d584b885-8b7e-49c7-94cd-61ab9febb8a1\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"572898a8-3c5a-4e18-9334-e1dba1a50547\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f1ab32ad-0f36-4785-ac3b-907ceb9a0394\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d47174ce-ebc0-49c5-a7e4-c8607328f5eb\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b3d0cdf7-513b-4bc0-9e28-ee24a83e04fb\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"95377961-7ce6-4fa6-a2cf-35ffc6412b54\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6104b422-8192-40c1-a047-a173cf4ae7f7\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"5dc5ec4b-c546-43a9-af17-0e5ef7406f5d\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f7745ac0-2a75-4bdc-ab02-acec7b310e48\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b6615372-3a40-4c39-ae16-cd36a46d58b8\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"00a17afe-062f-4bdf-be5d-6a069e9b304a\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"da670740-9a06-43c7-98c1-98155e0ca2e9\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"a62dbe6b-6479-4b00-9eac-272b90347ba7\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d476a951-a6a2-4f9e-b372-f3ebe9715daa\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"40c43dfc-2ad4-49dd-8582-f88c722e7dc8\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0e5352ba-9adc-4eb7-ad76-4b40077680b1\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"037712cd-fb7b-4329-a3d1-3870cef97ecc\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6d31e692-9b63-483d-be8a-fe074c90a23a\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"420b0d88-b0f3-468e-aebf-826092c5ef9f\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"90c996cd-ca1f-4dc6-a21c-62fda991c4e1\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"24a70dea-2b51-4d93-b99d-728e42f4365c\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"aa2d91d9-90a3-4f42-889e-00e020782982\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"40830896-4457-4c3d-af6a-16e49eee331d\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"abec555c-e63e-484a-8175-229b34c557ff\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bb4e9528-167f-4e14-9756-6451fbf0591d\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"891fa169-bc23-4c4a-b8cc-400588a16990\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3753eb1b-4e97-49b4-a7c0-520e916fff9e\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d305fc0b-1d3f-4f1a-a420-2ab3f2b80265\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"fb69f6fc-e137-4408-90ce-cd4e25cb67e1\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"64fd7191-81f5-4c38-a5f9-fa73948b6ce9\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3697065f-af43-40fa-9f93-3fa62f3596ee\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"8b172c1b-ffad-44fb-9fdc-31773e22964b\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"1e1841e2-b2ca-46f0-9d65-fa58b85273a8\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"8d510f7c-7be8-46ed-b3b9-a1934dd31127\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"0c5a7eaa-34e7-4d13-8462-89532c0354e9\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"2d1d0094-0a37-4374-9d2f-317ebc79e7a3\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"3f48cd38-b26d-4fbf-8cef-8834b9e3ab72\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"992dfa6f-edb1-4d78-a162-cd5c436777b0\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6a8022cb-1863-47bc-b686-2d69676612c0\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"c0261f53-a3f3-43eb-b1b7-ae1062f4889a\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d7835aeb-3a05-4b83-9dc7-bd87c4a964a4\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60a5302c-9a7a-47a0-9548-fc94874dc735\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"8dc9b487-eee8-4f9e-9cf6-06ebb1bc64e6\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":true}],\"GuaranteesCount\":8,\"GuaranteesDiceTId\":\"5dce7b0c-4858-465a-9d65-1551febab548\"}}"
     },
     {
       "Id": "5dce7b0c-4858-465a-9d65-1551febab548",
@@ -8570,19 +8569,19 @@
       "Id": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
       "DisplayName": "金币30钻石购买",
       "Gid": 180201164,
-      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"612ec963-4f73-437e-a51a-776478b4434a\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"acbd008f-20d7-4e29-837a-97d7c81d3f72\",\"Count\":1}]},\"name_txt\":10966,\"comment_txt\":10960,\"JiaoBiao\":[],\"display_icon\":\"YuMiLi1\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"612ec963-4f73-437e-a51a-776478b4434a\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"acbd008f-20d7-4e29-837a-97d7c81d3f72\",\"Count\":1}]},\"name_txt\":10966,\"comment_txt\":10960,\"JiaoBiao\":[]}"
     },
     {
       "Id": "3f1d2412-c5b4-4b3e-91ae-a91caefb8403",
       "DisplayName": "金币90钻石购买",
       "Gid": 180201165,
-      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":90,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"f45fcb92-c13b-4f7d-be7e-c60c73bff030\",\"Count\":1}]},\"name_txt\":10967,\"comment_txt\":10961,\"JiaoBiao\":[],\"display_icon\":\"YuMiLi2\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":90,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"f45fcb92-c13b-4f7d-be7e-c60c73bff030\",\"Count\":1}]},\"name_txt\":10967,\"comment_txt\":10961,\"JiaoBiao\":[]}"
     },
     {
       "Id": "29028c4c-cde2-4791-b97e-0ff77b63dccb",
       "DisplayName": "金币288钻石购买",
       "Gid": 180201166,
-      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":288,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"bbd8df20-3071-492a-8fef-aae2f848025a\",\"Count\":1}]},\"name_txt\":10968,\"comment_txt\":10962,\"JiaoBiao\":[],\"display_icon\":\"YuMiLi3\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_jibigoumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":30,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":288,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"bbd8df20-3071-492a-8fef-aae2f848025a\",\"Count\":1}]},\"name_txt\":10968,\"comment_txt\":10962,\"JiaoBiao\":[]}"
     },
     {
       "Id": "acbd008f-20d7-4e29-837a-97d7c81d3f72",
@@ -11184,7 +11183,7 @@
       "Id": "59bf4cb7-5bc2-48ee-98ad-2efbf116b162",
       "DisplayName": "体力广告购买",
       "Gid": 180401001,
-      "PropertiesString": "{\"Genus\":[\"gs_tili\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"Count\":5}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_tili\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"Count\":5}]}}"
     },
     {
       "Id": "622b4572-782d-4bee-b4c5-2d512daa3714",
@@ -12234,7 +12233,7 @@
       "Id": "64d5b4f8-d698-498c-a5dd-b82730d97096",
       "DisplayName": "法老宝藏成就奖励",
       "Gid": 220103017,
-      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6f0da752-94ba-4cb4-a52b-39dcbdb41f91\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":3000}]]}}"
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6f0da752-94ba-4cb4-a52b-39dcbdb41f91\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":3000}]]}}"
     },
     {
       "Id": "29ea431e-ee62-4162-8821-3f88c8373d67",
@@ -12450,7 +12449,7 @@
       "Id": "e2c2cf15-263f-4341-acdd-c3135c73097b",
       "DisplayName": "开服活动成就 - 累计升级装备次数",
       "Gid": 220104003,
-      "PropertiesString": "{\"Genus\":[\"cj_kaifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":null,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":13,\"Subtrahend\":0,\"Modulus\":13,\"MinRemainder\":0,\"MaxRemainder\":13},\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[5,10,15,20,30,40,60],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":50000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50}]]},\"name_txt\":50002}"
+      "PropertiesString": "{\"Genus\":[\"cj_kaifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":null,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":13,\"Subtrahend\":0,\"Modulus\":13,\"MinRemainder\":0,\"MaxRemainder\":13},\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[5,10,15,20,30,40,60],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":2}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":3000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":10}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50}]]},\"name_txt\":50002}"
     },
     {
       "Id": "db98951e-a908-482a-a2e4-0e851a3e1c95",
@@ -12462,13 +12461,13 @@
       "Id": "86833e6b-81bf-47ca-9965-b57c2012ecfd",
       "DisplayName": "开服活动成就-累计挑战关卡次数",
       "Gid": 220104005,
-      "PropertiesString": "{\"Genus\":[\"cj_kaifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":null,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":13,\"Subtrahend\":0,\"Modulus\":13,\"MinRemainder\":0,\"MaxRemainder\":13},\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[3,5,8,10,15,20,25],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":8000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":20}]]},\"name_txt\":50004}"
+      "PropertiesString": "{\"Genus\":[\"cj_kaifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":null,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":13,\"Subtrahend\":0,\"Modulus\":13,\"MinRemainder\":0,\"MaxRemainder\":13},\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[3,5,8,10,15,20,25],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":3}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":3000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":5}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":20}]]},\"name_txt\":50004}"
     },
     {
       "Id": "5173f53e-6534-4594-82cc-d989f52f03c7",
       "DisplayName": "开服活动成就- 累计开宝箱次数",
       "Gid": 220104006,
-      "PropertiesString": "{\"Genus\":[\"cj_kaifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":null,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":13,\"Subtrahend\":0,\"Modulus\":13,\"MinRemainder\":0,\"MaxRemainder\":13},\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[2,5,8,12,15,18,22,26,30],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":2}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}],[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"385763e0-cd0b-47a8-9dc0-e4a41819dd47\",\"Count\":1}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}]]},\"name_txt\":50005}"
+      "PropertiesString": "{\"Genus\":[\"cj_kaifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":null,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":13,\"Subtrahend\":0,\"Modulus\":13,\"MinRemainder\":0,\"MaxRemainder\":13},\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[2,5,8,12,15,18,22,26,30],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":2}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}],[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"385763e0-cd0b-47a8-9dc0-e4a41819dd47\",\"Count\":1}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"ec8d0858-38a3-4057-9de4-0bb0a629ee30\",\"Count\":2}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}]]},\"name_txt\":50005}"
     },
     {
       "Id": "c7772592-50ab-4f98-be01-b58c02571d46",
@@ -16319,7 +16318,7 @@
       "Id": "f05025ec-4efb-4e61-9ad5-69995153f198",
       "DisplayName": "法币购买赛季门票VIP1  商品",
       "Gid": 180612001,
-      "PropertiesString": "{\"Genus\":[\"gs_saijivip\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":80}]},\"productStoreId\":\"com.duangphl.16\",\"productAmount\":159,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"少量钻石\"}",
+      "PropertiesString": "{\"Genus\":[\"gs_saijivip\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"c9615e53-ff8c-4080-ab20-ec8c5d170a3b\",\"Count\":1}]},\"productStoreId\":\"com.duangphl.16\",\"productAmount\":159,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"少量钻石\"}",
       "Remark": "可通过序列输出不同的赛季成就"
     },
     {

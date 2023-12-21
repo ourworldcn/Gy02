@@ -45,6 +45,9 @@ namespace OW.Game.Store
             set => ((IEntityWithSingleKey<Guid>)Thing).Id = value;
         }
 
+        /// <summary>
+        /// 实体的模板Id。
+        /// </summary>
         [JsonIgnore]
         public Guid TemplateId
         {

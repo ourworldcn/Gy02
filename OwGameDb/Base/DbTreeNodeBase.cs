@@ -32,9 +32,14 @@ namespace OW.Game.Store
         string ExtraString { get; set; }
 
         /// <summary>
-        /// 记录一些额外的信息，用于排序搜索使用的字段。
+        /// 记录一些额外的数值信息，用于排序搜索使用的字段。
         /// </summary>
         decimal? ExtraDecimal { get; set; }
+
+        /// <summary>
+        /// 记录扩展的日期时间属性
+        /// </summary>
+        public DateTime? ExtraDateTime { get; set; }
 
     }
 
@@ -62,7 +67,8 @@ namespace OW.Game.Store
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-
+        [Precision(18, 4)]
+        [Comment("记录一些额外的数值信息，用于排序搜索使用的字段")]
         public decimal? ExtraDecimal { get; set; }
 
         /// <summary>
@@ -75,7 +81,15 @@ namespace OW.Game.Store
         /// <inheritdoc/>
         /// </summary>
         [MaxLength(64)]
+        [Comment("记录一些额外的信息，通常这些信息用于排序，加速查找符合特定要求的对象")]
         public string ExtraString { get => _ExtraString; set => _ExtraString = value; }
+
+        DateTime? _ExtraDateTime;
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Comment("记录扩展的日期时间属性")]
+        public DateTime? ExtraDateTime { get => _ExtraDateTime; set => _ExtraDateTime = value; }
 
         /// <summary>
         /// <inheritdoc/>

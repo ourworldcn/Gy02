@@ -65,15 +65,11 @@ namespace OW.Game.Entity
         {
             get
             {
-                //if (Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061") == TemplateId)
-                //    ;
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
                 return fcp is null ? _Count : fcp.GetCurrentValueWithUtc();
             }
             set
             {
-                //if (Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061") == TemplateId)
-                //    ;
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
                 if (fcp is null)
                 {
@@ -89,13 +85,52 @@ namespace OW.Game.Entity
             }
         }
 
+        /*public decimal Count
+        {
+            get
+            {
+                //if (Guid.Parse("1f31807a-f633-4d3a-8e8e-382ad105d061") == TemplateId)
+                //    ;
+                if (Fcps.GetValueOrDefault(nameof(Count)) is FastChangingProperty fcp) return fcp.GetCurrentValueWithUtc(); //若是快速变化属性
+                if (Thing is IDbQuickFind dqf) return dqf.ExtraDecimal ?? default;    //若有值
+                return default;
+            }
+            set
+            {
+                if (Fcps.GetValueOrDefault(nameof(Count)) is FastChangingProperty fcp)
+                {
+                    var dt = fcp.LastDateTime;  //保持最后计算时间点不变，如果要更新最后时间点，则应进行读取
+                    fcp.SetLastValue(value, ref dt);
+                    CountOfLastModifyUtc = OwHelper.WorldNow;
+                }
+                else
+                {
+                    (Thing as IDbQuickFind).ExtraDecimal = value;
+                    CountOfLastModifyUtc = OwHelper.WorldNow;
+                }
+            }
+        }*/
+
+
         /// <summary>
         /// 创建此对象的世界时间。
         /// </summary>
 #if NETCOREAPP
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        [JsonIgnore]
 #endif
-        public DateTime? CreateDateTime { get; set; } = OwHelper.WorldNow;
+        public DateTime? CreateDateTime
+        {
+            get
+            {
+                if (Thing is IDbQuickFind dqf) return dqf.ExtraDateTime ??= OwHelper.WorldNow;
+                return default;
+            }
+            set
+            {
+                if (Thing is IDbQuickFind dqf) dqf.ExtraDateTime = value;
+                Debug.WriteLine($"错误的Thing类型，Thing = {Thing}");
+            }
+        }
 
         /// <summary>
         /// Count 属性最后的修改时间。修改Count属性时自动修改此属性。
