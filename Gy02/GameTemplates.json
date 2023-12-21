@@ -918,9 +918,9 @@
     },
     {
       "Id": "1d28ac5b-69b8-4d00-8d33-a81e5953884e",
-      "DisplayName": "增加20%的击飞概率",
+      "DisplayName": "增加5%的击飞概率",
       "Gid": 140301002,
-      "PropertiesString": "{\"skillParams\":[5,5],\"name_txt\":12106}"
+      "PropertiesString": "{\"skillParams\":[20,2],\"name_txt\":12106}"
     },
     {
       "Id": "c0acf35b-7a33-481b-af29-12483f788ba4",
@@ -6274,7 +6274,6 @@
       "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13029,\"comment_txt\":13036,\"suggest\":[ 500,3500,600],\"scoreTime\":[480,540,720],\"charExp\":1750}"
     },
     {
-      "Id": "e987add9-00dd-4d03-83ff-bef717cae823",
       "DisplayName": "法老宝藏",
       "Gid": 210101017,
       "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13030,\"comment_txt\":13037,\"suggest\":[ 500,3500,600],\"scoreTime\":[480,540,720],\"charExp\":1950}"
@@ -11184,7 +11183,7 @@
       "Id": "59bf4cb7-5bc2-48ee-98ad-2efbf116b162",
       "DisplayName": "体力广告购买",
       "Gid": 180401001,
-      "PropertiesString": "{\"Genus\":[\"gs_tili\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"Count\":5}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_tili\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"Count\":5}]}}"
     },
     {
       "Id": "622b4572-782d-4bee-b4c5-2d512daa3714",
@@ -12234,7 +12233,7 @@
       "Id": "64d5b4f8-d698-498c-a5dd-b82730d97096",
       "DisplayName": "法老宝藏成就奖励",
       "Gid": 220103017,
-      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6f0da752-94ba-4cb4-a52b-39dcbdb41f91\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":3000}]]}}"
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"6f0da752-94ba-4cb4-a52b-39dcbdb41f91\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":2},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":3000}]]}}"
     },
     {
       "Id": "29ea431e-ee62-4162-8821-3f88c8373d67",

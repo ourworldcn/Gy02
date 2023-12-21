@@ -116,7 +116,7 @@ namespace OW.Game.Entity
         /// 创建此对象的世界时间。
         /// </summary>
 #if NETCOREAPP
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        [JsonIgnore]
 #endif
         public DateTime? CreateDateTime
         {
