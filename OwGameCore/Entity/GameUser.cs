@@ -32,15 +32,6 @@ namespace OW.Game.Entity
             Initialize();
         }
 
-        /// <summary>
-        /// 构造函数。
-        /// </summary>
-        /// <param name="thing"><inheritdoc/></param>
-        public GameUser(OrphanedThing thing) : base(thing)
-        {
-            Initialize();
-        }
-
         private void Initialize()
         {
         }

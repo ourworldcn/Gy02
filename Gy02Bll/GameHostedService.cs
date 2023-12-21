@@ -81,6 +81,7 @@ namespace GY02
             using var scope = _Services.CreateScope();
             var service = scope.ServiceProvider;
             CreateDb(service);
+            UpdateDatabase(service);
             var result = Task.Factory.StartNew(c =>
             {
                 //Thread thread = new Thread(() => CreateNewUserAndChar())
@@ -157,6 +158,37 @@ namespace GY02
         }
 
         /// <summary>
+        /// 升级数据库内容。
+        /// </summary>
+        private void UpdateDatabase(IServiceProvider services)
+        {
+            var dbUser = services.GetRequiredService<GY02UserContext>();
+            var dic = new Dictionary<Guid, string>
+            {
+                {
+                    Guid.Parse("{1FE2EF96-5C0C-46F7-8377-7EA9371871A6}"),
+                        "UPDATE [dbo].[VirtualThings] SET [ExtraDateTime] = cast(JSON_Value([JsonObjectString],'$.CreateDateTime') as datetime2)"
+                },
+                //{
+                //    Guid.Parse("{D7F19FBA-2748-43C9-9267-D3C89A897AC2}"),
+                //        "UPDATE [dbo].[VirtualThings] SET [ExtraDecimal] =cast(JSON_Value([JsonObjectString],'$.Count') as decimal)"
+                //},
+            };
+            var names = dic.Keys.Select(c => c.ToString()).ToArray();
+            var ids = dbUser.ServerConfig.Where(c => names.Contains(c.Name)).AsEnumerable().AsEnumerable().Where(c => Guid.TryParse(c.Name, out var id)).Select(c => Guid.Parse(c.Name)).ToHashSet();   //已经存在的内容升级
+
+            foreach (var kvp in dic)    //执行升级语句
+            {
+                if (ids.Contains(kvp.Key)) continue;
+                dbUser.Database.ExecuteSqlRaw(kvp.Value);
+                var key = kvp.Key.ToString();
+                var config = new ServerConfigItem { Name = key, Value = kvp.Value };
+                dbUser.Add(config);
+            }
+            dbUser.SaveChanges();
+        }
+
+        /// <summary>
         /// 初始化管理员账号。
         /// </summary>
         void InitializeAdmin()
@@ -183,6 +215,10 @@ namespace GY02
             }
         }
 
+        /// <summary>
+        /// 迁移升级数据库。
+        /// </summary>
+        /// <param name="services"></param>
         private void CreateDb(IServiceProvider services)
         {
             var logger = services.GetRequiredService<ILogger<GameHostedService>>();
