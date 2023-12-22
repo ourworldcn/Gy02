@@ -130,10 +130,13 @@ namespace Gy02.Controllers
                 result.FillErrorFrom(command);
                 return result;
             }
-            order.State = 1;
             _Mapper.Map(command.Changes, result.Changes);
             _Logger.LogDebug("订单号{id}已经确认成功。", order.Id);
 
+            order.Confirm1 = true;
+            order.Confirm2 = true;
+            order.State = 1;
+            order.CompletionDateTime = OwHelper.WorldNow;
             try
             {
                 _DbContext.SaveChanges();

@@ -186,6 +186,7 @@ namespace GY02.Controllers
 
             order.Confirm2 = true;
             order.State = 1;
+            order.CompletionDateTime = OwHelper.WorldNow;
             _Logger.LogDebug("订单号{id}已经确认成功。", order.Id);
         lbReturn:
             try
@@ -243,7 +244,8 @@ namespace GY02.Controllers
                 State = 1,
                 CustomerId = order.CustomerId,
                 Currency = order.Currency,
-                Amount = -order.Amount
+                Amount = -order.Amount,
+                CompletionDateTime = OwHelper.WorldNow,
             };
             try
             {

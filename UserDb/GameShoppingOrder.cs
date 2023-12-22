@@ -73,6 +73,11 @@ namespace OW.Game.Store
         public DateTime CreateUtc { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
+        /// 完成的时间。
+        /// </summary>
+        public DateTime? CompletionDateTime { get; set; }
+
+        /// <summary>
         /// 获取一个深表副本。注意Id也被复制，通常需要调用<see cref="GuidKeyObjectBase.GenerateNewId"/>换成新Id。
         /// </summary>
         /// <returns></returns>
@@ -88,10 +93,14 @@ namespace OW.Game.Store
                 CustomerId = CustomerId,
                 Id = Id,
                 JsonObjectString = JsonObjectString,
+                CreateUtc = CreateUtc,
+                CompletionDateTime = CompletionDateTime,
             };
             Detailes.ForEach(c => result.Detailes.Add((GameShoppingOrderDetail)c.Clone()));
             return result;
         }
+
+
 
         /// <summary>
         /// 将对象和子对象的Id换成新Id。通常在<see cref="Clone"/>后调用。

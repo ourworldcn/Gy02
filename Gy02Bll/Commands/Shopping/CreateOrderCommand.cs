@@ -13,6 +13,11 @@ namespace GY02.Commands
 {
     public class CreateOrderCommand : SyncCommandBase, IGameCharCommand
     {
+        public CreateOrderCommand()
+        {
+            
+        }
+
         public GameChar GameChar { get; set; }
 
         /// <summary>
