@@ -78,21 +78,22 @@ namespace Gy02.Controllers
             if (!b) //若无法验证订单
             {
                 result.FillErrorFromWorld();
+                _Logger.LogWarning("无法获取订单信息——{msg}",result.DebugMessage);
                 return result;
             }
 
             if (/*returnData.purchaseState != 0 ||*/ returnData.consumptionState != 1)    //若尚未付款成功
             {
-                result.DebugMessage = $"未付款成功。";
+                result.DebugMessage = $"未付款成功(尚未消耗)。";
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                _Logger.LogWarning(result.DebugMessage);
+                _Logger.LogWarning("未付款成功(尚未消耗)——{msg}。",result.DebugMessage);
                 return result;
             }
             if (returnData.orderId != model.OrderId)   //若无法对应透传参数
             {
                 result.DebugMessage = $"透传参数ObfuscatedExternalAccountId错误。";
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                _Logger.LogWarning(result.DebugMessage);
+                _Logger.LogWarning("若无法对应透传参数——{msg}", result.DebugMessage);
                 return result;
             }
 
