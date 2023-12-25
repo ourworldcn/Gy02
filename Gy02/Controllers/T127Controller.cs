@@ -85,6 +85,7 @@ namespace Gy02.Controllers
             //重试逻辑
             if (/*returnData.purchaseState != 0 ||*/ returnData.consumptionState != 1)    //若尚未付款成功
             {
+                _Logger.LogInformation("订单处于未消费状态，开始重试");
                 using CancellationTokenSource cts = new CancellationTokenSource(6000);
                 cts.Token.WaitHandle.WaitOne();
                 b = _T127Manager.GetOrderState(model.ProductId, model.PurchaseToken, out returnData);
@@ -97,10 +98,10 @@ namespace Gy02.Controllers
             }
             if (/*returnData.purchaseState != 0 ||*/ returnData.consumptionState != 1)    //若尚未付款成功
             {
-                result.DebugMessage = $"未付款成功(尚未消耗)。";
+                result.DebugMessage = $"重试后订单仍处于未消费状态。";
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                 result.HasError = true;
-                _Logger.LogWarning("未付款成功(尚未消耗)——{msg}。", result.DebugMessage);
+                _Logger.LogWarning("重试后订单仍处于未消费状态。");
                 return result;
             }
 
