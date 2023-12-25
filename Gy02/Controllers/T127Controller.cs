@@ -69,6 +69,7 @@ namespace Gy02.Controllers
             if (tt is null)    //找不到指定的ProductId对应的商品
             {
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.HasError = true;
                 result.DebugMessage = "找不到指定的ProductId对应的商品。";
                 _Logger.LogWarning(result.DebugMessage);
                 return result;
@@ -78,21 +79,37 @@ namespace Gy02.Controllers
             if (!b) //若无法验证订单
             {
                 result.FillErrorFromWorld();
+                _Logger.LogWarning("无法获取订单信息——{msg}", result.DebugMessage);
+                return result;
+            }
+            //重试逻辑
+            if (/*returnData.purchaseState != 0 ||*/ returnData.consumptionState != 1)    //若尚未付款成功
+            {
+                using CancellationTokenSource cts = new CancellationTokenSource(6000);
+                cts.Token.WaitHandle.WaitOne();
+                b = _T127Manager.GetOrderState(model.ProductId, model.PurchaseToken, out returnData);
+                if (!b) //若无法验证订单
+                {
+                    result.FillErrorFromWorld();
+                    _Logger.LogWarning("无法获取订单信息——{msg}", result.DebugMessage);
+                    return result;
+                }
+            }
+            if (/*returnData.purchaseState != 0 ||*/ returnData.consumptionState != 1)    //若尚未付款成功
+            {
+                result.DebugMessage = $"未付款成功(尚未消耗)。";
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.HasError = true;
+                _Logger.LogWarning("未付款成功(尚未消耗)——{msg}。", result.DebugMessage);
                 return result;
             }
 
-            if (/*returnData.purchaseState != 0 ||*/ returnData.consumptionState != 1)    //若尚未付款成功
-            {
-                result.DebugMessage = $"未付款成功。";
-                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                _Logger.LogWarning(result.DebugMessage);
-                return result;
-            }
             if (returnData.orderId != model.OrderId)   //若无法对应透传参数
             {
                 result.DebugMessage = $"透传参数ObfuscatedExternalAccountId错误。";
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                _Logger.LogWarning(result.DebugMessage);
+                result.HasError = true;
+                _Logger.LogWarning("若无法对应透传参数——{msg}", result.DebugMessage);
                 return result;
             }
 
@@ -113,6 +130,7 @@ namespace Gy02.Controllers
             {
                 result.DebugMessage = $"法币占位符为空。CharId={gc.Id}";
                 result.ErrorCode = ErrorCodes.ERROR_INVALID_DATA;
+                result.HasError = true;
                 _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
