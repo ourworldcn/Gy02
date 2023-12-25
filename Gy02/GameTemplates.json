@@ -7495,7 +7495,7 @@
       "Id": "85725ce3-09df-40d4-b781-eb288bc38f4e",
       "DisplayName": "免费钻石领取",
       "Gid": 180201001,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[]}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[]}"
     },
     {
       "Id": "b507bd07-ece2-4a69-88c1-e72265a9e4f1",
@@ -8468,7 +8468,7 @@
       "Id": "38c418b7-3662-4ad8-b613-032d68f544fc",
       "DisplayName": "商品购买条件刷新序列",
       "Gid": 190101006,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"ToInt32\",\"args\":[\"Count\"]},\"Outs\":{\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,20],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"ToInt32\",\"args\":[\"Count\"]},\"Outs\":{\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,1,20],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
     },
     {
       "Id": "b957c891-33b6-4b28-ab5f-def1e2060a31",
@@ -8516,7 +8516,7 @@
       "Id": "e2d2115d-cee6-4f1a-b173-ab3b647307b7",
       "DisplayName": "动物抽奖序列",
       "Gid": 190101007,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"62e227a8-c5d5-410e-96c5-d5ca931bafe2\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"ToInt32\",\"args\":[\"Count\"]},\"Outs\":{\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,50,100,100],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"62e227a8-c5d5-410e-96c5-d5ca931bafe2\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"ToInt32\",\"args\":[\"Count\"]},\"Outs\":{\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,1,50,100],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
     },
     {
       "Id": "d5b2958c-7d49-40bf-a482-d54474c8cf1d",
@@ -11142,7 +11142,7 @@
       "Id": "f7ad9c3c-c9d1-4773-9eb5-f77bf7b4162a",
       "DisplayName": "快速巡逻广告购买-1",
       "Gid": 180301003,
-      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]}}"
     },
     {
       "Id": "6969e916-893d-4cbe-9059-48904d24213a",
@@ -11196,7 +11196,7 @@
       "Id": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
       "DisplayName": "复活广告购买",
       "Gid": 180401003,
-      "PropertiesString": "{\"Genus\":[\"gs_fuhuo\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_fuhuo\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":99,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[]}}"
     },
     {
       "Id": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
@@ -11208,7 +11208,7 @@
       "Id": "b1e28c8b-dff0-446a-8fd5-a87c648eca6a",
       "DisplayName": "孵化广告购买",
       "Gid": 180401005,
-      "PropertiesString": "{\"Genus\":[\"gs_fuhua\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_fuhua\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":1}]}}"
     },
     {
       "Id": "10a3f9a4-c440-45af-b720-a8e850069ca1",
