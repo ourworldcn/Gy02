@@ -80,7 +80,6 @@ namespace Gy02.Controllers
             {
                 result.FillErrorFromWorld();
                 _Logger.LogWarning("无法获取订单信息——{msg}", result.DebugMessage);
-                result.HasError = true;
                 return result;
             }
             //重试逻辑
@@ -93,7 +92,6 @@ namespace Gy02.Controllers
                 {
                     result.FillErrorFromWorld();
                     _Logger.LogWarning("无法获取订单信息——{msg}", result.DebugMessage);
-                    result.HasError = true;
                     return result;
                 }
             }
@@ -109,8 +107,8 @@ namespace Gy02.Controllers
             if (returnData.orderId != model.OrderId)   //若无法对应透传参数
             {
                 result.DebugMessage = $"透传参数ObfuscatedExternalAccountId错误。";
-                result.HasError = true;
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.HasError = true;
                 _Logger.LogWarning("若无法对应透传参数——{msg}", result.DebugMessage);
                 return result;
             }
