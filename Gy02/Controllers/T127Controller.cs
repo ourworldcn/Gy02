@@ -147,10 +147,10 @@ namespace Gy02.Controllers
             {
                 if (bi.Count > 0) bi.Count--;
                 result.FillErrorFrom(command);
+                _Logger.LogWarning("出现错误——{msg}", result.DebugMessage);
                 return result;
             }
             _Mapper.Map(command.Changes, result.Changes);
-            _Logger.LogDebug("订单号{id}已经确认成功。", order.Id);
 
             order.Confirm1 = true;
             order.Confirm2 = true;
@@ -163,7 +163,11 @@ namespace Gy02.Controllers
             catch (Exception err)
             {
                 _Logger.LogWarning("保存订单号{id}的订单时出错——{msg}", order.Id, err.Message);
+                result.DebugMessage = $"保存订单号{order.Id}的订单时出错——{err.Message}";
+                result.ErrorCode = ErrorCodes.ERROR_INVALID_DATA;
+                return result;
             }
+            _Logger.LogInformation("订单号{id}已经确认成功。", order.Id);
             return result;
         }
     }
