@@ -3,7 +3,7 @@
     "Parent1Conditional": [
       {
         "ParentTId": null,
-        "Genus": [ "zuoqi_giraffe" ],
+        "Genus": [ "zuoqi_sheep" ],
         "TId": null,
         "MinCount": 1,
         "GeneralConditional": []
@@ -12,14 +12,14 @@
     "Parent2Conditional": [
       {
         "ParentTId": null,
-        "Genus": [ "zuoqi_pand" ],
+        "Genus": [ "zuoqi_wolf" ],
         "TId": null,
         "MinCount": 1,
         "GeneralConditional": []
       }
     ],
-    "DiceTId1": "e68fb34f-a662-4209-af36-f8892725a93d",
-    "DiceTId2": "54dce087-5d8a-4818-9ee0-09a04637a179",
+    "DiceTId1": "0345ca96-b748-4050-ad8a-814b9643d890",
+    "DiceTId2": "65578531-8325-4e6f-910f-12055f2eeb4f",
     "In": [
       {
         "Conditional": [
