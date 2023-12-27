@@ -62,4 +62,3 @@ C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET
 公驴驹坐骑
 和撒那战吼
 
-飞书接入在线文档 https://wiki.meetgames.com/distribution-service/SDKAccessDocument/loginPayment/loginIndex
