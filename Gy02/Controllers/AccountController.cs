@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Gy02.Controllers;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
@@ -150,6 +151,27 @@ namespace GY02.Controllers
         }
 
         /// <summary>
+        /// T1228合作伙伴登录的接口。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="udpServer"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LoginT1228ReturnDto> LoginT1228(LoginT1228ParamsDto model, [FromServices] UdpServerManager udpServer)
+        {
+            var command = _Mapper.Map<LoginT78Command>(model);
+            _SyncCommandManager.Handle(command);
+
+            string ip = LocalIp.ToString();
+            var result = _Mapper.Map<LoginT1228ReturnDto>(command);
+            var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+            var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+            result.WorldServiceHost = worldServiceHost;
+            result.UdpServiceHost = udpServiceHost;
+            return result;
+        }
+
+        /// <summary>
         /// 心跳功能，延迟被驱逐的时间。
         /// </summary>
         /// <param name="model"></param>
@@ -174,6 +196,7 @@ namespace GY02.Controllers
             _Mapper.Map(command, result);
             return result;
         }
+
     }
 
 }

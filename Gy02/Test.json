@@ -1,38 +1,40 @@
 {
-  "Fuhua": {
-    "Parent1Conditional": [
-      {
-        "ParentTId": null,
-        "Genus": [ "zuoqi_sheep" ],
-        "TId": null,
-        "MinCount": 1,
-        "GeneralConditional": []
-      }
-    ],
-    "Parent2Conditional": [
-      {
-        "ParentTId": null,
-        "Genus": [ "zuoqi_wolf" ],
-        "TId": null,
-        "MinCount": 1,
-        "GeneralConditional": []
-      }
-    ],
-    "DiceTId1": "0345ca96-b748-4050-ad8a-814b9643d890",
-    "DiceTId2": "65578531-8325-4e6f-910f-12055f2eeb4f",
-    "In": [
+  "Genus": [ "gs_niudan" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 2,
+    "MaxCount": null,
+    "Ins": [
       {
         "Conditional": [
           {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "ParentTId": null,
             "Genus": [],
-            "TId": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
-            "MinCount": 1
+            "TId": "e2d2115d-cee6-4f1a-b173-ab3b647307b7",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 1
           }
         ],
         "Count": 1,
-        "Genus": null
+        "Genus": []
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "88c92efc-fb43-43df-997d-c5918808de5d",
+        "Count": 1
       }
     ]
-  }
+  },
+  "name_txt": 10965,
+  "comment_txt": 10943,
+  "JiaoBiao": []
 }

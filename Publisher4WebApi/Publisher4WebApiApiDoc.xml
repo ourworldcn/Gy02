@@ -459,6 +459,21 @@
             属性发生变化的时间点。Utc计时。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.LoginT1228ReturnDto">
+            <summary>
+            T1228合作伙伴登录的的功能返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.LoginT1228ParamsDto">
+            <summary>
+            T1228合作伙伴登录的的功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT1228ParamsDto.Token">
+            <summary>
+            发行商SDK给的token。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.LoginT78ParamsDto">
             <summary>
             
@@ -2019,6 +2034,21 @@
         <member name="T:GY02.Publisher.CompleteOrderReturnDto">
             <summary>
             通知服务器完成T127的订单功能返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.Payed1228ParamsDto">
+            <summary>
+            支付回调接口的参数封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.Payed1228ReturnDto">
+            <summary>
+            支付回调接口的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.Payed1228ReturnDto.Result">
+            <summary>
+            success表示成功。其他值都是失败。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GenerateRedeemCodeParamsDto">

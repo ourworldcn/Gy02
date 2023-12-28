@@ -145,6 +145,14 @@
             <param name="udpServer"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.AccountController.LoginT1228(GY02.Publisher.LoginT1228ParamsDto,GY02.Managers.UdpServerManager)">
+            <summary>
+            T1228合作伙伴登录的接口。
+            </summary>
+            <param name="model"></param>
+            <param name="udpServer"></param>
+            <returns></returns>
+        </member>
         <member name="M:GY02.Controllers.AccountController.Nop(GY02.Publisher.NopParamsDto)">
             <summary>
             心跳功能，延迟被驱逐的时间。
@@ -729,6 +737,23 @@
         <member name="M:Gy02.Controllers.MailController.MakeReadAndPickUp(GY02.Publisher.MakeReadAndPickUpParamsDto)">
             <summary>
             标记邮件为已读状态，且如果有附件则领取附件。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gy02.Controllers.T1228Controller">
+            <summary>
+            T1228合作伙伴相关功能的控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T1228Controller.#ctor(AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T1228Controller.Payed1228(GY02.Publisher.Payed1228ParamsDto)">
+            <summary>
+            支付回调接口。
             </summary>
             <param name="model"></param>
             <returns></returns>

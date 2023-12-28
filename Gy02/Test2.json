@@ -1,38 +1,59 @@
 {
-  "Fuhua": {
-    "Parent1Conditional": [
+  "Genus": [ "gs_meirishangdian" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "43200s"
+    },
+    "GroupNumber": 6,
+    "MaxCount": 1,
+    "Ins": [
       {
-        "ParentTId": null,
-        "Genus": [ "zuoqi_sheep" ],
-        "TId": null,
-        "MinCount": 1,
-        "GeneralConditional": []
-      }
-    ],
-    "Parent2Conditional": [
-      {
-        "ParentTId": null,
-        "Genus": [ "zuoqi_panda" ],
-        "TId": null,
-        "MinCount": 1,
-        "GeneralConditional": []
-      }
-    ],
-    "DiceTId1": "c94d1566-b7ab-44f2-b1f6-3f3152271832",
-    "DiceTId2": "2b2f318f-d902-42cf-8254-a80b24441e91",
-    "In": [
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
+            "MinCount": 0,
+            "GeneralConditional": [
+              {
+                "op": "ModE",
+                "pn": "Count",
+                "args": [ "10", "0" ]
+              }
+            ]
+          }
+        ],
+        "Count": 0,
+        "Genus": []
+      },
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
-            "MinCount": 1
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 1
           }
         ],
-        "Count": 1,
-        "Genus": null
+        "Count": 60,
+        "Genus": []
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+        "TId": "9fec11b1-8050-4027-ad8b-2637e6b49d42",
+        "Count": 1
       }
     ]
-  }
+  },
+  "name_txt": 10297,
+  "comment_txt": 10304,
+  "JiaoBiao": []
 }

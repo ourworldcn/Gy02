@@ -625,6 +625,24 @@ namespace GY02.Publisher
     #region 账号及登录相关
 
     /// <summary>
+    /// T1228合作伙伴登录的的功能返回值封装类。
+    /// </summary>
+    public class LoginT1228ReturnDto : LoginReturnDto
+    {
+    }
+
+    /// <summary>
+    /// T1228合作伙伴登录的的功能参数封装类。
+    /// </summary>
+    public class LoginT1228ParamsDto
+    {
+        /// <summary>
+        /// 发行商SDK给的token。
+        /// </summary>
+        public string Token { get; set; }
+    }
+
+    /// <summary>
     /// 
     /// </summary>
     [AutoMap(typeof(LoginT78Command), ReverseMap = true)]
@@ -2656,6 +2674,29 @@ namespace GY02.Publisher
     }
 
     #endregion T127相关
+
+    #region T1228相关
+
+    /// <summary>
+    /// 支付回调接口的参数封装类。
+    /// </summary>
+    public class Payed1228ParamsDto
+    {
+    }
+
+    /// <summary>
+    /// 支付回调接口的返回值封装类。
+    /// </summary>
+    public class Payed1228ReturnDto
+    {
+        /// <summary>
+        /// success表示成功。其他值都是失败。
+        /// </summary>
+        [JsonPropertyName("result")]
+        public string Result { get; set; }
+    }
+
+    #endregion T1228相关
 
     #region 兑换码相关
 

@@ -36,9 +36,9 @@ https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetai
 
 F871361D-A803-4F7E-B222-13216A89E9FA 上传模板的凭据
 
-phl.self.1stlightstudio.com 自测服务器地址。
+自测服务器地址。 phl.self.1stlightstudio.com 
 9bK2frUv0ivRjLFtGlZ?aOf*CL(!4e6Y
 
 飞书接入在线文档 https://wiki.meetgames.com/distribution-service/SDKAccessDocument/loginPayment/loginIndex
 飞书深诺 https://www.meetsocial.com/company.html
-飞书深诺南美服务器 SA.meetsocial.1stlightstudio.com:20081 
+飞书深诺南美服务器 SA.meetsocial.1stlightstudio.com:20443 
