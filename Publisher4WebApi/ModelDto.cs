@@ -2678,22 +2678,137 @@ namespace GY02.Publisher
     #region T1228相关
 
     /// <summary>
+    /// 获取订单功能的参数封装类。
+    /// </summary>
+    public class GetT1228OrderParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 获取订单的返回值封装类。
+    /// </summary>
+    public class GetT1228OrderReturnDto : ReturnDtoBase
+    {
+    }
+
+    /// <summary>
     /// 支付回调接口的参数封装类。
     /// </summary>
     public class Payed1228ParamsDto
     {
+        /// <summary>
+        /// 签名字段顺序列表。
+        /// </summary>
+        public List<string> signOrder { get; set; }
+
+        /// <summary>
+        /// 商品类型，应用平台
+        /// </summary>
+        public string productType { get; set; }
+
+        /// <summary>
+        /// 各平台配置的应用内唯一编码
+        /// </summary>
+        public string productCode { get; set; }
+
+        /// <summary>
+        /// 第三方平台生成的原始订单号
+        /// </summary>
+        public string originOrderId { get; set; }
+
+        /// <summary>
+        /// 第三方原始订单回调数据
+        /// </summary>
+        public string originInfo { get; set; }
+
+        /// <summary>
+        /// 订单唯一编号
+        /// </summary>
+        public long orderId { get; set; }
+
+        /// <summary>
+        /// 固定值orderPayed。
+        /// </summary>
+        public string @event { get; set; }
+
+        /// <summary>
+        /// 用户上传的订单数据。
+        /// </summary>
+        public T1218PayedCustomInfo customInfo { get; set; }
+
+        /// <summary>
+        /// 创建时间.
+        /// </summary>
+        public string createTime { get; set; }
+
+        /// <summary>
+        /// 应用唯一编号
+        /// </summary>
+        public long appId { get; set; }
+    }
+
+    /// <summary>
+    /// customInfo参数类型。
+    /// </summary>
+    public class T1218PayedCustomInfo
+    {
+        /// <summary>
+        /// 商品类型
+        /// </summary>
+        public string productType { get; set; }
+
+        /// <summary>
+        /// 商品ID	
+        /// </summary>
+        public string productId { get; set; }
+
+        /// <summary>
+        /// 角色信息	
+        /// </summary>
+        public T1218PayedRoleInfo roleInfo { get; set; }
+    }
+
+    /// <summary>
+    /// roleInfo参数说明.
+    /// </summary>
+    public class T1218PayedRoleInfo
+    {
+        /// <summary>
+        /// 角色ID
+        /// </summary>
+        public string roleId { get; set; }
+
+        /// <summary>
+        /// 角色名	
+        /// </summary>
+        public string roleName { get; set; }
+
+        /// <summary>
+        /// 角色等级	
+        /// </summary>
+        public string roleLevel { get; set; }
+
+        /// <summary>
+        /// 服务器名称	
+        /// </summary>
+        public string serverName { get; set; }
+
+        /// <summary>
+        /// vip等级	
+        /// </summary>
+        public string vipLevel { get; set; }
     }
 
     /// <summary>
     /// 支付回调接口的返回值封装类。
     /// </summary>
-    public class Payed1228ReturnDto
+    public class Payed1228ReturnDto : ReturnDtoBase
     {
         /// <summary>
         /// success表示成功。其他值都是失败。
         /// </summary>
         [JsonPropertyName("result")]
-        public string Result { get; set; }
+        public string Result { get; set; } = "success";
     }
 
     #endregion T1228相关

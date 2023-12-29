@@ -746,16 +746,68 @@
             T1228合作伙伴相关功能的控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.T1228Controller.#ctor(AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:Gy02.Controllers.T1228Controller.#ctor(AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.T1228Controller})">
             <summary>
             构造函数
             </summary>
+        </member>
+        <member name="F:Gy02.Controllers.T1228Controller._Secret">
+            <summary>
+            SDK服务器颁发的密钥。
+            </summary>
+        </member>
+        <member name="F:Gy02.Controllers.T1228Controller._ClientSecret">
+            <summary>
+            客户端密钥。
+            </summary>
+        </member>
+        <member name="F:Gy02.Controllers.T1228Controller._ClientId">
+            <summary>
+            客户端ID。
+            </summary>
+        </member>
+        <member name="F:Gy02.Controllers.T1228Controller._Key">
+            <summary>
+            后台秘钥。
+            </summary>
+        </member>
+        <member name="F:Gy02.Controllers.T1228Controller._AppId">
+            <summary>
+            AppId。
+            </summary>
+        </member>
+        <member name="F:Gy02.Controllers.T1228Controller._CallbackUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T1228Controller.GetT1228Order(GY02.Publisher.GetT1228OrderParamsDto)">
+            <summary>
+            获取订单。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
         </member>
         <member name="M:Gy02.Controllers.T1228Controller.Payed1228(GY02.Publisher.Payed1228ParamsDto)">
             <summary>
             支付回调接口。
             </summary>
             <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.T1228Controller.GetString(System.Collections.Generic.IEnumerable{System.String},System.String)">
+            <summary>
+            获取验证的字符串。
+            </summary>
+            <param name="strs"></param>
+            <param name="secret"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.T1228Controller.GetMD5(System.String)">
+            <summary>
+            获取字符串的md5后base64编码字符串。
+            </summary>
+            <param name="str"></param>
             <returns></returns>
         </member>
         <member name="T:Gy02.Controllers.T127Controller">
