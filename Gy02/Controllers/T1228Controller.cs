@@ -86,7 +86,7 @@ namespace Gy02.Controllers
         {
             var result = new Payed1228ReturnDto();
             _Logger.LogInformation($"T1228/Payed1228收到支付确认调用，参数：{JsonSerializer.Serialize(model)}");
-            var str = GetString(model.signOrder, _Secret);
+            var str = GetString(model);
             var md5 = GetMD5(str);
             var id = Guid.NewGuid();
             _Logger.LogInformation($"T1228/Payed1228确认支付调用。id={id}");
@@ -97,12 +97,21 @@ namespace Gy02.Controllers
         /// <summary>
         /// 获取验证的字符串。
         /// </summary>
-        /// <param name="strs"></param>
-        /// <param name="secret"></param>
+        /// <param name="dto"></param>
         /// <returns></returns>
-        string GetString(IEnumerable<string> strs, string secret)
+        static string GetString(Payed1228ParamsDto dto)
         {
-            return $"{string.Join('&', strs)}&{secret}";
+            StringBuilder sb = new StringBuilder();
+            var type = dto.GetType();
+            var pis = type.GetProperties();
+            foreach (var item in dto.signOrder)
+            {
+                var pi = pis.First(c => c.Name == item);
+                var val = pi.GetValue(dto);
+                sb.Append($"{item}={val?.ToString()}&");
+            }
+            sb.Append($"secret={_Secret}");
+            return sb.ToString();
         }
 
         /// <summary>

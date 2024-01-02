@@ -267,10 +267,11 @@ namespace GY02
                 using HttpClient client = new HttpClient();
                 //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
                 //var str1 = r.Content.ReadAsStringAsync().Result;
-                var b = svc.GetOrderState("com.duangphl.07", "hpohhpfgbielodmhiflcefhd.AO-J1OwdtIEgJGxcMDtxK880anOSCy7yirhq0W6S4--tlDmmTrZOEv-CLcJzMwBuxLJ1xiw_1uaTX2-i4dppDQAY0SPTAeFHEFl6V1yTpTwVxBKiObGjjlA",
-                    out var result);
-                var host = Dns.GetHostAddresses("phl.self.1stlightstudio.com");
-                var host1 = Dns.GetHostAddresses(host[0].ToString());
+                //var b = svc.GetOrderState("com.duangphl.07", "hpohhpfgbielodmhiflcefhd.AO-J1OwdtIEgJGxcMDtxK880anOSCy7yirhq0W6S4--tlDmmTrZOEv-CLcJzMwBuxLJ1xiw_1uaTX2-i4dppDQAY0SPTAeFHEFl6V1yTpTwVxBKiObGjjlA",
+                //    out var result);
+
+                var svc1228 = _Services.GetRequiredService<T1228Manager>();
+                //var str1 = svc1228.GetUserInfo("Bearer eyJhbGciOiJIUzI1NiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAAAG2NQQoCMRAE_9LnOfRsMplMfqOsiLDosjEgiH83J08eu6qg39jR7mPbBCc002yZjMVKSqxVQ3D8_JjB4pGNpJcUU0cR_MMm6OOMhuvT1Qqr0gjBrfcJ9-OxznF5zW91Fnea6ucLRi5lVYwAAAA.BTzlg4Xd40WTN5LK5pw1vgNZouAkfc2MKT70B4TNyhc");
             }
             #endregion 测试用代码
             catch (Exception)

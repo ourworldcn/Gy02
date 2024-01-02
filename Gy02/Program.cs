@@ -120,6 +120,7 @@ internal class Program
         services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(GY02AutoMapperProfile).Assembly);
         services.AddPublisherT78();
         services.AddPublisherT127();
+        services.AddPublisherT1228();
         var app = builder.Build();
 
         #endregion 追加服务到容器

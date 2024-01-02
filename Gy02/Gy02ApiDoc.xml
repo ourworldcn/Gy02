@@ -795,12 +795,11 @@
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:Gy02.Controllers.T1228Controller.GetString(System.Collections.Generic.IEnumerable{System.String},System.String)">
+        <member name="M:Gy02.Controllers.T1228Controller.GetString(GY02.Publisher.Payed1228ParamsDto)">
             <summary>
             获取验证的字符串。
             </summary>
-            <param name="strs"></param>
-            <param name="secret"></param>
+            <param name="dto"></param>
             <returns></returns>
         </member>
         <member name="M:Gy02.Controllers.T1228Controller.GetMD5(System.String)">

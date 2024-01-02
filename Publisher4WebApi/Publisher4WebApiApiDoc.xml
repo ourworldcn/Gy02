@@ -2041,6 +2041,11 @@
             获取订单功能的参数封装类。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GetT1228OrderParamsDto.Orderld">
+            <summary>
+            订单唯一编号。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetT1228OrderReturnDto">
             <summary>
             获取订单的返回值封装类。

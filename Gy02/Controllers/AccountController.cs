@@ -159,7 +159,7 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<LoginT1228ReturnDto> LoginT1228(LoginT1228ParamsDto model, [FromServices] UdpServerManager udpServer)
         {
-            var command = _Mapper.Map<LoginT78Command>(model);
+            var command = _Mapper.Map<LoginT1228Command>(model);
             _SyncCommandManager.Handle(command);
 
             string ip = LocalIp.ToString();

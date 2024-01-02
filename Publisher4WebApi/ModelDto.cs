@@ -627,6 +627,7 @@ namespace GY02.Publisher
     /// <summary>
     /// T1228合作伙伴登录的的功能返回值封装类。
     /// </summary>
+    [AutoMap(typeof(LoginT1228Command))]
     public class LoginT1228ReturnDto : LoginReturnDto
     {
     }
@@ -634,6 +635,7 @@ namespace GY02.Publisher
     /// <summary>
     /// T1228合作伙伴登录的的功能参数封装类。
     /// </summary>
+    [AutoMap(typeof(LoginT1228Command), ReverseMap = true)]
     public class LoginT1228ParamsDto
     {
         /// <summary>
@@ -2682,12 +2684,16 @@ namespace GY02.Publisher
     /// </summary>
     public class GetT1228OrderParamsDto : TokenDtoBase
     {
+        /// <summary>
+        /// 订单唯一编号。
+        /// </summary>
+        public long Orderld { get; set; }
     }
 
     /// <summary>
     /// 获取订单的返回值封装类。
     /// </summary>
-    public class GetT1228OrderReturnDto : ReturnDtoBase
+    public class GetT1228OrderReturnDto : PropertyChangeReturnDto
     {
     }
 
@@ -2734,7 +2740,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 用户上传的订单数据。
         /// </summary>
-        public T1218PayedCustomInfo customInfo { get; set; }
+        public string customInfo { get; set; }
 
         /// <summary>
         /// 创建时间.
