@@ -269,9 +269,10 @@ namespace GY02
                 //var str1 = r.Content.ReadAsStringAsync().Result;
                 //var b = svc.GetOrderState("com.duangphl.07", "hpohhpfgbielodmhiflcefhd.AO-J1OwdtIEgJGxcMDtxK880anOSCy7yirhq0W6S4--tlDmmTrZOEv-CLcJzMwBuxLJ1xiw_1uaTX2-i4dppDQAY0SPTAeFHEFl6V1yTpTwVxBKiObGjjlA",
                 //    out var result);
-
+                var s1 = $"val={null}";
                 var svc1228 = _Services.GetRequiredService<T1228Manager>();
-                //var str1 = svc1228.GetUserInfo("Bearer eyJhbGciOiJIUzI1NiIsInppcCI6IkdaSVAifQ.H4sIAAAAAAAAAG2NQQoCMRAE_9LnOfRsMplMfqOsiLDosjEgiH83J08eu6qg39jR7mPbBCc002yZjMVKSqxVQ3D8_JjB4pGNpJcUU0cR_MMm6OOMhuvT1Qqr0gjBrfcJ9-OxznF5zW91Fnea6ucLRi5lVYwAAAA.BTzlg4Xd40WTN5LK5pw1vgNZouAkfc2MKT70B4TNyhc");
+                var str1 = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"\",\"roleName\":\"\",\"roleLevel\":\"\",\"serverName\":\"\",\"vipLevel\":\"\"}}&secret=YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
+                var str2 = svc1228.GetSign(str1);
             }
             #endregion 测试用代码
             catch (Exception)

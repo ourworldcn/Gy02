@@ -13,7 +13,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// T1228合作伙伴相关功能的控制器。
@@ -23,21 +23,18 @@ namespace Gy02.Controllers
         /// <summary>
         /// 构造函数
         /// </summary>
-        public T1228Controller(IMapper mapper, SyncCommandManager syncCommandManager, ILogger<T1228Controller> logger)
+        public T1228Controller(IMapper mapper, SyncCommandManager syncCommandManager, ILogger<T1228Controller> logger, T1228Manager t1228Manager)
         {
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
             _Logger = logger;
+            _T1228Manager = t1228Manager;
         }
 
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
         ILogger<T1228Controller> _Logger;
-
-        /// <summary>
-        /// SDK服务器颁发的密钥。
-        /// </summary>
-        public const string _Secret = "YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
+        T1228Manager _T1228Manager;
 
         /// <summary>
         /// 客户端密钥。
@@ -65,6 +62,10 @@ namespace Gy02.Controllers
         public const string _CallbackUrl = "https://sa.meetsocial.1stlightstudio.com:20443/api/T1228/Payed1228";
 
         /// <summary>
+        /// 调试地址。
+        /// </summary>
+        public const string DebugUrl = "https://business.meetgames.com/tools/paymentNotice";
+        /// <summary>
         /// 获取订单。
         /// </summary>
         /// <param name="model"></param>
@@ -72,7 +73,7 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<GetT1228OrderReturnDto> GetT1228Order(GetT1228OrderParamsDto model)
         {
-            var result = new GetT1228OrderReturnDto { };
+            var result = new GetT1228OrderReturnDto { }; 
             return result;
         }
 
@@ -86,48 +87,15 @@ namespace Gy02.Controllers
         {
             var result = new Payed1228ReturnDto();
             _Logger.LogInformation($"T1228/Payed1228收到支付确认调用，参数：{JsonSerializer.Serialize(model)}");
-            var str = GetString(model);
-            var md5 = GetMD5(str);
+            var str =_T1228Manager.GetString(model);
+            var md5 =_T1228Manager.GetSign(str);
+
             var id = Guid.NewGuid();
             _Logger.LogInformation($"T1228/Payed1228确认支付调用。id={id}");
             result.DebugMessage = $"{id}";
             return result;
         }
 
-        /// <summary>
-        /// 获取验证的字符串。
-        /// </summary>
-        /// <param name="dto"></param>
-        /// <returns></returns>
-        static string GetString(Payed1228ParamsDto dto)
-        {
-            StringBuilder sb = new StringBuilder();
-            var type = dto.GetType();
-            var pis = type.GetProperties();
-            foreach (var item in dto.signOrder)
-            {
-                var pi = pis.First(c => c.Name == item);
-                var val = pi.GetValue(dto);
-                sb.Append($"{item}={val?.ToString()}&");
-            }
-            sb.Append($"secret={_Secret}");
-            return sb.ToString();
-        }
-
-        /// <summary>
-        /// 获取字符串的md5后base64编码字符串。
-        /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        public static string GetMD5(string str)
-        {
-            var demo = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"5\",\"roleName\":\"6\",\"roleLevel\":\"7\",\"serverName\":\"8\",\"vipLevel\":\"9\"}}&secret=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";
-            var tmp = Encoding.UTF8.GetBytes(str);
-            var md5 = MD5.HashData(tmp);
-            var result = Convert.ToBase64String(md5);
-            Debug.Assert(result[^2..] == "==");
-            return result;
-        }
     }
 
 }
