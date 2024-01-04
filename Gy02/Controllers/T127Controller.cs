@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using GY02;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
@@ -11,7 +10,7 @@ using OW.SyncCommand;
 using OW.TemplateDb.Entity;
 using System.Text.Json;
 
-namespace Gy02.Controllers
+namespace GY02.Controllers
 {
     /// <summary>
     /// 127伙伴接入相关。

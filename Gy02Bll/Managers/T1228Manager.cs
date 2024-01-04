@@ -73,8 +73,17 @@ namespace GY02.Managers
             var pis = type.GetProperties();
             foreach (var item in dto.signOrder)
             {
-                var pi = pis.First(c => c.Name == item);
-                var val = pi.GetValue(dto);
+                var pi = pis.FirstOrDefault(c => c.Name == item);
+                object val;
+                if (pi is null)
+                {
+                    if (dto.ExtensionData.TryGetValue(item, out var obj))
+                        val = obj.ToString();
+                    else
+                        throw new InvalidOperationException("无法找到需要排序的字段。");
+                }
+                else
+                    val = pi.GetValue(dto);
                 sb.Append($"{item}={val?.ToString()}&");
             }
             sb.Append($"secret={_Secret}");
@@ -226,6 +235,12 @@ namespace GY02.Managers
         /// 签名。
         /// </summary>
         public string sign { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [JsonExtensionData]
+        public Dictionary<string, string> ExtensionData { get; set; } = new Dictionary<string, string>();
     }
 
     /// <summary>
@@ -242,14 +257,19 @@ namespace GY02.Managers
         }
 
         /// <summary>
+        /// 商品ID	
+        /// </summary>
+        public string productId { get; set; }
+
+        /// <summary>
         /// 商品类型
         /// </summary>
         public string productType { get; set; }
 
         /// <summary>
-        /// 商品ID	
+        /// 透传参数(最多250字符)
         /// </summary>
-        public string productId { get; set; }
+        public string developerPayload { get; set; }
 
         /// <summary>
         /// 角色信息	
