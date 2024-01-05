@@ -19,6 +19,9 @@ namespace GY02.Managers
      * https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri={重定向址}&client_id={创建的clientId}
      * https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/androidpublisher&response_type=code&access_type=offline&redirect_uri=https://developers.google.com&client_id=520270928290-qrd2n0u7ksknrgeulah2hhooim4mgg8v.apps.googleusercontent.com
      * */
+    /// <summary>
+    /// 
+    /// </summary>
     public class T127ManagerOptions : IOptions<T127ManagerOptions>
     {
         public T127ManagerOptions Value => this;
@@ -53,6 +56,7 @@ namespace GY02.Managers
         //public const string _EncodedCode = "4%2F0AfJohXmshrd_rvdpyYaDpCv43JXUptt7Z-y5Hn6KwLJD51XSg06arLLPO_xZf1jI9rzOJg";
         //public const string _EncodedCode = "4%2F0AfJohXmdQZhQsY87pjCzJPR22NadZJud7czeCUwrZlxTBQMmQNjWTlldWiTK5semhr1HkA";
         public const string _EncodedCode = "4%2F0AfJohXmODRMcGsx0hf7UUyKxrbaBiErMieGPh3Bq_PdKbvDxpzNAkrb1WbAXkO97Znb6_Q";
+
         /// <summary>
         /// 解码后的Code。
         /// </summary>
