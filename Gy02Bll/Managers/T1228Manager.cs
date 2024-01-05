@@ -39,14 +39,27 @@ namespace GY02.Managers
         const string _GetUserInfoUrl = $"https://{SdkServerUrl}/auth/myProfile";
 
         /// <summary>
-        /// SDK服务器颁发的密钥。
-        /// </summary>
-        public const string _Secret = "YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
-
-        /// <summary>
         /// 回调地址。
         /// </summary>
         const string _PayedCallback = "https://sa.meetsocial.1stlightstudio.com:20443/api/T1228/Payed1228";
+
+        /*
+         * AppID: 514540092563308819
+         * AppKey: CNOjqhub75t3mbmYtmKJEE4J8i8oaBg2Erz8
+         * AppSecret: YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR
+         */
+
+        /// <summary>
+        /// 应用Id。
+        /// </summary>
+        public const string AppID = "514540092563308819";
+
+        public const string AppKey = "CNOjqhub75t3mbmYtmKJEE4J8i8oaBg2Erz8";
+
+        /// <summary>
+        /// 生成签名的密钥。
+        /// </summary>
+        public const string AppSecret = "YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
 
         /// <summary>
         /// 获取用户信息。
@@ -86,7 +99,7 @@ namespace GY02.Managers
                     val = pi.GetValue(dto);
                 sb.Append($"{item}={val?.ToString()}&");
             }
-            sb.Append($"secret={_Secret}");
+            sb.Append($"secret={AppSecret}");
             return sb.ToString();
         }
 
@@ -240,7 +253,7 @@ namespace GY02.Managers
         /// 
         /// </summary>
         [JsonExtensionData]
-        public Dictionary<string, string> ExtensionData { get; set; } = new Dictionary<string, string>();
+        public Dictionary<string, object> ExtensionData { get; set; } = new Dictionary<string, object>();
     }
 
     /// <summary>

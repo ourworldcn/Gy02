@@ -70,7 +70,7 @@ internal class Program
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-
+        
         #region 配置Swagger
         //注册Swagger生成器，定义一个 Swagger 文档
         services.AddSwaggerGen(c =>
@@ -132,8 +132,9 @@ internal class Program
 
         IWebHostEnvironment env = app.Environment;
         app.UseResponseCompression();
-
         app.UseResponseCaching();
+
+        app.UseStaticFiles();
         //app.UseAuthorization();
         app.MapControllers();
         

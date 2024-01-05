@@ -56,7 +56,7 @@ namespace GY02.Controllers
         /// <summary>
         /// 后台秘钥。
         /// </summary>
-        public const string _Key = " MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAimBobSIjfnCphlDMD6ivf0q1HgbCvqC8/1uHrTqLHKSIs1oSbhredWi/BSU6pUBiMM63eMIb98niego6JXg9jviQJjaNyaKbjM1KvM/LqFN5/kGRFRpR+kDQya8PXlm6jCxwQv1Bo6pfbUEJoiWtP9K7CGN0uOkCrvkt8ba+jL7sfVTYEo4eroyjzZCzwy3h/E5OAMQBwCebIDL7zFSa/XEA2CsoDLj0vPWSyISJVZGvz2TjQ/LxnLbdcrzJY1RSllUzXaZTuN7mv9uhqEQHVi2J52G+yPCRSzzvxlpjMlTvVq4tUp8Jdz26usq6P2dQz/Kl6wmlX7lvqbiZXeLc8wIDAQAB";
+        public const string _Key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAimBobSIjfnCphlDMD6ivf0q1HgbCvqC8/1uHrTqLHKSIs1oSbhredWi/BSU6pUBiMM63eMIb98niego6JXg9jviQJjaNyaKbjM1KvM/LqFN5/kGRFRpR+kDQya8PXlm6jCxwQv1Bo6pfbUEJoiWtP9K7CGN0uOkCrvkt8ba+jL7sfVTYEo4eroyjzZCzwy3h/E5OAMQBwCebIDL7zFSa/XEA2CsoDLj0vPWSyISJVZGvz2TjQ/LxnLbdcrzJY1RSllUzXaZTuN7mv9uhqEQHVi2J52G+yPCRSzzvxlpjMlTvVq4tUp8Jdz26usq6P2dQz/Kl6wmlX7lvqbiZXeLc8wIDAQAB";
 
         /// <summary>
         /// AppId。
