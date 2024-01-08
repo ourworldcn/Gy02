@@ -206,18 +206,18 @@ namespace GY02.Managers
     {
         /*
          * {
-  "purchaseTimeMillis": "1623980699933",//购买产品的时间，自纪元（1970 年 1 月 1 日）以来的毫秒数。
-  "purchaseState": 0,//订单的购买状态。可能的值为：0. 已购买 1. 已取消 2. 待定
-  "consumptionState": 0,//产品的消费状态。可能的值为： 0. 尚未消耗 1. 已消耗
-  "developerPayload": "",
-  "orderId": "GPA.3398-6726-1036-80298",//google订单号
-  "purchaseType": 0,
-  "acknowledgementState": 0,
-  "kind": "androidpublisher#productPurchase",
-  "obfuscatedExternalAccountId": "SDK2106180944530041",//上面客户支付时的透传字段，google指导是用来存放用户信息的，不能过长，否则客户端不能支付
-  "obfuscatedExternalProfileId": "",
-  "regionCode": "HK"
-}
+          "purchaseTimeMillis": "1623980699933",//购买产品的时间，自纪元（1970 年 1 月 1 日）以来的毫秒数。
+          "purchaseState": 0,//订单的购买状态。可能的值为：0. 已购买 1. 已取消 2. 待定
+          "consumptionState": 0,//产品的消费状态。可能的值为： 0. 尚未消耗 1. 已消耗
+          "developerPayload": "",
+          "orderId": "GPA.3398-6726-1036-80298",//google订单号
+          "purchaseType": 0,
+          "acknowledgementState": 0,
+          "kind": "androidpublisher#productPurchase",
+          "obfuscatedExternalAccountId": "SDK2106180944530041",//上面客户支付时的透传字段，google指导是用来存放用户信息的，不能过长，否则客户端不能支付
+          "obfuscatedExternalProfileId": "",
+          "regionCode": "HK"
+            }
          * */
         /// <summary>
         /// 购买产品的时间，自纪元（1970 年 1 月 1 日）以来的毫秒数。
