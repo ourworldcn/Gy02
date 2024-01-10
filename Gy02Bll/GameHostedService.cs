@@ -264,15 +264,18 @@ namespace GY02
             try
             {
                 var svc = _Services.GetRequiredService<T127Manager>();
+                var svc1 = _Services.GetRequiredService<LoginName26Generator>();
                 using HttpClient client = new HttpClient();
                 //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
                 //var str1 = r.Content.ReadAsStringAsync().Result;
                 //var b = svc.GetOrderState("com.duangphl.07", "hpohhpfgbielodmhiflcefhd.AO-J1OwdtIEgJGxcMDtxK880anOSCy7yirhq0W6S4--tlDmmTrZOEv-CLcJzMwBuxLJ1xiw_1uaTX2-i4dppDQAY0SPTAeFHEFl6V1yTpTwVxBKiObGjjlA",
                 //    out var result);
-                var s1 = $"val={null}";
-                var svc1228 = _Services.GetRequiredService<T1228Manager>();
-                var str1 = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"\",\"roleName\":\"\",\"roleLevel\":\"\",\"serverName\":\"\",\"vipLevel\":\"\"}}&secret=YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
-                var str2 = svc1228.GetSign(str1);
+                //var s1 = $"val={null}";
+                //var svc1228 = _Services.GetRequiredService<T1228Manager>();
+                //var str1 = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"\",\"roleName\":\"\",\"roleLevel\":\"\",\"serverName\":\"\",\"vipLevel\":\"\"}}&secret=YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
+                //var str2 = svc1228.GetSign(str1);
+                int i = 1023;
+                var str1 = $"FY{Interlocked.Increment(ref i):X6}";
             }
             #endregion 测试用代码
             catch (Exception)
