@@ -630,6 +630,22 @@ namespace GY02.Publisher
     [AutoMap(typeof(LoginT1228Command))]
     public class LoginT1228ReturnDto : LoginReturnDto
     {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public LoginT1228ReturnDto()
+        {
+        }
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
     }
 
     /// <summary>

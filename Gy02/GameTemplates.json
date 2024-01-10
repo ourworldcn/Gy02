@@ -4556,25 +4556,25 @@
       "Id": "3f37e371-eee4-49a6-bd20-5122f1e88fad",
       "DisplayName": "熊猫 绿",
       "Gid": 120202010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222],\"Genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11878,\"comment_txt\":11879,\"atk\":null,\"def\":null,\"pow\":[70,78,86,94,102,110,118,126,134,142,150,158,166,174,182,190,198,206,214,222],\"Genus\":[\"p_gn\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "fa658261-f1b7-4d6e-8633-27873eac7995",
       "DisplayName": "熊猫 蓝",
       "Gid": 120302010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11878,\"comment_txt\":11879,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":false},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "5d10ca8a-1874-4a1d-a71b-db1706142461",
       "DisplayName": "熊猫 紫",
       "Gid": 121102010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":true},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11878,\"comment_txt\":11879,\"atk\":null,\"def\":null,\"pow\":[150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":true},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "7646818c-0cb2-443f-83f6-55269674e747",
       "DisplayName": "熊猫 紫+1",
       "Gid": 121202010,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11876,\"comment_txt\":11877,\"atk\":null,\"def\":null,\"pow\":[180,198,216,234,252,270,288,306,324,342,360,378,396,414,432,450,468,486,504,522,540,558,576,594,612,630,648,666,684,702,720,738,756,774,792,810,828,846,864,882,900,918,936,954,972,990,1008,1026,1044,1062,1080,1098,1116,1134,1152,1170,1188,1206,1224,1242],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":true},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11878,\"comment_txt\":11879,\"atk\":null,\"def\":null,\"pow\":[180,198,216,234,252,270,288,306,324,342,360,378,396,414,432,450,468,486,504,522,540,558,576,594,612,630,648,666,684,702,720,738,756,774,792,810,828,846,864,882,900,918,936,954,972,990,1008,1026,1044,1062,1080,1098,1116,1134,1152,1170,1188,1206,1224,1242],\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"p_skills\":[{\"skillsid\":\"02c69591-b1d6-47fb-a992-c8dd9c485b54\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"3ff79b86-e801-47d8-9dce-142025a2bf31\",\"enable\":true},{\"skillsid\":\"d46359c0-13a7-4a78-a873-b7a17d85689a\",\"enable\":false},{\"skillsid\":\"698b41a1-db8b-4e00-b669-112bb2f925fd\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "f8c8d599-df2e-42ee-bd40-7a1739656f67",
@@ -4592,7 +4592,7 @@
       "Id": "4caced11-8773-43ff-8c19-23d2a703c61b",
       "DisplayName": "熊 蓝",
       "Gid": 120302011,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11878,\"comment_txt\":11879,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_bear\"],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true},{\"skillsid\":\"e429c487-4c5d-46d5-8aac-d3492397babf\",\"enable\":true},{\"skillsid\":\"a4789c2b-26ab-4b8d-b2b7-4a33cf01cbb7\",\"enable\":false},{\"skillsid\":\"851829c6-e6d6-4dd5-b0b6-004b6b0a5980\",\"enable\":false},{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11880,\"comment_txt\":11881,\"atk\":null,\"def\":null,\"pow\":[100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260,270,280,290,300,310,320,330,340,350,360,370,380,390],\"Genus\":[\"p_bu\",\"e_zuoqi\",\"zuoqi_bear\"],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true},{\"skillsid\":\"e429c487-4c5d-46d5-8aac-d3492397babf\",\"enable\":true},{\"skillsid\":\"a4789c2b-26ab-4b8d-b2b7-4a33cf01cbb7\",\"enable\":false},{\"skillsid\":\"851829c6-e6d6-4dd5-b0b6-004b6b0a5980\",\"enable\":false},{\"skillsid\":\"4a28cf9b-199c-4b42-940a-a2e893eca0bf\",\"enable\":false}],\"LvUpTId\":\"da8ede17-b3fb-45b1-b7af-1f1d35c2797e\"}"
     },
     {
       "Id": "b765092d-2a8f-4375-b633-99f781609fd0",
@@ -7483,7 +7483,7 @@
       "Id": "6189b795-512b-4768-b4e0-859ef0636d36",
       "DisplayName": "熊和熊猫的孵化动物产出",
       "Gid": 170101109,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c06b7de2-7ae5-4897-a11a-f025a827617c\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d79bf01e-0eba-427d-a4a6-c280a801f096\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"97d2639a-048e-4426-bec7-f8043093c57f\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c06b7de2-7ae5-4897-a11a-f025a827617c\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d79bf01e-0eba-427d-a4a6-c280a801f096\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"97d2639a-048e-4426-bec7-f8043093c57f\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "5b3624bd-01d2-445b-90eb-f37f0fcf039f",
@@ -13086,7 +13086,7 @@
       "Id": "dfe3e989-f5fc-48b8-9ab2-401edeb2437f",
       "DisplayName": "每日任务-总任务6",
       "Gid": 220211006,
-      "PropertiesString": "{\"Genus\":[\"cj_meiri\",\"goto_main_level\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":5,\"Modulus\":7,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"GroupMask\":3}]}],\"Exp2LvSequence\":[20,40,60,100,140,180],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":52}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":2}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}]]},\"name_txt\":111111}"
+      "PropertiesString": "{\"Genus\":[\"cj_meiri\",\"goto_main_level\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":5,\"Modulus\":7,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"GroupMask\":3}]}],\"Exp2LvSequence\":[20,40,60,100,140,180],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":5}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}],[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":2}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}]]},\"name_txt\":111111}"
     },
     {
       "Id": "aea8e667-1f4b-4097-910b-4f63a9633ff3",
@@ -15933,6 +15933,186 @@
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
+      "Id": "7255129f-0db2-4f59-abcd-3c3c7422438e",
+      "DisplayName": "灰色鲨鱼怪（近战）",
+      "Gid": 320101027,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "c87db66f-3407-4ce8-b8e9-838812d12f7d",
+      "DisplayName": "蓝色鲨鱼怪（近战）",
+      "Gid": 320101028,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "463db488-1f22-4b22-94b5-a08240f0211d",
+      "DisplayName": "小熊（召唤）",
+      "Gid": 320201117,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e2ed4dec-7c14-4da3-93b2-8331301fa92e",
+      "DisplayName": "快速子弹（精英）",
+      "Gid": 320203010,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_jingying\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e2d2115d-cee6-4f1a-b173-ab3b647307b7",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206043,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "5bc2747f-dc6f-4f7c-a067-c588f6494a03",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206044,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "58f1269e-24e5-4a8c-9b9e-7bcf363d0105",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206045,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "f224be29-5f3b-4702-9845-59abc7c739f0",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206046,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b5c8c6e4-501c-4614-b468-921d5498e194",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206047,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "10121ab1-4102-45c8-a79b-ddddc6ddc687",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206048,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4f6bd00e-f8b4-49aa-adaf-4f0444955ea9",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206049,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8cdba755-0144-4f98-878b-69a370b49bce",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206050,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "08f9e9bc-2d66-455d-9f85-2588d6dc8431",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206051,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "6bc2dce8-2533-48ea-9232-8c79b8271e64",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206052,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "cd817c5e-08ae-4051-984c-231ec3e025c2",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206053,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8f2e2998-8368-4b67-bff1-651588de29e6",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206054,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "30cc7bf9-bff2-4043-830f-d37a2e7312a5",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206055,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "021454d4-257f-42fd-bf98-3b990edaa363",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206056,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b4bf286a-3137-4a00-88d9-96386f3843e1",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206057,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "8c62efe9-76c8-40df-9804-1534c6f23aa0",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206058,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "2b2e7dc8-6dc8-4582-bc8c-1743b3e80e31",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206059,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "32f872d5-320f-4cec-a1d3-935668f5e9fb",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206060,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "b4c932f6-fab7-490f-9270-c6443dcffdae",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206061,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "f9d8db69-19d5-4a89-9429-841d7454ee89",
+      "DisplayName": "出生点旗子",
+      "Gid": 320206161,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "4c539721-8f22-452c-949b-a277d8bc0b20",
+      "DisplayName": "45关出生点蛋",
+      "Gid": 320206545,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "feb05687-1159-487c-b6cd-27dd1a2c108b",
+      "DisplayName": "54关出生点蛋",
+      "Gid": 320206554,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "631dbd97-cb1f-4775-91c5-f765335ebdf8",
+      "DisplayName": "38关出生点子弹蛋",
+      "Gid": 320206738,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "1bf92676-0553-40d4-b0bc-3916a2217ce6",
+      "DisplayName": "47关出生点子弹蛋",
+      "Gid": 320206747,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "be88a656-4815-4f04-b763-1586b4624ea6",
+      "DisplayName": "冰石头人Boss",
+      "Gid": 320307008,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "21a5f012-1b4e-4cd6-ae9a-e9fd2b54c06d",
+      "DisplayName": "向日葵Boss2",
+      "Gid": 320307009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
       "Id": "eb33553d-89e1-4683-b0a2-04449485d908",
       "DisplayName": "狼头熊身（召唤小）",
       "Gid": 320208112,
@@ -16068,6 +16248,18 @@
       "Id": "e93ab556-cc3a-4794-a49a-46115a7ed997",
       "DisplayName": "石头蟹 5 （特殊关卡 弹珠球）",
       "Gid": 320209006,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "e12a50ee-6ea4-472d-98e6-bdcef8b1176f",
+      "DisplayName": "特殊关卡金币关的旗子",
+      "Gid": 320206903,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "Id": "3a602c79-eeaa-4cc9-87cf-7f0b5ffff8fc",
+      "DisplayName": "特殊关卡经验关的旗子",
+      "Gid": 320206904,
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {

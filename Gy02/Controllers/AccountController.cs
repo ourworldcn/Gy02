@@ -161,13 +161,18 @@ namespace GY02.Controllers
         {
             var command = _Mapper.Map<LoginT1228Command>(model);
             _SyncCommandManager.Handle(command);
-
             string ip = LocalIp.ToString();
             var result = _Mapper.Map<LoginT1228ReturnDto>(command);
-            var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-            var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
-            result.WorldServiceHost = worldServiceHost;
-            result.UdpServiceHost = udpServiceHost;
+            result.FillErrorFrom(command);
+            if (!result.HasError)
+            {
+                var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+                var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+                result.WorldServiceHost = worldServiceHost;
+                result.UdpServiceHost = udpServiceHost;
+                result.LoginName = command.User.LoginName;
+                result.Pwd = command.Pwd;
+            }
             return result;
         }
 
