@@ -264,7 +264,7 @@ namespace GY02
             try
             {
                 var svc = _Services.GetRequiredService<T127Manager>();
-                var svc1 = _Services.GetRequiredService<LoginName26Generator>();
+                var svc1 = _Services.GetRequiredService<LoginNameGenerator>();
                 using HttpClient client = new HttpClient();
                 //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
                 //var str1 = r.Content.ReadAsStringAsync().Result;

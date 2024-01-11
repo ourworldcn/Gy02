@@ -28,8 +28,6 @@ namespace GY02.Base
             services.UseSyncCommand(hsAssm);
 
             services.TryAddSingleton<PasswordGenerator>(); //密码生成器
-            services.TryAddSingleton<LoginNameGenerator>();    //登录名生成器
-            services.TryAddSingleton<LoginName26Generator>();    //登录名生成器
             services.TryAddSingleton<OwServerMemoryCache>();
 
             services.AddOwScheduler();

@@ -74,7 +74,7 @@ namespace GY02.Commands
             if (string.IsNullOrWhiteSpace(command.LoginName))   //若需要生成登录名
             {
                 var date = OwHelper.WorldNow;
-                command.LoginName = _LoginNameGenerator.Generate();
+                command.LoginName = _LoginNameGenerator.GetNext();
             }
             using var dwLoginName = DisposeHelper.Create(SingletonLocker.TryEnter, SingletonLocker.Exit, command.LoginName, TimeSpan.FromSeconds(2));   //锁定登录名
             if (dwLoginName.IsEmpty)    //若无法锁定登录名

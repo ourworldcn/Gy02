@@ -116,7 +116,7 @@ internal class Program
 
         services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"))
             .Configure<UdpServerManagerOptions>(builder.Configuration.GetSection("UdpServerManagerOptions"))
-            .Configure<LoginName26GeneratorOptions>(builder.Configuration.GetSection("LoginName26GeneratorOptions"));  //模板配置的选项模式
+            .Configure<LoginNameGeneratorOptions>(builder.Configuration.GetSection("LoginNameGeneratorOptions"));  //模板配置的选项模式
 
         services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(GY02AutoMapperProfile).Assembly);
         services.AddPublisherT78();

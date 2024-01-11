@@ -1,4 +1,5 @@
 ﻿using GY02.Managers;
+using GY02.Publisher;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,6 +10,7 @@ using OW.Game.Managers;
 using OW.Game.Store;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -16,96 +18,84 @@ using System.Threading.Tasks;
 
 namespace GY02.Base
 {
-    public class LoginNameGenerator
+    public class LoginNameGeneratorOptions : IOptions<LoginNameGeneratorOptions>
     {
-        public LoginNameGenerator() { }
+        public LoginNameGeneratorOptions Value => this;
 
-        private bool _QuicklyRegisterSuffixSeqInit;
-        private int _QuicklyRegisterSuffixSeq;
-
-        [MethodImpl(MethodImplOptions.Synchronized)]
-        int GetQuicklyRegisterSuffixSeq()
-        {
-            if (!_QuicklyRegisterSuffixSeqInit)
-            {
-                using var db = VWorld.CreateNewUserDbContext();
-                var maxSeqStr = db.VirtualThings.Where(c => c.ExtraString.StartsWith("gy") && EF.Functions.IsNumeric(c.ExtraString.Substring(2)))
-                    .OrderByDescending(c => c.ExtraString.Length).ThenByDescending(c => c.ExtraString).FirstOrDefault()?.ExtraString ?? "0";
-                var len = maxSeqStr.Reverse().TakeWhile(c => char.IsDigit(c)).Count();
-                _QuicklyRegisterSuffixSeq = int.Parse(maxSeqStr[^len..^0]);
-                _QuicklyRegisterSuffixSeqInit = true;
-            }
-            return Interlocked.Increment(ref _QuicklyRegisterSuffixSeq);
-        }
-
-        public string Generate()
-        {
-            return $"gy{GetQuicklyRegisterSuffixSeq()}";
-        }
-    }
-
-    public class LoginName26GeneratorOptions : IOptions<LoginName26GeneratorOptions>
-    {
         /// <summary>
         /// 前缀。
         /// </summary>
         public string Prefix { get; set; }
 
-        public LoginName26GeneratorOptions Value => this;
+        /// <summary>
+        /// 尾数位数。
+        /// </summary>
+        [Range(1, 8)]
+        public int SuffixLength { get; set; } = 6;
+
+        /// <summary>
+        /// 尾数类型码int.ToString使用的类型码。仅支持X或D。
+        /// </summary>
+        [RegularExpression("[XD]")]
+        public string SuffixMask { get; set; } = "X";
     }
 
     /// <summary>
     /// 2-6码登录名生成器。
     /// </summary>
-    public class LoginName26Generator
+    [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
+    public class LoginNameGenerator
     {
-        public LoginName26Generator(IOptions<LoginName26GeneratorOptions> options)
+        public LoginNameGenerator(IOptions<LoginNameGeneratorOptions> options, IDbContextFactory<GY02UserContext> dbContextFactory)
         {
             _Options = options.Value;
+            _DbContextFactory = dbContextFactory;
+            _InitTask = Task.Run(Initialize);
         }
 
-        private bool _QuicklyRegisterSuffixSeqInit;
-        private int _QuicklyRegisterSuffixSeq;
-        LoginName26GeneratorOptions _Options;
-        int _Current = 0;
+        LoginNameGeneratorOptions _Options;
+        IDbContextFactory<GY02UserContext> _DbContextFactory;
+        Task _InitTask;
+
+        int _Current;
 
         /// <summary>
         /// 前缀。
         /// </summary>
         public string Prefix { get; }
 
-        [MethodImpl(MethodImplOptions.Synchronized)]
-        int GetQuicklyRegisterSuffixSeq()
+        /// <summary>
+        /// 初始化，
+        /// TODO 要避免已经溢出的问题，如自己起名DVFFFFFF。
+        /// </summary>
+        private void Initialize()
         {
-            if (!_QuicklyRegisterSuffixSeqInit)
+            using var db = _DbContextFactory.CreateDbContext();
+            var totalLength = _Options.SuffixLength + _Options.Prefix.Length;
+            var coll = db.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString.Length == totalLength && c.ExtraString.StartsWith(_Options.Prefix))
+                .OrderByDescending(c => c.ExtraString).Select(c => c.ExtraString.Substring(_Options.Prefix.Length));
+            var style = _Options.SuffixMask == "X" ? System.Globalization.NumberStyles.HexNumber : System.Globalization.NumberStyles.Integer;
+            for (int i = 0; true; i += 1000)
             {
-                using var db = VWorld.CreateNewUserDbContext();
-                var maxSeqStr = db.VirtualThings.Where(c => c.ExtraString.StartsWith("gy") && EF.Functions.IsNumeric(c.ExtraString.Substring(2)))
-                    .OrderByDescending(c => c.ExtraString.Length).ThenByDescending(c => c.ExtraString).FirstOrDefault()?.ExtraString ?? "0";
-                var len = maxSeqStr.Reverse().TakeWhile(c => char.IsDigit(c)).Count();
-                _QuicklyRegisterSuffixSeq = int.Parse(maxSeqStr[^len..^0]);
-                _QuicklyRegisterSuffixSeqInit = true;
+                var ary = coll.Skip(i).Take(1000).ToArray();
+                if (ary.Length == 0) break;
+                foreach (var item in ary)
+                {
+                    if (int.TryParse(item, style, default, out var suffix))
+                    {
+                        _Current = suffix;
+                        return;
+                    }
+                }
             }
-            return Interlocked.Increment(ref _QuicklyRegisterSuffixSeq);
+            _Current = 0;
         }
 
         public string GetNext()
         {
-            return $"{_Options.Prefix}{Interlocked.Increment(ref _QuicklyRegisterSuffixSeq)}";
+            _InitTask.Wait();
+            return $"{_Options.Prefix}{Interlocked.Increment(ref _Current).ToString(_Options.SuffixMask + _Options.SuffixLength)}";
         }
 
-        public string Generate()
-        {
-            return $"gy{GetQuicklyRegisterSuffixSeq()}";
-        }
-    }
-
-    public static class LoginName26GeneratorExtensions
-    {
-        public static IServiceCollection AddLoginName26Generator(this IServiceCollection services)
-        {
-            services.TryAddSingleton<LoginName26Generator, LoginName26Generator>();
-            return services;
-        }
     }
 }
