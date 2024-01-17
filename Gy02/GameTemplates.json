@@ -10,7 +10,7 @@
       "Id": "07664462-df05-4ba7-886d-b431bb88aa1c",
       "DisplayName": "角色",
       "Gid": 911101001,
-      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"04AB4C60-9E5B-43A8-894F-3477655371BE\"],\"atk\":[20],\"def\":[100],\"pow\":[350],\"crit\":100,\"crit_pct\":0}"
+      "PropertiesString": "{\"TypeGuid\":\"941917CC-E91C-46D7-9F53-A98C3EB4F92E\",\"lv\":0,\"TIdsOfCreate\":[\"18084905-2C57-4B4C-B302-4B8230740FBD\",\"3b163a62-6591-4a93-a385-cf079b20f589\",\"29b7e726-387f-409d-a6ac-ad8670a814f0\",\"4d125986-4a3f-4294-bf54-a70853d719c1\",\"3d141082-0deb-4f59-ac5d-a80e43657ccc\",\"fe312261-2233-4c35-aaf4-bd698e328baf\",\"af7b7b9b-a881-4cbe-bca5-111f7babd73a\",\"14d0e372-909b-485f-b8cb-07c9231b10ff\",\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"9c559895-9a2c-43a7-b793-e879a600487c\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"f1abe4b7-372b-45b2-a9da-eb6930e95cb9\",\"f5022e9f-13da-4a2d-b1b9-d57fc07de232\"],\"atk\":[20],\"def\":[100],\"pow\":[350],\"crit\":100,\"crit_pct\":0}"
     },
     {
       "Id": "CE00523E-9060-4D74-96C7-C7D3D57CE650",
@@ -48,7 +48,19 @@
       "Id": "f00fbec7-7465-4344-8443-6b4b43260b3c",
       "DisplayName": "7日签到第1天 第一组",
       "Gid": 180101001,
-      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":0,\"GeneralConditional\":[{\"op\":\"ModE\",\"pn\":\"Count\",\"args\":[\"42\",\"0\"]}]}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000}],\"MaxCount\":1}}"
+      "PropertiesString": "{\"Genus\":[\"gs_qiandao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"dbbb8d4c-92f0-49ff-9add-682c6caaa200\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":6,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"Count\":0,\"GroupMask\":2}]},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"289a5c18-086b-4fe5-8b76-53699c841cb7\",\"MinCount\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"ad9fa99b-1831-4154-a0ac-661d0facf606\",\"Count\":1}],\"MaxCount\":2}}"
+    },
+    {
+      "Id": "289a5c18-086b-4fe5-8b76-53699c841cb7",
+      "DisplayName": "7日签到第1天 第一组条件序列",
+      "Gid": 190201004,
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"ToInt32\",\"args\":[\"Count\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"46542DE4-B8B8-4735-936C-856273B650F7\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\"],\"Counts\":[0,1]}}}"
+    },
+    {
+      "Id": "ad9fa99b-1831-4154-a0ac-661d0facf606",
+      "DisplayName": "7日签到第1天 第一组产出序列",
+      "Gid": 190201005,
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"ToInt32\",\"args\":[\"Count\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[5000,20]}}}"
     },
     {
       "Id": "75137bd7-882d-4580-b011-e92e8a36fbd5",
@@ -700,6 +712,19 @@
       "PropertiesString": "{\"Genus\":[\"gs_equipslot\"],\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1,\"TIdsOfCreate\": [\"e919f7c7-b341-4159-9ecb-fba64363cff2\"]}"
     },
     {
+      "Id": "f1abe4b7-372b-45b2-a9da-eb6930e95cb9",
+      "DisplayName": "骑士（角色形象）装备槽",
+      "Gid": 912111013,
+      "PropertiesString": "{\"Genus\":[\"gs_equipslot\"],\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1,\"TIdsOfCreate\":[\"77e4e83b-4592-4070-8c4f-6215c9a2f1fc\"]}"
+    },
+    {
+      "Id": "f5022e9f-13da-4a2d-b1b9-d57fc07de232",
+      "DisplayName": "骑士（角色形象） 背包",
+      "Gid": 912111014,
+      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}",
+      "__EMPTY_4": "                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          "
+    },
+    {
       "Id": "e6edab87-0034-4f45-8040-1f0d565ccf58",
       "DisplayName": "装备背包",
       "Gid": 912101009,
@@ -719,7 +744,7 @@
     },
     {
       "Id": "A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652",
-      "DisplayName": "时装背包",
+      "DisplayName": "时装背包（动物皮肤）",
       "Gid": 912101012,
       "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}"
     },
@@ -5380,6 +5405,24 @@
       "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"ff0be92f-acfb-4202-a6ea-8a6d42427926\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b765092d-2a8f-4375-b633-99f781609fd0\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
     },
     {
+      "Id": "77e4e83b-4592-4070-8c4f-6215c9a2f1fc",
+      "DisplayName": "默认形象（部落形象）",
+      "Gid": 200101001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"f5022e9f-13da-4a2d-b1b9-d57fc07de232\",\"name_txt\":12184,\"comment_txt\":12185,\"atk\":[0],\"def\":[0],\"pow\":[0],\"Genus\":null,\"p_skills\":null,\"LvUpTId\":null}"
+    },
+    {
+      "Id": "28dde3de-8f36-4e50-9762-7ac4fb4bed6b",
+      "DisplayName": "重甲骑士（角色形象）",
+      "Gid": 200101002,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"f5022e9f-13da-4a2d-b1b9-d57fc07de232\",\"name_txt\":12180,\"comment_txt\":12181,\"atk\":[15],\"def\":[20],\"pow\":[10],\"Genus\":null,\"p_skills\":null,\"LvUpTId\":null}"
+    },
+    {
+      "Id": "2a4914bb-577a-42d4-ac6c-f72020bb97eb",
+      "DisplayName": "鸟叔（角色形象）",
+      "Gid": 200101003,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"f5022e9f-13da-4a2d-b1b9-d57fc07de232\",\"name_txt\":12182,\"comment_txt\":12183,\"atk\":[15],\"def\":[500],\"pow\":[10],\"Genus\":null,\"p_skills\":null,\"LvUpTId\":null}"
+    },
+    {
       "Id": "a380e125-2640-409b-8c45-359ea2f734bb",
       "DisplayName": "灰山羊",
       "Gid": 160201102,
@@ -7735,7 +7778,7 @@
       "Id": "85725ce3-09df-40d4-b781-eb288bc38f4e",
       "DisplayName": "免费钻石领取",
       "Gid": 180201001,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":7,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b65693ee6ded97\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b65693ee6ded97\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "b507bd07-ece2-4a69-88c1-e72265a9e4f1",
@@ -8708,7 +8751,7 @@
       "Id": "38c418b7-3662-4ad8-b613-032d68f544fc",
       "DisplayName": "商品购买条件刷新序列",
       "Gid": 190101006,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"ToInt32\",\"args\":[\"Count\"]},\"Outs\":{\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,1,1,1,1,1,1,20],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"ToInt32\",\"args\":[\"Count\"]},\"Outs\":{\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,1,20],\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"]}}}"
     },
     {
       "Id": "b957c891-33b6-4b28-ab5f-def1e2060a31",
@@ -8750,7 +8793,7 @@
       "Id": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
       "DisplayName": "动物抽奖广告购买",
       "Gid": 180201209,
-      "PropertiesString": "{\"Genus\":[\"gs_niudan\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":7,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"88c92efc-fb43-43df-997d-c5918808de5d\",\"Count\":1}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b659625f69f07d\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_niudan\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"88c92efc-fb43-43df-997d-c5918808de5d\",\"Count\":1}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b659625f69f07d\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "62e227a8-c5d5-410e-96c5-d5ca931bafe2",
@@ -8846,43 +8889,43 @@
       "Id": "612ec963-4f73-437e-a51a-776478b4434a",
       "DisplayName": "金币广告购买项目序列",
       "Gid": 190101002,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"e3aeb7f1-f7de-4d32-8805-2f6a40b9db36\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,1,1,1,1,1,30]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"e3aeb7f1-f7de-4d32-8805-2f6a40b9db36\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,30]}}}"
     },
     {
       "Id": "ae438454-abd7-4ef7-9ece-9cd81c132817",
       "DisplayName": "80钻石购买",
       "Gid": 180211001,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":80}]},\"productStoreId\":\"com.duangpbr.01\",\"productAmount\":1.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"少量钻石\",\"name_txt\":10995,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi1\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":1,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":80}]},\"productStoreId\":\"com.duangphl.01\",\"productAmount\":25,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"少量钻石\",\"name_txt\":10995,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi1\"}"
     },
     {
       "Id": "38aba4b4-fb67-4751-8c90-522425bb3545",
       "DisplayName": "500钻石购买",
       "Gid": 180211002,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":500}]},\"productStoreId\":\"com.duangpbr.02\",\"productAmount\":9.99,\"currencyCode\":\"PHP\",\"currencyMark\":\"R$\",\"productName\":\"钻石购买\",\"productType\":\"礼包\",\"productDesc\":\"一些钻石\",\"name_txt\":10996,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi2\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":500}]},\"productStoreId\":\"com.duangphl.02\",\"productAmount\":129,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"礼包\",\"productDesc\":\"一些钻石\",\"name_txt\":10996,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi2\"}"
     },
     {
       "Id": "9b191e01-dff8-4957-afbb-8e0eaba59e3a",
       "DisplayName": "1200钻石购买",
       "Gid": 180211003,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":3,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":1200}]},\"productStoreId\":\"com.duangpbr.03\",\"productAmount\":19.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"很多钻石\",\"name_txt\":10997,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi3\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":3,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":1200}]},\"productStoreId\":\"com.duangphl.03\",\"productAmount\":299,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"很多钻石\",\"name_txt\":10997,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi3\"}"
     },
     {
       "Id": "f6a3ee3a-4d83-49f3-8b72-3529d3f75fb8",
       "DisplayName": "2500钻石购买",
       "Gid": 180211004,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":4,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":2500}]},\"productStoreId\":\"com.duangpbr.04\",\"productAmount\":39.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"更多的钻石\",\"name_txt\":10998,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi4\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":4,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":2500}]},\"productStoreId\":\"com.duangphl.04\",\"productAmount\":499,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"更多的钻石\",\"name_txt\":10998,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi4\"}"
     },
     {
       "Id": "a8ea7d31-dc0c-4a60-98ee-b6ec332231d3",
       "DisplayName": "6500钻石购买",
       "Gid": 180211005,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":6500}]},\"productStoreId\":\"com.duangpbr.05\",\"productAmount\":99.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"很多的钻石\",\"name_txt\":10999,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi5\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":5,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":6500}]},\"productStoreId\":\"com.duangphl.05\",\"productAmount\":1699,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"很多的钻石\",\"name_txt\":10999,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi5\"}"
     },
     {
       "Id": "7e4e9db8-bd09-4f0e-a62e-5dd88b403fc6",
       "DisplayName": "14000钻石购买",
       "Gid": 180211006,
-      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":6,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":14000}]},\"productStoreId\":\"com.duangpbr.06\",\"productTId\":\"Te4e9db8-bd09-4fe-a62e-5dd88b403fcd\",\"productAmount\":199.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"很多的钻石\",\"name_txt\":11000,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi6\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_zs\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":6,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":14000}]},\"productStoreId\":\"com.duangphl.06\",\"productTId\":\"Te4e9db8-bd09-4fe-a62e-5dd88b403fcd\",\"productAmount\":3499,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"很多的钻石\",\"name_txt\":11000,\"JiaoBiao\":[],\"display_icon\":\"ZuanShi6\"}"
     },
     {
       "Id": "1f96a737-6a27-4aa4-b69f-6f9369593e4d",
@@ -11376,13 +11419,13 @@
       "Id": "89a66863-4d5e-48f6-b8e6-4f2b949239af",
       "DisplayName": "快速巡逻购买",
       "Gid": 180301002,
-      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":10,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":10,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"1a0d2012-58a0-4789-b28a-758d5626c7db\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":15,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"1a0d2012-58a0-4789-b28a-758d5626c7db\",\"Count\":1}]}}"
     },
     {
       "Id": "f7ad9c3c-c9d1-4773-9eb5-f77bf7b4162a",
       "DisplayName": "快速巡逻广告购买-1",
       "Gid": 180301003,
-      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":10,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b659625e13717f\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_kuaisu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6a539178-1ef0-48bf-bf31-d2a12ad76b34\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"86790d27-d17d-465e-90bf-8348ce994516\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"7d8a55e7-a766-4271-ad82-d6ce19eacf6c\",\"Count\":1}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b659625e13717f\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "6969e916-893d-4cbe-9059-48904d24213a",
@@ -11412,7 +11455,7 @@
       "Id": "6516d816-236c-458b-b282-79e0c275026d",
       "DisplayName": "一般卡池广告购买",
       "Gid": 180201168,
-      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":7,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[],\"display_icon\":\"RaffleBoxBg_180201035\",\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b657670b088511\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[],\"display_icon\":\"RaffleBoxBg_180201035\",\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b657670b088511\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "20f26de9-bd53-44a6-b8b7-5b1016932c60",
@@ -11424,7 +11467,7 @@
       "Id": "59bf4cb7-5bc2-48ee-98ad-2efbf116b162",
       "DisplayName": "体力广告购买",
       "Gid": 180401001,
-      "PropertiesString": "{\"Genus\":[\"gs_tili\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":10,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"Count\":5}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b6576708a925a8\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_tili\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"Count\":5}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b6576708a925a8\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "622b4572-782d-4bee-b4c5-2d512daa3714",
@@ -11448,13 +11491,13 @@
       "Id": "b1e28c8b-dff0-446a-8fd5-a87c648eca6a",
       "DisplayName": "孵化广告购买",
       "Gid": 180401005,
-      "PropertiesString": "{\"Genus\":[\"gs_fuhua\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":10,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":1}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b657670bc7ba4f\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_fuhua\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":1}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b657670bc7ba4f\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "10a3f9a4-c440-45af-b720-a8e850069ca1",
       "DisplayName": "首充购买礼包",
       "Gid": 180212001,
-      "PropertiesString": "{\"Genus\":[\"gs_shoucong\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"fa658261-f1b7-4d6e-8633-27873eac7995\",\"Count\":1}]},\"productStoreId\":\"com.duangpbr.07\",\"productAmount\":4.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"首充礼包\",\"productType\":\"礼包\",\"productDesc\":\"超值礼包不容错过\",\"JiaoBiao\":[\"ZheKou60\",10985]}"
+      "PropertiesString": "{\"Genus\":[\"gs_shoucong\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"fa658261-f1b7-4d6e-8633-27873eac7995\",\"Count\":1}]},\"productStoreId\":\"com.duangphl.07\",\"productAmount\":59,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"首充礼包\",\"productType\":\"礼包\",\"productDesc\":\"超值礼包不容错过\",\"JiaoBiao\":[\"ZheKou60\",10985]}"
     },
     {
       "Id": "e4947911-e113-47ba-b28b-62d1ac441ab8",
@@ -12721,6 +12764,12 @@
       "DisplayName": "开服活动商品",
       "Gid": 180601001,
       "PropertiesString": "{\"Genus\":[\"gs_kaifu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":null,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":13,\"Subtrahend\":0,\"Modulus\":13,\"MinRemainder\":0,\"MaxRemainder\":13},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":60,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"e012e8bc-882f-4b0c-a3c1-719ac003efed\",\"Count\":1}]},\"name_txt\":10213,\"comment_txt\":10214}"
+    },
+    {
+      "Id": "85e5e4ed-af11-4153-b62a-2df9c6dd97cb",
+      "DisplayName": "开服活动货币看广告购买",
+      "Gid": 180601002,
+      "PropertiesString": "{\"Genus\":[\"gs_kaifu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":null,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":13,\"Subtrahend\":0,\"Modulus\":13,\"MinRemainder\":0,\"MaxRemainder\":13},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0,\"Genus\":[]},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"90a6e9a9-5814-4bb1-9d74-5f7945f8856a\",\"Count\":1}]},\"name_txt\":10213,\"comment_txt\":10214}"
     },
     {
       "Id": "6c70de33-1021-43bf-a013-5af3a66e793e",
@@ -15933,12 +15982,6 @@
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
-      "Id": "eb33553d-89e1-4683-b0a2-04449485d908",
-      "DisplayName": "狼头熊身（召唤小）",
-      "Gid": 320208112,
-      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qita\"],\"name_txt\":0,\"comment_txt\":0}"
-    },
-    {
       "Id": "7255129f-0db2-4f59-abcd-3c3c7422438e",
       "DisplayName": "灰色鲨鱼怪（近战）",
       "Gid": 320101027,
@@ -16119,6 +16162,12 @@
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
+      "Id": "eb33553d-89e1-4683-b0a2-04449485d908",
+      "DisplayName": "狼头熊身（召唤小）",
+      "Gid": 320208112,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qita\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
       "Id": "96d0c974-8535-476a-bb03-3dd093e8a973",
       "DisplayName": "珍珠蚌（特殊关卡 布景1）",
       "Gid": 320109001,
@@ -16266,49 +16315,49 @@
       "Id": "56510b07-824f-4f63-b2bb-3387f6e14d11",
       "DisplayName": "装备礼包1",
       "Gid": 180213001,
-      "PropertiesString": "{\"Genus\":[\"gs_shoucong\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"fa658261-f1b7-4d6e-8633-27873eac7995\",\"Count\":1}]},\"productStoreId\":\"com.duangpbr.08\",\"productAmount\":4.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"首充礼包\",\"productType\":\"礼包\",\"productDesc\":\"超值礼包不容错过\",\"JiaoBiao\":[\"ZheKou60\",10985]}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f1ab32ad-0f36-4785-ac3b-907ceb9a0394\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"6d31e692-9b63-483d-be8a-fe074c90a23a\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"64fd7191-81f5-4c38-a5f9-fa73948b6ce9\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60a5302c-9a7a-47a0-9548-fc94874dc735\",\"Count\":1}]},\"display_icon\":\"EquipGiftIcon\",\"productStoreId\":\"com.duangphl.08\",\"productAmount\":59,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10226}"
     },
     {
       "Id": "ef5fdab3-3e7b-49b2-93d2-e0bb6356a3a1",
       "DisplayName": "武器礼包1",
       "Gid": 180213002,
-      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d9d0b916-285c-441a-a68d-543596b1dcd5\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":20}]},\"display_icon\":\"EquipGiftIcon\",\"productStoreId\":\"com.duangpbr.09\",\"productAmount\":4.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10339}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"d9d0b916-285c-441a-a68d-543596b1dcd5\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":20}]},\"display_icon\":\"EquipGiftIcon\",\"productStoreId\":\"com.duangphl.09\",\"productAmount\":59,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10339}"
     },
     {
       "Id": "5fced16d-e4fd-4670-aac6-985e37e4255a",
       "DisplayName": "金币礼包1",
       "Gid": 180213003,
-      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1000000}]},\"display_icon\":\"GoldGiftIcon\",\"productStoreId\":\"com.duangpbr.10\",\"productAmount\":0.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"金币礼包\",\"productType\":\"装备\",\"productDesc\":\"很多金币\",\"name_txt\":10224}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":1000000}]},\"display_icon\":\"GoldGiftIcon\",\"productStoreId\":\"com.duangphl.10\",\"productAmount\":29,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"金币礼包\",\"productType\":\"装备\",\"productDesc\":\"很多金币\",\"name_txt\":10224}"
     },
     {
       "Id": "8a19ed1e-e792-4c60-848e-1eed052cfdce",
       "DisplayName": "金币礼包2",
       "Gid": 180213004,
-      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000000}]},\"display_icon\":\"GoldGiftIcon\",\"productStoreId\":\"com.duangpbr.11\",\"productAmount\":0.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"金币礼包\",\"productType\":\"装备\",\"productDesc\":\"很多金币\",\"name_txt\":10224}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000000}]},\"display_icon\":\"GoldGiftIcon\",\"productStoreId\":\"com.duangphl.11\",\"productAmount\":29,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"金币礼包\",\"productType\":\"装备\",\"productDesc\":\"很多金币\",\"name_txt\":10224}"
     },
     {
       "Id": "497895b5-bf4d-4bcb-af3d-fd5c35ee009f",
       "DisplayName": "材料礼包1",
       "Gid": 180213005,
-      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":5},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":5}]},\"display_icon\":\"MaterialIcon\",\"productStoreId\":\"com.duangpbr.12\",\"productAmount\":4.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10227}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":30},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":30}]},\"display_icon\":\"MaterialIcon\",\"productStoreId\":\"com.duangphl.12\",\"productAmount\":59,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10227}"
     },
     {
       "Id": "fc4ed8f3-b1b0-4022-8583-553c1c5d1c39",
-      "DisplayName": "材料礼包2",
+      "DisplayName": "材料礼包1",
       "Gid": 180213006,
-      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":10},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":10},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":10},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":10}]},\"display_icon\":\"MaterialIcon\",\"productStoreId\":\"com.duangpbr.13\",\"productAmount\":4.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10227}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c82e87-de2e-43aa-b713-63fd0fd14457\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":50},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"79391d55-a01f-4051-841b-5452908566ab\",\"Count\":50}]},\"display_icon\":\"MaterialIcon\",\"productStoreId\":\"com.duangphl.13\",\"productAmount\":59,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10227}"
     },
     {
       "Id": "5b69edb3-b3c5-4dc0-8f0d-24077e3f26e8",
       "DisplayName": "钥匙礼包",
       "Gid": 180213007,
-      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}]},\"display_icon\":\"KeyGiftIcon\",\"productStoreId\":\"com.duangpbr.14\",\"productAmount\":12.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10225}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":20}]},\"display_icon\":\"KeyGiftIcon\",\"productStoreId\":\"com.duangphl.14\",\"productAmount\":149,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10225}"
     },
     {
       "Id": "e00241f2-3b57-465e-a465-11e9caf9fca4",
       "DisplayName": "钻石礼包",
       "Gid": 180213008,
-      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":3000}]},\"display_icon\":\"DiamondGiftIcon\",\"productStoreId\":\"com.duangpbr.15\",\"productAmount\":8.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10222}"
+      "PropertiesString": "{\"Genus\":[\"gs_libao\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":3000}]},\"display_icon\":\"DiamondGiftIcon\",\"productStoreId\":\"com.duangphl.15\",\"productAmount\":13333,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"装备礼包\",\"productType\":\"装备\",\"productDesc\":\"少量钻石\",\"name_txt\":10222}"
     },
     {
       "Id": "dd3eb026-df77-469c-a608-ead03d4b579e",
@@ -16751,7 +16800,7 @@
       "Id": "f05025ec-4efb-4e61-9ad5-69995153f198",
       "DisplayName": "法币购买赛季门票VIP1  商品",
       "Gid": 180612001,
-      "PropertiesString": "{\"Genus\":[\"gs_saijivip\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"c9615e53-ff8c-4080-ab20-ec8c5d170a3b\",\"Count\":1}]},\"productStoreId\":\"com.duangpbr.16\",\"productAmount\":13.99,\"currencyCode\":\"BRL\",\"currencyMark\":\"R$\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"少量钻石\"}",
+      "PropertiesString": "{\"Genus\":[\"gs_saijivip\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"c9615e53-ff8c-4080-ab20-ec8c5d170a3b\",\"Count\":1}]},\"productStoreId\":\"com.duangphl.16\",\"productAmount\":159,\"currencyCode\":\"PHP\",\"currencyMark\":\"₱\",\"productName\":\"钻石购买\",\"productType\":\"钻石\",\"productDesc\":\"少量钻石\"}",
       "Remark": "可通过序列输出不同的赛季成就"
     },
     {

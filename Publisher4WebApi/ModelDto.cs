@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text.Json.Serialization;
@@ -411,6 +412,16 @@ namespace GY02.Publisher
         /// 成就槽。所有成就在此槽下。
         /// </summary>
         public GameSlotDto<GameAchievementDto> ChengJiuSlot { get; set; }
+
+        /// <summary>
+        /// 形象槽。
+        /// </summary>
+        public GameSlotDto<GameEquipmentDto> XingxiangSlot { get; set; }
+
+        /// <summary>
+        /// 形象背包。
+        /// </summary>
+        public GameSlotDto<GameEquipmentDto> XingxiangBag { get; set; }
 
         #endregion 各种槽
 

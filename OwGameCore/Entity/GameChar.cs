@@ -226,6 +226,19 @@ namespace OW.Game.Entity
         /// </summary>
         [JsonIgnore]
         public GameSlot<GameAchievement> ChengJiuSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.ChengJiuSlotTId)?.GetJsonObject<GameSlot<GameAchievement>>();
+
+        /// <summary>
+        /// 形象槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> XingxiangSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.XingxiangSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
+
+        /// <summary>
+        /// 形象背包。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> XingxiangBag => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.XingxiangBagTId)?.GetJsonObject<GameSlot<GameEquipment>>();
+
         #endregion 各种槽
 
         #region 孵化相关

@@ -130,6 +130,16 @@ namespace GY02.Publisher
         /// </summary>
         public static readonly Guid T78SlotTId = new Guid("7A7A7058-CB88-4D54-80E9-22241774CF51");
 
+        /// <summary>
+        /// 形象槽TId。
+        /// </summary>
+        public static readonly Guid XingxiangSlotTId = new Guid("f1abe4b7-372b-45b2-a9da-eb6930e95cb9");
+
+        /// <summary>
+        /// 形象背包TId。
+        /// </summary>
+        public static readonly Guid XingxiangBagTId = new Guid("f5022e9f-13da-4a2d-b1b9-d57fc07de232");
+
 
         #endregion 各种槽和背包
 

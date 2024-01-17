@@ -321,6 +321,16 @@
             成就槽。所有成就在此槽下。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameCharDto.XingxiangSlot">
+            <summary>
+            形象槽。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameCharDto.XingxiangBag">
+            <summary>
+            形象背包。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GameCharDto.FuhuaPreview">
             <summary>
             记录孵化的预览信息。

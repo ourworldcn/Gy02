@@ -1376,6 +1376,16 @@
             T78注册占位符TId。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.XingxiangSlotTId">
+            <summary>
+            形象槽TId。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.XingxiangBagTId">
+            <summary>
+            形象背包TId。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.MailSlotTId">
             <summary>
             邮件槽TId。
