@@ -309,7 +309,7 @@ namespace GY02.Managers
                 if (tmp is not null) hs.Remove(tmp);    //若移除对应的项
                 result.Add((tmp, item));
             }
-            var tmp1 = hs.FirstOrDefault(c => c.TemplateId == Guid.Parse("3ecf10c0-f5e5-4996-8ed0-2e16547310a5"));
+            var tmp1 = hs.FirstOrDefault(c => c.TemplateId == Guid.Parse("46542de4-b8b8-4735-936c-856273b650f7"));
             return result;
         }
 
