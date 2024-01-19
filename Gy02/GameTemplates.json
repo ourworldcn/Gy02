@@ -54,13 +54,13 @@
       "Id": "289a5c18-086b-4fe5-8b76-53699c841cb7",
       "DisplayName": "7日签到第1天 第一组条件序列",
       "Gid": 190201004,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f0fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"46542DE4-B8B8-4735-936C-856273B650F7\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\"],\"Counts\":[0,1]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f00fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\"],\"Counts\":[0,1]}}}"
     },
     {
       "Id": "ad9fa99b-1831-4154-a0ac-661d0facf606",
       "DisplayName": "7日签到第1天 第一组产出序列",
       "Gid": 190201005,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"46542DE4-B8B8-4735-936C-856273B650F7\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f0fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[5000,20]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f00fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[5000,20]}}}"
     },
     {
       "Id": "75137bd7-882d-4580-b011-e92e8a36fbd5",
