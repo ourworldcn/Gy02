@@ -4,8 +4,8 @@
     "Period": {
       "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
     "GroupNumber": 0,
     "MaxCount": 1,

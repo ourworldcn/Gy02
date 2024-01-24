@@ -649,6 +649,9 @@ namespace GY02.Managers
 
             var list = Create(coll);
             if (list is null) return false;
+#if DEBUG
+            var tmp = allEntity.FirstOrDefault(c => c.TemplateId == Guid.Parse("A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652"));
+#endif
             foreach (var item in list)
             {
                 var container = GetContainer(item.Item2, item.Item1.ParentTId, allEntity);

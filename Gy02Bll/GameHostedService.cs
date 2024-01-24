@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -259,6 +260,7 @@ namespace GY02
             var store = _Services.GetService<GameAccountStoreManager>();
             var mapper = _Services.GetService<IMapper>();
             var sw = Stopwatch.StartNew();
+            var cache = _Services.GetService<IMemoryCache>();
 
             #region 测试用代码
             try

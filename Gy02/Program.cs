@@ -30,7 +30,7 @@ internal class Program
         var builder = WebApplication.CreateBuilder(args);
 
         var services = builder.Services;
-
+        services.AddMemoryCache();
         builder.Configuration.AddJsonFile("GameTemplates.json", false, true);    //加入模板信息配置文件
                                                                                  //builder.Services.AddW3CLogging(logging =>
                                                                                  //{

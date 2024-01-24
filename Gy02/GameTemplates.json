@@ -1349,12 +1349,6 @@
       "PropertiesString": "{\"cap\":1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"TIdsOfCreate\":[\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"46542DE4-B8B8-4735-936C-856273B650F7\",\"4527471A-FD91-4899-910C-DE7056AD67A1\",\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"62D3A545-7604-46BF-9837-95E286660BC8\",\"9599B400-0BFD-498E-93DC-F44FF303B1B3\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"d577e084-4aa4-44d9-9510-20ccea041375\",\"547865b2-fa3d-4d7f-957f-0219b8318b73\",\"d4828a12-534a-4a32-ae17-792b6bfd29cd\",\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"bc966a8c-4d37-4120-aaa5-cd790da25ab5\",\"1f31807a-f633-4d3a-8e8e-382ad105d061\",\"e4eacb80-3b91-495f-8d08-4dfe451acf25\",\"7b81fa89-029d-4928-8de6-4fc19d6fff34\",\"62e227a8-c5d5-410e-96c5-d5ca931bafe2\",\"554cda05-553f-46a2-b905-6a30ffcd2fbb\",\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\"]}"
     },
     {
-      "Id": "A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652",
-      "DisplayName": "时装背包（动物皮肤）",
-      "Gid": 912101012,
-      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}"
-    },
-    {
       "Id": "3b163a62-6591-4a93-a385-cf079b20f589",
       "DisplayName": "皮肤背包",
       "Gid": 912101002,
@@ -7406,7 +7400,7 @@
       "Id": "d8a92b6b-e6ac-480e-88e5-2dcdb8e10609",
       "DisplayName": "狼和龙孵化皮肤产出",
       "Gid": 170101014,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d0c41279-ed69-4a17-b2fa-2e1a37c81e7c\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"45c351d1-3147-438d-b8c0-366f6a61d3eb\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3a47c56c-fa8b-4293-98cd-d6c64690604a\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d0c41279-ed69-4a17-b2fa-2e1a37c81e7c\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"45c351d1-3147-438d-b8c0-366f6a61d3eb\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "0a1056e8-2d5b-47cc-b862-91f0b4f1556a",
@@ -12151,7 +12145,7 @@
       "Id": "cd0df6dd-2447-4463-a2a0-91ff3334dc70",
       "DisplayName": "任意充值礼包",
       "Gid": 180604001,
-      "PropertiesString": "{\"Genus\":[\"gs_renyichong\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1m\",\"ValidPeriodString\":\"1m\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652\",\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":3}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_renyichong\",\"fb_goumai\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"TId\":\"824409e8-5968-4d4b-929d-1ba6e629cbc6\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":20000},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":3}]}}"
     },
     {
       "Id": "e4947911-e113-47ba-b28b-62d1ac441ab8",

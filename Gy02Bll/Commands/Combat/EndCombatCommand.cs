@@ -130,6 +130,7 @@ namespace GY02.Commands
             #endregion 记录战斗信息
 
             #region 记录看广告后额外奖励信息
+            gc.AdsRewardsHistory.Clear();
             gc.AdsRewardsHistory.AddRange(command.AdsRewards.Select(c => c.Clone() as GameEntitySummary));
             #endregion  记录看广告后额外奖励信息
             _AccountStore.Save(key);
