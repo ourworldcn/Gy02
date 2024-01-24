@@ -17,7 +17,7 @@ namespace GY02.Managers
     /// 游戏特定需求的功能封装管理类。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
-    public class SpecialManager : GameManagerBase<SpecialManagerOptions, SpecialManager>
+    public class SpecialManager : GameManagerBase<SpecialManagerOptions, SpecialManager>, IEntitySummaryConverter
     {
         public SpecialManager(IOptions<SpecialManagerOptions> options, ILogger<SpecialManager> logger, GameTemplateManager templateManager, GameDiceManager diceManager, GameSequenceManager sequenceOutManager) : base(options, logger)
         {
@@ -162,7 +162,7 @@ namespace GY02.Managers
         /// <returns>true成功翻译，false出现错误。</returns>
         public bool Transformed(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context)
         {
-            IEntitySummaryConverter[] svcs = new IEntitySummaryConverter[] { _DiceManager, _SequenceOutManager };
+            IEntitySummaryConverter[] svcs = new IEntitySummaryConverter[] { _DiceManager, _SequenceOutManager, this };
 
             IEnumerable<GameEntitySummary> tmpSource = source;
             List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> tmpDest = null;
@@ -172,6 +172,7 @@ namespace GY02.Managers
                 changed = false;
                 foreach (var svc in svcs)
                 {
+
                     tmpDest = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)>();
                     if (!svc.ConvertEntitySummary(tmpSource, tmpDest, context, out var changedTmp)) goto lbErr;  //若失败
                     changed = changed || changedTmp;
@@ -181,6 +182,32 @@ namespace GY02.Managers
             tmpDest?.ForEach(c => dest.Add(c));
             return true;
         lbErr:  //出错
+            changed = false;
+            return false;
+        }
+
+        /// <summary>
+        /// 转化特定的物品占位符，如结算后看广告的产出占位符。
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="dest"></param>
+        /// <param name="context"></param>
+        /// <param name="changed"></param>
+        /// <returns></returns>
+        public bool ConvertEntitySummary(IEnumerable<GameEntitySummary> source, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> dest, EntitySummaryConverterContext context, out bool changed)
+        {
+            changed = false;
+            List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)>();
+            foreach (var summary in source)
+            {
+                //var tmp = Transformed(summary, context.GameChar, context.IgnoreGuarantees, context.Random);
+                //if (tmp is null) goto lbErr;
+                //if (tmp.Count != 1 || tmp[0] != summary) changed = true;
+                //list.Add((summary, tmp));
+            }
+            list.ForEach(c => dest.Add(c));
+            return true;
+        lbErr:
             changed = false;
             return false;
         }

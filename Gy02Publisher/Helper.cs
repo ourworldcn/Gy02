@@ -227,6 +227,10 @@ namespace GY02.Publisher
         /// </summary>
         public const string AutoIncGenus = "fl_AutoInc";
 
+        /// <summary>
+        /// 关卡结算后看广告额外产出占位符。
+        /// </summary>
+        public static readonly Guid AdsCombatTid = new Guid("ED31E2D9-5D01-4AC9-BB23-91AA1D756DD9");
 
         #region 游戏内实体类型的类型Guid
 

@@ -1316,6 +1316,11 @@ namespace GY02.Publisher
         public List<GameEntitySummaryDto> Others { get; set; } = new List<GameEntitySummaryDto>();
 
         /// <summary>
+        /// 看广告后的额外奖励。
+        /// </summary>
+        public List<GameEntitySummaryDto> AdsRewards { get; set; } = new List<GameEntitySummaryDto>();
+
+        /// <summary>
         /// 该关卡的最短时间，如果null,表示不记录。
         /// </summary>
         public TimeSpan? MinTimeSpanOfPass { get; set; }

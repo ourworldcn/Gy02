@@ -260,6 +260,11 @@ namespace OW.Game.Entity
 
         public List<CombatHistoryItem> CombatHistory { get; set; } = new List<CombatHistoryItem>();
 
+        /// <summary>
+        /// 看广告后的额外奖励集合。
+        /// </summary>
+        public List<GameEntitySummary> AdsRewardsHistory { get; set; } = new List<GameEntitySummary>();
+
         #endregion 战斗相关
 
         #region 商城相关

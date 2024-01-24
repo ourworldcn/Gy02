@@ -64,7 +64,7 @@ namespace OW.Game.Managers
         /// <summary>
         /// 变换实体描述对象。
         /// </summary>
-        /// <param name="source">源实体秒对象。</param>
+        /// <param name="source">源实体对象。</param>
         /// <param name="dest">转换后的结果。</param>
         /// <param name="context">上下文对象。</param>
         /// <param name="changed">是否实际发生了转换。</param>

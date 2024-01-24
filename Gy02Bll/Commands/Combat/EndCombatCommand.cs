@@ -46,6 +46,11 @@ namespace GY02.Commands
         public List<GameEntitySummary> Others { get; set; } = new List<GameEntitySummary>();
 
         /// <summary>
+        /// 看广告后的额外奖励。
+        /// </summary>
+        public List<GameEntitySummary> AdsRewards { get; set; } = new List<GameEntitySummary>();
+
+        /// <summary>
         /// 该关卡的最短时间，如果null,表示不记录。
         /// </summary>
         public TimeSpan? MinTimeSpanOfPass { get; set; }
@@ -123,6 +128,10 @@ namespace GY02.Commands
             }
 
             #endregion 记录战斗信息
+
+            #region 记录看广告后额外奖励信息
+            gc.AdsRewardsHistory.AddRange(command.AdsRewards.Select(c => c.Clone() as GameEntitySummary));
+            #endregion  记录看广告后额外奖励信息
             _AccountStore.Save(key);
         }
 
