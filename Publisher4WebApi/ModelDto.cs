@@ -1274,6 +1274,13 @@ namespace GY02.Publisher
         /// 返回的终止时间。若无有效周期则为null。
         /// </summary>
         public List<DateTime?> End { get; set; } = new List<DateTime?>();
+
+        /// <summary>
+        /// 模板Id集合，通常是关卡TId集合。原样复制参数中的集合。
+        /// </summary>
+        public List<Guid> TIds { get; set; } = new List<Guid>();
+
+
     }
 
     /// <summary>

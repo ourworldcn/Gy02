@@ -1466,6 +1466,11 @@
             每日递增。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.AdsCombatTid">
+            <summary>
+            关卡结算后看广告额外产出占位符。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.SlotTypeGuid">
             <summary>
             槽类型的类型Guid。

@@ -200,16 +200,18 @@ namespace GY02.Managers
             List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)>();
             foreach (var summary in source)
             {
-                //var tmp = Transformed(summary, context.GameChar, context.IgnoreGuarantees, context.Random);
-                //if (tmp is null) goto lbErr;
-                //if (tmp.Count != 1 || tmp[0] != summary) changed = true;
-                //list.Add((summary, tmp));
+                if (summary.TId == ProjectContent.AdsCombatTid)    //若是广告购买物品
+                {
+                    changed = true;
+                    list.Add((summary, context.GameChar.AdsRewardsHistory));
+                }
+                else
+                {
+                    list.Add((summary, new GameEntitySummary[] { summary }));
+                }
             }
             list.ForEach(c => dest.Add(c));
             return true;
-        lbErr:
-            changed = false;
-            return false;
         }
     }
 }

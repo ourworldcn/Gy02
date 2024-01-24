@@ -10,6 +10,7 @@ using OW.Game.Store;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -104,6 +105,14 @@ namespace GY02.Commands
                         Subject = "Welcome to the open beta test",
                         Body = "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!",
                     },
+                };
+                commandMail.Mail.Dictionary1 = new Dictionary<string, string>() {
+                    { "English", "Welcome to the open beta test" },
+                    { "Portuguese", "Bem-vindo ao teste beta aberto"},
+                };
+                commandMail.Mail.Dictionary2 = new Dictionary<string, string>() {
+                    { "English", "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!\r\n" },
+                    { "Portuguese", "Caro Herói,\r\n\r\nParabéns pela sua participação no Beta Aberto!\r\n\r\nEmpunhe as armas e junte-se à batalha num mundo cheio de monstros! Enfrente cada inimigo!\r\n\r\nSinta-se à vontade para nos dar feedback enquanto continuamos a melhorar a experiência de jogo.\r\n\r\nA aventura começará em breve!"},
                 };
                 commandMail.ToIds.Add(command.GameChar.Id);   //加入收件人
                 commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary

@@ -945,6 +945,11 @@
             返回的终止时间。若无有效周期则为null。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GetDurationReturnDto.TIds">
+            <summary>
+            模板Id集合，通常是关卡TId集合。原样复制参数中的集合。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.CombatHistoryItemDto">
             <summary>
             战斗的相关记录信息。
