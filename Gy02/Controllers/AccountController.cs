@@ -108,21 +108,31 @@ namespace GY02.Controllers
                 _Logger.LogWarning(err.Message);
                 return result;
             }
+            try
+            {
+                var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+                var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+                result.WorldServiceHost = worldServiceHost;
+                result.UdpServiceHost = udpServiceHost;
+    #if DEBUG
+                //var udp = new GyUdpClient();
+                //var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
+                //udp.Start(result.Token, serverIp);
+                //Task.Run(() =>
+                //{
+                //    udp.Nop(result.Token);
+                //});
+    #endif
+                return result;
 
-            var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-            var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
-            result.WorldServiceHost = worldServiceHost;
-            result.UdpServiceHost = udpServiceHost;
-#if DEBUG
-            //var udp = new GyUdpClient();
-            //var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
-            //udp.Start(result.Token, serverIp);
-            //Task.Run(() =>
-            //{
-            //    udp.Nop(result.Token);
-            //});
-#endif
-            return result;
+            }
+            catch (Exception err)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = err.Message;
+                _Logger.LogWarning(err.Message);
+                return result;
+            }
         }
 
         /// <summary>

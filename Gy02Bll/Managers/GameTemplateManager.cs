@@ -45,16 +45,25 @@ namespace OW.Game.Managers
     {
         #region 静态成员
 
+        /// <summary>
+        /// 验证模板数据。
+        /// </summary>
+        /// <param name="rawTemplate"></param>
+        /// <returns></returns>
+        /// <exception cref="AggregateException"></exception>
         public static Dictionary<Guid, TemplateStringFullView> GetTemplateFullviews(IEnumerable<RawTemplate> rawTemplate)
         {
             List<Exception> exceptions = new List<Exception>();
             var result = new Dictionary<Guid, TemplateStringFullView>();
+            HashSet<int> gids = new HashSet<int>();
             foreach (RawTemplate raw in rawTemplate)
             {
                 try
                 {
                     var tmp = raw.GetJsonObject<TemplateStringFullView>();
                     result.Add(raw.Id, tmp);
+                    //验证GId重复问题
+                    if (tmp.Gid.HasValue && !gids.Add(tmp.Gid.Value)) throw new InvalidDataException($"重复的Gid={tmp.Gid.Value}");
                 }
                 catch (Exception excp)
                 {

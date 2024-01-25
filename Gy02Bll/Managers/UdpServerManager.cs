@@ -144,10 +144,7 @@ namespace GY02.Managers
 
         protected override void Dispose(bool disposing)
         {
-            if (_Udp is not null)
-            {
-                _Udp.Dispose();
-            }
+            _Udp?.Dispose();
             base.Dispose(disposing);
         }
 

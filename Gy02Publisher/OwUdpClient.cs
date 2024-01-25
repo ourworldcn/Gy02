@@ -300,6 +300,7 @@ namespace System.Net.Sockets
                 }
                 ct.WaitHandle.WaitOne(delay);   //等待到期再次轮询
             }
+            _UdpClient.Close();
             _Stopped.Cancel();  //发出已终止信号
         }
 
@@ -324,10 +325,10 @@ namespace System.Net.Sockets
 
         void ResetError()
         {
-            uint IOC_IN = 0x80000000;
-            uint IOC_VENDOR = 0x18000000;
-            uint IOC_UDP_RESET = IOC_IN | IOC_VENDOR | 12;
-            _UdpClient.Client.IOControl((int)IOC_UDP_RESET, new byte[] { Convert.ToByte(false) }, null);
+            const uint IOC_IN = 0x80000000;
+            const uint IOC_VENDOR = 0x18000000;
+            const uint IOC_UDP_RESET = IOC_IN | IOC_VENDOR | 12;
+            _UdpClient.Client.IOControl(unchecked((int)IOC_UDP_RESET), new byte[] { Convert.ToByte(false) }, null);
         }
 
         /// <summary>
