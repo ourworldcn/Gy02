@@ -44,6 +44,25 @@ namespace GY02.Managers
         #region 获取信息
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="inItems"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="entity"></param>
+        /// <returns>不是空则获取到了周期数。否则是无效周期 -或- 指定的输入项接中没有自周期限定条件。</returns>
+        public int? GetPeriodIndex(IEnumerable<BlueprintInItem> inItems, GameChar gameChar, out GameEntity entity)
+        {
+            var item1 = inItems?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is NumberCondition));
+            if (item1 is null)
+            {
+                entity = null;
+                return null;
+            }
+            var index = GetPeriodIndex(item1, gameChar, out entity);
+            return index;
+        }
+
+        /// <summary>
         /// 获取周期数。
         /// </summary>
         /// <param name="inItem"></param>

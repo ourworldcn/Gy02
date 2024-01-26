@@ -35,11 +35,12 @@ namespace GY02.Commands
 
     public class GetShoppingItemsHandler : SyncCommandHandlerBase<GetShoppingItemsCommand>, IGameCharHandler<GetShoppingItemsCommand>
     {
-        public GetShoppingItemsHandler(GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager)
+        public GetShoppingItemsHandler(GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, GameBlueprintManager blueprintManager)
         {
             AccountStore = accountStore;
             _TemplateManager = templateManager;
             _ShoppingManager = shoppingManager;
+            _BlueprintManager = blueprintManager;
         }
 
         public GameAccountStoreManager AccountStore { get; }
@@ -47,6 +48,8 @@ namespace GY02.Commands
         GameTemplateManager _TemplateManager;
 
         GameShoppingManager _ShoppingManager;
+
+        GameBlueprintManager _BlueprintManager;
 
         public override void Handle(GetShoppingItemsCommand command)
         {
@@ -76,12 +79,23 @@ namespace GY02.Commands
             //var tmp = _TemplateManager.Id2FullView.Values.FirstOrDefault(c => c.TemplateId == Guid.Parse("e2d2115d-cee6-4f1a-b173-ab3b647307b7"));
 
             var coll1 = list.Where(c => c.Item1.Genus.Contains("gs_meirishangdian")).ToArray();
-            command.ShoppingItemStates.AddRange(list.Select(c => new ShoppingItemState
+
+            command.ShoppingItemStates.AddRange(list.Select(c =>
             {
-                TId = c.Item1.TemplateId,
-                StartUtc = c.Item2,
-                EndUtc = c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod,
-                BuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.DateTime >= c.Item2 && history.DateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.Count),
+                var tmp = new ShoppingItemState
+                {
+                    TId = c.Item1.TemplateId,
+                    StartUtc = c.Item2,
+                    EndUtc = c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod,
+                    BuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.DateTime >= c.Item2 && history.DateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.Count),
+                };
+                var per = _BlueprintManager.GetPeriodIndex(c.Item1.ShoppingItem.Ins, command.GameChar, out _);
+                if (per.HasValue) //若有自周期
+                {
+                    var newBuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.PeriodIndex == per).Sum(c => c.Count);
+                    tmp.BuyedCount = Math.Max(tmp.BuyedCount, newBuyedCount);
+                }
+                return tmp;
             }));
 
         }

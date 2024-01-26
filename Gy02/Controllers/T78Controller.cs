@@ -35,7 +35,7 @@ namespace GY02.Controllers
         /// <param name="logger"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="specialManager"></param>
-        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager)
+        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager, GameBlueprintManager blueprintManager)
         {
             _T78Manager = t78Manager;
             _ShoppingManager = shoppingManager;
@@ -44,6 +44,7 @@ namespace GY02.Controllers
             _Logger = logger;
             _SyncCommandManager = syncCommandManager;
             _SpecialManager = specialManager;
+            _BlueprintManager = blueprintManager;
         }
 
         PublisherT78Manager _T78Manager;
@@ -53,6 +54,7 @@ namespace GY02.Controllers
         ILogger<T78Controller> _Logger;
         SyncCommandManager _SyncCommandManager;
         SpecialManager _SpecialManager;
+        GameBlueprintManager _BlueprintManager;
 
         /// <summary>
         /// T78合作伙伴充值回调。
@@ -305,6 +307,8 @@ namespace GY02.Controllers
                 if (allEntity is null) goto lbErr;  //若无法获取
                                                     //提前缓存产出项
                                                     //消耗项
+                var periodIndex = _BlueprintManager.GetPeriodIndex(tt.ShoppingItem.Ins, gc, out _); //提前获取自周期数
+
                 if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
                     if (!blueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins)) goto lbErr;
 
@@ -345,12 +349,14 @@ namespace GY02.Controllers
                         return result;
                     }
                 }
+
                 gc.ShoppingHistory.Add(new GameShoppingHistoryItem
                 {
                     Count = 1,
                     DateTime = now,
                     TId = tid,
-                });
+                    PeriodIndex = periodIndex,
+                }); ;
                 _Logger.LogInformation("收到T78问卷调查回调，正常发送奖励。CharId={gcId}", gc.Id);
                 return result;
             }

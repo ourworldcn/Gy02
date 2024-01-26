@@ -57,7 +57,6 @@ namespace OW.Game.Entity
         /// </summary>
 #if NETCOREAPP
         [JsonIgnore]
-        [JsonPropertyOrder(10)]
 #endif
         public decimal Count
         {

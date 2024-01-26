@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -38,6 +39,7 @@ namespace GY02.Commands
         /// <summary>
         /// 掉落物品的集合。
         /// </summary>
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
         public List<GameEntitySummary> Rewards { get; set; } = new List<GameEntitySummary>();
 
         /// <summary>

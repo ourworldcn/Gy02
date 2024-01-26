@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Managers
 {
@@ -200,6 +201,16 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool IsMatchOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
         {
+            var periodIndex = _BlueprintManager.GetPeriodIndex(tt.ShoppingItem.Ins, gameChar, out _); //获取自周期数
+            if (periodIndex.HasValue) //若存在自周期
+            {
+                var tmp = gameChar.ShoppingHistory?.Where(c => c.PeriodIndex == periodIndex && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;
+                if (tmp >= tt.ShoppingItem.MaxCount)
+                {
+                    buyedCount = tmp;
+                    return false;
+                }
+            }
             buyedCount = gameChar.ShoppingHistory?.Where(c => c.DateTime >= start && c.DateTime < end && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
             return buyedCount < (tt.ShoppingItem.MaxCount ?? decimal.MaxValue);
         }

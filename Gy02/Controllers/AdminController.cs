@@ -322,7 +322,7 @@ namespace GY02.Controllers
         public ActionResult<ModifyWorldDateTimeReturnDto> ModifyWorldDateTime(ModifyWorldDateTimeParamsDto model, [FromServices] IHostEnvironment environment)
         {
             var result = new ModifyWorldDateTimeReturnDto();
-            if (environment.EnvironmentName != Environments.Production)
+            if (environment.EnvironmentName != Environments.Production && environment.EnvironmentName != Environments.Development)
             {
                 result.ErrorCode = ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED;
                 result.DebugMessage = "仅能开发调试版才能使用";

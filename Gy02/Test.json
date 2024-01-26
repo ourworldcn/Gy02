@@ -1,197 +1,62 @@
 {
-  "FuhuaPreview": [
-    {
-      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
-      "Items": [
-        {
-          "Outs": [
-            {
-              "TId": "62dfb515-f618-4144-8096-4f14aaaf3127",
-              "Count": 1,
-              "AddPropertyDictionary": {}
-            }
-          ],
-          "Weight": 30
-        },
-        {
-          "Outs": [
-            {
-              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-              "TId": "9fec11b1-8050-4027-ad8b-2637e6b49d42",
-              "Count": 1,
-              "AddPropertyDictionary": {}
-            }
-          ],
-          "Weight": 50
-        },
-        {
-          "Outs": [
-            {
-              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-              "TId": "b4864644-156c-4e40-ac2e-b4e428eb7913",
-              "Count": 1,
-              "AddPropertyDictionary": {}
-            }
-          ],
-          "Weight": 20
-        },
-        {
-          "Outs": [
-            {
-              "TId": "0bc7c3af-8cd5-4dd5-8c8c-548de10c027f",
-              "Count": 1,
-              "AddPropertyDictionary": {}
-            }
-          ],
-          "Weight": 28
-        },
-        {
-          "Outs": [
-            {
-              "TId": "f45a1b76-8b24-450d-8c93-d6fb5b81960f",
-              "Count": 1,
-              "AddPropertyDictionary": {}
-            }
-          ],
-          "Weight": 10
-        }
-      ]
-    }
-  ],
-  "FuhuaHistory": [
-    {
-      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
-      "Items": [
-        {
-          "Outs": [
-            {
-              "TId": "cb2e74d5-43d9-4f70-9d16-31079cc8ef6d",
-              "Count": 1,
-              "AddPropertyDictionary": {}
-            }
-          ],
-          "Weight": 200000
-        }
-      ]
-    }
-  ],
-  "CombatHistory": [
-    {
-      "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
-      "MinTimeSpanOfPass": "00:03:29.8960000"
+  "Genus": [ "gs_qiandao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
     },
-    {
-      "TId": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
-      "MinTimeSpanOfPass": "00:04:46.7210000"
-    },
-    {
-      "TId": "1e5fc645-2833-48a1-add5-6b83a3407d03",
-      "MinTimeSpanOfPass": "00:04:57.5130000"
-    }
-  ],
-  "AdsRewardsHistory": [
-    {
-      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "Count": 2112.0,
-      "AddPropertyDictionary": {}
-    },
-    {
-      "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-      "Count": 1.0,
-      "AddPropertyDictionary": {}
-    },
-    {
-      "TId": "d9b43e81-e049-4ba0-94d3-f850300fdf2f",
-      "Count": 2.0,
-      "AddPropertyDictionary": {}
-    }
-  ],
-  "ShoppingHistory": [
-    {
-      "TId": "a76e122a-092a-45fc-aff0-14eb98c16ed7",
-      "Count": 1,
-      "DateTime": "2024-01-25T15:18:29.7713598Z"
-    },
-    {
-      "TId": "59eb329d-ba4e-4370-b7bb-c3556556f334",
-      "Count": 1,
-      "DateTime": "2024-01-25T15:25:20.1771844Z"
-    },
-    {
-      "TId": "f00fbec7-7465-4344-8443-6b4b43260b3c",
-      "Count": 1,
-      "DateTime": "2024-01-25T15:25:26.5452441Z"
-    },
-    {
-      "TId": "f00fbec7-7465-4344-8443-6b4b43260b3c",
-      "Count": 1,
-      "DateTime": "2024-01-25T15:25:30.2037687Z"
-    },
-    {
-      "TId": "6969e916-893d-4cbe-9059-48904d24213a",
-      "Count": 1,
-      "DateTime": "2024-01-25T15:25:49.3397785Z"
-    },
-    {
-      "TId": "59bf4cb7-5bc2-48ee-98ad-2efbf116b162",
-      "Count": 1,
-      "DateTime": "2024-01-25T19:07:16.8438877Z"
-    },
-    {
-      "TId": "59bf4cb7-5bc2-48ee-98ad-2efbf116b162",
-      "Count": 1,
-      "DateTime": "2024-01-25T19:13:31.7454982Z"
-    },
-    {
-      "TId": "59bf4cb7-5bc2-48ee-98ad-2efbf116b162",
-      "Count": 1,
-      "DateTime": "2024-01-25T19:29:34.4859094Z"
-    },
-    {
-      "TId": "9607a468-5d43-4874-8704-a03ce120e4ec",
-      "Count": 1,
-      "DateTime": "2024-01-25T19:35:31.438749Z"
-    },
-    {
-      "TId": "75137bd7-882d-4580-b011-e92e8a36fbd5",
-      "Count": 1,
-      "DateTime": "2024-01-26T10:02:58.4270757Z"
-    },
-    {
-      "TId": "f00fbec7-7465-4344-8443-6b4b43260b3c",
-      "Count": 1,
-      "DateTime": "2024-01-26T10:03:05.5387394Z"
-    },
-    {
-      "TId": "75137bd7-882d-4580-b011-e92e8a36fbd5",
-      "Count": 1,
-      "DateTime": "2024-01-26T10:03:12.6876784Z"
-    },
-    {
-      "TId": "f00fbec7-7465-4344-8443-6b4b43260b3c",
-      "Count": 1,
-      "DateTime": "2024-01-26T10:03:15.2981946Z"
-    },
-    {
-      "TId": "ef22ce64-ac81-4ae2-b786-6582c3b724e6",
-      "Count": 1,
-      "DateTime": "2024-01-26T10:03:43.5545028Z"
-    }
-  ],
-  "DiceHistory": [],
-  "Roles": [],
-  "LvUpAccruedCost": [],
-  "CompositingAccruedCost": [],
-  "ClientDictionary": { "TutorialIds": "[11001,11004,11005,10001,11002,10002,10003,10005,11006,11007]" },
-  "RedeemCodeHistory": null,
-  "CreateUtc": "2024-01-25T15:03:50.957481Z",
-  "IsOnline": false,
-  "atk": 20,
-  "def": 100,
-  "pow": 350,
-  "crit": 100,
-  "LastLoginDateTimeUtc": "2024-01-26T00:00:00Z",
-  "LogineCount": 15,
-  "CountOfLastModifyUtc": "2024-01-25T15:03:50.9574849Z",
-  "Fcps": {}
+    "GroupNumber": 1,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
+            "MinCount": 0,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 42,
+              "MinRemainder": 0,
+              "MaxRemainder": 6
+            },
+            "GeneralConditional": [],
+            "GroupMask": 3
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "289a5c18-086b-4fe5-8b76-53699c841cb7",
+            "MinCount": 1,
+            "GroupMask": 1
+          }
+        ],
+        "Count": 1
+      }
+    ],
+    "Outs": [
+      {
+        "ParentTId": null,
+        "TId": "ad9fa99b-1831-4154-a0ac-661d0facf606",
+        "Count": 1
+      }
+    ],
+    "MaxCount": 2
+  },
+  "adPlacementIdDic": {
+    "Korea": null,
+    "Canada": null,
+    "Feishu": "b65ae42ef982dc",
+    "Pilipinas": "b6579671ea72ce"
+  }
 }

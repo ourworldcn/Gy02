@@ -111,6 +111,7 @@ namespace GY02.Commands
                     });
                     if (!b) goto lbErr;
                 }
+                var periodIndex = _BlueprintManager.GetPeriodIndex(tt.ShoppingItem.Ins, command.GameChar, out _); //提前获取自周期数
                 //消耗项
                 if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
                     if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes))
@@ -132,6 +133,7 @@ namespace GY02.Commands
                     Count = command.Count,
                     DateTime = now,
                     TId = command.ShoppingItemTId,
+                    PeriodIndex = periodIndex,
                 });
 
                 AccountStore.Save(key);

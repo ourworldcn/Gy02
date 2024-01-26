@@ -261,9 +261,9 @@ namespace GY02.Managers
         public int? GetPeriodIndex(GameAchievement achi, GameChar gameChar)
         {
             if (GetTemplateById(achi.TemplateId) is not TemplateStringFullView tt) return null;
-            var item1 = tt.Achievement.Ins?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is NumberCondition));
+            var item1 = tt.Achievement?.Ins?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is NumberCondition));
             if (item1 is null) return null;
-            var index = _BlueprintManager.GetPeriodIndex(item1, gameChar, out _);
+            var index = _BlueprintManager.GetPeriodIndex(tt.Achievement.Ins, gameChar, out _);
             return index;
         }
 

@@ -57,11 +57,6 @@ namespace OW.Game.Entity
         public Guid UserId { get => ((VirtualThing)Thing).ParentId ?? Guid.Empty; set => ((VirtualThing)Thing).ParentId = value; }
 
         /// <summary>
-        /// 创建该对象的通用协调时间。
-        /// </summary>
-        public DateTime CreateUtc { get; set; } = OwHelper.WorldNow;
-
-        /// <summary>
         /// 是否由用户登录。
         /// </summary>
         public bool IsOnline { get; set; }
@@ -413,6 +408,14 @@ namespace OW.Game.Entity
         /// 购买的日期。
         /// </summary>
         public DateTime DateTime { get; set; }
+
+        /// <summary>
+        /// 最后购买时所处周期号。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public int? PeriodIndex { get; set; }
 
         /// <summary>
         /// 该项是否有效。在同组数据返回时，有些项是无效项。
