@@ -169,7 +169,7 @@ namespace GY02
             {
                 {
                     Guid.Parse("{1FE2EF96-5C0C-46F7-8377-7EA9371871A6}"),
-                        "UPDATE [dbo].[VirtualThings] SET [ExtraDateTime] = cast(JSON_Value([JsonObjectString],'$.CreateDateTime') as datetime2) where JSON_Value([JsonObjectString],'$.CreateDateTime') is not null"+
+                        "UPDATE [dbo].[VirtualThings] SET [ExtraDateTime] = cast(JSON_Value([JsonObjectString],'$.CreateDateTime') as datetime2) where JSON_Value([JsonObjectString],'$.CreateDateTime') is not null;"+
                         "UPDATE [dbo].[VirtualThings] SET [JsonObjectString] = JSON_MODIFY([JsonObjectString],'$.CreateDateTime',null)"
                 },
                 {
@@ -181,6 +181,7 @@ namespace GY02
             var names = dic.Keys.Select(c => c.ToString()).ToArray();
             var ids = dbUser.ServerConfig.Where(c => names.Contains(c.Name)).AsEnumerable().AsEnumerable().Where(c => Guid.TryParse(c.Name, out var id)).Select(c => Guid.Parse(c.Name)).ToHashSet();   //已经存在的内容升级
 
+            dbUser.Database.SetCommandTimeout(TimeSpan.FromSeconds(60));
             foreach (var kvp in dic)    //执行升级语句
             {
                 if (ids.Contains(kvp.Key)) continue;

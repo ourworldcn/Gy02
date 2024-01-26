@@ -134,6 +134,7 @@ internal class Program
         IWebHostEnvironment env = app.Environment;
         app.UseResponseCompression();
         app.UseResponseCaching();
+        app.UseDeveloperExceptionPage();
 
         app.UseStaticFiles();
         //app.UseAuthorization();
