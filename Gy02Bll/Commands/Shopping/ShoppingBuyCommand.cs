@@ -185,18 +185,21 @@ namespace GY02.Commands
                 _AccountStore.Save(key);
             }
             //增加七日签到天数
-            slot = allEntity[ProjectContent.SevenDayQiandaoSlotTId].Single();
-            coll = from tmp in gc.ShoppingHistory
-                   let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
-                   where tt.Genus.Contains("gs_qiandao")   //7日签到项
-                   select tmp;
-            buyDate = coll.Any() ? coll.Max(c => c.DateTime.Date) : null; //最后购买时间
-            markDate = slot.ExtensionProperties.GetDateTimeOrDefault("LastMark");   //最后签到时间
-            if (buyDate.HasValue && buyDate.Value.Date >= markDate.Value.Date)   //若需要增加计数
+            slot = allEntity[ProjectContent.SevenDayQiandaoSlotTId].FirstOrDefault();
+            if (slot is not null)
             {
-                slot.Count++;
-                slot.ExtensionProperties["LastMark"] = now.ToString();
-                _AccountStore.Save(key);
+                coll = from tmp in gc.ShoppingHistory
+                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
+                       where tt.Genus.Contains("gs_qiandao")   //7日签到项
+                       select tmp;
+                buyDate = coll.Any() ? coll.Max(c => c.DateTime.Date) : null; //最后购买时间
+                markDate = slot.ExtensionProperties.GetDateTimeOrDefault("LastMark");   //最后签到时间
+                if (buyDate.HasValue && buyDate.Value.Date >= markDate.Value.Date)   //若需要增加计数
+                {
+                    slot.Count++;
+                    slot.ExtensionProperties["LastMark"] = now.ToString();
+                    _AccountStore.Save(key);
+                }
             }
             //增加累计登录天数
             slot = allEntity[ProjectContent.LoginedDayTId]?.FirstOrDefault();
