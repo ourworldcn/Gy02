@@ -52,13 +52,11 @@ namespace OW.Game.Entity
         [JsonPropertyName("lv")]
         public virtual decimal Level { get; set; }
 
-        decimal _Count;
-
         /// <summary>
         /// 数量。
         /// </summary>
 #if NETCOREAPP
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        [JsonIgnore]
         [JsonPropertyOrder(10)]
 #endif
         public decimal Count
@@ -66,14 +64,14 @@ namespace OW.Game.Entity
             get
             {
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
-                return fcp is null ? _Count : fcp.GetCurrentValueWithUtc();
+                return fcp is null ? (Thing as IDbQuickFind)?.ExtraDecimal ?? 0 : fcp.GetCurrentValueWithUtc();
             }
             set
             {
                 var fcp = Fcps.GetValueOrDefault(nameof(Count));
                 if (fcp is null)
                 {
-                    _Count = value;
+                    (Thing as IDbQuickFind).ExtraDecimal = value;
                     CountOfLastModifyUtc = OwHelper.WorldNow;
                 }
                 else

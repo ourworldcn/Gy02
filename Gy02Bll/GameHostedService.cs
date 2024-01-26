@@ -165,16 +165,18 @@ namespace GY02
         private void UpdateDatabase(IServiceProvider services)
         {
             var dbUser = services.GetRequiredService<GY02UserContext>();
-            var dic = new Dictionary<Guid, string>
+            Dictionary<Guid, string> dic = new Dictionary<Guid, string>
             {
                 {
                     Guid.Parse("{1FE2EF96-5C0C-46F7-8377-7EA9371871A6}"),
-                        "UPDATE [dbo].[VirtualThings] SET [ExtraDateTime] = cast(JSON_Value([JsonObjectString],'$.CreateDateTime') as datetime2)"
+                        "UPDATE [dbo].[VirtualThings] SET [ExtraDateTime] = cast(JSON_Value([JsonObjectString],'$.CreateDateTime') as datetime2) where JSON_Value([JsonObjectString],'$.CreateDateTime') is not null"+
+                        "UPDATE [dbo].[VirtualThings] SET [JsonObjectString] = JSON_MODIFY([JsonObjectString],'$.CreateDateTime',null)"
                 },
-                //{
-                //    Guid.Parse("{D7F19FBA-2748-43C9-9267-D3C89A897AC2}"),
-                //        "UPDATE [dbo].[VirtualThings] SET [ExtraDecimal] =cast(JSON_Value([JsonObjectString],'$.Count') as decimal)"
-                //},
+                {
+                    Guid.Parse("{17B22D6F-AA1E-489A-BE50-9A30AA893045}"),
+                        "UPDATE [dbo].[VirtualThings] SET [ExtraDecimal] =cast(JSON_Value([JsonObjectString],'$.Count') as decimal) where JSON_Value([JsonObjectString],'$.Count') is not null;"+
+                        "UPDATE [dbo].[VirtualThings] SET [JsonObjectString] = JSON_MODIFY([JsonObjectString],'$.Count',null)"
+                },
             };
             var names = dic.Keys.Select(c => c.ToString()).ToArray();
             var ids = dbUser.ServerConfig.Where(c => names.Contains(c.Name)).AsEnumerable().AsEnumerable().Where(c => Guid.TryParse(c.Name, out var id)).Select(c => Guid.Parse(c.Name)).ToHashSet();   //已经存在的内容升级
@@ -182,10 +184,17 @@ namespace GY02
             foreach (var kvp in dic)    //执行升级语句
             {
                 if (ids.Contains(kvp.Key)) continue;
-                dbUser.Database.ExecuteSqlRaw(kvp.Value);
-                var key = kvp.Key.ToString();
-                var config = new ServerConfigItem { Name = key, Value = kvp.Value };
-                dbUser.Add(config);
+                try
+                {
+                    dbUser.Database.ExecuteSqlRaw(kvp.Value);
+                    var key = kvp.Key.ToString();
+                    var config = new ServerConfigItem { Name = key, Value = kvp.Value };
+                    dbUser.Add(config);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
             }
             dbUser.SaveChanges();
         }
