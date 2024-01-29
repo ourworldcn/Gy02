@@ -272,7 +272,8 @@ namespace GY02
             var mapper = _Services.GetService<IMapper>();
             var sw = Stopwatch.StartNew();
             var cache = _Services.GetService<IMemoryCache>();
-
+            int i = int.MinValue+1;
+            var j = 0 - i;
             #region 测试用代码
             try
             {
@@ -287,8 +288,6 @@ namespace GY02
                 //var svc1228 = _Services.GetRequiredService<T1228Manager>();
                 //var str1 = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"\",\"roleName\":\"\",\"roleLevel\":\"\",\"serverName\":\"\",\"vipLevel\":\"\"}}&secret=YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
                 //var str2 = svc1228.GetSign(str1);
-                int i = 1023;
-                var str1 = $"FY{Interlocked.Increment(ref i):X6}";
                 //Cult();
             }
             #endregion 测试用代码
