@@ -18,6 +18,7 @@ using Microsoft.Extensions.Internal;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
+using OW.Data;
 using OW.DDD;
 using OW.Game;
 using OW.Game.Conditional;
@@ -30,6 +31,7 @@ using OW.GameDb;
 using OW.Server;
 using OW.SyncCommand;
 using System;
+using System.Buffers;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Globalization;
@@ -272,11 +274,15 @@ namespace GY02
             var mapper = _Services.GetService<IMapper>();
             var sw = Stopwatch.StartNew();
             var cache = _Services.GetService<IMemoryCache>();
-            int i = int.MinValue+1;
+            int i = int.MinValue + 1;
             var j = 0 - i;
             #region 测试用代码
             try
             {
+                var e0 = new SocketAsyncEventArgs { };
+                var ary = new byte[256];
+                e0.SetBuffer(ary, 0, ary.Length);
+                e0.SetBuffer(null, 0, 0);
                 var svc = _Services.GetRequiredService<T127Manager>();
                 var svc1 = _Services.GetRequiredService<LoginNameGenerator>();
                 using HttpClient client = new HttpClient();
@@ -289,6 +295,41 @@ namespace GY02
                 //var str1 = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"\",\"roleName\":\"\",\"roleLevel\":\"\",\"serverName\":\"\",\"vipLevel\":\"\"}}&secret=YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
                 //var str2 = svc1228.GetSign(str1);
                 //Cult();
+                int rp = 20089;
+                int j1 = int.MaxValue;
+                var s = OwUdpClientV2.IncrementUInt32(ref j1);
+                Task.Run(() =>
+                {
+                    var udp1 = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                    var ep = new IPEndPoint(IPAddress.Any, rp);
+                    udp1.Bind(ep);
+                    var e1 = new SocketAsyncEventArgs { };
+                    e1.SetBuffer(new byte[256]);
+                    e1.Completed += E1_Completed1;
+                    var buff = new byte[2048];
+                    var rr = udp1.ReceiveAsync(e1);
+                    var ary = rr;
+                });
+                Thread.Sleep(100);
+                using var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                socket.Bind(new IPEndPoint(IPAddress.Any, 50000));
+                socket.Connect(new IPEndPoint(IPAddress.Parse("192.168.0.104"), 89));
+                var e1 = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Loopback, rp), };
+                var buff1 = new byte[] { 0x4c, 0x4d };
+                e1.SetBuffer(buff1, 0, buff1.Length);
+
+                e1.Completed += E1_Completed;
+                var r1 = socket.SendAsync(e1);
+                Thread.Sleep(100);
+
+                var e2 = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 20443) };
+                e2.SetBuffer(0, 2048);
+                e2.Completed += E1_Completed;
+                var r2 = socket.SendAsync(e2);
+                Debug.Assert(true);
+
+                var udp = new UdpClient(0);
+                udp.Send(new byte[] { 3, 4 }, new IPEndPoint(IPAddress.Loopback, rp));
             }
             #endregion 测试用代码
             catch (Exception)
@@ -299,6 +340,15 @@ namespace GY02
                 sw.Stop();
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
+        }
+
+        private void E1_Completed1(object sender, SocketAsyncEventArgs e)
+        {
+        }
+
+        private void E1_Completed(object sender, SocketAsyncEventArgs e)
+        {
+
         }
 
         [Conditional("DEBUG")]
