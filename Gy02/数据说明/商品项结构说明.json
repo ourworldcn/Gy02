@@ -19,6 +19,7 @@
             ],
             "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //物品的TId。省略（null）则不限制。
             "MinCount": 0, //要求的最小数量。省略(null)则不限制。
+            "MaxCount": null, //要求的最大数量。省略(null)则不限制。
             "GeneralConditional": [ //通用条件，这个比较复杂，一般是空集合，特定情况特定约定
               {
                 "op": "ModE",

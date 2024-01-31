@@ -1229,6 +1229,11 @@ namespace GY02.Templates
         /// </summary>
         public decimal? MinCount { get; set; }
 
+        /// <summary>
+        /// 要求的最大数量。省略(null)则不限制。
+        /// </summary>
+        public decimal? MaxCount { get; set; }
+
         #endregion 简写属性
 
         private List<GeneralConditionalItem> _Contional;
@@ -1291,6 +1296,7 @@ namespace GY02.Templates
                 NumberCondition = NumberCondition.Clone() as NumberCondition,
                 GroupMask = GroupMask,
                 MinCount = MinCount,
+                MaxCount = MaxCount,
                 ParentTId = ParentTId,
                 TId = TId,
             };

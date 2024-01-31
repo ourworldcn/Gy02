@@ -814,6 +814,11 @@
             要求的最小数量。省略(null)则不限制。
             </summary>
         </member>
+        <member name="P:GY02.Templates.GameThingPreconditionItem.MaxCount">
+            <summary>
+            要求的最大数量。省略(null)则不限制。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.GameThingPreconditionItem.GeneralConditional">
             <summary>
             扩展条件，针对属性的不等式。有多项时需要同时都符合才认为命中。
