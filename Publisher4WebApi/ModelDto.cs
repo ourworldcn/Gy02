@@ -660,6 +660,43 @@ namespace GY02.Publisher
     }
 
     /// <summary>
+    /// 
+    /// </summary>
+    [AutoMap(typeof(LoginT21Command), ReverseMap = true)]
+    public class LoginT21ParamsDto
+    {
+        /// <summary>
+        /// 发行商SDK给的的sid。
+        /// </summary>
+        public string Sid { get; set; }
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [AutoMap(typeof(LoginT21Command))]
+    public class LoginT21ReturnDto : LoginReturnDto
+    {
+        /// <summary>
+        /// T21服务器返回的值完整的放在此处。仅当成功登录时才有。
+        /// </summary>
+        public string ResultString { get; set; }
+
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        [SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+
+    /// <summary>
     /// T1228合作伙伴登录的的功能参数封装类。
     /// </summary>
     [AutoMap(typeof(LoginT1228Command), ReverseMap = true)]

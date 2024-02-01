@@ -161,6 +161,31 @@ namespace GY02.Controllers
         }
 
         /// <summary>
+        /// 特定发行商sdk创建或登录用户。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="udpServer"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LoginT21ReturnDto> LoginT21(LoginT21ParamsDto model, [FromServices] UdpServerManager udpServer)
+        {
+            //    if (gm.Id2OnlineChar.Count > 10000 * Environment.ProcessorCount)
+            //        return StatusCode((int)HttpStatusCode.ServiceUnavailable, "登录人数过多，请稍后登录");
+            //    var gu = gm.LoginT21(model.Sid, out string pwd);
+
+            var command = _Mapper.Map<LoginT21Command>(model);
+            _SyncCommandManager.Handle(command);
+
+            string ip = LocalIp.ToString();
+            var result = _Mapper.Map<LoginT21ReturnDto>(command);
+            var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+            var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+            result.WorldServiceHost = worldServiceHost;
+            result.UdpServiceHost = udpServiceHost;
+            return result;
+        }
+
+        /// <summary>
         /// T1228合作伙伴登录的接口。
         /// </summary>
         /// <param name="model"></param>

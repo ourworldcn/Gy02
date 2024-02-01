@@ -145,6 +145,14 @@
             <param name="udpServer"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.AccountController.LoginT21(GY02.Publisher.LoginT21ParamsDto,GY02.Managers.UdpServerManager)">
+            <summary>
+            特定发行商sdk创建或登录用户。
+            </summary>
+            <param name="model"></param>
+            <param name="udpServer"></param>
+            <returns></returns>
+        </member>
         <member name="M:GY02.Controllers.AccountController.LoginT1228(GY02.Publisher.LoginT1228ParamsDto,GY02.Managers.UdpServerManager)">
             <summary>
             T1228合作伙伴登录的接口。

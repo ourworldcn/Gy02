@@ -1,5 +1,5 @@
 {
-  "Genus": [],  //商品所属页签
+  "Genus": [], //商品所属页签
   "ShoppingItem": {
     "Period": { //控制周期
       "Start": "2023-05-30T03:03:28.385Z", //起始时间点
@@ -8,7 +8,7 @@
       "ValidPeriodString": "string" //有效周期，格式同上
     },
     "GroupNumber": 0, //分组号，前端使用
-    "MaxCount": 0, //最大购买数量
+    "MaxCount": 0, //一个周期内最大购买数量,null或省略则不限制
     "Ins": [ //购买的代价
       {
         "Conditional": [ //条件
@@ -27,23 +27,21 @@
                 "args": [
                   60,
                   0
-                ],
-                "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
+                ]
               }
             ],
             "NumberCondition": null,
-            "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
+            "GroupMask": 1 //1=仅有购买时才计算该条件，3=在获取列表和购买时都要计算该条件
           }
         ],
         "Count": 0, //消耗的数量。注意消耗数量可能是0，代表需要此物品但不消耗此物品。
         "Genus": [ //保留未用，应该是空集合
-        ],
-        "IgnoreIfDisplayList": true //true在获取有效性时，忽略此条件
+        ]
       }
     ],
     "Outs": [ //输出项
       {
-        "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //暂时无用，可以为null
+        "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //暂时无用，通常为null或省略
         "ParentTId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //父容器TId，可以为null表示放置在默认容器中
         "TId": "3fa85f64-5717-4562-b3fc-2c963f66afa6", //物品的TId
         "Count": 0 //物品的数量

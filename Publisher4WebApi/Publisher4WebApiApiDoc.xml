@@ -489,6 +489,36 @@
             密码。若首次登录，创建了账号则这里返回密码。否则返回null。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.LoginT21ParamsDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT21ParamsDto.Sid">
+            <summary>
+            发行商SDK给的的sid。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.LoginT21ReturnDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT21ReturnDto.ResultString">
+            <summary>
+            T21服务器返回的值完整的放在此处。仅当成功登录时才有。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT21ReturnDto.LoginName">
+            <summary>
+            登录名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT21ReturnDto.Pwd">
+            <summary>
+            密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.LoginT1228ParamsDto">
             <summary>
             T1228合作伙伴登录的的功能参数封装类。
