@@ -177,13 +177,13 @@ namespace GY02
                 {
                     Guid.Parse("{17B22D6F-AA1E-489A-BE50-9A30AA893045}"),
                         "UPDATE [dbo].[VirtualThings] SET [ExtraDecimal] =cast(JSON_Value([JsonObjectString],'$.Count') as decimal) where JSON_Value([JsonObjectString],'$.Count') is not null;"+
-                        "UPDATE [dbo].[VirtualThings] SET [JsonObjectString] = JSON_MODIFY([JsonObjectString],'$.Count',null)"
+                        "UPDATE [dbo].[VirtualThings] SET [JsonObjectString] = JSON_MODIFY([JsonObjectString],'$.Count',null) where JSON_Value([JsonObjectString],'$.Count') is not null;"
                 },
             };
             var names = dic.Keys.Select(c => c.ToString()).ToArray();
             var ids = dbUser.ServerConfig.Where(c => names.Contains(c.Name)).AsEnumerable().AsEnumerable().Where(c => Guid.TryParse(c.Name, out var id)).Select(c => Guid.Parse(c.Name)).ToHashSet();   //已经存在的内容升级
 
-            dbUser.Database.SetCommandTimeout(TimeSpan.FromSeconds(60));
+            dbUser.Database.SetCommandTimeout(TimeSpan.FromMinutes(5));
             foreach (var kvp in dic)    //执行升级语句
             {
                 if (ids.Contains(kvp.Key)) continue;

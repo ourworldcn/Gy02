@@ -207,7 +207,6 @@ namespace GY02.Managers
                 if (GetMatch(hs, item, mask, out var tmp)) hs.Remove(tmp);    //若移除对应的项
                 result.Add((tmp, item));
             }
-            var tmp1 = hs.FirstOrDefault(c => c.TemplateId == Guid.Parse("46542de4-b8b8-4735-936c-856273b650f7"));
             return result;
         }
         #endregion 蓝图输入项相关
