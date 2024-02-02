@@ -54,13 +54,13 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="token"></param>
         /// <param name="gameChar"></param>
-        /// <param name="worldDateTime"></param>
+        /// <param name="worldNow"></param>
         /// <param name="changes"></param>
-        public SimpleGameContext(Guid token, GameChar gameChar, DateTime worldDateTime, ICollection<GamePropertyChangeItem<object>> changes)
+        public SimpleGameContext(Guid token, GameChar gameChar, DateTime worldNow, ICollection<GamePropertyChangeItem<object>> changes)
         {
             Token = token;
             GameChar = gameChar;
-            WorldDateTime = worldDateTime;
+            WorldDateTime = worldNow;
             Changes = changes;
         }
 
