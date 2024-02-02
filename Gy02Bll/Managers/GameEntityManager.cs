@@ -357,61 +357,6 @@ namespace GY02.Managers
 
         #endregion 基础功能
 
-        #region 通用条件相关
-
-        /// <summary>
-        /// 指定实体是否符合指定条件的要求。此函数不考虑条件组掩码问题，
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="condition">最终条件，指定的所有模板id必须已被翻译。</param>
-        /// <returns></returns>
-        public bool IsMatch(GameEntity entity, GameThingPreconditionItem condition)
-        {
-            if (!IsMatchWithoutNumberCondition(entity, condition)) return false;
-            if (condition.NumberCondition is NumberCondition nc) //若需要判断数值条件
-            {
-                if (entity.GetType().GetProperty(nc.PropertyName) is not PropertyInfo pi || !OwConvert.TryToDecimal(pi.GetValue(entity), out var deci)) return false; //若非数值属性
-                if (!nc.IsMatch(deci)) return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// 指定实体是否符合指定条件的要求。此函数不考虑 <see cref="GameThingPreconditionItem.NumberCondition"/> 及条件组掩码问题，
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="condition"></param>
-        /// <returns>true符合条件，否则返回false。</returns>
-        public virtual bool IsMatchWithoutNumberCondition(GameEntity entity, GameThingPreconditionItem condition)
-        {
-            if (condition.TId.HasValue) //若需要考虑模板id
-                if (condition.TId.Value != entity.TemplateId)
-                    return false;
-            if (condition.MinCount > entity.Count) return false;
-            if (condition.MaxCount < entity.Count) return false;
-            VirtualThing thing = entity.GetThing();
-            TemplateStringFullView fullView = _TemplateManager.GetFullViewFromId(thing.ExtraGuid);
-
-            if (condition.Genus is not null && condition.Genus.Count > 0)    //若需要限制类属
-                if (fullView.Genus is null || condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count)
-                    return false;
-            if (condition.ParentTId.HasValue)
-                if (thing.Parent is null || condition.ParentTId.Value != thing.Parent.ExtraGuid)
-                    return false;
-            if (!condition.GeneralConditional.All(c =>
-            {
-                if (!_TemplateManager.TryGetValueFromConditionalItem(c, out var obj, entity))
-                    return false;
-                if (!OwConvert.TryGetBoolean(obj, out var result))
-                    return false;
-                return result;
-            }))  //若通用属性要求的条件不满足
-                return false;
-            return true;
-        }
-
-        #endregion 通用条件相关
-
         #region 创建实体相关功能
 
         /// <summary>
@@ -782,19 +727,5 @@ namespace GY02.Managers
 
     public static class GameEntityManagerExtensions
     {
-        /// <summary>
-        /// 获取一个指示，指定实体是否满足一组条件的要求。
-        /// </summary>
-        /// <param name="mng"></param>
-        /// <param name="entity"></param>
-        /// <param name="conditions">其中条件必须已经被转换为最终，不能仍含有序列等条件。</param>
-        /// <param name="mask"></param>
-        /// <returns></returns>
-        public static bool IsMatch(this GameEntityManager mng, GameEntity entity, IEnumerable<GameThingPreconditionItem> conditions, int mask)
-        {
-            var coll = conditions.Where(c => c.IsValidate(mask));
-            return coll.All(c => mng.IsMatch(entity, c));
-        }
-
     }
 }

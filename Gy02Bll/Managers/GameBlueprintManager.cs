@@ -7,7 +7,9 @@ using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
+using OW.Game.Store;
 using System.Buffers;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace GY02.Managers
@@ -28,86 +30,22 @@ namespace GY02.Managers
     public class GameBlueprintManager : GameManagerBase<GameBlueprintOptions, GameBlueprintManager>
     {
         public GameBlueprintManager(IOptions<GameBlueprintOptions> options, ILogger<GameBlueprintManager> logger,
-            GameEntityManager entityManager, GameSequenceManager sequenceManager, GameDiceManager diceManager, GameTemplateManager templateManager) : base(options, logger)
+            GameEntityManager entityManager, GameSequenceManager sequenceManager, GameDiceManager diceManager, GameTemplateManager templateManager, GameSearcherManager searcherManager) : base(options, logger)
         {
             _EntityManager = entityManager;
             _SequenceManager = sequenceManager;
             _DiceManager = diceManager;
             _TemplateManager = templateManager;
+            _SearcherManager = searcherManager;
         }
 
         GameEntityManager _EntityManager;
         GameSequenceManager _SequenceManager;
         GameDiceManager _DiceManager;
         GameTemplateManager _TemplateManager;
-
-        #region 获取信息
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="inItems"></param>
-        /// <param name="gameChar"></param>
-        /// <param name="entity"></param>
-        /// <returns>不是空则获取到了周期数。否则是无效周期 -或- 指定的输入项接中没有自周期限定条件。</returns>
-        public int? GetPeriodIndex(IEnumerable<BlueprintInItem> inItems, GameChar gameChar, out GameEntity entity)
-        {
-            var item1 = inItems?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is NumberCondition));
-            if (item1 is null)
-            {
-                entity = null;
-                return null;
-            }
-            var index = GetPeriodIndex(item1, gameChar, out entity);
-            return index;
-        }
-
-        /// <summary>
-        /// 获取周期数。
-        /// </summary>
-        /// <param name="inItem"></param>
-        /// <param name="gameChar"></param>
-        /// <param name="entity"></param>
-        /// <returns>不是空则获取到了周期数。否则是无效周期。</returns>
-        public int? GetPeriodIndex(BlueprintInItem inItem, GameChar gameChar, out GameEntity entity)
-        {
-            var allEntity = _EntityManager.GetAllEntity(gameChar);
-            var gtc = inItem.Conditional.FirstOrDefault(c => c.NumberCondition is not null);
-
-            entity = allEntity.Where(c =>
-            {
-                return _EntityManager.IsMatch(c, gtc);
-            }).FirstOrDefault();
-            if (entity is null) goto lbEmpty;
-
-            var number = gtc.NumberCondition.GetNumber(entity);
-            if (number is null) goto lbEmpty;
-
-            var period = gtc.NumberCondition.GetPeriodIndex(number.Value);
-
-            return period;
-        lbEmpty:
-            entity = null;
-            return null;
-        }
-
-        #endregion 获取信息
+        GameSearcherManager _SearcherManager;
 
         #region 计算匹配
-
-        /// <summary>
-        /// 按条件掩码确定是否匹配。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="inItem">必须是最终条件，不考虑转换问题。</param>
-        /// <param name="mask"></param>
-        /// <returns></returns>
-        public bool IsMatch(GameEntity entity, BlueprintInItem inItem, int mask)
-        {
-            if (!_EntityManager.IsMatch(entity, inItem.Conditional, mask)) return false;
-            if (inItem.Count > entity.Count && inItem.Conditional.Any(c => c.IsValidate(mask))) return false;
-            return true;
-        }
 
         #region 条件转化
 
@@ -185,7 +123,6 @@ namespace GY02.Managers
 
         #endregion 计算匹配
 
-
         #region 计算寻找物品的匹配
 
         /// <summary>
@@ -198,7 +135,7 @@ namespace GY02.Managers
         /// <returns>true表示指定实体符合指定条件，否则返回false。</returns>
         public bool IsMatch(GameEntity main, CostInfo cost, GameEntity entity, out decimal count)
         {
-            if (_EntityManager.IsMatch(entity, cost.Conditional, 1))
+            if (_SearcherManager.IsMatch(entity, cost.Conditional, 1))
             {
                 var lv = Convert.ToInt32(main.Level);
                 if (cost.Conditional is not null && cost.Counts.Count > lv)
@@ -278,7 +215,7 @@ namespace GY02.Managers
         {
             List<(GameEntity, decimal)> list = new List<(GameEntity, decimal)>();
             var collCond = conditionals.Select(c => Transformed(c, entities));
-            var coll = this.GetMatches(entities, collCond, 1);
+            var coll = _SearcherManager.GetMatches(entities, collCond, 1);
             var errItem = coll.FirstOrDefault(c => c.Item1 is null);
             if (errItem.Item2 is not null)   //若存在无法找到的项
             {
@@ -292,58 +229,5 @@ namespace GY02.Managers
 
     public static class GameBlueprintManagerExtensions
     {
-        /// <summary>
-        /// 获取第一个匹配项。
-        /// 不考虑转换等因素。
-        /// </summary>
-        /// <param name="mng">蓝图管理器。</param>
-        /// <param name="entities"></param>
-        /// <param name="inItem"></param>
-        /// <param name="mask">条件组掩码</param>
-        /// <returns>返回符合条件的实体，null表示没有找到合适的实体。</returns>
-        public static GameEntity GetMatch(this GameBlueprintManager mng, IEnumerable<GameEntity> entities, BlueprintInItem inItem, int mask)
-        {
-            var result = entities.FirstOrDefault(c =>
-            {
-                return mng.IsMatch(c, inItem, mask);
-            });
-            return result;
-        }
-
-        /// <summary>
-        /// 获取每个条件匹配的项。
-        /// </summary>
-        /// <param name="mng"></param>
-        /// <param name="entities"></param>
-        /// <param name="inItems">必须都是最终条件。</param>
-        /// <param name="mask">只考虑符合该掩码的条件。</param>
-        /// <returns>针对每一个输入项有一个匹配项。如果某个项是null则说明没有找到匹配项。</returns>
-        public static IEnumerable<(GameEntity, BlueprintInItem)> GetMatches(this GameBlueprintManager mng, IEnumerable<GameEntity> entities, IEnumerable<BlueprintInItem> inItems, int mask)
-        {
-            var result = new List<(GameEntity, BlueprintInItem)>();
-            var hs = new HashSet<GameEntity>(entities);
-            foreach (var item in inItems.TryToCollection())
-            {
-                var tmp = mng.GetMatch(hs, item, mask);
-                if (tmp is not null) hs.Remove(tmp);    //若移除对应的项
-                result.Add((tmp, item));
-            }
-            var tmp1 = hs.FirstOrDefault(c => c.TemplateId == Guid.Parse("46542de4-b8b8-4735-936c-856273b650f7"));
-            return result;
-        }
-
-        /// <summary>
-        /// 获取一个指示，指定实体是否满足所有指定条件。
-        /// </summary>
-        /// <param name="mng"></param>
-        /// <param name="entity"></param>
-        /// <param name="inItems">必须都是最终条件。</param>
-        /// <param name="mask">只考虑符合该掩码的条件。</param>
-        /// <returns></returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsMatch(this GameBlueprintManager mng, GameEntity entity, IEnumerable<BlueprintInItem> inItems, int mask)
-        {
-            return inItems.All(c => mng.IsMatch(entity, c, mask));
-        }
     }
 }

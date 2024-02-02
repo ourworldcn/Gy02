@@ -20,13 +20,14 @@ namespace Gy02.Controllers
         /// 构造函数。
         /// </summary>
         public AchievementController(GameAccountStoreManager accountStore, IMapper mapper, SyncCommandManager syncCommandManager,
-            GameTemplateManager templateManager, GameAchievementManager achievementManager)
+            GameTemplateManager templateManager, GameAchievementManager achievementManager, GameSearcherManager gameSearcherManager)
         {
             _AccountStore = accountStore;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
             _AchievementManager = achievementManager;
+            _GameSearcherManager = gameSearcherManager;
         }
 
         private GameAccountStoreManager _AccountStore;
@@ -37,6 +38,7 @@ namespace Gy02.Controllers
 
         GameTemplateManager _TemplateManager;
         GameAchievementManager _AchievementManager;
+        GameSearcherManager _GameSearcherManager;
 
 #if DEBUG
         /// <summary>
@@ -101,7 +103,7 @@ namespace Gy02.Controllers
                         var cond = inItem.Conditional?[0];
                         if (cond is null) continue;
                         if (cond.NumberCondition is not NumberCondition nc) continue;
-                        if (blueprintManager.GetMatch(entityManager.GetAllEntity(command.GameChar), inItem, 1) is not OW.Game.Entity.GameEntity ge) continue;    //转轮
+                        if (!_GameSearcherManager.GetMatch(entityManager.GetAllEntity(command.GameChar), inItem, 1, out var ge)) continue;    //转轮
                         var current = ge.Count;
                         if (!nc.GetCurrentPeriod(current, out var s, out var e)) continue;
                         item.Start = now.Date - TimeSpan.FromDays((double)(current - s));

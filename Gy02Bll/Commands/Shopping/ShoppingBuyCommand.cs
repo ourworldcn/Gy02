@@ -43,7 +43,7 @@ namespace GY02.Commands
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
     {
 
-        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager, SyncCommandManager commandManager, GameAchievementManager achievementManager)
+        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager, SyncCommandManager commandManager, GameAchievementManager achievementManager, GameSearcherManager searcherManager)
         {
             AccountStore = accountStore;
             _ShoppingManager = shoppingManager;
@@ -53,6 +53,7 @@ namespace GY02.Commands
             _SpecialManager = specialManager;
             _CommandManager = commandManager;
             _AchievementManager = achievementManager;
+            _SearcherManager = searcherManager;
         }
 
         public GameAccountStoreManager AccountStore { get; }
@@ -65,6 +66,7 @@ namespace GY02.Commands
         GameDiceManager _DiceManager;
         SpecialManager _SpecialManager;
         SyncCommandManager _CommandManager;
+        GameSearcherManager _SearcherManager;
 
         public override void Handle(ShoppingBuyCommand command)
         {
@@ -111,7 +113,7 @@ namespace GY02.Commands
                     });
                     if (!b) goto lbErr;
                 }
-                var periodIndex = _BlueprintManager.GetPeriodIndex(tt.ShoppingItem.Ins, command.GameChar, out _); //提前获取自周期数
+                var periodIndex = _SearcherManager.GetPeriodIndex(tt.ShoppingItem.Ins, command.GameChar, out _); //提前获取自周期数
                 //消耗项
                 if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
                     if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes))

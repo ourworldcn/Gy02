@@ -35,7 +35,7 @@ namespace GY02.Controllers
         /// <param name="logger"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="specialManager"></param>
-        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager, GameBlueprintManager blueprintManager)
+        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager, GameBlueprintManager blueprintManager, GameSearcherManager searcherManager)
         {
             _T78Manager = t78Manager;
             _ShoppingManager = shoppingManager;
@@ -45,6 +45,7 @@ namespace GY02.Controllers
             _SyncCommandManager = syncCommandManager;
             _SpecialManager = specialManager;
             _BlueprintManager = blueprintManager;
+            _SearcherManager = searcherManager;
         }
 
         PublisherT78Manager _T78Manager;
@@ -55,6 +56,7 @@ namespace GY02.Controllers
         SyncCommandManager _SyncCommandManager;
         SpecialManager _SpecialManager;
         GameBlueprintManager _BlueprintManager;
+        GameSearcherManager _SearcherManager;
 
         /// <summary>
         /// T78合作伙伴充值回调。
@@ -307,7 +309,7 @@ namespace GY02.Controllers
                 if (allEntity is null) goto lbErr;  //若无法获取
                                                     //提前缓存产出项
                                                     //消耗项
-                var periodIndex = _BlueprintManager.GetPeriodIndex(tt.ShoppingItem.Ins, gc, out _); //提前获取自周期数
+                var periodIndex = _SearcherManager.GetPeriodIndex(tt.ShoppingItem.Ins, gc, out _); //提前获取自周期数
 
                 if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
                     if (!blueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins)) goto lbErr;

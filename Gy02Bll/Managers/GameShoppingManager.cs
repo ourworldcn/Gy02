@@ -30,16 +30,18 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameShoppingManager : GameManagerBase<GameShoppingManagerOptions, GameShoppingManager>
     {
-        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, GameBlueprintManager blueprintManager, GameEntityManager entityManager, GameTemplateManager templateManager) : base(options, logger)
+        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, GameBlueprintManager blueprintManager, GameEntityManager entityManager, GameTemplateManager templateManager, GameSearcherManager searcherManager) : base(options, logger)
         {
             _BlueprintManager = blueprintManager;
             _EntityManager = entityManager;
             _TemplateManager = templateManager;
+            _SearcherManager = searcherManager;
         }
 
         GameBlueprintManager _BlueprintManager;
         GameEntityManager _EntityManager;
         GameTemplateManager _TemplateManager;
+        GameSearcherManager _SearcherManager;
 
         #region 获取信息
 
@@ -181,7 +183,7 @@ namespace GY02.Managers
                                                                                       //    return false;
             var entities = _EntityManager.GetAllEntity(gameChar);
             var ins = shoppingItem.Ins.Select(c => _BlueprintManager.Transformed(c, entities));
-            var b = _BlueprintManager.GetMatches(entities, ins, mask);
+            var b = _SearcherManager.GetMatches(entities, ins, mask);
             if (b.Any(c => c.Item1 is null))
             {
                 OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到符合条件的实体。");
@@ -201,7 +203,7 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool IsMatchOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
         {
-            var periodIndex = _BlueprintManager.GetPeriodIndex(tt.ShoppingItem.Ins, gameChar, out _); //获取自周期数
+            var periodIndex = _SearcherManager.GetPeriodIndex(tt.ShoppingItem.Ins, gameChar, out _); //获取自周期数
             if (periodIndex.HasValue) //若存在自周期
             {
                 var tmp = gameChar.ShoppingHistory?.Where(c => c.PeriodIndex == periodIndex && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;

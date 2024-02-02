@@ -35,12 +35,13 @@ namespace GY02.Commands
 
     public class GetShoppingItemsHandler : SyncCommandHandlerBase<GetShoppingItemsCommand>, IGameCharHandler<GetShoppingItemsCommand>
     {
-        public GetShoppingItemsHandler(GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, GameBlueprintManager blueprintManager)
+        public GetShoppingItemsHandler(GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, GameBlueprintManager blueprintManager, GameSearcherManager searcherManager)
         {
             AccountStore = accountStore;
             _TemplateManager = templateManager;
             _ShoppingManager = shoppingManager;
             _BlueprintManager = blueprintManager;
+            _SearcherManager = searcherManager;
         }
 
         public GameAccountStoreManager AccountStore { get; }
@@ -50,7 +51,7 @@ namespace GY02.Commands
         GameShoppingManager _ShoppingManager;
 
         GameBlueprintManager _BlueprintManager;
-
+        GameSearcherManager _SearcherManager;
         public override void Handle(GetShoppingItemsCommand command)
         {
             var key = ((IGameCharHandler<GetShoppingItemsCommand>)this).GetKey(command);
@@ -89,7 +90,7 @@ namespace GY02.Commands
                     EndUtc = c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod,
                     BuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.DateTime >= c.Item2 && history.DateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.Count),
                 };
-                var per = _BlueprintManager.GetPeriodIndex(c.Item1.ShoppingItem.Ins, command.GameChar, out _);
+                var per = _SearcherManager.GetPeriodIndex(c.Item1.ShoppingItem.Ins, command.GameChar, out _);
                 if (per.HasValue) //若有自周期
                 {
                     var newBuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.PeriodIndex == per).Sum(c => c.Count);

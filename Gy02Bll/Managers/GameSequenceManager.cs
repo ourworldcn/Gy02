@@ -30,14 +30,16 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameSequenceManager : GameManagerBase<GameSequenceManagerOptions, GameSequenceManager>, IEntitySummaryConverter
     {
-        public GameSequenceManager(IOptions<GameSequenceManagerOptions> options, ILogger<GameSequenceManager> logger, GameEntityManager entityManager, GameTemplateManager templateManager) : base(options, logger)
+        public GameSequenceManager(IOptions<GameSequenceManagerOptions> options, ILogger<GameSequenceManager> logger, GameEntityManager entityManager, GameTemplateManager templateManager, GameSearcherManager searcherManager) : base(options, logger)
         {
             _EntityManager = entityManager;
             _TemplateManager = templateManager;
+            _SearcherManager = searcherManager;
         }
 
         GameTemplateManager _TemplateManager;
         GameEntityManager _EntityManager;
+        GameSearcherManager _SearcherManager;
 
         #region 获取信息相关
 
@@ -136,7 +138,7 @@ namespace GY02.Managers
         {
             if (GetGameSequenceByTemplate(tt) is not SequenceOut mo) goto lbErr;
 
-            var coll = entities.Where(c => _EntityManager.IsMatch(c, mo.Conditions, 1));    //符合条件的实体集合
+            var coll = entities.Where(c => _SearcherManager.IsMatch(c, mo.Conditions, 1));    //符合条件的实体集合
             var entity = coll.FirstOrDefault();
             if (entity is null)
             {

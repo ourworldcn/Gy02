@@ -58,7 +58,7 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class GameAchievementManager : GameManagerBase<GameAchievementManagerOptions, GameAchievementManager>
     {
-        public GameAchievementManager(IOptions<GameAchievementManagerOptions> options, ILogger<GameAchievementManager> logger, GameTemplateManager templateManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, SpecialManager specialManager) : base(options, logger)
+        public GameAchievementManager(IOptions<GameAchievementManagerOptions> options, ILogger<GameAchievementManager> logger, GameTemplateManager templateManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, SpecialManager specialManager, GameSearcherManager searcherManager) : base(options, logger)
         {
             _TemplateManager = templateManager;
             _EntityManager = entityManager;
@@ -70,6 +70,7 @@ namespace GY02.Managers
             _BlueprintManager = blueprintManager;
             Initialize();
             _SpecialManager = specialManager;
+            _SearcherManager = searcherManager;
         }
 
         private void Initialize()
@@ -81,6 +82,7 @@ namespace GY02.Managers
         GameBlueprintManager _BlueprintManager;
         ConcurrentDictionary<Guid, TemplateStringFullView> _Templates;
         SpecialManager _SpecialManager;
+        GameSearcherManager _SearcherManager;
 
         /// <summary>
         /// 所有任务/成就模板。
@@ -263,7 +265,7 @@ namespace GY02.Managers
             if (GetTemplateById(achi.TemplateId) is not TemplateStringFullView tt) return null;
             var item1 = tt.Achievement?.Ins?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is NumberCondition));
             if (item1 is null) return null;
-            var index = _BlueprintManager.GetPeriodIndex(tt.Achievement.Ins, gameChar, out _);
+            var index = _SearcherManager.GetPeriodIndex(tt.Achievement.Ins, gameChar, out _);
             return index;
         }
 
@@ -474,7 +476,7 @@ namespace GY02.Managers
             if (!tt.Achievement.Period.IsValid(now, out _))
                 return false;
 
-            var b = tt.Achievement.Ins is null || _BlueprintManager.GetMatches(_EntityManager.GetAllEntity(gameChar), tt.Achievement.Ins, 1).All(c => c.Item1 is not null);
+            var b = tt.Achievement.Ins is null || _SearcherManager.GetMatches(_EntityManager.GetAllEntity(gameChar), tt.Achievement.Ins, 1).All(c => c.Item1 is not null);
             if (!b)
                 return false;
 

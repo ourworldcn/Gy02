@@ -22,7 +22,7 @@ namespace GY02.Commands.Achievement
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class AchievementEventHandler
     {
-        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager, GameTemplateManager templateManager, GameEventManager eventManager)
+        public AchievementEventHandler(GameEntityManager entityManager, GameAchievementManager achievementManager, GameBlueprintManager blueprintManager, GameTemplateManager templateManager, GameEventManager eventManager, GameSearcherManager searcherManager)
         {
             _EntityManager = entityManager;
             _AchievementManager = achievementManager;
@@ -31,6 +31,7 @@ namespace GY02.Commands.Achievement
             _EventManager = eventManager;
 
             Initialize();
+            _SearcherManager = searcherManager;
         }
 
         private void Initialize()
@@ -43,6 +44,7 @@ namespace GY02.Commands.Achievement
         GameBlueprintManager _BlueprintManager;
         GameTemplateManager _TemplateManager;
         GameEventManager _EventManager;
+        GameSearcherManager _SearcherManager;
 
         /// <summary>
         /// 所有装备的类属集合。
@@ -150,7 +152,7 @@ namespace GY02.Commands.Achievement
                         if (ary is null || ary.Length <= 0) return false;
                         var entities = new GameEntity[] { entity };
                         var tmpInItems = ary.Select(c => _BlueprintManager.Transformed(c, entities));
-                        return _BlueprintManager.GetMatches(entities, tmpInItems, 1).All(c => c.Item1 is not null);
+                        return _SearcherManager.GetMatches(entities, tmpInItems, 1).All(c => c.Item1 is not null);
                     }).Value;
                     if (achiTt is null) continue;
                     var achi = _AchievementManager.GetOrCreate(gc, achiTt);
