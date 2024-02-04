@@ -34,6 +34,8 @@
           "AddPropertyDictionary": {}
         }
       ],
+      "IsCompleted": true,
+      "IsPicked": true,
       "Level": 2
     },
     {
@@ -51,6 +53,8 @@
           "AddPropertyDictionary": {}
         }
       ],
+      "IsCompleted": true,
+      "IsPicked": true,
       "Level": 3
     },
     {
@@ -1710,10 +1714,10 @@
   "ClientDictionary": {},
   "CompositingAccruedCost": [],
   "LvUpAccruedCost": [],
-  "lv": 1,
+  "lv": 3,
   "LastMarkPeriodIndex": null,
-  "LastModifyDateTime": "2024-01-06T06:13:10.8121932Z",
+  "LastModifyDateTime": "2024-01-02T08:54:50.6122719Z",
   "IsValid": true,
-  "CountOfLastModifyUtc": "2024-01-06T06:37:22.7914061Z",
+  "CountOfLastModifyUtc": "2024-01-02T11:14:14.70006Z",
   "Fcps": {}
 }

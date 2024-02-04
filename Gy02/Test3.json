@@ -1,62 +1,1893 @@
 {
-  "Genus": [ "gs_qiandao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
+  "FuhuaPreview": [
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "9fec11b1-8050-4027-ad8b-2637e6b49d42",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "62dfb515-f618-4144-8096-4f14aaaf3127",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0bc7c3af-8cd5-4dd5-8c8c-548de10c027f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 28
+        },
+        {
+          "Outs": [
+            {
+              "TId": "f45a1b76-8b24-450d-8c93-d6fb5b81960f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        }
+      ]
     },
-    "GroupNumber": 1,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "46542DE4-B8B8-4735-936C-856273B650F7",
-            "MinCount": 0,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 42,
-              "MinRemainder": 0,
-              "MaxRemainder": 6
-            },
-            "GeneralConditional": [],
-            "GroupMask": 3
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "289a5c18-086b-4fe5-8b76-53699c841cb7",
-            "MinCount": 1,
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1
-      }
-    ],
-    "Outs": [
-      {
-        "ParentTId": null,
-        "TId": "ad9fa99b-1831-4154-a0ac-661d0facf606",
-        "Count": 1
-      }
-    ],
-    "MaxCount": 2
-  },
-  "adPlacementIdDic": {
-    "Korea": null,
-    "Canada": null,
-    "Feishu": "b65ae42ef982dc",
-    "Pilipinas": "b6579671ea72ce"
-  }
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "a86856b9-8f93-4190-858b-e7dff9d971ff",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "6335b66c-09fe-4b23-a5e0-ee86199a7d98",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "3d716d41-ee18-4445-831d-96bf7a45f1fa",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "5345cc96-ecee-4b31-a73a-0bee76824847",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "b4fa9009-5652-4ea1-9ca2-6c8beed3753d",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_sheep", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "af123a1b-e729-4c3c-9d90-188f89a8e749",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 100
+        },
+        {
+          "Outs": [
+            {
+              "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "be5d5262-9b67-4416-ba08-fa069bf4c311",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "18b7f5cf-fc73-4e8f-b443-a9204e010188",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_tiger", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b82c34c3-e531-4a7b-acdc-cd88586d957b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "70663ec0-cc40-4c22-82b7-2ce7f87cab7a",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 40
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b82c34c3-e531-4a7b-acdc-cd88586d957b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "9451d8a6-507b-46eb-b1be-1f653af21f0a",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "524b552f-6ecc-4fbf-a388-4f70eab305b2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "6ce19f8f-4c23-4c56-805e-4a649318108f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "62dfb515-f618-4144-8096-4f14aaaf3127",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "6335b66c-09fe-4b23-a5e0-ee86199a7d98",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "a86856b9-8f93-4190-858b-e7dff9d971ff",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "2f9175aa-52ae-4da0-a1ae-793a3cb23bfb",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "d887a620-e675-49f3-a1f8-e82137b2034a",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "52651918-cb98-412f-bb9c-7681cb2bc3f2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "d79bf01e-0eba-427d-a4a6-c280a801f096",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0d4336cb-87c4-4598-a0c6-fe85570fecfe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_giraffe" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b5b92ab3-36d9-4e2c-a718-cff80f4f7942",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "696e8311-b286-486c-931f-aff1eb72f1de",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "1f31d9c1-a59a-4f60-9109-d33a5864ddde",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "e2474a81-9404-457e-8932-ba063447d251",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "01928e28-ee77-4f11-98aa-721e5ebec9a6",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c2aa963d-a568-45fc-b4f0-646843e1a4fc",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "8c1a6b45-6e46-48b7-a024-412047eb3412",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 40
+        },
+        {
+          "Outs": [
+            {
+              "TId": "cebd63fb-6629-4a57-97e8-ce35e44fba33",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "ef631e00-a039-44d7-b481-ab5885c12c3f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "2de0e114-2d24-4b16-8102-907ec5ef1ec8",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "ac541f0c-b3dd-490a-a815-8ccc8f763003",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "25536dd5-212a-4932-9627-e0a2350bd51b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 40
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "2df31956-e473-4bd3-8c47-eb83bf67c184",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0d80dddc-ab67-4a17-bc19-ff2eb6a6192f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "6849e6dc-a75c-4903-a98e-589ebfe4112b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_shark", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "25536dd5-212a-4932-9627-e0a2350bd51b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 35
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "468695b4-d8fa-4805-9111-156d0060c217",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 35
+        },
+        {
+          "Outs": [
+            {
+              "TId": "7c674d2a-8bc2-4aa6-823d-0f887820117f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "60c16e21-b22e-4a3a-94dd-99b552b30230",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "0d4336cb-87c4-4598-a0c6-fe85570fecfe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "97d2639a-048e-4426-bec7-f8043093c57f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_panda" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "696e8311-b286-486c-931f-aff1eb72f1de",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "97d2639a-048e-4426-bec7-f8043093c57f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 40
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0d4336cb-87c4-4598-a0c6-fe85570fecfe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b4864644-156c-4e40-ac2e-b4e428eb7913",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "9fec11b1-8050-4027-ad8b-2637e6b49d42",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "61c6d72a-4c44-4d97-9501-ff5e5d9c6fa1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        },
+        {
+          "Outs": [
+            {
+              "TId": "5941cc1f-32f1-4210-ac96-33f834febc43",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "TId": "696e8311-b286-486c-931f-aff1eb72f1de",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "70663ec0-cc40-4c22-82b7-2ce7f87cab7a",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "39954cb7-873a-407c-8afb-0dc043265a55",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        }
+      ]
+    }
+  ],
+  "FuhuaHistory": [
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "cb2e74d5-43d9-4f70-9d16-31079cc8ef6d",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 200000
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_sheep", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "b564395a-487d-4682-8dec-1338daee3952",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_tiger", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_tiger" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_tiger" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_shark" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "ad18e13f-7af8-4e4f-a545-064607ce0a8b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_giraffe" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_shark" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_shark", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "bd71928c-334e-4433-84a1-5941ea8148e4",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 16
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_shark" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_panda" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_shark" ],
+      "Items": []
+    }
+  ],
+  "CombatHistory": [
+    {
+      "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
+      "MinTimeSpanOfPass": "00:06:04.5470000"
+    },
+    {
+      "TId": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
+      "MinTimeSpanOfPass": "00:06:01.7240000"
+    },
+    {
+      "TId": "1e5fc645-2833-48a1-add5-6b83a3407d03",
+      "MinTimeSpanOfPass": "00:06:27.9590000"
+    },
+    {
+      "TId": "28314d37-7d90-4a13-992f-22485de7b020",
+      "MinTimeSpanOfPass": "00:09:02.2630000"
+    },
+    {
+      "TId": "f8b2fd94-8e7e-4c62-9c37-411f24a9b6a1",
+      "MinTimeSpanOfPass": "00:04:57.2480000"
+    },
+    {
+      "TId": "da564dad-8b75-420a-b7e9-d1aab85617ec",
+      "MinTimeSpanOfPass": "00:06:46.7720000"
+    },
+    {
+      "TId": "1bc14a08-1551-4f53-9a51-11876aa7610a",
+      "MinTimeSpanOfPass": "00:07:56.0380000"
+    },
+    {
+      "TId": "a490d629-5dc0-4617-a38f-41c7755ef81b",
+      "MinTimeSpanOfPass": "00:06:30.3450000"
+    },
+    {
+      "TId": "2105aabe-b1d8-4add-9ddf-bc512f673105",
+      "MinTimeSpanOfPass": "00:05:34.0350000"
+    },
+    {
+      "TId": "3fb9edc2-1ba6-4f4a-aeeb-bcc93e9ce971",
+      "MinTimeSpanOfPass": "00:09:34.0290000"
+    },
+    {
+      "TId": "44400571-975e-4a5d-a1db-4d606cc4363b",
+      "MinTimeSpanOfPass": "00:08:37.0300000"
+    },
+    {
+      "TId": "e4c4bc86-2b72-4bee-ac01-0f53909fb498",
+      "MinTimeSpanOfPass": "00:08:35.4350000"
+    },
+    {
+      "TId": "7c1a30c2-e91d-4fca-9b26-fdaef4e2c249",
+      "MinTimeSpanOfPass": "00:08:59.4770000"
+    },
+    {
+      "TId": "6510b97c-3317-43b8-a25c-f4ca0920a8ce",
+      "MinTimeSpanOfPass": "00:07:10.4940000"
+    },
+    {
+      "TId": "6f0da752-94ba-4cb4-a52b-39dcbdb41f91",
+      "MinTimeSpanOfPass": "00:07:43.1330000"
+    },
+    {
+      "TId": "7e1408ab-d6f5-4928-ac6c-fba86800b585",
+      "MinTimeSpanOfPass": "00:12:05.9230000"
+    }
+  ],
+  "ShoppingHistory": [
+    {
+      "TId": "59eb329d-ba4e-4370-b7bb-c3556556f334",
+      "Count": 1,
+      "DateTime": "2023-12-31T12:07:43.741322Z"
+    },
+    {
+      "TId": "f00fbec7-7465-4344-8443-6b4b43260b3c",
+      "Count": 1,
+      "DateTime": "2023-12-31T12:07:45.6641613Z"
+    },
+    {
+      "TId": "a76e122a-092a-45fc-aff0-14eb98c16ed7",
+      "Count": 1,
+      "DateTime": "2023-12-31T12:08:07.7022584Z"
+    },
+    {
+      "TId": "6969e916-893d-4cbe-9059-48904d24213a",
+      "Count": 1,
+      "DateTime": "2023-12-31T12:16:53.4666083Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T12:17:58.3736052Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T12:18:02.1138916Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T12:18:08.8086006Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:01:09.5077066Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:01:13.8926111Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:01:17.8373882Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:16:16.0426074Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:21:23.5975343Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:21:54.0376051Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:22:12.3627732Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:23:13.4925708Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:23:56.4573415Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:24:30.5376713Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:24:59.9477814Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:25:38.9629744Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:25:54.922807Z"
+    },
+    {
+      "TId": "42fe780b-2ccf-4bb0-b306-ed2562d94a23",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:26:01.7878756Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:29:20.5122623Z"
+    },
+    {
+      "TId": "f9681a67-e609-4b35-8df5-1764a6ec3fd8",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:40:22.2373777Z"
+    },
+    {
+      "TId": "dd3eb026-df77-469c-a608-ead03d4b579e",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:40:25.467331Z"
+    },
+    {
+      "TId": "0d05943c-2ed3-42c1-ab63-cfc92e785432",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:40:30.5328566Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "4854df73-d4d9-4c97-8870-2254d3b19c04",
+      "Count": 45,
+      "DateTime": "2023-12-31T21:42:07.0877747Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:42:54.9226384Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2023-12-31T21:54:03.3477051Z"
+    },
+    {
+      "TId": "75137bd7-882d-4580-b011-e92e8a36fbd5",
+      "Count": 1,
+      "DateTime": "2024-01-01T00:56:52.9126349Z"
+    },
+    {
+      "TId": "ef22ce64-ac81-4ae2-b786-6582c3b724e6",
+      "Count": 1,
+      "DateTime": "2024-01-01T00:56:58.0579795Z"
+    },
+    {
+      "TId": "91b2a5aa-80ba-4bbf-9eb2-6eb39df3d920",
+      "Count": 1,
+      "DateTime": "2024-01-02T08:55:29.3347338Z"
+    },
+    {
+      "TId": "ee0ae75e-9e45-4d8c-9ec1-09219e7684e4",
+      "Count": 1,
+      "DateTime": "2024-01-02T08:55:31.5108419Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-02T08:58:13.32568Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-02T08:58:52.3883823Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-02T08:58:55.5668745Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-02T08:59:32.6060244Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-02T09:00:11.5959127Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-02T09:00:54.4033917Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-02T09:12:19.5008767Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-02T09:27:10.0834765Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-02T09:32:10.4092247Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-02T09:32:14.9940003Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-02T09:33:58.6726092Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-02T10:31:27.6298968Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-02T10:38:35.1418897Z"
+    },
+    {
+      "TId": "59bf4cb7-5bc2-48ee-98ad-2efbf116b162",
+      "Count": 1,
+      "DateTime": "2024-01-02T06:35:27.3558627Z"
+    },
+    {
+      "TId": "c7640cab-5178-4447-9456-76fa807645ae",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:09:43.6236776Z"
+    },
+    {
+      "TId": "10d891fe-c345-4bdb-91be-9542af2edd8f",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:09:48.8360216Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:11:06.8775498Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:12:09.2254574Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:12:12.1200414Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:12:15.9199919Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:13:30.0868524Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:14:07.960597Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:14:44.972807Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:15:28.2313021Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:21:24.6219489Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:22:18.6612999Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:23:04.8779992Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:24:06.6833468Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:24:32.5773623Z"
+    },
+    {
+      "TId": "683da21d-9766-4701-9450-e24e06a1f9e1",
+      "Count": 1,
+      "DateTime": "2024-01-04T06:21:10.0972954Z"
+    },
+    {
+      "TId": "4c087d38-ec50-42bc-ab59-b8af3101d9af",
+      "Count": 1,
+      "DateTime": "2024-01-04T06:21:14.5450681Z"
+    },
+    {
+      "TId": "94f21d1a-3b55-40c6-9748-7abd43e2dc47",
+      "Count": 1,
+      "DateTime": "2024-01-05T17:10:12.8486956Z"
+    },
+    {
+      "TId": "660e0b11-10a2-4467-9f75-9746219ed7d6",
+      "Count": 1,
+      "DateTime": "2024-01-05T17:11:26.3358549Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-05T17:12:06.6519101Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-05T17:13:17.5749585Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-05T17:13:23.3115387Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-05T17:13:27.2704403Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-05T17:13:30.598337Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-05T17:14:13.7934053Z"
+    },
+    {
+      "TId": "8d5fa9a1-a713-4b7b-b573-694f789ecc6a",
+      "Count": 1,
+      "DateTime": "2024-01-07T11:15:49.4317474Z"
+    },
+    {
+      "TId": "f34df47a-2397-4751-9e2f-961879ef2f6d",
+      "Count": 1,
+      "DateTime": "2024-01-07T11:15:50.7959928Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-07T11:16:06.1957262Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-07T11:24:04.4367878Z"
+    },
+    {
+      "TId": "42fe780b-2ccf-4bb0-b306-ed2562d94a23",
+      "Count": 1,
+      "DateTime": "2024-01-07T11:24:06.865443Z"
+    },
+    {
+      "TId": "1a4eeb46-207e-4b61-b7ef-4886cbc29faf",
+      "Count": 1,
+      "DateTime": "2024-01-10T12:43:55.743045Z"
+    },
+    {
+      "TId": "afca2c79-0856-40ed-816c-6bbfe3462798",
+      "Count": 1,
+      "DateTime": "2024-01-10T12:43:59.5033077Z"
+    },
+    {
+      "TId": "264d99e1-f8a2-4d85-9fd0-28711782ae7f",
+      "Count": 1,
+      "DateTime": "2024-01-10T12:44:16.0023559Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-10T12:49:03.0218413Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-10T13:01:15.7106717Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-10T13:01:19.0873287Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-10T13:19:45.0503449Z"
+    },
+    {
+      "TId": "83953478-80c0-44c7-9130-0a96f30e961e",
+      "Count": 1,
+      "DateTime": "2024-01-11T14:43:32.1267981Z"
+    },
+    {
+      "TId": "6fe8ca81-8db8-4ca7-a450-dc79ff032481",
+      "Count": 1,
+      "DateTime": "2024-01-11T14:43:33.3533217Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-11T14:44:19.010896Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-11T14:54:14.1144607Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-11T15:00:21.5272341Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-11T15:01:04.8559437Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-11T15:01:29.7625267Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-11T15:01:45.7048695Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-11T15:02:05.9789602Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-11T15:02:51.1750888Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-11T15:03:04.3003988Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-11T16:05:47.8684139Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-11T16:09:41.8825272Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-11T16:12:10.6286208Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-11T16:12:14.2033521Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-11T16:18:32.3136643Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-11T16:30:30.8421088Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-11T16:43:41.8031212Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:21:44.221811Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:30:37.3439157Z"
+    },
+    {
+      "TId": "34ed89da-4a7f-41b6-baf1-c948765525c3",
+      "Count": 1,
+      "DateTime": "2024-01-14T10:06:50.0383491Z"
+    },
+    {
+      "TId": "36a5f9d9-4446-4f42-8e13-ccea7da8c449",
+      "Count": 1,
+      "DateTime": "2024-01-14T10:06:53.3531607Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-14T10:07:17.4998072Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-14T10:08:45.1048939Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-14T13:44:33.9777132Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-14T13:45:06.9829747Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-14T13:45:44.938595Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-14T13:46:22.8572911Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-14T13:47:27.8387394Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-14T13:48:12.7967756Z"
+    },
+    {
+      "TId": "1a1299f9-dd2d-4819-ac18-30339ca40927",
+      "Count": 1,
+      "DateTime": "2024-01-15T20:45:13.4955672Z"
+    },
+    {
+      "TId": "b7c03093-fa38-41c3-9bd3-74e5960fff72",
+      "Count": 1,
+      "DateTime": "2024-01-15T20:45:14.7699784Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-15T20:51:03.5262118Z"
+    },
+    {
+      "TId": "cd67e4d4-a1d5-4973-9ca1-14518baa8c9e",
+      "Count": 1,
+      "DateTime": "2024-01-20T15:25:00.7323667Z"
+    },
+    {
+      "TId": "fcf43607-51e5-4682-8277-89ce2434bc31",
+      "Count": 1,
+      "DateTime": "2024-01-20T15:25:06.5404975Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-20T15:25:12.1602906Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-20T15:37:43.3907341Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-20T15:46:44.6255675Z"
+    },
+    {
+      "TId": "5c05ee60-5ceb-4247-94a3-37899f7750c4",
+      "Count": 1,
+      "DateTime": "2024-01-24T12:18:57.5702487Z"
+    },
+    {
+      "TId": "3c77e261-f74e-417a-8a56-55a644f857f5",
+      "Count": 1,
+      "DateTime": "2024-01-24T12:18:58.7300492Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-24T13:01:30.2407928Z"
+    },
+    {
+      "TId": "46f2aeb1-fcce-482d-a918-0c4b650673dc",
+      "Count": 1,
+      "DateTime": "2024-01-24T13:02:52.8964698Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-24T13:03:40.1095163Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-24T13:03:42.2010439Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-24T13:03:45.9380189Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-24T13:03:52.1582882Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-24T13:03:55.7530919Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-24T14:17:28.5286592Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-24T14:31:14.0135141Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2024-01-24T14:41:34.8254361Z"
+    },
+    {
+      "TId": "12a5817e-edaa-4c56-82c7-58e797d3a838",
+      "Count": 1,
+      "DateTime": "2024-01-28T17:40:56.699174Z"
+    },
+    {
+      "TId": "63ace825-5416-4d80-935a-3b3d7c853991",
+      "Count": 1,
+      "DateTime": "2024-01-28T17:41:04.852705Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-28T17:41:46.7932876Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-28T17:43:43.2615131Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-28T17:43:46.0854173Z"
+    }
+  ],
+  "DiceHistory": [
+    {
+      "DiceTId": "af719619-3934-45bf-aaec-669c6a8afdc6",
+      "GuaranteesCount": 0
+    },
+    {
+      "DiceTId": "a65dd1ff-dac0-42d7-9167-9cad64dd0b9e",
+      "GuaranteesCount": 1
+    }
+  ],
+  "Roles": [],
+  "RedeemCodeHistory": null,
+  "LvUpAccruedCost": [],
+  "CompositingAccruedCost": [],
+  "ClientDictionary": { "TutorialIds": "[11001,10001,10005,11004,11005,11002,10002,10003,10006,10007,11003]" },
+  "CreateUtc": "2023-12-31T11:59:48.2048565Z",
+  "IsOnline": false,
+  "atk": 20,
+  "def": 100,
+  "pow": 350,
+  "crit": 100,
+  "CombatTId": "e987add9-00dd-4d03-83ff-bef717cae823",
+  "LogineCount": 23,
+  "LastLoginDateTimeUtc": "2024-01-28T00:00:00Z",
+  "ClientCombatInfo": "{\u0022killEnemyDic\u0022:{\u0022320101014\u0022:343,\u0022320101006\u0022:13,\u0022320206017\u0022:5,\u0022320107003\u0022:3,\u0022320105402\u0022:1,\u0022320203005\u0022:1,\u0022320103005\u0022:6,\u0022320104002\u0022:1,\u0022320102010\u0022:8,\u0022320101005\u0022:40,\u0022320103004\u0022:8,\u0022320202010\u0022:1,\u0022320201006\u0022:6,\u0022320203004\u0022:1,\u0022320105403\u0022:1,\u0022320308025\u0022:1,\u0022320103003\u0022:1},\u0022dropRewardDic\u0022:{\u0022110101002\u0022:2898,\u0022131101301\u0022:1,\u0022131101601\u0022:1,\u0022120106001\u0022:1}}",
+  "CountOfLastModifyUtc": "2023-12-31T11:59:48.2048604Z",
+  "Fcps": {}
 }
