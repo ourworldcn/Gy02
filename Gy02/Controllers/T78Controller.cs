@@ -35,7 +35,11 @@ namespace GY02.Controllers
         /// <param name="logger"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="specialManager"></param>
-        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore, GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager, GameBlueprintManager blueprintManager, GameSearcherManager searcherManager)
+        /// <param name="blueprintManager"></param>
+        /// <param name="searcherManager"></param>
+        public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore,
+            GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager,
+            GameBlueprintManager blueprintManager, GameSearcherManager searcherManager)
         {
             _T78Manager = t78Manager;
             _ShoppingManager = shoppingManager;

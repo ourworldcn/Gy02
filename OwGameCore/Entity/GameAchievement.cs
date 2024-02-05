@@ -40,6 +40,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 当前该成就/任务是否有效。true有效，false无效此时成就任务的计数不会推进，但已有的奖励仍然可以领取（若已完成且未领取）。UI可以在无效时不让领取。
         /// </summary>
+#if NET5_0_OR_GREATER
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public bool IsValid { get; set; }
 
         /// <summary>
@@ -50,6 +53,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 最后一次标记的自传周期号。用于解决周期结束开始之间需要发生两个事件的问题。
         /// </summary>
+#if NET5_0_OR_GREATER
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public decimal? LastMarkPeriodIndex { get; set; }
 
         #endregion 可复制属性
@@ -69,7 +75,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 是否已经达成该等级。true已经达成，false未达成。
         /// </summary>
-#if NETCOREAPP
+#if NET5_0_OR_GREATER
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
         public bool IsCompleted { get; set; }
@@ -77,7 +83,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 是否已经领取了该等级的奖励，true已经领取，false尚未领取，在未达成时此属性值也是false。
         /// </summary>
-#if NETCOREAPP
+#if NET5_0_OR_GREATER
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
         public bool IsPicked { get; set; }
@@ -85,7 +91,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 等级。1表示第一级的状态，2表示第二级的状态，以此类推。
         /// </summary>
-#if NETCOREAPP
+#if NET5_0_OR_GREATER
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
         public int Level { get; set; }

@@ -32,6 +32,7 @@ using OW.Server;
 using OW.SyncCommand;
 using System;
 using System.Buffers;
+using System.Collections.Concurrent;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Globalization;
@@ -77,7 +78,10 @@ namespace GY02
 
         protected override Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            return Task.CompletedTask;
+            return Task.Run(() =>
+            {
+                SetDbConfig();  //设置数据库配置项
+            });
         }
 
         public override Task StartAsync(CancellationToken cancellationToken)
@@ -88,18 +92,6 @@ namespace GY02
             UpdateDatabase(service);
             var result = Task.Factory.StartNew(c =>
             {
-                //Thread thread = new Thread(() => CreateNewUserAndChar())
-                //{
-                //    IsBackground = true,
-                //    Priority = ThreadPriority.Lowest,
-                //};
-                //#if DEBUG
-                //                thread.Start();
-                //#else
-                //                thread.Start();
-                //#endif
-                //                Task.Run(CreateGameManager);    //强制初始化所有服务以加速
-                Task.Run(SetDbConfig);  //设置数据库配置项
                 var logger = _Services.GetService<ILogger<GameHostedService>>();
                 logger?.LogInformation("游戏虚拟世界服务成功上线。");
                 using var scope = _Services.CreateScope();
@@ -110,7 +102,7 @@ namespace GY02
             }, _Services, cancellationToken);
 
             Test();
-
+            base.StartAsync(cancellationToken);
             return result;
         }
 
@@ -154,7 +146,16 @@ namespace GY02
             }
             catch (Exception err)
             {
-                Trace.WriteLine(err.Message);
+                _Logger.LogWarning(err, default);
+            }
+            var sql = "EXEC sp_tableoption '[dbo].[VirtualThings]', 'vardecimal storage format', 1";
+            try
+            {
+                db?.Database.ExecuteSqlRaw(sql);
+            }
+            catch (Exception err)
+            {
+                _Logger.LogWarning(err, default);
             }
 #if !DEBUG  //若正式运行版本
 
@@ -270,67 +271,44 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test(string str = null)
         {
+            void ttt((uint, uint, MD5 md5, byte[]) minMax)
+            {
+
+                for (var i = minMax.Item1; i <= minMax.Item2; i++)
+                {
+                    if (minMax.md5.ComputeHash(BitConverter.GetBytes(i)).SequenceEqual(minMax.Item4)) return;
+                }
+                return;
+            }
+            var entity = new GameEntity { };
+            var entitySummary = new GameEntitySummary { };
+            var jstr = JsonSerializer.Serialize(entitySummary);
             var store = _Services.GetService<GameAccountStoreManager>();
             var mapper = _Services.GetService<IMapper>();
-            var sw = Stopwatch.StartNew();
             var cache = _Services.GetService<IMemoryCache>();
-            int i = int.MinValue + 1;
-            var j = 0 - i;
+            var sw = Stopwatch.StartNew();
+
             #region 测试用代码
             try
             {
-                var e0 = new SocketAsyncEventArgs { };
-                var ary = new byte[256];
-                e0.SetBuffer(ary, 0, ary.Length);
-                e0.SetBuffer(null, 0, 0);
-                var svc = _Services.GetRequiredService<T127Manager>();
-                var svc1 = _Services.GetRequiredService<LoginNameGenerator>();
-                using HttpClient client = new HttpClient();
-                //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
-                //var str1 = r.Content.ReadAsStringAsync().Result;
-                //var b = svc.GetOrderState("com.duangphl.07", "hpohhpfgbielodmhiflcefhd.AO-J1OwdtIEgJGxcMDtxK880anOSCy7yirhq0W6S4--tlDmmTrZOEv-CLcJzMwBuxLJ1xiw_1uaTX2-i4dppDQAY0SPTAeFHEFl6V1yTpTwVxBKiObGjjlA",
-                //    out var result);
-                //var s1 = $"val={null}";
-                //var svc1228 = _Services.GetRequiredService<T1228Manager>();
-                //var str1 = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"\",\"roleName\":\"\",\"roleLevel\":\"\",\"serverName\":\"\",\"vipLevel\":\"\"}}&secret=YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
-                //var str2 = svc1228.GetSign(str1);
-                //Cult();
-                int rp = 20089;
-                int j1 = int.MaxValue;
-                uint u1 = (uint)(j1 + 1);
-                var s = OwUdpClientV2.IncrementUInt32(ref j1);
-                Task.Run(() =>
-                {
-                    var udp1 = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                    var ep = new IPEndPoint(IPAddress.Any, rp);
-                    udp1.Bind(ep);
-                    var e1 = new SocketAsyncEventArgs { };
-                    e1.SetBuffer(new byte[256]);
-                    e1.Completed += E1_Completed1;
-                    var buff = new byte[2048];
-                    var rr = udp1.ReceiveAsync(e1);
-                    var ary = rr;
-                });
-                Thread.Sleep(100);
-                using var socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                socket.Bind(new IPEndPoint(IPAddress.Any, 50000));
-                socket.Connect(new IPEndPoint(IPAddress.Parse("192.168.0.104"), 89));
-                var e1 = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Loopback, rp), };
-                var buff1 = new byte[] { 0x4c, 0x4d };
-                e1.SetBuffer(buff1, 0, buff1.Length);
+                var part = Partitioner.Create(long.MinValue, long.MaxValue, 10_000_000);
+                byte[] bytes = MD5.HashData(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()));
 
-                e1.Completed += E1_Completed;
-                var r1 = socket.SendAsync(e1);
-                Thread.Sleep(100);
-
-                var e2 = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 20443) };
-                e2.SetBuffer(0, 2048);
-                e2.Completed += E1_Completed;
-                var r2 = socket.SendAsync(e2);
-                Debug.Assert(true);
-
-                var udp = new UdpClient(0);
-                udp.Send(new byte[] { 3, 4 }, new IPEndPoint(IPAddress.Loopback, rp));
+                //var result = Parallel.ForEach(part, (range, state) =>
+                //{
+                //    using var md5 = MD5.Create();
+                //    for (var i = range.Item1; i <= range.Item2; i++)
+                //    {
+                //        if (state.IsStopped) return;
+                //        if (md5.ComputeHash(BitConverter.GetBytes(i)).SequenceEqual(bytes))
+                //        {
+                //            state.Stop();
+                //            Debug.WriteLine($"找到碰撞{i}");
+                //            return;
+                //        }
+                //    }
+                //    Debug.WriteLine($"{range.Item1} - {range.Item2}没有碰撞。");
+                //});
             }
             #endregion 测试用代码
             catch (Exception)
@@ -341,6 +319,59 @@ namespace GY02
                 sw.Stop();
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
+        }
+
+        private void TestUdp(out HttpClient client, out Socket socket)
+        {
+            var e0 = new SocketAsyncEventArgs { };
+            var ary = new byte[256];
+            e0.SetBuffer(ary, 0, ary.Length);
+            e0.SetBuffer(null, 0, 0);
+            var svc = _Services.GetRequiredService<T127Manager>();
+            var svc1 = _Services.GetRequiredService<LoginNameGenerator>();
+            client = new HttpClient();
+            //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
+            //var str1 = r.Content.ReadAsStringAsync().Result;
+            //var b = svc.GetOrderState("com.duangphl.07", "hpohhpfgbielodmhiflcefhd.AO-J1OwdtIEgJGxcMDtxK880anOSCy7yirhq0W6S4--tlDmmTrZOEv-CLcJzMwBuxLJ1xiw_1uaTX2-i4dppDQAY0SPTAeFHEFl6V1yTpTwVxBKiObGjjlA",
+            //    out var result);
+            //var s1 = $"val={null}";
+            //var svc1228 = _Services.GetRequiredService<T1228Manager>();
+            //var str1 = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"\",\"roleName\":\"\",\"roleLevel\":\"\",\"serverName\":\"\",\"vipLevel\":\"\"}}&secret=YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
+            //var str2 = svc1228.GetSign(str1);
+            //Cult();
+            int rp = 20089;
+            Task.Run(() =>
+            {
+                var udp1 = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                var ep = new IPEndPoint(IPAddress.Any, rp);
+                udp1.Bind(ep);
+                var e1 = new SocketAsyncEventArgs { };
+                e1.SetBuffer(new byte[256]);
+                e1.Completed += E1_Completed1;
+                var buff = new byte[2048];
+                var rr = udp1.ReceiveAsync(e1);
+                var ary = rr;
+            });
+            Thread.Sleep(100);
+            socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+            socket.Bind(new IPEndPoint(IPAddress.Any, 50000));
+            socket.Connect(new IPEndPoint(IPAddress.Parse("192.168.0.104"), 89));
+            var e1 = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Loopback, rp), };
+            var buff1 = new byte[] { 0x4c, 0x4d };
+            e1.SetBuffer(buff1, 0, buff1.Length);
+
+            e1.Completed += E1_Completed;
+            var r1 = socket.SendAsync(e1);
+            Thread.Sleep(100);
+
+            var e2 = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 20443) };
+            e2.SetBuffer(0, 2048);
+            e2.Completed += E1_Completed;
+            var r2 = socket.SendAsync(e2);
+            Debug.Assert(true);
+
+            var udp = new UdpClient(0);
+            udp.Send(new byte[] { 3, 4 }, new IPEndPoint(IPAddress.Loopback, rp));
         }
 
         private void E1_Completed1(object sender, SocketAsyncEventArgs e)

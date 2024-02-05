@@ -8,7 +8,7 @@
     <DocumentationFile>Gy02ApiDoc.xml</DocumentationFile>
     <TieredCompilation>true</TieredCompilation>
     <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
-    <!--<ServerGarbageCollection>false</ServerGarbageCollection>-->
+    <ServerGarbageCollection>true</ServerGarbageCollection>
     <!--<RetainVMGarbageCollection>true</RetainVMGarbageCollection>-->
     <!--<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>-->
   </PropertyGroup>

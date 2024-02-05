@@ -55,7 +55,7 @@ namespace GY02.Templates
         /// <summary>
         /// 特定原因记录物品唯一Id，通常为null。
         /// </summary>
-#if NETCOREAPP
+#if NET5_0_OR_GREATER
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
         public Guid? Id { get; set; }
@@ -63,7 +63,7 @@ namespace GY02.Templates
         /// <summary>
         /// 父容器模板Id，为null则放置在默认容器中。
         /// </summary>
-#if NETCOREAPP
+#if NET5_0_OR_GREATER
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
         public Guid? ParentTId { get; set; }
@@ -76,7 +76,7 @@ namespace GY02.Templates
         /// <summary>
         /// 数量。对可堆叠物可以是任何数量，对不可堆叠物只能是正整数。
         /// </summary>
-#if NETCOREAPP
+#if NET5_0_OR_GREATER
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
         public decimal Count { get; set; }
@@ -85,6 +85,9 @@ namespace GY02.Templates
         /// <summary>
         /// 合并计算的数值属性。此属性将根据名称累加到已有的属性上。
         /// </summary>
+#if NET5_0_OR_GREATER
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public Dictionary<string, decimal> AddPropertyDictionary
         {
             get => LazyInitializer.EnsureInitialized(ref _AddPropertyDictionary);
@@ -1771,7 +1774,7 @@ namespace GY02.Templates
         /// 保底忽略标志。
         /// </summary>
         /// <value>true当命中此项时会清除保底计数，置为0。</value>
-#if NETCOREAPP
+#if NET5_0_OR_GREATER
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
         public bool ClearGuaranteesCount { get; set; }

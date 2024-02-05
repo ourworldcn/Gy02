@@ -589,6 +589,8 @@
             <param name="logger"></param>
             <param name="syncCommandManager"></param>
             <param name="specialManager"></param>
+            <param name="blueprintManager"></param>
+            <param name="searcherManager"></param>
         </member>
         <member name="M:GY02.Controllers.T78Controller.Payed(GY02.Publisher.PayedParamsDto,System.String,System.String)">
             <summary>
