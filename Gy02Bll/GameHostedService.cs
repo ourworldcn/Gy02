@@ -271,15 +271,6 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test(string str = null)
         {
-            void ttt((uint, uint, MD5 md5, byte[]) minMax)
-            {
-
-                for (var i = minMax.Item1; i <= minMax.Item2; i++)
-                {
-                    if (minMax.md5.ComputeHash(BitConverter.GetBytes(i)).SequenceEqual(minMax.Item4)) return;
-                }
-                return;
-            }
             var entity = new GameEntity { };
             var entitySummary = new GameEntitySummary { };
             var jstr = JsonSerializer.Serialize(entitySummary);
