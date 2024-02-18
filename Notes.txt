@@ -62,3 +62,5 @@ C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET
 公驴驹坐骑
 和撒那战吼
 
+dbcc shrinkfile('GY02UserTest2',emptyfile) --清空指定的数据文件以便未来删除文件
+菲力宾自测时 20240218之前 VirtualThings表是 1.795kB/行
