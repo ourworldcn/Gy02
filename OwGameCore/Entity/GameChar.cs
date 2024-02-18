@@ -407,6 +407,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 购买的日期。
         /// </summary>
+#if NETCOREAPP
+        [JsonConverter(typeof(OwDateTime_sJsonConverter))]
+#endif
         public DateTime DateTime { get; set; }
 
         /// <summary>

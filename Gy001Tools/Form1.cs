@@ -68,5 +68,38 @@ namespace Gy001Tools
                 Debug.WriteLine(err.Message);
             }
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+        bool _Changing;
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (_Changing) return;
+            _Changing = true;
+            if (Guid.TryParse(textBox1.Text, out var guid)) textBox2.Text = Convert.ToBase64String(guid.ToByteArray());
+            else
+                textBox2.Text = "";
+            _Changing = false;
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            if (_Changing) return;
+            _Changing = true;
+            try
+            {
+                var bin = Convert.FromBase64String(textBox2.Text);
+                var guid = new Guid(bin);
+                textBox1.Text = guid.ToString();
+            }
+            catch (Exception)
+            {
+                textBox1.Text = "";
+            }
+            finally { _Changing = false; }
+        }
     }
 }

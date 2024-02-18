@@ -1,1773 +1,2474 @@
 {
-  "Items": [
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 1
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 2
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 3
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 4
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 5
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 6
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 7
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 8
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 9
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 2,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 10
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 11
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 12
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 13
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 14
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 15
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 16
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 17
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 18
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 19
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 20
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 21
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 22
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 23
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 24
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 25
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 26
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 27
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 28
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 29
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 30
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 31
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 32
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 33
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 34
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 35
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 36
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 37
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 38
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 39
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 40
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 41
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 42
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 43
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 44
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 45
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 46
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 47
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 48
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 49
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 25,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 50
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 51
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 52
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 53
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 54
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 55
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 56
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 57
-    },
-    {
-      "Rewards": [
+  "FuhuaPreview": [
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b4864644-156c-4e40-ac2e-b4e428eb7913",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "62dfb515-f618-4144-8096-4f14aaaf3127",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0bc7c3af-8cd5-4dd5-8c8c-548de10c027f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 28
+        },
+        {
+          "Outs": [
+            {
+              "TId": "f45a1b76-8b24-450d-8c93-d6fb5b81960f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "62dfb515-f618-4144-8096-4f14aaaf3127",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "6335b66c-09fe-4b23-a5e0-ee86199a7d98",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "3d716d41-ee18-4445-831d-96bf7a45f1fa",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 58
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 59
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 60
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 61
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 62
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 63
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 64
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 65
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 66
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 67
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 68
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 69
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 35,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 70
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 71
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 72
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 73
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 74
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 75
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 76
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 77
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 78
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 79
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 40,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 80
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 81
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 82
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 83
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 84
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 85
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 86
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 87
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 88
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 89
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 45,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 90
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 91
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 92
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 93
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 94
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 95
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 96
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 97
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 98
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 99
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 100
-    },
-    {
-      "Rewards": [],
-      "Level": 101
+          "Outs": [
+            {
+              "TId": "5345cc96-ecee-4b31-a73a-0bee76824847",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_sheep", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "af123a1b-e729-4c3c-9d90-188f89a8e749",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 100
+        },
+        {
+          "Outs": [
+            {
+              "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "b564395a-487d-4682-8dec-1338daee3952",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "be5d5262-9b67-4416-ba08-fa069bf4c311",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "12c33ec5-1500-4e0e-91a5-90cceb1b49a4",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "af123a1b-e729-4c3c-9d90-188f89a8e749",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "6b7f8db2-3563-443b-9f85-174a1a226263",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "b14c117f-ad3d-47ed-9c96-2bbf5c2f9d04",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "b4827ef0-710b-4ba0-8d43-187a685c673b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_sheep" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 60
+        },
+        {
+          "Outs": [
+            {
+              "TId": "696e8311-b286-486c-931f-aff1eb72f1de",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "3480ff53-a036-4ba2-9af9-fbf749774897",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 100
+        },
+        {
+          "Outs": [
+            {
+              "TId": "d05fd0f3-db38-4089-9ad9-f1dc677e217e",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "7b4b5142-80fe-4e95-adbe-32c71589efe8",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        },
+        {
+          "Outs": [
+            {
+              "TId": "26f7e185-6daa-428a-a86f-715258c43b4b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_giraffe" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "62dfb515-f618-4144-8096-4f14aaaf3127",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "8f772e03-b9b8-48cc-acae-280dfcca842d",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "3480ff53-a036-4ba2-9af9-fbf749774897",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "59dcec3c-0c5b-404f-a19d-402468cd84b6",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "1c2c1076-f013-444e-bf4a-f208fb071c68",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        },
+        {
+          "Outs": [
+            {
+              "TId": "7f917637-8767-47ec-a317-157b6540d5e4",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "25536dd5-212a-4932-9627-e0a2350bd51b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "468695b4-d8fa-4805-9111-156d0060c217",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "6aa7900e-f44c-4bd5-baca-76b4e1d8eb72",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        },
+        {
+          "Outs": [
+            {
+              "TId": "cd917e6a-754b-463c-922e-2d1d565a7513",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "714356af-4948-46b6-9dce-2b6fdc3ee2ab",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "f14e79dd-8daf-4924-8b4b-357632b5f294",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "3daea572-a21a-450c-a261-ff07d4b6e1fe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "8c1a6b45-6e46-48b7-a024-412047eb3412",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "3fece1b2-cb3f-4302-9db4-5268bed05ea6",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "7dc18013-ae81-409a-8c5e-d33374702346",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_shark", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b5b92ab3-36d9-4e2c-a718-cff80f4f7942",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "1f31d9c1-a59a-4f60-9109-d33a5864ddde",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c9cbc2b3-0f41-496b-9865-2980b298f400",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "77aaeda3-d6ef-46be-ae72-61775472211c",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "e5666b70-a567-46f3-967f-208a6877fb59",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b82c34c3-e531-4a7b-acdc-cd88586d957b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "70663ec0-cc40-4c22-82b7-2ce7f87cab7a",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "696e8311-b286-486c-931f-aff1eb72f1de",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "ad18e13f-7af8-4e4f-a545-064607ce0a8b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "39954cb7-873a-407c-8afb-0dc043265a55",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "25536dd5-212a-4932-9627-e0a2350bd51b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 40
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "TId": "3daea572-a21a-450c-a261-ff07d4b6e1fe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0d80dddc-ab67-4a17-bc19-ff2eb6a6192f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "6849e6dc-a75c-4903-a98e-589ebfe4112b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "62dfb515-f618-4144-8096-4f14aaaf3127",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "9fec11b1-8050-4027-ad8b-2637e6b49d42",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "TId": "61c6d72a-4c44-4d97-9501-ff5e5d9c6fa1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        },
+        {
+          "Outs": [
+            {
+              "TId": "5941cc1f-32f1-4210-ac96-33f834febc43",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_shark", "zuoqi_sheep" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "a86856b9-8f93-4190-858b-e7dff9d971ff",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "6335b66c-09fe-4b23-a5e0-ee86199a7d98",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "4399dd8c-d004-4c26-9346-7fbbcf9eadbd",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "089c207b-d43e-4929-81bf-246b3fd2bd48",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        },
+        {
+          "Outs": [
+            {
+              "TId": "3b69a843-2e89-4ef5-9d9c-2779152ed2b1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 6
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "8c1a6b45-6e46-48b7-a024-412047eb3412",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "cebd63fb-6629-4a57-97e8-ce35e44fba33",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "fa112e6f-eb1c-4f46-a2e7-03cfbf70a320",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        },
+        {
+          "Outs": [
+            {
+              "TId": "ff72cfb0-a14a-4f6c-8dd2-6c1190cb9078",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "fa96f361-f300-40b7-abd4-752eeb24ff43",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "c06b7de2-7ae5-4897-a11a-f025a827617c",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "97d2639a-048e-4426-bec7-f8043093c57f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "97d2639a-048e-4426-bec7-f8043093c57f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "d79bf01e-0eba-427d-a4a6-c280a801f096",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "c06b7de2-7ae5-4897-a11a-f025a827617c",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "97d2639a-048e-4426-bec7-f8043093c57f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 60
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0d4336cb-87c4-4598-a0c6-fe85570fecfe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_sheep" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "d79bf01e-0eba-427d-a4a6-c280a801f096",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "97d2639a-048e-4426-bec7-f8043093c57f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_panda" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "af123a1b-e729-4c3c-9d90-188f89a8e749",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 40
+        },
+        {
+          "Outs": [
+            {
+              "TId": "cebd63fb-6629-4a57-97e8-ce35e44fba33",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0d4336cb-87c4-4598-a0c6-fe85570fecfe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_panda" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "0d4336cb-87c4-4598-a0c6-fe85570fecfe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "8f772e03-b9b8-48cc-acae-280dfcca842d",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "69d3fdca-5bb2-42b8-85a4-272e2eed95f9",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_panda" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "97d2639a-048e-4426-bec7-f8043093c57f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 40
+        },
+        {
+          "Outs": [
+            {
+              "TId": "696e8311-b286-486c-931f-aff1eb72f1de",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "c06b7de2-7ae5-4897-a11a-f025a827617c",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 3
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_panda" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "62dfb515-f618-4144-8096-4f14aaaf3127",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "9fec11b1-8050-4027-ad8b-2637e6b49d42",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 50
+        },
+        {
+          "Outs": [
+            {
+              "TId": "0d4336cb-87c4-4598-a0c6-fe85570fecfe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 35
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_shark", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "25536dd5-212a-4932-9627-e0a2350bd51b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 35
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "468695b4-d8fa-4805-9111-156d0060c217",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_tiger", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "57cca3f1-39c1-4c9b-8109-de94058eb299",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b82c34c3-e531-4a7b-acdc-cd88586d957b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "b82c34c3-e531-4a7b-acdc-cd88586d957b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "TId": "6ce19f8f-4c23-4c56-805e-4a649318108f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "524b552f-6ecc-4fbf-a388-4f70eab305b2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "9451d8a6-507b-46eb-b1be-1f653af21f0a",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_corgi" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "cebd63fb-6629-4a57-97e8-ce35e44fba33",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "TId": "3daea572-a21a-450c-a261-ff07d4b6e1fe",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "25536dd5-212a-4932-9627-e0a2350bd51b",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 40
+        },
+        {
+          "Outs": [
+            {
+              "TId": "7f87e41c-fec6-44c3-bd0a-9c121ac580ae",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        },
+        {
+          "Outs": [
+            {
+              "TId": "07b7a4f1-c7e9-4aa2-a0aa-354e59c842b9",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "ddeb2a86-bc6e-42d4-a8e3-d866f8abb219",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "887b5c87-6726-4054-b929-10f223efa4e0",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "c222527a-d3e0-41e1-9a6e-c03381e722a1",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 25
+        },
+        {
+          "Outs": [
+            {
+              "TId": "cebd63fb-6629-4a57-97e8-ce35e44fba33",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "dff9b94c-efcd-4fa7-ae8f-0e8d2131d051",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 20
+        },
+        {
+          "Outs": [
+            {
+              "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+              "TId": "1f31d9c1-a59a-4f60-9109-d33a5864ddde",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 30
+        },
+        {
+          "Outs": [
+            {
+              "TId": "cebd63fb-6629-4a57-97e8-ce35e44fba33",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        },
+        {
+          "Outs": [
+            {
+              "TId": "e7e7007a-b9f7-4de5-9570-a601300208a2",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        }
+      ]
     }
   ],
-  "ClientDictionary": {},
-  "CompositingAccruedCost": [],
+  "FuhuaHistory": [
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "cb2e74d5-43d9-4f70-9d16-31079cc8ef6d",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 200000
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "b4fa9009-5652-4ea1-9ca2-6c8beed3753d",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 8
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_sheep", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_sheep" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_giraffe" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_tiger", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_tiger" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_shark", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_shark", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "7c674d2a-8bc2-4aa6-823d-0f887820117f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "60c16e21-b22e-4a3a-94dd-99b552b30230",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "bd71928c-334e-4433-84a1-5941ea8148e4",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 16
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_shark" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_shark" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_shark" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_shark", "zuoqi_sheep" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_shark" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "ef631e00-a039-44d7-b481-ab5885c12c3f",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 10
+        },
+        {
+          "Outs": [
+            {
+              "TId": "2de0e114-2d24-4b16-8102-907ec5ef1ec8",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 5
+        },
+        {
+          "Outs": [
+            {
+              "TId": "ac541f0c-b3dd-490a-a815-8ccc8f763003",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 1
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_tiger" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "2f9175aa-52ae-4da0-a1ae-793a3cb23bfb",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 15
+        },
+        {
+          "Outs": [
+            {
+              "TId": "b030897d-d5f3-439d-8910-624a76811b79",
+              "Count": 1,
+              "AddPropertyDictionary": {}
+            }
+          ],
+          "Weight": 4
+        }
+      ]
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_shark" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_tiger" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_wolf" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_panda", "zuoqi_sheep" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_corgi", "zuoqi_panda" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_panda" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_giraffe", "zuoqi_panda" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_chick", "zuoqi_panda" ],
+      "Items": []
+    },
+    {
+      "ParentTIds": [ "zuoqi_cat", "zuoqi_corgi" ],
+      "Items": []
+    }
+  ],
+  "CombatHistory": [
+    {
+      "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
+      "MinTimeSpanOfPass": "00:04:17.4410000"
+    },
+    {
+      "TId": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
+      "MinTimeSpanOfPass": "00:05:07.4110000"
+    },
+    {
+      "TId": "1e5fc645-2833-48a1-add5-6b83a3407d03",
+      "MinTimeSpanOfPass": "00:05:43.1060000"
+    },
+    {
+      "TId": "28314d37-7d90-4a13-992f-22485de7b020",
+      "MinTimeSpanOfPass": "00:05:42.7580000"
+    },
+    {
+      "TId": "f8b2fd94-8e7e-4c62-9c37-411f24a9b6a1",
+      "MinTimeSpanOfPass": "00:06:11.1120000"
+    },
+    {
+      "TId": "da564dad-8b75-420a-b7e9-d1aab85617ec",
+      "MinTimeSpanOfPass": "00:09:12.8630000"
+    },
+    {
+      "TId": "1bc14a08-1551-4f53-9a51-11876aa7610a",
+      "MinTimeSpanOfPass": "00:09:11.6480000"
+    },
+    {
+      "TId": "a490d629-5dc0-4617-a38f-41c7755ef81b",
+      "MinTimeSpanOfPass": "00:08:39.8510000"
+    },
+    {
+      "TId": "2105aabe-b1d8-4add-9ddf-bc512f673105",
+      "MinTimeSpanOfPass": "00:12:17.4270000"
+    },
+    {
+      "TId": "3fb9edc2-1ba6-4f4a-aeeb-bcc93e9ce971",
+      "MinTimeSpanOfPass": "00:06:59.6370000"
+    },
+    {
+      "TId": "44400571-975e-4a5d-a1db-4d606cc4363b",
+      "MinTimeSpanOfPass": "00:12:45.0680000"
+    },
+    {
+      "TId": "e4c4bc86-2b72-4bee-ac01-0f53909fb498",
+      "MinTimeSpanOfPass": "00:12:46.8940000"
+    },
+    {
+      "TId": "7c1a30c2-e91d-4fca-9b26-fdaef4e2c249",
+      "MinTimeSpanOfPass": "00:16:07.0580000"
+    }
+  ],
+  "ShoppingHistory": [
+    {
+      "TId": "59eb329d-ba4e-4370-b7bb-c3556556f334",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:13:30.0652313Z"
+    },
+    {
+      "TId": "f00fbec7-7465-4344-8443-6b4b43260b3c",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:13:31.2058378Z"
+    },
+    {
+      "TId": "a76e122a-092a-45fc-aff0-14eb98c16ed7",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:13:49.3655328Z"
+    },
+    {
+      "TId": "6969e916-893d-4cbe-9059-48904d24213a",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:20:34.0410576Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:28:22.4667541Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:28:28.8750091Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:28:30.6810051Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:28:32.2040056Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:29:59.5593143Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:30:34.7124624Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:32:31.7115127Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:33:31.4910741Z"
+    },
+    {
+      "TId": "56ed56cc-5698-4f3f-bb7a-110655bf9fef",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:41:53.7846195Z"
+    },
+    {
+      "TId": "f9681a67-e609-4b35-8df5-1764a6ec3fd8",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:42:29.9647984Z"
+    },
+    {
+      "TId": "dd3eb026-df77-469c-a608-ead03d4b579e",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:42:32.2818701Z"
+    },
+    {
+      "TId": "0d05943c-2ed3-42c1-ab63-cfc92e785432",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:42:36.2503168Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:43:36.9169549Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2023-12-30T23:46:03.9051698Z"
+    },
+    {
+      "TId": "75137bd7-882d-4580-b011-e92e8a36fbd5",
+      "Count": 1,
+      "DateTime": "2023-12-31T11:37:23.1852781Z"
+    },
+    {
+      "TId": "ef22ce64-ac81-4ae2-b786-6582c3b724e6",
+      "Count": 1,
+      "DateTime": "2023-12-31T11:37:34.1448113Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2023-12-31T11:45:06.6463855Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2023-12-31T11:56:28.9512815Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2023-12-31T13:23:00.3092721Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2023-12-31T13:23:39.0468349Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2023-12-31T13:25:17.0220655Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2023-12-31T13:25:56.1480258Z"
+    },
+    {
+      "TId": "91b2a5aa-80ba-4bbf-9eb2-6eb39df3d920",
+      "Count": 1,
+      "DateTime": "2024-01-01T19:37:24.6214851Z"
+    },
+    {
+      "TId": "ee0ae75e-9e45-4d8c-9ec1-09219e7684e4",
+      "Count": 1,
+      "DateTime": "2024-01-01T19:37:25.885598Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-01T19:38:21.2554338Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-01T19:40:21.2636856Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-01T19:42:13.2018876Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-01T19:50:24.0290895Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-01T19:50:25.9740247Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-01T19:58:02.7465003Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-01T23:35:38.324111Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-01T23:36:16.6167307Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-01T23:44:54.3004742Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-01T23:55:10.0590905Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:00:06.9698079Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:00:40.8042517Z"
+    },
+    {
+      "TId": "ee0ae75e-9e45-4d8c-9ec1-09219e7684e4",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:00:45.4952464Z"
+    },
+    {
+      "TId": "264d99e1-f8a2-4d85-9fd0-28711782ae7f",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:00:50.9644924Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:12:07.7811692Z"
+    },
+    {
+      "TId": "b1e28c8b-dff0-446a-8fd5-a87c648eca6a",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:12:49.7082227Z"
+    },
+    {
+      "TId": "b1e28c8b-dff0-446a-8fd5-a87c648eca6a",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:13:49.2510545Z"
+    },
+    {
+      "TId": "b1e28c8b-dff0-446a-8fd5-a87c648eca6a",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:15:11.8339695Z"
+    },
+    {
+      "TId": "b1e28c8b-dff0-446a-8fd5-a87c648eca6a",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:15:55.5517623Z"
+    },
+    {
+      "TId": "b1e28c8b-dff0-446a-8fd5-a87c648eca6a",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:16:32.5817375Z"
+    },
+    {
+      "TId": "d5b2958c-7d49-40bf-a482-d54474c8cf1d",
+      "Count": 1,
+      "DateTime": "2024-01-02T00:17:45.4050013Z"
+    },
+    {
+      "TId": "c7640cab-5178-4447-9456-76fa807645ae",
+      "Count": 1,
+      "DateTime": "2024-01-02T11:25:09.0803607Z"
+    },
+    {
+      "TId": "10d891fe-c345-4bdb-91be-9542af2edd8f",
+      "Count": 1,
+      "DateTime": "2024-01-02T11:25:11.3326974Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-02T11:35:05.9770826Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-02T22:46:53.1806457Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-02T22:49:49.3651648Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-02T22:50:28.8846182Z"
+    },
+    {
+      "TId": "683da21d-9766-4701-9450-e24e06a1f9e1",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:40:07.6588027Z"
+    },
+    {
+      "TId": "4c087d38-ec50-42bc-ab59-b8af3101d9af",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:40:08.6992073Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:40:31.9486453Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:40:34.9292868Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:40:36.4732558Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:42:05.2293434Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:44:11.7649435Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-03T07:44:13.5085086Z"
+    },
+    {
+      "TId": "94f21d1a-3b55-40c6-9748-7abd43e2dc47",
+      "Count": 1,
+      "DateTime": "2024-01-04T05:50:02.6372559Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-04T05:50:09.1132709Z"
+    },
+    {
+      "TId": "660e0b11-10a2-4467-9f75-9746219ed7d6",
+      "Count": 1,
+      "DateTime": "2024-01-04T05:50:16.0827457Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-04T20:51:54.5445345Z"
+    },
+    {
+      "TId": "8d5fa9a1-a713-4b7b-b573-694f789ecc6a",
+      "Count": 1,
+      "DateTime": "2024-01-06T00:18:14.6960792Z"
+    },
+    {
+      "TId": "f34df47a-2397-4751-9e2f-961879ef2f6d",
+      "Count": 1,
+      "DateTime": "2024-01-06T00:18:16.6506429Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-06T00:18:31.8887939Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-06T00:23:57.1013168Z"
+    },
+    {
+      "TId": "afca2c79-0856-40ed-816c-6bbfe3462798",
+      "Count": 1,
+      "DateTime": "2024-01-07T12:07:59.4002557Z"
+    },
+    {
+      "TId": "1a4eeb46-207e-4b61-b7ef-4886cbc29faf",
+      "Count": 1,
+      "DateTime": "2024-01-07T12:08:01.4745406Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-07T12:08:19.2946089Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-07T12:08:57.2927631Z"
+    },
+    {
+      "TId": "42fe780b-2ccf-4bb0-b306-ed2562d94a23",
+      "Count": 1,
+      "DateTime": "2024-01-07T12:08:59.6078453Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-07T12:11:12.9122402Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-07T12:11:55.6277795Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-07T12:22:58.2779188Z"
+    },
+    {
+      "TId": "83953478-80c0-44c7-9130-0a96f30e961e",
+      "Count": 1,
+      "DateTime": "2024-01-08T05:19:23.5849088Z"
+    },
+    {
+      "TId": "6fe8ca81-8db8-4ca7-a450-dc79ff032481",
+      "Count": 1,
+      "DateTime": "2024-01-08T05:19:24.465023Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-08T05:21:39.4971996Z"
+    },
+    {
+      "TId": "34ed89da-4a7f-41b6-baf1-c948765525c3",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:31:40.1512056Z"
+    },
+    {
+      "TId": "36a5f9d9-4446-4f42-8e13-ccea7da8c449",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:31:42.750707Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:32:39.1761326Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:34:26.3456971Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:35:10.8707295Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:36:51.5064449Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:37:28.5456204Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:39:14.5865Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-09T09:39:16.505918Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-09T23:25:32.2551558Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-09T23:26:19.4926118Z"
+    },
+    {
+      "TId": "1a1299f9-dd2d-4819-ac18-30339ca40927",
+      "Count": 1,
+      "DateTime": "2024-01-11T00:52:37.3711293Z"
+    },
+    {
+      "TId": "b7c03093-fa38-41c3-9bd3-74e5960fff72",
+      "Count": 1,
+      "DateTime": "2024-01-11T00:52:42.0764558Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-11T00:52:58.3800495Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-11T00:55:07.0499307Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-11T00:55:09.7065913Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-11T00:55:33.87267Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-11T01:05:30.622038Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-11T01:08:49.1836487Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-11T01:21:37.4461217Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-11T01:23:48.1740161Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:38:16.9315355Z"
+    },
+    {
+      "TId": "7d6e5226-145c-4702-836e-efca1052ceab",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:39:16.2567275Z"
+    },
+    {
+      "TId": "3f1d2412-c5b4-4b3e-91ae-a91caefb8403",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:39:23.3013269Z"
+    },
+    {
+      "TId": "3f1d2412-c5b4-4b3e-91ae-a91caefb8403",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:39:26.6508081Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:40:32.3115058Z"
+    },
+    {
+      "TId": "e8d2545c-aec2-4b0d-bb56-c693c51fd849",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:41:07.9507155Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:41:51.6106189Z"
+    },
+    {
+      "TId": "6516d816-236c-458b-b282-79e0c275026d",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:42:55.2858126Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:43:36.6309793Z"
+    },
+    {
+      "TId": "85725ce3-09df-40d4-b781-eb288bc38f4e",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:44:14.5313157Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:44:52.4154756Z"
+    },
+    {
+      "TId": "e3aeb7f1-f7de-4d32-8805-2f6a40b9db36",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:45:28.4459583Z"
+    },
+    {
+      "TId": "67fc1a18-ec52-4e8c-8e51-1b063be8b8d7",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:46:45.4957412Z"
+    },
+    {
+      "TId": "65f085c1-2897-4150-9c38-49d47752157d",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:46:47.5299972Z"
+    },
+    {
+      "TId": "b37c44de-d5f2-473c-8bc8-25335bd905ad",
+      "Count": 1,
+      "DateTime": "2024-01-11T17:46:50.0860343Z"
+    },
+    {
+      "TId": "cd67e4d4-a1d5-4973-9ca1-14518baa8c9e",
+      "Count": 1,
+      "DateTime": "2024-01-12T13:38:16.967591Z"
+    },
+    {
+      "TId": "fcf43607-51e5-4682-8277-89ce2434bc31",
+      "Count": 1,
+      "DateTime": "2024-01-12T13:38:19.1862572Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-12T13:38:34.2215611Z"
+    },
+    {
+      "TId": "9101b2c8-cb26-4a1f-abf4-a42a7a65f995",
+      "Count": 1,
+      "DateTime": "2024-01-12T13:39:47.1993038Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-12T13:40:16.3157504Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-12T13:40:18.1798692Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-12T13:40:20.3953102Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-12T13:51:14.3469495Z"
+    },
+    {
+      "TId": "5c05ee60-5ceb-4247-94a3-37899f7750c4",
+      "Count": 1,
+      "DateTime": "2024-01-14T03:10:04.9188594Z"
+    },
+    {
+      "TId": "3c77e261-f74e-417a-8a56-55a644f857f5",
+      "Count": 1,
+      "DateTime": "2024-01-14T03:10:06.3296359Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-14T03:10:12.7046567Z"
+    },
+    {
+      "TId": "63ace825-5416-4d80-935a-3b3d7c853991",
+      "Count": 1,
+      "DateTime": "2024-01-15T10:37:46.1378079Z"
+    },
+    {
+      "TId": "12a5817e-edaa-4c56-82c7-58e797d3a838",
+      "Count": 1,
+      "DateTime": "2024-01-15T10:37:47.9388751Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-15T10:37:57.8586735Z"
+    },
+    {
+      "TId": "f9a713a9-e7ae-40c2-a6dd-829e9a00512b",
+      "Count": 1,
+      "DateTime": "2024-01-17T00:33:18.8086092Z"
+    },
+    {
+      "TId": "72ed6c57-6a26-419c-a594-0429bf8331ac",
+      "Count": 1,
+      "DateTime": "2024-01-17T00:33:19.6171018Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-17T00:33:32.9875787Z"
+    },
+    {
+      "TId": "8ace5770-e16d-44c2-877c-2e99be81b729",
+      "Count": 1,
+      "DateTime": "2024-01-18T13:08:13.3789761Z"
+    },
+    {
+      "TId": "d32c8aaf-558d-4a88-90e2-70d688cb59da",
+      "Count": 1,
+      "DateTime": "2024-01-18T13:08:15.5792143Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-18T13:08:21.3386702Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-18T13:10:54.1144115Z"
+    },
+    {
+      "TId": "42fe780b-2ccf-4bb0-b306-ed2562d94a23",
+      "Count": 1,
+      "DateTime": "2024-01-18T13:10:56.0187697Z"
+    },
+    {
+      "TId": "5a1e199c-7d0d-4fee-b982-89ae3fd91017",
+      "Count": 1,
+      "DateTime": "2024-01-18T13:10:58.1390983Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-18T13:27:37.2195518Z"
+    },
+    {
+      "TId": "90eb5209-4b97-495d-9799-8d0786494175",
+      "Count": 1,
+      "DateTime": "2024-01-19T10:01:51.5711865Z"
+    },
+    {
+      "TId": "f6d15fe4-eb71-43d5-9bb2-3e2f2f82c538",
+      "Count": 1,
+      "DateTime": "2024-01-19T10:01:52.3689973Z"
+    },
+    {
+      "TId": "89a66863-4d5e-48f6-b8e6-4f2b949239af",
+      "Count": 1,
+      "DateTime": "2024-01-19T10:02:34.5236301Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-19T10:18:29.3127815Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-19T15:34:58.6917239Z"
+    },
+    {
+      "TId": "7b2a2005-1d0f-4d21-ad5c-f4913023b67b",
+      "Count": 1,
+      "DateTime": "2024-01-19T16:05:50.3343902Z"
+    },
+    {
+      "TId": "2032bad2-3040-410d-9157-32f9859b89f4",
+      "Count": 1,
+      "DateTime": "2024-01-20T15:57:17.1140111Z"
+    },
+    {
+      "TId": "e9dbe367-e214-4544-ae36-426091dfa664",
+      "Count": 1,
+      "DateTime": "2024-01-20T15:57:19.1384162Z"
+    },
+    {
+      "TId": "16a21a09-c9c2-48cb-8f91-40b4d82f3477",
+      "Count": 1,
+      "DateTime": "2024-01-20T16:18:07.1440095Z"
+    }
+  ],
+  "DiceHistory": [
+    {
+      "DiceTId": "af719619-3934-45bf-aaec-669c6a8afdc6",
+      "GuaranteesCount": 1
+    },
+    {
+      "DiceTId": "88c92efc-fb43-43df-997d-c5918808de5d",
+      "GuaranteesCount": 15
+    }
+  ],
+  "Roles": [],
+  "RedeemCodeHistory": null,
   "LvUpAccruedCost": [],
-  "lv": 28,
-  "LastMarkPeriodIndex": null,
-  "LastModifyDateTime": "2024-01-10T13:10:25.8610293Z",
-  "IsValid": true,
-  "CountOfLastModifyUtc": "2024-02-04T12:07:18.6506667Z",
+  "CompositingAccruedCost": [],
+  "ClientDictionary": { "TutorialIds": "[11001,10001,10005,11004,11005,11002,10002,10003,10006,10007,11003,11006,11007]" },
+  "CreateUtc": "2023-12-30T23:07:17.317457Z",
+  "IsOnline": false,
+  "atk": 20,
+  "def": 100,
+  "pow": 350,
+  "crit": 100,
+  "CombatTId": "6510b97c-3317-43b8-a25c-f4ca0920a8ce",
+  "LogineCount": 32,
+  "LastLoginDateTimeUtc": "2024-01-20T00:00:00Z",
+  "ClientCombatInfo": "{\u0022killEnemyDic\u0022:{\u0022320101004\u0022:560,\u0022320105502\u0022:24,\u0022320105405\u0022:2,\u0022320103002\u0022:13,\u0022320203002\u0022:1,\u0022320104005\u0022:2,\u0022320206014\u0022:14,\u0022320101005\u0022:410,\u0022320103007\u0022:25,\u0022320102004\u0022:36,\u0022320203007\u0022:3,\u0022320201005\u0022:1,\u0022320202004\u0022:1,\u0022320102003\u0022:8,\u0022320302003\u0022:1,\u0022320102002\u0022:13,\u0022320101002\u0022:15,\u0022320202002\u0022:1},\u0022dropRewardDic\u0022:{\u0022131101201\u0022:4,\u0022110101002\u0022:5724,\u0022131101501\u0022:2,\u0022131101301\u0022:1,\u0022120105001\u0022:1}}",
+  "CountOfLastModifyUtc": "2023-12-30T23:07:17.3174609Z",
   "Fcps": {}
 }
