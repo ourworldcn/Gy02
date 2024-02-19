@@ -87,6 +87,7 @@ namespace GY02.Templates
         /// </summary>
 #if NET5_0_OR_GREATER
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+        [JsonPropertyName("AddPropDic")]    //为节约字节数
 #endif
         public Dictionary<string, decimal> AddPropertyDictionary
         {

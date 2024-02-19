@@ -114,6 +114,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 创建该对象的世界时间。
         /// </summary>
+#if NETCOREAPP
+        [JsonConverter(typeof(OwDateTimeZipJsonConverter))]
+#endif
         public DateTime CreateUtc { get; set; } = OwHelper.WorldNow;
 
         #region 非数据库属性

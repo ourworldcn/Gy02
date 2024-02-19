@@ -282,6 +282,8 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var b1 = DateTime.Now.ToString("yyyyMMddTHHmmss");
+                var b2 = DateTime.ParseExact(b1, "yyyyMMddTHHmmss", default, DateTimeStyles.None);
                 var part = Partitioner.Create(long.MinValue, long.MaxValue, 10_000_000);
                 byte[] bytes = MD5.HashData(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()));
 

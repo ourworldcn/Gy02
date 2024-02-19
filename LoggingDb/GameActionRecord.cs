@@ -1,8 +1,11 @@
-﻿using OW.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OW.Data;
 using OW.Game.Store;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace OW.GameDb
@@ -53,5 +56,32 @@ namespace OW.GameDb
         /// 一个人眼可读的说明。
         /// </summary>
         public string Remark { get; set; }
+    }
+
+    public class SimpleActionItem
+    {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public long Id { get; set; }
+
+        /// <summary>
+        /// 一个Guid,通常是关联主体对象的Id。
+        /// </summary>
+        [Comment("一个Guid,通常是关联主体对象的Id。")]
+        public Guid? ExtraGuid{ get; set; }
+
+        /// <summary>
+        /// 额外的字符串，通常行为Id，最长64字符。
+        /// </summary>
+        [MaxLength(64)]
+        [Comment("额外的字符串，通常行为Id，最长64字符。")]
+        public string ExtraString { get; set; }
+
+        /// <summary>
+        /// 这个行为发生的时间。
+        /// </summary>
+        /// <value>默认是构造此对象的<see cref="OwHelper.WorldNow"/>时间。</value>
+        public DateTime DateTime { get; set; } = OwHelper.WorldNow;
+
+
     }
 }
