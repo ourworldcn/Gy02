@@ -1,17 +1,28 @@
 {
-  "LvUpAccruedCost": [],
-  "CompositingAccruedCost": [],
-  "ClientDictionary": {},
-  "CountOfLastModifyUtc": "2024-01-02T01:29:40.1526697Z",
-  "Fcps": {
-    "Count": {
-      "MinValue": 0,
-      "MaxValue": 72,
-      "StepValue": 1,
-      "Delay": "00:20:00",
-      "CurrentValue": 1,
-      "LastDateTime": "2024-01-02T01:40:00Z",
-      "Tag": null
-    }
+  "Genus": [ "gs_yindao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "GroupNumber": 2,
+    "MaxCount": 1,
+    "Ins": [],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
+        "Count": 1
+      },
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
+        "Count": -1
+      }
+    ]
   }
 }

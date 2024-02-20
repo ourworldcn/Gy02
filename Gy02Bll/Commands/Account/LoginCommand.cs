@@ -88,7 +88,7 @@ namespace GY02.Commands
             var db = gu.GetDbContext();
             gu.CurrentChar = ((VirtualThing)gu.Thing).Children.First(c => c.ExtraGuid == ProjectContent.CharTId).GetJsonObject<GameChar>();
             gu.CurrentChar.LogineCount++;
-            _LoggingManager.AddLogging(new GameActionRecord { ActionId = "Loginged", ParentId = gu.Id });
+            _LoggingManager.AddLogging(new ActionRecord { ActionId = "Loginged", ExtraGuid = gu.Id });
             var gc = gu.CurrentChar;
             _VirtualThingManager.Normal(gc.GetThing());
 

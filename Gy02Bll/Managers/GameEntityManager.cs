@@ -583,9 +583,9 @@ namespace GY02.Managers
         /// <summary>
         /// 按预览对象创建并移动到指定角色上。
         /// </summary>
-        /// <param name="summaries">(实体的模板Id，数量，强行指定的容器Id。)不指定容器则使用默认容器。</param>
+        /// <param name="summaries">不指定容器则使用默认容器。空集合则不进行任何操作。</param>
         /// <param name="gameChar"></param>
-        /// <param name="changes"></param>
+        /// <param name="changes">省略或为null则不记录变化信息。</param>
         /// <returns></returns>
         public bool CreateAndMove(IEnumerable<GameEntitySummary> summaries, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
         {

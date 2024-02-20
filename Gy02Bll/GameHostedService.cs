@@ -239,8 +239,9 @@ namespace GY02
             var logger = services.GetRequiredService<ILogger<GameHostedService>>();
             try
             {
-                var loggingContext = services.GetRequiredService<GY02LogginContext>();
-                GY02LogginMigrateDbInitializer.Initialize(loggingContext);
+                var dbFact = services.GetRequiredService<IDbContextFactory<GY02LogginContext>>();
+                using (var loggingContext = dbFact.CreateDbContext())
+                    GY02LogginMigrateDbInitializer.Initialize(loggingContext);
                 logger.LogTrace($"日志数据库已正常升级。");
 
                 var tContext = services.GetRequiredService<GY02TemplateContext>();
@@ -278,7 +279,8 @@ namespace GY02
             var mapper = _Services.GetService<IMapper>();
             var cache = _Services.GetService<IMemoryCache>();
             var sw = Stopwatch.StartNew();
-
+            var ss = _Services.GetService<IDbContextFactory<GY02LogginContext>>();
+            using var dbLogger = ss.CreateDbContext();
             #region 测试用代码
             try
             {

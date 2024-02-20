@@ -25,49 +25,37 @@ namespace OW.GameDb
     /// </code>
     /// 索引在此情况下最有用。
     /// </remarks>
-    public class GameActionRecord : JsonDynamicPropertyBase
+    [Index(nameof(ActionId), nameof(WorldDateTime), IsUnique = false)]
+    [Index(nameof(WorldDateTime),nameof(ActionId),  IsUnique = false)]
+    public class ActionRecord : JsonDynamicPropertyBase
     {
-        public GameActionRecord()
+        public ActionRecord()
         {
         }
 
-        public GameActionRecord(Guid id) : base(id)
+        public ActionRecord(Guid id) : base(id)
         {
         }
 
         /// <summary>
-        /// 主体对象的Id。
-        /// </summary>
-        public Guid? ParentId { get; set; }
-
-        /// <summary>
-        /// 行为Id。
+        /// 行为Id。如Logined , ShoppingBuy.xxxxxxxxxxxxxxxxxxxx==。
         /// </summary>
         [MaxLength(64)]
+        [Comment("行为Id。如Logined , ShoppingBuy.xxxxxxxxxxxxxxxxxxxx==。")]
         public string ActionId { get; set; }
 
         /// <summary>
-        /// 这个行为发生的时间。
+        /// 这个行为发生的世界时间。
         /// </summary>
-        /// <value>默认是构造此对象的UTC时间。</value>
-        public DateTime DateTimeUtc { get; set; } = OwHelper.WorldNow;
-
+        /// <value>默认是构造此对象的<see cref="OwHelper.WorldNow"/>时间。</value>
+        [Comment("这个行为发生的世界时间。")]
+        public DateTime WorldDateTime { get; set; } = OwHelper.WorldNow;
+        
         /// <summary>
-        /// 一个人眼可读的说明。
+        /// 额外Guid。
         /// </summary>
-        public string Remark { get; set; }
-    }
-
-    public class SimpleActionItem
-    {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long Id { get; set; }
-
-        /// <summary>
-        /// 一个Guid,通常是关联主体对象的Id。
-        /// </summary>
-        [Comment("一个Guid,通常是关联主体对象的Id。")]
-        public Guid? ExtraGuid{ get; set; }
+        [Comment("额外Guid。")]
+        public Guid? ExtraGuid { get; set; }
 
         /// <summary>
         /// 额外的字符串，通常行为Id，最长64字符。
@@ -77,11 +65,87 @@ namespace OW.GameDb
         public string ExtraString { get; set; }
 
         /// <summary>
-        /// 这个行为发生的时间。
+        /// 额外数字，具体意义取决于该条记录的类型。
+        /// </summary>
+        [Precision(18, 4)]
+        [Comment("额外数字，具体意义取决于该条记录的类型。")]
+        public decimal ExtraDecimal { get; set; }
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [Index(nameof(ActionId), nameof(WorldDateTime), IsUnique = false)]
+    public class SimpleActionItem : IJsonDynamicProperty
+    {
+        /// <summary>
+        /// 唯一Id。
+        /// </summary>
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Comment("唯一Id")]
+        public long Id { get; set; }
+
+        /// <summary>
+        /// 行为Id。如ShoppingBuy.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx,ShoppingBuy.xxxxxxxxxxxxxxxxxxxx==
+        /// </summary>
+        [MaxLength(64)]
+        [Comment("行为Id。如ShoppingBuy.xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx,ShoppingBuy.xxxxxxxxxxxxxxxxxxxx==")]
+        public string ActionId { get; set; }
+
+        /// <summary>
+        /// 这个行为发生的世界时间。
         /// </summary>
         /// <value>默认是构造此对象的<see cref="OwHelper.WorldNow"/>时间。</value>
-        public DateTime DateTime { get; set; } = OwHelper.WorldNow;
+        [Comment("这个行为发生的世界时间。")]
+        public DateTime WorldDateTime { get; set; } = OwHelper.WorldNow;
 
+        /// <summary>
+        /// 额外Guid。
+        /// </summary>
+        [Comment("额外Guid。")]
+        public Guid? ExtraGuid { get; set; }
 
+        /// <summary>
+        /// 额外的字符串，通常行为Id，最长64字符。
+        /// </summary>
+        [MaxLength(64)]
+        [Comment("额外的字符串，通常行为Id，最长64字符。")]
+        public string ExtraString { get; set; }
+
+        /// <summary>
+        /// 额外数字，具体意义取决于该条记录的类型。
+        /// </summary>
+        [Precision(18, 4)]
+        [Comment("额外数字，具体意义取决于该条记录的类型。")]
+        public decimal ExtraDecimal { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        public string JsonObjectString { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [NotMapped]
+        public Type JsonObjectType { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [NotMapped]
+        public object JsonObject { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public T GetJsonObject<T>() where T : new()
+        {
+            return default;
+        }
     }
 }

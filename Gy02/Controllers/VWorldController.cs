@@ -63,7 +63,7 @@ namespace GY02.Controllers
             var dbLogging = HttpContext.RequestServices.GetService<GameSqlLoggingManager>();
             if (dbLogging is not null)
             {
-                var actionRecord = new GameActionRecord
+                var actionRecord = new ActionRecord
                 {
                     ActionId = "Reboot",
                     JsonObjectString = $"{{\"UId\":\"{model.UId}\"}}",

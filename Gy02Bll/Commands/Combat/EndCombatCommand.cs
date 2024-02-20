@@ -106,27 +106,24 @@ namespace GY02.Commands
             var change = command.Changes?.MarkChanges(command.GameChar, nameof(command.GameChar.CombatTId), command.GameChar.CombatTId, null);
             if (change is not null) change.HasNewValue = false;
             command.GameChar.CombatTId = null;
+
             #region 记录战斗信息
             var gc = command.GameChar;
-            if (command.MinTimeSpanOfPass.HasValue) //若需要记录战斗信息
+            var ch = gc.CombatHistory.FirstOrDefault(c => c.TId == command.CombatTId);
+            if (ch is null) //若尚未初始化
             {
-                var ch = gc.CombatHistory.FirstOrDefault(c => c.TId == command.CombatTId);
-                if (ch is null) //若尚未初始化
+                ch = new CombatHistoryItem { TId = command.CombatTId };
+                gc.CombatHistory.Add(ch);
+            }
+            if (!ch.MinTimeSpanOfPass.HasValue || ch.MinTimeSpanOfPass > command.MinTimeSpanOfPass)
+            {
+                var change1 = command.Changes?.MarkChanges(gc, nameof(gc.CombatHistory), new CombatHistoryItem { TId = ch.TId, MinTimeSpanOfPass = ch.MinTimeSpanOfPass }, ch);
+                if (change1 != null)
                 {
-                    ch = new CombatHistoryItem { TId = command.CombatTId };
-                    gc.CombatHistory.Add(ch);
+                    change1.HasOldValue = ch.MinTimeSpanOfPass.HasValue;
+                    change1.HasNewValue = true;
                 }
-                if (!ch.MinTimeSpanOfPass.HasValue || ch.MinTimeSpanOfPass > command.MinTimeSpanOfPass)
-                {
-                    var change1 = command.Changes?.MarkChanges(gc, nameof(gc.CombatHistory), new CombatHistoryItem { TId = ch.TId, MinTimeSpanOfPass = ch.MinTimeSpanOfPass }, ch);
-                    if (change1 != null)
-                    {
-                        change1.HasOldValue = ch.MinTimeSpanOfPass.HasValue;
-                        change1.HasNewValue = command.MinTimeSpanOfPass.HasValue;
-                    }
-                    ch.MinTimeSpanOfPass = command.MinTimeSpanOfPass;
-
-                }
+                ch.MinTimeSpanOfPass = command.MinTimeSpanOfPass;
             }
 
             #endregion 记录战斗信息
@@ -135,6 +132,21 @@ namespace GY02.Commands
             gc.AdsRewardsHistory.Clear();
             gc.AdsRewardsHistory.AddRange(command.AdsRewards.Select(c => c.Clone() as GameEntitySummary));
             #endregion  记录看广告后额外奖励信息
+
+            #region 金猪活动
+            /*311bae23-09b4-4d8b-b158-f3129d5f6503	金猪累计金币占位符
+            a84bcbd1-9541-4907-99df-59b19559ae9f	金猪累计钻石占位符*/
+            var jinzhuColl = command.AdsRewards.Concat(command.Rewards);
+            var jinzhuList = new List<GameEntitySummary>();
+            var jinzhuJinbi = jinzhuColl.Where(c => c.TId == ProjectContent.GoldTId).Sum(c => c.Count); //如果source不包含任何元素，则方法返回零。
+            if (jinzhuJinbi > 0)
+                jinzhuList.Add(new GameEntitySummary { TId = Guid.Parse("311bae23-09b4-4d8b-b158-f3129d5f6503"), Count = jinzhuJinbi });
+            var jinzhuZuanshi = jinzhuColl.Where(c => c.TId == ProjectContent.DiamTId).Sum(c => c.Count); //如果source不包含任何元素，则方法返回零。
+            if (jinzhuZuanshi > 0)
+                jinzhuList.Add(new GameEntitySummary { TId = Guid.Parse("a84bcbd1-9541-4907-99df-59b19559ae9f"), Count = jinzhuJinbi });
+            if (jinzhuList.Count > 0)
+                _GameEntityManager.CreateAndMove(jinzhuList, gc, command.Changes);
+            #endregion 金猪活动
             _AccountStore.Save(key);
         }
 

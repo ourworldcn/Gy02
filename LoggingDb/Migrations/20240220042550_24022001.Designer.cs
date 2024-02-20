@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OW.GameDb;
 
@@ -11,9 +12,10 @@ using OW.GameDb;
 namespace LoggingDb.Migrations
 {
     [DbContext(typeof(GY02LogginContext))]
-    partial class GY02LogginContextModelSnapshot : ModelSnapshot
+    [Migration("20240220042550_24022001")]
+    partial class _24022001
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

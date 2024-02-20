@@ -98,7 +98,7 @@ internal class Program
         var userDbConnectionString = builder.Configuration.GetConnectionString("UserDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
         var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 
-        services.AddDbContext<GY02LogginContext>(options => options.UseLazyLoadingProxies().UseSqlServer(loggingDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
+        services.AddPooledDbContextFactory<GY02LogginContext>(options => options.UseLazyLoadingProxies().UseSqlServer(loggingDbConnectionString).EnableSensitiveDataLogging());
 
         services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
         //services.AddDbContext<GY02UserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Scoped);

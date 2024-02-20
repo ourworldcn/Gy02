@@ -20,25 +20,24 @@ namespace OW.GameDb
         }
     }
 
+    /// <summary>
+    /// 日志数据库上下文对象。
+    /// </summary>
+    /// <remarks>构造函数不能有除了DbContextOptions以外的参数，这是因为连接池时DbContext对象会被连接池保存，
+    /// 这意味着DbContext对象是单例的，所以不能有其他注入的服务。
+    /// 数据库连接字符串默认参数是pooling=true，如果改为pooling=false也会对启用数据库连接池造成影响。</remarks>
     public class GY02LogginContext : DbContext
     {
         public GY02LogginContext(DbContextOptions<GY02LogginContext> options) : base(options)
         {
         }
 
-        public GY02LogginContext()
-        {
-
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<GameActionRecord>().HasIndex(c => new { c.DateTimeUtc, c.ActionId }).IsUnique(false);
-            modelBuilder.Entity<GameActionRecord>().HasIndex(c => new { c.ActionId, c.DateTimeUtc }).IsUnique(false);
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<GameActionRecord> ActionRecords { get; set; }
+        public DbSet<ActionRecord> ActionRecords { get; set; }
 
     }
 
@@ -54,9 +53,9 @@ namespace OW.GameDb
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameSqlLoggingManager
     {
-        public GameSqlLoggingManager(GY02LogginContext context, IHostApplicationLifetime applicationLifetime, IOptions<GameSqlLoggingManagerOptions> options, ILogger<GameSqlLoggingManager> logging)
+        public GameSqlLoggingManager(IDbContextFactory<GY02LogginContext> context, IHostApplicationLifetime applicationLifetime, IOptions<GameSqlLoggingManagerOptions> options, ILogger<GameSqlLoggingManager> logging)
         {
-            _Context = context;
+            _Context = context.CreateDbContext();
             _ApplicationLifetime = applicationLifetime;
 
             _ApplicationLifetime.ApplicationStopping.Register(() => _Actions.CompleteAdding());
@@ -67,12 +66,12 @@ namespace OW.GameDb
 
         GY02LogginContext _Context;
         IHostApplicationLifetime _ApplicationLifetime;
-        BlockingCollection<GameActionRecord> _Actions = new BlockingCollection<GameActionRecord>();
+        BlockingCollection<ActionRecord> _Actions = new BlockingCollection<ActionRecord>();
         Task _Task;
         GameSqlLoggingManagerOptions _Options;
         ILogger<GameSqlLoggingManager> _Logging;
 
-        public void AddLogging(GameActionRecord actionRecord)
+        public void AddLogging(ActionRecord actionRecord)
         {
             _Actions.Add(actionRecord);
         }

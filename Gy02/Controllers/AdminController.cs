@@ -181,8 +181,8 @@ namespace GY02.Controllers
             result.RegCount = ary.Length;
 
             var loginColl = from ar in dbLogger.ActionRecords
-                            where ar.ActionId == "Loginged" && ar.DateTimeUtc >= model.StartReg && ar.DateTimeUtc < model.EndReg && ary.Contains(ar.ParentId!.Value)
-                            group ar.ParentId by ar.ParentId into g
+                            where ar.ActionId == "Loginged" && ar.WorldDateTime >= model.StartReg && ar.WorldDateTime < model.EndReg && ary.Contains(ar.ExtraGuid!.Value)
+                            group ar.ExtraGuid by ar.ExtraGuid into g
                             select g.Key;
 
             result.LoginCount = loginColl.Count();

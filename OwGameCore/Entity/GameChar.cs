@@ -253,6 +253,9 @@ namespace OW.Game.Entity
 
         #region 战斗相关
 
+        /// <summary>
+        /// 战斗记录。
+        /// </summary>
         public List<CombatHistoryItem> CombatHistory { get; set; } = new List<CombatHistoryItem>();
 
         /// <summary>
