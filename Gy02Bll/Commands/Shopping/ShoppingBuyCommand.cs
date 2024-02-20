@@ -5,12 +5,14 @@ using OW.DDD;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.GameDb;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.SymbolStore;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,7 +45,7 @@ namespace GY02.Commands
     public class ShoppingBuyHandler : SyncCommandHandlerBase<ShoppingBuyCommand>, IGameCharHandler<ShoppingBuyCommand>
     {
 
-        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager, SyncCommandManager commandManager, GameAchievementManager achievementManager, GameSearcherManager searcherManager)
+        public ShoppingBuyHandler(GameAccountStoreManager accountStore, GameShoppingManager shoppingManager, GameEntityManager entityManager, GameBlueprintManager blueprintManager, GameDiceManager diceManager, SpecialManager specialManager, SyncCommandManager commandManager, GameAchievementManager achievementManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager)
         {
             AccountStore = accountStore;
             _ShoppingManager = shoppingManager;
@@ -54,6 +56,7 @@ namespace GY02.Commands
             _CommandManager = commandManager;
             _AchievementManager = achievementManager;
             _SearcherManager = searcherManager;
+            _SqlLoggingManager = sqlLoggingManager;
         }
 
         public GameAccountStoreManager AccountStore { get; }
@@ -67,6 +70,7 @@ namespace GY02.Commands
         SpecialManager _SpecialManager;
         SyncCommandManager _CommandManager;
         GameSearcherManager _SearcherManager;
+        GameSqlLoggingManager _SqlLoggingManager;
 
         public override void Handle(ShoppingBuyCommand command)
         {
@@ -130,13 +134,13 @@ namespace GY02.Commands
                     _AchievementManager.SetExperience(achi, achi.Count + summary.Count, new SimpleGameContext(Guid.Empty, command.GameChar, now, command.Changes));
                 }
                 //加入购买历史记录
-                command.GameChar.ShoppingHistory.Add(new GameShoppingHistoryItem
-                {
-                    Count = command.Count,
-                    DateTime = now,
-                    TId = command.ShoppingItemTId,
-                    PeriodIndex = periodIndex,
-                });
+                var historyItem = _ShoppingManager.CreateHistoryItem(command.GameChar);
+                historyItem.TId = command.ShoppingItemTId;
+                historyItem.Count = command.Count;
+                historyItem.WorldDateTime = now;
+                historyItem.PeriodIndex = periodIndex;
+                historyItem.Save();
+                _SqlLoggingManager.Save(historyItem.ActionRecord);
 
                 AccountStore.Save(key);
             }
@@ -151,16 +155,18 @@ namespace GY02.Commands
     /// </summary>
     public class CharFirstLoginedHandler : SyncCommandHandlerBase<CharFirstLoginedCommand>
     {
-        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStoreManager accountStore)
+        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStoreManager accountStore, GameSqlLoggingManager sqlLoggingManager)
         {
             _EntityManager = entityManager;
             _ShoppingManager = shoppingManager;
             _AccountStore = accountStore;
+            _SqlLoggingManager = sqlLoggingManager;
         }
 
         GameEntityManager _EntityManager;
         GameShoppingManager _ShoppingManager;
         GameAccountStoreManager _AccountStore;
+        GameSqlLoggingManager _SqlLoggingManager;
 
         /// <summary>
         /// 
@@ -176,11 +182,14 @@ namespace GY02.Commands
             //增加累计签到天数
             var slot = allEntity[ProjectContent.LeijiQiandaoSlotTId].Single();  //累计签到占位符
 
-            var coll = from tmp in gc.ShoppingHistory
-                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
+            using var dbLoggin = _SqlLoggingManager.CreateDbContext();
+            var collLoggin = _ShoppingManager.GetShoppingBuyHistoryQuery(gc, dbLoggin);
+
+            var coll = from tmp in collLoggin
+                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.ExtraGuid.Value) //模板
                        where tt.Genus.Contains("gs_leijiqiandao")   //累计签到项
                        select tmp;
-            DateTime? buyDate = coll.Any() ? coll.Max(c => c.DateTime.Date) : null; //最后购买时间
+            DateTime? buyDate = coll.Any() ? coll.Max(c => c.WorldDateTime.Date) : null; //最后购买时间
             DateTime? markDate = slot.ExtensionProperties.GetDateTimeOrDefault("LastMark");   //最后签到时间
             if (buyDate.HasValue && buyDate.Value.Date >= markDate.Value.Date)   //若需要增加计数
             {
@@ -192,11 +201,11 @@ namespace GY02.Commands
             slot = allEntity[ProjectContent.SevenDayQiandaoSlotTId].FirstOrDefault();
             if (slot is not null)
             {
-                coll = from tmp in gc.ShoppingHistory
-                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
+                coll = from tmp in collLoggin
+                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.ExtraGuid.Value) //模板
                        where tt.Genus.Contains("gs_qiandao")   //7日签到项
                        select tmp;
-                buyDate = coll.Any() ? coll.Max(c => c.DateTime.Date) : null; //最后购买时间
+                buyDate = coll.Any() ? coll.Max(c => c.WorldDateTime.Date) : null; //最后购买时间
                 markDate = slot.ExtensionProperties.GetDateTimeOrDefault("LastMark");   //最后签到时间
                 if (buyDate.HasValue && buyDate.Value.Date >= markDate.Value.Date)   //若需要增加计数
                 {

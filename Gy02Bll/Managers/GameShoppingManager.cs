@@ -7,6 +7,7 @@ using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
+using OW.GameDb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,18 +31,66 @@ namespace GY02.Managers
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameShoppingManager : GameManagerBase<GameShoppingManagerOptions, GameShoppingManager>
     {
-        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, GameBlueprintManager blueprintManager, GameEntityManager entityManager, GameTemplateManager templateManager, GameSearcherManager searcherManager) : base(options, logger)
+        /// <summary>
+        /// 购买记录的前缀字符串。
+        /// </summary>
+        public const string ShoppingBuyHistoryPrefix = "ShoppingBuy";
+
+        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, GameBlueprintManager blueprintManager, GameEntityManager entityManager, GameTemplateManager templateManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager) : base(options, logger)
         {
             _BlueprintManager = blueprintManager;
             _EntityManager = entityManager;
             _TemplateManager = templateManager;
             _SearcherManager = searcherManager;
+            _SqlLoggingManager = sqlLoggingManager;
         }
 
         GameBlueprintManager _BlueprintManager;
         GameEntityManager _EntityManager;
         GameTemplateManager _TemplateManager;
         GameSearcherManager _SearcherManager;
+        GameSqlLoggingManager _SqlLoggingManager;
+
+        #region 商品购买历史记录相关
+
+        /// <summary>
+        /// 获取指定角色购买行为的ActionId。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <returns></returns>
+        public string GetShoppingBuyHistoryActionId(GameChar gameChar)
+        {
+            return $"{ShoppingBuyHistoryPrefix}.{gameChar.GetThing().Base64IdString}";
+        }
+
+        /// <summary>
+        /// 创建一个新的购买记录对象，并自动设置好ActionId属性。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <returns></returns>
+        public GameShoppingHistoryItemV2 CreateHistoryItem(GameChar gameChar)
+        {
+            var tmp = new ActionRecord
+            {
+                ActionId = GetShoppingBuyHistoryActionId(gameChar),
+            };
+            var result = GameShoppingHistoryItemV2.From(tmp);
+            return result;
+        }
+
+        /// <summary>
+        /// 获取指定用户购买记录的可查询对象。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="db">使用的数据库上下文。调用者必须自行释放。</param>
+        /// <returns></returns>
+        public IQueryable<ActionRecord> GetShoppingBuyHistoryQuery(GameChar gameChar, GY02LogginContext db)
+        {
+            var actionId = GetShoppingBuyHistoryActionId(gameChar);
+            return db.ActionRecords.Where(c => c.ActionId == actionId);
+        }
+
+        #endregion 商品购买历史记录相关
 
         #region 获取信息
 
@@ -204,16 +253,20 @@ namespace GY02.Managers
         public bool IsMatchOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
         {
             var periodIndex = _SearcherManager.GetPeriodIndex(tt.ShoppingItem.Ins, gameChar, out _); //获取自周期数
+            using var dbLoggin = _SqlLoggingManager.CreateDbContext();
+            var collLoggin = GetShoppingBuyHistoryQuery(gameChar, dbLoggin);
+
             if (periodIndex.HasValue) //若存在自周期
             {
-                var tmp = gameChar.ShoppingHistory?.Where(c => c.PeriodIndex == periodIndex && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;
+                var tmp = collLoggin?.Where(c => c.ExtraGuid == tt.TemplateId).AsEnumerable().Select(c => GameShoppingHistoryItemV2.From(c))
+                    .Where(c => c.PeriodIndex == periodIndex).Sum(c => c.Count) ?? decimal.Zero;
                 if (tmp >= tt.ShoppingItem.MaxCount)
                 {
                     buyedCount = tmp;
                     return false;
                 }
             }
-            buyedCount = gameChar.ShoppingHistory?.Where(c => c.DateTime >= start && c.DateTime < end && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
+            buyedCount = collLoggin?.Where(c => c.WorldDateTime >= start && c.WorldDateTime < end && c.ExtraGuid == tt.TemplateId).Sum(c => c.ExtraDecimal) ?? decimal.Zero;  //已经购买的数量
             return buyedCount < (tt.ShoppingItem.MaxCount ?? decimal.MaxValue);
         }
 

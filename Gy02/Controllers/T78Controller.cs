@@ -12,6 +12,7 @@ using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
+using OW.GameDb;
 using OW.SyncCommand;
 using System.Text;
 using System.Text.Json;
@@ -39,7 +40,7 @@ namespace GY02.Controllers
         /// <param name="searcherManager"></param>
         public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore,
             GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager,
-            GameBlueprintManager blueprintManager, GameSearcherManager searcherManager)
+            GameBlueprintManager blueprintManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager)
         {
             _T78Manager = t78Manager;
             _ShoppingManager = shoppingManager;
@@ -50,6 +51,7 @@ namespace GY02.Controllers
             _SpecialManager = specialManager;
             _BlueprintManager = blueprintManager;
             _SearcherManager = searcherManager;
+            _SqlLoggingManager = sqlLoggingManager;
         }
 
         PublisherT78Manager _T78Manager;
@@ -61,6 +63,7 @@ namespace GY02.Controllers
         SpecialManager _SpecialManager;
         GameBlueprintManager _BlueprintManager;
         GameSearcherManager _SearcherManager;
+        GameSqlLoggingManager _SqlLoggingManager;
 
         /// <summary>
         /// T78合作伙伴充值回调。
@@ -355,14 +358,14 @@ namespace GY02.Controllers
                         return result;
                     }
                 }
+                var historyItem = _ShoppingManager.CreateHistoryItem(gc);
+                historyItem.TId = tid;
+                historyItem.Count = 1;
+                historyItem.WorldDateTime = now;
+                historyItem.PeriodIndex = periodIndex;
+                historyItem.Save();
+                _SqlLoggingManager.Save(historyItem.ActionRecord);
 
-                gc.ShoppingHistory.Add(new GameShoppingHistoryItem
-                {
-                    Count = 1,
-                    DateTime = now,
-                    TId = tid,
-                    PeriodIndex = periodIndex,
-                }); ;
                 _Logger.LogInformation("收到T78问卷调查回调，正常发送奖励。CharId={gcId}", gc.Id);
                 return result;
             }

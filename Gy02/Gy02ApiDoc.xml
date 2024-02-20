@@ -578,7 +578,7 @@
             T78合作伙伴调入控制器。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.T78Controller.#ctor(GY02.Managers.PublisherT78Manager,GY02.Managers.GameShoppingManager,GY02.Managers.GameAccountStoreManager,GY02.Managers.GameEntityManager,Microsoft.Extensions.Logging.ILogger{GY02.Controllers.T78Controller},OW.SyncCommand.SyncCommandManager,GY02.Managers.SpecialManager,GY02.Managers.GameBlueprintManager,GY02.Managers.GameSearcherManager)">
+        <member name="M:GY02.Controllers.T78Controller.#ctor(GY02.Managers.PublisherT78Manager,GY02.Managers.GameShoppingManager,GY02.Managers.GameAccountStoreManager,GY02.Managers.GameEntityManager,Microsoft.Extensions.Logging.ILogger{GY02.Controllers.T78Controller},OW.SyncCommand.SyncCommandManager,GY02.Managers.SpecialManager,GY02.Managers.GameBlueprintManager,GY02.Managers.GameSearcherManager,OW.GameDb.GameSqlLoggingManager)">
             <summary>
             构造函数。
             </summary>

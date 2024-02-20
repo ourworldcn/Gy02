@@ -15,6 +15,7 @@ using Microsoft.IdentityModel.Tokens;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.Store;
+using OW.GameDb;
 using OW.Server;
 using OW.SyncCommand;
 using System;
@@ -74,7 +75,7 @@ namespace GY02.Managers
     public class GameAccountStoreManager : GameManagerBase<GameAccountStoreManagerOptions, GameAccountStoreManager>
     {
         public GameAccountStoreManager(IOptions<GameAccountStoreManagerOptions> options, ILogger<GameAccountStoreManager> logger, IDbContextFactory<GY02UserContext> contextFactory,
-            IHostApplicationLifetime lifetime, IServiceProvider service, GameTemplateManager templateManager, OwScheduler scheduler) : base(options, logger)
+            IHostApplicationLifetime lifetime, IServiceProvider service, GameTemplateManager templateManager, OwScheduler scheduler, GameSqlLoggingManager sqlLoggingManager) : base(options, logger)
         {
             _ContextFactory = contextFactory;
             _Lifetime = lifetime;
@@ -83,6 +84,7 @@ namespace GY02.Managers
             _Scheduler = scheduler;
 
             Task.Factory.StartNew(SaveCallback, TaskCreationOptions.LongRunning);
+            _SqlLoggingManager = sqlLoggingManager;
         }
 
         IDbContextFactory<GY02UserContext> _ContextFactory;
@@ -90,6 +92,7 @@ namespace GY02.Managers
         IServiceProvider _Service;
         GameTemplateManager _TemplateManager;
         OwScheduler _Scheduler;
+        GameSqlLoggingManager _SqlLoggingManager;
 
         /// <summary>
         /// 记录所有用户对象。
@@ -512,6 +515,29 @@ namespace GY02.Managers
                     return DisposeHelper.Empty<string>();
                 }
                 AddUser(user);
+
+                #region 升级购买记录存储方式
+                if (user.CurrentChar is GameChar gc)
+                {
+                    var base64Id = gc.GetThing().Base64IdString;
+                    var collShoppingHistory = gc.ShoppingHistory.Select(c =>
+                    {
+                        var action = new ActionRecord
+                        {
+                            ActionId = $"{GameShoppingManager.ShoppingBuyHistoryPrefix}.{base64Id}",
+                        };
+                        var result = GameShoppingHistoryItemV2.From(action);
+                        result.TId = c.TId;
+                        result.Count = c.Count;
+                        result.WorldDateTime = c.DateTime;
+                        result.PeriodIndex = c.PeriodIndex;
+                        result.Save();
+                        return result;
+                    }).ToArray();
+                    if (collShoppingHistory.Length > 0)
+                        _SqlLoggingManager.Save(collShoppingHistory.Select(c => c.ActionRecord));
+                }
+                #endregion 升级购买记录存储方式
                 return dw;
             }
             catch (Exception)

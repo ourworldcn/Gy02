@@ -3,6 +3,7 @@ using GY02.Templates;
 using OW.Game;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.GameDb;
 using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
@@ -35,13 +36,14 @@ namespace GY02.Commands
 
     public class GetShoppingItemsHandler : SyncCommandHandlerBase<GetShoppingItemsCommand>, IGameCharHandler<GetShoppingItemsCommand>
     {
-        public GetShoppingItemsHandler(GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, GameBlueprintManager blueprintManager, GameSearcherManager searcherManager)
+        public GetShoppingItemsHandler(GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, GameBlueprintManager blueprintManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager)
         {
             AccountStore = accountStore;
             _TemplateManager = templateManager;
             _ShoppingManager = shoppingManager;
             _BlueprintManager = blueprintManager;
             _SearcherManager = searcherManager;
+            _SqlLoggingManager = sqlLoggingManager;
         }
 
         public GameAccountStoreManager AccountStore { get; }
@@ -52,6 +54,9 @@ namespace GY02.Commands
 
         GameBlueprintManager _BlueprintManager;
         GameSearcherManager _SearcherManager;
+
+        GameSqlLoggingManager _SqlLoggingManager;
+
         public override void Handle(GetShoppingItemsCommand command)
         {
             var key = ((IGameCharHandler<GetShoppingItemsCommand>)this).GetKey(command);
@@ -80,6 +85,8 @@ namespace GY02.Commands
             //var tmp = _TemplateManager.Id2FullView.Values.FirstOrDefault(c => c.TemplateId == Guid.Parse("e2d2115d-cee6-4f1a-b173-ab3b647307b7"));
 
             var coll1 = list.Where(c => c.Item1.Genus.Contains("gs_meirishangdian")).ToArray();
+            using var dbLoggin = _SqlLoggingManager.CreateDbContext();
+            var collHistory = _ShoppingManager.GetShoppingBuyHistoryQuery(command.GameChar, dbLoggin);
 
             command.ShoppingItemStates.AddRange(list.Select(c =>
             {
@@ -88,12 +95,16 @@ namespace GY02.Commands
                     TId = c.Item1.TemplateId,
                     StartUtc = c.Item2,
                     EndUtc = c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod,
-                    BuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.DateTime >= c.Item2 && history.DateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.Count),
+                    BuyedCount = collHistory.Where(history => history.ExtraGuid == c.Item1.TemplateId && history.WorldDateTime >= c.Item2 && history.WorldDateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.ExtraDecimal),
                 };
                 var per = _SearcherManager.GetPeriodIndex(c.Item1.ShoppingItem.Ins, command.GameChar, out _);
                 if (per.HasValue) //若有自周期
                 {
-                    var newBuyedCount = command.GameChar.ShoppingHistory.Where(history => history.TId == c.Item1.TemplateId && history.PeriodIndex == per).Sum(c => c.Count);
+                    using var dbLoggin = _SqlLoggingManager.CreateDbContext();
+                    var collLoggin = _ShoppingManager.GetShoppingBuyHistoryQuery(command.GameChar, dbLoggin);
+                    
+                    var newBuyedCount = collLoggin.Where(history => history.ExtraGuid == c.Item1.TemplateId).AsEnumerable().Select(c => GameShoppingHistoryItemV2.From(c))
+                        .Where(c => c.PeriodIndex == per).Sum(c => c.Count);
                     tmp.BuyedCount = Math.Max(tmp.BuyedCount, newBuyedCount);
                 }
                 return tmp;

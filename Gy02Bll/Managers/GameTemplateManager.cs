@@ -311,6 +311,9 @@ namespace OW.Game.Managers
                             value = 0; break;
                         }
 
+//TODO                        //using var dbLoggin = _SqlLoggingManager.CreateDbContext();
+                        //var collLoggin = GetShoppingBuyHistoryQuery(gameChar, dbLoggin);
+
                         var list = gameChar.ShoppingHistory;
                         var val = list.Where(c => c.TId == tid && c.DateTime >= start && c.DateTime <= now).Sum(c => c.Count);  //如果source不包含任何元素，则Sum(IEnumerable<Decimal>)方法返回零。
                         value = Convert.ToInt32(val);

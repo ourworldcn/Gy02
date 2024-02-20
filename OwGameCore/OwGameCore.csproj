@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Gy02Publisher\Gy02Publisher.csproj" />
+    <ProjectReference Include="..\LoggingDb\LoggingDb.csproj" />
     <ProjectReference Include="..\OwGameDb\OwGameDb.csproj" />
     <ProjectReference Include="..\TemplateDb\TemplateDb.csproj" />
     <ProjectReference Include="..\UserDb\UserDb.csproj" />

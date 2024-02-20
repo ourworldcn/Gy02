@@ -1,6 +1,7 @@
 ﻿using GY02.Publisher;
 using GY02.Templates;
 using OW.Game.Store;
+using OW.GameDb;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,6 +11,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace OW.Game.Entity
@@ -331,17 +333,6 @@ namespace OW.Game.Entity
     }
 
     /// <summary>
-    /// 购买记录。
-    /// </summary>
-    public class GameShoppingHistory : Collection<GameShoppingHistoryItem>
-    {
-        public GameShoppingHistory()
-        {
-
-        }
-    }
-
-    /// <summary>
     /// 商品项的状态描述对象。
     /// </summary>
     public class ShoppingItemState
@@ -416,7 +407,7 @@ namespace OW.Game.Entity
         public DateTime DateTime { get; set; }
 
         /// <summary>
-        /// 最后购买时所处周期号。
+        /// 购买时所处周期号。
         /// </summary>
 #if NETCOREAPP
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
@@ -431,6 +422,56 @@ namespace OW.Game.Entity
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
         public bool Valid { get; set; }
+    }
+
+    public class GameShoppingHistoryItemV2
+    {
+        public static GameShoppingHistoryItemV2 From(ActionRecord actionRecord)
+        {
+            var result = JsonSerializer.Deserialize<GameShoppingHistoryItemV2>(actionRecord.JsonObjectString);
+            result.ActionRecord = actionRecord;
+            return result;
+        }
+
+        public GameShoppingHistoryItemV2()
+        {
+        }
+
+        public GameShoppingHistoryItemV2(ActionRecord actionRecord)
+        {
+            ActionRecord = actionRecord;
+        }
+
+        [JsonIgnore]
+        public ActionRecord ActionRecord { get; set; }
+
+        /// <summary>
+        /// 购买的商品TId。
+        /// </summary>
+        [JsonIgnore]
+        public Guid TId { get => ActionRecord.ExtraGuid ?? Guid.Empty; set => ActionRecord.ExtraGuid = value; }
+
+        /// <summary>
+        /// 购买的商品的次数。如两次可能购买总计2000金币，但这里是2。具体获得物品的数量取决于商品项的配置。
+        /// </summary>
+        [JsonIgnore]
+        public decimal Count { get => ActionRecord.ExtraDecimal; set => ActionRecord.ExtraDecimal = value; }
+
+        /// <summary>
+        /// 购买的日期。
+        /// </summary>
+        [JsonIgnore]
+        public DateTime WorldDateTime { get => ActionRecord.WorldDateTime; set => ActionRecord.WorldDateTime = value; }
+
+        /// <summary>
+        /// 购买时所处周期号。
+        /// </summary>
+        public int? PeriodIndex { get; set; }
+
+        public void Save()
+        {
+            ActionRecord.JsonObjectString = JsonSerializer.Serialize(this);
+        }
     }
 
     /// <summary>

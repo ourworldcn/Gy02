@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -50,11 +51,15 @@ namespace OW.GameDb
         public TimeSpan MaxDelay { get; set; } = TimeSpan.FromSeconds(10);
     }
 
+    /// <summary>
+    /// 管理数据库行为记录的管理器。
+    /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton)]
     public class GameSqlLoggingManager
     {
         public GameSqlLoggingManager(IDbContextFactory<GY02LogginContext> context, IHostApplicationLifetime applicationLifetime, IOptions<GameSqlLoggingManagerOptions> options, ILogger<GameSqlLoggingManager> logging)
         {
+            _DbContextFactory = context;
             _Context = context.CreateDbContext();
             _ApplicationLifetime = applicationLifetime;
 
@@ -63,6 +68,8 @@ namespace OW.GameDb
             _Options = options.Value;
             _Logging = logging;
         }
+
+        IDbContextFactory<GY02LogginContext> _DbContextFactory;
 
         GY02LogginContext _Context;
         IHostApplicationLifetime _ApplicationLifetime;
@@ -115,6 +122,37 @@ namespace OW.GameDb
             { }
             catch (ObjectDisposedException)
             { }
+        }
+
+        /// <summary>
+        /// 创建一个新的日志数据库的上下文（当前版本是从池中取一个对象）。调用者需要自己释放该对象。
+        /// </summary>
+        /// <returns></returns>
+        public GY02LogginContext CreateDbContext()
+        {
+            return _DbContextFactory.CreateDbContext();
+        }
+
+        /// <summary>
+        /// 立即存储指定的行为记录。
+        /// </summary>
+        /// <param name="actionRecord"></param>
+        public void Save(ActionRecord actionRecord)
+        {
+            using var db = CreateDbContext();
+            db.ActionRecords.Add(actionRecord);
+            db.SaveChanges();
+        }
+
+        /// <summary>
+        /// 立即存储指定的行为记录。
+        /// </summary>
+        /// <param name="actionRecords"></param>
+        public void Save(IEnumerable<ActionRecord> actionRecords)
+        {
+            using var db = CreateDbContext();
+            db.ActionRecords.AddRange(actionRecords);
+            db.SaveChanges();
         }
     }
 }
