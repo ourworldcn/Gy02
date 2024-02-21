@@ -90,6 +90,40 @@ namespace GY02.Managers
             return db.ActionRecords.Where(c => c.ActionId == actionId);
         }
 
+        public void SaveHistoryItem(GameShoppingHistoryItemV2 item)
+        {
+            item.Save();
+            _SqlLoggingManager.Save(item.ActionRecord);
+        }
+
+        public void SaveHistoryItems(IEnumerable<GameShoppingHistoryItemV2> item)
+        {
+            item.ForEach(c => c.Save());
+            _SqlLoggingManager.Save(item.Select(c => c.ActionRecord));
+        }
+
+        /// <summary>
+        /// 追加集合，并保存到数据库。
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="gameChar"></param>
+        public void AddHistoryItem(GameShoppingHistoryItemV2 item, GameChar gameChar)
+        {
+            SaveHistoryItem(item);
+            gameChar.ShoppingHistoryV2.Add(item);
+        }
+
+        /// <summary>
+        /// 追加集合，并保存到数据库。
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="gameChar"></param>
+        public void AddHistoryItems(IEnumerable<GameShoppingHistoryItemV2> items, GameChar gameChar)
+        {
+            SaveHistoryItems(items);
+            gameChar.ShoppingHistoryV2.AddRange(items);
+        }
+
         #endregion 商品购买历史记录相关
 
         #region 获取信息
@@ -253,12 +287,11 @@ namespace GY02.Managers
         public bool IsMatchOnlyCount(GameChar gameChar, TemplateStringFullView tt, DateTime start, DateTime end, out decimal buyedCount)
         {
             var periodIndex = _SearcherManager.GetPeriodIndex(tt.ShoppingItem.Ins, gameChar, out _); //获取自周期数
-            using var dbLoggin = _SqlLoggingManager.CreateDbContext();
-            var collLoggin = GetShoppingBuyHistoryQuery(gameChar, dbLoggin);
+            var collLoggin = gameChar.ShoppingHistoryV2;
 
             if (periodIndex.HasValue) //若存在自周期
             {
-                var tmp = collLoggin?.Where(c => c.ExtraGuid == tt.TemplateId).AsEnumerable().Select(c => GameShoppingHistoryItemV2.From(c))
+                var tmp = collLoggin?.Where(c => c.TId == tt.TemplateId)
                     .Where(c => c.PeriodIndex == periodIndex).Sum(c => c.Count) ?? decimal.Zero;
                 if (tmp >= tt.ShoppingItem.MaxCount)
                 {
@@ -266,7 +299,7 @@ namespace GY02.Managers
                     return false;
                 }
             }
-            buyedCount = collLoggin?.Where(c => c.WorldDateTime >= start && c.WorldDateTime < end && c.ExtraGuid == tt.TemplateId).Sum(c => c.ExtraDecimal) ?? decimal.Zero;  //已经购买的数量
+            buyedCount = collLoggin?.Where(c => c.WorldDateTime >= start && c.WorldDateTime < end && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
             return buyedCount < (tt.ShoppingItem.MaxCount ?? decimal.MaxValue);
         }
 

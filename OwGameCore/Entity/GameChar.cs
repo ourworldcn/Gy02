@@ -274,6 +274,12 @@ namespace OW.Game.Entity
         /// </summary>
         public List<GameShoppingHistoryItem> ShoppingHistory { get; set; } = new List<GameShoppingHistoryItem>();
 
+        /// <summary>
+        /// 购买记录。
+        /// </summary>
+        [JsonIgnore]
+        public List<GameShoppingHistoryItemV2> ShoppingHistoryV2 { get; set; } = new List<GameShoppingHistoryItemV2>();
+
         #endregion 商城相关
 
         #region 投骰子的记录
@@ -428,7 +434,7 @@ namespace OW.Game.Entity
     {
         public static GameShoppingHistoryItemV2 From(ActionRecord actionRecord)
         {
-            var result = JsonSerializer.Deserialize<GameShoppingHistoryItemV2>(actionRecord.JsonObjectString);
+            var result = string.IsNullOrWhiteSpace(actionRecord.JsonObjectString) ? new GameShoppingHistoryItemV2(actionRecord) : JsonSerializer.Deserialize<GameShoppingHistoryItemV2>(actionRecord.JsonObjectString);
             result.ActionRecord = actionRecord;
             return result;
         }

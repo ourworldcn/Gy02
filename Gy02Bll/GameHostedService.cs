@@ -281,8 +281,6 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             var ss = _Services.GetService<IDbContextFactory<GY02LogginContext>>();
             using var dbLogger = ss.CreateDbContext();
-            var tstr = JsonSerializer.Serialize(new GameShoppingHistoryItemV2 { PeriodIndex=1});
-            var ti= JsonSerializer.Deserialize<GameShoppingHistoryItemV2>(tstr);
             #region 测试用代码
             try
             {

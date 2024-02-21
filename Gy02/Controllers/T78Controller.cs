@@ -363,9 +363,7 @@ namespace GY02.Controllers
                 historyItem.Count = 1;
                 historyItem.WorldDateTime = now;
                 historyItem.PeriodIndex = periodIndex;
-                historyItem.Save();
-                _SqlLoggingManager.Save(historyItem.ActionRecord);
-
+                _ShoppingManager.AddHistoryItem(historyItem, gc);
                 _Logger.LogInformation("收到T78问卷调查回调，正常发送奖励。CharId={gcId}", gc.Id);
                 return result;
             }

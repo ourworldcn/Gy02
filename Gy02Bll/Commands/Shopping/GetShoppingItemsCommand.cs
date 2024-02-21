@@ -85,9 +85,6 @@ namespace GY02.Commands
             //var tmp = _TemplateManager.Id2FullView.Values.FirstOrDefault(c => c.TemplateId == Guid.Parse("e2d2115d-cee6-4f1a-b173-ab3b647307b7"));
 
             var coll1 = list.Where(c => c.Item1.Genus.Contains("gs_meirishangdian")).ToArray();
-            using var dbLoggin = _SqlLoggingManager.CreateDbContext();
-            var collHistory = _ShoppingManager.GetShoppingBuyHistoryQuery(command.GameChar, dbLoggin);
-
             command.ShoppingItemStates.AddRange(list.Select(c =>
             {
                 var tmp = new ShoppingItemState
@@ -95,15 +92,12 @@ namespace GY02.Commands
                     TId = c.Item1.TemplateId,
                     StartUtc = c.Item2,
                     EndUtc = c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod,
-                    BuyedCount = collHistory.Where(history => history.ExtraGuid == c.Item1.TemplateId && history.WorldDateTime >= c.Item2 && history.WorldDateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.ExtraDecimal),
+                    BuyedCount = command.GameChar.ShoppingHistoryV2.Where(history => history.TId == c.Item1.TemplateId && history.WorldDateTime >= c.Item2 && history.WorldDateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.Count),
                 };
                 var per = _SearcherManager.GetPeriodIndex(c.Item1.ShoppingItem.Ins, command.GameChar, out _);
                 if (per.HasValue) //若有自周期
                 {
-                    using var dbLoggin = _SqlLoggingManager.CreateDbContext();
-                    var collLoggin = _ShoppingManager.GetShoppingBuyHistoryQuery(command.GameChar, dbLoggin);
-                    
-                    var newBuyedCount = collLoggin.Where(history => history.ExtraGuid == c.Item1.TemplateId).AsEnumerable().Select(c => GameShoppingHistoryItemV2.From(c))
+                    var newBuyedCount = command.GameChar.ShoppingHistoryV2.Where(history => history.TId == c.Item1.TemplateId)
                         .Where(c => c.PeriodIndex == per).Sum(c => c.Count);
                     tmp.BuyedCount = Math.Max(tmp.BuyedCount, newBuyedCount);
                 }

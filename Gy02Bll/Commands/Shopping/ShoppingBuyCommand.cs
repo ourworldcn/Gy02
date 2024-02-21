@@ -139,8 +139,7 @@ namespace GY02.Commands
                 historyItem.Count = command.Count;
                 historyItem.WorldDateTime = now;
                 historyItem.PeriodIndex = periodIndex;
-                historyItem.Save();
-                _SqlLoggingManager.Save(historyItem.ActionRecord);
+                _ShoppingManager.AddHistoryItem(historyItem, command.GameChar);
 
                 AccountStore.Save(key);
             }
@@ -182,11 +181,8 @@ namespace GY02.Commands
             //增加累计签到天数
             var slot = allEntity[ProjectContent.LeijiQiandaoSlotTId].Single();  //累计签到占位符
 
-            using var dbLoggin = _SqlLoggingManager.CreateDbContext();
-            var collLoggin = _ShoppingManager.GetShoppingBuyHistoryQuery(gc, dbLoggin);
-
-            var coll = from tmp in collLoggin
-                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.ExtraGuid.Value) //模板
+            var coll = from tmp in gc.ShoppingHistoryV2
+                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
                        where tt.Genus.Contains("gs_leijiqiandao")   //累计签到项
                        select tmp;
             DateTime? buyDate = coll.Any() ? coll.Max(c => c.WorldDateTime.Date) : null; //最后购买时间
@@ -201,8 +197,8 @@ namespace GY02.Commands
             slot = allEntity[ProjectContent.SevenDayQiandaoSlotTId].FirstOrDefault();
             if (slot is not null)
             {
-                coll = from tmp in collLoggin
-                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.ExtraGuid.Value) //模板
+                coll = from tmp in gc.ShoppingHistoryV2
+                       let tt = _ShoppingManager.GetShoppingTemplateByTId(tmp.TId) //模板
                        where tt.Genus.Contains("gs_qiandao")   //7日签到项
                        select tmp;
                 buyDate = coll.Any() ? coll.Max(c => c.WorldDateTime.Date) : null; //最后购买时间

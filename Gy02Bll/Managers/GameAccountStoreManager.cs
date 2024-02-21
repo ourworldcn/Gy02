@@ -535,7 +535,19 @@ namespace GY02.Managers
                         return result;
                     }).ToArray();
                     if (collShoppingHistory.Length > 0)
+                    {
+                        gc.ShoppingHistoryV2.AddRange(collShoppingHistory);
                         _SqlLoggingManager.Save(collShoppingHistory.Select(c => c.ActionRecord));
+                        gc.ShoppingHistory.Clear();
+                        Save(user.Key);
+                    }
+                    else //若已经升级
+                    {
+                        using var db = _SqlLoggingManager.CreateDbContext();
+                        var name = $"{GameShoppingManager.ShoppingBuyHistoryPrefix}.{gc.GetThing().Base64IdString}";
+                        var coll = db.ActionRecords.Where(c => c.ActionId == name);
+                        gc.ShoppingHistoryV2.AddRange(coll.Select(c => GameShoppingHistoryItemV2.From(c)));
+                    }
                 }
                 #endregion 升级购买记录存储方式
                 return dw;
