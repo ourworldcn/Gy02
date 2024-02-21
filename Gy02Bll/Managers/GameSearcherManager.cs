@@ -121,7 +121,7 @@ namespace GY02.Managers
         /// <returns>不是空则获取到了周期数。否则是无效周期 -或- 指定的输入项接中没有自周期限定条件。</returns>
         public int? GetPeriodIndex(IEnumerable<BlueprintInItem> inItems, GameChar gameChar, out GameEntity entity)
         {
-            var item1 = inItems?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is NumberCondition));
+            var item1 = inItems?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is not null));
             if (item1 is null)
             {
                 entity = null;

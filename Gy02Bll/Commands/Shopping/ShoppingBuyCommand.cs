@@ -106,6 +106,9 @@ namespace GY02.Commands
                 if (allEntity is null) goto lbErr;
                 //提前缓存产出项
                 var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+#if DEBUG
+                var tt1 = _EntityManager.GetAllEntity(command.GameChar).First(c => c.TemplateId == Guid.Parse("9599B400-0BFD-498E-93DC-F44FF303B1B3"));
+#endif
                 if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
                 {
                     var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
@@ -123,8 +126,8 @@ namespace GY02.Commands
                     if (!_BlueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins, command.Changes))
                         if (OwHelper.GetLastError() != ErrorCodes.NO_ERROR)
                             goto lbErr;
-                var entitySummary = list.SelectMany(c => c.Item2).Where(c => _AchievementManager.GetTemplateById(c.TId) is not TemplateStringFullView).ToArray();
-                var achis = list.SelectMany(c => c.Item2).Where(c => _AchievementManager.GetTemplateById(c.TId) is TemplateStringFullView).ToArray();   //成就/任务
+                var entitySummary = list.SelectMany(c => c.Item2).Where(c => _AchievementManager.GetTemplateById(c.TId) is null).ToArray();
+                var achis = list.SelectMany(c => c.Item2).Where(c => _AchievementManager.GetTemplateById(c.TId) is not null).ToArray();   //成就/任务
                 if (!_EntityManager.CreateAndMove(entitySummary, command.GameChar, command.Changes)) goto lbErr;
 
                 foreach (var summary in achis)  //遍历任务/成就

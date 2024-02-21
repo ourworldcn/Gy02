@@ -81,7 +81,7 @@ namespace GY02
             return Task.Run(() =>
             {
                 SetDbConfig();  //设置数据库配置项
-            });
+            }, stoppingToken);
         }
 
         public override Task StartAsync(CancellationToken cancellationToken)
@@ -272,12 +272,6 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test(string str = null)
         {
-            var entity = new GameEntity { };
-            var entitySummary = new GameEntitySummary { };
-            var jstr = JsonSerializer.Serialize(entitySummary);
-            var store = _Services.GetService<GameAccountStoreManager>();
-            var mapper = _Services.GetService<IMapper>();
-            var cache = _Services.GetService<IMemoryCache>();
             var sw = Stopwatch.StartNew();
             var ss = _Services.GetService<IDbContextFactory<GY02LogginContext>>();
             using var dbLogger = ss.CreateDbContext();

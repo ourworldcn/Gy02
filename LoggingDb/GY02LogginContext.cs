@@ -69,14 +69,14 @@ namespace OW.GameDb
             _Logging = logging;
         }
 
-        IDbContextFactory<GY02LogginContext> _DbContextFactory;
+        readonly IDbContextFactory<GY02LogginContext> _DbContextFactory;
 
-        GY02LogginContext _Context;
-        IHostApplicationLifetime _ApplicationLifetime;
-        BlockingCollection<ActionRecord> _Actions = new BlockingCollection<ActionRecord>();
-        Task _Task;
-        GameSqlLoggingManagerOptions _Options;
-        ILogger<GameSqlLoggingManager> _Logging;
+        readonly GY02LogginContext _Context;
+        readonly IHostApplicationLifetime _ApplicationLifetime;
+        readonly BlockingCollection<ActionRecord> _Actions = new BlockingCollection<ActionRecord>();
+        readonly Task _Task;
+        readonly GameSqlLoggingManagerOptions _Options;
+        readonly ILogger<GameSqlLoggingManager> _Logging;
 
         public void AddLogging(ActionRecord actionRecord)
         {
@@ -85,7 +85,7 @@ namespace OW.GameDb
 
         void OnWork()
         {
-            CancellationTokenSource cts = new CancellationTokenSource((int)_Options.MaxDelay.TotalMilliseconds);
+            var cts = new CancellationTokenSource((int)_Options.MaxDelay.TotalMilliseconds);
             var totalCts = CancellationTokenSource.CreateLinkedTokenSource(cts.Token, _ApplicationLifetime.ApplicationStopping);
             try
             {

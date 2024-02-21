@@ -295,8 +295,7 @@ namespace OW.Game.Managers
                 case "GetBuyedCount":
                     {
                         var now = OwHelper.WorldNow;
-                        var gameChar = objects[0] as GameChar;
-                        if (gameChar is null)
+                        if (objects[0] is not GameChar gameChar)
                         {
                             value = 0; break;
                         }

@@ -231,7 +231,7 @@ namespace GY02.Managers
 
         void ClearUser(GameUser user)
         {
-            //user.GetDbContext()?.Dispose();
+            user.GetDbContext()?.Dispose();
             //user.CurrentChar?.Dispose();
             //user.Dispose();
         }

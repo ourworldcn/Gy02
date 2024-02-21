@@ -119,7 +119,6 @@ namespace System.Net.Sockets
         /// </summary>
         public OwUdpDgram()
         {
-            MemoryStream ms = new MemoryStream(_Buffer, 8, _Buffer.Length - 8);
         }
 
         byte[] _Buffer = new byte[4096];
@@ -180,7 +179,7 @@ namespace System.Net.Sockets
             _IoWorker = Task.Factory.StartNew(IoWorker, TaskCreationOptions.LongRunning);
         }
 
-        OwUdpClientOptions _Options;
+        readonly OwUdpClientOptions _Options;
 
         UdpClient _UdpClient;
         private Task _IoWorker;
@@ -193,11 +192,11 @@ namespace System.Net.Sockets
         /// <summary>
         /// 收发复位终止的信号。
         /// </summary>
-        CancellationTokenSource _Stopped = new CancellationTokenSource();
+        readonly CancellationTokenSource _Stopped = new CancellationTokenSource();
 
-        ConcurrentQueue<(byte[], IPEndPoint)> _ReceiveQueue = new ConcurrentQueue<(byte[], IPEndPoint)>();
+        readonly ConcurrentQueue<(byte[], IPEndPoint)> _ReceiveQueue = new ConcurrentQueue<(byte[], IPEndPoint)>();
 
-        ConcurrentQueue<(byte[], IPEndPoint)> _SendQueue = new ConcurrentQueue<(byte[], IPEndPoint)>();
+        readonly ConcurrentQueue<(byte[], IPEndPoint)> _SendQueue = new ConcurrentQueue<(byte[], IPEndPoint)>();
 
         class SendEntry
         {
@@ -224,7 +223,7 @@ namespace System.Net.Sockets
             public ConcurrentDictionary<int, byte[]> History = new ConcurrentDictionary<int, byte[]>();
         }
 
-        ConcurrentDictionary<IPEndPoint, SendEntry> _SendEntry = new ConcurrentDictionary<IPEndPoint, SendEntry>();
+        readonly ConcurrentDictionary<IPEndPoint, SendEntry> _SendEntry = new ConcurrentDictionary<IPEndPoint, SendEntry>();
 
         private bool disposedValue;
 

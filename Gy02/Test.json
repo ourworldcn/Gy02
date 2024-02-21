@@ -1,28 +1,23 @@
 {
-  "Genus": [ "gs_yindao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "GroupNumber": 2,
-    "MaxCount": 1,
-    "Ins": [],
-    "Outs": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Id": null,
         "ParentTId": null,
-        "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
-        "Count": -1
+        "Genus": [],
+        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "GroupMask": 1
       }
-    ]
+    ],
+    "GetIndexExpression": {
+      "op": "ToInt32",
+      "args": [ "Count" ]
+    },
+    "Outs": {
+      "TIds": [ "c4dd8e23-ae8f-4c70-b8e5-abbf126ad08e", "f7ee2778-0b4d-41e8-9735-cb2158312f96", "af9ba288-adce-4e5d-b180-2f8ba6a80fcc", "bc87bb45-23a9-4da0-b370-cd7ed8ba5abd", "8d0312eb-c561-4752-a21c-28ecb3a51bb9", "afef331f-e695-4bf4-bb03-a35ec16469a3", "3048a8f7-702c-4ae4-9c84-2a5a8672d6e8", "7e59512e-b5e5-4d9c-971f-ed29ed0c929a", "1ab3965e-8760-4f09-8626-0be395d43657", "51b9943f-ba60-4449-afd8-1e009280710c", "a04593e8-db13-42df-89d1-8cd2ea07cb1b", "1efc91c7-05d0-4232-b917-e12c54783372", "f67012dc-3b6b-447b-8c2d-039c7d9653d5", "e64c19ca-0a28-4d2a-ab50-10040bba4529", "3dfc37da-1c86-4c8f-9738-6dd7e1db9cff", "6f115ce1-1f4c-49fd-9931-e7b75ad9b80a", "cd448a7d-941d-4f70-ba96-82f1200ce1ea", "f3ecf139-4f69-4941-8953-d17ac49bd802", "89592c46-9335-4266-96e2-12d54eef1a84", "d13c1d09-dbaa-46b0-a5cc-78bd355504da", "cdc3c11c-3976-4700-8d1e-c24e64c9d636", "9937000d-9053-4b30-9453-090afe0237b4", "0714f428-6ef8-4a16-8ff6-4d7e189455e0", "532070bf-4986-4895-b47e-c0281d3d8b35", "c9ceeeeb-5e54-4bf4-9389-95f1350af79e", "8ab0ca9c-3c54-4082-9e6b-046ecdcb45ad", "c72349a3-dcbf-48d4-8df0-2aaa37efe127", "14967451-9a35-4d5f-8a6b-beaa4f062129", "4ca580dc-f304-448b-96f7-29d565fd238a", "41256508-ae9e-42e7-b764-9b6b9bca8536" ],
+      "ParentTIds": [ null ],
+      "Counts": [ 1 ]
+    }
   }
 }

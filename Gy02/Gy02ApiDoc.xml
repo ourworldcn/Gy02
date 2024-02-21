@@ -591,6 +591,7 @@
             <param name="specialManager"></param>
             <param name="blueprintManager"></param>
             <param name="searcherManager"></param>
+            <param name="sqlLoggingManager"></param>
         </member>
         <member name="M:GY02.Controllers.T78Controller.Payed(GY02.Publisher.PayedParamsDto,System.String,System.String)">
             <summary>

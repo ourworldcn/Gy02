@@ -38,6 +38,7 @@ namespace GY02.Controllers
         /// <param name="specialManager"></param>
         /// <param name="blueprintManager"></param>
         /// <param name="searcherManager"></param>
+        /// <param name="sqlLoggingManager"></param>
         public T78Controller(PublisherT78Manager t78Manager, GameShoppingManager shoppingManager, GameAccountStoreManager gameAccountStore,
             GameEntityManager entityManager, ILogger<T78Controller> logger, SyncCommandManager syncCommandManager, SpecialManager specialManager,
             GameBlueprintManager blueprintManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager)
@@ -220,7 +221,7 @@ namespace GY02.Controllers
         public ActionResult<T78RefundReturnDto> Refund([FromForm] T78RefundParamsDto model)
         {
             _Logger.LogInformation("收到T78退款回调，参数 = {model}", JsonSerializer.Serialize(model));
-            T78RefundReturnDto result = new T78RefundReturnDto { };
+            var result = new T78RefundReturnDto { };
 
             var dic = model.GetDictionary();
             var sign = _T78Manager.GetSignature(dic);

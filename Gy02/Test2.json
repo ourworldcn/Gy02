@@ -1,253 +1,77 @@
 {
-  "Items": [
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 1
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 2
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 3
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 4
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 5
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 6
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 7
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 8
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 9
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 10
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 11
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 12
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 13
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 14
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 30,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 15
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 16
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 17
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 18
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 19
-    },
-    {
-      "Rewards": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50,
-          "AddPropertyDictionary": {}
-        }
-      ],
-      "Level": 20
-    }
-  ],
-  "ClientDictionary": {},
-  "CompositingAccruedCost": [],
-  "LvUpAccruedCost": [],
-  "lv": 10,
-  "LastMarkPeriodIndex": null,
-  "LastModifyDateTime": "2024-01-02T00:43:10.6117869Z",
-  "IsValid": true,
-  "CountOfLastModifyUtc": "2024-01-12T00:36:33.9200681Z",
-  "Fcps": {}
+  "Dice": {
+    "MaxCount": 6,
+    "AllowRepetition": true,
+    "Items": [
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
+            "Count": 1
+          }
+        ],
+        "Weight": 30,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+            "Count": 1
+          }
+        ],
+        "Weight": 40,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "79391d55-a01f-4051-841b-5452908566ab",
+            "Count": 1
+          }
+        ],
+        "Weight": 120,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
+            "Count": 1
+          }
+        ],
+        "Weight": 60,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
+            "Count": 1
+          }
+        ],
+        "Weight": 20,
+        "ClearGuaranteesCount": false
+      }
+    ],
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
+  },
+  "outItemcounts": { "outItemcounts": { "131100000": 6 } }
 }

@@ -472,6 +472,9 @@ namespace OW.Game.Entity
         /// <summary>
         /// 购买时所处周期号。
         /// </summary>
+#if NET5_0_OR_GREATER
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
         public int? PeriodIndex { get; set; }
 
         public void Save()
