@@ -1,77 +1,16 @@
 {
-  "Dice": {
-    "MaxCount": 6,
-    "AllowRepetition": true,
-    "Items": [
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-            "Count": 1
-          }
-        ],
-        "Weight": 30,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
-            "Count": 1
-          }
-        ],
-        "Weight": 40,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "79391d55-a01f-4051-841b-5452908566ab",
-            "Count": 1
-          }
-        ],
-        "Weight": 120,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-            "Count": 1
-          }
-        ],
-        "Weight": 60,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-            "Count": 1
-          }
-        ],
-        "Weight": 20,
-        "ClearGuaranteesCount": false
-      }
-    ],
-    "GuaranteesCount": null,
-    "GuaranteesDiceTId": null
-  },
-  "outItemcounts": { "outItemcounts": { "131100000": 6 } }
+  "Subject": "Welcome to the open beta test",
+  "Body": "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!",
+  "Attachment": [
+    {
+      "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+      "Count": 100,
+      "AddPropertyDictionary": {}
+    }
+  ],
+  "From": "d47115c7-84c5-4474-9a29-c55e40f9e4e8",
+  "Dictionary1": {},
+  "Dictionary2": {},
+  "ReadUtc": "2024-01-10T10:29:16.183503Z",
+  "SendUtc": "2023-12-21T19:50:42.4768012Z"
 }

@@ -90,14 +90,14 @@ namespace GY02
             var service = scope.ServiceProvider;
             CreateDb(service);
             UpdateDatabase(service);
+            var mailManager = service.GetService<GameMailManager>();
+            mailManager.ClearMail();
             var result = Task.Factory.StartNew(c =>
             {
                 var logger = _Services.GetService<ILogger<GameHostedService>>();
                 logger?.LogInformation("游戏虚拟世界服务成功上线。");
                 using var scope = _Services.CreateScope();
                 var service = scope.ServiceProvider;
-                var mailManager = service.GetService<GameMailManager>();
-                Task.Run(mailManager.ClearMail);
                 Task.Run(InitializeAdmin);
             }, _Services, cancellationToken);
 
@@ -182,7 +182,8 @@ namespace GY02
                 },
             };
             var names = dic.Keys.Select(c => c.ToString()).ToArray();
-            var ids = dbUser.ServerConfig.Where(c => names.Contains(c.Name)).AsEnumerable().AsEnumerable().Where(c => Guid.TryParse(c.Name, out var id)).Select(c => Guid.Parse(c.Name)).ToHashSet();   //已经存在的内容升级
+            var ids = dbUser.ServerConfig.Where(c => names.Contains(c.Name)).
+                AsEnumerable().Where(c => Guid.TryParse(c.Name, out var id)).Select(c => Guid.Parse(c.Name)).ToHashSet();   //已经存在的内容升级
 
             dbUser.Database.SetCommandTimeout(TimeSpan.FromMinutes(5));
             foreach (var kvp in dic)    //执行升级语句

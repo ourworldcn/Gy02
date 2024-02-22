@@ -194,22 +194,25 @@ namespace GY02.Managers
         public void ClearMail()
         {
             using var db = _ContextFactory.CreateDbContext();
-            var limit = (OwHelper.WorldNow - TimeSpan.FromDays(60)).ToString();   //60天之前的时间点
-            var coll = from mail in db.Set<VirtualThing>()
-                       where mail.ExtraGuid == ProjectContent.MailTId && (SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.ReadUtc") != null || SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.PickUpUtc") != null ||
-                        StringComparer.CurrentCulture.Compare(SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.SendUtc"), limit) < 0)
-                       select mail;
-            var mails = coll.AsEnumerable().Select(c => c.GetJsonObject<GameMail>());
-            List<VirtualThing> remove = new List<VirtualThing>();
-            foreach (var mail in mails)
-            {
-                if (!IsExpiration(mail)) continue;
-                remove.Add(mail.GetThing());
-            }
+            //var limit = (OwHelper.WorldNow - TimeSpan.FromDays(60)).ToString();   //60天之前的时间点
+            //var coll = from mail in db.Set<VirtualThing>()
+            //           where mail.ExtraGuid == ProjectContent.MailTId && (SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.ReadUtc") != null || SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.PickUpUtc") != null ||
+            //            StringComparer.CurrentCulture.Compare(SqlDbFunctions.JsonValue(mail.JsonObjectString, "$.SendUtc"), limit) < 0)
+            //           select mail;
+            //var mails = coll.AsEnumerable().Select(c => c.GetJsonObject<GameMail>());
+            //List<VirtualThing> remove = new List<VirtualThing>();
+            //foreach (var mail in mails)
+            //{
+            //    if (!IsExpiration(mail)) continue;
+            //    remove.Add(mail.GetThing());
+            //}
+
             try
             {
-                db.RemoveRange(remove);
-                db.SaveChanges();
+                //db.RemoveRange(remove);
+                //db.SaveChanges();
+                var sql = "DELETE FROM [dbo].[VirtualThings] where [ExtraGuid]='E7229A9E-23A4-42EF-8ABB-FAEF0E16F683' and DATEDIFF(day, cast(JSON_VALUE([jsonobjectstring],'$.SendUtc') as datetime2),getdate())>60";
+                var r = db.Database.ExecuteSqlRaw(sql);
             }
             catch (Exception)
             {

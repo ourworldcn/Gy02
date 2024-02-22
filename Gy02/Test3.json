@@ -1,24 +1,73 @@
 {
-  "GameEvent": {
-    "EventId": "0d8d8ff7-2e8a-428b-9efa-db7ee7463910",
-    "Ins": [],
-    "Outs": [
+  "Genus": [ "gs_jinzhu" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "15d",
+      "ValidPeriodString": "15d"
+    },
+    "GroupNumber": 1,
+    "Ins": [
       {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "43E9286A-904C-4923-B477-482C0D6470A5",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
+            "MinCount": 0,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 15,
+              "MinRemainder": 0,
+              "MaxRemainder": 2
+            },
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0
       },
       {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "311bae23-09b4-4d8b-b158-f3129d5f6503",
+            "MinCount": 100000,
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
+            "MinCount": 0,
+            "GroupMask": 1
+          }
+        ],
+        "Count": 1
+      }
+    ],
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+        "Count": 200000
       }
     ]
+  },
+  "adPlacementIdDic": {
+    "Korea": null,
+    "Canada": null,
+    "Feishu": "b65ae42ef982dc",
+    "Pilipinas": "b6579671ea72ce"
   }
 }

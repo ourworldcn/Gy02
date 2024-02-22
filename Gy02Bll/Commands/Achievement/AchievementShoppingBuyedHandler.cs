@@ -2,6 +2,7 @@
 using GY02.Publisher;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
+using OW.Game.PropertyChange;
 using OW.SyncCommand;
 using System.Data;
 
@@ -13,14 +14,16 @@ namespace GY02.Commands
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<ShoppingBuyCommand>))]
     public class AchievementShoppingBuyedHandler : ISyncCommandHandled<ShoppingBuyCommand>
     {
-        public AchievementShoppingBuyedHandler(GameAchievementManager achievementManager, GameEventManager eventManager)
+        public AchievementShoppingBuyedHandler(GameAchievementManager achievementManager, GameEventManager eventManager, GameEntityManager entityManager)
         {
             _AchievementManager = achievementManager;
             _EventManager = eventManager;
+            _EntityManager = entityManager;
         }
 
         GameAchievementManager _AchievementManager;
         GameEventManager _EventManager;
+        GameEntityManager _EntityManager;
 
         public void Handled(ShoppingBuyCommand command, Exception exception)
         {
@@ -41,6 +44,21 @@ namespace GY02.Commands
                 //    return true;
                 //}).Select(c => (c.HasOldValue && OwConvert.TryToDecimal(c.OldValue, out var ov) ? ov : 0m, c.HasNewValue && OwConvert.TryToDecimal(c.NewValue, out var nv) ? nv : 0))
                 //.Sum(c => c.Item2 - c.Item1);
+            }
+            if (command.ShoppingItemTId == Guid.Parse("e4b9d61c-d130-4c2e-aad3-e55dfd40be6d")) //若是开启金猪活动的商品
+            {
+                var coll = _EntityManager.GetAllEntity(command.GameChar).Where(c => c.TemplateId == Guid.Parse("311bae23-09b4-4d8b-b158-f3129d5f6503") ||
+                    c.TemplateId == Guid.Parse("a84bcbd1-9541-4907-99df-59b19559ae9f")).ToArray();
+                Array.ForEach(coll, c =>
+                {
+                    if (c.Count != 0)
+                    {
+                        var ss = command.Changes?.MarkNewValueChanges(c, nameof(c.Count), 0);
+                        ss.HasOldValue = true;
+                        ss.OldValue = c.Count;
+                        c.Count = 0;
+                    }
+                });
             }
         }
     }
