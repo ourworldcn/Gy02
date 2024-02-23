@@ -250,6 +250,7 @@ namespace GY02
                 logger.LogTrace($"模板数据库已正常升级。");
 
                 var context = services.GetRequiredService<GY02UserContext>();
+                context.Database.SetCommandTimeout(TimeSpan.FromMinutes(5));
                 MigrateDbInitializer.Initialize(context);
                 logger.LogTrace("用户数据库已正常升级。");
 
@@ -279,6 +280,9 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var thing = new VirtualThing { ExtraString = "₱" };
+                var s = JsonSerializer.Serialize(thing);
+                var obj=JsonSerializer.Deserialize<VirtualThing>(s);
                 var b1 = DateTime.Now.ToString("yyyyMMddTHHmmss");
                 var b2 = DateTime.ParseExact(b1, "yyyyMMddTHHmmss", default, DateTimeStyles.None);
                 var part = Partitioner.Create(long.MinValue, long.MaxValue, 10_000_000);

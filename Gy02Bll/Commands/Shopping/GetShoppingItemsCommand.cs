@@ -73,6 +73,8 @@ namespace GY02.Commands
                 HashSet<string> genus = new HashSet<string>(command.Genus);
                 baseColl = _TemplateManager.Id2FullView.Where(c => c.Value.ShoppingItem is not null && c.Value.Genus is not null && genus.Overlaps(c.Value.Genus)).Select(c => c.Value);
             }
+            //刷新金猪周期
+            if (_ShoppingManager.IsJinzhuChanged(command.GameChar)) _ShoppingManager.JinzhuChanged(command.GameChar);
             //过滤
             DateTime nowUtc = OwHelper.WorldNow;    //当前
             List<(TemplateStringFullView, DateTime)> list = new List<(TemplateStringFullView, DateTime)>();

@@ -1,10 +1,19 @@
-[
-  {
-    "Index": 0,
-    "Language": 2,
-    "Title": "Welcome to the open beta test",
-    "Content": "Dear Hero\\n\\nCongratulations on your participation in Open Beta!\\n\\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\\n\\nFeel free to provide us with feedback as we continue to improve the gaming experience.\\n\\nThe adventure will begin soon!",
-    "URL": null,
-    "PopupType": 21
-  }
-]
+{
+  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+  "Count": 3,
+  "Fcps": {
+    "Count": {
+      "MinValue": 0,
+      "MaxValue": 3,
+      "StepValue": 1,
+      "Delay": "1.00:00:00",
+      "CurrentValue": 3,
+      "LastDateTime": "2023-06-01T00:00:00.0000000+08:00"
+    }
+  },
+  "name_txt": 10441,
+  "comment_txt": 10442
+}

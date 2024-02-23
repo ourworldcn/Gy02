@@ -10,6 +10,7 @@ using OW.Game.Store;
 using OW.GameDb;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -125,6 +126,72 @@ namespace GY02.Managers
         }
 
         #endregion 商品购买历史记录相关
+
+        #region 自转周期相关
+
+        /// <summary>
+        /// 指定商品的自转周期是否已经发生变化。
+        /// 首次计算则一律视为已经变化
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name=""></param>
+        /// <returns></returns>
+        public bool IsChanged(GameChar gameChar, Guid shoppingTid, out int? periodIndex)
+        {
+            periodIndex = null;
+            if (GetShoppingTemplateByTId(shoppingTid) is not TemplateStringFullView tt) return false;
+            periodIndex = _SearcherManager.GetPeriodIndex(tt.ShoppingItem.Ins, gameChar, out var entity);
+            var history = gameChar.PeriodIndexHistory.FirstOrDefault(c => c.TId == shoppingTid);
+            if (history is null)    //若未计算
+            {
+                history = new GameShoppingHistoryItem
+                {
+                    TId = shoppingTid,
+                    PeriodIndex = periodIndex,
+                };
+                gameChar.PeriodIndexHistory.Add(history);
+                return true;
+            }
+            if (history.PeriodIndex == periodIndex) return false;
+            history.PeriodIndex = periodIndex;
+            return true;
+        }
+
+        /// <summary>
+        /// 测试金猪相关商品是否变化了。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <returns></returns>
+        public bool IsJinzhuChanged(GameChar gameChar)
+        {
+            var templates = _TemplateManager.GetTemplatesFromGenus("gs_jinzhu");
+            bool changed = false;
+            foreach (var template in templates)
+            {
+                if (GetShoppingItemByTemplate(template) is not GameShoppingItem) continue;
+                if (IsChanged(gameChar, template.TemplateId, out _)) changed = true;
+            }
+            return changed;
+        }
+
+        /// <summary>
+        /// 若金猪商品变化了需要做的处理。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="changes"></param>
+        public void JinzhuChanged(GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            /*311bae23-09b4-4d8b-b158-f3129d5f6503	金猪累计金币占位符
+            a84bcbd1-9541-4907-99df-59b19559ae9f	金猪累计钻石占位符*/
+            Guid[] tids = new Guid[] { Guid.Parse("311bae23-09b4-4d8b-b158-f3129d5f6503"), Guid.Parse("a84bcbd1-9541-4907-99df-59b19559ae9f") };
+            var coll = _EntityManager.GetAllEntity(gameChar).Where(c => tids.Contains(c.TemplateId)).Select(c => new GameEntitySummary
+            {
+                TId = c.TemplateId,
+                Count = -c.Count,
+            }).ToArray();
+            _EntityManager.CreateAndMove(coll, gameChar, changes);
+        }
+        #endregion 自转周期相关
 
         #region 获取信息
 

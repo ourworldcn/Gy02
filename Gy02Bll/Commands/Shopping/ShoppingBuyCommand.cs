@@ -100,6 +100,8 @@ namespace GY02.Commands
                 command.DebugMessage = $"购买商品数量超过限制。";
                 return;
             }
+            //刷新金猪周期
+            if (_ShoppingManager.IsJinzhuChanged(command.GameChar)) _ShoppingManager.JinzhuChanged(command.GameChar,command.Changes);
             for (int i = 0; i < command.Count; i++)
             {
                 var allEntity = _EntityManager.GetAllEntity(command.GameChar)?.ToArray();
@@ -145,6 +147,11 @@ namespace GY02.Commands
                 _ShoppingManager.AddHistoryItem(historyItem, command.GameChar);
 
                 AccountStore.Save(key);
+            }
+            //金猪开启
+            if (command.ShoppingItemTId == Guid.Parse("e4b9d61c-d130-4c2e-aad3-e55dfd40be6d")) //若开启金猪
+            {
+                _ShoppingManager.IsJinzhuChanged(command.GameChar);
             }
             return;
         lbErr:

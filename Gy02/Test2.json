@@ -1,16 +1,81 @@
 {
-  "Subject": "Welcome to the open beta test",
-  "Body": "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!",
-  "Attachment": [
-    {
-      "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-      "Count": 100,
-      "AddPropertyDictionary": {}
-    }
-  ],
-  "From": "d47115c7-84c5-4474-9a29-c55e40f9e4e8",
-  "Dictionary1": {},
-  "Dictionary2": {},
-  "ReadUtc": "2024-01-10T10:29:16.183503Z",
-  "SendUtc": "2023-12-21T19:50:42.4768012Z"
+  "Genus": [ "gs_jinzhu" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "MaxCount": 1,
+    "GroupNumber": 1,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
+            "MinCount": 0,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 15,
+              "MinRemainder": 0,
+              "MaxRemainder": 2
+            },
+            "GeneralConditional": [],
+            "GroupMask": 3
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "311bae23-09b4-4d8b-b158-f3129d5f6503",
+            "MinCount": 100000,
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
+            "MinCount": 0,
+            "GroupMask": 1
+          }
+        ],
+        "Count": 1
+      }
+    ],
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+        "Count": 200000
+      },
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
+        "Count": 1
+      }
+    ]
+  },
+  "productStoreId": "com.duangphl.02",
+  "productAmount": 25,
+  "currencyCode": "PHP",
+  "currencyMark": "₱",
+  "productName": "金猪购买",
+  "productType": "金猪",
+  "productDesc": "金猪"
 }

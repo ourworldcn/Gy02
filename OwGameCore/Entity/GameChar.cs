@@ -280,6 +280,10 @@ namespace OW.Game.Entity
         [JsonIgnore]
         public List<GameShoppingHistoryItemV2> ShoppingHistoryV2 { get; set; } = new List<GameShoppingHistoryItemV2>();
 
+        /// <summary>
+        /// 上次计算的周期索引。
+        /// </summary>
+        public List<GameShoppingHistoryItem> PeriodIndexHistory { get; set; } = new List<GameShoppingHistoryItem>();
         #endregion 商城相关
 
         #region 投骰子的记录
