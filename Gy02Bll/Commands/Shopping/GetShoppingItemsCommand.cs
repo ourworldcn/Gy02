@@ -101,7 +101,7 @@ namespace GY02.Commands
                 {
                     var newBuyedCount = command.GameChar.ShoppingHistoryV2.Where(history => history.TId == c.Item1.TemplateId)
                         .Where(c => c.PeriodIndex == per).Sum(c => c.Count);
-                    tmp.BuyedCount = Math.Max(tmp.BuyedCount, newBuyedCount);
+                    tmp.BuyedCount = newBuyedCount;
                 }
                 return tmp;
             }));

@@ -365,6 +365,8 @@ namespace GY02.Managers
                     buyedCount = tmp;
                     return false;
                 }
+                buyedCount = tmp;
+                return true;
             }
             buyedCount = collLoggin?.Where(c => c.WorldDateTime >= start && c.WorldDateTime < end && c.TId == tt.TemplateId).Sum(c => c.Count) ?? decimal.Zero;  //已经购买的数量
             return buyedCount < (tt.ShoppingItem.MaxCount ?? decimal.MaxValue);
