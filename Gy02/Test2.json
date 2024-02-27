@@ -22,9 +22,9 @@
               "MinValue": 0,
               "MaxValue": null,
               "Subtrahend": 0,
-              "Modulus": 15,
-              "MinRemainder": 0,
-              "MaxRemainder": 2
+              "Modulus": 16,
+              "MinRemainder": 3,
+              "MaxRemainder": 5
             },
             "GeneralConditional": [],
             "GroupMask": 3
@@ -37,8 +37,8 @@
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "311bae23-09b4-4d8b-b158-f3129d5f6503",
-            "MinCount": 100000,
+            "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
+            "MinCount": 160,
             "GroupMask": 1
           }
         ],
@@ -60,8 +60,8 @@
     "Outs": [
       {
         "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-        "Count": 200000
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 320
       },
       {
         "Id": null,

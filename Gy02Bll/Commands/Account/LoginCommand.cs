@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
 using OW.Game.Manager;
+using GY02.Templates;
 
 namespace GY02.Commands
 {
@@ -49,18 +50,22 @@ namespace GY02.Commands
     public class LoginHandler : SyncCommandHandlerBase<LoginCommand>
     {
 
-        public LoginHandler(IServiceProvider service, GameSqlLoggingManager loggingManager, SyncCommandManager syncCommandManager, VirtualThingManager virtualThingManager)
+        public LoginHandler(IServiceProvider service, GameSqlLoggingManager loggingManager, SyncCommandManager syncCommandManager, VirtualThingManager virtualThingManager, GameShoppingManager gameShoppingManager, GameEntityManager entityManager)
         {
             _Service = service;
             _LoggingManager = loggingManager;
             _SyncCommandManager = syncCommandManager;
             _VirtualThingManager = virtualThingManager;
+            _ShoppingManager = gameShoppingManager;
+            _EntityManager = entityManager;
         }
 
         IServiceProvider _Service;
         GameSqlLoggingManager _LoggingManager;
         SyncCommandManager _SyncCommandManager;
         VirtualThingManager _VirtualThingManager;
+        GameShoppingManager _ShoppingManager;
+        GameEntityManager _EntityManager;
 
         public override void Handle(LoginCommand command)
         {
@@ -99,7 +104,10 @@ namespace GY02.Commands
                 _SyncCommandManager.Handle(subCommand);
                 svcStore.Save(gu.Key);
             }
-
+            //增加金猪占位符的计数
+            _ShoppingManager.InitJinzhu(gc, nowUtc);
+            if (_ShoppingManager.IsJinzhuChanged(gc))
+                _ShoppingManager.JinzhuChanged(gc);
         }
 
     }

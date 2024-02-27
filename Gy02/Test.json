@@ -1,19 +1,81 @@
 {
-  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-  "Count": 3,
-  "Fcps": {
-    "Count": {
-      "MinValue": 0,
-      "MaxValue": 3,
-      "StepValue": 1,
-      "Delay": "1.00:00:00",
-      "CurrentValue": 3,
-      "LastDateTime": "2023-06-01T00:00:00.0000000+08:00"
-    }
+  "Genus": [ "gs_jinzhu" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "MaxCount": 1,
+    "GroupNumber": 1,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
+            "MinCount": 0,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 16,
+              "MinRemainder": 6,
+              "MaxRemainder": 10
+            },
+            "GeneralConditional": [],
+            "GroupMask": 3
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "311bae23-09b4-4d8b-b158-f3129d5f6503",
+            "MinCount": 30000,
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
+            "MinCount": 0,
+            "GroupMask": 1
+          }
+        ],
+        "Count": 1
+      }
+    ],
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+        "Count": 600000
+      },
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
+        "Count": 1
+      }
+    ]
   },
-  "name_txt": 10441,
-  "comment_txt": 10442
+  "productStoreId": "com.duangphl.02",
+  "productAmount": 25,
+  "currencyCode": "PHP",
+  "currencyMark": "₱",
+  "productName": "金猪购买",
+  "productType": "金猪",
+  "productDesc": "金猪"
 }

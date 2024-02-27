@@ -69,7 +69,9 @@ namespace GY02.Controllers
             using var stream = file.OpenReadStream();
             try
             {
-                var list = JsonSerializer.Deserialize<TemplateDatas>(stream);
+                using StreamReader sr = new StreamReader(stream);
+                var str = sr.ReadToEnd();
+                var list = JsonSerializer.Deserialize<TemplateDatas>(str);
                 var dic = GameTemplateManager.GetTemplateFullviews(list?.GameTemplates);
 
                 var coll = new List<ValidationResult>();

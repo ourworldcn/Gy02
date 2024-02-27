@@ -191,6 +191,20 @@ namespace GY02.Managers
             }).ToArray();
             _EntityManager.CreateAndMove(coll, gameChar, changes);
         }
+
+        /// <summary>
+        /// 刷新金猪占位符的Count值。
+        /// </summary>
+        /// <param name="gc">角色。</param>
+        /// <param name="worldUtc">世界时间。</param>
+        public void InitJinzhu(GameChar gc, DateTime worldUtc)
+        {
+            if (_EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == Guid.Parse("9f9fff74-7426-4022-8e3e-06cb93a1806c")) is GameEntity jinzhu)
+            {
+                jinzhu.Count = (worldUtc.Date - jinzhu.CreateDateTime.Value.Date).Days;
+            }
+
+        }
         #endregion 自转周期相关
 
         #region 获取信息
