@@ -106,8 +106,11 @@ namespace GY02.Commands
             }
             //增加金猪占位符的计数
             _ShoppingManager.InitJinzhu(gc, nowUtc);
-            if (_ShoppingManager.IsJinzhuChanged(gc))
+            if (_ShoppingManager.IsChanged(gc, "gs_jinzhu"))
                 _ShoppingManager.JinzhuChanged(gc);
+
+            if (_ShoppingManager.IsChanged(gc, "gs_leijilibao"))
+                _ShoppingManager.LibaoChanged(gc);
         }
 
     }

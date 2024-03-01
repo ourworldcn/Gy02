@@ -208,6 +208,16 @@ namespace GY02.Publisher
         public static readonly Guid XunluoTId = new Guid("62D3A545-7604-46BF-9837-95E286660BC8");
 
         /// <summary>
+        /// 周卡占位符。
+        /// </summary>
+        public static readonly Guid ZhoukaTId = new Guid("91E6DD20-1F00-4090-9A26-EA04B7693E60");
+
+        /// <summary>
+        /// 月卡占位符。
+        /// </summary>
+        public static readonly Guid YuekaTId = new Guid("419A400B-55A3-4244-82A6-1917267654F7");
+
+        /// <summary>
         /// 七日签到页签。
         /// </summary>
         public const string QiriQiandaoGenus = "gs_qiandao";

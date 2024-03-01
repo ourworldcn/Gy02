@@ -1,5 +1,5 @@
 {
-  "Genus": [ "gs_jinzhu" ],
+  "Genus": [ "gs_leijilibao" ],
   "ShoppingItem": {
     "Period": {
       "Start": "2023-05-09T00:00:00.000Z",
@@ -15,16 +15,16 @@
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
+            "TId": "24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C",
             "MinCount": 0,
             "NumberCondition": {
               "PropertyName": "Count",
               "MinValue": 0,
               "MaxValue": null,
               "Subtrahend": 0,
-              "Modulus": 16,
-              "MinRemainder": 3,
-              "MaxRemainder": 5
+              "Modulus": 20,
+              "MinRemainder": 0,
+              "MaxRemainder": 4
             },
             "GeneralConditional": [],
             "GroupMask": 3
@@ -37,45 +37,20 @@
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-            "MinCount": 160,
+            "TId": "cb3eb8b7-15b5-4480-a56b-24bf6fca9a12",
+            "MinCount": 2,
             "GroupMask": 1
           }
         ],
         "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 0,
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1
       }
     ],
     "Outs": [
       {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 320
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
+        "ParentTId": null,
+        "TId": "e91eb5c2-76c7-487d-b1bf-ac651dcdfaca",
         "Count": 1
       }
     ]
-  },
-  "productStoreId": "com.duangphl.02",
-  "productAmount": 25,
-  "currencyCode": "PHP",
-  "currencyMark": "₱",
-  "productName": "金猪购买",
-  "productType": "金猪",
-  "productDesc": "金猪"
+  }
 }

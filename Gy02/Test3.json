@@ -1,73 +1,58 @@
 {
-  "Genus": [ "gs_jinzhu" ],
+  "Genus": [ "gs_meirilibao" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
+      "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "15d",
-      "ValidPeriodString": "15d"
+      "PeriodString": "1d",
+      "ValidPerioString": "1d"
     },
-    "GroupNumber": 1,
+    "GroupNumber": 0,
+    "MaxCount": 1,
     "Ins": [
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "9f9fff74-7426-4022-8e3e-06cb93a1806c",
+            "TId": "1de88b53-e5bf-4a60-9dfb-90284b94bdab",
             "MinCount": 0,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 15,
-              "MinRemainder": 0,
-              "MaxRemainder": 2
-            },
             "GeneralConditional": [],
             "GroupMask": 1
           }
         ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "311bae23-09b4-4d8b-b158-f3129d5f6503",
-            "MinCount": 100000,
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 0,
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1
+        "Count": 1,
+        "Genus": []
       }
     ],
     "Outs": [
       {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "6cf5fc4c-394c-4ba1-9bc5-13713a90add8",
+        "Count": 2
+      },
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 10
+      },
+      {
+        "Id": null,
         "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
         "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-        "Count": 200000
+        "Count": 500
       }
     ]
   },
+  "name_txt": 10963,
+  "comment_txt": 10928,
+  "JiaoBiao": [],
   "adPlacementIdDic": {
     "Korea": null,
     "Canada": null,
-    "Feishu": "b65ae42ef982dc",
+    "Feishu": "b65693ee6ded97",
     "Pilipinas": "b6579671ea72ce"
   }
 }

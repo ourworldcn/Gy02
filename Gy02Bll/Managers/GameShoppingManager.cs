@@ -158,11 +158,12 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 测试金猪相关商品是否变化了。
+        /// 指定页签下所有商品，有任何一个周期变化即认为变化了。
         /// </summary>
         /// <param name="gameChar"></param>
-        /// <returns></returns>
-        public bool IsJinzhuChanged(GameChar gameChar)
+        /// <param name="genus"></param>
+        /// <returns>true有商品的周期发生了变化；否则为false。</returns>
+        public bool IsChanged(GameChar gameChar, string genus)
         {
             var templates = _TemplateManager.GetTemplatesFromGenus("gs_jinzhu");
             bool changed = false;
@@ -184,6 +185,24 @@ namespace GY02.Managers
             /*311bae23-09b4-4d8b-b158-f3129d5f6503	金猪累计金币占位符
             a84bcbd1-9541-4907-99df-59b19559ae9f	金猪累计钻石占位符*/
             Guid[] tids = new Guid[] { Guid.Parse("311bae23-09b4-4d8b-b158-f3129d5f6503"), Guid.Parse("a84bcbd1-9541-4907-99df-59b19559ae9f") };
+            var coll = _EntityManager.GetAllEntity(gameChar).Where(c => tids.Contains(c.TemplateId)).Select(c => new GameEntitySummary
+            {
+                TId = c.TemplateId,
+                Count = -c.Count,
+            }).ToArray();
+            _EntityManager.CreateAndMove(coll, gameChar, changes);
+        }
+
+        /// <summary>
+        /// 若礼包商品周期变化了，调用此函数进行相应处理。
+        /// </summary>
+        /// <param name="gameChar"></param>
+        /// <param name="changes"></param>
+        public void LibaoChanged(GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            /*cb3eb8b7-15b5-4480-a56b-24bf6fca9a12	礼包商店充值次数占位符
+            */
+            Guid[] tids = new Guid[] {  Guid.Parse("cb3eb8b7-15b5-4480-a56b-24bf6fca9a12") };
             var coll = _EntityManager.GetAllEntity(gameChar).Where(c => tids.Contains(c.TemplateId)).Select(c => new GameEntitySummary
             {
                 TId = c.TemplateId,
