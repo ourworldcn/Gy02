@@ -1,56 +1,23 @@
 {
-  "Genus": [ "gs_leijilibao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "MaxCount": 1,
-    "GroupNumber": 1,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C",
-            "MinCount": 0,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 20,
-              "MinRemainder": 0,
-              "MaxRemainder": 4
-            },
-            "GeneralConditional": [],
-            "GroupMask": 3
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "cb3eb8b7-15b5-4480-a56b-24bf6fca9a12",
-            "MinCount": 2,
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0
-      }
-    ],
-    "Outs": [
+  "SequenceOut": {
+    "Conditions": [
       {
         "ParentTId": null,
-        "TId": "e91eb5c2-76c7-487d-b1bf-ac651dcdfaca",
-        "Count": 1
+        "Genus": [],
+        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "GroupMask": 1
       }
-    ]
+    ],
+    "GetIndexExpression": {
+      "op": "GetBuyedCount",
+      "args": [ "ee0ae75e-9e45-4d8c-9ec1-09219e7684e4" ]
+    },
+    "Outs": {
+      "ParentTIds": [ "3b163a62-6591-4a93-a385-cf079b20f589", "f5022e9f-13da-4a2d-b1b9-d57fc07de232" ],
+      "TIds": [ "3a47c56c-fa8b-4293-98cd-d6c64690604a", "214dcccc-b0e9-4dbe-affd-1f32ca8b3086" ],
+      "Counts": [ 1, 2 ]
+    }
   }
 }

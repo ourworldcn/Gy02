@@ -1,58 +1,34 @@
 {
-  "Genus": [ "gs_meirilibao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1d",
-      "ValidPerioString": "1d"
-    },
-    "GroupNumber": 0,
-    "MaxCount": 1,
-    "Ins": [
+  "Seq": 0,
+  "TId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+  "ObjectId": "5e9b11b9-8cad-419a-bc95-9df5a5b6e286",
+  "PropertyName": "Children",
+  "HasOldValue": true,
+  "OldValue": {
+    "LvUpAccruedCost": [
       {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "1de88b53-e5bf-4a60-9dfb-90284b94bdab",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1,
-        "Genus": []
+        "Id": "132888ed-f14b-4c12-9d60-3160c99959d8",
+        "ParentTId": "9c199974-d0be-4dc8-93d4-23eee89e4e53",
+        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+        "Count": -1000
+      },
+      {
+        "Id": "b20da6c4-57ba-4dcd-a849-6376a268d9d3",
+        "ParentTId": "551bb094-7055-4e61-b72e-44c760eb8666",
+        "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
+        "Count": -1
       }
     ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "6cf5fc4c-394c-4ba1-9bc5-13713a90add8",
-        "Count": 2
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 10
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-        "Count": 500
-      }
-    ]
+    "CompositingAccruedCost": [],
+    "CreateDateTime": "2024-03-01T18:39:18.9392876Z",
+    "CountOfLastModifyUtc": "2024-03-01T18:39:18.9306296Z",
+    "ClientDictionary": {},
+    "Fcps": {},
+    "lv": 1,
+    "Id": "1348adc9-2dd3-424b-b3b0-0af216f03c66",
+    "TemplateId": "41b2d9a5-041f-4725-bd1b-48c99fdf774d"
   },
-  "name_txt": 10963,
-  "comment_txt": 10928,
-  "JiaoBiao": [],
-  "adPlacementIdDic": {
-    "Korea": null,
-    "Canada": null,
-    "Feishu": "b65693ee6ded97",
-    "Pilipinas": "b6579671ea72ce"
-  }
+  "HasNewValue": false,
+  "NewValue": null,
+  "DateTimeUtc": "2024-03-01T18:42:19.9060553Z"
 }

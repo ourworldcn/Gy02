@@ -80,7 +80,9 @@ namespace OW.Game.Manager
         /// <returns>true修补了对象，false没有修补。</returns>
         public bool Normal(VirtualThing root)
         {
-            var ignTids = new Guid[] { Guid.Parse("29b7e726-387f-409d-a6ac-ad8670a814f0"), Guid.Parse("14d0e372-909b-485f-b8cb-07c9231b10ff") };
+            //f1abe4b7-372b-45b2-a9da-eb6930e95cb9
+            var ignTids = new Guid[] { Guid.Parse("29b7e726-387f-409d-a6ac-ad8670a814f0"), Guid.Parse("14d0e372-909b-485f-b8cb-07c9231b10ff"),
+                Guid.Parse("f1abe4b7-372b-45b2-a9da-eb6930e95cb9") };
             if (ignTids.Contains(root.ExtraGuid) || root.Children.Count > 0)
                 return false;
             var result = false;
