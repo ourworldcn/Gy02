@@ -2788,6 +2788,46 @@ namespace GY02.Publisher
 
     #endregion T1228相关
 
+    #region T304相关
+    /// <summary>
+    /// T304完成订单功能参数封装类。
+    /// </summary>
+    public class T304PayedParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 完美 北美支付确认功能参数封装类的构造函数。
+        /// </summary>
+        public T304PayedParamsDto()
+        {
+            
+        }
+
+        /// <summary>
+        /// 包名。
+        /// </summary>
+        public string PackageName { get; set; }
+
+        /// <summary>
+        /// 对应购买商品的商品ID。
+        /// </summary>
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// 购买成功后Purchase对象的getPurchaseToken()
+        /// </summary>
+        public string PurchaseToken { get; set; }
+
+    }
+
+    /// <summary>
+    /// T304完成订单功能返回值封装类。
+    /// </summary>
+    public class T304PayedReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    #endregion T304相关
+
     #region 兑换码相关
 
     /// <summary>

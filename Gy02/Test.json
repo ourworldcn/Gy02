@@ -1,56 +1,59 @@
 {
-  "Genus": [ "gs_leijilibao" ],
+  "Genus": [ "gs_zs", "fb_goumai" ],
   "ShoppingItem": {
     "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
+      "Start": "2023-05-30T00:00:00.000Z",
       "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
+      "PeriodString": "1m",
+      "ValidPeriodString": "1m"
     },
-    "MaxCount": 1,
-    "GroupNumber": 1,
+    "GroupNumber": 3,
+    "MaxCount": null,
     "Ins": [
       {
         "Conditional": [
           {
             "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
             "Genus": [],
-            "TId": "24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C",
-            "MinCount": 0,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 20,
-              "MinRemainder": 0,
-              "MaxRemainder": 4
-            },
-            "GeneralConditional": [],
-            "GroupMask": 3
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "cb3eb8b7-15b5-4480-a56b-24bf6fca9a12",
+            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
             "MinCount": 1,
+            "GeneralConditional": [],
             "GroupMask": 1
           }
         ],
-        "Count": 0
+        "Count": 1,
+        "Genus": []
       }
     ],
     "Outs": [
       {
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "2e877976-2d3d-4e7e-8851-07163216319a",
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 1200
+      },
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "554cda05-553f-46a2-b905-6a30ffcd2fbb",
+        "Count": 0
+      },
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
         "Count": 1
       }
     ]
-  }
+  },
+  "productStoreId": "com.beast.beastbumper.blitz.03",
+  "productAmount": 8.99,
+  "currencyCode": "USD",
+  "currencyMark": "$",
+  "productName": "钻石购买",
+  "productType": "钻石",
+  "productDesc": "很多钻石",
+  "name_txt": 10997,
+  "JiaoBiao": [],
+  "display_icon": "ZuanShi3"
 }

@@ -2126,6 +2126,36 @@
             success表示成功。其他值都是失败。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.T304PayedParamsDto">
+            <summary>
+            T304完成订单功能参数封装类。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.T304PayedParamsDto.#ctor">
+            <summary>
+            完美 北美支付确认功能参数封装类的构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedParamsDto.PackageName">
+            <summary>
+            包名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedParamsDto.ProductId">
+            <summary>
+            对应购买商品的商品ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedParamsDto.PurchaseToken">
+            <summary>
+            购买成功后Purchase对象的getPurchaseToken()
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.T304PayedReturnDto">
+            <summary>
+            T304完成订单功能返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GenerateRedeemCodeParamsDto">
             <summary>
             生成兑换码功能参数封装类。

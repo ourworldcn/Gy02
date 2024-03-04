@@ -1,23 +1,46 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Genus": [ "gs_jijinfufei2" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodStrig": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "MaxCount": 1,
+    "GroupNumber": 1,
+    "Ins": [
       {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
-        "MinCount": null,
-        "GeneralConditional": [],
-        "GroupMask": 1
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "1f31807a-f633-4d3a-8e8e-382ad105d061",
+            "MinCount": 1398443,
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "fc60e07e-910b-4054-a1fd-4bb9e6832d80",
+            "MinCount": 1,
+            "GroupMask": 0
+          }
+        ],
+        "Count": 1
       }
     ],
-    "GetIndexExpression": {
-      "op": "GetBuyedCount",
-      "args": [ "ee0ae75e-9e45-4d8c-9ec1-09219e7684e4" ]
-    },
-    "Outs": {
-      "ParentTIds": [ "3b163a62-6591-4a93-a385-cf079b20f589", "f5022e9f-13da-4a2d-b1b9-d57fc07de232" ],
-      "TIds": [ "3a47c56c-fa8b-4293-98cd-d6c64690604a", "214dcccc-b0e9-4dbe-affd-1f32ca8b3086" ],
-      "Counts": [ 1, 2 ]
-    }
+    "Outs": [
+      {
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 3000
+      }
+    ]
   }
 }

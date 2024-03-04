@@ -823,6 +823,28 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="T:Gy02.Controllers.T304Controller">
+            <summary>
+            T304合作伙伴功能控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T304Controller.#ctor(Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.T304Controller},GY02.Managers.GameAccountStoreManager,OW.Game.Managers.GameTemplateManager,OW.Game.Store.GY02UserContext,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="F:Gy02.Controllers.T304Controller._Logger">
+            <summary>
+            日志接口。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T304Controller.Payed(GY02.Publisher.T304PayedParamsDto)">
+            <summary>
+            付款结束确认。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
         <member name="T:Global.Program">
             <summary>
             

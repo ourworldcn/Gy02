@@ -504,6 +504,16 @@
             支付平台的商品Id。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.Amount">
+            <summary>
+            商品平台价格。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.CurrencyCode">
+            <summary>
+            商品平台币种。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Atk">
             <summary>
             攻击数值序列。

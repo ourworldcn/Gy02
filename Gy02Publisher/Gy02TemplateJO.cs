@@ -804,6 +804,18 @@ namespace GY02.Templates
         /// </summary>
         [JsonPropertyName("productStoreId")]
         public string ProductStoreId { get; set; }
+
+        /// <summary>
+        /// 商品平台价格。
+        /// </summary>
+        [JsonPropertyName("productAmount")]
+        public decimal Amount { get; set; }
+
+        /// <summary>
+        /// 商品平台币种。
+        /// </summary>
+        [JsonPropertyName("currencyCode")]
+        public string CurrencyCode { get; set; }
         #endregion 商城相关
 
         #region 装备数据

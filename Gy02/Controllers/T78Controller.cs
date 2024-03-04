@@ -82,7 +82,7 @@ namespace GY02.Controllers
             //    var str1 = reader.ReadToEndAsync().Result;
             //    _Logger.LogInformation("收到T78充值回调，参数 = {str1}", str1);
             //}
-
+            // 冰鸟 韩国，日本
             _Logger.LogInformation("收到T78充值回调，参数 : {model},X-BNPAY-SANDBOX = {isSandbox}，X-BNPAY-PAYTYPE = {payType}", JsonSerializer.Serialize(model), isSandbox, payType);
             var result = new PayedReturnDto { };
             var dic = model.GetDictionary();

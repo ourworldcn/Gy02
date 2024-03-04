@@ -172,7 +172,7 @@ namespace GY02.Controllers
             //    if (gm.Id2OnlineChar.Count > 10000 * Environment.ProcessorCount)
             //        return StatusCode((int)HttpStatusCode.ServiceUnavailable, "登录人数过多，请稍后登录");
             //    var gu = gm.LoginT21(model.Sid, out string pwd);
-
+            // 完美 北美登录。
             var command = _Mapper.Map<LoginT21Command>(model);
             _SyncCommandManager.Handle(command);
 

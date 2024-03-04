@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -159,6 +160,7 @@ namespace GY02.Managers
             //var uri2 = "https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{packageName}/purchases/products/{productId}/tokens/{token}?access_token={access_token}";
             var result = _HttpClient.GetAsync(uri).Result;
             return result;
+            
         }
 
         /// <summary>

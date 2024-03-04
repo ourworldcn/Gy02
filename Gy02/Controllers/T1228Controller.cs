@@ -30,6 +30,7 @@ namespace GY02.Controllers
         public T1228Controller(IMapper mapper, SyncCommandManager syncCommandManager, ILogger<T1228Controller> logger, T1228Manager t1228Manager,
             GameAccountStoreManager accountStoreManager)
         {
+            //菲力宾自营，谷歌支付
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
             _Logger = logger;
