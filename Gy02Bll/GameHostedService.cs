@@ -276,11 +276,6 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test(string str = null)
         {
-            var t304 = _Services.GetService<T304Manager>();
-
-            t304.Verify("W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==",
-                "{\"orderId\":\"GPA.3329-4244-5515-90021\",\"packageName\":\"com.beast.beastbumper.blitz\",\"productId\":\"com.beast.beastbumper.blitz.01.dg0\",\"purchaseTime\":1709548989171,\"purchaseState\":0,\"purchaseToken\":\"gkohaeflhihimpiekggaoklj.AO-J1Oyg_wlUycSp64RDJhl6AvIjjxjEZpZARBl9wtU7FQBuF2WF76Tt6U6A2Gjgzh9SwJ-8W_abWbE1hpS28j_e70xAVyRzBlo7wmEdYIjK4T_53IpXkT4\",\"quantity\":1,\"acknowledged\":false}");
-
             var sw = Stopwatch.StartNew();
             var ss = _Services.GetService<IDbContextFactory<GY02LogginContext>>();
             using var dbLogger = ss.CreateDbContext();

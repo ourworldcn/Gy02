@@ -2151,6 +2151,16 @@
             购买成功后Purchase对象的getPurchaseToken()
             </summary>
         </member>
+        <member name="P:GY02.Publisher.T304PayedParamsDto.Data">
+            <summary>
+            签名的数据。看得懂的。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedParamsDto.Sign">
+            <summary>
+            签名，通常是base64编码的。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.T304PayedReturnDto">
             <summary>
             T304完成订单功能返回值封装类。

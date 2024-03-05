@@ -10,8 +10,11 @@ using Microsoft.EntityFrameworkCore;
 using OW.Game.Managers;
 using OW.Game.Store;
 using OW.SyncCommand;
+using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Gy02.Controllers
 {
@@ -23,7 +26,7 @@ namespace Gy02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public T304Controller(ILogger<T304Controller> logger, GameAccountStoreManager accountStoreManager, GameTemplateManager templateManager, GY02UserContext dbContext, IMapper mapper, SyncCommandManager syncCommandManager)
+        public T304Controller(ILogger<T304Controller> logger, GameAccountStoreManager accountStoreManager, GameTemplateManager templateManager, GY02UserContext dbContext, IMapper mapper, SyncCommandManager syncCommandManager, T304Manager t304Manager)
         {
             _Logger = logger;
             _AccountStoreManager = accountStoreManager;
@@ -31,6 +34,7 @@ namespace Gy02.Controllers
             _DbContext = dbContext;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
+            _T304Manager = t304Manager;
             //完美 北美
         }
 
@@ -43,6 +47,7 @@ namespace Gy02.Controllers
         GY02UserContext _DbContext;
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
+        T304Manager _T304Manager;
 
         /// <summary>
         /// 付款结束确认。
@@ -61,31 +66,54 @@ namespace Gy02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-
+            if (string.IsNullOrWhiteSpace(model.Data))
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"签名数据不可为空。";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            string orderId;
+            try
+            {
+                var jo = JsonSerializer.Deserialize<T304Data>(model.Data)!;
+                orderId = jo.OrderId;
+            }
+            catch (Exception)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"签名数据格式不正确。";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            if (!_T304Manager.Verify(model.Data, model.Sign))
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"签名无效。";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
+            var orderIdBinary = Encoding.UTF8.GetBytes(orderId);
+            var orderOld = _DbContext.ShoppingOrder.FirstOrDefault(c => c.BinaryArray == orderIdBinary);
+            if(orderOld is not null)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"订单已被入库，不可重复入库。";
+                _Logger.LogWarning(result.DebugMessage);
+                return result;
+            }
             var tt = _TemplateManager.Id2FullView.Values.FirstOrDefault(c => c.ProductStoreId == model.ProductId);
             if (tt is null)
             {
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                 result.DebugMessage = $"找不到指定商品——{model.ProductId}";
                 _Logger.LogWarning(result.DebugMessage);
-                //result.DebugMessage = result.DebugMessage;
                 return result;
-
             }
             var id = Guid.NewGuid();
             _Logger.LogInformation($"T304/Payed确认支付调用。id={id}");
             result.DebugMessage = $"{id}";
-            //透参的格式是：角色Id,商品TId,如:2A92C88B-CF43-4C47-9B53-0832CCCBD805,D330809B-AF3C-4A71-B2ED-9D9AABED4281
-            //string payload = "";    //透参
-            //var ary = payload.Split(',');
-            //if (ary.Length != 2 || !Guid.TryParse(ary[0], out var gcId/*角色Id*/) || !Guid.TryParse(ary[1], out var shoppingTid/*商品Id*/))
-            //{
-            //    result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-            //    result.DebugMessage = $"透参格式错误——{payload}";
-            //    _Logger.LogWarning(result.DebugMessage);
-            //    //result.DebugMessage = result.DebugMessage;
-            //    return result;
-            //}
+
             #region 内部购买
 
             var bi = gc!.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
@@ -125,6 +153,7 @@ namespace Gy02.Controllers
                 CompletionDateTime = OwHelper.WorldNow,
                 Amount = tt.Amount,
                 Currency = tt.CurrencyCode,
+                BinaryArray= orderIdBinary,
             };
             _DbContext.ShoppingOrder.Add(order);
             try
@@ -143,6 +172,27 @@ namespace Gy02.Controllers
             return result;
         }
 
+
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class T304Data
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public T304Data()
+        {
+            
+        }
+
+        /// <summary>
+        /// 订单Id。
+        /// </summary>
+        [JsonPropertyName("orderId")]
+        public string OrderId { get; set; } = null!;
     }
 
     //    public class GooglePayDto {

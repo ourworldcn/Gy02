@@ -6036,7 +6036,7 @@
     },
     {
       "Id": "a380e125-2640-409b-8c45-359ea2f734bb",
-      "DisplayName": "灰山羊",
+      "DisplayName": "灰山羊 ",
       "Gid": 160201102,
       "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12401,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"p_skills\":[{\"skillsid\":\"0dfc1671-b37e-422c-b832-149585ffff2c\",\"enable\":true}],\"equipskin\":\"Sheep_Color_777777\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_wolf\"]}"
     },
@@ -6836,301 +6836,301 @@
       "Id": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
       "DisplayName": "牧野草原",
       "Gid": 210101001,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13001,\"comment_txt\":13013,\"suggest\":[200,2000,200],\"scoreTime\":[360,480,600],\"charExp\":200}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13001,\"comment_txt\":13013,\"suggest\":[100,34,400],\"scoreTime\":[360,480,600],\"charExp\":200}"
     },
     {
       "Id": "bba55ecc-52e9-4b20-9c8d-d396f5c5e33b",
       "DisplayName": "残破牧场",
       "Gid": 210101002,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13002,\"comment_txt\":13014,\"suggest\":[200,2000,200],\"scoreTime\":[390,480,600],\"charExp\":300}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13002,\"comment_txt\":13014,\"suggest\":[132,40,400],\"scoreTime\":[390,480,600],\"charExp\":300}"
     },
     {
       "Id": "1e5fc645-2833-48a1-add5-6b83a3407d03",
       "DisplayName": "荒野雪原",
       "Gid": 210101003,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13003,\"comment_txt\":13015,\"suggest\":[ 250,2200,200],\"scoreTime\":[450,500,600],\"charExp\":580}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13003,\"comment_txt\":13015,\"suggest\":[165,46,415],\"scoreTime\":[450,500,600],\"charExp\":580}"
     },
     {
       "Id": "f8b2fd94-8e7e-4c62-9c37-411f24a9b6a1",
       "DisplayName": "平原小路",
       "Gid": 210101005,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13004,\"comment_txt\":13016,\"suggest\":[ 250,2200,200],\"scoreTime\":[450,500,600],\"charExp\":600}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13004,\"comment_txt\":13016,\"suggest\":[235,58,432],\"scoreTime\":[450,500,600],\"charExp\":600}"
     },
     {
       "Id": "28314d37-7d90-4a13-992f-22485de7b020",
       "DisplayName": "火山溶洞",
       "Gid": 210101004,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[ 280,2500,250],\"scoreTime\":[450,500,600],\"charExp\":620}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[312,71,450],\"scoreTime\":[450,500,600],\"charExp\":620}"
     },
     {
       "Id": "da564dad-8b75-420a-b7e9-d1aab85617ec",
       "DisplayName": "荒废古道",
       "Gid": 210101006,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13006,\"comment_txt\":13018,\"suggest\":[ 280,2500,250],\"scoreTime\":[450,500,600],\"charExp\":650}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13006,\"comment_txt\":13018,\"suggest\":[394,84,470],\"scoreTime\":[450,500,600],\"charExp\":650}"
     },
     {
       "Id": "1bc14a08-1551-4f53-9a51-11876aa7610a",
       "DisplayName": "水晶矿洞",
       "Gid": 210101007,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[ 280,2500,250],\"scoreTime\":[450,500,600],\"charExp\":700}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[481,99,491],\"scoreTime\":[450,500,600],\"charExp\":700}"
     },
     {
       "Id": "a490d629-5dc0-4617-a38f-41c7755ef81b",
       "DisplayName": "海兽领地",
       "Gid": 210101008,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13046,\"comment_txt\":13048,\"suggest\":[ 400,3500,400],\"scoreTime\":[480,540,720],\"charExp\":750}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13046,\"comment_txt\":13048,\"suggest\":[575,113,513],\"scoreTime\":[480,540,720],\"charExp\":750}"
     },
     {
       "Id": "2105aabe-b1d8-4add-9ddf-bc512f673105",
       "DisplayName": "破败废墟",
       "Gid": 210101009,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13025,\"comment_txt\":13032,\"suggest\":[ 400,3500,400],\"scoreTime\":[480,540,720],\"charExp\":1350}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13025,\"comment_txt\":13032,\"suggest\":[779,145,563],\"scoreTime\":[480,540,720],\"charExp\":1350}"
     },
     {
       "Id": "3fb9edc2-1ba6-4f4a-aeeb-bcc93e9ce971",
       "DisplayName": "风暴沙漠",
       "Gid": 210101010,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13027,\"comment_txt\":13034,\"suggest\":[ 500,3500,400],\"scoreTime\":[480,540,720],\"charExp\":800}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13027,\"comment_txt\":13034,\"suggest\":[883,154,577],\"scoreTime\":[480,540,720],\"charExp\":800}"
     },
     {
       "Id": "44400571-975e-4a5d-a1db-4d606cc4363b",
       "DisplayName": "牧场小径",
       "Gid": 210101011,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[ 300,3000,300],\"scoreTime\":[480,540,720],\"charExp\":950}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13011,\"comment_txt\":13023,\"suggest\":[889,162,590],\"scoreTime\":[480,540,720],\"charExp\":950}"
     },
     {
       "Id": "e4c4bc86-2b72-4bee-ac01-0f53909fb498",
       "DisplayName": "高山松林",
       "Gid": 210101012,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13038,\"comment_txt\":13039,\"suggest\":[ 300,3000,300],\"scoreTime\":[480,540,720],\"charExp\":1000}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13038,\"comment_txt\":13039,\"suggest\":[946,171,605],\"scoreTime\":[480,540,720],\"charExp\":1000}"
     },
     {
       "Id": "7c1a30c2-e91d-4fca-9b26-fdaef4e2c249",
       "DisplayName": "神秘洞穴",
       "Gid": 210101013,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13028,\"comment_txt\":13035,\"suggest\":[ 500,3500,400],\"scoreTime\":[480,540,720],\"charExp\":1100}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13028,\"comment_txt\":13035,\"suggest\":[1190,207,665],\"scoreTime\":[480,540,720],\"charExp\":1100}"
     },
     {
       "Id": "6510b97c-3317-43b8-a25c-f4ca0920a8ce",
       "DisplayName": "滑滑冰川",
       "Gid": 210101014,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13043,\"comment_txt\":13044,\"suggest\":[ 300,3000,300],\"scoreTime\":[480,540,720],\"charExp\":1180}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13043,\"comment_txt\":13044,\"suggest\":[1255,217,681],\"scoreTime\":[480,540,720],\"charExp\":1180}"
     },
     {
       "Id": "6f0da752-94ba-4cb4-a52b-39dcbdb41f91",
       "DisplayName": "地火监牢",
       "Gid": 210101015,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13040,\"comment_txt\":13041,\"suggest\":[ 400,3000,400],\"scoreTime\":[480,540,720],\"charExp\":1280}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13040,\"comment_txt\":13041,\"suggest\":[1321,227,697],\"scoreTime\":[480,540,720],\"charExp\":1280}"
     },
     {
       "Id": "7e1408ab-d6f5-4928-ac6c-fba86800b585",
       "DisplayName": "古老遗迹",
       "Gid": 210101016,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13029,\"comment_txt\":13036,\"suggest\":[ 500,3500,600],\"scoreTime\":[480,540,720],\"charExp\":1380}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13029,\"comment_txt\":13036,\"suggest\":[1388,236,714],\"scoreTime\":[480,540,720],\"charExp\":1380}"
     },
     {
       "Id": "e987add9-00dd-4d03-83ff-bef717cae823",
       "DisplayName": "法老宝藏",
       "Gid": 210101017,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13030,\"comment_txt\":13037,\"suggest\":[ 500,3500,600],\"scoreTime\":[480,540,720],\"charExp\":1500}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13030,\"comment_txt\":13037,\"suggest\":[1527,257,749],\"scoreTime\":[480,540,720],\"charExp\":1500}"
     },
     {
       "Id": "2cefd284-8d80-4beb-a1e6-0bce481593ca",
       "DisplayName": "迷路深林",
       "Gid": 210101018,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[ 300,2800,250],\"scoreTime\":[480,540,720],\"charExp\":1600}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13008,\"comment_txt\":13020,\"suggest\":[1822,299,823],\"scoreTime\":[480,540,720],\"charExp\":1600}"
     },
     {
       "Id": "efe9e887-3f97-48ce-8cfe-b2fe97924940",
       "DisplayName": "神秘海域",
       "Gid": 210101019,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13045,\"comment_txt\":13047,\"suggest\":[ 500,3800,800],\"scoreTime\":[480,540,720],\"charExp\":1720}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13045,\"comment_txt\":13047,\"suggest\":[1899,310,843],\"scoreTime\":[480,540,720],\"charExp\":1720}"
     },
     {
       "Id": "9b6b2f9d-01cb-4847-8373-758f3c0baee2",
       "DisplayName": "绿野仙踪",
       "Gid": 210101020,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[300,2800,800],\"scoreTime\":[480,540,720],\"charExp\":1855}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13009,\"comment_txt\":13021,\"suggest\":[1978,321,862],\"scoreTime\":[480,540,720],\"charExp\":1855}"
     },
     {
       "Id": "1cdd590b-1931-457a-9052-e1829b61aed4",
       "DisplayName": "黑暗祭坛",
       "Gid": 210101021,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13049,\"comment_txt\":13050,\"suggest\":[300,2800,800],\"scoreTime\":[480,540,720],\"charExp\":2000}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13049,\"comment_txt\":13050,\"suggest\":[2058,333,833],\"scoreTime\":[480,540,720],\"charExp\":2000}"
     },
     {
       "Id": "5260ae6e-4e38-4cc0-9a4b-a9756cb27f02",
       "DisplayName": "遗弃矿洞",
       "Gid": 210101022,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13051,\"comment_txt\":13052,\"suggest\":[400,3000,900],\"scoreTime\":[480,540,720],\"charExp\":2150}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13051,\"comment_txt\":13052,\"suggest\":[2308,368,945],\"scoreTime\":[480,540,720],\"charExp\":2150}"
     },
     {
       "Id": "bd9796f9-f784-452d-be1a-76cda6e12887",
       "DisplayName": "法老神庙",
       "Gid": 210101023,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13053,\"comment_txt\":13054,\"suggest\":[350,3200,850],\"scoreTime\":[480,540,720],\"charExp\":2300}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13053,\"comment_txt\":13054,\"suggest\":[2751,430,1058],\"scoreTime\":[480,540,720],\"charExp\":2300}"
     },
     {
       "Id": "225e2257-85e5-4e0f-a957-8104ec12474c",
       "DisplayName": "无尽深林",
       "Gid": 210101024,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13055,\"comment_txt\":13056,\"suggest\":[350,3200,850],\"scoreTime\":[480,540,720],\"charExp\":2460}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13055,\"comment_txt\":13056,\"suggest\":[2844,442,1081],\"scoreTime\":[480,540,720],\"charExp\":2460}"
     },
     {
       "Id": "d3f259ef-1e8f-42ff-a377-18fe5eef665e",
       "DisplayName": "坠落方舟",
       "Gid": 210101025,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13057,\"comment_txt\":13058,\"suggest\":[350,3200,850],\"scoreTime\":[480,540,720],\"charExp\":2630}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13057,\"comment_txt\":13058,\"suggest\":[2939,456,1105],\"scoreTime\":[480,540,720],\"charExp\":2630}"
     },
     {
       "Id": "a9721798-88e2-4467-bb7c-703e0cb56a28",
       "DisplayName": "深海宝藏",
       "Gid": 210101026,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13059,\"comment_txt\":13060,\"suggest\":[380,3500,900],\"scoreTime\":[480,540,720],\"charExp\":2800}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13059,\"comment_txt\":13060,\"suggest\":[3035,469,1130],\"scoreTime\":[480,540,720],\"charExp\":2800}"
     },
     {
       "Id": "29652d7e-bdee-465f-9d8e-4c08370d1a10",
       "DisplayName": "时空之门",
       "Gid": 210101027,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13061,\"comment_txt\":13062,\"suggest\":[380,3500,900],\"scoreTime\":[480,540,720],\"charExp\":3000}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13061,\"comment_txt\":13062,\"suggest\":[3331,509,1205],\"scoreTime\":[480,540,720],\"charExp\":3000}"
     },
     {
       "Id": "0eab1438-2626-402d-a831-e03830260939",
       "DisplayName": "失落遗迹",
       "Gid": 210101028,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13063,\"comment_txt\":13064,\"suggest\":[380,3500,900],\"scoreTime\":[480,540,720],\"charExp\":3200}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13063,\"comment_txt\":13064,\"suggest\":[3853,580,1338],\"scoreTime\":[480,540,720],\"charExp\":3200}"
     },
     {
       "Id": "a45059cf-a452-4aa0-ad44-2f11d8602490",
       "DisplayName": "冰霜堡垒",
       "Gid": 210101029,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13065,\"comment_txt\":13066,\"suggest\":[400,3800,1200],\"scoreTime\":[480,540,720],\"charExp\":3400}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13065,\"comment_txt\":13066,\"suggest\":[3962,595,1366],\"scoreTime\":[480,540,720],\"charExp\":3400}"
     },
     {
       "Id": "6f6b3f04-c222-4930-8b69-0da634a54faf",
       "DisplayName": "沙漠神殿",
       "Gid": 210101030,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13067,\"comment_txt\":13068,\"suggest\":[450,4000,1500],\"scoreTime\":[480,540,720],\"charExp\":3600}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13067,\"comment_txt\":13068,\"suggest\":[4072,610,1394],\"scoreTime\":[480,540,720],\"charExp\":3600}"
     },
     {
       "Id": "3197b329-68b8-4c31-8334-b88b161fd728",
       "DisplayName": "向日葵平原",
       "Gid": 210101031,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13069,\"comment_txt\":13070,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":3830}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13069,\"comment_txt\":13070,\"suggest\":[4184,625,1423],\"scoreTime\":[420,480,600],\"charExp\":3830}"
     },
     {
       "Id": "bad56592-6e8a-4dcd-b559-2aedbadb0ce7",
       "DisplayName": "部落之地",
       "Gid": 210101032,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13071,\"comment_txt\":13072,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":4050}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13071,\"comment_txt\":13072,\"suggest\":[4527,671,1510],\"scoreTime\":[420,480,600],\"charExp\":4050}"
     },
     {
       "Id": "26eef17b-04a6-4318-a9f8-ef16384a0bc5",
       "DisplayName": "玛雅神殿",
       "Gid": 210101033,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13073,\"comment_txt\":13074,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":4300}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13073,\"comment_txt\":13074,\"suggest\":[5127,752,1664],\"scoreTime\":[420,480,600],\"charExp\":4300}"
     },
     {
       "Id": "bb50d515-03c3-407d-a8e5-da4ca1232f02",
       "DisplayName": "丛林之巅",
       "Gid": 210101034,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13075,\"comment_txt\":13076,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":4550}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13075,\"comment_txt\":13076,\"suggest\":[5252,768,1696],\"scoreTime\":[420,480,600],\"charExp\":4550}"
     },
     {
       "Id": "0f8c1aaa-ae17-4ee2-8ffa-f333ea34f4e8",
       "DisplayName": "鲨鱼领地",
       "Gid": 210101035,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13077,\"comment_txt\":13078,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":4800}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13077,\"comment_txt\":13078,\"suggest\":[5378,785,1729],\"scoreTime\":[420,480,600],\"charExp\":4800}"
     },
     {
       "Id": "3c1808eb-c50a-4248-bb0f-c508bec82556",
       "DisplayName": "冰雪小屋",
       "Gid": 210101036,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13079,\"comment_txt\":13080,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":5050}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13079,\"comment_txt\":13080,\"suggest\":[5505,802,1761],\"scoreTime\":[420,480,600],\"charExp\":5050}"
     },
     {
       "Id": "04a41e03-6ed4-416d-8a5c-911dfcafb9c2",
       "DisplayName": "风车磨坊",
       "Gid": 210101037,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13081,\"comment_txt\":13082,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":5350}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13081,\"comment_txt\":13082,\"suggest\":[5895,853,1861],\"scoreTime\":[420,480,600],\"charExp\":5350}"
     },
     {
       "Id": "de8687fa-57f3-43d0-8ea6-2d957b75ddab",
       "DisplayName": "祭祀之地",
       "Gid": 210101038,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13083,\"comment_txt\":13084,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":5600}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13083,\"comment_txt\":13084,\"suggest\":[6574,943,2036],\"scoreTime\":[420,480,600],\"charExp\":5600}"
     },
     {
       "Id": "40112c4b-6253-44d5-aa45-04281f9b3b07",
       "DisplayName": "神殿之间",
       "Gid": 210101039,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13085,\"comment_txt\":13086,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":6000}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13085,\"comment_txt\":13086,\"suggest\":[6714,961,2072],\"scoreTime\":[420,480,600],\"charExp\":6000}"
     },
     {
       "Id": "b5cdac6b-6281-4346-bc82-2cfff1229b80",
       "DisplayName": "高山营地",
       "Gid": 210101040,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13087,\"comment_txt\":13088,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":6525}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13087,\"comment_txt\":13088,\"suggest\":[6856,980,2109],\"scoreTime\":[420,480,600],\"charExp\":6525}"
     },
     {
       "Id": "90b39779-ef6f-47ea-8993-e8793b471a13",
       "DisplayName": "魔法矿场",
       "Gid": 210101041,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13091,\"comment_txt\":13092,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":6850}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13091,\"comment_txt\":13092,\"suggest\":[6999,999,2145],\"scoreTime\":[420,480,600],\"charExp\":6850}"
     },
     {
       "Id": "a6da7950-5556-4fa8-a8df-d39a1de57b97",
       "DisplayName": "岩浆巢穴",
       "Gid": 210101042,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13089,\"comment_txt\":13090,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":7180}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13089,\"comment_txt\":13090,\"suggest\":[7436,1056,2258],\"scoreTime\":[420,480,600],\"charExp\":7180}"
     },
     {
       "Id": "d64a7d8e-c8cb-4e01-b4a2-86b183ac8c6b",
       "DisplayName": "草原古树",
       "Gid": 210101043,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13091,\"comment_txt\":13092,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":7180}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13091,\"comment_txt\":13092,\"suggest\":[8194,1155,2454],\"scoreTime\":[420,480,600],\"charExp\":7180}"
     },
     {
       "Id": "990298ce-3b4b-408f-964c-e63cd07af035",
       "DisplayName": "祭祀神殿",
       "Gid": 210101044,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13093,\"comment_txt\":13094,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":7520}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13093,\"comment_txt\":13094,\"suggest\":[8349,1175,2494],\"scoreTime\":[420,480,600],\"charExp\":7520}"
     },
     {
       "Id": "81beeb25-2a87-4fe2-b9f9-a7ba8bb44786",
       "DisplayName": "法老遗迹",
       "Gid": 210101045,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13095,\"comment_txt\":13096,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":7860}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13095,\"comment_txt\":13096,\"suggest\":[8507,1196,2534],\"scoreTime\":[420,480,600],\"charExp\":7860}"
     },
     {
       "Id": "5e88a59b-7f22-459d-8c29-658f896dc9f4",
       "DisplayName": "丛林秘境",
       "Gid": 210101046,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13097,\"comment_txt\":13098,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":8200}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13097,\"comment_txt\":13098,\"suggest\":[8665,1216,2575],\"scoreTime\":[420,480,600],\"charExp\":8200}"
     },
     {
       "Id": "ce0ca55d-5148-4c0b-bcd9-8ca2adf87def",
       "DisplayName": "潜水圣地",
       "Gid": 210101047,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13099,\"comment_txt\":13100,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":8600}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13099,\"comment_txt\":13100,\"suggest\":[8825,1237,2617],\"scoreTime\":[420,480,600],\"charExp\":8600}"
     },
     {
       "Id": "14b5c71d-3c3f-4aa8-a755-8461992d5869",
       "DisplayName": "冰雪乐园",
       "Gid": 210101048,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13101,\"comment_txt\":13102,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":8960}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13101,\"comment_txt\":13102,\"suggest\":[9314,1300,2743],\"scoreTime\":[420,480,600],\"charExp\":8960}"
     },
     {
       "Id": "1464690b-26a0-441f-94aa-30a4472db4d6",
       "DisplayName": "部落农场",
       "Gid": 210101049,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13103,\"comment_txt\":13104,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":9350}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13103,\"comment_txt\":13104,\"suggest\":[10157,1409,2961],\"scoreTime\":[420,480,600],\"charExp\":9350}"
     },
     {
       "Id": "d937fe48-5230-41cd-b6f6-39fd318a1fec",
       "DisplayName": "圣地遗迹",
       "Gid": 210101050,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13105,\"comment_txt\":13106,\"suggest\":[450,4000,1500],\"scoreTime\":[420,480,600],\"charExp\":9800}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13105,\"comment_txt\":13106,\"suggest\":[10330,1431,3006],\"scoreTime\":[420,480,600],\"charExp\":9800}"
     },
     {
       "Id": "cabe2c3c-56c0-4afe-abae-14dfbf96d4a2",
@@ -7166,13 +7166,13 @@
       "Id": "0345ca96-b748-4050-ad8a-814b9643d890",
       "DisplayName": "羊和狼孵化动物产出",
       "Gid": 170101001,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "65578531-8325-4e6f-910f-12055f2eeb4f",
       "DisplayName": "羊和狼孵化皮肤产出",
       "Gid": 170101002,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be5d5262-9b67-4416-ba08-fa069bf4c311\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"18b7f5cf-fc73-4e8f-b443-a9204e010188\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be5d5262-9b67-4416-ba08-fa069bf4c311\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"18b7f5cf-fc73-4e8f-b443-a9204e010188\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "Id": "bd2fc6c4-61b3-4165-9f40-6948b27f0acd",
@@ -14077,7 +14077,7 @@
       "Id": "b1e28c8b-dff0-446a-8fd5-a87c648eca6a",
       "DisplayName": "孵化广告购买",
       "Gid": 180401005,
-      "PropertiesString": "{\"Genus\":[\"gs_fuhua\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":5,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":1}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b657670bc7ba4f\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_fuhua\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"Count\":1}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b657670bc7ba4f\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "341c8f7c-7022-42d4-93a8-44cb02814e10",
@@ -19732,67 +19732,67 @@
       "Id": "93aec088-e065-449d-89b4-a7bf5dba1f4c",
       "DisplayName": "金猪1-商品-金币1",
       "Gid": 181104001,
-      "PropertiesString": "{\"Genus\":[\"gs_jinzhu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9f9fff74-7426-4022-8e3e-06cb93a1806c\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":16,\"MinRemainder\":0,\"MaxRemainder\":2},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"311bae23-09b4-4d8b-b158-f3129d5f6503\",\"MinCount\":12000,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":24000},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.18\",\"productAmount\":0.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"金猪购买\",\"productType\":\"金猪\",\"productDesc\":\"双倍奖励\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_jinzhu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9f9fff74-7426-4022-8e3e-06cb93a1806c\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":16,\"MinRemainder\":0,\"MaxRemainder\":2},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"311bae23-09b4-4d8b-b158-f3129d5f6503\",\"MinCount\":12000,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":24000},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"name_txt\":10454,\"comment_txt\":11017,\"JiaoBiao\":[11019],\"productStoreId\":\"com.beast.beastbumper.blitz.18\",\"productAmount\":0.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"金猪购买\",\"productType\":\"金猪\",\"productDesc\":\"双倍奖励\"}"
     },
     {
       "Id": "bf1cc255-3c86-40f4-9c17-e469303be12a",
       "DisplayName": "金猪2-商品- 钻石1",
       "Gid": 181104002,
-      "PropertiesString": "{\"Genus\":[\"gs_jinzhu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9f9fff74-7426-4022-8e3e-06cb93a1806c\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":16,\"MinRemainder\":3,\"MaxRemainder\":5},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"MinCount\":160,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":320},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.20\",\"productAmount\":0.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"金猪购买\",\"productType\":\"金猪\",\"productDesc\":\"金猪\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_jinzhu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9f9fff74-7426-4022-8e3e-06cb93a1806c\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":16,\"MinRemainder\":3,\"MaxRemainder\":5},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"MinCount\":160,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":320},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"name_txt\":10454,\"comment_txt\":11018,\"JiaoBiao\":[11019],\"productStoreId\":\"com.beast.beastbumper.blitz.20\",\"productAmount\":0.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"金猪购买\",\"productType\":\"金猪\",\"productDesc\":\"金猪\"}"
     },
     {
       "Id": "ce193456-e9d8-4ca7-9fde-7ef3cdc7413d",
       "DisplayName": "金猪3-商品-金币2",
       "Gid": 181104003,
-      "PropertiesString": "{\"Genus\":[\"gs_jinzhu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9f9fff74-7426-4022-8e3e-06cb93a1806c\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":16,\"MinRemainder\":6,\"MaxRemainder\":10},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"311bae23-09b4-4d8b-b158-f3129d5f6503\",\"MinCount\":30000,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":60000},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.19\",\"productAmount\":4.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"金猪购买\",\"productType\":\"金猪\",\"productDesc\":\"金猪\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_jinzhu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9f9fff74-7426-4022-8e3e-06cb93a1806c\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":16,\"MinRemainder\":6,\"MaxRemainder\":10},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"311bae23-09b4-4d8b-b158-f3129d5f6503\",\"MinCount\":30000,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":60000},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"name_txt\":10454,\"comment_txt\":11017,\"JiaoBiao\":[11019],\"productStoreId\":\"com.beast.beastbumper.blitz.19\",\"productAmount\":4.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"金猪购买\",\"productType\":\"金猪\",\"productDesc\":\"金猪\"}"
     },
     {
       "Id": "38af6717-343e-4d73-8209-360657aa5005",
       "DisplayName": "金猪4-商品- 钻石2",
       "Gid": 181104004,
-      "PropertiesString": "{\"Genus\":[\"gs_jinzhu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9f9fff74-7426-4022-8e3e-06cb93a1806c\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":16,\"MinRemainder\":11,\"MaxRemainder\":15},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"MinCount\":600,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":1200},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.21\",\"productAmount\":4.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"金猪购买\",\"productType\":\"金猪\",\"productDesc\":\"金猪\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_jinzhu\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9f9fff74-7426-4022-8e3e-06cb93a1806c\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":16,\"MinRemainder\":11,\"MaxRemainder\":15},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"MinCount\":600,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":1200},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"name_txt\":10454,\"comment_txt\":11017,\"JiaoBiao\":[11019],\"productStoreId\":\"com.beast.beastbumper.blitz.21\",\"productAmount\":4.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"金猪购买\",\"productType\":\"金猪\",\"productDesc\":\"金猪\"}"
     },
     {
       "Id": "cee479b2-9ce2-4d9a-9a49-04702b63d3fd",
       "DisplayName": "礼包商店-每日-看广告礼包",
       "Gid": 180606001,
-      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPerioString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6cf5fc4c-394c-4ba1-9bc5-13713a90add8\",\"Count\":2},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":500}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b65693ee6ded97\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"6cf5fc4c-394c-4ba1-9bc5-13713a90add8\",\"Count\":2},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":500}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b65693ee6ded97\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "5db4a5f8-66ea-4684-ae07-18998239ab77",
       "DisplayName": "礼包商店-每日- 0.99",
       "Gid": 181105001,
-      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":1},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"8ae4f36e-f510-47c5-ac92-47678ef785bf\",\"Count\":1},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000},{\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1},{\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.22\",\"productAmount\":0.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"8ae4f36e-f510-47c5-ac92-47678ef785bf\",\"Count\":1},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":5000},{\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1},{\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.22\",\"productAmount\":0.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
     },
     {
       "Id": "b7aaf767-6ec8-44b8-844f-69aecb8f90b0",
       "DisplayName": "礼包商店-每日-1.99",
       "Gid": 181105002,
-      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":1},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"55ca0dec-7efb-4d86-b9ee-aeee9f097eea\",\"Count\":1},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100},{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":10},{\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1},{\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.23\",\"productAmount\":1.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"55ca0dec-7efb-4d86-b9ee-aeee9f097eea\",\"Count\":1},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100},{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":10},{\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1},{\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.23\",\"productAmount\":1.99,\"currencyCode\":\"USD\",\"currencyMark\":\"$\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
     },
     {
       "Id": "8a85dc64-0322-4905-8d9e-0e5d59b263ef",
       "DisplayName": "礼包商店-每日-4.99",
       "Gid": 181105003,
-      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":1},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"17c1a202-cead-4ae0-be5c-ec7bc29dd502\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":300},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":30},{\"Id\":null,\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.24\",\"productAmount\":4.99,\"currencyCode\":\"USD\",\"currencyMark\":\"＄\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":1},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":0}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"17c1a202-cead-4ae0-be5c-ec7bc29dd502\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":300},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":30},{\"Id\":null,\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.24\",\"productAmount\":4.99,\"currencyCode\":\"USD\",\"currencyMark\":\"＄\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
     },
     {
       "Id": "8e7a6c19-16a7-4b30-919f-21d636e5454c",
       "DisplayName": "礼包商店-每日-6.99",
       "Gid": 181105004,
-      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":1},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"6cf5fc4c-394c-4ba1-9bc5-13713a90add8\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":1000},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":60},{\"Id\":null,\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.25\",\"productAmount\":6.99,\"currencyCode\":\"USD\",\"currencyMark\":\"＄\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"6cf5fc4c-394c-4ba1-9bc5-13713a90add8\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":1000},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":60},{\"Id\":null,\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.25\",\"productAmount\":6.99,\"currencyCode\":\"USD\",\"currencyMark\":\"＄\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
     },
     {
       "Id": "d35e2cc5-d381-49ce-850a-60683b47fabd",
       "DisplayName": "礼包商店-每日-8.99",
       "Gid": 181105005,
-      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":1},\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"f9ba6a49-8ac8-4e71-8602-2dacd8927851\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":2000},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":60},{\"Id\":null,\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.26\",\"productAmount\":8.99,\"currencyCode\":\"USD\",\"currencyMark\":\"＄\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":1,\"MinRemainder\":0,\"MaxRemainder\":0},\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"d577e084-4aa4-44d9-9510-20ccea041375\",\"MinCount\":0,\"GroupMask\":1}],\"Count\":1}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"f9ba6a49-8ac8-4e71-8602-2dacd8927851\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":2000},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"09d9062c-84fe-4cc1-846a-5daab6a23b1e\",\"Count\":60},{\"Id\":null,\"ParentTId\":null,\"TId\":\"e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee\",\"Count\":1},{\"Id\":null,\"ParentTId\":null,\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"Count\":1}]},\"productStoreId\":\"com.beast.beastbumper.blitz.26\",\"productAmount\":8.99,\"currencyCode\":\"USD\",\"currencyMark\":\"＄\",\"productName\":\"每日礼包\",\"productType\":\"礼包\",\"productDesc\":\"每日优惠礼包\"}"
     },
     {
       "Id": "62d97a72-b919-4635-a196-237a2827fb3d",
       "DisplayName": "礼包商店-每周-看广告礼包",
       "Gid": 180606002,
-      "PropertiesString": "{\"Genus\":[\"gs_meizhoulibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1w\",\"ValidPerioString\":\"1w\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"acca7c0a-fdd5-4343-a6ec-e6c7f5c91e1c\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b65693ee6ded97\",\"Pilipinas\":\"b6579671ea72ce\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_meizhoulibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPerioString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":7,\"MinRemainder\":0,\"MaxRemainder\":6},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"acca7c0a-fdd5-4343-a6ec-e6c7f5c91e1c\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b65693ee6ded97\",\"Pilipinas\":\"b6579671ea72ce\"}}"
     },
     {
       "Id": "eb4ff15a-f1de-4a2d-a10e-fdec8f2dfe4b",
@@ -19852,25 +19852,25 @@
       "Id": "e91eb5c2-76c7-487d-b1bf-ac651dcdfaca",
       "DisplayName": "礼包蓝色动物碎片产出卡池-2个",
       "Gid": 170101670,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9c79a55a-106f-4f32-9d44-484d86a665fd\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":2000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":1200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"132103000\":2}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"91a68d03-cc11-4dc5-924b-669ecad20045\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"800e78af-e9c4-480b-a0f3-8e15b93979f3\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":2000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":1200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"132103000\":2}}"
     },
     {
       "Id": "55ca0dec-7efb-4d86-b9ee-aeee9f097eea",
       "DisplayName": "礼包蓝色动物碎片产出卡池-3个",
       "Gid": 170101671,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9c79a55a-106f-4f32-9d44-484d86a665fd\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":2000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":1200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"132103000\":3}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"91a68d03-cc11-4dc5-924b-669ecad20045\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"800e78af-e9c4-480b-a0f3-8e15b93979f3\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":2000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":1200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"132103000\":3}}"
     },
     {
       "Id": "17c1a202-cead-4ae0-be5c-ec7bc29dd502",
       "DisplayName": "礼包蓝色动物碎片产出卡池-5个",
       "Gid": 170101672,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":5,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9c79a55a-106f-4f32-9d44-484d86a665fd\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":2000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":1200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"132103000\":5}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":5,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"91a68d03-cc11-4dc5-924b-669ecad20045\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"800e78af-e9c4-480b-a0f3-8e15b93979f3\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":2000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":1200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"132103000\":5}}"
     },
     {
       "Id": "f9ba6a49-8ac8-4e71-8602-2dacd8927851",
       "DisplayName": "礼包紫色动物碎片产出卡池-2个",
       "Gid": 170101673,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"91a68d03-cc11-4dc5-924b-669ecad20045\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"800e78af-e9c4-480b-a0f3-8e15b93979f3\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":2100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"132111000\":1}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"625bcec8-fc02-4f1a-9399-7e27d74b130f\",\"Count\":1}],\"Weight\":1500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9f246873-2e81-4517-8562-c38eeb48d1ee\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"51ca3cd8-0d33-41b6-ad21-fbc721bd9cbc\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"45365577-2d0f-4f48-9067-23adc862ae98\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2c4908e9-1a74-43c4-a776-b112ac86c112\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"480bf300-b723-4d9d-ab7b-3ce5d2483d68\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"929e4d6f-8240-425d-ab5c-1f31480d6350\",\"Count\":1}],\"Weight\":2100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"7683a573-d909-47a9-95d4-7c2200916749\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c3c67a9d-c679-42ad-b2df-7427ac185a0d\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"132111000\":1}}"
     },
     {
       "Id": "0905ee29-da9c-4799-b4dd-935ba19b4380",
@@ -19882,73 +19882,73 @@
       "Id": "37322583-3fac-40ab-a05f-8b8c93a7c53b",
       "DisplayName": "礼包商店-次数奖励组1-1次",
       "Gid": 180606003,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":0,\"MaxRemainder\":4},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":0,\"MaxRemainder\":4},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}]}}"
     },
     {
       "Id": "1de529b6-89fa-4cd3-92d9-733ee0701a36",
       "DisplayName": "礼包商店-次数奖励组1-2次",
       "Gid": 180606004,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":0,\"MaxRemainder\":4},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":2,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"e91eb5c2-76c7-487d-b1bf-ac651dcdfaca\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":0,\"MaxRemainder\":4},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":2,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"e91eb5c2-76c7-487d-b1bf-ac651dcdfaca\",\"Count\":1}]}}"
     },
     {
       "Id": "97a5942a-4ecd-450f-a831-7244493929b1",
       "DisplayName": "礼包商店-次数奖励组1-4次",
       "Gid": 180606005,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":0,\"MaxRemainder\":4},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":4,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"a3d2e4e9-c22a-4379-8c47-3a6d2abaa996\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":0,\"MaxRemainder\":4},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":4,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":null,\"TId\":\"a3d2e4e9-c22a-4379-8c47-3a6d2abaa996\",\"Count\":1}]}}"
     },
     {
       "Id": "445dabf3-62dd-46db-84be-d7722b9ba006",
       "DisplayName": "礼包商店-次数奖励组2-1次",
       "Gid": 180606006,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":5,\"MaxRemainder\":9},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":5,\"MaxRemainder\":9},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":1}]}}"
     },
     {
       "Id": "9a14564b-9f22-41d2-a817-4b0ccff8bd8f",
       "DisplayName": "礼包商店-次数奖励组2-2次",
       "Gid": 180606007,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":5,\"MaxRemainder\":9},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":2,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":5,\"MaxRemainder\":9},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":2,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"Count\":1}]}}"
     },
     {
       "Id": "f1590874-21b8-4b5c-89d5-51c02e37a80d",
       "DisplayName": "礼包商店-次数奖励组2-4次",
       "Gid": 180606008,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":5,\"MaxRemainder\":9},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":4,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"acca7c0a-fdd5-4343-a6ec-e6c7f5c91e1c\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":5,\"MaxRemainder\":9},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":4,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"acca7c0a-fdd5-4343-a6ec-e6c7f5c91e1c\",\"Count\":1}]}}"
     },
     {
       "Id": "f62f4fec-68a3-4112-8827-d5e393cdfc5e",
       "DisplayName": "礼包商店-次数奖励组3-1次",
       "Gid": 180606009,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":10,\"MaxRemainder\":14},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":80}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":10,\"MaxRemainder\":14},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":80}]}}"
     },
     {
       "Id": "8e523f12-797d-4efd-b8eb-0bd508e9ce48",
       "DisplayName": "礼包商店-次数奖励组3-2次",
       "Gid": 180606010,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":10,\"MaxRemainder\":14},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":2,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":10,\"MaxRemainder\":14},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":2,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"Count\":1}]}}"
     },
     {
       "Id": "5a173490-e57d-4be6-8f3a-e3af77e6c71e",
       "DisplayName": "礼包商店-次数奖励组3-4次",
       "Gid": 180606011,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":10,\"MaxRemainder\":14},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":4,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"acca7c0a-fdd5-4343-a6ec-e6c7f5c91e1c\",\"TId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":10,\"MaxRemainder\":14},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":4,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"acca7c0a-fdd5-4343-a6ec-e6c7f5c91e1c\",\"TId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Count\":1}]}}"
     },
     {
       "Id": "4be93f7f-8224-42a6-b29e-481c659951c4",
       "DisplayName": "礼包商店-次数奖励组4-1次",
       "Gid": 180606012,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":10,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":0,\"MinRemainder\":15,\"MaxRemainder\":19},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":10,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":0,\"MinRemainder\":15,\"MaxRemainder\":19},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":1}]}}"
     },
     {
       "Id": "0aeb9a58-fb93-4738-a337-2171d46fc866",
       "DisplayName": "礼包商店-次数奖励组4-2次",
       "Gid": 180606013,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":15,\"MaxRemainder\":19},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":15,\"MaxRemainder\":19},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2e877976-2d3d-4e7e-8851-07163216319a\",\"Count\":2}]}}"
     },
     {
       "Id": "3e502fbb-dd1e-49b1-b394-2e8014c0c6a2",
       "DisplayName": "礼包商店-次数奖励组4-4次",
       "Gid": 180606014,
-      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"24DD1BA1-628F-4F04-BDAF-4C9B0CEF895C\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":15,\"MaxRemainder\":19},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":4,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"5c4b8d36-5776-453a-a415-f31c03a26776\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_leijilibao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"A1414D6E-C3A1-44C3-BBBD-E8B4357A8796\",\"MinCount\":0,\"NumberCondition\":{\"PropertyName\":\"Count\",\"MinValue\":0,\"MaxValue\":null,\"Subtrahend\":0,\"Modulus\":20,\"MinRemainder\":15,\"MaxRemainder\":19},\"GeneralConditional\":[],\"GroupMask\":3}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"cb3eb8b7-15b5-4480-a56b-24bf6fca9a12\",\"MinCount\":4,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"5c4b8d36-5776-453a-a415-f31c03a26776\",\"Count\":1}]}}"
     },
     {
       "Id": "e8d2650a-f740-4911-8257-1811f281cda5",
@@ -20158,7 +20158,7 @@
       "Id": "81014ae9-4eab-463c-af07-805b186956e8",
       "DisplayName": "基金17.99奖励-35级-3000钻",
       "Gid": 180609009,
-      "PropertiesString": "{\"Genus\":[\"gs_jijinfufei2\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodStrig\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1f31807a-f633-4d3a-8e8e-382ad105d061\",\"MinCount\":1398443,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"fc60e07e-910b-4054-a1fd-4bb9e6832d80\",\"MinCount\":1,\"GroupMask\":0}],\"Count\":1}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":3000}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_jijinfufei2\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodStrig\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1f31807a-f633-4d3a-8e8e-382ad105d061\",\"MinCount\":1398443,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"fc60e07e-910b-4054-a1fd-4bb9e6832d80\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":3000}]}}"
     },
     {
       "Id": "af1aa8d8-27a2-4cde-bd00-b1f887915a8c",

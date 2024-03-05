@@ -828,7 +828,7 @@
             T304合作伙伴功能控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.T304Controller.#ctor(Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.T304Controller},GY02.Managers.GameAccountStoreManager,OW.Game.Managers.GameTemplateManager,OW.Game.Store.GY02UserContext,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
+        <member name="M:Gy02.Controllers.T304Controller.#ctor(Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.T304Controller},GY02.Managers.GameAccountStoreManager,OW.Game.Managers.GameTemplateManager,OW.Game.Store.GY02UserContext,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager,GY02.Managers.T304Manager)">
             <summary>
             构造函数。
             </summary>
@@ -844,6 +844,21 @@
             </summary>
             <param name="model"></param>
             <returns></returns>
+        </member>
+        <member name="T:Gy02.Controllers.T304Data">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T304Data.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:Gy02.Controllers.T304Data.OrderId">
+            <summary>
+            订单Id。
+            </summary>
         </member>
         <member name="T:Global.Program">
             <summary>

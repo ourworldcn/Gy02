@@ -33,6 +33,7 @@
     <Folder Include="CommandHandlers\" />
     <Folder Include="Commands\Achievement\Task\" />
     <Folder Include="Entity\" />
+    <Folder Include="Google\" />
   </ItemGroup>
 
   <ItemGroup>

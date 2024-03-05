@@ -2817,6 +2817,15 @@ namespace GY02.Publisher
         /// </summary>
         public string PurchaseToken { get; set; }
 
+        /// <summary>
+        /// 签名的数据。看得懂的。
+        /// </summary>
+        public string Data { get; set; }
+
+        /// <summary>
+        /// 签名，通常是base64编码的。
+        /// </summary>
+        public string Sign { get; set; }
     }
 
     /// <summary>

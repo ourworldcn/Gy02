@@ -5,9 +5,11 @@ using OW.Game.Managers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace GY02.Managers
@@ -45,16 +47,21 @@ namespace GY02.Managers
             return rsa.Decrypt(data, RSAEncryptionPadding.OaepSHA1);
         }
 
-        public bool Verify(string signedData, string signature)
+        /// <summary>
+        /// 校验签名。
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="signature"></param>
+        /// <returns></returns>
+        public bool Verify(string data, string signature)
         {
             using var rsa = RSA.Create("RSA");
             rsa.ImportSubjectPublicKeyInfo(PublicKey, out _);
-            //var data = Convert.FromBase64String(signedData);
-            //var sign = Encoding.UTF8.GetBytes(signature);
-            var  sign = Convert.FromBase64String(signedData);
-            var data = Encoding.UTF8.GetBytes(signature);
+            var dataBytes = Encoding.UTF8.GetBytes(data);
+            var signBytes = Convert.FromBase64String(signature);
 
-            var result = rsa.VerifyData(data, sign, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+            var result = rsa.VerifyData(dataBytes, signBytes, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+
             return result;
         }
     }
