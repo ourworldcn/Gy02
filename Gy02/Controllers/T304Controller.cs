@@ -145,8 +145,6 @@ namespace Gy02.Controllers
 
             var order = new GameShoppingOrder
             {
-                //Amount = model.Amount,
-                //Currency = model.Currency,
                 Confirm1 = true,
                 Confirm2 = true,
                 CustomerId = gc?.Id.ToString(),
@@ -165,6 +163,7 @@ namespace Gy02.Controllers
                 _Logger.LogWarning("保存订单号{id}的订单时出错——{msg}", order.Id, err.Message);
                 result.DebugMessage = $"保存订单号{order.Id}的订单时出错——{err.Message}";
                 result.ErrorCode = ErrorCodes.ERROR_INVALID_DATA;
+                _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
             _Logger.LogInformation("订单号{id}已经确认成功。", order.Id);
@@ -193,6 +192,12 @@ namespace Gy02.Controllers
         /// </summary>
         [JsonPropertyName("orderId")]
         public string OrderId { get; set; } = null!;
+
+        /// <summary>
+        /// 平台的商品Id。
+        /// </summary>
+        [JsonPropertyName("productId")]
+        public string ProductId { get; set; } = null!;
     }
 
     //    public class GooglePayDto {

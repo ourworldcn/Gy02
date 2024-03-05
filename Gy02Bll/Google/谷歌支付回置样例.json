@@ -1,0 +1,68 @@
+{
+  "request": {
+    "guid": "02793bd6-d83e-4c55-87e0-f53df3ba0ccd",
+    "purchasable": {
+      "id": {
+        "hash": 608831540
+      },
+      "cost": {
+        "iapID": "com.beast.beastbumper.blitz.01.dg0"
+      },
+      "items": [],
+      "tags": []
+    },
+    "callback": {
+      "Method": {
+        "Name": "<Buy>g__OnPurchaseResult|16_0",
+        "AssemblyName": "Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ClassName": "WanMeiSdk",
+        "Signature": "Void <Buy>g__OnPurchaseResult|16_0(Armoury.Economy.PurchaseResult)",
+        "Signature2": "System.Void <Buy>g__OnPurchaseResult|16_0(Armoury.Economy.PurchaseResult)",
+        "MemberType": 8,
+        "GenericArguments": null
+      },
+      "Target": null
+    },
+    "purchaseOffer": null,
+    "shopItemCategory": null,
+    "shopItemID": null
+  },
+  "revenueEvent": {
+    "receiptJson": "{\"orderId\":\"GPA.3329-4244-5515-90021\",\"packageName\":\"com.beast.beastbumper.blitz\",\"productId\":\"com.beast.beastbumper.blitz.01.dg0\",\"purchaseTime\":1709548989171,\"purchaseState\":0,\"purchaseToken\":\"gkohaeflhihimpiekggaoklj.AO-J1Oyg_wlUycSp64RDJhl6AvIjjxjEZpZARBl9wtU7FQBuF2WF76Tt6U6A2Gjgzh9SwJ-8W_abWbE1hpS28j_e70xAVyRzBlo7wmEdYIjK4T_53IpXkT4\",\"quantity\":1,\"acknowledged\":false}",
+    "receiptSignature": "W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==",
+    "purchaseToken": "gkohaeflhihimpiekggaoklj.AO-J1Oyg_wlUycSp64RDJhl6AvIjjxjEZpZARBl9wtU7FQBuF2WF76Tt6U6A2Gjgzh9SwJ-8W_abWbE1hpS28j_e70xAVyRzBlo7wmEdYIjK4T_53IpXkT4",
+    "kind": 1,
+    "armouryMasterIapID": "com.beast.beastbumper.blitz.01.dg0",
+    "unityMasterIapID": "com.beast.beastbumper.blitz.01.dg0.dg0",
+    "storeSpecificIapID": "com.beast.beastbumper.blitz.01.dg0",
+    "discountGroupID": {
+      "hash": 193489344
+    },
+    "purchaseItemID": {
+      "hash": 608831540
+    },
+    "referencePrice": 1.39,
+    "localizedPrice": 1.39,
+    "localizedPriceString": "CA$1.39",
+    "currencyCode": "CAD",
+    "purchaseDate": "2024-03-04T10:43:09.171Z",
+    "transactionID": "GPA.3329-4244-5515-90021",
+    "receiptPayload": "{\"json\":\"{\\\"orderId\\\":\\\"GPA.3329-4244-5515-90021\\\",\\\"packageName\\\":\\\"com.beast.beastbumper.blitz\\\",\\\"productId\\\":\\\"com.beast.beastbumper.blitz.01.dg0\\\",\\\"purchaseTime\\\":1709548989171,\\\"purchaseState\\\":0,\\\"purchaseToken\\\":\\\"gkohaeflhihimpiekggaoklj.AO-J1Oyg_wlUycSp64RDJhl6AvIjjxjEZpZARBl9wtU7FQBuF2WF76Tt6U6A2Gjgzh9SwJ-8W_abWbE1hpS28j_e70xAVyRzBlo7wmEdYIjK4T_53IpXkT4\\\",\\\"quantity\\\":1,\\\"acknowledged\\\":false}\",\"signature\":\"W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==\",\"skuDetails\":[\"{\\\"productId\\\":\\\"com.beast.beastbumper.blitz.01.dg0\\\",\\\"type\\\":\\\"inapp\\\",\\\"title\\\":\\\"80 Diamond (Beast Bumper Blitz)\\\",\\\"name\\\":\\\"80 Diamond\\\",\\\"iconUrl\\\":\\\"https:\\\\/\\\\/lh3.googleusercontent.com\\\\/5B6ZlDKj0ZVWJSdcyk9pBXefpmZEf6ODKTS5qKZu4wc5Ea6gw59FK3AOwwvG0JjOUo8\\\",\\\"description\\\":\\\"80 Diamonds\\\",\\\"price\\\":\\\"CA$1.39\\\",\\\"price_amount_micros\\\":1390000,\\\"price_currency_code\\\":\\\"CAD\\\",\\\"skuDetailsToken\\\":\\\"AEuhp4IMwnrmlnQjaTasRGOqetbF3t08UjUKVoNF2LfbpRFSygABBkDqhndnZ0jdmdml\\\"}\"]}",
+    "unityReceipt": "{\"Payload\":\"{\\\"json\\\":\\\"{\\\\\\\"orderId\\\\\\\":\\\\\\\"GPA.3329-4244-5515-90021\\\\\\\",\\\\\\\"packageName\\\\\\\":\\\\\\\"com.beast.beastbumper.blitz\\\\\\\",\\\\\\\"productId\\\\\\\":\\\\\\\"com.beast.beastbumper.blitz.01.dg0\\\\\\\",\\\\\\\"purchaseTime\\\\\\\":1709548989171,\\\\\\\"purchaseState\\\\\\\":0,\\\\\\\"purchaseToken\\\\\\\":\\\\\\\"gkohaeflhihimpiekggaoklj.AO-J1Oyg_wlUycSp64RDJhl6AvIjjxjEZpZARBl9wtU7FQBuF2WF76Tt6U6A2Gjgzh9SwJ-8W_abWbE1hpS28j_e70xAVyRzBlo7wmEdYIjK4T_53IpXkT4\\\\\\\",\\\\\\\"quantity\\\\\\\":1,\\\\\\\"acknowledged\\\\\\\":false}\\\",\\\"signature\\\":\\\"W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==\\\",\\\"skuDetails\\\":[\\\"{\\\\\\\"productId\\\\\\\":\\\\\\\"com.beast.beastbumper.blitz.01.dg0\\\\\\\",\\\\\\\"type\\\\\\\":\\\\\\\"inapp\\\\\\\",\\\\\\\"title\\\\\\\":\\\\\\\"80 Diamond (Beast Bumper Blitz)\\\\\\\",\\\\\\\"name\\\\\\\":\\\\\\\"80 Diamond\\\\\\\",\\\\\\\"iconUrl\\\\\\\":\\\\\\\"https:\\\\\\\\/\\\\\\\\/lh3.googleusercontent.com\\\\\\\\/5B6ZlDKj0ZVWJSdcyk9pBXefpmZEf6ODKTS5qKZu4wc5Ea6gw59FK3AOwwvG0JjOUo8\\\\\\\",\\\\\\\"description\\\\\\\":\\\\\\\"80 Diamonds\\\\\\\",\\\\\\\"price\\\\\\\":\\\\\\\"CA$1.39\\\\\\\",\\\\\\\"price_amount_micros\\\\\\\":1390000,\\\\\\\"price_currency_code\\\\\\\":\\\\\\\"CAD\\\\\\\",\\\\\\\"skuDetailsToken\\\\\\\":\\\\\\\"AEuhp4IMwnrmlnQjaTasRGOqetbF3t08UjUKVoNF2LfbpRFSygABBkDqhndnZ0jdmdml\\\\\\\"}\\\"]}\",\"Store\":\"GooglePlay\",\"TransactionID\":\"gkohaeflhihimpiekggaoklj.AO-J1Oyg_wlUycSp64RDJhl6AvIjjxjEZpZARBl9wtU7FQBuF2WF76Tt6U6A2Gjgzh9SwJ-8W_abWbE1hpS28j_e70xAVyRzBlo7wmEdYIjK4T_53IpXkT4\"}"
+  },
+  "shouldAwardContents": false,
+  "errorCode": 0,
+  "errorMessage": null,
+  "itemsAwarded": [],
+  "isSuccessful": true,
+  "error": {
+    "Item1": 0,
+    "Item2": null
+  }
+}
+//W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==
+//W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==
+//W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==
+//W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==
+//{\"orderId\":\"GPA.3329-4244-5515-90021\",\"packageName\":\"com.beast.beastbumper.blitz\",\"productId\":\"com.beast.beastbumper.blitz.01.dg0\",\"purchaseTime\":1709548989171,\"purchaseState\":0,\"purchaseToken\":\"gkohaeflhihimpiekggaoklj.AO-J1Oyg_wlUycSp64RDJhl6AvIjjxjEZpZARBl9wtU7FQBuF2WF76Tt6U6A2Gjgzh9SwJ-8W_abWbE1hpS28j_e70xAVyRzBlo7wmEdYIjK4T_53IpXkT4\",\"quantity\":1,\"acknowledged\":false}
+//{\"orderId\":\"GPA.3329-4244-5515-90021\",\"packageName\":\"com.beast.beastbumper.blitz\",\"productId\":\"com.beast.beastbumper.blitz.01.dg0\",\"purchaseTime\":1709548989171,\"purchaseState\":0,\"purchaseToken\":\"gkohaeflhihimpiekggaoklj.AO-J1Oyg_wlUycSp64RDJhl6AvIjjxjEZpZARBl9wtU7FQBuF2WF76Tt6U6A2Gjgzh9SwJ-8W_abWbE1hpS28j_e70xAVyRzBlo7wmEdYIjK4T_53IpXkT4\",\"quantity\":1,\"acknowledged\":false}\",\"signature\":\"W0u52QDB2hef+IWrP9x5B7KJAvWARHlRxXgu6XMStWTzn+dpRNdkFAvARg5lG2ZXAOnxw1Z5Pw26gv+rWCM6LLFZ83Ir/tyVbY38EdXHxlfUy2isDiCAay3mDtROtHkOze3vEr3imMLp01ySXjESZBye3pOgzrTxbOc61dg0qKnMf3lgCOGkP2JGykSgQoP86bOsDxg7n/7PV6Wx5Pa5BOM/SoWsmLnJq8iECs05Tg7xsKd+58gTifLK8mtJZb5mKMGcP2lZ+KnRSoTOO2F5Lc5xnTjJCM32DuGpdSd5CEZhV9U7ug2ZA+V0lg4SOvk5MMCi6JRKnbeIeN7zoSBEVw==\",\"skuDetails\":[\"{\"productId\":\"com.beast.beastbumper.blitz.01.dg0\",\"type\":\"inapp\",\"title\":\"80 Diamond (Beast Bumper Blitz)\",\"name\":\"80 Diamond\",\"iconUrl\":\"https:\/\/lh3.googleusercontent.com\/5B6ZlDKj0ZVWJSdcyk9pBXefpmZEf6ODKTS5qKZu4wc5Ea6gw59FK3AOwwvG0JjOUo8\",\"description\":\"80 Diamonds\",\"price\":\"CA$1.39\",\"price_amount_micros\":1390000,\"price_currency_code\":\"CAD\",\"skuDetailsToken\":\"AEuhp4IMwnrmlnQjaTasRGOqetbF3t08UjUKVoNF2LfbpRFSygABBkDqhndnZ0jdmdml\"}\"]}

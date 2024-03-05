@@ -860,6 +860,11 @@
             订单Id。
             </summary>
         </member>
+        <member name="P:Gy02.Controllers.T304Data.ProductId">
+            <summary>
+            平台的商品Id。
+            </summary>
+        </member>
         <member name="T:Global.Program">
             <summary>
             

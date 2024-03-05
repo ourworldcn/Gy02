@@ -1,59 +1,1733 @@
 {
-  "Genus": [ "gs_zs", "fb_goumai" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
+  "Items": [
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 1
     },
-    "GroupNumber": 3,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1,
-        "Genus": []
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 1200
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "554cda05-553f-46a2-b905-6a30ffcd2fbb",
-        "Count": 0
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
-        "Count": 1
-      }
-    ]
-  },
-  "productStoreId": "com.beast.beastbumper.blitz.03",
-  "productAmount": 8.99,
-  "currencyCode": "USD",
-  "currencyMark": "$",
-  "productName": "钻石购买",
-  "productType": "钻石",
-  "productDesc": "很多钻石",
-  "name_txt": 10997,
-  "JiaoBiao": [],
-  "display_icon": "ZuanShi3"
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 2
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 3
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 4
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 5
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 6
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 7
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 8
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 9
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 2,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 10
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 11
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 12
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 13
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 14
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 15
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 16
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 17
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 18
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 19
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 10,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 20
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 21
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 22
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 23
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 24
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 25
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 26
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 27
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 28
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 29
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 15,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 30
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 31
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 32
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 33
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 34
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 35
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 36
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 37
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 38
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 39
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 20,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 40
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 41
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 42
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 43
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 44
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 45
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 46
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 47
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 48
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 49
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 25,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 50
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 51
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 52
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 53
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 54
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 55
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 56
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 57
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 58
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 59
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 30,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 60
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 61
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 62
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 63
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 64
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 65
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 66
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 67
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 68
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 69
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 35,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 70
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 71
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 72
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 73
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 74
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 75
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 76
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 77
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 78
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 79
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 40,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 80
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 81
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 82
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 83
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 84
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 85
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 86
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 87
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 88
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 89
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 45,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 90
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 91
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 92
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 93
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 94
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 95
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 96
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 97
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 98
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 99
+    },
+    {
+      "Rewards": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 50,
+          "AddPropertyDictionary": {}
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+          "Count": 5,
+          "AddPropertyDictionary": {}
+        }
+      ],
+      "Level": 100
+    },
+    {
+      "Rewards": [],
+      "Level": 101
+    }
+  ],
+  "ClientDictionary": {},
+  "CompositingAccruedCost": [],
+  "LvUpAccruedCost": [],
+  "lv": 8,
+  "LastMarkPeriodIndex": null,
+  "LastModifyDateTime": "2024-01-29T10:46:45.6838209Z",
+  "IsValid": true,
+  "CountOfLastModifyUtc": "2024-02-06T17:18:25.914589Z",
+  "Fcps": {}
 }
