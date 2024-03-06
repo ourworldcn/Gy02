@@ -1,11 +1,14 @@
-﻿using GY02.Templates;
+﻿using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using OW.Game.Conditional;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.Store;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -66,7 +69,7 @@ namespace GY02.Managers
                     return false;
             if (!condition.GeneralConditional.All(c =>
             {
-                if (!_TemplateManager.TryGetValueFromConditionalItem(c, out var obj, entity))
+                if (!TryGetValueFromConditionalItem(c, out var obj, entity))
                     return false;
                 if (!OwConvert.TryGetBoolean(obj, out var result))
                     return false;
@@ -108,12 +111,112 @@ namespace GY02.Managers
             return coll.All(c => IsMatch(entity, c));
         }
 
+        /// <summary>
+        /// 计算扩展函数。
+        /// </summary>
+        /// <param name="conditionalItem"></param>
+        /// <param name="value"></param>
+        /// <param name="objects"></param>
+        /// <returns></returns>
+        public bool TryGetValueFromConditionalItem(GeneralConditionalItem conditionalItem, out object value, params object[] objects)
+        {
+            var result = false;
+            switch (conditionalItem.Operator)
+            {
+                case "ToInt32":
+                    {
+                        var pName = conditionalItem.Args[0];
+                        var obj = objects[0];
+                        var pi = obj.GetType().GetProperty(pName);
+                        if (pi is null)
+                        {
+                            OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定属性，属性名={pName}");
+                            value = default;
+                            break;
+                        }
+                        var tmp = pi.GetValue(obj);
+                        value = Convert.ToInt32(tmp);
+                        result = true;
+                    }
+                    break;
+                case "GetBuyedCount":
+                    {
+                        var now = OwHelper.WorldNow;
+                        if (objects[0] is not GameChar gameChar)
+                        {
+                            value = 0; break;
+                        }
+                        if (!Guid.TryParse(conditionalItem.Args[0].ToString(), out var tid)) //商品的TId
+                        {
+                            value = 0; break;
+                        }
+                        if (objects.Length > 1 && objects[1] is GameThingPreconditionItem gtpi)  //若有父对象
+                        {
+
+                        }
+                        var tt = _TemplateManager.GetFullViewFromId(tid);
+                        var list = gameChar.ShoppingHistoryV2;
+                        if (IsExistsPeriod(tt.Ins)) //若存在自转周期
+                        {
+                            var period = GetPeriodIndex(tt.ShoppingItem.Ins, gameChar, out _);
+                            var val = list.Where(c => c.TId == tid && c.PeriodIndex == period).Sum(c => c.Count);  //如果source不包含任何元素，则Sum(IEnumerable<Decimal>)方法返回零。
+                            value = Convert.ToInt32(val);
+                            result = true;
+                        }
+                        else
+                        {
+
+                            if (!tt.ShoppingItem.Period.IsValid(now, out var start))
+                            {
+                                value = 0; break;
+                            }
+                            var val = list.Where(c => c.TId == tid && c.WorldDateTime >= start && c.WorldDateTime <= now).Sum(c => c.Count);  //如果source不包含任何元素，则Sum(IEnumerable<Decimal>)方法返回零。
+                            value = Convert.ToInt32(val);
+                            result = true;
+                        }
+                    }
+                    break;
+                case "ModE":
+                    {
+                        //获取属性值
+                        var pName = conditionalItem.PropertyName;
+                        var obj = objects[0];
+                        var pi = obj.GetType().GetProperty(pName);
+                        if (pi is null)
+                        {
+                            OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定属性，属性名={pName}");
+                            value = default;
+                            break;
+                        }
+                        var tmp = pi.GetValue(obj);
+                        var val = Convert.ToDecimal(tmp);
+                        if (!OwConvert.TryToDecimal(conditionalItem.Args[0], out var arg0) || !OwConvert.TryToDecimal(conditionalItem.Args[1], out var arg1))
+                        {
+                            OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
+                            OwHelper.SetLastErrorMessage($"ModE要有两个参数都是数值型。");
+                            result = false;
+                            value = default;
+                            break;
+                        }
+                        else
+                            OwHelper.SetLastError(ErrorCodes.NO_ERROR);
+                        value = val % arg0 == arg1;
+                        result = true;
+                    }
+                    break;
+                default:
+                    value = default;
+                    break;
+            }
+            return result;
+        }
+
         #endregion 通用条件判断方法
 
         #region 周期相关
 
         /// <summary>
-        /// 
+        /// 获取周期号。
         /// </summary>
         /// <param name="inItems"></param>
         /// <param name="gameChar"></param>
@@ -132,12 +235,25 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 获取周期数。
+        /// 是否存在自转周期。
+        /// </summary>
+        /// <param name="inItems"></param>
+        /// <returns></returns>
+        public bool IsExistsPeriod(IEnumerable<BlueprintInItem> inItems)
+        {
+            var item1 = inItems?.FirstOrDefault(inItem => inItem.Conditional.Any(c => c.NumberCondition is not null));
+            if (item1 is null) return false;
+            return true;
+
+        }
+
+        /// <summary>
+        /// 获取周期号。
         /// </summary>
         /// <param name="inItem"></param>
         /// <param name="gameChar"></param>
         /// <param name="entity"></param>
-        /// <returns>不是空则获取到了周期数。否则是无效周期。</returns>
+        /// <returns>不是空则获取到了周期号。否则是无效周期。</returns>
         public int? GetPeriodIndex(BlueprintInItem inItem, GameChar gameChar, out GameEntity entity)
         {
             var allEntity = _EntityManager.GetAllEntity(gameChar);

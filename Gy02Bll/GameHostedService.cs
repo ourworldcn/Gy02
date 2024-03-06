@@ -282,6 +282,7 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var str1=JsonSerializer.Serialize("龖");
                 var thing = new VirtualThing { ExtraString = "₱" };
                 var s = JsonSerializer.Serialize(thing);
                 var obj = JsonSerializer.Deserialize<VirtualThing>(s);

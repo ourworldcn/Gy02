@@ -146,7 +146,7 @@ namespace GY02.Managers
                 OwHelper.SetLastErrorMessage($"找不到适合条件的实体, 条件TId = {tt.TemplateId}");
                 goto lbErr;
             }
-            if (!_TemplateManager.TryGetValueFromConditionalItem(mo.GetIndexExpression, out var indexObj, entity)) goto lbErr;  //若无法获取索引
+            if (!_SearcherManager.TryGetValueFromConditionalItem(mo.GetIndexExpression, out var indexObj, entity)) goto lbErr;  //若无法获取索引
             //if (!mo.GetIndexExpression.TryGetValue(entity, out var indexObj)) goto lbErr;
             var index = Convert.ToInt32(indexObj);
             result = mo.Outs.GetItem(index);
