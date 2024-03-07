@@ -1,23 +1,36 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "Genus": [ "gs_tianfu" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "999y",
+      "ValidPeriodString": "999y"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
       {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
-        "MinCount": null,
-        "GeneralConditional": [],
-        "GroupMask": 1
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "a9afdc4d-080c-4d8a-9b37-64481ff525c6",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 1
       }
     ],
-    "GetIndexExpression": {
-      "op": "GetBuyedCount",
-      "args": [ "f00fbec7-7465-4344-8443-6b4b43260b3c" ]
-    },
-    "Outs": {
-      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
-      "TIds": [ "1de88b53-e5bf-4a60-9dfb-90284b94bdab" ],
-      "Counts": [ 0, 1 ]
-    }
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "3f10bd41-e97c-49f0-84ae-127506d90c60",
+        "Count": 1
+      }
+    ]
   }
 }

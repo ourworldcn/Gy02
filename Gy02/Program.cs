@@ -1,3 +1,4 @@
+using Global;
 using GY02;
 using GY02.AutoMappper;
 using GY02.Base;
@@ -70,7 +71,7 @@ internal class Program
 
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
-        
+
         #region 配置Swagger
         //注册Swagger生成器，定义一个 Swagger 文档
         services.AddSwaggerGen(c =>
@@ -99,7 +100,7 @@ internal class Program
         var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 
         services.AddPooledDbContextFactory<GY02LogginContext>(options => options.UseLazyLoadingProxies().UseSqlServer(loggingDbConnectionString).EnableSensitiveDataLogging());
-
+        
         services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
         //services.AddDbContext<GY02UserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Scoped);
         services.AddDbContextFactory<GY02UserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging());
@@ -122,6 +123,9 @@ internal class Program
         services.AddPublisherT78();
         services.AddPublisherT127();
         services.AddPublisherT1228();
+
+        services.AddScoped(c => new SimpleGameContext());
+        //services.AddScoped<MyClassMiddleware>();
         var app = builder.Build();
 
         #endregion 追加服务到容器
@@ -131,6 +135,8 @@ internal class Program
         // Configure the HTTP request pipeline.
         //if (app.Environment.IsDevelopment())
 
+        app.UseMiddleware<MyClassMiddleware>();
+
         IWebHostEnvironment env = app.Environment;
         app.UseResponseCompression();
         app.UseResponseCaching();
@@ -139,7 +145,7 @@ internal class Program
         app.UseStaticFiles();
         //app.UseAuthorization();
         app.MapControllers();
-        
+
         #region 启用中间件服务生成Swagger
         app.UseSwagger();
         //app.UseSwaggerUI();
@@ -200,6 +206,47 @@ namespace Global
         /// </summary>
         public static volatile bool ReqireReboot = false;
 
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class MyClassMiddleware 
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public MyClassMiddleware(RequestDelegate next)
+        {
+            _Next = next;
+
+            Initialize();
+        }
+
+        private void Initialize()
+        {
+        }
+
+        RequestDelegate _Next;
+        //SimpleGameContext _GameContext;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="gameContext"></param>
+        /// <returns></returns>
+        public async Task InvokeAsync(HttpContext context, SimpleGameContext gameContext)
+        {
+            try
+            {
+                await _Next(context);
+            }
+            finally
+            {
+
+            }
+        }
     }
 
 

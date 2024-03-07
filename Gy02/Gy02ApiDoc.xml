@@ -875,5 +875,23 @@
             是否请求重新启动。
             </summary>
         </member>
+        <member name="T:Global.MyClassMiddleware">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Global.MyClassMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="M:Global.MyClassMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,GY02.Managers.SimpleGameContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+            <param name="gameContext"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

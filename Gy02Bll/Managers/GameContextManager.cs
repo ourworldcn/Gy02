@@ -49,6 +49,11 @@ namespace GY02.Managers
     /// </summary>
     public class SimpleGameContext : IGameContext
     {
+        public SimpleGameContext()
+        {
+            
+        }
+
         /// <summary>
         /// 构造函数。
         /// </summary>
@@ -77,7 +82,7 @@ namespace GY02.Managers
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public DateTime WorldDateTime { get; }
+        public DateTime WorldDateTime { get; set; } = OwHelper.WorldNow;
 
         /// <summary>
         /// <inheritdoc/>

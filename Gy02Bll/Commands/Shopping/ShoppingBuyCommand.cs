@@ -155,6 +155,10 @@ namespace GY02.Commands
             {
                 _ShoppingManager.IsChanged(command.GameChar, "gs_jinzhu");
             }
+            if(tt.Genus.Contains("gs_tianfu"))  //若是天赋商品
+            {
+                //已计入周任务
+            }
             return;
         lbErr:
             command.FillErrorFromWorld();

@@ -36,13 +36,14 @@ namespace GY02.Commands
     public class LvUpCommandHandler : SyncCommandHandlerBase<LvUpCommand>, IGameCharHandler<LvUpCommand>
     {
 
-        public LvUpCommandHandler(GameTemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStoreManager accountStore, GameBlueprintManager blueprintManager)
+        public LvUpCommandHandler(GameTemplateManager templateManager, SyncCommandManager syncCommandManager, GameEntityManager gameEntityManager, GameAccountStoreManager accountStore, GameBlueprintManager blueprintManager, GameEventManager eventManager)
         {
             _TemplateManager = templateManager;
             _SyncCommandManager = syncCommandManager;
             _GameEntityManager = gameEntityManager;
             AccountStore = accountStore;
             _BlueprintManager = blueprintManager;
+            _EventManager = eventManager;
         }
 
         GameTemplateManager _TemplateManager;
@@ -50,6 +51,7 @@ namespace GY02.Commands
         SyncCommandManager _SyncCommandManager;
         GameEntityManager _GameEntityManager;
         GameBlueprintManager _BlueprintManager;
+        GameEventManager _EventManager;
 
         public GameAccountStoreManager AccountStore { get; }
 
@@ -85,11 +87,28 @@ namespace GY02.Commands
                     return;
                 }
             }
+            List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
+            decimal total = 0;  //消耗金币总数。
             foreach (var entity in entities)
             {
                 _TemplateManager.SetTemplate((VirtualThing)entity.Thing);
-                LvUp(entity, command.Changes);
+                changes.Clear();
+                LvUp(entity, changes);
+                foreach (var change in changes)
+                {
+                    if (change.Object is not GameItem gi) continue;
+                    if (gi.TemplateId != ProjectContent.GoldTId) continue;
+                    if (!OwConvert.TryToDecimal(change.OldValue, out var oldValue)) continue;
+                    if (!OwConvert.TryToDecimal(change.NewValue, out var newValue)) continue;
+                    var diff = oldValue - newValue;
+                    if (diff <= 0) continue;
+                    total += diff;
+                }
+                command.Changes?.AddRange(changes);
             }
+            SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, OwHelper.WorldNow, null);
+            if (total > 0)
+                _EventManager.SendEvent(Guid.Parse("7f6b561a-705c-47ba-9765-22e41e1ce1d9"), total, context);    //发送消耗金币变化事件
             AccountStore.Save(key);
         }
 
