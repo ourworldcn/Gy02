@@ -1,72 +1,39 @@
 {
-  "GameEvent": {
-    "EventId": "7f6b561a-705c-47ba-9765-22e41e1ce1d9",
-    "Ins": [],
+  "Genus": [ "gs_tili" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "MaxCount": 2,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 60,
+        "Genus": []
+      }
+    ],
     "Outs": [
       {
         "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "99eb753e-20eb-43df-a4d3-a892df0945ac",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "d6178591-50cd-480f-9672-4bd749cb31ca",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "bfba0e3e-286f-44f4-a5b9-ef95d933f638",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "19f94c44-4eeb-4c22-90db-5d22d684272c",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "d2341f77-6b12-4036-9b67-5926ce9dcd42",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "8f9d08cb-8fc4-4e85-a210-aacf1314eb18",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "b628c49f-1938-445e-96a0-18bcff13355f",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
-      },
-      {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "9b956f67-2b53-480c-b90c-ec6885f96f36",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+        "Count": 15
       }
     ]
-  }
+  },
+  "display_icon": "Tili2",
+  "display_count": 15
 }

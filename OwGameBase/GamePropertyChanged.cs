@@ -202,6 +202,32 @@ namespace OW.Game.PropertyChange
             Tag = default;
         }
 
+        /// <summary>
+        /// 获取数值增量。
+        /// </summary>
+        /// <param name="defaultValue">当值不存在时的默认值。</param>
+        /// <param name="result">返回增量。</param>
+        /// <returns>true 得到了增量值，false新值或旧值至少有一个存在且无法转换为数值型。</returns>
+        public bool GetIncrement(decimal defaultValue, out decimal result)
+        {
+            result = default;
+            decimal oldValue, newValue;
+            if (HasOldValue)
+            {
+                if (!OwConvert.TryToDecimal(OldValue, out oldValue)) return false;
+            }
+            else
+                oldValue = defaultValue;
+            if (HasNewValue)
+            {
+                if (!OwConvert.TryToDecimal(NewValue, out newValue)) return false;
+            }
+            else
+                newValue = defaultValue;
+            result = newValue - oldValue;
+            return true;
+        }
+
         #region 调试相关
 
         /// <summary>

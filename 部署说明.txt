@@ -31,6 +31,8 @@ yun1.pandaglb.com:44489
 {9E51D4AF-1740-4919-89E6-FCE02D117CFE}
 BeastBlitzKey
 
+最新完美/北美服务器 sa.wanmei.1stlightstudio.com(44.193.1.133) Administrator//{9E51D4AF-1740-4919-89E6-FCE02D117CFE}
+
 香港服务器 52.194.248.217 Administrator//y=A@Nlgjfqw9s!Wy6vD-w$w8;5fWA6&3
 https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-0d757090e71fb103e
 

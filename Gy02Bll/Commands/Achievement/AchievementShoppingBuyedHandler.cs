@@ -35,7 +35,16 @@ namespace GY02.Commands
             var tiliGoodsTId = new Guid[] { Guid.Parse("59bf4cb7-5bc2-48ee-98ad-2efbf116b162"), Guid.Parse("622b4572-782d-4bee-b4c5-2d512daa3714") };
             if (tiliGoodsTId.Contains(command.ShoppingItemTId)) //可能需要处理购买体力的成就
             {
-                _EventManager.SendEvent(Guid.Parse("f0aeedb4-890b-48ce-96e3-964dad23beb4"), 5 * command.Count, context);
+                decimal total = 0;
+                if (command.Changes is not null)
+                    foreach (var c in command.Changes)
+                    {
+                        if (c.Object is not GameItem gi) continue;
+                        if (gi.TemplateId != ProjectContent.PowerTId) continue;
+                        if (!c.GetIncrement(0, out var inc)) continue;
+                        total += inc;
+                    }
+                _EventManager.SendEvent(Guid.Parse("f0aeedb4-890b-48ce-96e3-964dad23beb4"), total, context);
 
                 //var inc = command.Changes.Where(c =>  //获取体力增量
                 //{

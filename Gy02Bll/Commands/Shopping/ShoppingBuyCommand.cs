@@ -88,6 +88,7 @@ namespace GY02.Commands
                 command.DebugMessage = $"购买商品数量需要大于0。";
                 return;
             }
+            var ss = command.GameChar.ChengJiuSlot.Children.FirstOrDefault(c => c.TemplateId == Guid.Parse("822b1d80-70fe-417d-baea-e9c2aacbdcd8"));
 
             if (!_ShoppingManager.IsMatch(command.GameChar, tt, now, out var periodStart)) goto lbErr;    //若不能购买
             var end = periodStart + tt.ShoppingItem.Period.ValidPeriod;
@@ -101,7 +102,7 @@ namespace GY02.Commands
                 return;
             }
             //刷新金猪周期
-            if (_ShoppingManager.IsChanged(command.GameChar, "gs_jinzhu")) _ShoppingManager.JinzhuChanged(command.GameChar,command.Changes);
+            if (_ShoppingManager.IsChanged(command.GameChar, "gs_jinzhu")) _ShoppingManager.JinzhuChanged(command.GameChar, command.Changes);
             //刷新礼包周期
             if (_ShoppingManager.IsChanged(command.GameChar, "gs_leijilibao")) _ShoppingManager.LibaoChanged(command.GameChar);
             for (int i = 0; i < command.Count; i++)
@@ -155,7 +156,7 @@ namespace GY02.Commands
             {
                 _ShoppingManager.IsChanged(command.GameChar, "gs_jinzhu");
             }
-            if(tt.Genus.Contains("gs_tianfu"))  //若是天赋商品
+            if (tt.Genus.Contains("gs_tianfu"))  //若是天赋商品
             {
                 //已计入周任务
             }
