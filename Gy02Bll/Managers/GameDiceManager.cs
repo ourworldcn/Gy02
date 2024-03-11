@@ -69,7 +69,7 @@ namespace GY02.Managers
         public TemplateStringFullView GetDiceById(Guid tid)
         {
             var result = Id2TemplateStringFullView.GetValueOrDefault(tid);
-            if (result is null)
+            if (result?.Dice is null)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
                 OwHelper.SetLastErrorMessage($"找不到指定Id的卡池，TId={tid}");

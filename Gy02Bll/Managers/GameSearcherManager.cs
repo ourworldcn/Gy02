@@ -302,6 +302,8 @@ namespace GY02.Managers
         {
             entity = entities.FirstOrDefault(c =>
             {
+                if (c.TemplateId == Guid.Parse("46542DE4-B8B8-4735-936C-856273B650F7"))
+                    ;
                 return IsMatch(c, inItem, mask);
             });
             return entity != null;

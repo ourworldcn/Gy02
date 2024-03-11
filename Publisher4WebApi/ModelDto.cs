@@ -1258,6 +1258,28 @@ namespace GY02.Publisher
 
     #region 蓝图相关
     /// <summary>
+    /// 获取卡池的保底信息返回值封装类。
+    /// </summary>
+    public class GetDiceGuaranteesReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 还剩余多少次出高价值物品。空表示没有保底数。
+        /// </summary>
+        public int? Count { get; set; }
+    }
+
+    /// <summary>
+    /// 获取卡池的保底信息参数封装类。
+    /// </summary>
+    public class GetDiceGuaranteesParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 卡池模板的TId。
+        /// </summary>
+        public Guid DiceTid { get; set; }
+    }
+
+    /// <summary>
     /// 
     /// </summary>
     public class ApplyBlueprintReturnDto : PropertyChangeReturnDto

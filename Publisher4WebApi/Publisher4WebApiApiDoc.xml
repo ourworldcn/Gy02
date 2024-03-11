@@ -930,6 +930,26 @@
             分解（降品）装备功能的返回值封装类。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetDiceGuaranteesReturnDto">
+            <summary>
+            获取卡池的保底信息返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetDiceGuaranteesReturnDto.Count">
+            <summary>
+            还剩余多少次出高价值物品。空表示没有保底数。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetDiceGuaranteesParamsDto">
+            <summary>
+            获取卡池的保底信息参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetDiceGuaranteesParamsDto.DiceTid">
+            <summary>
+            卡池模板的TId。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.ApplyBlueprintReturnDto">
             <summary>
             

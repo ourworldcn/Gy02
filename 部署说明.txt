@@ -36,10 +36,12 @@ BeastBlitzKey
 香港服务器 52.194.248.217 Administrator//y=A@Nlgjfqw9s!Wy6vD-w$w8;5fWA6&3
 https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-0d757090e71fb103e
 
-F871361D-A803-4F7E-B222-13216A89E9FA 上传模板的凭据
+捷游/东南亚 连接地址：abb.shfoga.com administrator//Forgame@123
 
 自测服务器地址。 phl.self.1stlightstudio.com 
 9bK2frUv0ivRjLFtGlZ?aOf*CL(!4e6Y
+
+F871361D-A803-4F7E-B222-13216A89E9FA 上传模板的凭据
 
 飞书接入在线文档 https://wiki.meetgames.com/distribution-service/SDKAccessDocument/loginPayment/loginIndex
 飞书深诺 https://www.meetsocial.com/company.html

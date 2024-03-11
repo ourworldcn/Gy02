@@ -1,56 +1,1170 @@
 {
-  "Genus": [ "gs_leijilibao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-09T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
+  "GameChar": {
+    "DisplayName": "角色",
+    "CombatTId": null,
+    "ClientCombatInfo": null,
+    "LogineCount": 1,
+    "LastLoginDateTimeUtc": "2024-03-11T00:00:00Z",
+    "YichuanPifuSlot": {
+      "Capacity": -1,
+      "Children": [],
+      "lv": 0,
+      "Id": "198971c5-3764-424e-aa50-42a38dceb9cb",
+      "TemplateId": "18084905-2c57-4b4c-b302-4b8230740fbd"
     },
-    "MaxCount": 1,
-    "GroupNumber": 1,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
-            "MinCount": 0,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 10,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 0,
-              "MinRemainder": 15,
-              "MaxRemainder": 19
+    "Wuqi": {
+      "Capacity": 1,
+      "Children": [
+        {
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107404Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7528246Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "d9087f1e-0674-4f19-8053-ed6c1571022b",
+          "TemplateId": "c531cd34-fed9-4859-81f1-501c25c0926d"
+        }
+      ],
+      "lv": 0,
+      "Id": "36ebedf1-9291-4838-9e28-01a18e6e52da",
+      "TemplateId": "29b7e726-387f-409d-a6ac-ad8670a814f0"
+    },
+    "ShouTao": {
+      "Capacity": 1,
+      "Children": [],
+      "lv": 0,
+      "Id": "3723a3e1-c497-4b09-bfd1-a529284c44d9",
+      "TemplateId": "4d125986-4a3f-4294-bf54-a70853d719c1"
+    },
+    "YiFu": {
+      "Capacity": 1,
+      "Children": [],
+      "lv": 0,
+      "Id": "edfee269-cb16-4855-8481-53695245fe74",
+      "TemplateId": "3d141082-0deb-4f59-ac5d-a80e43657ccc"
+    },
+    "XieZi": {
+      "Capacity": 1,
+      "Children": [],
+      "lv": 0,
+      "Id": "db9064d1-005b-45b3-b1d4-2a7ebdb60971",
+      "TemplateId": "fe312261-2233-4c35-aaf4-bd698e328baf"
+    },
+    "YaoDai": {
+      "Capacity": 1,
+      "Children": [],
+      "lv": 0,
+      "Id": "580e6a4d-243e-4f39-a3cb-71d3c6e3a43a",
+      "TemplateId": "af7b7b9b-a881-4cbe-bca5-111f7babd73a"
+    },
+    "ZuoQiSlot": {
+      "Capacity": 1,
+      "Children": [
+        {
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.910747Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7528252Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "7597ce30-e06f-4877-baaf-c56123f6affd",
+          "TemplateId": "e919f7c7-b341-4159-9ecb-fba64363cff2"
+        }
+      ],
+      "lv": 0,
+      "Id": "27a260d8-3bce-40d9-9d1d-6cca510ea9da",
+      "TemplateId": "14d0e372-909b-485f-b8cb-07c9231b10ff"
+    },
+    "ZhuangBeiBag": {
+      "Capacity": -1,
+      "Children": [],
+      "lv": 0,
+      "Id": "936d2778-86cd-468a-a59f-a35eff7080fa",
+      "TemplateId": "e6edab87-0034-4f45-8040-1f0d565ccf58"
+    },
+    "DaoJuBag": {
+      "Capacity": -1,
+      "Children": [],
+      "lv": 0,
+      "Id": "0d604e55-c0bc-4079-8a41-fc8600111a57",
+      "TemplateId": "9c559895-9a2c-43a7-b793-e879a600487c"
+    },
+    "PiFuBag": {
+      "Capacity": -1,
+      "Children": [],
+      "lv": 0,
+      "Id": "5e9868bc-a77d-46fc-b007-6bac45a8d940",
+      "TemplateId": "3b163a62-6591-4a93-a385-cf079b20f589"
+    },
+    "HuoBiSlot": {
+      "Capacity": 1,
+      "Children": [
+        {
+          "Count": 30,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107604Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7524021Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 30,
+              "StepValue": 1,
+              "Delay": "00:20:00",
+              "CurrentValue": 30,
+              "LastDateTime": "2024-03-11T15:45:34.1196115Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "d905e549-1b23-4ed0-9ad8-104dfaf226e2",
+          "TemplateId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7"
+        },
+        {
+          "Count": 5000,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107623Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7524229Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "b35aed21-16d6-4f06-8e00-73dc8ed3d4b7",
+          "TemplateId": "a45b3421-3688-43c5-b8f5-429db7621f69"
+        },
+        {
+          "Count": 100,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.910763Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7524346Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "c512fd6d-acaa-4b07-a1d7-051216d85e20",
+          "TemplateId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7"
+        },
+        {
+          "Count": 3,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107642Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7524474Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 3,
+              "StepValue": 1,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 3,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "2b11d744-dd35-4767-83cb-3e4fa01184c5",
+          "TemplateId": "9ebdc71e-f2ad-4f1c-82b9-88955fe15b4b"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.910765Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7524596Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "6dece227-798f-490f-8b98-57b3c251123e",
+          "TemplateId": "46542de4-b8b8-4735-936c-856273b650f7"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.910766Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7524704Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "b04e9ed2-36c6-4aca-bed4-5aa59bcf7c62",
+          "TemplateId": "4527471a-fd91-4899-910c-de7056ad67a1"
+        },
+        {
+          "Count": 1,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107667Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9017964Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "cf018805-baca-4af0-ada7-d95715879159",
+          "TemplateId": "24dd1ba1-628f-4f04-bdaf-4c9b0cef895c"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107689Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7524929Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 72,
+              "StepValue": 1,
+              "Delay": "00:20:00",
+              "CurrentValue": 0,
+              "LastDateTime": "2024-03-11T15:40:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "3167da23-095c-4d09-ab25-c8a5ed600f85",
+          "TemplateId": "62d3a545-7604-46bf-9837-95e286660bc8"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107697Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.752514Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "0f6ed6b7-2357-47a1-a05f-9e26e33c4ade",
+          "TemplateId": "9599b400-0bfd-498e-93dc-f44ff303b1b3"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107704Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7525254Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "0ce40e90-6703-46b3-9b4c-55e8b197efbc",
+          "TemplateId": "1de88b53-e5bf-4a60-9dfb-90284b94bdab"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.910773Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7525359Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "26a82660-59d2-42c0-bd6f-23a6b568d722",
+          "TemplateId": "d577e084-4aa4-44d9-9510-20ccea041375"
+        },
+        {
+          "Count": 2,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107741Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7525483Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 2,
+              "StepValue": 2,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 2,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "4db1048d-0d42-4283-906d-33f6e6689211",
+          "TemplateId": "547865b2-fa3d-4d7f-957f-0219b8318b73"
+        },
+        {
+          "Count": 2,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107752Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7525599Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 2,
+              "StepValue": 2,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 2,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "9e177131-d9f4-4734-b512-4b8241a0a8c4",
+          "TemplateId": "d4828a12-534a-4a32-ae17-792b6bfd29cd"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:27.7528566Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9021889Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "9d4a326a-b9c3-49b4-b91d-801f45ef2fd2",
+          "TemplateId": "a1414d6e-c3a1-44c3-bbbd-e8b4357a8796"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107772Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7525861Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 1,
+              "StepValue": 1,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 0,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "218c5e38-bac9-42d1-b6e2-be7ba881195a",
+          "TemplateId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107779Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7525986Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "3e225d66-cfe0-47f3-b82c-aa5f5969fdb6",
+          "TemplateId": "1f31807a-f633-4d3a-8e8e-382ad105d061"
+        },
+        {
+          "Count": 2,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107791Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7526114Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 2,
+              "StepValue": 2,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 2,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "b146e52f-871b-4b12-8048-e9575167e4dc",
+          "TemplateId": "e4eacb80-3b91-495f-8d08-4dfe451acf25"
+        },
+        {
+          "Count": 2,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107804Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7526226Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 2,
+              "StepValue": 2,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 2,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "f52de676-dfe3-49df-9ebf-ff7bef2aaf1d",
+          "TemplateId": "7b81fa89-029d-4928-8de6-4fc19d6fff34"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107816Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7526361Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 1,
+              "StepValue": 1,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 0,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "7d8686da-aeac-4d85-a8ed-bc582c9da625",
+          "TemplateId": "62e227a8-c5d5-410e-96c5-d5ca931bafe2"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107824Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7526477Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "407fdf1b-b548-46d5-827b-46cb18968ea6",
+          "TemplateId": "554cda05-553f-46a2-b905-6a30ffcd2fbb"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107831Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7526584Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "366aba88-fd10-4930-b53e-23a8aa336a6c",
+          "TemplateId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107843Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7526707Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 10,
+              "StepValue": -1,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 0,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "d49d667b-c22a-47a8-8192-bf221c172f5b",
+          "TemplateId": "91e6dd20-1f00-4090-9a26-ea04b7693e60"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107874Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7526826Z",
+          "ClientDictionary": {},
+          "Fcps": {
+            "Count": {
+              "MinValue": 0,
+              "MaxValue": 33,
+              "StepValue": -1,
+              "Delay": "1.00:00:00",
+              "CurrentValue": 0,
+              "LastDateTime": "2024-03-11T00:00:00Z",
+              "Tag": null
+            }
+          },
+          "lv": 0,
+          "Id": "44e80ed6-d207-4b7f-b228-ba226e399096",
+          "TemplateId": "419a400b-55a3-4244-82a6-1917267654f7"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107882Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9105038Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "68aaddad-1f92-4a54-b19d-c68d32ca0293",
+          "TemplateId": "311bae23-09b4-4d8b-b158-f3129d5f6503"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107889Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9105654Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "9f3ab0d2-6e01-4d0b-9dd0-2c348bc78b70",
+          "TemplateId": "a84bcbd1-9541-4907-99df-59b19559ae9f"
+        },
+        {
+          "Count": 0,
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107895Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7527173Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "f2f2fa2a-0f9d-4ab8-bc3e-318789e0bfb3",
+          "TemplateId": "e8d2650a-f740-4911-8257-1811f281cda5"
+        }
+      ],
+      "lv": 0,
+      "Id": "9fd1b047-528e-45ed-8a48-cdf26bbff50d",
+      "TemplateId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d"
+    },
+    "ChengJiuSlot": {
+      "Capacity": -1,
+      "Children": [
+        {
+          "Items": [
+            {
+              "IsCompleted": true,
+              "IsPicked": false,
+              "Level": 1
             },
-            "GeneralConditional": [],
-            "GroupMask": 3
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "cb3eb8b7-15b5-4480-a56b-24bf6fca9a12",
-            "MinCount": 1,
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0
-      }
-    ],
-    "Outs": [
-      {
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 1
-      }
-    ]
-  }
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 2
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 3
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 4
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 5
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 6
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 7
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 8
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 9
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 10
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 11
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 12
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 13
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 14
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 15
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 16
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 17
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 18
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 19
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 20
+            }
+          ],
+          "Count": 1,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9019939Z",
+          "IsValid": true,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9020583Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9020223Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 1,
+          "Id": "d78cadc5-35f6-4371-b854-3594d917e1cf",
+          "TemplateId": "0d8071a9-34a0-44fc-8264-c5827f95f1e6"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 2
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 3
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 4
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 5
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 6
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 7
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 8
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 9
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 10
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 11
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 12
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 13
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 14
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 15
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 16
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 17
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 18
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 19
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 20
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9018502Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107978Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9018402Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "6bfe134a-805e-43e4-8141-7fe8eca32ad2",
+          "TemplateId": "a934d181-087e-4bd1-bd90-8eba1020aa99"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 2
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 3
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 4
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 5
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 6
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 7
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 8
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 9
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 10
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 11
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 12
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 13
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 14
+            },
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 15
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9019514Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9107992Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9019116Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "33f397b6-9cfd-491d-8239-6a9e887c1e71",
+          "TemplateId": "2d023b02-fb74-4320-9ee4-b6c761938fbe"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": true,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 1,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9022818Z",
+          "IsValid": true,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9023469Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9023059Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 1,
+          "Id": "cd48204c-4aa1-47ec-a0a0-947a1ac92ecf",
+          "TemplateId": "52b2351f-fb1a-4872-8cfb-e38d7ff08637"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9024143Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9024759Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9024724Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "fcdec4dd-5b7b-4767-851f-76754c5733ce",
+          "TemplateId": "d9f62847-df1f-4899-a428-e7a65cdb02b3"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9025383Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.902601Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9025977Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "30c051ef-3153-49d9-a16e-bcde4b92bd4b",
+          "TemplateId": "cf33381f-950d-43bd-ba17-cd5ae948e250"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.902663Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9027257Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9027209Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "69509a9c-53e4-46fe-bc26-53ac667f9f0a",
+          "TemplateId": "49ef3f2c-c434-4069-9407-ae09b2f80596"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9027856Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9028496Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9028464Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "e2cadcb6-52cc-4ad1-aa45-8e6e6418c6c4",
+          "TemplateId": "1205f9e3-5f61-45a4-a803-6c0442c376e8"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9029116Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9029765Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9029734Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "6d6778ff-1369-4d0c-a59a-1668ea9aa342",
+          "TemplateId": "aea8e667-1f4b-4097-910b-4f63a9633ff3"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9030392Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.903103Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9031Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "859633cf-c3d7-4472-b79f-12b7e3d426bf",
+          "TemplateId": "4b651fd4-ab4b-409b-93e7-b7be8bd0ce2f"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 1,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9031646Z",
+          "IsValid": true,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9032183Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9031816Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "3e4605c2-edf1-4da5-bd46-e4afad46935a",
+          "TemplateId": "6d8372ee-cacd-40df-b32a-05920ae6b134"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9032831Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9033583Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9033551Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "f8a03991-3b59-4d8c-a578-aaff1b15baa6",
+          "TemplateId": "1a332240-e5a3-4313-9c72-45a5fd051a27"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9034232Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9034903Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9034874Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "c64b88d4-e39a-4104-9cc5-f4ad3d339a55",
+          "TemplateId": "410a8468-5faa-4014-81bf-b335f08bc1db"
+        },
+        {
+          "Items": [
+            {
+              "IsCompleted": false,
+              "IsPicked": false,
+              "Level": 1
+            }
+          ],
+          "Count": 0,
+          "LastModifyDateTime": "2024-03-11T15:49:37.9035539Z",
+          "IsValid": false,
+          "Start": "0001-01-01T00:00:00",
+          "End": "0001-01-01T00:00:00",
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9036238Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:37.9036208Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "9af9cb66-2012-49e6-83b7-fc9187c91397",
+          "TemplateId": "572c425b-deb9-4187-9ddd-0e5d3db1f478"
+        }
+      ],
+      "lv": 0,
+      "Id": "52be1f90-1d16-44cc-bcb1-1f89a390324d",
+      "TemplateId": "04ab4c60-9e5b-43a8-894f-3477655371be"
+    },
+    "XingxiangSlot": {
+      "Capacity": 1,
+      "Children": [
+        {
+          "LvUpAccruedCost": [],
+          "CompositingAccruedCost": [],
+          "CreateDateTime": "2024-03-11T15:49:37.9108152Z",
+          "CountOfLastModifyUtc": "2024-03-11T15:49:27.7528257Z",
+          "ClientDictionary": {},
+          "Fcps": {},
+          "lv": 0,
+          "Id": "6f6f891f-e867-4b8a-abb5-868bfd429101",
+          "TemplateId": "77e4e83b-4592-4070-8c4f-6215c9a2f1fc"
+        }
+      ],
+      "lv": 0,
+      "Id": "9f355ae9-03f7-4ba0-840e-25d848e4bc50",
+      "TemplateId": "f1abe4b7-372b-45b2-a9da-eb6930e95cb9"
+    },
+    "XingxiangBag": {
+      "Capacity": -1,
+      "Children": [],
+      "lv": 0,
+      "Id": "e3059c30-3fc5-4df4-9f06-e642a1a09786",
+      "TemplateId": "f5022e9f-13da-4a2d-b1b9-d57fc07de232"
+    },
+    "FuhuaPreview": [],
+    "FuhuaHistory": [],
+    "CombatHistory": [],
+    "ShoppingHistory": [],
+    "DiceHistory": [],
+    "LvUpAccruedCost": [],
+    "CompositingAccruedCost": [],
+    "CreateDateTime": "2024-03-11T15:49:37.9108246Z",
+    "CountOfLastModifyUtc": "2024-03-11T15:49:27.7521363Z",
+    "ClientDictionary": {},
+    "Fcps": {},
+    "lv": 0,
+    "Id": "eedc0851-0ff1-4ef7-bd59-eb2e4740f375",
+    "TemplateId": "07664462-df05-4ba7-886d-b431bb88aa1c"
+  },
+  "UserId": "1f86666f-01ba-4ecb-a9c0-24a2f9dbdf18",
+  "Token": "338388f5-a61e-41c5-80b9-f0504de1b0bc",
+  "WorldServiceHost": "https://13.229.74.108:20081",
+  "UdpServiceHost": "13.229.74.108:20088",
+  "HasError": false,
+  "ErrorCode": 0,
+  "DebugMessage": "操作成功完成。"
 }
