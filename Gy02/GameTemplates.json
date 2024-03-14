@@ -7256,13 +7256,13 @@
       "DisplayName": "羊和鸡的孵化动物产出",
       "Id": "605d907f-2d17-46da-8d83-13aeb745f4f8",
       "Gid": 170101023,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "羊和鸡孵化皮肤产出",
       "Id": "1dc95c9f-5f3f-4db3-8686-c287cb430526",
       "Gid": 170101024,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0bc7c3af-8cd5-4dd5-8c8c-548de10c027f\",\"Count\":1}],\"Weight\":28,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f45a1b76-8b24-450d-8c93-d6fb5b81960f\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cb2e74d5-43d9-4f70-9d16-31079cc8ef6d\",\"Count\":1}],\"Weight\":200000,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0bc7c3af-8cd5-4dd5-8c8c-548de10c027f\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f45a1b76-8b24-450d-8c93-d6fb5b81960f\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cb2e74d5-43d9-4f70-9d16-31079cc8ef6d\",\"Count\":1}],\"Weight\":200000,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "羊和猫的孵化",
@@ -7328,7 +7328,7 @@
       "DisplayName": "羊和熊的孵化动物产出",
       "Id": "9f30a604-0f52-43ad-ba1a-a0daf626413b",
       "Gid": 170101091,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "羊和熊的孵化皮肤产出",
@@ -7346,13 +7346,13 @@
       "DisplayName": "狼和虎孵化动物产出",
       "Id": "f80255bf-c906-4866-89c4-1cba20853049",
       "Gid": 170101009,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和虎孵化皮肤产出",
       "Id": "c9e1173a-789d-4940-8209-35a8ea94b3c2",
       "Gid": 170101010,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"9451d8a6-507b-46eb-b1be-1f653af21f0a\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"524b552f-6ecc-4fbf-a388-4f70eab305b2\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6ce19f8f-4c23-4c56-805e-4a649318108f\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"928fb8a2-f3ab-4863-abf9-3992049cac4e\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"9451d8a6-507b-46eb-b1be-1f653af21f0a\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6ce19f8f-4c23-4c56-805e-4a649318108f\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"928fb8a2-f3ab-4863-abf9-3992049cac4e\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和长颈鹿的孵化",
@@ -7364,13 +7364,13 @@
       "DisplayName": "狼和长颈鹿孵化动物产出",
       "Id": "70c73d0f-59d1-428d-8359-f3feb79f7e63",
       "Gid": 170101011,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和长颈鹿孵化皮肤产出",
       "Id": "7d728204-1858-44ec-b909-6e8bb8e6d01b",
       "Gid": 170101012,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"4d87f0f0-5c82-4a83-a654-05bfdd3e95a5\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b14c117f-ad3d-47ed-9c96-2bbf5c2f9d04\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b4827ef0-710b-4ba0-8d43-187a685c673b\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6b7f8db2-3563-443b-9f85-174a1a226263\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"4d87f0f0-5c82-4a83-a654-05bfdd3e95a5\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b14c117f-ad3d-47ed-9c96-2bbf5c2f9d04\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b4827ef0-710b-4ba0-8d43-187a685c673b\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6b7f8db2-3563-443b-9f85-174a1a226263\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和龙的孵化",
@@ -7382,13 +7382,13 @@
       "DisplayName": "狼和龙孵化动物产出",
       "Id": "1fb6b3eb-3653-475b-a266-a4be37f2aacf",
       "Gid": 170101013,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"51ca3cd8-0d33-41b6-ad21-fbc721bd9cbc\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和龙孵化皮肤产出",
       "Id": "d8a92b6b-e6ac-480e-88e5-2dcdb8e10609",
       "Gid": 170101014,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d0c41279-ed69-4a17-b2fa-2e1a37c81e7c\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"45c351d1-3147-438d-b8c0-366f6a61d3eb\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d0c41279-ed69-4a17-b2fa-2e1a37c81e7c\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"45c351d1-3147-438d-b8c0-366f6a61d3eb\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3a47c56c-fa8b-4293-98cd-d6c64690604a\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和火鸡的孵化",
@@ -7400,13 +7400,13 @@
       "DisplayName": "狼和火鸡孵化动物产出",
       "Id": "488a00c8-ac31-4862-bcc5-cef0ce23e2f8",
       "Gid": 170101027,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"91a68d03-cc11-4dc5-924b-669ecad20045\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和火鸡孵化皮肤产出",
       "Id": "34077e7b-f089-40f8-9507-577f08a4156c",
       "Gid": 170101028,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"5345cc96-ecee-4b31-a73a-0bee76824847\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b4fa9009-5652-4ea1-9ca2-6c8beed3753d\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3d716d41-ee18-4445-831d-96bf7a45f1fa\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"5345cc96-ecee-4b31-a73a-0bee76824847\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b4fa9009-5652-4ea1-9ca2-6c8beed3753d\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3d716d41-ee18-4445-831d-96bf7a45f1fa\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和狗的孵化",
@@ -7418,13 +7418,13 @@
       "DisplayName": "狼和狗的孵化动物产出",
       "Id": "5ab190f6-abb5-4c47-ab83-c3f26a1742e0",
       "Gid": 170101029,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d0c41279-ed69-4a17-b2fa-2e1a37c81e7c\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"45c351d1-3147-438d-b8c0-366f6a61d3eb\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3a47c56c-fa8b-4293-98cd-d6c64690604a\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和狗的孵化皮肤产出",
       "Id": "148ccd35-dd66-4abd-ae99-c65874e010bd",
       "Gid": 170101030,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ff72cfb0-a14a-4f6c-8dd2-6c1190cb9078\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"fa96f361-f300-40b7-abd4-752eeb24ff43\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"fa112e6f-eb1c-4f46-a2e7-03cfbf70a320\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ff72cfb0-a14a-4f6c-8dd2-6c1190cb9078\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"fa96f361-f300-40b7-abd4-752eeb24ff43\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"fa112e6f-eb1c-4f46-a2e7-03cfbf70a320\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和猫的孵化",
@@ -7436,13 +7436,13 @@
       "DisplayName": "狼和猫孵化动物产出",
       "Id": "b07a138d-83e3-447a-8cd4-16979dce08ff",
       "Gid": 170101031,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和猫孵化皮肤产出",
       "Id": "1eee600c-2058-4885-a9bd-ec90b11c0f01",
       "Gid": 170101032,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cd917e6a-754b-463c-922e-2d1d565a7513\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6aa7900e-f44c-4bd5-baca-76b4e1d8eb72\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"714356af-4948-46b6-9dce-2b6fdc3ee2ab\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cd917e6a-754b-463c-922e-2d1d565a7513\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6aa7900e-f44c-4bd5-baca-76b4e1d8eb72\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"714356af-4948-46b6-9dce-2b6fdc3ee2ab\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和鲨鱼的孵化",
@@ -7454,13 +7454,13 @@
       "DisplayName": "狼和鲨鱼的孵化动物产出",
       "Id": "4a70a981-1e03-43b0-9d4c-d18759069e94",
       "Gid": 170101059,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和鲨鱼孵化皮肤产出",
       "Id": "840124c4-bd75-4a5c-b6fa-fbc49485945d",
       "Gid": 170101060,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e5666b70-a567-46f3-967f-208a6877fb59\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c9cbc2b3-0f41-496b-9865-2980b298f400\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"77aaeda3-d6ef-46be-ae72-61775472211c\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e5666b70-a567-46f3-967f-208a6877fb59\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c9cbc2b3-0f41-496b-9865-2980b298f400\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"77aaeda3-d6ef-46be-ae72-61775472211c\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和熊猫的孵化",
@@ -7472,7 +7472,7 @@
       "DisplayName": "狼和熊猫的孵化动物产出",
       "Id": "c1b36e5f-8191-47fc-824b-b4c1c6c0ec0c",
       "Gid": 170101075,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c06b7de2-7ae5-4897-a11a-f025a827617c\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d79bf01e-0eba-427d-a4a6-c280a801f096\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"97d2639a-048e-4426-bec7-f8043093c57f\",\"Count\":1}],\"Weight\":60,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和熊猫孵化皮肤产出",
@@ -7490,13 +7490,13 @@
       "DisplayName": "狼和熊的孵化动物产出",
       "Id": "a1fcba2c-9765-4e61-9293-c772e49e4054",
       "Gid": 170101093,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狼和熊孵化皮肤产出",
       "Id": "088b5239-9b39-4e1a-9c8f-8413de7744e3",
       "Gid": 170101094,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"084d2322-56f0-4ec4-9c4f-c9325ad12889\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"64c5edbf-42e6-4d8c-847b-f25454f727f8\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"084d2322-56f0-4ec4-9c4f-c9325ad12889\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"64c5edbf-42e6-4d8c-847b-f25454f727f8\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6b7f8db2-3563-443b-9f85-174a1a226263\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和长颈鹿的孵化",
@@ -7508,13 +7508,13 @@
       "DisplayName": "虎和长颈鹿孵化动物产出",
       "Id": "b496948d-eb6d-4196-a742-c6f0ac9178b5",
       "Gid": 170101015,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和长颈鹿孵化皮肤产出",
       "Id": "1857e628-e923-4725-beaa-f85178d9dfb3",
       "Gid": 170101016,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"9f12ff15-8e24-4672-b2da-d5a2263e3afb\",\"Count\":1}],\"Weight\":12,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"662b5b60-44a4-42d6-90d0-e5f422667890\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"83ccf074-77b4-4ca5-82f4-84b0349dfb5b\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"76cd417d-a78f-4818-8d84-1fb7c0a37fdb\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"662b5b60-44a4-42d6-90d0-e5f422667890\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"83ccf074-77b4-4ca5-82f4-84b0349dfb5b\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"76cd417d-a78f-4818-8d84-1fb7c0a37fdb\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和龙的孵化",
@@ -7526,13 +7526,13 @@
       "DisplayName": "虎和龙孵化动物产出",
       "Id": "b787d431-c41b-4afb-b587-292efb834ce6",
       "Gid": 170101017,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和龙孵化皮肤产出",
       "Id": "449d62ab-228b-4f12-8516-95bcea844234",
       "Gid": 170101018,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c9bc26a8-7d8b-4c61-8be5-6d74dd7e3b9b\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e4ace279-5ddb-4080-81e9-86e59f49a6b3\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"13c638fb-86cd-473a-ae33-113239fc4fb8\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c9bc26a8-7d8b-4c61-8be5-6d74dd7e3b9b\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e4ace279-5ddb-4080-81e9-86e59f49a6b3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"13c638fb-86cd-473a-ae33-113239fc4fb8\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和火鸡的孵化",
@@ -7544,13 +7544,13 @@
       "DisplayName": "虎和火鸡孵化动物产出",
       "Id": "810461f1-7589-472f-a07d-ecab28055cf6",
       "Gid": 170101033,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"91a68d03-cc11-4dc5-924b-669ecad20045\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和火鸡孵化皮肤产出",
       "Id": "ef5f426d-7274-439f-8f02-a749cad17585",
       "Gid": 170101034,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2f9175aa-52ae-4da0-a1ae-793a3cb23bfb\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"52651918-cb98-412f-bb9c-7681cb2bc3f2\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d887a620-e675-49f3-a1f8-e82137b2034a\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2f9175aa-52ae-4da0-a1ae-793a3cb23bfb\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"52651918-cb98-412f-bb9c-7681cb2bc3f2\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d887a620-e675-49f3-a1f8-e82137b2034a\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和狗的孵化",
@@ -7562,13 +7562,13 @@
       "DisplayName": "虎和狗的孵化动物产出",
       "Id": "0c7da30b-157a-48b6-94c8-c6df2e562e81",
       "Gid": 170101035,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和狗的孵化皮肤产出",
       "Id": "e9f9c225-923f-4842-9d93-0eb8fc440cb1",
       "Gid": 170101036,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2f9175aa-52ae-4da0-a1ae-793a3cb23bfb\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e7e7007a-b9f7-4de5-9570-a601300208a2\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b030897d-d5f3-439d-8910-624a76811b79\",\"Count\":1}],\"Weight\":4,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c2399cf1-4bbe-4518-b077-3a5919678422\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e7e7007a-b9f7-4de5-9570-a601300208a2\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b030897d-d5f3-439d-8910-624a76811b79\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和猫的孵化",
@@ -7580,13 +7580,13 @@
       "DisplayName": "虎和猫的孵化动物产出",
       "Id": "b62bd67d-ace7-4513-a753-03c8636534bb",
       "Gid": 170101037,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":4,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和猫的孵化皮肤产出",
       "Id": "8974d31c-aa7b-4a9e-9a3c-c8916e84d6e1",
       "Gid": 170101038,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"4f299a2e-3b61-4a26-a561-7fba6591fad4\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7dc18013-ae81-409a-8c5e-d33374702346\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3fece1b2-cb3f-4302-9db4-5268bed05ea6\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"4f299a2e-3b61-4a26-a561-7fba6591fad4\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7dc18013-ae81-409a-8c5e-d33374702346\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3fece1b2-cb3f-4302-9db4-5268bed05ea6\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和鲨鱼的孵化",
@@ -7598,13 +7598,13 @@
       "DisplayName": "虎和鲨鱼的孵化动物产出",
       "Id": "3aac9ccc-70e1-49d6-91f0-6eac354dec6f",
       "Gid": 170101061,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和鲨鱼孵化皮肤产出",
       "Id": "7b19c3d2-0b44-4b78-86aa-1a692bd7c0f4",
       "Gid": 170101062,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"bd71928c-334e-4433-84a1-5941ea8148e4\",\"Count\":1}],\"Weight\":16,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7c674d2a-8bc2-4aa6-823d-0f887820117f\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"60c16e21-b22e-4a3a-94dd-99b552b30230\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"bd71928c-334e-4433-84a1-5941ea8148e4\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7c674d2a-8bc2-4aa6-823d-0f887820117f\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"60c16e21-b22e-4a3a-94dd-99b552b30230\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和熊猫的孵化",
@@ -7616,7 +7616,7 @@
       "DisplayName": "虎和熊猫的孵化动物产出",
       "Id": "fd20605a-d79e-4af4-8b30-ce51532e8cd3",
       "Gid": 170101077,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c06b7de2-7ae5-4897-a11a-f025a827617c\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d79bf01e-0eba-427d-a4a6-c280a801f096\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"97d2639a-048e-4426-bec7-f8043093c57f\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和熊猫孵化皮肤产出",
@@ -7634,13 +7634,13 @@
       "DisplayName": "虎和熊的孵化动物产出",
       "Id": "4b5aa652-3d0f-4743-8e78-f78f64415b06",
       "Gid": 170101095,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和熊孵化皮肤产出",
       "Id": "edb94615-3ef1-4436-80bc-df53e0bc4858",
       "Gid": 170101096,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d33ac59b-50ca-4841-857d-c6fbfdab3e5e\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"aeedf7e8-72c3-4fea-91ab-2dd340fe7d94\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d33ac59b-50ca-4841-857d-c6fbfdab3e5e\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"aeedf7e8-72c3-4fea-91ab-2dd340fe7d94\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和龙的孵化",
@@ -7649,16 +7649,16 @@
       "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_dragon\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"4096908e-466e-49cc-a082-b9c412a466f1\",\"DiceTId2\":\"1f4b52df-e3a0-457a-86b9-423e3a203b43\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
     },
     {
-      "DisplayName": "长颈鹿和龙的产出",
+      "DisplayName": "长颈鹿和龙的动物产出",
       "Id": "4096908e-466e-49cc-a082-b9c412a466f1",
       "Gid": 170101019,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
-      "DisplayName": "长颈鹿和龙的产出",
+      "DisplayName": "长颈鹿和龙的皮肤产出",
       "Id": "1f4b52df-e3a0-457a-86b9-423e3a203b43",
       "Gid": 170101020,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"96c3230c-cc80-4d6b-b3f6-3804fc171bf0\",\"Count\":1}],\"Weight\":12,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"944a8ebc-b1f7-4b02-b090-5fd76d827b75\",\"Count\":1}],\"Weight\":16,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"643d2f0c-2cc1-475c-a686-ae75981bdc19\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"96c3230c-cc80-4d6b-b3f6-3804fc171bf0\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"944a8ebc-b1f7-4b02-b090-5fd76d827b75\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"643d2f0c-2cc1-475c-a686-ae75981bdc19\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和火鸡的孵化",
@@ -7667,16 +7667,16 @@
       "PropertiesString": "{\"Fuhua\":{\"Parent1Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"Parent2Conditional\":[{\"ParentTId\":null,\"Genus\":[\"zuoqi_chick\"],\"TId\":null,\"MinCount\":1,\"GeneralConditional\":[]}],\"DiceTId1\":\"05c18c2f-c153-4f97-bbbb-c2a7cd45b107\",\"DiceTId2\":\"4506777f-2a4f-4216-817f-d898eb22b50d\",\"In\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B\",\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}}"
     },
     {
-      "DisplayName": "长颈鹿和火鸡的产出",
+      "DisplayName": "长颈鹿和火鸡动物的产出",
       "Id": "05c18c2f-c153-4f97-bbbb-c2a7cd45b107",
       "Gid": 170101039,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
-      "DisplayName": "长颈鹿和火鸡的产出",
+      "DisplayName": "长颈鹿和火鸡皮肤的产出",
       "Id": "4506777f-2a4f-4216-817f-d898eb22b50d",
       "Gid": 170101040,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7f917637-8767-47ec-a317-157b6540d5e4\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1c2c1076-f013-444e-bf4a-f208fb071c68\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"59dcec3c-0c5b-404f-a19d-402468cd84b6\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7f917637-8767-47ec-a317-157b6540d5e4\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1c2c1076-f013-444e-bf4a-f208fb071c68\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"59dcec3c-0c5b-404f-a19d-402468cd84b6\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和狗的孵化",
@@ -7688,13 +7688,13 @@
       "DisplayName": "长颈鹿和狗的孵化动物产出",
       "Id": "dee6d0cd-ba5c-485d-b187-a62c5633a9f6",
       "Gid": 170101041,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和狗的孵化皮肤产出",
       "Id": "c74fdb61-2ab5-40e4-a52b-713b863bccca",
       "Gid": 170101042,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"01928e28-ee77-4f11-98aa-721e5ebec9a6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c2aa963d-a568-45fc-b4f0-646843e1a4fc\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e2474a81-9404-457e-8932-ba063447d251\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"01928e28-ee77-4f11-98aa-721e5ebec9a6\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c2aa963d-a568-45fc-b4f0-646843e1a4fc\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e2474a81-9404-457e-8932-ba063447d251\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和猫的孵化",
@@ -7706,13 +7706,13 @@
       "DisplayName": "长颈鹿和猫的孵化动物产出",
       "Id": "c88c1cb9-baac-4594-813e-ccef145d23bd",
       "Gid": 170101043,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和猫的孵化皮肤产出",
       "Id": "648fc481-a15f-4338-aa42-a446f663cafb",
       "Gid": 170101044,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a649e568-f65b-4a64-ad51-ccfce73cf224\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"53d8a334-b8a0-4214-9382-cf3c64e2a82d\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"987cee4e-6919-4f24-b13e-ffb30cb311a5\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a649e568-f65b-4a64-ad51-ccfce73cf224\",\"Count\":1}],\"Weight\":80,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"53d8a334-b8a0-4214-9382-cf3c64e2a82d\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"987cee4e-6919-4f24-b13e-ffb30cb311a5\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和鲨鱼的孵化",
@@ -7724,13 +7724,13 @@
       "DisplayName": "长颈鹿和鲨鱼的孵化动物产出",
       "Id": "ce88e859-718d-4493-9887-4eb54f293ec0",
       "Gid": 170101063,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和鲨鱼孵化皮肤产出",
       "Id": "48107799-b75b-4c6e-a272-c5bb1c96ac59",
       "Gid": 170101064,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ad18e13f-7af8-4e4f-a545-064607ce0a8b\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"39954cb7-873a-407c-8afb-0dc043265a55\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ad18e13f-7af8-4e4f-a545-064607ce0a8b\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"39954cb7-873a-407c-8afb-0dc043265a55\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"9f12ff15-8e24-4672-b2da-d5a2263e3afb\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和熊猫的孵化",
@@ -7742,7 +7742,7 @@
       "DisplayName": "长颈鹿和熊猫的孵化动物产出",
       "Id": "e68fb34f-a662-4209-af36-f8892725a93d",
       "Gid": 170101079,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c06b7de2-7ae5-4897-a11a-f025a827617c\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d79bf01e-0eba-427d-a4a6-c280a801f096\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"97d2639a-048e-4426-bec7-f8043093c57f\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和熊猫孵化皮肤产出",
@@ -7760,13 +7760,13 @@
       "DisplayName": "长颈鹿和熊的孵化动物产出",
       "Id": "82e0143e-b2d1-4a90-8c1d-6e31ec4203cf",
       "Gid": 170101097,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "长颈鹿和熊孵化皮肤产出",
       "Id": "5057b6c3-dca3-4355-bf35-fc62ab68d451",
       "Gid": 170101098,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d338d279-fed9-4ea7-8224-075dac1cc02d\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"4d6167fd-cc0c-453c-ac08-78bcb98752b2\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d338d279-fed9-4ea7-8224-075dac1cc02d\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"4d6167fd-cc0c-453c-ac08-78bcb98752b2\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和火鸡的孵化",
@@ -7778,13 +7778,13 @@
       "DisplayName": "龙和火鸡的动物产出",
       "Id": "04663fe4-5e52-42bd-a55c-c648a6a3d2c2",
       "Gid": 170101045,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":16,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和火鸡的皮肤产出",
       "Id": "240852a6-bcde-474c-a893-b7fccd3f125e",
       "Gid": 170101046,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"355dad94-7706-4765-bbf0-7cd4f85f7db2\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2f9156a9-36f3-457c-b369-a83035a3b8c5\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"355dad94-7706-4765-bbf0-7cd4f85f7db2\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2f9156a9-36f3-457c-b369-a83035a3b8c5\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和猫的孵化",
@@ -7796,13 +7796,13 @@
       "DisplayName": "龙和猫的动物产出",
       "Id": "73664589-f6b8-46e8-89df-65caf76ddd82",
       "Gid": 170101047,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和猫的皮肤产出",
       "Id": "5ab55577-6e92-4bc5-8066-c1e33c7b01ff",
       "Gid": 170101048,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"bf07c036-98ee-4bab-9d70-56b5be95cad2\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a7610cfc-79de-4f95-b522-d3faf0d02499\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"20310983-8374-4dd1-805f-309e04cb6f9c\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"bf07c036-98ee-4bab-9d70-56b5be95cad2\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a7610cfc-79de-4f95-b522-d3faf0d02499\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"20310983-8374-4dd1-805f-309e04cb6f9c\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和鲨鱼的孵化",
@@ -7814,13 +7814,13 @@
       "DisplayName": "龙和鲨鱼的孵化动物产出",
       "Id": "fb75e834-24e9-497c-b08f-1050291299ee",
       "Gid": 170101065,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"800e78af-e9c4-480b-a0f3-8e15b93979f3\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9c79a55a-106f-4f32-9d44-484d86a665fd\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":22,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和鲨鱼孵化皮肤产出",
       "Id": "98579189-5c31-46ed-9b3c-4d9d4e2e53e9",
       "Gid": 170101066,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"23539a5f-78e5-49d8-b349-be11556757dd\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"03787b62-d1ea-42d8-b961-6f31995f930a\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"23539a5f-78e5-49d8-b349-be11556757dd\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"03787b62-d1ea-42d8-b961-6f31995f930a\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ac541f0c-b3dd-490a-a815-8ccc8f763003\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和熊猫的孵化",
@@ -7832,7 +7832,7 @@
       "DisplayName": "龙和熊猫的孵化动物产出",
       "Id": "50a2a5db-ddce-4a0d-9045-6a10edf4cd9d",
       "Gid": 170101081,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c06b7de2-7ae5-4897-a11a-f025a827617c\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"97d2639a-048e-4426-bec7-f8043093c57f\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和熊猫孵化皮肤产出",
@@ -7850,13 +7850,13 @@
       "DisplayName": "龙和熊的孵化动物产出",
       "Id": "db01e374-d71f-4ee4-96d8-1f7fbcf42230",
       "Gid": 170101099,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":28,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "龙和熊孵化皮肤产出",
       "Id": "aebac5f9-63c8-496c-ad18-54fbe0073c3f",
       "Gid": 170101100,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1fdb9155-4a43-4f1d-85fd-404dd23d511c\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"740e727f-9623-4355-bda7-8f6e4e52dc84\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1984e8b9-cc67-43c2-b210-67f27f08945e\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1fdb9155-4a43-4f1d-85fd-404dd23d511c\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"740e727f-9623-4355-bda7-8f6e4e52dc84\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1984e8b9-cc67-43c2-b210-67f27f08945e\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和猫的孵化",
@@ -7868,13 +7868,13 @@
       "DisplayName": "火鸡和猫的动物产出",
       "Id": "36374abe-76c1-4329-a6b1-d0154216f108",
       "Gid": 170101049,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"91a68d03-cc11-4dc5-924b-669ecad20045\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"6335b66c-09fe-4b23-a5e0-ee86199a7d98\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":23,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和猫的皮肤产出",
       "Id": "6c11a70c-c0d1-4094-9fe7-33ada43fd8a6",
       "Gid": 170101050,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"22f114f0-cd71-4978-bb44-84409717a373\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"12430b1f-09c3-427a-b14b-c6923d82ed2f\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"22f114f0-cd71-4978-bb44-84409717a373\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"12430b1f-09c3-427a-b14b-c6923d82ed2f\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和狗的孵化",
@@ -7886,13 +7886,13 @@
       "DisplayName": "火鸡和狗的动物产出",
       "Id": "10df17f3-b58a-4ca7-8694-ffe8fe6e3172",
       "Gid": 170101051,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"314e56c7-72a2-4632-8cb6-fbe030630f30\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b5b92ab3-36d9-4e2c-a718-cff80f4f7942\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和狗的皮肤产出",
       "Id": "c0edff42-1f47-4ac3-9b59-b4413c5abf98",
       "Gid": 170101052,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"27f0ee29-52dd-40b5-bb9b-3366c2eedfec\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7407d55f-c653-4487-9de0-75ec5a76e659\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"d887a620-e675-49f3-a1f8-e82137b2034a\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"27f0ee29-52dd-40b5-bb9b-3366c2eedfec\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7407d55f-c653-4487-9de0-75ec5a76e659\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和鲨鱼的孵化",
@@ -7904,13 +7904,13 @@
       "DisplayName": "火鸡和鲨鱼的孵化动物产出",
       "Id": "8bf8c725-737d-4805-84f5-03e7e93fb842",
       "Gid": 170101067,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和鲨鱼孵化皮肤产出",
       "Id": "b81bfa43-56ff-4496-bd47-97983e496f2e",
       "Gid": 170101068,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"5941cc1f-32f1-4210-ac96-33f834febc43\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"61c6d72a-4c44-4d97-9501-ff5e5d9c6fa1\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"5941cc1f-32f1-4210-ac96-33f834febc43\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"61c6d72a-4c44-4d97-9501-ff5e5d9c6fa1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和熊猫的孵化",
@@ -7922,7 +7922,7 @@
       "DisplayName": "火鸡和熊猫的孵化动物产出",
       "Id": "f488d2a4-7be7-4316-a596-8575fd5877aa",
       "Gid": 170101083,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"08a3c90e-b14f-40f0-ab38-9bc40a50c617\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b4864644-156c-4e40-ac2e-b4e428eb7913\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和熊猫孵化皮肤产出",
@@ -7940,13 +7940,13 @@
       "DisplayName": "火鸡和熊的孵化动物产出",
       "Id": "d486af63-87ed-483f-810d-ae9fcb693dce",
       "Gid": 170101101,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "火鸡和熊孵化皮肤产出",
       "Id": "3db7d3c9-ee42-43f6-9e3c-4670dd040bf9",
       "Gid": 170101102,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a8c2377c-a098-4a98-8285-03f191499539\",\"Count\":1}],\"Weight\":6,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b363d058-f630-4c97-8de0-7ffcb0add6f3\",\"Count\":1}],\"Weight\":18,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e4310a40-6a01-4e4a-80e0-eeb88ee71979\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a8c2377c-a098-4a98-8285-03f191499539\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b363d058-f630-4c97-8de0-7ffcb0add6f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e4310a40-6a01-4e4a-80e0-eeb88ee71979\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和猫的孵化",
@@ -7958,13 +7958,13 @@
       "DisplayName": "狗和猫的动物产出",
       "Id": "67614970-4e68-4e13-9135-8af588a6c341",
       "Gid": 170101053,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和猫的皮肤产出",
       "Id": "d1f6bfd6-f99f-4aef-877d-5b4dc6da3543",
       "Gid": 170101054,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7f87e41c-fec6-44c3-bd0a-9c121ac580ae\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ddeb2a86-bc6e-42d4-a8e3-d866f8abb219\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"07b7a4f1-c7e9-4aa2-a0aa-354e59c842b9\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"7f87e41c-fec6-44c3-bd0a-9c121ac580ae\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ddeb2a86-bc6e-42d4-a8e3-d866f8abb219\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"07b7a4f1-c7e9-4aa2-a0aa-354e59c842b9\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和龙的孵化",
@@ -7976,13 +7976,13 @@
       "DisplayName": "狗和龙的动物产出",
       "Id": "83b81215-bbb1-4fbe-aa5f-2b7eef8447cc",
       "Gid": 170101055,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和龙的皮肤产出",
       "Id": "7b79503a-29f0-4845-89c3-ff95e0faee91",
       "Gid": 170101056,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"561e90a4-c683-4ddf-85d4-f82919db4535\",\"Count\":1}],\"Weight\":8,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2a6b7077-e084-4519-92cb-e29260f908b6\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c5f671cf-32c7-46cd-ab97-47b43086159b\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"561e90a4-c683-4ddf-85d4-f82919db4535\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2a6b7077-e084-4519-92cb-e29260f908b6\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c5f671cf-32c7-46cd-ab97-47b43086159b\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和鲨鱼的孵化",
@@ -7994,13 +7994,13 @@
       "DisplayName": "狗和鲨鱼的孵化动物产出",
       "Id": "0c0be997-091b-4ec4-9894-8941e10e45d6",
       "Gid": 170101069,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和鲨鱼孵化皮肤产出",
       "Id": "9c21bce3-e798-455e-a3c6-52233bd47f9d",
       "Gid": 170101070,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ef631e00-a039-44d7-b481-ab5885c12c3f\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2de0e114-2d24-4b16-8102-907ec5ef1ec8\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ac541f0c-b3dd-490a-a815-8ccc8f763003\",\"Count\":1}],\"Weight\":1,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ef631e00-a039-44d7-b481-ab5885c12c3f\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"2de0e114-2d24-4b16-8102-907ec5ef1ec8\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和熊猫的孵化",
@@ -8012,7 +8012,7 @@
       "DisplayName": "狗和熊猫的孵化动物产出",
       "Id": "eaf1e939-c1ed-4ceb-b3d2-72495614d498",
       "Gid": 170101085,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"12c33ec5-1500-4e0e-91a5-90cceb1b49a4\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2ad31a00-903f-46fc-b802-e98e7a69525a\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和熊猫孵化皮肤产出",
@@ -8030,13 +8030,13 @@
       "DisplayName": "狗和熊的孵化动物产出",
       "Id": "a1b28822-e46f-4646-8e57-3060f72001d9",
       "Gid": 170101103,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "狗和熊孵化皮肤产出",
       "Id": "4d61e4a3-dad7-4214-8288-6f1be531f536",
       "Gid": 170101104,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1538d804-d608-4f9e-ab85-7d28f4c66ab0\",\"Count\":1}],\"Weight\":18,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"8618e094-050f-4fc6-aa91-16e9571317b4\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b813aa95-4c63-40c7-8bfc-4c227b1a48d5\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1538d804-d608-4f9e-ab85-7d28f4c66ab0\",\"Count\":200}],\"Weight\":18,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"8618e094-050f-4fc6-aa91-16e9571317b4\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"b813aa95-4c63-40c7-8bfc-4c227b1a48d5\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "猫和鲨鱼的孵化",
@@ -8048,13 +8048,13 @@
       "DisplayName": "猫和鲨鱼的孵化动物产出",
       "Id": "691330c5-28b7-4cfb-a3fd-2e210ebe009f",
       "Gid": 170101071,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"2df31956-e473-4bd3-8c47-eb83bf67c184\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"468695b4-d8fa-4805-9111-156d0060c217\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":40,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "猫和鲨鱼孵化皮肤产出",
       "Id": "d48f34d3-6a03-42c0-8970-a935502d76e7",
       "Gid": 170101072,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d80dddc-ab67-4a17-bc19-ff2eb6a6192f\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6849e6dc-a75c-4903-a98e-589ebfe4112b\",\"Count\":1}],\"Weight\":3,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d80dddc-ab67-4a17-bc19-ff2eb6a6192f\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"6849e6dc-a75c-4903-a98e-589ebfe4112b\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "猫和熊猫的孵化",
@@ -8066,7 +8066,7 @@
       "DisplayName": "猫和熊猫的孵化动物产出",
       "Id": "0c6c5cea-ee39-4af8-b044-36d667b0bfcf",
       "Gid": 170101087,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"69d3fdca-5bb2-42b8-85a4-272e2eed95f9\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8f772e03-b9b8-48cc-acae-280dfcca842d\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "猫和熊猫孵化皮肤产出",
@@ -8084,13 +8084,13 @@
       "DisplayName": "猫和熊的孵化动物产出",
       "Id": "972aa2fa-18d1-4f58-858f-24ea89e037de",
       "Gid": 170101105,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"57cca3f1-39c1-4c9b-8109-de94058eb299\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"b82c34c3-e531-4a7b-acdc-cd88586d957b\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "猫和熊孵化皮肤产出",
       "Id": "dd802b17-c358-4fe1-bad4-4f0ab9fad1a3",
       "Gid": 170101106,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"71862474-2072-4407-896d-657e760f0dbf\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"442c5187-2f9a-4500-9a84-454381ef8d72\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"387be40e-90dd-49b2-8fb9-4986e8f2b73e\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"71862474-2072-4407-896d-657e760f0dbf\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"442c5187-2f9a-4500-9a84-454381ef8d72\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"387be40e-90dd-49b2-8fb9-4986e8f2b73e\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "鲨鱼和熊猫的孵化",
@@ -8102,7 +8102,7 @@
       "DisplayName": "鲨鱼和熊猫的孵化动物产出",
       "Id": "65cd7243-9102-4dc4-8df6-41c339882050",
       "Gid": 170101089,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c06b7de2-7ae5-4897-a11a-f025a827617c\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"97d2639a-048e-4426-bec7-f8043093c57f\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d79bf01e-0eba-427d-a4a6-c280a801f096\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "鲨鱼和熊猫孵化皮肤产出",
@@ -8120,13 +8120,13 @@
       "DisplayName": "鲨鱼和熊的孵化动物产出",
       "Id": "a1b1b47b-1126-42f8-b480-f558542e4881",
       "Gid": 170101107,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"887b5c87-6726-4054-b929-10f223efa4e0\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"f14e79dd-8daf-4924-8b4b-357632b5f294\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":30,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":25,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "鲨鱼和熊孵化皮肤产出",
       "Id": "42096ea5-53d8-4385-9123-9d1370e738f7",
       "Gid": 170101108,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e84514f2-85b5-4e90-bf5c-4ea6d870a10b\",\"Count\":1}],\"Weight\":18,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a571ab9d-cf3b-45c5-bf99-1f538937d684\",\"Count\":1}],\"Weight\":10,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1984e8b9-cc67-43c2-b210-67f27f08945e\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":2,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e84514f2-85b5-4e90-bf5c-4ea6d870a10b\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"a571ab9d-cf3b-45c5-bf99-1f538937d684\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "熊和熊猫的孵化",
@@ -8138,7 +8138,7 @@
       "DisplayName": "熊和熊猫的孵化动物产出",
       "Id": "6189b795-512b-4768-b4e0-859ef0636d36",
       "Gid": 170101109,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"c06b7de2-7ae5-4897-a11a-f025a827617c\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d79bf01e-0eba-427d-a4a6-c280a801f096\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"97d2639a-048e-4426-bec7-f8043093c57f\",\"Count\":1}],\"Weight\":35,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":5,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":15,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"Count\":1}],\"Weight\":1000,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"0d4336cb-87c4-4598-a0c6-fe85570fecfe\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"696e8311-b286-486c-931f-aff1eb72f1de\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"1741c697-ea92-458b-a9e8-a839e41ad5f3\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"cebd63fb-6629-4a57-97e8-ce35e44fba33\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"62dfb515-f618-4144-8096-4f14aaaf3127\",\"Count\":1}],\"Weight\":800,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"3daea572-a21a-450c-a261-ff07d4b6e1fe\",\"Count\":1}],\"Weight\":700,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"c222527a-d3e0-41e1-9a6e-c03381e722a1\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"f8c8d599-df2e-42ee-bd40-7a1739656f67\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "熊和熊猫孵化皮肤产出",

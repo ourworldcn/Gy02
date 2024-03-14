@@ -109,6 +109,7 @@ internal class Program
         VWorld.UserContextOptions = new DbContextOptionsBuilder<GY02UserContext>().UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging().Options;
 
         #endregion 配置数据库
+
         if (TimeSpan.TryParse(builder.Configuration.GetSection("WorldClockOffset").Value, out var offerset))
             OwHelper._Offset = offerset;  //配置游戏世界的时间。
         //services.Replace(new ServiceDescriptor(typeof(ISystemClock), typeof(OwSystemClock), ServiceLifetime.Singleton));
@@ -123,6 +124,7 @@ internal class Program
         services.AddPublisherT78();
         services.AddPublisherT127();
         services.AddPublisherT1228();
+        services.AddPublisherT0314();
 
         services.AddScoped(c => new SimpleGameContext());
         //services.AddScoped<MyClassMiddleware>();
@@ -135,7 +137,7 @@ internal class Program
         // Configure the HTTP request pipeline.
         //if (app.Environment.IsDevelopment())
 
-        app.UseMiddleware<MyClassMiddleware>();
+        app.UseMiddleware<GY02Middleware>();
 
         IWebHostEnvironment env = app.Environment;
         app.UseResponseCompression();
@@ -209,14 +211,14 @@ namespace Global
     }
 
     /// <summary>
-    /// 
+    /// 项目自用中间件。
     /// </summary>
-    public class MyClassMiddleware 
+    public class GY02Middleware 
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public MyClassMiddleware(RequestDelegate next)
+        public GY02Middleware(RequestDelegate next)
         {
             _Next = next;
 

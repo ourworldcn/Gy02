@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using Gy02.Controllers;
 using GY02.Commands;
+using GY02.Commands.Account;
 using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
 using OW.SyncCommand;
 using System.Net;
+using System.Net.Sockets;
 
 namespace GY02.Controllers
 {
@@ -198,6 +200,33 @@ namespace GY02.Controllers
             _SyncCommandManager.Handle(command);
             string ip = LocalIp.ToString();
             var result = _Mapper.Map<LoginT1228ReturnDto>(command);
+            result.FillErrorFrom(command);
+            if (!result.HasError)
+            {
+                var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+                var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+                result.WorldServiceHost = worldServiceHost;
+                result.UdpServiceHost = udpServiceHost;
+                result.LoginName = command.User.LoginName;
+                result.Pwd = command.Pwd;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 0314合作伙伴登录接口。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="udpServer"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LoginT0314ReturnDto> LoginT0314(LoginT0314ParamsDto model, [FromServices] UdpServerManager udpServer)
+        {
+            //捷游/东南亚
+            var command = _Mapper.Map<LoginT0314Command>(model);
+            _SyncCommandManager.Handle(command);
+            string ip = LocalIp.ToString();
+            var result = _Mapper.Map<LoginT0314ReturnDto>(command);
             result.FillErrorFrom(command);
             if (!result.HasError)
             {

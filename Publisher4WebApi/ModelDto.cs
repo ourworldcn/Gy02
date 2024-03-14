@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.Configuration.Annotations;
 using GY02.Commands;
+using GY02.Commands.Account;
 using GY02.Templates;
 using OW.Data;
 using OW.Game.Entity;
@@ -2821,7 +2822,7 @@ namespace GY02.Publisher
         /// </summary>
         public T304PayedParamsDto()
         {
-            
+
         }
 
         /// <summary>
@@ -2899,6 +2900,50 @@ namespace GY02.Publisher
     }
 
     #endregion 兑换码相关
+
+    #region 0314相关
+
+    /// <summary>
+    /// 0314登录参数封装类。
+    /// </summary>
+#if NETCOREAPP
+    [AutoMap(typeof(LoginT0314Command), ReverseMap = true)]
+#endif
+    public class LoginT0314ParamsDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+    /// <summary>
+    /// 0314登录返回值封装类。
+    /// </summary>
+#if NETCOREAPP
+    [AutoMap(typeof(LoginT0314Command))]
+#endif
+    public class LoginT0314ReturnDto : LoginReturnDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+    #endregion 0314相关
 }
 
 

@@ -276,36 +276,14 @@ namespace GY02
         [Conditional("DEBUG")]
         private void Test(string str = null)
         {
-            var sw = Stopwatch.StartNew();
             var ss = _Services.GetService<IDbContextFactory<GY02LogginContext>>();
             using var dbLogger = ss.CreateDbContext();
+            var svc = _Services.GetRequiredService<T0314Manager>();
+            var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
             {
-                var str1=JsonSerializer.Serialize("龖");
-                var thing = new VirtualThing { ExtraString = "₱" };
-                var s = JsonSerializer.Serialize(thing);
-                var obj = JsonSerializer.Deserialize<VirtualThing>(s);
-                var b1 = DateTime.Now.ToString("yyyyMMddTHHmmss");
-                var b2 = DateTime.ParseExact(b1, "yyyyMMddTHHmmss", default, DateTimeStyles.None);
-                var part = Partitioner.Create(long.MinValue, long.MaxValue, 10_000_000);
-                byte[] bytes = MD5.HashData(Encoding.UTF8.GetBytes(Guid.NewGuid().ToString()));
-
-                //var result = Parallel.ForEach(part, (range, state) =>
-                //{
-                //    using var md5 = MD5.Create();
-                //    for (var i = range.Item1; i <= range.Item2; i++)
-                //    {
-                //        if (state.IsStopped) return;
-                //        if (md5.ComputeHash(BitConverter.GetBytes(i)).SequenceEqual(bytes))
-                //        {
-                //            state.Stop();
-                //            Debug.WriteLine($"找到碰撞{i}");
-                //            return;
-                //        }
-                //    }
-                //    Debug.WriteLine($"{range.Item1} - {range.Item2}没有碰撞。");
-                //});
+                var ri = svc.Login("@133@203@156@105@180@129@149@165@168@153@129@210@159@187@159@116@123@127@110@202@96@185@127@138@128@178@170@128@183@158@173@164@166@156@172@165@215@163@190@144@148@134@139@204@131@222@174@107@136@133@141@174@120@202@173@170@129@108@174@179@168@134@96@140@130@220@206@125@181@131@156@147@166@153@166@172@104@214@123@120@130@135@168@149@125@151@121@164@123@113@154@174@181@104@126@164@145@168@174@170@202@174@181@195@103@121@137@160", "16588782");
             }
             #endregion 测试用代码
             catch (Exception)

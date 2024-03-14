@@ -156,7 +156,7 @@ namespace GY02.Managers
                         }
                         var tt = _TemplateManager.GetFullViewFromId(tid);
                         var list = gameChar.ShoppingHistoryV2;
-                        if (IsExistsPeriod(tt.Ins)) //若存在自转周期
+                        if (IsExistsPeriod(tt.ShoppingItem.Ins)) //若存在自转周期
                         {
                             var period = GetPeriodIndex(tt.ShoppingItem.Ins, gameChar, out _);
                             var val = list.Where(c => c.TId == tid && c.PeriodIndex == period).Sum(c => c.Count);  //如果source不包含任何元素，则Sum(IEnumerable<Decimal>)方法返回零。
@@ -165,7 +165,6 @@ namespace GY02.Managers
                         }
                         else
                         {
-
                             if (!tt.ShoppingItem.Period.IsValid(now, out var start))
                             {
                                 value = 0; break;

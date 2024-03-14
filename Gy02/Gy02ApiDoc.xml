@@ -161,6 +161,14 @@
             <param name="udpServer"></param>
             <returns></returns>
         </member>
+        <member name="M:GY02.Controllers.AccountController.LoginT0314(GY02.Publisher.LoginT0314ParamsDto,GY02.Managers.UdpServerManager)">
+            <summary>
+            0314合作伙伴登录接口。
+            </summary>
+            <param name="model"></param>
+            <param name="udpServer"></param>
+            <returns></returns>
+        </member>
         <member name="M:GY02.Controllers.AccountController.Nop(GY02.Publisher.NopParamsDto)">
             <summary>
             心跳功能，延迟被驱逐的时间。
@@ -884,17 +892,17 @@
             是否请求重新启动。
             </summary>
         </member>
-        <member name="T:Global.MyClassMiddleware">
+        <member name="T:Global.GY02Middleware">
             <summary>
-            
+            项目自用中间件。
             </summary>
         </member>
-        <member name="M:Global.MyClassMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+        <member name="M:Global.GY02Middleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="M:Global.MyClassMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,GY02.Managers.SimpleGameContext)">
+        <member name="M:Global.GY02Middleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,GY02.Managers.SimpleGameContext)">
             <summary>
             
             </summary>
