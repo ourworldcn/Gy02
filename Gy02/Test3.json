@@ -1,195 +1,24 @@
 {
-  "FuhuaPreview": [
-    {
-      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
-      "Items": [
-        {
-          "Outs": [
-            {
-              "TId": "x/cZ6UGzWUGey/umQ2PP8g==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 800
-        },
-        {
-          "Outs": [
-            {
-              "TId": "FbXfYhj2REGAlk8Uqq8xJw==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 1000
-        },
-        {
-          "Outs": [
-            {
-              "TId": "r8PHC9WM1U2MjFSN4QwCfw==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 300
-        },
-        {
-          "Outs": [
-            {
-              "TId": "dhta9CSLDUWMk9b7W4GWDw==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 200
-        }
-      ]
-    },
-    {
-      "ParentTIds": [ "zuoqi_corgi", "zuoqi_wolf" ],
-      "Items": [
-        {
-          "Outs": [
-            {
-              "TId": "0VHDRUcxjUO4wDZvamHT6w==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 100
-        },
-        {
-          "Outs": [
-            {
-              "TId": "eRLE0GntF0qy+i4aN8gefA==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 200
-        },
-        {
-          "Outs": [
-            {
-              "TId": "bMVHOov6k0KYzdbGRpBgSg==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 50
-        },
-        {
-          "Outs": [
-            {
-              "TId": "sM9y/0qhbE+N0mwRkMuQeA==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 300
-        },
-        {
-          "Outs": [
-            {
-              "TId": "by4R+hzrRk+i5wPPv3CjIA==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 50
-        },
-        {
-          "Outs": [
-            {
-              "TId": "YfOW+gDzt0Cr1HUu6yT/Qw==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 150
-        }
-      ]
-    }
-  ],
-  "FuhuaHistory": [
-    {
-      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
-      "Items": [
-        {
-          "Outs": [
-            {
-              "TId": "1XQuy9lDcE+dFjEHnMjvbQ==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 200000
-        }
-      ]
-    },
-    {
-      "ParentTIds": [ "zuoqi_corgi", "zuoqi_wolf" ],
-      "Items": [
-        {
-          "Outs": [
-            {
-              "TId": "eRLE0GntF0qy+i4aN8gefA==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 200
-        }
-      ]
-    }
-  ],
-  "CombatHistory": [
-    {
-      "TId": "h7kiGyxP/EuxBQ6EWRS5nQ==",
-      "MinTimeSpanOfPass": "00:00:06.4230000"
-    },
-    {
-      "TId": "zF6lu+lSIEucjdOW9cXjOw==",
-      "MinTimeSpanOfPass": "00:00:05.5760000"
-    },
-    {
-      "TId": "RcZfHjMooUit1WuDo0B9Aw==",
-      "MinTimeSpanOfPass": "00:00:06.3230000"
-    },
-    {
-      "TId": "N00xKJB9E0qZLyJIXeewIA==",
-      "MinTimeSpanOfPass": "00:00:02.7780000"
-    },
-    { "TId": "lP2y+H6OYkycN0EfJKm2oQ==" }
-  ],
-  "AdsRewardsHistory": [],
-  "ShoppingHistory": [],
-  "PeriodIndexHistory": [
-    { "TId": "F2evOD40c02CCTYGV6pQBQ==" },
-    { "TId": "VcIcv4Y89ECcF+RpMDvhKg==" },
-    { "TId": "VjQZztjpp0yf3n7zzcdBPQ==" }
-  ],
-  "DiceHistory": [
-    { "DiceTId": "/9FdpsDa10KRZ5ytZN0Lng==" },
-    {
-      "DiceTId": "/C7JiEP730OZfcWRiAjeXQ==",
-      "GuaranteesCount": 3
-    },
-    {
-      "DiceTId": "GZZxrzQ5v0Wq7Gacaor9xg==",
-      "GuaranteesCount": 4
-    }
-  ],
-  "Roles": [],
-  "LvUpAccruedCost": [],
-  "CompositingAccruedCost": [],
-  "ClientDictionary": { "TutorialIds": "[11001,11004,11005,10001,11002,10002,10003,10005,10008,11006,11007,10006,10007,11003]" },
-  "atk": 20,
-  "def": 100,
-  "pow": 350,
-  "crit": 100,
-  "LogineCount": 56,
-  "LastLoginDateTimeUtc": "2024-03-12T00:00:00Z",
-  "CountOfLastModifyUtc": "2024-03-08T16:59:30.2059481Z",
-  "Fcps": {}
+  "GameEvent": {
+    "EventId": "0d8d8ff7-2e8a-428b-9efa-db7ee7463910",
+    "Ins": [],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "43E9286A-904C-4923-B477-482C0D6470A5",
+        "Count": 0,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
+        "Count": 0,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      }
+    ]
+  }
 }

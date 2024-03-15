@@ -29,8 +29,16 @@ namespace GY02.Controllers
                     IPAddress tmp;
                     if (Request.Host.ToString().Contains("localhost", StringComparison.CurrentCultureIgnoreCase))
                     {
-                        var addressList = Dns.GetHostEntry(Dns.GetHostName()).AddressList;
-                        tmp = addressList.Last(c => c.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork);
+                        try
+                        {
+                            var addressList = Dns.GetHostEntry(Dns.GetHostName()).AddressList;
+                            tmp = addressList.Last(c => c.AddressFamily == AddressFamily.InterNetwork);
+                        }
+                        catch (Exception err)
+                        {
+                            _Logger.LogWarning(err,"获取本机地址出现异常");
+                            throw;
+                        }
                     }
                     else
                     {

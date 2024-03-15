@@ -89,7 +89,7 @@ namespace GY02.Managers
         /// 发送游戏内事件。
         /// </summary>
         /// <param name="eventTId"></param>
-        /// <param name="count">此时发生的值(全量)仅对任务/成就，对一般实体仍使用增量。</param>
+        /// <param name="count">此时发生的值(全量)。</param>
         /// <param name="context"></param>
         public void SendEventWithNewValue(Guid eventTId, decimal count, IGameContext context)
         {
@@ -110,6 +110,26 @@ namespace GY02.Managers
                 }
             }
             _EntityManager.CreateAndMove(entities, context.GameChar, context.Changes);  //创建实体
+            //处理特殊占位符
+            var id = Guid.Parse("9599B400-0BFD-498E-93DC-F44FF303B1B3");
+            var entity = entities.FirstOrDefault(c => c.TId == id);
+            if (entity is not null)  //若有需要特殊处理的占位符
+            {
+                var sq = _EntityManager.GetAllEntity(context.GameChar).FirstOrDefault(c => c.TemplateId == id); //获取占位符
+                if (sq is null)  //若没有
+                {
+                    entity.Count = count;
+                    _EntityManager.CreateAndMove(new GameEntitySummary[] { entity }, context.GameChar, context.Changes);  //创建实体
+                }
+                else //若已经存在
+                {
+                    if (sq.Count < count)   //若存在的值较小
+                    {
+                        entity.Count = count - sq.Count;
+                        _EntityManager.CreateAndMove(new GameEntitySummary[] { entity }, context.GameChar, context.Changes);  //创建实体
+                    }
+                }
+            }
         }
     }
 }

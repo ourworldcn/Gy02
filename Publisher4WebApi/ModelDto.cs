@@ -2915,12 +2915,12 @@ namespace GY02.Publisher
         /// 登录名。
         /// </summary>
         //[SourceMember("User.LoginName")]
-        public string LoginName { get; set; }
+        public string Uid { get; set; }
 
         /// <summary>
         /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
         /// </summary>
-        public string Pwd { get; set; }
+        public string Token { get; set; }
     }
 
     /// <summary>

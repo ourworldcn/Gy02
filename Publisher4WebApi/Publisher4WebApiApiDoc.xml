@@ -2226,12 +2226,12 @@
             0314登录参数封装类。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.LoginT0314ParamsDto.LoginName">
+        <member name="P:GY02.Publisher.LoginT0314ParamsDto.Uid">
             <summary>
             登录名。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.LoginT0314ParamsDto.Pwd">
+        <member name="P:GY02.Publisher.LoginT0314ParamsDto.Token">
             <summary>
             密码。若首次登录，创建了账号则这里返回密码。否则返回null。
             </summary>
