@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Managers;
@@ -6,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Text.Json;
@@ -45,12 +47,40 @@ namespace GY02.Managers
 
         private readonly HttpClient _HttpClient;
 
+        /// <summary>
+        /// 验证签名的Key。
+        /// </summary>
+        public const string OpenKey = "iOnaKGcn1X0aQTfzEFpCm1yehPJADlBW";
+
         public T0314LoginReturn Login(string token, string uid)
         {
             var builder = new UriBuilder(Path.Combine(SdkServerUrl, LoginUrl));
             builder.Query = $"token={token}&uid={uid}";
             var str = _HttpClient.GetStringAsync(builder.Uri).Result;
             return JsonSerializer.Deserialize<T0314LoginReturn>(str);
+        }
+
+        /// <summary>
+        /// 获取签名。
+        /// </summary>
+        /// <param name="dic"></param>
+        /// <returns></returns>
+        public byte[] GetSign(IDictionary<string, string> dic)
+        {
+            //得到字符串
+            var sb = new StringBuilder();
+            foreach (var item in dic.Where(c => c.Key != "sign").OrderBy(c => c.Key))
+            {
+                sb.Append(item.Key);
+                sb.Append('=');
+                sb.Append(item.Value);
+                sb.Append("&");
+            }
+            sb.Append(OpenKey);
+            //计算签名
+            var bin = Encoding.UTF8.GetBytes(sb.ToString());
+            var result = MD5.HashData(bin);
+            return result;
         }
     }
 
@@ -67,6 +97,109 @@ namespace GY02.Managers
 
         [JsonPropertyName("uid")]
         public string Uid { get; set; }
+    }
+
+    /// <summary>
+    /// 支付回调参数封装类。
+    /// </summary>
+    /// <remarks>注：如果是官网充值方式时，CP可以获取extrasParams参数的值来定位到角色信息。这里的值CP可与第三方官网约定一个规则，让第三方官网按照规则传值。
+    /// 目前规则为:区服ID|@|角色ID|@|商品ID</remarks>
+    public class T0314PayReturnDto
+    {
+        public T0314PayReturnDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 购买道具的用户uid。
+        /// </summary>
+        [JsonPropertyName("uid")]
+        public string Uid { get; set; }
+
+        /// <summary>
+        /// 购买道具的用户username。
+        /// </summary>
+        [JsonPropertyName("username")]
+        public string UserName { get; set; }
+
+        /// <summary>
+        /// 游戏下单时传递的游戏订单号，原样返回。
+        /// </summary>
+        [JsonPropertyName("cpOrderNo")]
+        public string CpOrderNo { get; set; }
+
+        /// <summary>
+        /// SDK唯一订单号。
+        /// </summary>
+        [JsonPropertyName("orderNo")]
+        public string OrderNo { get; set; }
+
+        /// <summary>
+        /// 用户支付时间，如2017-02-06 14:22:32
+        /// </summary>
+        [JsonPropertyName("payTime")]
+        public DateTime PayTime { get; set; }
+
+        /// <summary>
+        /// 订单支付方式，具体值对应支付渠道详见对照表.
+        /// </summary>
+        [JsonPropertyName("payType")]
+        public string PayType { get; set; }
+
+        /// <summary>
+        /// 用户支付金额（单位：元）,注意：如果游戏商品有多个数量，那么金额就是单价*数量
+        /// </summary>
+        [JsonPropertyName("payAmount")]
+        public decimal PayAmount { get; set; }
+
+        /// <summary>
+        /// 用户支付的币种，如RMB，USD等.
+        /// </summary>
+        [JsonPropertyName("payCurrency")]
+        public string PayCurrency { get; set; }
+
+        /// <summary>
+        /// 用户支付的游戏道具以美元计价的金额（单位：元）.注意：如果游戏商品有多个数量，那么金额就是单价*数量
+        /// </summary>
+        [JsonPropertyName("usdAmount")]
+        public decimal UsdAmount { get; set; }
+
+        /// <summary>
+        /// 支付状态，为0表示成功，为1时游戏不做处理
+        /// </summary>
+        [JsonPropertyName("payStatus")]
+        public int PayStatus { get; set; }
+
+        /// <summary>
+        /// 充值折扣，取值范围0~1(不包含0），默认为1表示不折扣；如值为0.2表示多发20%的元宝
+        /// </summary>
+        [JsonPropertyName("actRate")]
+        public decimal ActRate { get; set; }
+
+        /// <summary>
+        /// 游戏下单时传递的扩展参数，将原样返回。
+        /// </summary>
+        [JsonPropertyName("extrasParams")]
+        public string ExtrasParams { get; set; }
+
+        /// <summary>
+        /// 内购订阅型商品订单使用，如果有此字段表示订单订阅状态。cp监测到有此字段时不需要发货。字段取值为：2：订阅取消
+        /// </summary>
+        [JsonPropertyName("subscriptionStatus")]
+        public int? SubscriptionStatus { get; set; }
+
+        /// <summary>
+        /// 内购订阅型商品订单取消订阅原因。当有subscriptionStatus字段时此字段必有
+        /// </summary>
+        [JsonPropertyName("subReason")]
+        public string SubReason { get; set; }
+
+        /// <summary>
+        /// 签名值，游戏应根据签名约定，本地计算后与此值进行比对
+        /// </summary>
+        [JsonPropertyName("sign")]
+        public string Sign { get; set; }
     }
 
     public static class T0314ManagerExtensions

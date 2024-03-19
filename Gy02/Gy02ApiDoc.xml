@@ -840,6 +840,23 @@
             <param name="model"></param>
             <returns></returns>
         </member>
+        <member name="T:Gy02.Controllers.T0314Controller">
+            <summary>
+            T0314合作伙伴相关控制器。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T0314Controller.#ctor(Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.T0314Controller},GY02.Managers.T0314Manager)">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="M:Gy02.Controllers.T0314Controller.Payed(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
         <member name="T:Gy02.Controllers.T304Controller">
             <summary>
             T304合作伙伴功能控制器。
