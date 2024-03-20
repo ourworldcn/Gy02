@@ -130,6 +130,14 @@ internal class Program
         //services.AddScoped<MyClassMiddleware>();
         var app = builder.Build();
 
+        app.Use(async (context, next) =>
+        {
+            context.Request.EnableBuffering();
+            //await ReadRequestBody(context.Request.Body);
+            context.Request.Body.Position = 0;
+
+            await next.Invoke();
+        });
         #endregion 追加服务到容器
 
         #region 配置HTTP管道
