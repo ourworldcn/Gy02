@@ -845,17 +845,44 @@
             T0314合作伙伴相关控制器。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.T0314Controller.#ctor(Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.T0314Controller},GY02.Managers.T0314Manager)">
+        <member name="M:Gy02.Controllers.T0314Controller.#ctor(Microsoft.Extensions.Logging.ILogger{Gy02.Controllers.T0314Controller},GY02.Managers.T0314Manager,GY02.Managers.GameAccountStoreManager,Microsoft.EntityFrameworkCore.IDbContextFactory{OW.Game.Store.GY02UserContext})">
             <summary>
             构造函数。
             </summary>
         </member>
-        <member name="M:Gy02.Controllers.T0314Controller.Payed(System.String)">
+        <member name="M:Gy02.Controllers.T0314Controller.Payed(GY02.Managers.T0314PayReturnStringDto)">
             <summary>
             
             </summary>
-            <param name="str"></param>
+            <param name="model"></param>
             <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.T0314Controller.EnsureT0314Order(Gy02.Controllers.EnsureT0314OrderParamsDto)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Gy02.Controllers.EnsureT0314OrderParamsDto">
+            <summary>
+            确认订单功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:Gy02.Controllers.EnsureT0314OrderParamsDto.OrderNo">
+            <summary>
+            游戏下单时传递的游戏订单号。
+            </summary>
+        </member>
+        <member name="P:Gy02.Controllers.EnsureT0314OrderParamsDto.GoodsTId">
+            <summary>
+            购买的商品模板Id。
+            </summary>
+        </member>
+        <member name="T:Gy02.Controllers.EnsureT0314OrderReturnDto">
+            <summary>
+            确认订单功能的返回值封装类。
+            </summary>
         </member>
         <member name="T:Gy02.Controllers.T304Controller">
             <summary>

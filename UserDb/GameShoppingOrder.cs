@@ -1,5 +1,7 @@
-﻿using OW.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using OW.Data;
 using OW.Game.PropertyChange;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.Json;
@@ -9,6 +11,7 @@ namespace OW.Game.Store
     /// <summary>
     /// 法币购买商品的订单。
     /// </summary>
+    [Index(nameof(CustomerId), nameof(CreateUtc))]
     public class GameShoppingOrder : JsonDynamicPropertyBase, ICloneable
     {
         /// <summary>
@@ -30,6 +33,7 @@ namespace OW.Game.Store
         /// <summary>
         /// 目前是角色Id的字符串形式。如果以后存在给账号购买的情况则可能是账号Id。
         /// </summary>
+        [MaxLength(64)]
         public string CustomerId { get; set; }
 
         /// <summary>
