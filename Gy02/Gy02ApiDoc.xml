@@ -294,12 +294,6 @@
             战斗控制器。
             </summary>
         </member>
-        <member name="M:GY02.Controllers.CombatController.Test">
-            <summary>
-            测试。
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:GY02.Controllers.CombatController.StartCombat(GY02.Publisher.StartCombatParamsDto)">
             <summary>
             开始战斗。
@@ -364,12 +358,6 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.ItemManagerController.TestLvUp">
-            <summary>
-            测试升级接口。
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:GY02.Controllers.ItemManagerController.AddItems(GY02.Publisher.AddItemsParamsDto,GY02.Managers.GameAccountStoreManager,OW.SyncCommand.SyncCommandManager,OW.Game.Managers.GameTemplateManager,AutoMapper.IMapper)">
             <summary>
             增加物品，调试用接口。
@@ -423,12 +411,6 @@
             <param name="model"></param>
             <returns></returns>
         </member>
-        <member name="M:GY02.Controllers.ItemManagerController.TestFuhuaPreview">
-            <summary>
-            测试孵化。
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:GY02.Controllers.ItemManagerController.FuhuaPreview(GY02.Publisher.FuhuaPreviewParamsDto)">
             <summary>
             孵化的预览功能。
@@ -470,12 +452,6 @@
             <param name="gameAccountStore"></param>
             <param name="mapper"></param>
             <param name="syncCommandManager"></param>
-        </member>
-        <member name="M:GY02.Controllers.ShoppingController.GetShoppingItem">
-            <summary>
-            获取商品项结构。
-            </summary>
-            <returns></returns>
         </member>
         <member name="M:GY02.Controllers.ShoppingController.GetShoppingItems(GY02.Publisher.GetShoppingItemsParamsDto)">
             <summary>
@@ -771,13 +747,6 @@
             <summary>
             构造函数。
             </summary>
-        </member>
-        <member name="M:Gy02.Controllers.AchievementController.GetTemplateDemo(GY02.Managers.GameAchievementManager)">
-            <summary>
-            获取一个样例。
-            </summary>
-            <param name="achievementManager"></param>
-            <returns></returns>
         </member>
         <member name="M:Gy02.Controllers.AchievementController.GetAchievementStateWithGenus(GY02.Publisher.GetAchievementStateWithGenusParamsDto,GY02.Managers.GameBlueprintManager,GY02.Managers.GameEntityManager)">
             <summary>

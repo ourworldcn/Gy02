@@ -51,6 +51,7 @@ namespace Gy02.Controllers
              * b)处理完毕，订单结束则返回SUCCESS，SDK不会再通知。
              * https://abb.shfoga.com:20443/api/T0314/Payed
              */
+
             string str = "";
             _Logger.LogInformation("收到支付确认，参数:{str}", string.Join('&', model.GetDic().Select(c => c.Key + '=' + c.Value)));
             var ary = str.Split('&');
@@ -59,18 +60,22 @@ namespace Gy02.Controllers
                 _Logger.LogWarning("没有内容");
                 return "没有内容";
             }
-            var dic = new Dictionary<string, string>();
-            foreach (var item in ary)
+            Dictionary<string, string> dic;
+            var keys = Request.Form.Select(c => c.Key).ToHashSet();
+            try
             {
-                var kv = item.Split('=');
-                if (kv.Length != 2)
-                {
-                    _Logger.LogWarning("格式错误");
-                    return "格式错误";
-                }
-                dic[kv[0]] = kv[1];
+                dic = model.GetDic();
+                var removes = dic.Keys.Except(keys).ToArray();
+                removes.ForEach(c => dic.Remove(c));
             }
-            var sign = _T0314Manager.GetSign(dic);
+            catch (Exception)
+            {
+                _Logger.LogWarning("格式错误");
+                return "格式错误";
+            }
+            var sign = _T0314Manager.GetSignForAndroid(dic);
+            var localSign = Convert.ToHexString(sign);
+            _Logger.LogInformation("计算获得签名为: {str}", localSign);
             var signStr = dic["sign"];
             if (string.Compare(Convert.ToHexString(sign), signStr, StringComparison.OrdinalIgnoreCase) != 0)
             {

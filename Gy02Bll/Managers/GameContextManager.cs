@@ -51,7 +51,7 @@ namespace GY02.Managers
     {
         public SimpleGameContext()
         {
-            
+
         }
 
         /// <summary>
@@ -72,12 +72,12 @@ namespace GY02.Managers
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public Guid Token { get; }
+        public Guid Token { get; set; }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        public GameChar GameChar { get; internal set; }
+        public GameChar GameChar { get; set; }
 
         /// <summary>
         /// <inheritdoc/>

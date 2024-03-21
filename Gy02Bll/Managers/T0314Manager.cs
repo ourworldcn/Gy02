@@ -53,6 +53,10 @@ namespace GY02.Managers
         /// </summary>
         public const string OpenKey = "iOnaKGcn1X0aQTfzEFpCm1yehPJADlBW";
 
+        public const string IosCallbackKey = "13910753290173445245276973738589";
+
+        public const string AndroidCallbackKey = "84989153729002945222447943365883";
+
         public T0314LoginReturn Login(string token, string uid)
         {
             var builder = new UriBuilder(Path.Combine(SdkServerUrl, LoginUrl));
@@ -66,7 +70,7 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="dic"></param>
         /// <returns></returns>
-        public byte[] GetSign(IDictionary<string, string> dic)
+        public byte[] GetSignForAndroid(IDictionary<string, string> dic)
         {
             //得到字符串
             var sb = new StringBuilder();
@@ -75,11 +79,25 @@ namespace GY02.Managers
                 sb.Append(item.Key);
                 sb.Append('=');
                 sb.Append(item.Value);
-                sb.Append("&");
+                sb.Append('&');
             }
-            sb.Append(OpenKey);
+
+            sb.Append(AndroidCallbackKey);
+            var str = sb.ToString();
+            Logger.LogInformation("要签名的字符串是 {str}", str);
             //计算签名
-            var bin = Encoding.UTF8.GetBytes(sb.ToString());
+            var result = GetSignForAndroid(str);
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str">不含& 与 回调key的拼接字符串。</param>
+        /// <returns></returns>
+        public byte[] GetSignForAndroid(string str)
+        {
+            var bin = Encoding.UTF8.GetBytes(str + "&" + AndroidCallbackKey);
             var result = MD5.HashData(bin);
             return result;
         }
@@ -211,7 +229,7 @@ namespace GY02.Managers
                 var name = c.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? c.Name;
                 return (name, c.GetValue(this)?.ToString());
             });
-            return coll.ToDictionary(c=>c.name,c=>c.Item2);
+            return coll.ToDictionary(c => c.name, c => c.Item2);
         }
     }
 
@@ -321,7 +339,7 @@ namespace GY02.Managers
                 var name = c.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? c.Name;
                 return (name, c.GetValue(this)?.ToString());
             });
-            return coll.ToDictionary(c=>c.name,c=>c.Item2);
+            return coll.ToDictionary(c => c.name, c => c.Item2);
         }
     }
 

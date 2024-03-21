@@ -100,6 +100,11 @@ namespace GY02.Managers
         public ConcurrentDictionary<string, GameUser> _Key2User = new ConcurrentDictionary<string, GameUser>();
 
         /// <summary>
+        /// 记录所有用户对象。
+        /// </summary>
+        public ConcurrentDictionary<string, GameUser> Key2User => _Key2User;
+
+        /// <summary>
         /// 票据到账号Key的映射。
         /// </summary>
         ConcurrentDictionary<Guid, string> _Token2Key = new ConcurrentDictionary<Guid, string>();

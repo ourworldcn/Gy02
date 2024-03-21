@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -20,7 +21,10 @@ using OW.Game.Managers;
 using OW.Game.Store;
 using OW.GameDb;
 using OW.SyncCommand;
+using System.Buffers;
 using System.IO.Compression;
+using System.Text;
+using System.Text.Json;
 
 internal class Program
 {
@@ -100,7 +104,7 @@ internal class Program
         var templateDbConnectionString = builder.Configuration.GetConnectionString("TemplateDbConnection").Replace("{Env}", builder.Environment.EnvironmentName);
 
         services.AddPooledDbContextFactory<GY02LogginContext>(options => options.UseLazyLoadingProxies().UseSqlServer(loggingDbConnectionString).EnableSensitiveDataLogging());
-        
+
         services.AddDbContext<GY02TemplateContext>(options => options.UseLazyLoadingProxies().UseSqlServer(templateDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Singleton);
         //services.AddDbContext<GY02UserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging(), ServiceLifetime.Scoped);
         services.AddDbContextFactory<GY02UserContext>(options => options.UseLazyLoadingProxies().UseSqlServer(userDbConnectionString).EnableSensitiveDataLogging());
@@ -127,15 +131,31 @@ internal class Program
         services.AddPublisherT0314();
 
         services.AddScoped(c => new SimpleGameContext());
-        //services.AddScoped<MyClassMiddleware>();
         var app = builder.Build();
 
         app.Use(async (context, next) =>
         {
             context.Request.EnableBuffering();
-            //await ReadRequestBody(context.Request.Body);
-            context.Request.Body.Position = 0;
+            var gcontext = context.RequestServices.GetRequiredService<SimpleGameContext>();
+            try
+            {
+                var tokenModel = (await JsonSerializer.DeserializeAsync<TokenDtoBase>(context.Request.Body))!;
+                if (tokenModel.Token != Guid.Empty)
+                {
+                    gcontext.Token = tokenModel.Token;
+                    var _GameAccountStore = context.RequestServices.GetRequiredService<GameAccountStoreManager>();
+                    if (_GameAccountStore.Token2Key.TryGetValue(tokenModel.Token, out var key))
+                    {
+                        if (_GameAccountStore.Key2User.TryGetValue(key, out var user))
+                            gcontext.GameChar = user.CurrentChar;
+                    }
 
+                }
+            }
+            catch (Exception)
+            {
+            }
+            context.Request.Body.Position = 0;
             await next.Invoke();
         });
         #endregion 追加服务到容器
@@ -221,7 +241,7 @@ namespace Global
     /// <summary>
     /// 项目自用中间件。
     /// </summary>
-    public class GY02Middleware 
+    public class GY02Middleware
     {
         /// <summary>
         /// 构造函数。
