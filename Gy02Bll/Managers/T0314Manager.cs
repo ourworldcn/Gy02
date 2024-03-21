@@ -81,8 +81,7 @@ namespace GY02.Managers
                 sb.Append(item.Value);
                 sb.Append('&');
             }
-
-            sb.Append(AndroidCallbackKey);
+            sb.Remove(sb.Length - 1, 1);    //去掉&号
             var str = sb.ToString();
             Logger.LogInformation("要签名的字符串是 {str}", str);
             //计算签名
