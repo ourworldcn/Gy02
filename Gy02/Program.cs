@@ -133,31 +133,31 @@ internal class Program
         services.AddScoped(c => new SimpleGameContext());
         var app = builder.Build();
 
-        app.Use(async (context, next) =>
-        {
-            context.Request.EnableBuffering();
-            var gcontext = context.RequestServices.GetRequiredService<SimpleGameContext>();
-            try
-            {
-                var tokenModel = (await JsonSerializer.DeserializeAsync<TokenDtoBase>(context.Request.Body))!;
-                if (tokenModel.Token != Guid.Empty)
-                {
-                    gcontext.Token = tokenModel.Token;
-                    var _GameAccountStore = context.RequestServices.GetRequiredService<GameAccountStoreManager>();
-                    if (_GameAccountStore.Token2Key.TryGetValue(tokenModel.Token, out var key))
-                    {
-                        if (_GameAccountStore.Key2User.TryGetValue(key, out var user))
-                            gcontext.GameChar = user.CurrentChar;
-                    }
+        //app.Use(async (context, next) =>
+        //{
+        //    context.Request.EnableBuffering();
+        //    var gcontext = context.RequestServices.GetRequiredService<SimpleGameContext>();
+        //    try
+        //    {
+        //        var tokenModel = (await JsonSerializer.DeserializeAsync<TokenDtoBase>(context.Request.Body))!;
+        //        if (tokenModel.Token != Guid.Empty)
+        //        {
+        //            gcontext.Token = tokenModel.Token;
+        //            var _GameAccountStore = context.RequestServices.GetRequiredService<GameAccountStoreManager>();
+        //            if (_GameAccountStore.Token2Key.TryGetValue(tokenModel.Token, out var key))
+        //            {
+        //                if (_GameAccountStore.Key2User.TryGetValue(key, out var user))
+        //                    gcontext.GameChar = user.CurrentChar;
+        //            }
 
-                }
-            }
-            catch (Exception)
-            {
-            }
-            context.Request.Body.Position = 0;
-            await next.Invoke();
-        });
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //    }
+        //    context.Request.Body.Position = 0;
+        //    await next.Invoke();
+        //});
         #endregion 追加服务到容器
 
         #region 配置HTTP管道

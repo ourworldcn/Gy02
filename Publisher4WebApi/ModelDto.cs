@@ -2943,6 +2943,28 @@ namespace GY02.Publisher
         public string Pwd { get; set; }
     }
 
+    /// <summary>
+    /// 确认订单功能的参数封装类。
+    /// </summary>
+    public class EnsureT0314OrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 游戏下单时传递的游戏订单号。
+        /// </summary>
+        public string OrderNo { get; set; }
+
+        /// <summary>
+        /// 购买的商品模板Id。
+        /// </summary>
+        public Guid GoodsTId { get; set; }
+    }
+
+    /// <summary>
+    /// 确认订单功能的返回值封装类。
+    /// </summary>
+    public class EnsureT0314OrderReturnDto : PropertyChangeReturnDto
+    {
+    }
     #endregion 0314相关
 }
 

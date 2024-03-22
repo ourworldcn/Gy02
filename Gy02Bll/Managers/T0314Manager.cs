@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
 using OW.Game.Managers;
 using System;
@@ -70,23 +71,39 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="dic"></param>
         /// <returns></returns>
-        public byte[] GetSignForAndroid(IDictionary<string, string> dic)
+        public byte[] GetSignForAndroid(IReadOnlyDictionary<string, string> dic)
         {
-            //得到字符串
-            var sb = new StringBuilder();
-            foreach (var item in dic.Where(c => c.Key != "sign").OrderBy(c => c.Key))
-            {
-                sb.Append(item.Key);
-                sb.Append('=');
-                sb.Append(item.Value);
-                sb.Append('&');
-            }
-            sb.Remove(sb.Length - 1, 1);    //去掉&号
-            var str = sb.ToString();
+            var str = GetSignString(dic);
             Logger.LogInformation("要签名的字符串是 {str}", str);
             //计算签名
             var result = GetSignForAndroid(str);
             return result;
+        }
+
+        /// <summary>
+        /// 获取代签名字符串。不含签名的key。
+        /// </summary>
+        /// <param name="dic"></param>
+        /// <returns></returns>
+        public string GetSignString(IReadOnlyDictionary<string, string> dic)
+        {
+            var sb = AutoClearPool<StringBuilder>.Shared.Get();
+            try
+            {
+                foreach (var item in dic.Where(c => c.Key != "sign").OrderBy(c => c.Key))
+                {
+                    sb.Append(item.Key);
+                    sb.Append('=');
+                    sb.Append(item.Value);
+                    sb.Append('&');
+                }
+                sb.Remove(sb.Length - 1, 1);    //去掉&号
+                return sb.ToString();
+            }
+            finally
+            {
+                AutoClearPool<StringBuilder>.Shared.Return(sb);
+            }
         }
 
         /// <summary>
@@ -341,6 +358,115 @@ namespace GY02.Managers
             return coll.ToDictionary(c => c.name, c => c.Item2);
         }
     }
+
+    //public class T0314PayReturnStringDto
+    //{
+    //    public T0314PayReturnStringDto()
+    //    {
+
+    //    }
+
+    //    /// <summary>
+    //    /// 购买道具的用户uid。
+    //    /// </summary>
+    //    [JsonPropertyName("uid")]
+    //    public string Uid { get; set; }
+
+    //    /// <summary>
+    //    /// 购买道具的用户username。
+    //    /// </summary>
+    //    [JsonPropertyName("username")]
+    //    public string UserName { get; set; }
+
+    //    /// <summary>
+    //    /// 游戏下单时传递的游戏订单号，原样返回。
+    //    /// </summary>
+    //    [JsonPropertyName("cpOrderNo")]
+    //    public string CpOrderNo { get; set; }
+
+    //    /// <summary>
+    //    /// SDK唯一订单号。
+    //    /// </summary>
+    //    [JsonPropertyName("orderNo")]
+    //    public string OrderNo { get; set; }
+
+    //    /// <summary>
+    //    /// 用户支付时间，如2017-02-06 14:22:32
+    //    /// </summary>
+    //    [JsonPropertyName("payTime")]
+    //    public string PayTime { get; set; }
+
+    //    /// <summary>
+    //    /// 订单支付方式，具体值对应支付渠道详见对照表.
+    //    /// </summary>
+    //    [JsonPropertyName("payType")]
+    //    public string PayType { get; set; }
+
+    //    /// <summary>
+    //    /// 用户支付金额（单位：元）,注意：如果游戏商品有多个数量，那么金额就是单价*数量
+    //    /// </summary>
+    //    [JsonPropertyName("payAmount")]
+    //    public string PayAmount { get; set; }
+
+    //    /// <summary>
+    //    /// 用户支付的币种，如RMB，USD等.
+    //    /// </summary>
+    //    [JsonPropertyName("payCurrency")]
+    //    public string PayCurrency { get; set; }
+
+    //    /// <summary>
+    //    /// 用户支付的游戏道具以美元计价的金额（单位：元）.注意：如果游戏商品有多个数量，那么金额就是单价*数量
+    //    /// </summary>
+    //    [JsonPropertyName("usdAmount")]
+    //    public string UsdAmount { get; set; }
+
+    //    /// <summary>
+    //    /// 支付状态，为0表示成功，为1时游戏不做处理
+    //    /// </summary>
+    //    [JsonPropertyName("payStatus")]
+    //    public string PayStatus { get; set; }
+
+    //    /// <summary>
+    //    /// 充值折扣，取值范围0~1(不包含0），默认为1表示不折扣；如值为0.2表示多发20%的元宝
+    //    /// </summary>
+    //    [JsonPropertyName("actRate")]
+    //    public string ActRate { get; set; }
+
+    //    /// <summary>
+    //    /// 游戏下单时传递的扩展参数，将原样返回。
+    //    /// </summary>
+    //    [JsonPropertyName("extrasParams")]
+    //    public string ExtrasParams { get; set; }
+
+    //    /// <summary>
+    //    /// 内购订阅型商品订单使用，如果有此字段表示订单订阅状态。cp监测到有此字段时不需要发货。字段取值为：2：订阅取消
+    //    /// </summary>
+    //    [JsonPropertyName("subscriptionStatus")]
+    //    public string SubscriptionStatus { get; set; }
+
+    //    /// <summary>
+    //    /// 内购订阅型商品订单取消订阅原因。当有subscriptionStatus字段时此字段必有
+    //    /// </summary>
+    //    [JsonPropertyName("subReason")]
+    //    public string SubReason { get; set; }
+
+    //    /// <summary>
+    //    /// 签名值，游戏应根据签名约定，本地计算后与此值进行比对
+    //    /// </summary>
+    //    [JsonPropertyName("sign")]
+    //    public string Sign { get; set; }
+
+    //    public Dictionary<string, string> GetDic()
+    //    {
+    //        var dic = new Dictionary<string, string>();
+    //        var coll = GetType().GetProperties().Select(c =>
+    //        {
+    //            var name = c.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? c.Name;
+    //            return (name, c.GetValue(this)?.ToString());
+    //        });
+    //        return coll.ToDictionary(c => c.name, c => c.Item2);
+    //    }
+    //}
 
     public static class T0314ManagerExtensions
     {

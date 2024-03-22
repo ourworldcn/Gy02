@@ -2251,6 +2251,26 @@
             密码。若首次登录，创建了账号则这里返回密码。否则返回null。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.EnsureT0314OrderParamsDto">
+            <summary>
+            确认订单功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.EnsureT0314OrderParamsDto.OrderNo">
+            <summary>
+            游戏下单时传递的游戏订单号。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.EnsureT0314OrderParamsDto.GoodsTId">
+            <summary>
+            购买的商品模板Id。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.EnsureT0314OrderReturnDto">
+            <summary>
+            确认订单功能的返回值封装类。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.DispatcherDemo">
             <summary>
             示例。

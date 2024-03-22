@@ -287,7 +287,7 @@ namespace GY02
                 var obj = new T0314PayReturnStringDto { PayAmount = "1.2m" };
                 var dic2 = obj.GetDic();
                 var dic = mapper.Map<Dictionary<string, string>>(obj);
-                svc.GetSignForAndroid("actRate=1&cpOrderNo=064ace1d-1ac1-4099-8174-649b7f72f045&extrasParams=&orderNo=0020240321165705736415&payAmount=0.990000&payCurrency=USD&payStatus=0&payTime=2024-03-21 16:57:12&payType=30&uid=16588787&usdAmount=0.99&username=gt17926472");
+                //svc.GetSignStringForAndroid("actRate=1&cpOrderNo=064ace1d-1ac1-4099-8174-649b7f72f045&extrasParams=&orderNo=0020240321165705736415&payAmount=0.990000&payCurrency=USD&payStatus=0&payTime=2024-03-21 16:57:12&payType=30&uid=16588787&usdAmount=0.99&username=gt17926472");
             }
             #endregion 测试用代码
             catch (Exception)
