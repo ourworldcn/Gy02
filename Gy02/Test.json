@@ -1,7 +1,54 @@
-{}
-
-//uid=16588787&username=gt17926472&cpOrderNo=43ad8c30-c961-4bf5-b119-330e28ce0171&orderNo=0020240321144229154165&payTime=2024-03-21 14:42:40&payType=30&payAmount=0.990000&payCurrency=USD&usdAmount=0.99&payStatus=0&actRate=1&extrasParams=&subscriptionStatus=&subReason=&sign=e6b86aca3a722c432a12d970885504e0
-//uid=16588787&username=gt17926472&cpOrderNo=43ad8c30-c961-4bf5-b119-330e28ce0171&orderNo=0020240321144229154165&payTime=2024-03-21 14:42:40&payType=30&payAmount=0.990000&payCurrency=USD&usdAmount=0.99&payStatus=0&actRate=1&extrasParams=&subscriptionStatus=&subReason=&sign=e6b86aca3a722c432a12d970885504e0
-//e6b86aca3a722c432a12d970885504e0
-//9dc190977cbe391cbd7f283f44cd1912
-//9dc190977cbe391cbd7f283f44cd1912
+{
+  "Genus": [
+    "cj_guanqia"
+  ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
+    "Period": {
+      "Start": "2023-05-30T03:03:28.385Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "TjIns": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [
+            ],
+            "TId": "1e5fc645-2833-48a1-add5-6b83a3407d03",
+            "MinCount": 1,
+            "GeneralConditional": [
+            ],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0,
+        "Genus": [
+        ]
+      }
+    ],
+    "Exp2LvSequence": [
+      1
+    ],
+    "Outs": [
+      [
+        {
+          "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+          "TId": "b3d0cdf7-513b-4bc0-9e28-ee24a83e04fb",
+          "Count": 1
+        },
+        {
+          "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+          "TId": "60c28119-42b0-4ebc-bc37-24be3afaebf4",
+          "Count": 1
+        }
+      ]
+    ]
+  }
+}

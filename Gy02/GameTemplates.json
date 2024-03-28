@@ -54,13 +54,13 @@
       "DisplayName": "7日签到第1天 第一组条件序列",
       "Id": "289a5c18-086b-4fe5-8b76-53699c841cb7",
       "Gid": 190201004,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f00fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\"],\"Counts\":[0,1]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f00fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\"],\"Counts\":[0,0]}}}"
     },
     {
       "DisplayName": "7日签到第1天 第一组产出序列",
       "Id": "ad9fa99b-1831-4154-a0ac-661d0facf606",
       "Gid": 190201005,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f00fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\"],\"Counts\":[5000,8000]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f00fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"9c559895-9a2c-43a7-b793-e879a600487c\"],\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"9c79a55a-106f-4f32-9d44-484d86a665fd\"],\"Counts\":[5000,2]}}}"
     },
     {
       "DisplayName": "7日签到第2天 第一组",
@@ -15097,7 +15097,7 @@
       "DisplayName": "荒野雪原成就奖励",
       "Id": "09825809-2468-488e-800c-bee89d46163b",
       "Gid": 220103003,
-      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1e5fc645-2833-48a1-add5-6b83a3407d03\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":2000},{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60c28119-42b0-4ebc-bc37-24be3afaebf4\",\"Count\":1}]]}}"
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1e5fc645-2833-48a1-add5-6b83a3407d03\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"b3d0cdf7-513b-4bc0-9e28-ee24a83e04fb\",\"Count\":1},{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"60c28119-42b0-4ebc-bc37-24be3afaebf4\",\"Count\":1}]]}}"
     },
     {
       "DisplayName": "火山溶洞成就奖励",
@@ -15115,7 +15115,7 @@
       "DisplayName": "荒废古道成就奖励",
       "Id": "375b11c4-0e34-43ef-8fee-b8b9b5008627",
       "Gid": 220103006,
-      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"da564dad-8b75-420a-b7e9-d1aab85617ec\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd871154-1aab-4add-8433-be4886244560\",\"Count\":1},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
+      "PropertiesString": "{\"Genus\":[\"cj_guanqia\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"da564dad-8b75-420a-b7e9-d1aab85617ec\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"ed3773b3-2c40-4bed-ac87-db6156384f43\",\"Count\":1},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
     },
     {
       "DisplayName": "水晶矿洞成就奖励",
@@ -20291,6 +20291,12 @@
       "Id": "f465cb2b-6435-4ccb-89ed-af75d4c5b8f3",
       "Gid": 180609011,
       "PropertiesString": "{\"Genus\":[\"gs_jijinfufei2\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodStrig\":\"99y\",\"ValidPeriodString\":\"99y\"},\"MaxCount\":1,\"GroupNumber\":1,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1f31807a-f633-4d3a-8e8e-382ad105d061\",\"MinCount\":3813629,\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"fc60e07e-910b-4054-a1fd-4bb9e6832d80\",\"MinCount\":1,\"GroupMask\":1}],\"Count\":0}],\"Outs\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5000}]}}"
+    },
+    {
+      "DisplayName": "兑换码-1",
+      "Id": "de51abe6-aeb9-4c9f-8d9a-0024bdb4020d",
+      "Gid": 180701001,
+      "PropertiesString": "{\"Genus\":[\"gs_duihuanm\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"TId\":\"ebaf2894-7db4-4577-8855-e07d9cef9ea2\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":10000}]}}"
     }
   ]
 }
