@@ -6884,25 +6884,25 @@
       "DisplayName": "火山溶洞",
       "Id": "28314d37-7d90-4a13-992f-22485de7b020",
       "Gid": 210101004,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[69,203,432],\"scoreTime\":[450,500,600],\"charExp\":620}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13005,\"comment_txt\":13017,\"suggest\":[60,176,432],\"scoreTime\":[450,500,600],\"charExp\":620}"
     },
     {
       "DisplayName": "平原小路",
       "Id": "f8b2fd94-8e7e-4c62-9c37-411f24a9b6a1",
       "Gid": 210101005,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13004,\"comment_txt\":13016,\"suggest\":[89,260,450],\"scoreTime\":[450,500,600],\"charExp\":600}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13004,\"comment_txt\":13016,\"suggest\":[78,231,441],\"scoreTime\":[450,500,600],\"charExp\":600}"
     },
     {
       "DisplayName": "荒废古道",
       "Id": "da564dad-8b75-420a-b7e9-d1aab85617ec",
       "Gid": 210101006,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13006,\"comment_txt\":13018,\"suggest\":[109,321,470],\"scoreTime\":[450,500,600],\"charExp\":650}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13006,\"comment_txt\":13018,\"suggest\":[99,291,460],\"scoreTime\":[450,500,600],\"charExp\":650}"
     },
     {
       "DisplayName": "水晶矿洞",
       "Id": "1bc14a08-1551-4f53-9a51-11876aa7610a",
       "Gid": 210101007,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[131,386,491],\"scoreTime\":[450,500,600],\"charExp\":700}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"name_txt\":13007,\"comment_txt\":13019,\"suggest\":[120,352,480],\"scoreTime\":[450,500,600],\"charExp\":700}"
     },
     {
       "DisplayName": "海兽领地",

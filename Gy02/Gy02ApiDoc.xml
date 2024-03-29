@@ -86,6 +86,11 @@
             
             </summary>
         </member>
+        <member name="M:GY02.OwDeflateCompressionProvider.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
         <member name="P:GY02.OwDeflateCompressionProvider.EncodingName">
             <summary>
             <inheritdoc/>

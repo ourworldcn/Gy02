@@ -22,6 +22,7 @@ using OW.Game.Store;
 using OW.GameDb;
 using OW.SyncCommand;
 using System.Buffers;
+using System.Diagnostics;
 using System.IO.Compression;
 using System.Text;
 using System.Text.Json;
@@ -36,19 +37,27 @@ internal class Program
 
         var services = builder.Services;
         services.AddMemoryCache();
-        builder.Configuration.AddJsonFile("GameTemplates.json", false, true);    //加入模板信息配置文件
-                                                                                 //builder.Services.AddW3CLogging(logging =>
-                                                                                 //{
-                                                                                 //    // Log all W3C fields
-                                                                                 //    logging.LoggingFields = W3CLoggingFields.All;
-
+        //加入模板信息配置文件
+        builder.Configuration.AddJsonFile("GameTemplates.json", false, true);
+        //builder.Services.AddW3CLogging(logging =>
+        //{
+        //    // Log all W3C fields
+        //    logging.LoggingFields = W3CLoggingFields.All;
         //    logging.FileSizeLimit = 5 * 1024 * 1024;
         //    logging.RetainedFileCountLimit = 2;
         //    logging.FileName = "MyLogFile";
         //    logging.LogDirectory = @"C:\logs";
         //    logging.FlushInterval = TimeSpan.FromSeconds(2);
         //});
-
+        //需要文件日志则用Serilog.Extensions.Logging.File
+        builder.Logging.AddEventLog(eventLogSettings =>
+        {
+            eventLogSettings.SourceName = "OwLogs";
+        });
+        //var fileListener = new TextWriterTraceListener("OwLogs.txt");
+        //builder.Logging.AddTraceSource(new SourceSwitch("Debug"),fileListener);
+        //Trace.Listeners.Add(fileListener);
+        
         #region 追加服务到容器
 
         // Add services to the container.
@@ -191,13 +200,13 @@ internal class Program
         #endregion 配置HTTP管道
 
         app.Run();
-
         if (Global.Program.ReqireReboot) //若需要重启
         {
             (app as IDisposable)?.Dispose();
             app = null;
             GC.Collect(GC.MaxGeneration, GCCollectionMode.Forced);
             GC.WaitForFullGCComplete();
+            Thread.Sleep(1000);
             Global.Program.ReqireReboot = false;
             goto lbStart;
         }

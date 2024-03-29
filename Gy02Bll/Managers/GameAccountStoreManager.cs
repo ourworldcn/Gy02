@@ -95,6 +95,11 @@ namespace GY02.Managers
         GameSqlLoggingManager _SqlLoggingManager;
 
         /// <summary>
+        /// 大致记录cpu繁忙度的同步元素。起始有与逻辑cpu数量两倍或16（取较大者）相同的信号数量。
+        /// </summary>
+        public readonly SemaphoreSlim SemaphoreSlim = new SemaphoreSlim(Math.Max(Environment.ProcessorCount * 2, 16));
+
+        /// <summary>
         /// 记录所有用户对象。
         /// </summary>
         public ConcurrentDictionary<string, GameUser> _Key2User = new ConcurrentDictionary<string, GameUser>();
@@ -652,6 +657,7 @@ namespace GY02.Managers
                 _ContextFactory = default;
                 _Lifetime = default;
                 _Service = default;
+                SemaphoreSlim.Dispose();
                 base.Dispose(disposing);
             }
         }

@@ -192,6 +192,14 @@ namespace GY02
     public class OwDeflateCompressionProvider : Microsoft.AspNetCore.ResponseCompression.ICompressionProvider
     {
         /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public OwDeflateCompressionProvider()
+        {
+            
+        }
+
+        /// <summary>
         /// <inheritdoc/>
         /// </summary>
         public string EncodingName => "deflate";

@@ -101,7 +101,7 @@ namespace GY02
                 using var scope = _Services.CreateScope();
                 var service = scope.ServiceProvider;
                 Task.Run(InitializeAdmin);
-                GC.Collect(GC.MaxGeneration,GCCollectionMode.Optimized);
+                GC.Collect(GC.MaxGeneration, GCCollectionMode.Optimized);
             }, _Services, cancellationToken);
             //Cult();
 
@@ -286,6 +286,10 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var svc1 = _Services.GetService<GameAccountStoreManager>();
+                svc1.SemaphoreSlim.Wait();
+                //using var sem = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
+                //sem.TryEnterReadLock(1);
                 var obj = new T0314PayReturnStringDto { PayAmount = "1.2m" };
                 var dic2 = obj.GetDic();
                 var dic = mapper.Map<Dictionary<string, string>>(obj);
@@ -374,7 +378,7 @@ namespace GY02
             foreach (var name in names)
             {
                 var tmp = new CultureInfo(name);
-                var str = DateTime.Now.ToString("F",tmp);
+                var str = DateTime.Now.ToString("F", tmp);
                 sb.AppendLine($"{tmp.DisplayName}\t{tmp.NativeName}\t{tmp.Name}\t{tmp.EnglishName}\t{tmp.LCID}");
             }
             using var file = File.OpenWrite("C:\\st.txt");
