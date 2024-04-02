@@ -51,7 +51,7 @@ namespace GY02.Managers
             _Lifetime.ApplicationStopping.Register(() => _Timer?.Dispose());    //试图关闭清理计时器
             var udpOpt = new OwUdpClientOptions
             {
-                LocalEndPoint = new IPEndPoint(IPAddress.Any, Options.LocalPort),
+                LocalEndPoint = new IPEndPoint(IPAddress.Parse(Options.LocalIp), Options.LocalPort),
                 RemoteEndPoint = new IPEndPoint(IPAddress.Any, 0),
                 //ReceiveBufferSize = 1024_000,
                 //SendBufferSize = 1024_000,
