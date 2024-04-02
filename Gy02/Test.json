@@ -1,7 +1,5 @@
 {
-  "Genus": [
-    "cj_guanqia"
-  ],
+  "Genus": [ "cj_guanqia" ],
   "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
   "stk": -1,
   "Count0Reserved": true,
@@ -19,33 +17,28 @@
         "Conditional": [
           {
             "ParentTId": null,
-            "Genus": [
-            ],
-            "TId": "1e5fc645-2833-48a1-add5-6b83a3407d03",
+            "Genus": [],
+            "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
             "MinCount": 1,
-            "GeneralConditional": [
-            ],
+            "GeneralConditional": [],
             "GroupMask": 1
           }
         ],
         "Count": 0,
-        "Genus": [
-        ]
+        "Genus": []
       }
     ],
-    "Exp2LvSequence": [
-      1
-    ],
+    "Exp2LvSequence": [ 1 ],
     "Outs": [
       [
         {
-          "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-          "TId": "b3d0cdf7-513b-4bc0-9e28-ee24a83e04fb",
-          "Count": 1
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 2000
         },
         {
-          "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-          "TId": "60c28119-42b0-4ebc-bc37-24be3afaebf4",
+          "ParentTId": null,
+          "TId": "6f947821-bff5-4c1b-8cbb-8c30a633505a",
           "Count": 1
         }
       ]

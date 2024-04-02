@@ -1,31 +1,47 @@
 {
-  "Items": [
-    {
-      "Rewards": [
+  "Genus": [ "cj_guanqia" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
+    "Period": {
+      "Start": "2023-05-30T03:03:28.385Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "TjIns": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0,
+        "Genus": []
+      }
+    ],
+    "Exp2LvSequence": [ 1 ],
+    "Outs": [
+      [
         {
-          "ParentTId": "0Vo6EvDU2UyavNRAQZ2eDQ==",
-          "TId": "ITRbpIg2xUO49UKdt2IfaQ==",
-          "Count": 2000,
-          "AddPropDic": {}
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+          "Count": 2000
         },
         {
-          "ParentTId": "h6vt5jQARU+AQB8NVlzPWA==",
-          "TId": "GYHCYLBCvE68NyS+Ovrr9A==",
-          "Count": 1,
-          "AddPropDic": {}
+          "ParentTId": null,
+          "TId": "6f947821-bff5-4c1b-8cbb-8c30a633505a",
+          "Count": 1
         }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 1
-    }
-  ],
-  "ClientDictionary": {},
-  "CompositingAccruedCost": [],
-  "LvUpAccruedCost": [],
-  "lv": 1,
-  "LastModifyDateTime": "2024-03-28T02:16:32.4602473Z",
-  "IsValid": true,
-  "CountOfLastModifyUtc": "2024-03-28T04:09:26.0173426Z",
-  "Fcps": {}
+      ]
+    ]
+  }
 }

@@ -121,6 +121,7 @@ namespace GY02.Managers
                 {
                     tmp = Roll(hs, random);
                     if (tmp is null) return null;
+                    
                     result.Add(tmp);
                     if (!allowRepetition)
                     {
