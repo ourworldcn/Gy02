@@ -96,17 +96,54 @@ namespace GY02.Commands
                     GameChar = command.GameChar,
                     Mail = new SendMailItem
                     {
-                        Subject = "Welcome to the open beta test",
-                        Body = "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!",
+                        Subject = "Facebook Community Guidelines",
+                        Body = "Join our community platform for generous rewards\r\nDear Heroes,\r\nWelcome to \"Animals BAM BAM\"! To celebrate the official launch of this paid closed beta test, we will be distributing gift codes containing generous in-game rewards on our official community platform Facebook. After obtaining the gift code, open the game settings, click the [Redeem Code] button, and enter the gift code to claim your rewards. \r\nAdditionally, you can also get the latest official news and game guides on our official community platform, participate in various exciting activities, and share your fantastic gaming moments. \r\nFacebook: https://www.facebook.com/profile.php?id=61556765890056\r\nIf you have any questions or suggestions, feel free to contact our customer service team anytime. Wish you an enjoyable gaming experience! \r\n\r\n[Animals BAM BAM] Operations Team",
                     },
                 };
                 commandMail.Mail.Dictionary1 = new Dictionary<string, string>() {
-                    { "English", "Welcome to the open beta test" },
-                    { "Portuguese", "Bem-vindo ao teste beta aberto"},
+                    { "Chinese", "Facebook社区指南" },
+                    { "Filipino", "Mga Alituntunin ng Komunidad ng Facebook"},
+                    { "Indonesian", "Pedoman Komunitas Facebook"},
+                    { "Malay", "Garis Panduan Komuniti Facebook"},
+                    { "Thai", "แนวทางปฏิบัติของชุมชน Facebook"},
                 };
                 commandMail.Mail.Dictionary2 = new Dictionary<string, string>() {
-                    { "English", "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!" },
-                    { "Portuguese", "Caro Herói,\r\n\r\nParabéns pela sua participação no Beta Aberto!\r\n\r\nEmpunhe as armas e junte-se à batalha num mundo cheio de monstros! Enfrente cada inimigo!\r\n\r\nSinta-se à vontade para nos dar feedback enquanto continuamos a melhorar a experiência de jogo.\r\n\r\nA aventura começará em breve!"},
+                    { "Chinese", "加入社群平台，获取丰厚奖励\r\n亲爱的英雄，\r\n欢迎您来到《Animals BAMBAM》， 为庆祝本次付费删档测试正式启动，我们将在官方社群平台Facebook发放包含丰厚游戏奖励的礼包码，获取礼包码后打开游戏设置点击【兑换码】按钮，将礼包码输入就可以获取。\r\n此外您还可以在我们的官方社群获取官方最新资讯和游戏攻略，参加各类精彩活动，分享您的游戏精彩瞬间。\r\nFacebook：https://www.facebook.com/profile.php?id=61556765890056\r\n如果您有任何疑问或建议，欢迎随时联系我们的客服团队。祝您游戏愉快！\r\n\r\n【Animals BAMBAM】运营团队" },
+                    { "Filipino", "Sumali sa ating platform ng komunidad para sa maraming mga reward.\r\nMinamahal na Mga Hero,\r\nWelcome sa \"Animals BAM BAM\" ! Para ipagdiwang ang opisyal na paglulunsad ng paid closed beta test na ito, kami ay magbabahagi ng mga gift code na naglalaman ng mga maraming in-game reward sa ating opisyal na platform ng komunidad na Facebook. Matapos makuha ang gift code, buksan ang setting ng laro, i-click ang [Redeem Code] button, at ilagay ang gift code para i-claim ang iyong mga reward. \r\nDagdag pa dito, makakakuha ka rin ng mga napapanahong opisyal na balita at mga gabay sa laro sa ating opisyal na platform ng komunidad, makilahok sa ilang nakakatuwang mga aktibidad, at magbahagi ng iyong mga sandali sa karanasan ng masayang paglalaro. \r\nFacebook: https://www.facebook.com/profile.php?id=61556765890056\r\nKung may mga katanungan ka o mga mungkahi, huwag mag-atubiling makipag-ugnayan sa ating team ng coustomer service anumang oras. Hangad namin ang isang mahusay na karanasan sa paglalaro! \r\n\r\n[Animals BAM BAM] Operations Team"},
+                    { "Indonesian", "Bergabunglah dengan platform sosmed dan dapatkan hadiah besar!\r\nPahlawan yang terhormat,\r\nSelamat datang di \"Animals BAMBAM\". Untuk merayakan peluncuran resmi beta berbayar penghapusan data ini, kami akan mengeluarkan kode giftpack berisi hadiah game yang melimpah di Facebook. Setelah mendapatkan kode giftpack, buka pengaturan game dan klik tombol [Kode Penukaran], masukkan kode giftpack untuk mendapatkannya. \r\nSelain itu, kamu juga bisa mendapatkan informasi resmi dan strategi permainan terkini di komunitas resmi kami, mengikuti berbagai event menarik, serta berbagi momen bermainmu yang menyenangkan. \r\nFacebook: https://www.facebook.com/profile.php?id=61556765890056\r\nHubungi tim layanan pelanggan kami jika memiliki pertanyaan atau saran. Selamat bermain! \r\n\r\nTim operasional [Animals BAMBAM]"},
+                    { "Malay", "Sertai platform sosial, dapatkan ganjaran hebat\r\nWira yang dihormati,\r\nSelamat datang ke \"Animals BAM BAM\", untuk meraikan pelancaran rasmi ujian beta berbayar ini, kami akan mengedarkan kod hadiah yang mengandungi ganjaran permainan kaya di platform sosial rasmi Facebook, selepas mendapatkan kod hadiah, buka tetapan permainan dan klik butang [Tebus Kod], masukkan kod hadiah untuk mendapatkannya. \r\nDi samping itu, anda juga boleh mendapatkan berita rasmi dan petua permainan terkini dalam komuniti rasmi kami, anda juga berpeluang untuk mengambil bahagian dalam pelbagai aktiviti menarik dan boleh berkongsi momen menarik permainan anda. \r\nFacebook: https://www.facebook.com/profile.php?id=61556765890056\r\nSekiranya anda mempunyai sebarang pertanyaan atau cadangan, sila hubungi pasukan khidmat pelanggan kami. Selamat bermain! \r\n\r\nPasukan Operasi \"Animals BAM BAM\""},
+                    { "Thai", "เข้าร่วมแพลตฟอร์มโซเชียล จะได้รับรางวัลจำนวนมาก\r\nสวัสดี ฮีโร่\r\nขอต้อนรับสู่ \"Animals BAMBAM\" เพื่อฉลองเปิดให้ทดสอบลบไฟล์แบบชำระเงินอย่างเป็นทางการในครั้งนี้ เราจะแจกโค้ดแลกที่มีรางวัลเกมจำนวนมากที่ Facebook ทางการของเรา หลังจากรับโค้ดแลกแล้ว เปิดหน้าตั้งค่าของเกมและกด [โค้ดแลก] จากนั้นใส่โค้ดแลกคุณก็จะสามารถรับได้ \r\nนอกจากนี้ คุณยังสามารถรับข่าวสารเกมล่าสุดและกลยุทธ์เกมได้ที่กลุ่ม Facebook ของเรา แถมยังมีกิจกรรมที่น่าตื่นเต้นอีกมากมาย มาแบ่งปันช่วงเวลาการเล่นเกมของคุณกัน \r\nFacebook：https://www.facebook.com/profile.php?id=61556765890056\r\nหากคุณมีข้อสงสัยหรือคำแนะนำใด ๆ โปรดติดต่อฝ่ายบริการลูกค้าของเราได้ตลอดเวลา ขอให้สนุกกับการเล่นเกมนะ! \r\n\r\nทีมงาน [Animals BAMBAM]"},
+                };
+                commandMail.ToIds.Add(command.GameChar.Id);   //加入收件人
+                commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary
+                {
+                    TId = Guid.Parse("a45b3421-3688-43c5-b8f5-429db7621f69"),
+                    Count = 10000,
+                });     //加入附件
+                _SyncCommandManager.Handle(commandMail);
+                //第二封
+                commandMail = new SendMailCommand
+                {
+                    GameChar = command.GameChar,
+                    Mail = new SendMailItem
+                    {
+                        Subject = "Welcome to the open beta",
+                        Body = "Hi heroes,\r\nTo celebrate the official launch of the paid closed beta test of \"Animals BAM BAM\" today, and to thank you for your enthusiasm and support, we hereby offer you [100 diamonds]. \r\nWish all heroes an enjoyable gaming experience!",
+                    },
+                };
+                commandMail.Mail.Dictionary1 = new Dictionary<string, string>() {
+                    { "Chinese", "欢迎参加公开测试" },
+                    { "Filipino", "Welcome sa pagsali sa open beta"},
+                    { "Indonesian", "Selamat datang di beta publik"},
+                    { "Malay", "Selamat datang ke Beta Terbuka"},
+                    { "Thai", "ยินดีต้อนรับสู่การทดสอบเบต้า"},
+                };
+                commandMail.Mail.Dictionary2 = new Dictionary<string, string>() {
+                    { "Chinese", "嗨 英雄，\r\n为了庆祝《Animals BAMBAM》 今日正式开启付费删档测试，为了感谢大家的热情与支持，我们特此奉上【钻石*100】。\r\n祝各位英雄游戏愉快！" },
+                    { "Filipino", "Kamusta Mga Hero,\r\nPara ipagdiwang ang opisyal na paglulunsad ng paid closed beta test ng \"Animals BAM BAM\" ngayon, at para pasalamatan ka para sa iyong suporta at sigasig, kami ay nag-aalok sa iyo ng [100 diamonds] \r\nHangad namin na lahat ng mga hero ay makakaranas ng mahusay na karanasan sa paglalaro!"},
+                    { "Indonesian", "Hai, pahlawan!\r\nUntuk merayakan peluncuran resmi beta berbayar penghapusan data \"Animals BAMBAM\" hari ini, dan untuk berterima kasih kepada semua orang atas antusiasme dan dukungannya, dengan ini kami berikan [Diamond*100]. \r\nSelamat bermain, para pahlawan!"},
+                    { "Malay", "Hai, para wira,\r\nUntuk meraikan permulaan rasmi ujian beta berbayar \"Animals BAM BAM\" hari ini serta mengucapkan terima kasih atas semangat dan sokongan para wira, kami akan menghadiahkan [Berlian * 100]. \r\nPara wira, selamat bermain!"},
+                    { "Thai", "สวัสดี ฮีโร่\r\nเพื่อฉลองเปิดให้ทดสอบลบไฟล์แบบชำระเงินเกม \"Animals BAMBAM\" อย่างเป็นทางการในวันนี้ และเพื่อขอบคุณสำหรับความกระตือรือร้นและการสนับสนุนจากทุกคน เราจึงขอมอบ [เพชร*100] ให้กับคุณ \r\nขอให้ฮีโร่ทุกท่านสนุกกับการเล่นเกมนะ!"},
                 };
                 commandMail.ToIds.Add(command.GameChar.Id);   //加入收件人
                 commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary
@@ -115,57 +152,38 @@ namespace GY02.Commands
                     Count = 100,
                 }); ;    //加入附件
                 _SyncCommandManager.Handle(commandMail);
-                //    //第二封
-                //    // commandMail = new SendMailCommand
-                //    //{
-                //    //    GameChar = command.GameChar,
-                //    //    Mail = new SendMailItem
-                //    //    {
-                //    //        Subject = "Welcome to the open beta test",
-                //    //        Body = "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!",
-                //    //    },
-                //    //};
-                //    //commandMail.Mail.Dictionary1 = new Dictionary<string, string>() {
-                //    //    { "English", "Animal Bumper Survey & Feedback" },
-                //    //    { "Portuguese", "Pesquisa e Feedback do Animal Bumper"},
-                //    //};
-                //    //commandMail.Mail.Dictionary2 = new Dictionary<string, string>() {
-                //    //    { "English", "Dear Players,\r\n\r\nHow is your experience with Animal Bumper so far? We have prepared a Survey to collect your experience feedback. We hope you can take a few minutes to fill it out. \r\nSurvey Link: https://forms.gle/iVrzEQwoWNJ1cuwD9\r\n\r\nWe will randomly select 10 players who filled out the Survey on Febuary 5th and provide each of them with a Google gift card worth $10.\r\nThank you for taking the time to share your honest thoughts. Your feedback will aid our efforts in improving the game experience!\r\n\r\nOperation Team [Animal Bumper]" },
-                //    //    { "Portuguese", "Caros Jogadores,\r\n\r\nComo tem sido sua experiência com o Animal Bumper até agora? Preparamos uma Pesquisa para coletar seu feedback sobre a experiência. Esperamos que você possa dedicar alguns minutos para preenchê-la. \r\nLink da Pesquisa: https://forms.gle/N8fnakPGmRKkpv5Z8\r\n\r\nVamos selecionar aleatoriamente 10 jogadores que preencheram a Pesquisa no dia 5 de fevereiro e fornecer a cada um deles um cartão-presente do Google no valor de $10.\r\n\r\nObrigado por dedicar seu tempo para compartilhar seus pensamentos honestos. Seu feedback ajudará nossos esforços para melhorar a experiência do jogo!\r\n\r\nEquipe de Operação [Animal Bumper]"},
-                //    //};
-                //    //commandMail.ToIds.Add(command.GameChar.Id);   //加入收件人
-                //    //commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary
-                //    //{
-                //    //    TId = Guid.Parse("c9575f24-a33d-49ba-b130-29b6ff4d62c7"),
-                //    //    Count = 20,
-                //    //}); ;    //加入附件
-                //    //_SyncCommandManager.Handle(commandMail);
 
-                //    //第三封
-                //    //commandMail = new SendMailCommand
-                //    //{
-                //    //    GameChar = command.GameChar,
-                //    //    Mail = new SendMailItem
-                //    //    {
-                //    //        Subject = "Welcome to the open beta test",
-                //    //        Body = "Dear Hero,\r\n\r\nCongratulations on your participation in Open Beta!\r\n\r\nTake up weapons and join the battle in a world full of monsters! Fight with every enemy!\r\n\r\nFeel free to provide us with feedback as we continue to improve the gaming experience.\r\n\r\nThe adventure will begin soon!",
-                //    //    },
-                //    //};
-                //    //commandMail.Mail.Dictionary1 = new Dictionary<string, string>() {
-                //    //    { "English", "Join our Official Discord" },
-                //    //    { "Portuguese", "Junte-se ao nosso Discord Oficial"},
-                //    //};
-                //    //commandMail.Mail.Dictionary2 = new Dictionary<string, string>() {
-                //    //    { "English", "Dear Players,\r\n\r\nOur official community Discord server is ready for you to join!\r\nJoin Animal Bumper’s Official Discord to connect with other players, discuss strategies, and stay updated on the latest game news!!\r\n\r\nOfficial Discord invite: https://discord.gg/Te73CNuZu2\r\n\r\nThank you for your support to Animal Bumper! \r\n\r\nOperation Team [Animal Bumper]" },
-                //    //    { "Portuguese", "Caros Jogadores,\r\n\r\nNosso servidor oficial da comunidade no Discord está pronto para você se juntar!\r\nJunte-se ao Discord Oficial do Animal Bumper para se conectar com outros jogadores, discutir estratégias e ficar atualizado sobre as últimas notícias do jogo!!\r\n\r\nConvite oficial do Discord: https://discord.gg/MqXJEy6yGQ\r\n\r\nObrigado pelo seu apoio ao Animal Bumper!\r\n\r\nEquipe de Operação [Animal Bumper]"},
-                //    //};
-                //    //commandMail.ToIds.Add(command.GameChar.Id);   //加入收件人
-                //    //commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary
-                //    //{
-                //    //    TId = Guid.Parse("c9575f24-a33d-49ba-b130-29b6ff4d62c7"),
-                //    //    Count = 20,
-                //    //}); ;    //加入附件
-                //    //_SyncCommandManager.Handle(commandMail);
+                //第三封
+                commandMail = new SendMailCommand
+                {
+                    GameChar = command.GameChar,
+                    Mail = new SendMailItem
+                    {
+                        Subject = "Discord Community Guide",
+                        Body = "Join our community platform for generous rewards\r\nDear Heroes,\r\nWelcome to \"Animals BAM BAM\"! To celebrate the official launch of this paid closed beta test, we will be distributing gift codes containing generous in-game rewards on our official community platform Discord. After obtaining the gift code, open the game settings, click the [Redeem Code] button, and enter the gift code to claim your rewards. \r\nAdditionally, you can also get the latest official news and game guides on our official community platform, participate in various exciting activities, and share your fantastic gaming moments. \r\nDiscord:https://discord.gg/kQAZ7AWf\r\nIf you have any questions or suggestions, feel free to contact our customer service team anytime. Wish you an enjoyable gaming experience! \r\n\r\n[Animals BAM BAM] Operations Team",
+                    },
+                };
+                commandMail.Mail.Dictionary1 = new Dictionary<string, string>() {
+                    { "Chinese", "Discord社区指南" },
+                    { "Filipino", "Discord Community Guide"},
+                    { "Indonesian", "Panduan Komunitas Perselisihan"},
+                    { "Malay", "Panduan Komuniti Discord"},
+                    { "Thai", "คู่มือชุมชน Discord"},
+                };
+                commandMail.Mail.Dictionary2 = new Dictionary<string, string>() {
+                    { "Chinese", "加入社群平台，获取丰厚奖励\r\n亲爱的英雄，\r\n欢迎您来到《Animals BAMBAM》， 为庆祝本次付费删档测试正式启动，我们将在官方社群平台Discord发放包含丰厚游戏奖励的礼包码，获取礼包码后打开游戏设置点击【兑换码】按钮，将礼包码输入就可以获取。\r\n此外您还可以在我们的官方社群获取官方最新资讯和游戏攻略，参加各类精彩活动，分享您的游戏精彩瞬间。\r\nDiscord：https://discord.gg/kQAZ7AWf\r\n如果您有任何疑问或建议，欢迎随时联系我们的客服团队。祝您游戏愉快！\r\n\r\n【Animals BAMBAM】运营团队" },
+                    { "Filipino", "Sumali sa ating platform ng komunidad para sa maraming mga reward.\r\nMinamahal na Mga Hero,\r\nWelcome sa \"Animals BAM BAM\"! Para ipagdiwang ang opisyal na paglulunsad ng paid closed beta test na ito, kami ay magbabahagi ng mga gift code na naglalaman ng mga maraming in-game reward sa ating opisyal na platform ng komunidad na Discord. Matapos makuha ang gift code, buksan ang setting ng laro, i-click ang [Redeem Code] button, at ilagay ang gift code para i-claim ang iyong mga reward. \r\nDagdag pa dito, makakakuha ka rin ng mga napapanahong opisyal na balita at mga gabay sa laro sa ating opisyal na platform ng komunidad, makilahok sa ilang nakakatuwang mga aktibidad, at magbahagi ng iyong mga sandali sa karanasan ng masayang paglalaro. \r\nDiscord:https://discord.gg/kQAZ7AWf\r\nKung may mga katanungan ka o mga mungkahi, huwag mag-atubiling makipag-ugnayan sa ating team ng coustomer service anumang oras. Hangad namin ang isang mahusay na karanasan sa paglalaro! \r\n\r\n[Animals BAM BAM] Operations Team"},
+                    { "Indonesian", "Bergabunglah dengan platform sosmed dan dapatkan hadiah besar!\r\nPahlawan yang terhormat,\r\nSelamat datang di \"Animals BAMBAM\". Untuk merayakan peluncuran resmi beta berbayar penghapusan data ini, kami akan mengeluarkan kode giftpack berisi hadiah game yang melimpah di Discord. Setelah mendapatkan kode giftpack, buka pengaturan game dan klik tombol [Kode Penukaran], masukkan kode giftpack untuk mendapatkannya. \r\nSelain itu, kamu juga bisa mendapatkan informasi resmi dan strategi permainan terkini di komunitas resmi kami, mengikuti berbagai event menarik, serta berbagi momen bermainmu yang menyenangkan. \r\nDiscord: https://discord.gg/kQAZ7AWf\r\nHubungi tim layanan pelanggan kami jika memiliki pertanyaan atau saran. Selamat bermain! \r\n\r\nTim operasional [Animals BAMBAM]"},
+                    { "Malay", "Sertai platform sosial, dapatkan ganjaran hebat\r\nWira yang dihormati,\r\nSelamat datang ke \"Animals BAM BAM\", untuk meraikan pelancaran rasmi ujian beta berbayar ini, kami akan mengedarkan kod hadiah yang mengandungi ganjaran permainan kaya di platform sosial rasmi Discord, selepas mendapatkan kod hadiah, buka tetapan permainan dan klik butang [Tebus Kod], masukkan kod hadiah untuk mendapatkannya. \r\nDi samping itu, anda juga boleh mendapatkan berita rasmi dan petua permainan terkini dalam komuniti rasmi kami, anda juga berpeluang untuk mengambil bahagian dalam pelbagai aktiviti menarik dan boleh berkongsi momen menarik permainan anda. \r\nDiscord:https://discord.gg/kQAZ7AWf\r\nSekiranya anda mempunyai sebarang pertanyaan atau cadangan, sila hubungi pasukan khidmat pelanggan kami. Selamat bermain! \r\n\r\nPasukan Operasi \"Animals BAM BAM\""},
+                    { "Thai", "เข้าร่วมแพลตฟอร์มโซเชียล จะได้รับรางวัลมากมาย\r\nสวัสดี ฮีโร่\r\nขอต้อนรับสู่ \"Animals BAMBAM\" เพื่อฉลองเปิดให้ทดสอบลบไฟล์แบบชำระเงินอย่างเป็นทางการในครั้งนี้ เราจะแจกโค้ดแลกที่มีรางวัลเกมจำนวนมากที่ Discord ทางการของเรา หลังจากรับโค้ดแลกแล้ว เปิดหน้าตั้งค่าของเกมและกด [โค้ดแลก] จากนั้นใส่โค้ดแลกคุณก็จะสามารถรับได้ \r\nนอกจากนี้ คุณยังสามารถรับข่าวสารเกมล่าสุดและกลยุทธ์เกมได้ที่กลุ่ม Facebook ของเรา แถมยังมีกิจกรรมที่น่าตื่นเต้นอีกมากมาย มาแบ่งปันช่วงเวลาการเล่นเกมของคุณกัน \r\nDiscord: https://discord.gg/kQAZ7AWf\r\nหากคุณมีข้อสงสัยหรือคำแนะนำใด ๆ โปรดติดต่อฝ่ายบริการลูกค้าของเราได้ตลอดเวลา ขอให้สนุกกับการเล่นเกมนะ! \r\n\r\nทีมงาน [Animals BAMBAM]"},
+                };
+                commandMail.ToIds.Add(command.GameChar.Id);   //加入收件人
+                commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary
+                {
+                    TId = Guid.Parse("a45b3421-3688-43c5-b8f5-429db7621f69"),
+                    Count = 10000,
+                }); ;    //加入附件
+                _SyncCommandManager.Handle(commandMail);
 
             }
         }
