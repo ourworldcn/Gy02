@@ -283,6 +283,9 @@ namespace GY02
             var svc = _Services.GetRequiredService<T0314Manager>();
             var sw = Stopwatch.StartNew();
             var mapper = _Services.GetRequiredService<IMapper>();
+            int i1= -2;
+            var ui2=(uint)i1;
+            var i2 = (int)ui2;
             #region 测试用代码
             try
             {
