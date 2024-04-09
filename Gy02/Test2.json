@@ -1,47 +1,23 @@
 {
-  "Genus": [ "cj_guanqia" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
-    "Period": {
-      "Start": "2023-05-30T03:03:28.385Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "TjIns": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0,
-        "Genus": []
+        "ParentTId": null,
+        "Genus": [],
+        "TId": "62D3A545-7604-46BF-9837-95E286660BC8",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "GroupMask": 1
       }
     ],
-    "Exp2LvSequence": [ 1 ],
-    "Outs": [
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 2000
-        },
-        {
-          "ParentTId": null,
-          "TId": "6f947821-bff5-4c1b-8cbb-8c30a633505a",
-          "Count": 1
-        }
-      ]
-    ]
+    "GetIndexExpression": {
+      "op": "ToInt32",
+      "args": [ "Count" ]
+    },
+    "Outs": {
+      "TIds": [ "1f31807a-f633-4d3a-8e8e-382ad105d061" ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
+      "Counts": [ 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 570, 600, 630, 660, 690, 720, 750, 780, 810, 840, 870, 900, 930, 960, 990, 1020, 1050, 1080, 1110, 1140, 1170, 1200, 1230, 1260, 1290, 1320, 1350, 1380, 1410, 1440, 1470, 1500, 1530, 1560, 1590, 1620, 1650, 1680, 1710, 1740, 1770, 1800, 1830, 1860, 1890, 1920, 1950, 1980, 2010, 2040, 2070, 2100, 2130, 2160 ]
+    }
   }
 }

@@ -1,47 +1,23 @@
 {
-  "Genus": [ "cj_guanqia" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
-    "Period": {
-      "Start": "2023-05-30T03:03:28.385Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "TjIns": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Conditional": [
-          {
-            "ParentTId": null,
-            "Genus": [],
-            "TId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0,
-        "Genus": []
+        "ParentTId": null,
+        "Genus": [],
+        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
+        "MinCount": null,
+        "GeneralConditional": [],
+        "GroupMask": 1
       }
     ],
-    "Exp2LvSequence": [ 1 ],
-    "Outs": [
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 2000
-        },
-        {
-          "ParentTId": null,
-          "TId": "6f947821-bff5-4c1b-8cbb-8c30a633505a",
-          "Count": 1
-        }
-      ]
-    ]
+    "GetIndexExpression": {
+      "op": "ToInt32",
+      "args": [ "Count" ]
+    },
+    "Outs": {
+      "TIds": [ "f827aa4f-f695-4351-b89f-410bbf76b6ad", "f1ba6a76-3306-46a4-bf85-bae6c495e65a", "46d57c3d-a67b-4500-8816-ad7f051c1c0f", "b17a711f-a5c7-461e-bd5f-26d480b9cc10", "f8c78df7-b993-4e37-8e0b-a507b77974b3", "21cbb7e2-a4d7-450d-acaa-dc31730b7d6e", "9a940f59-ee87-45f9-9a2b-d912e9523a01", "2b1d12ed-33fb-48c2-8f6a-5d519e92f291", "89f7d8d3-4a32-4869-a213-ccd137fbb5b1", "92981126-96c4-4b5c-89bf-4ca427d2d8b6", "6982a457-61a7-42f2-9fc5-0d33c1ad02c0", "3ddaee1f-7c4d-4a36-b1ce-44b62a0f928f", "79c97461-d568-433a-8e5b-52efcaea4366", "2fd36b4a-a605-4dc6-ac73-77db3b384630", "68a6d6d7-3ba0-4eec-83e5-77f9e323b6dc", "79964007-d679-46d0-accf-e9512d15ec09", "2acc7563-b41d-4d90-979d-906c40610d62", "872fdd78-ae0a-4001-8ed4-304ec14dfb41", "d2df5a4e-3d84-4cf6-ab7e-68dd9daa421e", "86f01b10-1c97-475a-9393-e1d2d176d4d5", "0c853bf1-16da-44ad-8151-ef8bfbe03358", "42c365b4-c272-4615-bd14-cd4494c4a22b", "4bfdaa9a-2b28-4b3a-a8f3-971cf16181cf", "06db8984-c5ab-4079-986e-e2e2221f03ac", "c95fc948-b311-4bc0-8da1-9470fa4a5859", "9786e1b9-316b-4c48-9901-ae7feae4159a", "edc984ac-3c29-4d87-87e2-85149d487996", "bb2bb5b7-cf23-43a9-a3af-d3b93b268c60", "2a1d43e1-9746-4160-8e70-055afe1f4b1c", "fe0cf662-2794-4d91-8cb2-9b3b3baa0333", "08e907df-9514-451d-b9b0-4e63cfbcdab5", "5ed4edef-7f1e-48db-834c-e9e2e3657d5c", "c2f9e5e9-3c96-4a27-916c-a3382540c1e2", "ed9f18f0-ca7f-4680-b224-73fb17484665", "847bf8be-e155-499e-96c4-f4b246c6d0df", "ded93ccf-54b7-4a41-ad9c-1a4cdc567174", "bab3ce49-d4ea-4887-976a-404facec333a", "c485aa93-4faa-47c2-baca-21d1a05b7b7d", "31be6199-c127-45fa-8b18-91606c659729", "5f9b055f-7648-41fe-a782-2719b2bdae01", "667389e6-67c9-436d-a3d5-eeca0b6f9ed1", "3e9edd60-5dc5-4692-a960-f0a0ecf163fa", "fbebf321-630d-4d62-b6b9-9c71fa69864f", "0fcb9da6-6b64-4c7e-b17f-3a75ae218284", "c177cf7d-569e-4763-9601-49c1348fc63a", "8e75b99c-dd23-4014-b3ef-6b926fe4e8f8", "85d1d84c-d325-4919-bdea-996b191d2a2c", "2e04c29b-7b7d-4740-b79a-72462123e2fb", "58406444-3a53-454b-a770-ba4e539d26c9", "897b7792-e445-4c48-942d-fa0943659fd2" ],
+      "ParentTIds": [ null ],
+      "Counts": [ 1 ]
+    }
   }
 }

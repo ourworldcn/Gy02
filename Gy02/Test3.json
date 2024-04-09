@@ -4,8 +4,8 @@
     "Period": {
       "Start": "2023-05-09T00:00:00.000Z",
       "End": null,
-      "PeriodString": "1d",
-      "ValidPeriodString": "1d"
+      "PeriodString": "12h",
+      "ValidPeriodString": "12h"
     },
     "GroupNumber": 0,
     "Ins": [
@@ -31,7 +31,7 @@
         "Count": 1
       }
     ],
-    "MaxCount": null
+    "MaxCount": 3
   },
   "adPlacementIdDic": {
     "Korea": null,
