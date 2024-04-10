@@ -289,7 +289,55 @@ namespace GY02
             for (int i = 0; i < 10; i++) DataEntry.Dequeue();
             for (int i = 0; i < 10; i++) DataEntry.Enqueue(i);
             var ary = DataEntry.Skip(1).Take(1);
+            Task.Run(() =>
+            {
+                var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp); ;
+                udp.Bind(new IPEndPoint(IPAddress.Parse("192.168.0.104"), 50000));
+                for (int i = 0; i < 10; i++)
+                {
+                    SocketAsyncEventArgs eventArgs = new SocketAsyncEventArgs
+                    {
+                        UserToken = null, //试图回收此数据帧
+                        RemoteEndPoint = new IPEndPoint(IPAddress.Any, 0),
+                    };
+                    eventArgs.UserToken = udp;
+                    var buff = new byte[512];
+                    eventArgs.SetBuffer(buff, 0, buff.Length);
+                    eventArgs.Completed += (c, d) =>
+                    {
+                        Debug.WriteLine($"{d.RemoteEndPoint} => {BitConverter.ToInt32(d.Buffer)}");
+                    };
+                    var s = udp.ReceiveFromAsync(eventArgs);
+                    if(!s)
+                    {
+                        Debug.WriteLine($"{eventArgs.RemoteEndPoint} => {BitConverter.ToInt32(eventArgs.Buffer)}");
+                    }
+                }
+            });
+            using var _Socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+            _Socket.Blocking = false;
+            _Socket.Bind(new IPEndPoint(IPAddress.Any, 0));
 
+            for (int i = 0; i < 100; i++)
+            {
+                Task.Factory.StartNew(c =>
+                {
+                    SocketAsyncEventArgs e = new SocketAsyncEventArgs();
+                    var buff = ArrayPool<byte>.Shared.Rent(512);
+                    BitConverter.TryWriteBytes(buff, (int)c);
+                    e.Completed += IO_Completed;
+                    e.SetBuffer(buff, 0, buff.Length);
+                    e.UserToken = 1; //试图回收此数据帧
+                    e.RemoteEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 50000);
+                    var willRaiseEvent = _Socket.SendToAsync(e);
+                    if (willRaiseEvent) i++;
+                    else if (e.SocketError != SocketError.Success)
+                    {
+                        ;
+                    }
+                }, i);
+
+            }
             #region 测试用代码
             try
             {
@@ -311,6 +359,10 @@ namespace GY02
                 sw.Stop();
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
+        }
+
+        private void IO_Completed(object sender, SocketAsyncEventArgs e)
+        {
         }
 
         private void TestUdp(out HttpClient client, out Socket socket)
