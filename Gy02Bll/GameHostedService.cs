@@ -308,7 +308,7 @@ namespace GY02
                         Debug.WriteLine($"{d.RemoteEndPoint} => {BitConverter.ToInt32(d.Buffer)}");
                     };
                     var s = udp.ReceiveFromAsync(eventArgs);
-                    if(!s)
+                    if (!s)
                     {
                         Debug.WriteLine($"{eventArgs.RemoteEndPoint} => {BitConverter.ToInt32(eventArgs.Buffer)}");
                     }
