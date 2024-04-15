@@ -301,7 +301,7 @@ namespace GY02
                         RemoteEndPoint = new IPEndPoint(IPAddress.Any, 0),
                     };
                     eventArgs.UserToken = udp;
-                    var buff = new byte[512];
+                    var buff = new byte[1024];
                     eventArgs.SetBuffer(buff, 0, buff.Length);
                     eventArgs.Completed += (c, d) =>
                     {
