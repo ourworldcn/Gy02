@@ -284,7 +284,9 @@ namespace GY02
             var sw = Stopwatch.StartNew();
             var mapper = _Services.GetRequiredService<IMapper>();
             var DataEntry = new Queue<int>();
-
+            int i1= -2;
+            uint ui = (uint)i1;
+            int i2 = (int)ui;
             for (int i = 0; i < 10; i++) DataEntry.Enqueue(i);
             for (int i = 0; i < 10; i++) DataEntry.Dequeue();
             for (int i = 0; i < 10; i++) DataEntry.Enqueue(i);
