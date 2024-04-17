@@ -283,74 +283,11 @@ namespace GY02
             var svc = _Services.GetRequiredService<T0314Manager>();
             var sw = Stopwatch.StartNew();
             var mapper = _Services.GetRequiredService<IMapper>();
-            var DataEntry = new Queue<int>();
-            int i1= -2;
-            uint ui = (uint)i1;
-            int i2 = (int)ui;
-            for (int i = 0; i < 10; i++) DataEntry.Enqueue(i);
-            for (int i = 0; i < 10; i++) DataEntry.Dequeue();
-            for (int i = 0; i < 10; i++) DataEntry.Enqueue(i);
-            var ary = DataEntry.Skip(1).Take(1);
-            Task.Run(() =>
-            {
-                var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp); ;
-                udp.Bind(new IPEndPoint(IPAddress.Parse("192.168.0.104"), 50000));
-                for (int i = 0; i < 10; i++)
-                {
-                    SocketAsyncEventArgs eventArgs = new SocketAsyncEventArgs
-                    {
-                        UserToken = null, //试图回收此数据帧
-                        RemoteEndPoint = new IPEndPoint(IPAddress.Any, 0),
-                    };
-                    eventArgs.UserToken = udp;
-                    var buff = new byte[1024];
-                    eventArgs.SetBuffer(buff, 0, buff.Length);
-                    eventArgs.Completed += (c, d) =>
-                    {
-                        Debug.WriteLine($"{d.RemoteEndPoint} => {BitConverter.ToInt32(d.Buffer)}");
-                    };
-                    var s = udp.ReceiveFromAsync(eventArgs);
-                    if (!s)
-                    {
-                        Debug.WriteLine($"{eventArgs.RemoteEndPoint} => {BitConverter.ToInt32(eventArgs.Buffer)}");
-                    }
-                }
-            });
-            using var _Socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            _Socket.Blocking = false;
-            _Socket.Bind(new IPEndPoint(IPAddress.Any, 0));
-
-            for (int i = 0; i < 100; i++)
-            {
-                Task.Factory.StartNew(c =>
-                {
-                    SocketAsyncEventArgs e = new SocketAsyncEventArgs();
-                    var buff = ArrayPool<byte>.Shared.Rent(512);
-                    BitConverter.TryWriteBytes(buff, (int)c);
-                    e.Completed += IO_Completed;
-                    e.SetBuffer(buff, 0, buff.Length);
-                    e.UserToken = 1; //试图回收此数据帧
-                    e.RemoteEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 50000);
-                    var willRaiseEvent = _Socket.SendToAsync(e);
-                    if (willRaiseEvent) i++;
-                    else if (e.SocketError != SocketError.Success)
-                    {
-                        ;
-                    }
-                }, i);
-
-            }
+            var t = new TestRdm(_Services);
             #region 测试用代码
             try
             {
-                var svc1 = _Services.GetService<GameAccountStoreManager>();
-                svc1.SemaphoreSlim.Wait();
-                //using var sem = new ReaderWriterLockSlim(LockRecursionPolicy.SupportsRecursion);
-                //sem.TryEnterReadLock(1);
-                var obj = new T0314PayReturnStringDto { PayAmount = "1.2m" };
-                var dic2 = obj.GetDic();
-                var dic = mapper.Map<Dictionary<string, string>>(obj);
-                //svc.GetSignStringForAndroid("actRate=1&cpOrderNo=064ace1d-1ac1-4099-8174-649b7f72f045&extrasParams=&orderNo=0020240321165705736415&payAmount=0.990000&payCurrency=USD&payStatus=0&payTime=2024-03-21 16:57:12&payType=30&uid=16588787&usdAmount=0.99&username=gt17926472");
+                t.Test();
             }
             #endregion 测试用代码
             catch (Exception)
@@ -361,72 +298,6 @@ namespace GY02
                 sw.Stop();
                 Debug.WriteLine($"测试用时:{sw.ElapsedMilliseconds:0.0}ms");
             }
-        }
-
-        private void IO_Completed(object sender, SocketAsyncEventArgs e)
-        {
-        }
-
-        private void TestUdp(out HttpClient client, out Socket socket)
-        {
-            var e0 = new SocketAsyncEventArgs { };
-            var ary = new byte[256];
-            e0.SetBuffer(ary, 0, ary.Length);
-            e0.SetBuffer(null, 0, 0);
-            var svc = _Services.GetRequiredService<T127Manager>();
-            var svc1 = _Services.GetRequiredService<LoginNameGenerator>();
-            client = new HttpClient();
-            //var r = svc.GetRefreshTokenFromCode(client, svc.Code, svc._ClientId, svc._ClientSecret);
-            //var str1 = r.Content.ReadAsStringAsync().Result;
-            //var b = svc.GetOrderState("com.duangphl.07", "hpohhpfgbielodmhiflcefhd.AO-J1OwdtIEgJGxcMDtxK880anOSCy7yirhq0W6S4--tlDmmTrZOEv-CLcJzMwBuxLJ1xiw_1uaTX2-i4dppDQAY0SPTAeFHEFl6V1yTpTwVxBKiObGjjlA",
-            //    out var result);
-            //var s1 = $"val={null}";
-            //var svc1228 = _Services.GetRequiredService<T1228Manager>();
-            //var str1 = "event=orderPayed&orderId=1&productType=inapp&productCode=2&originOrderId=3&originInfo=4&customInfo={\"productType\":\"inapp\",\"productId\":\"2\",\"roleInfo\":{\"roleId\":\"\",\"roleName\":\"\",\"roleLevel\":\"\",\"serverName\":\"\",\"vipLevel\":\"\"}}&secret=YDjCiVmvo8KJnGCwoKZ5EpyemwR6XWt8x0bR";
-            //var str2 = svc1228.GetSign(str1);
-            //Cult();
-            int rp = 20089;
-            Task.Run(() =>
-            {
-                var udp1 = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                var ep = new IPEndPoint(IPAddress.Any, rp);
-                udp1.Bind(ep);
-                var e1 = new SocketAsyncEventArgs { };
-                e1.SetBuffer(new byte[256]);
-                e1.Completed += E1_Completed1;
-                var buff = new byte[2048];
-                var rr = udp1.ReceiveAsync(e1);
-                var ary = rr;
-            });
-            Thread.Sleep(100);
-            socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-            socket.Bind(new IPEndPoint(IPAddress.Any, 50000));
-            socket.Connect(new IPEndPoint(IPAddress.Parse("192.168.0.104"), 89));
-            var e1 = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Loopback, rp), };
-            var buff1 = new byte[] { 0x4c, 0x4d };
-            e1.SetBuffer(buff1, 0, buff1.Length);
-
-            e1.Completed += E1_Completed;
-            var r1 = socket.SendAsync(e1);
-            Thread.Sleep(100);
-
-            var e2 = new SocketAsyncEventArgs { RemoteEndPoint = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 20443) };
-            e2.SetBuffer(0, 2048);
-            e2.Completed += E1_Completed;
-            var r2 = socket.SendAsync(e2);
-            Debug.Assert(true);
-
-            var udp = new UdpClient(0);
-            udp.Send(new byte[] { 3, 4 }, new IPEndPoint(IPAddress.Loopback, rp));
-        }
-
-        private void E1_Completed1(object sender, SocketAsyncEventArgs e)
-        {
-        }
-
-        private void E1_Completed(object sender, SocketAsyncEventArgs e)
-        {
-
         }
 
         [Conditional("DEBUG")]

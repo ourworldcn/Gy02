@@ -24,6 +24,7 @@ using OW.SyncCommand;
 using System.Buffers;
 using System.Diagnostics;
 using System.IO.Compression;
+using System.Net.Sockets;
 using System.Text;
 using System.Text.Json;
 
@@ -131,6 +132,7 @@ internal class Program
 
         services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"))
             .Configure<UdpServerManagerOptions>(builder.Configuration.GetSection("UdpServerManagerOptions"))
+            .Configure<OwRdmServerOptions>(builder.Configuration.GetSection("OwRdmServerOptions"))
             .Configure<LoginNameGeneratorOptions>(builder.Configuration.GetSection("LoginNameGeneratorOptions"));  //模板配置的选项模式
 
         services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(GY02AutoMapperProfile).Assembly);
@@ -140,6 +142,8 @@ internal class Program
         services.AddPublisherT0314();
 
         services.AddScoped(c => new SimpleGameContext());
+        services.AddSingleton<OwRdmServer>();
+
         var app = builder.Build();
 
         //app.Use(async (context, next) =>
