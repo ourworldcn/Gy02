@@ -287,6 +287,9 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var endPoint = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 50000);
+                var endPoint2 = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 50000);
+                var b = endPoint.Equals(endPoint2);
                 t.Test();
             }
             #endregion 测试用代码
