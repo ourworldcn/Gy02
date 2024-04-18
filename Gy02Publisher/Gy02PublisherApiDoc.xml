@@ -1789,22 +1789,5 @@
             
             </summary>
         </member>
-        <member name="T:Gy02Publisher.UdpPackage">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Gy02Publisher.UdpPackage.#ctor">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Gy02Publisher.UdpPackage.Send(System.Byte[],System.Net.IPEndPoint)">
-            <summary>
-            
-            </summary>
-            <param name="data"></param>
-            <param name="iPEndPoint"></param>
-        </member>
     </members>
 </doc>

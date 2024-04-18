@@ -2326,11 +2326,6 @@
             默认构造函数。
             </summary>
         </member>
-        <member name="F:GY02.Publisher.GyUdpClient._CancellationTokenSource">
-            <summary>
-            
-            </summary>
-        </member>
         <member name="P:GY02.Publisher.GyUdpClient.CancellationTokenSource">
             <summary>
             请求停止的终止标志。
@@ -2357,12 +2352,6 @@
             开始侦听。
             </summary>
             <exception cref="T:System.Net.Sockets.SocketException">访问套接字时出错。请务必拦截该异常并处理，以避免进程崩溃。</exception>
-        </member>
-        <member name="M:GY02.Publisher.GyUdpClient.Nop(System.Guid)">
-            <summary>
-            通知服务器客户端在线。
-            </summary>
-            <param name="token"></param>
         </member>
         <member name="E:GY02.Publisher.GyUdpClient.DataRecived">
             <summary>

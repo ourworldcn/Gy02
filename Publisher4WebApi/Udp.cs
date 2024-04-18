@@ -136,17 +136,12 @@ namespace GY02.Publisher
         {
         }
 
-        volatile OwUdpClient _Udp;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        CancellationTokenSource _CancellationTokenSource = new CancellationTokenSource();
+        volatile OwRdmClient _Rdm;
 
         /// <summary>
         /// 请求停止的终止标志。
         /// </summary>
-        public CancellationTokenSource CancellationTokenSource { get => _CancellationTokenSource; }
+        public CancellationTokenSource CancellationTokenSource { get => _Rdm?.Stopping; }
 
         IPEndPoint _RemoteEndPoint;
         /// <summary>
@@ -192,47 +187,20 @@ namespace GY02.Publisher
         /// <exception cref="SocketException">访问套接字时出错。请务必拦截该异常并处理，以避免进程崩溃。</exception>
         public virtual void Start(Guid token, IPEndPoint remotePoint)
         {
-            _RemoteEndPoint = remotePoint;
-            _Udp?.Dispose();
-            _Udp = new OwUdpClient(new OwUdpClientOptions
-            {
-                //LocalPoint = remotePoint,
-                RemoteEndPoint = RemoteEndPoint,
-                //RequestStop= Token,
-            });
+            _Rdm?.Dispose();    //容错
+            _Rdm = new OwRdmClient();
 
             //初始化引发事件数据的任务
-            _Udp.UdpDataRecived += _Udp_UdpDataRecived;
-
-            //心跳
-            Nop(Token);
-
-            _LastPing = new System.Threading.Timer(Timer_Callback, null, 11_000, Timeout.Infinite);
+            _RemoteEndPoint = remotePoint;
+            _Rdm.OwUdpDataReceived += _Rdm_OwUdpDataReceived;
+            _Rdm.Name = token.ToString();   //设置角色Token
+            _Rdm.Start(_RemoteEndPoint);
         }
 
-        private void Timer_Callback(object state)
+        private void _Rdm_OwUdpDataReceived(object sender, OwRdmDataReceivedEventArgs e)
         {
-            Nop(Token);
-            _LastPing.Change(11_000, Timeout.Infinite);
-        }
-
-        System.Threading.Timer _LastPing;
-
-        private void _Udp_UdpDataRecived(object sender, UdpDataRecivedEventArgs e)
-        {
-            _LastPing.Change(11_000, Timeout.Infinite);
-            OnDataRecived(new DataRecivedEventArgs { Data = e.Data });
-        }
-
-        /// <summary>
-        /// 通知服务器客户端在线。
-        /// </summary>
-        /// <param name="token"></param>
-        public void Nop(Guid token)
-        {
-            //通知服务器
-            var guts = token.ToByteArray();
-            _Udp.Send(guts, RemoteEndPoint);
+            //_LastPing.Change(11_000, Timeout.Infinite);
+            OnDataRecived(new DataRecivedEventArgs { Data = e.Datas });
         }
 
         #region 事件相关
@@ -282,17 +250,15 @@ namespace GY02.Publisher
                 if (disposing)
                 {
                     //释放托管状态(托管对象)
-                    _CancellationTokenSource?.Cancel();
+                    CancellationTokenSource?.Cancel();
                     //var waitHandle = new AutoResetEvent(false);
                     //_Timer?.Dispose(waitHandle);
                     //waitHandle.WaitOne(5_000);   //确保定时器退出
-                    _LastPing?.Dispose();
-                    _Udp?.Dispose();
+                    _Rdm?.Dispose();
                 }
                 // 释放未托管的资源(未托管的对象)并重写终结器
                 // 将大型字段设置为 null
-                _LastPing = null;
-                _Udp = null;
+                _Rdm = null;
                 //base.Dispose(disposing);  //        IsDisposed = true;
             }
         }
