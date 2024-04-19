@@ -911,6 +911,17 @@
             平台的商品Id。
             </summary>
         </member>
+        <member name="T:Gy02.Test.TestUdpServerManager">
+            <summary>
+            测试udp的用例。
+            </summary>
+        </member>
+        <member name="M:Gy02.Test.TestUdpServerManager.#ctor(System.IServiceProvider)">
+            <summary>
+            构造函数。
+            </summary>
+            <param name="serviceProvider"></param>
+        </member>
         <member name="T:Global.Program">
             <summary>
             

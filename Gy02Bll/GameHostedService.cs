@@ -283,14 +283,11 @@ namespace GY02
             var svc = _Services.GetRequiredService<T0314Manager>();
             var sw = Stopwatch.StartNew();
             var mapper = _Services.GetRequiredService<IMapper>();
-            var t = new TestRdm(_Services);
             #region 测试用代码
             try
             {
-                var endPoint = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 50000);
-                var endPoint2 = new IPEndPoint(IPAddress.Parse("192.168.0.104"), 50000);
-                var b = endPoint.Equals(endPoint2);
-                t.Test();
+                var obj = new OwRdmDgramV2();
+                var s = obj.Seq;
             }
             #endregion 测试用代码
             catch (Exception)

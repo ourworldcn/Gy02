@@ -11,91 +11,79 @@ using System.Buffers;
 using System.Collections.Concurrent;
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 using System.Text.Json;
 
 namespace GY02.Managers
 {
-    public class UdpServerManagerOptions : IOptions<UdpServerManagerOptions>
+    public class UdpServerManagerOptions : OwRdmServerOptions, IOptions<UdpServerManagerOptions>
     {
-        public UdpServerManagerOptions Value => this;
-
-        /// <summary>
-        /// 使用的本机侦听端口。
-        /// </summary>
-        /// <value>默认值：0,自动选择。应通过配置指定端口，避免防火墙拒绝侦听请求。</value>
-        public short LocalPort { get; set; }
-
-        /// <summary>
-        /// 指定使用的本地终结点Ip,通常不用设置。
-        /// </summary>
-        public string LocalIp { get; set; }
+        public override UdpServerManagerOptions Value => this;
     }
 
     /// <summary>
     /// 游戏服务器的Udp管理器。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
-    public class UdpServerManager : GameManagerBase<UdpServerManagerOptions, UdpServerManager>
+    public class UdpServerManager : OwRdmServer
     {
+        #region 静态成员
+
         /// <summary>
-        /// 
+        /// 用户令牌对应的远程客户端地址端口。
         /// </summary>
-        /// <param name="options"></param>
-        /// <param name="logger"></param>
-        public UdpServerManager(IOptions<UdpServerManagerOptions> options, ILogger<UdpServerManager> logger, IHostApplicationLifetime lifetime, GameAccountStoreManager accountStoreManager)
-            : base(options, logger)
-        {
-            _Lifetime = lifetime;
-            _AccountStoreManager = accountStoreManager;
-            _Timer = new Timer(ClearToken, null, 60_000, 60_000);
-            _Lifetime.ApplicationStopping.Register(() => _Timer?.Dispose());    //试图关闭清理计时器
-            var udpOpt = new OwUdpClientOptions
-            {
-                LocalEndPoint = new IPEndPoint(IPAddress.Parse(Options.LocalIp), Options.LocalPort),
-                RemoteEndPoint = new IPEndPoint(IPAddress.Any, 0),
-                //ReceiveBufferSize = 1024_000,
-                //SendBufferSize = 1024_000,
-                RequestStop = _Lifetime.ApplicationStopping,
-                SendPerSeconds = 100,
-            };
-            _Udp = new OwUdpClient(udpOpt);
-            _Udp.UdpDataRecived += _Udp_UdpDataRecived;
-            Logger.LogInformation("UdpServer开始侦听{LocalEndPoint}。", udpOpt.LocalEndPoint);
-        }
+        static ConcurrentDictionary<Guid, int> _Token2ClientId = new ConcurrentDictionary<Guid, int>();
 
-        long _Seq = 0;
+        #endregion 静态成员
 
-        private void _Udp_UdpDataRecived(object sender, UdpDataRecivedEventArgs e)
-        {
-            var token = new Guid(e.Data);
-
-            if (_Token2EndPoint.TryGetValue(token, out var oldIpPoint) && !Equals(oldIpPoint, e.RemotePoint)) //若更改ip地址
-            {
-                Logger.LogWarning("检测到令牌 {token} 将客户端地址从 {oldIpEndPoint} 变更为 {newIpEndPoint}", token, oldIpPoint, e.RemotePoint);
-            }
-            _Token2EndPoint.AddOrUpdate(token, e.RemotePoint, (t, p) => e.RemotePoint);
-            SendObject(token, new ListenStartedDto() { Token = token, IPEndpoint = e.RemotePoint.ToString() });  //发送确认
-        }
+        #region 属性及相关
 
         IHostApplicationLifetime _Lifetime;
         GameAccountStoreManager _AccountStoreManager;
 
         Timer _Timer;
 
-        /// <summary>
-        /// 听的端口号。
-        /// </summary>
-        public int ListenerPort => _Udp.LocalEndPoint.Port;
+        #endregion 属性及相关
 
-        OwUdpClient _Udp;
+        #region 构造函数
 
         /// <summary>
-        /// 用户令牌对应的远程客户端地址端口。
+        /// 
         /// </summary>
-        static ConcurrentDictionary<Guid, IPEndPoint> _Token2EndPoint = new ConcurrentDictionary<Guid, IPEndPoint>();
+        /// <param name="options"></param>
+        /// <param name="logger"></param>
+        public UdpServerManager(IOptions<UdpServerManagerOptions> options, ILogger<UdpServerManager> logger, IHostApplicationLifetime lifetime, GameAccountStoreManager accountStoreManager)
+            : base(options, logger, lifetime)
+        {
+            _Lifetime = lifetime;
+            _AccountStoreManager = accountStoreManager;
+            _Timer = new Timer(ClearToken, null, 60_000, 60_000);
+            _Lifetime.ApplicationStopping.Register(() => Stopping.Cancel());    //试图关闭清理计时器
+            Logger.LogInformation("UdpServer开始侦听{LocalEndPoint}。", ListernEndPoint);
+        }
 
-        public static Guid PingGuid = Guid.Parse("{D99A07D0-DF3E-43F7-8060-4C7140905A29}");
+        #endregion 构造函数
 
+        #region 方法
+
+        /// <summary>
+        /// 获取客户端名称。
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <returns></returns>
+        string GetClientName(ReadOnlySpan<byte> buffer)
+        {
+            return Encoding.UTF8.GetString(buffer);
+        }
+
+        protected override void OnRequestConnect(OwRdmDgram datas, EndPoint remote)
+        {
+            var clientName = GetClientName(new Span<byte>(datas.Buffer, datas.Offset + 8, datas.Count - 8)); //获取客户端传来的名称
+            if (!Guid.TryParse(clientName, out var token)) goto goon;
+            _Token2ClientId.AddOrUpdate(token, c => datas.Id, (c, d) => datas.Id);
+        goon:
+            base.OnRequestConnect(datas, remote);
+        }
         /// <summary>
         /// 发送一个类型。
         /// </summary>
@@ -105,11 +93,9 @@ namespace GY02.Managers
         {
             var type = obj.GetType();
             var guid = type.GUID;
-            if (obj is IJsonData jd) jd.Seq = Interlocked.Increment(ref _Seq);  //增加序号
             MemoryStream ms;
             using (ms = new MemoryStream())
             {
-
                 ms.Write(guid.ToByteArray(), 0, 16);
                 JsonSerializer.Serialize(ms, obj, type);
             }
@@ -123,10 +109,9 @@ namespace GY02.Managers
         /// <param name="data"></param>
         public bool Send(Guid token, byte[] data)
         {
-            if (!_Token2EndPoint.TryGetValue(token, out var ip))    //若未找到指定的ip地址
+            if (!_Token2ClientId.TryGetValue(token, out var id))    //若未找到指定的ip地址
                 return false;
-            _Udp.Send(data, ip);
-            Logger.LogDebug("发送信息{_Udp.Client.LocalEndPoint} -> {ip} : {tmp.Item2.Length}字节", _Udp.LocalEndPoint, ip, data.Length);
+            SendTo(data, 0, data.Length, id);
             return true;
         }
 
@@ -135,25 +120,38 @@ namespace GY02.Managers
         /// </summary>
         void ClearToken(object state)
         {
-            foreach (var item in _Token2EndPoint)
+            foreach (var item in _Token2ClientId)
             {
                 if (!_AccountStoreManager.Token2Key.ContainsKey(item.Key))   //若不存在指定的Token
-                    _Token2EndPoint.Remove(item.Key, out _);
+                    _Token2ClientId.Remove(item.Key, out _);
             }
         }
 
+        #endregion 方法
+
+        #region IDisposable接口及相关
+
         protected override void Dispose(bool disposing)
         {
-            _Udp?.Dispose();
+            if (!Disposed)
+            {
+                if (disposing)
+                {
+
+                }
+            }
             base.Dispose(disposing);
         }
+
+        #endregion IDisposable接口及相关
 
         public class AccountLogoutingHandler : SyncCommandHandlerBase<AccountLogoutingCommand>
         {
             public override void Handle(AccountLogoutingCommand command)
             {
-                _Token2EndPoint.TryRemove(command.User.Token, out _);
+                _Token2ClientId.TryRemove(command.User.Token, out _);
             }
         }
     }
+
 }

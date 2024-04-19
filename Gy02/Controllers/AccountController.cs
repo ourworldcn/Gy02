@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Gy02.Controllers;
+using Gy02.Test;
 using GY02.Commands;
 using GY02.Commands.Account;
 using GY02.Managers;
@@ -36,7 +37,7 @@ namespace GY02.Controllers
                         }
                         catch (Exception err)
                         {
-                            _Logger.LogWarning(err,"获取本机地址出现异常");
+                            _Logger.LogWarning(err, "获取本机地址出现异常");
                             throw;
                         }
                     }
@@ -91,6 +92,10 @@ namespace GY02.Controllers
             return result;
         }
 
+#if DEBUG
+        TestUdpServerManager testUdpServerManager;
+#endif
+
         /// <summary>
         /// 登录账号。
         /// </summary>
@@ -121,18 +126,13 @@ namespace GY02.Controllers
             try
             {
                 var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-                var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+                var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
                 result.WorldServiceHost = worldServiceHost;
                 result.UdpServiceHost = udpServiceHost;
-    #if DEBUG
-                //var udp = new GyUdpClient();
-                //var serverIp = IPEndPoint.Parse(result.UdpServiceHost);
-                //udp.Start(result.Token, serverIp);
-                //Task.Run(() =>
-                //{
-                //    udp.Nop(result.Token);
-                //});
-    #endif
+#if DEBUG
+                testUdpServerManager = new TestUdpServerManager(HttpContext.RequestServices);
+                testUdpServerManager.Test(command.User.Token, IPEndPoint.Parse(udpServiceHost));
+#endif
                 return result;
 
             }
@@ -164,7 +164,7 @@ namespace GY02.Controllers
             string ip = LocalIp.ToString();
             var result = _Mapper.Map<LoginT78ReturnDto>(command);
             var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-            var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+            var udpServiceHost = $"{ip}:{udpServer.ListernEndPoint}";
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
             return result;
@@ -189,7 +189,7 @@ namespace GY02.Controllers
             string ip = LocalIp.ToString();
             var result = _Mapper.Map<LoginT21ReturnDto>(command);
             var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-            var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+            var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
             return result;
@@ -212,7 +212,7 @@ namespace GY02.Controllers
             if (!result.HasError)
             {
                 var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-                var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+                var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
                 result.WorldServiceHost = worldServiceHost;
                 result.UdpServiceHost = udpServiceHost;
                 result.LoginName = command.User.LoginName;
@@ -239,7 +239,7 @@ namespace GY02.Controllers
             if (!result.HasError)
             {
                 var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-                var udpServiceHost = $"{ip}:{udpServer.ListenerPort}";
+                var udpServiceHost = $"{ip}:{udpServer.ListernEndPoint}";
                 result.WorldServiceHost = worldServiceHost;
                 result.UdpServiceHost = udpServiceHost;
                 result.LoginName = command.User.LoginName;
