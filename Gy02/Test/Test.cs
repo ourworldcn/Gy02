@@ -32,6 +32,11 @@ namespace Gy02.Test
         UdpServerManager _Server;
         GyUdpClient _Client;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="endPoing"></param>
         public void Test(Guid token, IPEndPoint endPoing)
         {
             _Client.Start(token, endPoing);

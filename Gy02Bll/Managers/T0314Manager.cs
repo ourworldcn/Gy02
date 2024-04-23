@@ -25,13 +25,13 @@ namespace GY02.Managers
 
     /// <summary>
     /// T0314合作伙伴的管理器。
-    /// https://quick.shfoga.com/docs/index/aid/512#catlog2帮助地址。
     /// </summary>
     [OwAutoInjection(ServiceLifetime.Singleton, AutoCreateFirst = true)]
     public class T0314Manager : GameManagerBase<T0314ManagerOptions, T0314Manager>
     {
         /// <summary>
         /// 捷游/东南亚相关功能管理器的构造函数。
+        /// https://quick.shfoga.com/docs/index/aid/512#catlog2帮助地址。
         /// </summary>
         /// <param name="options"></param>
         /// <param name="logger"></param>
@@ -81,6 +81,20 @@ namespace GY02.Managers
         }
 
         /// <summary>
+        /// 获取签名。
+        /// </summary>
+        /// <param name="dic"></param>
+        /// <returns></returns>
+        public byte[] GetSignForIos(IReadOnlyDictionary<string, string> dic)
+        {
+            var str = GetSignString(dic);
+            Logger.LogInformation("要签名的字符串是 {str}", str);
+            //计算签名
+            var result = GetSignForIos(str);
+            return result;
+        }
+
+        /// <summary>
         /// 获取代签名字符串。不含签名的key。
         /// </summary>
         /// <param name="dic"></param>
@@ -114,6 +128,18 @@ namespace GY02.Managers
         public byte[] GetSignForAndroid(string str)
         {
             var bin = Encoding.UTF8.GetBytes(str + "&" + AndroidCallbackKey);
+            var result = MD5.HashData(bin);
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public byte[] GetSignForIos(string str)
+        {
+            var bin = Encoding.UTF8.GetBytes(str + "&" + IosCallbackKey);
             var result = MD5.HashData(bin);
             return result;
         }

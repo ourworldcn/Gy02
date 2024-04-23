@@ -63,6 +63,10 @@ namespace GY02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
+        /// <param name="gameAccountStore"></param>
+        /// <param name="syncCommandManager"></param>
+        /// <param name="mapper"></param>
+        /// <param name="logger"></param>
         public AccountController(GameAccountStoreManager gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper, ILogger<AccountController> logger)
         {
             _GameAccountStore = gameAccountStore;

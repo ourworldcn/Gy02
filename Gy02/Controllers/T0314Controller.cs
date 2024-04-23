@@ -43,7 +43,7 @@ namespace Gy02.Controllers
         GameEntityManager _EntityManager;
 
         /// <summary>
-        /// 
+        /// 安卓支付回调地址。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -83,6 +83,101 @@ namespace Gy02.Controllers
                 return "格式错误";
             }
             var sign = _T0314Manager.GetSignForAndroid(dic);
+            var localSign = Convert.ToHexString(sign);
+            _Logger.LogInformation("计算获得签名为: {str}", localSign);
+            var signStr = dic["sign"];
+            if (string.Compare(Convert.ToHexString(sign), signStr, StringComparison.OrdinalIgnoreCase) != 0)
+            {
+                _Logger.LogWarning("签名错误");
+                return "FAILED";
+            }
+            if (!Guid.TryParse(model.CpOrderNo, out var orderId))
+            {
+                _Logger.LogWarning("非法的开发者订单Id:{CpOrderNo}", model.CpOrderNo);
+                return "非法的开发者订单Id";
+            }
+            //验证用户
+            using var db = _DbContextFactory.CreateDbContext();
+            var guThing = db.VirtualThings.FirstOrDefault(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString == model.Uid);
+            if (guThing is null)
+            {
+                _Logger.LogWarning("找不到指定用户{uid}", model.Uid);
+                return "找不到指定用户";
+            }
+            var gcThing = guThing.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.CharTId);
+            if (gcThing is null)
+            {
+                _Logger.LogWarning("用户数据损坏{uid}", model.Uid);
+                return "用户数据损坏";
+            }
+            var order = db.ShoppingOrder.FirstOrDefault(c => c.Id == orderId);
+            if (order is null)  //若新建
+            {
+                order = new GameShoppingOrder
+                {
+                    Id = orderId,
+                    CustomerId = gcThing.IdString,  //角色Id
+                    Currency = model.PayCurrency,
+                    State = 0,
+                };
+                if (!OwConvert.TryToDecimal(model.PayAmount, out var amount))
+                {
+                    _Logger.LogWarning("支付金额非法{amount}", model.PayAmount);
+                    return "找不到指定用户";
+                }
+                order.Amount = amount;
+                db.ShoppingOrder.Add(order);
+            }
+            else if (order.State != 0)  //若订单已经完成
+            {
+                _Logger.LogWarning("订单已经完成不可重复通知{id}", model.CpOrderNo);
+                return "订单已经完成不可重复通知";
+            }
+            db.SaveChanges();
+            return "SUCCESS";
+        }
+
+        /// <summary>
+        /// Ios支付回调地址。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<string> PayedForIos([FromForm] T0314PayReturnStringDto model)
+        {
+            /*
+             * a)假设本地计算的签名与POST中传递的签名一致，则通过
+             * b)若签名不一致，则返回FAILED，中断处理。
+             * CP应判断是否已发送道具。
+             * CP其他判断逻辑。
+             * 处理完成后。
+             * a)希望SDK继续通知则返回任何非SUCCESS的字符。
+             * b)处理完毕，订单结束则返回SUCCESS，SDK不会再通知。
+             * https://abb.shfoga.com:20443/api/T0314/PayedForIos
+             */
+
+            string str = "";
+            _Logger.LogInformation("收到支付确认，参数:{str}", string.Join('&', model.GetDic().Select(c => c.Key + '=' + c.Value)));
+            var ary = str.Split('&');
+            if (ary.Length <= 0)
+            {
+                _Logger.LogWarning("没有内容");
+                return "没有内容";
+            }
+            Dictionary<string, string> dic;
+            var keys = Request.Form.Select(c => c.Key).ToHashSet();
+            try
+            {
+                dic = model.GetDic();
+                var removes = dic.Keys.Except(keys).ToArray();
+                removes.ForEach(c => dic.Remove(c));
+            }
+            catch (Exception)
+            {
+                _Logger.LogWarning("格式错误");
+                return "格式错误";
+            }
+            var sign = _T0314Manager.GetSignForIos(dic);
             var localSign = Convert.ToHexString(sign);
             _Logger.LogInformation("计算获得签名为: {str}", localSign);
             var signStr = dic["sign"];

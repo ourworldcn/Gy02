@@ -122,6 +122,10 @@
             <summary>
             构造函数。
             </summary>
+            <param name="gameAccountStore"></param>
+            <param name="syncCommandManager"></param>
+            <param name="mapper"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:GY02.Controllers.AccountController.CreateAccount(GY02.Publisher.CreateAccountParamsDto,AutoMapper.IMapper,OW.SyncCommand.SyncCommandManager)">
             <summary>
@@ -857,7 +861,14 @@
         </member>
         <member name="M:Gy02.Controllers.T0314Controller.Payed(GY02.Managers.T0314PayReturnStringDto)">
             <summary>
-            
+            安卓支付回调地址。
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Gy02.Controllers.T0314Controller.PayedForIos(GY02.Managers.T0314PayReturnStringDto)">
+            <summary>
+            Ios支付回调地址。
             </summary>
             <param name="model"></param>
             <returns></returns>
@@ -921,6 +932,13 @@
             构造函数。
             </summary>
             <param name="serviceProvider"></param>
+        </member>
+        <member name="M:Gy02.Test.TestUdpServerManager.Test(System.Guid,System.Net.IPEndPoint)">
+            <summary>
+            
+            </summary>
+            <param name="token"></param>
+            <param name="endPoing"></param>
         </member>
         <member name="T:Global.Program">
             <summary>
