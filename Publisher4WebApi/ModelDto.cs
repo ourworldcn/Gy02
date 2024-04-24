@@ -962,6 +962,13 @@ namespace GY02.Publisher
         /// </summary>
         [MaxLength(64)]
         public string Pwd { get; set; }
+
+        /// <summary>
+        /// 客户端文件的时间戳。如果服务器文件与该时间戳不同才会返回数据，否则不返回模板的数据。
+        /// 省略或为null则强制获取数据。
+        /// </summary>
+        public long? Timestamp { get; set; }
+
     }
 
     /// <summary>
@@ -973,6 +980,11 @@ namespace GY02.Publisher
         /// 模板数据集合。
         /// </summary>
         public IEnumerable<TemplateStringFullView> Templates { get; set; }
+
+        /// <summary>
+        /// 服务器文件的时间戳。
+        /// </summary>
+        public long Timestamp { get; set; }
     }
 
     /// <summary>

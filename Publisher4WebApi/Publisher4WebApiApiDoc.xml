@@ -704,6 +704,12 @@
             密码。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GetTemplates2ParamsDto.Timestamp">
+            <summary>
+            客户端文件的时间戳。如果服务器文件与该时间戳不同才会返回数据，否则不返回模板的数据。
+            省略或为null则强制获取数据。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetTemplates2ReturnDto">
             <summary>
             
@@ -712,6 +718,11 @@
         <member name="P:GY02.Publisher.GetTemplates2ReturnDto.Templates">
             <summary>
             模板数据集合。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetTemplates2ReturnDto.Timestamp">
+            <summary>
+            服务器文件的时间戳。
             </summary>
         </member>
         <member name="T:GY02.Publisher.StopServiceParamsDto">
