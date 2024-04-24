@@ -37,6 +37,8 @@ using System.Collections.Concurrent;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http.Json;
 using System.Net.Sockets;
@@ -283,11 +285,18 @@ namespace GY02
             var svc = _Services.GetRequiredService<T0314Manager>();
             var sw = Stopwatch.StartNew();
             var mapper = _Services.GetRequiredService<IMapper>();
+            using var scope = _Services.CreateScope();
+            var svcScope = scope.ServiceProvider;
+            var db = svcScope.GetService<GY02UserContext>();
             #region 测试用代码
             try
             {
-                var obj = new OwRdmDgramV2();
-                var s = obj.Seq;
+                var p = Expression.Parameter(typeof(VirtualThing));
+                var prop = EfHelper.PropertyOrField(p, nameof(VirtualThing.ExtraString).ToLower(),true);
+                var prop2 = EfHelper.StringContains(prop, Expression.Constant("角"));
+                var lambda = Expression.Lambda<Func<VirtualThing, bool>>(prop2, p);
+                var r = lambda.Compile();
+                var d = db.VirtualThings.Where(lambda).ToArray();
             }
             #endregion 测试用代码
             catch (Exception)
