@@ -37,6 +37,7 @@ BeastBlitzKey
 https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-0d757090e71fb103e
 
 捷游/东南亚 连接地址：abb.shfoga.com administrator//Forgame@123 UTC+8
+捷游/调试 47.237.87.21 administrator//Forgame@123 UTC+8
 
 自测服务器地址。 phl.self.1stlightstudio.com 
 9bK2frUv0ivRjLFtGlZ?aOf*CL(!4e6Y

@@ -62,14 +62,14 @@ namespace Gy02.Controllers
              * https://abb.shfoga.com:20443/api/T0314/Payed
              */
 
-            string str = "";
+            //string str = "";
             _Logger.LogInformation("收到支付确认，参数:{str}", string.Join('&', model.GetDic().Select(c => c.Key + '=' + c.Value)));
-            var ary = str.Split('&');
-            if (ary.Length <= 0)
-            {
-                _Logger.LogWarning("没有内容");
-                return "没有内容";
-            }
+            //var ary = str.Split('&');
+            //if (ary.Length <= 0)
+            //{
+            //    _Logger.LogWarning("没有内容");
+            //    return "没有内容";
+            //}
             Dictionary<string, string> dic;
             var keys = Request.Form.Select(c => c.Key).ToHashSet();
             try
@@ -135,6 +135,7 @@ namespace Gy02.Controllers
                 return "订单已经完成不可重复通知";
             }
             db.SaveChanges();
+            _Logger.LogDebug("订单已经成功入库,Id={id}", model.CpOrderNo);
             return "SUCCESS";
         }
 
@@ -155,16 +156,17 @@ namespace Gy02.Controllers
              * a)希望SDK继续通知则返回任何非SUCCESS的字符。
              * b)处理完毕，订单结束则返回SUCCESS，SDK不会再通知。
              * https://abb.shfoga.com:20443/api/T0314/PayedForIos
+             * 测试的回调地址 https://47.237.87.21:20443/api/T0314/PayedForIos
              */
 
-            string str = "";
+            //string str = "";
             _Logger.LogInformation("收到支付确认，参数:{str}", string.Join('&', model.GetDic().Select(c => c.Key + '=' + c.Value)));
-            var ary = str.Split('&');
-            if (ary.Length <= 0)
-            {
-                _Logger.LogWarning("没有内容");
-                return "没有内容";
-            }
+            //var ary = str.Split('&');
+            //if (ary.Length <= 0)
+            //{
+            //    _Logger.LogWarning("没有内容");
+            //    return "没有内容";
+            //}
             Dictionary<string, string> dic;
             var keys = Request.Form.Select(c => c.Key).ToHashSet();
             try
@@ -230,6 +232,7 @@ namespace Gy02.Controllers
                 return "订单已经完成不可重复通知";
             }
             db.SaveChanges();
+            _Logger.LogDebug("订单已经成功入库,Id={id}", model.CpOrderNo);
             return "SUCCESS";
         }
 

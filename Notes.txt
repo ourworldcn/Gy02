@@ -64,3 +64,5 @@ C:\Program Files\dotnet\sdk\6.0.100\Sdks\Microsoft.NET.Sdk\targets\Microsoft.NET
 
 dbcc shrinkfile('GY02UserTest2',emptyfile) --清空指定的数据文件以便未来删除文件
 菲力宾自测时 20240218之前 VirtualThings表是 1.795kB/行
+
+ actRate=1&cpOrderNo=e2409668-bd70-4296-9d14-d3904c2d6fb4&extrasParams=&orderNo=0020240425184302837889&payAmount=0.990000&payCurrency=USD&payStatus=0&payTime=2024-04-25 18:43:16&payType=8&uid=16588783&usdAmount=0.99&username=gq98303261
