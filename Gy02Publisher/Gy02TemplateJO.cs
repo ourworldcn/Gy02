@@ -816,6 +816,54 @@ namespace GY02.Templates
         /// </summary>
         [JsonPropertyName("currencyCode")]
         public string CurrencyCode { get; set; }
+
+        /*//内网-开发调试
+            //DevelopPrivy_Android
+            //DevelopPrivy_iOS
+
+            //内网-内部开发
+            //DevelopChina_Android
+            //DevelopChina_iOS
+
+            //冰鸟-韩国-线上测试
+            //Korea_Android
+            //Korea_iOS
+
+            //北美-加拿大-线上测试
+            //Canada_Android
+            //Canada_iOS
+
+            //香港-港澳台-线上测试
+            //Hongkong_Android
+            //Hongkong_iOS
+
+            //飞书-南美-线上测试
+            //Feishu_Android
+            //Feishu_iOS
+
+            //自测-菲律宾-线上测试
+            //Pilipinas_Android
+            //Pilipinas_iOS
+
+            //版号-国内Tap-线上测试
+            //TapTap_Android
+            //TapTap_iOS
+
+            //发行-东南亚-线上测试
+            //Southeast_Android
+            //Southeast_iOS
+
+            //支付后台商品id属性名：productStoreId
+        //productAmount
+        //currencyCode
+        //currencyMark
+            //商品信息-区分渠道平台, Dictionary<渠道平台,Dictionary<属性名,值>>
+        */
+        /// <summary>
+        /// 渠道信息。
+        /// </summary>
+        [JsonPropertyName("productInfo")]
+        public Dictionary<string, Dictionary<string, string>> ProductInfo { get; set; } = new Dictionary<string, Dictionary<string, string>>();
         #endregion 商城相关
 
         #region 装备数据

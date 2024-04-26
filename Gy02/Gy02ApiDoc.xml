@@ -657,7 +657,7 @@
         </member>
         <member name="M:GY02.Controllers.VWorldController.GetTemplates(GY02.Publisher.GetTemplates2ParamsDto)">
             <summary>
-            使用缓存获取配置。
+            获取配置数据。
             </summary>
             <param name="model"></param>
             <returns></returns>

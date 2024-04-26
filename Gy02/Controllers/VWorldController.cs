@@ -22,12 +22,11 @@ namespace GY02.Controllers
         GameTemplateManager _TemplateManager;
 
         /// <summary>
-        /// 使用缓存获取配置。
+        /// 获取配置数据。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpGet]
-        [ResponseCache(Duration = 120, Location = ResponseCacheLocation.Any, VaryByQueryKeys = new string[] { nameof(GetTemplates2ParamsDto.Uid), nameof(GetTemplates2ParamsDto.Pwd) })]
         public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery] GetTemplates2ParamsDto model)
         {
             var result = new GetTemplates2ReturnDto();
@@ -38,8 +37,12 @@ namespace GY02.Controllers
                 result.HasError = true;
                 return Unauthorized(result);
             }
-            else
+            //取时间戳
+            var modifyDateTime = Directory.GetLastWriteTimeUtc(Path.Combine(AppContext.BaseDirectory, "GameTemplates.json"));
+            var timestamp = modifyDateTime.Ticks;
+            if (!model.Timestamp.HasValue || model.Timestamp != timestamp)  //若需要返回数据
                 result.Templates = _TemplateManager.Id2FullView.Values.ToArray();
+            result.Timestamp = timestamp;
             return result;
         }
 

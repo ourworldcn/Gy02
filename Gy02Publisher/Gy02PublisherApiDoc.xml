@@ -514,6 +514,11 @@
             商品平台币种。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.ProductInfo">
+            <summary>
+            渠道信息。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Atk">
             <summary>
             攻击数值序列。
