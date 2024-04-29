@@ -283,20 +283,30 @@ namespace GY02
             var ss = _Services.GetService<IDbContextFactory<GY02LogginContext>>();
             using var dbLogger = ss.CreateDbContext();
             var svc = _Services.GetRequiredService<T0314Manager>();
-            var sw = Stopwatch.StartNew();
             var mapper = _Services.GetRequiredService<IMapper>();
             using var scope = _Services.CreateScope();
             var svcScope = scope.ServiceProvider;
             var db = svcScope.GetService<GY02UserContext>();
+            Dictionary<long, string> dic = new Dictionary<long, string>();
+            var key = Guid.NewGuid().ToString();
+            var value = Guid.NewGuid().ToString();
+            var list=new LinkedList<long>();
+            var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
             {
-                var p = Expression.Parameter(typeof(VirtualThing));
-                var prop = EfHelper.PropertyOrField(p, nameof(VirtualThing.ExtraString).ToLower(),true);
-                var prop2 = EfHelper.StringContains(prop, Expression.Constant("角"));
-                var lambda = Expression.Lambda<Func<VirtualThing, bool>>(prop2, p);
-                var r = lambda.Compile();
-                var d = db.VirtualThings.Where(lambda).ToArray();
+                //var p = Expression.Parameter(typeof(VirtualThing));
+                //var prop = EfHelper.PropertyOrField(p, nameof(VirtualThing.ExtraString).ToLower(),true);
+                //var prop2 = EfHelper.StringContains(prop, Expression.Constant("角"));
+                //var lambda = Expression.Lambda<Func<VirtualThing, bool>>(prop2, p);
+                //var r = lambda.Compile();
+                //var d = db.VirtualThings.Where(lambda).ToArray();
+
+                for (int i = 0; i < 1000_000; i++)
+                {
+                    list.AddLast(i);
+                    if( i % 2 == 0 ) list.RemoveFirst();
+                }
             }
             #endregion 测试用代码
             catch (Exception)
