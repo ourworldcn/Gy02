@@ -185,6 +185,31 @@
             新到达邮件的唯一Id集合。
             </summary>
         </member>
+        <member name="T:GY02.Templates.ProductInfoItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.ProductInfoItem.ProductStoreId">
+            <summary>
+            平台商品Id。如:com.duangsea.01
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.ProductInfoItem.ProductAmount">
+            <summary>
+            商品单价。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.ProductInfoItem.CurrencyCode">
+            <summary>
+            币种缩写。如 USD。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.ProductInfoItem.CurrencyMark">
+            <summary>
+            币种符号。如 $。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.GameShoppingItem">
             <summary>
             

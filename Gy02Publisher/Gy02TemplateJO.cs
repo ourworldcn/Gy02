@@ -339,6 +339,36 @@ namespace GY02.Templates
     /// <summary>
     /// 
     /// </summary>
+    public class ProductInfoItem
+    {
+        /// <summary>
+        /// 平台商品Id。如:com.duangsea.01
+        /// </summary>
+        [JsonPropertyName("productStoreId")]
+        public string ProductStoreId { get; set; }
+
+        /// <summary>
+        /// 商品单价。
+        /// </summary>
+        [JsonPropertyName("productAmount")]
+        public decimal ProductAmount { get; set; }
+
+        /// <summary>
+        /// 币种缩写。如 USD。
+        /// </summary>
+        [JsonPropertyName("currencyCode")]
+        public string CurrencyCode { get; set; }
+
+        /// <summary>
+        /// 币种符号。如 $。
+        /// </summary>
+        [JsonPropertyName("currencyMark")]
+        public string CurrencyMark { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class GameShoppingItem : IValidatableObject, ICloneable
     {
         /// <summary>
