@@ -290,7 +290,7 @@ namespace GY02
             Dictionary<long, string> dic = new Dictionary<long, string>();
             var key = Guid.NewGuid().ToString();
             var value = Guid.NewGuid().ToString();
-            var list=new LinkedList<long>();
+            var list = new LinkedList<long>();
             var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
@@ -305,8 +305,11 @@ namespace GY02
                 for (int i = 0; i < 1000_000; i++)
                 {
                     list.AddLast(i);
-                    if( i % 2 == 0 ) list.RemoveFirst();
+                    if (i % 2 == 0) list.RemoveFirst();
                 }
+                var op = _Services.GetService<IOptions<UdpServerManagerOptions>>();
+                var op2 = _Services.GetService<IOptions<OwRdmServerOptions>>();
+                var svc2 = _Services.GetService<UdpServerManager>();
             }
             #endregion 测试用代码
             catch (Exception)

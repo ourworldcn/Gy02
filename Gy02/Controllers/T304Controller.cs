@@ -28,6 +28,7 @@ namespace Gy02.Controllers
         /// </summary>
         public T304Controller(ILogger<T304Controller> logger, GameAccountStoreManager accountStoreManager, GameTemplateManager templateManager, GY02UserContext dbContext, IMapper mapper, SyncCommandManager syncCommandManager, T304Manager t304Manager)
         {
+            //完美 北美
             _Logger = logger;
             _AccountStoreManager = accountStoreManager;
             _TemplateManager = templateManager;
@@ -35,7 +36,6 @@ namespace Gy02.Controllers
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
             _T304Manager = t304Manager;
-            //完美 北美
         }
 
         /// <summary>
@@ -95,14 +95,19 @@ namespace Gy02.Controllers
             }
             var orderIdBinary = Encoding.UTF8.GetBytes(orderId);
             var orderOld = _DbContext.ShoppingOrder.FirstOrDefault(c => c.BinaryArray == orderIdBinary);
-            if(orderOld is not null)
+            if (orderOld is not null)
             {
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                 result.DebugMessage = $"订单已被入库，不可重复入库。";
                 _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
-            var tt = _TemplateManager.Id2FullView.Values.FirstOrDefault(c => c.ProductStoreId == model.ProductId);
+            var tt = _TemplateManager.Id2FullView.Values.FirstOrDefault(c =>
+            {
+                var r = c.ProductInfo?.Values.FirstOrDefault(d => d.TryGetValue("productStoreId", out var s) && string.Equals(model.ProductId, s, StringComparison.OrdinalIgnoreCase));
+                return r != null;
+                //return c.ProductStoreId == model.ProductId;
+            });
             if (tt is null)
             {
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
@@ -110,6 +115,7 @@ namespace Gy02.Controllers
                 _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
+            var dicProductInfo = tt.ProductInfo.Values.First(d => d.TryGetValue("productStoreId", out var s) && string.Equals(model.ProductId, s, StringComparison.OrdinalIgnoreCase))!;
             var id = Guid.NewGuid();
             _Logger.LogInformation($"T304/Payed确认支付调用。id={id}");
             result.DebugMessage = $"{id}";
@@ -151,7 +157,7 @@ namespace Gy02.Controllers
                 CompletionDateTime = OwHelper.WorldNow,
                 Amount = tt.Amount,
                 Currency = tt.CurrencyCode,
-                BinaryArray= orderIdBinary,
+                BinaryArray = orderIdBinary,
             };
             _DbContext.ShoppingOrder.Add(order);
             try
@@ -184,7 +190,7 @@ namespace Gy02.Controllers
         /// </summary>
         public T304Data()
         {
-            
+
         }
 
         /// <summary>

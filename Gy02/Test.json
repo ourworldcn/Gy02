@@ -7,7 +7,7 @@
       "PeriodString": "1m",
       "ValidPeriodString": "1m"
     },
-    "GroupNumber": 1,
+    "GroupNumber": 2,
     "MaxCount": null,
     "Ins": [
       {
@@ -30,7 +30,7 @@
         "Id": null,
         "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
         "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 80
+        "Count": 500
       },
       {
         "Id": null,
@@ -48,46 +48,46 @@
   },
   "productInfo": {
     "Southeast_Android": {
-      "productStoreId": "com.duangsea.01",
-      "productAmount": 0.99,
+      "productStoreId": "com.duangsea.02",
+      "productAmount": "4.99",
       "currencyCode": "USD",
       "currencyMark": "$"
     },
     "Southeast_iOS": {
-      "productStoreId": "com.duangsea.01",
-      "productAmount": 0.99,
+      "productStoreId": "com.duangsea.02",
+      "productAmount": "4.99",
       "currencyCode": "USD",
       "currencyMark": "$"
     },
     "Canada_Android": {
-      "productStoreId": "com.beast.beastbumper.blitz.01",
-      "productAmount": 0.99,
+      "productStoreId": "com.beast.beastbumper.blitz.02",
+      "productAmount": "4.99",
       "currencyCode": "USD",
       "currencyMark": "$"
     },
     "Canada_iOS": {
-      "productStoreId": "com.beast.beastbumper.blitz.01",
-      "productAmount": 0.99,
+      "productStoreId": "com.beast.beastbumper.blitz.02",
+      "productAmount": "4.99",
       "currencyCode": "USD",
       "currencyMark": "$"
     },
     "Korea_Android": {
-      "productStoreId": "com.duangzs.01",
-      "productAmount": 0.99,
+      "productStoreId": "com.duangzs.02",
+      "productAmount": "4.5",
       "currencyCode": "USD",
       "currencyMark": "$"
     },
     "Korea_iOS": {
-      "productStoreId": "com.duangzs.01",
-      "productAmount": 0.99,
+      "productStoreId": "com.duangzs.02",
+      "productAmount": "4.5",
       "currencyCode": "USD",
       "currencyMark": "$"
     }
   },
-  "productName": "80钻石购买",
-  "productType": "80钻石购买",
-  "productDesc": "80钻石购买",
-  "name_txt": 10995,
+  "productName": "500钻石购买",
+  "productType": "购买",
+  "productDesc": "500钻石购买",
+  "name_txt": 10996,
   "JiaoBiao": [],
-  "display_icon": "ZuanShi1"
+  "display_icon": "ZuanShi2"
 }

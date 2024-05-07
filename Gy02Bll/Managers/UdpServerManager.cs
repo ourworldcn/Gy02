@@ -16,9 +16,24 @@ using System.Text.Json;
 
 namespace GY02.Managers
 {
-    public class UdpServerManagerOptions : OwRdmServerOptions, IOptions<UdpServerManagerOptions>
+    public class UdpServerManagerOptions : IOptions<UdpServerManagerOptions>
     {
-        public override UdpServerManagerOptions Value => this;
+        //public override UdpServerManagerOptions Value => this;
+
+        /// <summary>
+        /// 侦听地址。
+        /// 指定使用的本地终结点Ip,通常不用设置。
+        /// </summary>
+        /// <value>默认侦听虚四段表示法中的 0.0.0.0。</value>
+        public string LocalIp { get; set; } = "0.0.0.0";
+
+        /// <summary>
+        /// 使用的本机侦听端口。应通过配置指定端口，避免防火墙拒绝侦听请求。
+        /// </summary>
+        /// <value>默认值：0,自动选择。</value>
+        public ushort LocalPort { get; set; }
+
+        public UdpServerManagerOptions Value => this;
     }
 
     /// <summary>
@@ -53,7 +68,7 @@ namespace GY02.Managers
         /// <param name="options"></param>
         /// <param name="logger"></param>
         public UdpServerManager(IOptions<UdpServerManagerOptions> options, ILogger<UdpServerManager> logger, IHostApplicationLifetime lifetime, GameAccountStoreManager accountStoreManager)
-            : base(options, logger, lifetime)
+            : base(new OwRdmServerOptions { ListernPort = options.Value.LocalPort, ListernAddress = options.Value.LocalIp }, logger, lifetime)
         {
             _Lifetime = lifetime;
             _AccountStoreManager = accountStoreManager;
