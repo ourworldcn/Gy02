@@ -168,7 +168,7 @@ namespace GY02.Controllers
             string ip = LocalIp.ToString();
             var result = _Mapper.Map<LoginT78ReturnDto>(command);
             var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-            var udpServiceHost = $"{ip}:{udpServer.ListernEndPoint}";
+            var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
             return result;
@@ -243,7 +243,7 @@ namespace GY02.Controllers
             if (!result.HasError)
             {
                 var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-                var udpServiceHost = $"{ip}:{udpServer.ListernEndPoint}";
+                var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
                 result.WorldServiceHost = worldServiceHost;
                 result.UdpServiceHost = udpServiceHost;
                 result.LoginName = command.User.LoginName;
