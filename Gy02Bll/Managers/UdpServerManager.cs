@@ -95,6 +95,7 @@ namespace GY02.Managers
         {
             var clientName = GetClientName(new Span<byte>(datas.Buffer, datas.Offset + 8, datas.Count - 8)); //获取客户端传来的名称
             if (!Guid.TryParse(clientName, out var token)) goto goon;
+            Logger.LogDebug("检测到连接请求，Ip={ip},Id={id}", remote, token);
             _Token2ClientId.AddOrUpdate(token, c => datas.Id, (c, d) => datas.Id);
         goon:
             base.OnRequestConnect(datas, remote);

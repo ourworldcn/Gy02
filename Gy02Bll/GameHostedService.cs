@@ -287,29 +287,25 @@ namespace GY02
             using var scope = _Services.CreateScope();
             var svcScope = scope.ServiceProvider;
             var db = svcScope.GetService<GY02UserContext>();
-            Dictionary<long, string> dic = new Dictionary<long, string>();
-            var key = Guid.NewGuid().ToString();
-            var value = Guid.NewGuid().ToString();
-            var list = new LinkedList<long>();
+
             var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
             {
-                //var p = Expression.Parameter(typeof(VirtualThing));
-                //var prop = EfHelper.PropertyOrField(p, nameof(VirtualThing.ExtraString).ToLower(),true);
-                //var prop2 = EfHelper.StringContains(prop, Expression.Constant("角"));
-                //var lambda = Expression.Lambda<Func<VirtualThing, bool>>(prop2, p);
-                //var r = lambda.Compile();
-                //var d = db.VirtualThings.Where(lambda).ToArray();
-
-                for (int i = 0; i < 1000_000; i++)
-                {
-                    list.AddLast(i);
-                    if (i % 2 == 0) list.RemoveFirst();
-                }
-                var op = _Services.GetService<IOptions<UdpServerManagerOptions>>();
-                var op2 = _Services.GetService<IOptions<OwRdmServerOptions>>();
-                var svc2 = _Services.GetService<UdpServerManager>();
+                int i = -1;
+                uint j = (uint)i >> 16 & 0x1;
+                var ips = Dns.GetHostAddresses("abb.shfoga.com");
+                var ipEndPoint = new IPEndPoint(ips[1], 20088);
+                using var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                udp.Bind(new IPEndPoint(IPAddress.Any, 0));
+                byte[] buff = new byte[] { 0,0,0,0,0,0,0,0,11};
+                udp.SendTo(buff, ipEndPoint);
+                EndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
+                EndPoint endPoint2 = new IPEndPoint(IPAddress.Any, 0);
+                var b = udp.Available;
+                //udp.ReceiveFrom(buff, ref endPoint);
+                var b1 = endPoint == endPoint2;
+                var b2 = endPoint.Equals( endPoint2);
             }
             #endregion 测试用代码
             catch (Exception)

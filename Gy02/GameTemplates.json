@@ -7040,7 +7040,7 @@
       "DisplayName": "熊头羊",
       "Id": "c62629bd-2181-4153-9103-86f889b663d8",
       "Gid": 160211214,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12529,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"7cbb0485-3903-46d2-ab7e-e0bc0290a5b4\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_crocodile\"]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12529,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"7cbb0485-3903-46d2-ab7e-e0bc0290a5b4\",\"enable\":true}],\"equipskin\":\"Bear_Hybrid_Sheep\",\"source1\":[\"zuoqi_sheep\",\"zuoqi_bear\"]}"
     },
     {
       "DisplayName": "熊头狼",
@@ -17206,7 +17206,7 @@
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
-      "DisplayName": "蓝色速度怪（废弃）",
+      "DisplayName": "小蜜蜂",
       "Id": "473ad6e1-ab06-49a7-99d4-f706abcda366",
       "Gid": 320102001,
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\"],\"name_txt\":0,\"comment_txt\":0}"
@@ -18142,7 +18142,7 @@
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_gongju\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
-      "DisplayName": "召唤宝箱",
+      "DisplayName": "召唤宝箱--召唤图腾",
       "Id": "c5ffa652-0b55-42b6-b499-0061a4dae98c",
       "Gid": 320105408,
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_gongju\"],\"name_txt\":0,\"comment_txt\":0}"
@@ -18817,7 +18817,7 @@
       "DisplayName": "猫头狼身（小狼）",
       "Id": "e224f650-fb93-4465-b5e7-c07e34e935ff",
       "Gid": 320208017,
-      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
       "DisplayName": "猫头龙身",
@@ -18883,7 +18883,7 @@
       "DisplayName": "鸡头狼身（小狼）",
       "Id": "977e2eac-722c-4916-be83-fca4639ed382",
       "Gid": 320208028,
-      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
       "DisplayName": "鸡头龙身",
@@ -18943,7 +18943,7 @@
       "DisplayName": "虎头狼身（小狼）",
       "Id": "49da945f-5554-4438-9079-f92984dd181b",
       "Gid": 320208038,
-      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
       "DisplayName": "虎头龙身",
@@ -19015,7 +19015,7 @@
       "DisplayName": "龙头狼身（小狼）",
       "Id": "6b2aae2a-e42d-4a73-868b-2ead2fcd9739",
       "Gid": 320208050,
-      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
       "DisplayName": "龙头鲨身",
@@ -19904,6 +19904,132 @@
       "Id": "3a602c79-eeaa-4cc9-87cf-7f0b5ffff8fc",
       "Gid": 320206904,
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "喷火图腾（单向无敌）",
+      "Id": "ea4c5430-ea0a-43fb-baf4-42ffc08e234d",
+      "Gid": 320104009,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qita\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "喷火图腾（无敌）",
+      "Id": "f2b8f7b2-a9b3-481b-9bd2-075b54591698",
+      "Gid": 320104010,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qita\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "召唤喷火图腾（单向）",
+      "Id": "ac83d584-4442-4fc1-95c2-693eb539bc7f",
+      "Gid": 320105409,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_gongju\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "召唤喷火图腾",
+      "Id": "8e553b66-1615-47fd-8cb0-906b8566860d",
+      "Gid": 320105410,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_gongju\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "鸡下的大蛋可孵化小黑怪",
+      "Id": "ec2591bf-09da-48c7-ad4f-b5eb4353fb7e",
+      "Gid": 320105704,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_gongju\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "陨石技能（被召唤）",
+      "Id": "e597a9b8-14b7-4231-9753-54aeb4bc2e4f",
+      "Gid": 320201018,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_gongju\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "出生点旗子",
+      "Id": "3472bc90-e4e7-4d0c-bba3-87e9e01c78a4",
+      "Gid": 320206066,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "出生点旗子",
+      "Id": "0f5beb19-1fec-4af4-875e-c7d0c5cdc1fc",
+      "Gid": 320206067,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_qizi\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "出生蛋",
+      "Id": "38fc397f-bb19-4739-9548-590fd5dd0b77",
+      "Gid": 320206513,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "出生蛋",
+      "Id": "a4a81294-8780-4692-9ddd-e17207df0c6a",
+      "Gid": 320206514,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "出生蛋行走",
+      "Id": "6f8f72c5-38a1-45ee-9407-1802249c5b78",
+      "Gid": 320206613,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "出生蛋（发子弹）",
+      "Id": "9ddeba16-6ef1-404c-9a12-f321c644a31f",
+      "Gid": 320206713,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "出生蛋（发子弹）",
+      "Id": "813e8a88-99f8-4eec-b618-a3a19270f560",
+      "Gid": 320206714,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_egg\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "天马召唤的小羊",
+      "Id": "8bf5c772-a2d4-4f9f-9c69-72a85eb743e7",
+      "Gid": 320301011,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "天马召唤的小虎",
+      "Id": "c3617777-dbe7-4f43-9ab6-705854bf4e12",
+      "Gid": 320301012,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "天马召唤的小长颈鹿",
+      "Id": "c8c62f04-68ce-4d2d-a817-01b1c6ab84a4",
+      "Gid": 320301013,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "天马召唤的小狗",
+      "Id": "371ef4fc-d55e-4cb5-9d27-9c79c705c71b",
+      "Gid": 320301014,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "天马召唤的小猫",
+      "Id": "9b6b12d3-cfc8-490a-bf83-dbf2255838bd",
+      "Gid": 320301016,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "天马召唤的小鸡",
+      "Id": "007094eb-9fbf-46ca-b424-bb65772d51b9",
+      "Gid": 320301017,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "天马召唤的小鲨鱼",
+      "Id": "349f3575-6c24-4094-9144-0e1b475a8bd9",
+      "Gid": 320301018,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "复制Boss",
+      "Id": "20b5d742-4ae5-41a1-922d-b359334d4c3f",
+      "Gid": 320305003,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_boss\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
       "DisplayName": "装备礼包1",
