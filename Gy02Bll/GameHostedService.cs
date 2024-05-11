@@ -292,20 +292,22 @@ namespace GY02
             #region 测试用代码
             try
             {
-                int i = -1;
-                uint j = (uint)i >> 16 & 0x1;
                 var ips = Dns.GetHostAddresses("abb.shfoga.com");
                 var ipEndPoint = new IPEndPoint(ips[1], 20088);
                 using var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
                 udp.Bind(new IPEndPoint(IPAddress.Any, 0));
-                byte[] buff = new byte[] { 0,0,0,0,0,0,0,0,11};
-                udp.SendTo(buff, ipEndPoint);
+                //udp.SendTo(buff, ipEndPoint);
                 EndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
-                EndPoint endPoint2 = new IPEndPoint(IPAddress.Any, 0);
+                byte[] buff = Encoding.UTF8.GetBytes("this is a test.");
+                EndPoint remote = new IPEndPoint(IPAddress.Parse("47.236.192.97"), 20088);
+
+                for (int i = 0; i < 1_000; i++)
+                {
+                    //udp.SendTo(buff, remote);
+                    //Thread.Sleep(1000);
+                }
                 var b = udp.Available;
-                //udp.ReceiveFrom(buff, ref endPoint);
-                var b1 = endPoint == endPoint2;
-                var b2 = endPoint.Equals( endPoint2);
+
             }
             #endregion 测试用代码
             catch (Exception)
