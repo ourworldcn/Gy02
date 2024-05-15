@@ -292,21 +292,21 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var ips = Dns.GetHostAddresses("abb.shfoga.com");
-                var ipEndPoint = new IPEndPoint(ips[1], 20088);
-                using var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                udp.Bind(new IPEndPoint(IPAddress.Any, 0));
-                //udp.SendTo(buff, ipEndPoint);
-                EndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
-                byte[] buff = Encoding.UTF8.GetBytes("this is a test.");
-                EndPoint remote = new IPEndPoint(IPAddress.Parse("47.236.192.97"), 20088);
+                //var ips = Dns.GetHostAddresses("abb.shfoga.com");
+                //var ipEndPoint = new IPEndPoint(ips[1], 20088);
+                //using var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
+                //udp.Bind(new IPEndPoint(IPAddress.Any, 0));
+                ////udp.SendTo(buff, ipEndPoint);
+                //EndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
+                //byte[] buff = Encoding.UTF8.GetBytes("this is a test.");
+                //EndPoint remote = new IPEndPoint(IPAddress.Parse("47.236.192.97"), 20088);
 
                 for (int i = 0; i < 1_000; i++)
                 {
                     //udp.SendTo(buff, remote);
                     //Thread.Sleep(1000);
                 }
-                var b = udp.Available;
+                //var b = udp.Available;
 
             }
             #endregion 测试用代码
@@ -341,7 +341,7 @@ namespace GY02
 
     //private unsafe void Awake()
     //{
-    //    byte[] sendByte = Encoding.ASCII.GetBytes("");//FORWARDERS
+    //    byte[] sendByte = Encoding.ASCII.GetBytes("");    //FORWARDERS
 
     //    fixed (byte* pointerToFirst = &sendByte[0])
     //    {

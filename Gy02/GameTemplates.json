@@ -1291,7 +1291,7 @@
       "DisplayName": "衣服装备槽",
       "Id": "3d141082-0deb-4f59-ac5d-a80e43657ccc",
       "Gid": 912111005,
-      "PropertiesString": "{\"Genus\":[\"gs_equipslot\"],\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1}"
+      "PropertiesString": "{\"Genus\":[\"gs_equipslot\"],\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"cap\":1,\"Count\":1,\"TIdsOfCreate\":[\"dde00d3f-e459-4928-a7d6-016e7dae3268\"]}"
     },
     {
       "DisplayName": "鞋子装备槽",
@@ -6422,7 +6422,7 @@
       "DisplayName": "葵花鹿",
       "Id": "60680163-185d-462b-ae6d-4d9f3c609895",
       "Gid": 160204310,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12549,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Giraffe_Legend_02\",\"source1\":[\"zuoqi_corgi\",\"zuoqi_giraffe\"]}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"name_txt\":12549,\"atk\":null,\"def\":null,\"pow\":null,\"Genus\":[\"e_zuoqi\",\"goto_fuhua\"],\"UniInCharOuts\":[{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3ecf10c0-f5e5-4996-8ed0-2e16547310a5\",\"Count\":5}],\"p_skills\":[{\"skillsid\":\"622f4517-ef8d-4f70-877e-a9420d177f00\",\"enable\":true}],\"equipskin\":\"Giraffe_Legend_02\",\"source1\":[\"zuoqi_crocodile\",\"zuoqi_giraffe\"]}"
     },
     {
       "DisplayName": "非凡鹿",
@@ -8954,7 +8954,13 @@
       "DisplayName": "免费钻石领取",
       "Id": "85725ce3-09df-40d4-b781-eb288bc38f4e",
       "Gid": 180201001,
-      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b65693ee6ded97\",\"Pilipinas\":\"b6579671ea72ce\",\"Southeast\":\"b65f269835b562\",\"Southeast_iOS\":\"b1fh1r09fqplkm\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_meirishangdian\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"408c6858-6016-4e56-aec0-d69c0fbb2cbc\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30}]},\"name_txt\":10963,\"comment_txt\":10928,\"JiaoBiao\":[],\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b65693ee6ded97\",\"Pilipinas\":\"b6579671ea72ce\",\"Southeast\":\"b65f269835b562\",\"Southeast_iOS\":\"b1fh1r09fqplkm\"}}"
+    },
+    {
+      "DisplayName": "免费钻石领取序列",
+      "Id": "408c6858-6016-4e56-aec0-d69c0fbb2cbc",
+      "Gid": 190201107,
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"85725ce3-09df-40d4-b781-eb288bc38f4e\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\"],\"Counts\":[0,1,1]}}}"
     },
     {
       "DisplayName": "每日商店  第1组-1 免广告道具 x3 ",
@@ -9981,7 +9987,7 @@
       "DisplayName": "动物抽奖付费购买",
       "Id": "d5b2958c-7d49-40bf-a482-d54474c8cf1d",
       "Gid": 180201167,
-      "PropertiesString": "{\"Genus\":[\"gs_niudan\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":2,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":100,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"88c92efc-fb43-43df-997d-c5918808de5d\",\"Count\":1}]},\"name_txt\":10965,\"comment_txt\":10943,\"JiaoBiao\":[]}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"e3aeb7f1-f7de-4d32-8805-2f6a40b9db36\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[0,1,1,30]}}}"
     },
     {
       "DisplayName": "付费卡池",
@@ -10065,7 +10071,7 @@
       "DisplayName": "金币广告购买项目序列",
       "Id": "612ec963-4f73-437e-a51a-776478b4434a",
       "Gid": 190101002,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"e3aeb7f1-f7de-4d32-8805-2f6a40b9db36\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[1,1,30]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"e3aeb7f1-f7de-4d32-8805-2f6a40b9db36\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[0,1,1,30]}}}"
     },
     {
       "DisplayName": "80钻石购买",
@@ -14575,7 +14581,7 @@
       "DisplayName": "装备穿戴升级引导用",
       "Id": "6969e916-893d-4cbe-9059-48904d24213a",
       "Gid": 180501001,
-      "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"dde00d3f-e459-4928-a7d6-016e7dae3268\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"e85a0690-6b83-4fc2-96d5-57d97010c2cb\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"f76166e8-8199-404c-b4a8-7f6499681532\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"16a8b068-918b-46ad-8ae6-d3797c7683ac\",\"Count\":1}]}}"
     },
     {
       "DisplayName": "装备合成引导用",
@@ -14599,7 +14605,13 @@
       "DisplayName": "一般卡池广告购买",
       "Id": "6516d816-236c-458b-b282-79e0c275026d",
       "Gid": 180201168,
-      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":2,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[],\"display_icon\":\"RaffleBoxBg_180201035\",\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b657670b088511\",\"Pilipinas\":\"b6579671ea72ce\",\"Southeast\":\"b65f269a84d8bd\",\"Southeast_iOS\":\"b1fh1r09fqp4p6\"}}"
+      "PropertiesString": "{\"Genus\":[\"gs_choujiangbaoxiang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"5d4136a7-9c81-478e-a8db-76582b719e85\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"7657244e-ef96-4f4d-a07f-157b22198fd7\",\"Count\":1},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":300}]},\"name_txt\":10964,\"comment_txt\":10940,\"JiaoBiao\":[],\"display_icon\":\"RaffleBoxBg_180201035\",\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b657670b088511\",\"Pilipinas\":\"b6579671ea72ce\",\"Southeast\":\"b65f269a84d8bd\",\"Southeast_iOS\":\"b1fh1r09fqp4p6\"}}"
+    },
+    {
+      "DisplayName": "一般卡池广告购买序列",
+      "Id": "5d4136a7-9c81-478e-a8db-76582b719e85",
+      "Gid": 190201106,
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"6516d816-236c-458b-b282-79e0c275026d\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\"],\"Counts\":[0,1,1]}}}"
     },
     {
       "DisplayName": "调查问卷奖励购买",
