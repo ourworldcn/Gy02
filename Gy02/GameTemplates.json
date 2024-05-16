@@ -1424,7 +1424,7 @@
       "DisplayName": "免广告道具-付费购买",
       "Id": "09d9062c-84fe-4cc1-846a-5daab6a23b1e",
       "Gid": 130101005,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":15,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":999999,\"StepValue\":15,\"Delay\":\"1.00:00:00\",\"CurrentValue\":15,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}},\"name_txt\":10293,\"comment_txt\":10294}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":15,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"Fcps\":{\"Count\":{\"MinValue\":-10,\"MaxValue\":999999,\"StepValue\":15,\"Delay\":\"1.00:00:00\",\"CurrentValue\":15,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}},\"name_txt\":10293,\"comment_txt\":10294}"
     },
     {
       "DisplayName": "免广告道具-VIP赠送",
