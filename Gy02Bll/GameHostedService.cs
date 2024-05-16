@@ -287,11 +287,12 @@ namespace GY02
             using var scope = _Services.CreateScope();
             var svcScope = scope.ServiceProvider;
             var db = svcScope.GetService<GY02UserContext>();
-
+            var str2 = "2023-06-01T00:00:00.0000000";
             var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
             {
+                var ss2 = JsonSerializer.Deserialize<DateTime>(str2);
                 //var ips = Dns.GetHostAddresses("abb.shfoga.com");
                 //var ipEndPoint = new IPEndPoint(ips[1], 20088);
                 //using var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);

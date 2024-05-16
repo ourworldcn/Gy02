@@ -379,6 +379,7 @@ namespace GY02.Managers
                 if (entity is null) return null;
                 var oriCount = entity.Count;    //预读fcp
                 entity.Count = summary.Count;   //可以是任何数
+                var tmpi = entity.Count;
                 if (tt.Genus?.Contains(ProjectContent.ExistsDayNumberGenus) ?? false)
                 {
                     entity.CreateDateTime = OwHelper.WorldNow;

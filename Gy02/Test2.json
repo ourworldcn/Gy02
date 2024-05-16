@@ -1,23 +1,19 @@
 {
-  "SequenceOut": {
-    "Conditions": [
-      {
-        "ParentTId": null,
-        "Genus": [],
-        "TId": "62D3A545-7604-46BF-9837-95E286660BC8",
-        "MinCount": null,
-        "GeneralConditional": [],
-        "GroupMask": 1
-      }
-    ],
-    "GetIndexExpression": {
-      "op": "ToInt32",
-      "args": [ "Count" ]
-    },
-    "Outs": {
-      "TIds": [ "1f31807a-f633-4d3a-8e8e-382ad105d061" ],
-      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
-      "Counts": [ 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 360, 390, 420, 450, 480, 510, 540, 570, 600, 630, 660, 690, 720, 750, 780, 810, 840, 870, 900, 930, 960, 990, 1020, 1050, 1080, 1110, 1140, 1170, 1200, 1230, 1260, 1290, 1320, 1350, 1380, 1410, 1440, 1470, 1500, 1530, 1560, 1590, 1620, 1650, 1680, 1710, 1740, 1770, 1800, 1830, 1860, 1890, 1920, 1950, 1980, 2010, 2040, 2070, 2100, 2130, 2160 ]
+  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
+  "Count": 0,
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "9c559895-9a2c-43a7-b793-e879a600487c",
+  "name_txt": 10295,
+  "comment_txt": 10296,
+  "Fcps": {
+    "Count": {
+      "MinValue": -1,
+      "MaxValue": 10,
+      "StepValue": 10,
+      "Delay": "1.00:00:00",
+      "CurrentValue": 10,
+      "LastDateTime": "2023-06-01T00:00:00.0000000+08:00"
     }
   }
 }
