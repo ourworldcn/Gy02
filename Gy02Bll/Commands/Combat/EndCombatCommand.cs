@@ -3,6 +3,7 @@ using GY02.Publisher;
 using GY02.Templates;
 using OW.Game;
 using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.SyncCommand;
 using System;
@@ -69,16 +70,18 @@ namespace GY02.Commands
     /// </summary>
     public class EndCombatHandler : SyncCommandHandlerBase<EndCombatCommand>, IGameCharHandler<EndCombatCommand>
     {
-        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager)
+        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager)
         {
             _AccountStore = gameAccountStore;
             _GameEntityManager = gameEntityManager;
             _SyncCommandManager = syncCommandManager;
+            _TemplateManager = templateManager;
         }
 
         GameAccountStoreManager _AccountStore;
         GameEntityManager _GameEntityManager;
         SyncCommandManager _SyncCommandManager;
+        GameTemplateManager _TemplateManager;
 
         public GameAccountStoreManager AccountStore => _AccountStore;
 
@@ -115,17 +118,60 @@ namespace GY02.Commands
                 ch = new CombatHistoryItem { TId = command.CombatTId };
                 gc.CombatHistory.Add(ch);
             }
-            if (!ch.MinTimeSpanOfPass.HasValue || ch.MinTimeSpanOfPass > command.MinTimeSpanOfPass)
+            #region 星级评定
+            var ttCombat = _TemplateManager.GetFullViewFromId(command.CombatTId);   //管卡模板
+            int? lastLevelOfPass = null;
+            int? maxLevelOfPass = ch.MaxLevelOfPass;
+            if (command.IsSuccess && ttCombat.ScoreTime.Count > 0 && command.MinTimeSpanOfPass.HasValue)  //若需要评定星级
             {
-                var change1 = command.Changes?.MarkChanges(gc, nameof(gc.CombatHistory), new CombatHistoryItem { TId = ch.TId, MinTimeSpanOfPass = ch.MinTimeSpanOfPass }, ch);
-                if (change1 != null)
+                var tongguan = _GameEntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.TongguanBiTId); //通关币
+                if (tongguan is null)
                 {
-                    change1.HasOldValue = ch.MinTimeSpanOfPass.HasValue;
-                    change1.HasNewValue = true;
+                    command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    command.DebugMessage = $"需要评定通关等级，但客户没有通关币对象。";
+                    return;
                 }
-                ch.MinTimeSpanOfPass = command.MinTimeSpanOfPass;
+                var scope = (decimal)command.MinTimeSpanOfPass.Value.TotalSeconds;   //通关的秒数
+                var combarLv = ttCombat.ScoreTime.FindIndex(c => scope <= c);   //星级
+                if (combarLv == -1)
+                    combarLv = 0;
+                else
+                    combarLv = ttCombat.ScoreTime.Count - combarLv; //计算得到星级
+                if (ch.MaxLevelOfPass is null || ch.MaxLevelOfPass != combarLv)   //若通关等级发生变化
+                {
+                    var bi = combarLv - (ch.MaxLevelOfPass ?? 0);
+                    if (bi > 0)    //若需要增加通关币
+                    {
+                        var biEntity = new GameEntitySummary[] { new GameEntitySummary {
+                            TId=ProjectContent.TongguanBiTId,
+                            Count= bi,
+                        } };
+                        _GameEntityManager.CreateAndMove(biEntity, gc, command.Changes);
+                        maxLevelOfPass = combarLv;
+                    }
+                }
+                lastLevelOfPass = combarLv;
             }
-
+            else
+                lastLevelOfPass = null;
+            #endregion 星级评定
+            //if (!ch.MinTimeSpanOfPass.HasValue || ch.MinTimeSpanOfPass > command.MinTimeSpanOfPass)
+            var change1 = command.Changes?.MarkChanges(gc, nameof(gc.CombatHistory), new CombatHistoryItem
+            {
+                TId = ch.TId,
+                MinTimeSpanOfPass = ch.MinTimeSpanOfPass,
+                MaxLevelOfPass = ch.MaxLevelOfPass,
+                LastLevelOfPass = ch.LastLevelOfPass,
+            }, ch);
+            if (change1 != null)
+            {
+                change1.HasOldValue = ch.MinTimeSpanOfPass.HasValue;
+                change1.HasNewValue = true;
+            }
+            if (!ch.MinTimeSpanOfPass.HasValue || ch.MinTimeSpanOfPass > command.MinTimeSpanOfPass)
+                ch.MinTimeSpanOfPass = command.MinTimeSpanOfPass;
+            ch.MaxLevelOfPass = maxLevelOfPass;
+            ch.LastLevelOfPass = lastLevelOfPass;
             #endregion 记录战斗信息
 
             #region 记录看广告后额外奖励信息

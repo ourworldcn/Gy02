@@ -604,6 +604,12 @@
             关卡入场条件。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.ScoreTime">
+            <summary>
+            通关等级转化数组。可能是空集合表示不评定星级。
+            </summary>
+            <value>例如:[ 360, 480, 600 ]小于或等于360秒则评定为3(数组长度)星，大于600秒则评定为0星，以此类推。</value>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fuhua">
             <summary>
             孵化数据。
@@ -1459,6 +1465,11 @@
         <member name="F:GY02.Publisher.ProjectContent.DiamTId">
             <summary>
             钻石TID。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.TongguanBiTId">
+            <summary>
+            通关币TID。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.PowerTId">

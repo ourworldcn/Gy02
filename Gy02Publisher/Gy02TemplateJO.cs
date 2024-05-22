@@ -975,6 +975,12 @@ namespace GY02.Templates
         /// </summary>
         public List<BlueprintInItem> Ins { get; set; } = new List<BlueprintInItem>();
 
+        /// <summary>
+        /// 通关等级转化数组。可能是空集合表示不评定星级。
+        /// </summary>
+        /// <value>例如:[ 360, 480, 600 ]小于或等于360秒则评定为3(数组长度)星，大于600秒则评定为0星，以此类推。</value>
+        [JsonPropertyName("scoreTime")]
+        public List<decimal> ScoreTime { get; set; } = new List<decimal>();
         #endregion
 
         #region 孵化相关

@@ -178,6 +178,11 @@ namespace GY02.Publisher
         public static readonly Guid DiamTId = new Guid("c9575f24-a33d-49ba-b130-29b6ff4d62c7");
 
         /// <summary>
+        /// 通关币TID。
+        /// </summary>
+        public static readonly Guid TongguanBiTId = new Guid("49597D35-877B-420F-BA2F-121FB2D4F63F");
+
+        /// <summary>
         /// 体力TID。
         /// </summary>
         public static readonly Guid PowerTId = new Guid("f1b15c9e-32ee-4203-af62-d324bfa4f7e7");

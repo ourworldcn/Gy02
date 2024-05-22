@@ -1370,6 +1370,16 @@ namespace GY02.Publisher
         /// 该关卡的最短时间，如果null,表示没有记录过。
         /// </summary>
         public TimeSpan? MinTimeSpanOfPass { get; set; }
+
+        /// <summary>
+        /// 最高通过评定星级。空则表示未成功通关，0表示通关但未获得等级，1表示1星，以此类推。
+        /// </summary>
+        public int? MaxLevelOfPass { get; set; }
+
+        /// <summary>
+        /// 最近一次通过评定星级。空则表示未成功通关，0表示通关但未获得等级，1表示1星，以此类推。
+        /// </summary>
+        public int? LastLevelOfPass { get; set; }
     }
 
 
