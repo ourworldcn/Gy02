@@ -120,7 +120,7 @@ namespace GY02.Commands
                     TId = Guid.Parse("a45b3421-3688-43c5-b8f5-429db7621f69"),
                     Count = 10000,
                 });     //加入附件
-                _SyncCommandManager.Handle(commandMail);
+                //_SyncCommandManager.Handle(commandMail);
                 //第二封
                 commandMail = new SendMailCommand
                 {
@@ -183,7 +183,7 @@ namespace GY02.Commands
                     TId = Guid.Parse("a45b3421-3688-43c5-b8f5-429db7621f69"),
                     Count = 10000,
                 }); ;    //加入附件
-                _SyncCommandManager.Handle(commandMail);
+                //_SyncCommandManager.Handle(commandMail);
 
             }
         }

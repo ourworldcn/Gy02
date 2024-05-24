@@ -127,9 +127,14 @@ namespace GY02.Commands
                 var tongguan = _GameEntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.TongguanBiTId); //通关币
                 if (tongguan is null)
                 {
-                    command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                    command.DebugMessage = $"需要评定通关等级，但客户没有通关币对象。";
-                    return;
+                    if (!_GameEntityManager.CreateAndMove(new GameEntitySummary[]{ new GameEntitySummary { TId = ProjectContent.TongguanBiTId, Count = 0, }
+                    }, gc, command.Changes))
+                    {
+                        command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                        command.DebugMessage = $"需要评定通关等级，但客户没有通关币对象且无法创建。";
+                        return;
+                    }
+                    tongguan = _GameEntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.TongguanBiTId); //通关币
                 }
                 var scope = (decimal)command.MinTimeSpanOfPass.Value.TotalSeconds;   //通关的秒数
                 var combarLv = ttCombat.ScoreTime.FindIndex(c => scope <= c);   //星级

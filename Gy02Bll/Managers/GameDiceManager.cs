@@ -121,7 +121,7 @@ namespace GY02.Managers
                 {
                     tmp = Roll(hs, random);
                     if (tmp is null) return null;
-                    
+
                     result.Add(tmp);
                     if (!allowRepetition)
                     {
@@ -320,8 +320,12 @@ namespace GY02.Managers
             if (dice is null)
                 return new List<GameEntitySummary> { outItem };
             random ??= new Random();
-            var items = Roll(dice, gameChar, ignoreGuarantees, random);
-            var result = items.SelectMany(c => c.Outs).ToList();
+            List<GameEntitySummary> result = new List<GameEntitySummary>();
+            for (var i = 0; i < outItem.Count; i++) //多次摇色钟
+            {
+                var items = Roll(dice, gameChar, ignoreGuarantees, random);
+                result.AddRange(items.SelectMany(c => c.Outs));
+            }
             return result;
         }
 

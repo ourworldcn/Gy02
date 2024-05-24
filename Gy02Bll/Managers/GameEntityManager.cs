@@ -368,7 +368,11 @@ namespace GY02.Managers
         public virtual List<GameEntity> Create(GameEntitySummary summary)
         {
             var tt = _TemplateManager.GetFullViewFromId(summary.TId);
-            if (tt is null) return null;
+            if (tt is null)
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定的模板，Id={summary.TId}");
+                return null;
+            }
             List<GameEntity> result;
             if (tt.IsStk())  //可堆叠物
             {
@@ -478,6 +482,59 @@ namespace GY02.Managers
                 }
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="summary"></param>
+        /// <param name="gameChar"></param>
+        /// <param name="changes"></param>
+        /// <returns></returns>
+        public GameEntity GetOrCreate(GameEntitySummary summary, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var allEntities = GetAllEntity(gameChar);
+            GameEntity result = default;
+            if (summary.ParentTId is null) result = allEntities.FirstOrDefault(c => c.TemplateId == summary.TId);
+            else
+            {
+                var parent = allEntities.FirstOrDefault(c => c.TemplateId == summary.ParentTId);
+                if (parent is null)
+                {
+                    OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"找不到指定容器，TId={summary.ParentTId}");
+                    return null;
+                }
+                var thing = parent.GetThing().Children.FirstOrDefault(c => c.ExtraGuid == summary.TId);
+                //result = parent.FirstOrDefault(c => c.TemplateId == summary.TId && GetParent(c).TemplateId == summary.ParentTId.Value);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 按预览对象创建并移动到指定角色上。
+        /// </summary>
+        /// <param name="summaries">不指定容器则使用默认容器。空集合则不进行任何操作。</param>
+        /// <param name="gameChar"></param>
+        /// <param name="changes">省略或为null则不记录变化信息。</param>
+        /// <returns></returns>
+        public bool CreateAndMove(IEnumerable<GameEntitySummary> summaries, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
+        {
+            var allEntity = GetAllEntity(gameChar)?.ToArray();
+            if (allEntity is null) return false;
+            var coll = summaries.TryToCollection();
+
+            var list = Create(coll);
+            if (list is null) return false;
+#if DEBUG
+            var tmp = allEntity.FirstOrDefault(c => c.TemplateId == Guid.Parse("A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652"));
+#endif
+            foreach (var item in list)
+            {
+                var container = GetContainer(item.Item2, item.Item1.ParentTId, allEntity);
+                Move(item.Item2, container, changes);
+            }
+            return true;
+        }
+
         #endregion 创建实体相关功能
 
         #region 删除实体相关功能
@@ -579,32 +636,6 @@ namespace GY02.Managers
                 changes?.CollectionRemove(entity, parent);
                 return true;
             }
-        }
-
-        /// <summary>
-        /// 按预览对象创建并移动到指定角色上。
-        /// </summary>
-        /// <param name="summaries">不指定容器则使用默认容器。空集合则不进行任何操作。</param>
-        /// <param name="gameChar"></param>
-        /// <param name="changes">省略或为null则不记录变化信息。</param>
-        /// <returns></returns>
-        public bool CreateAndMove(IEnumerable<GameEntitySummary> summaries, GameChar gameChar, ICollection<GamePropertyChangeItem<object>> changes = null)
-        {
-            var allEntity = GetAllEntity(gameChar)?.ToArray();
-            if (allEntity is null) return false;
-            var coll = summaries.TryToCollection();
-
-            var list = Create(coll);
-            if (list is null) return false;
-#if DEBUG
-            var tmp = allEntity.FirstOrDefault(c => c.TemplateId == Guid.Parse("A92E5EE3-1D48-40A1-BE7F-6C2A9F0BC652"));
-#endif
-            foreach (var item in list)
-            {
-                var container = GetContainer(item.Item2, item.Item1.ParentTId, allEntity);
-                Move(item.Item2, container, changes);
-            }
-            return true;
         }
 
         /// <summary>

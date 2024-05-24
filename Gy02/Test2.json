@@ -1,19 +1,40 @@
 {
-  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
-  "Count": 0,
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "9c559895-9a2c-43a7-b793-e879a600487c",
-  "name_txt": 10295,
-  "comment_txt": 10296,
-  "Fcps": {
-    "Count": {
-      "MinValue": -1,
-      "MaxValue": 10,
-      "StepValue": 10,
-      "Delay": "1.00:00:00",
-      "CurrentValue": 10,
-      "LastDateTime": "2023-06-01T00:00:00.0000000+08:00"
-    }
-  }
+  "Genus": [ "gs_niudan" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 3,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 900,
+        "Genus": []
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "88c92efc-fb43-43df-997d-c5918808de5d",
+        "Count": 10
+      }
+    ]
+  },
+  "name_txt": 11025,
+  "comment_txt": [],
+  "JiaoBiao": []
 }
