@@ -53,13 +53,16 @@ F871361D-A803-4F7E-B222-13216A89E9FA 上传模板的凭据
 
 支付回调地址 https://SA.meetsocial.1stlightstudio.com:20443/api/T1228/Payed1228
 
-捷游/正式 游戏服务器
+捷游/正式 游戏服务器 https://seasia.jieyou.1stlightstudio.com:20443/
 操作系统：winserver 2022 中文
 配置：8C/32G 200G
-公网地址：abb-pro.shfoga.com
+公网地址：abb-pro.shfoga.com 47.236.73.116
 内网地址：172.16.0.76
 连接信息：administrator / Forgame@123
 已开放端口：3389/tcp、20443/tcp、20444/tcp、20021/udp、20088/udp、20089/udp
+
+堡垒机地址：https://bastion.shfoga.com
+账号信息：abb / Animals@123
 
 捷游/正式 数据库服务器
 操作系统：winserver 2022 中文
@@ -67,3 +70,4 @@ F871361D-A803-4F7E-B222-13216A89E9FA 上传模板的凭据
 内网地址：172.16.0.75
 连接信息：administrator / Forgame@123
 forgame_admin  /  Forgame@123
+
