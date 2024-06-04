@@ -22,10 +22,10 @@
             "MaxCount": null, //要求的最大数量。省略(null)则不限制。
             "GeneralConditional": [ //通用条件，这个比较复杂，一般是空集合，特定情况特定约定
               {
-                "op": "ModE",
+                "op": "GetBuyedCount",
                 "pn": "Count",
                 "args": [
-                  60,
+                  "商品tid",
                   0
                 ]
               }
