@@ -68,6 +68,7 @@ F871361D-A803-4F7E-B222-13216A89E9FA 上传模板的凭据
 操作系统：winserver 2022 中文
 配置：4C/16G 250G/100G/100G
 内网地址：172.16.0.75
+rm-t4nbj36b8877j344i.mssql.singapore.rds.aliyuncs.com
 连接信息：administrator / Forgame@123
 forgame_admin  /  Forgame@123
 

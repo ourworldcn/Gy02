@@ -292,8 +292,8 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var ss2 = JsonSerializer.Deserialize<DateTime>(str2);
-                //var ips = Dns.GetHostAddresses("abb.shfoga.com");
+                //var ips = Dns.GetHostAddresses(".");
+                var ips2 = Dns.GetHostAddresses("localhost");
                 //var ipEndPoint = new IPEndPoint(ips[1], 20088);
                 //using var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
                 //udp.Bind(new IPEndPoint(IPAddress.Any, 0));
