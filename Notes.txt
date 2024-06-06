@@ -4,9 +4,6 @@ Add-Migration 22111601 -Context GY02TemplateContext
 Add-Migration 23122101 -Context GY02UserContext
 Add-Migration 24021901 -Context GY02LogginContext
 
-实际 26,677.188 MB / 31265251行 = 0.874KB / 行 = 895Byte
-空行 86Byte / 行
-
 fcpifhcd=1	增量
 fcpdfhcd=1	计算间隔，单位：秒
 fcpcfhcd=xx	当前值
