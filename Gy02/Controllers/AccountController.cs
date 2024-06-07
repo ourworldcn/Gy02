@@ -134,8 +134,8 @@ namespace GY02.Controllers
                 result.WorldServiceHost = worldServiceHost;
                 result.UdpServiceHost = udpServiceHost;
 #if DEBUG
-                testUdpServerManager = new TestUdpServerManager(HttpContext.RequestServices);
-                testUdpServerManager.Test(command.User.Token, IPEndPoint.Parse(udpServiceHost));
+                //testUdpServerManager = new TestUdpServerManager(HttpContext.RequestServices);
+                //testUdpServerManager.Test(command.User.Token, IPEndPoint.Parse(udpServiceHost));
 #endif
                 return result;
 

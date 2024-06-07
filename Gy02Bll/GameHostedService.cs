@@ -42,6 +42,7 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http.Json;
 using System.Net.Sockets;
+using System.Reflection.PortableExecutable;
 using System.Runtime;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -154,15 +155,15 @@ namespace GY02
             {
                 _Logger.LogWarning(err, default);
             }
-            var sql = "EXEC sp_tableoption '[dbo].[VirtualThings]', 'vardecimal storage format', 1";
-            try
-            {
-                db?.Database.ExecuteSqlRaw(sql);
-            }
-            catch (Exception err)
-            {
-                _Logger.LogWarning(err, default);
-            }
+            //var sql = "EXEC sp_tableoption '[dbo].[VirtualThings]', 'vardecimal storage format', 1";  //高版本SqlServer用此压缩收益很低
+            //try
+            //{
+            //    db?.Database.ExecuteSqlRaw(sql);
+            //}
+            //catch (Exception err)
+            //{
+            //    _Logger.LogWarning(err, default);
+            //}
 #if !DEBUG  //若正式运行版本
 
 #endif
@@ -308,7 +309,9 @@ namespace GY02
                     //Thread.Sleep(1000);
                 }
                 //var b = udp.Available;
-
+                var b = DateTime.TryParse("Thu Jun 86 2024 00:00:08 GMT 8808", out var dt);
+                var str1 = JsonSerializer.Serialize("哈利路亚");
+                var str3=JsonSerializer.Deserialize<string>(str1);
             }
             #endregion 测试用代码
             catch (Exception)

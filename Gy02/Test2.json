@@ -4,20 +4,20 @@
       {
         "ParentTId": null,
         "Genus": [],
-        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+        "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
         "MinCount": 0,
         "GeneralConditional": [],
-        "GroupMask": 3
+        "GroupMask": 1
       }
     ],
     "GetIndexExpression": {
-      "op": "GetBuyedCount",
-      "args": [ "42fe780b-2ccf-4bb0-b306-ed2562d94a23" ]
+      "op": "ToInt32",
+      "args": [ "Count" ]
     },
     "Outs": {
-      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
-      "TIds": [ "9c8ea669-08bf-41ad-9628-736fe16bd226" ],
-      "Counts": [ 8, 9, 9, 9, 9, 9, 9, 12, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 ]
+      "TIds": [ "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
+      "Counts": [ 1, 1, 1, 20, 20, 20, 20, 20, 20, 20 ],
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "c9575f24-a33d-49ba-b130-29b6ff4d62c7" ]
     }
   }
 }

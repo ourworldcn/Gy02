@@ -1,68 +1,185 @@
 {
-  "Genus": [
-    "gs_lunbolibao"
-  ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "GroupNumber": 2,
-    "MaxCount": 1,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [
-
-            ],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 1,
-            "GeneralConditional": [
-
-            ],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1,
-        "Genus": [
-
-        ],
-        "GetIndexExpression": {
-          "op": "GetBuyedCount",
-          "args": [
-            "90519f77-b9cc-4892-a4a9-d04d73181ad4"
-          ]
+  "FuhuaPreview": [
+    {
+      "ParentTIds": [ "zuoqi_sheep", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "x/cZ6UGzWUGey/umQ2PP8g==",
+              "Count": 1,
+              "AddPropDic": {}
+            }
+          ],
+          "Weight": 1000
+        },
+        {
+          "Outs": [
+            {
+              "TId": "DqNIvmQ/ekec5rPDytBGiA==",
+              "Count": 1,
+              "AddPropDic": {}
+            }
+          ],
+          "Weight": 300
+        },
+        {
+          "Outs": [
+            {
+              "TId": "JeGAo0Amm0CMRTWeovc0uw==",
+              "Count": 1,
+              "AddPropDic": {}
+            }
+          ],
+          "Weight": 500
+        },
+        {
+          "Outs": [
+            {
+              "TId": "WjlktX1IgkaN7BM42u45Ug==",
+              "Count": 1,
+              "AddPropDic": {}
+            }
+          ],
+          "Weight": 600
+        },
+        {
+          "Outs": [
+            {
+              "TId": "YlJdvmebFkS6CPoGm/TDEQ==",
+              "Count": 1,
+              "AddPropDic": {}
+            }
+          ],
+          "Weight": 200
         }
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "d79bf01e-0eba-427d-a4a6-c280a801f096",
-        "Count": 6
-      },
-      {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "2e877976-2d3d-4e7e-8851-07163216319a",
-        "Count": 5
-      },
-      {
-        "Id": null,
-        "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
-        "TId": "824409e8-5968-4d4b-929d-1ba6e629cbc6",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
-        "Count": 1
-      },
-      {
-             
+      ]
+    }
+  ],
+  "FuhuaHistory": [
+    {
+      "ParentTIds": [ "zuoqi_sheep", "zuoqi_wolf" ],
+      "Items": [
+        {
+          "Outs": [
+            {
+              "TId": "bMVHOov6k0KYzdbGRpBgSg==",
+              "Count": 1,
+              "AddPropDic": {}
+            }
+          ],
+          "Weight": 260000
+        }
+      ]
+    }
+  ],
+  "CombatHistory": [
+    {
+      "TId": "h7kiGyxP/EuxBQ6EWRS5nQ==",
+      "MinTimeSpanOfPass": "00:01:57.5250000",
+      "MaxLevelOfPass": 3,
+      "LastLevelOfPass": 3
+    },
+    {
+      "TId": "zF6lu+lSIEucjdOW9cXjOw==",
+      "MinTimeSpanOfPass": "00:03:04.7330000",
+      "MaxLevelOfPass": 3,
+      "LastLevelOfPass": 3
+    },
+    {
+      "TId": "RcZfHjMooUit1WuDo0B9Aw==",
+      "MinTimeSpanOfPass": "00:03:59.2910000",
+      "MaxLevelOfPass": 3,
+      "LastLevelOfPass": 3
+    },
+    {
+      "TId": "N00xKJB9E0qZLyJIXeewIA==",
+      "MinTimeSpanOfPass": "00:04:16.6160000",
+      "MaxLevelOfPass": 3,
+      "LastLevelOfPass": 3
+    },
+    {
+      "TId": "lP2y+H6OYkycN0EfJKm2oQ==",
+      "MinTimeSpanOfPass": "00:04:29.1590000",
+      "MaxLevelOfPass": 3,
+      "LastLevelOfPass": 3
+    },
+    {
+      "TId": "rU1W2nWLCkK36dGquFYX7A==",
+      "MinTimeSpanOfPass": "00:05:33.9980000",
+      "MaxLevelOfPass": 3,
+      "LastLevelOfPass": 3
+    },
+    {
+      "TId": "CErBG1EVU0+aURGHaqdhCg==",
+      "MinTimeSpanOfPass": "00:06:24.4710000",
+      "MaxLevelOfPass": 3,
+      "LastLevelOfPass": 3
+    },
+    {
+      "TId": "KdaQpMBdF0ajj0HHdV74Gw==",
+      "MinTimeSpanOfPass": "00:08:14.5250000",
+      "MaxLevelOfPass": 2,
+      "LastLevelOfPass": 2
+    },
+    {
+      "TId": "MZ2RXadrok2yOI7Bj7fsUA==",
+      "MinTimeSpanOfPass": "00:02:00.0580000",
+      "MaxLevelOfPass": 3,
+      "LastLevelOfPass": 3
+    },
+    {
+      "TId": "vqoFIdix3Uqd37xRL2cxBQ==",
+      "MinTimeSpanOfPass": "00:07:43.2110000",
+      "MaxLevelOfPass": 3
+    },
+    {
+      "TId": "wu25P6YbSk+u67zJPpzpcQ==",
+      "MinTimeSpanOfPass": "00:08:29.4120000",
+      "MaxLevelOfPass": 2,
+      "LastLevelOfPass": 2
+    },
+    {
+      "TId": "cQVARF6XXUqh201gbMQ2Ow==",
+      "MinTimeSpanOfPass": "00:06:21.9740000",
+      "MaxLevelOfPass": 3
+    },
+    {
+      "TId": "hrzE5HIr7kusAQ9TkJ+0mA==",
+      "MinTimeSpanOfPass": "00:09:08.6110000",
+      "MaxLevelOfPass": 1,
+      "LastLevelOfPass": 1
+    },
+    { "TId": "wjAafB3pyk+bJv2u9OLCSQ==" }
+  ],
+  "AdsRewardsHistory": [],
+  "ShoppingHistory": [],
+  "PeriodIndexHistory": [
+    { "TId": "F2evOD40c02CCTYGV6pQBQ==" },
+    { "TId": "VcIcv4Y89ECcF+RpMDvhKg==" },
+    { "TId": "VjQZztjpp0yf3n7zzcdBPQ==" },
+    {
+      "TId": "iMCuk2XgnUSJtKe/XbofTA==",
+      "PeriodIndex": 0
+    }
+  ],
+  "DiceHistory": [
+    { "DiceTId": "/9FdpsDa10KRZ5ytZN0Lng==" },
+    {
+      "DiceTId": "GZZxrzQ5v0Wq7Gacaor9xg==",
+      "GuaranteesCount": 12
+    }
+  ],
+  "Roles": [],
+  "LvUpAccruedCost": [],
+  "CompositingAccruedCost": [],
+  "ClientDictionary": { "TutorialIds": "[11001,11008,10001,10005,11002,10003,11006,11007,10004,10010,11004,10002,10006,11009,11005,10007,10008,10009,11003]" },
+  "atk": 20,
+  "def": 100,
+  "pow": 350,
+  "crit": 100,
+  "LogineCount": 22,
+  "LastLoginDateTimeUtc": "2024-06-07T00:00:00Z",
+  "CountOfLastModifyUtc": "2024-06-06T10:26:23.2935499Z",
+  "Fcps": {}
+}
