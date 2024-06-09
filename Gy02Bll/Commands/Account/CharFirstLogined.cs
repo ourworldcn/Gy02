@@ -151,7 +151,7 @@ namespace GY02.Commands
                     TId = Guid.Parse("c9575f24-a33d-49ba-b130-29b6ff4d62c7"),
                     Count = 100,
                 }); ;    //加入附件
-                _SyncCommandManager.Handle(commandMail);
+                //_SyncCommandManager.Handle(commandMail);
 
                 //第三封
                 commandMail = new SendMailCommand
