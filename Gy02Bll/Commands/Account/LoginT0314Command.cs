@@ -97,6 +97,7 @@ namespace GY02.Commands.Account
                 userThing = (VirtualThing)createCommand.User.Thing;
                 //VirtualThingManager.Add(t78slot, userThing);
                 isCreate = true;
+
             }
             //登录用户
             var loginCommand = new LoginCommand { LoginName = uid, Pwd = uid };

@@ -51,6 +51,13 @@ namespace GY02.Commands
             if (catalog is null)
             {
                 command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                command.DebugMessage = "无效的兑换码";
+                return;
+            }
+            if (catalog.CodeType == 2 && redeem.Count > 0) //若已经兑换
+            {
+                command.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
+                command.DebugMessage = "不可重复兑换";
                 return;
             }
             var tid = catalog.ShoppingTId;

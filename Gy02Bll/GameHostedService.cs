@@ -293,6 +293,7 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var dic = svcScope.GetService<IOptions<ButieOptions>>();
                 //var ips = Dns.GetHostAddresses(".");
                 var ips2 = Dns.GetHostAddresses("localhost");
                 //var ipEndPoint = new IPEndPoint(ips[1], 20088);
@@ -311,7 +312,7 @@ namespace GY02
                 //var b = udp.Available;
                 var b = DateTime.TryParse("Thu Jun 86 2024 00:00:08 GMT 8808", out var dt);
                 var str1 = JsonSerializer.Serialize("哈利路亚");
-                var str3=JsonSerializer.Deserialize<string>(str1);
+                var str3 = JsonSerializer.Deserialize<string>(str1);
             }
             #endregion 测试用代码
             catch (Exception)
