@@ -745,6 +745,21 @@
             
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetServerInfoParamsDto">
+            <summary>
+            获取服务器非敏感信息功能的参数封装类。保留未用（暂时可不传递）。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetServerInfoReturnDto">
+            <summary>
+            获取服务器非敏感信息的返回值封装类。未来增加的服务器配置都见放入此处。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetServerInfoReturnDto.Offset">
+            <summary>
+            服务器内部偏移时间。单位:秒
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.AddItemForYourselfReturnDto">
             <summary>
             增加广告币功能返回值封装类。

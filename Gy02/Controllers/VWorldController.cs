@@ -88,6 +88,27 @@ namespace GY02.Controllers
             var result = new GetServerDateTimeUtcReturnDto { DateTimeUtc = OwHelper.WorldNow };
             return result;
         }
+
+        /// <summary>
+        /// 获取服务器非敏感信息。
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult<GetServerInfoReturnDto> GetServerInfo([FromQuery] GetServerInfoParamsDto model)
+        {
+            var result = new GetServerInfoReturnDto
+            {
+                Offset = OwHelper._Offset.TotalSeconds,
+            };
+            return result;
+        }
     }
 
+    /// <summary>
+    /// 服务器信息。
+    /// </summary>
+    public class ServerInfo
+    {
+
+    }
 }

@@ -143,9 +143,8 @@ namespace GY02.Managers
                 {
                     if (_Token2ClientId.Remove(item.Key, out var id))
                     {
-                        Logger?.LogDebug("成功移除了udp连接信息，Token = {token}", id);
                         if (RemoveId(id, out _))
-                            Logger?.LogDebug("成功移除了udp连接信息，Id = {id}", id);
+                            Logger?.LogDebug("成功移除了udp连接信息，Token = {token}，Id = {id}", item.Key, id);
                     }
                 }
             }

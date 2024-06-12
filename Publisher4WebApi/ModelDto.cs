@@ -1010,6 +1010,24 @@ namespace GY02.Publisher
     {
     }
 
+    /// <summary>
+    /// 获取服务器非敏感信息功能的参数封装类。保留未用（暂时可不传递）。
+    /// </summary>
+    public class GetServerInfoParamsDto
+    {
+    }
+
+    /// <summary>
+    /// 获取服务器非敏感信息的返回值封装类。未来增加的服务器配置都见放入此处。
+    /// </summary>
+    public class GetServerInfoReturnDto
+    {
+        /// <summary>
+        /// 服务器内部偏移时间。单位:秒
+        /// </summary>
+        public double Offset { get; set; }
+    }
+
     #endregion 世界控制器功能相关
 
     #region 物品管理相关
