@@ -134,6 +134,7 @@ namespace Gy02.Controllers
                 _Logger.LogWarning("订单已经完成不可重复通知{id}", model.CpOrderNo);
                 return "订单已经完成不可重复通知";
             }
+            order.Confirm2 = true;
             db.SaveChanges();
             _Logger.LogDebug("订单已经成功入库,Id={id}", model.CpOrderNo);
             return "SUCCESS";
@@ -231,6 +232,8 @@ namespace Gy02.Controllers
                 _Logger.LogWarning("订单已经完成不可重复通知{id}", model.CpOrderNo);
                 return "订单已经完成不可重复通知";
             }
+            order.Confirm2 = true;
+
             db.SaveChanges();
             _Logger.LogDebug("订单已经成功入库,Id={id}", model.CpOrderNo);
             return "SUCCESS";
@@ -312,8 +315,11 @@ namespace Gy02.Controllers
             _Mapper.Map(command.Changes, result.Changes);
 
             order.Confirm1 = true;
-            order.Confirm2 = true;
-            order.State = 1;
+            //order.Confirm2 = true;
+            if (order.Confirm1 && order.Confirm2)
+                order.State = 1;
+            else
+                order.State = 2;
             order.CompletionDateTime = OwHelper.WorldNow;
             try
             {

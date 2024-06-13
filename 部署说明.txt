@@ -72,3 +72,6 @@ rm-t4nbj36b8877j344i.mssql.singapore.rds.aliyuncs.com
 连接信息：administrator / Forgame@123
 forgame_admin  /  Forgame@123
 
+资源服务器
+Web访问地址 https://abb.shfoga.com:20444/
+Ftp访问地址，ftp://abb.shfoga.com:20021，用户名：radmin，密码：Gy220115
