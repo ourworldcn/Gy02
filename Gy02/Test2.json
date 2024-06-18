@@ -1,23 +1,24 @@
 {
-  "SequenceOut": {
-    "Conditions": [
+  "GameEvent": {
+    "EventId": "0d8d8ff7-2e8a-428b-9efa-db7ee7463910",
+    "Ins": [],
+    "Outs": [
       {
+        "Id": null,
+        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+        "TId": "43E9286A-904C-4923-B477-482C0D6470A5",
+        "Count": 0,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
+      },
+      {
+        "Id": null,
         "ParentTId": null,
-        "Genus": [],
-        "TId": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
-        "MinCount": 0,
-        "GeneralConditional": [],
-        "GroupMask": 1
+        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
+        "Count": 0,
+        "AddPropertyDictionary": null,
+        "additionalProp1": null
       }
-    ],
-    "GetIndexExpression": {
-      "op": "ToInt32",
-      "args": [ "Count" ]
-    },
-    "Outs": {
-      "TIds": [ "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
-      "Counts": [ 1, 1, 1, 20, 20, 20, 20, 20, 20, 20 ],
-      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "c9575f24-a33d-49ba-b130-29b6ff4d62c7" ]
-    }
+    ]
   }
 }

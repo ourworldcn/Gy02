@@ -123,6 +123,7 @@ namespace GY02.Managers
                 }
                 else //若已经存在
                 {
+                    sq.Count -= entity.Count;
                     if (sq.Count < count)   //若存在的值较小
                     {
                         entity.Count = count - sq.Count;
