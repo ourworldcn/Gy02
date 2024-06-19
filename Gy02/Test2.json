@@ -1,24 +1,77 @@
 {
-  "GameEvent": {
-    "EventId": "0d8d8ff7-2e8a-428b-9efa-db7ee7463910",
-    "Ins": [],
-    "Outs": [
+  "Dice": {
+    "MaxCount": 2,
+    "AllowRepetition": false,
+    "Items": [
       {
-        "Id": null,
-        "ParentTId": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-        "TId": "43E9286A-904C-4923-B477-482C0D6470A5",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
+            "Count": 1
+          }
+        ],
+        "Weight": 50,
+        "ClearGuaranteesCount": false
       },
       {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "9599B400-0BFD-498E-93DC-F44FF303B1B3",
-        "Count": 0,
-        "AddPropertyDictionary": null,
-        "additionalProp1": null
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
+            "Count": 1
+          }
+        ],
+        "Weight": 60,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "79391d55-a01f-4051-841b-5452908566ab",
+            "Count": 1
+          }
+        ],
+        "Weight": 80,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
+            "Count": 1
+          }
+        ],
+        "Weight": 32,
+        "ClearGuaranteesCount": false
       }
-    ]
-  }
+    ],
+    "GuaranteesCount": null,
+    "GuaranteesDiceTId": null
+  },
+  "outItemcounts": { "131100000": 2 }
 }

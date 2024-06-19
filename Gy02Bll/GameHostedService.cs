@@ -94,6 +94,7 @@ namespace GY02
             using var scope = _Services.CreateScope();
             var service = scope.ServiceProvider;
             CreateDb(service);
+            BugFix(service);
             UpdateDatabase(service);
             var mailManager = service.GetService<GameMailManager>();
             mailManager.ClearMail();
@@ -209,6 +210,52 @@ namespace GY02
                 }
             }
             dbUser.SaveChanges();
+        }
+
+        /// <summary>
+        /// 修复Bug。修复错误记录通过最大等级的问题。
+        /// </summary>
+        private void BugFix(IServiceProvider services)
+        {
+            Guid fixId = new Guid("{8146A40E-98E6-4C1C-AFB7-D844C7380152}");
+            var fixIdString = fixId.ToString();
+            var dbUser = services.GetRequiredService<GY02UserContext>();
+            var entity = dbUser.ServerConfig.FirstOrDefault(c => c.Name == fixIdString);
+            if (entity is null)  //若需要修复
+            {
+                Guid charTId = Guid.Parse("07664462-df05-4ba7-886d-b431bb88aa1c");  //角色对象的TId
+                Guid slotTId = Guid.Parse("123a5ad1-d4f0-4cd9-9abc-d440419d9e0d");  //货币槽
+                Guid xTId = Guid.Parse("9599B400-0BFD-498E-93DC-F44FF303B1B3");  //巡逻用主线副本最高记录占位符
+                var coll = from gChar in dbUser.VirtualThings.Where(c => c.ExtraGuid == charTId)
+                           join slot in dbUser.VirtualThings.Where(c => c.ExtraGuid == slotTId) on gChar.Id equals slot.ParentId
+                           join x in dbUser.VirtualThings.Where(c => c.ExtraGuid == xTId) on slot.Id equals x.ParentId
+                           select new { gChar, x };
+
+                var ttMng = services.GetRequiredService<GameTemplateManager>();
+                foreach (var item in coll)
+                {
+                    var gChar = item.gChar.GetJsonObject<GameChar>();
+                    var x = item.x.GetJsonObject<GameItem>();
+                    var ary = gChar.CombatHistory.Select(c => ttMng.GetFullViewFromId(c.TId)).ToArray();
+                    if (ary.Length > 0)
+                    {
+                        var maxPass = ary.Max(c => c.Gid.GetValueOrDefault() % 1000); //最大通关数
+                        if (x.Count != maxPass)
+                        {
+                            if (maxPass > 0)   //若至少通过一关
+                                x.Count = maxPass;
+                            else
+                                x.Count = 0;
+                        }
+                    }
+                    else
+                        x.Count = 0;
+                        item.gChar.PrepareSaving(dbUser);
+                        item.x.PrepareSaving(dbUser);
+                }
+                dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString });
+                dbUser.SaveChanges();
+            }
         }
 
         /// <summary>
