@@ -250,8 +250,8 @@ namespace GY02
                     }
                     else
                         x.Count = 0;
-                        item.gChar.PrepareSaving(dbUser);
-                        item.x.PrepareSaving(dbUser);
+                    //item.gChar.PrepareSaving(dbUser);
+                    item.x.PrepareSaving(dbUser);
                 }
                 dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString });
                 dbUser.SaveChanges();
