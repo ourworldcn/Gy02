@@ -2944,6 +2944,52 @@ namespace GY02.Publisher
     #region 0314相关
 
     /// <summary>
+    /// 获取指定订单功能参数封装类。
+    /// </summary>
+    public class GetT0314OrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 游戏下单时传递的游戏订单号。
+        /// </summary>
+        public string OrderNo { get; set; }
+    }
+
+    /// <summary>
+    /// 获取指定订单功能的返回值封装类。
+    /// </summary>
+    public class GetT0314OrderReturnDto : PropertyChangeReturnDto
+    {
+        /// <summary>
+        /// 订单信息对象。
+        /// </summary>
+        public GameShoppingOrderDto Order { get; set; }
+    }
+
+    /// <summary>
+    /// 客户端创建并确认订单功能参数封装类。
+    /// </summary>
+    public class CreateT0314OrderParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 客户端创建并确认订单功能返回值封装类。
+    /// </summary>
+    public class CreateT0314OrderReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public CreateT0314OrderReturnDto()
+        {
+        }
+        /// <summary>
+        /// 游戏下单时传递的游戏订单号。客户端要将此参数需要传递给SDK服务器。
+        /// </summary>
+        public string OrderNo { get; set; }
+    }
+
+    /// <summary>
     /// 0314登录参数封装类。
     /// </summary>
 #if NETCOREAPP

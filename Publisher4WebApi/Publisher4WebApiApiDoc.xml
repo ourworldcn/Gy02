@@ -2257,6 +2257,46 @@
             生成的码的集合。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetT0314OrderParamsDto">
+            <summary>
+            获取指定订单功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetT0314OrderParamsDto.OrderNo">
+            <summary>
+            游戏下单时传递的游戏订单号。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetT0314OrderReturnDto">
+            <summary>
+            获取指定订单功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetT0314OrderReturnDto.Order">
+            <summary>
+            订单信息对象。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.CreateT0314OrderParamsDto">
+            <summary>
+            客户端创建并确认订单功能参数封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.CreateT0314OrderReturnDto">
+            <summary>
+            客户端创建并确认订单功能返回值封装类。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.CreateT0314OrderReturnDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CreateT0314OrderReturnDto.OrderNo">
+            <summary>
+            游戏下单时传递的游戏订单号。客户端要将此参数需要传递给SDK服务器。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.LoginT0314ParamsDto">
             <summary>
             0314登录参数封装类。

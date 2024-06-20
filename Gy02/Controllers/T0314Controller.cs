@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Writers;
+using OW.Game.Entity;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System.Linq.Expressions;
@@ -333,6 +334,70 @@ namespace Gy02.Controllers
                 return result;
             }
             _Logger.LogInformation("订单号{id}已经确认成功。", order.Id);
+            return result;
+        }
+
+        /// <summary>
+        /// 客户端创建并确认订单功能。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<CreateT0314OrderReturnDto> CreateT0314Order(CreateT0314OrderParamsDto model)
+        {
+            var result = new CreateT0314OrderReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            using var db = _DbContextFactory.CreateDbContext();
+
+            GameShoppingOrder order = new GameShoppingOrder()
+            {
+                Confirm1 = true,
+                CustomerId = gc.GetThing().IdString,
+            };
+
+            db.Add(order);
+            db.SaveChanges();
+            result.OrderNo = order.Id.ToString();
+
+            return result;
+        }
+
+        /// <summary>
+        /// 获取指定订单。
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult<GetT0314OrderReturnDto> GetT0314Order([FromQuery] GetT0314OrderParamsDto model)
+        {
+            var result = new GetT0314OrderReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            if (!Guid.TryParse(model.OrderNo, out var orderId))
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"订单号格式错误，{nameof(model.OrderNo)}={model.OrderNo}";
+                return result;
+            }
+            using var db = _DbContextFactory.CreateDbContext();
+            var order = db.ShoppingOrder.Find(orderId);
+            if (order is null)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"无此订单，{nameof(model.OrderNo)}={model.OrderNo}";
+                return result;
+            }
+            result.Order = _Mapper.Map<GameShoppingOrderDto>(order);
             return result;
         }
     }
