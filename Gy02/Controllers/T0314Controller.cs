@@ -342,6 +342,7 @@ namespace Gy02.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// <response code="401">无效令牌。</response>  
         [HttpPost]
         public ActionResult<CreateT0314OrderReturnDto> CreateT0314Order(CreateT0314OrderParamsDto model)
         {
@@ -372,6 +373,7 @@ namespace Gy02.Controllers
         /// 获取指定订单。
         /// </summary>
         /// <returns></returns>
+        /// <response code="401">无效令牌。</response>  
         [HttpGet]
         public ActionResult<GetT0314OrderReturnDto> GetT0314Order([FromQuery] GetT0314OrderParamsDto model)
         {
