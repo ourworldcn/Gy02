@@ -3,14 +3,17 @@ using GY02;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Writers;
 using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.Game.Store;
 using OW.SyncCommand;
+using System;
 using System.Linq.Expressions;
 using System.Text.Json.Serialization;
 
@@ -24,7 +27,9 @@ namespace Gy02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public T0314Controller(ILogger<T0314Controller> logger, T0314Manager t0314Manager, GameAccountStoreManager gameAccountStore, IDbContextFactory<GY02UserContext> dbContextFactory, SyncCommandManager syncCommandManager, IMapper mapper, GameEntityManager entityManager)
+        public T0314Controller(ILogger<T0314Controller> logger, T0314Manager t0314Manager, GameAccountStoreManager gameAccountStore,
+            IDbContextFactory<GY02UserContext> dbContextFactory, SyncCommandManager syncCommandManager, IMapper mapper, GameEntityManager entityManager,
+            SpecialManager specialManager, GameTemplateManager templateManager)
         {
             _Logger = logger;
             _T0314Manager = t0314Manager;
@@ -33,6 +38,8 @@ namespace Gy02.Controllers
             _SyncCommandManager = syncCommandManager;
             _Mapper = mapper;
             _EntityManager = entityManager;
+            _SpecialManager = specialManager;
+            _TemplateManager = templateManager;
             //捷游/东南亚服务器
         }
 
@@ -43,6 +50,8 @@ namespace Gy02.Controllers
         SyncCommandManager _SyncCommandManager;
         IMapper _Mapper;
         GameEntityManager _EntityManager;
+        SpecialManager _SpecialManager;
+        GameTemplateManager _TemplateManager;
 
         /// <summary>
         /// 安卓支付回调地址。
@@ -237,6 +246,7 @@ namespace Gy02.Controllers
 
             db.SaveChanges();
             _Logger.LogDebug("订单已经成功入库,Id={id}", model.CpOrderNo);
+            _T0314Manager.Reg(order.Id);
             return "SUCCESS";
         }
 
@@ -361,6 +371,9 @@ namespace Gy02.Controllers
                 Confirm1 = true,
                 CustomerId = gc.GetThing().IdString,
             };
+            var jo = order.GetJsonObject<T0314JObject>();
+            jo.TId = model.ShoppingItemTId;
+            jo.IsClientCreate = true;
 
             db.Add(order);
             db.SaveChanges();
@@ -389,6 +402,7 @@ namespace Gy02.Controllers
             {
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                 result.DebugMessage = $"订单号格式错误，{nameof(model.OrderNo)}={model.OrderNo}";
+                result.HasError = true;
                 return result;
             }
             using var db = _DbContextFactory.CreateDbContext();
@@ -397,11 +411,74 @@ namespace Gy02.Controllers
             {
                 result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                 result.DebugMessage = $"无此订单，{nameof(model.OrderNo)}={model.OrderNo}";
+                result.HasError = true;
                 return result;
             }
+            if (Guid.TryParse(order.CustomerId, out var gcId))
+                if (gcId != gc.Id)    //若不是自己的订单
+                {
+                    result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    result.DebugMessage = $"只能查询自己的订单。";
+                    result.HasError = true;
+                    return result;
+                }
+            var jo = order.GetJsonObject<T0314JObject>();
+            if (jo.NotifyDateTime is null)  //若未记录客户端查询时间
+            {
+                jo.NotifyDateTime = OwHelper.WorldNow;
+            }
+            if (jo.SendInMail is null)   //若尚未发送商品
+            {
+                if (order.State == 1)  //若可以发送奖品
+                {
+                    #region 内部购买
+                    var tt = _TemplateManager.GetFullViewFromId(jo.TId);
+                    if (tt is null)
+                    {
+                        result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                        result.DebugMessage = $"无此商品，商品模板Id={jo.TId}";
+                        result.HasError = true;
+                        return result;
+                    }
+
+                    var bi = gc!.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
+                    if (bi is null)
+                    {
+                        result.DebugMessage = $"法币占位符为空。CharId={gc.Id}";
+                        result.ErrorCode = ErrorCodes.ERROR_INVALID_DATA;
+                        result.HasError = true;
+                        _Logger.LogWarning(result.DebugMessage);
+                        return result;
+                    }
+                    bi.Count++;
+                    var command = new ShoppingBuyCommand
+                    {
+                        Count = 1,
+                        GameChar = gc,
+                        ShoppingItemTId = tt.TemplateId,
+                    };
+                    _SyncCommandManager.Handle(command);
+                    if (command.HasError)
+                    {
+                        if (bi.Count > 0) bi.Count--;
+                        result.FillErrorFrom(command);
+                        _Logger.LogWarning("出现错误——{msg}", result.DebugMessage);
+                        return result;
+                    }
+                    _Mapper.Map(command.Changes, result.Changes);
+                    
+                    #endregion 内部购买
+
+                    jo.SendInMail = false;
+                }
+            }
+            db.SaveChanges();
             result.Order = _Mapper.Map<GameShoppingOrderDto>(order);
+
             return result;
         }
+
+
     }
 
 }

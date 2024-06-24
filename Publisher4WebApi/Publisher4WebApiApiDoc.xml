@@ -2277,9 +2277,24 @@
             订单信息对象。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GetT0314OrderReturnDto.SendInMail">
+            <summary>
+            true=奖品已通过mail发送，false=奖品直接发送到了用户包裹中。此属性仅当 Order 成功完成时才有意义。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetT0314OrderReturnDto.EntitySummaryDtos">
+            <summary>
+            获取奖品的预览数据。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.CreateT0314OrderParamsDto">
             <summary>
             客户端创建并确认订单功能参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CreateT0314OrderParamsDto.ShoppingItemTId">
+            <summary>
+            购买商品的模板Id。
             </summary>
         </member>
         <member name="T:GY02.Publisher.CreateT0314OrderReturnDto">

@@ -1,11 +1,19 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+﻿using GY02.Commands;
+using GY02.Publisher;
+using GY02.Templates;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
+using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.Store;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Reflection;
@@ -15,6 +23,7 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Managers
 {
@@ -35,11 +44,26 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="options"></param>
         /// <param name="logger"></param>
-        public T0314Manager(IOptions<T0314ManagerOptions> options, ILogger<T0314Manager> logger, HttpClient httpClient) : base(options, logger)
+        public T0314Manager(IOptions<T0314ManagerOptions> options, ILogger<T0314Manager> logger, HttpClient httpClient, IDbContextFactory<GY02UserContext> dbContextFactory,
+            GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, SpecialManager specialManager, IServiceProvider service)
+            : base(options, logger)
         {
             _HttpClient = httpClient;
             var str = Path.Combine(SdkServerUrl, LoginUrl);
+            _DbContextFactory = dbContextFactory;
+            _AccountStore = accountStore;
+            _TemplateManager = templateManager;
+            _ShoppingManager = shoppingManager;
+            _SpecialManager = specialManager;
+            _Service = service;
         }
+
+        IServiceProvider _Service;
+        IDbContextFactory<GY02UserContext> _DbContextFactory;
+        GameAccountStoreManager _AccountStore;
+        GameTemplateManager _TemplateManager;
+        GameShoppingManager _ShoppingManager;
+        SpecialManager _SpecialManager;
 
         /// <summary>
         /// SDK服务器调用地址。
@@ -143,6 +167,94 @@ namespace GY02.Managers
             var result = MD5.HashData(bin);
             return result;
         }
+
+        /// <summary>
+        /// 该订单在未来需要扫描。
+        /// </summary>
+        /// <param name="orderId"></param>
+        public void Reg(Guid orderId)
+        {
+            CancellationTokenSource cts = new CancellationTokenSource(60_000);
+            cts.Token.Register(c =>
+            {
+                if (c is not Guid orderId) return;
+                using var db = _DbContextFactory.CreateDbContext();
+                if (db.ShoppingOrder.Find(orderId) is not GameShoppingOrder tmp) return;
+                if (!Guid.TryParse(tmp.CustomerId, out var gcId)) return;
+
+                var key = _AccountStore.GetKeyByCharId(gcId, db);
+                using var dw = _AccountStore.GetOrLoadUser(key, out var gu);
+                if (dw.IsEmpty) return;
+                var gc = gu.CurrentChar;
+
+                if (db.ShoppingOrder.FirstOrDefault(c => c.Id == orderId) is not GameShoppingOrder order) return;
+                if (!order.Confirm1 || !order.Confirm2) return;
+                order.State = 1;
+                var jo = order.GetJsonObject<T0314JObject>();
+                if (!jo.IsClientCreate || jo.SendInMail is not null) return;
+                //准备发送邮件
+                if (_ShoppingManager.GetShoppingTemplateByTId(jo.TId) is not TemplateStringFullView tt) return;
+                var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+                if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
+                {
+                    var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
+                    {
+                        Change = null,
+                        GameChar = gc,
+                        IgnoreGuarantees = false,
+                        Random = new Random(),
+                    });
+                    if (!b) return;
+                }
+                var items = list.SelectMany(c => c.Item2);
+                using var scope = _Service.CreateScope();
+                var _SyncCommandManager = scope.ServiceProvider.GetService<SyncCommandManager>();
+
+                #region 发送奖品邮件
+                var commandMail = new SendMailCommand
+                {
+                    GameChar = gc,
+                    Mail = new SendMailItem
+                    {
+                        Subject = "恭喜您！获得了购买物品",
+                        Body = "请获取附件",
+                    },
+                };
+                commandMail.Mail.Dictionary1 = new Dictionary<string, string>()
+                {
+
+                };
+                commandMail.Mail.Dictionary2 = new Dictionary<string, string>()
+                {
+                };
+                commandMail.ToIds.Add(gc.Id);   //加入收件人
+                commandMail.Mail.Attachment.AddRange(items);     //加入附件
+                _SyncCommandManager.Handle(commandMail);
+                #endregion 发送奖品邮件
+
+                //后处理
+                jo.SendInMail = true;
+                db.SaveChanges();
+            }, orderId);
+        }
+        /*
+*         lbErr:
+   var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+   if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
+   {
+       var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
+       {
+           Change = null,
+           GameChar = gc,
+           IgnoreGuarantees = false,
+           Random = new Random(),
+       });
+       if (!b) goto lbErr;
+   }
+   var items = list.SelectMany(c => c.Item2);
+
+
+* */
     }
 
     public class T0314LoginReturn
@@ -383,6 +495,37 @@ namespace GY02.Managers
             });
             return coll.ToDictionary(c => c.name, c => c.Item2);
         }
+    }
+
+    /// <summary>
+    /// 该渠道支付时，订单中的寄宿数据对象。用于满足特殊的"慢支付"流程需要。
+    /// </summary>
+    public class T0314JObject
+    {
+        /// <summary>
+        /// 客户端获取订单的时间，若为null则未获取。
+        /// </summary>
+        public DateTime? NotifyDateTime { get; set; }
+
+        /// <summary>
+        /// 商品的TId。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 使用新方法处理发送货品。
+        /// </summary>
+        public bool IsClientCreate { get; set; }
+
+        /// <summary>
+        /// 是否通过Mail发送了奖品。null=未确定，true=已通过mail发送，false=已直接放入用户包裹。
+        /// </summary>
+        public bool? SendInMail { get; set; }
+
+        /// <summary>
+        /// 获取购买得到的物品摘要。
+        /// </summary>
+        public List<GameEntitySummary> EntitySummaries { get; set; } = new List<GameEntitySummary>();
     }
 
     //public class T0314PayReturnStringDto

@@ -2963,6 +2963,16 @@ namespace GY02.Publisher
         /// 订单信息对象。
         /// </summary>
         public GameShoppingOrderDto Order { get; set; }
+
+        /// <summary>
+        /// true=奖品已通过mail发送，false=奖品直接发送到了用户包裹中。此属性仅当 Order 成功完成时才有意义。
+        /// </summary>
+        public bool SendInMail { get; set; }
+
+        /// <summary>
+        /// 获取奖品的预览数据。
+        /// </summary>
+        public List<GameEntitySummaryDto> EntitySummaryDtos { get; set; } = new List<GameEntitySummaryDto>();
     }
 
     /// <summary>
@@ -2970,6 +2980,10 @@ namespace GY02.Publisher
     /// </summary>
     public class CreateT0314OrderParamsDto : TokenDtoBase
     {
+        /// <summary>
+        /// 购买商品的模板Id。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
     }
 
     /// <summary>
