@@ -4,6 +4,7 @@ using GY02.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
@@ -45,7 +46,8 @@ namespace GY02.Managers
         /// <param name="options"></param>
         /// <param name="logger"></param>
         public T0314Manager(IOptions<T0314ManagerOptions> options, ILogger<T0314Manager> logger, HttpClient httpClient, IDbContextFactory<GY02UserContext> dbContextFactory,
-            GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, SpecialManager specialManager, IServiceProvider service)
+            GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, SpecialManager specialManager,
+            IServiceProvider service, IHostEnvironment environment, GameEntityManager entityManager)
             : base(options, logger)
         {
             _HttpClient = httpClient;
@@ -56,6 +58,8 @@ namespace GY02.Managers
             _ShoppingManager = shoppingManager;
             _SpecialManager = specialManager;
             _Service = service;
+            _Environment = environment;
+            _EntityManager = entityManager;
         }
 
         IServiceProvider _Service;
@@ -64,6 +68,8 @@ namespace GY02.Managers
         GameTemplateManager _TemplateManager;
         GameShoppingManager _ShoppingManager;
         SpecialManager _SpecialManager;
+        IHostEnvironment _Environment;
+        GameEntityManager _EntityManager;
 
         /// <summary>
         /// SDK服务器调用地址。
@@ -192,46 +198,61 @@ namespace GY02.Managers
                 order.State = 1;
                 var jo = order.GetJsonObject<T0314JObject>();
                 if (!jo.IsClientCreate || jo.SendInMail is not null) return;
-                //准备发送邮件
-                if (_ShoppingManager.GetShoppingTemplateByTId(jo.TId) is not TemplateStringFullView tt) return;
-                var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
-                if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
+                //分拣发送及直接放置物品
+                List<GameEntitySummary> forMail = new List<GameEntitySummary>();
+                List<GameEntitySummary> noMail = new List<GameEntitySummary>();
+                foreach (var item in jo.EntitySummaries)
                 {
-                    var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
+                    var ttTmp = _TemplateManager.GetFullViewFromId(item.TId);
+                    if (ttTmp.Genus?.Contains(ProjectContent.NoMailAttachmentGenus) ?? false)  //若直接放置
                     {
-                        Change = null,
-                        GameChar = gc,
-                        IgnoreGuarantees = false,
-                        Random = new Random(),
-                    });
-                    if (!b) return;
+                        noMail.Add(item);
+                    }
+                    else //若发送邮件
+                    {
+                        forMail.Add(item);
+                    }
                 }
-                var items = list.SelectMany(c => c.Item2);
-                using var scope = _Service.CreateScope();
-                var _SyncCommandManager = scope.ServiceProvider.GetService<SyncCommandManager>();
-
+                //准备发送邮件
                 #region 发送奖品邮件
-                var commandMail = new SendMailCommand
+                if (forMail.Count > 0)
                 {
-                    GameChar = gc,
-                    Mail = new SendMailItem
+                    using var scope = _Service.CreateScope();
+                    var _SyncCommandManager = scope.ServiceProvider.GetService<SyncCommandManager>();
+
+                    var commandMail = new SendMailCommand
                     {
-                        Subject = "恭喜您！获得了购买物品",
-                        Body = "请获取附件",
-                    },
-                };
-                commandMail.Mail.Dictionary1 = new Dictionary<string, string>()
+                        GameChar = gc,
+                        Mail = new SendMailItem
+                        {
+                            Subject = "Please check receipt of goods",
+                            Body = "Hero, we found that your purchased item was not obtained in a timely manner. We are now resending it to you. Best of luck to you.",
+                        },
+                    };
+                    commandMail.Mail.Dictionary1 = new Dictionary<string, string>()
                 {
-
+                    { "English","Please check receipt of goods"},
+                    { "Chinese","商品请查收"},
+                    { "Filipino","Maaring i-check ang inyong natanggap na produkto"},
+                    { "Indonesian","Silakan periksa enerimaan barang"},
+                    { "Malay","Sila semak penerimaan barang."},
+                    { "Thai","กรุณาตรวจรับสินค้า"},
                 };
-                commandMail.Mail.Dictionary2 = new Dictionary<string, string>()
+                    commandMail.Mail.Dictionary2 = new Dictionary<string, string>()
                 {
+                    { "English","Hero, we found that your purchased item was not obtained in a timely manner. We are now resending it to you. Best of luck to you."},
+                    { "Chinese","英雄，由于查询到，你购买的商品未及时获取，现补发给你。祝你好运。"},
+                    { "Filipino","Bayani, dahil sa aming pagkukulang, hindi namin nakuha agad ang binili mong produkto. Ngayon ay ipinapadala namin muli sa iyo. Magandang kapalaran sa iyo."},
+                    { "Indonesian","Pahlawan, karena kami menemukan bahwa barang yang Anda beli tidak segera diperoleh, kami sekarang mengirimkannya kembali kepada Anda. Semoga beruntung untuk Anda."},
+                    { "Malay","Hero, kerana kami dapati barang yang anda beli tidak diperolehi dengan cepat, kami kini menghantarnya semula kepada anda. Semoga berjaya untuk anda."},
+                    { "Thai","วีรชนครับ/ค่ะ พบว่าสินค้าที่คุณซื้อไม่ได้รับไว้ทันที เราจึงจัดส่งใหม่ให้คุณครับ/ค่ะ ขอให้โชคดีครับ/ค่ะ"},
                 };
-                commandMail.ToIds.Add(gc.Id);   //加入收件人
-                commandMail.Mail.Attachment.AddRange(items);     //加入附件
-                _SyncCommandManager.Handle(commandMail);
+                    commandMail.ToIds.Add(gc.Id);   //加入收件人
+                    commandMail.Mail.Attachment.AddRange(forMail);     //加入附件
+                    _SyncCommandManager.Handle(commandMail);
+                }
                 #endregion 发送奖品邮件
-
+                _EntityManager.CreateAndMove(noMail, gc);
                 //后处理
                 jo.SendInMail = true;
                 db.SaveChanges();

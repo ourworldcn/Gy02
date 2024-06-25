@@ -80,6 +80,9 @@ namespace GY02.Commands
 
             var tt = _ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId);
             if (tt is null) goto lbErr;
+#if DEBUG
+            if (tt.TemplateId == Guid.Parse("71567fb7-adfa-4443-94ee-46a48245ef9c")) ;
+#endif
             var now = OwHelper.WorldNow;
             if (command.Count <= 0)
             {
@@ -111,20 +114,8 @@ namespace GY02.Commands
                 if (allEntity is null) goto lbErr;
                 //提前缓存产出项
                 var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
-#if DEBUG
-                var tt1 = _EntityManager.GetAllEntity(command.GameChar).First(c => c.TemplateId == Guid.Parse("9599B400-0BFD-498E-93DC-F44FF303B1B3"));
-#endif
-                if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
-                {
-                    var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
-                    {
-                        Change = null,
-                        GameChar = command.GameChar,
-                        IgnoreGuarantees = false,
-                        Random = new Random(),
-                    });
-                    if (!b) goto lbErr;
-                }
+                if (!_SpecialManager.Transformed(tt, list, command.GameChar)) goto lbErr;
+
                 var periodIndex = _SearcherManager.GetPeriodIndex(tt.ShoppingItem.Ins, command.GameChar, out _); //提前获取自周期数
                 //消耗项
                 if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源

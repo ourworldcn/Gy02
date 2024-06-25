@@ -24,6 +24,11 @@ namespace GY02.Publisher
         /// </summary>
         public const string ServerDictionaryName = "3872287E-E2A3-4D3D-A5FE-C6FF703FA544";
 
+        /// <summary>
+        /// 不能通过邮件附件发送物品的标志。
+        /// </summary>
+        public const string NoMailAttachmentGenus = "flag_NoMailAttachment";
+
         #region 权限相关
 
         /// <summary>

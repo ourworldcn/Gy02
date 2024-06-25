@@ -1,136 +1,22 @@
 {
-  "FuhuaPreview": [
-    {
-      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
-      "Items": [
-        {
-          "Outs": [
-            {
-              "TId": "FbXfYhj2REGAlk8Uqq8xJw==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 1000
-        },
-        {
-          "Outs": [
-            {
-              "TId": "x/cZ6UGzWUGey/umQ2PP8g==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 800
-        },
-        {
-          "Outs": [
-            {
-              "TId": "r8PHC9WM1U2MjFSN4QwCfw==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 300
-        },
-        {
-          "Outs": [
-            {
-              "TId": "dhta9CSLDUWMk9b7W4GWDw==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 200
-        },
-        {
-          "Outs": [
-            {
-              "TId": "1XQuy9lDcE+dFjEHnMjvbQ==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 100
-        }
-      ]
-    }
-  ],
-  "FuhuaHistory": [
-    {
-      "ParentTIds": [ "zuoqi_chick", "zuoqi_sheep" ],
-      "Items": [
-        {
-          "Outs": [
-            {
-              "TId": "s8+vK1MX3UOkDPear6r7Zg==",
-              "Count": 1,
-              "AddPropDic": {}
-            }
-          ],
-          "Weight": 2000000
-        }
-      ]
-    }
-  ],
-  "CombatHistory": [
-    {
-      "TId": "h7kiGyxP/EuxBQ6EWRS5nQ==",
-      "MinTimeSpanOfPass": "00:00:05.1090000"
+  "Genus": [ "gs_yindao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    {
-      "TId": "zF6lu+lSIEucjdOW9cXjOw==",
-      "MinTimeSpanOfPass": "00:00:06.1510000"
-    },
-    {
-      "TId": "RcZfHjMooUit1WuDo0B9Aw==",
-      "MinTimeSpanOfPass": "00:00:05.3360000"
-    },
-    {
-      "TId": "N00xKJB9E0qZLyJIXeewIA==",
-      "MinTimeSpanOfPass": "00:01:19.9200000"
-    }
-  ],
-  "AdsRewardsHistory": [
-    {
-      "TId": "ITRbpIg2xUO49UKdt2IfaQ==",
-      "Count": 4446.0,
-      "AddPropDic": {}
-    },
-    {
-      "TId": "ZhqvXpnn5UqSN3Wj9YSTAQ==",
-      "Count": 1.0,
-      "AddPropDic": {}
-    },
-    {
-      "TId": "AGB42WOGe0++qNzYEbb/Dg==",
-      "Count": 1.0,
-      "AddPropDic": {}
-    },
-    {
-      "TId": "VR05eR+gUUCEG1RSkIVmqw==",
-      "Count": 1.0,
-      "AddPropDic": {}
-    }
-  ],
-  "ShoppingHistory": [],
-  "PeriodIndexHistory": [
-    { "TId": "F2evOD40c02CCTYGV6pQBQ==" },
-    { "TId": "VcIcv4Y89ECcF+RpMDvhKg==" },
-    { "TId": "VjQZztjpp0yf3n7zzcdBPQ==" },
-    { "TId": "iMCuk2XgnUSJtKe/XbofTA==" }
-  ],
-  "DiceHistory": [ { "DiceTId": "/9FdpsDa10KRZ5ytZN0Lng==" } ],
-  "Roles": [],
-  "LvUpAccruedCost": [],
-  "CompositingAccruedCost": [],
-  "ClientDictionary": { "TutorialIds": "[11001,10001,11004,11005,10005,11002,10002,11006,11007,10003,11003]" },
-  "atk": 20,
-  "def": 100,
-  "pow": 350,
-  "crit": 100,
-  "LogineCount": 3,
-  "LastLoginDateTimeUtc": "2024-04-02T00:00:00Z",
-  "CountOfLastModifyUtc": "2024-04-02T16:46:11.6597828Z",
-  "Fcps": {}
+    "GroupNumber": 0,
+    "MaxCount": 1,
+    "Ins": [],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+        "TId": "385763e0-cd0b-47a8-9dc0-e4a41819dd47",
+        "Count": 1
+      }
+    ]
+  }
 }

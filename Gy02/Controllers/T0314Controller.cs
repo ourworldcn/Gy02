@@ -7,6 +7,7 @@ using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Writers;
 using OW.Game.Entity;
@@ -29,7 +30,7 @@ namespace Gy02.Controllers
         /// </summary>
         public T0314Controller(ILogger<T0314Controller> logger, T0314Manager t0314Manager, GameAccountStoreManager gameAccountStore,
             IDbContextFactory<GY02UserContext> dbContextFactory, SyncCommandManager syncCommandManager, IMapper mapper, GameEntityManager entityManager,
-            SpecialManager specialManager, GameTemplateManager templateManager)
+            SpecialManager specialManager, GameTemplateManager templateManager, IHostEnvironment environment)
         {
             _Logger = logger;
             _T0314Manager = t0314Manager;
@@ -40,6 +41,7 @@ namespace Gy02.Controllers
             _EntityManager = entityManager;
             _SpecialManager = specialManager;
             _TemplateManager = templateManager;
+            _Environment = environment;
             //捷游/东南亚服务器
         }
 
@@ -52,6 +54,7 @@ namespace Gy02.Controllers
         GameEntityManager _EntityManager;
         SpecialManager _SpecialManager;
         GameTemplateManager _TemplateManager;
+        IHostEnvironment _Environment;
 
         /// <summary>
         /// 安卓支付回调地址。
@@ -246,7 +249,9 @@ namespace Gy02.Controllers
 
             db.SaveChanges();
             _Logger.LogDebug("订单已经成功入库,Id={id}", model.CpOrderNo);
-            _T0314Manager.Reg(order.Id);
+            var jo = order.GetJsonObject<T0314JObject>();
+            if (_Environment.EnvironmentName != "jieyou" || jo.IsClientCreate)
+                _T0314Manager.Reg(order.Id);
             return "SUCCESS";
         }
 
@@ -371,10 +376,23 @@ namespace Gy02.Controllers
                 Confirm1 = true,
                 CustomerId = gc.GetThing().IdString,
             };
+            #region 初始化数据对象信息
             var jo = order.GetJsonObject<T0314JObject>();
             jo.TId = model.ShoppingItemTId;
             jo.IsClientCreate = true;
-
+            if (_TemplateManager.GetFullViewFromId(model.ShoppingItemTId) is not TemplateStringFullView tt)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+            if (!_SpecialManager.Transformed(tt, list, gc))
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            jo.EntitySummaries.AddRange(list.SelectMany(c => c.Item2));
+            #endregion 初始化数据对象信息
             db.Add(order);
             db.SaveChanges();
             result.OrderNo = order.Id.ToString();
@@ -466,7 +484,7 @@ namespace Gy02.Controllers
                         return result;
                     }
                     _Mapper.Map(command.Changes, result.Changes);
-                    
+
                     #endregion 内部购买
 
                     jo.SendInMail = false;
@@ -474,7 +492,7 @@ namespace Gy02.Controllers
             }
             db.SaveChanges();
             result.Order = _Mapper.Map<GameShoppingOrderDto>(order);
-
+            _Mapper.Map(jo.EntitySummaries, result.EntitySummaryDtos);
             return result;
         }
 

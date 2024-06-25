@@ -1327,6 +1327,11 @@
             全服配置字典条目的名称。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.NoMailAttachmentGenus">
+            <summary>
+            不能通过邮件附件发送物品的标志。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.AdminLoginName">
             <summary>
             管理员登录名。
