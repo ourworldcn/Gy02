@@ -1,22 +1,25 @@
 {
-  "Genus": [ "gs_yindao" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "GroupNumber": 0,
-    "MaxCount": 1,
-    "Ins": [],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-        "TId": "385763e0-cd0b-47a8-9dc0-e4a41819dd47",
-        "Count": 1
-      }
-    ]
-  }
+  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
+  "ptid": "3b163a62-6591-4a93-a385-cf079b20f589",
+  "name_txt": 12515,
+  "atk": null,
+  "def": null,
+  "pow": null,
+  "Genus": [ "e_zuoqi", "goto_unlock" ],
+  "UniInCharOuts": [
+    {
+      "Id": null,
+      "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+      "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
+      "Count": 5
+    }
+  ],
+  "p_skills": [
+    {
+      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
+      "enable": true
+    }
+  ],
+  "equipskin": "Panda_Legend_01",
+  "source2": [ "shangweikaiqi", "50028" ]
 }
