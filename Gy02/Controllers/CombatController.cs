@@ -112,7 +112,7 @@ namespace GY02.Controllers
         }
 
         /// <summary>
-        /// 
+        /// 获取区间。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>

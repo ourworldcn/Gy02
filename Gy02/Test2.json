@@ -1,25 +1,42 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "3b163a62-6591-4a93-a385-cf079b20f589",
-  "name_txt": 12515,
-  "atk": null,
-  "def": null,
-  "pow": null,
-  "Genus": [ "e_zuoqi", "goto_unlock" ],
-  "UniInCharOuts": [
+  "Ins": [
     {
-      "Id": null,
-      "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-      "TId": "3ecf10c0-f5e5-4996-8ed0-2e16547310a5",
-      "Count": 5
+      "Conditional": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "Genus": [],
+          "TId": "dbbb8d4c-92f0-49ff-9add-682c6caaa200",
+          "MinCount": 0,
+          "NumberCondition": {
+            "PropertyName": "Count",
+            "MinValue": 2,
+            "MaxValue": null,
+            "Subtrahend": 2,
+            "Modulus": 4,
+            "MinRemainder": 0,
+            "MaxRemainder": 0
+          },
+          "GeneralConditional": [],
+          "Count": 0,
+          "GroupMask": 1
+        }
+      ]
+    },
+    {
+      "Conditional": [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "Genus": [],
+          "TId": "e4eacb80-3b91-495f-8d08-4dfe451acf25",
+          "MinCount": 1
+        }
+      ],
+      "Count": 1
     }
   ],
-  "p_skills": [
-    {
-      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
-      "enable": true
-    }
-  ],
-  "equipskin": "Panda_Legend_01",
-  "source2": [ "shangweikaiqi", "50028" ]
+  "name_txt": 40006,
+  "comment_txt": 40007,
+  "comment2_txt": 40008,
+  "suggest": [ 300, 2800, 250 ],
+  "scoreTime": [ 480, 540, 720 ]
 }
