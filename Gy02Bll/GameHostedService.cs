@@ -95,6 +95,7 @@ namespace GY02
             var service = scope.ServiceProvider;
             CreateDb(service);
             BugFix(service);
+            CharNameFix(service);  //20240702
             UpdateDatabase(service);
             var mailManager = service.GetService<GameMailManager>();
             mailManager.ClearMail();
@@ -215,11 +216,11 @@ namespace GY02
         /// <summary>
         /// 修复Bug。修复错误记录通过最大等级的问题。
         /// </summary>
-        private void BugFix(IServiceProvider services)
+        private void BugFix(IServiceProvider service)
         {
             Guid fixId = new Guid("{8146A40E-98E6-4C1C-AFB7-D844C7380152}");
             var fixIdString = fixId.ToString();
-            var dbUser = services.GetRequiredService<GY02UserContext>();
+            var dbUser = service.GetRequiredService<GY02UserContext>();
             var entity = dbUser.ServerConfig.FirstOrDefault(c => c.Name == fixIdString);
             if (entity is null)  //若需要修复
             {
@@ -231,7 +232,7 @@ namespace GY02
                            join x in dbUser.VirtualThings.Where(c => c.ExtraGuid == xTId) on slot.Id equals x.ParentId
                            select new { gChar, x };
 
-                var ttMng = services.GetRequiredService<GameTemplateManager>();
+                var ttMng = service.GetRequiredService<GameTemplateManager>();
                 foreach (var item in coll)
                 {
                     var gChar = item.gChar.GetJsonObject<GameChar>();
@@ -258,6 +259,32 @@ namespace GY02
             }
         }
 
+        /// <summary>
+        /// 修正角色显示名称。
+        /// </summary>
+        /// <param name="service"></param>
+        void CharNameFix(IServiceProvider service)
+        {
+            Guid fixId = new Guid("{73E77D0D-8058-4249-B0DF-CD8635937CA8}");
+            var fixIdString = fixId.ToString();
+            var dbUser = service.GetRequiredService<GY02UserContext>();
+            var entity = dbUser.ServerConfig.FirstOrDefault(c => c.Name == fixIdString);
+            if (entity is null)  //若需要修复
+            {
+                var cng = service.GetRequiredService<IConfiguration>();
+                var prefix = cng.GetSection("CharNamePrefix").Value ?? string.Empty;
+                var coll = from gc in dbUser.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.CharTId)
+                           join gu in dbUser.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString != ProjectContent.AdminLoginName)
+                           on gc.ParentId equals gu.Id
+                           select new { gc, gu };
+                foreach (var item in coll)
+                {
+                    item.gc.ExtraString = $"{prefix}{item.gu.ExtraString}";
+                }
+                dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString });
+                dbUser.SaveChanges();
+            }
+        }
         /// <summary>
         /// 初始化管理员账号。
         /// </summary>
@@ -340,26 +367,8 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var dic = svcScope.GetService<IOptions<ButieOptions>>();
-                //var ips = Dns.GetHostAddresses(".");
-                var ips2 = Dns.GetHostAddresses("localhost");
-                //var ipEndPoint = new IPEndPoint(ips[1], 20088);
-                //using var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                //udp.Bind(new IPEndPoint(IPAddress.Any, 0));
-                ////udp.SendTo(buff, ipEndPoint);
-                //EndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
-                //byte[] buff = Encoding.UTF8.GetBytes("this is a test.");
-                //EndPoint remote = new IPEndPoint(IPAddress.Parse("47.236.192.97"), 20088);
-
-                for (int i = 0; i < 1_000; i++)
-                {
-                    //udp.SendTo(buff, remote);
-                    //Thread.Sleep(1000);
-                }
-                //var b = udp.Available;
-                var b = DateTime.TryParse("Thu Jun 86 2024 00:00:08 GMT 8808", out var dt);
-                var str1 = JsonSerializer.Serialize("哈利路亚");
-                var str3 = JsonSerializer.Deserialize<string>(str1);
+                var mng = svcScope.GetService<GameTemplateManager>();
+                var s = mng.IsOrgasm("总书记习近平发表重要讲话", out var result);
             }
             #endregion 测试用代码
             catch (Exception)

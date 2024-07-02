@@ -1,8 +1,35 @@
 {
-  "Genus": [ "fl_ExistsDayNumber" ],
-  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
-  "Count": 0,
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d"
+  "Out": [
+    {
+      "ParentTId": null,
+      "TId": "b5057117-ee25-4125-962f-1ab12bcb854b",
+      "Count": 1
+    }
+  ],
+  "In": [
+    {
+      "Conditional": [
+        {
+          "ParentTId": null,
+          "Genus": [],
+          "TId": "6d551fec-702b-44d6-b94b-b62405d1e056",
+          "MinCount": 1
+        }
+      ],
+      "Count": 1,
+      "Genus": null
+    },
+    {
+      "Conditional": [
+        {
+          "ParentTId": null,
+          "Genus": [ "p_vt", "e_wuqi" ],
+          "TId": null,
+          "MinCount": 1
+        }
+      ],
+      "Count": 1,
+      "Genus": null
+    }
+  ]
 }
