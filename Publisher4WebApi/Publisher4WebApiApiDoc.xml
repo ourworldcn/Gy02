@@ -1198,6 +1198,21 @@
             孵化功能返回值封装类。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.RenameCharReturnDto">
+            <summary>
+            角色改名功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.RenameCharParamsDto">
+            <summary>
+            角色改名功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.RenameCharParamsDto.DisplayName">
+            <summary>
+            新的显示名。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.RedeemParamsDto">
             <summary>
             执行兑换码兑换功能的参数封装类。

@@ -134,6 +134,11 @@ namespace OW.Game.Entity
         /// </summary>
         public DateTime? LastLoginDateTimeUtc { get; set; }
 
+        /// <summary>
+        /// 改名的次数，初始为0。
+        /// </summary>
+        public int RenameCount { get; set; }
+
         #endregion 普通属性
 
         #region 简单属性

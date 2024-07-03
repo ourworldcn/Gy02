@@ -1590,6 +1590,24 @@ namespace GY02.Publisher
     #region 商城相关
 
     /// <summary>
+    /// 角色改名功能的返回值封装类。
+    /// </summary>
+    public class RenameCharReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
+    /// 角色改名功能的参数封装类。
+    /// </summary>
+    public class RenameCharParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 新的显示名。
+        /// </summary>
+        public string DisplayName { get; set; }
+    }
+
+    /// <summary>
     /// 执行兑换码兑换功能的参数封装类。
     /// 错误码是160表示指定的兑换码不存在。若错误码是1219则表示兑换码失效。
     /// </summary>

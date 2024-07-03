@@ -4,10 +4,13 @@ using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using OW.Game.Entity;
+using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System.Text.Json;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Controllers
 {
@@ -22,16 +25,19 @@ namespace GY02.Controllers
         /// <param name="gameAccountStore"></param>
         /// <param name="mapper"></param>
         /// <param name="syncCommandManager"></param>
-        public ShoppingController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager)
+        /// <param name="entityManager"></param>
+        public ShoppingController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager, GameEntityManager entityManager)
         {
             _GameAccountStore = gameAccountStore;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
+            _EntityManager = entityManager;
         }
 
         GameAccountStoreManager _GameAccountStore;
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
+        GameEntityManager _EntityManager;
 
 #if DEBUG
         /// <summary>
@@ -199,6 +205,53 @@ namespace GY02.Controllers
             _Mapper.Map(command, result);
             return result;
         }
+
+        /// <summary>
+        /// 角色改名。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>用户属性变化返回在Changes里。</returns>
+        /// <response code="401">无效令牌。</response>  
+        [HttpPost]
+        public ActionResult<RenameCharReturnDto> RenameChar(RenameCharParamsDto model)
+        {
+            var result = new RenameCharReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
+            if (gc.RenameCount > 0)    //若不是第一次改名
+            {
+                //确认有足够钻石
+                var diam = new GameEntitySummary() { TId = ProjectContent.DiamTId, Count = -100 };
+                if (_EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.DiamTId) is not GameEntity entity || entity.Count < 100)
+                {
+                    result.DebugMessage = "没有足够的钻石";
+                    result.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
+                    result.HasError = true;
+                    return result;
+                }
+                //花费钻石
+                _EntityManager.CreateAndMove(new GameEntitySummary[] { diam }, gc, changes);
+            }
+            //更新名字
+            var ovDisplayName = gc.DisplayName;
+            gc.DisplayName = model.DisplayName;
+            changes.MarkChanges(gc, nameof(gc.DisplayName), ovDisplayName, gc.DisplayName);
+            //更新更改次数
+            var ov = gc.RenameCount;
+            gc.RenameCount++;
+            changes.MarkChanges(gc, nameof(gc.RenameCount), ov, gc.RenameCount);
+            //记录变化数据
+            _Mapper.Map(changes, result.Changes);
+            _GameAccountStore.Save(gc.GetUser().GetThing().IdString);
+            return result;
+        }
+
     }
 
 }
