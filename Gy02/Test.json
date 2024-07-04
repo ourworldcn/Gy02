@@ -1,35 +1,10 @@
 {
-  "Out": [
-    {
-      "ParentTId": null,
-      "TId": "b5057117-ee25-4125-962f-1ab12bcb854b",
-      "Count": 1
-    }
-  ],
-  "In": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": null,
-          "Genus": [],
-          "TId": "6d551fec-702b-44d6-b94b-b62405d1e056",
-          "MinCount": 1
-        }
-      ],
-      "Count": 1,
-      "Genus": null
-    },
-    {
-      "Conditional": [
-        {
-          "ParentTId": null,
-          "Genus": [ "p_vt", "e_wuqi" ],
-          "TId": null,
-          "MinCount": 1
-        }
-      ],
-      "Count": 1,
-      "Genus": null
-    }
-  ]
+  "cap": -1,
+  "TypeGuid": "57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38",
+  "SubTypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B"
+
 }
+/*
+  头像背包	B39A6FEA-CA36-4C96-975C-59D326EFD7D1
+头像装备槽	3F38C631-1694-41F5-BA70-7D25900D4D96
+*/

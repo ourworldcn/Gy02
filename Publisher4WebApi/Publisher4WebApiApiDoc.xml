@@ -331,6 +331,16 @@
             形象背包。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameCharDto.TouxiangBag">
+            <summary>
+            头像背包。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GameCharDto.TouxiangSlot">
+            <summary>
+            头像装备槽。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GameCharDto.FuhuaPreview">
             <summary>
             记录孵化的预览信息。

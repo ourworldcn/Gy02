@@ -424,6 +424,15 @@ namespace GY02.Publisher
         /// </summary>
         public GameSlotDto<GameEquipmentDto> XingxiangBag { get; set; }
 
+        /// <summary>
+        /// 头像背包。
+        /// </summary>
+        public GameSlot<GameEquipment> TouxiangBag { get; set; }
+
+        /// <summary>
+        /// 头像装备槽。
+        /// </summary>
+        public GameSlot<GameEquipment> TouxiangSlot { get; set; }
         #endregion 各种槽
 
         #region 孵化相关

@@ -1442,6 +1442,16 @@
             形象背包TId。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.TouxiangBagTId">
+            <summary>
+            头像背包TId B39A6FEA-CA36-4C96-975C-59D326EFD7D1
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.TouxiangSlotTId">
+            <summary>
+            头像装备槽TId	3F38C631-1694-41F5-BA70-7D25900D4D96
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.MailSlotTId">
             <summary>
             邮件槽TId。

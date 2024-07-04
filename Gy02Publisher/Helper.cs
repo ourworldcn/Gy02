@@ -145,6 +145,15 @@ namespace GY02.Publisher
         /// </summary>
         public static readonly Guid XingxiangBagTId = new Guid("f5022e9f-13da-4a2d-b1b9-d57fc07de232");
 
+        /// <summary>
+        /// 头像背包TId B39A6FEA-CA36-4C96-975C-59D326EFD7D1
+        /// </summary>
+        public static readonly Guid TouxiangBagTId = new Guid("B39A6FEA-CA36-4C96-975C-59D326EFD7D1");
+
+        /// <summary>
+        /// 头像装备槽TId	3F38C631-1694-41F5-BA70-7D25900D4D96
+        /// </summary>
+        public static readonly Guid TouxiangSlotTId = new Guid("3F38C631-1694-41F5-BA70-7D25900D4D96");
 
         #endregion 各种槽和背包
 
@@ -166,7 +175,7 @@ namespace GY02.Publisher
         /// 法币TID。
         /// </summary>
         public static readonly Guid FabiTId = new Guid("d577e084-4aa4-44d9-9510-20ccea041375");
-        
+
         /// <summary>
         /// 广告币TID。
         /// </summary>
