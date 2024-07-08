@@ -350,6 +350,11 @@ namespace GY02.Publisher
         /// </summary>
         public DateTime? LastLoginDateTimeUtc { get; set; }
 
+        /// <summary>
+        /// 改名的次数，初始为0。
+        /// </summary>
+        public int RenameCount { get; set; }
+
         #endregion 简单属性
 
         #region 各种槽

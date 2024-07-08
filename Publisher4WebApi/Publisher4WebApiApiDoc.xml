@@ -261,6 +261,11 @@
             最后一次登录的时间点。仅用户登录后才会改变该值，系统登录该角色不会改变该值。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GameCharDto.RenameCount">
+            <summary>
+            改名的次数，初始为0。
+            </summary>
+        </member>
         <member name="P:GY02.Publisher.GameCharDto.YichuanPifuSlot">
             <summary>
             已穿戴皮肤槽。
