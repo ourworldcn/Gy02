@@ -427,12 +427,12 @@ namespace GY02.Publisher
         /// <summary>
         /// 头像背包。
         /// </summary>
-        public GameSlot<GameEquipment> TouxiangBag { get; set; }
+        public GameSlotDto<GameEquipmentDto> TouxiangBag { get; set; }
 
         /// <summary>
         /// 头像装备槽。
         /// </summary>
-        public GameSlot<GameEquipment> TouxiangSlot { get; set; }
+        public GameSlotDto<GameEquipmentDto> TouxiangSlot { get; set; }
         #endregion 各种槽
 
         #region 孵化相关
@@ -1029,7 +1029,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 获取服务器非敏感信息的返回值封装类。未来增加的服务器配置都见放入此处。
     /// </summary>
-    public class GetServerInfoReturnDto
+    public class GetServerInfoReturnDto : ReturnDtoBase
     {
         /// <summary>
         /// 服务器内部偏移时间。单位:秒

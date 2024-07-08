@@ -1,10 +1,39 @@
 {
-  "cap": -1,
-  "TypeGuid": "57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38",
-  "SubTypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B"
-
+  "Genus": [ "gs_gaiming" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "GroupNumber": 0,
+    "MaxCount": 1,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "b45c570b-9027-4aa6-b333-91e304705d38",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 1,
+        "Genus": []
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
+        "Count": 15
+      }
+    ]
+  },
+  "display_icon": "Tili2",
+  "display_count": 15
 }
-/*
-  头像背包	B39A6FEA-CA36-4C96-975C-59D326EFD7D1
-头像装备槽	3F38C631-1694-41F5-BA70-7D25900D4D96
-*/

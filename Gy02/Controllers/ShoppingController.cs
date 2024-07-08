@@ -224,20 +224,22 @@ namespace GY02.Controllers
                 return result;
             }
             List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
-            if (gc.RenameCount > 0)    //若不是第一次改名
+            //购买的消耗商品
+            //b45c570b-9027-4aa6-b333-91e304705d38 修改名称商品购买
+            var command = new ShoppingBuyCommand
             {
-                //确认有足够钻石
-                var diam = new GameEntitySummary() { TId = ProjectContent.DiamTId, Count = -100 };
-                if (_EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.DiamTId) is not GameEntity entity || entity.Count < 100)
-                {
-                    result.DebugMessage = "没有足够的钻石";
-                    result.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
-                    result.HasError = true;
-                    return result;
-                }
-                //花费钻石
-                _EntityManager.CreateAndMove(new GameEntitySummary[] { diam }, gc, changes);
+                GameChar = gc,
+                Count = 1,
+                ShoppingItemTId = Guid.Parse("b45c570b-9027-4aa6-b333-91e304705d38"),
+            };
+
+            _SyncCommandManager.Handle(command);
+            if (command.HasError)
+            {
+                result.FillErrorFrom(command);
+                return result;
             }
+            _Mapper.Map(command.Changes, result.Changes);
             //更新名字
             var ovDisplayName = gc.DisplayName;
             gc.DisplayName = model.DisplayName;
@@ -247,7 +249,8 @@ namespace GY02.Controllers
             gc.RenameCount++;
             changes.MarkChanges(gc, nameof(gc.RenameCount), ov, gc.RenameCount);
             //记录变化数据
-            _Mapper.Map(changes, result.Changes);
+            var tmp = _Mapper.Map<List<GamePropertyChangeItemDto>>(changes);
+            result.Changes.AddRange(tmp);
             _GameAccountStore.Save(gc.GetUser().GetThing().IdString);
             return result;
         }
