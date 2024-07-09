@@ -225,12 +225,12 @@ namespace GY02.Controllers
             }
             List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
             //购买的消耗商品
-            //b45c570b-9027-4aa6-b333-91e304705d38 修改名称商品购买
+            //1d8542d3-da32-445e-9845-c9dc25e15cd5 修改名称商品购买
             var command = new ShoppingBuyCommand
             {
                 GameChar = gc,
                 Count = 1,
-                ShoppingItemTId = Guid.Parse("b45c570b-9027-4aa6-b333-91e304705d38"),
+                ShoppingItemTId = Guid.Parse("1d8542d3-da32-445e-9845-c9dc25e15cd5"),
             };
 
             _SyncCommandManager.Handle(command);

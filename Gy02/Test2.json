@@ -1,42 +1,10 @@
 {
-  "Ins": [
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "dbbb8d4c-92f0-49ff-9add-682c6caaa200",
-          "MinCount": 0,
-          "NumberCondition": {
-            "PropertyName": "Count",
-            "MinValue": 2,
-            "MaxValue": null,
-            "Subtrahend": 2,
-            "Modulus": 4,
-            "MinRemainder": 0,
-            "MaxRemainder": 0
-          },
-          "GeneralConditional": [],
-          "Count": 0,
-          "GroupMask": 1
-        }
-      ]
-    },
-    {
-      "Conditional": [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "e4eacb80-3b91-495f-8d08-4dfe451acf25",
-          "MinCount": 1
-        }
-      ],
-      "Count": 1
-    }
-  ],
-  "name_txt": 40006,
-  "comment_txt": 40007,
-  "comment2_txt": 40008,
-  "suggest": [ 300, 2800, 250 ],
-  "scoreTime": [ 480, 540, 720 ]
+  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
+  "ptid": "B39A6FEA-CA36-4C96-975C-59D326EFD7D1",
+  "name_txt": [],
+  "comment_txt": [],
+  "iconName": "Sheep_Legend_01",
+  "Genus": null,
+  "p_skills": null,
+  "LvUpTId": null
 }

@@ -367,8 +367,9 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var mng = svcScope.GetService<GameTemplateManager>();
-                var s = mng.IsOrgasm("总书记习近平发表重要讲话", out var result);
+                List<string> list = null;
+                if (list?.Count > 0) ;
+                else;
             }
             #endregion 测试用代码
             catch (Exception)

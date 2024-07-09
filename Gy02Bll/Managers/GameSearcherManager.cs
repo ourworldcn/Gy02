@@ -53,15 +53,14 @@ namespace GY02.Managers
         /// <returns></returns>
         public bool IsMatch(GameEntity entity, GameThingPreconditionItem condition)
         {
-            if (condition.TId.HasValue) //若需要考虑模板id
-                if (condition.TId.Value != entity.TemplateId)
-                    return false;
-            if (condition.MinCount > entity.Count) return false;
-            if (condition.MaxCount < entity.Count) return false;
-            VirtualThing thing = entity.GetThing();
-            TemplateStringFullView fullView = _TemplateManager.GetFullViewFromId(thing.ExtraGuid);
+            if (condition.TId.HasValue && condition.TId.Value != entity.TemplateId) return false; //若模板id不匹配
+            else if (condition.MinCount > entity.Count) return false;   //若低于要求值
+            else if (condition.MaxCount < entity.Count) return false;   //若高于要求值
 
-            if (condition.Genus is not null && condition.Genus.Count > 0)    //若需要限制类属
+            var thing = entity.GetThing();
+            var fullView = _TemplateManager.GetFullViewFromId(entity.TemplateId);
+
+            if (condition.Genus?.Count > 0)    //若需要限制类属
                 if (fullView.Genus is null || condition.Genus.Intersect(fullView.Genus).Count() != condition.Genus.Count)
                     return false;
             if (condition.ParentTId.HasValue)

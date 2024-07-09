@@ -1315,7 +1315,7 @@ namespace GY02.Templates
         public Guid? ParentTId { get; set; }
 
         /// <summary>
-        /// 需要包含的属名称（如果有多项则必须全部包含）。空集合则不限制。
+        /// 需要包含的属名称（如果有多项则必须全部包含）。null或空集合则不限制。
         /// </summary>
         public List<string> Genus { get; set; } = new List<string>();
 
