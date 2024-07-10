@@ -1346,20 +1346,20 @@
       "DisplayName": "皮肤背包",
       "Id": "3b163a62-6591-4a93-a385-cf079b20f589",
       "Gid": 912101002,
-      "PropertiesString": "{\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"Count\":1}"
+      "PropertiesString": "{\"cap\":-1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"TIdsOfCreate\":[\"f02ef9b1-e47f-4007-94a1-4c662fa837d4\",\"706116a8-ccdc-4358-856b-aec70dcc9793\"],\"Count\":1}"
     },
     {
       "DisplayName": "头像背包",
       "Id": "B39A6FEA-CA36-4C96-975C-59D326EFD7D1",
       "Gid": 912101003,
-      "PropertiesString": "{  \"cap\": -1,  \"TypeGuid\": \"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",  \"SubTypeGuid\": \"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}",
+      "PropertiesString": "{  \"cap\": -1,  \"TypeGuid\": \"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\": \"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}",
       "Remark": "直属于角色对象"
     },
     {
       "DisplayName": "头像装备槽",
       "Id": "3F38C631-1694-41F5-BA70-7D25900D4D96",
       "Gid": 912111015,
-      "PropertiesString": "{  \"cap\": 1,  \"TypeGuid\": \"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",  \"SubTypeGuid\": \"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}",
+      "PropertiesString": "{  \"cap\": 1,  \"TypeGuid\": \"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\": \"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":1,\"TIdsOfCreate\":[\"01745dd0-0c86-4dc4-97ff-b4af1401bc19\"]}",
       "Remark": "直属于角色对象，在此槽内表示装备上了"
     },
     {
@@ -5572,7 +5572,7 @@
       "DisplayName": "长矛紫色+2（升阶）",
       "Id": "60d75e2f-aea6-463b-985e-f21054e8468d",
       "Gid": 150201133,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"7a82bcf0-5393-4bf5-a222-05bcf1bf6a67\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"478d3278-34f7-4901-b43e-e7a1851f6abf\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"7a82bcf0-5393-4bf5-a222-05bcf1bf6a67\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"478d3278-34f7-4901-b43e-e7a1851f6abf\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "锤子绿色 （升阶）",
@@ -5602,7 +5602,7 @@
       "DisplayName": "锤子紫色+2（升阶）",
       "Id": "224fe617-d854-42a4-8703-d032806482aa",
       "Gid": 150201134,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"8a854c44-3d29-435f-b19d-81af3aae0f0d\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b5057117-ee25-4125-962f-1ab12bcb854b\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"8a854c44-3d29-435f-b19d-81af3aae0f0d\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"b5057117-ee25-4125-962f-1ab12bcb854b\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "法杖绿色 （升阶）",
@@ -5632,7 +5632,7 @@
       "DisplayName": "法杖紫色+2（升阶）",
       "Id": "27f7e5c1-5a34-4911-8606-85265ed43ecb",
       "Gid": 150201135,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"924ad8d5-7e22-41f2-ab73-79361fc3a76d\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":\"e2bc41c1-d1d3-44a6-aaee-34ce525569c3\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"924ad8d5-7e22-41f2-ab73-79361fc3a76d\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":\"e2bc41c1-d1d3-44a6-aaee-34ce525569c3\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "弩箭绿色 （升阶）",
@@ -5662,7 +5662,7 @@
       "DisplayName": "弩箭紫色+2（升阶）.",
       "Id": "0b26a621-b6c7-4ff6-a932-753119f9878f",
       "Gid": 150201136,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"35542206-7c9a-432f-a72d-d7ed2c5cafed\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":\"6b76357e-6187-4afe-8134-cd41cd8c5ebf\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"35542206-7c9a-432f-a72d-d7ed2c5cafed\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":\"6b76357e-6187-4afe-8134-cd41cd8c5ebf\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "飞镖绿色 （升阶）",
@@ -5692,7 +5692,7 @@
       "DisplayName": "飞镖紫色+2（升阶）.",
       "Id": "10c192c9-bded-4296-ad5b-94c1b00d2229",
       "Gid": 150201137,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"4e5bb385-4145-4660-8bad-337f4f430aa9\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"17fd4340-7205-4ad0-af58-ad6b835474d6\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"4e5bb385-4145-4660-8bad-337f4f430aa9\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"17fd4340-7205-4ad0-af58-ad6b835474d6\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "兽皮手套 绿色（升阶）",
@@ -5722,7 +5722,7 @@
       "DisplayName": "兽皮手套 紫色+2（升阶）",
       "Id": "c699e547-9d51-4fb8-8a5d-3734fe3a6f77",
       "Gid": 150201138,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"18dd99d2-6efa-40b5-9847-48364c617583\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"0319ed64-1519-4fc8-88e5-4296e9f6d125\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_shoutao\"],\"TId\":null,\"MinCount\":2}],\"Count\":2,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"18dd99d2-6efa-40b5-9847-48364c617583\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"0319ed64-1519-4fc8-88e5-4296e9f6d125\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_shoutao\"],\"TId\":null,\"MinCount\":2}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "骑士手套 绿色（升阶）",
@@ -5752,7 +5752,7 @@
       "DisplayName": "骑士手套 紫色+2（升阶）",
       "Id": "b7932189-3317-4064-92ad-e811a9712037",
       "Gid": 150201139,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"3883a006-9261-46c9-b85b-f95b697813d6\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3e6dc325-4064-4a56-96c4-6647ba90b5ca\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_shoutao\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"3883a006-9261-46c9-b85b-f95b697813d6\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3e6dc325-4064-4a56-96c4-6647ba90b5ca\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_shoutao\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "法术手套 绿色（升阶）",
@@ -5782,7 +5782,7 @@
       "DisplayName": "法术手套 紫色+2（升阶）",
       "Id": "f87f4b04-87ef-4647-9a7d-16046f03ce47",
       "Gid": 150201140,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"2d78f20c-656c-47ae-b107-4c3ce8157305\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9db6337c-a14b-490e-97a4-20c36b31c09e\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_shoutao\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"2d78f20c-656c-47ae-b107-4c3ce8157305\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9db6337c-a14b-490e-97a4-20c36b31c09e\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_shoutao\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "机械手套 绿色（升阶）",
@@ -5812,7 +5812,7 @@
       "DisplayName": "机械手套 紫色+2（升阶）",
       "Id": "fe2cc014-f9e9-4ec6-83e5-f1c783eea75b",
       "Gid": 150201141,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"5162d72a-4a0b-4be9-9698-7a4c27c3df70\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"919f4149-e39a-42b8-adf3-6643decf0138\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_shoutao\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"5162d72a-4a0b-4be9-9698-7a4c27c3df70\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"919f4149-e39a-42b8-adf3-6643decf0138\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_shoutao\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "兽皮衣服绿（升阶）",
@@ -5842,7 +5842,7 @@
       "DisplayName": "兽皮衣服紫+2（升阶）",
       "Id": "1488b965-4811-4a06-8118-5d13eea554f7",
       "Gid": 150201142,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"4639e82e-0b7e-4613-8916-bf486f6bf606\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"0484094b-1739-4100-a9b5-e118a3c0a471\",\"MinCount\":1}],\"Count\": 2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yifu\"],\"TId\": null,\"MinCount\":1}],\"Count\": 1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"4639e82e-0b7e-4613-8916-bf486f6bf606\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"0484094b-1739-4100-a9b5-e118a3c0a471\",\"MinCount\":1}],\"Count\": 1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yifu\"],\"TId\": null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "厚重铁甲绿（升阶）",
@@ -5872,7 +5872,7 @@
       "DisplayName": "厚重铁甲紫+2（升阶）",
       "Id": "82b08a2f-94e9-4c02-9f12-b1eb2e210d57",
       "Gid": 150201143,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"bcce05ae-373a-4b78-99e8-3aae0f09d80d\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"fd6b5402-6779-4e7d-b4a0-485db5ce9cb3\",\"MinCount\":1}],\"Count\": 2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yifu\"],\"TId\": null,\"MinCount\":1}],\"Count\": 1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"bcce05ae-373a-4b78-99e8-3aae0f09d80d\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"fd6b5402-6779-4e7d-b4a0-485db5ce9cb3\",\"MinCount\":1}],\"Count\": 1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yifu\"],\"TId\": null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "机械战甲绿（升阶）",
@@ -5902,7 +5902,7 @@
       "DisplayName": "机械战甲紫+2（升阶）",
       "Id": "b1375a0a-2ebc-4684-8c9f-82ea6eaee729",
       "Gid": 150201144,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"d9e236aa-2565-497a-8b50-4a4d42e1181e\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"c6640712-c331-4ff0-b213-a19e47eb6c05\",\"MinCount\": 1}],\"Count\": 2,\"Genus\":null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yifu\"],\"TId\":null}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"d9e236aa-2565-497a-8b50-4a4d42e1181e\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"c6640712-c331-4ff0-b213-a19e47eb6c05\",\"MinCount\": 1}],\"Count\":1,\"Genus\":null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yifu\"],\"TId\":null}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "法师袍绿（升阶）",
@@ -5932,7 +5932,7 @@
       "DisplayName": "法师袍紫+2（升阶）",
       "Id": "b39b6eb4-fcac-43c1-8815-ff482cea1341",
       "Gid": 150201145,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"d4fea4a7-d039-4af1-a9b7-a5c62d632a11\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"a36cc752-8c31-47b0-be13-74192aaa5764\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yifu\"],\"TId\": null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"d4fea4a7-d039-4af1-a9b7-a5c62d632a11\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"a36cc752-8c31-47b0-be13-74192aaa5764\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yifu\"],\"TId\": null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "兽脚鞋子绿（升阶）",
@@ -5962,7 +5962,7 @@
       "DisplayName": "兽脚鞋子紫+2（升阶）",
       "Id": "8dcba40a-1b09-4675-95c1-66a098f5eae3",
       "Gid": 150201146,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"dd6ad3e7-ebb0-429b-811c-45e3e0ff72e6\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"392a94b7-4e8e-401f-9990-7a1eb0ea7afa\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_xiezi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"dd6ad3e7-ebb0-429b-811c-45e3e0ff72e6\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"392a94b7-4e8e-401f-9990-7a1eb0ea7afa\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_xiezi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "骑士靴子绿（升阶）",
@@ -5992,7 +5992,7 @@
       "DisplayName": "骑士靴子紫+2（升阶）",
       "Id": "577f747d-a8a5-4e70-9828-8095b4acd552",
       "Gid": 150201147,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"a9aaf7ec-13a6-440e-b158-523dbb06b0b0\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"9175191c-d3ae-4ddb-98f6-270ce3b1eae6\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_xiezi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"a9aaf7ec-13a6-440e-b158-523dbb06b0b0\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"9175191c-d3ae-4ddb-98f6-270ce3b1eae6\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_xiezi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "机械战靴绿（升阶）",
@@ -6022,7 +6022,7 @@
       "DisplayName": "机械战靴紫+2（升阶）",
       "Id": "b36425a3-0be8-4197-bff2-dd119abf7eb4",
       "Gid": 150201148,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"ecc5c0ba-cf07-40c2-b313-968008159fc7\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"247f6086-a584-4bf0-861a-48e7cd518969\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_xiezi\"],\"TId\": null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"ecc5c0ba-cf07-40c2-b313-968008159fc7\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"247f6086-a584-4bf0-861a-48e7cd518969\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_xiezi\"],\"TId\": null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "魔法靴子绿（升阶）",
@@ -6052,7 +6052,7 @@
       "DisplayName": "魔法靴子紫+2（升阶）",
       "Id": "606556f8-60e1-4d94-93d5-d25027d8586d",
       "Gid": 150201149,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"80a7e1f9-9add-421d-b190-86469fd78f19\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"be3b4711-25cf-42b7-8319-82b1ce07c222\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_xiezi\"],\"TId\": null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"80a7e1f9-9add-421d-b190-86469fd78f19\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"be3b4711-25cf-42b7-8319-82b1ce07c222\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_xiezi\"],\"TId\": null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "野兽腰带绿（升阶）",
@@ -6082,7 +6082,7 @@
       "DisplayName": "野兽腰带紫+2（升阶）",
       "Id": "c6df04b4-9954-4135-86e5-38cb818909ab",
       "Gid": 150201150,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"019cdae4-061e-44fa-9a67-01d12b98e562\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"8cf24475-43a8-40b4-9efa-7146ace6438b\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yaodai\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"019cdae4-061e-44fa-9a67-01d12b98e562\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"8cf24475-43a8-40b4-9efa-7146ace6438b\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yaodai\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "武士腰带绿（升阶）",
@@ -6112,7 +6112,7 @@
       "DisplayName": "武士腰带紫+2（升阶）",
       "Id": "7e957bfc-0036-41a0-8845-8a110eb8d734",
       "Gid": 150201151,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"561f6fa6-9ae6-4f09-a23b-78ec29e1d311\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"bb24d79a-18a2-459b-ac7d-eab1155e7293\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yaodai\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"561f6fa6-9ae6-4f09-a23b-78ec29e1d311\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"bb24d79a-18a2-459b-ac7d-eab1155e7293\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yaodai\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "机械腰带绿（升阶）",
@@ -6142,7 +6142,7 @@
       "DisplayName": "机械腰带紫+2（升阶）",
       "Id": "3a1f9ccd-d9e1-41a1-b64a-e0044d4b465a",
       "Gid": 150201152,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"1a9ef3ea-63bf-4658-bf51-4481a6cc61c1\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"c55a7643-25fe-44aa-89ee-2290bf2d43a0\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yaodai\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"1a9ef3ea-63bf-4658-bf51-4481a6cc61c1\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"c55a7643-25fe-44aa-89ee-2290bf2d43a0\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yaodai\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "法师皮带绿（升阶）",
@@ -6172,7 +6172,7 @@
       "DisplayName": "法师皮带紫+2（升阶）",
       "Id": "4ad43dd5-90f6-4270-9566-588e1938faa9",
       "Gid": 150201153,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"97cd26c6-55dd-4a33-bdf5-51773ba8bf29\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"2c0cd893-6e17-4127-9f19-04c0c286b0b6\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yaodai\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"97cd26c6-55dd-4a33-bdf5-51773ba8bf29\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"2c0cd893-6e17-4127-9f19-04c0c286b0b6\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_yaodai\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "山羊坐骑绿（升阶）",
@@ -6202,7 +6202,7 @@
       "DisplayName": "山羊坐骑紫+2（升阶）",
       "Id": "c4cd9250-51bd-45e8-a1fd-0054f23d5969",
       "Gid": 150201154,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"598b27f6-fa84-4a47-8ea6-2c214f16d412\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"69435e7a-d560-4edb-bafb-d333185f48cf\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"598b27f6-fa84-4a47-8ea6-2c214f16d412\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"69435e7a-d560-4edb-bafb-d333185f48cf\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_sheep\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "老虎绿（升阶）",
@@ -6232,7 +6232,7 @@
       "DisplayName": "老虎紫+2（升阶）",
       "Id": "e177c4de-0ad2-4b3a-894f-bd7d05466f0b",
       "Gid": 150201155,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"727edabb-1397-4f3d-b7cd-972bb705c588\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"162528c0-2a99-4e9f-bc0b-79d1c8a8e181\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"727edabb-1397-4f3d-b7cd-972bb705c588\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"162528c0-2a99-4e9f-bc0b-79d1c8a8e181\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_tiger\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "狼绿（升阶）",
@@ -6262,7 +6262,7 @@
       "DisplayName": "狼紫+2（升阶）",
       "Id": "f9bdec1d-e9a5-4f87-8db6-fc1495b70401",
       "Gid": 150201156,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"27b170d8-67f9-4f13-aa86-6607c8e2f182\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"e242f480-5146-4aad-b32c-25f2cc121577\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"27b170d8-67f9-4f13-aa86-6607c8e2f182\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"e242f480-5146-4aad-b32c-25f2cc121577\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_wolf\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "长颈鹿绿（升阶）",
@@ -6292,7 +6292,7 @@
       "DisplayName": "长颈鹿紫+2（升阶）",
       "Id": "195dbc03-00e2-4f6c-9354-9a015d134ef8",
       "Gid": 150201157,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"4cde39f1-976b-4eee-8018-9095992391d4\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"41b2d9a5-041f-4725-bd1b-48c99fdf774d\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"4cde39f1-976b-4eee-8018-9095992391d4\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"41b2d9a5-041f-4725-bd1b-48c99fdf774d\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_giraffe\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "龙绿（升阶）",
@@ -6322,7 +6322,7 @@
       "DisplayName": "龙紫+2（升阶）",
       "Id": "9202345b-b46a-483f-a525-bedea89287cd",
       "Gid": 150201158,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"6e68b2d3-7dba-4640-b9bc-2cd2910c8d19\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"21d169d9-0adc-40b8-a752-31270f507cfc\",\"MinCount\":1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_dragon\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"6e68b2d3-7dba-4640-b9bc-2cd2910c8d19\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"21d169d9-0adc-40b8-a752-31270f507cfc\",\"MinCount\":1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_dragon\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "柯基绿（升阶）",
@@ -6352,7 +6352,7 @@
       "DisplayName": "柯基紫+2（升阶）",
       "Id": "4bfe2570-4c8c-4618-babb-f52316827334",
       "Gid": 150201159,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"699e6582-910e-4c28-ac87-65d60b7060b9\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"952a0672-ed62-4c75-b64f-7c815c5dd3f7\",\"MinCount\": 1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_dragon\"],\"TId\": null,\"MinCount\": 1}],\"Count\": 1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"699e6582-910e-4c28-ac87-65d60b7060b9\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"952a0672-ed62-4c75-b64f-7c815c5dd3f7\",\"MinCount\": 1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_dragon\"],\"TId\": null,\"MinCount\": 1}],\"Count\":2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "火鸡绿（升阶）",
@@ -6382,7 +6382,7 @@
       "DisplayName": "火鸡紫+2（升阶）",
       "Id": "a9f41c71-68df-4feb-a6e9-c4ab5436dd3d",
       "Gid": 150201160,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"e0e2f3d5-d4c0-4de6-bd38-a758d4ea37c7\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"041b7433-cd27-4823-84d3-60a4d1b1758b\",\"MinCount\": 1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_chick\"],\"TId\": null,\"MinCount\": 1}],\"Count\": 1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"e0e2f3d5-d4c0-4de6-bd38-a758d4ea37c7\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"041b7433-cd27-4823-84d3-60a4d1b1758b\",\"MinCount\": 1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_chick\"],\"TId\": null,\"MinCount\": 1}],\"Count\": 2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "猫绿（升阶）",
@@ -6412,7 +6412,7 @@
       "DisplayName": "猫紫+2（升阶）",
       "Id": "e4b987f7-3d4b-4bb7-8ea2-a7aeba20ec3e",
       "Gid": 150201161,
-      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"582f8663-9291-4043-b08f-36983109e7ce\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"276efd73-a375-4b75-ae81-aea1310bacad\",\"MinCount\": 1}],\"Count\":2,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_cat\"],\"TId\": null,\"MinCount\": 1}],\"Count\": 1,\"Genus\": null}]}"
+      "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"582f8663-9291-4043-b08f-36983109e7ce\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"276efd73-a375-4b75-ae81-aea1310bacad\",\"MinCount\": 1}],\"Count\":1,\"Genus\": null},{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [\"p_vt\",\"e_zuoqi\",\"zuoqi_cat\"],\"TId\": null,\"MinCount\": 1}],\"Count\": 2,\"Genus\": null}]}"
     },
     {
       "DisplayName": "鲨鱼 绿（升阶）",
@@ -6442,7 +6442,7 @@
       "DisplayName": "鲨鱼 紫+2（升阶）",
       "Id": "07d47a5d-292d-4a45-87a1-0eed83076bda",
       "Gid": 150201162,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"e01b17fc-6e01-4892-82a8-d7a65782489f\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"159acab0-db83-4133-b975-5a2939c7e6a1\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_shark\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"e01b17fc-6e01-4892-82a8-d7a65782489f\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"159acab0-db83-4133-b975-5a2939c7e6a1\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_shark\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "熊猫 绿（升阶）",
@@ -6472,7 +6472,7 @@
       "DisplayName": "熊猫 紫+2（升阶）",
       "Id": "c74a2c29-ef0c-49be-8e3a-0d068b9e3a73",
       "Gid": 150201163,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"0661be8c-d89f-4502-ad94-8684d9489ea2\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"7646818c-0cb2-443f-83f6-55269674e747\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"0661be8c-d89f-4502-ad94-8684d9489ea2\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"7646818c-0cb2-443f-83f6-55269674e747\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_panda\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "熊 绿（升阶）",
@@ -6502,7 +6502,7 @@
       "DisplayName": "熊 紫+2（升阶）",
       "Id": "3438a4d6-231b-4e9c-8630-d482445c9539",
       "Gid": 150201164,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"363d2782-eedd-4866-92b7-77a47aac8bb8\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"ff0be92f-acfb-4202-a6ea-8a6d42427926\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"363d2782-eedd-4866-92b7-77a47aac8bb8\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"ff0be92f-acfb-4202-a6ea-8a6d42427926\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "鳄鱼 绿（升阶）",
@@ -6532,7 +6532,7 @@
       "DisplayName": "鳄鱼 紫+2（升阶）",
       "Id": "4abd2e29-245d-4102-ae14-4ed127f6cd41",
       "Gid": 150201165,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"7918bd1c-1ebc-424a-9089-72cd6f4f1c36\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9886916e-7f2d-4ae8-9d41-846ece71e595\",\"MinCount\":1}],\"Count\":2,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"7918bd1c-1ebc-424a-9089-72cd6f4f1c36\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"9886916e-7f2d-4ae8-9d41-846ece71e595\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_zuoqi\",\"zuoqi_bear\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "默认形象（部落形象）",
@@ -21877,6 +21877,42 @@
       "Id": "77c70f1c-caa6-4214-9351-f64797d6b3e7",
       "Gid": 180701004,
       "PropertiesString": "{\"Genus\":[\"gs_wenquan\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"999y\",\"ValidPeriodString\":\"999y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":10000},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100}]}}"
+    },
+    {
+      "DisplayName": "默认形象-男",
+      "Id": "01745dd0-0c86-4dc4-97ff-b4af1401bc19",
+      "Gid": 230101001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Knight1\",\"Genus\":[\"e_touxiang\"]}"
+    },
+    {
+      "DisplayName": "角色头像-女",
+      "Id": "f02ef9b1-e47f-4007-94a1-4c662fa837d4",
+      "Gid": 230101002,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Knight2\",\"Genus\":[\"e_touxiang\"]}"
+    },
+    {
+      "DisplayName": "角色头像-骑士",
+      "Id": "706116a8-ccdc-4358-856b-aec70dcc9793",
+      "Gid": 230101003,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Knight3\",\"Genus\":[\"e_touxiang\"]}"
+    },
+    {
+      "DisplayName": "发条羊头像",
+      "Id": "5e74ec59-e53a-4bad-8248-bbf8c9bfb3d1",
+      "Gid": 230101004,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Sheep_Legend_01\",\"Genus\":[\"e_touxiang\"]}"
+    },
+    {
+      "DisplayName": "匪徒羊头像",
+      "Id": "81d2a83a-caba-49da-bf9a-7ee41cd917ef",
+      "Gid": 230101005,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Sheep_Legend_02\",\"Genus\":[\"e_touxiang\"]}"
+    },
+    {
+      "DisplayName": "喷气羊头像",
+      "Id": "32c176a4-500b-434a-84f9-cc757a876293",
+      "Gid": 230101006,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Sheep_Legend_03\",\"Genus\":[\"e_touxiang\"]}"
     }
   ]
 }

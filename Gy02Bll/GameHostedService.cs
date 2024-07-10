@@ -281,10 +281,52 @@ namespace GY02
                 {
                     item.gc.ExtraString = $"{prefix}{item.gu.ExtraString}";
                 }
+                dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString, Value = "修正角色显示名称" });
+                dbUser.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 头像产出的成就修正。
+        /// </summary>
+        /// <param name="service"></param>
+        void ChengjiuFix(IServiceProvider service)
+        {
+            Guid fixId = new Guid("{C9867EC4-5282-46CB-BEF0-9916BA2E5300}");
+            var genusString = "e_touxiang";   //头像的类属
+            var fixIdString = fixId.ToString();
+            var dbUser = service.GetRequiredService<GY02UserContext>();
+            var fixFlag = dbUser.ServerConfig.FirstOrDefault(c => c.Name == fixIdString);
+            if (fixFlag is null)  //若需要修复
+            {
+                GameTemplateManager templateManager = service.GetRequiredService<GameTemplateManager>();
+                GameAchievementManager achievementManager = service.GetRequiredService<GameAchievementManager>();
+                List<TemplateStringFullView> list = new List<TemplateStringFullView>();
+                foreach (var achiTT in achievementManager.Templates.Values)
+                {
+                    if (achiTT.Achievement.Outs.Any(c => c.Any(d => templateManager.GetFullViewFromId(d.TId)?.Genus?.Contains(genusString) ?? false)))  //若这个成就需要更新
+                        list.Add(achiTT);
+                }
+                var ids = list.Select(c => c.TemplateId).ToArray();
+                //fullView.Achievement.Outs.Any(c=>c.Any(d=> templateManager.GetFullViewFromId(d.TId)?))
+
+                var coll = from slot in dbUser.VirtualThings
+                           where slot.ExtraGuid == ProjectContent.ChengJiuSlotTId
+                           join achi in dbUser.VirtualThings
+                           on slot.Id equals achi.ParentId
+                           where ids.Contains(achi.ExtraGuid)
+                           select new { slot, achi };
+                foreach (var item in coll)
+                {
+                    var achi = item.achi.GetJsonObject<GameAchievement>();
+                    var tt = templateManager.GetFullViewFromId(achi.TemplateId);
+                    achi.Items[1].IsPicked = false;
+                }
                 dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString });
                 dbUser.SaveChanges();
             }
         }
+
         /// <summary>
         /// 初始化管理员账号。
         /// </summary>
@@ -362,14 +404,10 @@ namespace GY02
             using var scope = _Services.CreateScope();
             var svcScope = scope.ServiceProvider;
             var db = svcScope.GetService<GY02UserContext>();
-            var str2 = "2023-06-01T00:00:00.0000000";
             var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
             {
-                List<string> list = null;
-                if (list?.Count > 0) ;
-                else;
             }
             #endregion 测试用代码
             catch (Exception)

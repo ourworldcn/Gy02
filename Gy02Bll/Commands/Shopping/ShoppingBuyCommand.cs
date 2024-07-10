@@ -81,7 +81,7 @@ namespace GY02.Commands
             var tt = _ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId);
             if (tt is null) goto lbErr;
 #if DEBUG
-            if (tt.TemplateId == Guid.Parse("71567fb7-adfa-4443-94ee-46a48245ef9c")) ;
+            //if (tt.TemplateId == Guid.Parse("71567fb7-adfa-4443-94ee-46a48245ef9c")) ;
 #endif
             var now = OwHelper.WorldNow;
             if (command.Count <= 0)

@@ -135,6 +135,29 @@ namespace GY02.Controllers
             return result;
 
         }
-    }
 
+        /// <summary>
+        /// 获取竞技场信息。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GetTowerReturnDto> GetTower(GetTowerParamsDto model)
+        {
+            var result = new GetTowerReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            //var command = new GetDurationCommand { GameChar = gc, };
+            //_Mapper.Map(model, command);
+            //_SyncCommandManager.Handle(command);
+            //_Mapper.Map(command, result);
+            return result;
+        }
+    }
 }

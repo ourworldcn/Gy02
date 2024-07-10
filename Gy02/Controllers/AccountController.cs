@@ -99,7 +99,7 @@ namespace GY02.Controllers
         }
 
 #if DEBUG
-        TestUdpServerManager testUdpServerManager;
+        TestUdpServerManager? testUdpServerManager ;
 #endif
 
         /// <summary>

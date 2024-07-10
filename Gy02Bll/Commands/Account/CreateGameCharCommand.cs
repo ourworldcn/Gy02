@@ -1,5 +1,6 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OW.Game.Entity;
 using OW.Game.Manager;
@@ -14,14 +15,16 @@ namespace GY02.Commands
     [OwAutoInjection(ServiceLifetime.Scoped, ServiceType = typeof(ISyncCommandHandled<CreateAccountCommand>))]
     public class AccountCreatedHandler : ISyncCommandHandled<CreateAccountCommand>
     {
-        public AccountCreatedHandler(GameEntityManager entityManager, SyncCommandManager commandManager)
+        public AccountCreatedHandler(GameEntityManager entityManager, SyncCommandManager commandManager, IConfiguration iConfiguration)
         {
             _EntityManager = entityManager;
             _CommandManager = commandManager;
+            _IConfiguration = iConfiguration;
         }
 
         GameEntityManager _EntityManager;
         SyncCommandManager _CommandManager;
+        IConfiguration _IConfiguration;
 
         public void Handled(CreateAccountCommand command, Exception exception = null)
         {
@@ -76,18 +79,20 @@ namespace GY02.Commands
     /// </summary>
     public class CreateGameCharHandler : SyncCommandHandlerBase<CreateGameCharCommand>
     {
-        public CreateGameCharHandler(GameEntityManager gameEntityManager, SyncCommandManager commandManager, GameAccountStoreManager accountStoreManager, VirtualThingManager virtualThingManager)
+        public CreateGameCharHandler(GameEntityManager gameEntityManager, SyncCommandManager commandManager, GameAccountStoreManager accountStoreManager, VirtualThingManager virtualThingManager, IConfiguration iConfiguration)
         {
             _GameEntityManager = gameEntityManager;
             _CommandManager = commandManager;
             _AccountStoreManager = accountStoreManager;
             _VirtualThingManager = virtualThingManager;
+            _IConfiguration = iConfiguration;
         }
 
         GameEntityManager _GameEntityManager;
         SyncCommandManager _CommandManager;
         GameAccountStoreManager _AccountStoreManager;
         VirtualThingManager _VirtualThingManager;
+        IConfiguration _IConfiguration;
 
         public override void Handle(CreateGameCharCommand command)
         {
@@ -111,6 +116,8 @@ namespace GY02.Commands
             result.ExtraGuid = ProjectContent.CharTId;
             result.Parent = command.User.Thing as VirtualThing;
             ((VirtualThing)command.User.Thing).Children.Add(result);
+            var prefix = _IConfiguration.GetSection("CharNamePrefix")?.Value ?? string.Empty;
+            gc.DisplayName = $"{prefix}{command.User.LoginName}";
 
             _GameEntityManager.GetAllEntity(gc);
             var coll = gc.GetAllChildren().Select(c =>

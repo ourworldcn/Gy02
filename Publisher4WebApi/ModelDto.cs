@@ -1351,6 +1351,29 @@ namespace GY02.Publisher
 
     #region 战斗相关
 
+
+    /// <summary>
+    /// 获取竞技场信息功能的参数封装类。
+    /// </summary>
+    public class GetTowerParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 是否强制刷新。
+        /// </summary>
+        public bool ForceRefresh { get; set; }
+    }
+
+    /// <summary>
+    /// 获取竞技场信息功能的返回值封装类
+    /// </summary>
+    public class GetTowerReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回的可打竞技场Id集合。
+        /// </summary>
+        public List<Guid> Ids { get; set; } = new List<Guid>();
+    }
+
     /// <summary>
     /// 获取特殊关卡有效周期功能参数封装类。
     /// </summary>

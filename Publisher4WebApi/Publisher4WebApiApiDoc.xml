@@ -1011,6 +1011,26 @@
             使用的蓝图模板Id。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetTowerParamsDto">
+            <summary>
+            获取竞技场信息功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetTowerParamsDto.ForceRefresh">
+            <summary>
+            是否强制刷新。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetTowerReturnDto">
+            <summary>
+            获取竞技场信息功能的返回值封装类
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetTowerReturnDto.Ids">
+            <summary>
+            返回的可打竞技场Id集合。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetDurationParamsDto">
             <summary>
             获取特殊关卡有效周期功能参数封装类。
