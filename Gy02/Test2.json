@@ -1,10 +1,14 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "B39A6FEA-CA36-4C96-975C-59D326EFD7D1",
-  "name_txt": [],
-  "comment_txt": [],
-  "iconName": "Sheep_Legend_01",
-  "Genus": null,
-  "p_skills": null,
-  "LvUpTId": null
+  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+  "title": "One or more validation errors occurred.",
+  "status": 400,
+  "traceId": "00-e3b0dfc0e315191972b1f5b919ceeb27-ae7d67c0f7869ac1-00",
+  "errors": {
+    "": [
+      "A non-empty request body is required."
+    ],
+    "model": [
+      "The model field is required."
+    ]
+  }
 }

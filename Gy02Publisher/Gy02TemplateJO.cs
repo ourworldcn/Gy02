@@ -981,6 +981,8 @@ namespace GY02.Templates
         /// <value>例如:[ 360, 480, 600 ]小于或等于360秒则评定为3(数组长度)星，大于600秒则评定为0星，以此类推。</value>
         [JsonPropertyName("scoreTime")]
         public List<decimal> ScoreTime { get; set; } = new List<decimal>();
+
+        public TowerInfo TowerInfo { get; set; }
         #endregion
 
         #region 孵化相关
@@ -2173,4 +2175,12 @@ namespace GY02.Templates
     }
     #endregion 事件相关
 
+    #region 战斗相关
+    /// <summary>
+    /// 塔层信息
+    /// </summary>
+    public class TowerInfo
+    {
+    }
+    #endregion 战斗相关
 }

@@ -96,6 +96,7 @@ namespace GY02
             CreateDb(service);
             BugFix(service);
             CharNameFix(service);  //20240702
+            ChengjiuFix(service);   //20240711
             UpdateDatabase(service);
             var mailManager = service.GetService<GameMailManager>();
             mailManager.ClearMail();
@@ -320,9 +321,15 @@ namespace GY02
                 {
                     var achi = item.achi.GetJsonObject<GameAchievement>();
                     var tt = templateManager.GetFullViewFromId(achi.TemplateId);
+                    for (int i = 0; i < (tt.Achievement?.Outs.Count ?? 0); i++)
+                    {
+                        if (tt.Achievement.Outs[i].Any(c => templateManager.GetFullViewFromId(c.TId)?.Genus?.Contains(genusString) ?? false))   //若需要复位
+                            if (achi.Items.FirstOrDefault(c => c.Level == i) is GameAchievementItem gai)
+                                gai.IsPicked = false;
+                    }
                     achi.Items[1].IsPicked = false;
                 }
-                dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString });
+                dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString, Value = "头像产出的成就修正" });
                 dbUser.SaveChanges();
             }
         }
@@ -408,6 +415,7 @@ namespace GY02
             #region 测试用代码
             try
             {
+                var op = mapper.Map<GameCombatManagerOptions>(new Dictionary<string, object>() { { "TowerUpCount", 30 } });
             }
             #endregion 测试用代码
             catch (Exception)

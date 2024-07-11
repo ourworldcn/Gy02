@@ -1,0 +1,8 @@
+{
+  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04", //固定常量
+  "TowerUpCount": 30, //爬塔往上排名数量
+  "TowerDownCount": 30, //爬塔往下排名数量（含本层）
+  "HardWeight": 33, //上手取值范围权重
+  "NormalWeight": 34, //平手取值范围权重
+  "EasyWeight": 33 //下手取值范围权重
+}

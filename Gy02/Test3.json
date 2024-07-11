@@ -1,77 +1,112 @@
 {
-  "Dice": {
-    "MaxCount": 7,
-    "AllowRepetition": false,
-    "Items": [
+  "Genus": [ "gs_lunbolibao" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
+    },
+    "GroupNumber": 1,
+    "MaxCount": 1,
+    "Ins": [
       {
-        "Outs": [
+        "Conditional": [
           {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "16a8b068-918b-46ad-8ae6-d3797c7683ac",
-            "Count": 1
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "GroupMask": 1
           }
         ],
-        "Weight": 50,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "12c82e87-de2e-43aa-b713-63fd0fd14457",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "e85a0690-6b83-4fc2-96d5-57d97010c2cb",
-            "Count": 1
-          }
-        ],
-        "Weight": 60,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "79391d55-a01f-4051-841b-5452908566ab",
-            "Count": 1
-          }
-        ],
-        "Weight": 80,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "f5a17932-fbbd-45ae-ae24-3f7b1b6ffb63",
-            "Count": 1
-          }
-        ],
-        "Weight": 100,
-        "ClearGuaranteesCount": false
-      },
-      {
-        "Outs": [
-          {
-            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-            "TId": "ec8d0858-38a3-4057-9de4-0bb0a629ee30",
-            "Count": 1
-          }
-        ],
-        "Weight": 39,
-        "ClearGuaranteesCount": false
+        "Count": 1,
+        "Genus": []
       }
     ],
-    "GuaranteesCount": null,
-    "GuaranteesDiceTId": null
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "0fd6c92a-87c2-4e56-8c29-eb69d30f5f26",
+        "Count": 1
+      },
+      {
+        "Id": null,
+        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+        "TId": "09d9062c-84fe-4cc1-846a-5daab6a23b1e",
+        "Count": 4
+      },
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+        "Count": 2000
+      },
+      {
+        "Id": null,
+        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "Count": 30
+      }
+    ]
   },
-  "outItemcounts": { "131100000": 7 }
+  "productInfo": {
+    "Southeast_Android": {
+      "productStoreId": "com.duangsea.07",
+      "productAmount": "0.29",
+      "currencyCode": "USD",
+      "currencyMark": "$"
+    },
+    "Southeast_iOS": {
+      "productStoreId": "com.duangsea.07",
+      "productAmount": "0.29",
+      "currencyCode": "USD",
+      "currencyMark": "$"
+    },
+    "Canada_Android": {
+      "productStoreId": "com.beast.beastbumper.blitz.07",
+      "productAmount": "1.99",
+      "currencyCode": "USD",
+      "currencyMark": "$"
+    },
+    "Canada_iOS": {
+      "productStoreId": "com.beast.beastbumper.blitz.07",
+      "productAmount": "1.99",
+      "currencyCode": "USD",
+      "currencyMark": "$"
+    },
+    "Korea_Android": {
+      "productStoreId": "com.duangzs.07",
+      "productAmount": "1.8",
+      "currencyCode": "USD",
+      "currencyMark": "$"
+    },
+    "Korea_iOS": {
+      "productStoreId": "com.duangzs.07",
+      "productAmount": "1.8",
+      "currencyCode": "USD",
+      "currencyMark": "$"
+    },
+    "Pilipinas_Android": {
+      "productStoreId": "com.duangphl.07",
+      "productAmount": "0.29",
+      "currencyCode": "USD",
+      "currencyMark": "$"
+    },
+    "Pilipinas_iOS": {
+      "productStoreId": "com.duangphl.07",
+      "productAmount": "0.29",
+      "currencyCode": "USD",
+      "currencyMark": "$"
+    }
+  },
+  "productName": "新手礼包",
+  "productType": "新手礼包",
+  "productDesc": "新手礼包",
+  "name_txt": 10919,
+  "comment_txt": 0,
+  "display_icon": "Slideshow_181106001",
+  "JiaoBiao": [ null, 11037, 11038 ]
 }

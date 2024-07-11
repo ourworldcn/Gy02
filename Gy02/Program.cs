@@ -59,7 +59,7 @@ internal class Program
         //var fileListener = new TextWriterTraceListener("OwLogs.txt");
         //builder.Logging.AddTraceSource(new SourceSwitch("Debug"),fileListener);
         //Trace.Listeners.Add(fileListener);
-        
+
         #region 追加服务到容器
 
         // Add services to the container.
@@ -136,7 +136,6 @@ internal class Program
             .Configure<OwRdmServerOptions>(builder.Configuration.GetSection("OwRdmServerOptions"))
             .Configure<LoginNameGeneratorOptions>(builder.Configuration.GetSection("LoginNameGeneratorOptions"))  //模板配置的选项模式
             .Configure<ButieOptions>(builder.Configuration.GetSection("ButieOptions")); //补钻石
-
 
         services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(GY02AutoMapperProfile).Assembly);
         services.AddPublisherT78();

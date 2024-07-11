@@ -1317,6 +1317,11 @@
             要改变的实体摘要集合。特别地，其中 GameEntitySummary.Count 属性应设置为0，表示使用事件的增量值（如增加了多少个击杀的精英怪）替代。
             </summary>
         </member>
+        <member name="T:GY02.Templates.TowerInfo">
+            <summary>
+            塔层信息
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.ProjectContent">
             <summary>
             存储一些常量和Id。
