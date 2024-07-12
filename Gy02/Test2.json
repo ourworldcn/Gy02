@@ -1,14 +1,28 @@
 {
-  "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
-  "title": "One or more validation errors occurred.",
-  "status": 400,
-  "traceId": "00-e3b0dfc0e315191972b1f5b919ceeb27-ae7d67c0f7869ac1-00",
-  "errors": {
-    "": [
-      "A non-empty request body is required."
-    ],
-    "model": [
-      "The model field is required."
-    ]
-  }
+  "Subject": "Compensation Email",
+  "Body": "This is your compensation, please check it!",
+  "Attachment": [
+    {
+      "TId": "JF9XyT2jukmxMCm2/01ixw==",
+      "Count": 300.0,
+      "AddPropDic": {}
+    }
+  ],
+  "From": "257925c4-a59d-4e8c-b6a3-35c3206ad5e0",
+  "Dictionary1": {
+    "Chinese": "\u8865\u507F\u90AE\u4EF6",
+    "Filipino": "Naipamahaging kabayaran sa Email",
+    "Indonesian": "Pesan Kompensasi",
+    "Malay": "Surat pampasan",
+    "Thai": "\u0E08\u0E14\u0E2B\u0E21\u0E32\u0E22\u0E0A\u0E14\u0E40\u0E0A\u0E22"
+  },
+  "Dictionary2": {
+    "Chinese": "\u8FD9\u662F\u60A8\u7684\u8865\u507F\uFF0C\u8BF7\u67E5\u6536\uFF01",
+    "Filipino": "Ito ang iyong kabayaran, mangyaring suriin ito!",
+    "Indonesian": "Terimalah kompensasi ini!",
+    "Malay": "Ini pampasan anda, sila semak dan terima!",
+    "Thai": "\u0E19\u0E35\u0E48\u0E04\u0E37\u0E2D\u0E01\u0E32\u0E23\u0E0A\u0E14\u0E40\u0E0A\u0E22\u0E02\u0E2D\u0E07\u0E04\u0E38\u0E13 \u0E42\u0E1B\u0E23\u0E14\u0E15\u0E23\u0E27\u0E08\u0E2A\u0E2D\u0E1A!"
+  },
+  "SendUtc": "2024-06-27T10:05:50.627639Z",
+  "DeleteDelay": "30.00:00:00"
 }

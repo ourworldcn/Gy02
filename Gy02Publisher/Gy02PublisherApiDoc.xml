@@ -610,6 +610,11 @@
             </summary>
             <value>例如:[ 360, 480, 600 ]小于或等于360秒则评定为3(数组长度)星，大于600秒则评定为0星，以此类推。</value>
         </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.TowerInfo">
+            <summary>
+            爬塔信息。
+            </summary>
+        </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fuhua">
             <summary>
             孵化数据。

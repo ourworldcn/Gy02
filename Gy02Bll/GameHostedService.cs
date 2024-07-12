@@ -324,10 +324,12 @@ namespace GY02
                     for (int i = 0; i < (tt.Achievement?.Outs.Count ?? 0); i++)
                     {
                         if (tt.Achievement.Outs[i].Any(c => templateManager.GetFullViewFromId(c.TId)?.Genus?.Contains(genusString) ?? false))   //若需要复位
-                            if (achi.Items.FirstOrDefault(c => c.Level == i) is GameAchievementItem gai)
-                                gai.IsPicked = false;
+                            if (achi.Items.FirstOrDefault(c => c.Level == i + 1) is GameAchievementItem gai)
+                                if (gai.IsPicked)
+                                {
+                                    gai.IsPicked = false;
+                                }
                     }
-                    achi.Items[1].IsPicked = false;
                 }
                 dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString, Value = "头像产出的成就修正" });
                 dbUser.SaveChanges();

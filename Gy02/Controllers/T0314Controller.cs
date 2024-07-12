@@ -148,6 +148,7 @@ namespace Gy02.Controllers
                 return "订单已经完成不可重复通知";
             }
             order.Confirm2 = true;
+            if (order.Confirm1) order.State = 1;
             db.SaveChanges();
             _Logger.LogDebug("订单已经成功入库,Id={id}", model.CpOrderNo);
             return "SUCCESS";
@@ -445,6 +446,7 @@ namespace Gy02.Controllers
             {
                 jo.NotifyDateTime = OwHelper.WorldNow;
             }
+            var command = new ShoppingBuyCommand();
             if (jo.SendInMail is null)   //若尚未发送商品
             {
                 if (order.State == 1)  //若可以发送奖品
@@ -469,7 +471,7 @@ namespace Gy02.Controllers
                         return result;
                     }
                     bi.Count++;
-                    var command = new ShoppingBuyCommand
+                    command = new ShoppingBuyCommand
                     {
                         Count = 1,
                         GameChar = gc,
@@ -484,7 +486,6 @@ namespace Gy02.Controllers
                         return result;
                     }
                     _Mapper.Map(command.Changes, result.Changes);
-
                     #endregion 内部购买
 
                     jo.SendInMail = false;
@@ -493,6 +494,7 @@ namespace Gy02.Controllers
             db.SaveChanges();
             result.Order = _Mapper.Map<GameShoppingOrderDto>(order);
             _Mapper.Map(jo.EntitySummaries, result.EntitySummaryDtos);
+            _Mapper.Map(command.Changes, result.Order.Changes);
             return result;
         }
 

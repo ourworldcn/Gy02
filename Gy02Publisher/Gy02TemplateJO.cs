@@ -982,6 +982,9 @@ namespace GY02.Templates
         [JsonPropertyName("scoreTime")]
         public List<decimal> ScoreTime { get; set; } = new List<decimal>();
 
+        /// <summary>
+        /// 爬塔信息。
+        /// </summary>
         public TowerInfo TowerInfo { get; set; }
         #endregion
 
