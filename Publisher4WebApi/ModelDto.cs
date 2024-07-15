@@ -1358,7 +1358,7 @@ namespace GY02.Publisher
     public class GetTowerParamsDto : TokenDtoBase
     {
         /// <summary>
-        /// 是否强制刷新。
+        /// 是否强制刷新。false仅获取当前塔层信息，true强制刷新塔层信息（可能失败，如果达到限制）
         /// </summary>
         public bool ForceRefresh { get; set; }
     }

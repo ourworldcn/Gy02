@@ -141,6 +141,10 @@ namespace OW.Game.Entity
 
         #endregion 普通属性
 
+        #region 爬塔信息
+
+        #endregion 爬塔信息
+
         #region 简单属性
 
         /// <summary>
@@ -546,6 +550,41 @@ namespace OW.Game.Entity
         /// 可能产出的物品预览。
         /// </summary>
         public List<GameDiceItem> Items { get; set; } = new List<GameDiceItem>();
+    }
+
+    public class TowerInfo
+    {
+        /// <summary>
+        /// 塔的刷新时间。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public DateTime? RefreshDateTime { get; set; }
+
+        /// <summary>
+        /// 下手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid?  EasyId{ get; set; }
+
+        /// <summary>
+        /// 平手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid? NormalId { get; set; }
+
+        /// <summary>
+        /// 上手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid? HardId { get; set; }
     }
 
     public static class GameCharExtensions

@@ -3,6 +3,7 @@ using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
+using OW.Game.Entity;
 using OW.SyncCommand;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -151,6 +152,10 @@ namespace GY02.Controllers
                 if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
                 return result;
+            }
+            if (model.ForceRefresh) //若需要刷新
+            {
+
             }
 
             //var command = new GetDurationCommand { GameChar = gc, };
