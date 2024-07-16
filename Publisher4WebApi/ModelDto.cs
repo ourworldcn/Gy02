@@ -1364,14 +1364,76 @@ namespace GY02.Publisher
     }
 
     /// <summary>
-    /// 获取竞技场信息功能的返回值封装类
+    /// 爬塔信息。
+    /// </summary>
+    [AutoMap(typeof(TowerInfo))]
+    public class TowerInfoDto
+    {
+        /// <summary>
+        /// 塔的刷新时间。null标识未刷新过。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public DateTime? RefreshDateTime { get; set; }
+
+        /// <summary>
+        /// 下手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid? EasyId { get; set; }
+
+        /// <summary>
+        /// 是否已经打过了。true=已打过，false=尚未打过。
+        /// </summary>
+        public bool IsEasyDone { get; set; }
+
+        /// <summary>
+        /// 平手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid? NormalId { get; set; }
+
+        /// <summary>
+        /// 是否已经打过了。true=已打过，false=尚未打过。
+        /// </summary>
+        public bool IsNormalDone { get; set; }
+
+        /// <summary>
+        /// 上手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid? HardId { get; set; }
+
+        /// <summary>
+        /// 是否已经打过了。true=已打过，false=尚未打过。
+        /// </summary>
+        public bool IsHardDone { get; set; }
+    }
+
+    /// <summary>
+    /// 获取竞技场信息功能的返回值封装类。
     /// </summary>
     public class GetTowerReturnDto : ReturnDtoBase
     {
         /// <summary>
-        /// 返回的可打竞技场Id集合。
+        /// 构造函数。
         /// </summary>
-        public List<Guid> Ids { get; set; } = new List<Guid>();
+        public GetTowerReturnDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 返回的可打竞技场Id信息。
+        /// </summary>
+        public TowerInfoDto TowerInfo { get; set; }
     }
 
     /// <summary>

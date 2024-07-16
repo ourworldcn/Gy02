@@ -1,5 +1,5 @@
 {
-  "Genus": [ "cj_changqi", "goto_main_level" ],
+  "Genus": [ "tj_jiangli", "cj_pifu" ],
   "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
   "stk": -1,
   "Count0Reserved": true,
@@ -9,238 +9,39 @@
     "Period": {
       "Start": "2023-05-30T03:03:28.385Z",
       "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
+      "PeriodString": "90y",
+      "ValidPeriodString": "90y"
     },
-    "Ins": [],
-    "Exp2LvSequence": [ 1000, 3000, 5000, 9000, 16000, 25500, 40500, 60500, 89000, 115500, 155500, 210500, 280500, 370500, 480500, 610500, 760500, 940500, 1160500, 1410500 ],
+    "TjIns": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
+            "Genus": [],
+            "TId": "b8c2308a-3e93-4190-9211-266456c15ed2",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0,
+        "Genus": []
+      }
+    ],
+    "Exp2LvSequence": [ 1 ],
     "Outs": [
       [
         {
           "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "f1b15c9e-32ee-4203-af62-d324bfa4f7e7",
-          "Count": 10
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 2000
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-          "Count": 2000
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 10
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 10
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 20
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 10
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 20
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 30
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 30
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 30
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 30
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 15
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 30
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
           "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
           "Count": 20
         },
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 40
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 40
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 40
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 40
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 40
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 100
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 100
-        }
-      ],
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 50
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "a84bcbd1-9541-4907-99df-59b19559ae9f",
-          "Count": 100
+          "ParentTId": "B39A6FEA-CA36-4C96-975C-59D326EFD7D1",
+          "TId": "f74aa303-5d4d-4f3e-89cf-dd2733af0cbd",
+          "Count": 1
         }
       ]
     ]
-  },
-  "name_txt": 3001
+  }
 }

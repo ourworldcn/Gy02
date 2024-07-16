@@ -610,9 +610,9 @@
             </summary>
             <value>例如:[ 360, 480, 600 ]小于或等于360秒则评定为3(数组长度)星，大于600秒则评定为0星，以此类推。</value>
         </member>
-        <member name="P:GY02.Templates.TemplateStringFullView.TowerInfo">
+        <member name="P:GY02.Templates.TemplateStringFullView.PataOutIds">
             <summary>
-            爬塔信息。
+            爬塔产出信息。顺序是：作为上手时产出的商品Id，作为平手时产出的商品Id，作为下手时产出的商品Id。
             </summary>
         </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fuhua">
@@ -1320,11 +1320,6 @@
         <member name="P:GY02.Templates.GameEventTO.Outs">
             <summary>
             要改变的实体摘要集合。特别地，其中 GameEntitySummary.Count 属性应设置为0，表示使用事件的增量值（如增加了多少个击杀的精英怪）替代。
-            </summary>
-        </member>
-        <member name="T:GY02.Templates.TowerInfo">
-            <summary>
-            塔层信息
             </summary>
         </member>
         <member name="T:GY02.Publisher.ProjectContent">

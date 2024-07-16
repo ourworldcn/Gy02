@@ -983,9 +983,9 @@ namespace GY02.Templates
         public List<decimal> ScoreTime { get; set; } = new List<decimal>();
 
         /// <summary>
-        /// 爬塔信息。
+        /// 爬塔产出信息。顺序是：作为上手时产出的商品Id，作为平手时产出的商品Id，作为下手时产出的商品Id。
         /// </summary>
-        public TowerInfo TowerInfo { get; set; }
+        public List<Guid> PataOutIds { get; set; } = new List<Guid>();
         #endregion
 
         #region 孵化相关
@@ -2179,11 +2179,6 @@ namespace GY02.Templates
     #endregion 事件相关
 
     #region 战斗相关
-    /// <summary>
-    /// 塔层信息
-    /// </summary>
-    public class TowerInfo
-    {
-    }
+
     #endregion 战斗相关
 }

@@ -323,12 +323,17 @@ namespace GY02
                     var tt = templateManager.GetFullViewFromId(achi.TemplateId);
                     for (int i = 0; i < (tt.Achievement?.Outs.Count ?? 0); i++)
                     {
+#if DEBUG
+                        if (Guid.Parse("0c51077f-6426-4353-bd50-41281e6105bf") == tt.TemplateId)
+                            ;
+#endif
                         if (tt.Achievement.Outs[i].Any(c => templateManager.GetFullViewFromId(c.TId)?.Genus?.Contains(genusString) ?? false))   //若需要复位
                             if (achi.Items.FirstOrDefault(c => c.Level == i + 1) is GameAchievementItem gai)
-                                if (gai.IsPicked)
-                                {
-                                    gai.IsPicked = false;
-                                }
+                            {
+                                gai.IsPicked = false;
+                                gai.Rewards.Clear();
+                                gai.Rewards.AddRange(tt.Achievement.Outs[i].Select(c => c.Clone() as GameEntitySummary));
+                            }
                     }
                 }
                 dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString, Value = "头像产出的成就修正" });

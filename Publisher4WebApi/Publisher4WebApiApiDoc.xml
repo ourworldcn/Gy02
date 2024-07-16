@@ -1021,14 +1021,59 @@
             是否强制刷新。false仅获取当前塔层信息，true强制刷新塔层信息（可能失败，如果达到限制）
             </summary>
         </member>
-        <member name="T:GY02.Publisher.GetTowerReturnDto">
+        <member name="T:GY02.Publisher.TowerInfoDto">
             <summary>
-            获取竞技场信息功能的返回值封装类
+            爬塔信息。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.GetTowerReturnDto.Ids">
+        <member name="P:GY02.Publisher.TowerInfoDto.RefreshDateTime">
             <summary>
-            返回的可打竞技场Id集合。
+            塔的刷新时间。null标识未刷新过。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TowerInfoDto.EasyId">
+            <summary>
+            下手的Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TowerInfoDto.IsEasyDone">
+            <summary>
+            是否已经打过了。true=已打过，false=尚未打过。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TowerInfoDto.NormalId">
+            <summary>
+            平手的Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TowerInfoDto.IsNormalDone">
+            <summary>
+            是否已经打过了。true=已打过，false=尚未打过。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TowerInfoDto.HardId">
+            <summary>
+            上手的Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TowerInfoDto.IsHardDone">
+            <summary>
+            是否已经打过了。true=已打过，false=尚未打过。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetTowerReturnDto">
+            <summary>
+            获取竞技场信息功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="M:GY02.Publisher.GetTowerReturnDto.#ctor">
+            <summary>
+            构造函数。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetTowerReturnDto.TowerInfo">
+            <summary>
+            返回的可打竞技场Id信息。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GetDurationParamsDto">

@@ -1352,7 +1352,7 @@
       "DisplayName": "头像背包",
       "Id": "B39A6FEA-CA36-4C96-975C-59D326EFD7D1",
       "Gid": 912101003,
-      "PropertiesString": "{  \"cap\": -1,  \"TypeGuid\": \"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\": \"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\"}",
+      "PropertiesString": "{\"cap\":-1,\"TypeGuid\":\"57EB05BD-B8BE-47D5-ADFE-C8C2E8888E38\",\"SubTypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"TIdsOfCreate\":[\"f02ef9b1-e47f-4007-94a1-4c662fa837d4\",\"706116a8-ccdc-4358-856b-aec70dcc9793\"],\"Count\":1}",
       "Remark": "直属于角色对象"
     },
     {
@@ -15879,7 +15879,7 @@
       "DisplayName": "柯基头虎身图鉴奖励",
       "Id": "3361b6e9-b0cf-4320-8076-6cbc3261eb10",
       "Gid": 220102084,
-      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":\"2023-05-30T03:03:28.385Z\",\"PeriodString\":\"string\",\"ValidPeriodString\":\"string\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"e7e7007a-b9f7-4de5-9570-a601300208a2\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15}]]}}"
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"e7e7007a-b9f7-4de5-9570-a601300208a2\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15}]]}}"
     },
     {
       "DisplayName": "柯基头龙身图鉴奖励",

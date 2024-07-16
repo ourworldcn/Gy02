@@ -153,14 +153,17 @@ namespace GY02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-            if (model.ForceRefresh) //若需要刷新
+
+            if (model.ForceRefresh || !gc.TowerInfo.NormalId.HasValue) //若需要刷新
             {
 
             }
+
             //var command = new GetDurationCommand { GameChar = gc, };
             //_Mapper.Map(model, command);
             //_SyncCommandManager.Handle(command);
             //_Mapper.Map(command, result);
+            _Mapper.Map(gc.TowerInfo, result.TowerInfo);
             return result;
         }
     }
