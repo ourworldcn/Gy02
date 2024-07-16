@@ -80,23 +80,26 @@ namespace OW.Game.Manager
         /// <returns>true修补了对象，false没有修补。</returns>
         public bool Normal(VirtualThing root)
         {
-            //f1abe4b7-372b-45b2-a9da-eb6930e95cb9
             var ignTids = new Guid[] { Guid.Parse("29b7e726-387f-409d-a6ac-ad8670a814f0"), Guid.Parse("14d0e372-909b-485f-b8cb-07c9231b10ff"),
-                Guid.Parse("f1abe4b7-372b-45b2-a9da-eb6930e95cb9") };
-            if (ignTids.Contains(root.ExtraGuid) || root.Children.Count > 0)
+                Guid.Parse("f1abe4b7-372b-45b2-a9da-eb6930e95cb9") };   //忽略的槽，只要其中有物品，就不再补足子对象
+            if (ignTids.Contains(root.ExtraGuid) || root.Children.Count > 0)    //若无需补足
                 return false;
             var result = false;
-            var tt = _TemplateManager.GetFullViewFromId(root.ExtraGuid);    //根的子对象
-            if (tt.TIdsOfCreate is null) return result;    //若没有指定子对象
-            var tids = root.Children.Select(c => c.ExtraGuid).ToArray();    //已有子对象tid集合
-            var list = tt.TIdsOfCreate.Where(c => !tids.Contains(c)).ToArray();   //需要补足的对象tid集合
-            foreach (var item in list)  //补足子对象
+            if (_TemplateManager.GetFullViewFromId(root.ExtraGuid) is not TemplateStringFullView tt) return result;    //若没有指定子对象
+            if (_TemplateManager.GetEntityBase(root, out _) is not GameEntityBase rootEntity) return result;    //若无法获取实体基对象
+            if (rootEntity.TIdsOfCreatedIds.Count == 0)    //若尚未初始化
+                rootEntity.TIdsOfCreatedIds.AddRange(root.Children.Select(c => c.ExtraGuid));
+            var createdIds = rootEntity.TIdsOfCreatedIds.ToList();  //已明确创建的对象Id集合副本
+            foreach (var tid in tt.TIdsOfCreate)  //补足子对象
             {
-                var template = _TemplateManager.GetFullViewFromId(item);    //获取模板
+                if (createdIds.Remove(tid)) //若移除特定对象的第一个匹配项成功
+                    continue;   //此项没必要创建
+                var template = _TemplateManager.GetFullViewFromId(tid);    //获取模板
                 if (template is null) continue;
                 var thing = Create(template);   //创建对象
                 if (thing is null) continue;
                 root.Children.Add(thing);
+                rootEntity.TIdsOfCreatedIds.Add(tid);
                 result = true;
             }
             foreach (var item in root.Children) //修补子对象

@@ -141,10 +141,6 @@ namespace OW.Game.Entity
 
         #endregion 普通属性
 
-        #region 爬塔信息
-
-        #endregion 爬塔信息
-
         #region 简单属性
 
         /// <summary>
@@ -284,6 +280,11 @@ namespace OW.Game.Entity
         /// 看广告后的额外奖励集合。
         /// </summary>
         public List<GameEntitySummary> AdsRewardsHistory { get; set; } = new List<GameEntitySummary>();
+
+        /// <summary>
+        /// 爬塔信息。
+        /// </summary>
+        public TowerInfo TowerInfo { get; set; }
 
         #endregion 战斗相关
 
@@ -555,7 +556,7 @@ namespace OW.Game.Entity
     public class TowerInfo
     {
         /// <summary>
-        /// 塔的刷新时间。
+        /// 塔的刷新时间。null标识未刷新过。
         /// </summary>
 #if NETCOREAPP
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]

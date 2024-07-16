@@ -20550,6 +20550,786 @@
       "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_putong\",\"types_all\"],\"name_txt\":0,\"comment_txt\":0}"
     },
     {
+      "DisplayName": "玩家狼_闪电狼",
+      "Id": "73b41a5e-3d22-41d9-b9e1-1bde039fa4a9",
+      "Gid": 320301311,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狼_兔宝狼",
+      "Id": "1d1917f4-5410-44bb-8688-f0938b0b9ec7",
+      "Gid": 320301312,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狼_恐角狼",
+      "Id": "ec945eda-9b95-496b-b89a-7738ef383d35",
+      "Gid": 320301313,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狼_绅士狼",
+      "Id": "63d06783-0974-4f58-a6c0-e5897c07048e",
+      "Gid": 320301314,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狼_葵花狼",
+      "Id": "09dba013-56a1-4f29-86ea-f4e817a4cfb7",
+      "Gid": 320301315,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狼_狼虎",
+      "Id": "7062546a-7302-4392-9b30-8558e1bd96fa",
+      "Gid": 320301316,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狼_狼鸡",
+      "Id": "bf51f039-e264-4d89-9cd0-d9ac616fde25",
+      "Gid": 320301317,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狼_狼鲨",
+      "Id": "23195639-0622-4108-93da-5749c77a63a1",
+      "Gid": 320301318,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狼_狼鳄鱼",
+      "Id": "d9d48f8a-9d87-43bb-96d8-ae06c818ebe0",
+      "Gid": 320301319,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_南瓜虎",
+      "Id": "6fd37627-6018-43bd-9c4b-4e5c0c052419",
+      "Gid": 320301320,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_汉堡虎",
+      "Id": "47313382-6714-4f36-b4e8-6df554e0ba71",
+      "Gid": 320301321,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎狼",
+      "Id": "b4bbd175-7d55-4c56-9f48-a8d86078d8e6",
+      "Gid": 320301322,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎龙",
+      "Id": "eeb9cdfa-9d1d-4e09-b132-299952488373",
+      "Gid": 320301323,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎鸡",
+      "Id": "701c382b-7d5c-4c12-93ef-14a0f76bcbb4",
+      "Gid": 320301324,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎猫",
+      "Id": "e3abacc7-3959-4198-aa94-29df91dd65b7",
+      "Gid": 320301325,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎鲨",
+      "Id": "f5b43668-7c4f-4026-8fae-308eaa7e20de",
+      "Gid": 320301326,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎熊",
+      "Id": "f9530467-1e28-4250-93c6-fa1fe3dfdf11",
+      "Gid": 320301327,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎狗",
+      "Id": "73422341-5524-435b-804b-bd598ce8783f",
+      "Gid": 320301328,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎鳄",
+      "Id": "4fa63d3f-9eaa-4791-b850-094f98d8c6ff",
+      "Gid": 320301329,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_南瓜虎（召唤变大）",
+      "Id": "51f92037-c58e-449c-8aed-d22eca14b9f7",
+      "Gid": 320301330,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_汉堡虎（召唤变大）",
+      "Id": "e604113f-57bc-4b66-98d1-aa15b3230bdf",
+      "Gid": 320301331,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎狼（召唤变大）",
+      "Id": "86924958-6e75-4f00-8d2b-cbf1a388057d",
+      "Gid": 320301332,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎龙（召唤变大）",
+      "Id": "f1e1d952-1e83-456a-ae07-9fab86a8c8e0",
+      "Gid": 320301333,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎鸡（召唤变大）",
+      "Id": "a621e121-3c02-4f66-ab3f-b922bdbede89",
+      "Gid": 320301334,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎猫（召唤变大）",
+      "Id": "0987c348-bb48-478a-b622-e03132bf0cfe",
+      "Gid": 320301335,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎鲨（召唤变大）",
+      "Id": "aa07378c-cdac-4310-b947-1a8ba2bc995b",
+      "Gid": 320301336,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎熊（召唤变大）",
+      "Id": "9996ef4b-131f-4828-bb96-ececb5b4b1a1",
+      "Gid": 320301337,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎狗（召唤变大）",
+      "Id": "6de9d6bb-cd67-43a6-9169-78e508038a6b",
+      "Gid": 320301338,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家虎_虎鳄（召唤变大）",
+      "Id": "faae2274-dee1-4f1b-bebd-32984e7a1a9d",
+      "Gid": 320301339,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_罗马鸡",
+      "Id": "bd73aceb-14f9-4c87-bcc4-557e83412c44",
+      "Gid": 320301340,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_路障鸡",
+      "Id": "187cdd51-608d-46bd-95e1-586c9227c6bf",
+      "Gid": 320301341,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_鸡羊",
+      "Id": "cf8bedb7-4439-419c-b24f-267e3212da52",
+      "Gid": 320301342,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_鸡狼",
+      "Id": "8ce0e559-a1af-4815-a5a1-26da08940763",
+      "Gid": 320301343,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_鸡虎",
+      "Id": "5cef3a5e-42a4-4cdc-8d14-cf548ab2ac29",
+      "Gid": 320301344,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_鸡龙",
+      "Id": "d4228780-2cbd-4d8c-b1f4-dbc7885db1ba",
+      "Gid": 320301345,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_鸡鳄",
+      "Id": "ed91e7cd-e00c-4583-9171-8ed9b309ea45",
+      "Gid": 320301346,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_鸡鲨",
+      "Id": "42ecbdde-c1fb-4298-8594-afbb0fa61adc",
+      "Gid": 320301347,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_鸡熊",
+      "Id": "767bccc9-dd3a-459f-967c-0e618c703ade",
+      "Gid": 320301348,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鸡_鸡猫",
+      "Id": "a428952e-6496-491a-8b33-fff37a7c3362",
+      "Gid": 320301349,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_非洲鹿",
+      "Id": "30f8e338-1486-449a-a01a-539a791fafab",
+      "Gid": 320301350,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_花鹿",
+      "Id": "74c48be0-0b10-4a06-93c7-d57c9ccb6694",
+      "Gid": 320301351,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_阿凡达鹿",
+      "Id": "b9784557-008a-446f-85e5-67925aee5667",
+      "Gid": 320301352,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_牛仔鹿",
+      "Id": "e200f6a4-ddc8-43d8-aa64-5316ee2c921e",
+      "Gid": 320301353,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_鹿虎",
+      "Id": "c7a5965a-c2bb-42f1-b8dc-1617d3f35d6d",
+      "Gid": 320301354,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_鹿龙",
+      "Id": "9cd9f27e-76c1-40e5-9dbb-f53f23ec31a5",
+      "Gid": 320301355,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_鹿鸡",
+      "Id": "a2d63e21-7e24-4292-9384-6d32d83a8d3f",
+      "Gid": 320301356,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_鹿鲨",
+      "Id": "839c9d1b-ddc4-4f10-b819-d29404a30555",
+      "Gid": 320301357,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_鹿鳄",
+      "Id": "e67ae57f-b576-47c3-a323-ddc775e09b63",
+      "Gid": 320301358,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家长颈鹿_鹿狼",
+      "Id": "9065c4ce-18ff-4879-ad3b-96e2dbd87152",
+      "Gid": 320301359,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_机械羊",
+      "Id": "a3fc7bf1-e68d-49c4-86d5-723955e9be27",
+      "Gid": 320301360,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_恐龙羊",
+      "Id": "6fdf8751-855c-4ab1-9da0-7ac84d86cdd2",
+      "Gid": 320301361,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_匪徒羊",
+      "Id": "3c58ec5d-30a3-4ab1-ad0b-419b65991086",
+      "Gid": 320301362,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_飞碟羊",
+      "Id": "ae4dcfc0-af42-4a59-803d-bc431d9d6f15",
+      "Gid": 320301363,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_圣诞羊",
+      "Id": "604872c8-280f-4f74-beef-79913208be4b",
+      "Gid": 320301364,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_喷气羊",
+      "Id": "514113b2-8857-4178-92b0-78f5a44e039f",
+      "Gid": 320301365,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_摩托羊",
+      "Id": "863019dc-ad8a-431d-9c44-1ad16f307ca5",
+      "Gid": 320301366,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_羊鸡",
+      "Id": "f97aeb79-4adf-478c-863e-7bee3caa4aa0",
+      "Gid": 320301367,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_羊鳄",
+      "Id": "feea6a4c-26d2-497e-a0c4-fd385828e8b9",
+      "Gid": 320301368,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家羊_羊龙",
+      "Id": "5153caf0-5fec-4548-a7ea-643f6b58bb0e",
+      "Gid": 320301369,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_圣诞狗",
+      "Id": "89add7a4-45a0-4196-bef9-4e7dfcbb11a1",
+      "Gid": 320301370,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_恐龙狗",
+      "Id": "670fe460-1dbb-4f61-bbeb-d61463ca534b",
+      "Gid": 320301371,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_眼镜狗",
+      "Id": "b4a76f16-a548-4363-af7b-616eb28568c7",
+      "Gid": 320301372,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_飞行狗",
+      "Id": "ae9076e3-534f-4f59-82c5-7c68ae5cc71e",
+      "Gid": 320301373,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_地狱犬",
+      "Id": "8584d6b5-0abd-4e45-bbdb-0efada425eeb",
+      "Gid": 320301374,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_电锯狗",
+      "Id": "fc55e4ca-9eb3-4fcd-bbd5-fad0fa1c65f6",
+      "Gid": 320301375,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_食人花狗",
+      "Id": "3bb3218f-1956-4308-9412-400055300b3b",
+      "Gid": 320301376,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_狗熊",
+      "Id": "07ce7e60-a0ba-44cd-8751-78af6a568a78",
+      "Gid": 320301377,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_狗鳄",
+      "Id": "f3062a13-c4e8-414a-a58e-1a23ac20d227",
+      "Gid": 320301378,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家狗_狗虎",
+      "Id": "30b85ef7-09fb-4498-ac51-d561394f549c",
+      "Gid": 320301379,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_岩龙",
+      "Id": "19a18a56-974c-4958-a1c6-7c66cdbef1d5",
+      "Gid": 320301380,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_冰龙",
+      "Id": "a147f514-f0c2-495f-b07f-cd0404ede54a",
+      "Gid": 320301381,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_龙熊",
+      "Id": "5bc3cc60-c9d3-40b7-ab06-58487d5fd026",
+      "Gid": 320301382,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_龙猫",
+      "Id": "192d3263-3b6c-4a43-8463-da6f7b41f491",
+      "Gid": 320301383,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_龙鸡",
+      "Id": "279b64ae-0157-4618-9356-eee89b70d7f3",
+      "Gid": 320301384,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_龙狗",
+      "Id": "dc91044c-87fc-4769-b0b2-eb0c3537ef24",
+      "Gid": 320301385,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_龙狼",
+      "Id": "e9b76252-6047-42e8-887d-468a13891f64",
+      "Gid": 320301386,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_龙鳄",
+      "Id": "e925a63c-1c89-41f8-b4fc-263b39f5a350",
+      "Gid": 320301387,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_龙鲨",
+      "Id": "e5972de7-79e6-4516-bcb2-ca42ea7cd87a",
+      "Gid": 320301388,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家龙_龙虎",
+      "Id": "fcc5c64c-2c97-4cb3-b9fa-5106a498109b",
+      "Gid": 320301389,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_武士猫",
+      "Id": "1af22132-a31d-4399-a7a0-1b7ec6275312",
+      "Gid": 320301390,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_巫师猫",
+      "Id": "22776737-86be-40e0-9613-f577d6141351",
+      "Gid": 320301391,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_海盗猫",
+      "Id": "74164df1-bfad-42c2-8148-5ffb08e37ec9",
+      "Gid": 320301392,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_猫熊",
+      "Id": "75f2755b-db2a-4965-80ff-1d05d21a7e54",
+      "Gid": 320301393,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_猫鸡",
+      "Id": "f6f7207d-83bb-4678-b12f-6fc42784fec1",
+      "Gid": 320301394,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_猫龙",
+      "Id": "bc98b41b-57aa-47ff-9032-be1ef03d1070",
+      "Gid": 320301395,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_猫虎",
+      "Id": "79086bf1-f98f-430f-afc6-cce487d86a29",
+      "Gid": 320301396,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_猫鳄",
+      "Id": "0ca14491-4d2e-4328-a42d-89a5e956127a",
+      "Gid": 320301397,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_猫鲨",
+      "Id": "f072786c-a071-476b-b606-6e81dc73ca5d",
+      "Gid": 320301398,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家猫_猫狗",
+      "Id": "0364718a-78e6-4207-87d6-c280d7a7ed37",
+      "Gid": 320301399,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊_轻松熊",
+      "Id": "60f194b7-8880-4ce6-a926-4c3b0db43cee",
+      "Gid": 320301400,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊_圣诞熊",
+      "Id": "b3e8b513-2a5f-47bc-8a00-bb2c0dce0943",
+      "Gid": 320301401,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊_布偶熊",
+      "Id": "61a1955a-6fe6-4ba5-9a4b-8225990180fb",
+      "Gid": 320301402,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊_熊狼",
+      "Id": "661b3b0f-e97d-432e-be45-e9f90d9ff671",
+      "Gid": 320301403,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊_熊虎",
+      "Id": "ea74506a-a6dc-4ebd-ac1e-e012684c5e0c",
+      "Gid": 320301404,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊_熊羊",
+      "Id": "14cfd2fb-402c-454f-a41b-cc4b8f700a43",
+      "Gid": 320301405,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊_熊鳄",
+      "Id": "93468f6d-c0f8-4052-89fb-44de71dede33",
+      "Gid": 320301406,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊_熊龙",
+      "Id": "436cf249-8b36-4c63-a53e-227ec7f498bd",
+      "Gid": 320301407,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊猫_眼镜熊",
+      "Id": "c1d916a9-246e-4d18-ab8d-fc4f25d0e655",
+      "Gid": 320301410,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家熊猫_功夫",
+      "Id": "029a2804-536d-4fff-b136-1795d57ffb67",
+      "Gid": 320301411,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_水果鲨",
+      "Id": "b41fba26-b5c9-4d5a-b9e2-ccc32245b18d",
+      "Gid": 320301420,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_导弹鲨",
+      "Id": "b57cbaa7-bbef-4dc5-9b8e-59dc259ac244",
+      "Gid": 320301421,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_大眼鲨红",
+      "Id": "ff345faf-0bb6-4090-89d4-aca4319d6177",
+      "Gid": 320301422,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_大眼鲨蓝",
+      "Id": "dde960d7-7d50-4d56-9f25-af491a49e493",
+      "Gid": 320301423,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_鲨熊",
+      "Id": "db626ae2-0dd6-41f6-800b-b7e647cc7465",
+      "Gid": 320301424,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_鲨猫",
+      "Id": "e1dd4909-19ac-402b-827a-ae87660b6f14",
+      "Gid": 320301425,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_鲨鸡",
+      "Id": "2b093a7d-0525-4ad5-b087-0ae01a608615",
+      "Gid": 320301426,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_鲨鳄",
+      "Id": "a1e1fe0c-85e7-42fe-8522-795a620b6719",
+      "Gid": 320301427,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_鲨龙",
+      "Id": "59cd11c7-a28b-452f-a2bc-e707b396711c",
+      "Gid": 320301428,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鲨鱼_鲨虎",
+      "Id": "3b74ca2c-191b-43af-aec3-893494d65dcc",
+      "Gid": 320301429,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鳄鱼_鳄熊",
+      "Id": "7dbc492c-376d-4a3c-a264-4962f17f5575",
+      "Gid": 320301430,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鳄鱼_鳄猫",
+      "Id": "da99e117-3d7c-463c-b38b-e74e30b240ba",
+      "Gid": 320301431,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鳄鱼_鳄鸡",
+      "Id": "bb341eb7-8b07-4154-8f8d-bcef203489bd",
+      "Gid": 320301432,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鳄鱼_鳄狗",
+      "Id": "b8653fb7-817b-4c5d-8b17-f6953bb26a73",
+      "Gid": 320301433,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鳄鱼_鳄龙",
+      "Id": "f33771df-26a5-4383-b01b-4b0f41ef9e5d",
+      "Gid": 320301434,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鳄鱼_鳄鲨",
+      "Id": "9a1106fc-e3d8-4ebf-8fa0-f6d17b9f9f3e",
+      "Gid": 320301435,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鳄鱼_鳄虎",
+      "Id": "e6139f16-b883-49ce-bc18-47c70765129b",
+      "Gid": 320301436,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "玩家鳄鱼_鳄狼",
+      "Id": "1898f09c-7f7a-4535-9ec2-c4041713a26f",
+      "Gid": 320301437,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场羊",
+      "Id": "81d74daf-22a9-4093-bc3d-771a2df66db1",
+      "Gid": 320301801,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场虎",
+      "Id": "006901d1-5505-4b7d-8222-e0bb31581081",
+      "Gid": 320301802,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场长颈鹿",
+      "Id": "e670c9de-a272-4640-adab-a75d0f7ae804",
+      "Gid": 320301803,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场狗",
+      "Id": "2c829e5a-1488-4569-a528-e283b628f580",
+      "Gid": 320301804,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场猫",
+      "Id": "e4fa5f64-5525-4236-ba0c-d61d74496e79",
+      "Gid": 320301806,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场鸡",
+      "Id": "7f58a33f-0733-49eb-8633-2395be292236",
+      "Gid": 320301807,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场鲨鱼",
+      "Id": "dc40140c-a075-4f7b-ad43-b8e821176d7b",
+      "Gid": 320301816,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场熊",
+      "Id": "6f174aad-fe60-4680-97db-e7e4f033443c",
+      "Gid": 320301817,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场虎（变大）",
+      "Id": "462f1a9f-12b0-4332-86c4-858d4496b5bc",
+      "Gid": 320301852,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场狗（分身）",
+      "Id": "7d0abcca-b4ca-4fae-a991-afee22653998",
+      "Gid": 320301854,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场狼",
+      "Id": "1a7fd818-458a-4af7-b90c-f461520b59e7",
+      "Gid": 320301901,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场龙",
+      "Id": "d482d2ec-e35a-4a40-8b3c-1f4058031036",
+      "Gid": 320301903,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
+      "DisplayName": "竞技场白狼",
+      "Id": "f9b93c38-f33f-4a0a-8b24-c83f6cfbfe04",
+      "Gid": 320301951,
+      "PropertiesString": "{\"Genus\":[\"ga_guai\",\"types_teshu\"],\"name_txt\":0,\"comment_txt\":0}"
+    },
+    {
       "DisplayName": "复制Boss",
       "Id": "20b5d742-4ae5-41a1-922d-b359334d4c3f",
       "Gid": 320305003,
@@ -21879,12 +22659,6 @@
       "PropertiesString": "{\"Genus\":[\"gs_wenquan\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"999y\",\"ValidPeriodString\":\"999y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"Count\":10000},{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":100}]}}"
     },
     {
-      "DisplayName": "默认形象-男",
-      "Id": "01745dd0-0c86-4dc4-97ff-b4af1401bc19",
-      "Gid": 230101001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Knight1\",\"Genus\":[\"e_touxiang\"]}"
-    },
-    {
       "DisplayName": "角色头像-女",
       "Id": "f02ef9b1-e47f-4007-94a1-4c662fa837d4",
       "Gid": 230101002,
@@ -21895,6 +22669,12 @@
       "Id": "706116a8-ccdc-4358-856b-aec70dcc9793",
       "Gid": 230101003,
       "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Knight3\",\"Genus\":[\"e_touxiang\"]}"
+    },
+    {
+      "DisplayName": "默认形象-男",
+      "Id": "01745dd0-0c86-4dc4-97ff-b4af1401bc19",
+      "Gid": 230101001,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"iconName\":\"Knight1\",\"Genus\":[\"e_touxiang\"]}"
     },
     {
       "DisplayName": "发条羊头像",
@@ -22114,20 +22894,45 @@
     {
       "DisplayName": "爬塔占位符",
       "Id": "43ADC188-7B1D-4C73-983F-4E5583CBACCD",
+      "Gid": 110201030,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":0}",
       "Remark": "Count=0标识没有爬塔，Count>0标识爬塔的层数，如1表示处于第一层，以此类推"
     },
     {
       "DisplayName": "爬塔准刷商品",
       "Id": "E7A0E2A3-304E-4D19-84A4-14128650B152",
-      "Gid": 180401010,
-      "PropertiesString": "{\"Genus\":[\"gs_shuaxin\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"43200s\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3184aa4c-1467-4484-ad03-d23d7bcc638e\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[]}}"
+      "Gid": 180401011,
+      "PropertiesString": "{\"Genus\":[\"gs_jingjichang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-09T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"43200s\",\"ValidPeriodString\":\"43200s\"},\"GroupNumber\":0,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"3184aa4c-1467-4484-ad03-d23d7bcc638e\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[]}}"
     },
     {
       "DisplayName": "爬塔刷新序列",
       "Id": "3184aa4c-1467-4484-ad03-d23d7bcc638e",
       "Gid": 190101009,
       "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":3}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"E7A0E2A3-304E-4D19-84A4-14128650B152\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"9c8ea669-08bf-41ad-9628-736fe16bd226\"],\"Counts\":[100,100,100]}}}"
+    },
+    {
+      "DisplayName": "爬塔准进入商品   （消耗体力）",
+      "Id": "4EE5AEA7-9AF8-485A-8B95-3A108E633B9F",
+      "Gid": 180401012,
+      "PropertiesString": "{\"Genus\":[\"gs_jingjichang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[]}}"
+    },
+    {
+      "DisplayName": "爬塔次数（每日）占位符",
+      "Id": "619031ce-d892-40fd-ad4b-61c8d8ff8af2",
+      "Gid": 110201031,
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":1,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":5,\"StepValue\":5,\"Delay\":\"1.00:00:00\",\"CurrentValue\":5,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+    },
+    {
+      "DisplayName": "爬塔体力购买--广告",
+      "Id": "496b81b9-8388-4f27-9e3f-91d569923e97",
+      "Gid": 180401009,
+      "PropertiesString": "{\"Genus\":[\"gs_jingjichang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"1de88b53-e5bf-4a60-9dfb-90284b94bdab\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":1,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"Count\":1}]},\"adPlacementIdDic\":{\"Korea\":null,\"Canada\":null,\"Feishu\":\"b6576708a925a8\",\"Pilipinas\":\"b6579671ea72ce\",\"Southeast\":\"b668b4ecd1ae16\",\"Southeast_iOS\":\"b668b4e9f70d79\"},\"adScenarioIdDic\":{\"Southeast\":\"f668bac4a3e5f2\",\"Southeast_iOS\":\"f668b833e77f18\"}}"
+    },
+    {
+      "DisplayName": "爬塔体力购买--钻石",
+      "Id": "7716ca60-a652-420f-87f4-5996fe905f0c",
+      "Gid": 180401010,
+      "PropertiesString": "{\"Genus\":[\"gs_jingjichang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":150,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"Count\":5}]}}"
     }
   ]
 }

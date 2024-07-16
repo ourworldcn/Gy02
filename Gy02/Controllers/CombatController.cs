@@ -157,7 +157,6 @@ namespace GY02.Controllers
             {
 
             }
-
             //var command = new GetDurationCommand { GameChar = gc, };
             //_Mapper.Map(model, command);
             //_SyncCommandManager.Handle(command);

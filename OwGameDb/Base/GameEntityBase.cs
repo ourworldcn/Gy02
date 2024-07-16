@@ -127,6 +127,12 @@ namespace OW.Game.Store
             set => _Thing = value;
         }
 
+        private List<Guid> _TIdsOfCreatedIds = new List<Guid>();
+        /// <summary>
+        /// 已经创建过的子对象的Id集合。
+        /// </summary>
+        public List<Guid> TIdsOfCreatedIds { get => LazyInitializer.EnsureInitialized(ref _TIdsOfCreatedIds); set => _TIdsOfCreatedIds = value; }
+
         Dictionary<string, object> _ExtensionProperties;
         /// <summary>
         /// 反序列化时，可能会在 JSON 中收到不是由目标类型的属性表示的数据。
@@ -137,7 +143,6 @@ namespace OW.Game.Store
             get => LazyInitializer.EnsureInitialized(ref _ExtensionProperties);
             set => _ExtensionProperties = value;
         }
-
         #region 事件相关
 
         protected bool SetStruct<T>(ref T field, T newValue) where T : struct
@@ -197,6 +202,7 @@ namespace OW.Game.Store
         #endregion 事件相关
 
         string _Key;
+
         /// <summary>
         /// 获取该对象的唯一标识。通常该返回值可以用于锁定该对象。
         /// </summary>
@@ -204,6 +210,7 @@ namespace OW.Game.Store
         /// 此属性尽量不生成新的对象。</remarks>
         [JsonIgnore]
         public string Key => Thing is GuidKeyObjectBase gko ? gko.IdString : _Key ??= Id.ToString();
+
     }
 
     /// <summary>
