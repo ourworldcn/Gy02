@@ -251,7 +251,7 @@ namespace GY02.Controllers
             //记录变化数据
             var tmp = _Mapper.Map<List<GamePropertyChangeItemDto>>(changes);
             result.Changes.AddRange(tmp);
-            _GameAccountStore.Save(gc.GetUser().GetThing().IdString);
+            _GameAccountStore.Save(gc.GetUser().Key);
             return result;
         }
 

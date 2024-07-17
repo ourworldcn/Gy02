@@ -1,47 +1,17 @@
 {
-  "Genus": [ "tj_jiangli", "cj_pifu" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
-    "Period": {
-      "Start": "2023-05-30T03:03:28.385Z",
-      "End": null,
-      "PeriodString": "90y",
-      "ValidPeriodString": "90y"
-    },
-    "TjIns": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
-            "Genus": [],
-            "TId": "b8c2308a-3e93-4190-9211-266456c15ed2",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      }
-    ],
-    "Exp2LvSequence": [ 1 ],
-    "Outs": [
-      [
+  "Genus": [ " gq_pt" ],
+  "Ins": [
+    {
+      "Conditional": [
         {
           "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 20
-        },
-        {
-          "ParentTId": "B39A6FEA-CA36-4C96-975C-59D326EFD7D1",
-          "TId": "f74aa303-5d4d-4f3e-89cf-dd2733af0cbd",
-          "Count": 1
+          "Genus": [],
+          "TId": "619031ce-d892-40fd-ad4b-61c8d8ff8af2",
+          "MinCount": 1
         }
-      ]
-    ]
-  }
+      ],
+      "Count": 1
+    }
+  ],
+  "PataOutIds": [ "e6a86c16-0d66-499a-8d90-8e1353e3e876", "e6a86c16-0d66-499a-8d90-8e1353e3e876", "e6a86c16-0d66-499a-8d90-8e1353e3e876" ]
 }

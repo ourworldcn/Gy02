@@ -2,6 +2,7 @@
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
 using OW.SyncCommand;
@@ -14,19 +15,28 @@ namespace GY02.Controllers
     /// </summary>
     public class CombatController : GameControllerBase
     {
-#pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
-        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper, SyncCommandManager syncCommandManager) : base(service)
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="gameAccountStore"></param>
+        /// <param name="gameCombatManager"></param>
+        /// <param name="mapper"></param>
+        /// <param name="syncCommandManager"></param>
+        /// <param name="entityManager"></param>
+        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper, SyncCommandManager syncCommandManager, GameEntityManager entityManager) : base(service)
         {
             _GameAccountStore = gameAccountStore;
             _GameCombatManager = gameCombatManager;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
+            _EntityManager = entityManager;
         }
-#pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
 
         GameAccountStoreManager _GameAccountStore;
         GameCombatManager _GameCombatManager;
         SyncCommandManager _SyncCommandManager;
+        GameEntityManager _EntityManager;
         IMapper _Mapper;
 #if DEBUG
         /// <summary>
@@ -141,7 +151,7 @@ namespace GY02.Controllers
         /// 获取竞技场信息。
         /// </summary>
         /// <param name="model"></param>
-        /// <returns></returns>
+        /// <returns>ErrorCode的错误意义如下：160=没有找到爬塔占位符（用此占位符来确定爬塔功能是否开启）。1219=无法购买刷新商品（可能是资源或次数不足。）</returns>
         [HttpPost]
         public ActionResult<GetTowerReturnDto> GetTower(GetTowerParamsDto model)
         {
@@ -153,17 +163,55 @@ namespace GY02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
-
-            if (model.ForceRefresh || !gc.TowerInfo.NormalId.HasValue) //若需要刷新
+            var ph = _EntityManager.GetEntity(_EntityManager.GetAllEntity(gc), new GameEntitySummary { TId = Guid.Parse("43ADC188-7B1D-4C73-983F-4E5583CBACCD") });    //爬塔占位符
+            gc.TowerInfo ??= new TowerInfo();
+            if (ph is null)
             {
-
+                result.HasError = true;
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"没有找到爬塔占位符";
+                return result;
+            }
+            if (!gc.TowerInfo.NormalId.HasValue || !gc.TowerInfo.RefreshDateTime.HasValue || gc.TowerInfo.RefreshDateTime.Value.Date != OwHelper.WorldNow.Date)   //若需要免费刷新
+            {
+                var ids = _GameCombatManager.GetNewLevel(Guid.Empty);
+                gc.TowerInfo.RefreshDateTime = OwHelper.WorldNow;
+                gc.TowerInfo.EasyId = ids.Item1;
+                gc.TowerInfo.IsEasyDone = false;
+                gc.TowerInfo.NormalId = ids.Item2;
+                gc.TowerInfo.IsNormalDone = false;
+                gc.TowerInfo.HardId = ids.Item3;
+                gc.TowerInfo.IsHardDone = false;
+            }
+            else if (model.ForceRefresh) //若需要强制刷新
+            {
+                var commandRefresh = new ShoppingBuyCommand
+                {
+                    GameChar = gc,
+                    Count = 1,
+                    ShoppingItemTId = Guid.Parse("E7A0E2A3-304E-4D19-84A4-14128650B152"),
+                };
+                _SyncCommandManager.Handle(commandRefresh);
+                if (commandRefresh.HasError)
+                {
+                    result.FillErrorFrom(commandRefresh);
+                    result.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
+                    return result;
+                }
+                _Mapper.Map(commandRefresh, result);
+                var ids = _GameCombatManager.GetNewLevel(ph.Count == 0 ? Guid.Empty : _GameCombatManager.Towers[(int)ph.Count - 1].TemplateId);
+                gc.TowerInfo.RefreshDateTime = OwHelper.WorldNow;
+                gc.TowerInfo.EasyId = ids.Item1;
+                gc.TowerInfo.IsEasyDone = false;
+                gc.TowerInfo.NormalId = ids.Item2;
+                gc.TowerInfo.IsNormalDone = false;
+                gc.TowerInfo.HardId = ids.Item3;
+                gc.TowerInfo.IsHardDone = false;
             }
 
-            //var command = new GetDurationCommand { GameChar = gc, };
-            //_Mapper.Map(model, command);
-            //_SyncCommandManager.Handle(command);
-            //_Mapper.Map(command, result);
+            result.TowerInfo ??= new TowerInfoDto();
             _Mapper.Map(gc.TowerInfo, result.TowerInfo);
+            _GameAccountStore.Save(gc.GetUser().Key);
             return result;
         }
     }

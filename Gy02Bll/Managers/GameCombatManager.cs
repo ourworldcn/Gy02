@@ -65,6 +65,11 @@ namespace GY02.Managers
             Initialize();
         }
 
+        /// <summary>
+        /// 爬塔关卡的类属字符串。
+        /// </summary>
+        public static string PataGenusString = "gq_pt";
+
         private void Initialize()
         {
             var tt = _TemplateManager.GetFullViewFromId(Guid.Parse("524143AA-0E67-4E9B-8FBF-9BB8AFB586EA"));
@@ -96,13 +101,13 @@ namespace GY02.Managers
         /// <summary>
         /// 塔层数据。按层数升序排列。
         /// </summary>
-        List<TemplateStringFullView> Towers
+        public List<TemplateStringFullView> Towers
         {
             get
             {
                 return LazyInitializer.EnsureInitialized(ref _Towers, () =>
                 {
-                    return default;
+                    return _TemplateManager.Id2FullView.Values.Where(c => c.Genus?.Contains(PataGenusString) ?? false).OrderBy(c => c.Gid).ToList();
                 });
             }
         }
@@ -116,10 +121,12 @@ namespace GY02.Managers
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="currentId"></param>
+        /// <param name="currentId">当前所处塔层 <see cref="Guid.Empty"/>表示尚无等级。</param>
         /// <returns>(下手Id，平手Id，上手Id)</returns>
         public (Guid, Guid, Guid) GetNewLevel(Guid currentId)
         {
+            if (currentId == Guid.Empty)
+                currentId = Towers.First().TemplateId;
             Random rnd = new Random();
             var index = Towers.FindIndex(c => c.TemplateId == currentId); //当前塔层索引
 
@@ -131,7 +138,7 @@ namespace GY02.Managers
             var hardCount = (int)Math.Round((decimal)Options.HardWeight / total * totalCount);   //上手池数量
             var normalCount = (int)Math.Round((decimal)Options.NormalWeight / total * totalCount);   //平手池数量
             var easyCount = totalCount - hardCount - normalCount;   //下手池数量
-            //取随即索引
+            //取随机索引
             var hardIndex = rnd.Next(hardCount);    //上手索引偏移
             var normalIndex = rnd.Next(normalCount);    //平手索引偏移
             var easyIndex = rnd.Next(easyCount);    //下手索引偏移

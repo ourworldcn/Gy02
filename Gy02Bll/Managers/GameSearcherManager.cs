@@ -46,21 +46,6 @@ namespace GY02.Managers
         #region 通用条件判断方法
 
         /// <summary>
-        /// 获取指示，确定摘要是否和指定实体匹配。
-        /// </summary>
-        /// <param name="entity"></param>
-        /// <param name="summary"></param>
-        /// <returns></returns>
-        public bool IsMatch(GameEntity entity, GameEntitySummary summary)
-        {
-            if (summary.Id.HasValue && summary.Id.Value != entity.Id) return false;
-            if (summary.TId != entity.TemplateId) return false;
-            if (summary.Count > entity.Count) return false;
-            if (summary.ParentTId.HasValue && summary.ParentTId.Value != entity.GetThing()?.Parent?.ExtraGuid) return false;
-            return true;
-        }
-
-        /// <summary>
         /// 指定实体是否符合指定条件的要求。此函数不考虑条件组掩码问题。
         /// </summary>
         /// <param name="entity"></param>

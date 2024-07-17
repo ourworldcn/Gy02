@@ -326,12 +326,55 @@ namespace GY02.Managers
         }
 
         /// <summary>
+        /// 获取所有孩子的实体。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public IEnumerable<GameEntity> GetChildren(GameEntity entity)
+        {
+            return entity.GetThing().Children.Select(c => GetEntity(c));
+        }
+
+        /// <summary>
         /// 获取指定角色下所有实体的枚举子。包含角色自身。
         /// </summary>
         /// <param name="gameChar"></param>
         /// <returns>所有子虚拟物的枚举子。如果出错则返回null,此时用<see cref="OwHelper.GetLastError"/>确定具体信息。</returns>
         public IEnumerable<GameEntity> GetAllEntity(GameChar gameChar) => gameChar.GetAllChildren()?.Select(c => GetEntity(c)).Append(gameChar);
 
+        /// <summary>
+        /// 获取指示，确定摘要是否和指定实体匹配。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="summary"></param>
+        /// <returns></returns>
+        public bool IsMatch(GameEntity entity, GameEntitySummary summary)
+        {
+            if (summary.Id.HasValue && summary.Id.Value != entity.Id) return false;
+            if (summary.TId != entity.TemplateId) return false;
+            if (summary.Count > entity.Count) return false;
+            if (summary.ParentTId.HasValue && summary.ParentTId.Value != entity.GetThing()?.Parent?.ExtraGuid) return false;
+            return true;
+        }
+
+        /// <summary>
+        /// 在一组实体中找到指定条件的第一个实体。
+        /// </summary>
+        /// <param name="gc"></param>
+        /// <param name="summary"></param>
+        /// <returns>可能为null。</returns>
+        public GameEntity GetEntity(IEnumerable<GameEntity> gameEntities, GameEntitySummary summary)
+        {
+            if (summary.ParentTId.HasValue)  //若限定父容器TId
+            {
+                var sm = summary.Clone() as GameEntitySummary;
+                sm.ParentTId = null;
+                sm.TId = summary.ParentTId.Value;
+                return gameEntities.Where(c => IsMatch(c, sm)).SelectMany(c => GetChildren(c)).FirstOrDefault(c => IsMatch(c, summary));
+            }
+            else
+                return gameEntities.FirstOrDefault(c => IsMatch(c, summary));
+        }
         #endregion 基础功能
 
         #region 创建实体相关功能

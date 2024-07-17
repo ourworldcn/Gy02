@@ -1420,7 +1420,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 获取竞技场信息功能的返回值封装类。
     /// </summary>
-    public class GetTowerReturnDto : ReturnDtoBase
+    public class GetTowerReturnDto : PropertyChangeReturnDto
     {
         /// <summary>
         /// 构造函数。

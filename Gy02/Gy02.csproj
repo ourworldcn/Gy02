@@ -18,14 +18,6 @@
     <Content Remove="Test.json" />
     <Content Remove="Test2.json" />
     <Content Remove="Test3.json" />
-    <Content Remove="数据说明 - 复制\动态产出说明.json" />
-    <Content Remove="数据说明 - 复制\卡池组结构说明.json" />
-    <Content Remove="数据说明 - 复制\卡池结构说明.json" />
-    <Content Remove="数据说明 - 复制\唯一性违反时转化结构说明.json" />
-    <Content Remove="数据说明 - 复制\商品项结构说明.json" />
-    <Content Remove="数据说明 - 复制\快速变化属性的说明.json" />
-    <Content Remove="数据说明 - 复制\成就定义说明.json" />
-    <Content Remove="数据说明 - 复制\选取实体条件对象的说明.json" />
     <Content Remove="数据说明\事件结构说明.json" />
     <Content Remove="数据说明\动态产出说明.json" />
     <Content Remove="数据说明\卡池组结构说明.json" />
@@ -56,18 +48,6 @@
     <None Include="Test3.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
-    <None Include="数据说明 - 复制\动态产出说明.json" />
-    <None Include="数据说明 - 复制\卡池组结构说明.json" />
-    <None Include="数据说明 - 复制\卡池结构说明.json" />
-    <None Include="数据说明 - 复制\唯一性违反时转化结构说明.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Include="数据说明 - 复制\商品项结构说明.json" />
-    <None Include="数据说明 - 复制\快速变化属性的说明.json" />
-    <None Include="数据说明 - 复制\成就定义说明.json">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </None>
-    <None Include="数据说明 - 复制\选取实体条件对象的说明.json" />
     <None Include="数据说明\事件结构说明.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>

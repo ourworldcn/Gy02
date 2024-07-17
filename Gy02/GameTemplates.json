@@ -8470,7 +8470,7 @@
       "DisplayName": "虎和鳄鱼的孵化动物产出",
       "Id": "6057d4e9-bc68-43f7-9ece-bb1f1629afa8",
       "Gid": 170101680,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和鳄鱼的孵化皮肤产出",
@@ -15669,7 +15669,7 @@
       "DisplayName": "火焰龙图鉴奖励",
       "Id": "a4d4d2bc-0e51-40fe-a077-c7d60ab55192",
       "Gid": 220102052,
-      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"e4ace279-5ddb-4080-81e9-86e59f49a6b3\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5},{\"ParentTId\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"TId\":\"381c34c4-f299-450e-944d-794d17e97485\",\"Count\":1}]]}}"
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"90y\",\"ValidPeriodString\":\"90y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"e4ace279-5ddb-4080-81e9-86e59f49a6b3\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":25},{\"ParentTId\":\"B39A6FEA-CA36-4C96-975C-59D326EFD7D1\",\"TId\":\"381c34c4-f299-450e-944d-794d17e97485\",\"Count\":1}]]}}"
     },
     {
       "DisplayName": "龙头鸡身图鉴奖励",
@@ -22889,7 +22889,7 @@
     {
       "DisplayName": "爬塔配置项",
       "Id": "524143AA-0E67-4E9B-8FBF-9BB8AFB586EA",
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"TowerUpCount\":5,\"TowerDownCount\":5,\"HardWeight\":20,\"NormalWeight\":10,\"EasyWeight\":30}"
     },
     {
       "DisplayName": "爬塔占位符",
@@ -22908,7 +22908,7 @@
       "DisplayName": "爬塔刷新序列",
       "Id": "3184aa4c-1467-4484-ad03-d23d7bcc638e",
       "Gid": 190101009,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":3}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"E7A0E2A3-304E-4D19-84A4-14128650B152\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"9c8ea669-08bf-41ad-9628-736fe16bd226\"],\"Counts\":[100,100,100]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":3}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"E7A0E2A3-304E-4D19-84A4-14128650B152\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\"],\"Counts\":[100,100,100]}}}"
     },
     {
       "DisplayName": "爬塔准进入商品   （消耗体力）",
@@ -22932,7 +22932,193 @@
       "DisplayName": "爬塔体力购买--钻石",
       "Id": "7716ca60-a652-420f-87f4-5996fe905f0c",
       "Gid": 180401010,
-      "PropertiesString": "{\"Genus\":[\"gs_jingjichang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":150,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"Count\":5}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_jingjichang\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":3,\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"MinCount\":0,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":150,\"Genus\":[]}],\"Outs\":[{\"Id\":null,\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"Count\":5}]},\"display_icon\":\"ArenaCountX\",\"display_count\":10}"
+    },
+    {
+      "DisplayName": "爬塔奖励池子1",
+      "Id": "8548d8d4-5783-492b-815a-daf8c76a7c4c",
+      "Gid": 170101706,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":1,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":450,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8fdbaa66-034f-401b-9fad-a7b3d3ed3d48\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"130101000\":1}}"
+    },
+    {
+      "DisplayName": "爬塔奖励池子2",
+      "Id": "ab46240d-6c6c-4d04-a319-a751959a6a9c",
+      "Gid": 170101707,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":1,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":450,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8fdbaa66-034f-401b-9fad-a7b3d3ed3d48\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"130101000\":1}}"
+    },
+    {
+      "DisplayName": "爬塔奖励池子3",
+      "Id": "5b921aed-9da7-4ce4-8861-1e69f1c26e00",
+      "Gid": 170101708,
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":1,\"AllowRepetition\":true,\"Items\":[{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"a86856b9-8f93-4190-858b-e7dff9d971ff\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"25536dd5-212a-4932-9627-e0a2350bd51b\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"1f31d9c1-a59a-4f60-9109-d33a5864ddde\",\"Count\":1}],\"Weight\":300,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"70663ec0-cc40-4c22-82b7-2ce7f87cab7a\",\"Count\":1}],\"Weight\":150,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"d1b7f903-cccf-498d-9a64-f5c39e1b7714\",\"Count\":1}],\"Weight\":50,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"af123a1b-e729-4c3c-9d90-188f89a8e749\",\"Count\":1}],\"Weight\":400,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"9fec11b1-8050-4027-ad8b-2637e6b49d42\",\"Count\":1}],\"Weight\":500,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"3480ff53-a036-4ba2-9af9-fbf749774897\",\"Count\":1}],\"Weight\":450,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8c1a6b45-6e46-48b7-a024-412047eb3412\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"TId\":\"8fdbaa66-034f-401b-9fad-a7b3d3ed3d48\",\"Count\":1}],\"Weight\":20,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null},\"outItemcounts\":{\"130101000\":1}}"
+    },
+    {
+      "DisplayName": "爬塔奖励1",
+      "Id": "e6a86c16-0d66-499a-8d90-8e1353e3e876",
+      "Gid": 180901001,
+      "PropertiesString": "{\"Genus\":[\"gs_jingjijiangli\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"8548d8d4-5783-492b-815a-daf8c76a7c4c\",\"Count\":1}]}}"
+    },
+    {
+      "DisplayName": "爬塔奖励2",
+      "Id": "f3f9cc6c-7a6d-4f49-a944-3ec54f589de8",
+      "Gid": 180901002,
+      "PropertiesString": "{\"Genus\":[\"gs_jingjijiangli\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"8548d8d4-5783-492b-815a-daf8c76a7c4c\",\"Count\":1}]}}"
+    },
+    {
+      "DisplayName": "爬塔奖励3",
+      "Id": "7df94606-e986-4dd1-9826-dc458a204c6d",
+      "Gid": 180901003,
+      "PropertiesString": "{\"Genus\":[\"gs_jingjijiangli\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"1d\",\"ValidPeriodString\":\"1d\"},\"GroupNumber\":0,\"MaxCount\":null,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":null,\"TId\":\"8548d8d4-5783-492b-815a-daf8c76a7c4c\",\"Count\":1}]}}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-1",
+      "Id": "3f9b94d3-4c8f-4558-b9a8-6bedfce9dacf",
+      "Gid": 240101002,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-2",
+      "Id": "b447431e-392f-42d4-b0c3-b9b5272a2772",
+      "Gid": 240101003,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-3",
+      "Id": "f7dd0c17-0c06-4603-b280-9b634b841a4b",
+      "Gid": 240101004,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-4",
+      "Id": "281b2192-370d-44c1-ade1-eba152d3489f",
+      "Gid": 240101005,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-5",
+      "Id": "94258e2b-11b1-4871-a863-22e0cb3f40b1",
+      "Gid": 240101006,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-6",
+      "Id": "95bf2545-bf2e-4cb1-bf8b-8c8a27d2bc60",
+      "Gid": 240101007,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-7",
+      "Id": "58fc76e7-023f-4b44-b179-4c2b25572b78",
+      "Gid": 240101008,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-8",
+      "Id": "a2767a7c-b63c-4a1d-aa4d-8b8d6b363218",
+      "Gid": 240101009,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-9",
+      "Id": "e4dc7256-b61a-402c-b2fa-662a5262b35e",
+      "Gid": 240101010,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-10",
+      "Id": "b289580b-e6c0-440d-b51e-2b9639893013",
+      "Gid": 240101011,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-11",
+      "Id": "d6c63050-1649-4f84-8c41-86544ce01d44",
+      "Gid": 240101012,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-12",
+      "Id": "03860a4f-5f6b-4c7a-9977-4fc0bb6ee772",
+      "Gid": 240101013,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-13",
+      "Id": "2fad97ec-7d5e-43df-b5ab-7cfe5d5f42a2",
+      "Gid": 240101014,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-14",
+      "Id": "ab357cdb-6ec0-4565-a057-d819a42b2373",
+      "Gid": 240101015,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-15",
+      "Id": "413662a4-878a-4e5d-ba26-37b25fb6433b",
+      "Gid": 240101016,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-16",
+      "Id": "58a37d61-c76e-47fe-83c2-3ea30ad6660e",
+      "Gid": 240101017,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-17",
+      "Id": "e3a6f160-f254-4e22-8a51-aead9f8a0bcf",
+      "Gid": 240101018,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-18",
+      "Id": "7c64d045-2cff-43c1-b336-bb3a92c9b85a",
+      "Gid": 240101019,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-19",
+      "Id": "2ac7be95-43f4-438c-9c77-776c9815ba35",
+      "Gid": 240101020,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-20",
+      "Id": "1fafbd88-7d7d-4375-988d-05e193816778",
+      "Gid": 240101021,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-21",
+      "Id": "b821c461-d309-45ce-899c-b0b10de1adaa",
+      "Gid": 240101022,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-22",
+      "Id": "36721e6f-ca47-43e1-8607-f14f75dc98be",
+      "Gid": 240101023,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-23",
+      "Id": "6f685306-cfaa-43c4-9ae7-55d207abe7ef",
+      "Gid": 240101024,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-24",
+      "Id": "e4c12608-8df0-489d-9f99-77a230411865",
+      "Gid": 240101025,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-25",
+      "Id": "9f1f5fde-ddee-49c1-87e4-221647f8f031",
+      "Gid": 240101026,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     }
   ]
 }
