@@ -6550,7 +6550,7 @@
       "DisplayName": "骑士形象（角色形象）",
       "Id": "2e9848f0-5fc2-4b6f-a973-b5892cf84f04",
       "Gid": 200101003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"f5022e9f-13da-4a2d-b1b9-d57fc07de232\",\"name_txt\":12180,\"comment_txt\":12181,\"atk\":[15],\"def\":[20],\"pow\":[10],\"Genus\":null,\"p_skills\":null,\"LvUpTId\":null}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"f5022e9f-13da-4a2d-b1b9-d57fc07de232\",\"name_txt\":12186,\"comment_txt\":12187,\"atk\":[15],\"def\":[20],\"pow\":[10],\"Genus\":null,\"p_skills\":null,\"LvUpTId\":null}"
     },
     {
       "DisplayName": "灰山羊 ",
@@ -8470,7 +8470,7 @@
       "DisplayName": "虎和鳄鱼的孵化动物产出",
       "Id": "6057d4e9-bc68-43f7-9ece-bb1f1629afa8",
       "Gid": 170101680,
-      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
+      "PropertiesString": "{\"Dice\":{\"MaxCount\":3,\"AllowRepetition\":false,\"Items\":[{\"Outs\":[{\"ParentTId\":null,\"TId\":\"dff9b94c-efcd-4fa7-ae8f-0e8d2131d051\",\"Count\":1}],\"Weight\":200,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"ce287cb6-72c0-4811-8f09-3f339b6cf4b1\",\"Count\":1}],\"Weight\":100,\"ClearGuaranteesCount\":false},{\"Outs\":[{\"ParentTId\":null,\"TId\":\"be48a30e-3f64-477a-9ce6-b3c3cad04688\",\"Count\":1}],\"Weight\":600,\"ClearGuaranteesCount\":false}],\"GuaranteesCount\":null,\"GuaranteesDiceTId\":null}}"
     },
     {
       "DisplayName": "虎和鳄鱼的孵化皮肤产出",
@@ -22973,152 +22973,896 @@
     {
       "DisplayName": "爬塔难度层级-1",
       "Id": "3f9b94d3-4c8f-4558-b9a8-6bedfce9dacf",
-      "Gid": 240101002,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101001,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-2",
       "Id": "b447431e-392f-42d4-b0c3-b9b5272a2772",
-      "Gid": 240101003,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101002,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-3",
       "Id": "f7dd0c17-0c06-4603-b280-9b634b841a4b",
-      "Gid": 240101004,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101003,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-4",
       "Id": "281b2192-370d-44c1-ade1-eba152d3489f",
-      "Gid": 240101005,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101004,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-5",
       "Id": "94258e2b-11b1-4871-a863-22e0cb3f40b1",
-      "Gid": 240101006,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101005,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-6",
       "Id": "95bf2545-bf2e-4cb1-bf8b-8c8a27d2bc60",
-      "Gid": 240101007,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101006,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-7",
       "Id": "58fc76e7-023f-4b44-b179-4c2b25572b78",
-      "Gid": 240101008,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101007,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-8",
       "Id": "a2767a7c-b63c-4a1d-aa4d-8b8d6b363218",
-      "Gid": 240101009,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101008,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-9",
       "Id": "e4dc7256-b61a-402c-b2fa-662a5262b35e",
-      "Gid": 240101010,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101009,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-10",
       "Id": "b289580b-e6c0-440d-b51e-2b9639893013",
-      "Gid": 240101011,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101010,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-11",
       "Id": "d6c63050-1649-4f84-8c41-86544ce01d44",
-      "Gid": 240101012,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101011,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-12",
       "Id": "03860a4f-5f6b-4c7a-9977-4fc0bb6ee772",
-      "Gid": 240101013,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101012,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-13",
       "Id": "2fad97ec-7d5e-43df-b5ab-7cfe5d5f42a2",
-      "Gid": 240101014,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101013,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-14",
       "Id": "ab357cdb-6ec0-4565-a057-d819a42b2373",
-      "Gid": 240101015,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101014,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-15",
       "Id": "413662a4-878a-4e5d-ba26-37b25fb6433b",
-      "Gid": 240101016,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101015,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-16",
       "Id": "58a37d61-c76e-47fe-83c2-3ea30ad6660e",
-      "Gid": 240101017,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101016,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-17",
       "Id": "e3a6f160-f254-4e22-8a51-aead9f8a0bcf",
-      "Gid": 240101018,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101017,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-18",
       "Id": "7c64d045-2cff-43c1-b336-bb3a92c9b85a",
-      "Gid": 240101019,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101018,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-19",
       "Id": "2ac7be95-43f4-438c-9c77-776c9815ba35",
-      "Gid": 240101020,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101019,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-20",
       "Id": "1fafbd88-7d7d-4375-988d-05e193816778",
-      "Gid": 240101021,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101020,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-21",
       "Id": "b821c461-d309-45ce-899c-b0b10de1adaa",
-      "Gid": 240101022,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101021,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-22",
       "Id": "36721e6f-ca47-43e1-8607-f14f75dc98be",
-      "Gid": 240101023,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101022,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-23",
       "Id": "6f685306-cfaa-43c4-9ae7-55d207abe7ef",
-      "Gid": 240101024,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101023,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-24",
       "Id": "e4c12608-8df0-489d-9f99-77a230411865",
-      "Gid": 240101025,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "Gid": 240101024,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     },
     {
       "DisplayName": "爬塔难度层级-25",
       "Id": "9f1f5fde-ddee-49c1-87e4-221647f8f031",
+      "Gid": 240101025,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-26",
+      "Id": "5e994b18-7319-41dd-abe0-0fe06fc47fb2",
       "Gid": 240101026,
-      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"619031ce-d892-40fd-ad4b-61c8d8ff8af2\",\"MinCount\":1}],\"Count\":1}],\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-27",
+      "Id": "4ef5bf8b-7d9f-4fce-913d-075f059b6196",
+      "Gid": 240101027,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-28",
+      "Id": "65fa2496-d388-4330-8416-053832952b60",
+      "Gid": 240101028,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-29",
+      "Id": "dabf1f19-c6d8-4015-a71b-49f1ae6473c1",
+      "Gid": 240101029,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-30",
+      "Id": "21b48c78-ece9-42e0-a55b-bda0c8819d0d",
+      "Gid": 240101030,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-31",
+      "Id": "98edf58d-0604-4707-8b2b-6edfe80fcfe4",
+      "Gid": 240101031,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-32",
+      "Id": "a36ec939-cd3a-41e8-81a9-66a543cc42a7",
+      "Gid": 240101032,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-33",
+      "Id": "ad76e9d7-713e-41e0-84bb-53c847998894",
+      "Gid": 240101033,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-34",
+      "Id": "f0fa5250-aee4-40a8-8b02-826a5b6ccdf6",
+      "Gid": 240101034,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-35",
+      "Id": "deb79b55-2b98-4991-9b8e-1546987bb7c3",
+      "Gid": 240101035,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-36",
+      "Id": "b38fd259-61e4-4e72-a5a0-7c656d7dc076",
+      "Gid": 240101036,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-37",
+      "Id": "cf76e458-73da-4bcf-9dce-12ab7f3b5533",
+      "Gid": 240101037,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-38",
+      "Id": "9662c102-1802-4073-94a7-648f8cf7f59e",
+      "Gid": 240101038,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-39",
+      "Id": "8f0db246-c9c6-4120-a189-5bcabd90c2d2",
+      "Gid": 240101039,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-40",
+      "Id": "5fbf3839-f08d-4e37-b0a7-f70a6dcfebb1",
+      "Gid": 240101040,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-41",
+      "Id": "6b87f533-3e9b-48ad-87c3-4ab04ada4017",
+      "Gid": 240101041,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-42",
+      "Id": "d981bb9a-3977-4f9d-b398-44c4c4ede8ff",
+      "Gid": 240101042,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-43",
+      "Id": "45d1d75e-3165-46b3-ac2f-6adbe8b850c9",
+      "Gid": 240101043,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-44",
+      "Id": "23f3285f-600b-45a6-a644-892745264ae8",
+      "Gid": 240101044,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-45",
+      "Id": "b2cd1696-6e14-4ecd-b022-324e62c5f6ba",
+      "Gid": 240101045,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-46",
+      "Id": "0ad48629-4001-4105-b697-c83fa33ae6d9",
+      "Gid": 240101046,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-47",
+      "Id": "2a6434c5-62f6-463b-9cee-8daeb3f886e5",
+      "Gid": 240101047,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-48",
+      "Id": "2610160f-e139-4b82-889d-c8f330b46a30",
+      "Gid": 240101048,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-49",
+      "Id": "2cffb7bd-61ce-405f-b96f-eb2fb4904dd2",
+      "Gid": 240101049,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-50",
+      "Id": "eef673a6-b3fc-4fe0-8c84-3c24028c766e",
+      "Gid": 240101050,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-51",
+      "Id": "4ce7728c-9385-4a4a-b783-c5ef332878a2",
+      "Gid": 240101051,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-52",
+      "Id": "641f7637-91a0-4bfc-8370-36545d097294",
+      "Gid": 240101052,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-53",
+      "Id": "d260a42c-fbb7-424e-8aa4-27966f393b4d",
+      "Gid": 240101053,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-54",
+      "Id": "a665c404-edb9-4ecf-a334-97af831b4df2",
+      "Gid": 240101054,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-55",
+      "Id": "66bf0ab6-1f4a-4521-954b-d15e130ae747",
+      "Gid": 240101055,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-56",
+      "Id": "d11af0a9-171b-477e-b047-1b533e51f075",
+      "Gid": 240101056,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-57",
+      "Id": "c1cbb8d0-7124-44ff-847c-f8dedebc0cc3",
+      "Gid": 240101057,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-58",
+      "Id": "47bee609-022d-4743-b0a6-59dd8e602843",
+      "Gid": 240101058,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-59",
+      "Id": "d357e436-38c7-461c-976b-076b52b8ee8e",
+      "Gid": 240101059,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-60",
+      "Id": "a4cc2369-45ed-48a6-9bda-4638543a8441",
+      "Gid": 240101060,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-61",
+      "Id": "37fe6ed7-3adb-41d1-9504-c08dfd1c45c6",
+      "Gid": 240101061,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-62",
+      "Id": "04b448ce-17da-417c-ba40-136dc4e12080",
+      "Gid": 240101062,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-63",
+      "Id": "28a00ed8-85cf-4ccf-a7cf-0e1dc396e87a",
+      "Gid": 240101063,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-64",
+      "Id": "a802a837-f668-4be5-b936-22d6f8c2d42f",
+      "Gid": 240101064,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-65",
+      "Id": "f264c35e-4311-4900-b4b4-9d8a22251ed3",
+      "Gid": 240101065,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-66",
+      "Id": "ba72174c-293d-4794-a0bd-67355c0c0952",
+      "Gid": 240101066,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-67",
+      "Id": "48f4a489-b75a-435f-941f-b6926db2782c",
+      "Gid": 240101067,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-68",
+      "Id": "ac0ab270-479d-4580-8af8-d9db62f04cc3",
+      "Gid": 240101068,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-69",
+      "Id": "ccd01ba0-1715-43cc-ae8b-1beda5337675",
+      "Gid": 240101069,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-70",
+      "Id": "0e1aada6-1f05-429e-8ef5-c736d02b342a",
+      "Gid": 240101070,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-71",
+      "Id": "083cd861-6217-476d-8d4a-dfffc7404206",
+      "Gid": 240101071,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-72",
+      "Id": "e59a5e09-e0fa-477d-9cc1-34ed89755f91",
+      "Gid": 240101072,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-73",
+      "Id": "05a6f05e-55a6-4eb0-865f-042216ecf89f",
+      "Gid": 240101073,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-74",
+      "Id": "75068825-a1fe-4c92-b3c2-644d7227d3bd",
+      "Gid": 240101074,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-75",
+      "Id": "087cbbb5-910a-4687-a519-d15b6b00160f",
+      "Gid": 240101075,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-76",
+      "Id": "fafdbbdd-7efd-4f06-983e-2afae3b32e5d",
+      "Gid": 240101076,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-77",
+      "Id": "72d563cf-2da9-4cb5-933d-492d3ba6cb6f",
+      "Gid": 240101077,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-78",
+      "Id": "26ece404-df01-491a-ad02-bdfca794c46b",
+      "Gid": 240101078,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-79",
+      "Id": "877d7342-a047-438a-9a0f-ff86cc6d6b4d",
+      "Gid": 240101079,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-80",
+      "Id": "0c7fe1ce-0794-4be9-8b68-cc19f837f520",
+      "Gid": 240101080,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-81",
+      "Id": "b5c8c9e8-e4e5-4b32-a13d-3a24a9b088bf",
+      "Gid": 240101081,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-82",
+      "Id": "b590346d-34af-4882-898c-bfeece8791a0",
+      "Gid": 240101082,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-83",
+      "Id": "36c0d13e-1508-436e-b09b-721e4b5d99c6",
+      "Gid": 240101083,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-84",
+      "Id": "753ffcc2-8e08-44dd-a631-7987e21802b2",
+      "Gid": 240101084,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-85",
+      "Id": "dcd3185c-b7cd-4ad8-aa5c-f86db11346bc",
+      "Gid": 240101085,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-86",
+      "Id": "756083dc-850d-41f2-962d-45ee3e4102bb",
+      "Gid": 240101086,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-87",
+      "Id": "7bfb3f14-e5f8-4d27-988a-90a5eaabe8b5",
+      "Gid": 240101087,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-88",
+      "Id": "bc2c1cfe-43b7-4b37-ad8a-43ef14991f3c",
+      "Gid": 240101088,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-89",
+      "Id": "10fd4453-e2fa-4c4d-a345-95bcade05fd0",
+      "Gid": 240101089,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-90",
+      "Id": "a89ca714-8efd-414e-9ed2-7319934274bf",
+      "Gid": 240101090,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-91",
+      "Id": "0f3de67e-c54b-4084-b538-21b154f13f0c",
+      "Gid": 240101091,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-92",
+      "Id": "e0fc1506-3f5b-4163-9795-a5f887c1975d",
+      "Gid": 240101092,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-93",
+      "Id": "e31d1fe8-03c3-4903-a0ae-04b25d167f4a",
+      "Gid": 240101093,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-94",
+      "Id": "16c25045-b95b-4236-bc28-a92611e11810",
+      "Gid": 240101094,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-95",
+      "Id": "92a0d775-6ce1-4766-9c70-ec4a1e954666",
+      "Gid": 240101095,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-96",
+      "Id": "532f51b8-1bf0-4bf5-9f47-afaf02926da4",
+      "Gid": 240101096,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-97",
+      "Id": "97aef2eb-202d-4457-828f-7fdb13371007",
+      "Gid": 240101097,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-98",
+      "Id": "f3df480d-2337-4aab-9efd-59ff07bf7314",
+      "Gid": 240101098,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-99",
+      "Id": "32986bf8-410d-4c83-9b92-c5f95d86c07c",
+      "Gid": 240101099,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-100",
+      "Id": "36bf35fc-ca05-4e98-9642-f427ec818ddc",
+      "Gid": 240101100,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-101",
+      "Id": "68094972-61de-407c-8a6f-0c389b50bac2",
+      "Gid": 240101101,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-102",
+      "Id": "a9d76126-e7dd-4c0d-97a1-ee551869b7a0",
+      "Gid": 240101102,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-103",
+      "Id": "df40bf26-d433-44c9-ad66-690e1b995755",
+      "Gid": 240101103,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-104",
+      "Id": "95d713ad-ad15-4060-ac56-0d8d29679930",
+      "Gid": 240101104,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-105",
+      "Id": "43b415e6-76b7-4edc-b1b4-4b5e0aa5b17d",
+      "Gid": 240101105,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-106",
+      "Id": "2a3ec958-7d9c-4856-a39f-536f858e8424",
+      "Gid": 240101106,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-107",
+      "Id": "7a09b73a-da53-4352-a259-a615f468ab8e",
+      "Gid": 240101107,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-108",
+      "Id": "1262d574-7da8-4770-89a1-31d1248cdda4",
+      "Gid": 240101108,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-109",
+      "Id": "047f8fdb-97a8-45d6-8937-733178ddefa0",
+      "Gid": 240101109,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-110",
+      "Id": "902d131a-09a9-4b51-8aa7-52827b8deaa1",
+      "Gid": 240101110,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-111",
+      "Id": "3dc72eb6-88d8-4647-8433-f173279697d0",
+      "Gid": 240101111,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-112",
+      "Id": "674d4908-865a-4e31-8ee7-eb0db982d4e3",
+      "Gid": 240101112,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-113",
+      "Id": "f717f50e-ab38-4f14-ab40-832a5cc3f8db",
+      "Gid": 240101113,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-114",
+      "Id": "62ddeb51-68f4-401f-b570-6920c259f728",
+      "Gid": 240101114,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-115",
+      "Id": "3b90b8fd-c4e6-4f63-a7ca-75f1916683a3",
+      "Gid": 240101115,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-116",
+      "Id": "5e961056-4d01-4463-b49f-11feb022cbc8",
+      "Gid": 240101116,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-117",
+      "Id": "8099275b-fc4b-4d5a-ae30-be87c82a5165",
+      "Gid": 240101117,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-118",
+      "Id": "82c69e0d-96fb-4780-aa81-1fc116726838",
+      "Gid": 240101118,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-119",
+      "Id": "818146b2-812f-4dd2-b774-dea254b40adb",
+      "Gid": 240101119,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-120",
+      "Id": "50d6473f-5411-454a-948e-ddd0f7e4718d",
+      "Gid": 240101120,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-121",
+      "Id": "0ab6dccd-492d-4ac8-a6b5-fe5a71670e47",
+      "Gid": 240101121,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-122",
+      "Id": "092ece8b-aed7-40da-bb12-a5ea8e638a08",
+      "Gid": 240101122,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-123",
+      "Id": "1e93536a-576b-422e-9b25-7d59f0c38f42",
+      "Gid": 240101123,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-124",
+      "Id": "3b0652c7-1660-4360-96eb-2eb43b1869c0",
+      "Gid": 240101124,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-125",
+      "Id": "668e0f90-872d-4af1-882c-839d14f74496",
+      "Gid": 240101125,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-126",
+      "Id": "9a12bcef-5c28-4f1b-8389-fbf0c5d001e7",
+      "Gid": 240101126,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-127",
+      "Id": "f5e71efd-6d2d-4604-8d9c-fe1e467df84c",
+      "Gid": 240101127,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-128",
+      "Id": "b79006ca-f031-490e-864d-042ce367d5ba",
+      "Gid": 240101128,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-129",
+      "Id": "dee12a67-63fb-4c58-bf0b-b634bc8cb77c",
+      "Gid": 240101129,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-130",
+      "Id": "18d95739-3e48-4edb-a11e-1ab61887c353",
+      "Gid": 240101130,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-131",
+      "Id": "9b413879-2c62-4c65-a491-ae8f00c05ae2",
+      "Gid": 240101131,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-132",
+      "Id": "363c02cb-f19a-4bdd-a2a5-b97c9bad2b5c",
+      "Gid": 240101132,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-133",
+      "Id": "acb724db-5505-4add-a341-9cc020caf8c4",
+      "Gid": 240101133,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-134",
+      "Id": "d7ad8ee2-ed24-463f-9eb7-f7a5a00469d1",
+      "Gid": 240101134,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-135",
+      "Id": "acb4a63e-7bd1-4251-8ff2-525bf5a9498d",
+      "Gid": 240101135,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-136",
+      "Id": "f0ae89d2-1962-40df-bc75-f1c9a63364ef",
+      "Gid": 240101136,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-137",
+      "Id": "19fc1586-ac13-451c-bf9d-935cd0e0edab",
+      "Gid": 240101137,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-138",
+      "Id": "84c57f86-a06b-4908-82ad-350663d7b2ef",
+      "Gid": 240101138,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-139",
+      "Id": "baeee0f0-3dd9-42f1-8972-7864011e9173",
+      "Gid": 240101139,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-140",
+      "Id": "f2eaf28f-43f7-4dc2-b1e3-d0149bd4ec60",
+      "Gid": 240101140,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-141",
+      "Id": "2133167d-f1a6-49e4-ae77-67e1254ce29f",
+      "Gid": 240101141,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-142",
+      "Id": "7d14b0d5-775d-4a80-887c-9fe3521d24bf",
+      "Gid": 240101142,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-143",
+      "Id": "a20facda-7690-433e-b2a5-2557b73118c7",
+      "Gid": 240101143,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-144",
+      "Id": "d418674f-9b54-400b-b3c6-dd9f32fa8bf4",
+      "Gid": 240101144,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-145",
+      "Id": "0c097d48-d86e-4e8e-9f80-7a2bdc66b3e1",
+      "Gid": 240101145,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-146",
+      "Id": "11e2682f-2a58-446b-bfa6-aca726b155e1",
+      "Gid": 240101146,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-147",
+      "Id": "a0eabf31-27f7-46fc-b217-2637992dfe3f",
+      "Gid": 240101147,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-148",
+      "Id": "789c75f6-5de2-4d9e-b615-4ff8aec1d28f",
+      "Gid": 240101148,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
+    },
+    {
+      "DisplayName": "爬塔难度层级-149",
+      "Id": "c6ab0fcd-7674-493f-b8ed-8c30c53c6ec2",
+      "Gid": 240101149,
+      "PropertiesString": "{\"Genus\":[\"gq_pt\"],\"Ins\":null,\"PataOutIds\":[\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\",\"e6a86c16-0d66-499a-8d90-8e1353e3e876\"]}"
     }
   ]
 }

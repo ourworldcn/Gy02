@@ -112,7 +112,7 @@ namespace GY02.Commands
                 var ph = _EntityManager.GetEntity(_EntityManager.GetAllEntity(gc), new GameEntitySummary { TId = Guid.Parse("43ADC188-7B1D-4C73-983F-4E5583CBACCD") });    //爬塔占位符
                 var ov = ph.Count;
 
-                if (gc.TowerInfo.HardId == command.CombatTId && !gc.TowerInfo.IsHardDone)  //若是上手
+                if (gc.TowerInfo.HardId == command.CombatTId && !gc.TowerInfo.IsHardDone.HasValue)  //若是上手
                 {
                     if (command.IsSuccess)   //若赢了
                     {
@@ -126,9 +126,9 @@ namespace GY02.Commands
                         ph.Count += 3;
                         command.Changes?.MarkChanges(ph,nameof(ph.Count),ov, ph.Count);
                     }
-                    gc.TowerInfo.IsHardDone = true;
+                    gc.TowerInfo.IsHardDone = command.IsSuccess;
                 }
-                else if (gc.TowerInfo.NormalId == command.CombatTId && !gc.TowerInfo.IsNormalDone)  //若是平手
+                else if (gc.TowerInfo.NormalId == command.CombatTId && !gc.TowerInfo.IsNormalDone.HasValue)  //若是平手
                 {
                     if (command.IsSuccess)   //若赢了
                     {
@@ -142,9 +142,9 @@ namespace GY02.Commands
                         ph.Count += 2;
                         command.Changes?.MarkChanges(ph,nameof(ph.Count),ov, ph.Count);
                     }
-                    gc.TowerInfo.IsNormalDone = true;
+                    gc.TowerInfo.IsNormalDone = command.IsSuccess;
                 }
-                else if (gc.TowerInfo.EasyId == command.CombatTId && !gc.TowerInfo.IsEasyDone)  //若是下手
+                else if (gc.TowerInfo.EasyId == command.CombatTId && !gc.TowerInfo.IsEasyDone.HasValue)  //若是下手
                 {
                     if (command.IsSuccess)   //若赢了
                     {
@@ -158,7 +158,7 @@ namespace GY02.Commands
                         ph.Count += 1;
                         command.Changes?.MarkChanges(ph,nameof(ph.Count),ov, ph.Count);
                     }
-                    gc.TowerInfo.IsEasyDone = true;
+                    gc.TowerInfo.IsEasyDone = command.IsSuccess;
                 }
                 else //非法
                 {

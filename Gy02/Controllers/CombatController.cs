@@ -5,6 +5,7 @@ using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.SyncCommand;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -24,19 +25,23 @@ namespace GY02.Controllers
         /// <param name="mapper"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="entityManager"></param>
-        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper, SyncCommandManager syncCommandManager, GameEntityManager entityManager) : base(service)
+        /// <param name="templateManager"></param>
+        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper, 
+            SyncCommandManager syncCommandManager, GameEntityManager entityManager, GameTemplateManager templateManager) : base(service)
         {
             _GameAccountStore = gameAccountStore;
             _GameCombatManager = gameCombatManager;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
             _EntityManager = entityManager;
+            _TemplateManager = templateManager;
         }
 
         GameAccountStoreManager _GameAccountStore;
         GameCombatManager _GameCombatManager;
         SyncCommandManager _SyncCommandManager;
         GameEntityManager _EntityManager;
+        GameTemplateManager _TemplateManager;
         IMapper _Mapper;
 #if DEBUG
         /// <summary>
@@ -211,6 +216,9 @@ namespace GY02.Controllers
 
             result.TowerInfo ??= new TowerInfoDto();
             _Mapper.Map(gc.TowerInfo, result.TowerInfo);
+            result.TowerInfo.EasyTemplate = _TemplateManager.GetFullViewFromId(gc.TowerInfo.EasyId!.Value);
+            result.TowerInfo.NormalTemplate = _TemplateManager.GetFullViewFromId(gc.TowerInfo.NormalId.Value);
+            result.TowerInfo.HardTemplate = _TemplateManager.GetFullViewFromId(gc.TowerInfo.HardId!.Value);
             _GameAccountStore.Save(gc.GetUser().Key);
             return result;
         }

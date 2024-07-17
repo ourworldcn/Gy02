@@ -1378,43 +1378,43 @@ namespace GY02.Publisher
         public DateTime? RefreshDateTime { get; set; }
 
         /// <summary>
-        /// 下手的Id。
+        /// 下手的塔层信息。
         /// </summary>
 #if NETCOREAPP
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
-        public Guid? EasyId { get; set; }
+        public TemplateStringFullView EasyTemplate { get; set; }
 
         /// <summary>
-        /// 是否已经打过了。true=已打过，false=尚未打过。
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
         /// </summary>
-        public bool IsEasyDone { get; set; }
+        public bool? IsEasyDone { get; set; }
 
         /// <summary>
-        /// 平手的Id。
-        /// </summary>
-#if NETCOREAPP
-        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-#endif
-        public Guid? NormalId { get; set; }
-
-        /// <summary>
-        /// 是否已经打过了。true=已打过，false=尚未打过。
-        /// </summary>
-        public bool IsNormalDone { get; set; }
-
-        /// <summary>
-        /// 上手的Id。
+        /// 平手的塔层信息。
         /// </summary>
 #if NETCOREAPP
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
-        public Guid? HardId { get; set; }
+        public TemplateStringFullView NormalTemplate { get; set; }
 
         /// <summary>
-        /// 是否已经打过了。true=已打过，false=尚未打过。
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
         /// </summary>
-        public bool IsHardDone { get; set; }
+        public bool? IsNormalDone { get; set; }
+
+        /// <summary>
+        /// 上手的塔层信息。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public TemplateStringFullView HardTemplate { get; set; }
+
+        /// <summary>
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
+        /// </summary>
+        public bool? IsHardDone { get; set; }
     }
 
     /// <summary>

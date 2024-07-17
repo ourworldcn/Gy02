@@ -1031,34 +1031,34 @@
             塔的刷新时间。null标识未刷新过。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.TowerInfoDto.EasyId">
+        <member name="P:GY02.Publisher.TowerInfoDto.EasyTemplate">
             <summary>
-            下手的Id。
+            下手的塔层信息。
             </summary>
         </member>
         <member name="P:GY02.Publisher.TowerInfoDto.IsEasyDone">
             <summary>
-            是否已经打过了。true=已打过，false=尚未打过。
+            空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.TowerInfoDto.NormalId">
+        <member name="P:GY02.Publisher.TowerInfoDto.NormalTemplate">
             <summary>
-            平手的Id。
+            平手的塔层信息。
             </summary>
         </member>
         <member name="P:GY02.Publisher.TowerInfoDto.IsNormalDone">
             <summary>
-            是否已经打过了。true=已打过，false=尚未打过。
+            空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.TowerInfoDto.HardId">
+        <member name="P:GY02.Publisher.TowerInfoDto.HardTemplate">
             <summary>
-            上手的Id。
+            上手的塔层信息。
             </summary>
         </member>
         <member name="P:GY02.Publisher.TowerInfoDto.IsHardDone">
             <summary>
-            是否已经打过了。true=已打过，false=尚未打过。
+            空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
             </summary>
         </member>
         <member name="T:GY02.Publisher.GetTowerReturnDto">

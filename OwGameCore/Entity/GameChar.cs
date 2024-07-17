@@ -569,12 +569,12 @@ namespace OW.Game.Entity
 #if NETCOREAPP
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
 #endif
-        public Guid?  EasyId{ get; set; }
+        public Guid? EasyId { get; set; }
 
         /// <summary>
-        /// 是否已经打过了。true=已打过，false=尚未打过。
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
         /// </summary>
-        public bool IsEasyDone { get; set; }
+        public bool? IsEasyDone { get; set; }
 
         /// <summary>
         /// 平手的Id。
@@ -585,9 +585,9 @@ namespace OW.Game.Entity
         public Guid? NormalId { get; set; }
 
         /// <summary>
-        /// 是否已经打过了。true=已打过，false=尚未打过。
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
         /// </summary>
-        public bool IsNormalDone { get; set; }
+        public bool? IsNormalDone { get; set; }
 
         /// <summary>
         /// 上手的Id。
@@ -598,9 +598,9 @@ namespace OW.Game.Entity
         public Guid? HardId { get; set; }
 
         /// <summary>
-        /// 是否已经打过了。true=已打过，false=尚未打过。
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
         /// </summary>
-        public bool IsHardDone { get; set; }
+        public bool? IsHardDone { get; set; }
     }
 
     public static class GameCharExtensions
