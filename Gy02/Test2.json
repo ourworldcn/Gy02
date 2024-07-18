@@ -1,33 +1,26 @@
 {
-  "Genus": [ "gq_pt" ],
-  "Ins": [
+  "Items": [
     {
-      "Conditional": [
+      "Rewards": [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "Genus": [],
-          "TId": "619031ce-d892-40fd-ad4b-61c8d8ff8af2",
-          "MinCount": 1
+          "ParentTId": "0Vo6EvDU2UyavNRAQZ2eDQ==",
+          "TId": "JF9XyT2jukmxMCm2/01ixw==",
+          "Count": 10,
+          "AddPropDic": {}
         }
       ],
-      "Count": 1
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 1
     }
   ],
-  "PataOutIds": [
-    {
-      "ParentTId": null,
-      "TId": "8548d8d4-5783-492b-815a-daf8c76a7c4c",
-      "Count": 1
-    },
-    {
-      "ParentTId": null,
-      "TId": "ab46240d-6c6c-4d04-a319-a751959a6a9c",
-      "Count": 1
-    },
-    {
-      "ParentTId": null,
-      "TId": "5b921aed-9da7-4ce4-8861-1e69f1c26e00",
-      "Count": 1
-    }
-  ]
+  "TIdsOfCreatedIds": [],
+  "ClientDictionary": {},
+  "CompositingAccruedCost": [],
+  "lv": 1,
+  "LastModifyDateTime": "2024-06-12T11:32:22.16233Z",
+  "IsValid": true,
+  "LvUpAccruedCost": [],
+  "CountOfLastModifyUtc": "2024-07-12T11:08:00.788256Z",
+  "Fcps": {}
 }

@@ -26,7 +26,7 @@ namespace GY02.Controllers
         /// <param name="syncCommandManager"></param>
         /// <param name="entityManager"></param>
         /// <param name="templateManager"></param>
-        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper, 
+        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper,
             SyncCommandManager syncCommandManager, GameEntityManager entityManager, GameTemplateManager templateManager) : base(service)
         {
             _GameAccountStore = gameAccountStore;
@@ -177,16 +177,17 @@ namespace GY02.Controllers
                 result.DebugMessage = $"没有找到爬塔占位符";
                 return result;
             }
-            if (!gc.TowerInfo.NormalId.HasValue || !gc.TowerInfo.RefreshDateTime.HasValue || gc.TowerInfo.RefreshDateTime.Value.Date != OwHelper.WorldNow.Date)   //若需要免费刷新
+            var now = OwHelper.WorldNow.Date;
+            if (!gc.TowerInfo.NormalId.HasValue || !gc.TowerInfo.RefreshDateTime.HasValue || gc.TowerInfo.RefreshDateTime.Value.Date != now)   //若需要免费刷新
             {
                 var ids = _GameCombatManager.GetNewLevel(Guid.Empty);
-                gc.TowerInfo.RefreshDateTime = OwHelper.WorldNow;
+                gc.TowerInfo.RefreshDateTime = now;
                 gc.TowerInfo.EasyId = ids.Item1;
-                gc.TowerInfo.IsEasyDone = false;
+                gc.TowerInfo.IsEasyDone = null;
                 gc.TowerInfo.NormalId = ids.Item2;
-                gc.TowerInfo.IsNormalDone = false;
+                gc.TowerInfo.IsNormalDone = null;
                 gc.TowerInfo.HardId = ids.Item3;
-                gc.TowerInfo.IsHardDone = false;
+                gc.TowerInfo.IsHardDone = null;
             }
             else if (model.ForceRefresh) //若需要强制刷新
             {
@@ -203,15 +204,15 @@ namespace GY02.Controllers
                     result.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
                     return result;
                 }
-                _Mapper.Map(commandRefresh, result);
+                _Mapper.Map(commandRefresh.Changes, result.Changes);
                 var ids = _GameCombatManager.GetNewLevel(ph.Count == 0 ? Guid.Empty : _GameCombatManager.Towers[(int)ph.Count - 1].TemplateId);
-                gc.TowerInfo.RefreshDateTime = OwHelper.WorldNow;
+                gc.TowerInfo.RefreshDateTime = now;
                 gc.TowerInfo.EasyId = ids.Item1;
-                gc.TowerInfo.IsEasyDone = false;
+                gc.TowerInfo.IsEasyDone = null;
                 gc.TowerInfo.NormalId = ids.Item2;
-                gc.TowerInfo.IsNormalDone = false;
+                gc.TowerInfo.IsNormalDone = null;
                 gc.TowerInfo.HardId = ids.Item3;
-                gc.TowerInfo.IsHardDone = false;
+                gc.TowerInfo.IsHardDone = null;
             }
 
             result.TowerInfo ??= new TowerInfoDto();

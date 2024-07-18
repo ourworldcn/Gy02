@@ -5,12 +5,17 @@
         {
           "ParentTId": "0Vo6EvDU2UyavNRAQZ2eDQ==",
           "TId": "JF9XyT2jukmxMCm2/01ixw==",
-          "Count": 20,
+          "Count": 10,
+          "AddPropDic": {}
+        },
+        {
+          "ParentTId": "6m+aszbKlkyXXFnTJu/X0Q==",
+          "TId": "yhYiFK66jECFCc7cOL6V6g==",
+          "Count": 1,
           "AddPropDic": {}
         }
       ],
       "IsCompleted": true,
-      "IsPicked": true,
       "Level": 1
     }
   ],
@@ -18,9 +23,9 @@
   "ClientDictionary": {},
   "CompositingAccruedCost": [],
   "lv": 1,
-  "LastModifyDateTime": "2024-04-24T14:26:17.8913283Z",
+  "LastModifyDateTime": "2024-06-12T11:32:22.16233Z",
   "IsValid": true,
   "LvUpAccruedCost": [],
-  "CountOfLastModifyUtc": "2024-06-25T11:57:05.3033529Z",
+  "CountOfLastModifyUtc": "2024-07-12T11:08:00.788256Z",
   "Fcps": {}
 }

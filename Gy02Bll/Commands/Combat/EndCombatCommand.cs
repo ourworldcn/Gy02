@@ -124,7 +124,7 @@ namespace GY02.Commands
                             return;
                         }
                         ph.Count += 3;
-                        command.Changes?.MarkChanges(ph,nameof(ph.Count),ov, ph.Count);
+                        command.Changes?.MarkChanges(ph, nameof(ph.Count), ov, ph.Count);
                     }
                     gc.TowerInfo.IsHardDone = command.IsSuccess;
                 }
@@ -140,7 +140,7 @@ namespace GY02.Commands
                             return;
                         }
                         ph.Count += 2;
-                        command.Changes?.MarkChanges(ph,nameof(ph.Count),ov, ph.Count);
+                        command.Changes?.MarkChanges(ph, nameof(ph.Count), ov, ph.Count);
                     }
                     gc.TowerInfo.IsNormalDone = command.IsSuccess;
                 }
@@ -156,7 +156,7 @@ namespace GY02.Commands
                             return;
                         }
                         ph.Count += 1;
-                        command.Changes?.MarkChanges(ph,nameof(ph.Count),ov, ph.Count);
+                        command.Changes?.MarkChanges(ph, nameof(ph.Count), ov, ph.Count);
                     }
                     gc.TowerInfo.IsEasyDone = command.IsSuccess;
                 }
@@ -166,6 +166,43 @@ namespace GY02.Commands
                     command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                     command.DebugMessage = "不可进入该塔层";
                     return;
+                }
+                List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
+                if (command.IsSuccess)  //若胜利
+                {
+                    changes.Clear();
+                    commandShopping = new ShoppingBuyCommand
+                    {
+                        GameChar = command.GameChar,
+                        ShoppingItemTId = Guid.Parse("e1e368b4-acfa-4412-ad1b-e3d1215be199"),
+                        Count = 1,
+                        Changes = changes,
+                    };
+                    _SyncCommandManager.Handle(commandShopping);
+                    if (commandShopping.HasError)
+                    {
+                        command.FillErrorFrom(commandShopping);
+                        return;
+                    }
+                    command.Changes.AddRange(changes);
+                }
+                else //若失败
+                {
+                    changes.Clear();
+                    commandShopping = new ShoppingBuyCommand
+                    {
+                        GameChar = command.GameChar,
+                        ShoppingItemTId = Guid.Parse("61a13698-2d2d-4808-b44f-db1f7ac94a40"),
+                        Count = 1,
+                        Changes = changes,
+                    };
+                    _SyncCommandManager.Handle(commandShopping);
+                    if (commandShopping.HasError)
+                    {
+                        command.FillErrorFrom(commandShopping);
+                        return;
+                    }
+                    command.Changes.AddRange(changes);
                 }
             }
 

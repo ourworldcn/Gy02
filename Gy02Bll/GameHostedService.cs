@@ -294,6 +294,7 @@ namespace GY02
         void ChengjiuFix(IServiceProvider service)
         {
             Guid fixId = new Guid("{C9867EC4-5282-46CB-BEF0-9916BA2E5300}");
+            var startDt = OwHelper.WorldNow;
             var genusString = "e_touxiang";   //头像的类属
             var fixIdString = fixId.ToString();
             var dbUser = service.GetRequiredService<GY02UserContext>();
@@ -317,6 +318,7 @@ namespace GY02
                            on slot.Id equals achi.ParentId
                            where ids.Contains(achi.ExtraGuid)
                            select new { slot, achi };
+                int iCount = 0;
                 foreach (var item in coll)
                 {
                     var achi = item.achi.GetJsonObject<GameAchievement>();
@@ -333,10 +335,14 @@ namespace GY02
                                 gai.IsPicked = false;
                                 gai.Rewards.Clear();
                                 gai.Rewards.AddRange(tt.Achievement.Outs[i].Select(c => c.Clone() as GameEntitySummary));
+                                iCount++;
                             }
                     }
                 }
-                dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString, Value = "头像产出的成就修正" });
+                var cfg = new ServerConfigItem() { Name = fixIdString, Value = $"头像产出的成就修正，开始时间{startDt},结束时间{OwHelper.WorldNow},{iCount}条数据被更新" };
+                dbUser.ServerConfig.Add(cfg);
+                dbUser.SaveChanges();
+                cfg.Value = $"头像产出的成就修正，开始时间{startDt},结束时间{OwHelper.WorldNow},{iCount}条数据被更新";
                 dbUser.SaveChanges();
             }
         }

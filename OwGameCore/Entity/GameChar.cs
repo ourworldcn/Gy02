@@ -553,6 +553,9 @@ namespace OW.Game.Entity
         public List<GameDiceItem> Items { get; set; } = new List<GameDiceItem>();
     }
 
+    /// <summary>
+    /// 爬塔信息。
+    /// </summary>
     public class TowerInfo
     {
         /// <summary>
@@ -601,6 +604,7 @@ namespace OW.Game.Entity
         /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
         /// </summary>
         public bool? IsHardDone { get; set; }
+
     }
 
     public static class GameCharExtensions
