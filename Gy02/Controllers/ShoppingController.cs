@@ -5,7 +5,9 @@ using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using OW.Game;
 using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
@@ -26,18 +28,28 @@ namespace GY02.Controllers
         /// <param name="mapper"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="entityManager"></param>
-        public ShoppingController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager, GameEntityManager entityManager)
+        /// <param name="shoppingManager"></param>
+        /// <param name="templateManager"></param>
+        /// <param name="searcherManager"></param>
+        public ShoppingController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager, GameEntityManager entityManager,
+            GameShoppingManager shoppingManager, GameTemplateManager templateManager, GameSearcherManager searcherManager)
         {
             _GameAccountStore = gameAccountStore;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
             _EntityManager = entityManager;
+            _ShoppingManager = shoppingManager;
+            _TemplateManager = templateManager;
+            _SearcherManager = searcherManager;
         }
 
         GameAccountStoreManager _GameAccountStore;
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
         GameEntityManager _EntityManager;
+        GameShoppingManager _ShoppingManager;
+        GameTemplateManager _TemplateManager;
+        GameSearcherManager _SearcherManager;
 
 #if DEBUG
         /// <summary>
@@ -72,6 +84,61 @@ namespace GY02.Controllers
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);
             _Mapper.Map(command, result);
+            return result;
+        }
+
+        /// <summary>
+        /// 按指定TId获取商品配置数据。
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GetShoppingItemsByIdsReturnDto> GetShoppingItemsByIds(GetShoppingItemsByIdsParamsDto model)
+        {
+            var result = new GetShoppingItemsByIdsReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            //获取基础集合
+            IEnumerable<TemplateStringFullView> baseColl;
+
+            baseColl = _TemplateManager.Id2FullView.Where(c => c.Value.ShoppingItem is not null && model.TIds.Contains(c.Value.TemplateId)).Select(c => c.Value);
+            //刷新金猪周期
+            if (_ShoppingManager.IsChanged(gc, "gs_jinzhu")) _ShoppingManager.JinzhuChanged(gc);
+            //刷新礼包周期
+            if (_ShoppingManager.IsChanged(gc, "gs_leijilibao")) _ShoppingManager.LibaoChanged(gc);
+            //过滤
+            DateTime nowUtc = OwHelper.WorldNow;    //当前
+            List<(TemplateStringFullView, DateTime)> list = new List<(TemplateStringFullView, DateTime)>();
+            foreach (var item in baseColl)  //遍历基础集合
+            {
+                var b = _ShoppingManager.IsMatchWithoutBuyed(gc, item, nowUtc, out var startUtc, 2);
+                if (!b) continue;   //若不符合条件
+                list.Add((item, startUtc));
+            }
+            var coll1 = list.Where(c => c.Item1.Genus.Contains("gs_meirishangdian")).ToArray();
+            result.ShoppingItemStates.AddRange(list.Select(c =>
+            {
+                var tmp = new ShoppingItemStateDto
+                {
+                    TId = c.Item1.TemplateId,
+                    StartUtc = c.Item2,
+                    EndUtc = c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod,
+                    BuyedCount = gc.ShoppingHistoryV2.Where(history => history.TId == c.Item1.TemplateId && history.WorldDateTime >= c.Item2 && history.WorldDateTime < c.Item2 + c.Item1.ShoppingItem.Period.ValidPeriod).Sum(c => c.Count),
+                };
+                var per = _SearcherManager.GetPeriodIndex(c.Item1.ShoppingItem.Ins, gc, out _);
+                if (per.HasValue) //若有自周期
+                {
+                    var newBuyedCount = gc.ShoppingHistoryV2.Where(history => history.TId == c.Item1.TemplateId)
+                        .Where(c => c.PeriodIndex == per).Sum(c => c.Count);
+                    tmp.BuyedCount = newBuyedCount;
+                }
+                return tmp;
+            }));
+
             return result;
         }
 

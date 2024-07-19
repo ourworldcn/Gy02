@@ -2023,6 +2023,27 @@ namespace GY02.Publisher
         public DateTime? EndUtc { get; set; }
     }
 
+    /// <summary>
+    /// 按指定TId获取商品配置数据功能的参数封装类。
+    /// </summary>
+    public class GetShoppingItemsByIdsParamsDto: TokenDtoBase
+    {
+        /// <summary>
+        /// 要过滤的TId集合。
+        /// </summary>
+        public List<Guid> TIds { get; set; } = new List<Guid>();
+    }
+
+    /// <summary>
+    /// 按指定TId获取商品配置数据功能的返回值封装类。
+    /// </summary>
+    public class GetShoppingItemsByIdsReturnDto: ReturnDtoBase
+    {
+        /// <summary>
+        /// 购买商品的状态集合。
+        /// </summary>
+        public List<ShoppingItemStateDto> ShoppingItemStates { get; set; } = new List<ShoppingItemStateDto>();
+    }
     #endregion 商城相关
 
     #region 邮件相关

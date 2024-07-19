@@ -1551,6 +1551,26 @@
             本周期的结束时间。空表示无结束时间。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetShoppingItemsByIdsParamsDto">
+            <summary>
+            按指定TId获取商品配置数据功能的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetShoppingItemsByIdsParamsDto.TIds">
+            <summary>
+            要过滤的TId集合。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetShoppingItemsByIdsReturnDto">
+            <summary>
+            按指定TId获取商品配置数据功能的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetShoppingItemsByIdsReturnDto.ShoppingItemStates">
+            <summary>
+            购买商品的状态集合。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.MakeReadAndPickUpParamsDto">
             <summary>
             标记邮件为已读状态，且如果有附件则领取附件功能的参数封装类。

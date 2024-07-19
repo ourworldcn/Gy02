@@ -174,7 +174,7 @@ namespace GY02.Commands
                     commandShopping = new ShoppingBuyCommand
                     {
                         GameChar = command.GameChar,
-                        ShoppingItemTId = Guid.Parse("e1e368b4-acfa-4412-ad1b-e3d1215be199"),
+                        ShoppingItemTId = Guid.Parse("95f0e2cf-757a-4668-aab3-d91db54d1e19"),
                         Count = 1,
                         Changes = changes,
                     };

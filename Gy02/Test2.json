@@ -1,26 +1,5 @@
 {
-  "Items": [
-    {
-      "Rewards": [
-        {
-          "ParentTId": "0Vo6EvDU2UyavNRAQZ2eDQ==",
-          "TId": "JF9XyT2jukmxMCm2/01ixw==",
-          "Count": 10,
-          "AddPropDic": {}
-        }
-      ],
-      "IsCompleted": true,
-      "IsPicked": true,
-      "Level": 1
-    }
-  ],
-  "TIdsOfCreatedIds": [],
-  "ClientDictionary": {},
-  "CompositingAccruedCost": [],
-  "lv": 1,
-  "LastModifyDateTime": "2024-06-12T11:32:22.16233Z",
-  "IsValid": true,
-  "LvUpAccruedCost": [],
-  "CountOfLastModifyUtc": "2024-07-12T11:08:00.788256Z",
-  "Fcps": {}
+  "Genus": [ "gq_pt" ],
+  "Ins": null,
+  "PataOutIds": [ "e6a86c16-0d66-499a-8d90-8e1353e3e876", "f3f9cc6c-7a6d-4f49-a944-3ec54f589de8", "7df94606-e986-4dd1-9826-dc458a204c6d" ]
 }

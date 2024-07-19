@@ -284,7 +284,7 @@ namespace OW.Game.Entity
         /// <summary>
         /// 爬塔信息。
         /// </summary>
-        public TowerInfo TowerInfo { get; set; }
+        public TowerInfo TowerInfo { get; set; } = new TowerInfo();
 
         #endregion 战斗相关
 
