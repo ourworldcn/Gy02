@@ -70,18 +70,20 @@ namespace GY02.Commands
     /// </summary>
     public class EndCombatHandler : SyncCommandHandlerBase<EndCombatCommand>, IGameCharHandler<EndCombatCommand>
     {
-        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager)
+        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEventManager eventManager)
         {
             _AccountStore = gameAccountStore;
             _EntityManager = gameEntityManager;
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
+            _EventManager = eventManager;
         }
 
         GameAccountStoreManager _AccountStore;
         GameEntityManager _EntityManager;
         SyncCommandManager _SyncCommandManager;
         GameTemplateManager _TemplateManager;
+        GameEventManager _EventManager;
 
         public GameAccountStoreManager AccountStore => _AccountStore;
 
@@ -97,7 +99,7 @@ namespace GY02.Commands
                 command.DebugMessage = $"客户端指定战斗模板Id={command.CombatTId},但用户实际的战斗模板Id={command.GameChar.CombatTId}";
                 return;
             }
-
+            var now = OwHelper.WorldNow;
             var gc = command.GameChar;
             #region 爬塔相关
             var tt = _TemplateManager.GetFullViewFromId(command.CombatTId);
@@ -204,6 +206,14 @@ namespace GY02.Commands
                     }
                     command.Changes.AddRange(changes);
                 }
+                //事件
+                SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, now, null);
+                //竞技场挑战次数的事件	7f6482c8-511a-477e-ab79-ce0d8b7643ca
+                _EventManager.SendEvent(Guid.Parse("7f6482c8-511a-477e-ab79-ce0d8b7643ca"), 1, context);
+
+                //竞技场获胜次数的事件 f619df3b-3475-4b28-b291-48aa9014ae7c
+                if (command.IsSuccess) _EventManager.SendEvent(Guid.Parse("f619df3b-3475-4b28-b291-48aa9014ae7c"), 1, context);
+
             }
 
             #endregion 爬塔相关
