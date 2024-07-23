@@ -428,7 +428,11 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var op = mapper.Map<GameCombatManagerOptions>(new Dictionary<string, object>() { { "TowerUpCount", 30 } });
+                var web = new HttpClient() { };
+
+                using var file = new StreamContent(File.Open("d:\\testup.txt", FileMode.Open)) { };
+                var r = web.PostAsync("http://localhost:20082", file);
+                var s1 = r.Result;
             }
             #endregion 测试用代码
             catch (Exception)
