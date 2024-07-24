@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.SyncCommand;
+using System;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Controllers
@@ -178,9 +179,10 @@ namespace GY02.Controllers
                 return result;
             }
             var now = OwHelper.WorldNow.Date;
-            if (!gc.TowerInfo.NormalId.HasValue || !gc.TowerInfo.RefreshDateTime.HasValue || gc.TowerInfo.RefreshDateTime.Value.Date != now)   //若需要免费刷新
+            if (!gc.TowerInfo.NormalId.HasValue || !gc.TowerInfo.RefreshDateTime.HasValue || gc.TowerInfo.RefreshDateTime.Value.Date != now ||
+                gc.TowerInfo.IsEasyDone.HasValue && gc.TowerInfo.IsNormalDone.HasValue && gc.TowerInfo.IsHardDone.HasValue)   //若需要免费刷新
             {
-                var ids = _GameCombatManager.GetNewLevel(Guid.Empty);
+                var ids = _GameCombatManager.GetNewLevel(ph.Count == 0 ? Guid.Empty : _GameCombatManager.Towers[(int)ph.Count - 1].TemplateId);
                 gc.TowerInfo.RefreshDateTime = now;
                 gc.TowerInfo.EasyId = ids.Item1;
                 gc.TowerInfo.IsEasyDone = null;
