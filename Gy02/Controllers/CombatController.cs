@@ -193,20 +193,29 @@ namespace GY02.Controllers
             }
             else if (model.ForceRefresh) //若需要强制刷新
             {
-                var commandRefresh = new ShoppingBuyCommand
+                //var commandRefresh = new ShoppingBuyCommand
+                //{
+                //    GameChar = gc,
+                //    Count = 1,
+                //    ShoppingItemTId = Guid.Parse("E7A0E2A3-304E-4D19-84A4-14128650B152"),
+                //};
+                //_SyncCommandManager.Handle(commandRefresh);
+                //if (commandRefresh.HasError)
+                //{
+                //    result.FillErrorFrom(commandRefresh);
+                //    result.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
+                //    return result;
+                //}
+                //_Mapper.Map(commandRefresh.Changes, result.Changes);
+                var pataShua = _EntityManager.GetEntity(_EntityManager.GetAllEntity(gc),
+                    new GameEntitySummary { TId = Guid.Parse("0fa37f44-9977-4a17-abf3-936caf425c9c") });    //爬塔刷新币
+                if (pataShua is null || pataShua.Count <= 0)
                 {
-                    GameChar = gc,
-                    Count = 1,
-                    ShoppingItemTId = Guid.Parse("E7A0E2A3-304E-4D19-84A4-14128650B152"),
-                };
-                _SyncCommandManager.Handle(commandRefresh);
-                if (commandRefresh.HasError)
-                {
-                    result.FillErrorFrom(commandRefresh);
+                    result.HasError = true;
+                    result.DebugMessage = "爬塔刷新币不足。";
                     result.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
                     return result;
                 }
-                _Mapper.Map(commandRefresh.Changes, result.Changes);
                 var ids = _GameCombatManager.GetNewLevel(ph.Count == 0 ? Guid.Empty : _GameCombatManager.Towers[(int)ph.Count - 1].TemplateId);
                 gc.TowerInfo.RefreshDateTime = now;
                 gc.TowerInfo.EasyId = ids.Item1;

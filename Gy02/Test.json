@@ -1,27 +1,30 @@
 {
-  "Subject": "Welcome to the open beta",
-  "Body": "Hi heroes,\r\nTo celebrate the official launch of the paid closed beta test of \u0022Animals BAM BAM\u0022 today, and to thank you for your enthusiasm and support, we hereby offer you [100 diamonds]. \r\nWish all heroes an enjoyable gaming experience!",
-  "Attachment": [
-    {
-      "TId": "JF9XyT2jukmxMCm2/01ixw==",
-      "Count": 100,
-      "AddPropDic": {}
-    }
-  ],
-  "From": "c9cf7988-5be9-4230-bd79-e34d59116c0d",
-  "Dictionary1": {
-    "Chinese": "\u6B22\u8FCE\u53C2\u52A0\u516C\u5F00\u6D4B\u8BD5",
-    "Filipino": "Welcome sa pagsali sa open beta",
-    "Indonesian": "Selamat datang di beta publik",
-    "Malay": "Selamat datang ke Beta Terbuka",
-    "Thai": "\u0E22\u0E34\u0E19\u0E14\u0E35\u0E15\u0E49\u0E2D\u0E19\u0E23\u0E31\u0E1A\u0E2A\u0E39\u0E48\u0E01\u0E32\u0E23\u0E17\u0E14\u0E2A\u0E2D\u0E1A\u0E40\u0E1A\u0E15\u0E49\u0E32"
-  },
-  "Dictionary2": {
-    "Chinese": "\u55E8 \u82F1\u96C4\uFF0C\r\n\u4E3A\u4E86\u5E86\u795D\u300AAnimals BAMBAM\u300B \u4ECA\u65E5\u6B63\u5F0F\u5F00\u542F\u4ED8\u8D39\u5220\u6863\u6D4B\u8BD5\uFF0C\u4E3A\u4E86\u611F\u8C22\u5927\u5BB6\u7684\u70ED\u60C5\u4E0E\u652F\u6301\uFF0C\u6211\u4EEC\u7279\u6B64\u5949\u4E0A\u3010\u94BB\u77F3*100\u3011\u3002\r\n\u795D\u5404\u4F4D\u82F1\u96C4\u6E38\u620F\u6109\u5FEB\uFF01",
-    "Filipino": "Kamusta Mga Hero,\r\nPara ipagdiwang ang opisyal na paglulunsad ng paid closed beta test ng \u0022Animals BAM BAM\u0022 ngayon, at para pasalamatan ka para sa iyong suporta at sigasig, kami ay nag-aalok sa iyo ng [100 diamonds] \r\nHangad namin na lahat ng mga hero ay makakaranas ng mahusay na karanasan sa paglalaro!",
-    "Indonesian": "Hai, pahlawan!\r\nUntuk merayakan peluncuran resmi beta berbayar penghapusan data \u0022Animals BAMBAM\u0022 hari ini, dan untuk berterima kasih kepada semua orang atas antusiasme dan dukungannya, dengan ini kami berikan [Diamond*100]. \r\nSelamat bermain, para pahlawan!",
-    "Malay": "Hai, para wira,\r\nUntuk meraikan permulaan rasmi ujian beta berbayar \u0022Animals BAM BAM\u0022 hari ini serta mengucapkan terima kasih atas semangat dan sokongan para wira, kami akan menghadiahkan [Berlian * 100]. \r\nPara wira, selamat bermain!",
-    "Thai": "\u0E2A\u0E27\u0E31\u0E2A\u0E14\u0E35 \u0E2E\u0E35\u0E42\u0E23\u0E48\r\n\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E09\u0E25\u0E2D\u0E07\u0E40\u0E1B\u0E34\u0E14\u0E43\u0E2B\u0E49\u0E17\u0E14\u0E2A\u0E2D\u0E1A\u0E25\u0E1A\u0E44\u0E1F\u0E25\u0E4C\u0E41\u0E1A\u0E1A\u0E0A\u0E33\u0E23\u0E30\u0E40\u0E07\u0E34\u0E19\u0E40\u0E01\u0E21 \u0022Animals BAMBAM\u0022 \u0E2D\u0E22\u0E48\u0E32\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E43\u0E19\u0E27\u0E31\u0E19\u0E19\u0E35\u0E49 \u0E41\u0E25\u0E30\u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E02\u0E2D\u0E1A\u0E04\u0E38\u0E13\u0E2A\u0E33\u0E2B\u0E23\u0E31\u0E1A\u0E04\u0E27\u0E32\u0E21\u0E01\u0E23\u0E30\u0E15\u0E37\u0E2D\u0E23\u0E37\u0E2D\u0E23\u0E49\u0E19\u0E41\u0E25\u0E30\u0E01\u0E32\u0E23\u0E2A\u0E19\u0E31\u0E1A\u0E2A\u0E19\u0E38\u0E19\u0E08\u0E32\u0E01\u0E17\u0E38\u0E01\u0E04\u0E19 \u0E40\u0E23\u0E32\u0E08\u0E36\u0E07\u0E02\u0E2D\u0E21\u0E2D\u0E1A [\u0E40\u0E1E\u0E0A\u0E23*100] \u0E43\u0E2B\u0E49\u0E01\u0E31\u0E1A\u0E04\u0E38\u0E13 \r\n\u0E02\u0E2D\u0E43\u0E2B\u0E49\u0E2E\u0E35\u0E42\u0E23\u0E48\u0E17\u0E38\u0E01\u0E17\u0E48\u0E32\u0E19\u0E2A\u0E19\u0E38\u0E01\u0E01\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E40\u0E25\u0E48\u0E19\u0E40\u0E01\u0E21\u0E19\u0E30!"
-  },
-  "SendUtc": "2024-06-07T03:23:09.8483493Z"
+  "Genus": [ "gs_jingjichang" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-09T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "1d",
+      "ValidPeriodString": "1d"
+    },
+    "GroupNumber": 0,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": null,
+            "Genus": [],
+            "TId": "3184aa4c-1467-4484-ad03-d23d7bcc638e",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 1,
+        "Genus": []
+      }
+    ],
+    "Outs": []
+  }
 }

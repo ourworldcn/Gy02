@@ -1,5 +1,23 @@
 {
-  "Genus": [ "gq_pt" ],
-  "Ins": null,
-  "PataOutIds": [ "e6a86c16-0d66-499a-8d90-8e1353e3e876", "f3f9cc6c-7a6d-4f49-a944-3ec54f589de8", "7df94606-e986-4dd1-9826-dc458a204c6d" ]
+  "SequenceOut": {
+    "Conditions": [
+      {
+        "ParentTId": null,
+        "Genus": [],
+        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+        "MinCount": 0,
+        "GeneralConditional": [],
+        "GroupMask": 3
+      }
+    ],
+    "GetIndexExpression": {
+      "op": "GetBuyedCount",
+      "args": [ "E7A0E2A3-304E-4D19-84A4-14128650B152" ]
+    },
+    "Outs": {
+      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d", "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
+      "TIds": [ "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "1de88b53-e5bf-4a60-9dfb-90284b94bdab", "c9575f24-a33d-49ba-b130-29b6ff4d62c7" ],
+      "Counts": [ 1, 1, 30 ]
+    }
+  }
 }
