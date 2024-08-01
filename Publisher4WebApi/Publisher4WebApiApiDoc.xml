@@ -2372,6 +2372,162 @@
             生成的码的集合。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.GetT0314TapTapOrderParamsDto">
+            <summary>
+            查询TapTap订单信息的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetT0314TapTapOrderParamsDto.OrderId">
+            <summary>
+            要查询的订单Id。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.GetT0314TapTapOrderReturnDto">
+            <summary>
+            查询TapTap订单信息返回值封装类。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.CreateT0314TapTapOrderParamsDto">
+            <summary>
+            创建T0314TapTap订单的参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CreateT0314TapTapOrderParamsDto.GoodsTId">
+            <summary>
+            要购买商品的Id。数量恒定为1。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.CreateT0314TapTapOrderReturnDto">
+            <summary>
+            创建T0314TapTap订单的返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.CreateT0314TapTapOrderReturnDto.OrderId">
+            <summary>
+            生成订单的Id。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.TapTapPayedOrderDto">
+            <summary>
+            Taptap支付回调的订单信息。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.OrderId">
+            <summary>
+            订单唯一 ID
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.PurchaseToken">
+            <summary>
+            用于订单核销的 token。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.ClientId">
+            <summary>
+            应用的 Client ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.OpenId">
+            <summary>
+            用户的开放平台 ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.UserRegion">
+            <summary>
+            用户地区。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.GoodsOpenId">
+            <summary>
+            商品唯一。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.GoodsName">
+            <summary>
+            商品名称。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.Status">
+            <summary>
+            订单状态。
+            charge.pending	待支付
+            charge.succeeded 支付成功
+            charge.confirmed 已核销
+            charge.overdue 支付超时关闭
+            refund.pending 退款中
+            refund.succeeded 退款成功
+            refund.failed 退款失败
+            refund.rejected 退款被拒绝
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.Amount">
+            <summary>
+            金额（本币金额 x 1,000,000）。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.StandardAmount">
+            <summary>
+            标准法币金额，主货币单位为基准，如1.99表示1.99主货币单位。
+            若<see cref="P:GY02.Publisher.TapTapPayedOrderDto.Amount"/>是非法值则返回0.
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.Currency">
+            <summary>
+            币种。
+            </summary>
+            <remarks>TapTap Payments 支持全球 173 个国家地区和 40 多种货币。
+            在 本地货币不支持的国家地区，或在开发者没有设定价格的国家地区中，用户将以美元（USD）进行付款。
+            另外，大部分货币为二位十进制货币，例如 USD 0.99，而另一部分则是零位十进制货币，例如 JPY 130。请在设置价格时参照以下标准：</remarks>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.CreateTime">
+            <summary>
+            创建时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.PayTime">
+            <summary>
+            支付时间。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.TapTapPayedOrderDto.Extra">
+            <summary>
+            商户自定义数据，如角色信息等，长度不超过 255 UTF-8 字符。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.T0314TapTapPayedParamsDto">
+            <summary>
+            Taptap支付回调参数封装类。
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="P:GY02.Publisher.T0314TapTapPayedParamsDto.Order">
+            <summary>
+            对象结构。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T0314TapTapPayedParamsDto.EventType">
+            <summary>
+            对象结构。
+            charge.succeeded	充值成功
+            refund.succeeded 退款成功
+            refund.failed 退款失败
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.T0314TapTapPayedReturnDto">
+            <summary>
+            Taptap支付回调返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T0314TapTapPayedReturnDto.Code">
+            <summary>
+            状态码，SUCCESS 为接收成功，FAIL 或其他均认为失败。必须填写。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T0314TapTapPayedReturnDto.Msg">
+            <summary>
+            当接收失败时需返回失败原因。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.GetT0314OrderParamsDto">
             <summary>
             获取指定订单功能参数封装类。

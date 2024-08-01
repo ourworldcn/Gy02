@@ -34,6 +34,7 @@ using System;
 using System.Buffers;
 using System.Buffers.Text;
 using System.Collections.Concurrent;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Globalization;
@@ -429,10 +430,6 @@ namespace GY02
             try
             {
                 var web = new HttpClient() { };
-
-                using var file = new StreamContent(File.Open("d:\\testup.txt", FileMode.Open)) { };
-                var r = web.PostAsync("http://localhost:20082", file);
-                var s1 = r.Result;
             }
             #endregion 测试用代码
             catch (Exception)

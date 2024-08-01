@@ -4,6 +4,7 @@ using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
+using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -149,6 +150,9 @@ namespace Gy02.Controllers
             }
             order.Confirm2 = true;
             if (order.Confirm1) order.State = 1;
+            //容错
+            order.Currency ??= model.PayCurrency;
+            if (order.Amount == 0 && decimal.TryParse(model.PayAmount, out var amount1)) order.Amount = amount1;
             db.SaveChanges();
             _Logger.LogDebug("订单已经成功入库,Id={id}", model.CpOrderNo);
             return "SUCCESS";
@@ -498,6 +502,69 @@ namespace Gy02.Controllers
             return result;
         }
 
+        #region TapTap相关
+        /*
+         * https://m60bysk56u.feishu.cn/docx/ZWPkd11xso08ZSxYyDTcr10dnoc?from=from_copylink
+         * https://developer.taptap.io/docs/zh-Hans/sdk/
+         * https://developer.taptap.io/docs/zh-Hans/tap-download/
+        */
+
+        /// <summary>
+        /// Taptap支付回调。
+        /// </summary>
+        /// <remarks>参考 https://developer.taptap.io/docs/zh-Hans/sdk/TapPayments/develop/server/
+        /// POST[application/json; charset=utf-8]
+        /// 同样的通知可能会多次发送，商户系统必须正确处理重复通知。
+        /// 推荐做法是：当商户系统收到通知时，首先进行签名验证，然后检查对应业务数据的状态，如未处理，则进行处理；如已处理，则直接返回成功。
+        /// 在处理业务数据时建议采用数据锁进行并发控制，以避免可能出现的数据异常。</remarks>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<T0314TapTapPayedReturnDto> T0314TapTapPayed(T0314TapTapPayedParamsDto model)
+        {
+            var result = new T0314TapTapPayedReturnDto();
+            return result;
+        }
+
+        /// <summary>
+        /// 创建 T0314TapTap 订单。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <response code="401">无效令牌。</response> 
+        [HttpPost]
+        public ActionResult<CreateT0314TapTapOrderReturnDto> CreateT0314TapTapOrder(CreateT0314TapTapOrderParamsDto model)
+        {
+            var result = new CreateT0314TapTapOrderReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 查询TapTap订单信息。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <response code="401">无效令牌。</response> 
+        [HttpGet]
+        public ActionResult<GetT0314TapTapOrderReturnDto> GetT0314TapTapOrder([FromQuery] GetT0314TapTapOrderParamsDto model)
+        {
+            var result = new GetT0314TapTapOrderReturnDto();
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            return result;
+        }
+        #endregion TapTap相关
 
     }
 

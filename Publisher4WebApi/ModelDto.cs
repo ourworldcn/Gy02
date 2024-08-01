@@ -2026,7 +2026,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 按指定TId获取商品配置数据功能的参数封装类。
     /// </summary>
-    public class GetShoppingItemsByIdsParamsDto: TokenDtoBase
+    public class GetShoppingItemsByIdsParamsDto : TokenDtoBase
     {
         /// <summary>
         /// 要过滤的TId集合。
@@ -2037,7 +2037,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 按指定TId获取商品配置数据功能的返回值封装类。
     /// </summary>
-    public class GetShoppingItemsByIdsReturnDto: ReturnDtoBase
+    public class GetShoppingItemsByIdsReturnDto : ReturnDtoBase
     {
         /// <summary>
         /// 购买商品的状态集合。
@@ -3080,6 +3080,194 @@ namespace GY02.Publisher
     #endregion 兑换码相关
 
     #region 0314相关
+
+    #region 0314TapTap相关
+
+    /// <summary>
+    /// 查询TapTap订单信息的参数封装类。
+    /// </summary>
+    public class GetT0314TapTapOrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要查询的订单Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
+    /// <summary>
+    /// 查询TapTap订单信息返回值封装类。
+    /// </summary>
+    public class GetT0314TapTapOrderReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
+    /// 创建T0314TapTap订单的参数封装类。
+    /// </summary>
+    public class CreateT0314TapTapOrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要购买商品的Id。数量恒定为1。
+        /// </summary>
+        public Guid GoodsTId { get; set; }
+    }
+
+    /// <summary>
+    /// 创建T0314TapTap订单的返回值封装类。
+    /// </summary>
+    public class CreateT0314TapTapOrderReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 生成订单的Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
+    /// <summary>
+    /// Taptap支付回调的订单信息。
+    /// </summary>
+    public class TapTapPayedOrderDto
+    {
+
+        /// <summary>
+        /// 订单唯一 ID
+        /// </summary>
+        [JsonPropertyName("order_id")]
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// 用于订单核销的 token。
+        /// </summary>
+        [JsonPropertyName("purchase_token")]
+        public string PurchaseToken { get; set; }
+
+        /// <summary>
+        /// 应用的 Client ID。
+        /// </summary>
+        [JsonPropertyName("client_id")]
+        public string ClientId { get; set; }
+
+        /// <summary>
+        /// 用户的开放平台 ID。
+        /// </summary>
+        [JsonPropertyName("open_id")]
+        public string OpenId { get; set; }
+
+        /// <summary>
+        /// 用户地区。
+        /// </summary>
+        [JsonPropertyName("user_region")]
+        public string UserRegion { get; set; }
+
+        /// <summary>
+        /// 商品唯一。
+        /// </summary>
+        [JsonPropertyName("goods_open_id")]
+        public string GoodsOpenId { get; set; }
+
+        /// <summary>
+        /// 商品名称。
+        /// </summary>
+        [JsonPropertyName("goods_name")]
+        public string GoodsName { get; set; }
+
+        /// <summary>
+        /// 订单状态。
+        /// charge.pending	待支付
+        /// charge.succeeded 支付成功
+        /// charge.confirmed 已核销
+        /// charge.overdue 支付超时关闭
+        /// refund.pending 退款中
+        /// refund.succeeded 退款成功
+        /// refund.failed 退款失败
+        /// refund.rejected 退款被拒绝
+        /// </summary>
+        [JsonPropertyName("status")]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// 金额（本币金额 x 1,000,000）。
+        /// </summary>
+        [JsonPropertyName("amount")]
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// 标准法币金额，主货币单位为基准，如1.99表示1.99主货币单位。
+        /// 若<see cref="Amount"/>是非法值则返回0.
+        /// </summary>
+        public decimal StandardAmount { get => decimal.TryParse(Amount, out var result) ? result / 1_000_000 : decimal.Zero; }
+
+        /// <summary>
+        /// 币种。
+        /// </summary>
+        /// <remarks>TapTap Payments 支持全球 173 个国家地区和 40 多种货币。
+        /// 在 本地货币不支持的国家地区，或在开发者没有设定价格的国家地区中，用户将以美元（USD）进行付款。
+        /// 另外，大部分货币为二位十进制货币，例如 USD 0.99，而另一部分则是零位十进制货币，例如 JPY 130。请在设置价格时参照以下标准：</remarks>
+        [JsonPropertyName("currency")]
+        public string Currency { get; set; }
+
+        /// <summary>
+        /// 创建时间。
+        /// </summary>
+        [JsonPropertyName("create_time")]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 支付时间。
+        /// </summary>
+        [JsonPropertyName("pay_time")]
+        public string PayTime { get; set; }
+
+        /// <summary>
+        /// 商户自定义数据，如角色信息等，长度不超过 255 UTF-8 字符。
+        /// </summary>
+        [JsonPropertyName("extra")]
+        public string Extra { get; set; }
+
+    }
+
+    /// <summary>
+    /// Taptap支付回调参数封装类。
+    /// </summary>
+    /// <remarks></remarks>
+    public class T0314TapTapPayedParamsDto
+    {
+        /// <summary>
+        /// 对象结构。
+        /// </summary>
+        [JsonPropertyName("order")]
+        public TapTapPayedOrderDto Order { get; set; }
+
+        /// <summary>
+        /// 对象结构。
+        /// charge.succeeded	充值成功
+        /// refund.succeeded 退款成功
+        /// refund.failed 退款失败
+        /// </summary>
+        [JsonPropertyName("event_type")]
+        public string EventType { get; set; }
+    }
+
+    #endregion 0314TapTap相关
+
+    /// <summary>
+    /// Taptap支付回调返回值封装类。
+    /// </summary>
+    public class T0314TapTapPayedReturnDto
+    {
+        /// <summary>
+        /// 状态码，SUCCESS 为接收成功，FAIL 或其他均认为失败。必须填写。
+        /// </summary>
+        [JsonPropertyName("code")]
+        public string Code { get; set; }
+
+        /// <summary>
+        /// 当接收失败时需返回失败原因。
+        /// </summary>
+        [JsonPropertyName("msg")]
+        public string Msg { get; set; }
+
+    }
 
     /// <summary>
     /// 获取指定订单功能参数封装类。
