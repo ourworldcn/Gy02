@@ -3099,6 +3099,15 @@ namespace GY02.Publisher
     /// </summary>
     public class GetT0314TapTapOrderReturnDto : PropertyChangeReturnDto
     {
+        /// <summary>
+        /// 订单信息对象。返回时，其中 States 0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+        /// </summary>
+        public GameShoppingOrderDto Order { get; set; }
+
+        /// <summary>
+        /// 获取奖品的预览数据。仅当Order.States =1 时才有意义。
+        /// </summary>
+        public List<GameEntitySummaryDto> EntitySummaryDtos { get; set; } = new List<GameEntitySummaryDto>();
     }
 
     /// <summary>
@@ -3109,7 +3118,7 @@ namespace GY02.Publisher
         /// <summary>
         /// 要购买商品的Id。数量恒定为1。
         /// </summary>
-        public Guid GoodsTId { get; set; }
+        public Guid ShoppingItemTId { get; set; }
     }
 
     /// <summary>

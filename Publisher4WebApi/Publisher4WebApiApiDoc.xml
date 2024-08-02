@@ -2387,12 +2387,22 @@
             查询TapTap订单信息返回值封装类。
             </summary>
         </member>
+        <member name="P:GY02.Publisher.GetT0314TapTapOrderReturnDto.Order">
+            <summary>
+            订单信息对象。返回时，其中 States 0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.GetT0314TapTapOrderReturnDto.EntitySummaryDtos">
+            <summary>
+            获取奖品的预览数据。仅当Order.States =1 时才有意义。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.CreateT0314TapTapOrderParamsDto">
             <summary>
             创建T0314TapTap订单的参数封装类。
             </summary>
         </member>
-        <member name="P:GY02.Publisher.CreateT0314TapTapOrderParamsDto.GoodsTId">
+        <member name="P:GY02.Publisher.CreateT0314TapTapOrderParamsDto.ShoppingItemTId">
             <summary>
             要购买商品的Id。数量恒定为1。
             </summary>

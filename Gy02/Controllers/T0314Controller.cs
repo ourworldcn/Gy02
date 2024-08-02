@@ -522,6 +522,8 @@ namespace Gy02.Controllers
         public ActionResult<T0314TapTapPayedReturnDto> T0314TapTapPayed(T0314TapTapPayedParamsDto model)
         {
             var result = new T0314TapTapPayedReturnDto();
+
+            result.Code = "SUCCESS";
             return result;
         }
 
@@ -542,6 +544,36 @@ namespace Gy02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
+            using var db = _DbContextFactory.CreateDbContext();
+
+            GameShoppingOrder order = new GameShoppingOrder()
+            {
+                Confirm1 = true,
+                CustomerId = gc.GetThing().IdString,
+            };
+
+            #region 初始化数据对象信息
+            var jo = order.GetJsonObject<T0314JObject>();
+            jo.TId = model.ShoppingItemTId;
+            jo.IsClientCreate = true;
+            if (_TemplateManager.GetFullViewFromId(model.ShoppingItemTId) is not TemplateStringFullView tt)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+            if (!_SpecialManager.Transformed(tt, list, gc))
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            jo.EntitySummaries.AddRange(list.SelectMany(c => c.Item2));
+            #endregion 初始化数据对象信息
+
+            db.Add(order);
+            db.SaveChanges();
+            result.OrderId = order.Id;
+
             return result;
         }
 
@@ -562,6 +594,38 @@ namespace Gy02.Controllers
                 result.FillErrorFromWorld();
                 return result;
             }
+            var now = OwHelper.WorldNow;
+            var endDt = now + TimeSpan.FromSeconds(6);
+            using var db = _DbContextFactory.CreateDbContext();
+            GameShoppingOrder? order = null;
+            for (var tmp = now; tmp <= endDt; tmp = OwHelper.WorldNow)
+            {
+                order = db.ShoppingOrder.Find(model.OrderId);
+                if (order is null)
+                {
+                    //result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    //result.DebugMessage = $"无此订单，{nameof(model.OrderId)}={model.OrderId}";
+                    //result.HasError = true;
+                    Thread.Sleep(500);
+                    continue;
+                }
+                if (order.State == 0)
+                {
+                    Thread.Sleep(500);
+                    continue;
+                }
+                if (Guid.TryParse(order.CustomerId, out var gcId))
+                    if (gcId != gc.Id)    //若不是自己的订单
+                    {
+                        result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                        result.DebugMessage = $"只能查询自己的订单。";
+                        result.HasError = true;
+                        return result;
+                    }
+                result.Order = _Mapper.Map<GameShoppingOrderDto>(order);
+
+            }
+            //_Mapper.Map(command.Changes, result.Order.Changes);
             return result;
         }
         #endregion TapTap相关
