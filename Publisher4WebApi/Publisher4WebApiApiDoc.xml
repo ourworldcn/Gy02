@@ -2523,6 +2523,12 @@
             refund.failed 退款失败
             </summary>
         </member>
+        <member name="M:GY02.Publisher.T0314TapTapPayedParamsDto.GetDic">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:GY02.Publisher.T0314TapTapPayedReturnDto">
             <summary>
             Taptap支付回调返回值封装类。

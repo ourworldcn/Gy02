@@ -3255,6 +3255,21 @@ namespace GY02.Publisher
         /// </summary>
         [JsonPropertyName("event_type")]
         public string EventType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public IDictionary<string,string> GetDic()
+        {
+            var dic = new Dictionary<string, string>();
+            var coll = GetType().GetProperties().Select(c =>
+            {
+                var name = c.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? c.Name;
+                return (name, c.GetValue(this)?.ToString());
+            });
+            return coll.ToDictionary(c => c.name, c => c.Item2);
+        }
     }
 
     #endregion 0314TapTap相关

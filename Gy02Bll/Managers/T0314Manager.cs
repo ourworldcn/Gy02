@@ -547,6 +547,11 @@ namespace GY02.Managers
         /// 获取购买得到的物品摘要。
         /// </summary>
         public List<GameEntitySummary> EntitySummaries { get; set; } = new List<GameEntitySummary>();
+
+        /// <summary>
+        /// 扩展字符串，通常放置 实际发放物品的变化数据。
+        /// </summary>
+        public string ExtraString { get; set; }
     }
 
     //public class T0314PayReturnStringDto

@@ -17,6 +17,7 @@ using OW.Game.Store;
 using OW.SyncCommand;
 using System;
 using System.Linq.Expressions;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace Gy02.Controllers
@@ -522,8 +523,110 @@ namespace Gy02.Controllers
         public ActionResult<T0314TapTapPayedReturnDto> T0314TapTapPayed(T0314TapTapPayedParamsDto model)
         {
             var result = new T0314TapTapPayedReturnDto();
+            _Logger.LogInformation("收到支付确认，参数:{str}", JsonSerializer.Serialize(model));
+            if (model.EventType == "charge.succeeded")   //充值成功
+            {
+                if (!Guid.TryParse(model.Order.Extra, out var orderId))
+                {
+                    var errMsg = $"{nameof(model.Order.Extra)} = {model.Order.Extra} ,不是要求的格式。";
+                    _Logger.LogWarning(errMsg);
+                    result.Code = "FAIL";
+                    result.Msg = errMsg;
+                    return result;
+                }
+                using var db = _DbContextFactory.CreateDbContext();
+                if (db.ShoppingOrder.Find(orderId) is not GameShoppingOrder order)  //若找不到订单
+                {
+                    var errMsg = $"找不到指定订单 Id = {orderId} 。";
+                    _Logger.LogWarning(errMsg);
+                    result.Code = "FAIL";
+                    result.Msg = errMsg;
+                    return result;
+                }
+                order.Amount = decimal.TryParse(model.Order.Amount, out var amount) ? amount : 0;
+                order.Currency = model.Order.Currency;
+                order.Confirm2 = true;
+                if (order.Confirm1) order.State = 1;
+                if (!Guid.TryParse(order.CustomerId, out var gcId))
+                {
+                    var errMsg = $"{nameof(order.CustomerId)} = {order.CustomerId} ,不是要求的格式。";
+                    _Logger.LogWarning(errMsg);
+                    result.Code = "FAIL";
+                    result.Msg = errMsg;
+                    return result;
+                }
+                var guThing = db.VirtualThings.FirstOrDefault(c => c.Id == gcId)?.Parent;
+                if (guThing is null)
+                {
+                    var errMsg = $"找不到用户。";
+                    _Logger.LogWarning(errMsg);
+                    result.Code = "FAIL";
+                    result.Msg = errMsg;
+                    return result;
+                }
 
-            result.Code = "SUCCESS";
+                using var dwKey = _GameAccountStore.GetOrLoadUser(guThing.IdString, out var gu);
+                if (dwKey.IsEmpty)
+                {
+                    var errMsg = $"无法找到指定用户。key={guThing.IdString as string}";
+                    _Logger.LogWarning(errMsg);
+                    result.Code = "FAIL";
+                    result.Msg = errMsg;
+                    return result;
+                }
+                if (order.State == 1)  //若已经完成则发送物品
+                {
+                    var gc = gu.CurrentChar;
+                    #region 初始化数据对象信息
+                    var jo = order.GetJsonObject<T0314JObject>();
+                    if (_TemplateManager.GetFullViewFromId(jo.TId) is not TemplateStringFullView tt)
+                    {
+                        var errMsg = OwHelper.GetLastErrorMessage();
+                        _Logger.LogWarning(errMsg);
+                        result.Code = "FAIL";
+                        result.Msg = errMsg;
+                        return result;
+                    }
+                    var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+                    var command = new ShoppingBuyCommand
+                    {
+                        ShoppingItemTId = jo.TId,
+                        Count = 1,
+                        GameChar = gc,
+                    };
+                    _SyncCommandManager.Handle(command);
+                    if (command.HasError)
+                    {
+                        var errMsg = command.DebugMessage;
+                        _Logger.LogWarning(errMsg);
+                        result.Code = "FAIL";
+                        result.Msg = errMsg;
+                        return result;
+                    }
+                    List<GamePropertyChangeItemDto> changesDto = new List<GamePropertyChangeItemDto>();
+                    _Mapper.Map(command.Changes, changesDto);
+                    jo.ExtraString = JsonSerializer.Serialize(changesDto);
+
+                    #endregion 初始化数据对象信息
+                }
+                db.SaveChanges();
+                result.Code = "SUCCESS";
+            }
+            else if (model.EventType == "refund.succeeded")    //退款成功
+            {
+                result.Code = "SUCCESS";
+
+            }
+            else if (model.EventType == "refund.failed")    //退款失败
+            {
+                result.Code = "SUCCESS";
+
+            }
+            else
+            {
+                _Logger.LogWarning("错误的事件类型，参数:{str}", model.EventType);
+                result.Code = "FAIL";
+            }
             return result;
         }
 
@@ -555,7 +658,7 @@ namespace Gy02.Controllers
             #region 初始化数据对象信息
             var jo = order.GetJsonObject<T0314JObject>();
             jo.TId = model.ShoppingItemTId;
-            jo.IsClientCreate = true;
+            jo.IsClientCreate = false;
             if (_TemplateManager.GetFullViewFromId(model.ShoppingItemTId) is not TemplateStringFullView tt)
             {
                 result.FillErrorFromWorld();
@@ -623,7 +726,8 @@ namespace Gy02.Controllers
                         return result;
                     }
                 result.Order = _Mapper.Map<GameShoppingOrderDto>(order);
-
+                var jo = order.GetJsonObject<T0314JObject>();
+                result.Changes.AddRange(string.IsNullOrWhiteSpace(jo.ExtraString) ? new List<GamePropertyChangeItemDto>() : JsonSerializer.Deserialize<List<GamePropertyChangeItemDto>>(jo.ExtraString)!);
             }
             //_Mapper.Map(command.Changes, result.Order.Changes);
             return result;

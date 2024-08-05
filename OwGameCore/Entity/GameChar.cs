@@ -52,7 +52,7 @@ namespace OW.Game.Entity
         #region 普通属性
 
         /// <summary>
-        /// 角色显示用的名字。就是昵称，不可重复。
+        /// 所属账号的唯一标识。不可重复。
         /// </summary>
         [MaxLength(64)]
         [JsonIgnore]
