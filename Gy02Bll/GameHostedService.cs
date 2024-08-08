@@ -429,7 +429,9 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var web = new HttpClient() { };
+                var cult=new CultureInfo("zh-CN");
+                decimal decm = 1.23m;
+                var str1 = decm.ToString("零0.00",cult);
             }
             #endregion 测试用代码
             catch (Exception)

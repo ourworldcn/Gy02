@@ -5,6 +5,7 @@ using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -511,7 +512,7 @@ namespace Gy02.Controllers
         */
 
         /// <summary>
-        /// Taptap支付回调。
+        /// Taptap支付回调。api/T0314/T0314TapTapPayed。
         /// </summary>
         /// <remarks>参考 https://developer.taptap.io/docs/zh-Hans/sdk/TapPayments/develop/server/
         /// POST[application/json; charset=utf-8]
@@ -522,6 +523,9 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<T0314TapTapPayedReturnDto> T0314TapTapPayed(T0314TapTapPayedParamsDto model)
         {
+            //Client ID：wjy1qtzgcooodm2bc0
+            //Client Token：pFFYR03soMobfFxFgzj8ZNlYT6yNnOJDoTiQSoqs
+            //Server Secret：7OlTx8K5ljSpIkgYfDnhzmhiwHeBndyi
             var result = new T0314TapTapPayedReturnDto();
             _Logger.LogInformation("收到支付确认，参数:{str}", JsonSerializer.Serialize(model));
             if (model.EventType == "charge.succeeded")   //充值成功
@@ -538,6 +542,14 @@ namespace Gy02.Controllers
                 if (db.ShoppingOrder.Find(orderId) is not GameShoppingOrder order)  //若找不到订单
                 {
                     var errMsg = $"找不到指定订单 Id = {orderId} 。";
+                    _Logger.LogWarning(errMsg);
+                    result.Code = "FAIL";
+                    result.Msg = errMsg;
+                    return result;
+                }
+                else if (order.State != 0)  //订单已被入库
+                {
+                    var errMsg = $"订单已被入库，不可重复入库。";
                     _Logger.LogWarning(errMsg);
                     result.Code = "FAIL";
                     result.Msg = errMsg;
@@ -608,19 +620,26 @@ namespace Gy02.Controllers
                     jo.ExtraString = JsonSerializer.Serialize(changesDto);
 
                     #endregion 初始化数据对象信息
+                    db.SaveChanges();
+                    _Logger.LogInformation("单据成功入库，商品已下发");
+                    result.Code = "SUCCESS";
                 }
-                db.SaveChanges();
-                result.Code = "SUCCESS";
+                else
+                {
+                    result.Code = "FAIL";
+                    result.Msg = "订单不存在,请稍后重试！";
+                    _Logger.LogWarning("订单不存在,请稍后重试！");
+                }
             }
             else if (model.EventType == "refund.succeeded")    //退款成功
             {
                 result.Code = "SUCCESS";
-
+                _Logger.LogInformation("退款已记账。");
             }
             else if (model.EventType == "refund.failed")    //退款失败
             {
                 result.Code = "SUCCESS";
-
+                _Logger.LogInformation("退款失败。");
             }
             else
             {
@@ -681,7 +700,7 @@ namespace Gy02.Controllers
         }
 
         /// <summary>
-        /// 查询TapTap订单信息。
+        /// 查询TapTap订单信息。最多6秒返回。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -729,7 +748,6 @@ namespace Gy02.Controllers
                 var jo = order.GetJsonObject<T0314JObject>();
                 result.Changes.AddRange(string.IsNullOrWhiteSpace(jo.ExtraString) ? new List<GamePropertyChangeItemDto>() : JsonSerializer.Deserialize<List<GamePropertyChangeItemDto>>(jo.ExtraString)!);
             }
-            //_Mapper.Map(command.Changes, result.Order.Changes);
             return result;
         }
         #endregion TapTap相关
