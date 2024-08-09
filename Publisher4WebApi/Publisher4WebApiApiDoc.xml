@@ -2297,6 +2297,183 @@
             success表示成功。其他值都是失败。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.T304PayedV2ParamsDto">
+            <summary>
+            储值成功回调参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.UId">
+            <summary>
+            用户在SDK服务器的唯一标识。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.AppId">
+            <summary>
+            应用在SDK平台的唯一标识。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.SdkOrderId">
+            <summary>
+             SDK平台的订单号
+            订阅型商品自动续订成功时，
+            sdkOrderId会新创建，与首次订
+            阅的sdkOrderId不同
+            订阅型商品取消续订时，
+            sdkOrderId同首次订阅一样。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.SubscribeSdkOrderId">
+            <summary>
+            如果该值存在，说明这个是根据之前的一个订阅订单，自动生成的订单
+            取值为之前订阅的一个sdkOrderId
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.Timestamp">
+            <summary>
+            当前时间戳（毫秒）
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.AppOrderId">
+            <summary>
+            应用在游戏服务器的订单号，对应客户端文档的gameOrderId
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.MoneyAmount">
+            <summary>
+            实际支付金额
+            从SDK客户端获取具体值未知，可能随着用户的支付账号、支付地区、支付方式变化
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.MoneyCurrency">
+            <summary>
+            实际支付币种从SDK客户端获取具体值未知，可能随着用户的支付账号、支付地区、支付方式变化
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.OrderAmount">
+            <summary>
+             SDK服务器后台配置的金额配合payType和productId可用于游戏服务器检验订单金额
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.OrderCurrency">
+            <summary>
+             SDK服务器后台配置的币种配合payType和productId可用于游戏服务器检验订单金额
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.ServerId">
+            <summary>
+            游戏服务器ID
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.RoleId">
+            <summary>
+            游戏角色ID
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.PayType">
+            <summary>
+             1:GooglePay
+             2:AppStore
+             3:TStore
+             4:KaKaoGameShop
+             5:WeixinPay
+             6:AliPay
+             7:Paypal
+             11:OneStore
+             12:SheenPay
+             13:MyCardPay
+             14:HuaWeiPay
+             15:DirectnessPay
+             16:PagsmilePay
+             17:RazerPay
+             18:CodaShopPay
+             19:Flexion
+             20:Razershop
+             21:HonorPay
+             22:XsollaPay
+             23:Payletter
+             24:Samsung
+             26:Steam
+             27:PlayStation
+             28:RuStore
+             29:空中云汇Airwallex
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.ProductId">
+            <summary>
+            商品ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.ProductName">
+            <summary>
+            商品名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.ChannelName">
+            <summary>
+            苹果、google等渠道名的缩写。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.ChannelId">
+            <summary>
+            苹果、google等渠道ID。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.ChannelOrderId">
+            <summary>
+            苹果、google等渠道产生的订单号。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.Sandbox">
+            <summary>
+             true：沙箱订单， false：正式订单
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.Subscribe">
+            <summary>
+            该商品是否为订阅商品。如果是订阅商品，不论unsubscribe取何值，subscribe始终为true
+             true：订阅订单， false：非订阅订单
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.Unsubscribe">
+            <summary>
+            当subscribe为true时，unsubscribe的值才需要考虑
+             true：取消订阅
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.PlatformId">
+            <summary>
+              2：ANDROID 3：IOS 4：windows 6：web端储值
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.Sign">
+            <summary>
+             签名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.AppExtraInfo">
+            <summary>
+              游戏透传字段格式为json sdkServerLog为保留的key前缀
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ParamsDto.SdkExtraInfo">
+            <summary>
+             格式为json.
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.T304PayedV2ReturnDto">
+            <summary>
+            储值成功回调返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.T304PayedV2ReturnDto.Code">
+            <summary>
+             操作成功,
+             该接口可能由于网络等问题，重复调用
+             相同订单 sdkOrderId 重复通知时，需要返回 code0
+             除了返回 code0，其他所有情况都算失败，包括网络失败，SDK 服务器会重新划拨
+             游戏服务器需做防重处理。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.T304PayedParamsDto">
             <summary>
             T304完成订单功能参数封装类。
@@ -2523,12 +2700,6 @@
             refund.failed 退款失败
             </summary>
         </member>
-        <member name="M:GY02.Publisher.T0314TapTapPayedParamsDto.GetDic">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:GY02.Publisher.T0314TapTapPayedReturnDto">
             <summary>
             Taptap支付回调返回值封装类。
@@ -2597,6 +2768,36 @@
         <member name="P:GY02.Publisher.CreateT0314OrderReturnDto.OrderNo">
             <summary>
             游戏下单时传递的游戏订单号。客户端要将此参数需要传递给SDK服务器。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.LoginT0314TapTapParamsDto">
+            <summary>
+            T0314 TapTap登录参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT0314TapTapParamsDto.Uid">
+            <summary>
+            登录名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT0314TapTapParamsDto.Token">
+            <summary>
+            密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.LoginT0314TapTapReturnDto">
+            <summary>
+            T0314 TapTap登录返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT0314TapTapReturnDto.LoginName">
+            <summary>
+            登录名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT0314TapTapReturnDto.Pwd">
+            <summary>
+            密码。若首次登录，创建了账号则这里返回密码。否则返回null。
             </summary>
         </member>
         <member name="T:GY02.Publisher.LoginT0314ParamsDto">

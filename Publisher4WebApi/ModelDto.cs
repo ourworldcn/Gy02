@@ -2991,6 +2991,212 @@ namespace GY02.Publisher
 
     #region T304相关
     /// <summary>
+    /// 储值成功回调参数封装类。
+    /// </summary>
+    public class T304PayedV2ParamsDto
+    {
+        /// <summary>
+        /// 用户在SDK服务器的唯一标识。
+        /// </summary>
+        [JsonPropertyName("uid")]
+        public string UId { get; set; }
+
+        /// <summary>
+        /// 应用在SDK平台的唯一标识。
+        /// </summary>
+        [JsonPropertyName("appId")]
+        public long AppId { get; set; }
+
+        /// <summary>
+        ///  SDK平台的订单号
+        /// 订阅型商品自动续订成功时，
+        /// sdkOrderId会新创建，与首次订
+        /// 阅的sdkOrderId不同
+        /// 订阅型商品取消续订时，
+        /// sdkOrderId同首次订阅一样。
+        /// </summary>
+        [JsonPropertyName("sdkOrderId")]
+        public string SdkOrderId { get; set; }
+
+        /// <summary>
+        /// 如果该值存在，说明这个是根据之前的一个订阅订单，自动生成的订单
+        /// 取值为之前订阅的一个sdkOrderId
+        /// </summary>
+        [JsonPropertyName("subscribeSdkOrderId")]
+        public string SubscribeSdkOrderId { get; set; }
+
+        /// <summary>
+        /// 当前时间戳（毫秒）
+        /// </summary>
+        [JsonPropertyName("t")]
+        public long Timestamp { get; set; }
+
+        /// <summary>
+        /// 应用在游戏服务器的订单号，对应客户端文档的gameOrderId
+        /// </summary>
+        [JsonPropertyName("appOrderId")]
+        public string AppOrderId { get; set; }
+
+        /// <summary>
+        /// 实际支付金额
+        /// 从SDK客户端获取具体值未知，可能随着用户的支付账号、支付地区、支付方式变化
+        /// </summary>
+        [JsonPropertyName("moneyAmount")]
+        public long MoneyAmount { get; set; }
+
+        /// <summary>
+        /// 实际支付币种从SDK客户端获取具体值未知，可能随着用户的支付账号、支付地区、支付方式变化
+        /// </summary>
+        [JsonPropertyName("moneyCurrency")]
+        public string MoneyCurrency { get; set; }
+
+        /// <summary>
+        ///  SDK服务器后台配置的金额配合payType和productId可用于游戏服务器检验订单金额
+        /// </summary>
+        [JsonPropertyName("orderAmount")]
+        public long OrderAmount { get; set; }
+
+        /// <summary>
+        ///  SDK服务器后台配置的币种配合payType和productId可用于游戏服务器检验订单金额
+        /// </summary>
+        [JsonPropertyName("orderCurrency")]
+        public string OrderCurrency { get; set; }
+
+        /// <summary>
+        /// 游戏服务器ID
+        /// </summary>
+        [JsonPropertyName("serverId")]
+        public string ServerId { get; set; }
+
+        /// <summary>
+        /// 游戏角色ID
+        /// </summary>
+        [JsonPropertyName("roleId")]
+        public string RoleId { get; set; }
+
+        /// <summary>
+        ///  1:GooglePay
+        ///  2:AppStore
+        ///  3:TStore
+        ///  4:KaKaoGameShop
+        ///  5:WeixinPay
+        ///  6:AliPay
+        ///  7:Paypal
+        ///  11:OneStore
+        ///  12:SheenPay
+        ///  13:MyCardPay
+        ///  14:HuaWeiPay
+        ///  15:DirectnessPay
+        ///  16:PagsmilePay
+        ///  17:RazerPay
+        ///  18:CodaShopPay
+        ///  19:Flexion
+        ///  20:Razershop
+        ///  21:HonorPay
+        ///  22:XsollaPay
+        ///  23:Payletter
+        ///  24:Samsung
+        ///  26:Steam
+        ///  27:PlayStation
+        ///  28:RuStore
+        ///  29:空中云汇Airwallex
+        /// </summary>
+        [JsonPropertyName("payType")]
+        public long PayType { get; set; }
+
+        /// <summary>
+        /// 商品ID。
+        /// </summary>
+        [JsonPropertyName("productId")]
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// 商品名。
+        /// </summary>
+        [JsonPropertyName("productName")]
+        public string ProductName { get; set; }
+
+        /// <summary>
+        /// 苹果、google等渠道名的缩写。
+        /// </summary>
+        [JsonPropertyName("channelName")]
+        public string ChannelName { get; set; }
+
+        /// <summary>
+        /// 苹果、google等渠道ID。
+        /// </summary>
+        [JsonPropertyName("channelId")]
+        public string ChannelId { get; set; }
+
+        /// <summary>
+        /// 苹果、google等渠道产生的订单号。
+        /// </summary>
+        [JsonPropertyName("channelOrderId")]
+        public string ChannelOrderId { get; set; }
+
+        /// <summary>
+        ///  true：沙箱订单， false：正式订单
+        /// </summary>
+        [JsonPropertyName("sandbox")]
+        public bool Sandbox { get; set; }
+
+        /// <summary>
+        /// 该商品是否为订阅商品。如果是订阅商品，不论unsubscribe取何值，subscribe始终为true
+        ///  true：订阅订单， false：非订阅订单
+        /// </summary>
+        [JsonPropertyName("subscribe")]
+        public bool Subscribe { get; set; }
+
+        /// <summary>
+        /// 当subscribe为true时，unsubscribe的值才需要考虑
+        ///  true：取消订阅
+        /// </summary>
+        [JsonPropertyName("unsubscribe")]
+        public bool Unsubscribe { get; set; }
+
+        /// <summary>
+        ///   2：ANDROID 3：IOS 4：windows 6：web端储值
+        /// </summary>
+        [JsonPropertyName("platformId")]
+        public long PlatformId { get; set; }
+
+        /// <summary>
+        ///  签名。
+        /// </summary>
+        [JsonPropertyName("sign")]
+        public string Sign { get; set; }
+
+        /// <summary>
+        ///   游戏透传字段格式为json sdkServerLog为保留的key前缀
+        /// </summary>
+        [JsonPropertyName("appExtraInfo")]
+        public string AppExtraInfo { get; set; }
+
+        /// <summary>
+        ///  格式为json.
+        /// </summary>
+        [JsonPropertyName("sdkExtraInfo")]
+        public string SdkExtraInfo { get; set; }
+
+    }
+
+    /// <summary>
+    /// 储值成功回调返回值封装类。
+    /// </summary>
+    public class T304PayedV2ReturnDto
+    {
+        /// <summary>
+        ///  操作成功,
+        ///  该接口可能由于网络等问题，重复调用
+        ///  相同订单 sdkOrderId 重复通知时，需要返回 code0
+        ///  除了返回 code0，其他所有情况都算失败，包括网络失败，SDK 服务器会重新划拨
+        ///  游戏服务器需做防重处理。
+        /// </summary>
+        [JsonPropertyName("code")]
+        public int Code { get; set; }
+    }
+
+    /// <summary>
     /// T304完成订单功能参数封装类。
     /// </summary>
     public class T304PayedParamsDto : TokenDtoBase
@@ -3256,20 +3462,6 @@ namespace GY02.Publisher
         [JsonPropertyName("event_type")]
         public string EventType { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public IDictionary<string,string> GetDic()
-        {
-            var dic = new Dictionary<string, string>();
-            var coll = GetType().GetProperties().Select(c =>
-            {
-                var name = c.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? c.Name;
-                return (name, c.GetValue(this)?.ToString());
-            });
-            return coll.ToDictionary(c => c.name, c => c.Item2);
-        }
     }
 
     #endregion 0314TapTap相关
@@ -3351,6 +3543,46 @@ namespace GY02.Publisher
         /// 游戏下单时传递的游戏订单号。客户端要将此参数需要传递给SDK服务器。
         /// </summary>
         public string OrderNo { get; set; }
+    }
+
+    /// <summary>
+    /// T0314 TapTap登录参数封装类。
+    /// </summary>
+#if NETCOREAPP
+    [AutoMap(typeof(LoginT0314Command), ReverseMap = true)]
+#endif
+    public class LoginT0314TapTapParamsDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string Uid { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Token { get; set; }
+    }
+
+    /// <summary>
+    /// T0314 TapTap登录返回值封装类。
+    /// </summary>
+#if NETCOREAPP
+    [AutoMap(typeof(LoginT0314Command))]
+#endif
+    public class LoginT0314TapTapReturnDto : LoginReturnDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
     }
 
     /// <summary>

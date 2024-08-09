@@ -255,6 +255,33 @@ namespace GY02.Controllers
         }
 
         /// <summary>
+        /// 0314合作伙伴登录接口。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="udpServer"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LoginT0314TapTapReturnDto> LoginT0314TapTap(LoginT0314TapTapParamsDto model, [FromServices] UdpServerManager udpServer)
+        {
+            //捷游/东南亚TapTap
+            var command = _Mapper.Map<LoginT0314Command>(model);
+            _SyncCommandManager.Handle(command);
+            string ip = LocalIp.ToString();
+            var result = _Mapper.Map<LoginT0314TapTapReturnDto>(command);
+            result.FillErrorFrom(command);
+            if (!result.HasError)
+            {
+                var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+                var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
+                result.WorldServiceHost = worldServiceHost;
+                result.UdpServiceHost = udpServiceHost;
+                result.LoginName = command.User.LoginName;
+                result.Pwd = command.Pwd;
+            }
+            return result;
+        }
+
+        /// <summary>
         /// 心跳功能，延迟被驱逐的时间。
         /// </summary>
         /// <param name="model"></param>

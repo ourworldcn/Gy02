@@ -177,7 +177,23 @@ namespace Gy02.Controllers
             return result;
         }
 
-        /*https://m60bysk56u.feishu.cn/docx/ZWPkd11xso08ZSxYyDTcr10dnoc*/
+        /*
+         * https://m60bysk56u.feishu.cn/docx/ZWPkd11xso08ZSxYyDTcr10dnoc
+         * */
+
+        /// <summary>
+        /// 储值成功回调。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<T304PayedV2ReturnDto> T304PayedV2([FromForm] T304PayedV2ParamsDto model)
+        {
+            _Logger.LogInformation($"T304/T304PayedV2收到支付确认调用，参数：{JsonSerializer.Serialize(model)}");
+            var result = new T304PayedV2ReturnDto();
+            return result;
+        }
+
     }
 
     /// <summary>
@@ -206,20 +222,4 @@ namespace Gy02.Controllers
         public string ProductId { get; set; } = null!;
     }
 
-    //    public class GooglePayDto {
-    //string packageName;
-    //String productId;
-    //string purchaseToken;
-    //public string getPackageName() (return packageName:
-    //public void setPackageName(string packageName) [this.packageName = packageName;
-    //public string getProductId() [return productId;
-    //public void setProductId(string productId)
-    //    {
-    //        this.productId = productid;
-    //        public string getPurchaseToken()
-    //        {
-    //            return purchaseToken;
-    //            public void setPurchaseToken(string purchaseToken) this.purchaseToken = purchaseToken;
-    //        }
-    //    }
 }

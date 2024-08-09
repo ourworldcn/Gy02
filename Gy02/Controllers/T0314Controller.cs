@@ -722,7 +722,7 @@ namespace Gy02.Controllers
             GameShoppingOrder? order = null;
             for (var tmp = now; tmp <= endDt; tmp = OwHelper.WorldNow)
             {
-                order = db.ShoppingOrder.Find(model.OrderId);
+                order = db.ShoppingOrder.FirstOrDefault(c => c.Id == model.OrderId);
                 if (order is null)
                 {
                     //result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
