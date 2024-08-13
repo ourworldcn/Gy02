@@ -2297,6 +2297,31 @@
             success表示成功。其他值都是失败。
             </summary>
         </member>
+        <member name="T:GY02.Publisher.LoginT304V2ParamsDto">
+            <summary>
+            304合作伙伴登录接口第二版参数封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT304V2ParamsDto.Uid">
+            <summary>
+            唯一Id。
+            </summary>
+        </member>
+        <member name="T:GY02.Publisher.LoginT304V2ReturnDto">
+            <summary>
+            304合作伙伴登录接口第二版返回值封装类。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT304V2ReturnDto.LoginName">
+            <summary>
+            登录名。
+            </summary>
+        </member>
+        <member name="P:GY02.Publisher.LoginT304V2ReturnDto.Pwd">
+            <summary>
+            密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+            </summary>
+        </member>
         <member name="T:GY02.Publisher.T304PayedV2ParamsDto">
             <summary>
             储值成功回调参数封装类。

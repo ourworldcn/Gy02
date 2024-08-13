@@ -7,6 +7,7 @@ using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
+using OW.Game.Store;
 using OW.SyncCommand;
 using System.Net;
 using System.Net.Sockets;
@@ -99,7 +100,7 @@ namespace GY02.Controllers
         }
 
 #if DEBUG
-        TestUdpServerManager? testUdpServerManager ;
+        TestUdpServerManager? testUdpServerManager;
 #endif
 
         /// <summary>
@@ -135,12 +136,7 @@ namespace GY02.Controllers
                 var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
                 result.WorldServiceHost = worldServiceHost;
                 result.UdpServiceHost = udpServiceHost;
-#if DEBUG
-                //testUdpServerManager = new TestUdpServerManager(HttpContext.RequestServices);
-                //testUdpServerManager.Test(command.User.Token, IPEndPoint.Parse(udpServiceHost));
-#endif
                 return result;
-
             }
             catch (Exception err)
             {
@@ -264,21 +260,128 @@ namespace GY02.Controllers
         public ActionResult<LoginT0314TapTapReturnDto> LoginT0314TapTap(LoginT0314TapTapParamsDto model, [FromServices] UdpServerManager udpServer)
         {
             //捷游/东南亚TapTap
-            var command = _Mapper.Map<LoginT0314Command>(model);
+            var result = new LoginT0314TapTapReturnDto { };
+            using var dw = _GameAccountStore.GetOrLoadUser(model.Uid, model.Uid, out var gu);
+            var isCreate = false;
+            if (dw.IsEmpty)  //若没有创建
+            {
+                var commandCreate = new CreateAccountCommand { LoginName = model.Uid, Pwd = model.Uid };
+                _SyncCommandManager.Handle(commandCreate);
+                if(commandCreate.HasError)
+                {
+                    result.FillErrorFrom(commandCreate);
+                    return result;
+                }
+                isCreate = true;
+            }
+
+            var command = new LoginCommand
+            {
+                LoginName = model.Uid,
+                Pwd = model.Uid,
+            };
             _SyncCommandManager.Handle(command);
-            string ip = LocalIp.ToString();
-            var result = _Mapper.Map<LoginT0314TapTapReturnDto>(command);
-            result.FillErrorFrom(command);
-            if (!result.HasError)
+            if (command.HasError)
+            {
+                result.FillErrorFrom(command);
+                return result;
+            }
+            result = _Mapper.Map<LoginT0314TapTapReturnDto>(command);
+            string ip;
+            try
+            {
+                ip = LocalIp.ToString();
+            }
+            catch (Exception err)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = err.Message;
+                _Logger.LogWarning(err.Message);
+                return result;
+            }
+            try
             {
                 var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
                 var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
                 result.WorldServiceHost = worldServiceHost;
                 result.UdpServiceHost = udpServiceHost;
-                result.LoginName = command.User.LoginName;
-                result.Pwd = command.Pwd;
+                if (!isCreate) result.Pwd = null;
+                return result;
             }
-            return result;
+            catch (Exception err)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = err.Message;
+                _Logger.LogWarning(err.Message);
+                return result;
+            }
+        }
+
+        /// <summary>
+        /// 304合作伙伴登录接口V2。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <param name="udpServer"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LoginT304V2ReturnDto> LoginT304V2(LoginT304V2ParamsDto model, [FromServices] UdpServerManager udpServer)
+        {
+            //完美/北美
+            var result = new LoginT304V2ReturnDto { };
+            using var dw = _GameAccountStore.GetOrLoadUser(model.Uid, model.Uid, out var gu);
+            var isCreate = false;
+            if (dw.IsEmpty)  //若没有创建
+            {
+                var commandCreate = new CreateAccountCommand { LoginName = model.Uid, Pwd = model.Uid };
+                _SyncCommandManager.Handle(commandCreate);
+                if(commandCreate.HasError)
+                {
+                    result.FillErrorFrom(commandCreate);
+                    return result;
+                }
+                isCreate = true;
+            }
+
+            var command = new LoginCommand
+            {
+                LoginName = model.Uid,
+                Pwd = model.Uid,
+            };
+            _SyncCommandManager.Handle(command);
+            if (command.HasError)
+            {
+                result.FillErrorFrom(command);
+                return result;
+            }
+            result = _Mapper.Map<LoginT304V2ReturnDto>(command);
+            string ip;
+            try
+            {
+                ip = LocalIp.ToString();
+            }
+            catch (Exception err)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = err.Message;
+                _Logger.LogWarning(err.Message);
+                return result;
+            }
+            try
+            {
+                var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+                var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
+                result.WorldServiceHost = worldServiceHost;
+                result.UdpServiceHost = udpServiceHost;
+                if (!isCreate) result.Pwd = null;
+                return result;
+            }
+            catch (Exception err)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = err.Message;
+                _Logger.LogWarning(err.Message);
+                return result;
+            }
         }
 
         /// <summary>

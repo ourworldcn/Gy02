@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using OW.Game.Managers;
+using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System.Diagnostics.CodeAnalysis;
@@ -57,7 +58,7 @@ namespace Gy02.Controllers
         [HttpPost]
         public ActionResult<T304PayedReturnDto> Payed(T304PayedParamsDto model)
         {
-            _Logger.LogInformation($"T304/Payed收到支付确认调用，参数：{JsonSerializer.Serialize(model)}");
+            _Logger.LogInformation("T304/Payed收到支付确认调用，参数：{str}", JsonSerializer.Serialize(model));
             var result = new T304PayedReturnDto();
             using var dw = _AccountStoreManager.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
@@ -177,20 +178,66 @@ namespace Gy02.Controllers
             return result;
         }
 
-        /*
-         * https://m60bysk56u.feishu.cn/docx/ZWPkd11xso08ZSxYyDTcr10dnoc
-         * */
-
         /// <summary>
-        /// 储值成功回调。
+        /// 储值回调。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult<T304PayedV2ReturnDto> T304PayedV2([FromForm] T304PayedV2ParamsDto model)
         {
-            _Logger.LogInformation($"T304/T304PayedV2收到支付确认调用，参数：{JsonSerializer.Serialize(model)}");
+            // https://m60bysk56u.feishu.cn/docx/ZWPkd11xso08ZSxYyDTcr10dnoc
             var result = new T304PayedV2ReturnDto();
+            _Logger.LogInformation("T304/T304PayedV2收到支付确认调用，参数：{str}", JsonSerializer.Serialize(model));
+            string? errMsg = null;
+            if (!Guid.TryParse(model.AppExtraInfo, out var orderId))
+            {
+                errMsg = $"无效的透传参数:{model.AppExtraInfo}";
+                goto lbErr;
+            }
+            if (_DbContext.ShoppingOrder.Find(orderId) is not GameShoppingOrder order)
+            {
+                errMsg = $"找不到指定的订单Id:Id={orderId}";
+                goto lbErr;
+            }
+            var keyGu = _AccountStoreManager.GetKeyByCharId(Guid.Parse(order.CustomerId));
+            using (var dw = _AccountStoreManager.GetOrLoadUser(keyGu, out var gu))
+            {
+                if (dw.IsEmpty)
+                {
+                    errMsg = $"无法找到角色:GameCharId={order.CustomerId}";
+                    goto lbErr;
+                }
+                if (order.Confirm2)  //若订单已经完成
+                    return result;
+                else order.Confirm2 = true;
+                var jo = order.GetJsonObject<T304PayedV2JObject>();
+                order.Amount = model.MoneyAmount;
+                order.Currency = model.MoneyCurrency;
+                if (order.Confirm1) //若需要发货
+                {
+                    order.State = 1;
+                    var gc = gu.CurrentChar;
+                    var command = new ShoppingBuyCommand
+                    {
+                        Count = 1,
+                        GameChar = gu.CurrentChar,
+                        ShoppingItemTId = jo.TId,
+                    };
+                    _SyncCommandManager.Handle(command);
+                    if (command.HasError)
+                    {
+                        errMsg = command.DebugMessage;
+                        goto lbErr;
+                    }
+                    _Mapper.Map(command.Changes, jo.Changes);
+                }
+            }
+            _DbContext.SaveChanges();
+            return result;
+        lbErr:
+            _Logger.LogWarning(errMsg);
+            result.Code = 1;
             return result;
         }
 
@@ -222,4 +269,20 @@ namespace Gy02.Controllers
         public string ProductId { get; set; } = null!;
     }
 
+    /// <summary>
+    /// 304支付接口V2订单的额外数据对象。
+    /// </summary>
+    public class T304PayedV2JObject
+    {
+        /// <summary>
+        /// 商品Id。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 变化数据。
+        /// </summary>
+        public List<GamePropertyChangeItemDto> Changes { get; set; } = new List<GamePropertyChangeItemDto>();
+
+    }
 }

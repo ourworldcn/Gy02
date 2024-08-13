@@ -2991,6 +2991,37 @@ namespace GY02.Publisher
 
     #region T304相关
     /// <summary>
+    /// 304合作伙伴登录接口第二版参数封装类。
+    /// </summary>
+    public class LoginT304V2ParamsDto
+    {
+        /// <summary>
+        /// 唯一Id。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string Uid { get; set; }
+    }
+
+
+    /// <summary>
+    /// 304合作伙伴登录接口第二版返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(LoginCommand))]
+    public class LoginT304V2ReturnDto : LoginReturnDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+    /// <summary>
     /// 储值成功回调参数封装类。
     /// </summary>
     public class T304PayedV2ParamsDto
@@ -3152,7 +3183,7 @@ namespace GY02.Publisher
         ///  true：取消订阅
         /// </summary>
         [JsonPropertyName("unsubscribe")]
-        public bool Unsubscribe { get; set; }
+        public bool? Unsubscribe { get; set; }
 
         /// <summary>
         ///   2：ANDROID 3：IOS 4：windows 6：web端储值
@@ -3569,7 +3600,7 @@ namespace GY02.Publisher
     /// T0314 TapTap登录返回值封装类。
     /// </summary>
 #if NETCOREAPP
-    [AutoMap(typeof(LoginT0314Command))]
+    [AutoMap(typeof(LoginCommand))]
 #endif
     public class LoginT0314TapTapReturnDto : LoginReturnDto
     {
