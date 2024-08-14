@@ -3,10 +3,13 @@ using GY02;
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+using OW.Game.Entity;
 using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
@@ -27,28 +30,30 @@ namespace Gy02.Controllers
         /// <summary>
         /// 构造函数。
         /// </summary>
-        public T304Controller(ILogger<T304Controller> logger, GameAccountStoreManager accountStoreManager, GameTemplateManager templateManager, GY02UserContext dbContext, IMapper mapper, SyncCommandManager syncCommandManager, T304Manager t304Manager)
+        public T304Controller(ILogger<T304Controller> logger, GameAccountStoreManager accountStoreManager, GameTemplateManager templateManager, GY02UserContext dbContext, IMapper mapper, SyncCommandManager syncCommandManager, T304Manager t304Manager, SpecialManager specialManager)
         {
             //完美 北美
             _Logger = logger;
-            _AccountStoreManager = accountStoreManager;
+            _AccountStore = accountStoreManager;
             _TemplateManager = templateManager;
             _DbContext = dbContext;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
             _T304Manager = t304Manager;
+            _SpecialManager = specialManager;
         }
 
         /// <summary>
         /// 日志接口。
         /// </summary>
         ILogger<T304Controller> _Logger;
-        GameAccountStoreManager _AccountStoreManager;
+        GameAccountStoreManager _AccountStore;
         GameTemplateManager _TemplateManager;
         GY02UserContext _DbContext;
         IMapper _Mapper;
         SyncCommandManager _SyncCommandManager;
         T304Manager _T304Manager;
+        SpecialManager _SpecialManager;
 
         /// <summary>
         /// 付款结束确认。
@@ -60,7 +65,7 @@ namespace Gy02.Controllers
         {
             _Logger.LogInformation("T304/Payed收到支付确认调用，参数：{str}", JsonSerializer.Serialize(model));
             var result = new T304PayedReturnDto();
-            using var dw = _AccountStoreManager.GetCharFromToken(model.Token, out var gc);
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
             if (dw.IsEmpty)
             {
                 if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
@@ -200,8 +205,8 @@ namespace Gy02.Controllers
                 errMsg = $"找不到指定的订单Id:Id={orderId}";
                 goto lbErr;
             }
-            var keyGu = _AccountStoreManager.GetKeyByCharId(Guid.Parse(order.CustomerId));
-            using (var dw = _AccountStoreManager.GetOrLoadUser(keyGu, out var gu))
+            var keyGu = _AccountStore.GetKeyByCharId(Guid.Parse(order.CustomerId));
+            using (var dw = _AccountStore.GetOrLoadUser(keyGu, out var gu))
             {
                 if (dw.IsEmpty)
                 {
@@ -230,7 +235,9 @@ namespace Gy02.Controllers
                         errMsg = command.DebugMessage;
                         goto lbErr;
                     }
-                    _Mapper.Map(command.Changes, jo.Changes);
+                    List<GamePropertyChangeItemDto> changes = new List<GamePropertyChangeItemDto>();
+                    _Mapper.Map(command.Changes, changes);
+                    jo.ExtraString = JsonSerializer.Serialize(changes);
                 }
             }
             _DbContext.SaveChanges();
@@ -238,6 +245,106 @@ namespace Gy02.Controllers
         lbErr:
             _Logger.LogWarning(errMsg);
             result.Code = 1;
+            return result;
+        }
+
+        /// <summary>
+        /// 创建 T304V2 订单。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <response code="401">无效令牌。</response> 
+        [HttpPost]
+        public ActionResult<CreateT304V2OrderReturnDto> CreateT304V2Order(CreateT304V2OrderParamsDto model)
+        {
+            var result = new CreateT304V2OrderReturnDto { };
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            GameShoppingOrder order = new GameShoppingOrder()
+            {
+                Confirm1 = true,
+                CustomerId = gc.Id.ToString(),
+            };
+
+            #region 初始化数据对象信息
+            var jo = order.GetJsonObject<T304PayedV2JObject>();
+            jo.TId = model.ShoppingItemTId;
+
+            if (_TemplateManager.GetFullViewFromId(model.ShoppingItemTId) is not TemplateStringFullView tt)
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+            if (!_SpecialManager.Transformed(tt, list, gc))
+            {
+                result.FillErrorFromWorld();
+                return result;
+            }
+            jo.EntitySummaries.AddRange(list.SelectMany(c => c.Item2));
+            #endregion 初始化数据对象信息
+
+            _DbContext.Add(order);
+            _DbContext.SaveChanges();
+            result.OrderId = order.Id;
+
+            return result;
+        }
+
+        /// <summary>
+        /// 查询T304V2 订单。最多6秒返回。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        /// <response code="401">无效令牌。</response> 
+        [HttpGet]
+        public ActionResult<GetT304V2OrderReturnDto> GetT304V2Order([FromQuery] GetT304V2OrderParamsDto model)
+        {
+            var result = new GetT304V2OrderReturnDto();
+            using var dw = _AccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var now = OwHelper.WorldNow;
+            var endDt = now + TimeSpan.FromSeconds(6);
+            GameShoppingOrder? order = null;
+            for (var tmp = now; tmp <= endDt; tmp = OwHelper.WorldNow)
+            {
+                order = _DbContext.ShoppingOrder.FirstOrDefault(c => c.Id == model.OrderId);
+                if (order is null)
+                {
+                    //result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    //result.DebugMessage = $"无此订单，{nameof(model.OrderId)}={model.OrderId}";
+                    //result.HasError = true;
+                    Thread.Sleep(500);
+                    continue;
+                }
+                if (order.State == 0)
+                {
+                    Thread.Sleep(500);
+                    continue;
+                }
+                if (Guid.TryParse(order.CustomerId, out var gcId))
+                    if (gcId != gc.Id)    //若不是自己的订单
+                    {
+                        result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                        result.DebugMessage = $"只能查询自己的订单。";
+                        result.HasError = true;
+                        return result;
+                    }
+                result.Order = _Mapper.Map<GameShoppingOrderDto>(order);
+                var jo = order.GetJsonObject<T304PayedV2JObject>();
+                result.Changes.AddRange(string.IsNullOrWhiteSpace(jo.ExtraString) ? new List<GamePropertyChangeItemDto>() : JsonSerializer.Deserialize<List<GamePropertyChangeItemDto>>(jo.ExtraString)!);
+            }
             return result;
         }
 
@@ -280,9 +387,13 @@ namespace Gy02.Controllers
         public Guid TId { get; set; }
 
         /// <summary>
-        /// 变化数据。
+        /// 获取购买得到的物品摘要。
         /// </summary>
-        public List<GamePropertyChangeItemDto> Changes { get; set; } = new List<GamePropertyChangeItemDto>();
+        public List<GameEntitySummary> EntitySummaries { get; set; } = new List<GameEntitySummary>();
 
+        /// <summary>
+        /// 扩展字符串，通常放置 实际发放物品的变化数据。
+        /// </summary>
+        public string ExtraString { get; set; }
     }
 }

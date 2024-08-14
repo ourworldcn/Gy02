@@ -2990,6 +2990,56 @@ namespace GY02.Publisher
     #endregion T1228相关
 
     #region T304相关
+
+    /// <summary>
+    /// 查询T304V2 订单功能参数封装类。
+    /// </summary>
+    public class GetT304V2OrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要查询的订单Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
+    /// <summary>
+    /// 查询T304V2 订单功能返回值封装类。
+    /// </summary>
+    public class GetT304V2OrderReturnDto : PropertyChangeReturnDto
+    {
+        /// <summary>
+        /// 订单信息对象。返回时，其中 States 0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+        /// </summary>
+        public GameShoppingOrderDto Order { get; set; }
+
+        /// <summary>
+        /// 获取奖品的预览数据。仅当Order.States =1 时才有意义。
+        /// </summary>
+        public List<GameEntitySummaryDto> EntitySummaryDtos { get; set; } = new List<GameEntitySummaryDto>();
+    }
+
+    /// <summary>
+    /// 创建 T304V2 订单功能的参数封装类。
+    /// </summary>
+    public class CreateT304V2OrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要购买商品的Id。数量恒定为1。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+    }
+
+    /// <summary>
+    /// 创建 T304V2 订单功能的返回值封装类。
+    /// </summary>
+    public class CreateT304V2OrderReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 生成订单的Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
     /// <summary>
     /// 304合作伙伴登录接口第二版参数封装类。
     /// </summary>
