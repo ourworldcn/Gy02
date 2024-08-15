@@ -1758,7 +1758,9 @@ namespace GY02.Publisher
     /// <summary>
     /// 法币购买商品的订单。
     /// </summary>
-    //[AutoMap(typeof(GameShoppingOrder), ReverseMap = true)]
+#if NETCOREAPP
+    [AutoMap(typeof(GameShoppingOrder), ReverseMap = true)]
+#endif
     public class GameShoppingOrderDto
     {
         /// <summary>

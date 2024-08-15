@@ -344,6 +344,7 @@ namespace Gy02.Controllers
                 result.Order = _Mapper.Map<GameShoppingOrderDto>(order);
                 var jo = order.GetJsonObject<T304PayedV2JObject>();
                 result.Changes.AddRange(string.IsNullOrWhiteSpace(jo.ExtraString) ? new List<GamePropertyChangeItemDto>() : JsonSerializer.Deserialize<List<GamePropertyChangeItemDto>>(jo.ExtraString)!);
+                result.Order.Changes.AddRange(string.IsNullOrWhiteSpace(jo.ExtraString) ? new List<GamePropertyChangeItemDto>() : JsonSerializer.Deserialize<List<GamePropertyChangeItemDto>>(jo.ExtraString)!);
             }
             return result;
         }
