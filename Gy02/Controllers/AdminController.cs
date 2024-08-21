@@ -92,7 +92,7 @@ namespace GY02.Controllers
             {
                 return BadRequest(err.Message);
             }
-
+            //var r = new StatusCodeResult();
             return Ok("格式正确。");
         }
 
