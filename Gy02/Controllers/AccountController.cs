@@ -389,8 +389,8 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// <response code="401">令牌无效。</response>  
         [HttpPost]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public ActionResult<NopReturnDto> Nop(NopParamsDto model)
         {
             var result = new NopReturnDto { };

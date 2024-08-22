@@ -61,6 +61,7 @@ namespace Gy02.Controllers
         /// <param name="blueprintManager"></param>
         /// <param name="entityManager"></param>
         /// <returns></returns>
+        /// <response code="401">令牌无效。</response>  
         [HttpPost]
         public ActionResult<GetAchievementStateWithGenusReturnDto> GetAchievementStateWithGenus(GetAchievementStateWithGenusParamsDto model,
             [FromServices] GameBlueprintManager blueprintManager, [FromServices] GameEntityManager entityManager)

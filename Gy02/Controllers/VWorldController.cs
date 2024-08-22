@@ -26,6 +26,7 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// <response code="401">用户名或密码错误。</response>  
         [HttpGet]
         public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery] GetTemplates2ParamsDto model)
         {

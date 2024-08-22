@@ -58,6 +58,7 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// <response code="401">令牌无效。</response>  
         [HttpPost]
         public ActionResult<GetDiceGuaranteesReturnDto> GetDiceGuarantees(GetDiceGuaranteesParamsDto model)
         {

@@ -74,6 +74,7 @@ namespace GY02.Controllers
         /// 增加广告币。以后此函数会过滤TId，仅允许增加特定的TId物品
         /// </summary>
         /// <returns></returns>
+        /// <response code="401">令牌无效。</response>  
         [HttpPost]
         public ActionResult<AddItemForYourselfReturnDto> AddItemForYourself(AddItemForYourselfParamsDto model)
         {

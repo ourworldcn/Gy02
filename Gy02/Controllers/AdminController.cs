@@ -60,8 +60,6 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="file"></param>
         /// <param name="token">令牌。</param>
-        /// 
-        /// 
         /// <returns></returns>
         [HttpPost,]
         public ActionResult VerifyTemplates(IFormFile file, string token)
@@ -198,6 +196,7 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// <response code="401">令牌无效。</response>  
         [HttpPost]
         public ActionResult<ModifyServerDictionaryReturnDto> ModifyServerDictionary(ModifyServerDictionaryParamsDto model)
         {

@@ -67,6 +67,7 @@ namespace GY02.Controllers
         /// 获取指定商品配置数据。
         /// </summary>
         /// <returns></returns>
+        /// <response code="401">令牌无效。</response>  
         [HttpPost]
         public ActionResult<GetShoppingItemsReturnDto> GetShoppingItems(GetShoppingItemsParamsDto model)
         {
