@@ -4421,7 +4421,7 @@
       "DisplayName": "长矛紫+2",
       "Id": "7a82bcf0-5393-4bf5-a222-05bcf1bf6a67",
       "Gid": 121301001,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11806,\"comment_txt\":11832,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"8a145b29-42e7-4ce5-80c6-416d918fc935\",\"enable\":true},{\"skillsid\":\"331f708c-650a-4b00-b890-6ae1be5fb089\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"71c93229-8b51-40dc-98d2-0a317fd183a7\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"60d75e2f-aea6-463b-985e-f21054e8468d\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11806,\"comment_txt\":11832,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"8a145b29-42e7-4ce5-80c6-416d918fc935\",\"enable\":true},{\"skillsid\":\"331f708c-650a-4b00-b890-6ae1be5fb089\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"71c93229-8b51-40dc-98d2-0a317fd183a7\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"60d75e2f-aea6-463b-985e-f21054e8468d\"}"
     },
     {
       "DisplayName": "锤子白",
@@ -4457,7 +4457,7 @@
       "DisplayName": "锤子紫+2",
       "Id": "8a854c44-3d29-435f-b19d-81af3aae0f0d",
       "Gid": 121301002,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11807,\"comment_txt\":11833,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"c0acf35b-7a33-481b-af29-12483f788ba4\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"9748c9ed-6615-453e-9280-82c406caf159\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"224fe617-d854-42a4-8703-d032806482aa\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11807,\"comment_txt\":11833,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":true},{\"skillsid\":\"c0acf35b-7a33-481b-af29-12483f788ba4\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"9748c9ed-6615-453e-9280-82c406caf159\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"224fe617-d854-42a4-8703-d032806482aa\"}"
     },
     {
       "DisplayName": "法杖白",
@@ -4493,7 +4493,7 @@
       "DisplayName": "法杖紫+2",
       "Id": "924ad8d5-7e22-41f2-ab73-79361fc3a76d",
       "Gid": 121301003,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11808,\"comment_txt\":11834,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"30b065d8-5a5f-449b-b7ef-1272c4ba9b4a\",\"enable\":true},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"92c19f7e-a154-4e56-9236-a23f878fc9f0\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"27f7e5c1-5a34-4911-8606-85265ed43ecb\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11808,\"comment_txt\":11834,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"30b065d8-5a5f-449b-b7ef-1272c4ba9b4a\",\"enable\":true},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"92c19f7e-a154-4e56-9236-a23f878fc9f0\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"27f7e5c1-5a34-4911-8606-85265ed43ecb\"}"
     },
     {
       "DisplayName": "弩箭白",
@@ -4529,7 +4529,7 @@
       "DisplayName": "弩箭紫+2",
       "Id": "35542206-7c9a-432f-a72d-d7ed2c5cafed",
       "Gid": 121301004,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11808,\"comment_txt\":11834,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"30b065d8-5a5f-449b-b7ef-1272c4ba9b4a\",\"enable\":true},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"92c19f7e-a154-4e56-9236-a23f878fc9f0\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"0b26a621-b6c7-4ff6-a932-753119f9878f\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11808,\"comment_txt\":11834,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"30b065d8-5a5f-449b-b7ef-1272c4ba9b4a\",\"enable\":true},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":true},{\"skillsid\":\"92c19f7e-a154-4e56-9236-a23f878fc9f0\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"0b26a621-b6c7-4ff6-a932-753119f9878f\"}"
     },
     {
       "DisplayName": "飞镖白",
@@ -4565,7 +4565,43 @@
       "DisplayName": "飞镖紫+2",
       "Id": "4e5bb385-4145-4660-8bad-337f4f430aa9",
       "Gid": 121301005,
-      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11810,\"comment_txt\":11836,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"126e82c2-1167-4e3a-aac1-7606521d5570\",\"enable\":true},{\"skillsid\":\"35ec2d0d-73d9-4f78-b1bc-6a0e3f3dc6ba\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"77c6a162-9473-40d6-ae45-2fe780edffa3\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"10c192c9-bded-4296-ad5b-94c1b00d2229\"}"
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11810,\"comment_txt\":11836,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":true},{\"skillsid\":\"126e82c2-1167-4e3a-aac1-7606521d5570\",\"enable\":true},{\"skillsid\":\"35ec2d0d-73d9-4f78-b1bc-6a0e3f3dc6ba\",\"enable\":true},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"77c6a162-9473-40d6-ae45-2fe780edffa3\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\",\"CompositeId\":\"10c192c9-bded-4296-ad5b-94c1b00d2229\"}"
+    },
+    {
+      "DisplayName": "脉冲锤白",
+      "Id": "219d7701-787c-4d85-b05a-2398a75cf7c9",
+      "Gid": 120101006,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11884,\"comment_txt\":11885,\"atk\":[15,19,23,27,31,35,39,43,47,51],\"def\":null,\"pow\":null,\"Genus\":[\"p_wh\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":false},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"9748c9ed-6615-453e-9280-82c406caf159\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\"}"
+    },
+    {
+      "DisplayName": "脉冲锤绿",
+      "Id": "e3b35a17-0bd4-4fa3-bff1-98d8d2327050",
+      "Gid": 120201006,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11807,\"comment_txt\":11833,\"atk\":[30,36,42,48,54,60,66,72,78,84,90,96,102,108,114,120,126,132,138,144],\"def\":null,\"pow\":null,\"Genus\":[\"p_gn\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":false},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"9748c9ed-6615-453e-9280-82c406caf159\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\"}"
+    },
+    {
+      "DisplayName": "脉冲锤蓝",
+      "Id": "4ece9ae8-cead-4425-894d-92e3593908f8",
+      "Gid": 120301006,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11807,\"comment_txt\":11833,\"atk\":[45,53,61,69,77,85,93,101,109,117,125,133,141,149,157,165,173,181,189,197,205,213,221,229,237,245,253,261,269,277],\"def\":null,\"pow\":null,\"Genus\":[\"p_bu\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":false},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"9748c9ed-6615-453e-9280-82c406caf159\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\"}"
+    },
+    {
+      "DisplayName": "脉冲锤紫",
+      "Id": "61276c55-9788-4075-83bd-3e5d0934bfe2",
+      "Gid": 121101006,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11807,\"comment_txt\":11833,\"atk\":[75,87,99,111,123,135,147,159,171,183,195,207,219,231,243,255,267,279,291,303,315,327,339,351,363,375,387,399,411,423,435,447,459,471,483,495,507,519,531,543,555,567,579,591,603,615,627,639,651,663],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":false},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"9748c9ed-6615-453e-9280-82c406caf159\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\"}"
+    },
+    {
+      "DisplayName": "脉冲锤紫+1",
+      "Id": "16766c13-46c1-494f-8fcf-6b8727fc4592",
+      "Gid": 121201006,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11807,\"comment_txt\":11833,\"atk\":[90,104,118,132,146,160,174,188,202,216,230,244,258,272,286,300,314,328,342,356,370,384,398,412,426,440,454,468,482,496,510,524,538,552,566,580,594,608,622,636,650,664,678,692,706,720,734,748,762,776,790,804,818,832,846,860,874,888,902,916],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt1\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":false},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"9748c9ed-6615-453e-9280-82c406caf159\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\"}"
+    },
+    {
+      "DisplayName": "脉冲锤紫+2",
+      "Id": "f84c6476-693c-4f6b-ac37-1f37173e1642",
+      "Gid": 121301006,
+      "PropertiesString": "{\"TypeGuid\":\"5C9B58EA-F18A-4874-9625-B22694A71A04\",\"ptid\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"name_txt\":11807,\"comment_txt\":11833,\"atk\":[105,120,135,150,165,180,195,210,225,240,255,270,285,300,315,330,345,360,375,390,405,420,435,450,465,480,495,510,525,540,555,570,585,600,615,630,645,660,675,690,705,720,735,750,765,780,795,810,825,840,855,870,885,900,915,930,945,960,975,990,1005,1020,1035,1050,1065,1080,1095,1110,1125,1140],\"def\":null,\"pow\":null,\"Genus\":[\"p_vt2\",\"e_wuqi\"],\"p_skills\":[{\"skillsid\":\"c4c430e1-962a-458d-a1ce-026128edc377\",\"enable\":false},{\"skillsid\":\"1d28ac5b-69b8-4d00-8d33-a81e5953884e\",\"enable\":false},{\"skillsid\":\"441a5e71-0252-4e16-8f9c-ba0e5203d2c2\",\"enable\":false},{\"skillsid\":\"0268e085-c13f-43b7-8290-58d41ffe6244\",\"enable\":false},{\"skillsid\":\"9748c9ed-6615-453e-9280-82c406caf159\",\"enable\":false}],\"LvUpTId\":\"f6d2b3d3-9680-472a-bd41-7927de6e87f9\"}"
     },
     {
       "DisplayName": "兽皮手套白",
@@ -5653,7 +5689,7 @@
       "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"4bb3c291-612c-49cb-9d73-96af45a45e72\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"3eac8a90-e8f9-4244-917f-98d37c7a6094\",\"MinCount\": 3}],\"Count\": 3,\"Genus\": null}]}"
     },
     {
-      "DisplayName": "法杖紫色（升阶）.",
+      "DisplayName": "法杖紫色（升阶）",
       "Id": "02cce6a2-a2a8-4a80-b752-237e0ab44782",
       "Gid": 150201009,
       "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"05d53c61-11d7-4f12-bbd5-e1d0f8aaad51\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"4bb3c291-612c-49cb-9d73-96af45a45e72\",\"MinCount\": 3}],\"Count\": 3,\"Genus\": null}]}"
@@ -5683,19 +5719,19 @@
       "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"657cece9-27e4-40f3-9e69-069852716d7b\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\":\"6aff80ac-84ad-4adc-a353-a700406cbe5a\",\"MinCount\": 3}],\"Count\": 3,\"Genus\": null}]}"
     },
     {
-      "DisplayName": "弩箭紫色（升阶）.",
+      "DisplayName": "弩箭紫色（升阶）",
       "Id": "7b65e361-eda1-45a7-be93-f4cc3831ffda",
       "Gid": 150201012,
       "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"d9d0b916-285c-441a-a68d-543596b1dcd5\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"657cece9-27e4-40f3-9e69-069852716d7b\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
     },
     {
-      "DisplayName": "弩箭紫色+1（升阶）.",
+      "DisplayName": "弩箭紫色+1（升阶）",
       "Id": "3d013d36-a082-47fe-b104-21a4ba212b68",
       "Gid": 150201082,
       "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"6b76357e-6187-4afe-8134-cd41cd8c5ebf\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":\"d9d0b916-285c-441a-a68d-543596b1dcd5\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
     },
     {
-      "DisplayName": "弩箭紫色+2（升阶）.",
+      "DisplayName": "弩箭紫色+2（升阶）",
       "Id": "0b26a621-b6c7-4ff6-a932-753119f9878f",
       "Gid": 150201136,
       "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"35542206-7c9a-432f-a72d-d7ed2c5cafed\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":\"6b76357e-6187-4afe-8134-cd41cd8c5ebf\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
@@ -5713,22 +5749,52 @@
       "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"5c4b8d36-5776-453a-a415-f31c03a26776\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"47fcdd7f-6206-48c1-b1e0-af65dbb65855\",\"MinCount\": 3}],\"Count\": 3,\"Genus\": null}]}"
     },
     {
-      "DisplayName": "飞镖紫色（升阶）.",
+      "DisplayName": "飞镖紫色（升阶）",
       "Id": "f27e9ed8-2b1f-4b87-ac16-d66fa052e5b9",
       "Gid": 150201015,
       "PropertiesString": "{\"Out\": [{\"ParentTId\": null,\"TId\": \"0130307a-36fa-4804-b24e-c1c457ae2721\",\"Count\": 1}],\"In\": [{\"Conditional\": [{\"ParentTId\": null,\"Genus\": [],\"TId\": \"5c4b8d36-5776-453a-a415-f31c03a26776\",\"MinCount\": 3}],\"Count\": 3,\"Genus\": null}]}"
     },
     {
-      "DisplayName": "飞镖紫色+1（升阶）.",
+      "DisplayName": "飞镖紫色+1（升阶）",
       "Id": "350b50f9-2f10-4e58-aa70-0754f915958c",
       "Gid": 150201083,
-      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"17fd4340-7205-4ad0-af58-ad6b835474d6\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"0130307a-36fa-4804-b24e-c1c457ae2721\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"16766c13-46c1-494f-8fcf-6b8727fc4592\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"61276c55-9788-4075-83bd-3e5d0934bfe2\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
     },
     {
-      "DisplayName": "飞镖紫色+2（升阶）.",
+      "DisplayName": "飞镖紫色+2（升阶）",
       "Id": "10c192c9-bded-4296-ad5b-94c1b00d2229",
       "Gid": 150201137,
       "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"4e5bb385-4145-4660-8bad-337f4f430aa9\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"17fd4340-7205-4ad0-af58-ad6b835474d6\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
+    },
+    {
+      "DisplayName": "脉冲锤绿（升阶）",
+      "Id": "98767f74-38bf-4077-a9e5-1896e9c68a22",
+      "Gid": 150201167,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"e3b35a17-0bd4-4fa3-bff1-98d8d2327050\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"219d7701-787c-4d85-b05a-2398a75cf7c9\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "DisplayName": "脉冲锤蓝（升阶）",
+      "Id": "357e4861-6895-4888-9240-dff73cf0deaa",
+      "Gid": 150201168,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"4ece9ae8-cead-4425-894d-92e3593908f8\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"e3b35a17-0bd4-4fa3-bff1-98d8d2327050\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "DisplayName": "脉冲锤紫（升阶）",
+      "Id": "5dfb44ba-4923-46ac-b645-1f8b557591e6",
+      "Gid": 150201169,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"61276c55-9788-4075-83bd-3e5d0934bfe2\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"4ece9ae8-cead-4425-894d-92e3593908f8\",\"MinCount\":3}],\"Count\":3,\"Genus\":null}]}"
+    },
+    {
+      "DisplayName": "脉冲锤紫+1（升阶）",
+      "Id": "f05438ba-18b4-4934-84fe-ef7580425d37",
+      "Gid": 150201170,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"17fd4340-7205-4ad0-af58-ad6b835474d6\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"61276c55-9788-4075-83bd-3e5d0934bfe2\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":1,\"Genus\":null}]}"
+    },
+    {
+      "DisplayName": "脉冲锤紫+2（升阶）",
+      "Id": "ce76bea8-4604-4ea2-a17f-2b6a13c77047",
+      "Gid": 150201171,
+      "PropertiesString": "{\"Out\":[{\"ParentTId\":null,\"TId\":\"4e5bb385-4145-4660-8bad-337f4f430aa9\",\"Count\":1}],\"In\":[{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"16766c13-46c1-494f-8fcf-6b8727fc4592\",\"MinCount\":1}],\"Count\":1,\"Genus\":null},{\"Conditional\":[{\"ParentTId\":null,\"Genus\":[\"p_vt\",\"e_wuqi\"],\"TId\":null,\"MinCount\":1}],\"Count\":2,\"Genus\":null}]}"
     },
     {
       "DisplayName": "兽皮手套 绿色（升阶）",

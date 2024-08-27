@@ -239,6 +239,7 @@ namespace Gy02.Controllers
                     _Mapper.Map(command.Changes, changes);
                     jo.ExtraString = JsonSerializer.Serialize(changes);
                 }
+                if (order.Confirm1 && order.Confirm2) order.State = 1;
             }
             _DbContext.SaveChanges();
             return result;
