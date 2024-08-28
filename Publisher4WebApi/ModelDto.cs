@@ -1311,6 +1311,11 @@ namespace GY02.Publisher
         /// 还剩余多少次出高价值物品。空表示没有保底数。
         /// </summary>
         public int? Count { get; set; }
+
+        /// <summary>
+        /// 最大保底次数，如果没有则返回null。
+        /// </summary>
+        public int? MaxGuaranteesCount { get; set; }
     }
 
     /// <summary>

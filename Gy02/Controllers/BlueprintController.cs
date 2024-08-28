@@ -85,6 +85,7 @@ namespace GY02.Controllers
             }
             else
                 result.Count = i;
+            result.MaxGuaranteesCount = i;
             return result;
         }
     }
