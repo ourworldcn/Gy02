@@ -323,6 +323,40 @@ namespace GY02.Controllers
             return result;
         }
 
+        #region 法币购买相关
+
+        /// <summary>
+        /// 创建法币购买订单。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<CreateOrderV2ReturnDto> CreateOrderV2(CreateOrderV2ParamsDto model)
+        {
+            var result = new CreateOrderV2ReturnDto();
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            return result;
+        }
+        #endregion 法币购买相关
     }
 
+    /// <summary>
+    /// 创建法币购买订单功能的参数封装类。
+    /// </summary>
+    public class CreateOrderV2ParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 创建法币购买订单功能的返回值封装类。
+    /// </summary>
+    public class CreateOrderV2ReturnDto:ReturnDtoBase
+    {
+    }
 }
