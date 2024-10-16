@@ -351,12 +351,16 @@ namespace GY02.Controllers
     /// </summary>
     public class CreateOrderV2ParamsDto : TokenDtoBase
     {
+        /// <summary>
+        /// 渠道标识，针对每个不同渠道会给出不同命名，通常是 渠道名/地区/平台，当然也可能不区分平台。
+        /// </summary>
+        public string Channel { get; set; }
     }
 
     /// <summary>
     /// 创建法币购买订单功能的返回值封装类。
     /// </summary>
-    public class CreateOrderV2ReturnDto:ReturnDtoBase
+    public class CreateOrderV2ReturnDto : ReturnDtoBase
     {
     }
 }
