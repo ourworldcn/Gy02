@@ -1,1 +1,371 @@
-uid=string&appId=0&sdkOrderId=string&subscribeSdkOrderId=string&t=0&appOrderId=string&moneyAmount=0&moneyCurrency=string&orderAmount=0&orderCurrency=string&serverId=string&roleId=string&payType=0&productId=string&productName=string&channelName=string&channelId=string&channelOrderId=string&sandbox=true&subscribe=true&unsubscribe=true&platformId=0&sign=string&appExtraInfo=string&sdkExtraInfo=string}
+{
+  "Dice": {
+    "MaxCount": 1,
+    "AllowRepetition": true,
+    "Items": [
+      {
+        "Outs": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
+            "Count": 100
+          }
+        ],
+        "Weight": 700,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "6335b66c-09fe-4b23-a5e0-ee86199a7d98",
+            "Count": 1
+          }
+        ],
+        "Weight": 100,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "468695b4-d8fa-4805-9111-156d0060c217",
+            "Count": 1
+          }
+        ],
+        "Weight": 20,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "b5b92ab3-36d9-4e2c-a718-cff80f4f7942",
+            "Count": 1
+          }
+        ],
+        "Weight": 50,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "b82c34c3-e531-4a7b-acdc-cd88586d957b",
+            "Count": 1
+          }
+        ],
+        "Weight": 30,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "9c79a55a-106f-4f32-9d44-484d86a665fd",
+            "Count": 1
+          }
+        ],
+        "Weight": 10,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "2ad31a00-903f-46fc-b802-e98e7a69525a",
+            "Count": 1
+          }
+        ],
+        "Weight": 70,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "b4864644-156c-4e40-ac2e-b4e428eb7913",
+            "Count": 1
+          }
+        ],
+        "Weight": 80,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "8f772e03-b9b8-48cc-acae-280dfcca842d",
+            "Count": 1
+          }
+        ],
+        "Weight": 90,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "f14e79dd-8daf-4924-8b4b-357632b5f294",
+            "Count": 1
+          }
+        ],
+        "Weight": 20,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
+            "TId": "08e38e09-c33a-4908-b171-6a0ca37141f1",
+            "Count": 1
+          }
+        ],
+        "Weight": 30,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "bd871154-1aab-4add-8433-be4886244560",
+            "Count": 1
+          }
+        ],
+        "Weight": 10,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "385763e0-cd0b-47a8-9dc0-e4a41819dd47",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "3eac8a90-e8f9-4244-917f-98d37c7a6094",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "6aff80ac-84ad-4adc-a353-a700406cbe5a",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "47fcdd7f-6206-48c1-b1e0-af65dbb65855",
+            "Count": 1
+          }
+        ],
+        "Weight": 3,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "1e809108-ac47-4ea3-912b-bb446dd89179",
+            "Count": 1
+          }
+        ],
+        "Weight": 10,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "ce7756d8-53c6-46da-811e-3a011c6a7a25",
+            "Count": 1
+          }
+        ],
+        "Weight": 15,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "572898a8-3c5a-4e18-9334-e1dba1a50547",
+            "Count": 1
+          }
+        ],
+        "Weight": 8,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "b3d0cdf7-513b-4bc0-9e28-ee24a83e04fb",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "5dc5ec4b-c546-43a9-af17-0e5ef7406f5d",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "00a17afe-062f-4bdf-be5d-6a069e9b304a",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "d476a951-a6a2-4f9e-b372-f3ebe9715daa",
+            "Count": 1
+          }
+        ],
+        "Weight": 10,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "037712cd-fb7b-4329-a3d1-3870cef97ecc",
+            "Count": 1
+          }
+        ],
+        "Weight": 8,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "90c996cd-ca1f-4dc6-a21c-62fda991c4e1",
+            "Count": 1
+          }
+        ],
+        "Weight": 8,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "40830896-4457-4c3d-af6a-16e49eee331d",
+            "Count": 1
+          }
+        ],
+        "Weight": 8,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "891fa169-bc23-4c4a-b8cc-400588a16990",
+            "Count": 1
+          }
+        ],
+        "Weight": 8,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "fb69f6fc-e137-4408-90ce-cd4e25cb67e1",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "8b172c1b-ffad-44fb-9fdc-31773e22964b",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "0c5a7eaa-34e7-4d13-8462-89532c0354e9",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "992dfa6f-edb1-4d78-a162-cd5c436777b0",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "d7835aeb-3a05-4b83-9dc7-bd87c4a964a4",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      },
+      {
+        "Outs": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "TId": "d7835aeb-3a05-4b83-9dc7-bd87c4a964a4",
+            "Count": 1
+          }
+        ],
+        "Weight": 5,
+        "ClearGuaranteesCount": false
+      }
+    ]
+  }
+}
