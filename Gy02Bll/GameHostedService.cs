@@ -52,6 +52,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02
 {
@@ -429,9 +430,7 @@ namespace GY02
             #region 测试用代码
             try
             {
-                var cult=new CultureInfo("zh-CN");
-                decimal decm = 1.23m;
-                var str1 = decm.ToString("零0.00",cult);
+                //var gamePropertyChanges = mapper.Map<List<GamePropertyChangeItemDto>>(new List<GamePropertyChangeItem<object>>());
             }
             #endregion 测试用代码
             catch (Exception)

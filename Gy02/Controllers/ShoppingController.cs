@@ -11,6 +11,7 @@ using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -194,6 +195,44 @@ namespace GY02.Controllers
             _SyncCommandManager.Handle(command);
             _Mapper.Map(command, result);
             if (result.Changes?.Count > 0) result.HasError = false; //对多个购买物品时，买一次成功就算成功
+            return result;
+        }
+
+        /// <summary>
+        /// 购买指定商品，分开返回每一个商品引发的属性变化。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<ShoppingBuyWithDetailReturnDto> ShoppingBuyWithDetail(ShoppingBuyWithDetailParamsDto model)
+        {
+            var result = new ShoppingBuyWithDetailReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+
+            for (var i = 0; i < model.Count; i++)
+            {
+                var command = new ShoppingBuyCommand
+                {
+                    GameChar = gc,
+                    ShoppingItemTId = model.ShoppingItemTId,
+                    Count = 1,
+                };
+                _SyncCommandManager.Handle(command);
+                if (command.HasError)
+                {
+                    result.FillErrorFrom(command);
+                    return result;
+                }
+                var gamePropertyChanges = _Mapper.Map<List<GamePropertyChangeItemDto>>(command.Changes);
+                result.Changes.Add(gamePropertyChanges);
+            }
+            //if (result.Changes?.Count > 0) result.HasError = false; //对多个购买物品时，买一次成功就算成功
             return result;
         }
 

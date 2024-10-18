@@ -7,6 +7,7 @@ using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
 using OW.Game.Entity;
+using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System.Net;
@@ -93,6 +94,9 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<CreateAccountResultDto> CreateAccount(CreateAccountParamsDto model, [FromServices] IMapper mapper, [FromServices] SyncCommandManager commandMng)
         {
+            var tmp = new List<GamePropertyChangeItem<object>>() {new GamePropertyChangeItem<object>() };
+            var gamePropertyChanges = mapper.Map<List<GamePropertyChangeItemDto>>(tmp);
+
             var command = mapper.Map<CreateAccountCommand>(model);
             commandMng.Handle(command);
             var result = mapper.Map<CreateAccountResultDto>(command);

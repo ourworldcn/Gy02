@@ -1956,6 +1956,36 @@ namespace GY02.Publisher
     }
 
     /// <summary>
+    /// 购买功能参数封装类。
+    /// </summary>
+    public class ShoppingBuyWithDetailParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 购买的商品项Id。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+
+        /// <summary>
+        /// 购买数量。
+        /// 如果购买商品超过上限则返回错误，此时没有购买任何商品。
+        /// </summary>
+        [Range(1, int.MaxValue, ErrorMessage = "购买数量需要大于0.")]
+        public int Count { get; set; }
+    }
+
+    /// <summary>
+    /// 购买功能返回值封装类。
+    /// </summary>
+    public class ShoppingBuyWithDetailReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回每个商品导致的变化数据。
+        /// </summary>
+        public List<List<GamePropertyChangeItemDto>> Changes { get; set; } = new List<List<GamePropertyChangeItemDto>>();
+    }
+
+
+    /// <summary>
     /// 累计签到功能的参数封装类。
     /// </summary>
     [AutoMap(typeof(LeijiQiandaoCommand), ReverseMap = true)]
