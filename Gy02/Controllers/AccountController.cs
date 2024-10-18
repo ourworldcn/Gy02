@@ -94,9 +94,10 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<CreateAccountResultDto> CreateAccount(CreateAccountParamsDto model, [FromServices] IMapper mapper, [FromServices] SyncCommandManager commandMng)
         {
-            var tmp = new List<GamePropertyChangeItem<object>>() {new GamePropertyChangeItem<object>() };
+#if DEBUG
+            var tmp = new List<GamePropertyChangeItem<object>>() { new GamePropertyChangeItem<object>() };
             var gamePropertyChanges = mapper.Map<List<GamePropertyChangeItemDto>>(tmp);
-
+#endif 
             var command = mapper.Map<CreateAccountCommand>(model);
             commandMng.Handle(command);
             var result = mapper.Map<CreateAccountResultDto>(command);
@@ -271,7 +272,7 @@ namespace GY02.Controllers
             {
                 var commandCreate = new CreateAccountCommand { LoginName = model.Uid, Pwd = model.Uid };
                 _SyncCommandManager.Handle(commandCreate);
-                if(commandCreate.HasError)
+                if (commandCreate.HasError)
                 {
                     result.FillErrorFrom(commandCreate);
                     return result;
@@ -338,7 +339,7 @@ namespace GY02.Controllers
             {
                 var commandCreate = new CreateAccountCommand { LoginName = model.Uid, Pwd = model.Uid };
                 _SyncCommandManager.Handle(commandCreate);
-                if(commandCreate.HasError)
+                if (commandCreate.HasError)
                 {
                     result.FillErrorFrom(commandCreate);
                     return result;
