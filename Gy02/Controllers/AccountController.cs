@@ -6,12 +6,15 @@ using GY02.Commands.Account;
 using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System.Net;
 using System.Net.Sockets;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Xml.Linq;
 
 namespace GY02.Controllers
@@ -71,18 +74,25 @@ namespace GY02.Controllers
         /// <param name="syncCommandManager"></param>
         /// <param name="mapper"></param>
         /// <param name="logger"></param>
-        public AccountController(GameAccountStoreManager gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper, ILogger<AccountController> logger)
+        /// <param name="udpServer"></param>
+        /// <param name="httpClientFactory"></param>
+        public AccountController(GameAccountStoreManager gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper, ILogger<AccountController> logger,
+            UdpServerManager udpServer, IHttpClientFactory httpClientFactory)
         {
             _GameAccountStore = gameAccountStore;
             _SyncCommandManager = syncCommandManager;
             _Mapper = mapper;
             _Logger = logger;
+            _UdpServer = udpServer;
+            _HttpClientFactory = httpClientFactory;
         }
 
         readonly GameAccountStoreManager _GameAccountStore;
         readonly SyncCommandManager _SyncCommandManager;
         readonly IMapper _Mapper;
         ILogger<AccountController> _Logger;
+        UdpServerManager _UdpServer;
+        IHttpClientFactory _HttpClientFactory;
 
         /// <summary>
         /// 创建一个新账号。
@@ -156,10 +166,9 @@ namespace GY02.Controllers
         /// 特定发行商sdk创建或登录用户。
         /// </summary>
         /// <param name="model"></param>
-        /// <param name="udpServer"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<LoginT78ReturnDto> LoginT78(LoginT78ParamsDto model, [FromServices] UdpServerManager udpServer)
+        public ActionResult<LoginT78ReturnDto> LoginT78(LoginT78ParamsDto model)
         {
             //    if (gm.Id2OnlineChar.Count > 10000 * Environment.ProcessorCount)
             //        return StatusCode((int)HttpStatusCode.ServiceUnavailable, "登录人数过多，请稍后登录");
@@ -171,7 +180,7 @@ namespace GY02.Controllers
             string ip = LocalIp.ToString();
             var result = _Mapper.Map<LoginT78ReturnDto>(command);
             var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-            var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
+            var udpServiceHost = $"{ip}:{((IPEndPoint)_UdpServer.ListernEndPoint).Port}";
             result.WorldServiceHost = worldServiceHost;
             result.UdpServiceHost = udpServiceHost;
             return result;
@@ -259,10 +268,9 @@ namespace GY02.Controllers
         /// 0314合作伙伴登录接口。
         /// </summary>
         /// <param name="model"></param>
-        /// <param name="udpServer"></param>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult<LoginT0314TapTapReturnDto> LoginT0314TapTap(LoginT0314TapTapParamsDto model, [FromServices] UdpServerManager udpServer)
+        public ActionResult<LoginT0314TapTapReturnDto> LoginT0314TapTap(LoginT0314TapTapParamsDto model)
         {
             //捷游/东南亚TapTap
             var result = new LoginT0314TapTapReturnDto { };
@@ -307,7 +315,7 @@ namespace GY02.Controllers
             try
             {
                 var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
-                var udpServiceHost = $"{ip}:{((IPEndPoint)udpServer.ListernEndPoint).Port}";
+                var udpServiceHost = $"{ip}:{((IPEndPoint)_UdpServer.ListernEndPoint).Port}";
                 result.WorldServiceHost = worldServiceHost;
                 result.UdpServiceHost = udpServiceHost;
                 if (!isCreate) result.Pwd = null;
@@ -415,6 +423,170 @@ namespace GY02.Controllers
             return result;
         }
 
+        /// <summary>
+        /// 统一登陆接口。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<LoginV2ReturnDto> LoginV2(LoginV2ParamsDto model)
+        {
+            var result = new LoginV2ReturnDto();
+            var command = new LoginCommand();
+            var isCreate = false;
+            var isCreateSucc = false;
+
+            switch (model.Mode)
+            {
+                case "T1021/NA":
+                case "T1021/EU":
+                    {
+                        //欧美发型/欧美地区
+                        if (!model.Evidence.TryGetValue("Uid", out var uid))   //若无法得到用户名
+                        {
+                            result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                            result.DebugMessage = "缺少证据项Uid。";
+                            result.HasError = true;
+                            return result;
+                        }
+                        if (!model.Evidence.TryGetValue("Token", out var token))   //若无法得到令牌
+                        {
+                            result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                            result.DebugMessage = "缺少证据项Token。";
+                            result.HasError = true;
+                            return result;
+                        }
+                        string url = "https://sdk-lmzha.lmzhom66.com/webapi/checkUserInfo";  //token认证地址
+                        var httpClient = _HttpClientFactory.CreateClient("T1021/NA");
+                        var p = new T1021NALoginParamsSdkDto { uid = uid, token = token };
+                        using var respone = httpClient.PostAsJsonAsync(url, p).Result;
+                        if (!respone.IsSuccessStatusCode)   //若不成功
+                        {
+                            result.ErrorCode = ErrorCodes.ERROR_INVALID_DATA;
+                            result.DebugMessage = $"调用验证不成功,返回码{respone.StatusCode}。";
+                            result.HasError = true;
+                            return result;
+                        }
+                        var str1 = respone.Content.ReadAsStringAsync().Result;
+                        var obj = JsonSerializer.Deserialize<T1021NALoginReturnSdkDto>(str1);
+                        if (!obj.status)
+                        {
+                            result.ErrorCode = ErrorCodes.ERROR_LOGON_FAILURE;
+                            result.DebugMessage = obj.message;
+                            result.HasError = true;
+                            return result;
+                        }
+
+                        using var dw = _GameAccountStore.GetOrLoadUser(uid, uid, out var gu);
+                        if (dw.IsEmpty)  //若没有创建
+                        {
+                            var commandCreate = new CreateAccountCommand { LoginName = uid, Pwd = uid };
+                            _SyncCommandManager.Handle(commandCreate);
+                            if (commandCreate.HasError)
+                            {
+                                result.FillErrorFrom(commandCreate);
+                                return result;
+                            }
+                            isCreate = true;
+                        }
+
+                        command.LoginName = uid;
+                        command.Pwd = uid;
+                        _SyncCommandManager.Handle(command);
+                        if (command.HasError)
+                        {
+                            result.FillErrorFrom(command);
+                            return result;
+                        }
+                        else
+                            isCreateSucc = true;
+
+                        result.Token = command.User.Token;
+                        result.GameChar = _Mapper.Map<GameCharDto>(command.User.CurrentChar);
+                        result.Pwd = isCreate ? command.Pwd : null;
+                        result.UserId = command.User.Id;
+                        string ip;
+
+                        try
+                        {
+                            ip = LocalIp.ToString();
+                        }
+                        catch (Exception err)
+                        {
+                            result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                            result.DebugMessage = err.Message;
+                            _Logger.LogWarning(err.Message);
+                            return result;
+                        }
+                        try
+                        {
+                            var worldServiceHost = $"{Request.Scheme}://{ip}:{Request.Host.Port}";
+                            var udpServiceHost = $"{ip}:{((IPEndPoint)_UdpServer.ListernEndPoint).Port}";
+                            result.WorldServiceHost = worldServiceHost;
+                            result.UdpServiceHost = udpServiceHost;
+                            if (!isCreate) result.Pwd = null;
+                            return result;
+                        }
+                        catch (Exception err)
+                        {
+                            result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                            result.DebugMessage = err.Message;
+                            _Logger.LogWarning(err.Message);
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+            return result;
+        }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    public class T1021NALoginReturnSdkDto
+    {
+        /// <summary>
+        /// 接口验证状态，若通过验证为true，否则为false。
+        /// </summary>
+        [JsonPropertyName("status")]
+        public bool status { get; set; }
+
+        /// <summary>
+        /// 玩家账号ID（自主平台的该值和客户端一致）。
+        /// </summary>
+        [JsonPropertyName("uid")]
+        public string uid { get; set; }
+
+        /// <summary>
+        /// status 为false 时，message 有值，为错误提示语。
+        /// </summary>
+        [JsonPropertyName("message")]
+        public string message { get; set; }
+
+        /// <summary>
+        /// 如果status 为true 时，data 数组包含了用户账号绑定信息。
+        /// </summary>
+        [JsonPropertyName("data")]
+        public string data { get; set; }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public class T1021NALoginParamsSdkDto
+    {
+        /// <summary>
+        /// 从客户端登录回调中获取的uid。
+        /// </summary>
+        [JsonPropertyName("uid")]
+        public string? uid { get; set; }
+
+        /// <summary>
+        /// 从客户端登录回调中获取的token，请注意token的长度不要被截断。
+        /// </summary>
+        [JsonPropertyName("token")]
+        public string? token { get; set; }
+    }
 }

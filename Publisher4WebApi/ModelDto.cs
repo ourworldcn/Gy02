@@ -929,6 +929,99 @@ namespace GY02.Publisher
         #endregion 可映射属性
 
     }
+
+    /// <summary>
+    /// 通用登录功能的参数封装类。
+    /// </summary>
+    public class LoginV2ParamsDto
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public LoginV2ParamsDto()
+        {
+            
+        }
+
+        /// <summary>
+        /// 登录验证模式的标识字符串，类似 合作伙伴名/渠道名/地域缩写/平台名，各名可能省略。如 T1021/NA，T1021/EU。
+        /// </summary>
+        public string Mode { get; set; }
+
+        /// <summary>
+        /// 验证使用的证据。键是证据项的名，值证据项的值，针对不同的验证模式需要的证据也各不相同。如{{"Uid","登录名"},{"Token","令牌"}}。
+        /// </summary>
+        public Dictionary<string, string> Evidence { get; set; } = new Dictionary<string, string>();
+    }
+
+    /// <summary>
+    /// 通用登录功能的返回值封装类。
+    /// </summary>
+    public class LoginV2ReturnDto: ReturnDtoBase
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public LoginV2ReturnDto()
+        {
+            
+        }
+
+        #region 可映射属性
+
+        /// <summary>
+        /// 角色的信息。
+        /// </summary>
+        [SourceMember("User.CurrentChar")]
+        public GameCharDto GameChar { get; set; }
+
+        /// <summary>
+        /// 用户账号的唯一Id。
+        /// </summary>
+        [SourceMember(nameof(LoginCommand.User) + "." + nameof(GameUser.Id))]
+        public Guid UserId { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+
+        Guid _Token;
+        /// <summary>
+        /// 后续操作该用户使用的令牌。
+        /// </summary>
+        [SourceMember("User.Token")]
+        public Guid Token
+        {
+            get => _Token; set
+            {
+                GyUdpClient.LastToken = value;
+                _Token = value;
+            }
+        }
+
+        /// <summary>
+        /// 世界服务器的主机地址。使用此地址拼接后续的通讯地址。
+        /// </summary>
+        public string WorldServiceHost { get; set; }
+
+        string _UdpServiceHost;
+        /// <summary>
+        /// Udp连接的地址。
+        /// </summary>
+        public string UdpServiceHost
+        {
+            get => _UdpServiceHost;
+            set
+            {
+                GyUdpClient.LastUdpServiceHost = value;
+                _UdpServiceHost = value;
+            }
+        }
+
+        #endregion 可映射属性
+    }
+
     #endregion 账号及登录相关
 
     #region 世界控制器功能相关
