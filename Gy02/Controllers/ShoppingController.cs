@@ -12,7 +12,9 @@ using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Controllers
@@ -383,6 +385,21 @@ namespace GY02.Controllers
             return result;
         }
         #endregion 法币购买相关
+
+        #region T1021NA相关
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<T1021NAPayedReturnDto> T1021NAPayed(T1021NAPayedDto model)
+        {
+            var result = new T1021NAPayedReturnDto() { errcode = 1 };
+            var nvs = StringUtility.Get(model);
+            return result;
+        }
+        #endregion T1021NA相关
     }
 
     /// <summary>
@@ -401,5 +418,161 @@ namespace GY02.Controllers
     /// </summary>
     public class CreateOrderV2ReturnDto : ReturnDtoBase
     {
+    }
+
+    /// <summary>
+    /// T1021合作伙伴北美支付回调参数封装类。
+    /// </summary>
+    public class T1021NAPayedDto
+    {
+        /// <summary>
+        /// state 的状态 1 成功。
+        /// </summary>
+        [JsonPropertyName("state")]
+        public int state { get; set; }
+
+        /// <summary>
+        /// 为Oasis的订单号。
+        /// </summary>
+        [JsonPropertyName("orderId")]
+        public string? orderId { get; set; }
+
+        /// <summary>
+        /// 用户ID。
+        /// </summary>
+        [JsonPropertyName("userId")]
+        public string? userId { get; set; }
+
+        /// <summary>
+        /// 为游戏编号，由Oasis 分配。
+        /// </summary>
+        [JsonPropertyName("uugameId")]
+        public int uugameId { get; set; }
+
+        /// <summary>
+        /// 游戏区服编号。
+        /// </summary>
+        [JsonPropertyName("serverId")]
+        public string? serverId { get; set; }
+
+        /// <summary>
+        /// 为渠道分配的渠道编号 iOS:2000100000 Google:2000100001 Huawei:2000100004 VIVO:2000100008 OPPO:2000100007 Web pay:2000100006 Web pay含游戏订单号：2000100005 
+        /// Japan yamada : 2000100009 Japan Gesoten: 2000100010。
+        /// </summary>
+        [JsonPropertyName("channelId")]
+        public string? channelId { get; set; }
+
+        /// <summary>
+        /// 游戏订单号我们原样返回，在Android中对应充值传递的gameCustomInfo，iOS中对应充值传递的code;针对网页充值包含游戏内网页直冲版本和游戏外充值网站版本版本，网站充值版本的channelId为：2000100006，
+        /// 此时gameCustomInfo为游戏的角色ID；游戏内网页直冲版本的channelId为2000100005，此时gameCustomInfo为游戏透传的订单号。
+        /// </summary>
+        [JsonPropertyName("gameCustomInfo")]
+        public string? gameCustomInfo { get; set; }
+
+        /// <summary>
+        /// 为玩家充值的商品 Id。
+        /// </summary>
+        [JsonPropertyName("productId")]
+        public string? productId { get; set; }
+
+        /// <summary>
+        /// 为玩家充值的金额(美元金额)。
+        /// </summary>
+        [JsonPropertyName("amount")]
+        public string? amount { get; set; }
+
+        /// <summary>
+        /// 为玩家充值的当地币金额(默认关闭)。
+        /// </summary>
+        [JsonPropertyName("payAmount")]
+        public string? payAmount { get; set; }
+
+        /// <summary>
+        /// 玩家充值的当地币币种(默认关闭)。
+        /// </summary>
+        [JsonPropertyName("payCurrency")]
+        public string? payCurrency { get; set; }
+
+        /// <summary>
+        /// 玩家点击的商品充值获得钻石数(该参数目前只针对网站充值)。
+        /// </summary>
+        [JsonPropertyName("diamondAmount")]
+        public int diamondAmount { get; set; }
+
+        /// <summary>
+        /// 用户多充值的钻石数(该参数目前只针对网站充值)。
+        /// </summary>
+        [JsonPropertyName("diamondExtraAmount")]
+        public int diamondExtraAmount { get; set; }
+
+        /// <summary>
+        /// 表示实际充值金额的总返利(该参数目前只针对网站充值)。
+        /// </summary>
+        [JsonPropertyName("diamondGiftExtraAmount")]
+        public int diamondGiftExtraAmount { get; set; }
+
+        /// <summary>
+        /// 对上边参数的签名数据，注：sign不参与签名。
+        /// </summary>
+        [JsonPropertyName("sign")]
+        public string? sign { get; set; }
+
+        /// <summary>
+        /// 签名方式，固定值“RSA”，对于java中的“SHA1WithRSA” 注：signtype不参与签名。
+        /// </summary>
+        [JsonPropertyName("signtype")]
+        public string? signtype { get; set; }
+
+
+    }
+
+    /// <summary>
+    /// T1021合作伙伴北美支付回调返回值封装类。
+    /// </summary>
+    public class T1021NAPayedReturnDto
+    {
+        /// <summary>
+        /// 1=成功，101=订单重复，-100=其他错误。
+        /// </summary>
+        [JsonPropertyName("errcode")]
+        public int errcode { get; set; }
+
+        /// <summary>
+        /// 错误信息。
+        /// </summary>
+        [JsonPropertyName("errMsg")]
+        public string? errMsg { get; set; }
+    }
+
+    /// <summary>
+    /// 常用工具。
+    /// </summary>
+    public static class StringUtility
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static IEnumerable<(string, string)> Get<T>(T data)
+        {
+            var result = new List<(string, string)>();
+            var pis = typeof(T).GetProperties();
+            string name;
+            foreach (var pi in pis)
+            {
+                if (pi.GetCustomAttribute<JsonPropertyNameAttribute>() is JsonPropertyNameAttribute jpna) name = jpna.Name;
+                else name = pi.Name;
+                if(pi.PropertyType == typeof(string))
+                {
+
+                }
+                //else if(typeof(DBNull<>)==){ }
+                var val = pi.GetValue(data)!.ToString()!;
+                result.Add((name, val));
+            }
+            return result;
+        }
     }
 }
