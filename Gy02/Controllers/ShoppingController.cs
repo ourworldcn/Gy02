@@ -11,8 +11,15 @@ using OW.Game.Managers;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
+using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
+using System.Runtime.Serialization;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Cryptography.Xml;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
@@ -34,8 +41,9 @@ namespace GY02.Controllers
         /// <param name="shoppingManager"></param>
         /// <param name="templateManager"></param>
         /// <param name="searcherManager"></param>
+        /// <param name="logger"></param>
         public ShoppingController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager, GameEntityManager entityManager,
-            GameShoppingManager shoppingManager, GameTemplateManager templateManager, GameSearcherManager searcherManager)
+            GameShoppingManager shoppingManager, GameTemplateManager templateManager, GameSearcherManager searcherManager, ILogger<ShoppingController> logger)
         {
             _GameAccountStore = gameAccountStore;
             _Mapper = mapper;
@@ -44,6 +52,7 @@ namespace GY02.Controllers
             _ShoppingManager = shoppingManager;
             _TemplateManager = templateManager;
             _SearcherManager = searcherManager;
+            _Logger = logger;
         }
 
         GameAccountStoreManager _GameAccountStore;
@@ -53,7 +62,7 @@ namespace GY02.Controllers
         GameShoppingManager _ShoppingManager;
         GameTemplateManager _TemplateManager;
         GameSearcherManager _SearcherManager;
-
+        ILogger<ShoppingController> _Logger;
 #if DEBUG
         /// <summary>
         /// 获取商品项结构。
@@ -387,37 +396,63 @@ namespace GY02.Controllers
         #endregion 法币购买相关
 
         #region T1021NA相关
+
+        const string T1021NAPublicKeyString = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCNkVFFp99tKggfkeIY3ZzurhqirkwbylWM8mvmyKf07PyWyV3IBROnQt7zjfyq4VOqVBZhteznFwKdR+0IlL4VYhOgVz0sh8bLK5E3jUlCpd1CPBp9Dkk575iCC4k0wbmgnqMsWaYvD3EJgf3myCvyAX/tLBJ9Hz3XDs3o0im1OwIDAQAB";
         /// <summary>
-        /// 
+        /// 公钥的二进制形式。
+        /// </summary>
+        static readonly byte[] T1021NAPublicKey = Convert.FromBase64String(T1021NAPublicKeyString);
+
+        /// <summary>
+        /// 支付回调函数。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
         public ActionResult<T1021NAPayedReturnDto> T1021NAPayed(T1021NAPayedDto model)
         {
-            var result = new T1021NAPayedReturnDto() { errcode = 1 };
+            var result = new T1021NAPayedReturnDto() { errcode = 1, errMsg = "Success" };
+            string errMsg;
             var nvs = StringUtility.Get(model);
+            var dic = nvs.ToDictionary(c => c.Item1, c => c.Item2);
+            if (!dic.Remove("signtype", out var signtype))
+            {
+                errMsg = "缺少signtype参数";
+                goto lbOtherErr;
+            }
+            if (signtype != "RSA")
+            {
+                errMsg = $"signtype参数不是RSA而是{signtype}";
+                goto lbOtherErr;
+            }
+            if (!dic.Remove("sign", out var sign))
+            {
+                errMsg = $"缺少 sign 参数";
+                goto lbOtherErr;
+            }
+            var str = string.Join('&', dic.OrderBy(c => c.Key, StringComparer.Ordinal).Select(c => $"{c.Key}={c.Value}"));
+            _Logger.LogInformation("待签名字符串为{str}", str);
+
+            using (var rsa = RSA.Create("RSA")!) //验证签名
+            {
+                rsa.ImportSubjectPublicKeyInfo(T1021NAPublicKey, out _);
+                var dataBytes = Encoding.UTF8.GetBytes(str);
+                var signBytes = Convert.FromBase64String(sign);
+                var b = rsa.VerifyData(dataBytes, signBytes, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
+                if (!b)
+                {
+                    errMsg = $"验证签名失败。";
+                    goto lbOtherErr;
+                }
+            }
+            return result;
+        lbOtherErr: //其它错误
+            _Logger.LogWarning("支付回调通知出错——{str}", errMsg);
+            result.errMsg = errMsg;
+            result.errcode = -100;
             return result;
         }
         #endregion T1021NA相关
-    }
-
-    /// <summary>
-    /// 创建法币购买订单功能的参数封装类。
-    /// </summary>
-    public class CreateOrderV2ParamsDto : TokenDtoBase
-    {
-        /// <summary>
-        /// 渠道标识，针对每个不同渠道会给出不同命名，通常是 渠道名/地区/平台，当然也可能不区分平台。
-        /// </summary>
-        public string Channel { get; set; }
-    }
-
-    /// <summary>
-    /// 创建法币购买订单功能的返回值封装类。
-    /// </summary>
-    public class CreateOrderV2ReturnDto : ReturnDtoBase
-    {
     }
 
     /// <summary>
@@ -429,7 +464,7 @@ namespace GY02.Controllers
         /// state 的状态 1 成功。
         /// </summary>
         [JsonPropertyName("state")]
-        public int state { get; set; }
+        public int? state { get; set; }
 
         /// <summary>
         /// 为Oasis的订单号。
@@ -447,7 +482,7 @@ namespace GY02.Controllers
         /// 为游戏编号，由Oasis 分配。
         /// </summary>
         [JsonPropertyName("uugameId")]
-        public int uugameId { get; set; }
+        public int? uugameId { get; set; }
 
         /// <summary>
         /// 游戏区服编号。
@@ -497,19 +532,19 @@ namespace GY02.Controllers
         /// 玩家点击的商品充值获得钻石数(该参数目前只针对网站充值)。
         /// </summary>
         [JsonPropertyName("diamondAmount")]
-        public int diamondAmount { get; set; }
+        public int? diamondAmount { get; set; }
 
         /// <summary>
         /// 用户多充值的钻石数(该参数目前只针对网站充值)。
         /// </summary>
         [JsonPropertyName("diamondExtraAmount")]
-        public int diamondExtraAmount { get; set; }
+        public int? diamondExtraAmount { get; set; }
 
         /// <summary>
         /// 表示实际充值金额的总返利(该参数目前只针对网站充值)。
         /// </summary>
         [JsonPropertyName("diamondGiftExtraAmount")]
-        public int diamondGiftExtraAmount { get; set; }
+        public int? diamondGiftExtraAmount { get; set; }
 
         /// <summary>
         /// 对上边参数的签名数据，注：sign不参与签名。
@@ -544,35 +579,4 @@ namespace GY02.Controllers
         public string? errMsg { get; set; }
     }
 
-    /// <summary>
-    /// 常用工具。
-    /// </summary>
-    public static class StringUtility
-    {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        public static IEnumerable<(string, string)> Get<T>(T data)
-        {
-            var result = new List<(string, string)>();
-            var pis = typeof(T).GetProperties();
-            string name;
-            foreach (var pi in pis)
-            {
-                if (pi.GetCustomAttribute<JsonPropertyNameAttribute>() is JsonPropertyNameAttribute jpna) name = jpna.Name;
-                else name = pi.Name;
-                if(pi.PropertyType == typeof(string))
-                {
-
-                }
-                //else if(typeof(DBNull<>)==){ }
-                var val = pi.GetValue(data)!.ToString()!;
-                result.Add((name, val));
-            }
-            return result;
-        }
-    }
 }

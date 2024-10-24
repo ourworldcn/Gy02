@@ -468,7 +468,7 @@ namespace GY02.Controllers
                             return result;
                         }
                         var str1 = respone.Content.ReadAsStringAsync().Result;
-                        var obj = JsonSerializer.Deserialize<T1021NALoginReturnSdkDto>(str1);
+                        var obj = JsonSerializer.Deserialize<T1021NALoginReturnSdkDto>(str1)!;
                         if (!obj.status)
                         {
                             result.ErrorCode = ErrorCodes.ERROR_LOGON_FAILURE;

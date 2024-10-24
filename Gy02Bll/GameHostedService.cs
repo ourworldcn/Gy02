@@ -43,10 +43,12 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http.Json;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Reflection.PortableExecutable;
 using System.Runtime;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -430,7 +432,7 @@ namespace GY02
             #region 测试用代码
             try
             {
-                //var gamePropertyChanges = mapper.Map<List<GamePropertyChangeItemDto>>(new List<GamePropertyChangeItem<object>>());
+                int? i = null;
             }
             #endregion 测试用代码
             catch (Exception)
@@ -462,12 +464,46 @@ namespace GY02
         }
     }
 
-    //private unsafe void Awake()
-    //{
-    //    byte[] sendByte = Encoding.ASCII.GetBytes("");    //FORWARDERS
+    /// <summary>
+    /// 常用工具。
+    /// </summary>
+    public static class StringUtility
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static List<(string, string)> Get<T>(T data)
+        {
+            var result = new List<(string, string)>();
+            var pis = typeof(T).GetProperties();
+            string name, val;
+            var type = data!.GetType();
+            foreach (var pi in pis)
+            {
+                if (pi.GetCustomAttribute<IgnoreDataMemberAttribute>() is not null) continue;
+                name = pi.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? pi.Name;
+                if (pi.PropertyType == typeof(string))
+                {
+                    if (pi.GetValue(data) is not string tmp || tmp == null) continue;
+                    val = tmp;
+                }
+                else if (pi.PropertyType.IsGenericType && typeof(Nullable<>) == pi.PropertyType.GetGenericTypeDefinition())    //若是可空类型
+                {
+                    var tmp = pi.GetValue(data);
+                    if (tmp is null) continue;
+                    dynamic dyn = tmp;
+                    if (dyn is null) continue;
+                    val = dyn.ToString();
+                }
+                else
+                    val = pi.GetValue(data)?.ToString() ?? string.Empty;
+                result.Add((name, val));
+            }
+            return result;
+        }
 
-    //    fixed (byte* pointerToFirst = &sendByte[0])
-    //    {
-    //    }
-    //}
+    }
 }
