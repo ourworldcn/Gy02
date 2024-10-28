@@ -411,6 +411,10 @@ namespace GY02.Controllers
         [HttpPost]
         public ActionResult<T1021NAPayedReturnDto> T1021NAPayed(T1021NAPayedDto model)
         {
+            //欧美
+            /* 测试用字符串
+             {"orderId":"1948171721269257264","userId":"1803020324964401153","uugameId":"221","serverId":"839999","amount":"120","productId":"22139","channelId":"2000100001","payAmount":"0.99","payCurrency":"USD","state":1,"gameCustomInfo":"1721269254_482_4427_1803020324964401153uudenahwhv","sign":"Dh9cH+ugF0abokozulMl/GERje/gpuEgBkU1e6ToQO4egbzYakVjLB7ZwsPhoa1F12Ny2rhU9tqc/Go/aiohFTOxHpfuaUJwgcoEFpbl+Yl1Bpu1rfGauCbKkIw81LCyvXcwCfAu84aOB8Z+5YZofYX/5dTpzvoRz3ZnGuGz0wQ=","signtype":"RSA"}
+             */
             var result = new T1021NAPayedReturnDto() { errcode = 1, errMsg = "Success" };
             string errMsg;
             var nvs = StringUtility.Get(model);
@@ -445,6 +449,12 @@ namespace GY02.Controllers
                     goto lbOtherErr;
                 }
             }
+            if (!Guid.TryParse(model.gameCustomInfo, out var orderId))
+            {
+                errMsg = $"订单号格式无效";
+                goto lbOtherErr;
+            }
+
             return result;
         lbOtherErr: //其它错误
             _Logger.LogWarning("支付回调通知出错——{str}", errMsg);
