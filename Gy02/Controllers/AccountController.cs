@@ -425,6 +425,7 @@ namespace GY02.Controllers
 
         /// <summary>
         /// 统一登陆接口。
+        /// 验证方式:T1021/NA,需要证据：Uid，Token
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -433,7 +434,7 @@ namespace GY02.Controllers
         {
             var result = new LoginV2ReturnDto();
             var command = new LoginCommand();
-            var isCreate = false;
+            var isCreate = false;   //是否是新创建
             var isCreateSucc = false;
 
             switch (model.Mode)
