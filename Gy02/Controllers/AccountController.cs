@@ -436,6 +436,8 @@ namespace GY02.Controllers
             var command = new LoginCommand();
             var isCreate = false;   //是否是新创建
             var isCreateSucc = false;
+            string errMsg ;
+            var errCode = ErrorCodes.NO_ERROR;
 
             switch (model.Mode)
             {
@@ -514,10 +516,9 @@ namespace GY02.Controllers
                         }
                         catch (Exception err)
                         {
-                            result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
-                            result.DebugMessage = err.Message;
-                            _Logger.LogWarning(err.Message);
-                            return result;
+                            errCode= ErrorCodes.ERROR_BAD_ARGUMENTS;
+                            errMsg = err.Message;
+                            goto lbErr;
                         }
                         try
                         {
@@ -538,6 +539,15 @@ namespace GY02.Controllers
                     break;
                 default:
                     break;
+            }
+            return result;
+        lbErr:
+            if (errCode != ErrorCodes.NO_ERROR)
+            {
+                result.HasError = true;
+                result.ErrorCode = errCode;
+                result.DebugMessage = errMsg;
+                _Logger.LogWarning(errMsg);
             }
             return result;
         }
