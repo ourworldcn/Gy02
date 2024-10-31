@@ -459,10 +459,17 @@ namespace GY02.Controllers
                             result.HasError = true;
                             return result;
                         }
-                        string url = "https://sdk-lmzha.lmzhom66.com/webapi/checkUserInfo";  //token认证地址
+                        //string url = "https://sdk-lmzha.lmzhom66.com/webapi/checkUserInfo";  //token认证地址
+                        string url = "https://sdkapi.difeh.com/webapi/checkUserInfo";  //token认证地址
                         var httpClient = _HttpClientFactory.CreateClient("T1021/NA");
                         var p = new T1021NALoginParamsSdkDto { uid = uid, token = token };
-                        using var respone = httpClient.PostAsJsonAsync(url, p).Result;
+
+                        var dic = new Dictionary<string,string>();
+                        dic.Add("uid", uid);
+                        dic.Add("token", token);
+                        
+                        using var respone = httpClient.PostAsync(url, new FormUrlEncodedContent(dic)).Result; 
+
                         if (!respone.IsSuccessStatusCode)   //若不成功
                         {
                             result.ErrorCode = ErrorCodes.ERROR_INVALID_DATA;
@@ -580,7 +587,7 @@ namespace GY02.Controllers
         /// 如果status 为true 时，data 数组包含了用户账号绑定信息。
         /// </summary>
         [JsonPropertyName("data")]
-        public string data { get; set; }
+        public object data { get; set; }
     }
 
     /// <summary>

@@ -143,7 +143,7 @@ internal class Program
         services.AddPublisherT1228();
         services.AddPublisherT0314();
 
-        services.AddHttpClient("T1021/NA");
+        services.AddHttpClient("T1021/NA",c=>c.DefaultRequestHeaders.Add("contentType", "application/x-www-form-urlencoded"));
 
         services.AddScoped(c => new SimpleGameContext());
         services.AddSingleton<OwRdmServer>();
