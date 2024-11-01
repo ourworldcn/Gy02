@@ -23,6 +23,10 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
+using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using OW.DDD;
 
 namespace GY02.Controllers
 {
@@ -42,8 +46,10 @@ namespace GY02.Controllers
         /// <param name="templateManager"></param>
         /// <param name="searcherManager"></param>
         /// <param name="logger"></param>
+        /// <param name="dbContext"></param>
         public ShoppingController(GameAccountStoreManager gameAccountStore, IMapper mapper, SyncCommandManager syncCommandManager, GameEntityManager entityManager,
-            GameShoppingManager shoppingManager, GameTemplateManager templateManager, GameSearcherManager searcherManager, ILogger<ShoppingController> logger)
+            GameShoppingManager shoppingManager, GameTemplateManager templateManager, GameSearcherManager searcherManager, ILogger<ShoppingController> logger,
+            GY02UserContext dbContext)
         {
             _GameAccountStore = gameAccountStore;
             _Mapper = mapper;
@@ -53,6 +59,7 @@ namespace GY02.Controllers
             _TemplateManager = templateManager;
             _SearcherManager = searcherManager;
             _Logger = logger;
+            _DbContext = dbContext;
         }
 
         GameAccountStoreManager _GameAccountStore;
@@ -63,6 +70,9 @@ namespace GY02.Controllers
         GameTemplateManager _TemplateManager;
         GameSearcherManager _SearcherManager;
         ILogger<ShoppingController> _Logger;
+        GY02UserContext _DbContext;
+
+
 #if DEBUG
         /// <summary>
         /// 获取商品项结构。
@@ -389,7 +399,123 @@ namespace GY02.Controllers
             {
                 if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
                 result.FillErrorFromWorld();
-                return result;
+                goto lbErr;
+            }
+            var shoppingItemId = model.Paramters.GetGuidOrDefault("ShoppingItemId");
+            if (shoppingItemId == Guid.Empty)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"无效的商品Id";
+                goto lbErr;
+            }
+            var count = model.Paramters.GetDecimalOrDefault("Count");
+            if (count == 0)
+            {
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"无效的商品数量";
+                goto lbErr;
+            }
+
+            Guid orderId;
+            if (model.Paramters.ContainsKey("OrderId"))
+            {
+                orderId = model.Paramters.GetGuidOrDefault("OrderId");
+                if (orderId == Guid.Empty)
+                {
+                    result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    result.DebugMessage = $"无效的订单Id";
+                    goto lbErr;
+                }
+            }
+            else
+                orderId = Guid.NewGuid();
+            if (_DbContext.ShoppingOrder.Find(orderId) is GameShoppingOrder order)   //若Id重复
+            {
+                order = new GameShoppingOrder();
+                orderId = order.Id;
+                result.DebugMessage = $"指定订单Id重复，重新生成了订单Id。";
+            }
+            else
+                order = new GameShoppingOrder(orderId);
+
+            switch (model.Channel)
+            {
+                case "T1021/NA":
+                    order.Channel = "T1021/NA";
+                    order.Confirm1 = true;
+                    order.Confirm2 = false;
+                    order.State = 0;
+                    order.CustomerId = gc.Id.ToString();
+                    break;
+                default:
+                    result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    result.DebugMessage = $"错误的渠道标识:{model.Channel}";
+                    goto lbErr;
+            }
+            order.Detailes.Add(new GameShoppingOrderDetail { GoodsId = shoppingItemId.ToString(), Count = count });
+            _DbContext.ShoppingOrder.Add(order);
+            _DbContext.SaveChanges();
+            result.OrderId = orderId;
+            return result;
+        lbErr:
+            if (result.ErrorCode != ErrorCodes.NO_ERROR)
+            {
+                result.HasError = true;
+                _Logger.LogWarning(result.DebugMessage);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取订单。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult<GetShoppingOrderV2ReturnDto> GetShoppingOrderV2(GetShoppingOrderV2ParamsDto model)
+        {
+            var result = new GetShoppingOrderV2ReturnDto();
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                goto lbErr;
+            }
+
+            var keyGc = gc.Key;
+            var query = _DbContext.ShoppingOrder.Where(c => c.Channel == model.Channel && c.CustomerId == keyGc);
+            if (model.OrderId.HasValue)
+                query = query.Where(c => c.Id == model.OrderId.Value);
+            if (model.Start.HasValue)
+                query = query.Where(c => c.CreateUtc >= model.Start.Value);
+            if (model.End.HasValue)
+                query = query.Where(c => c.CreateUtc <= model.End.Value);
+
+            var orders = query.ToList(); //要返回的订单集合
+            if (model.Timeout.HasValue)  //若需要等待完成
+            {
+                var timeout = TimeSpan.FromSeconds((double)model.Timeout.Value);
+                var s = DateTime.Now;
+                do
+                {
+                    orders = query.ToList();
+                    if (orders.Any(c => c.State == 0))
+                        Thread.Sleep(500);
+                } while (DateTime.Now - s <= timeout);
+            }
+            foreach (var order in orders)
+            {
+                var tmp = _Mapper.Map<GameShoppingOrderDto>(order);
+                tmp.Changes.AddRange(order.GetJsonObject<List<GamePropertyChangeItemDto>>());
+                result.Orders.Add(tmp);
+            }
+            return result;
+        lbErr:
+            if (result.ErrorCode != ErrorCodes.NO_ERROR)
+            {
+                result.HasError = true;
+                _Logger.LogWarning(result.DebugMessage);
             }
             return result;
         }
@@ -454,7 +580,74 @@ namespace GY02.Controllers
                 errMsg = $"订单号格式无效";
                 goto lbOtherErr;
             }
+            if (_DbContext.ShoppingOrder.Find(orderId) is not GameShoppingOrder order)
+            {
+                errMsg = $"订单号无效";
+                goto lbOtherErr;
+            }
+            if (order.State != 0)
+            {
+                result.errMsg = "订单重复确认";
+                result.errcode = 101;
+                return result;
+            }
+            if (!order.Confirm1)
+            {
+                errMsg = $"订单号无效";
+                goto lbOtherErr;
+            }
+            #region 实际购买
 
+            #endregion 实际购买
+            var keyGu = _GameAccountStore.GetKeyByCharId(Guid.Parse(order.CustomerId));
+            using (var dw = _GameAccountStore.GetOrLoadUser(keyGu, out var gu))
+            {
+                if (dw.IsEmpty)
+                {
+                    errMsg = $"无法找到角色:GameCharId={order.CustomerId}";
+                    goto lbOtherErr;
+                }
+                var gc = gu.CurrentChar;
+                var bi = gc!.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
+                if (bi is null)
+                {
+                    errMsg = $"法币占位符为空。CharId={gc.Id}";
+                    goto lbOtherErr;
+                }
+                bi.Count++;
+                if (order.Detailes.FirstOrDefault() is not GameShoppingOrderDetail gsod)
+                {
+                    errMsg = $"缺少具体商品信息。";
+                    goto lbOtherErr;
+                }
+                if (!OwConvert.TryGetGuid(gsod.GoodsId, out var shoppingItemId))
+                {
+                    errMsg = $"缺少具体商品信息。";
+                    goto lbOtherErr;
+                }
+                var command = new ShoppingBuyCommand
+                {
+                    GameChar = gc,
+                    Count = (int)gsod.Count,
+                    ShoppingItemTId = shoppingItemId,
+                };
+
+                _SyncCommandManager.Handle(command);
+                if (command.HasError)
+                {
+                    if (bi.Count > 0) bi.Count--;
+                    errMsg = $"出现错误——{command.DebugMessage}";
+                    goto lbOtherErr;
+                }
+                var changes = _Mapper.Map<List<GamePropertyChangeItemDto>>(command.Changes);
+                var jo = order.GetJsonObject<List<GamePropertyChangeItemDto>>();
+                jo.AddRange(changes);
+            }
+
+            order.Confirm2 = true;
+            order.State = 1;
+            _DbContext.SaveChanges();
+            _Logger.LogInformation("订单(Id={orderId})成功入库。", orderId);
             return result;
         lbOtherErr: //其它错误
             _Logger.LogWarning("支付回调通知出错——{str}", errMsg);
@@ -462,6 +655,8 @@ namespace GY02.Controllers
             result.errcode = -100;
             return result;
         }
+
+
         #endregion T1021NA相关
     }
 

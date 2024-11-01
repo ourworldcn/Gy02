@@ -940,7 +940,7 @@ namespace GY02.Publisher
         /// </summary>
         public LoginV2ParamsDto()
         {
-            
+
         }
 
         /// <summary>
@@ -957,14 +957,14 @@ namespace GY02.Publisher
     /// <summary>
     /// 通用登录功能的返回值封装类。
     /// </summary>
-    public class LoginV2ReturnDto: ReturnDtoBase
+    public class LoginV2ReturnDto : ReturnDtoBase
     {
         /// <summary>
         /// 构造函数。
         /// </summary>
         public LoginV2ReturnDto()
         {
-            
+
         }
 
         #region 可映射属性
@@ -1854,6 +1854,49 @@ namespace GY02.Publisher
     }
 
     /// <summary>
+    /// 获取法币购买订单信息参数封装类。
+    /// </summary>
+    public class GetShoppingOrderV2ParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 渠道标识，针对每个不同渠道会给出不同命名，通常是 渠道名/地区/平台，当然也可能不区分平台。
+        /// 渠道标识:T1021/NA。
+        /// </summary>
+        public string Channel { get; set; }
+
+        /// <summary>
+        /// 等待订单完成的最大时间长度，单位：秒（可以有小数）。如果省略或为null则不等待订单完成，立即返回。
+        /// </summary>
+        public decimal? Timeout { get; set; }
+
+        /// <summary>
+        /// 限定获取订单的Id。省略则不限定特定的订单。
+        /// </summary>
+        public Guid? OrderId { get; set; }
+
+        /// <summary>
+        /// 创建订单时间的最早时间。省略则不限定订单的最早创建时间。
+        /// </summary>
+        public DateTime? Start { get; set; }
+
+        /// <summary>
+        /// 创建订单时间的最晚时间。省略则不限定订单的最晚创建时间。
+        /// </summary>
+        public DateTime? End { get; set; }
+    }
+
+    /// <summary>
+    /// 获取法币购买订单信息返回封装类。
+    /// </summary>
+    public class GetShoppingOrderV2ReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 订单集合。
+        /// </summary>
+        public List<GameShoppingOrderDto> Orders { get; set; } = new List<GameShoppingOrderDto>();
+    }
+
+    /// <summary>
     /// 法币购买商品的订单。
     /// </summary>
 #if NETCOREAPP
@@ -1873,6 +1916,11 @@ namespace GY02.Publisher
         /// Id。
         /// </summary>
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// 生成该订单的渠道标识。类似T1234/NA。
+        /// </summary>
+        public string Channel { get; set; }
 
         /// <summary>
         /// 目前是角色Id的字符串形式。如果以后存在给账号购买的情况则可能是账号Id。
@@ -2020,8 +2068,15 @@ namespace GY02.Publisher
     {
         /// <summary>
         /// 渠道标识，针对每个不同渠道会给出不同命名，通常是 渠道名/地区/平台，当然也可能不区分平台。
+        /// 渠道标识:T1021/NA,需要参数：OrderId（可选，指定有效Id,或省略该参数。），ShoppingItemId(商品Id),Count(数量)
         /// </summary>
         public string Channel { get; set; }
+
+        /// <summary>
+        /// 验证使用的证据。键是证据项的名，值证据项的值，针对不同的购买渠道有不同参数，通常需要 ShoppingItemId(商品Id),Count(数量，需要将数字转为字符串格式)。
+        /// </summary>
+        public Dictionary<string, string> Paramters { get; set; } = new Dictionary<string, string>();
+
     }
 
     /// <summary>
@@ -2029,6 +2084,10 @@ namespace GY02.Publisher
     /// </summary>
     public class CreateOrderV2ReturnDto : ReturnDtoBase
     {
+        /// <summary>
+        /// 创建订单的Id.如果参数中指定了订单Id，且有效（无重）则这里返回的是指定的Id，否则将返回新Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
     }
 
     /// <summary>

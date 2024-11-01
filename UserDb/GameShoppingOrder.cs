@@ -11,7 +11,7 @@ namespace OW.Game.Store
     /// <summary>
     /// 法币购买商品的订单。
     /// </summary>
-    [Index(nameof(CustomerId), nameof(CreateUtc))]
+    [Index(nameof(Channel), nameof(CustomerId), nameof(CreateUtc))]
     public class GameShoppingOrder : JsonDynamicPropertyBase, ICloneable
     {
         /// <summary>
@@ -29,6 +29,12 @@ namespace OW.Game.Store
         public GameShoppingOrder(Guid id) : base(id)
         {
         }
+
+        /// <summary>
+        /// 生成该订单的渠道标识。类似T1234/NA。
+        /// </summary>
+        [MaxLength(64)]
+        public string Channel { get; set; }
 
         /// <summary>
         /// 目前是角色Id的字符串形式。如果以后存在给账号购买的情况则可能是账号Id。
@@ -89,6 +95,7 @@ namespace OW.Game.Store
         {
             var result = new GameShoppingOrder
             {
+                Channel = Channel,
                 Amount = Amount,
                 Currency = Currency,
                 BinaryArray = BinaryArray.ToArray(),
@@ -103,8 +110,6 @@ namespace OW.Game.Store
             Detailes.ForEach(c => result.Detailes.Add((GameShoppingOrderDetail)c.Clone()));
             return result;
         }
-
-
 
         /// <summary>
         /// 将对象和子对象的Id换成新Id。通常在<see cref="Clone"/>后调用。

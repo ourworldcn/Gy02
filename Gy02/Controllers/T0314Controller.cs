@@ -309,6 +309,7 @@ namespace Gy02.Controllers
                 _Logger.LogWarning(result.DebugMessage);
                 return result;
             }
+            
             var bi = gc!.HuoBiSlot.Children.FirstOrDefault(c => c.TemplateId == ProjectContent.FabiTId);  //法币占位符
             if (bi is null)
             {
