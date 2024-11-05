@@ -1,15 +1,66 @@
 {
-  "uugameId": 101,
-  "amount": "1.00",
-  "payAmount": "30.000000",
-  "payCurrency": "THB",
-  "gameCustomInfo": "201807061818410299667",
-  "productId": "10100001",
-  "orderId": "131018070664800724511",
-  "sign": "ZBhj8IIRynVYSLSs+f9J4aWzmom0hT2QPZmCwNtcpZiGxV6jp2XZx0XIaUNT7nA4fIS/zStg/3NLh0B58/Tdq0GE5WVCHI5KUa5zAugBdGxuAd3QVB1W/SZqT5MK1mrqPvvuedvsr8ohUA1EefjFSm9kBm6lLu7HKW6BqIRiL08=",
-  "signtype": "RSA",
-  "state": 1,
-  "userId": "94162398",
-  "serverId": "1",
-  "channelId": "1000100013"
+  "Genus": [ "gs_xinbaoxiangjifen" ],
+  "ShoppingItem": {
+    "Period": {
+      "Start": "2023-05-30T00:00:00.000Z",
+      "End": null,
+      "PeriodString": "999d",
+      "ValidPeriodString": "999d"
+    },
+    "GroupNumber": 1,
+    "MaxCount": null,
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "c0359bac-2e58-4300-ae2c-fb48b1c7cd93",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 5,
+        "Genus": []
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "8f24d9b8-01eb-40c7-aae5-30f0e4ee8863",
+            "MinCount": 0,
+            "GeneralConditional": [],
+            "GroupMask": 3,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 28,
+              "MinRemainder": 0,
+              "MaxRemainder": 0
+            }
+          }
+        ],
+        "Count": 0,
+        "Genus": []
+      }
+    ],
+    "Outs": [
+      {
+        "Id": null,
+        "ParentTId": null,
+        "TId": "50fcb134-39d6-4373-9a49-074f26452679",
+        "Count": 1
+      },
+      {
+        "Id": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "ParentTId": null,
+        "TId": "8f24d9b8-01eb-40c7-aae5-30f0e4ee8863",
+        "Count": 1
+      }
+    ]
+  }
 }

@@ -82,7 +82,6 @@ namespace GY02.Commands
             if (tt is null) goto lbErr;
 #if DEBUG
             //if (tt.TemplateId == Guid.Parse("71567fb7-adfa-4443-94ee-46a48245ef9c")) ;
-            var ss = command.GameChar.ChengJiuSlot.Children.FirstOrDefault(c => c.TemplateId == Guid.Parse("822b1d80-70fe-417d-baea-e9c2aacbdcd8"));
 #endif
             var now = OwHelper.WorldNow;
             if (command.Count <= 0)
