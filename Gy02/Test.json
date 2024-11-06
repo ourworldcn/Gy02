@@ -1,66 +1,17 @@
 {
-  "Genus": [ "gs_xinbaoxiangjifen" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "999d",
-      "ValidPeriodString": "999d"
-    },
-    "GroupNumber": 1,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "c0359bac-2e58-4300-ae2c-fb48b1c7cd93",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 5,
-        "Genus": []
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "8f24d9b8-01eb-40c7-aae5-30f0e4ee8863",
-            "MinCount": 0,
-            "GeneralConditional": [],
-            "GroupMask": 3,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 28,
-              "MinRemainder": 0,
-              "MaxRemainder": 0
-            }
-          }
-        ],
-        "Count": 0,
-        "Genus": []
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "50fcb134-39d6-4373-9a49-074f26452679",
-        "Count": 1
-      },
-      {
-        "Id": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "ParentTId": null,
-        "TId": "8f24d9b8-01eb-40c7-aae5-30f0e4ee8863",
-        "Count": 1
-      }
-    ]
+  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
+  "Count": 2,
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+  "Fcps": {
+    "Count": {
+      "MinValue": 0,
+      "MaxValue": 2,
+      "StepValue": 2,
+      "Delay": "1.00:00:00",
+      "CurrentValue": 2,
+      "LastDateTime": "2023-06-01T00:00:00.0000000+08:00"
+    }
   }
 }
