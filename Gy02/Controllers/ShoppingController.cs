@@ -416,8 +416,8 @@ namespace GY02.Controllers
                 goto lbErr;
             }
 
-            Guid orderId;
-            if (model.Paramters.ContainsKey("OrderId"))
+            Guid orderId;   //订单Id。
+            if (model.Paramters.ContainsKey("OrderId")) //若指定了订单Id。
             {
                 orderId = model.Paramters.GetGuidOrDefault("OrderId");
                 if (orderId == Guid.Empty)
@@ -496,13 +496,13 @@ namespace GY02.Controllers
             if (model.Timeout.HasValue)  //若需要等待完成
             {
                 var timeout = TimeSpan.FromSeconds((double)model.Timeout.Value);
-                var s = DateTime.Now;
+                var s = DateTime.UtcNow;
                 do
                 {
                     orders = query.ToList();
                     if (orders.Any(c => c.State == 0))
                         Thread.Sleep(500);
-                } while (DateTime.Now - s <= timeout);
+                } while (DateTime.UtcNow - s <= timeout);
             }
             foreach (var order in orders)
             {

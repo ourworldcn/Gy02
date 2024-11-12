@@ -77,7 +77,7 @@ forgame_admin  /  Forgame@123
 Web访问地址 https://abb.shfoga.com:20444/
 Ftp访问地址，ftp://abb.shfoga.com:20021，用户名：radmin，密码：Gy220115
 
-欧美
+欧美发行 北京卡卡托斯网络科技有限公司
 下面是游戏服务器跳板机登录信息
 https://jumpserver.getqccode.com/
 oasis_ranchgame

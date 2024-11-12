@@ -2073,7 +2073,7 @@ namespace GY02.Publisher
         public string Channel { get; set; }
 
         /// <summary>
-        /// 验证使用的证据。键是证据项的名，值证据项的值，针对不同的购买渠道有不同参数，通常需要 ShoppingItemId(商品Id),Count(数量，需要将数字转为字符串格式)。
+        /// 动态参数字典，针对不同的购买渠道有不同参数，通常需要 ShoppingItemId(商品Id),Count(数量，需要将数字转为字符串格式)。
         /// </summary>
         public Dictionary<string, string> Paramters { get; set; } = new Dictionary<string, string>();
 
