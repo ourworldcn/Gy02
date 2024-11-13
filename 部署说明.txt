@@ -3,9 +3,10 @@ https://learn.microsoft.com/zh-cn/aspnet/core/host-and-deploy/iis/advanced?view=
 
 资源服务器配置
 MIME映射
-.apk application/octet-stream
-. application/octet-stream
-.unity3d application/octet-stream
+application/octet-stream
+.unity3d .apk .bundle   .bytes    .rawfile
+application/text
+.version  .hash
 
 WebApi网站
 去掉模块 WebDAVModule %windir%\System32\inetsrv\webdav.dll
@@ -80,5 +81,8 @@ Ftp访问地址，ftp://abb.shfoga.com:20021，用户名：radmin，密码：Gy220115
 欧美发行 北京卡卡托斯网络科技有限公司
 下面是游戏服务器跳板机登录信息
 https://jumpserver.getqccode.com/
-oasis_ranchgame
-Gy210115
+oasis_ranchgame//Gy210115 12345678Aa#
+43.130.108.31 administrator//Gy210115
+https://43.130.108.31:20443
+资源服务器Url:https://43.130.108.31:20444,资源服务器路径: D:\IisRoot\RServer
+付费回调的相对url是 api/Shopping/T1021NAPayed
