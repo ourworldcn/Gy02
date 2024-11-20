@@ -479,10 +479,10 @@ namespace GY02.Controllers
                         }
                         var str1 = respone.Content.ReadAsStringAsync().Result;
                         var obj = JsonSerializer.Deserialize<T1021NALoginReturnSdkDto>(str1)!;
-                        if (!obj.status)
+                        if (!obj.Status)
                         {
                             result.ErrorCode = ErrorCodes.ERROR_LOGON_FAILURE;
-                            result.DebugMessage = obj.message;
+                            result.DebugMessage = obj.Message;
                             result.HasError = true;
                             return result;
                         }
@@ -569,25 +569,25 @@ namespace GY02.Controllers
         /// 接口验证状态，若通过验证为true，否则为false。
         /// </summary>
         [JsonPropertyName("status")]
-        public bool status { get; set; }
+        public bool Status { get; set; }
 
         /// <summary>
         /// 玩家账号ID（自主平台的该值和客户端一致）。
         /// </summary>
         [JsonPropertyName("uid")]
-        public string uid { get; set; }
+        public string? Uid { get; set; }
 
         /// <summary>
         /// status 为false 时，message 有值，为错误提示语。
         /// </summary>
         [JsonPropertyName("message")]
-        public string message { get; set; }
+        public string? Message { get; set; }
 
         /// <summary>
         /// 如果status 为true 时，data 数组包含了用户账号绑定信息。
         /// </summary>
         [JsonPropertyName("data")]
-        public object data { get; set; }
+        public object? Data { get; set; }
     }
 
     /// <summary>

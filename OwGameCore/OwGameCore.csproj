@@ -11,10 +11,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Gy02Publisher\Gy02Publisher.csproj" />
     <ProjectReference Include="..\LoggingDb\LoggingDb.csproj" />
     <ProjectReference Include="..\OwGameDb\OwGameDb.csproj" />

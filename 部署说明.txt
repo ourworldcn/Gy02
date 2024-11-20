@@ -85,4 +85,4 @@ oasis_ranchgame//Gy210115 12345678Aa#
 43.130.108.31 administrator//Gy210115
 https://43.130.108.31:20443
 资源服务器Url:https://43.130.108.31:20444,资源服务器路径: D:\IisRoot\RServer
-付费回调的相对url是 api/Shopping/T1021NAPayed
+付费回调的相对url是 api/Shopping/T1021NAPayed,https://43.130.108.31:20443/api/Shopping/T1021NAPayed
