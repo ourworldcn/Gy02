@@ -666,6 +666,12 @@ namespace GY02.Templates
         /// </summary>
         [JsonPropertyName("enable")]
         public bool Enable { get; set; }
+
+        /// <summary>
+        /// ??。
+        /// </summary>
+        [JsonPropertyName("displayIcon")]
+        public bool DisplayIcon { get; set; }
     }
 
     /// <summary>

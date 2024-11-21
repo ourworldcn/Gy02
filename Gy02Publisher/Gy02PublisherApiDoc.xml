@@ -413,6 +413,11 @@
             词条是否生效。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateSkillItem.DisplayIcon">
+            <summary>
+            ??。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.TemplateStringFullView">
             <summary>
             模板的完整视图。
