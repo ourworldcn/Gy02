@@ -599,7 +599,6 @@ namespace GY02.Controllers
             }
             #region 实际购买
 
-            #endregion 实际购买
             var keyGu = _GameAccountStore.GetKeyByCharId(Guid.Parse(order.CustomerId));
             using (var dw = _GameAccountStore.GetOrLoadUser(keyGu, out var gu))
             {
@@ -644,6 +643,7 @@ namespace GY02.Controllers
                 var jo = order.GetJsonObject<List<GamePropertyChangeItemDto>>();
                 jo.AddRange(changes);
             }
+            #endregion 实际购买
 
             order.Confirm2 = true;
             order.State = 1;
