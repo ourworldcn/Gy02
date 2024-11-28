@@ -356,7 +356,7 @@ namespace GY02.Controllers
         /// <returns>ErrorCode=1316标识权限不足，需要管理员或超管权限运行。</returns>
         /// <response code="401">令牌无效。</response>  
         [HttpPost]
-        public ActionResult<UploadResourceFileReturnDto> UploadResourceFile(Guid token, string path, IFormFile file)
+        public ActionResult<UploadResourceFileReturnDto> UploadResourceFile(Guid token, [Required] string path, IFormFile file)
         {
             var result = new UploadResourceFileReturnDto();
             using var dw = _AccountStore.GetCharFromToken(token, out var gc);
@@ -376,7 +376,7 @@ namespace GY02.Controllers
             using var src = file.OpenReadStream();
 
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
-            var fullPath = Path.Combine(Path.GetPathRoot(basePath), "IisRoot\\Gy001Resource", path);
+            var fullPath = Path.Combine(Path.GetPathRoot(basePath)!, "IisRoot\\Gy001Resource", path);
             //using StreamReader sr = new StreamReader(stream);
             //var str = sr.ReadToEnd();
             try
