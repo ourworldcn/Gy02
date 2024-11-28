@@ -126,7 +126,7 @@ internal class Program
         #endregion 配置数据库
 
         if (TimeSpan.TryParse(builder.Configuration.GetSection("WorldClockOffset").Value, out var offerset))
-            OwHelper._Offset = offerset;  //配置游戏世界的时间。
+            OwHelper.Offset = offerset;  //配置游戏世界的时间。
         //services.Replace(new ServiceDescriptor(typeof(ISystemClock), typeof(OwSystemClock), ServiceLifetime.Singleton));
         services.AddGameServices();
         services.AddHostedService<GameHostedService>();

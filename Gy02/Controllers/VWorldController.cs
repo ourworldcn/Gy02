@@ -99,7 +99,7 @@ namespace GY02.Controllers
         {
             var result = new GetServerInfoReturnDto
             {
-                Offset = OwHelper._Offset.TotalSeconds,
+                Offset = OwHelper.Offset.TotalSeconds,
             };
             return result;
         }

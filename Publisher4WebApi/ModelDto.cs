@@ -2495,6 +2495,20 @@ namespace GY02.Publisher
     #region 管理员功能相关
 
     /// <summary>
+    /// 上传一些程序用文件功能的参数封装类。
+    /// </summary>
+    public class UploadFileParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 上传一些程序用文件功能的返回值封装类。
+    /// </summary>
+    public class UploadResourceFileReturnDto : ReturnDtoBase
+    {
+    }
+
+    /// <summary>
     /// 修改系统时间的功能参数封装类。
     /// </summary>
     public class ModifyWorldDateTimeParamsDto : TokenDtoBase

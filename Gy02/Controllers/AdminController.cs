@@ -21,6 +21,7 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text.Json;
 using System.Web;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Controllers
 {
@@ -342,7 +343,53 @@ namespace GY02.Controllers
                 result.DebugMessage = "需要超管权限执行此操作。";
                 return result;
             }
-            OwHelper._Offset = TimeSpan.FromSeconds(model.Offset);
+            OwHelper.Offset = TimeSpan.FromSeconds(model.Offset);
+            return result;
+        }
+
+        /// <summary>
+        /// 向资源服务器上传文件。
+        /// </summary>
+        /// <param name="token">令牌，需要管理员或超过权限。</param>
+        /// <param name="path">全路径使用除线(\)分割，相对于资源服务器根路径的路径并含完整文件名，如:dlc\ios\readme.txt。相同文件将被覆盖。 </param>
+        /// <param name="file"></param>
+        /// <returns>ErrorCode=1316标识权限不足，需要管理员或超管权限运行。</returns>
+        /// <response code="401">令牌无效。</response>  
+        [HttpPost]
+        public ActionResult<UploadResourceFileReturnDto> UploadResourceFile(Guid token, string path, IFormFile file)
+        {
+            var result = new UploadResourceFileReturnDto();
+            using var dw = _AccountStore.GetCharFromToken(token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            if (gc.Roles.All(c => c != ProjectContent.SupperAdminRole && c != ProjectContent.AdminRole))   //若无权限
+            {
+                result.HasError = true;
+                result.ErrorCode = ErrorCodes.ERROR_INVALID_ACL;
+                result.DebugMessage = "权限不足";
+                return result;
+            }
+            using var src = file.OpenReadStream();
+
+            var basePath = AppDomain.CurrentDomain.BaseDirectory;
+            var fullPath = Path.Combine(Path.GetPathRoot(basePath), "IisRoot\\Gy001Resource", path);
+            //using StreamReader sr = new StreamReader(stream);
+            //var str = sr.ReadToEnd();
+            try
+            {
+                using var dest = new FileStream(fullPath, FileMode.Create);
+                src.CopyTo(dest);
+            }
+            catch (Exception err)
+            {
+                result.HasError = true;
+                result.ErrorCode = ErrorCodes.RPC_S_OUT_OF_RESOURCES;
+                result.DebugMessage = err.Message;
+            }
             return result;
         }
     }
