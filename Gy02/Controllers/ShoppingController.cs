@@ -764,7 +764,11 @@ namespace GY02.Controllers
         [JsonPropertyName("signtype")]
         public string? signtype { get; set; }
 
-
+        /// <summary>
+        /// 用户支付的渠道。
+        /// </summary>
+        [JsonPropertyName("payType")]
+        public string payType { get; set; }
     }
 
     /// <summary>

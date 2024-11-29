@@ -1,105 +1,42 @@
-{
-  "Genus": [ "gs_zs", "fb_goumai" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "1m",
-      "ValidPeriodString": "1m"
-    },
-    "GroupNumber": 1,
-    "MaxCount": null,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1,
-        "Genus": []
-      }
-    ],
-    "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 80
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "554cda05-553f-46a2-b905-6a30ffcd2fbb",
-        "Count": 0
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
-        "Count": 1
-      }
-    ]
+[
+  {
+    "TId": "hOB31aRK2USVECDM6gQTdQ==",
+    "ObjectId": "8teXVKMmcEmLwYBQCpbvTg==",
+    "PropertyName": "Count",
+    "HasOldValue": true,
+    "OldValue": 1.0000,
+    "HasNewValue": true,
+    "NewValue": 0.0000,
+    "DateTimeUtc": "2024-11-28T23:01:41.620269Z"
   },
-  "productInfo": {
-    "Southeast_Android": {
-      "productStoreId": "com.duangsea.01",
-      "productAmount": "0.59",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Southeast_iOS": {
-      "productStoreId": "com.duangsea.01",
-      "productAmount": "0.59",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "EuropeAmerica_Android": {
-      "productStoreId": "com.kk.ranch.gp.0.99",
-      "productAmount": "0.99",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "EuropeAmerica_iOS": {
-      "productStoreId": "com.kk.ranch.ios.0.99",
-      "productAmount": "0.99",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Korea_Android": {
-      "productStoreId": "com.duangzs.01",
-      "productAmount": "1.1",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Korea_iOS": {
-      "productStoreId": "com.duangzs.01",
-      "productAmount": "1.1",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Pilipinas_Android": {
-      "productStoreId": "com.duangphl.01",
-      "productAmount": "0.99",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Pilipinas_iOS": {
-      "productStoreId": "com.duangphl.01",
-      "productAmount": "0.99",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    }
+  {
+    "TId": "JF9XyT2jukmxMCm2/01ixw==",
+    "ObjectId": "fH4OEooNyUqJHpPU2FPCQw==",
+    "PropertyName": "Count",
+    "HasOldValue": true,
+    "OldValue": 425.0000,
+    "HasNewValue": true,
+    "NewValue": 505.0000,
+    "DateTimeUtc": "2024-11-28T23:01:41.6202737Z"
   },
-  "productName": "80钻石购买",
-  "productType": "购买",
-  "productDesc": "80钻石购买",
-  "name_txt": 10995,
-  "JiaoBiao": [],
-  "display_icon": "ZuanShi2"
-}
+  {
+    "TId": "BdpMVT9Voka5BWow/80vuw==",
+    "ObjectId": "zUULE+B1bUeNuwEWwit9Lw==",
+    "PropertyName": "Count",
+    "HasOldValue": true,
+    "OldValue": 0.0000,
+    "HasNewValue": true,
+    "NewValue": 0.0000,
+    "DateTimeUtc": "2024-11-28T23:01:41.620274Z"
+  },
+  {
+    "TId": "nbzQ5w4/4EedbYCtHECy7g==",
+    "ObjectId": "Q7wswVPhcEqfB9dxlVS7RA==",
+    "PropertyName": "Count",
+    "HasOldValue": true,
+    "OldValue": 4.0000,
+    "HasNewValue": true,
+    "NewValue": 5.0000,
+    "DateTimeUtc": "2024-11-28T23:01:41.6202742Z"
+  }
+]
