@@ -7,12 +7,14 @@ using GY02.Managers;
 using GY02.Publisher;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
+using OW;
 using OW.Game.Entity;
 using OW.Game.PropertyChange;
 using OW.Game.Store;
 using OW.SyncCommand;
 using System.Net;
 using System.Net.Sockets;
+using System.Runtime.Serialization.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Xml.Linq;
@@ -77,7 +79,7 @@ namespace GY02.Controllers
         /// <param name="udpServer"></param>
         /// <param name="httpClientFactory"></param>
         public AccountController(GameAccountStoreManager gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper, ILogger<AccountController> logger,
-            UdpServerManager udpServer, IHttpClientFactory httpClientFactory)
+            UdpServerManager udpServer, IHttpClientFactory httpClientFactory, PasswordGenerator passwordGenerator)
         {
             _GameAccountStore = gameAccountStore;
             _SyncCommandManager = syncCommandManager;
@@ -85,6 +87,7 @@ namespace GY02.Controllers
             _Logger = logger;
             _UdpServer = udpServer;
             _HttpClientFactory = httpClientFactory;
+            _PasswordGenerator = passwordGenerator;
         }
 
         readonly GameAccountStoreManager _GameAccountStore;
@@ -93,6 +96,7 @@ namespace GY02.Controllers
         ILogger<AccountController> _Logger;
         UdpServerManager _UdpServer;
         IHttpClientFactory _HttpClientFactory;
+        PasswordGenerator _PasswordGenerator;
 
         /// <summary>
         /// 创建一个新账号。
@@ -423,6 +427,11 @@ namespace GY02.Controllers
             return result;
         }
 
+        class GetPwdWrapper
+        {
+            public string Dan { get; set; }
+        }
+
         /// <summary>
         /// 统一登陆接口。
         /// 验证方式:T1021/NA,需要证据：Uid，Token
@@ -436,7 +445,7 @@ namespace GY02.Controllers
             var command = new LoginCommand();
             var isCreate = false;   //是否是新创建
             var isCreateSucc = false;
-            string errMsg ;
+            string errMsg;
             var errCode = ErrorCodes.NO_ERROR;
 
             switch (model.Mode)
@@ -464,11 +473,11 @@ namespace GY02.Controllers
                         var httpClient = _HttpClientFactory.CreateClient("T1021/NA");
                         var p = new T1021NALoginParamsSdkDto { uid = uid, token = token };
 
-                        var dic = new Dictionary<string,string>();
+                        var dic = new Dictionary<string, string>();
                         dic.Add("uid", uid);
                         dic.Add("token", token);
-                        
-                        using var respone = httpClient.PostAsync(url, new FormUrlEncodedContent(dic)).Result; 
+
+                        using var respone = httpClient.PostAsync(url, new FormUrlEncodedContent(dic)).Result;
 
                         if (!respone.IsSuccessStatusCode)   //若不成功
                         {
@@ -486,22 +495,36 @@ namespace GY02.Controllers
                             result.HasError = true;
                             return result;
                         }
-
-                        using var dw = _GameAccountStore.GetOrLoadUser(uid, uid, out var gu);
-                        if (dw.IsEmpty)  //若没有创建
+                        var db = _SyncCommandManager.Service.GetRequiredService<GY02UserContext>();
+                        var thing = db.VirtualThings.FirstOrDefault(c => c.ExtraString == uid);
+                        string pwd;
+                        if (thing is not null)   //若可能存在已创建的账号
                         {
-                            var commandCreate = new CreateAccountCommand { LoginName = uid, Pwd = uid };
-                            _SyncCommandManager.Handle(commandCreate);
-                            if (commandCreate.HasError)
+                            var key = thing?.Id.ToString() ?? Guid.Empty.ToString();
+                            using var dw = _GameAccountStore.GetOrLoadUser(key, out var gu);
+                            if (dw.IsEmpty)  //若不存在
                             {
-                                result.FillErrorFrom(commandCreate);
-                                return result;
+                                pwd = _PasswordGenerator.Generate(8);
+                                var commandCreate = new CreateAccountCommand { LoginName = uid, Pwd = pwd };
+                                _SyncCommandManager.Handle(commandCreate);
+                                if (commandCreate.HasError)
+                                {
+                                    result.FillErrorFrom(commandCreate);
+                                    return result;
+                                }
+                                isCreate = true;
                             }
-                            isCreate = true;
+                            else
+                            {
+                                var ss = JsonSerializer.Deserialize<GetPwdWrapper>(gu.GetThing().JsonObjectString);
+                                pwd = ss.Dan;// gu.CurrentChar.GetThing().JsonObjectString
+                            }
                         }
+                        else
+                            pwd = _PasswordGenerator.Generate(8);
 
                         command.LoginName = uid;
-                        command.Pwd = uid;
+                        command.Pwd = pwd;
                         _SyncCommandManager.Handle(command);
                         if (command.HasError)
                         {
@@ -523,7 +546,7 @@ namespace GY02.Controllers
                         }
                         catch (Exception err)
                         {
-                            errCode= ErrorCodes.ERROR_BAD_ARGUMENTS;
+                            errCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                             errMsg = err.Message;
                             goto lbErr;
                         }
