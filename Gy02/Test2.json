@@ -1,66 +1,54 @@
 {
-  "Genus": [ "cj_meiri", "goto_main_level" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
+  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
+  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+  "name_txt": 11827,
+  "comment_txt": 11853,
+  "atk": null,
+  "def": null,
+  "pow": [
+    50,
+    55,
+    60,
+    65,
+    70,
+    75,
+    80,
+    85,
+    90,
+    95
+  ],
+  "Genus": [
+    "p_wh",
+    "e_zuoqi",
+    "zuoqi_sheep"
+  ],
+  "p_skills": [
+    {
+      "skillsid": "0dfc1671-b37e-422c-b832-149585ffff2c",
+      "enable": false
     },
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
-            "MinCount": 0,
-            "NumberCondition": {
-              "PropertyName": "Count",
-              "MinValue": 0,
-              "MaxValue": null,
-              "Subtrahend": 0,
-              "Modulus": 7,
-              "MinRemainder": 0,
-              "MaxRemainder": 0
-            },
-            "GeneralConditional": [],
-            "Count": 0,
-            "GroupMask": 3
-          }
-        ]
-      }
-    ],
-    "Exp2LvSequence": [ 3 ],
-    "Outs": [
-      [
-        {
-          "ParentTId": null,
-          "TId": "6c70de33-1021-43bf-a013-5af3a66e793e",
-          "Count": 20
-        },
-        {
-          "ParentTId": null,
-          "TId": "008d96c5-9545-44fb-965d-6d1c9d97f97d",
-          "Count": 5
-        },
-        {
-          "ParentTId": null,
-          "TId": "64aa13e6-70bc-4fe4-a112-09dcb2160f35",
-          "Count": 5
-        },
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "e93c4aa4-ab58-4262-a93b-0118edfe8afb",
-          "Count": 11
-        }
-      ]
-    ]
-  },
-  "name_txt": 60005
+    {
+      "skillsid": "02c69591-b1d6-47fb-a992-c8dd9c485b54",
+      "enable": false
+    },
+    {
+      "skillsid": "ec322d87-893d-4c34-88ed-e9359bd5638c",
+      "enable": false
+    },
+    {
+      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
+      "enable": false
+    },
+    {
+      "skillsid": "511379b8-fdab-452e-8415-a6a350e7f930",
+      "enable": true,
+      "displayIcon": true
+    },
+    {
+      "skillsid": "b6bb4cbe-e425-419c-ab19-315c812b9f42",
+      "enable": false,
+      "displayIcon": true
+    }
+  ],
+  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e"
 }

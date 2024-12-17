@@ -1371,13 +1371,13 @@
     {
       "DisplayName": "金币",
       "Id": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "Gid": 110101002,
+      "Gid": 110103002,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":5000,\"name_txt\":10253,\"comment_txt\":10254}"
     },
     {
       "DisplayName": "钻石",
       "Id": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-      "Gid": 110101001,
+      "Gid": 110121001,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":100,\"name_txt\":10255,\"comment_txt\":10256}"
     },
     {
@@ -15409,16 +15409,16 @@
       "PropertiesString": "{\"Genus\":[\"cj_changqi\",\"goto_main_level\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Exp2LvSequence\":[5,15,25,35,50,65,80,100,120,140,160,180,200,230,260,300],\"Ins\":[],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":20}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":20}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":20}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":30}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":30}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":15},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":30}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":40}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":40}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":20},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":40}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":60}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":30},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":60}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":100}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":100}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":50},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":100}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":80},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":160}],[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":80},{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"a84bcbd1-9541-4907-99df-59b19559ae9f\",\"Count\":160}]]},\"name_txt\":30022}"
     },
     {
-      "DisplayName": "灰山羊图鉴奖励",
+      "DisplayName": "羊图鉴奖励 （白，绿，蓝） 匪徒羊",
       "Id": "7bdb4811-0a13-46bf-bab5-410ac8a0a5a4",
       "Gid": 220102001,
-      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"a380e125-2640-409b-8c45-359ea2f734bb\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}]]}}"
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pinjie\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\":[\"e_zuoqi\",\"zuoqi_sheep\"],\"TId\":\"e919f7c7-b341-4159-9ecb-fba64363cff2\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\":[\"e_zuoqi\",\"zuoqi_sheep\"],\"TId\":\"9c2d37c2-1f65-4809-a51b-bf1e22e9525f\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0},{\"Conditional\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\":[\"e_zuoqi\",\"zuoqi_sheep\"],\"TId\":\"110b74ff-db7e-4a28-9e28-12beaf18a9e1\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}]]}}"
     },
     {
-      "DisplayName": "粉山羊图鉴奖励",
+      "DisplayName": "羊图鉴奖励 （紫）星战羊",
       "Id": "845b9394-550b-451c-a128-a5797ab7de97",
       "Gid": 220102002,
-      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pifu\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"3b163a62-6591-4a93-a385-cf079b20f589\",\"Genus\":[],\"TId\":\"b564395a-487d-4682-8dec-1338daee3952\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0,\"Genus\":[]}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":5}]]}}"
+      "PropertiesString": "{\"Genus\":[\"tj_jiangli\",\"cj_pinjie\"],\"TypeGuid\":\"48CD339A-3B21-4DA7-9B0A-2B914B3DD42C\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"04AB4C60-9E5B-43A8-894F-3477655371BE\",\"Count\":0,\"Achievement\":{\"Period\":{\"Start\":\"2023-05-30T03:03:28.385Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"TjIns\":[{\"Conditional\":[{\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"Genus\":[\"e_zuoqi\",\"zuoqi_sheep\"],\"TId\":\"402a7b1c-bd32-4540-9efe-f9801ed6946b\",\"MinCount\":1,\"GeneralConditional\":[],\"GroupMask\":1}],\"Count\":0}],\"Exp2LvSequence\":[1],\"Outs\":[[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"TId\":\"c9575f24-a33d-49ba-b130-29b6ff4d62c7\",\"Count\":10}]]}}"
     },
     {
       "DisplayName": "金山羊图鉴奖励",
@@ -22277,7 +22277,7 @@
     {
       "DisplayName": "角色经验/等级占位符",
       "Id": "1f31807a-f633-4d3a-8e8e-382ad105d061",
-      "Gid": 110201007,
+      "Gid": 110203007,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":0,\"Exp2LvSequence\":[1000,2000,3203,4573,6188,8143,10552,13547,17280,21922,27665,34722,43327,53737,66231,81111,98703,119355,143440,171355,203522,240389,282428,330138,384043,444695,512670,588573,673036,766718,870306,984515,1110088,1247797,1398443,1562856,1741894,1936446,2147430,2375795,2622518,2888608,3175105,3483078,3813629,4167890,4547025,4952229,5384730,5845786,6336689,6858763,7413364,8001881,8625736,9286384,9985314,10724047,11504138,12327177,13194787,14108625,15070383,16081787,17144597,18260609,19431652,20659593,21946331,23293803,24703980,26178869,27720513,29330990,31012416,32766942,34596755,36504080,38491177,40560345,42713917,44954265,47283798,49704963,52220242,54832158,57543269,60356172,63273502,66297931,69432171,72678972,76041122,79521448,83122815,86848127,90700328,94682400,98797364,103048282,107438254],\"name_txt\":11002,\"comment_txt\":11002}",
       "Remark": "Count是角色经验，Level是角色等级"
     },
@@ -22326,7 +22326,7 @@
     {
       "DisplayName": "高级天赋购买材料",
       "Id": "acca7c0a-fdd5-4343-a6ec-e6c7f5c91e1c",
-      "Gid": 130101004,
+      "Gid": 130111004,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"9c559895-9a2c-43a7-b793-e879a600487c\",\"name_txt\":11008,\"comment_txt\":11009}"
     },
     {
@@ -23271,7 +23271,7 @@
     {
       "DisplayName": "爬塔占位符",
       "Id": "43ADC188-7B1D-4C73-983F-4E5583CBACCD",
-      "Gid": 110201030,
+      "Gid": 110203030,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":0}",
       "Remark": "Count=0标识没有爬塔，Count>0标识爬塔的层数，如1表示处于第一层，以此类推"
     },
@@ -29446,25 +29446,25 @@
     {
       "DisplayName": "宝箱2道具",
       "Id": "c958c9f0-8110-4da9-b61b-1c90ef230d97",
-      "Gid": 110301002,
+      "Gid": 110302002,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"name_txt\":69001,\"comment_txt\":69502,\"debrisCashEquip\":1}"
     },
     {
       "DisplayName": "宝箱3道具",
       "Id": "d8b238d1-3a98-4b0b-b74e-d3efffa77892",
-      "Gid": 110301003,
+      "Gid": 110303003,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"name_txt\":69002,\"comment_txt\":69503,\"debrisCashEquip\":1}"
     },
     {
       "DisplayName": "宝箱4道具",
       "Id": "d96e7af4-23b4-4de3-9642-f1845c30aad5",
-      "Gid": 110301004,
+      "Gid": 110311004,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"name_txt\":69003,\"comment_txt\":69504,\"debrisCashEquip\":1}"
     },
     {
       "DisplayName": "宝箱5道具",
       "Id": "06bb186e-5d67-4061-b150-8e043c9bb9a8",
-      "Gid": 110301005,
+      "Gid": 110321005,
       "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":false,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"name_txt\":69004,\"comment_txt\":69505,\"debrisCashEquip\":1}"
     },
     {
