@@ -1698,7 +1698,7 @@ namespace GY02.Templates
         }
 
         /// <summary>
-        /// 选取物品的条件。
+        /// 选取物品的条件。多个条件之间是或关系，即满足任意一个即认为满足条件。
         /// </summary>
         public List<GameThingPreconditionItem> Conditional { get; set; } = new List<GameThingPreconditionItem>();
 

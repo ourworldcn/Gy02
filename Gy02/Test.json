@@ -1,8 +1,5 @@
 {
-  "Genus": [
-    "tj_jiangli",
-    "cj_pifu"
-  ],
+  "Genus": [ "tj_jiangli", "cj_pinjie" ],
   "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
   "stk": -1,
   "Count0Reserved": true,
@@ -19,39 +16,34 @@
       {
         "Conditional": [
           {
-            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
-            "Genus": [
-
-            ],
-            "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
+            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
             "MinCount": 1,
-            "GeneralConditional": [
-
-            ],
+            "GeneralConditional": [],
             "GroupMask": 1
           },
           {
-            "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
-            "Genus": [
-
-            ],
-            "TId": "a380e125-2640-409b-8c45-359ea2f734bb",
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
+            "TId": "9c2d37c2-1f65-4809-a51b-bf1e22e9525f",
             "MinCount": 1,
-            "GeneralConditional": [
-
-            ],
+            "GeneralConditional": [],
+            "GroupMask": 1
+          },
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
+            "TId": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
+            "MinCount": 1,
+            "GeneralConditional": [],
             "GroupMask": 1
           }
         ],
-        "Count": 0,
-        "Genus": [
-
-        ]
+        "Count": 0
       }
     ],
-    "Exp2LvSequence": [
-      1
-    ],
+    "Exp2LvSequence": [ 1 ],
     "Outs": [
       [
         {

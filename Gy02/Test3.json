@@ -26,7 +26,9 @@
             ],
             "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
             "MinCount": 1,
-            "GeneralConditional": [],
+            "GeneralConditional": [
+
+            ],
             "GroupMask": 1
           },
           {
@@ -35,32 +37,13 @@
               "e_zuoqi",
               "zuoqi_sheep"
             ],
-            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "Genus": [
-              "e_zuoqi",
-              "zuoqi_sheep"
-            ],
             "TId": "9c2d37c2-1f65-4809-a51b-bf1e22e9525f",
             "MinCount": 1,
-            "GeneralConditional": [],
+            "GeneralConditional": [
+
+            ],
             "GroupMask": 1
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
+          },
           {
             "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
             "Genus": [
@@ -69,24 +52,10 @@
             ],
             "TId": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
             "MinCount": 1,
-            "GeneralConditional": [],
+            "GeneralConditional": [
+
+            ],
             "GroupMask": 1
           }
-        ],
-        "Count": 0
-      }
-    ],
-    "Exp2LvSequence": [
-      1
-    ],
-    "Outs": [
-      [
-        {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5
-        }
-      ]
-    ]
-  }
-}
+        ]
+ 

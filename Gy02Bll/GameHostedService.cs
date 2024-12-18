@@ -432,6 +432,18 @@ namespace GY02
             #region 测试用代码
             try
             {
+                int i = 0;
+                var tMng = _Services.GetRequiredService<GameTemplateManager>();
+                foreach (var item in tMng.Id2FullView.Values)
+                {
+                    if (item.TemplateId == Guid.Parse("7bdb4811-0a13-46bf-bab5-410ac8a0a5a4"))
+                        i++;
+                    if (item.Achievement?.TjIns.Any(c => c.Conditional.Count > 1) ?? false)
+                        i++;
+                    if (item.ShoppingItem?.Ins.Any(c => c.Conditional.Count > 1) ?? false)
+                        i++;
+                }
+
             }
             #endregion 测试用代码
             catch (Exception)

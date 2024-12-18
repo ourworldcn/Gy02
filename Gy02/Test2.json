@@ -1,54 +1,67 @@
 {
-  "TypeGuid": "5C9B58EA-F18A-4874-9625-B22694A71A04",
-  "ptid": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-  "name_txt": 11827,
-  "comment_txt": 11853,
-  "atk": null,
-  "def": null,
-  "pow": [
-    50,
-    55,
-    60,
-    65,
-    70,
-    75,
-    80,
-    85,
-    90,
-    95
-  ],
-  "Genus": [
-    "p_wh",
-    "e_zuoqi",
-    "zuoqi_sheep"
-  ],
-  "p_skills": [
-    {
-      "skillsid": "0dfc1671-b37e-422c-b832-149585ffff2c",
-      "enable": false
+  "Genus": [ "tj_jiangli", "cj_pinjie" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
+    "Period": {
+      "Start": "2023-05-30T03:03:28.385Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    {
-      "skillsid": "02c69591-b1d6-47fb-a992-c8dd9c485b54",
-      "enable": false
-    },
-    {
-      "skillsid": "ec322d87-893d-4c34-88ed-e9359bd5638c",
-      "enable": false
-    },
-    {
-      "skillsid": "46b40bae-67d8-4523-8281-ce81bb3b7b7e",
-      "enable": false
-    },
-    {
-      "skillsid": "511379b8-fdab-452e-8415-a6a350e7f930",
-      "enable": true,
-      "displayIcon": true
-    },
-    {
-      "skillsid": "b6bb4cbe-e425-419c-ab19-315c812b9f42",
-      "enable": false,
-      "displayIcon": true
-    }
-  ],
-  "LvUpTId": "da8ede17-b3fb-45b1-b7af-1f1d35c2797e"
+    "TjIns": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
+            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
+            "TId": "9c2d37c2-1f65-4809-a51b-bf1e22e9525f",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0
+      },
+      {
+        "Conditional": [
+          {
+            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
+            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
+            "TId": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
+            "MinCount": 1,
+            "GeneralConditional": [],
+            "GroupMask": 1
+          }
+        ],
+        "Count": 0
+      }
+    ],
+    "Exp2LvSequence": [ 1 ],
+    "Outs": [
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5
+        }
+      ]
+    ]
+  }
 }
