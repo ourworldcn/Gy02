@@ -107,7 +107,7 @@ namespace GY02.Managers
         public bool IsMatch(GameEntity entity, IEnumerable<GameThingPreconditionItem> conditions, int mask)
         {
             var coll = conditions.Where(c => c.IsValidate(mask));
-            return coll.Any(c => IsMatch(entity, c));
+            return !coll.Any() || coll.Any(c => IsMatch(entity, c));
         }
 
         /// <summary>

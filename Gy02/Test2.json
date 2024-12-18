@@ -1,67 +1,26 @@
 {
-  "Genus": [ "tj_jiangli", "cj_pinjie" ],
-  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
-  "stk": -1,
-  "Count0Reserved": true,
-  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
-  "Count": 0,
-  "Achievement": {
-    "Period": {
-      "Start": "2023-05-30T03:03:28.385Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "TjIns": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
-            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
-            "TId": "9c2d37c2-1f65-4809-a51b-bf1e22e9525f",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0
-      },
-      {
-        "Conditional": [
-          {
-            "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-            "Genus": [ "e_zuoqi", "zuoqi_sheep" ],
-            "TId": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 0
-      }
-    ],
-    "Exp2LvSequence": [ 1 ],
-    "Outs": [
-      [
+  "Items": [
+    {
+      "Rewards": [
         {
-          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-          "Count": 5
+          "ParentTId": "0Vo6EvDU2UyavNRAQZ2eDQ==",
+          "TId": "JF9XyT2jukmxMCm2/01ixw==",
+          "Count": 5,
+          "AddPropDic": {}
         }
-      ]
-    ]
-  }
+      ],
+      "IsCompleted": true,
+      "IsPicked": true,
+      "Level": 1
+    }
+  ],
+  "TIdsOfCreatedIds": [],
+  "ClientDictionary": {},
+  "CompositingAccruedCost": [],
+  "lv": 1,
+  "LastModifyDateTime": "2024-12-18T16:04:41.1893669Z",
+  "IsValid": true,
+  "LvUpAccruedCost": [],
+  "CountOfLastModifyUtc": "2024-12-18T16:08:30.0193355Z",
+  "Fcps": {}
 }

@@ -12,8 +12,8 @@
     "Period": {
       "Start": "2023-05-30T03:03:28.385Z",
       "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
+      "PeriodString": "90y",
+      "ValidPeriodString": "90y"
     },
     "TjIns": [
       {
@@ -22,12 +22,11 @@
             "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
             "Genus": [
               "e_zuoqi",
-              "zuoqi_sheep"
+              "zuoqi_wolf"
             ],
-            "TId": "e919f7c7-b341-4159-9ecb-fba64363cff2",
+            "TId": "be48a30e-3f64-477a-9ce6-b3c3cad04688",
             "MinCount": 1,
             "GeneralConditional": [
-
             ],
             "GroupMask": 1
           },
@@ -35,12 +34,11 @@
             "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
             "Genus": [
               "e_zuoqi",
-              "zuoqi_sheep"
+              "zuoqi_wolf"
             ],
-            "TId": "9c2d37c2-1f65-4809-a51b-bf1e22e9525f",
+            "TId": "60c28119-42b0-4ebc-bc37-24be3afaebf4",
             "MinCount": 1,
             "GeneralConditional": [
-
             ],
             "GroupMask": 1
           },
@@ -48,14 +46,31 @@
             "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
             "Genus": [
               "e_zuoqi",
-              "zuoqi_sheep"
+              "zuoqi_wolf"
             ],
-            "TId": "110b74ff-db7e-4a28-9e28-12beaf18a9e1",
+            "TId": "269448b5-b46c-4245-aab5-01b8fb53137e",
             "MinCount": 1,
             "GeneralConditional": [
-
             ],
             "GroupMask": 1
           }
+        ],
+        "Count": 0,
+        "Genus": [
         ]
- 
+      }
+    ],
+    "Exp2LvSequence": [
+      1
+    ],
+    "Outs": [
+      [
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+          "Count": 5
+        }
+      ]
+    ]
+  }
+}
