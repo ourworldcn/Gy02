@@ -86,3 +86,27 @@ oasis_ranchgame//Gy210115 12345678Aa#
 https://43.130.108.31:20443
 资源服务器Url:https://43.130.108.31:20444,资源服务器路径: D:\IisRoot\RServer
 付费回调的相对url是 api/Shopping/T1021NAPayed,https://43.130.108.31:20443/api/Shopping/T1021NAPayed
+
+卡卡托斯
+卡卡托斯/北美/正式/支付后回调地址 http://login-ranch-oasis.amuapp.com:20444/api/Shopping/T1021NAPayed
+
+卡卡托斯/北美/正式/游戏服务器
+IP:43.166.249.138
+DNS:login-ranch-oasis.amuapp.com
+账号:Administrator
+密码:BBSbbs123$%^fF123
+WebApi地址：https://login-ranch-oasis.amuapp.com:20443
+
+卡卡托斯/北美/正式/资源服务器
+IP:43.166.239.132
+DNS:rsc-ranch-oasis.amuapp.com
+账号:Administrator
+密码:BBSbbs123$%^fF123
+资源根目录:E:\IISRoot\Gy001Resource
+Web地址：https://rsc-ranch-oasis.amuapp.com:20443
+
+卡卡托斯/北美/正式/数据库服务器
+IP:10.4.1.7:1433
+DNS:/
+账号:bbs_admin
+密码:Sqlserver$%^fegF
