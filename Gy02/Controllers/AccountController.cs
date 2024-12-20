@@ -522,7 +522,17 @@ namespace GY02.Controllers
                             }
                         }
                         else
+                        {
                             pwd = _PasswordGenerator.Generate(8);
+                            var commandCreate = new CreateAccountCommand { LoginName = uid, Pwd = pwd };
+                            _SyncCommandManager.Handle(commandCreate);
+                            if (commandCreate.HasError)
+                            {
+                                result.FillErrorFrom(commandCreate);
+                                return result;
+                            }
+                            isCreate = true;
+                        }
 
                         command.LoginName = uid;
                         command.Pwd = pwd;
