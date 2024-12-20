@@ -28,7 +28,7 @@ namespace GY02.Commands
     {
         public StartCombatHandler(GameAccountStoreManager gameAccountStore, GameTemplateManager templateManager, GameBlueprintManager blueprintManager, GameEntityManager gameEntityManager, GameCombatManager combatManager, SyncCommandManager syncCommandManager)
         {
-            _GameAccountStore = gameAccountStore;
+            _AccountStore = gameAccountStore;
             _TemplateManager = templateManager;
             _BlueprintManager = blueprintManager;
             _GameEntityManager = gameEntityManager;
@@ -36,7 +36,7 @@ namespace GY02.Commands
             _SyncCommandManager = syncCommandManager;
         }
 
-        GameAccountStoreManager _GameAccountStore;
+        GameAccountStoreManager _AccountStore;
         GameTemplateManager _TemplateManager;
         GameBlueprintManager _BlueprintManager;
         GameEntityManager _GameEntityManager;
@@ -46,12 +46,12 @@ namespace GY02.Commands
         public override void Handle(StartCombatCommand command)
         {
             var key = command.GameChar.GetUser()?.Key;
-            if (!_GameAccountStore.Lock(key))   //若锁定失败
+            if (!_AccountStore.Lock(key))   //若锁定失败
             {
                 command.FillErrorFromWorld();
                 return;
             }
-            using var dw = DisposeHelper.Create(_GameAccountStore.Unlock, key);
+            using var dw = DisposeHelper.Create(_AccountStore.Unlock, key);
             if (dw.IsEmpty) //若锁定失败
             {
                 command.FillErrorFromWorld();
@@ -100,7 +100,8 @@ namespace GY02.Commands
                 command.GameChar.CombatTId = command.CombatTId;
                 command.Changes?.MarkNewValueChanges(command.GameChar, nameof(command.GameChar.CombatTId), command.GameChar.CombatTId);
             }
-            _GameAccountStore.Save(key);
+            _AccountStore.Save(key);
+            _AccountStore.Nop(key);
         }
     }
 }

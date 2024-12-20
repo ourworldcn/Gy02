@@ -150,6 +150,7 @@ namespace GY02.Commands
             {
                 //已计入周任务
             }
+            AccountStore.Nop(command.GameChar.GetUser()?.Key);
             return;
         lbErr:
             command.FillErrorFromWorld();

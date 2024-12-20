@@ -78,6 +78,7 @@ namespace GY02.Controllers
         /// <param name="logger"></param>
         /// <param name="udpServer"></param>
         /// <param name="httpClientFactory"></param>
+        /// <param name="passwordGenerator"></param>
         public AccountController(GameAccountStoreManager gameAccountStore, SyncCommandManager syncCommandManager, IMapper mapper, ILogger<AccountController> logger,
             UdpServerManager udpServer, IHttpClientFactory httpClientFactory, PasswordGenerator passwordGenerator)
         {

@@ -319,6 +319,7 @@ namespace GY02.Commands
             #endregion 金猪活动
 
             _AccountStore.Save(key);
+            _AccountStore.Nop(key);
         }
 
     }
