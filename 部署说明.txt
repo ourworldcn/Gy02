@@ -82,9 +82,14 @@ Ftp访问地址，ftp://abb.shfoga.com:20021，用户名：radmin，密码：Gy2
 下面是游戏服务器跳板机登录信息
 https://jumpserver.getqccode.com/
 oasis_ranchgame//Gy210115 12345678Aa#
-43.130.108.31 administrator//Gy210115
+
+卡卡托斯/北美/测试/游戏服务器
+IP:43.130.108.31
+账号:administrator
+密码:Gy210115
 https://43.130.108.31:20443
-资源服务器Url:https://43.130.108.31:20444,资源服务器路径: D:\IisRoot\RServer
+资源服务器Url:https://43.130.108.31:20444
+资源服务器路径: D:\IisRoot\RServer
 卡卡托斯/北美/测试/支付后回调地址付费回调的相对url是 api/Shopping/T1021NAPayed,https://43.130.108.31:20443/api/Shopping/T1021NAPayed
 卡卡托斯/北美/测试/支付后回调地址付费回调/HTTP地址：http://43.130.108.31:20021/api/Shopping/T1021NAPayed
 

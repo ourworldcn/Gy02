@@ -94,7 +94,7 @@ namespace GY02.Controllers
         readonly GameAccountStoreManager _GameAccountStore;
         readonly SyncCommandManager _SyncCommandManager;
         readonly IMapper _Mapper;
-        ILogger<AccountController> _Logger;
+        private ILogger<AccountController> _Logger;
         UdpServerManager _UdpServer;
         IHttpClientFactory _HttpClientFactory;
         PasswordGenerator _PasswordGenerator;
