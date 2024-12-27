@@ -1,68 +1,9 @@
 {
-  "FuhuaPreview": [],
-  "FuhuaHistory": [],
-  "CombatHistory": [
-    {
-      "TId": "h7kiGyxP/EuxBQ6EWRS5nQ==",
-      "MinTimeSpanOfPass": "00:02:43.6690000",
-      "MaxLevelOfPass": 3,
-      "LastLevelOfPass": 3
-    }
-  ],
-  "AdsRewardsHistory": [
-    {
-      "TId": "ITRbpIg2xUO49UKdt2IfaQ==",
-      "Count": 760.0,
-      "AddPropDic": {}
-    },
-    {
-      "TId": "NLH8UNY5c0OaSQdPJkUmeQ==",
-      "Count": 4.0,
-      "AddPropDic": {}
-    },
-    {
-      "TId": "8MlYyRCBqU22GxyQ7yMNlw==",
-      "Count": 1.0,
-      "AddPropDic": {}
-    }
-  ],
-  "TowerInfo": {},
-  "ShoppingHistory": [],
-  "PeriodIndexHistory": [
-    { "TId": "F2evOD40c02CCTYGV6pQBQ==" },
-    { "TId": "VcIcv4Y89ECcF+RpMDvhKg==" },
-    { "TId": "VjQZztjpp0yf3n7zzcdBPQ==" },
-    { "TId": "iMCuk2XgnUSJtKe/XbofTA==" }
-  ],
-  "DiceHistory": [],
-  "Roles": [],
-  "LvUpAccruedCost": [],
-  "CompositingAccruedCost": [],
-  "ClientDictionary": {},
-  "TIdsOfCreatedIds": [
-    "BUkIGFcsTEuzAkuCMHQPvQ==",
-    "YjoWO5Flk0qjhc8HmyD1iQ==",
-    "Jue3KX84nUCmrK2GcKgU8A==",
-    "hlkSTT9KlEK/VKcIU9cZwQ==",
-    "ghAUPesNWU+sXagOQ2V8zA==",
-    "YSIx/jMiNUyq9L1pjjKLrw==",
-    "m3t7r4Govky8pREfe6vXOg==",
-    "cuPQFJuQX0i4ywfJIxsQ/w==",
-    "h6vt5jQARU+AQB8NVlzPWA==",
-    "lZhVnCyap0O3k+h5pgBIfA==",
-    "0Vo6EvDU2UyavNRAQZ2eDQ==",
-    "YEyrBFueqEOJTzR3ZVNxvg==",
-    "t+Sr8Ss3skWp2utpMOlcuQ==",
-    "ny4C9doTLUqxudV/wH3iMg==",
-    "6m+aszbKlkyXXFnTJu/X0Q==",
-    "McY4P5QW9UG6cH0lkA1Nlg=="
-  ],
-  "atk": 20,
-  "def": 100,
-  "pow": 350,
-  "crit": 100,
-  "LogineCount": 2,
-  "LastLoginDateTimeUtc": "2024-12-24T00:00:00Z",
-  "CountOfLastModifyUtc": "2024-12-24T02:59:04.4363417Z",
-  "Fcps": {}
+  "TypeGuid": "F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B",
+  "stk": -1,
+  "Count0Reserved": true,
+  "Count": 1,
+  "ptid": "9c559895-9a2c-43a7-b793-e879a600487c",
+  "name_txt": 11008,
+  "comment_txt": 11009
 }

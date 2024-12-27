@@ -152,7 +152,7 @@ namespace GY02.Commands
                     TId = Guid.Parse("c9575f24-a33d-49ba-b130-29b6ff4d62c7"),
                     Count = 100,
                 });     //加入附件
-                _SyncCommandManager.Handle(commandMail);
+                //_SyncCommandManager.Handle(commandMail);
                 #endregion 第一封
 
                 #region 第二封
@@ -186,7 +186,7 @@ namespace GY02.Commands
                     TId = Guid.Parse("a45b3421-3688-43c5-b8f5-429db7621f69"),
                     Count = 10000,
                 });    //加入附件
-                _SyncCommandManager.Handle(commandMail);
+                //_SyncCommandManager.Handle(commandMail);
                 #endregion 第二封
                 //E:\BACKUP\GameLoggingjieyou.bak
                 //E:\BACKUP\GY02Templatejieyou.bak
@@ -225,7 +225,7 @@ namespace GY02.Commands
                         TId = Guid.Parse("c9575f24-a33d-49ba-b130-29b6ff4d62c7"),
                         Count = amount,
                     });    //加入附件
-                    _SyncCommandManager.Handle(commandMail);
+                    //_SyncCommandManager.Handle(commandMail);
                 }
                 #endregion 第三封
 
