@@ -112,7 +112,7 @@ DNS:rsc-ranch-oasis.amuapp.com
 密码:BBSbbs123$%^fF123
 资源根目录:E:\IISRoot\Gy001Resource
 Web地址：https://rsc-ranch-oasis.amuapp.com:20443
-新Web地址：https://rsc20443-ranch-oasis.amuapp.com
+新Web地址：https://rsc-ranch-oasis.amuapp.com:443
 备用Web地址：https://rsc20444-ranch-oasis.amuapp.com
 
 卡卡托斯/北美/正式/数据库服务器
