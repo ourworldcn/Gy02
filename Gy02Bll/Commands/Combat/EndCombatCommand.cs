@@ -84,6 +84,7 @@ namespace GY02.Commands
         SyncCommandManager _SyncCommandManager;
         GameTemplateManager _TemplateManager;
         GameEventManager _EventManager;
+        GameShoppingManager _ShoppingManager;
 
         public GameAccountStoreManager AccountStore => _AccountStore;
 
@@ -101,8 +102,40 @@ namespace GY02.Commands
             }
             var now = OwHelper.WorldNow;
             var gc = command.GameChar;
-            #region 爬塔相关
             var tt = _TemplateManager.GetFullViewFromId(command.CombatTId);
+
+            #region 限制产出
+            if (tt.MaxOutIds is List<Guid> outIds && outIds.Count > 0) //若需要限制产出
+            {
+                //计算产出限制
+                var sis = outIds.Select(c => _ShoppingManager.GetShoppingItemByTId(c)).OfType<GameShoppingItem>();
+                if (sis.Count() != outIds.Count)
+                {
+                    command.FillErrorFromWorld();
+                    return;
+                }
+                var limits = sis.SelectMany(c => c.Outs).GroupBy(c => c.TId, (key, seq) => (key, seq.Sum(d => d.Count))).ToDictionary(c => c.key, c => c.Item2);   //限制
+                //将奖励限制
+                var rewards = command.Rewards.GroupBy(c => c.TId, (key, seq) => (Key: key, Count: seq.Sum(d => d.Count))).ToList();
+                for (int i = rewards.Count - 1; i >= 0; i--)
+                {
+                    var item = rewards[i];
+                    if (!limits.TryGetValue(item.Key, out var count)) //若没找到此项
+                    {
+                        rewards.RemoveAt(i);
+                    }
+                    else if (item.Count > count) //若超出限制
+                    {
+                        item.Count = count;
+                    }
+                }
+                var tmp = rewards.Select(c => new GameEntitySummary(c.Key, c.Count));   //限制的结果
+                command.Rewards.Clear();
+                command.Rewards.AddRange(tmp);
+            }
+            #endregion 限制产出
+
+            #region 爬塔相关
             if (tt.Genus?.Contains(GameCombatManager.PataGenusString) ?? false)    //若是爬塔
             {
                 var commandShopping = new ShoppingBuyCommand

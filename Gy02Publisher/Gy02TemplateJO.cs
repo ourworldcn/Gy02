@@ -992,6 +992,12 @@ namespace GY02.Templates
         /// 爬塔产出信息。顺序是：作为上手时产出的商品Id，作为平手时产出的商品Id，作为下手时产出的商品Id。
         /// </summary>
         public List<Guid> PataOutIds { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 限制最大产出,可以有多个商品，计算其产出的合计，结算不能超过产出合计。如果超出，目前是忽略超出部分。未定义的产出视同限制为0——即忽略。
+        /// 仅针对正常产出限制。
+        /// </summary>
+        public List<Guid> MaxOutIds { get; set; } = new List<Guid>();
         #endregion
 
         #region 孵化相关

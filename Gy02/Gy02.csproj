@@ -19,6 +19,7 @@
     <Content Remove="Test2.json" />
     <Content Remove="Test3.json" />
     <Content Remove="数据说明\事件结构说明.json" />
+    <Content Remove="数据说明\关卡数据说明.json" />
     <Content Remove="数据说明\动态产出说明.json" />
     <Content Remove="数据说明\卡池组结构说明.json" />
     <Content Remove="数据说明\卡池结构说明.json" />
@@ -26,13 +27,8 @@
     <Content Remove="数据说明\商品项结构说明.json" />
     <Content Remove="数据说明\快速变化属性的说明.json" />
     <Content Remove="数据说明\成就定义说明.json" />
-    <Content Remove="数据说明\爬塔层数据说明.json" />
     <Content Remove="数据说明\爬塔配置项说明.json" />
     <Content Remove="数据说明\选取实体条件对象的说明.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="数据说明\爬塔层数据说明.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,7 +54,7 @@
     <None Include="数据说明\唯一性违反时转化结构说明.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
-    <None Include="数据说明\爬塔层数据说明.json">
+    <None Include="数据说明\关卡数据说明.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
     <None Include="数据说明\爬塔配置项说明.json">
