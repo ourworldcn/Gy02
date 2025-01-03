@@ -1,5 +1,5 @@
 {
-  "Genus": [ "gs_lunbolibao" ],
+  "Genus": [ "guanqiajiaoyan" ],
   "ShoppingItem": {
     "Period": {
       "Start": "2023-05-30T00:00:00.000Z",
@@ -8,119 +8,15 @@
       "ValidPeriodString": "99y"
     },
     "GroupNumber": 1,
-    "MaxCount": 1,
-    "Ins": [
-      {
-        "Conditional": [
-          {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 1
-          }
-        ],
-        "Count": 1,
-        "Genus": []
-      }
-    ],
+    "MaxCount": null,
+    "Ins": [],
     "Outs": [
       {
-        "Id": null,
-        "ParentTId": "e6edab87-0034-4f45-8040-1f0d565ccf58",
-        "TId": "92eebe70-ae9a-44a8-8ac2-ad4ae61de313",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "06bb186e-5d67-4061-b150-8e043c9bb9a8",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "09d9062c-84fe-4cc1-846a-5daab6a23b1e",
+        "Id": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "ParentTId": null,
+        "TId": "50fcb134-39d6-4373-9a49-074f26452679",
         "Count": 5
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
-        "Count": 80
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "554cda05-553f-46a2-b905-6a30ffcd2fbb",
-        "Count": 0
-      },
-      {
-        "Id": null,
-        "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
-        "Count": 1
       }
     ]
-  },
-  "productInfo": {
-    "Southeast_Android": {
-      "productStoreId": "com.duangsea.07",
-      "productAmount": "0.29",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Southeast_iOS": {
-      "productStoreId": "com.duangsea.07",
-      "productAmount": "0.29",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "EuropeAmerica_Android": {
-      "productStoreId": "com.kk.ranch.gp.1.99",
-      "productAmount": "1.99",
-      "productAmountByOriginalPrice": "23.99",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "EuropeAmerica_iOS": {
-      "productStoreId": "com.kk.ranch.ios.1.99",
-      "productAmount": "1.99",
-      "productAmountByOriginalPrice": "23.99",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Korea_Android": {
-      "productStoreId": "com.duangzs.07",
-      "productAmount": "1.8",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Korea_iOS": {
-      "productStoreId": "com.duangzs.07",
-      "productAmount": "1.8",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Pilipinas_Android": {
-      "productStoreId": "com.duangphl.07",
-      "productAmount": "0.29",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Pilipinas_iOS": {
-      "productStoreId": "com.duangphl.07",
-      "productAmount": "0.29",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    }
-  },
-  "productName": "新手礼包",
-  "productType": "新手礼包",
-  "productDesc": "新手礼包",
-  "name_txt": 10919,
-  "comment_txt": 0,
-  "display_icon": "Slideshow_181106001",
-  "JiaoBiao": [ null, 11037, 11038 ]
+  }
 }

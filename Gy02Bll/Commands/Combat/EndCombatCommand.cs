@@ -70,13 +70,14 @@ namespace GY02.Commands
     /// </summary>
     public class EndCombatHandler : SyncCommandHandlerBase<EndCombatCommand>, IGameCharHandler<EndCombatCommand>
     {
-        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEventManager eventManager)
+        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEventManager eventManager, GameShoppingManager shoppingManager)
         {
             _AccountStore = gameAccountStore;
             _EntityManager = gameEntityManager;
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
             _EventManager = eventManager;
+            _ShoppingManager = shoppingManager;
         }
 
         GameAccountStoreManager _AccountStore;
@@ -114,24 +115,26 @@ namespace GY02.Commands
                     command.FillErrorFromWorld();
                     return;
                 }
-                var limits = sis.SelectMany(c => c.Outs).GroupBy(c => c.TId, (key, seq) => (key, seq.Sum(d => d.Count))).ToDictionary(c => c.key, c => c.Item2);   //限制
+                var limits = sis.SelectMany(c => c.Outs).GroupBy(c => c.TId, (key, seq) => (key, seq.Sum(d => d.Count))).ToDictionary(c => c.key, c => c.Item2);   //产出限制
                 //将奖励限制
-                var rewards = command.Rewards.GroupBy(c => c.TId, (key, seq) => (Key: key, Count: seq.Sum(d => d.Count))).ToList();
-                for (int i = rewards.Count - 1; i >= 0; i--)
+                for (int i = command.Rewards.Count - 1; i >= 0; i--)
                 {
-                    var item = rewards[i];
-                    if (!limits.TryGetValue(item.Key, out var count)) //若没找到此项
+                    var item = command.Rewards[i];
+                    if (!limits.TryGetValue(item.TId, out var limitCount)) //若没找到此项
                     {
-                        rewards.RemoveAt(i);
+                        command.Rewards.RemoveAt(i);
                     }
-                    else if (item.Count > count) //若超出限制
+                    else
                     {
-                        item.Count = count;
+                        if (item.Count >= limitCount) //若达到或超出限制
+                        {
+                            item.Count = limitCount;
+                            limits.Remove(item.TId);
+                        }
+                        else
+                            limits[item.TId] = limitCount - item.Count;
                     }
                 }
-                var tmp = rewards.Select(c => new GameEntitySummary(c.Key, c.Count));   //限制的结果
-                command.Rewards.Clear();
-                command.Rewards.AddRange(tmp);
             }
             #endregion 限制产出
 
