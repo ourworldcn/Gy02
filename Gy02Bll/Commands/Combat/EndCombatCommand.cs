@@ -120,7 +120,7 @@ namespace GY02.Commands
                 for (int i = command.Rewards.Count - 1; i >= 0; i--)
                 {
                     var item = command.Rewards[i];
-                    if (!limits.TryGetValue(item.TId, out var limitCount)) //若没找到此项
+                    if (!limits.TryGetValue(item.TId, out var limitCount) || limitCount <= 0) //若没找到此项
                     {
                         command.Rewards.RemoveAt(i);
                     }
