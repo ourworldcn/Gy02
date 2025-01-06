@@ -1,22 +1,36 @@
 {
-  "Genus": [ "guanqiajiaoyan" ],
-  "ShoppingItem": {
-    "Period": {
-      "Start": "2023-05-30T00:00:00.000Z",
-      "End": null,
-      "PeriodString": "99y",
-      "ValidPeriodString": "99y"
-    },
-    "GroupNumber": 1,
-    "MaxCount": null,
-    "Ins": [],
-    "Outs": [
+  "SequenceOut": {
+    "Conditions": [
       {
-        "Id": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
         "ParentTId": null,
-        "TId": "50fcb134-39d6-4373-9a49-074f26452679",
-        "Count": 5
+        "Genus": [
+        ],
+        "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
+        "MinCount": null,
+        "GeneralConditional": [
+        ],
+        "GroupMask": 1
       }
-    ]
+    ],
+    "GetIndexExpression": {
+      "op": "GetBuyedCount",
+      "args": [
+        "75137bd7-882d-4580-b011-e92e8a36fbd5"
+      ]
+    },
+    "Outs": {
+      "ParentTIds": [
+        "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+        "9c559895-9a2c-43a7-b793-e879a600487c"
+      ],
+      "TIds": [
+        "c9575f24-a33d-49ba-b130-29b6ff4d62c7",
+        "e85a0690-6b83-4fc2-96d5-57d97010c2cb"
+      ],
+      "Counts": [
+        20,
+        5
+      ]
+    }
   }
 }
