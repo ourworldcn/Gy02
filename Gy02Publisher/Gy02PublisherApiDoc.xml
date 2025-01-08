@@ -1360,12 +1360,27 @@
         </member>
         <member name="F:GY02.Publisher.ProjectContent.SupperAdminRole">
             <summary>
-            超管角色标志。
+            超管角色标志。拥有所有权限。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.AdminRole">
             <summary>
             管理员角色标志。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.MailAdminRole">
+            <summary>
+            可发Mail角色标志。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.BulletinAdminRole">
+            <summary>
+            可设置公告角色标志。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.QuestionnaireAdminRole">
+            <summary>
+            可设置公告角色标志。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.UserTId">

@@ -42,7 +42,7 @@ namespace GY02.Publisher
         public const string AdminPwd = "1954D1C0-5012-44C3-8F1B-0950544862A5";
 
         /// <summary>
-        /// 超管角色标志。
+        /// 超管角色标志。拥有所有权限。
         /// </summary>
         public const string SupperAdminRole = "D7A8EA19-2B37-4A70-A80A-708120796093";
 
@@ -50,6 +50,28 @@ namespace GY02.Publisher
         /// 管理员角色标志。
         /// </summary>
         public const string AdminRole = "221BBA0F-4DAF-4394-8622-39F4377B61F7";
+
+        /// <summary>
+        /// 可发Mail角色标志。
+        /// </summary>
+        public const string MailAdminRole = "732B7EC2-2319-4055-B762-69E035EB5F5B";
+
+        /// <summary>
+        /// 可设置公告角色标志。
+        /// </summary>
+        public const string BulletinAdminRole = "B5A98E7D-5E18-470E-9CF0-8F8108F6ABB5";
+
+        /// <summary>
+        /// 可设置公告角色标志。
+        /// </summary>
+        public const string QuestionnaireAdminRole = "9C704923-1F4A-41EC-82D6-170CDD281A87";
+
+        /*
+        /// <summary>
+        /// 可生成兑换码角色标志。
+        /// </summary>
+        public const string RedeemCodeAdminRole = "2BAD2000-454C-4CD8-B288-4DADB79F68E6";
+        */
 
         #endregion 权限相关
 

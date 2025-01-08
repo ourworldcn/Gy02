@@ -31,10 +31,10 @@ namespace GY02.Controllers
         }
 
         private GameBlueprintManager _BlueprintManager;
-        SyncCommandManager _SyncCommandManager;
-        IMapper _Mapper;
-        GameDiceManager _DiceManager;
-        GameAccountStoreManager _AccountStoreManager;
+        private SyncCommandManager _SyncCommandManager;
+        private IMapper _Mapper;
+        private GameDiceManager _DiceManager;
+        private GameAccountStoreManager _AccountStoreManager;
 
         /// <summary>
         /// 使用指定蓝图。

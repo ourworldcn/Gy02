@@ -481,6 +481,12 @@ namespace GY02.Publisher
         public List<GameDiceHistoryItemDto> DiceHistory { get; set; } = new List<GameDiceHistoryItemDto>();
         #endregion 投骰子的记录
 
+        /// <summary>
+        /// 所属角色组。如果为空集合，则默认为一般用户组（这是一种压缩手段）。
+        /// </summary>
+        public List<string> Roles { get; set; } = new List<string>();
+
+
     }
 
     /// <summary>
@@ -3572,6 +3578,11 @@ namespace GY02.Publisher
         /// 强行指定生成一个通用兑换码。仅当 CodeType == 1时，指定这一项才有用。
         /// </summary>
         public string Code { get; set; }
+
+        /// <summary>
+        /// 强行一次性码的前缀。仅当 CodeType == 2时，指定这一项才有用。
+        /// </summary>
+        public string Prefix { get; set; }
     }
 
     /// <summary>
