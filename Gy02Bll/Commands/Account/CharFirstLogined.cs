@@ -126,33 +126,38 @@ namespace GY02.Commands
                     GameChar = command.GameChar,
                     Mail = new SendMailItem
                     {
-                        Subject = "Public Test Celebration Email",
+                        Subject = "撞飞一切！",
                         Body = "Hi heroes,\r\nTo celebrate the official open beta of \"Animals BAM BAM\" today, and to thank you for your enthusiasm and support, we hereby offer you [100 diamonds]. \r\nWish all heroes an enjoyable gaming experience!",
                     },
                 };
-                commandMail.Mail.Dictionary1 = new Dictionary<string, string>() {
-                    { "English", "Public Test Celebration Email" },
-                    { "Chinese", "公测庆祝邮件"},
-                    { "Filipino", "Recharge Rebate Email"},
-                    { "Indonesian", "Email Rabat Isi Ulang"},
-                    { "Malay", "Mengisi semula e -mel rebat"},
-                    { "Thai", "เติมเงินคืนอีเมล"},
+                commandMail.Mail.Dictionary1 = new Dictionary<string, string>() {   //多语言标题
+                    { "English", "Let's Get Bumping!" },
+                    { "Chinese", "撞飞一切！"},
+                    //{ "Filipino", "Recharge Rebate Email"},
+                    //{ "Indonesian", "Email Rabat Isi Ulang"},
+                    //{ "Malay", "Mengisi semula e -mel rebat"},
+                    //{ "Thai", "เติมเงินคืนอีเมล"},
                 };
-                commandMail.Mail.Dictionary2 = new Dictionary<string, string>() {
-                    { "English", "Hi heroes,\r\nTo celebrate the official open beta of \"Animals BAM BAM\" today, and to thank you for your enthusiasm and support, we hereby offer you [100 diamonds]. \r\nWish all heroes an enjoyable gaming experience!" },
-                    { "Chinese", "嗨 英雄，\r\n为了庆祝《Animals BAMBAM》 今日正式公测，为了感谢大家的热情与支持，我们特此奉上【钻石*100】。\r\n祝各位英雄游戏愉快！"},
-                    { "Filipino", "Hi hero,\r\nIto ang iyong rebate ng recharge, mangyaring bigyang -pansin upang suriin."},
-                    { "Indonesian", "Hai Pahlawan,\r\nIni adalah rabat isi ulang Anda, harap perhatikan untuk memeriksa."},
-                    { "Malay", "Hai wira,\r\nIni adalah rebat cas semula anda, sila perhatikan untuk diperiksa."},
-                    { "Thai", "สวัสดีฮีโร่\r\nนี่คือการคืนเงินเติมเงินของคุณโปรดใส่ใจในการตรวจสอบ"},
+                commandMail.Mail.Dictionary2 = new Dictionary<string, string>() {   //多语言正文
+                    { "English", "Hero! Welcome to Bump Bump survivor! Bump over everything! If you need assistance, tap the menu on the top left corner and select Help to contact customer service!" },
+                    { "Chinese", "勇士！欢迎来到Bump Bump survivor！尽情的撞翻一切吧！如需帮助，可点击左上角列表-Help获取专业人员协助！"},
+                    //{ "Filipino", "Hi hero,\r\nIto ang iyong rebate ng recharge, mangyaring bigyang -pansin upang suriin."},
+                    //{ "Indonesian", "Hai Pahlawan,\r\nIni adalah rabat isi ulang Anda, harap perhatikan untuk memeriksa."},
+                    //{ "Malay", "Hai wira,\r\nIni adalah rebat cas semula anda, sila perhatikan untuk diperiksa."},
+                    //{ "Thai", "สวัสดีฮีโร่\r\nนี่คือการคืนเงินเติมเงินของคุณโปรดใส่ใจในการตรวจสอบ"},
                 };
                 commandMail.ToIds.Add(command.GameChar.Id);   //加入收件人
                 commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary
                 {
-                    TId = Guid.Parse("c9575f24-a33d-49ba-b130-29b6ff4d62c7"),
+                    TId = Guid.Parse("c9575f24-a33d-49ba-b130-29b6ff4d62c7"),   //钻石
                     Count = 100,
                 });     //加入附件
-                //_SyncCommandManager.Handle(commandMail);
+                commandMail.Mail.Attachment.Add(new Templates.GameEntitySummary
+                {
+                    TId = Guid.Parse("a45b3421-3688-43c5-b8f5-429db7621f69"),   //金币
+                    Count = 3000,
+                });     //加入附件
+                _SyncCommandManager.Handle(commandMail);
                 #endregion 第一封
 
                 #region 第二封
