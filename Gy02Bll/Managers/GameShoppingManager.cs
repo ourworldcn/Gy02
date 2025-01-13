@@ -37,7 +37,9 @@ namespace GY02.Managers
         /// </summary>
         public const string ShoppingBuyHistoryPrefix = "ShoppingBuy";
 
-        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, GameBlueprintManager blueprintManager, GameEntityManager entityManager, GameTemplateManager templateManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager) : base(options, logger)
+        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, GameBlueprintManager blueprintManager,
+            GameEntityManager entityManager, GameTemplateManager templateManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager) 
+            : base(options, logger)
         {
             _BlueprintManager = blueprintManager;
             _EntityManager = entityManager;
