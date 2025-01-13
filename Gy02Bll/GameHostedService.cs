@@ -432,10 +432,10 @@ namespace GY02
             #region 测试用代码
             try
             {
-                HttpClient client = new HttpClient() { };
-                var content = new ByteArrayContent(new byte[] { 0, 1 });
-                var r = client.PutAsync("https://rsc-ranch-oasis.amuapp.com:443/CDN", content).Result;
-                r.EnsureSuccessStatusCode();
+                //HttpClient client = new HttpClient() { };
+                //var content = new ByteArrayContent(new byte[] { 0, 1 });
+                //var r = client.PutAsync("https://rsc-ranch-oasis.amuapp.com:443/CDN", content).Result;
+                //r.EnsureSuccessStatusCode();
             }
             #endregion 测试用代码
             catch (Exception)

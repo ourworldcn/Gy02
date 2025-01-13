@@ -226,7 +226,17 @@ namespace OW.Game.Managers
         {
             get
             {
-                LazyInitializer.EnsureInitialized(ref _Id2RawTemplate, () => new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id)));
+                Dictionary<Guid, RawTemplate> dic;
+                try
+                {
+                    var tmp = _RawTemplateOptions.CurrentValue;
+                    dic = tmp.ToDictionary(c => c.Id);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                LazyInitializer.EnsureInitialized(ref _Id2RawTemplate, () => new ConcurrentDictionary<Guid, RawTemplate>(dic));
                 return _Id2RawTemplate;
             }
         }
