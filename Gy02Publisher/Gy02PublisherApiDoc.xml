@@ -1535,7 +1535,7 @@
         </member>
         <member name="F:GY02.Publisher.ProjectContent.SevenDayQiandaoSlotTId">
             <summary>
-            累计签到占位符的TId。
+            7日签到标志的TId。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.LoginedDayTId">

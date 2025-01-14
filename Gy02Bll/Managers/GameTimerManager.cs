@@ -41,6 +41,7 @@ namespace GY02.Managers
             var now = OwHelper.WorldNow;
             var tomorrow = now.Date + TimeSpan.FromDays(1);
             _Timer = new Timer(MidnightCallback, null, tomorrow - now, TimeSpan.FromDays(1));
+            //_Timer = new Timer(MidnightCallback, null, TimeSpan.FromMinutes(1), TimeSpan.FromDays(1));
         }
 
         Timer _Timer;
@@ -60,7 +61,6 @@ namespace GY02.Managers
         {
             Queue<GameUser> query = new Queue<GameUser>();
             using var scope = _Service.CreateScope();
-
             foreach (var item in _AccountStoreManager.Key2User)
             {
                 var user = item.Value;

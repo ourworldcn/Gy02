@@ -96,7 +96,6 @@ namespace GY02.Controllers
                 return result;
             }
 
-
             var command = new CombatMarkCommand { GameChar = gc };
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);

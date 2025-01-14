@@ -1414,7 +1414,7 @@
       "DisplayName": "孵化次数货币",
       "Id": "9EBDC71E-F2AD-4F1C-82B9-88955FE15B4B",
       "Gid": 110201001,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":3,\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":1,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}},\"name_txt\":10441,\"comment_txt\":10442}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":3,\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":1,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}},\"name_txt\":10441,\"comment_txt\":10442}"
     },
     {
       "DisplayName": "活动兑换货币--鲨鱼币",
@@ -1450,25 +1450,25 @@
       "DisplayName": "特殊关卡-追箱子-次数",
       "Id": "547865b2-fa3d-4d7f-957f-0219b8318b73",
       "Gid": 110201009,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "特殊关卡-弹珠-次数",
       "Id": "d4828a12-534a-4a32-ae17-792b6bfd29cd",
       "Gid": 110201010,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "特殊关卡-黄金大作战-次数",
       "Id": "e4eacb80-3b91-495f-8d08-4dfe451acf25",
       "Gid": 110201011,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "特殊关卡-生存关卡-次数",
       "Id": "7b81fa89-029d-4928-8de6-4fc19d6fff34",
       "Gid": 110201012,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":3,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":3,\"StepValue\":3,\"Delay\":\"1.00:00:00\",\"CurrentValue\":3,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "用户注册天数占位符，0是第一天",
@@ -1487,7 +1487,7 @@
       "DisplayName": "巡逻时间占位符",
       "Id": "62D3A545-7604-46BF-9837-95E286660BC8",
       "Gid": 110201005,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":72,\"StepValue\":1,\"Delay\":\"00:20:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":72,\"StepValue\":1,\"Delay\":\"00:20:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "巡逻用主线副本最高记录占位符",
@@ -8057,7 +8057,7 @@
       "DisplayName": "牧野草原",
       "Id": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
       "Gid": 210101001,
-      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"MaxOutIds\":[\"6797ded1-e488-4d4c-85b7-076d376cea9c\",\"d219c914-50c5-4550-a90f-3dd8c2ef3efb\",\"acb5f753-8233-4468-9a9d-9fc3c800f39f\"],\"name_txt\":13001,\"comment_txt\":13013,\"suggest\":[34,100,400],\"scoreTime\":[360,480,600],\"charExp\":200}"
+      "PropertiesString": "{\"Ins\":[{\"Conditional\":[{\"ParentTId\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Genus\":[],\"TId\":\"f1b15c9e-32ee-4203-af62-d324bfa4f7e7\",\"MinCount\":5}],\"Count\":5}],\"MaxOutIds\":[\"6797ded1-e488-4d4c-85b7-076d376cea9c\",\"d219c914-50c5-4550-a90f-3dd8c2ef3efb\",\"acb5f753-8233-4468-9a9d-9fc3c800f39f\",\"a07ceea7-48e4-44d6-8a57-cf4989c8d35b\"],\"name_txt\":13001,\"comment_txt\":13013,\"suggest\":[34,100,400],\"scoreTime\":[360,480,600],\"charExp\":200}"
     },
     {
       "DisplayName": "残破牧场",
@@ -11615,7 +11615,7 @@
       "DisplayName": "可刷新商品占位符",
       "Id": "bc966a8c-4d37-4120-aaa5-cd790da25ab5",
       "Gid": 110201014,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":1,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":1,\"StepValue\":1,\"Delay\":\"0.12:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}",
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":1,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":1,\"StepValue\":1,\"Delay\":\"0.12:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}",
       "Remark": "fl_AutoInc此类实体在每天第一次登录时会自动把Count+1，从0开始。"
     },
     {
@@ -11682,7 +11682,7 @@
       "DisplayName": "动物抽奖商品占位符",
       "Id": "62e227a8-c5d5-410e-96c5-d5ca931bafe2",
       "Gid": 110201019,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":1,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":1,\"StepValue\":1,\"Delay\":\"1.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":1,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":1,\"StepValue\":1,\"Delay\":\"1.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "动物抽奖付费购买 一次",
@@ -23669,7 +23669,7 @@
       "DisplayName": "周卡占位符",
       "Id": "91E6DD20-1F00-4090-9A26-EA04B7693E60",
       "Gid": 110201022,
-      "PropertiesString": "{\"Genus\":[\"flag_NoMailAttachment\"],\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":0,\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":10,\"StepValue\":-1,\"Delay\":\"1.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"Genus\":[\"flag_NoMailAttachment\"],\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":0,\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":10,\"StepValue\":-1,\"Delay\":\"1.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "周卡购买一次奖励商品（周卡商品）",
@@ -23687,7 +23687,7 @@
       "DisplayName": "月卡占位符",
       "Id": "419A400B-55A3-4244-82A6-1917267654F7",
       "Gid": 110201023,
-      "PropertiesString": "{\"Genus\":[\"flag_NoMailAttachment\"],\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":0,\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":33,\"StepValue\":-1,\"Delay\":\"1.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"Genus\":[\"flag_NoMailAttachment\"],\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Count\":0,\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":33,\"StepValue\":-1,\"Delay\":\"1.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "月卡购买一次奖励商品（月卡商品）",
@@ -24604,19 +24604,19 @@
       "DisplayName": "爬塔挑战总次数占位符",
       "Id": "cb93322b-f6f7-460c-a6af-be5a06c5c5ee",
       "Gid": 110201032,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":99999999,\"StepValue\":-99999999,\"Delay\":\"30.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":99999999,\"StepValue\":-99999999,\"Delay\":\"30.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "爬塔挑战获胜数占位符",
       "Id": "18360566-8113-4d5c-a08e-db061bfb7bc5",
       "Gid": 110201033,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":99999999,\"StepValue\":-99999999,\"Delay\":\"30.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":99999999,\"StepValue\":-99999999,\"Delay\":\"30.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "爬塔每日挑战获胜数占位符",
       "Id": "3167c2bd-3ee6-4537-b0c0-19837541c659",
       "Gid": 110201034,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":5,\"StepValue\":-10,\"Delay\":\"1.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":0,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":5,\"StepValue\":-10,\"Delay\":\"1.00:00:00\",\"CurrentValue\":0,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "每日挑战获胜奖励卡池（动物碎片-紫）",
@@ -24659,7 +24659,7 @@
       "DisplayName": "爬塔（每日）次数占位符",
       "Id": "619031ce-d892-40fd-ad4b-61c8d8ff8af2",
       "Gid": 110201031,
-      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":8,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":8,\"StepValue\":8,\"Delay\":\"1.00:00:00\",\"CurrentValue\":8,\"LastDateTime\":\"2023-06-01T00:00:00.0000000+08:00\"}}}"
+      "PropertiesString": "{\"TypeGuid\":\"F3F9B16B-499E-4228-AEC0-FFA5B9F18E9B\",\"Count\":8,\"stk\":-1,\"Count0Reserved\":true,\"ptid\":\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"Fcps\":{\"Count\":{\"MinValue\":0,\"MaxValue\":8,\"StepValue\":8,\"Delay\":\"1.00:00:00\",\"CurrentValue\":8,\"LastDateTime\":\"2023-06-01T00:00:00.0000000\"}}}"
     },
     {
       "DisplayName": "爬塔体力购买--广告",

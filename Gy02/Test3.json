@@ -1,48 +1,66 @@
 {
-  "CombatTId": "1b22b987-4f2c-4bfc-b105-0e845914b99d",
-  "Rewards": [
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "Count": 520.0
+  "Genus": [ "cj_meiri", "goto_main_level" ],
+  "TypeGuid": "48CD339A-3B21-4DA7-9B0A-2B914B3DD42C",
+  "stk": -1,
+  "Count0Reserved": true,
+  "ptid": "04AB4C60-9E5B-43A8-894F-3477655371BE",
+  "Count": 0,
+  "Achievement": {
+    "Period": {
+      "Start": "2023-05-30T03:03:28.385Z",
+      "End": null,
+      "PeriodString": "99y",
+      "ValidPeriodString": "99y"
     },
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "1f31807a-f633-4d3a-8e8e-382ad105d061",
-      "Count": 200.0
-    }
-  ],
-  "Others": [
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "8d0e6ed4-74a9-4f75-9f4c-e8c2912b4186",
-      "Count": 4.0
-    },
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "10b08991-89ae-404f-875e-ae06bd219d7c",
-      "Count": 2.0
-    },
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "8a04e3b5-cfd6-428b-ba2c-62f9fec87afd",
-      "Count": 15.0
-    }
-  ],
-  "AdsRewards": [
-    {
-      "Id": null,
-      "ParentTId": null,
-      "TId": "a45b3421-3688-43c5-b8f5-429db7621f69",
-      "Count": 520.0
-    }
-  ],
-  "MinTimeSpanOfPass": "00:00:15.9720000",
-  "IsSuccess": true,
-  "Token": "d15bdc3f-1624-47f0-924a-812e1b23dbe2"
+    "Ins": [
+      {
+        "Conditional": [
+          {
+            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+            "Genus": [],
+            "TId": "A1414D6E-C3A1-44C3-BBBD-E8B4357A8796",
+            "MinCount": 0,
+            "NumberCondition": {
+              "PropertyName": "Count",
+              "MinValue": 0,
+              "MaxValue": null,
+              "Subtrahend": 0,
+              "Modulus": 7,
+              "MinRemainder": 0,
+              "MaxRemainder": 0
+            },
+            "GeneralConditional": [],
+            "Count": 0,
+            "GroupMask": 3
+          }
+        ]
+      }
+    ],
+    "Exp2LvSequence": [ 10 ],
+    "Outs": [
+      [
+        {
+          "ParentTId": null,
+          "TId": "6c70de33-1021-43bf-a013-5af3a66e793e",
+          "Count": 20
+        },
+        {
+          "ParentTId": null,
+          "TId": "008d96c5-9545-44fb-965d-6d1c9d97f97d",
+          "Count": 5
+        },
+        {
+          "ParentTId": null,
+          "TId": "64aa13e6-70bc-4fe4-a112-09dcb2160f35",
+          "Count": 5
+        },
+        {
+          "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
+          "TId": "e93c4aa4-ab58-4262-a93b-0118edfe8afb",
+          "Count": 11
+        }
+      ]
+    ]
+  },
+  "name_txt": 60002
 }
