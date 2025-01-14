@@ -535,7 +535,7 @@ namespace GY02.Controllers
                         }
 
                         command.LoginName = uid;
-                        command.Pwd = isCreate ? pwd : null;
+                        command.Pwd = pwd;
                         _SyncCommandManager.Handle(command);
                         if (command.HasError)
                         {
