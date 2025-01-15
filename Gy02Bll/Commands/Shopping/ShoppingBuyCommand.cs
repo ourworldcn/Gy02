@@ -1,6 +1,7 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
+using Microsoft.Extensions.Logging;
 using OW.DDD;
 using OW.Game;
 using OW.Game.Entity;
@@ -162,18 +163,20 @@ namespace GY02.Commands
     /// </summary>
     public class CharFirstLoginedHandler : SyncCommandHandlerBase<CharFirstLoginedCommand>
     {
-        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStoreManager accountStore, GameSqlLoggingManager sqlLoggingManager)
+        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStoreManager accountStore, GameSqlLoggingManager sqlLoggingManager, ILogger<CharFirstLoginedHandler> logger)
         {
             _EntityManager = entityManager;
             _ShoppingManager = shoppingManager;
             _AccountStore = accountStore;
             _SqlLoggingManager = sqlLoggingManager;
+            _Logger = logger;
         }
 
         GameEntityManager _EntityManager;
         GameShoppingManager _ShoppingManager;
         GameAccountStoreManager _AccountStore;
         GameSqlLoggingManager _SqlLoggingManager;
+        ILogger<CharFirstLoginedHandler> _Logger;
 
         /// <summary>
         /// 
@@ -213,8 +216,10 @@ namespace GY02.Commands
                 markDate = slot.ExtensionProperties.GetDateTimeOrDefault("LastMark");   //最后签到时间
                 if (buyDate.HasValue && buyDate.Value.Date >= markDate.Value.Date)   //若需要增加计数
                 {
+
                     slot.Count++;
                     slot.ExtensionProperties["LastMark"] = now.ToString();
+                    _Logger.LogDebug("[{time}] {tid}已经更新，Count={count}。", now, slot.TemplateId, slot.Count);
                     _AccountStore.Save(key);
                 }
             }

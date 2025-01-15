@@ -36,12 +36,26 @@ namespace GY02.Managers
             Initializer();
         }
 
-        private void Initializer()
+        internal void Initializer()
         {
             var now = OwHelper.WorldNow;
             var tomorrow = now.Date + TimeSpan.FromDays(1);
+            _Timer?.Dispose();
             _Timer = new Timer(MidnightCallback, null, tomorrow - now, TimeSpan.FromDays(1));
-            //_Timer = new Timer(MidnightCallback, null, TimeSpan.FromMinutes(1), TimeSpan.FromDays(1));
+            Logger.LogInformation("更新服务上线。预期更新时间为[{t}]({s}秒后)", tomorrow, (tomorrow - now).TotalSeconds);
+            OwHelper.Changed += OwHelper_Changed;
+        }
+
+        private void OwHelper_Changed(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(OwHelper.WorldNow))
+            {
+                var now = OwHelper.WorldNow;
+                var tomorrow = now.Date + TimeSpan.FromDays(1);
+                _Timer?.Dispose();
+                _Timer = new Timer(MidnightCallback, null, tomorrow - now, TimeSpan.FromDays(1));
+                Logger.LogInformation("重置午夜刷新时间，预期午夜更新时间为[{t}]({s}秒后)", tomorrow, (tomorrow - now).TotalSeconds);
+            }
         }
 
         Timer _Timer;
@@ -51,6 +65,7 @@ namespace GY02.Managers
         protected override void Dispose(bool disposing)
         {
             _Timer?.Dispose();
+            Logger.LogInformation("[{t}] 更新服务下线。", OwHelper.WorldNow);
             base.Dispose(disposing);
         }
         /// <summary>
@@ -59,6 +74,7 @@ namespace GY02.Managers
         /// <param name="state"></param>
         public void MidnightCallback(object? state)
         {
+            Logger.LogDebug("[{time}]开始午夜更新。", OwHelper.WorldNow);
             Queue<GameUser> query = new Queue<GameUser>();
             using var scope = _Service.CreateScope();
             foreach (var item in _AccountStoreManager.Key2User)

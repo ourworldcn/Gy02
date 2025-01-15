@@ -1262,6 +1262,8 @@ namespace GY02.Publisher
 
     /// <summary>
     /// 增加物品返回数据封装类。
+    /// ErrorCode说明：
+    /// 120=此环境下不能使用此功能。
     /// </summary>
     [AutoMap(typeof(MoveEntitiesCommand))]
     public class AddItemsReturnDto : PropertyChangeReturnDto

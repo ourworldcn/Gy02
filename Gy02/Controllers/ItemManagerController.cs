@@ -13,6 +13,7 @@ using OW.Game.Store;
 using OW.SyncCommand;
 using System.Text;
 using System.Text.Json;
+using EnvironmentName = Microsoft.Extensions.Hosting.EnvironmentName;
 
 namespace GY02.Controllers
 {
@@ -30,13 +31,14 @@ namespace GY02.Controllers
         /// <param name="gameEntityManager"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="gameAccountStore"></param>
-        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameAccountStoreManager gameAccountStore)
+        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameAccountStoreManager gameAccountStore, IHostEnvironment hostEnvironment)
         {
             _ServiceProvider = serviceProvider;
             _Mapper = mapper;
             _EntityManager = gameEntityManager;
             _SyncCommandManager = syncCommandManager;
             _GameAccountStore = gameAccountStore;
+            _HostEnvironment = hostEnvironment;
         }
 
         readonly IServiceProvider _ServiceProvider;
@@ -44,6 +46,7 @@ namespace GY02.Controllers
         GameEntityManager _EntityManager;
         SyncCommandManager _SyncCommandManager;
         GameAccountStoreManager _GameAccountStore;
+        IHostEnvironment _HostEnvironment;
 
         /// <summary>
         /// 移动物品接口。
@@ -142,7 +145,15 @@ namespace GY02.Controllers
             [FromServices] GameTemplateManager templateManager, [FromServices] IMapper mapper)
         {
             var result = new AddItemsReturnDto { };
+            if (_HostEnvironment.EnvironmentName != EnvironmentName.Development && _HostEnvironment.EnvironmentName != EnvironmentName.Production)
+            {
+                result.HasError = true;
+                result.ErrorCode = ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED;
+                result.DebugMessage = "此环境下不能使用此功能。";
+                return result;
+            }
             using var dw = store.GetCharFromToken(model.Token, out var gc);
+
             if (dw.IsEmpty)
             {
                 if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
