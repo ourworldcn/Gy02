@@ -39,7 +39,7 @@ namespace GY02.Managers
         internal void Initializer()
         {
             var now = OwHelper.WorldNow;
-            var tomorrow = now.Date + TimeSpan.FromDays(1);
+            var tomorrow = now.Date + TimeSpan.FromDays(1) + TimeSpan.FromMilliseconds(100);    //容错以确保确实跨天
             _Timer?.Dispose();
             _Timer = new Timer(MidnightCallback, null, tomorrow - now, TimeSpan.FromDays(1));
             Logger.LogInformation("更新服务上线。预期更新时间为[{t}]({s}秒后)", tomorrow, (tomorrow - now).TotalSeconds);
@@ -51,7 +51,7 @@ namespace GY02.Managers
             if (e.PropertyName == nameof(OwHelper.WorldNow))
             {
                 var now = OwHelper.WorldNow;
-                var tomorrow = now.Date + TimeSpan.FromDays(1);
+                var tomorrow = now.Date + TimeSpan.FromDays(1) + TimeSpan.FromMilliseconds(100);    //容错以确保确实跨天
                 _Timer?.Dispose();
                 _Timer = new Timer(MidnightCallback, null, tomorrow - now, TimeSpan.FromDays(1));
                 Logger.LogInformation("重置午夜刷新时间，预期午夜更新时间为[{t}]({s}秒后)", tomorrow, (tomorrow - now).TotalSeconds);
@@ -72,9 +72,12 @@ namespace GY02.Managers
         /// 午夜更新函数。
         /// </summary>
         /// <param name="state"></param>
-        public void MidnightCallback(object? state)
+        public void MidnightCallback(object state)
         {
-            Logger.LogDebug("[{time}]开始午夜更新。", OwHelper.WorldNow);
+            while (OwHelper.WorldNow.Hour >= 23)    //容错,以确保确实跨天
+                Thread.Sleep(100);
+            var now = OwHelper.WorldNow;
+            Logger.LogInformation("[{time}]开始午夜更新。", now);
             Queue<GameUser> query = new Queue<GameUser>();
             using var scope = _Service.CreateScope();
             foreach (var item in _AccountStoreManager.Key2User)

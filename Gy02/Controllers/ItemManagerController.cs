@@ -31,7 +31,9 @@ namespace GY02.Controllers
         /// <param name="gameEntityManager"></param>
         /// <param name="syncCommandManager"></param>
         /// <param name="gameAccountStore"></param>
-        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameAccountStoreManager gameAccountStore, IHostEnvironment hostEnvironment)
+        /// <param name="hostEnvironment"></param>
+        public ItemManagerController(IServiceProvider serviceProvider, IMapper mapper, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager,
+            GameAccountStoreManager gameAccountStore, IHostEnvironment hostEnvironment)
         {
             _ServiceProvider = serviceProvider;
             _Mapper = mapper;
