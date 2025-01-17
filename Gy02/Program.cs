@@ -95,7 +95,7 @@ internal class Program
             {
                 Version = "v1",
                 Title = $"光元02",
-                Description = "接口文档v2.0.0",
+                Description = $"接口文档v2.0.0({builder.Environment.EnvironmentName})",
                 Contact = new OpenApiContact() { }
             });
             // 为 Swagger 设置xml文档注释路径
