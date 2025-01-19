@@ -54,6 +54,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02
@@ -433,7 +434,13 @@ namespace GY02
             try
             {
                 var tt = scope.ServiceProvider.GetService<GameTemplateManager>();
-                var xx=tt.GetFullViewFromId(Guid.Parse("619031ce-d892-40fd-ad4b-61c8d8ff8af2"));
+                Regex regex = new Regex(@"""[a-zA-Z0-9\+\/]{22}?\=\=""", RegexOptions.Compiled);
+                var str1 = regex.Replace(@"""TId"": ""t7g+y7UVgESlayS/b8qaEg=="",", match =>
+                {
+                    Debug.Assert(match.Success);
+                    return OwConvert.TryGetGuid(match.Groups[0].Value.Trim('"'), out var tmpGuid) ? $"\"{tmpGuid.ToString()}\"" : string.Empty;
+                });
+
             }
             #endregion 测试用代码
             catch (Exception)

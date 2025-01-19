@@ -27,6 +27,8 @@ using static System.Runtime.CompilerServices.RuntimeHelpers;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using OW.DDD;
+using System.Text.RegularExpressions;
+using System.Diagnostics;
 
 namespace GY02.Controllers
 {
@@ -504,9 +506,17 @@ namespace GY02.Controllers
                         Thread.Sleep(500);
                 } while (DateTime.UtcNow - s <= timeout);
             }
+            Regex regex = new Regex(@"""[a-zA-Z0-9\+\/]{22}?\=\=""", RegexOptions.Compiled);
             foreach (var order in orders)
             {
                 var tmp = _Mapper.Map<GameShoppingOrderDto>(order);
+                var tmpStr = regex.Replace(order.JsonObjectString, match =>
+                {
+                    Debug.Assert(match.Success);
+                    return OwConvert.TryGetGuid(match.Groups[0].Value.Trim('"'), out var tmpGuid) ? $"\"{tmpGuid}\"" : string.Empty;
+                });
+                order.JsonObjectString = tmpStr; 
+                _Logger.LogDebug("已经将GameShoppingOrde.JsonObjectString替换为：{tmpStr}", tmpStr);
                 tmp.Changes.AddRange(order.GetJsonObject<List<GamePropertyChangeItemDto>>());
                 result.Orders.Add(tmp);
             }
