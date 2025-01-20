@@ -506,7 +506,7 @@ namespace GY02.Controllers
                         Thread.Sleep(500);
                 } while (DateTime.UtcNow - s <= timeout);
             }
-            Regex regex = new Regex(@"""[a-zA-Z0-9\+\/]{22}?\=\=""", RegexOptions.Compiled);
+            var regex = new Regex(@"""[a-zA-Z0-9\+\/]{22}\=\=""", RegexOptions.Compiled);
             foreach (var order in orders)
             {
                 var tmp = _Mapper.Map<GameShoppingOrderDto>(order);
