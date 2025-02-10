@@ -60,7 +60,7 @@
       "DisplayName": "7日签到第1天 第一组产出序列",
       "Id": "ad9fa99b-1831-4154-a0ac-661d0facf606",
       "Gid": 190201005,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f00fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"a45b3421-3688-43c5-b8f5-429db7621f69\",\"c958c9f0-8110-4da9-b61b-1c90ef230d97\"],\"Counts\":[5000,3]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"f00fbec7-7465-4344-8443-6b4b43260b3c\"]},\"Outs\":{\"ParentTIds\":[\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\",\"9c559895-9a2c-43a7-b793-e879a600487c\"],\"TIds\":[\"d96e7af4-23b4-4de3-9642-f1845c30aad5\",\"16a8b068-918b-46ad-8ae6-d3797c7683ac\"],\"Counts\":[1,5]}}}"
     },
     {
       "DisplayName": "7日签到第2天 第一组",
@@ -78,7 +78,7 @@
       "DisplayName": "7日签到第2天 第一组产出序列",
       "Id": "d120854a-601a-48cf-b6d6-f6bbec7e8227",
       "Gid": 190201007,
-      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"75137bd7-882d-4580-b011-e92e8a36fbd5\"]},\"Outs\":{\"ParentTIds\":[\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"47fcdd7f-6206-48c1-b1e0-af65dbb65855\",\"d8b238d1-3a98-4b0b-b74e-d3efffa77892\"],\"Counts\":[1,2]}}}"
+      "PropertiesString": "{\"SequenceOut\":{\"Conditions\":[{\"ParentTId\":null,\"Genus\":[],\"TId\":\"07664462-df05-4ba7-886d-b431bb88aa1c\",\"MinCount\":null,\"GeneralConditional\":[],\"GroupMask\":1}],\"GetIndexExpression\":{\"op\":\"GetBuyedCount\",\"args\":[\"75137bd7-882d-4580-b011-e92e8a36fbd5\"]},\"Outs\":{\"ParentTIds\":[\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"123a5ad1-d4f0-4cd9-9abc-d440419d9e0d\"],\"TIds\":[\"0130307a-36fa-4804-b24e-c1c457ae2721\",\"d8b238d1-3a98-4b0b-b74e-d3efffa77892\"],\"Counts\":[1,2]}}}"
     },
     {
       "DisplayName": "7日签到第3天 第一组",
@@ -16402,7 +16402,7 @@
       "DisplayName": "武器更换引导用",
       "Id": "71567fb7-adfa-4443-94ee-46a48245ef9c",
       "Gid": 180501007,
-      "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"bd871154-1aab-4add-8433-be4886244560\",\"Count\":1}]}}"
+      "PropertiesString": "{\"Genus\":[\"gs_yindao\"],\"ShoppingItem\":{\"Period\":{\"Start\":\"2023-05-30T00:00:00.000Z\",\"End\":null,\"PeriodString\":\"99y\",\"ValidPeriodString\":\"99y\"},\"GroupNumber\":0,\"MaxCount\":1,\"Ins\":[],\"Outs\":[{\"Id\":null,\"ParentTId\":\"e6edab87-0034-4f45-8040-1f0d565ccf58\",\"TId\":\"385763e0-cd0b-47a8-9dc0-e4a41819dd47\",\"Count\":1}]}}"
     },
     {
       "DisplayName": "宝箱抽奖引导用--钥匙。。。",
