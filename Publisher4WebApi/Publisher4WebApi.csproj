@@ -14,13 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Gy02Bll\Gy02Bll.csproj" />
     <ProjectReference Include="..\OwGameCore\OwGameCore.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Gy02Bll">
-      <HintPath>..\Gy02Bll\obj\Debug\net6.0\ref\Gy02Bll.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>
