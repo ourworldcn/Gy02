@@ -100,6 +100,7 @@ namespace GY02.Managers
         goon:
             base.OnRequestConnect(datas, remote);
         }
+
         /// <summary>
         /// 发送一个类型。
         /// </summary>
@@ -139,7 +140,13 @@ namespace GY02.Managers
             foreach (var item in _Token2ClientId)
             {
                 if (!_AccountStoreManager.Token2Key.ContainsKey(item.Key))   //若不存在指定的Token
-                    _Token2ClientId.Remove(item.Key, out _);
+                {
+                    if (_Token2ClientId.Remove(item.Key, out var id))
+                    {
+                        if (RemoveId(id, out _))
+                            Logger?.LogDebug("成功移除了udp连接信息，Token = {token}，Id = {id}", item.Key, id);
+                    }
+                }
             }
         }
 

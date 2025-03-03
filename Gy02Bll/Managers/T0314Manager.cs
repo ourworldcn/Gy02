@@ -1,11 +1,20 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+﻿using GY02.Commands;
+using GY02.Publisher;
+using GY02.Templates;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Options;
+using OW.Game.Entity;
 using OW.Game.Managers;
+using OW.Game.Store;
+using OW.SyncCommand;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Reflection;
@@ -15,6 +24,7 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Managers
 {
@@ -35,11 +45,31 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="options"></param>
         /// <param name="logger"></param>
-        public T0314Manager(IOptions<T0314ManagerOptions> options, ILogger<T0314Manager> logger, HttpClient httpClient) : base(options, logger)
+        public T0314Manager(IOptions<T0314ManagerOptions> options, ILogger<T0314Manager> logger, HttpClient httpClient, IDbContextFactory<GY02UserContext> dbContextFactory,
+            GameAccountStoreManager accountStore, GameTemplateManager templateManager, GameShoppingManager shoppingManager, SpecialManager specialManager,
+            IServiceProvider service, IHostEnvironment environment, GameEntityManager entityManager)
+            : base(options, logger)
         {
             _HttpClient = httpClient;
             var str = Path.Combine(SdkServerUrl, LoginUrl);
+            _DbContextFactory = dbContextFactory;
+            _AccountStore = accountStore;
+            _TemplateManager = templateManager;
+            _ShoppingManager = shoppingManager;
+            _SpecialManager = specialManager;
+            _Service = service;
+            _Environment = environment;
+            _EntityManager = entityManager;
         }
+
+        IServiceProvider _Service;
+        IDbContextFactory<GY02UserContext> _DbContextFactory;
+        GameAccountStoreManager _AccountStore;
+        GameTemplateManager _TemplateManager;
+        GameShoppingManager _ShoppingManager;
+        SpecialManager _SpecialManager;
+        IHostEnvironment _Environment;
+        GameEntityManager _EntityManager;
 
         /// <summary>
         /// SDK服务器调用地址。
@@ -143,6 +173,109 @@ namespace GY02.Managers
             var result = MD5.HashData(bin);
             return result;
         }
+
+        /// <summary>
+        /// 该订单在未来需要扫描。
+        /// </summary>
+        /// <param name="orderId"></param>
+        public void Reg(Guid orderId)
+        {
+            CancellationTokenSource cts = new CancellationTokenSource(60_000);
+            cts.Token.Register(c =>
+            {
+                if (c is not Guid orderId) return;
+                using var db = _DbContextFactory.CreateDbContext();
+                if (db.ShoppingOrder.Find(orderId) is not GameShoppingOrder tmp) return;
+                if (!Guid.TryParse(tmp.CustomerId, out var gcId)) return;
+
+                var key = _AccountStore.GetKeyByCharId(gcId, db);
+                using var dw = _AccountStore.GetOrLoadUser(key, out var gu);
+                if (dw.IsEmpty) return;
+                var gc = gu.CurrentChar;
+
+                if (db.ShoppingOrder.FirstOrDefault(c => c.Id == orderId) is not GameShoppingOrder order) return;
+                if (!order.Confirm1 || !order.Confirm2) return;
+                order.State = 1;
+                var jo = order.GetJsonObject<T0314JObject>();
+                if (!jo.IsClientCreate || jo.SendInMail is not null) return;
+                //分拣发送及直接放置物品
+                List<GameEntitySummary> forMail = new List<GameEntitySummary>();
+                List<GameEntitySummary> noMail = new List<GameEntitySummary>();
+                foreach (var item in jo.EntitySummaries)
+                {
+                    var ttTmp = _TemplateManager.GetFullViewFromId(item.TId);
+                    if (ttTmp.Genus?.Contains(ProjectContent.NoMailAttachmentGenus) ?? false)  //若直接放置
+                    {
+                        noMail.Add(item);
+                    }
+                    else //若发送邮件
+                    {
+                        forMail.Add(item);
+                    }
+                }
+                //准备发送邮件
+                #region 发送奖品邮件
+                if (forMail.Count > 0)
+                {
+                    using var scope = _Service.CreateScope();
+                    var _SyncCommandManager = scope.ServiceProvider.GetService<SyncCommandManager>();
+
+                    var commandMail = new SendMailCommand
+                    {
+                        GameChar = gc,
+                        Mail = new SendMailItem
+                        {
+                            Subject = "Please check receipt of goods",
+                            Body = "Hero, we found that your purchased item was not obtained in a timely manner. We are now resending it to you. Best of luck to you.",
+                        },
+                    };
+                    commandMail.Mail.Dictionary1 = new Dictionary<string, string>()
+                {
+                    { "English","Please check receipt of goods"},
+                    { "Chinese","商品请查收"},
+                    { "Filipino","Maaring i-check ang inyong natanggap na produkto"},
+                    { "Indonesian","Silakan periksa enerimaan barang"},
+                    { "Malay","Sila semak penerimaan barang."},
+                    { "Thai","กรุณาตรวจรับสินค้า"},
+                };
+                    commandMail.Mail.Dictionary2 = new Dictionary<string, string>()
+                {
+                    { "English","Hero, we found that your purchased item was not obtained in a timely manner. We are now resending it to you. Best of luck to you."},
+                    { "Chinese","英雄，由于查询到，你购买的商品未及时获取，现补发给你。祝你好运。"},
+                    { "Filipino","Bayani, dahil sa aming pagkukulang, hindi namin nakuha agad ang binili mong produkto. Ngayon ay ipinapadala namin muli sa iyo. Magandang kapalaran sa iyo."},
+                    { "Indonesian","Pahlawan, karena kami menemukan bahwa barang yang Anda beli tidak segera diperoleh, kami sekarang mengirimkannya kembali kepada Anda. Semoga beruntung untuk Anda."},
+                    { "Malay","Hero, kerana kami dapati barang yang anda beli tidak diperolehi dengan cepat, kami kini menghantarnya semula kepada anda. Semoga berjaya untuk anda."},
+                    { "Thai","วีรชนครับ/ค่ะ พบว่าสินค้าที่คุณซื้อไม่ได้รับไว้ทันที เราจึงจัดส่งใหม่ให้คุณครับ/ค่ะ ขอให้โชคดีครับ/ค่ะ"},
+                };
+                    commandMail.ToIds.Add(gc.Id);   //加入收件人
+                    commandMail.Mail.Attachment.AddRange(forMail);     //加入附件
+                    _SyncCommandManager.Handle(commandMail);
+                }
+                #endregion 发送奖品邮件
+                _EntityManager.CreateAndMove(noMail, gc);
+                //后处理
+                jo.SendInMail = true;
+                db.SaveChanges();
+            }, orderId);
+        }
+        /*
+*         lbErr:
+   var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+   if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
+   {
+       var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
+       {
+           Change = null,
+           GameChar = gc,
+           IgnoreGuarantees = false,
+           Random = new Random(),
+       });
+       if (!b) goto lbErr;
+   }
+   var items = list.SelectMany(c => c.Item2);
+
+
+* */
     }
 
     public class T0314LoginReturn
@@ -383,6 +516,42 @@ namespace GY02.Managers
             });
             return coll.ToDictionary(c => c.name, c => c.Item2);
         }
+    }
+
+    /// <summary>
+    /// 该渠道支付时，订单中的寄宿数据对象。用于满足特殊的"慢支付"流程需要。
+    /// </summary>
+    public class T0314JObject
+    {
+        /// <summary>
+        /// 客户端获取订单的时间，若为null则未获取。
+        /// </summary>
+        public DateTime? NotifyDateTime { get; set; }
+
+        /// <summary>
+        /// 商品的TId。
+        /// </summary>
+        public Guid TId { get; set; }
+
+        /// <summary>
+        /// 使用新方法处理发送货品。
+        /// </summary>
+        public bool IsClientCreate { get; set; }
+
+        /// <summary>
+        /// 是否通过Mail发送了奖品。null=未确定，true=已通过mail发送，false=已直接放入用户包裹。
+        /// </summary>
+        public bool? SendInMail { get; set; }
+
+        /// <summary>
+        /// 获取购买得到的物品摘要。
+        /// </summary>
+        public List<GameEntitySummary> EntitySummaries { get; set; } = new List<GameEntitySummary>();
+
+        /// <summary>
+        /// 扩展字符串，通常放置 实际发放物品的变化数据。
+        /// </summary>
+        public string ExtraString { get; set; }
     }
 
     //public class T0314PayReturnStringDto

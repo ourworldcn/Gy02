@@ -325,12 +325,12 @@ namespace GY02.Managers
         #region 锁定相关
 
         /// <summary>
-        /// 
+        /// 锁定指定的key。
         /// </summary>
         /// <param name="key"></param>
         /// <param name="timeout"></param>
         /// <returns></returns>
-        public bool Lock(object key, TimeSpan timeout)
+        public virtual bool Lock(object key, TimeSpan timeout)
         {
             var result = Options.LockCallback(key, timeout);
             return result;
@@ -341,7 +341,7 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="key"></param>
         /// <returns></returns>
-        public bool Lock(object key) => Options.LockCallback(key, Options.DefaultLockTimeout);
+        public bool Lock(object key) => Lock(key, Options.DefaultLockTimeout);
 
         /// <summary>
         /// 

@@ -2,6 +2,7 @@
 using GY02.Publisher;
 using GY02.TemplateDb;
 using GY02.Templates;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -127,7 +128,7 @@ namespace OW.Game.Managers
         }
 
         public GameTemplateManager(IOptions<GameTemplateManagerOptions> options, GY02TemplateContext dbContext, ILogger<GameTemplateManager> logger, IHostApplicationLifetime lifetime,
-            IOptionsMonitor<RawTemplateOptions> rawTemplateOptions)
+            IOptionsMonitor<RawTemplateOptions> rawTemplateOptions, IConfiguration configuration)
             : base(options, logger)
         {
             DbContext = dbContext;
@@ -136,6 +137,16 @@ namespace OW.Game.Managers
             _RawTemplateOptionsChangedMonitor = _RawTemplateOptions.OnChange(RawTemplateOptionsChanged);
             Initialize();
             logger.LogDebug("上线:模板管理器。");
+            _Configuration = configuration;
+            var ss = _Configuration.GetSection("SensitiveWords").GetChildren();
+            _SensitiveWords = new HashSet<string>(ss.Select(c => c.Value));
+            if (_SensitiveWords.Count > 0)
+            {
+                var tmp = _SensitiveWords.Where(c => !string.IsNullOrEmpty(c));
+                if (tmp.Any())
+                    _MinLength = tmp.Min(s => s.Length);
+                _MaxLength = _SensitiveWords.Max(s => s.Length);
+            }
         }
 
         private void RawTemplateOptionsChanged(RawTemplateOptions arg1, string arg2)
@@ -147,6 +158,11 @@ namespace OW.Game.Managers
         IDisposable _RawTemplateOptionsChangedMonitor;
         IOptionsMonitor<RawTemplateOptions> _RawTemplateOptions;
         IHostApplicationLifetime _Lifetime;
+        IConfiguration _Configuration;
+
+        HashSet<string> _SensitiveWords;
+        int _MinLength = 0;
+        int _MaxLength = 0;
 
         private void Initialize()
         {
@@ -164,6 +180,38 @@ namespace OW.Game.Managers
             }
         }
 
+        #region 敏感词
+
+        /// <summary>
+        /// 是否又碰到后脚跟的G点了。
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="result"></param>
+        /// <returns></returns>
+        public bool IsOrgasm(string str, out string result)
+        {
+            result = null;
+            if (_MinLength == 0 || _MaxLength == 0)
+            {
+                return false;
+            }
+            for (int i = 0; i <= str.Length - _MinLength; i++)
+            {
+                for (int j = _MinLength; j <= _MaxLength; j++)
+                {
+                    if (i + j > str.Length) break;
+                    var tmp = str[i..(i + j)];
+                    if (_SensitiveWords.Contains(tmp))
+                    {
+                        result = tmp;
+                        return true;
+                    }
+                }
+            }
+            return true;
+        }
+        #endregion 敏感词
+
         /// <summary>
         /// 
         /// </summary>
@@ -178,7 +226,17 @@ namespace OW.Game.Managers
         {
             get
             {
-                LazyInitializer.EnsureInitialized(ref _Id2RawTemplate, () => new ConcurrentDictionary<Guid, RawTemplate>(_RawTemplateOptions.CurrentValue.ToDictionary(c => c.Id)));
+                Dictionary<Guid, RawTemplate> dic;
+                try
+                {
+                    var tmp = _RawTemplateOptions.CurrentValue;
+                    dic = tmp.ToDictionary(c => c.Id);
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+                LazyInitializer.EnsureInitialized(ref _Id2RawTemplate, () => new ConcurrentDictionary<Guid, RawTemplate>(dic));
                 return _Id2RawTemplate;
             }
         }

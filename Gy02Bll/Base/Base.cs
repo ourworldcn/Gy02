@@ -198,13 +198,5 @@ namespace OW.Game
         /// </summary>
         public GameEntityManager EntityManager { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public IEnumerable<GameEntity> GetAllChildren()
-        {
-            return EntityManager.GetAllEntity(GameChar);
-        }
     }
 }

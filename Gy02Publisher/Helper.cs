@@ -24,6 +24,11 @@ namespace GY02.Publisher
         /// </summary>
         public const string ServerDictionaryName = "3872287E-E2A3-4D3D-A5FE-C6FF703FA544";
 
+        /// <summary>
+        /// 不能通过邮件附件发送物品的标志。
+        /// </summary>
+        public const string NoMailAttachmentGenus = "flag_NoMailAttachment";
+
         #region 权限相关
 
         /// <summary>
@@ -37,7 +42,7 @@ namespace GY02.Publisher
         public const string AdminPwd = "1954D1C0-5012-44C3-8F1B-0950544862A5";
 
         /// <summary>
-        /// 超管角色标志。
+        /// 超管角色标志。拥有所有权限。
         /// </summary>
         public const string SupperAdminRole = "D7A8EA19-2B37-4A70-A80A-708120796093";
 
@@ -45,6 +50,28 @@ namespace GY02.Publisher
         /// 管理员角色标志。
         /// </summary>
         public const string AdminRole = "221BBA0F-4DAF-4394-8622-39F4377B61F7";
+
+        /// <summary>
+        /// 可发Mail角色标志。
+        /// </summary>
+        public const string MailAdminRole = "732B7EC2-2319-4055-B762-69E035EB5F5B";
+
+        /// <summary>
+        /// 可设置公告角色标志。
+        /// </summary>
+        public const string BulletinAdminRole = "B5A98E7D-5E18-470E-9CF0-8F8108F6ABB5";
+
+        /// <summary>
+        /// 可设置公告角色标志。
+        /// </summary>
+        public const string QuestionnaireAdminRole = "9C704923-1F4A-41EC-82D6-170CDD281A87";
+
+        /*
+        /// <summary>
+        /// 可生成兑换码角色标志。
+        /// </summary>
+        public const string RedeemCodeAdminRole = "2BAD2000-454C-4CD8-B288-4DADB79F68E6";
+        */
 
         #endregion 权限相关
 
@@ -140,6 +167,15 @@ namespace GY02.Publisher
         /// </summary>
         public static readonly Guid XingxiangBagTId = new Guid("f5022e9f-13da-4a2d-b1b9-d57fc07de232");
 
+        /// <summary>
+        /// 头像背包TId B39A6FEA-CA36-4C96-975C-59D326EFD7D1
+        /// </summary>
+        public static readonly Guid TouxiangBagTId = new Guid("B39A6FEA-CA36-4C96-975C-59D326EFD7D1");
+
+        /// <summary>
+        /// 头像装备槽TId	3F38C631-1694-41F5-BA70-7D25900D4D96
+        /// </summary>
+        public static readonly Guid TouxiangSlotTId = new Guid("3F38C631-1694-41F5-BA70-7D25900D4D96");
 
         #endregion 各种槽和背包
 
@@ -161,7 +197,7 @@ namespace GY02.Publisher
         /// 法币TID。
         /// </summary>
         public static readonly Guid FabiTId = new Guid("d577e084-4aa4-44d9-9510-20ccea041375");
-        
+
         /// <summary>
         /// 广告币TID。
         /// </summary>
@@ -198,7 +234,7 @@ namespace GY02.Publisher
         public static readonly Guid LeijiQiandaoSlotTId = new Guid("4527471A-FD91-4899-910C-DE7056AD67A1");
 
         /// <summary>
-        /// 累计签到占位符的TId。
+        /// 7日签到标志的TId。
         /// </summary>
         public static readonly Guid SevenDayQiandaoSlotTId = new Guid("46542DE4-B8B8-4735-936C-856273B650F7");
 
@@ -259,6 +295,7 @@ namespace GY02.Publisher
     /// <summary>
     /// 错误码封装。
     /// </summary>
+    /// <remarks>https://learn.microsoft.com/zh-cn/windows/win32/debug/system-error-codes</remarks>
     public static class ErrorCodes
     {
         /// <summary>
@@ -271,9 +308,19 @@ namespace GY02.Publisher
         public const int NO_ERROR = 0;
 
         /// <summary>
+        /// The data is invalid.
+        /// </summary>
+        public const int ERROR_INVALID_DATA = 13;
+        /// <summary>
         /// 功能未实现。
         /// </summary>
         public const int ERROR_CALL_NOT_IMPLEMENTED = 120;
+
+        /// <summary>
+        /// 参数错误。One or more arguments are not correct.
+        /// </summary>
+        public const int ERROR_BAD_ARGUMENTS = 160;
+
 
         /// <summary>
         /// 超时，没有在指定时间内完成操作，通常是锁定超时。
@@ -286,9 +333,58 @@ namespace GY02.Publisher
         public const int ERROR_INVALID_TOKEN = 315;
 
         /// <summary>
+        /// 没有足够的权限来完成请求的操作
+        /// </summary>
+        public const int ERROR_NO_SUCH_PRIVILEGE = 1313;
+        /// <summary>
         /// 找不到指定用户。
         /// </summary>
         public const int ERROR_NO_SUCH_USER = 1317;
+
+        /// <summary>
+        /// 用户名或密码不正确。
+        /// </summary>
+        public const int ERROR_LOGON_FAILURE = 1326;
+
+        /// <summary>
+        /// 用户帐户限制阻止了此用户进行登录。例如：不允许使用空密码，登录次数的限制，或强制实施的某个策略限制。
+        /// </summary>
+        public const int ERROR_ACCOUNT_RESTRICTION = 1327;
+
+        /// <summary>
+        /// 没有足够资源完成操作。
+        /// </summary>
+        public const int RPC_S_OUT_OF_RESOURCES = 1721;
+
+        /// <summary>
+        /// 没有足够的配额来处理此命令。通常是超过某些次数的限制。
+        /// </summary>
+        public const int ERROR_NOT_ENOUGH_QUOTA = 1816;
+
+        /// <summary>
+        /// 操作试图超过实施定义的限制。
+        /// </summary>
+        public const int ERROR_IMPLEMENTATION_LIMIT = 1292;
+
+        /// <summary>
+        /// 无效的账号名称。
+        /// </summary>
+        public const int ERROR_INVALID_ACCOUNT_NAME = 1315;
+
+        /// <summary>
+        /// 指定账号已经存在。
+        /// </summary>
+        public const int ERROR_USER_EXISTS = 1316;
+
+        /// <summary>
+        /// 无效的ACL——权限令牌包含的权限不足,权限不够。
+        /// </summary>
+        public const int ERROR_INVALID_ACL = 1336;
+
+        /// <summary>
+        /// 无法登录，通常是被封停账号。
+        /// </summary>
+        public const int ERROR_LOGON_NOT_GRANTED = 1380;
 
         /// <summary>
         /// 并发或交错操作更改了对象的状态，使此操作无效。
@@ -310,60 +406,6 @@ namespace GY02.Publisher
         /// </summary>
         public const int ObjectDisposed = RO_E_CLOSED;
 
-        /// <summary>
-        /// 参数错误。One or more arguments are not correct.
-        /// </summary>
-        public const int ERROR_BAD_ARGUMENTS = 160;
-
-        /// <summary>
-        /// 没有足够的权限来完成请求的操作
-        /// </summary>
-        public const int ERROR_NO_SUCH_PRIVILEGE = 1313;
-
-        /// <summary>
-        /// 没有足够资源完成操作。
-        /// </summary>
-        public const int RPC_S_OUT_OF_RESOURCES = 1721;
-
-        /// <summary>
-        /// 没有足够的配额来处理此命令。通常是超过某些次数的限制。
-        /// </summary>
-        public const int ERROR_NOT_ENOUGH_QUOTA = 1816;
-
-        /// <summary>
-        /// The data is invalid.
-        /// </summary>
-        public const int ERROR_INVALID_DATA = 13;
-
-        /// <summary>
-        /// 操作试图超过实施定义的限制。
-        /// </summary>
-        public const int ERROR_IMPLEMENTATION_LIMIT = 1292;
-
-        /// <summary>
-        /// 无效的账号名称。
-        /// </summary>
-        public const int ERROR_INVALID_ACCOUNT_NAME = 1315;
-
-        /// <summary>
-        /// 指定账号已经存在。
-        /// </summary>
-        public const int ERROR_USER_EXISTS = 1316;
-
-        /// <summary>
-        /// 用户名或密码错误。
-        /// </summary>
-        public const int ERROR_LOGON_FAILURE = 1326;
-
-        /// <summary>
-        /// 无效的ACL——权限令牌包含的权限不足,权限不够。
-        /// </summary>
-        public const int ERROR_INVALID_ACL = 1336;
-
-        /// <summary>
-        /// 无法登录，通常是被封停账号。
-        /// </summary>
-        public const int ERROR_LOGON_NOT_GRANTED = 1380;
     }
 #pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
 

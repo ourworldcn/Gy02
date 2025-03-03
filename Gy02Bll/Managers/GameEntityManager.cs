@@ -326,6 +326,16 @@ namespace GY02.Managers
         }
 
         /// <summary>
+        /// 获取所有孩子的实体。
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public IEnumerable<GameEntity> GetChildren(GameEntity entity)
+        {
+            return entity.GetThing().Children.Select(c => GetEntity(c));
+        }
+
+        /// <summary>
         /// 获取指定角色下所有实体的枚举子。包含角色自身。
         /// </summary>
         /// <param name="gameChar"></param>
@@ -335,10 +345,10 @@ namespace GY02.Managers
         /// <summary>
         /// 获取指示，确定摘要是否和指定实体匹配。
         /// </summary>
-        /// <param name="summary"></param>
         /// <param name="entity"></param>
+        /// <param name="summary"></param>
         /// <returns></returns>
-        public bool IsMatch(GameEntitySummary summary, GameEntity entity)
+        public bool IsMatch(GameEntity entity, GameEntitySummary summary)
         {
             if (summary.Id.HasValue && summary.Id.Value != entity.Id) return false;
             if (summary.TId != entity.TemplateId) return false;
@@ -348,13 +358,23 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 获取指示匹配的一组实体。
+        /// 在一组实体中找到指定条件的第一个实体。
         /// </summary>
+        /// <param name="gc"></param>
         /// <param name="summary"></param>
-        /// <param name="entities"></param>
-        /// <returns>如果没有匹配的实体则返回空集合。</returns>
-        public IEnumerable<GameEntity> GetMatches(GameEntitySummary summary, IEnumerable<GameEntity> entities) => entities.Where(c => IsMatch(summary, c));
-
+        /// <returns>可能为null。</returns>
+        public GameEntity GetEntity(IEnumerable<GameEntity> gameEntities, GameEntitySummary summary)
+        {
+            if (summary.ParentTId.HasValue)  //若限定父容器TId
+            {
+                var sm = summary.Clone() as GameEntitySummary;
+                sm.ParentTId = null;
+                sm.TId = summary.ParentTId.Value;
+                return gameEntities.Where(c => IsMatch(c, sm)).SelectMany(c => GetChildren(c)).FirstOrDefault(c => IsMatch(c, summary));
+            }
+            else
+                return gameEntities.FirstOrDefault(c => IsMatch(c, summary));
+        }
         #endregion 基础功能
 
         #region 创建实体相关功能
@@ -512,7 +532,7 @@ namespace GY02.Managers
         /// <summary>
         /// 按预览对象创建并移动到指定角色上。
         /// </summary>
-        /// <param name="summaries">不指定容器则使用默认容器。空集合则不进行任何操作。</param>
+        /// <param name="summaries">不指定容器则使用默认容器。空集合则不进行任何操作。元素只当作最终实体处理，不考虑实体的转义。</param>
         /// <param name="gameChar"></param>
         /// <param name="changes">省略或为null则不记录变化信息。</param>
         /// <returns></returns>
@@ -615,7 +635,7 @@ namespace GY02.Managers
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="changes"></param>
-        /// <returns>true一处成功，false指定实体没有父容器或移除失败，此时用<see cref="OwHelper.GetLastError"/>获取详细信息，0表示指定实体本就没有父容器。</returns>
+        /// <returns>true移除成功，false指定实体没有父容器或移除失败，此时用<see cref="OwHelper.GetLastError"/>获取详细信息，0表示指定实体本就没有父容器。</returns>
         /// <exception cref="InvalidOperationException"></exception>
         public bool RemoveFromContainer(GameEntity entity, ICollection<GamePropertyChangeItem<object>> changes = null)
         {

@@ -2,6 +2,7 @@ using Global;
 using GY02;
 using GY02.AutoMappper;
 using GY02.Base;
+using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
 using GY02.TemplateDb;
@@ -58,7 +59,7 @@ internal class Program
         //var fileListener = new TextWriterTraceListener("OwLogs.txt");
         //builder.Logging.AddTraceSource(new SourceSwitch("Debug"),fileListener);
         //Trace.Listeners.Add(fileListener);
-        
+
         #region 追加服务到容器
 
         // Add services to the container.
@@ -94,7 +95,7 @@ internal class Program
             {
                 Version = "v1",
                 Title = $"光元02",
-                Description = "接口文档v2.0.0",
+                Description = $"接口文档v2.0.0({builder.Environment.EnvironmentName})",
                 Contact = new OpenApiContact() { }
             });
             // 为 Swagger 设置xml文档注释路径
@@ -125,7 +126,7 @@ internal class Program
         #endregion 配置数据库
 
         if (TimeSpan.TryParse(builder.Configuration.GetSection("WorldClockOffset").Value, out var offerset))
-            OwHelper._Offset = offerset;  //配置游戏世界的时间。
+            OwHelper.Offset = offerset;  //配置游戏世界的时间。
         //services.Replace(new ServiceDescriptor(typeof(ISystemClock), typeof(OwSystemClock), ServiceLifetime.Singleton));
         services.AddGameServices();
         services.AddHostedService<GameHostedService>();
@@ -133,13 +134,16 @@ internal class Program
         services.AddOptions().Configure<RawTemplateOptions>(builder.Configuration.GetSection("GameTemplates"))
             .Configure<UdpServerManagerOptions>(builder.Configuration.GetSection("UdpServerManagerOptions"))
             .Configure<OwRdmServerOptions>(builder.Configuration.GetSection("OwRdmServerOptions"))
-            .Configure<LoginNameGeneratorOptions>(builder.Configuration.GetSection("LoginNameGeneratorOptions"));  //模板配置的选项模式
+            .Configure<LoginNameGeneratorOptions>(builder.Configuration.GetSection("LoginNameGeneratorOptions"))  //模板配置的选项模式
+            .Configure<ButieOptions>(builder.Configuration.GetSection("ButieOptions")); //补钻石
 
         services.AddAutoMapper(typeof(Gy02AutoMapperProfile).Assembly, typeof(GameCharDto).Assembly, typeof(GY02AutoMapperProfile).Assembly);
         services.AddPublisherT78();
         services.AddPublisherT127();
         services.AddPublisherT1228();
         services.AddPublisherT0314();
+
+        services.AddHttpClient("T1021/NA",c=>c.DefaultRequestHeaders.Add("contentType", "application/x-www-form-urlencoded"));
 
         services.AddScoped(c => new SimpleGameContext());
         services.AddSingleton<OwRdmServer>();

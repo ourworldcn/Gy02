@@ -88,7 +88,7 @@ namespace GY02.Commands
                 list.Add((item, startUtc));
             }
 #if DEBUG
-            var tmp = command.GameChar.GetAllChildren().FirstOrDefault(c => c.ExtraGuid== Guid.Parse("46542DE4-B8B8-4735-936C-856273B650F7"));
+            var tmp = command.GameChar.GetAllChildren().FirstOrDefault(c => c.ExtraGuid== ProjectContent.SevenDayQiandaoSlotTId);
 #endif
             var coll1 = list.Where(c => c.Item1.Genus.Contains("gs_meirishangdian")).ToArray();
             command.ShoppingItemStates.AddRange(list.Select(c =>

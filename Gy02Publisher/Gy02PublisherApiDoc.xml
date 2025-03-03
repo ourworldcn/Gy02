@@ -413,6 +413,11 @@
             词条是否生效。
             </summary>
         </member>
+        <member name="P:GY02.Templates.TemplateSkillItem.DisplayIcon">
+            <summary>
+            ??。
+            </summary>
+        </member>
         <member name="T:GY02.Templates.TemplateStringFullView">
             <summary>
             模板的完整视图。
@@ -609,6 +614,17 @@
             通关等级转化数组。可能是空集合表示不评定星级。
             </summary>
             <value>例如:[ 360, 480, 600 ]小于或等于360秒则评定为3(数组长度)星，大于600秒则评定为0星，以此类推。</value>
+        </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.PataOutIds">
+            <summary>
+            爬塔产出信息。顺序是：作为上手时产出的商品Id，作为平手时产出的商品Id，作为下手时产出的商品Id。
+            </summary>
+        </member>
+        <member name="P:GY02.Templates.TemplateStringFullView.MaxOutIds">
+            <summary>
+            限制最大产出,可以有多个商品，计算其产出的合计，结算不能超过产出合计。如果超出，目前是忽略超出部分。未定义的产出视同限制为0——即忽略。
+            仅针对正常产出限制。
+            </summary>
         </member>
         <member name="P:GY02.Templates.TemplateStringFullView.Fuhua">
             <summary>
@@ -847,7 +863,7 @@
         </member>
         <member name="P:GY02.Templates.GameThingPreconditionItem.Genus">
             <summary>
-            需要包含的属名称（如果有多项则必须全部包含）。空集合则不限制。
+            需要包含的属名称（如果有多项则必须全部包含）。null或空集合则不限制。
             </summary>
         </member>
         <member name="P:GY02.Templates.GameThingPreconditionItem.NumberCondition">
@@ -1008,7 +1024,7 @@
         </member>
         <member name="P:GY02.Templates.BlueprintInItem.Conditional">
             <summary>
-            选取物品的条件。
+            选取物品的条件。多个条件之间是或关系，即满足任意一个即认为满足条件。
             </summary>
         </member>
         <member name="P:GY02.Templates.BlueprintInItem.Count">
@@ -1327,6 +1343,11 @@
             全服配置字典条目的名称。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.NoMailAttachmentGenus">
+            <summary>
+            不能通过邮件附件发送物品的标志。
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.AdminLoginName">
             <summary>
             管理员登录名。
@@ -1339,12 +1360,27 @@
         </member>
         <member name="F:GY02.Publisher.ProjectContent.SupperAdminRole">
             <summary>
-            超管角色标志。
+            超管角色标志。拥有所有权限。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.AdminRole">
             <summary>
             管理员角色标志。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.MailAdminRole">
+            <summary>
+            可发Mail角色标志。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.BulletinAdminRole">
+            <summary>
+            可设置公告角色标志。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.QuestionnaireAdminRole">
+            <summary>
+            可设置公告角色标志。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.UserTId">
@@ -1437,6 +1473,16 @@
             形象背包TId。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ProjectContent.TouxiangBagTId">
+            <summary>
+            头像背包TId B39A6FEA-CA36-4C96-975C-59D326EFD7D1
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ProjectContent.TouxiangSlotTId">
+            <summary>
+            头像装备槽TId	3F38C631-1694-41F5-BA70-7D25900D4D96
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ProjectContent.MailSlotTId">
             <summary>
             邮件槽TId。
@@ -1489,7 +1535,7 @@
         </member>
         <member name="F:GY02.Publisher.ProjectContent.SevenDayQiandaoSlotTId">
             <summary>
-            累计签到占位符的TId。
+            7日签到标志的TId。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ProjectContent.LoginedDayTId">
@@ -1546,6 +1592,7 @@
             <summary>
             错误码封装。
             </summary>
+            <remarks>https://learn.microsoft.com/zh-cn/windows/win32/debug/system-error-codes</remarks>
         </member>
         <member name="M:GY02.Publisher.ErrorCodes.GetMessage(System.Int32)">
             <summary>
@@ -1554,9 +1601,19 @@
             <param name="error"></param>
             <returns>一个错误的说明，与运行操作系统的语言一致。</returns>
         </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_DATA">
+            <summary>
+            The data is invalid.
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ErrorCodes.ERROR_CALL_NOT_IMPLEMENTED">
             <summary>
             功能未实现。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_BAD_ARGUMENTS">
+            <summary>
+            参数错误。One or more arguments are not correct.
             </summary>
         </member>
         <member name="F:GY02.Publisher.ErrorCodes.WAIT_TIMEOUT">
@@ -1569,9 +1626,59 @@
             无效令牌。
             </summary>
         </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_NO_SUCH_PRIVILEGE">
+            <summary>
+            没有足够的权限来完成请求的操作
+            </summary>
+        </member>
         <member name="F:GY02.Publisher.ErrorCodes.ERROR_NO_SUCH_USER">
             <summary>
             找不到指定用户。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_LOGON_FAILURE">
+            <summary>
+            用户名或密码不正确。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_ACCOUNT_RESTRICTION">
+            <summary>
+            用户帐户限制阻止了此用户进行登录。例如：不允许使用空密码，登录次数的限制，或强制实施的某个策略限制。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.RPC_S_OUT_OF_RESOURCES">
+            <summary>
+            没有足够资源完成操作。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_NOT_ENOUGH_QUOTA">
+            <summary>
+            没有足够的配额来处理此命令。通常是超过某些次数的限制。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_IMPLEMENTATION_LIMIT">
+            <summary>
+            操作试图超过实施定义的限制。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_ACCOUNT_NAME">
+            <summary>
+            无效的账号名称。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_USER_EXISTS">
+            <summary>
+            指定账号已经存在。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_ACL">
+            <summary>
+            无效的ACL——权限令牌包含的权限不足,权限不够。
+            </summary>
+        </member>
+        <member name="F:GY02.Publisher.ErrorCodes.ERROR_LOGON_NOT_GRANTED">
+            <summary>
+            无法登录，通常是被封停账号。
             </summary>
         </member>
         <member name="F:GY02.Publisher.ErrorCodes.E_CHANGED_STATE">
@@ -1592,61 +1699,6 @@
         <member name="F:GY02.Publisher.ErrorCodes.ObjectDisposed">
             <summary>
             对象已经被处置。
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_BAD_ARGUMENTS">
-            <summary>
-            参数错误。One or more arguments are not correct.
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_NO_SUCH_PRIVILEGE">
-            <summary>
-            没有足够的权限来完成请求的操作
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.RPC_S_OUT_OF_RESOURCES">
-            <summary>
-            没有足够资源完成操作。
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_NOT_ENOUGH_QUOTA">
-            <summary>
-            没有足够的配额来处理此命令。通常是超过某些次数的限制。
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_DATA">
-            <summary>
-            The data is invalid.
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_IMPLEMENTATION_LIMIT">
-            <summary>
-            操作试图超过实施定义的限制。
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_ACCOUNT_NAME">
-            <summary>
-            无效的账号名称。
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_USER_EXISTS">
-            <summary>
-            指定账号已经存在。
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_LOGON_FAILURE">
-            <summary>
-            用户名或密码错误。
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_INVALID_ACL">
-            <summary>
-            无效的ACL——权限令牌包含的权限不足,权限不够。
-            </summary>
-        </member>
-        <member name="F:GY02.Publisher.ErrorCodes.ERROR_LOGON_NOT_GRANTED">
-            <summary>
-            无法登录，通常是被封停账号。
             </summary>
         </member>
     </members>

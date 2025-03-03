@@ -52,7 +52,7 @@ namespace OW.Game.Entity
         #region 普通属性
 
         /// <summary>
-        /// 角色显示用的名字。就是昵称，不可重复。
+        /// 所属账号的唯一标识。不可重复。
         /// </summary>
         [MaxLength(64)]
         [JsonIgnore]
@@ -133,6 +133,11 @@ namespace OW.Game.Entity
         /// 最后一次登录的时间点。仅用户登录后才会改变该值，系统登录该角色不会改变该值。
         /// </summary>
         public DateTime? LastLoginDateTimeUtc { get; set; }
+
+        /// <summary>
+        /// 改名的次数，初始为0。
+        /// </summary>
+        public int RenameCount { get; set; }
 
         #endregion 普通属性
 
@@ -236,6 +241,17 @@ namespace OW.Game.Entity
         [JsonIgnore]
         public GameSlot<GameEquipment> XingxiangBag => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.XingxiangBagTId)?.GetJsonObject<GameSlot<GameEquipment>>();
 
+        /// <summary>
+        /// 头像背包。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> TouxiangBag => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.TouxiangBagTId)?.GetJsonObject<GameSlot<GameEquipment>>();
+
+        /// <summary>
+        /// 头像装备槽。
+        /// </summary>
+        [JsonIgnore]
+        public GameSlot<GameEquipment> TouxiangSlot => (Thing as VirtualThing)?.Children.FirstOrDefault(c => c.ExtraGuid == ProjectContent.TouxiangSlotTId)?.GetJsonObject<GameSlot<GameEquipment>>();
         #endregion 各种槽
 
         #region 孵化相关
@@ -264,6 +280,11 @@ namespace OW.Game.Entity
         /// 看广告后的额外奖励集合。
         /// </summary>
         public List<GameEntitySummary> AdsRewardsHistory { get; set; } = new List<GameEntitySummary>();
+
+        /// <summary>
+        /// 爬塔信息。
+        /// </summary>
+        public TowerInfo TowerInfo { get; set; } = new TowerInfo();
 
         #endregion 战斗相关
 
@@ -532,6 +553,60 @@ namespace OW.Game.Entity
         /// 可能产出的物品预览。
         /// </summary>
         public List<GameDiceItem> Items { get; set; } = new List<GameDiceItem>();
+    }
+
+    /// <summary>
+    /// 爬塔信息。
+    /// </summary>
+    public class TowerInfo
+    {
+        /// <summary>
+        /// 塔的刷新时间。null标识未刷新过。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public DateTime? RefreshDateTime { get; set; }
+
+        /// <summary>
+        /// 下手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid? EasyId { get; set; }
+
+        /// <summary>
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
+        /// </summary>
+        public bool? IsEasyDone { get; set; }
+
+        /// <summary>
+        /// 平手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid? NormalId { get; set; }
+
+        /// <summary>
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
+        /// </summary>
+        public bool? IsNormalDone { get; set; }
+
+        /// <summary>
+        /// 上手的Id。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public Guid? HardId { get; set; }
+
+        /// <summary>
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
+        /// </summary>
+        public bool? IsHardDone { get; set; }
+
     }
 
     public static class GameCharExtensions

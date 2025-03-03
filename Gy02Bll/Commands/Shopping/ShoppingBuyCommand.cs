@@ -1,6 +1,7 @@
 ﻿using GY02.Managers;
 using GY02.Publisher;
 using GY02.Templates;
+using Microsoft.Extensions.Logging;
 using OW.DDD;
 using OW.Game;
 using OW.Game.Entity;
@@ -80,6 +81,9 @@ namespace GY02.Commands
 
             var tt = _ShoppingManager.GetShoppingTemplateByTId(command.ShoppingItemTId);
             if (tt is null) goto lbErr;
+#if DEBUG
+            //if (tt.TemplateId == Guid.Parse("71567fb7-adfa-4443-94ee-46a48245ef9c")) ;
+#endif
             var now = OwHelper.WorldNow;
             if (command.Count <= 0)
             {
@@ -88,7 +92,6 @@ namespace GY02.Commands
                 command.DebugMessage = $"购买商品数量需要大于0。";
                 return;
             }
-            var ss = command.GameChar.ChengJiuSlot.Children.FirstOrDefault(c => c.TemplateId == Guid.Parse("822b1d80-70fe-417d-baea-e9c2aacbdcd8"));
 
             if (!_ShoppingManager.IsMatch(command.GameChar, tt, now, out var periodStart)) goto lbErr;    //若不能购买
             var end = periodStart + tt.ShoppingItem.Period.ValidPeriod;
@@ -111,20 +114,8 @@ namespace GY02.Commands
                 if (allEntity is null) goto lbErr;
                 //提前缓存产出项
                 var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
-#if DEBUG
-                var tt1 = _EntityManager.GetAllEntity(command.GameChar).First(c => c.TemplateId == Guid.Parse("9599B400-0BFD-498E-93DC-F44FF303B1B3"));
-#endif
-                if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
-                {
-                    var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
-                    {
-                        Change = null,
-                        GameChar = command.GameChar,
-                        IgnoreGuarantees = false,
-                        Random = new Random(),
-                    });
-                    if (!b) goto lbErr;
-                }
+                if (!_SpecialManager.Transformed(tt, list, command.GameChar)) goto lbErr;
+
                 var periodIndex = _SearcherManager.GetPeriodIndex(tt.ShoppingItem.Ins, command.GameChar, out _); //提前获取自周期数
                 //消耗项
                 if (tt.ShoppingItem.Ins.Count > 0)  //若需要消耗资源
@@ -160,6 +151,7 @@ namespace GY02.Commands
             {
                 //已计入周任务
             }
+            AccountStore.Nop(command.GameChar.GetUser()?.Key);
             return;
         lbErr:
             command.FillErrorFromWorld();
@@ -171,18 +163,20 @@ namespace GY02.Commands
     /// </summary>
     public class CharFirstLoginedHandler : SyncCommandHandlerBase<CharFirstLoginedCommand>
     {
-        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStoreManager accountStore, GameSqlLoggingManager sqlLoggingManager)
+        public CharFirstLoginedHandler(GameEntityManager entityManager, GameShoppingManager shoppingManager, GameAccountStoreManager accountStore, GameSqlLoggingManager sqlLoggingManager, ILogger<CharFirstLoginedHandler> logger)
         {
             _EntityManager = entityManager;
             _ShoppingManager = shoppingManager;
             _AccountStore = accountStore;
             _SqlLoggingManager = sqlLoggingManager;
+            _Logger = logger;
         }
 
         GameEntityManager _EntityManager;
         GameShoppingManager _ShoppingManager;
         GameAccountStoreManager _AccountStore;
         GameSqlLoggingManager _SqlLoggingManager;
+        ILogger<CharFirstLoginedHandler> _Logger;
 
         /// <summary>
         /// 
@@ -222,8 +216,10 @@ namespace GY02.Commands
                 markDate = slot.ExtensionProperties.GetDateTimeOrDefault("LastMark");   //最后签到时间
                 if (buyDate.HasValue && buyDate.Value.Date >= markDate.Value.Date)   //若需要增加计数
                 {
+
                     slot.Count++;
                     slot.ExtensionProperties["LastMark"] = now.ToString();
+                    _Logger.LogDebug("[{time}] {tid}已经更新，Count={count}。", now, slot.TemplateId, slot.Count);
                     _AccountStore.Save(key);
                 }
             }

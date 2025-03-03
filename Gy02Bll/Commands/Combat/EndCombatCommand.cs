@@ -70,18 +70,22 @@ namespace GY02.Commands
     /// </summary>
     public class EndCombatHandler : SyncCommandHandlerBase<EndCombatCommand>, IGameCharHandler<EndCombatCommand>
     {
-        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager)
+        public EndCombatHandler(GameAccountStoreManager gameAccountStore, GameEntityManager gameEntityManager, SyncCommandManager syncCommandManager, GameTemplateManager templateManager, GameEventManager eventManager, GameShoppingManager shoppingManager)
         {
             _AccountStore = gameAccountStore;
-            _GameEntityManager = gameEntityManager;
+            _EntityManager = gameEntityManager;
             _SyncCommandManager = syncCommandManager;
             _TemplateManager = templateManager;
+            _EventManager = eventManager;
+            _ShoppingManager = shoppingManager;
         }
 
         GameAccountStoreManager _AccountStore;
-        GameEntityManager _GameEntityManager;
+        GameEntityManager _EntityManager;
         SyncCommandManager _SyncCommandManager;
         GameTemplateManager _TemplateManager;
+        GameEventManager _EventManager;
+        GameShoppingManager _ShoppingManager;
 
         public GameAccountStoreManager AccountStore => _AccountStore;
 
@@ -97,21 +101,172 @@ namespace GY02.Commands
                 command.DebugMessage = $"客户端指定战斗模板Id={command.CombatTId},但用户实际的战斗模板Id={command.GameChar.CombatTId}";
                 return;
             }
+            var now = OwHelper.WorldNow;
+            var gc = command.GameChar;
+            var tt = _TemplateManager.GetFullViewFromId(command.CombatTId);
+
+            #region 限制产出
+            if (tt.MaxOutIds is List<Guid> outIds && outIds.Count > 0) //若需要限制产出
+            {
+                //计算产出限制
+                var sis = outIds.Select(c => _ShoppingManager.GetShoppingItemByTId(c)).OfType<GameShoppingItem>();
+                if (sis.Count() != outIds.Count)
+                {
+                    command.FillErrorFromWorld();
+                    return;
+                }
+                var limits = sis.SelectMany(c => c.Outs).GroupBy(c => c.TId, (key, seq) => (key, seq.Sum(d => d.Count))).ToDictionary(c => c.key, c => c.Item2);   //产出限制
+                //将奖励限制
+                for (int i = command.Rewards.Count - 1; i >= 0; i--)
+                {
+                    var item = command.Rewards[i];
+                    if (!limits.TryGetValue(item.TId, out var limitCount) || limitCount <= 0) //若没找到此项
+                    {
+                        command.Rewards.RemoveAt(i);
+                    }
+                    else
+                    {
+                        if (item.Count >= limitCount) //若达到或超出限制
+                        {
+                            item.Count = limitCount;
+                            limits.Remove(item.TId);
+                        }
+                        else
+                            limits[item.TId] = limitCount - item.Count;
+                    }
+                }
+            }
+            #endregion 限制产出
+
+            #region 爬塔相关
+            if (tt.Genus?.Contains(GameCombatManager.PataGenusString) ?? false)    //若是爬塔
+            {
+                var commandShopping = new ShoppingBuyCommand
+                {
+                    GameChar = command.GameChar,
+                    Count = 1,
+                    Changes = command.Changes,
+                };
+                var ph = _EntityManager.GetEntity(_EntityManager.GetAllEntity(gc), new GameEntitySummary { TId = Guid.Parse("43ADC188-7B1D-4C73-983F-4E5583CBACCD") });    //爬塔占位符
+                var ov = ph.Count;
+
+                if (gc.TowerInfo.HardId == command.CombatTId && !gc.TowerInfo.IsHardDone.HasValue)  //若是上手
+                {
+                    if (command.IsSuccess)   //若赢了
+                    {
+                        commandShopping.ShoppingItemTId = tt.PataOutIds[0];
+                        _SyncCommandManager.Handle(commandShopping);
+                        if (commandShopping.HasError)
+                        {
+                            command.FillErrorFrom(commandShopping);
+                            return;
+                        }
+                        ph.Count += 3;
+                        command.Changes?.MarkChanges(ph, nameof(ph.Count), ov, ph.Count);
+                    }
+                    gc.TowerInfo.IsHardDone = command.IsSuccess;
+                }
+                else if (gc.TowerInfo.NormalId == command.CombatTId && !gc.TowerInfo.IsNormalDone.HasValue)  //若是平手
+                {
+                    if (command.IsSuccess)   //若赢了
+                    {
+                        commandShopping.ShoppingItemTId = tt.PataOutIds[1];
+                        _SyncCommandManager.Handle(commandShopping);
+                        if (commandShopping.HasError)
+                        {
+                            command.FillErrorFrom(commandShopping);
+                            return;
+                        }
+                        ph.Count += 2;
+                        command.Changes?.MarkChanges(ph, nameof(ph.Count), ov, ph.Count);
+                    }
+                    gc.TowerInfo.IsNormalDone = command.IsSuccess;
+                }
+                else if (gc.TowerInfo.EasyId == command.CombatTId && !gc.TowerInfo.IsEasyDone.HasValue)  //若是下手
+                {
+                    if (command.IsSuccess)   //若赢了
+                    {
+                        commandShopping.ShoppingItemTId = tt.PataOutIds[2];
+                        _SyncCommandManager.Handle(commandShopping);
+                        if (commandShopping.HasError)
+                        {
+                            command.FillErrorFrom(commandShopping);
+                            return;
+                        }
+                        ph.Count += 1;
+                        command.Changes?.MarkChanges(ph, nameof(ph.Count), ov, ph.Count);
+                    }
+                    gc.TowerInfo.IsEasyDone = command.IsSuccess;
+                }
+                else //非法
+                {
+                    command.HasError = true;
+                    command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                    command.DebugMessage = "不可进入该塔层";
+                    return;
+                }
+                List<GamePropertyChangeItem<object>> changes = new List<GamePropertyChangeItem<object>>();
+                if (command.IsSuccess)  //若胜利
+                {
+                    changes.Clear();
+                    commandShopping = new ShoppingBuyCommand
+                    {
+                        GameChar = command.GameChar,
+                        ShoppingItemTId = Guid.Parse("95f0e2cf-757a-4668-aab3-d91db54d1e19"),
+                        Count = 1,
+                        Changes = changes,
+                    };
+                    _SyncCommandManager.Handle(commandShopping);
+                    if (commandShopping.HasError)
+                    {
+                        command.FillErrorFrom(commandShopping);
+                        return;
+                    }
+                    command.Changes.AddRange(changes);
+                }
+                else //若失败
+                {
+                    changes.Clear();
+                    commandShopping = new ShoppingBuyCommand
+                    {
+                        GameChar = command.GameChar,
+                        ShoppingItemTId = Guid.Parse("61a13698-2d2d-4808-b44f-db1f7ac94a40"),
+                        Count = 1,
+                        Changes = changes,
+                    };
+                    _SyncCommandManager.Handle(commandShopping);
+                    if (commandShopping.HasError)
+                    {
+                        command.FillErrorFrom(commandShopping);
+                        return;
+                    }
+                    command.Changes.AddRange(changes);
+                }
+                //事件
+                SimpleGameContext context = new SimpleGameContext(Guid.Empty, command.GameChar, now, null);
+                //竞技场挑战次数的事件	7f6482c8-511a-477e-ab79-ce0d8b7643ca
+                _EventManager.SendEvent(Guid.Parse("7f6482c8-511a-477e-ab79-ce0d8b7643ca"), 1, context);
+
+                //竞技场获胜次数的事件 f619df3b-3475-4b28-b291-48aa9014ae7c
+                if (command.IsSuccess) _EventManager.SendEvent(Guid.Parse("f619df3b-3475-4b28-b291-48aa9014ae7c"), 1, context);
+
+            }
+
+            #endregion 爬塔相关
             command.GameChar.ClientCombatInfo = null;
             //把掉落物品增加到角色背包中
             var coll = from tmp in command.Rewards
                        group tmp by tmp.TId into g
                        where g.Count() > 0
                        select new GameEntitySummary { TId = g.Key, Count = g.Sum(c => c.Count) };
-            var list = _GameEntityManager.Create(coll);
+            var list = _EntityManager.Create(coll);
             if (coll.Any()) //若有需要移动的实体
-                _GameEntityManager.Move(list.Select(c => c.Item2), command.GameChar, command.Changes);
+                _EntityManager.Move(list.Select(c => c.Item2), command.GameChar, command.Changes);
             var change = command.Changes?.MarkChanges(command.GameChar, nameof(command.GameChar.CombatTId), command.GameChar.CombatTId, null);
             if (change is not null) change.HasNewValue = false;
             command.GameChar.CombatTId = null;
 
             #region 记录战斗信息
-            var gc = command.GameChar;
             var ch = gc.CombatHistory.FirstOrDefault(c => c.TId == command.CombatTId);
             if (ch is null) //若尚未初始化
             {
@@ -124,17 +279,17 @@ namespace GY02.Commands
             int? maxLevelOfPass = ch.MaxLevelOfPass;
             if (command.IsSuccess && ttCombat.ScoreTime.Count > 0 && command.MinTimeSpanOfPass.HasValue)  //若需要评定星级
             {
-                var tongguan = _GameEntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.TongguanBiTId); //通关币
+                var tongguan = _EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.TongguanBiTId); //通关币
                 if (tongguan is null)
                 {
-                    if (!_GameEntityManager.CreateAndMove(new GameEntitySummary[]{ new GameEntitySummary { TId = ProjectContent.TongguanBiTId, Count = 0, }
+                    if (!_EntityManager.CreateAndMove(new GameEntitySummary[]{ new GameEntitySummary { TId = ProjectContent.TongguanBiTId, Count = 0, }
                     }, gc, command.Changes))
                     {
                         command.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
                         command.DebugMessage = $"需要评定通关等级，但客户没有通关币对象且无法创建。";
                         return;
                     }
-                    tongguan = _GameEntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.TongguanBiTId); //通关币
+                    tongguan = _EntityManager.GetAllEntity(gc).FirstOrDefault(c => c.TemplateId == ProjectContent.TongguanBiTId); //通关币
                 }
                 var scope = (decimal)command.MinTimeSpanOfPass.Value.TotalSeconds;   //通关的秒数
                 var combarLv = ttCombat.ScoreTime.FindIndex(c => scope <= c);   //星级
@@ -151,7 +306,7 @@ namespace GY02.Commands
                             TId=ProjectContent.TongguanBiTId,
                             Count= bi,
                         } };
-                        _GameEntityManager.CreateAndMove(biEntity, gc, command.Changes);
+                        _EntityManager.CreateAndMove(biEntity, gc, command.Changes);
                         maxLevelOfPass = combarLv;
                     }
                 }
@@ -196,9 +351,11 @@ namespace GY02.Commands
             if (jinzhuZuanshi > 0)
                 jinzhuList.Add(new GameEntitySummary { TId = Guid.Parse("a84bcbd1-9541-4907-99df-59b19559ae9f"), Count = jinzhuJinbi });
             if (jinzhuList.Count > 0)
-                _GameEntityManager.CreateAndMove(jinzhuList, gc, command.Changes);
+                _EntityManager.CreateAndMove(jinzhuList, gc, command.Changes);
             #endregion 金猪活动
+
             _AccountStore.Save(key);
+            _AccountStore.Nop(key);
         }
 
     }

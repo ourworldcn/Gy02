@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Gy02/Gy02ApiDoc.xml
+/Publisher4WebApi/Publisher4WebApiApiDoc.xml

@@ -37,7 +37,9 @@ namespace GY02.Managers
         /// </summary>
         public const string ShoppingBuyHistoryPrefix = "ShoppingBuy";
 
-        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, GameBlueprintManager blueprintManager, GameEntityManager entityManager, GameTemplateManager templateManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager) : base(options, logger)
+        public GameShoppingManager(IOptions<GameShoppingManagerOptions> options, ILogger<GameShoppingManager> logger, GameBlueprintManager blueprintManager,
+            GameEntityManager entityManager, GameTemplateManager templateManager, GameSearcherManager searcherManager, GameSqlLoggingManager sqlLoggingManager) 
+            : base(options, logger)
         {
             _BlueprintManager = blueprintManager;
             _EntityManager = entityManager;
@@ -202,7 +204,7 @@ namespace GY02.Managers
         {
             /*cb3eb8b7-15b5-4480-a56b-24bf6fca9a12	礼包商店充值次数占位符
             */
-            Guid[] tids = new Guid[] {  Guid.Parse("cb3eb8b7-15b5-4480-a56b-24bf6fca9a12") };
+            Guid[] tids = new Guid[] { Guid.Parse("cb3eb8b7-15b5-4480-a56b-24bf6fca9a12") };
             var coll = _EntityManager.GetAllEntity(gameChar).Where(c => tids.Contains(c.TemplateId)).Select(c => new GameEntitySummary
             {
                 TId = c.TemplateId,
@@ -263,7 +265,7 @@ namespace GY02.Managers
             if (tt.ShoppingItem is not GameShoppingItem shoppingItem)
             {
                 OwHelper.SetLastError(ErrorCodes.ERROR_BAD_ARGUMENTS);
-                OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。");
+                OwHelper.SetLastErrorMessage($"指定的模板不包含商品项信息。TId={tt.TemplateId}");
                 return null;
             }
             return shoppingItem;

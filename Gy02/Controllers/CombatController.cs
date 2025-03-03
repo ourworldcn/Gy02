@@ -2,8 +2,12 @@
 using GY02.Commands;
 using GY02.Managers;
 using GY02.Publisher;
+using GY02.Templates;
 using Microsoft.AspNetCore.Mvc;
+using OW.Game.Entity;
+using OW.Game.Managers;
 using OW.SyncCommand;
+using System;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02.Controllers
@@ -13,19 +17,32 @@ namespace GY02.Controllers
     /// </summary>
     public class CombatController : GameControllerBase
     {
-#pragma warning disable CS1591 // 缺少对公共可见类型或成员的 XML 注释
-        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper, SyncCommandManager syncCommandManager) : base(service)
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        /// <param name="service"></param>
+        /// <param name="gameAccountStore"></param>
+        /// <param name="gameCombatManager"></param>
+        /// <param name="mapper"></param>
+        /// <param name="syncCommandManager"></param>
+        /// <param name="entityManager"></param>
+        /// <param name="templateManager"></param>
+        public CombatController(IServiceProvider service, GameAccountStoreManager gameAccountStore, GameCombatManager gameCombatManager, IMapper mapper,
+            SyncCommandManager syncCommandManager, GameEntityManager entityManager, GameTemplateManager templateManager) : base(service)
         {
             _GameAccountStore = gameAccountStore;
             _GameCombatManager = gameCombatManager;
             _Mapper = mapper;
             _SyncCommandManager = syncCommandManager;
+            _EntityManager = entityManager;
+            _TemplateManager = templateManager;
         }
-#pragma warning restore CS1591 // 缺少对公共可见类型或成员的 XML 注释
 
         GameAccountStoreManager _GameAccountStore;
         GameCombatManager _GameCombatManager;
         SyncCommandManager _SyncCommandManager;
+        GameEntityManager _EntityManager;
+        GameTemplateManager _TemplateManager;
         IMapper _Mapper;
 #if DEBUG
         /// <summary>
@@ -40,6 +57,7 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// <response code="401">令牌无效。</response>  
         [HttpPost]
         public ActionResult<StartCombatReturnDto> StartCombat(StartCombatParamsDto model)
         {
@@ -78,7 +96,6 @@ namespace GY02.Controllers
                 return result;
             }
 
-
             var command = new CombatMarkCommand { GameChar = gc };
             _Mapper.Map(model, command);
             _SyncCommandManager.Handle(command);
@@ -112,7 +129,7 @@ namespace GY02.Controllers
         }
 
         /// <summary>
-        /// 
+        /// 获取区间。
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -135,6 +152,87 @@ namespace GY02.Controllers
             return result;
 
         }
-    }
 
+        /// <summary>
+        /// 获取竞技场信息。
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns>ErrorCode的错误意义如下：160=没有找到爬塔占位符（用此占位符来确定爬塔功能是否开启）。1219=无法购买刷新商品（可能是资源或次数不足。）</returns>
+        [HttpPost]
+        public ActionResult<GetTowerReturnDto> GetTower(GetTowerParamsDto model)
+        {
+            var result = new GetTowerReturnDto { };
+            using var dw = _GameAccountStore.GetCharFromToken(model.Token, out var gc);
+            if (dw.IsEmpty)
+            {
+                if (OwHelper.GetLastError() == ErrorCodes.ERROR_INVALID_TOKEN) return Unauthorized();
+                result.FillErrorFromWorld();
+                return result;
+            }
+            var ph = _EntityManager.GetEntity(_EntityManager.GetAllEntity(gc), new GameEntitySummary { TId = Guid.Parse("43ADC188-7B1D-4C73-983F-4E5583CBACCD") });    //爬塔占位符
+            gc.TowerInfo ??= new TowerInfo();
+            if (ph is null)
+            {
+                result.HasError = true;
+                result.ErrorCode = ErrorCodes.ERROR_BAD_ARGUMENTS;
+                result.DebugMessage = $"没有找到爬塔占位符";
+                return result;
+            }
+            var now = OwHelper.WorldNow.Date;
+            if (!gc.TowerInfo.NormalId.HasValue || !gc.TowerInfo.RefreshDateTime.HasValue || gc.TowerInfo.RefreshDateTime.Value.Date != now ||
+                gc.TowerInfo.IsEasyDone.HasValue && gc.TowerInfo.IsNormalDone.HasValue && gc.TowerInfo.IsHardDone.HasValue)   //若需要免费刷新
+            {
+                var ids = _GameCombatManager.GetNewLevel(ph.Count == 0 ? Guid.Empty : _GameCombatManager.Towers[(int)ph.Count - 1].TemplateId);
+                gc.TowerInfo.RefreshDateTime = now;
+                gc.TowerInfo.EasyId = ids.Item1;
+                gc.TowerInfo.IsEasyDone = null;
+                gc.TowerInfo.NormalId = ids.Item2;
+                gc.TowerInfo.IsNormalDone = null;
+                gc.TowerInfo.HardId = ids.Item3;
+                gc.TowerInfo.IsHardDone = null;
+            }
+            else if (model.ForceRefresh) //若需要强制刷新
+            {
+                //var commandRefresh = new ShoppingBuyCommand
+                //{
+                //    GameChar = gc,
+                //    Count = 1,
+                //    ShoppingItemTId = Guid.Parse("E7A0E2A3-304E-4D19-84A4-14128650B152"),
+                //};
+                //_SyncCommandManager.Handle(commandRefresh);
+                //if (commandRefresh.HasError)
+                //{
+                //    result.FillErrorFrom(commandRefresh);
+                //    result.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
+                //    return result;
+                //}
+                //_Mapper.Map(commandRefresh.Changes, result.Changes);
+                var pataShua = _EntityManager.GetEntity(_EntityManager.GetAllEntity(gc),
+                    new GameEntitySummary { TId = Guid.Parse("0fa37f44-9977-4a17-abf3-936caf425c9c") });    //爬塔刷新币
+                if (pataShua is null || pataShua.Count <= 0)
+                {
+                    result.HasError = true;
+                    result.DebugMessage = "爬塔刷新币不足。";
+                    result.ErrorCode = ErrorCodes.ERROR_IMPLEMENTATION_LIMIT;
+                    return result;
+                }
+                var ids = _GameCombatManager.GetNewLevel(ph.Count == 0 ? Guid.Empty : _GameCombatManager.Towers[(int)ph.Count - 1].TemplateId);
+                gc.TowerInfo.RefreshDateTime = now;
+                gc.TowerInfo.EasyId = ids.Item1;
+                gc.TowerInfo.IsEasyDone = null;
+                gc.TowerInfo.NormalId = ids.Item2;
+                gc.TowerInfo.IsNormalDone = null;
+                gc.TowerInfo.HardId = ids.Item3;
+                gc.TowerInfo.IsHardDone = null;
+            }
+
+            result.TowerInfo ??= new TowerInfoDto();
+            _Mapper.Map(gc.TowerInfo, result.TowerInfo);
+            result.TowerInfo.EasyTemplate = _TemplateManager.GetFullViewFromId(gc.TowerInfo.EasyId!.Value);
+            result.TowerInfo.NormalTemplate = _TemplateManager.GetFullViewFromId(gc.TowerInfo.NormalId.Value);
+            result.TowerInfo.HardTemplate = _TemplateManager.GetFullViewFromId(gc.TowerInfo.HardId!.Value);
+            _GameAccountStore.Save(gc.GetUser().Key);
+            return result;
+        }
+    }
 }

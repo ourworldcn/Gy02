@@ -26,6 +26,7 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// <response code="401">用户名或密码错误。</response>  
         [HttpGet]
         public ActionResult<GetTemplates2ReturnDto> GetTemplates([FromQuery] GetTemplates2ParamsDto model)
         {
@@ -88,6 +89,27 @@ namespace GY02.Controllers
             var result = new GetServerDateTimeUtcReturnDto { DateTimeUtc = OwHelper.WorldNow };
             return result;
         }
+
+        /// <summary>
+        /// 获取服务器非敏感信息。
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult<GetServerInfoReturnDto> GetServerInfo([FromQuery] GetServerInfoParamsDto model)
+        {
+            var result = new GetServerInfoReturnDto
+            {
+                Offset = OwHelper.Offset.TotalSeconds,
+            };
+            return result;
+        }
     }
 
+    /// <summary>
+    /// 服务器信息。
+    /// </summary>
+    public class ServerInfo
+    {
+
+    }
 }

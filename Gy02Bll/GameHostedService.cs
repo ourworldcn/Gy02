@@ -34,6 +34,7 @@ using System;
 using System.Buffers;
 using System.Buffers.Text;
 using System.Collections.Concurrent;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Globalization;
@@ -42,14 +43,19 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Net.Http.Json;
 using System.Net.Sockets;
+using System.Reflection;
+using System.Reflection.PortableExecutable;
 using System.Runtime;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace GY02
 {
@@ -93,6 +99,9 @@ namespace GY02
             using var scope = _Services.CreateScope();
             var service = scope.ServiceProvider;
             CreateDb(service);
+            BugFix(service);
+            CharNameFix(service);  //20240702
+            ChengjiuFix(service);   //20240711
             UpdateDatabase(service);
             var mailManager = service.GetService<GameMailManager>();
             mailManager.ClearMail();
@@ -154,15 +163,15 @@ namespace GY02
             {
                 _Logger.LogWarning(err, default);
             }
-            var sql = "EXEC sp_tableoption '[dbo].[VirtualThings]', 'vardecimal storage format', 1";
-            try
-            {
-                db?.Database.ExecuteSqlRaw(sql);
-            }
-            catch (Exception err)
-            {
-                _Logger.LogWarning(err, default);
-            }
+            //var sql = "EXEC sp_tableoption '[dbo].[VirtualThings]', 'vardecimal storage format', 1";  //高版本SqlServer用此压缩收益很低
+            //try
+            //{
+            //    db?.Database.ExecuteSqlRaw(sql);
+            //}
+            //catch (Exception err)
+            //{
+            //    _Logger.LogWarning(err, default);
+            //}
 #if !DEBUG  //若正式运行版本
 
 #endif
@@ -208,6 +217,139 @@ namespace GY02
                 }
             }
             dbUser.SaveChanges();
+        }
+
+        /// <summary>
+        /// 修复Bug。修复错误记录通过最大等级的问题。
+        /// </summary>
+        private void BugFix(IServiceProvider service)
+        {
+            Guid fixId = new Guid("{8146A40E-98E6-4C1C-AFB7-D844C7380152}");
+            var fixIdString = fixId.ToString();
+            var dbUser = service.GetRequiredService<GY02UserContext>();
+            var entity = dbUser.ServerConfig.FirstOrDefault(c => c.Name == fixIdString);
+            if (entity is null)  //若需要修复
+            {
+                Guid charTId = Guid.Parse("07664462-df05-4ba7-886d-b431bb88aa1c");  //角色对象的TId
+                Guid slotTId = Guid.Parse("123a5ad1-d4f0-4cd9-9abc-d440419d9e0d");  //货币槽
+                Guid xTId = Guid.Parse("9599B400-0BFD-498E-93DC-F44FF303B1B3");  //巡逻用主线副本最高记录占位符
+                var coll = from gChar in dbUser.VirtualThings.Where(c => c.ExtraGuid == charTId)
+                           join slot in dbUser.VirtualThings.Where(c => c.ExtraGuid == slotTId) on gChar.Id equals slot.ParentId
+                           join x in dbUser.VirtualThings.Where(c => c.ExtraGuid == xTId) on slot.Id equals x.ParentId
+                           select new { gChar, x };
+
+                var ttMng = service.GetRequiredService<GameTemplateManager>();
+                foreach (var item in coll)
+                {
+                    var gChar = item.gChar.GetJsonObject<GameChar>();
+                    var x = item.x.GetJsonObject<GameItem>();
+                    var ary = gChar.CombatHistory.Select(c => ttMng.GetFullViewFromId(c.TId)).ToArray();
+                    if (ary.Length > 0)
+                    {
+                        var maxPass = ary.Max(c => c.Gid.GetValueOrDefault() % 1000); //最大通关数
+                        if (x.Count != maxPass)
+                        {
+                            if (maxPass > 0)   //若至少通过一关
+                                x.Count = maxPass;
+                            else
+                                x.Count = 0;
+                        }
+                    }
+                    else
+                        x.Count = 0;
+                    //item.gChar.PrepareSaving(dbUser);
+                    item.x.PrepareSaving(dbUser);
+                }
+                dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString });
+                dbUser.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 修正角色显示名称。
+        /// </summary>
+        /// <param name="service"></param>
+        void CharNameFix(IServiceProvider service)
+        {
+            Guid fixId = new Guid("{73E77D0D-8058-4249-B0DF-CD8635937CA8}");
+            var fixIdString = fixId.ToString();
+            var dbUser = service.GetRequiredService<GY02UserContext>();
+            var entity = dbUser.ServerConfig.FirstOrDefault(c => c.Name == fixIdString);
+            if (entity is null)  //若需要修复
+            {
+                var cng = service.GetRequiredService<IConfiguration>();
+                var prefix = cng.GetSection("CharNamePrefix").Value ?? string.Empty;
+                var coll = from gc in dbUser.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.CharTId)
+                           join gu in dbUser.VirtualThings.Where(c => c.ExtraGuid == ProjectContent.UserTId && c.ExtraString != ProjectContent.AdminLoginName)
+                           on gc.ParentId equals gu.Id
+                           select new { gc, gu };
+                foreach (var item in coll)
+                {
+                    item.gc.ExtraString = $"{prefix}{item.gu.ExtraString}";
+                }
+                dbUser.ServerConfig.Add(new ServerConfigItem() { Name = fixIdString, Value = "修正角色显示名称" });
+                dbUser.SaveChanges();
+            }
+        }
+
+        /// <summary>
+        /// 头像产出的成就修正。
+        /// </summary>
+        /// <param name="service"></param>
+        void ChengjiuFix(IServiceProvider service)
+        {
+            Guid fixId = new Guid("{C9867EC4-5282-46CB-BEF0-9916BA2E5300}");
+            var startDt = OwHelper.WorldNow;
+            var genusString = "e_touxiang";   //头像的类属
+            var fixIdString = fixId.ToString();
+            var dbUser = service.GetRequiredService<GY02UserContext>();
+            var fixFlag = dbUser.ServerConfig.FirstOrDefault(c => c.Name == fixIdString);
+            if (fixFlag is null)  //若需要修复
+            {
+                GameTemplateManager templateManager = service.GetRequiredService<GameTemplateManager>();
+                GameAchievementManager achievementManager = service.GetRequiredService<GameAchievementManager>();
+                List<TemplateStringFullView> list = new List<TemplateStringFullView>();
+                foreach (var achiTT in achievementManager.Templates.Values)
+                {
+                    if (achiTT.Achievement.Outs.Any(c => c.Any(d => templateManager.GetFullViewFromId(d.TId)?.Genus?.Contains(genusString) ?? false)))  //若这个成就需要更新
+                        list.Add(achiTT);
+                }
+                var ids = list.Select(c => c.TemplateId).ToArray();
+                //fullView.Achievement.Outs.Any(c=>c.Any(d=> templateManager.GetFullViewFromId(d.TId)?))
+
+                var coll = from slot in dbUser.VirtualThings
+                           where slot.ExtraGuid == ProjectContent.ChengJiuSlotTId
+                           join achi in dbUser.VirtualThings
+                           on slot.Id equals achi.ParentId
+                           where ids.Contains(achi.ExtraGuid)
+                           select new { slot, achi };
+                int iCount = 0;
+                foreach (var item in coll)
+                {
+                    var achi = item.achi.GetJsonObject<GameAchievement>();
+                    var tt = templateManager.GetFullViewFromId(achi.TemplateId);
+                    for (int i = 0; i < (tt.Achievement?.Outs.Count ?? 0); i++)
+                    {
+#if DEBUG
+                        //if (Guid.Parse("0c51077f-6426-4353-bd50-41281e6105bf") == tt.TemplateId)
+                        //    ;
+#endif
+                        if (tt.Achievement.Outs[i].Any(c => templateManager.GetFullViewFromId(c.TId)?.Genus?.Contains(genusString) ?? false))   //若需要复位
+                            if (achi.Items.FirstOrDefault(c => c.Level == i + 1) is GameAchievementItem gai)
+                            {
+                                gai.IsPicked = false;
+                                gai.Rewards.Clear();
+                                gai.Rewards.AddRange(tt.Achievement.Outs[i].Select(c => c.Clone() as GameEntitySummary));
+                                iCount++;
+                            }
+                    }
+                }
+                var cfg = new ServerConfigItem() { Name = fixIdString, Value = $"头像产出的成就修正，开始时间{startDt},结束时间{OwHelper.WorldNow},{iCount}条数据被更新" };
+                dbUser.ServerConfig.Add(cfg);
+                dbUser.SaveChanges();
+                cfg.Value = $"头像产出的成就修正，开始时间{startDt},结束时间{OwHelper.WorldNow},{iCount}条数据被更新";
+                dbUser.SaveChanges();
+            }
         }
 
         /// <summary>
@@ -287,27 +429,17 @@ namespace GY02
             using var scope = _Services.CreateScope();
             var svcScope = scope.ServiceProvider;
             var db = svcScope.GetService<GY02UserContext>();
-            var str2 = "2023-06-01T00:00:00.0000000";
             var sw = Stopwatch.StartNew();
             #region 测试用代码
             try
             {
-                //var ips = Dns.GetHostAddresses(".");
-                var ips2 = Dns.GetHostAddresses("localhost");
-                //var ipEndPoint = new IPEndPoint(ips[1], 20088);
-                //using var udp = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                //udp.Bind(new IPEndPoint(IPAddress.Any, 0));
-                ////udp.SendTo(buff, ipEndPoint);
-                //EndPoint endPoint = new IPEndPoint(IPAddress.Any, 0);
-                //byte[] buff = Encoding.UTF8.GetBytes("this is a test.");
-                //EndPoint remote = new IPEndPoint(IPAddress.Parse("47.236.192.97"), 20088);
-
-                for (int i = 0; i < 1_000; i++)
+                var tt = scope.ServiceProvider.GetService<GameTemplateManager>();
+                Regex regex = new Regex(@"""[a-zA-Z0-9\+\/]{22}?\=\=""", RegexOptions.Compiled);
+                var str1 = regex.Replace(@"""TId"": ""t7g+y7UVgESlayS/b8qaEg=="",", match =>
                 {
-                    //udp.SendTo(buff, remote);
-                    //Thread.Sleep(1000);
-                }
-                //var b = udp.Available;
+                    Debug.Assert(match.Success);
+                    return OwConvert.TryGetGuid(match.Groups[0].Value.Trim('"'), out var tmpGuid) ? $"\"{tmpGuid.ToString()}\"" : string.Empty;
+                });
 
             }
             #endregion 测试用代码
@@ -340,12 +472,46 @@ namespace GY02
         }
     }
 
-    //private unsafe void Awake()
-    //{
-    //    byte[] sendByte = Encoding.ASCII.GetBytes("");    //FORWARDERS
+    /// <summary>
+    /// 常用工具。
+    /// </summary>
+    public static class StringUtility
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public static List<(string, string)> Get<T>(T data)
+        {
+            var result = new List<(string, string)>();
+            var pis = typeof(T).GetProperties();
+            string name, val;
+            var type = data!.GetType();
+            foreach (var pi in pis)
+            {
+                if (pi.GetCustomAttribute<IgnoreDataMemberAttribute>() is not null) continue;
+                name = pi.GetCustomAttribute<JsonPropertyNameAttribute>()?.Name ?? pi.Name;
+                if (pi.PropertyType == typeof(string))
+                {
+                    if (pi.GetValue(data) is not string tmp || tmp == null) continue;
+                    val = tmp;
+                }
+                else if (pi.PropertyType.IsGenericType && typeof(Nullable<>) == pi.PropertyType.GetGenericTypeDefinition())    //若是可空类型
+                {
+                    var tmp = pi.GetValue(data);
+                    if (tmp is null) continue;
+                    dynamic dyn = tmp;
+                    if (dyn is null) continue;
+                    val = dyn.ToString();
+                }
+                else
+                    val = pi.GetValue(data)?.ToString() ?? string.Empty;
+                result.Add((name, val));
+            }
+            return result;
+        }
 
-    //    fixed (byte* pointerToFirst = &sendByte[0])
-    //    {
-    //    }
-    //}
+    }
 }

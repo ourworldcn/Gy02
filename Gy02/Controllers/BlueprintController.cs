@@ -31,10 +31,10 @@ namespace GY02.Controllers
         }
 
         private GameBlueprintManager _BlueprintManager;
-        SyncCommandManager _SyncCommandManager;
-        IMapper _Mapper;
-        GameDiceManager _DiceManager;
-        GameAccountStoreManager _AccountStoreManager;
+        private SyncCommandManager _SyncCommandManager;
+        private IMapper _Mapper;
+        private GameDiceManager _DiceManager;
+        private GameAccountStoreManager _AccountStoreManager;
 
         /// <summary>
         /// 使用指定蓝图。
@@ -58,6 +58,7 @@ namespace GY02.Controllers
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        /// <response code="401">令牌无效。</response>  
         [HttpPost]
         public ActionResult<GetDiceGuaranteesReturnDto> GetDiceGuarantees(GetDiceGuaranteesParamsDto model)
         {
@@ -84,6 +85,7 @@ namespace GY02.Controllers
             }
             else
                 result.Count = i;
+            result.MaxGuaranteesCount = i;
             return result;
         }
     }

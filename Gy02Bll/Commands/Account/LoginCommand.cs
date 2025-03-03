@@ -111,6 +111,7 @@ namespace GY02.Commands
 
             if (_ShoppingManager.IsChanged(gc, "gs_leijilibao"))
                 _ShoppingManager.LibaoChanged(gc);
+            command.HasError = false;
         }
 
     }

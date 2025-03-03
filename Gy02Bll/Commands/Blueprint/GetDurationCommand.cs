@@ -66,7 +66,6 @@ namespace GY02.Commands
             for (int i = 0; i < command.TIds.Count; i++)
             {
                 var tid = command.TIds[i];
-
                 if (_TemplateManager.GetFullViewFromId(tid) is not TemplateStringFullView tt) goto lbErr;
                 if (tt.Ins is not List<BlueprintInItem> list) goto lbErr;
                 if (list.FirstOrDefault(c => c.Conditional.Any(d => d.NumberCondition is not null)) is not BlueprintInItem item) goto lbErr;

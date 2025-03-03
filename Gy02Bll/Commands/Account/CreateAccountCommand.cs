@@ -8,6 +8,7 @@ using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.Game.Store;
 using OW.SyncCommand;
+using System;
 using System.Diagnostics.CodeAnalysis;
 
 namespace GY02.Commands
@@ -120,6 +121,9 @@ namespace GY02.Commands
             var key = gu.GetThing().IdString;
             if (_AccountStore.Lock(key))
                 _SyncCommandManager.Post.Enqueue(new UnlockCommand { Key = key });
+            //容错
+            if (gu.CurrentChar is GameChar gc)
+                gc.CombatTId = null;
             _AccountStore.Save(guThing.IdString);
 
         }
@@ -129,6 +133,11 @@ namespace GY02.Commands
 
     public class UnlockCommand : SyncCommandBase
     {
+        public UnlockCommand()
+        {
+            
+        }
+
         public object Key { get; set; }
     }
 

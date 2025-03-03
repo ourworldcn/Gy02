@@ -323,17 +323,7 @@ namespace GY02.Controllers
                     if (!blueprintManager.Deplete(allEntity, tt.ShoppingItem.Ins)) goto lbErr;
 
                 var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
-                if (tt.ShoppingItem.Outs.Count > 0) //若有产出项
-                {
-                    var b = _SpecialManager.Transformed(tt.ShoppingItem.Outs, list, new EntitySummaryConverterContext
-                    {
-                        Change = null,
-                        GameChar = gc,
-                        IgnoreGuarantees = false,
-                        Random = new Random(),
-                    });
-                    if (!b) goto lbErr;
-                }
+                if (!_SpecialManager.Transformed(tt, list, gc)) goto lbErr;
                 var items = list.SelectMany(c => c.Item2);
                 //发邮件
                 using (var dwKeyAdmin = _GameAccountStore.GetOrLoadUser(ProjectContent.AdminLoginName, ProjectContent.AdminPwd, out var adminUser))

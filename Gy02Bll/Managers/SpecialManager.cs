@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using OW.Game.Entity;
 using OW.Game.Managers;
+using System;
 
 namespace GY02.Managers
 {
@@ -184,6 +185,36 @@ namespace GY02.Managers
         lbErr:  //出错
             changed = false;
             return false;
+        }
+
+        /// <summary>
+        /// 翻译指定的商品模板产出。
+        /// </summary>
+        /// <param name="tt"></param>
+        /// <param name="entitySummaries"></param>
+        /// <param name="gc"></param>
+        /// <returns></returns>
+        public bool Transformed(TemplateStringFullView tt, ICollection<(GameEntitySummary, IEnumerable<GameEntitySummary>)> entitySummaries, GameChar gc)
+        {
+            var tmp = tt?.ShoppingItem;
+            if (tmp is null)
+            {
+                OwHelper.SetLastErrorAndMessage(ErrorCodes.ERROR_BAD_ARGUMENTS, $"指定模板没有商品输出项，TId={tt.TemplateId}");
+                return false;
+            }
+            var outs = tmp?.Outs;
+            if (outs is null || outs.Count == 0) return true; //若没有有产出项
+            var list = new List<(GameEntitySummary, IEnumerable<GameEntitySummary>)> { };
+            var b = Transformed(outs, list, new EntitySummaryConverterContext
+            {
+                Change = null,
+                GameChar = gc,
+                IgnoreGuarantees = false,
+                Random = new Random(),
+            });
+            if (!b) return false;
+            list.ForEach(c => entitySummaries.Add(c));
+            return true;
         }
 
         /// <summary>

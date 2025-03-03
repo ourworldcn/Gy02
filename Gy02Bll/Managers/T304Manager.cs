@@ -34,6 +34,23 @@ namespace GY02.Managers
         /// </summary>
         const string PublicKeyString = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmfKkGYVh4fh85D3gInPQgbG6VsIKJqg2mgGQBm+0ETRk+4C3svLR8UZuz+MoFCmtXaYn7DpCVI4XZiWYhjqnYXrSwgBGrGMk7hKx1VAxGYpG9Uv28ZBGxr0i/dikctyeF/uU0p4p2qEFBn9LILXyhj3meOqc5zWRwA2ikxszXmwiS16jbE+L6YddF7hocqgE6ZjRBcDxJep0+bkjhyx4oCPf4rzUrrqiqE2PU+32+fzmzIq46mDjc7qEhIIUhaWViggfLpv74JHGOTGN+7Gm7ZYrU3V/Rvv0W5dowesVOoQ8L5NQD8pD8741J0sxEOBaAxlyYSqxgnZuFIZapPjL2wIDAQAB";
 
+        #region 新接入
+
+        const string AppId = "1000172";
+
+        const string AppKey = "2bc23c15abf368d01f719009e7b8dd333bc0c41e";
+        /// <summary>
+        /// 游戏支付解密使用。
+        /// </summary>
+        const string PublicKeyStringV2 = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCaXfg3WrMOZihl/w/gSAf7PtxB/jMwZRYt9j0itCOd54Vk1WBN52YrbRCfrOthWYdrBnUji60+min4vRy+cjhQxG5kyDIlE74Q3ipOjPfaeYSl9KtDfwZ5NZngGaovJJ1wEKZkTIUZPrFSX1RU0vRL1S9k2a8bGNi5YyYBCKc2iQIDAQAB";
+
+        /// <summary>
+        /// 游戏登录加密使用.
+        /// </summary>
+        const string AppPrivateKeyV2 = "MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAJR8/L7gWBVCcOE5hYF469A8JJkgeoltPdrNwdDsspSP5r0nPZrIn1rPayt/l3cfXjx8PSinIz3QI0gJUhQpNq0niU9nvgpHW53WCM/RmCvfK8mF92wo+Vu74/VgT/ymQZzj0VpiKr+p5cyD8UHAwUOodJ79s7DoXyz32p3nNbw/AgMBAAECgYB0+XFyPPGm7cxW4SWXNVcvl/GM39UoZfKQZ/8DQzP7bNFsuXkCcoF23GekwMLliMSICad0WxacH1dr7EvIrh7vWlhYzfPE9/YatGXpUX3ZJ8LFGsQ8CqMC8va3REsElSyUafsSZSdFGs0zCJVDWJ/tpEdP+Xkg0svdrk+ADqRWwQJBAOStc6GvgefHWHYGeG0sMv774H17AIQ7C2ONQqKU9kbvdRS8pLriIfdT/hqj5iynNeTFjZfOrpTC8PcRBEsqrpkCQQCmOsoHzeX9+szy/1Fs1enQR85jYSeExn9ctrluH+W0WChKxP57x2y3dQmgnkgXi+41CBUkjiTMfw5Qanu6hsCXAkBkF//7D6Ve3IS99IsVzjjsHzfd9M7/EhEkHBrEq0s5NWscDo5UNtMDPUKGSqNffDk8z7PwdMk52DI9Ere8ZwxRAkBTCPDcfySQ/xQbmiAxbpWSPhxBlkloUMNUK85qzTIwKQ1PdCHu8MpExgjeG9LFOFfwU65ECWEmaZ1b3CUcIq3XAkAVMDlZu8LVQGNqrD3+lwh3I8g0bEwY2iI97TD6pagBEJn/Aoylh9YNvWRaILA2j/F4Wm6h+9Fbgy7vj09ToNV+";
+
+        #endregion 新接入
+
         /// <summary>
         /// 公钥的二进制形式。
         /// </summary>

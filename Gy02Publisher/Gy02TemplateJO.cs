@@ -666,6 +666,12 @@ namespace GY02.Templates
         /// </summary>
         [JsonPropertyName("enable")]
         public bool Enable { get; set; }
+
+        /// <summary>
+        /// ??。
+        /// </summary>
+        [JsonPropertyName("displayIcon")]
+        public bool DisplayIcon { get; set; }
     }
 
     /// <summary>
@@ -981,6 +987,17 @@ namespace GY02.Templates
         /// <value>例如:[ 360, 480, 600 ]小于或等于360秒则评定为3(数组长度)星，大于600秒则评定为0星，以此类推。</value>
         [JsonPropertyName("scoreTime")]
         public List<decimal> ScoreTime { get; set; } = new List<decimal>();
+
+        /// <summary>
+        /// 爬塔产出信息。顺序是：作为上手时产出的商品Id，作为平手时产出的商品Id，作为下手时产出的商品Id。
+        /// </summary>
+        public List<Guid> PataOutIds { get; set; } = new List<Guid>();
+
+        /// <summary>
+        /// 限制最大产出,可以有多个商品，计算其产出的合计，结算不能超过产出合计。如果超出，目前是忽略超出部分。未定义的产出视同限制为0——即忽略。
+        /// 仅针对正常产出限制。
+        /// </summary>
+        public List<Guid> MaxOutIds { get; set; } = new List<Guid>();
         #endregion
 
         #region 孵化相关
@@ -1315,7 +1332,7 @@ namespace GY02.Templates
         public Guid? ParentTId { get; set; }
 
         /// <summary>
-        /// 需要包含的属名称（如果有多项则必须全部包含）。空集合则不限制。
+        /// 需要包含的属名称（如果有多项则必须全部包含）。null或空集合则不限制。
         /// </summary>
         public List<string> Genus { get; set; } = new List<string>();
 
@@ -1687,7 +1704,7 @@ namespace GY02.Templates
         }
 
         /// <summary>
-        /// 选取物品的条件。
+        /// 选取物品的条件。多个条件之间是或关系，即满足任意一个即认为满足条件。
         /// </summary>
         public List<GameThingPreconditionItem> Conditional { get; set; } = new List<GameThingPreconditionItem>();
 
@@ -2173,4 +2190,7 @@ namespace GY02.Templates
     }
     #endregion 事件相关
 
+    #region 战斗相关
+
+    #endregion 战斗相关
 }

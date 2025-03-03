@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using OW.Data;
 using OW.Game.Entity;
 using OW.Game.Manager;
 using OW.SyncCommand;

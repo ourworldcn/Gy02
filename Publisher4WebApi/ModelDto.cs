@@ -350,6 +350,11 @@ namespace GY02.Publisher
         /// </summary>
         public DateTime? LastLoginDateTimeUtc { get; set; }
 
+        /// <summary>
+        /// 改名的次数，初始为0。
+        /// </summary>
+        public int RenameCount { get; set; }
+
         #endregion 简单属性
 
         #region 各种槽
@@ -424,6 +429,15 @@ namespace GY02.Publisher
         /// </summary>
         public GameSlotDto<GameEquipmentDto> XingxiangBag { get; set; }
 
+        /// <summary>
+        /// 头像背包。
+        /// </summary>
+        public GameSlotDto<GameEquipmentDto> TouxiangBag { get; set; }
+
+        /// <summary>
+        /// 头像装备槽。
+        /// </summary>
+        public GameSlotDto<GameEquipmentDto> TouxiangSlot { get; set; }
         #endregion 各种槽
 
         #region 孵化相关
@@ -466,6 +480,12 @@ namespace GY02.Publisher
         /// </summary>
         public List<GameDiceHistoryItemDto> DiceHistory { get; set; } = new List<GameDiceHistoryItemDto>();
         #endregion 投骰子的记录
+
+        /// <summary>
+        /// 所属角色组。如果为空集合，则默认为一般用户组（这是一种压缩手段）。
+        /// </summary>
+        public List<string> Roles { get; set; } = new List<string>();
+
 
     }
 
@@ -915,6 +935,99 @@ namespace GY02.Publisher
         #endregion 可映射属性
 
     }
+
+    /// <summary>
+    /// 通用登录功能的参数封装类。
+    /// </summary>
+    public class LoginV2ParamsDto
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public LoginV2ParamsDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 登录验证模式的标识字符串，类似 合作伙伴名/渠道名/地域缩写/平台名，各名可能省略。如 T1021/NA，T1021/EU。
+        /// </summary>
+        public string Mode { get; set; }
+
+        /// <summary>
+        /// 验证使用的证据。键是证据项的名，值证据项的值，针对不同的验证模式需要的证据也各不相同。如{{"Uid","登录名"},{"Token","令牌"}}。
+        /// </summary>
+        public Dictionary<string, string> Evidence { get; set; } = new Dictionary<string, string>();
+    }
+
+    /// <summary>
+    /// 通用登录功能的返回值封装类。
+    /// </summary>
+    public class LoginV2ReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public LoginV2ReturnDto()
+        {
+
+        }
+
+        #region 可映射属性
+
+        /// <summary>
+        /// 角色的信息。
+        /// </summary>
+        [SourceMember("User.CurrentChar")]
+        public GameCharDto GameChar { get; set; }
+
+        /// <summary>
+        /// 用户账号的唯一Id。
+        /// </summary>
+        [SourceMember(nameof(LoginCommand.User) + "." + nameof(GameUser.Id))]
+        public Guid UserId { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+
+        Guid _Token;
+        /// <summary>
+        /// 后续操作该用户使用的令牌。
+        /// </summary>
+        [SourceMember("User.Token")]
+        public Guid Token
+        {
+            get => _Token; set
+            {
+                GyUdpClient.LastToken = value;
+                _Token = value;
+            }
+        }
+
+        /// <summary>
+        /// 世界服务器的主机地址。使用此地址拼接后续的通讯地址。
+        /// </summary>
+        public string WorldServiceHost { get; set; }
+
+        string _UdpServiceHost;
+        /// <summary>
+        /// Udp连接的地址。
+        /// </summary>
+        public string UdpServiceHost
+        {
+            get => _UdpServiceHost;
+            set
+            {
+                GyUdpClient.LastUdpServiceHost = value;
+                _UdpServiceHost = value;
+            }
+        }
+
+        #endregion 可映射属性
+    }
+
     #endregion 账号及登录相关
 
     #region 世界控制器功能相关
@@ -1008,6 +1121,24 @@ namespace GY02.Publisher
     /// </summary>
     public class StopServiceReturnDto : ReturnDtoBase
     {
+    }
+
+    /// <summary>
+    /// 获取服务器非敏感信息功能的参数封装类。保留未用（暂时可不传递）。
+    /// </summary>
+    public class GetServerInfoParamsDto
+    {
+    }
+
+    /// <summary>
+    /// 获取服务器非敏感信息的返回值封装类。未来增加的服务器配置都见放入此处。
+    /// </summary>
+    public class GetServerInfoReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 服务器内部偏移时间。单位:秒
+        /// </summary>
+        public double Offset { get; set; }
     }
 
     #endregion 世界控制器功能相关
@@ -1131,6 +1262,8 @@ namespace GY02.Publisher
 
     /// <summary>
     /// 增加物品返回数据封装类。
+    /// ErrorCode说明：
+    /// 120=此环境下不能使用此功能。
     /// </summary>
     [AutoMap(typeof(MoveEntitiesCommand))]
     public class AddItemsReturnDto : PropertyChangeReturnDto
@@ -1279,6 +1412,11 @@ namespace GY02.Publisher
         /// 还剩余多少次出高价值物品。空表示没有保底数。
         /// </summary>
         public int? Count { get; set; }
+
+        /// <summary>
+        /// 最大保底次数，如果没有则返回null。
+        /// </summary>
+        public int? MaxGuaranteesCount { get; set; }
     }
 
     /// <summary>
@@ -1318,6 +1456,91 @@ namespace GY02.Publisher
     #endregion 蓝图相关
 
     #region 战斗相关
+
+
+    /// <summary>
+    /// 获取竞技场信息功能的参数封装类。
+    /// </summary>
+    public class GetTowerParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 是否强制刷新。false仅获取当前塔层信息，true强制刷新塔层信息（可能失败，如果达到限制）
+        /// </summary>
+        public bool ForceRefresh { get; set; }
+    }
+
+    /// <summary>
+    /// 爬塔信息。
+    /// </summary>
+    [AutoMap(typeof(TowerInfo))]
+    public class TowerInfoDto
+    {
+        /// <summary>
+        /// 塔的刷新时间。null标识未刷新过。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public DateTime? RefreshDateTime { get; set; }
+
+        /// <summary>
+        /// 下手的塔层信息。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public TemplateStringFullView EasyTemplate { get; set; }
+
+        /// <summary>
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
+        /// </summary>
+        public bool? IsEasyDone { get; set; }
+
+        /// <summary>
+        /// 平手的塔层信息。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public TemplateStringFullView NormalTemplate { get; set; }
+
+        /// <summary>
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
+        /// </summary>
+        public bool? IsNormalDone { get; set; }
+
+        /// <summary>
+        /// 上手的塔层信息。
+        /// </summary>
+#if NETCOREAPP
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+#endif
+        public TemplateStringFullView HardTemplate { get; set; }
+
+        /// <summary>
+        /// 空=未挑战，true=已挑战且获得胜利，false=已挑战且失败。
+        /// </summary>
+        public bool? IsHardDone { get; set; }
+    }
+
+    /// <summary>
+    /// 获取竞技场信息功能的返回值封装类。
+    /// </summary>
+    public class GetTowerReturnDto : PropertyChangeReturnDto
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public GetTowerReturnDto()
+        {
+
+        }
+
+        /// <summary>
+        /// 返回的可打竞技场Id信息。
+        /// </summary>
+        public TowerInfoDto TowerInfo { get; set; }
+    }
 
     /// <summary>
     /// 获取特殊关卡有效周期功能参数封装类。
@@ -1572,6 +1795,24 @@ namespace GY02.Publisher
     #region 商城相关
 
     /// <summary>
+    /// 角色改名功能的返回值封装类。
+    /// </summary>
+    public class RenameCharReturnDto : PropertyChangeReturnDto
+    {
+    }
+
+    /// <summary>
+    /// 角色改名功能的参数封装类。
+    /// </summary>
+    public class RenameCharParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 新的显示名。
+        /// </summary>
+        public string DisplayName { get; set; }
+    }
+
+    /// <summary>
     /// 执行兑换码兑换功能的参数封装类。
     /// 错误码是160表示指定的兑换码不存在。若错误码是1219则表示兑换码失效。
     /// </summary>
@@ -1621,9 +1862,54 @@ namespace GY02.Publisher
     }
 
     /// <summary>
+    /// 获取法币购买订单信息参数封装类。
+    /// </summary>
+    public class GetShoppingOrderV2ParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 渠道标识，针对每个不同渠道会给出不同命名，通常是 渠道名/地区/平台，当然也可能不区分平台。
+        /// 渠道标识:T1021/NA。
+        /// </summary>
+        public string Channel { get; set; }
+
+        /// <summary>
+        /// 等待订单完成的最大时间长度，单位：秒（可以有小数）。如果省略或为null则不等待订单完成，立即返回。
+        /// </summary>
+        public decimal? Timeout { get; set; }
+
+        /// <summary>
+        /// 限定获取订单的Id。省略则不限定特定的订单。
+        /// </summary>
+        public Guid? OrderId { get; set; }
+
+        /// <summary>
+        /// 创建订单时间的最早时间。省略则不限定订单的最早创建时间。
+        /// </summary>
+        public DateTime? Start { get; set; }
+
+        /// <summary>
+        /// 创建订单时间的最晚时间。省略则不限定订单的最晚创建时间。
+        /// </summary>
+        public DateTime? End { get; set; }
+    }
+
+    /// <summary>
+    /// 获取法币购买订单信息返回封装类。
+    /// </summary>
+    public class GetShoppingOrderV2ReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 订单集合。
+        /// </summary>
+        public List<GameShoppingOrderDto> Orders { get; set; } = new List<GameShoppingOrderDto>();
+    }
+
+    /// <summary>
     /// 法币购买商品的订单。
     /// </summary>
-    //[AutoMap(typeof(GameShoppingOrder), ReverseMap = true)]
+#if NETCOREAPP
+    [AutoMap(typeof(GameShoppingOrder), ReverseMap = true)]
+#endif
     public class GameShoppingOrderDto
     {
         /// <summary>
@@ -1638,6 +1924,11 @@ namespace GY02.Publisher
         /// Id。
         /// </summary>
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// 生成该订单的渠道标识。类似T1234/NA。
+        /// </summary>
+        public string Channel { get; set; }
 
         /// <summary>
         /// 目前是角色Id的字符串形式。如果以后存在给账号购买的情况则可能是账号Id。
@@ -1779,6 +2070,35 @@ namespace GY02.Publisher
     }
 
     /// <summary>
+    /// 创建法币购买订单功能的参数封装类。
+    /// </summary>
+    public class CreateOrderV2ParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 渠道标识，针对每个不同渠道会给出不同命名，通常是 渠道名/地区/平台，当然也可能不区分平台。
+        /// 渠道标识:T1021/NA,需要参数：OrderId（可选，指定有效Id,或省略该参数。），ShoppingItemId(商品Id),Count(数量)
+        /// </summary>
+        public string Channel { get; set; }
+
+        /// <summary>
+        /// 动态参数字典，针对不同的购买渠道有不同参数，通常需要 ShoppingItemId(商品Id),Count(数量，需要将数字转为字符串格式)。
+        /// </summary>
+        public Dictionary<string, string> Paramters { get; set; } = new Dictionary<string, string>();
+
+    }
+
+    /// <summary>
+    /// 创建法币购买订单功能的返回值封装类。
+    /// </summary>
+    public class CreateOrderV2ReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 创建订单的Id.如果参数中指定了订单Id，且有效（无重）则这里返回的是指定的Id，否则将返回新Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
+    /// <summary>
     /// 购买功能参数封装类。
     /// </summary>
     [AutoMap(typeof(ShoppingBuyCommand), ReverseMap = true)]
@@ -1812,6 +2132,36 @@ namespace GY02.Publisher
     public class ShoppingBuyReturnDto : PropertyChangeReturnDto
     {
     }
+
+    /// <summary>
+    /// 购买功能参数封装类。
+    /// </summary>
+    public class ShoppingBuyWithDetailParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 购买的商品项Id。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+
+        /// <summary>
+        /// 购买数量。
+        /// 如果购买商品超过上限则返回错误，此时没有购买任何商品。
+        /// </summary>
+        [Range(1, int.MaxValue, ErrorMessage = "购买数量需要大于0.")]
+        public int Count { get; set; }
+    }
+
+    /// <summary>
+    /// 购买功能返回值封装类。
+    /// </summary>
+    public class ShoppingBuyWithDetailReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 返回每个商品导致的变化数据。
+        /// </summary>
+        public List<List<GamePropertyChangeItemDto>> Changes { get; set; } = new List<List<GamePropertyChangeItemDto>>();
+    }
+
 
     /// <summary>
     /// 累计签到功能的参数封装类。
@@ -1888,6 +2238,27 @@ namespace GY02.Publisher
         public DateTime? EndUtc { get; set; }
     }
 
+    /// <summary>
+    /// 按指定TId获取商品配置数据功能的参数封装类。
+    /// </summary>
+    public class GetShoppingItemsByIdsParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要过滤的TId集合。
+        /// </summary>
+        public List<Guid> TIds { get; set; } = new List<Guid>();
+    }
+
+    /// <summary>
+    /// 按指定TId获取商品配置数据功能的返回值封装类。
+    /// </summary>
+    public class GetShoppingItemsByIdsReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 购买商品的状态集合。
+        /// </summary>
+        public List<ShoppingItemStateDto> ShoppingItemStates { get; set; } = new List<ShoppingItemStateDto>();
+    }
     #endregion 商城相关
 
     #region 邮件相关
@@ -2130,6 +2501,20 @@ namespace GY02.Publisher
     #endregion 邮件相关
 
     #region 管理员功能相关
+
+    /// <summary>
+    /// 上传一些程序用文件功能的参数封装类。
+    /// </summary>
+    public class UploadFileParamsDto : TokenDtoBase
+    {
+    }
+
+    /// <summary>
+    /// 上传一些程序用文件功能的返回值封装类。
+    /// </summary>
+    public class UploadResourceFileReturnDto : ReturnDtoBase
+    {
+    }
 
     /// <summary>
     /// 修改系统时间的功能参数封装类。
@@ -2834,6 +3219,293 @@ namespace GY02.Publisher
     #endregion T1228相关
 
     #region T304相关
+
+    /// <summary>
+    /// 查询T304V2 订单功能参数封装类。
+    /// </summary>
+    public class GetT304V2OrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要查询的订单Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
+    /// <summary>
+    /// 查询T304V2 订单功能返回值封装类。
+    /// </summary>
+    public class GetT304V2OrderReturnDto : PropertyChangeReturnDto
+    {
+        /// <summary>
+        /// 订单信息对象。返回时，其中 States 0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+        /// </summary>
+        public GameShoppingOrderDto Order { get; set; }
+
+        /// <summary>
+        /// 获取奖品的预览数据。仅当Order.States =1 时才有意义。
+        /// </summary>
+        public List<GameEntitySummaryDto> EntitySummaryDtos { get; set; } = new List<GameEntitySummaryDto>();
+    }
+
+    /// <summary>
+    /// 创建 T304V2 订单功能的参数封装类。
+    /// </summary>
+    public class CreateT304V2OrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要购买商品的Id。数量恒定为1。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+    }
+
+    /// <summary>
+    /// 创建 T304V2 订单功能的返回值封装类。
+    /// </summary>
+    public class CreateT304V2OrderReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 生成订单的Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
+    /// <summary>
+    /// 304合作伙伴登录接口第二版参数封装类。
+    /// </summary>
+    public class LoginT304V2ParamsDto
+    {
+        /// <summary>
+        /// 唯一Id。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string Uid { get; set; }
+    }
+
+
+    /// <summary>
+    /// 304合作伙伴登录接口第二版返回值封装类。
+    /// </summary>
+    [AutoMap(typeof(LoginCommand))]
+    public class LoginT304V2ReturnDto : LoginReturnDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
+
+    /// <summary>
+    /// 储值成功回调参数封装类。
+    /// </summary>
+    public class T304PayedV2ParamsDto
+    {
+        /// <summary>
+        /// 用户在SDK服务器的唯一标识。
+        /// </summary>
+        [JsonPropertyName("uid")]
+        public string UId { get; set; }
+
+        /// <summary>
+        /// 应用在SDK平台的唯一标识。
+        /// </summary>
+        [JsonPropertyName("appId")]
+        public long AppId { get; set; }
+
+        /// <summary>
+        ///  SDK平台的订单号
+        /// 订阅型商品自动续订成功时，
+        /// sdkOrderId会新创建，与首次订
+        /// 阅的sdkOrderId不同
+        /// 订阅型商品取消续订时，
+        /// sdkOrderId同首次订阅一样。
+        /// </summary>
+        [JsonPropertyName("sdkOrderId")]
+        public string SdkOrderId { get; set; }
+
+        /// <summary>
+        /// 如果该值存在，说明这个是根据之前的一个订阅订单，自动生成的订单
+        /// 取值为之前订阅的一个sdkOrderId
+        /// </summary>
+        [JsonPropertyName("subscribeSdkOrderId")]
+        public string SubscribeSdkOrderId { get; set; }
+
+        /// <summary>
+        /// 当前时间戳（毫秒）
+        /// </summary>
+        [JsonPropertyName("t")]
+        public long Timestamp { get; set; }
+
+        /// <summary>
+        /// 应用在游戏服务器的订单号，对应客户端文档的gameOrderId
+        /// </summary>
+        [JsonPropertyName("appOrderId")]
+        public string AppOrderId { get; set; }
+
+        /// <summary>
+        /// 实际支付金额
+        /// 从SDK客户端获取具体值未知，可能随着用户的支付账号、支付地区、支付方式变化
+        /// </summary>
+        [JsonPropertyName("moneyAmount")]
+        public long MoneyAmount { get; set; }
+
+        /// <summary>
+        /// 实际支付币种从SDK客户端获取具体值未知，可能随着用户的支付账号、支付地区、支付方式变化
+        /// </summary>
+        [JsonPropertyName("moneyCurrency")]
+        public string MoneyCurrency { get; set; }
+
+        /// <summary>
+        ///  SDK服务器后台配置的金额配合payType和productId可用于游戏服务器检验订单金额
+        /// </summary>
+        [JsonPropertyName("orderAmount")]
+        public long OrderAmount { get; set; }
+
+        /// <summary>
+        ///  SDK服务器后台配置的币种配合payType和productId可用于游戏服务器检验订单金额
+        /// </summary>
+        [JsonPropertyName("orderCurrency")]
+        public string OrderCurrency { get; set; }
+
+        /// <summary>
+        /// 游戏服务器ID
+        /// </summary>
+        [JsonPropertyName("serverId")]
+        public string ServerId { get; set; }
+
+        /// <summary>
+        /// 游戏角色ID
+        /// </summary>
+        [JsonPropertyName("roleId")]
+        public string RoleId { get; set; }
+
+        /// <summary>
+        ///  1:GooglePay
+        ///  2:AppStore
+        ///  3:TStore
+        ///  4:KaKaoGameShop
+        ///  5:WeixinPay
+        ///  6:AliPay
+        ///  7:Paypal
+        ///  11:OneStore
+        ///  12:SheenPay
+        ///  13:MyCardPay
+        ///  14:HuaWeiPay
+        ///  15:DirectnessPay
+        ///  16:PagsmilePay
+        ///  17:RazerPay
+        ///  18:CodaShopPay
+        ///  19:Flexion
+        ///  20:Razershop
+        ///  21:HonorPay
+        ///  22:XsollaPay
+        ///  23:Payletter
+        ///  24:Samsung
+        ///  26:Steam
+        ///  27:PlayStation
+        ///  28:RuStore
+        ///  29:空中云汇Airwallex
+        /// </summary>
+        [JsonPropertyName("payType")]
+        public long PayType { get; set; }
+
+        /// <summary>
+        /// 商品ID。
+        /// </summary>
+        [JsonPropertyName("productId")]
+        public string ProductId { get; set; }
+
+        /// <summary>
+        /// 商品名。
+        /// </summary>
+        [JsonPropertyName("productName")]
+        public string ProductName { get; set; }
+
+        /// <summary>
+        /// 苹果、google等渠道名的缩写。
+        /// </summary>
+        [JsonPropertyName("channelName")]
+        public string ChannelName { get; set; }
+
+        /// <summary>
+        /// 苹果、google等渠道ID。
+        /// </summary>
+        [JsonPropertyName("channelId")]
+        public string ChannelId { get; set; }
+
+        /// <summary>
+        /// 苹果、google等渠道产生的订单号。
+        /// </summary>
+        [JsonPropertyName("channelOrderId")]
+        public string ChannelOrderId { get; set; }
+
+        /// <summary>
+        ///  true：沙箱订单， false：正式订单
+        /// </summary>
+        [JsonPropertyName("sandbox")]
+        public bool Sandbox { get; set; }
+
+        /// <summary>
+        /// 该商品是否为订阅商品。如果是订阅商品，不论unsubscribe取何值，subscribe始终为true
+        ///  true：订阅订单， false：非订阅订单
+        /// </summary>
+        [JsonPropertyName("subscribe")]
+        public bool Subscribe { get; set; }
+
+        /// <summary>
+        /// 当subscribe为true时，unsubscribe的值才需要考虑
+        ///  true：取消订阅
+        /// </summary>
+        [JsonPropertyName("unsubscribe")]
+        public bool? Unsubscribe { get; set; }
+
+        /// <summary>
+        ///   2：ANDROID 3：IOS 4：windows 6：web端储值
+        /// </summary>
+        [JsonPropertyName("platformId")]
+        public long PlatformId { get; set; }
+
+        /// <summary>
+        ///  签名。
+        /// </summary>
+        [JsonPropertyName("sign")]
+        public string Sign { get; set; }
+
+        /// <summary>
+        ///   游戏透传字段格式为json sdkServerLog为保留的key前缀
+        /// </summary>
+        [JsonPropertyName("appExtraInfo")]
+        public string AppExtraInfo { get; set; }
+
+        /// <summary>
+        ///  格式为json.
+        /// </summary>
+        [JsonPropertyName("sdkExtraInfo")]
+        public string SdkExtraInfo { get; set; }
+
+    }
+
+    /// <summary>
+    /// 储值成功回调返回值封装类。
+    /// </summary>
+    public class T304PayedV2ReturnDto
+    {
+        /// <summary>
+        ///  操作成功,
+        ///  该接口可能由于网络等问题，重复调用
+        ///  相同订单 sdkOrderId 重复通知时，需要返回 code0
+        ///  除了返回 code0，其他所有情况都算失败，包括网络失败，SDK 服务器会重新划拨
+        ///  游戏服务器需做防重处理。
+        /// </summary>
+        [JsonPropertyName("code")]
+        public int Code { get; set; }
+    }
+
     /// <summary>
     /// T304完成订单功能参数封装类。
     /// </summary>
@@ -2908,6 +3580,11 @@ namespace GY02.Publisher
         /// 强行指定生成一个通用兑换码。仅当 CodeType == 1时，指定这一项才有用。
         /// </summary>
         public string Code { get; set; }
+
+        /// <summary>
+        /// 强行一次性码的前缀。仅当 CodeType == 2时，指定这一项才有用。
+        /// </summary>
+        public string Prefix { get; set; }
     }
 
     /// <summary>
@@ -2924,6 +3601,304 @@ namespace GY02.Publisher
     #endregion 兑换码相关
 
     #region 0314相关
+
+    #region 0314TapTap相关
+
+    /// <summary>
+    /// 查询TapTap订单信息的参数封装类。
+    /// </summary>
+    public class GetT0314TapTapOrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要查询的订单Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
+    /// <summary>
+    /// 查询TapTap订单信息返回值封装类。
+    /// </summary>
+    public class GetT0314TapTapOrderReturnDto : PropertyChangeReturnDto
+    {
+        /// <summary>
+        /// 订单信息对象。返回时，其中 States 0=进行中，1=正常完成，2=多方都已确认，但确认数据不一致，即出错。
+        /// </summary>
+        public GameShoppingOrderDto Order { get; set; }
+
+        /// <summary>
+        /// 获取奖品的预览数据。仅当Order.States =1 时才有意义。
+        /// </summary>
+        public List<GameEntitySummaryDto> EntitySummaryDtos { get; set; } = new List<GameEntitySummaryDto>();
+    }
+
+    /// <summary>
+    /// 创建T0314TapTap订单的参数封装类。
+    /// </summary>
+    public class CreateT0314TapTapOrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 要购买商品的Id。数量恒定为1。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+    }
+
+    /// <summary>
+    /// 创建T0314TapTap订单的返回值封装类。
+    /// </summary>
+    public class CreateT0314TapTapOrderReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 生成订单的Id。
+        /// </summary>
+        public Guid OrderId { get; set; }
+    }
+
+    /// <summary>
+    /// Taptap支付回调的订单信息。
+    /// </summary>
+    public class TapTapPayedOrderDto
+    {
+
+        /// <summary>
+        /// 订单唯一 ID
+        /// </summary>
+        [JsonPropertyName("order_id")]
+        public string OrderId { get; set; }
+
+        /// <summary>
+        /// 用于订单核销的 token。
+        /// </summary>
+        [JsonPropertyName("purchase_token")]
+        public string PurchaseToken { get; set; }
+
+        /// <summary>
+        /// 应用的 Client ID。
+        /// </summary>
+        [JsonPropertyName("client_id")]
+        public string ClientId { get; set; }
+
+        /// <summary>
+        /// 用户的开放平台 ID。
+        /// </summary>
+        [JsonPropertyName("open_id")]
+        public string OpenId { get; set; }
+
+        /// <summary>
+        /// 用户地区。
+        /// </summary>
+        [JsonPropertyName("user_region")]
+        public string UserRegion { get; set; }
+
+        /// <summary>
+        /// 商品唯一。
+        /// </summary>
+        [JsonPropertyName("goods_open_id")]
+        public string GoodsOpenId { get; set; }
+
+        /// <summary>
+        /// 商品名称。
+        /// </summary>
+        [JsonPropertyName("goods_name")]
+        public string GoodsName { get; set; }
+
+        /// <summary>
+        /// 订单状态。
+        /// charge.pending	待支付
+        /// charge.succeeded 支付成功
+        /// charge.confirmed 已核销
+        /// charge.overdue 支付超时关闭
+        /// refund.pending 退款中
+        /// refund.succeeded 退款成功
+        /// refund.failed 退款失败
+        /// refund.rejected 退款被拒绝
+        /// </summary>
+        [JsonPropertyName("status")]
+        public string Status { get; set; }
+
+        /// <summary>
+        /// 金额（本币金额 x 1,000,000）。
+        /// </summary>
+        [JsonPropertyName("amount")]
+        public string Amount { get; set; }
+
+        /// <summary>
+        /// 标准法币金额，主货币单位为基准，如1.99表示1.99主货币单位。
+        /// 若<see cref="Amount"/>是非法值则返回0.
+        /// </summary>
+        public decimal StandardAmount { get => decimal.TryParse(Amount, out var result) ? result / 1_000_000 : decimal.Zero; }
+
+        /// <summary>
+        /// 币种。
+        /// </summary>
+        /// <remarks>TapTap Payments 支持全球 173 个国家地区和 40 多种货币。
+        /// 在 本地货币不支持的国家地区，或在开发者没有设定价格的国家地区中，用户将以美元（USD）进行付款。
+        /// 另外，大部分货币为二位十进制货币，例如 USD 0.99，而另一部分则是零位十进制货币，例如 JPY 130。请在设置价格时参照以下标准：</remarks>
+        [JsonPropertyName("currency")]
+        public string Currency { get; set; }
+
+        /// <summary>
+        /// 创建时间。
+        /// </summary>
+        [JsonPropertyName("create_time")]
+        public string CreateTime { get; set; }
+
+        /// <summary>
+        /// 支付时间。
+        /// </summary>
+        [JsonPropertyName("pay_time")]
+        public string PayTime { get; set; }
+
+        /// <summary>
+        /// 商户自定义数据，如角色信息等，长度不超过 255 UTF-8 字符。
+        /// </summary>
+        [JsonPropertyName("extra")]
+        public string Extra { get; set; }
+
+    }
+
+    /// <summary>
+    /// Taptap支付回调参数封装类。
+    /// </summary>
+    /// <remarks></remarks>
+    public class T0314TapTapPayedParamsDto
+    {
+        /// <summary>
+        /// 对象结构。
+        /// </summary>
+        [JsonPropertyName("order")]
+        public TapTapPayedOrderDto Order { get; set; }
+
+        /// <summary>
+        /// 对象结构。
+        /// charge.succeeded	充值成功
+        /// refund.succeeded 退款成功
+        /// refund.failed 退款失败
+        /// </summary>
+        [JsonPropertyName("event_type")]
+        public string EventType { get; set; }
+
+    }
+
+    #endregion 0314TapTap相关
+
+    /// <summary>
+    /// Taptap支付回调返回值封装类。
+    /// </summary>
+    public class T0314TapTapPayedReturnDto
+    {
+        /// <summary>
+        /// 状态码，SUCCESS 为接收成功，FAIL 或其他均认为失败。必须填写。
+        /// </summary>
+        [JsonPropertyName("code")]
+        public string Code { get; set; }
+
+        /// <summary>
+        /// 当接收失败时需返回失败原因。
+        /// </summary>
+        [JsonPropertyName("msg")]
+        public string Msg { get; set; }
+
+    }
+
+    /// <summary>
+    /// 获取指定订单功能参数封装类。
+    /// </summary>
+    public class GetT0314OrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 游戏下单时传递的游戏订单号。
+        /// </summary>
+        public string OrderNo { get; set; }
+    }
+
+    /// <summary>
+    /// 获取指定订单功能的返回值封装类。
+    /// </summary>
+    public class GetT0314OrderReturnDto : PropertyChangeReturnDto
+    {
+        /// <summary>
+        /// 订单信息对象。
+        /// </summary>
+        public GameShoppingOrderDto Order { get; set; }
+
+        /// <summary>
+        /// true=奖品已通过mail发送，false=奖品直接发送到了用户包裹中。此属性仅当 Order 成功完成时才有意义。
+        /// </summary>
+        public bool SendInMail { get; set; }
+
+        /// <summary>
+        /// 获取奖品的预览数据。
+        /// </summary>
+        public List<GameEntitySummaryDto> EntitySummaryDtos { get; set; } = new List<GameEntitySummaryDto>();
+    }
+
+    /// <summary>
+    /// 客户端创建并确认订单功能参数封装类。
+    /// </summary>
+    public class CreateT0314OrderParamsDto : TokenDtoBase
+    {
+        /// <summary>
+        /// 购买商品的模板Id。
+        /// </summary>
+        public Guid ShoppingItemTId { get; set; }
+    }
+
+    /// <summary>
+    /// 客户端创建并确认订单功能返回值封装类。
+    /// </summary>
+    public class CreateT0314OrderReturnDto : ReturnDtoBase
+    {
+        /// <summary>
+        /// 构造函数。
+        /// </summary>
+        public CreateT0314OrderReturnDto()
+        {
+        }
+        /// <summary>
+        /// 游戏下单时传递的游戏订单号。客户端要将此参数需要传递给SDK服务器。
+        /// </summary>
+        public string OrderNo { get; set; }
+    }
+
+    /// <summary>
+    /// T0314 TapTap登录参数封装类。
+    /// </summary>
+#if NETCOREAPP
+    [AutoMap(typeof(LoginT0314Command), ReverseMap = true)]
+#endif
+    public class LoginT0314TapTapParamsDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string Uid { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Token { get; set; }
+    }
+
+    /// <summary>
+    /// T0314 TapTap登录返回值封装类。
+    /// </summary>
+#if NETCOREAPP
+    [AutoMap(typeof(LoginCommand))]
+#endif
+    public class LoginT0314TapTapReturnDto : LoginReturnDto
+    {
+        /// <summary>
+        /// 登录名。
+        /// </summary>
+        //[SourceMember("User.LoginName")]
+        public string LoginName { get; set; }
+
+        /// <summary>
+        /// 密码。若首次登录，创建了账号则这里返回密码。否则返回null。
+        /// </summary>
+        public string Pwd { get; set; }
+    }
 
     /// <summary>
     /// 0314登录参数封装类。

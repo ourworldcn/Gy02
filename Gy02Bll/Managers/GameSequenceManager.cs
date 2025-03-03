@@ -157,24 +157,6 @@ namespace GY02.Managers
         }
 
         /// <summary>
-        /// 使用序列模板获取匹配项。
-        /// </summary>
-        /// <param name="entities"></param>
-        /// <param name="tt"></param>
-        /// <returns>没有找到匹配项，将返回空集合。</returns>
-        public IEnumerable<(GameEntitySummary, GameEntity)> GetMatches(IEnumerable<GameEntity> entities, TemplateStringFullView tt)
-        {
-            if (!GetOut(entities, tt, out var summary)) return Array.Empty<(GameEntitySummary, GameEntity)>();    //若没有匹配项
-            if (tt.SequenceOut is not null && entities.FirstOrDefault() is GameChar gc)
-            {
-                var matches1 = _EntityManager.GetMatches(summary, gc.HuoBiSlot.Children);
-                return matches1.Select(c => (summary, c));
-            }
-            var matches = _EntityManager.GetMatches(summary, entities);
-            return matches.Select(c => (summary, c));
-        }
-
-        /// <summary>
         /// <inheritdoc/>
         /// </summary>
         /// <param name="source"><inheritdoc/></param>

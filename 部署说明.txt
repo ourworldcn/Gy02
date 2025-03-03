@@ -1,74 +1,133 @@
-IIS ÅäÖÃ
+ï»¿IIS é…ç½®
 https://learn.microsoft.com/zh-cn/aspnet/core/host-and-deploy/iis/advanced?view=aspnetcore-6.0#iis-configuration
 
-×ÊÔ´·şÎñÆ÷ÅäÖÃ
-MIMEÓ³Éä
-.apk application/octet-stream
-. application/octet-stream
-.unity3d application/octet-stream
+èµ„æºæœåŠ¡å™¨é…ç½®
+MIMEæ˜ å°„
+application/octet-stream
+.unity3d .apk .bundle   .bytes    .rawfile
+application/text
+.version  .hash
 
-WebApiÍøÕ¾
-È¥µôÄ£¿é WebDAVModule %windir%\System32\inetsrv\webdav.dll
-´Ë¹¦ÄÜÓ°ÏìputÎ½´ÊµÄ¹¦ÄÜ
-ÉèÖÃÓ¦ÓÃ³ÌĞò³ØµÄÔËĞĞÕËºÅÎª¿ÉÍêÈ«·ÃÎÊÊı¾İ¿âµÄÕËºÅ¡£
+WebApiç½‘ç«™
+å»æ‰æ¨¡å— WebDAVModule %windir%\System32\inetsrv\webdav.dll
+æ­¤åŠŸèƒ½å½±å“putè°“è¯çš„åŠŸèƒ½
+è®¾ç½®åº”ç”¨ç¨‹åºæ± çš„è¿è¡Œè´¦å·ä¸ºå¯å®Œå…¨è®¿é—®æ•°æ®åº“çš„è´¦å·ã€‚
 
-Êı¾İ¿â
-ĞŞÕıÊı¾İ¿â×î´óÄÚ´æÏŞÖÆ£¬Ò»°ã4GB×ã¹»£¬±ÜÃâ³¤ÆÚÔËĞĞÊ±£¬ÆäÌ°À·ÄÚ´æËã·¨µ¼ÖÂÄÚ´æ½ôÕÅ¡£
+æ•°æ®åº“
+ä¿®æ­£æ•°æ®åº“æœ€å¤§å†…å­˜é™åˆ¶ï¼Œä¸€èˆ¬4GBè¶³å¤Ÿï¼Œé¿å…é•¿æœŸè¿è¡Œæ—¶ï¼Œå…¶è´ªå©ªå†…å­˜ç®—æ³•å¯¼è‡´å†…å­˜ç´§å¼ ã€‚
 
-³¬¹ÜÕËºÅ : 1D22F0CF-1704-412C-AD8D-32CE5FA5A7D5//37A87267-77DC-4AA3-8220-02F9538779AB
+è¶…ç®¡è´¦å· : 1D22F0CF-1704-412C-AD8D-32CE5FA5A7D5//37A87267-77DC-4AA3-8220-02F9538779AB
 
-ĞÂ³¬¹ÜÕËºÅ£º0A630B86-0C8F-4CDA-B9BB-A13E35295D71//1954D1C0-5012-44C3-8F1B-0950544862A5
-ºÃÓÑ»úÆ÷ÈËµÇÂ¼Ãû//ÃÜÂë£ºA3B4B3F7-8CAD-4B95-9983-4D5DAFDAA5F0//9D4C2381-F000-43F2-AB75-1A53718D44C0
+æ–°è¶…ç®¡è´¦å·ï¼š0A630B86-0C8F-4CDA-B9BB-A13E35295D71//1954D1C0-5012-44C3-8F1B-0950544862A5
+å¥½å‹æœºå™¨äººç™»å½•å//å¯†ç ï¼šA3B4B3F7-8CAD-4B95-9983-4D5DAFDAA5F0//9D4C2381-F000-43F2-AB75-1A53718D44C0
 
-Ö÷ÍøÕ¾²¿Êğ²Î¼û https://docs.microsoft.com/zh-cn/aspnet/core/tutorials/publish-to-iis?view=aspnetcore-3.1&tabs=visual-studio
+ä¸»ç½‘ç«™éƒ¨ç½²å‚è§ https://docs.microsoft.com/zh-cn/aspnet/core/tutorials/publish-to-iis?view=aspnetcore-3.1&tabs=visual-studio
 yun1.pandaglb.com:44489
-·ÆÁ¦±ö·şÎñÆ÷£º8.212.134.48 ÕËºÅÃÜÂëguangyuan.123
-¹úÄÚÍâÍø·şÎñÆ÷£º101.201.209.138 ÕËºÅÃÜÂë£ºGy210115 ×ÊÔ´·şÎñÆ÷ÃÜÂë£ºguangyuan.123
-43.133.232.4:20081 ×ÊÔ´·şÎñÆ÷ ResourceAdmin,ÃÜÂë:guangyuan.123
+è²åŠ›å®¾æœåŠ¡å™¨ï¼š8.212.134.48 è´¦å·å¯†ç guangyuan.123
+å›½å†…å¤–ç½‘æœåŠ¡å™¨ï¼š101.201.209.138 è´¦å·å¯†ç ï¼šGy210115 èµ„æºæœåŠ¡å™¨å¯†ç ï¼šguangyuan.123
+43.133.232.4:20081 èµ„æºæœåŠ¡å™¨ ResourceAdmin,å¯†ç :guangyuan.123
 43.133.232.4 Administrator//uE$,AKda.74+Y=%
 
-ÃÀÎ÷47.251.39.121 Administrator//5599F108-E0DF-43C3-BE06
+ç¾è¥¿47.251.39.121 Administrator//5599F108-E0DF-43C3-BE06
 {9E51D4AF-1740-4919-89E6-FCE02D117CFE}
 BeastBlitzKey
 
-×îĞÂ ÍêÃÀ/±±ÃÀ·şÎñÆ÷ sa.wanmei.1stlightstudio.com(44.193.1.133) Administrator//{9E51D4AF-1740-4919-89E6-FCE02D117CFE} UTC+0
+å®Œç¾/åŒ—ç¾æœåŠ¡å™¨ sa.wanmei.1stlightstudio.com(44.193.1.133) Administrator//{9E51D4AF-1740-4919-89E6-FCE02D117CFE} UTC+0
+å®Œç¾/åŒ—ç¾èµ„æºæœåŠ¡å™¨ sa.wanmei.1stlightstudio.com(44.193.1.133) Administrator//{9E51D4AF-1740-4919-89E6-FCE02D117CFE} UTC+0 èµ„æºæ ¹ç›®å½•C:\IisRoot\RWeb
 
-Ïã¸Û·şÎñÆ÷ 52.194.248.217 Administrator//y=A@Nlgjfqw9s!Wy6vD-w$w8;5fWA6&3
+é¦™æ¸¯æœåŠ¡å™¨ 52.194.248.217 Administrator//y=A@Nlgjfqw9s!Wy6vD-w$w8;5fWA6&3
 https://us-east-1.console.aws.amazon.com/ec2/home?region=us-east-1#InstanceDetails:instanceId=i-0d757090e71fb103e
 
-½İÓÎ/¶«ÄÏÑÇ Á¬½ÓµØÖ·£ºabb.shfoga.com administrator//Forgame@123 UTC+8
-½İÓÎ/µ÷ÊÔ 47.237.87.21 administrator//Forgame@123 UTC+8
+æ·æ¸¸/ä¸œå—äºš è¿æ¥åœ°å€ï¼šabb.shfoga.com administrator//Forgame@123 UTC+8
+æ·æ¸¸/è°ƒè¯• 47.237.87.21 administrator//Forgame@123 UTC+8
 
-×Ô²â·şÎñÆ÷µØÖ·¡£ phl.self.1stlightstudio.com 
+è‡ªæµ‹æœåŠ¡å™¨åœ°å€ã€‚ phl.self.1stlightstudio.com 
 9bK2frUv0ivRjLFtGlZ?aOf*CL(!4e6Y
 
-F871361D-A803-4F7E-B222-13216A89E9FA ÉÏ´«Ä£°åµÄÆ¾¾İ
+F871361D-A803-4F7E-B222-13216A89E9FA ä¸Šä¼ æ¨¡æ¿çš„å‡­æ®
 
-×ÔÓª/¹úÄÚ²âÊÔ https://test.prc.self.1stlightstudio.com:20444 https://101.200.75.226:20444 
+è‡ªè¥/PRC/å…¬ç½‘æµ‹è¯•
+IP:101.200.75.226
+DNS:https://test.prc.self.1stlightstudio.com
+è´¦å·:Administrator
+å¯†ç :
+Webåœ°å€ï¼šhttps://101.200.75.226:20446 
+æ–°Webåœ°å€ï¼šhttps://test.prc.self.1stlightstudio.com:20446
 
-·ÉÊé½ÓÈëÔÚÏßÎÄµµ https://wiki.meetgames.com/distribution-service/SDKAccessDocument/loginPayment/loginIndex
-·ÉÊéÉîÅµ https://www.meetsocial.com/company.html
-·ÉÊéÉîÅµÄÏÃÀ·şÎñÆ÷ SA.meetsocial.1stlightstudio.com:20443 
-·ÉÊéÉîÅµµ÷ÊÔ½Ó¿Ú https://business.meetgames.com/tools/paymentNotice
+è‡ªè¥/PRC/ç‰ˆå·ç”³è¯·
+IP:101.200.75.226
+DNS:https://test.prc.self.1stlightstudio.com
+è´¦å·:Administrator
+å¯†ç :
+Webåœ°å€ï¼šhttps://101.200.75.226:20444
+æ–°Webåœ°å€ï¼šhttps://test.prc.self.1stlightstudio.com:20444
 
-Ö§¸¶»Øµ÷µØÖ· https://SA.meetsocial.1stlightstudio.com:20443/api/T1228/Payed1228
+é£ä¹¦æ¥å…¥åœ¨çº¿æ–‡æ¡£ https://wiki.meetgames.com/distribution-service/SDKAccessDocument/loginPayment/loginIndex
+é£ä¹¦æ·±è¯º https://www.meetsocial.com/company.html
+é£ä¹¦æ·±è¯ºå—ç¾æœåŠ¡å™¨ SA.meetsocial.1stlightstudio.com:20443 
+é£ä¹¦æ·±è¯ºè°ƒè¯•æ¥å£ https://business.meetgames.com/tools/paymentNotice
 
-½İÓÎ/ÕıÊ½ ÓÎÏ··şÎñÆ÷ https://seasia.jieyou.1stlightstudio.com:20443/
-²Ù×÷ÏµÍ³£ºwinserver 2022 ÖĞÎÄ
-ÅäÖÃ£º8C/32G 200G
-¹«ÍøµØÖ·£ºabb-pro.shfoga.com 47.236.73.116
-ÄÚÍøµØÖ·£º172.16.0.76
-Á¬½ÓĞÅÏ¢£ºadministrator / Forgame@123
-ÒÑ¿ª·Å¶Ë¿Ú£º3389/tcp¡¢20443/tcp¡¢20444/tcp¡¢20021/udp¡¢20088/udp¡¢20089/udp
+æ”¯ä»˜å›è°ƒåœ°å€ https://SA.meetsocial.1stlightstudio.com:20443/api/T1228/Payed1228
 
-±¤Àİ»úµØÖ·£ºhttps://bastion.shfoga.com
-ÕËºÅĞÅÏ¢£ºabb / Animals@123
+æ·æ¸¸/æ­£å¼ æ¸¸æˆæœåŠ¡å™¨ https://seasia.jieyou.1stlightstudio.com:20443/
+æ“ä½œç³»ç»Ÿï¼šwinserver 2022 ä¸­æ–‡
+é…ç½®ï¼š8C/32G 200G
+å…¬ç½‘åœ°å€ï¼šabb-pro.shfoga.com 47.236.73.116
+å†…ç½‘åœ°å€ï¼š172.16.0.76
+è¿æ¥ä¿¡æ¯ï¼šadministrator / Forgame@123
+å·²å¼€æ”¾ç«¯å£ï¼š3389/tcpã€20443/tcpã€20444/tcpã€20021/udpã€20088/udpã€20089/udp
 
-½İÓÎ/ÕıÊ½ Êı¾İ¿â·şÎñÆ÷
-²Ù×÷ÏµÍ³£ºwinserver 2022 ÖĞÎÄ
-ÅäÖÃ£º4C/16G 250G/100G/100G
-ÄÚÍøµØÖ·£º172.16.0.75
+å ¡å’æœºåœ°å€ï¼šhttps://bastion.shfoga.com
+è´¦å·ä¿¡æ¯ï¼šabb / Animals@123
+
+æ·æ¸¸/æ­£å¼ æ•°æ®åº“æœåŠ¡å™¨
+æ“ä½œç³»ç»Ÿï¼šwinserver 2022 ä¸­æ–‡
+é…ç½®ï¼š4C/16G 250G/100G/100G
+å†…ç½‘åœ°å€ï¼š172.16.0.75
 rm-t4nbj36b8877j344i.mssql.singapore.rds.aliyuncs.com
-Á¬½ÓĞÅÏ¢£ºadministrator / Forgame@123
+è¿æ¥ä¿¡æ¯ï¼šadministrator / Forgame@123
 forgame_admin  /  Forgame@123
 
+èµ„æºæœåŠ¡å™¨
+Webè®¿é—®åœ°å€ https://abb.shfoga.com:20444/
+Ftpè®¿é—®åœ°å€ï¼Œftp://abb.shfoga.com:20021ï¼Œç”¨æˆ·åï¼šradminï¼Œå¯†ç ï¼šGy220115
+
+æ¬§ç¾å‘è¡Œ åŒ—äº¬å¡å¡æ‰˜æ–¯ç½‘ç»œç§‘æŠ€æœ‰é™å…¬å¸
+ä¸‹é¢æ˜¯æ¸¸æˆæœåŠ¡å™¨è·³æ¿æœºç™»å½•ä¿¡æ¯
+https://jumpserver.getqccode.com/
+oasis_ranchgame//Gy210115 12345678Aa#
+
+å¡å¡æ‰˜æ–¯/åŒ—ç¾/æµ‹è¯•/æ¸¸æˆæœåŠ¡å™¨
+IP:43.130.108.31
+è´¦å·:administrator
+å¯†ç :Gy210115
+https://43.130.108.31:20443
+èµ„æºæœåŠ¡å™¨Url:https://43.130.108.31:20444
+èµ„æºæœåŠ¡å™¨è·¯å¾„: D:\IisRoot\RServer
+å¡å¡æ‰˜æ–¯/åŒ—ç¾/æµ‹è¯•/æ”¯ä»˜åå›è°ƒåœ°å€ä»˜è´¹å›è°ƒçš„ç›¸å¯¹urlæ˜¯ api/Shopping/T1021NAPayed,https://43.130.108.31:20443/api/Shopping/T1021NAPayed
+å¡å¡æ‰˜æ–¯/åŒ—ç¾/æµ‹è¯•/æ”¯ä»˜åå›è°ƒåœ°å€ä»˜è´¹å›è°ƒ/HTTPåœ°å€ï¼šhttp://43.130.108.31:20021/api/Shopping/T1021NAPayed
+å¡å¡æ‰˜æ–¯/åŒ—ç¾/æ­£å¼/æ”¯ä»˜åå›è°ƒåœ°å€ http://login-ranch-oasis.amuapp.com:20444/api/Shopping/T1021NAPayed
+
+å¡å¡æ‰˜æ–¯/åŒ—ç¾/æ­£å¼/æ¸¸æˆæœåŠ¡å™¨
+IP:43.166.249.138
+DNS:login-ranch-oasis.amuapp.com
+è´¦å·:Administrator
+å¯†ç :BBSbbs123$%^fF123
+WebApiåœ°å€ï¼šhttps://login-ranch-oasis.amuapp.com:20443
+
+å¡å¡æ‰˜æ–¯/åŒ—ç¾/æ­£å¼/èµ„æºæœåŠ¡å™¨
+IP:43.166.239.132
+DNS:rsc-ranch-oasis.amuapp.com
+è´¦å·:Administrator
+å¯†ç :BBSbbs123$%^fF123
+èµ„æºæ ¹ç›®å½•:E:\IISRoot\Gy001Resource
+Webåœ°å€ï¼šhttps://rsc-ranch-oasis.amuapp.com:20443
+æ–°Webåœ°å€ï¼šhttps://rsc-ranch-oasis.amuapp.com:443
+å¤‡ç”¨Webåœ°å€ï¼šhttps://rsc20444-ranch-oasis.amuapp.com
+
+å¡å¡æ‰˜æ–¯/åŒ—ç¾/æ­£å¼/æ•°æ®åº“æœåŠ¡å™¨
+IP: 10.4.1.8
+DNS:/
+è´¦å·:Administrator
+å¯†ç :BBSbbs123$%^fF123Sqlserver
+æ•°æ®åº“è´¦å·ï¼šsa//#*&10e7e60a-da9c-4fe2-9ff4-2edb7ebda2b6@)
