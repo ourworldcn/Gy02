@@ -3,21 +3,32 @@
     "Conditions": [
       {
         "ParentTId": null,
-        "Genus": [],
+        "Genus": [
+        ],
         "TId": "07664462-df05-4ba7-886d-b431bb88aa1c",
-        "MinCount": 0,
-        "GeneralConditional": [],
-        "GroupMask": 3
+        "MinCount": null,
+        "GeneralConditional": [
+        ],
+        "GroupMask": 1
       }
     ],
     "GetIndexExpression": {
-      "op": "GetBuyedCount",
-      "args": [ "42fe780b-2ccf-4bb0-b306-ed2562d94a23" ]
+      "op": "ToInt32",
+      "args": [
+        "RenameCount"
+      ]
     },
     "Outs": {
-      "ParentTIds": [ "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d" ],
-      "TIds": [ "9c8ea669-08bf-41ad-9628-736fe16bd226" ],
-      "Counts": [ 8, 9, 9, 9, 9, 9, 9, 12, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15, 15 ]
+      "TIds": [
+        "c9575f24-a33d-49ba-b130-29b6ff4d62c7"
+      ],
+      "Counts": [
+        0,
+        100
+      ],
+      "ParentTIds": [
+        "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d"
+      ]
     }
   }
 }

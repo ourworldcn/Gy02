@@ -1,5 +1,7 @@
 {
-  "Genus": [ "gs_lunbolibao" ],
+  "Genus": [
+    "gs_gaiming"
+  ],
   "ShoppingItem": {
     "Period": {
       "Start": "2023-05-30T00:00:00.000Z",
@@ -7,112 +9,30 @@
       "PeriodString": "99y",
       "ValidPeriodString": "99y"
     },
-    "GroupNumber": 2,
-    "MaxCount": 1,
+    "GroupNumber": 0,
+    "MaxCount": null,
     "Ins": [
       {
         "Conditional": [
           {
-            "ParentTId": "123a5ad1-d4f0-4cd9-9abc-d440419d9e0d",
-            "Genus": [],
-            "TId": "d577e084-4aa4-44d9-9510-20ccea041375",
-            "MinCount": 1,
-            "GeneralConditional": [],
-            "GroupMask": 3
+            "ParentTId": null,
+            "Genus": [
+            ],
+            "TId": "b45c570b-9027-4aa6-b333-91e304705d38",
+            "MinCount": 0,
+            "GeneralConditional": [
+            ],
+            "GroupMask": 1
           }
         ],
         "Count": 1,
-        "Genus": []
+        "Genus": [
+        ]
       }
     ],
     "Outs": [
-      {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "d79bf01e-0eba-427d-a4a6-c280a801f096",
-        "Count": 6
-      },
-      {
-        "Id": null,
-        "ParentTId": "9c559895-9a2c-43a7-b793-e879a600487c",
-        "TId": "2e877976-2d3d-4e7e-8851-07163216319a",
-        "Count": 5
-      },
-      {
-        "Id": null,
-        "ParentTId": "3b163a62-6591-4a93-a385-cf079b20f589",
-        "TId": "824409e8-5968-4d4b-929d-1ba6e629cbc6",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "e7d0bc9d-3f0e-47e0-9d6d-80ad1c40b2ee",
-        "Count": 1
-      },
-      {
-        "Id": null,
-        "ParentTId": null,
-        "TId": "cb3eb8b7-15b5-4480-a56b-24bf6fca9a12",
-        "Count": 1
-      }
     ]
   },
-  "productInfo": {
-    "Southeast_Android": {
-      "productStoreId": "com.duangsea.39",
-      "productAmount": "0.69",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Southeast_iOS": {
-      "productStoreId": "com.duangsea.39",
-      "productAmount": "0.69",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Canada_Android": {
-      "productStoreId": "com.beast.beastbumper.blitz.39",
-      "productAmount": "1.99",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Canada_iOS": {
-      "productStoreId": "com.beast.beastbumper.blitz.39",
-      "productAmount": "1.99",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Korea_Android": {
-      "productStoreId": "com.duangzs.39",
-      "productAmount": "1.8",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Korea_iOS": {
-      "productStoreId": "com.duangzs.39",
-      "productAmount": "1.8",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Pilipinas_Android": {
-      "productStoreId": "com.duangphl.39",
-      "productAmount": "0.69",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    },
-    "Pilipinas_iOS": {
-      "productStoreId": "com.duangphl.39",
-      "productAmount": "0.69",
-      "currencyCode": "USD",
-      "currencyMark": "$"
-    }
-  },
-  "productName": "熊猫皮肤礼包",
-  "productType": "熊猫皮肤",
-  "productDesc": "熊猫皮肤礼包",
-  "name_txt": 11036,
-  "comment_txt": 0,
-  "display_icon": "slideshow_181106002",
-  "JiaoBiao": [ null, 11037, 11038 ]
+  "display_icon": "Tili2",
+  "display_count": 15
 }

@@ -316,6 +316,8 @@ namespace OW.Game.Entity
         public List<string> RedeemCodeHistory { get; set; }
 
         #endregion 兑换码
+
+        public int RenameCount { get; set; }
     }
 
     /// <summary>
