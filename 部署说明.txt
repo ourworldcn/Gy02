@@ -107,6 +107,7 @@ https://43.130.108.31:20443
 卡卡托斯/北美/测试/支付后回调地址付费回调的相对url是 api/Shopping/T1021NAPayed,https://43.130.108.31:20443/api/Shopping/T1021NAPayed
 卡卡托斯/北美/测试/支付后回调地址付费回调/HTTP地址：http://43.130.108.31:20021/api/Shopping/T1021NAPayed
 卡卡托斯/北美/正式/支付后回调地址 http://login-ranch-oasis.amuapp.com:20444/api/Shopping/T1021NAPayed
+环境:test2
 
 卡卡托斯/北美/正式/游戏服务器
 IP:43.166.249.138
